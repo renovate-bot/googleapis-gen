@@ -70,8 +70,8 @@ describe('v2.ProfilerServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new profilerserviceModule.v2.ProfilerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.profilerServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v2.ProfilerServiceClient', () => {
 
     it('has close method', () => {
         const client = new profilerserviceModule.v2.ProfilerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v2.ProfilerServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new profilerserviceModule.v2.ProfilerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v2.ProfilerServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new profilerserviceModule.v2.ProfilerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v2.ProfilerServiceClient', () => {
     describe('createProfile', () => {
         it('invokes createProfile without error', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.CreateProfileRequest());
             request.parent = '';
@@ -145,9 +145,9 @@ describe('v2.ProfilerServiceClient', () => {
 
         it('invokes createProfile without error using callback', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.CreateProfileRequest());
             request.parent = '';
@@ -180,9 +180,9 @@ describe('v2.ProfilerServiceClient', () => {
 
         it('invokes createProfile with error', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.CreateProfileRequest());
             request.parent = '';
@@ -205,9 +205,9 @@ describe('v2.ProfilerServiceClient', () => {
     describe('createOfflineProfile', () => {
         it('invokes createOfflineProfile without error', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest());
             request.parent = '';
@@ -229,9 +229,9 @@ describe('v2.ProfilerServiceClient', () => {
 
         it('invokes createOfflineProfile without error using callback', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest());
             request.parent = '';
@@ -264,9 +264,9 @@ describe('v2.ProfilerServiceClient', () => {
 
         it('invokes createOfflineProfile with error', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.CreateOfflineProfileRequest());
             request.parent = '';
@@ -289,9 +289,9 @@ describe('v2.ProfilerServiceClient', () => {
     describe('updateProfile', () => {
         it('invokes updateProfile without error', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.UpdateProfileRequest());
             request.profile = {};
@@ -314,9 +314,9 @@ describe('v2.ProfilerServiceClient', () => {
 
         it('invokes updateProfile without error using callback', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.UpdateProfileRequest());
             request.profile = {};
@@ -350,9 +350,9 @@ describe('v2.ProfilerServiceClient', () => {
 
         it('invokes updateProfile with error', async () => {
             const client = new profilerserviceModule.v2.ProfilerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.cloudprofiler.v2.UpdateProfileRequest());
             request.profile = {};

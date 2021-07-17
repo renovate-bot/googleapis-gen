@@ -117,8 +117,8 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.jobsV1Beta3Stub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
     it('has close method', () => {
         const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta3.JobsV1Beta3Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta3.JobsV1Beta3Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
     describe('createJob', () => {
         it('invokes createJob without error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobRequest());
             const expectedOptions = {};
@@ -184,9 +184,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes createJob without error using callback', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobRequest());
             const expectedOptions = {};
@@ -211,9 +211,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes createJob with error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobRequest());
             const expectedOptions = {};
@@ -228,9 +228,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
     describe('getJob', () => {
         it('invokes getJob without error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobRequest());
             const expectedOptions = {};
@@ -244,9 +244,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes getJob without error using callback', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobRequest());
             const expectedOptions = {};
@@ -271,9 +271,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes getJob with error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobRequest());
             const expectedOptions = {};
@@ -288,9 +288,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
     describe('updateJob', () => {
         it('invokes updateJob without error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.UpdateJobRequest());
             const expectedOptions = {};
@@ -304,9 +304,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes updateJob without error using callback', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.UpdateJobRequest());
             const expectedOptions = {};
@@ -331,9 +331,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes updateJob with error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.UpdateJobRequest());
             const expectedOptions = {};
@@ -348,9 +348,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
     describe('checkActiveJobs', () => {
         it('invokes checkActiveJobs without error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CheckActiveJobsRequest());
             const expectedOptions = {};
@@ -364,9 +364,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes checkActiveJobs without error using callback', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CheckActiveJobsRequest());
             const expectedOptions = {};
@@ -391,9 +391,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes checkActiveJobs with error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CheckActiveJobsRequest());
             const expectedOptions = {};
@@ -408,9 +408,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
     describe('snapshotJob', () => {
         it('invokes snapshotJob without error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.SnapshotJobRequest());
             const expectedOptions = {};
@@ -424,9 +424,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes snapshotJob without error using callback', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.SnapshotJobRequest());
             const expectedOptions = {};
@@ -451,9 +451,9 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('invokes snapshotJob with error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.SnapshotJobRequest());
             const expectedOptions = {};
@@ -593,11 +593,12 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('uses async iteration with listJobs without error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
@@ -763,11 +764,12 @@ describe('v1beta3.JobsV1Beta3Client', () => {
 
         it('uses async iteration with aggregatedListJobs without error', async () => {
             const client = new jobsv1beta3Module.v1beta3.JobsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.Job()),

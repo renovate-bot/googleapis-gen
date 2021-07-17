@@ -117,8 +117,8 @@ describe('v1.CloudBillingClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new cloudbillingModule.v1.CloudBillingClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.cloudBillingStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.CloudBillingClient', () => {
 
     it('has close method', () => {
         const client = new cloudbillingModule.v1.CloudBillingClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.CloudBillingClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudbillingModule.v1.CloudBillingClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.CloudBillingClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudbillingModule.v1.CloudBillingClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.CloudBillingClient', () => {
     describe('getBillingAccount', () => {
         it('invokes getBillingAccount without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.GetBillingAccountRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes getBillingAccount without error using callback', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.GetBillingAccountRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes getBillingAccount with error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.GetBillingAccountRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1.CloudBillingClient', () => {
     describe('updateBillingAccount', () => {
         it('invokes updateBillingAccount without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.UpdateBillingAccountRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes updateBillingAccount without error using callback', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.UpdateBillingAccountRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes updateBillingAccount with error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.UpdateBillingAccountRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.CloudBillingClient', () => {
     describe('createBillingAccount', () => {
         it('invokes createBillingAccount without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.CreateBillingAccountRequest());
             const expectedOptions = {};
@@ -352,9 +352,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes createBillingAccount without error using callback', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.CreateBillingAccountRequest());
             const expectedOptions = {};
@@ -379,9 +379,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes createBillingAccount with error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.CreateBillingAccountRequest());
             const expectedOptions = {};
@@ -396,9 +396,9 @@ describe('v1.CloudBillingClient', () => {
     describe('getProjectBillingInfo', () => {
         it('invokes getProjectBillingInfo without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.GetProjectBillingInfoRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes getProjectBillingInfo without error using callback', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.GetProjectBillingInfoRequest());
             request.name = '';
@@ -455,9 +455,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes getProjectBillingInfo with error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.GetProjectBillingInfoRequest());
             request.name = '';
@@ -480,9 +480,9 @@ describe('v1.CloudBillingClient', () => {
     describe('updateProjectBillingInfo', () => {
         it('invokes updateProjectBillingInfo without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.UpdateProjectBillingInfoRequest());
             request.name = '';
@@ -504,9 +504,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes updateProjectBillingInfo without error using callback', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.UpdateProjectBillingInfoRequest());
             request.name = '';
@@ -539,9 +539,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes updateProjectBillingInfo with error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.UpdateProjectBillingInfoRequest());
             request.name = '';
@@ -564,9 +564,9 @@ describe('v1.CloudBillingClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -588,9 +588,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -623,9 +623,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -648,9 +648,9 @@ describe('v1.CloudBillingClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -672,9 +672,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -707,9 +707,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -732,9 +732,9 @@ describe('v1.CloudBillingClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -756,9 +756,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -791,9 +791,9 @@ describe('v1.CloudBillingClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -941,11 +941,12 @@ describe('v1.CloudBillingClient', () => {
 
         it('uses async iteration with listBillingAccounts without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListBillingAccountsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListBillingAccountsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount()),
               generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount()),
               generateSampleMessage(new protos.google.cloud.billing.v1.BillingAccount()),
@@ -1149,13 +1150,14 @@ describe('v1.CloudBillingClient', () => {
 
         it('uses async iteration with listProjectBillingInfo without error', async () => {
             const client = new cloudbillingModule.v1.CloudBillingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListProjectBillingInfoRequest());
             request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.v1.ProjectBillingInfo()),
               generateSampleMessage(new protos.google.cloud.billing.v1.ProjectBillingInfo()),
               generateSampleMessage(new protos.google.cloud.billing.v1.ProjectBillingInfo()),

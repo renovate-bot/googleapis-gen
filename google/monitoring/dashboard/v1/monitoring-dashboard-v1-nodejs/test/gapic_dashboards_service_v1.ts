@@ -117,8 +117,8 @@ describe('v1.DashboardsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.dashboardsServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.DashboardsServiceClient', () => {
 
     it('has close method', () => {
         const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.DashboardsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.DashboardsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.DashboardsServiceClient', () => {
     describe('createDashboard', () => {
         it('invokes createDashboard without error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.CreateDashboardRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('invokes createDashboard without error using callback', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.CreateDashboardRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('invokes createDashboard with error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.CreateDashboardRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.DashboardsServiceClient', () => {
     describe('getDashboard', () => {
         it('invokes getDashboard without error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.GetDashboardRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('invokes getDashboard without error using callback', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.GetDashboardRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('invokes getDashboard with error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.GetDashboardRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.DashboardsServiceClient', () => {
     describe('deleteDashboard', () => {
         it('invokes deleteDashboard without error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.DeleteDashboardRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('invokes deleteDashboard without error using callback', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.DeleteDashboardRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('invokes deleteDashboard with error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.DeleteDashboardRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.DashboardsServiceClient', () => {
     describe('updateDashboard', () => {
         it('invokes updateDashboard without error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.UpdateDashboardRequest());
             request.dashboard = {};
@@ -445,9 +445,9 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('invokes updateDashboard without error using callback', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.UpdateDashboardRequest());
             request.dashboard = {};
@@ -481,9 +481,9 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('invokes updateDashboard with error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.UpdateDashboardRequest());
             request.dashboard = {};
@@ -670,13 +670,14 @@ describe('v1.DashboardsServiceClient', () => {
 
         it('uses async iteration with listDashboards without error', async () => {
             const client = new dashboardsserviceModule.v1.DashboardsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.monitoring.dashboard.v1.ListDashboardsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.monitoring.dashboard.v1.Dashboard()),
               generateSampleMessage(new protos.google.monitoring.dashboard.v1.Dashboard()),
               generateSampleMessage(new protos.google.monitoring.dashboard.v1.Dashboard()),

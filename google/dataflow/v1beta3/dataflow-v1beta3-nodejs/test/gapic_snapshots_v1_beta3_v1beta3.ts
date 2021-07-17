@@ -70,8 +70,8 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.snapshotsV1Beta3Stub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
 
     it('has close method', () => {
         const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
     describe('getSnapshot', () => {
         it('invokes getSnapshot without error', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetSnapshotRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
 
         it('invokes getSnapshot without error using callback', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetSnapshotRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
 
         it('invokes getSnapshot with error', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetSnapshotRequest());
             const expectedOptions = {};
@@ -181,9 +181,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
     describe('deleteSnapshot', () => {
         it('invokes deleteSnapshot without error', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.DeleteSnapshotRequest());
             const expectedOptions = {};
@@ -197,9 +197,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
 
         it('invokes deleteSnapshot without error using callback', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.DeleteSnapshotRequest());
             const expectedOptions = {};
@@ -224,9 +224,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
 
         it('invokes deleteSnapshot with error', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.DeleteSnapshotRequest());
             const expectedOptions = {};
@@ -241,9 +241,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
     describe('listSnapshots', () => {
         it('invokes listSnapshots without error', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListSnapshotsRequest());
             const expectedOptions = {};
@@ -257,9 +257,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
 
         it('invokes listSnapshots without error using callback', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListSnapshotsRequest());
             const expectedOptions = {};
@@ -284,9 +284,9 @@ describe('v1beta3.SnapshotsV1Beta3Client', () => {
 
         it('invokes listSnapshots with error', async () => {
             const client = new snapshotsv1beta3Module.v1beta3.SnapshotsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListSnapshotsRequest());
             const expectedOptions = {};

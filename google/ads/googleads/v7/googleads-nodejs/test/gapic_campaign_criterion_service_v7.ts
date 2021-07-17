@@ -70,8 +70,8 @@ describe('v7.CampaignCriterionServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.campaignCriterionServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v7.CampaignCriterionServiceClient', () => {
 
     it('has close method', () => {
         const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v7.CampaignCriterionServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v7.CampaignCriterionServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v7.CampaignCriterionServiceClient', () => {
     describe('getCampaignCriterion', () => {
         it('invokes getCampaignCriterion without error', async () => {
             const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignCriterionRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v7.CampaignCriterionServiceClient', () => {
 
         it('invokes getCampaignCriterion without error using callback', async () => {
             const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignCriterionRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v7.CampaignCriterionServiceClient', () => {
 
         it('invokes getCampaignCriterion with error', async () => {
             const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignCriterionRequest());
             request.resourceName = '';
@@ -205,9 +205,9 @@ describe('v7.CampaignCriterionServiceClient', () => {
     describe('mutateCampaignCriteria', () => {
         it('invokes mutateCampaignCriteria without error', async () => {
             const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignCriteriaRequest());
             request.customerId = '';
@@ -229,9 +229,9 @@ describe('v7.CampaignCriterionServiceClient', () => {
 
         it('invokes mutateCampaignCriteria without error using callback', async () => {
             const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignCriteriaRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v7.CampaignCriterionServiceClient', () => {
 
         it('invokes mutateCampaignCriteria with error', async () => {
             const client = new campaigncriterionserviceModule.v7.CampaignCriterionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignCriteriaRequest());
             request.customerId = '';

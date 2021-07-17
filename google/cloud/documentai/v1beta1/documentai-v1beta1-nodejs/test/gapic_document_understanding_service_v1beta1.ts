@@ -82,8 +82,8 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.documentUnderstandingServiceStub, undefined);
         await client.initialize();
@@ -92,8 +92,8 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
 
     it('has close method', () => {
         const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -101,8 +101,8 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -113,8 +113,8 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -133,9 +133,9 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
     describe('batchProcessDocuments', () => {
         it('invokes batchProcessDocuments without error', async () => {
             const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest());
             request.parent = '';
@@ -158,9 +158,9 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
 
         it('invokes batchProcessDocuments without error using callback', async () => {
             const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest());
             request.parent = '';
@@ -196,9 +196,9 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
 
         it('invokes batchProcessDocuments with call error', async () => {
             const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest());
             request.parent = '';
@@ -219,9 +219,9 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
 
         it('invokes batchProcessDocuments with LRO error', async () => {
             const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
 
         it('invokes checkBatchProcessDocumentsProgress without error', async () => {
             const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -261,9 +261,9 @@ describe('v1beta1.DocumentUnderstandingServiceClient', () => {
 
         it('invokes checkBatchProcessDocumentsProgress with error', async () => {
             const client = new documentunderstandingserviceModule.v1beta1.DocumentUnderstandingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 

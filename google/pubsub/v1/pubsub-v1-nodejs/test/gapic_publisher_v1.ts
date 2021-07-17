@@ -117,8 +117,8 @@ describe('v1.PublisherClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new publisherModule.v1.PublisherClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.publisherStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.PublisherClient', () => {
 
     it('has close method', () => {
         const client = new publisherModule.v1.PublisherClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.PublisherClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new publisherModule.v1.PublisherClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.PublisherClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new publisherModule.v1.PublisherClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.PublisherClient', () => {
     describe('createTopic', () => {
         it('invokes createTopic without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.Topic());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes createTopic without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.Topic());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes createTopic with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.Topic());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1.PublisherClient', () => {
     describe('updateTopic', () => {
         it('invokes updateTopic without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateTopicRequest());
             request.topic = {};
@@ -277,9 +277,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes updateTopic without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateTopicRequest());
             request.topic = {};
@@ -313,9 +313,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes updateTopic with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateTopicRequest());
             request.topic = {};
@@ -339,9 +339,9 @@ describe('v1.PublisherClient', () => {
     describe('publish', () => {
         it('invokes publish without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.PublishRequest());
             request.topic = '';
@@ -363,9 +363,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes publish without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.PublishRequest());
             request.topic = '';
@@ -398,9 +398,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes publish with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.PublishRequest());
             request.topic = '';
@@ -423,9 +423,9 @@ describe('v1.PublisherClient', () => {
     describe('getTopic', () => {
         it('invokes getTopic without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetTopicRequest());
             request.topic = '';
@@ -447,9 +447,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes getTopic without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetTopicRequest());
             request.topic = '';
@@ -482,9 +482,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes getTopic with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetTopicRequest());
             request.topic = '';
@@ -507,9 +507,9 @@ describe('v1.PublisherClient', () => {
     describe('deleteTopic', () => {
         it('invokes deleteTopic without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteTopicRequest());
             request.topic = '';
@@ -531,9 +531,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes deleteTopic without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteTopicRequest());
             request.topic = '';
@@ -566,9 +566,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes deleteTopic with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteTopicRequest());
             request.topic = '';
@@ -591,9 +591,9 @@ describe('v1.PublisherClient', () => {
     describe('detachSubscription', () => {
         it('invokes detachSubscription without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DetachSubscriptionRequest());
             request.subscription = '';
@@ -615,9 +615,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes detachSubscription without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DetachSubscriptionRequest());
             request.subscription = '';
@@ -650,9 +650,9 @@ describe('v1.PublisherClient', () => {
 
         it('invokes detachSubscription with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DetachSubscriptionRequest());
             request.subscription = '';
@@ -838,13 +838,14 @@ describe('v1.PublisherClient', () => {
 
         it('uses async iteration with listTopics without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ListTopicsRequest());
             request.project = '';
-            const expectedHeaderRequestParams = "project=";const expectedResponse = [
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.pubsub.v1.Topic()),
               generateSampleMessage(new protos.google.pubsub.v1.Topic()),
               generateSampleMessage(new protos.google.pubsub.v1.Topic()),
@@ -1048,13 +1049,14 @@ describe('v1.PublisherClient', () => {
 
         it('uses async iteration with listTopicSubscriptions without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ListTopicSubscriptionsRequest());
             request.topic = '';
-            const expectedHeaderRequestParams = "topic=";const expectedResponse = [new String(), new String(), new String()];
+            const expectedHeaderRequestParams = "topic=";
+            const expectedResponse = [new String(), new String(), new String()];
             client.descriptors.page.listTopicSubscriptions.asyncIterate = stubAsyncIterationCall(expectedResponse);
             const responses: string[] = [];
             const iterable = client.listTopicSubscriptionsAsync(request);
@@ -1254,13 +1256,14 @@ describe('v1.PublisherClient', () => {
 
         it('uses async iteration with listTopicSnapshots without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ListTopicSnapshotsRequest());
             request.topic = '';
-            const expectedHeaderRequestParams = "topic=";const expectedResponse = [new String(), new String(), new String()];
+            const expectedHeaderRequestParams = "topic=";
+            const expectedResponse = [new String(), new String(), new String()];
             client.descriptors.page.listTopicSnapshots.asyncIterate = stubAsyncIterationCall(expectedResponse);
             const responses: string[] = [];
             const iterable = client.listTopicSnapshotsAsync(request);
@@ -1308,9 +1311,9 @@ describe('v1.PublisherClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -1335,9 +1338,9 @@ describe('v1.PublisherClient', () => {
         });
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -1374,9 +1377,9 @@ describe('v1.PublisherClient', () => {
         });
         it('invokes getIamPolicy with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -1400,9 +1403,9 @@ describe('v1.PublisherClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -1427,9 +1430,9 @@ describe('v1.PublisherClient', () => {
         });
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -1466,9 +1469,9 @@ describe('v1.PublisherClient', () => {
         });
         it('invokes setIamPolicy with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -1492,9 +1495,9 @@ describe('v1.PublisherClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()
@@ -1519,9 +1522,9 @@ describe('v1.PublisherClient', () => {
         });
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()
@@ -1558,9 +1561,9 @@ describe('v1.PublisherClient', () => {
         });
         it('invokes testIamPermissions with error', async () => {
             const client = new publisherModule.v1.PublisherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()

@@ -86,8 +86,8 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.offlineUserDataJobServiceStub, undefined);
         await client.initialize();
@@ -96,8 +96,8 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
     it('has close method', () => {
         const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -105,8 +105,8 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -117,8 +117,8 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -137,9 +137,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
     describe('createOfflineUserDataJob', () => {
         it('invokes createOfflineUserDataJob without error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.CreateOfflineUserDataJobRequest());
             request.customerId = '';
@@ -161,9 +161,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes createOfflineUserDataJob without error using callback', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.CreateOfflineUserDataJobRequest());
             request.customerId = '';
@@ -196,9 +196,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes createOfflineUserDataJob with error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.CreateOfflineUserDataJobRequest());
             request.customerId = '';
@@ -221,9 +221,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
     describe('getOfflineUserDataJob', () => {
         it('invokes getOfflineUserDataJob without error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetOfflineUserDataJobRequest());
             request.resourceName = '';
@@ -245,9 +245,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes getOfflineUserDataJob without error using callback', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetOfflineUserDataJobRequest());
             request.resourceName = '';
@@ -280,9 +280,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes getOfflineUserDataJob with error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetOfflineUserDataJobRequest());
             request.resourceName = '';
@@ -305,9 +305,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
     describe('addOfflineUserDataJobOperations', () => {
         it('invokes addOfflineUserDataJobOperations without error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.AddOfflineUserDataJobOperationsRequest());
             request.resourceName = '';
@@ -329,9 +329,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes addOfflineUserDataJobOperations without error using callback', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.AddOfflineUserDataJobOperationsRequest());
             request.resourceName = '';
@@ -364,9 +364,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes addOfflineUserDataJobOperations with error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.AddOfflineUserDataJobOperationsRequest());
             request.resourceName = '';
@@ -389,9 +389,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
     describe('runOfflineUserDataJob', () => {
         it('invokes runOfflineUserDataJob without error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.RunOfflineUserDataJobRequest());
             request.resourceName = '';
@@ -414,9 +414,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes runOfflineUserDataJob without error using callback', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.RunOfflineUserDataJobRequest());
             request.resourceName = '';
@@ -452,9 +452,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes runOfflineUserDataJob with call error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.RunOfflineUserDataJobRequest());
             request.resourceName = '';
@@ -475,9 +475,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes runOfflineUserDataJob with LRO error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.RunOfflineUserDataJobRequest());
             request.resourceName = '';
@@ -499,9 +499,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes checkRunOfflineUserDataJobProgress without error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -517,9 +517,9 @@ describe('v7.OfflineUserDataJobServiceClient', () => {
 
         it('invokes checkRunOfflineUserDataJobProgress with error', async () => {
             const client = new offlineuserdatajobserviceModule.v7.OfflineUserDataJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 

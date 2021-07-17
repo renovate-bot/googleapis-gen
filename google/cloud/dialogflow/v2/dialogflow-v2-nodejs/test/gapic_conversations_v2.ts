@@ -117,8 +117,8 @@ describe('v2.ConversationsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new conversationsModule.v2.ConversationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.conversationsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2.ConversationsClient', () => {
 
     it('has close method', () => {
         const client = new conversationsModule.v2.ConversationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2.ConversationsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new conversationsModule.v2.ConversationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2.ConversationsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new conversationsModule.v2.ConversationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2.ConversationsClient', () => {
     describe('createConversation', () => {
         it('invokes createConversation without error', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateConversationRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v2.ConversationsClient', () => {
 
         it('invokes createConversation without error using callback', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateConversationRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v2.ConversationsClient', () => {
 
         it('invokes createConversation with error', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateConversationRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v2.ConversationsClient', () => {
     describe('getConversation', () => {
         it('invokes getConversation without error', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetConversationRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v2.ConversationsClient', () => {
 
         it('invokes getConversation without error using callback', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetConversationRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v2.ConversationsClient', () => {
 
         it('invokes getConversation with error', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetConversationRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v2.ConversationsClient', () => {
     describe('completeConversation', () => {
         it('invokes completeConversation without error', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CompleteConversationRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v2.ConversationsClient', () => {
 
         it('invokes completeConversation without error using callback', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CompleteConversationRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v2.ConversationsClient', () => {
 
         it('invokes completeConversation with error', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CompleteConversationRequest());
             request.name = '';
@@ -583,13 +583,14 @@ describe('v2.ConversationsClient', () => {
 
         it('uses async iteration with listConversations without error', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.ListConversationsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Conversation()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Conversation()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Conversation()),
@@ -805,13 +806,14 @@ describe('v2.ConversationsClient', () => {
 
         it('uses async iteration with listMessages without error', async () => {
             const client = new conversationsModule.v2.ConversationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.ListMessagesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Message()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Message()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Message()),

@@ -133,8 +133,8 @@ describe('v4.JobServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new jobserviceModule.v4.JobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.jobServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v4.JobServiceClient', () => {
 
     it('has close method', () => {
         const client = new jobserviceModule.v4.JobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v4.JobServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new jobserviceModule.v4.JobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v4.JobServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new jobserviceModule.v4.JobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v4.JobServiceClient', () => {
     describe('createJob', () => {
         it('invokes createJob without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.CreateJobRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes createJob without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.CreateJobRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes createJob with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.CreateJobRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v4.JobServiceClient', () => {
     describe('getJob', () => {
         it('invokes getJob without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.GetJobRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes getJob without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.GetJobRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes getJob with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.GetJobRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v4.JobServiceClient', () => {
     describe('updateJob', () => {
         it('invokes updateJob without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.UpdateJobRequest());
             request.job = {};
@@ -377,9 +377,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes updateJob without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.UpdateJobRequest());
             request.job = {};
@@ -413,9 +413,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes updateJob with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.UpdateJobRequest());
             request.job = {};
@@ -439,9 +439,9 @@ describe('v4.JobServiceClient', () => {
     describe('deleteJob', () => {
         it('invokes deleteJob without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.DeleteJobRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes deleteJob without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.DeleteJobRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes deleteJob with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.DeleteJobRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v4.JobServiceClient', () => {
     describe('searchJobs', () => {
         it('invokes searchJobs without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.SearchJobsRequest());
             request.parent = '';
@@ -547,9 +547,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes searchJobs without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.SearchJobsRequest());
             request.parent = '';
@@ -582,9 +582,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes searchJobs with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.SearchJobsRequest());
             request.parent = '';
@@ -607,9 +607,9 @@ describe('v4.JobServiceClient', () => {
     describe('searchJobsForAlert', () => {
         it('invokes searchJobsForAlert without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.SearchJobsRequest());
             request.parent = '';
@@ -631,9 +631,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes searchJobsForAlert without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.SearchJobsRequest());
             request.parent = '';
@@ -666,9 +666,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes searchJobsForAlert with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.SearchJobsRequest());
             request.parent = '';
@@ -691,9 +691,9 @@ describe('v4.JobServiceClient', () => {
     describe('batchCreateJobs', () => {
         it('invokes batchCreateJobs without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchCreateJobsRequest());
             request.parent = '';
@@ -716,9 +716,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchCreateJobs without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchCreateJobsRequest());
             request.parent = '';
@@ -754,9 +754,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchCreateJobs with call error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchCreateJobsRequest());
             request.parent = '';
@@ -777,9 +777,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchCreateJobs with LRO error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchCreateJobsRequest());
             request.parent = '';
@@ -801,9 +801,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes checkBatchCreateJobsProgress without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -819,9 +819,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes checkBatchCreateJobsProgress with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -835,9 +835,9 @@ describe('v4.JobServiceClient', () => {
     describe('batchUpdateJobs', () => {
         it('invokes batchUpdateJobs without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchUpdateJobsRequest());
             request.parent = '';
@@ -860,9 +860,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchUpdateJobs without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchUpdateJobsRequest());
             request.parent = '';
@@ -898,9 +898,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchUpdateJobs with call error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchUpdateJobsRequest());
             request.parent = '';
@@ -921,9 +921,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchUpdateJobs with LRO error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchUpdateJobsRequest());
             request.parent = '';
@@ -945,9 +945,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes checkBatchUpdateJobsProgress without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -963,9 +963,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes checkBatchUpdateJobsProgress with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -979,9 +979,9 @@ describe('v4.JobServiceClient', () => {
     describe('batchDeleteJobs', () => {
         it('invokes batchDeleteJobs without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchDeleteJobsRequest());
             request.parent = '';
@@ -1004,9 +1004,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchDeleteJobs without error using callback', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchDeleteJobsRequest());
             request.parent = '';
@@ -1042,9 +1042,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchDeleteJobs with call error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchDeleteJobsRequest());
             request.parent = '';
@@ -1065,9 +1065,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes batchDeleteJobs with LRO error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.BatchDeleteJobsRequest());
             request.parent = '';
@@ -1089,9 +1089,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes checkBatchDeleteJobsProgress without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1107,9 +1107,9 @@ describe('v4.JobServiceClient', () => {
 
         it('invokes checkBatchDeleteJobsProgress with error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1286,13 +1286,14 @@ describe('v4.JobServiceClient', () => {
 
         it('uses async iteration with listJobs without error', async () => {
             const client = new jobserviceModule.v4.JobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4.ListJobsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.talent.v4.Job()),
               generateSampleMessage(new protos.google.cloud.talent.v4.Job()),
               generateSampleMessage(new protos.google.cloud.talent.v4.Job()),

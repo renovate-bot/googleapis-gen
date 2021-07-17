@@ -133,8 +133,8 @@ describe('v1beta1.NotebookServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.notebookServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.NotebookServiceClient', () => {
 
     it('has close method', () => {
         const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.NotebookServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.NotebookServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('getInstance', () => {
         it('invokes getInstance without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.GetInstanceRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes getInstance without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.GetInstanceRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes getInstance with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.GetInstanceRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('isInstanceUpgradeable', () => {
         it('invokes isInstanceUpgradeable without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableRequest());
             request.notebookInstance = '';
@@ -292,9 +292,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes isInstanceUpgradeable without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableRequest());
             request.notebookInstance = '';
@@ -327,9 +327,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes isInstanceUpgradeable with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.IsInstanceUpgradeableRequest());
             request.notebookInstance = '';
@@ -352,9 +352,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('getEnvironment', () => {
         it('invokes getEnvironment without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.GetEnvironmentRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes getEnvironment without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.GetEnvironmentRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes getEnvironment with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.GetEnvironmentRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('createInstance', () => {
         it('invokes createInstance without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.CreateInstanceRequest());
             request.parent = '';
@@ -461,9 +461,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes createInstance without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.CreateInstanceRequest());
             request.parent = '';
@@ -499,9 +499,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes createInstance with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.CreateInstanceRequest());
             request.parent = '';
@@ -522,9 +522,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes createInstance with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.CreateInstanceRequest());
             request.parent = '';
@@ -546,9 +546,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkCreateInstanceProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -564,9 +564,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkCreateInstanceProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -580,9 +580,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('registerInstance', () => {
         it('invokes registerInstance without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.RegisterInstanceRequest());
             request.parent = '';
@@ -605,9 +605,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes registerInstance without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.RegisterInstanceRequest());
             request.parent = '';
@@ -643,9 +643,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes registerInstance with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.RegisterInstanceRequest());
             request.parent = '';
@@ -666,9 +666,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes registerInstance with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.RegisterInstanceRequest());
             request.parent = '';
@@ -690,9 +690,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkRegisterInstanceProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -708,9 +708,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkRegisterInstanceProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -724,9 +724,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('setInstanceAccelerator', () => {
         it('invokes setInstanceAccelerator without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceAcceleratorRequest());
             request.name = '';
@@ -749,9 +749,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceAccelerator without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceAcceleratorRequest());
             request.name = '';
@@ -787,9 +787,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceAccelerator with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceAcceleratorRequest());
             request.name = '';
@@ -810,9 +810,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceAccelerator with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceAcceleratorRequest());
             request.name = '';
@@ -834,9 +834,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkSetInstanceAcceleratorProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -852,9 +852,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkSetInstanceAcceleratorProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -868,9 +868,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('setInstanceMachineType', () => {
         it('invokes setInstanceMachineType without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceMachineTypeRequest());
             request.name = '';
@@ -893,9 +893,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceMachineType without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceMachineTypeRequest());
             request.name = '';
@@ -931,9 +931,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceMachineType with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceMachineTypeRequest());
             request.name = '';
@@ -954,9 +954,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceMachineType with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceMachineTypeRequest());
             request.name = '';
@@ -978,9 +978,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkSetInstanceMachineTypeProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -996,9 +996,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkSetInstanceMachineTypeProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1012,9 +1012,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('setInstanceLabels', () => {
         it('invokes setInstanceLabels without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest());
             request.name = '';
@@ -1037,9 +1037,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceLabels without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest());
             request.name = '';
@@ -1075,9 +1075,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceLabels with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest());
             request.name = '';
@@ -1098,9 +1098,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes setInstanceLabels with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.SetInstanceLabelsRequest());
             request.name = '';
@@ -1122,9 +1122,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkSetInstanceLabelsProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1140,9 +1140,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkSetInstanceLabelsProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1156,9 +1156,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('deleteInstance', () => {
         it('invokes deleteInstance without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.DeleteInstanceRequest());
             request.name = '';
@@ -1181,9 +1181,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes deleteInstance without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.DeleteInstanceRequest());
             request.name = '';
@@ -1219,9 +1219,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes deleteInstance with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.DeleteInstanceRequest());
             request.name = '';
@@ -1242,9 +1242,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes deleteInstance with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.DeleteInstanceRequest());
             request.name = '';
@@ -1266,9 +1266,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkDeleteInstanceProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1284,9 +1284,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkDeleteInstanceProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1300,9 +1300,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('startInstance', () => {
         it('invokes startInstance without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.StartInstanceRequest());
             request.name = '';
@@ -1325,9 +1325,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes startInstance without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.StartInstanceRequest());
             request.name = '';
@@ -1363,9 +1363,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes startInstance with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.StartInstanceRequest());
             request.name = '';
@@ -1386,9 +1386,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes startInstance with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.StartInstanceRequest());
             request.name = '';
@@ -1410,9 +1410,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkStartInstanceProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1428,9 +1428,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkStartInstanceProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1444,9 +1444,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('stopInstance', () => {
         it('invokes stopInstance without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.StopInstanceRequest());
             request.name = '';
@@ -1469,9 +1469,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes stopInstance without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.StopInstanceRequest());
             request.name = '';
@@ -1507,9 +1507,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes stopInstance with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.StopInstanceRequest());
             request.name = '';
@@ -1530,9 +1530,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes stopInstance with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.StopInstanceRequest());
             request.name = '';
@@ -1554,9 +1554,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkStopInstanceProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1572,9 +1572,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkStopInstanceProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1588,9 +1588,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('resetInstance', () => {
         it('invokes resetInstance without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ResetInstanceRequest());
             request.name = '';
@@ -1613,9 +1613,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes resetInstance without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ResetInstanceRequest());
             request.name = '';
@@ -1651,9 +1651,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes resetInstance with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ResetInstanceRequest());
             request.name = '';
@@ -1674,9 +1674,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes resetInstance with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ResetInstanceRequest());
             request.name = '';
@@ -1698,9 +1698,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkResetInstanceProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1716,9 +1716,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkResetInstanceProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1732,9 +1732,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('reportInstanceInfo', () => {
         it('invokes reportInstanceInfo without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ReportInstanceInfoRequest());
             request.name = '';
@@ -1757,9 +1757,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes reportInstanceInfo without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ReportInstanceInfoRequest());
             request.name = '';
@@ -1795,9 +1795,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes reportInstanceInfo with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ReportInstanceInfoRequest());
             request.name = '';
@@ -1818,9 +1818,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes reportInstanceInfo with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ReportInstanceInfoRequest());
             request.name = '';
@@ -1842,9 +1842,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkReportInstanceInfoProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1860,9 +1860,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkReportInstanceInfoProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1876,9 +1876,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('upgradeInstance', () => {
         it('invokes upgradeInstance without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest());
             request.name = '';
@@ -1901,9 +1901,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes upgradeInstance without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest());
             request.name = '';
@@ -1939,9 +1939,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes upgradeInstance with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest());
             request.name = '';
@@ -1962,9 +1962,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes upgradeInstance with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.UpgradeInstanceRequest());
             request.name = '';
@@ -1986,9 +1986,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkUpgradeInstanceProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2004,9 +2004,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkUpgradeInstanceProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2020,9 +2020,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('upgradeInstanceInternal', () => {
         it('invokes upgradeInstanceInternal without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest());
             request.name = '';
@@ -2045,9 +2045,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes upgradeInstanceInternal without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest());
             request.name = '';
@@ -2083,9 +2083,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes upgradeInstanceInternal with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest());
             request.name = '';
@@ -2106,9 +2106,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes upgradeInstanceInternal with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.UpgradeInstanceInternalRequest());
             request.name = '';
@@ -2130,9 +2130,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkUpgradeInstanceInternalProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2148,9 +2148,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkUpgradeInstanceInternalProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2164,9 +2164,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('createEnvironment', () => {
         it('invokes createEnvironment without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.CreateEnvironmentRequest());
             request.parent = '';
@@ -2189,9 +2189,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes createEnvironment without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.CreateEnvironmentRequest());
             request.parent = '';
@@ -2227,9 +2227,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes createEnvironment with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.CreateEnvironmentRequest());
             request.parent = '';
@@ -2250,9 +2250,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes createEnvironment with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.CreateEnvironmentRequest());
             request.parent = '';
@@ -2274,9 +2274,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkCreateEnvironmentProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2292,9 +2292,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkCreateEnvironmentProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2308,9 +2308,9 @@ describe('v1beta1.NotebookServiceClient', () => {
     describe('deleteEnvironment', () => {
         it('invokes deleteEnvironment without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.DeleteEnvironmentRequest());
             request.name = '';
@@ -2333,9 +2333,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes deleteEnvironment without error using callback', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.DeleteEnvironmentRequest());
             request.name = '';
@@ -2371,9 +2371,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes deleteEnvironment with call error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.DeleteEnvironmentRequest());
             request.name = '';
@@ -2394,9 +2394,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes deleteEnvironment with LRO error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.DeleteEnvironmentRequest());
             request.name = '';
@@ -2418,9 +2418,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkDeleteEnvironmentProgress without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2436,9 +2436,9 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('invokes checkDeleteEnvironmentProgress with error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2615,13 +2615,14 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('uses async iteration with listInstances without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ListInstancesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.Instance()),
               generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.Instance()),
               generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.Instance()),
@@ -2837,13 +2838,14 @@ describe('v1beta1.NotebookServiceClient', () => {
 
         it('uses async iteration with listEnvironments without error', async () => {
             const client = new notebookserviceModule.v1beta1.NotebookServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.ListEnvironmentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.Environment()),
               generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.Environment()),
               generateSampleMessage(new protos.google.cloud.notebooks.v1beta1.Environment()),

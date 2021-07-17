@@ -70,8 +70,8 @@ describe('v1alpha.QuestionServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.questionServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1alpha.QuestionServiceClient', () => {
 
     it('has close method', () => {
         const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1alpha.QuestionServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1alpha.QuestionServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1alpha.QuestionServiceClient', () => {
     describe('getQuestion', () => {
         it('invokes getQuestion without error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.GetQuestionRequest());
             request.name = '';
@@ -145,9 +145,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes getQuestion without error using callback', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.GetQuestionRequest());
             request.name = '';
@@ -180,9 +180,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes getQuestion with error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.GetQuestionRequest());
             request.name = '';
@@ -205,9 +205,9 @@ describe('v1alpha.QuestionServiceClient', () => {
     describe('createQuestion', () => {
         it('invokes createQuestion without error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.CreateQuestionRequest());
             request.parent = '';
@@ -229,9 +229,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes createQuestion without error using callback', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.CreateQuestionRequest());
             request.parent = '';
@@ -264,9 +264,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes createQuestion with error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.CreateQuestionRequest());
             request.parent = '';
@@ -289,9 +289,9 @@ describe('v1alpha.QuestionServiceClient', () => {
     describe('executeQuestion', () => {
         it('invokes executeQuestion without error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest());
             request.name = '';
@@ -313,9 +313,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes executeQuestion without error using callback', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest());
             request.name = '';
@@ -348,9 +348,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes executeQuestion with error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest());
             request.name = '';
@@ -373,9 +373,9 @@ describe('v1alpha.QuestionServiceClient', () => {
     describe('getUserFeedback', () => {
         it('invokes getUserFeedback without error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.GetUserFeedbackRequest());
             request.name = '';
@@ -397,9 +397,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes getUserFeedback without error using callback', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.GetUserFeedbackRequest());
             request.name = '';
@@ -432,9 +432,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes getUserFeedback with error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.GetUserFeedbackRequest());
             request.name = '';
@@ -457,9 +457,9 @@ describe('v1alpha.QuestionServiceClient', () => {
     describe('updateUserFeedback', () => {
         it('invokes updateUserFeedback without error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.UpdateUserFeedbackRequest());
             request.userFeedback = {};
@@ -482,9 +482,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes updateUserFeedback without error using callback', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.UpdateUserFeedbackRequest());
             request.userFeedback = {};
@@ -518,9 +518,9 @@ describe('v1alpha.QuestionServiceClient', () => {
 
         it('invokes updateUserFeedback with error', async () => {
             const client = new questionserviceModule.v1alpha.QuestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.UpdateUserFeedbackRequest());
             request.userFeedback = {};

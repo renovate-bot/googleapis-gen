@@ -133,8 +133,8 @@ describe('v1.DatastoreAdminClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new datastoreadminModule.v1.DatastoreAdminClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.datastoreAdminStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.DatastoreAdminClient', () => {
 
     it('has close method', () => {
         const client = new datastoreadminModule.v1.DatastoreAdminClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.DatastoreAdminClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datastoreadminModule.v1.DatastoreAdminClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.DatastoreAdminClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datastoreadminModule.v1.DatastoreAdminClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.DatastoreAdminClient', () => {
     describe('getIndex', () => {
         it('invokes getIndex without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.GetIndexRequest());
             request.projectId = '';
@@ -208,9 +208,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes getIndex without error using callback', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.GetIndexRequest());
             request.projectId = '';
@@ -243,9 +243,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes getIndex with error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.GetIndexRequest());
             request.projectId = '';
@@ -268,9 +268,9 @@ describe('v1.DatastoreAdminClient', () => {
     describe('exportEntities', () => {
         it('invokes exportEntities without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ExportEntitiesRequest());
             request.projectId = '';
@@ -293,9 +293,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes exportEntities without error using callback', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ExportEntitiesRequest());
             request.projectId = '';
@@ -331,9 +331,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes exportEntities with call error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ExportEntitiesRequest());
             request.projectId = '';
@@ -354,9 +354,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes exportEntities with LRO error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ExportEntitiesRequest());
             request.projectId = '';
@@ -378,9 +378,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes checkExportEntitiesProgress without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes checkExportEntitiesProgress with error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1.DatastoreAdminClient', () => {
     describe('importEntities', () => {
         it('invokes importEntities without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ImportEntitiesRequest());
             request.projectId = '';
@@ -437,9 +437,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes importEntities without error using callback', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ImportEntitiesRequest());
             request.projectId = '';
@@ -475,9 +475,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes importEntities with call error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ImportEntitiesRequest());
             request.projectId = '';
@@ -498,9 +498,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes importEntities with LRO error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ImportEntitiesRequest());
             request.projectId = '';
@@ -522,9 +522,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes checkImportEntitiesProgress without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes checkImportEntitiesProgress with error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -556,9 +556,9 @@ describe('v1.DatastoreAdminClient', () => {
     describe('createIndex', () => {
         it('invokes createIndex without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.CreateIndexRequest());
             request.projectId = '';
@@ -581,9 +581,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes createIndex without error using callback', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.CreateIndexRequest());
             request.projectId = '';
@@ -619,9 +619,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes createIndex with call error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.CreateIndexRequest());
             request.projectId = '';
@@ -642,9 +642,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes createIndex with LRO error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.CreateIndexRequest());
             request.projectId = '';
@@ -666,9 +666,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes checkCreateIndexProgress without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -684,9 +684,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes checkCreateIndexProgress with error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -700,9 +700,9 @@ describe('v1.DatastoreAdminClient', () => {
     describe('deleteIndex', () => {
         it('invokes deleteIndex without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.DeleteIndexRequest());
             request.projectId = '';
@@ -725,9 +725,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes deleteIndex without error using callback', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.DeleteIndexRequest());
             request.projectId = '';
@@ -763,9 +763,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes deleteIndex with call error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.DeleteIndexRequest());
             request.projectId = '';
@@ -786,9 +786,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes deleteIndex with LRO error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.DeleteIndexRequest());
             request.projectId = '';
@@ -810,9 +810,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes checkDeleteIndexProgress without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -828,9 +828,9 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('invokes checkDeleteIndexProgress with error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1007,13 +1007,14 @@ describe('v1.DatastoreAdminClient', () => {
 
         it('uses async iteration with listIndexes without error', async () => {
             const client = new datastoreadminModule.v1.DatastoreAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.admin.v1.ListIndexesRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";const expectedResponse = [
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.datastore.admin.v1.Index()),
               generateSampleMessage(new protos.google.datastore.admin.v1.Index()),
               generateSampleMessage(new protos.google.datastore.admin.v1.Index()),

@@ -70,8 +70,8 @@ describe('v1beta3.TemplatesServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.templatesServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta3.TemplatesServiceClient', () => {
 
     it('has close method', () => {
         const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta3.TemplatesServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta3.TemplatesServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
     describe('createJobFromTemplate', () => {
         it('invokes createJobFromTemplate without error', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobFromTemplateRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
 
         it('invokes createJobFromTemplate without error using callback', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobFromTemplateRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
 
         it('invokes createJobFromTemplate with error', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.CreateJobFromTemplateRequest());
             const expectedOptions = {};
@@ -181,9 +181,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
     describe('launchTemplate', () => {
         it('invokes launchTemplate without error', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchTemplateRequest());
             const expectedOptions = {};
@@ -197,9 +197,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
 
         it('invokes launchTemplate without error using callback', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchTemplateRequest());
             const expectedOptions = {};
@@ -224,9 +224,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
 
         it('invokes launchTemplate with error', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchTemplateRequest());
             const expectedOptions = {};
@@ -241,9 +241,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
     describe('getTemplate', () => {
         it('invokes getTemplate without error', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetTemplateRequest());
             const expectedOptions = {};
@@ -257,9 +257,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
 
         it('invokes getTemplate without error using callback', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetTemplateRequest());
             const expectedOptions = {};
@@ -284,9 +284,9 @@ describe('v1beta3.TemplatesServiceClient', () => {
 
         it('invokes getTemplate with error', async () => {
             const client = new templatesserviceModule.v1beta3.TemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetTemplateRequest());
             const expectedOptions = {};

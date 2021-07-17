@@ -117,8 +117,8 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.streetViewPublishServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
     it('has close method', () => {
         const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.StreetViewPublishServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.StreetViewPublishServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
     describe('startUpload', () => {
         it('invokes startUpload without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.protobuf.Empty());
             const expectedOptions = {};
@@ -184,9 +184,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes startUpload without error using callback', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.protobuf.Empty());
             const expectedOptions = {};
@@ -211,9 +211,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes startUpload with error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.protobuf.Empty());
             const expectedOptions = {};
@@ -228,9 +228,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
     describe('createPhoto', () => {
         it('invokes createPhoto without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.CreatePhotoRequest());
             const expectedOptions = {};
@@ -244,9 +244,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes createPhoto without error using callback', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.CreatePhotoRequest());
             const expectedOptions = {};
@@ -271,9 +271,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes createPhoto with error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.CreatePhotoRequest());
             const expectedOptions = {};
@@ -288,9 +288,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
     describe('getPhoto', () => {
         it('invokes getPhoto without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.GetPhotoRequest());
             request.photoId = '';
@@ -312,9 +312,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes getPhoto without error using callback', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.GetPhotoRequest());
             request.photoId = '';
@@ -347,9 +347,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes getPhoto with error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.GetPhotoRequest());
             request.photoId = '';
@@ -372,9 +372,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
     describe('batchGetPhotos', () => {
         it('invokes batchGetPhotos without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchGetPhotosRequest());
             const expectedOptions = {};
@@ -388,9 +388,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes batchGetPhotos without error using callback', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchGetPhotosRequest());
             const expectedOptions = {};
@@ -415,9 +415,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes batchGetPhotos with error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchGetPhotosRequest());
             const expectedOptions = {};
@@ -432,9 +432,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
     describe('updatePhoto', () => {
         it('invokes updatePhoto without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.UpdatePhotoRequest());
             request.photo = {};
@@ -458,9 +458,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes updatePhoto without error using callback', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.UpdatePhotoRequest());
             request.photo = {};
@@ -495,9 +495,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes updatePhoto with error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.UpdatePhotoRequest());
             request.photo = {};
@@ -522,9 +522,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
     describe('batchUpdatePhotos', () => {
         it('invokes batchUpdatePhotos without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchUpdatePhotosRequest());
             const expectedOptions = {};
@@ -538,9 +538,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes batchUpdatePhotos without error using callback', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchUpdatePhotosRequest());
             const expectedOptions = {};
@@ -565,9 +565,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes batchUpdatePhotos with error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchUpdatePhotosRequest());
             const expectedOptions = {};
@@ -582,9 +582,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
     describe('deletePhoto', () => {
         it('invokes deletePhoto without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.DeletePhotoRequest());
             request.photoId = '';
@@ -606,9 +606,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes deletePhoto without error using callback', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.DeletePhotoRequest());
             request.photoId = '';
@@ -641,9 +641,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes deletePhoto with error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.DeletePhotoRequest());
             request.photoId = '';
@@ -666,9 +666,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
     describe('batchDeletePhotos', () => {
         it('invokes batchDeletePhotos without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchDeletePhotosRequest());
             const expectedOptions = {};
@@ -682,9 +682,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes batchDeletePhotos without error using callback', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchDeletePhotosRequest());
             const expectedOptions = {};
@@ -709,9 +709,9 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('invokes batchDeletePhotos with error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.streetview.publish.v1.BatchDeletePhotosRequest());
             const expectedOptions = {};
@@ -851,11 +851,12 @@ describe('v1.StreetViewPublishServiceClient', () => {
 
         it('uses async iteration with listPhotos without error', async () => {
             const client = new streetviewpublishserviceModule.v1.StreetViewPublishServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.streetview.publish.v1.ListPhotosRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.streetview.publish.v1.ListPhotosRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.streetview.publish.v1.Photo()),
               generateSampleMessage(new protos.google.streetview.publish.v1.Photo()),
               generateSampleMessage(new protos.google.streetview.publish.v1.Photo()),

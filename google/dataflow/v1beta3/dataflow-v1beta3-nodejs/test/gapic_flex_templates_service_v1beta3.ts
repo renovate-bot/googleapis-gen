@@ -70,8 +70,8 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new flextemplatesserviceModule.v1beta3.FlexTemplatesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.flexTemplatesServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
 
     it('has close method', () => {
         const client = new flextemplatesserviceModule.v1beta3.FlexTemplatesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new flextemplatesserviceModule.v1beta3.FlexTemplatesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new flextemplatesserviceModule.v1beta3.FlexTemplatesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
     describe('launchFlexTemplate', () => {
         it('invokes launchFlexTemplate without error', async () => {
             const client = new flextemplatesserviceModule.v1beta3.FlexTemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchFlexTemplateRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
 
         it('invokes launchFlexTemplate without error using callback', async () => {
             const client = new flextemplatesserviceModule.v1beta3.FlexTemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchFlexTemplateRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v1beta3.FlexTemplatesServiceClient', () => {
 
         it('invokes launchFlexTemplate with error', async () => {
             const client = new flextemplatesserviceModule.v1beta3.FlexTemplatesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.LaunchFlexTemplateRequest());
             const expectedOptions = {};

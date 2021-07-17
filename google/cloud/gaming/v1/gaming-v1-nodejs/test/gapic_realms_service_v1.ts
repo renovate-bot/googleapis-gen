@@ -133,8 +133,8 @@ describe('v1.RealmsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new realmsserviceModule.v1.RealmsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.realmsServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.RealmsServiceClient', () => {
 
     it('has close method', () => {
         const client = new realmsserviceModule.v1.RealmsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.RealmsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new realmsserviceModule.v1.RealmsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.RealmsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new realmsserviceModule.v1.RealmsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.RealmsServiceClient', () => {
     describe('getRealm', () => {
         it('invokes getRealm without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.GetRealmRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes getRealm without error using callback', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.GetRealmRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes getRealm with error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.GetRealmRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.RealmsServiceClient', () => {
     describe('previewRealmUpdate', () => {
         it('invokes previewRealmUpdate without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewRealmUpdateRequest());
             request.realm = {};
@@ -293,9 +293,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes previewRealmUpdate without error using callback', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewRealmUpdateRequest());
             request.realm = {};
@@ -329,9 +329,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes previewRealmUpdate with error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewRealmUpdateRequest());
             request.realm = {};
@@ -355,9 +355,9 @@ describe('v1.RealmsServiceClient', () => {
     describe('createRealm', () => {
         it('invokes createRealm without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.CreateRealmRequest());
             request.parent = '';
@@ -380,9 +380,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes createRealm without error using callback', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.CreateRealmRequest());
             request.parent = '';
@@ -418,9 +418,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes createRealm with call error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.CreateRealmRequest());
             request.parent = '';
@@ -441,9 +441,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes createRealm with LRO error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.CreateRealmRequest());
             request.parent = '';
@@ -465,9 +465,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes checkCreateRealmProgress without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -483,9 +483,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes checkCreateRealmProgress with error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -499,9 +499,9 @@ describe('v1.RealmsServiceClient', () => {
     describe('deleteRealm', () => {
         it('invokes deleteRealm without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.DeleteRealmRequest());
             request.name = '';
@@ -524,9 +524,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes deleteRealm without error using callback', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.DeleteRealmRequest());
             request.name = '';
@@ -562,9 +562,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes deleteRealm with call error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.DeleteRealmRequest());
             request.name = '';
@@ -585,9 +585,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes deleteRealm with LRO error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.DeleteRealmRequest());
             request.name = '';
@@ -609,9 +609,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes checkDeleteRealmProgress without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -627,9 +627,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes checkDeleteRealmProgress with error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -643,9 +643,9 @@ describe('v1.RealmsServiceClient', () => {
     describe('updateRealm', () => {
         it('invokes updateRealm without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.UpdateRealmRequest());
             request.realm = {};
@@ -669,9 +669,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes updateRealm without error using callback', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.UpdateRealmRequest());
             request.realm = {};
@@ -708,9 +708,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes updateRealm with call error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.UpdateRealmRequest());
             request.realm = {};
@@ -732,9 +732,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes updateRealm with LRO error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.UpdateRealmRequest());
             request.realm = {};
@@ -757,9 +757,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes checkUpdateRealmProgress without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -775,9 +775,9 @@ describe('v1.RealmsServiceClient', () => {
 
         it('invokes checkUpdateRealmProgress with error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -954,13 +954,14 @@ describe('v1.RealmsServiceClient', () => {
 
         it('uses async iteration with listRealms without error', async () => {
             const client = new realmsserviceModule.v1.RealmsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.ListRealmsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.gaming.v1.Realm()),
               generateSampleMessage(new protos.google.cloud.gaming.v1.Realm()),
               generateSampleMessage(new protos.google.cloud.gaming.v1.Realm()),

@@ -133,8 +133,8 @@ describe('v1.ServiceManagerClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new servicemanagerModule.v1.ServiceManagerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.serviceManagerStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.ServiceManagerClient', () => {
 
     it('has close method', () => {
         const client = new servicemanagerModule.v1.ServiceManagerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.ServiceManagerClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new servicemanagerModule.v1.ServiceManagerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.ServiceManagerClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new servicemanagerModule.v1.ServiceManagerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('getService', () => {
         it('invokes getService without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceRequest());
             request.serviceName = '';
@@ -208,9 +208,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes getService without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceRequest());
             request.serviceName = '';
@@ -243,9 +243,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes getService with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceRequest());
             request.serviceName = '';
@@ -268,9 +268,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('getServiceConfig', () => {
         it('invokes getServiceConfig without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceConfigRequest());
             request.serviceName = '';
@@ -292,9 +292,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes getServiceConfig without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceConfigRequest());
             request.serviceName = '';
@@ -327,9 +327,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes getServiceConfig with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceConfigRequest());
             request.serviceName = '';
@@ -352,9 +352,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('createServiceConfig', () => {
         it('invokes createServiceConfig without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceConfigRequest());
             request.serviceName = '';
@@ -376,9 +376,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes createServiceConfig without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceConfigRequest());
             request.serviceName = '';
@@ -411,9 +411,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes createServiceConfig with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceConfigRequest());
             request.serviceName = '';
@@ -436,9 +436,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('getServiceRollout', () => {
         it('invokes getServiceRollout without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceRolloutRequest());
             request.serviceName = '';
@@ -460,9 +460,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes getServiceRollout without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceRolloutRequest());
             request.serviceName = '';
@@ -495,9 +495,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes getServiceRollout with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GetServiceRolloutRequest());
             request.serviceName = '';
@@ -520,9 +520,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('generateConfigReport', () => {
         it('invokes generateConfigReport without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GenerateConfigReportRequest());
             const expectedOptions = {};
@@ -536,9 +536,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes generateConfigReport without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GenerateConfigReportRequest());
             const expectedOptions = {};
@@ -563,9 +563,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes generateConfigReport with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.GenerateConfigReportRequest());
             const expectedOptions = {};
@@ -580,9 +580,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('createService', () => {
         it('invokes createService without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRequest());
             const expectedOptions = {};
@@ -597,9 +597,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes createService without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRequest());
             const expectedOptions = {};
@@ -627,9 +627,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes createService with call error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRequest());
             const expectedOptions = {};
@@ -642,9 +642,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes createService with LRO error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRequest());
             const expectedOptions = {};
@@ -658,9 +658,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkCreateServiceProgress without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -676,9 +676,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkCreateServiceProgress with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -692,9 +692,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('deleteService', () => {
         it('invokes deleteService without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.DeleteServiceRequest());
             request.serviceName = '';
@@ -717,9 +717,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes deleteService without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.DeleteServiceRequest());
             request.serviceName = '';
@@ -755,9 +755,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes deleteService with call error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.DeleteServiceRequest());
             request.serviceName = '';
@@ -778,9 +778,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes deleteService with LRO error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.DeleteServiceRequest());
             request.serviceName = '';
@@ -802,9 +802,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkDeleteServiceProgress without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -820,9 +820,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkDeleteServiceProgress with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -836,9 +836,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('undeleteService', () => {
         it('invokes undeleteService without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.UndeleteServiceRequest());
             request.serviceName = '';
@@ -861,9 +861,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes undeleteService without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.UndeleteServiceRequest());
             request.serviceName = '';
@@ -899,9 +899,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes undeleteService with call error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.UndeleteServiceRequest());
             request.serviceName = '';
@@ -922,9 +922,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes undeleteService with LRO error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.UndeleteServiceRequest());
             request.serviceName = '';
@@ -946,9 +946,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkUndeleteServiceProgress without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -964,9 +964,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkUndeleteServiceProgress with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -980,9 +980,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('submitConfigSource', () => {
         it('invokes submitConfigSource without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.SubmitConfigSourceRequest());
             request.serviceName = '';
@@ -1005,9 +1005,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes submitConfigSource without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.SubmitConfigSourceRequest());
             request.serviceName = '';
@@ -1043,9 +1043,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes submitConfigSource with call error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.SubmitConfigSourceRequest());
             request.serviceName = '';
@@ -1066,9 +1066,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes submitConfigSource with LRO error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.SubmitConfigSourceRequest());
             request.serviceName = '';
@@ -1090,9 +1090,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkSubmitConfigSourceProgress without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1108,9 +1108,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkSubmitConfigSourceProgress with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1124,9 +1124,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('createServiceRollout', () => {
         it('invokes createServiceRollout without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRolloutRequest());
             request.serviceName = '';
@@ -1149,9 +1149,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes createServiceRollout without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRolloutRequest());
             request.serviceName = '';
@@ -1187,9 +1187,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes createServiceRollout with call error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRolloutRequest());
             request.serviceName = '';
@@ -1210,9 +1210,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes createServiceRollout with LRO error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.CreateServiceRolloutRequest());
             request.serviceName = '';
@@ -1234,9 +1234,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkCreateServiceRolloutProgress without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1252,9 +1252,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkCreateServiceRolloutProgress with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1268,9 +1268,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('enableService', () => {
         it('invokes enableService without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.EnableServiceRequest());
@@ -1295,9 +1295,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes enableService without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.EnableServiceRequest());
@@ -1335,9 +1335,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes enableService with call error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.EnableServiceRequest());
@@ -1360,9 +1360,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes enableService with LRO error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.EnableServiceRequest());
@@ -1386,9 +1386,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkEnableServiceProgress without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
@@ -1406,9 +1406,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkEnableServiceProgress with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const expectedError = new Error('expected');
@@ -1424,9 +1424,9 @@ describe('v1.ServiceManagerClient', () => {
     describe('disableService', () => {
         it('invokes disableService without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.DisableServiceRequest());
@@ -1451,9 +1451,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes disableService without error using callback', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.DisableServiceRequest());
@@ -1491,9 +1491,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes disableService with call error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.DisableServiceRequest());
@@ -1516,9 +1516,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes disableService with LRO error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.DisableServiceRequest());
@@ -1542,9 +1542,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkDisableServiceProgress without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
@@ -1562,9 +1562,9 @@ describe('v1.ServiceManagerClient', () => {
 
         it('invokes checkDisableServiceProgress with error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const expectedError = new Error('expected');
@@ -1705,11 +1705,12 @@ describe('v1.ServiceManagerClient', () => {
 
         it('uses async iteration with listServices without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.ListServicesRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.ListServicesRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.api.servicemanagement.v1.ManagedService()),
               generateSampleMessage(new protos.google.api.servicemanagement.v1.ManagedService()),
               generateSampleMessage(new protos.google.api.servicemanagement.v1.ManagedService()),
@@ -1913,13 +1914,14 @@ describe('v1.ServiceManagerClient', () => {
 
         it('uses async iteration with listServiceConfigs without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.ListServiceConfigsRequest());
             request.serviceName = '';
-            const expectedHeaderRequestParams = "service_name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "service_name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.api.Service()),
               generateSampleMessage(new protos.google.api.Service()),
               generateSampleMessage(new protos.google.api.Service()),
@@ -2135,13 +2137,14 @@ describe('v1.ServiceManagerClient', () => {
 
         it('uses async iteration with listServiceRollouts without error', async () => {
             const client = new servicemanagerModule.v1.ServiceManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicemanagement.v1.ListServiceRolloutsRequest());
             request.serviceName = '';
-            const expectedHeaderRequestParams = "service_name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "service_name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.api.servicemanagement.v1.Rollout()),
               generateSampleMessage(new protos.google.api.servicemanagement.v1.Rollout()),
               generateSampleMessage(new protos.google.api.servicemanagement.v1.Rollout()),

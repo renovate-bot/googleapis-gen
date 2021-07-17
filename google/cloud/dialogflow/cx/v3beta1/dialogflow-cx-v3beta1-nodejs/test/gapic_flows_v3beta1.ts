@@ -133,8 +133,8 @@ describe('v3beta1.FlowsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new flowsModule.v3beta1.FlowsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.flowsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3beta1.FlowsClient', () => {
 
     it('has close method', () => {
         const client = new flowsModule.v3beta1.FlowsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3beta1.FlowsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new flowsModule.v3beta1.FlowsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3beta1.FlowsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new flowsModule.v3beta1.FlowsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('createFlow', () => {
         it('invokes createFlow without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes createFlow without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes createFlow with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateFlowRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('deleteFlow', () => {
         it('invokes deleteFlow without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes deleteFlow without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes deleteFlow with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteFlowRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('getFlow', () => {
         it('invokes getFlow without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes getFlow without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes getFlow with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetFlowRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('updateFlow', () => {
         it('invokes updateFlow without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest());
             request.flow = {};
@@ -461,9 +461,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes updateFlow without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest());
             request.flow = {};
@@ -497,9 +497,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes updateFlow with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateFlowRequest());
             request.flow = {};
@@ -523,9 +523,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('validateFlow', () => {
         it('invokes validateFlow without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest());
             request.name = '';
@@ -547,9 +547,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes validateFlow without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest());
             request.name = '';
@@ -582,9 +582,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes validateFlow with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ValidateFlowRequest());
             request.name = '';
@@ -607,9 +607,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('getFlowValidationResult', () => {
         it('invokes getFlowValidationResult without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest());
             request.name = '';
@@ -631,9 +631,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes getFlowValidationResult without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes getFlowValidationResult with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetFlowValidationResultRequest());
             request.name = '';
@@ -691,9 +691,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('trainFlow', () => {
         it('invokes trainFlow without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest());
             request.name = '';
@@ -716,9 +716,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes trainFlow without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest());
             request.name = '';
@@ -754,9 +754,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes trainFlow with call error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest());
             request.name = '';
@@ -777,9 +777,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes trainFlow with LRO error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.TrainFlowRequest());
             request.name = '';
@@ -801,9 +801,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes checkTrainFlowProgress without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -819,9 +819,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes checkTrainFlowProgress with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -835,9 +835,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('importFlow', () => {
         it('invokes importFlow without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest());
             request.parent = '';
@@ -860,9 +860,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes importFlow without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest());
             request.parent = '';
@@ -898,9 +898,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes importFlow with call error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest());
             request.parent = '';
@@ -921,9 +921,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes importFlow with LRO error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest());
             request.parent = '';
@@ -945,9 +945,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes checkImportFlowProgress without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -963,9 +963,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes checkImportFlowProgress with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -979,9 +979,9 @@ describe('v3beta1.FlowsClient', () => {
     describe('exportFlow', () => {
         it('invokes exportFlow without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest());
             request.name = '';
@@ -1004,9 +1004,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes exportFlow without error using callback', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest());
             request.name = '';
@@ -1042,9 +1042,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes exportFlow with call error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest());
             request.name = '';
@@ -1065,9 +1065,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes exportFlow with LRO error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ExportFlowRequest());
             request.name = '';
@@ -1089,9 +1089,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes checkExportFlowProgress without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1107,9 +1107,9 @@ describe('v3beta1.FlowsClient', () => {
 
         it('invokes checkExportFlowProgress with error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1286,13 +1286,14 @@ describe('v3beta1.FlowsClient', () => {
 
         it('uses async iteration with listFlows without error', async () => {
             const client = new flowsModule.v3beta1.FlowsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ListFlowsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.Flow()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.Flow()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.Flow()),

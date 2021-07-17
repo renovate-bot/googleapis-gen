@@ -84,8 +84,8 @@ describe('v2.BigtableClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new bigtableModule.v2.BigtableClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.bigtableStub, undefined);
         await client.initialize();
@@ -94,8 +94,8 @@ describe('v2.BigtableClient', () => {
 
     it('has close method', () => {
         const client = new bigtableModule.v2.BigtableClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -103,8 +103,8 @@ describe('v2.BigtableClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new bigtableModule.v2.BigtableClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -115,8 +115,8 @@ describe('v2.BigtableClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new bigtableModule.v2.BigtableClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -135,9 +135,9 @@ describe('v2.BigtableClient', () => {
     describe('mutateRow', () => {
         it('invokes mutateRow without error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.MutateRowRequest());
             request.tableName = '';
@@ -159,9 +159,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes mutateRow without error using callback', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.MutateRowRequest());
             request.tableName = '';
@@ -194,9 +194,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes mutateRow with error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.MutateRowRequest());
             request.tableName = '';
@@ -219,9 +219,9 @@ describe('v2.BigtableClient', () => {
     describe('checkAndMutateRow', () => {
         it('invokes checkAndMutateRow without error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.CheckAndMutateRowRequest());
             request.tableName = '';
@@ -243,9 +243,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes checkAndMutateRow without error using callback', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.CheckAndMutateRowRequest());
             request.tableName = '';
@@ -278,9 +278,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes checkAndMutateRow with error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.CheckAndMutateRowRequest());
             request.tableName = '';
@@ -303,9 +303,9 @@ describe('v2.BigtableClient', () => {
     describe('readModifyWriteRow', () => {
         it('invokes readModifyWriteRow without error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.ReadModifyWriteRowRequest());
             request.tableName = '';
@@ -327,9 +327,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes readModifyWriteRow without error using callback', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.ReadModifyWriteRowRequest());
             request.tableName = '';
@@ -362,9 +362,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes readModifyWriteRow with error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.ReadModifyWriteRowRequest());
             request.tableName = '';
@@ -387,9 +387,9 @@ describe('v2.BigtableClient', () => {
     describe('readRows', () => {
         it('invokes readRows without error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.ReadRowsRequest());
             request.tableName = '';
@@ -420,9 +420,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes readRows with error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.ReadRowsRequest());
             request.tableName = '';
@@ -454,9 +454,9 @@ describe('v2.BigtableClient', () => {
     describe('sampleRowKeys', () => {
         it('invokes sampleRowKeys without error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.SampleRowKeysRequest());
             request.tableName = '';
@@ -487,9 +487,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes sampleRowKeys with error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.SampleRowKeysRequest());
             request.tableName = '';
@@ -521,9 +521,9 @@ describe('v2.BigtableClient', () => {
     describe('mutateRows', () => {
         it('invokes mutateRows without error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.MutateRowsRequest());
             request.tableName = '';
@@ -554,9 +554,9 @@ describe('v2.BigtableClient', () => {
 
         it('invokes mutateRows with error', async () => {
             const client = new bigtableModule.v2.BigtableClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.bigtable.v2.MutateRowsRequest());
             request.tableName = '';

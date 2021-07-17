@@ -70,8 +70,8 @@ describe('v2.Debugger2Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new debugger2Module.v2.Debugger2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.debugger2Stub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v2.Debugger2Client', () => {
 
     it('has close method', () => {
         const client = new debugger2Module.v2.Debugger2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v2.Debugger2Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new debugger2Module.v2.Debugger2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v2.Debugger2Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new debugger2Module.v2.Debugger2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v2.Debugger2Client', () => {
     describe('setBreakpoint', () => {
         it('invokes setBreakpoint without error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.SetBreakpointRequest());
             request.debuggeeId = '';
@@ -145,9 +145,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes setBreakpoint without error using callback', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.SetBreakpointRequest());
             request.debuggeeId = '';
@@ -180,9 +180,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes setBreakpoint with error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.SetBreakpointRequest());
             request.debuggeeId = '';
@@ -205,9 +205,9 @@ describe('v2.Debugger2Client', () => {
     describe('getBreakpoint', () => {
         it('invokes getBreakpoint without error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.GetBreakpointRequest());
             request.debuggeeId = '';
@@ -229,9 +229,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes getBreakpoint without error using callback', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.GetBreakpointRequest());
             request.debuggeeId = '';
@@ -264,9 +264,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes getBreakpoint with error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.GetBreakpointRequest());
             request.debuggeeId = '';
@@ -289,9 +289,9 @@ describe('v2.Debugger2Client', () => {
     describe('deleteBreakpoint', () => {
         it('invokes deleteBreakpoint without error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.DeleteBreakpointRequest());
             request.debuggeeId = '';
@@ -313,9 +313,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes deleteBreakpoint without error using callback', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.DeleteBreakpointRequest());
             request.debuggeeId = '';
@@ -348,9 +348,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes deleteBreakpoint with error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.DeleteBreakpointRequest());
             request.debuggeeId = '';
@@ -373,9 +373,9 @@ describe('v2.Debugger2Client', () => {
     describe('listBreakpoints', () => {
         it('invokes listBreakpoints without error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListBreakpointsRequest());
             request.debuggeeId = '';
@@ -397,9 +397,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes listBreakpoints without error using callback', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListBreakpointsRequest());
             request.debuggeeId = '';
@@ -432,9 +432,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes listBreakpoints with error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListBreakpointsRequest());
             request.debuggeeId = '';
@@ -457,9 +457,9 @@ describe('v2.Debugger2Client', () => {
     describe('listDebuggees', () => {
         it('invokes listDebuggees without error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListDebuggeesRequest());
             const expectedOptions = {};
@@ -473,9 +473,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes listDebuggees without error using callback', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListDebuggeesRequest());
             const expectedOptions = {};
@@ -500,9 +500,9 @@ describe('v2.Debugger2Client', () => {
 
         it('invokes listDebuggees with error', async () => {
             const client = new debugger2Module.v2.Debugger2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouddebugger.v2.ListDebuggeesRequest());
             const expectedOptions = {};

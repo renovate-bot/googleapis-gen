@@ -73,8 +73,8 @@ describe('v1.TetherClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new tetherModule.v1.TetherClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.tetherStub, undefined);
         await client.initialize();
@@ -83,8 +83,8 @@ describe('v1.TetherClient', () => {
 
     it('has close method', () => {
         const client = new tetherModule.v1.TetherClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -92,8 +92,8 @@ describe('v1.TetherClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tetherModule.v1.TetherClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -104,8 +104,8 @@ describe('v1.TetherClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tetherModule.v1.TetherClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -124,9 +124,9 @@ describe('v1.TetherClient', () => {
     describe('egress', () => {
         it('invokes egress without error', async () => {
             const client = new tetherModule.v1.TetherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigeeconnect.v1.EgressResponse());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.apigeeconnect.v1.EgressRequest());
@@ -152,9 +152,9 @@ describe('v1.TetherClient', () => {
 
         it('invokes egress with error', async () => {
             const client = new tetherModule.v1.TetherClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigeeconnect.v1.EgressResponse());const expectedError = new Error('expected');
             client.innerApiCalls.egress = stubBidiStreamingCall(undefined, expectedError);

@@ -70,8 +70,8 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.homeGraphApiServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
     it('has close method', () => {
         const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.HomeGraphApiServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.HomeGraphApiServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
     describe('requestSyncDevices', () => {
         it('invokes requestSyncDevices without error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.RequestSyncDevicesRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes requestSyncDevices without error using callback', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.RequestSyncDevicesRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes requestSyncDevices with error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.RequestSyncDevicesRequest());
             const expectedOptions = {};
@@ -181,9 +181,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
     describe('reportStateAndNotification', () => {
         it('invokes reportStateAndNotification without error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.ReportStateAndNotificationRequest());
             const expectedOptions = {};
@@ -197,9 +197,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes reportStateAndNotification without error using callback', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.ReportStateAndNotificationRequest());
             const expectedOptions = {};
@@ -224,9 +224,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes reportStateAndNotification with error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.ReportStateAndNotificationRequest());
             const expectedOptions = {};
@@ -241,9 +241,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
     describe('deleteAgentUser', () => {
         it('invokes deleteAgentUser without error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.DeleteAgentUserRequest());
             request.agentUserId = '';
@@ -265,9 +265,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes deleteAgentUser without error using callback', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.DeleteAgentUserRequest());
             request.agentUserId = '';
@@ -300,9 +300,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes deleteAgentUser with error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.DeleteAgentUserRequest());
             request.agentUserId = '';
@@ -325,9 +325,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
     describe('query', () => {
         it('invokes query without error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.QueryRequest());
             const expectedOptions = {};
@@ -341,9 +341,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes query without error using callback', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.QueryRequest());
             const expectedOptions = {};
@@ -368,9 +368,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes query with error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.QueryRequest());
             const expectedOptions = {};
@@ -385,9 +385,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
     describe('sync', () => {
         it('invokes sync without error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.SyncRequest());
             const expectedOptions = {};
@@ -401,9 +401,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes sync without error using callback', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.SyncRequest());
             const expectedOptions = {};
@@ -428,9 +428,9 @@ describe('v1.HomeGraphApiServiceClient', () => {
 
         it('invokes sync with error', async () => {
             const client = new homegraphapiserviceModule.v1.HomeGraphApiServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.graph.v1.SyncRequest());
             const expectedOptions = {};

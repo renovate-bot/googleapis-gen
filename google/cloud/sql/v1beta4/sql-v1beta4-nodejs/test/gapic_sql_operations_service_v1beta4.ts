@@ -70,8 +70,8 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.sqlOperationsServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
 
     it('has close method', () => {
         const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
     describe('get', () => {
         it('invokes get without error', async () => {
             const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlOperationsGetRequest());
             request.project = '';
@@ -145,9 +145,9 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
 
         it('invokes get without error using callback', async () => {
             const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlOperationsGetRequest());
             request.project = '';
@@ -180,9 +180,9 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
 
         it('invokes get with error', async () => {
             const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlOperationsGetRequest());
             request.project = '';
@@ -205,9 +205,9 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
     describe('list', () => {
         it('invokes list without error', async () => {
             const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlOperationsListRequest());
             request.project = '';
@@ -229,9 +229,9 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
 
         it('invokes list without error using callback', async () => {
             const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlOperationsListRequest());
             request.project = '';
@@ -264,9 +264,9 @@ describe('v1beta4.SqlOperationsServiceClient', () => {
 
         it('invokes list with error', async () => {
             const client = new sqloperationsserviceModule.v1beta4.SqlOperationsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlOperationsListRequest());
             request.project = '';

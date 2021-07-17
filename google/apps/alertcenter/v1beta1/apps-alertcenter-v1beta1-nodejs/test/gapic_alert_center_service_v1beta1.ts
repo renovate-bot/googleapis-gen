@@ -117,8 +117,8 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.alertCenterServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
     it('has close method', () => {
         const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('getAlert', () => {
         it('invokes getAlert without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetAlertRequest());
             request.alertId = '';
@@ -192,9 +192,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes getAlert without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetAlertRequest());
             request.alertId = '';
@@ -227,9 +227,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes getAlert with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetAlertRequest());
             request.alertId = '';
@@ -252,9 +252,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('deleteAlert', () => {
         it('invokes deleteAlert without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.DeleteAlertRequest());
             request.alertId = '';
@@ -276,9 +276,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes deleteAlert without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.DeleteAlertRequest());
             request.alertId = '';
@@ -311,9 +311,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes deleteAlert with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.DeleteAlertRequest());
             request.alertId = '';
@@ -336,9 +336,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('undeleteAlert', () => {
         it('invokes undeleteAlert without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UndeleteAlertRequest());
             request.alertId = '';
@@ -360,9 +360,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes undeleteAlert without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UndeleteAlertRequest());
             request.alertId = '';
@@ -395,9 +395,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes undeleteAlert with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UndeleteAlertRequest());
             request.alertId = '';
@@ -420,9 +420,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('createAlertFeedback', () => {
         it('invokes createAlertFeedback without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.CreateAlertFeedbackRequest());
             request.alertId = '';
@@ -444,9 +444,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes createAlertFeedback without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.CreateAlertFeedbackRequest());
             request.alertId = '';
@@ -479,9 +479,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes createAlertFeedback with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.CreateAlertFeedbackRequest());
             request.alertId = '';
@@ -504,9 +504,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('listAlertFeedback', () => {
         it('invokes listAlertFeedback without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.ListAlertFeedbackRequest());
             request.alertId = '';
@@ -528,9 +528,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes listAlertFeedback without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.ListAlertFeedbackRequest());
             request.alertId = '';
@@ -563,9 +563,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes listAlertFeedback with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.ListAlertFeedbackRequest());
             request.alertId = '';
@@ -588,9 +588,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('getAlertMetadata', () => {
         it('invokes getAlertMetadata without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetAlertMetadataRequest());
             request.alertId = '';
@@ -612,9 +612,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes getAlertMetadata without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetAlertMetadataRequest());
             request.alertId = '';
@@ -647,9 +647,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes getAlertMetadata with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetAlertMetadataRequest());
             request.alertId = '';
@@ -672,9 +672,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('getSettings', () => {
         it('invokes getSettings without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetSettingsRequest());
             const expectedOptions = {};
@@ -688,9 +688,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes getSettings without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetSettingsRequest());
             const expectedOptions = {};
@@ -715,9 +715,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes getSettings with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.GetSettingsRequest());
             const expectedOptions = {};
@@ -732,9 +732,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('updateSettings', () => {
         it('invokes updateSettings without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UpdateSettingsRequest());
             const expectedOptions = {};
@@ -748,9 +748,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes updateSettings without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UpdateSettingsRequest());
             const expectedOptions = {};
@@ -775,9 +775,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes updateSettings with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.UpdateSettingsRequest());
             const expectedOptions = {};
@@ -792,9 +792,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('batchDeleteAlerts', () => {
         it('invokes batchDeleteAlerts without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchDeleteAlertsRequest());
             const expectedOptions = {};
@@ -808,9 +808,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes batchDeleteAlerts without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchDeleteAlertsRequest());
             const expectedOptions = {};
@@ -835,9 +835,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes batchDeleteAlerts with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchDeleteAlertsRequest());
             const expectedOptions = {};
@@ -852,9 +852,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
     describe('batchUndeleteAlerts', () => {
         it('invokes batchUndeleteAlerts without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchUndeleteAlertsRequest());
             const expectedOptions = {};
@@ -868,9 +868,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes batchUndeleteAlerts without error using callback', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchUndeleteAlertsRequest());
             const expectedOptions = {};
@@ -895,9 +895,9 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('invokes batchUndeleteAlerts with error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.BatchUndeleteAlertsRequest());
             const expectedOptions = {};
@@ -1037,11 +1037,12 @@ describe('v1beta1.AlertCenterServiceClient', () => {
 
         it('uses async iteration with listAlerts without error', async () => {
             const client = new alertcenterserviceModule.v1beta1.AlertCenterServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.ListAlertsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.ListAlertsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Alert()),
               generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Alert()),
               generateSampleMessage(new protos.google.apps.alertcenter.v1beta1.Alert()),

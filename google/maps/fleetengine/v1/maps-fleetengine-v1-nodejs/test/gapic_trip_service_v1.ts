@@ -117,8 +117,8 @@ describe('v1.TripServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new tripserviceModule.v1.TripServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.tripServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.TripServiceClient', () => {
 
     it('has close method', () => {
         const client = new tripserviceModule.v1.TripServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.TripServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tripserviceModule.v1.TripServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.TripServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tripserviceModule.v1.TripServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.TripServiceClient', () => {
     describe('createTrip', () => {
         it('invokes createTrip without error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.CreateTripRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.TripServiceClient', () => {
 
         it('invokes createTrip without error using callback', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.CreateTripRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.TripServiceClient', () => {
 
         it('invokes createTrip with error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.CreateTripRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.TripServiceClient', () => {
     describe('getTrip', () => {
         it('invokes getTrip without error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.GetTripRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.TripServiceClient', () => {
 
         it('invokes getTrip without error using callback', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.GetTripRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.TripServiceClient', () => {
 
         it('invokes getTrip with error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.GetTripRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.TripServiceClient', () => {
     describe('reportBillableTrip', () => {
         it('invokes reportBillableTrip without error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.ReportBillableTripRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.TripServiceClient', () => {
 
         it('invokes reportBillableTrip without error using callback', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.ReportBillableTripRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.TripServiceClient', () => {
 
         it('invokes reportBillableTrip with error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.ReportBillableTripRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.TripServiceClient', () => {
     describe('updateTrip', () => {
         it('invokes updateTrip without error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateTripRequest());
             request.name = '';
@@ -444,9 +444,9 @@ describe('v1.TripServiceClient', () => {
 
         it('invokes updateTrip without error using callback', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateTripRequest());
             request.name = '';
@@ -479,9 +479,9 @@ describe('v1.TripServiceClient', () => {
 
         it('invokes updateTrip with error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateTripRequest());
             request.name = '';
@@ -667,13 +667,14 @@ describe('v1.TripServiceClient', () => {
 
         it('uses async iteration with searchTrips without error', async () => {
             const client = new tripserviceModule.v1.TripServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.SearchTripsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.maps.fleetengine.v1.Trip()),
               generateSampleMessage(new protos.maps.fleetengine.v1.Trip()),
               generateSampleMessage(new protos.maps.fleetengine.v1.Trip()),

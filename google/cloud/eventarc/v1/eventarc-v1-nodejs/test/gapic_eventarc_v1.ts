@@ -133,8 +133,8 @@ describe('v1.EventarcClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new eventarcModule.v1.EventarcClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.eventarcStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.EventarcClient', () => {
 
     it('has close method', () => {
         const client = new eventarcModule.v1.EventarcClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.EventarcClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new eventarcModule.v1.EventarcClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.EventarcClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new eventarcModule.v1.EventarcClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.EventarcClient', () => {
     describe('getTrigger', () => {
         it('invokes getTrigger without error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.GetTriggerRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes getTrigger without error using callback', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.GetTriggerRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes getTrigger with error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.GetTriggerRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.EventarcClient', () => {
     describe('createTrigger', () => {
         it('invokes createTrigger without error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.CreateTriggerRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes createTrigger without error using callback', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.CreateTriggerRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes createTrigger with call error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.CreateTriggerRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes createTrigger with LRO error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.CreateTriggerRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes checkCreateTriggerProgress without error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes checkCreateTriggerProgress with error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1.EventarcClient', () => {
     describe('updateTrigger', () => {
         it('invokes updateTrigger without error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.UpdateTriggerRequest());
             request.trigger = {};
@@ -438,9 +438,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes updateTrigger without error using callback', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.UpdateTriggerRequest());
             request.trigger = {};
@@ -477,9 +477,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes updateTrigger with call error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.UpdateTriggerRequest());
             request.trigger = {};
@@ -501,9 +501,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes updateTrigger with LRO error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.UpdateTriggerRequest());
             request.trigger = {};
@@ -526,9 +526,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes checkUpdateTriggerProgress without error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -544,9 +544,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes checkUpdateTriggerProgress with error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -560,9 +560,9 @@ describe('v1.EventarcClient', () => {
     describe('deleteTrigger', () => {
         it('invokes deleteTrigger without error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.DeleteTriggerRequest());
             request.name = '';
@@ -585,9 +585,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes deleteTrigger without error using callback', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.DeleteTriggerRequest());
             request.name = '';
@@ -623,9 +623,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes deleteTrigger with call error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.DeleteTriggerRequest());
             request.name = '';
@@ -646,9 +646,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes deleteTrigger with LRO error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.DeleteTriggerRequest());
             request.name = '';
@@ -670,9 +670,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes checkDeleteTriggerProgress without error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -688,9 +688,9 @@ describe('v1.EventarcClient', () => {
 
         it('invokes checkDeleteTriggerProgress with error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -867,13 +867,14 @@ describe('v1.EventarcClient', () => {
 
         it('uses async iteration with listTriggers without error', async () => {
             const client = new eventarcModule.v1.EventarcClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.eventarc.v1.ListTriggersRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.eventarc.v1.Trigger()),
               generateSampleMessage(new protos.google.cloud.eventarc.v1.Trigger()),
               generateSampleMessage(new protos.google.cloud.eventarc.v1.Trigger()),

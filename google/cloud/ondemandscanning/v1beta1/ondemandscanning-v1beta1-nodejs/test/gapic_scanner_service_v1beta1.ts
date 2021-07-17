@@ -133,8 +133,8 @@ describe('v1beta1.ScannerServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.scannerServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.ScannerServiceClient', () => {
 
     it('has close method', () => {
         const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.ScannerServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.ScannerServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.ScannerServiceClient', () => {
     describe('analyzePackages', () => {
         it('invokes analyzePackages without error', async () => {
             const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.ondemandscanning.v1beta1.AnalyzePackagesRequest());
             request.parent = '';
@@ -209,9 +209,9 @@ describe('v1beta1.ScannerServiceClient', () => {
 
         it('invokes analyzePackages without error using callback', async () => {
             const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.ondemandscanning.v1beta1.AnalyzePackagesRequest());
             request.parent = '';
@@ -247,9 +247,9 @@ describe('v1beta1.ScannerServiceClient', () => {
 
         it('invokes analyzePackages with call error', async () => {
             const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.ondemandscanning.v1beta1.AnalyzePackagesRequest());
             request.parent = '';
@@ -270,9 +270,9 @@ describe('v1beta1.ScannerServiceClient', () => {
 
         it('invokes analyzePackages with LRO error', async () => {
             const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.ondemandscanning.v1beta1.AnalyzePackagesRequest());
             request.parent = '';
@@ -294,9 +294,9 @@ describe('v1beta1.ScannerServiceClient', () => {
 
         it('invokes checkAnalyzePackagesProgress without error', async () => {
             const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -312,9 +312,9 @@ describe('v1beta1.ScannerServiceClient', () => {
 
         it('invokes checkAnalyzePackagesProgress with error', async () => {
             const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -491,13 +491,14 @@ describe('v1beta1.ScannerServiceClient', () => {
 
         it('uses async iteration with listVulnerabilities without error', async () => {
             const client = new scannerserviceModule.v1beta1.ScannerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.ondemandscanning.v1beta1.ListVulnerabilitiesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.grafeas.v1.Occurrence()),
               generateSampleMessage(new protos.grafeas.v1.Occurrence()),
               generateSampleMessage(new protos.grafeas.v1.Occurrence()),

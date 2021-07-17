@@ -70,8 +70,8 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.merchantCenterLinkServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
 
     it('has close method', () => {
         const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
     describe('listMerchantCenterLinks', () => {
         it('invokes listMerchantCenterLinks without error', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListMerchantCenterLinksRequest());
             request.customerId = '';
@@ -145,9 +145,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
 
         it('invokes listMerchantCenterLinks without error using callback', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListMerchantCenterLinksRequest());
             request.customerId = '';
@@ -180,9 +180,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
 
         it('invokes listMerchantCenterLinks with error', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListMerchantCenterLinksRequest());
             request.customerId = '';
@@ -205,9 +205,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
     describe('getMerchantCenterLink', () => {
         it('invokes getMerchantCenterLink without error', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetMerchantCenterLinkRequest());
             request.resourceName = '';
@@ -229,9 +229,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
 
         it('invokes getMerchantCenterLink without error using callback', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetMerchantCenterLinkRequest());
             request.resourceName = '';
@@ -264,9 +264,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
 
         it('invokes getMerchantCenterLink with error', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetMerchantCenterLinkRequest());
             request.resourceName = '';
@@ -289,9 +289,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
     describe('mutateMerchantCenterLink', () => {
         it('invokes mutateMerchantCenterLink without error', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateMerchantCenterLinkRequest());
             request.customerId = '';
@@ -313,9 +313,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
 
         it('invokes mutateMerchantCenterLink without error using callback', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateMerchantCenterLinkRequest());
             request.customerId = '';
@@ -348,9 +348,9 @@ describe('v8.MerchantCenterLinkServiceClient', () => {
 
         it('invokes mutateMerchantCenterLink with error', async () => {
             const client = new merchantcenterlinkserviceModule.v8.MerchantCenterLinkServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateMerchantCenterLinkRequest());
             request.customerId = '';

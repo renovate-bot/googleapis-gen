@@ -117,8 +117,8 @@ describe('v1.TranscoderServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.transcoderServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.TranscoderServiceClient', () => {
 
     it('has close method', () => {
         const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.TranscoderServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.TranscoderServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.TranscoderServiceClient', () => {
     describe('createJob', () => {
         it('invokes createJob without error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.CreateJobRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes createJob without error using callback', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.CreateJobRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes createJob with error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.CreateJobRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.TranscoderServiceClient', () => {
     describe('getJob', () => {
         it('invokes getJob without error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.GetJobRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes getJob without error using callback', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.GetJobRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes getJob with error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.GetJobRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.TranscoderServiceClient', () => {
     describe('deleteJob', () => {
         it('invokes deleteJob without error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.DeleteJobRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes deleteJob without error using callback', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.DeleteJobRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes deleteJob with error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.DeleteJobRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.TranscoderServiceClient', () => {
     describe('createJobTemplate', () => {
         it('invokes createJobTemplate without error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.CreateJobTemplateRequest());
             request.parent = '';
@@ -444,9 +444,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes createJobTemplate without error using callback', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.CreateJobTemplateRequest());
             request.parent = '';
@@ -479,9 +479,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes createJobTemplate with error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.CreateJobTemplateRequest());
             request.parent = '';
@@ -504,9 +504,9 @@ describe('v1.TranscoderServiceClient', () => {
     describe('getJobTemplate', () => {
         it('invokes getJobTemplate without error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.GetJobTemplateRequest());
             request.name = '';
@@ -528,9 +528,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes getJobTemplate without error using callback', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.GetJobTemplateRequest());
             request.name = '';
@@ -563,9 +563,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes getJobTemplate with error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.GetJobTemplateRequest());
             request.name = '';
@@ -588,9 +588,9 @@ describe('v1.TranscoderServiceClient', () => {
     describe('deleteJobTemplate', () => {
         it('invokes deleteJobTemplate without error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.DeleteJobTemplateRequest());
             request.name = '';
@@ -612,9 +612,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes deleteJobTemplate without error using callback', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.DeleteJobTemplateRequest());
             request.name = '';
@@ -647,9 +647,9 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('invokes deleteJobTemplate with error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.DeleteJobTemplateRequest());
             request.name = '';
@@ -835,13 +835,14 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('uses async iteration with listJobs without error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.ListJobsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.video.transcoder.v1.Job()),
               generateSampleMessage(new protos.google.cloud.video.transcoder.v1.Job()),
               generateSampleMessage(new protos.google.cloud.video.transcoder.v1.Job()),
@@ -1057,13 +1058,14 @@ describe('v1.TranscoderServiceClient', () => {
 
         it('uses async iteration with listJobTemplates without error', async () => {
             const client = new transcoderserviceModule.v1.TranscoderServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.video.transcoder.v1.ListJobTemplatesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.video.transcoder.v1.JobTemplate()),
               generateSampleMessage(new protos.google.cloud.video.transcoder.v1.JobTemplate()),
               generateSampleMessage(new protos.google.cloud.video.transcoder.v1.JobTemplate()),

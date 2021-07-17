@@ -73,8 +73,8 @@ describe('v1beta1.SpeechTranslationServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new speechtranslationserviceModule.v1beta1.SpeechTranslationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.speechTranslationServiceStub, undefined);
         await client.initialize();
@@ -83,8 +83,8 @@ describe('v1beta1.SpeechTranslationServiceClient', () => {
 
     it('has close method', () => {
         const client = new speechtranslationserviceModule.v1beta1.SpeechTranslationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -92,8 +92,8 @@ describe('v1beta1.SpeechTranslationServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new speechtranslationserviceModule.v1beta1.SpeechTranslationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -104,8 +104,8 @@ describe('v1beta1.SpeechTranslationServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new speechtranslationserviceModule.v1beta1.SpeechTranslationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -124,9 +124,9 @@ describe('v1beta1.SpeechTranslationServiceClient', () => {
     describe('streamingTranslateSpeech', () => {
         it('invokes streamingTranslateSpeech without error', async () => {
             const client = new speechtranslationserviceModule.v1beta1.SpeechTranslationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechResponse());
@@ -152,9 +152,9 @@ describe('v1beta1.SpeechTranslationServiceClient', () => {
 
         it('invokes streamingTranslateSpeech with error', async () => {
             const client = new speechtranslationserviceModule.v1beta1.SpeechTranslationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.mediatranslation.v1beta1.StreamingTranslateSpeechRequest());const expectedError = new Error('expected');
             client.innerApiCalls.streamingTranslateSpeech = stubBidiStreamingCall(undefined, expectedError);

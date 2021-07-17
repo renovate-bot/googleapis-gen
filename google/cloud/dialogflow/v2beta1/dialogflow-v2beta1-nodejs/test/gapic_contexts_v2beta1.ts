@@ -117,8 +117,8 @@ describe('v2beta1.ContextsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new contextsModule.v2beta1.ContextsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.contextsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2beta1.ContextsClient', () => {
 
     it('has close method', () => {
         const client = new contextsModule.v2beta1.ContextsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2beta1.ContextsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new contextsModule.v2beta1.ContextsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2beta1.ContextsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new contextsModule.v2beta1.ContextsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2beta1.ContextsClient', () => {
     describe('getContext', () => {
         it('invokes getContext without error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetContextRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes getContext without error using callback', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetContextRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes getContext with error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetContextRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v2beta1.ContextsClient', () => {
     describe('createContext', () => {
         it('invokes createContext without error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateContextRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes createContext without error using callback', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateContextRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes createContext with error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateContextRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v2beta1.ContextsClient', () => {
     describe('updateContext', () => {
         it('invokes updateContext without error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateContextRequest());
             request.context = {};
@@ -361,9 +361,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes updateContext without error using callback', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateContextRequest());
             request.context = {};
@@ -397,9 +397,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes updateContext with error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateContextRequest());
             request.context = {};
@@ -423,9 +423,9 @@ describe('v2beta1.ContextsClient', () => {
     describe('deleteContext', () => {
         it('invokes deleteContext without error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteContextRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes deleteContext without error using callback', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteContextRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes deleteContext with error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteContextRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v2beta1.ContextsClient', () => {
     describe('deleteAllContexts', () => {
         it('invokes deleteAllContexts without error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest());
             request.parent = '';
@@ -531,9 +531,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes deleteAllContexts without error using callback', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest());
             request.parent = '';
@@ -566,9 +566,9 @@ describe('v2beta1.ContextsClient', () => {
 
         it('invokes deleteAllContexts with error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteAllContextsRequest());
             request.parent = '';
@@ -754,13 +754,14 @@ describe('v2beta1.ContextsClient', () => {
 
         it('uses async iteration with listContexts without error', async () => {
             const client = new contextsModule.v2beta1.ContextsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListContextsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Context()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Context()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Context()),

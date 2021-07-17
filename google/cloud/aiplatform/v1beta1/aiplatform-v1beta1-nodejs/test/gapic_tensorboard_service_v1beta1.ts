@@ -145,8 +145,8 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.tensorboardServiceStub, undefined);
         await client.initialize();
@@ -155,8 +155,8 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
     it('has close method', () => {
         const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -164,8 +164,8 @@ describe('v1beta1.TensorboardServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -176,8 +176,8 @@ describe('v1beta1.TensorboardServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -196,9 +196,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('getTensorboard', () => {
         it('invokes getTensorboard without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardRequest());
             request.name = '';
@@ -220,9 +220,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes getTensorboard without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardRequest());
             request.name = '';
@@ -255,9 +255,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes getTensorboard with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardRequest());
             request.name = '';
@@ -280,9 +280,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('createTensorboardExperiment', () => {
         it('invokes createTensorboardExperiment without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest());
             request.parent = '';
@@ -304,9 +304,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboardExperiment without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest());
             request.parent = '';
@@ -339,9 +339,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboardExperiment with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest());
             request.parent = '';
@@ -364,9 +364,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('getTensorboardExperiment', () => {
         it('invokes getTensorboardExperiment without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardExperimentRequest());
             request.name = '';
@@ -388,9 +388,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes getTensorboardExperiment without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardExperimentRequest());
             request.name = '';
@@ -423,9 +423,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes getTensorboardExperiment with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardExperimentRequest());
             request.name = '';
@@ -448,9 +448,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('updateTensorboardExperiment', () => {
         it('invokes updateTensorboardExperiment without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest());
             request.tensorboardExperiment = {};
@@ -473,9 +473,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboardExperiment without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest());
             request.tensorboardExperiment = {};
@@ -509,9 +509,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboardExperiment with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardExperimentRequest());
             request.tensorboardExperiment = {};
@@ -535,9 +535,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('createTensorboardRun', () => {
         it('invokes createTensorboardRun without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardRunRequest());
             request.parent = '';
@@ -559,9 +559,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboardRun without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardRunRequest());
             request.parent = '';
@@ -594,9 +594,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboardRun with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardRunRequest());
             request.parent = '';
@@ -619,9 +619,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('getTensorboardRun', () => {
         it('invokes getTensorboardRun without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardRunRequest());
             request.name = '';
@@ -643,9 +643,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes getTensorboardRun without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardRunRequest());
             request.name = '';
@@ -678,9 +678,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes getTensorboardRun with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardRunRequest());
             request.name = '';
@@ -703,9 +703,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('updateTensorboardRun', () => {
         it('invokes updateTensorboardRun without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardRunRequest());
             request.tensorboardRun = {};
@@ -728,9 +728,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboardRun without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardRunRequest());
             request.tensorboardRun = {};
@@ -764,9 +764,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboardRun with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardRunRequest());
             request.tensorboardRun = {};
@@ -790,9 +790,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('createTensorboardTimeSeries', () => {
         it('invokes createTensorboardTimeSeries without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest());
             request.parent = '';
@@ -814,9 +814,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboardTimeSeries without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest());
             request.parent = '';
@@ -849,9 +849,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboardTimeSeries with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardTimeSeriesRequest());
             request.parent = '';
@@ -874,9 +874,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('getTensorboardTimeSeries', () => {
         it('invokes getTensorboardTimeSeries without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardTimeSeriesRequest());
             request.name = '';
@@ -898,9 +898,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes getTensorboardTimeSeries without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardTimeSeriesRequest());
             request.name = '';
@@ -933,9 +933,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes getTensorboardTimeSeries with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTensorboardTimeSeriesRequest());
             request.name = '';
@@ -958,9 +958,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('updateTensorboardTimeSeries', () => {
         it('invokes updateTensorboardTimeSeries without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardTimeSeriesRequest());
             request.tensorboardTimeSeries = {};
@@ -983,9 +983,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboardTimeSeries without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardTimeSeriesRequest());
             request.tensorboardTimeSeries = {};
@@ -1019,9 +1019,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboardTimeSeries with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardTimeSeriesRequest());
             request.tensorboardTimeSeries = {};
@@ -1045,9 +1045,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('readTensorboardTimeSeriesData', () => {
         it('invokes readTensorboardTimeSeriesData without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest());
             request.tensorboardTimeSeries = '';
@@ -1069,9 +1069,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes readTensorboardTimeSeriesData without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest());
             request.tensorboardTimeSeries = '';
@@ -1104,9 +1104,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes readTensorboardTimeSeriesData with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest());
             request.tensorboardTimeSeries = '';
@@ -1129,9 +1129,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('writeTensorboardRunData', () => {
         it('invokes writeTensorboardRunData without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest());
             request.tensorboardRun = '';
@@ -1153,9 +1153,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes writeTensorboardRunData without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest());
             request.tensorboardRun = '';
@@ -1188,9 +1188,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes writeTensorboardRunData with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest());
             request.tensorboardRun = '';
@@ -1213,9 +1213,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('createTensorboard', () => {
         it('invokes createTensorboard without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest());
             request.parent = '';
@@ -1238,9 +1238,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboard without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest());
             request.parent = '';
@@ -1276,9 +1276,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboard with call error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest());
             request.parent = '';
@@ -1299,9 +1299,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes createTensorboard with LRO error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTensorboardRequest());
             request.parent = '';
@@ -1323,9 +1323,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkCreateTensorboardProgress without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1341,9 +1341,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkCreateTensorboardProgress with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1357,9 +1357,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('updateTensorboard', () => {
         it('invokes updateTensorboard without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardRequest());
             request.tensorboard = {};
@@ -1383,9 +1383,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboard without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardRequest());
             request.tensorboard = {};
@@ -1422,9 +1422,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboard with call error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardRequest());
             request.tensorboard = {};
@@ -1446,9 +1446,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes updateTensorboard with LRO error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateTensorboardRequest());
             request.tensorboard = {};
@@ -1471,9 +1471,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkUpdateTensorboardProgress without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1489,9 +1489,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkUpdateTensorboardProgress with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1505,9 +1505,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('deleteTensorboard', () => {
         it('invokes deleteTensorboard without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardRequest());
             request.name = '';
@@ -1530,9 +1530,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboard without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardRequest());
             request.name = '';
@@ -1568,9 +1568,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboard with call error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardRequest());
             request.name = '';
@@ -1591,9 +1591,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboard with LRO error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardRequest());
             request.name = '';
@@ -1615,9 +1615,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkDeleteTensorboardProgress without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1633,9 +1633,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkDeleteTensorboardProgress with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1649,9 +1649,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('deleteTensorboardExperiment', () => {
         it('invokes deleteTensorboardExperiment without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardExperimentRequest());
             request.name = '';
@@ -1674,9 +1674,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardExperiment without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardExperimentRequest());
             request.name = '';
@@ -1712,9 +1712,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardExperiment with call error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardExperimentRequest());
             request.name = '';
@@ -1735,9 +1735,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardExperiment with LRO error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardExperimentRequest());
             request.name = '';
@@ -1759,9 +1759,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkDeleteTensorboardExperimentProgress without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1777,9 +1777,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkDeleteTensorboardExperimentProgress with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1793,9 +1793,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('deleteTensorboardRun', () => {
         it('invokes deleteTensorboardRun without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest());
             request.name = '';
@@ -1818,9 +1818,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardRun without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest());
             request.name = '';
@@ -1856,9 +1856,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardRun with call error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest());
             request.name = '';
@@ -1879,9 +1879,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardRun with LRO error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardRunRequest());
             request.name = '';
@@ -1903,9 +1903,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkDeleteTensorboardRunProgress without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1921,9 +1921,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkDeleteTensorboardRunProgress with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1937,9 +1937,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('deleteTensorboardTimeSeries', () => {
         it('invokes deleteTensorboardTimeSeries without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest());
             request.name = '';
@@ -1962,9 +1962,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardTimeSeries without error using callback', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest());
             request.name = '';
@@ -2000,9 +2000,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardTimeSeries with call error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest());
             request.name = '';
@@ -2023,9 +2023,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes deleteTensorboardTimeSeries with LRO error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTensorboardTimeSeriesRequest());
             request.name = '';
@@ -2047,9 +2047,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkDeleteTensorboardTimeSeriesProgress without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2065,9 +2065,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes checkDeleteTensorboardTimeSeriesProgress with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2081,9 +2081,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
     describe('readTensorboardBlobData', () => {
         it('invokes readTensorboardBlobData without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest());
             request.timeSeries = '';
@@ -2114,9 +2114,9 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('invokes readTensorboardBlobData with error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest());
             request.timeSeries = '';
@@ -2311,13 +2311,14 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('uses async iteration with listTensorboards without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListTensorboardsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Tensorboard()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Tensorboard()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Tensorboard()),
@@ -2533,13 +2534,14 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('uses async iteration with listTensorboardExperiments without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListTensorboardExperimentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardExperiment()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardExperiment()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardExperiment()),
@@ -2755,13 +2757,14 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('uses async iteration with listTensorboardRuns without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListTensorboardRunsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardRun()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardRun()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardRun()),
@@ -2977,13 +2980,14 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('uses async iteration with listTensorboardTimeSeries without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListTensorboardTimeSeriesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TensorboardTimeSeries()),
@@ -3199,13 +3203,14 @@ describe('v1beta1.TensorboardServiceClient', () => {
 
         it('uses async iteration with exportTensorboardTimeSeriesData without error', async () => {
             const client = new tensorboardserviceModule.v1beta1.TensorboardServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataRequest());
             request.tensorboardTimeSeries = '';
-            const expectedHeaderRequestParams = "tensorboard_time_series=";const expectedResponse = [
+            const expectedHeaderRequestParams = "tensorboard_time_series=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TimeSeriesDataPoint()),

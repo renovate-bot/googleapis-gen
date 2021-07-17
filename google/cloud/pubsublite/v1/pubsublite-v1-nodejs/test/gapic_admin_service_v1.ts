@@ -133,8 +133,8 @@ describe('v1.AdminServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adminserviceModule.v1.AdminServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.adminServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.AdminServiceClient', () => {
 
     it('has close method', () => {
         const client = new adminserviceModule.v1.AdminServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.AdminServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new adminserviceModule.v1.AdminServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.AdminServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new adminserviceModule.v1.AdminServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.AdminServiceClient', () => {
     describe('createTopic', () => {
         it('invokes createTopic without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateTopicRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes createTopic without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateTopicRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes createTopic with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateTopicRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1.AdminServiceClient', () => {
     describe('getTopic', () => {
         it('invokes getTopic without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetTopicRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes getTopic without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetTopicRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes getTopic with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetTopicRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1.AdminServiceClient', () => {
     describe('getTopicPartitions', () => {
         it('invokes getTopicPartitions without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetTopicPartitionsRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes getTopicPartitions without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetTopicPartitionsRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes getTopicPartitions with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetTopicPartitionsRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1.AdminServiceClient', () => {
     describe('updateTopic', () => {
         it('invokes updateTopic without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateTopicRequest());
             request.topic = {};
@@ -461,9 +461,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes updateTopic without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateTopicRequest());
             request.topic = {};
@@ -497,9 +497,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes updateTopic with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateTopicRequest());
             request.topic = {};
@@ -523,9 +523,9 @@ describe('v1.AdminServiceClient', () => {
     describe('deleteTopic', () => {
         it('invokes deleteTopic without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteTopicRequest());
             request.name = '';
@@ -547,9 +547,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes deleteTopic without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteTopicRequest());
             request.name = '';
@@ -582,9 +582,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes deleteTopic with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteTopicRequest());
             request.name = '';
@@ -607,9 +607,9 @@ describe('v1.AdminServiceClient', () => {
     describe('createSubscription', () => {
         it('invokes createSubscription without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateSubscriptionRequest());
             request.parent = '';
@@ -631,9 +631,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes createSubscription without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateSubscriptionRequest());
             request.parent = '';
@@ -666,9 +666,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes createSubscription with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateSubscriptionRequest());
             request.parent = '';
@@ -691,9 +691,9 @@ describe('v1.AdminServiceClient', () => {
     describe('getSubscription', () => {
         it('invokes getSubscription without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetSubscriptionRequest());
             request.name = '';
@@ -715,9 +715,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes getSubscription without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetSubscriptionRequest());
             request.name = '';
@@ -750,9 +750,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes getSubscription with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetSubscriptionRequest());
             request.name = '';
@@ -775,9 +775,9 @@ describe('v1.AdminServiceClient', () => {
     describe('updateSubscription', () => {
         it('invokes updateSubscription without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateSubscriptionRequest());
             request.subscription = {};
@@ -800,9 +800,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes updateSubscription without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateSubscriptionRequest());
             request.subscription = {};
@@ -836,9 +836,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes updateSubscription with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateSubscriptionRequest());
             request.subscription = {};
@@ -862,9 +862,9 @@ describe('v1.AdminServiceClient', () => {
     describe('deleteSubscription', () => {
         it('invokes deleteSubscription without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteSubscriptionRequest());
             request.name = '';
@@ -886,9 +886,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes deleteSubscription without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteSubscriptionRequest());
             request.name = '';
@@ -921,9 +921,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes deleteSubscription with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteSubscriptionRequest());
             request.name = '';
@@ -946,9 +946,9 @@ describe('v1.AdminServiceClient', () => {
     describe('createReservation', () => {
         it('invokes createReservation without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateReservationRequest());
             request.parent = '';
@@ -970,9 +970,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes createReservation without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateReservationRequest());
             request.parent = '';
@@ -1005,9 +1005,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes createReservation with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CreateReservationRequest());
             request.parent = '';
@@ -1030,9 +1030,9 @@ describe('v1.AdminServiceClient', () => {
     describe('getReservation', () => {
         it('invokes getReservation without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetReservationRequest());
             request.name = '';
@@ -1054,9 +1054,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes getReservation without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetReservationRequest());
             request.name = '';
@@ -1089,9 +1089,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes getReservation with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.GetReservationRequest());
             request.name = '';
@@ -1114,9 +1114,9 @@ describe('v1.AdminServiceClient', () => {
     describe('updateReservation', () => {
         it('invokes updateReservation without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateReservationRequest());
             request.reservation = {};
@@ -1139,9 +1139,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes updateReservation without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateReservationRequest());
             request.reservation = {};
@@ -1175,9 +1175,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes updateReservation with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.UpdateReservationRequest());
             request.reservation = {};
@@ -1201,9 +1201,9 @@ describe('v1.AdminServiceClient', () => {
     describe('deleteReservation', () => {
         it('invokes deleteReservation without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteReservationRequest());
             request.name = '';
@@ -1225,9 +1225,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes deleteReservation without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteReservationRequest());
             request.name = '';
@@ -1260,9 +1260,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes deleteReservation with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.DeleteReservationRequest());
             request.name = '';
@@ -1285,9 +1285,9 @@ describe('v1.AdminServiceClient', () => {
     describe('seekSubscription', () => {
         it('invokes seekSubscription without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SeekSubscriptionRequest());
             request.name = '';
@@ -1310,9 +1310,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes seekSubscription without error using callback', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SeekSubscriptionRequest());
             request.name = '';
@@ -1348,9 +1348,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes seekSubscription with call error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SeekSubscriptionRequest());
             request.name = '';
@@ -1371,9 +1371,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes seekSubscription with LRO error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SeekSubscriptionRequest());
             request.name = '';
@@ -1395,9 +1395,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes checkSeekSubscriptionProgress without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1413,9 +1413,9 @@ describe('v1.AdminServiceClient', () => {
 
         it('invokes checkSeekSubscriptionProgress with error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1592,13 +1592,14 @@ describe('v1.AdminServiceClient', () => {
 
         it('uses async iteration with listTopics without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListTopicsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Topic()),
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Topic()),
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Topic()),
@@ -1802,13 +1803,14 @@ describe('v1.AdminServiceClient', () => {
 
         it('uses async iteration with listTopicSubscriptions without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListTopicSubscriptionsRequest());
             request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedResponse = [new String(), new String(), new String()];
+            const expectedHeaderRequestParams = "name=";
+            const expectedResponse = [new String(), new String(), new String()];
             client.descriptors.page.listTopicSubscriptions.asyncIterate = stubAsyncIterationCall(expectedResponse);
             const responses: string[] = [];
             const iterable = client.listTopicSubscriptionsAsync(request);
@@ -2020,13 +2022,14 @@ describe('v1.AdminServiceClient', () => {
 
         it('uses async iteration with listSubscriptions without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListSubscriptionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Subscription()),
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Subscription()),
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Subscription()),
@@ -2242,13 +2245,14 @@ describe('v1.AdminServiceClient', () => {
 
         it('uses async iteration with listReservations without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.Reservation()),
@@ -2452,13 +2456,14 @@ describe('v1.AdminServiceClient', () => {
 
         it('uses async iteration with listReservationTopics without error', async () => {
             const client = new adminserviceModule.v1.AdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListReservationTopicsRequest());
             request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedResponse = [new String(), new String(), new String()];
+            const expectedHeaderRequestParams = "name=";
+            const expectedResponse = [new String(), new String(), new String()];
             client.descriptors.page.listReservationTopics.asyncIterate = stubAsyncIterationCall(expectedResponse);
             const responses: string[] = [];
             const iterable = client.listReservationTopicsAsync(request);

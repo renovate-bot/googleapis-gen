@@ -117,8 +117,8 @@ describe('v6.GoogleAdsFieldServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new googleadsfieldserviceModule.v6.GoogleAdsFieldServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.googleAdsFieldServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v6.GoogleAdsFieldServiceClient', () => {
 
     it('has close method', () => {
         const client = new googleadsfieldserviceModule.v6.GoogleAdsFieldServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v6.GoogleAdsFieldServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new googleadsfieldserviceModule.v6.GoogleAdsFieldServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v6.GoogleAdsFieldServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new googleadsfieldserviceModule.v6.GoogleAdsFieldServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v6.GoogleAdsFieldServiceClient', () => {
     describe('getGoogleAdsField', () => {
         it('invokes getGoogleAdsField without error', async () => {
             const client = new googleadsfieldserviceModule.v6.GoogleAdsFieldServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetGoogleAdsFieldRequest());
             request.resourceName = '';
@@ -192,9 +192,9 @@ describe('v6.GoogleAdsFieldServiceClient', () => {
 
         it('invokes getGoogleAdsField without error using callback', async () => {
             const client = new googleadsfieldserviceModule.v6.GoogleAdsFieldServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetGoogleAdsFieldRequest());
             request.resourceName = '';
@@ -227,9 +227,9 @@ describe('v6.GoogleAdsFieldServiceClient', () => {
 
         it('invokes getGoogleAdsField with error', async () => {
             const client = new googleadsfieldserviceModule.v6.GoogleAdsFieldServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetGoogleAdsFieldRequest());
             request.resourceName = '';
@@ -377,11 +377,12 @@ describe('v6.GoogleAdsFieldServiceClient', () => {
 
         it('uses async iteration with searchGoogleAdsFields without error', async () => {
             const client = new googleadsfieldserviceModule.v6.GoogleAdsFieldServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.SearchGoogleAdsFieldsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.SearchGoogleAdsFieldsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.ads.googleads.v6.resources.GoogleAdsField()),
               generateSampleMessage(new protos.google.ads.googleads.v6.resources.GoogleAdsField()),
               generateSampleMessage(new protos.google.ads.googleads.v6.resources.GoogleAdsField()),

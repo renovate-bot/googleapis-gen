@@ -70,8 +70,8 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.assetServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
     it('has close method', () => {
         const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1p2beta1.AssetServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1p2beta1.AssetServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
     describe('createFeed', () => {
         it('invokes createFeed without error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.CreateFeedRequest());
             request.parent = '';
@@ -145,9 +145,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes createFeed without error using callback', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.CreateFeedRequest());
             request.parent = '';
@@ -180,9 +180,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes createFeed with error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.CreateFeedRequest());
             request.parent = '';
@@ -205,9 +205,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
     describe('getFeed', () => {
         it('invokes getFeed without error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.GetFeedRequest());
             request.name = '';
@@ -229,9 +229,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes getFeed without error using callback', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.GetFeedRequest());
             request.name = '';
@@ -264,9 +264,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes getFeed with error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.GetFeedRequest());
             request.name = '';
@@ -289,9 +289,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
     describe('listFeeds', () => {
         it('invokes listFeeds without error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.ListFeedsRequest());
             request.parent = '';
@@ -313,9 +313,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes listFeeds without error using callback', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.ListFeedsRequest());
             request.parent = '';
@@ -348,9 +348,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes listFeeds with error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.ListFeedsRequest());
             request.parent = '';
@@ -373,9 +373,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
     describe('updateFeed', () => {
         it('invokes updateFeed without error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.UpdateFeedRequest());
             request.feed = {};
@@ -398,9 +398,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes updateFeed without error using callback', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.UpdateFeedRequest());
             request.feed = {};
@@ -434,9 +434,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes updateFeed with error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.UpdateFeedRequest());
             request.feed = {};
@@ -460,9 +460,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
     describe('deleteFeed', () => {
         it('invokes deleteFeed without error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.DeleteFeedRequest());
             request.name = '';
@@ -484,9 +484,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes deleteFeed without error using callback', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.DeleteFeedRequest());
             request.name = '';
@@ -519,9 +519,9 @@ describe('v1p2beta1.AssetServiceClient', () => {
 
         it('invokes deleteFeed with error', async () => {
             const client = new assetserviceModule.v1p2beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p2beta1.DeleteFeedRequest());
             request.name = '';

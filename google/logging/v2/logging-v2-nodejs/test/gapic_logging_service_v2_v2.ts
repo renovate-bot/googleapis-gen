@@ -126,8 +126,8 @@ describe('v2.LoggingServiceV2Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.loggingServiceV2Stub, undefined);
         await client.initialize();
@@ -136,8 +136,8 @@ describe('v2.LoggingServiceV2Client', () => {
 
     it('has close method', () => {
         const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -145,8 +145,8 @@ describe('v2.LoggingServiceV2Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -157,8 +157,8 @@ describe('v2.LoggingServiceV2Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -177,9 +177,9 @@ describe('v2.LoggingServiceV2Client', () => {
     describe('deleteLog', () => {
         it('invokes deleteLog without error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteLogRequest());
             request.logName = '';
@@ -201,9 +201,9 @@ describe('v2.LoggingServiceV2Client', () => {
 
         it('invokes deleteLog without error using callback', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteLogRequest());
             request.logName = '';
@@ -236,9 +236,9 @@ describe('v2.LoggingServiceV2Client', () => {
 
         it('invokes deleteLog with error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteLogRequest());
             request.logName = '';
@@ -261,9 +261,9 @@ describe('v2.LoggingServiceV2Client', () => {
     describe('writeLogEntries', () => {
         it('invokes writeLogEntries without error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.WriteLogEntriesRequest());
             const expectedOptions = {};
@@ -277,9 +277,9 @@ describe('v2.LoggingServiceV2Client', () => {
 
         it('invokes writeLogEntries without error using callback', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.WriteLogEntriesRequest());
             const expectedOptions = {};
@@ -304,9 +304,9 @@ describe('v2.LoggingServiceV2Client', () => {
 
         it('invokes writeLogEntries with error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.WriteLogEntriesRequest());
             const expectedOptions = {};
@@ -321,9 +321,9 @@ describe('v2.LoggingServiceV2Client', () => {
     describe('tailLogEntries', () => {
         it('invokes tailLogEntries without error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.TailLogEntriesRequest());
             const expectedResponse = generateSampleMessage(new protos.google.logging.v2.TailLogEntriesResponse());
@@ -349,9 +349,9 @@ describe('v2.LoggingServiceV2Client', () => {
 
         it('invokes tailLogEntries with error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.TailLogEntriesRequest());const expectedError = new Error('expected');
             client.innerApiCalls.tailLogEntries = stubBidiStreamingCall(undefined, expectedError);
@@ -502,11 +502,12 @@ describe('v2.LoggingServiceV2Client', () => {
 
         it('uses async iteration with listLogEntries without error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.logging.v2.ListLogEntriesRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.logging.v2.ListLogEntriesRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.logging.v2.LogEntry()),
               generateSampleMessage(new protos.google.logging.v2.LogEntry()),
               generateSampleMessage(new protos.google.logging.v2.LogEntry()),
@@ -672,11 +673,12 @@ describe('v2.LoggingServiceV2Client', () => {
 
         it('uses async iteration with listMonitoredResourceDescriptors without error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.logging.v2.ListMonitoredResourceDescriptorsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.logging.v2.ListMonitoredResourceDescriptorsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.api.MonitoredResourceDescriptor()),
               generateSampleMessage(new protos.google.api.MonitoredResourceDescriptor()),
               generateSampleMessage(new protos.google.api.MonitoredResourceDescriptor()),
@@ -868,13 +870,14 @@ describe('v2.LoggingServiceV2Client', () => {
 
         it('uses async iteration with listLogs without error', async () => {
             const client = new loggingservicev2Module.v2.LoggingServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListLogsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [new String(), new String(), new String()];
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [new String(), new String(), new String()];
             client.descriptors.page.listLogs.asyncIterate = stubAsyncIterationCall(expectedResponse);
             const responses: string[] = [];
             const iterable = client.listLogsAsync(request);

@@ -70,8 +70,8 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.sqlSslCertsServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
     it('has close method', () => {
         const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
     describe('delete', () => {
         it('invokes delete without error', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsDeleteRequest());
             request.project = '';
@@ -145,9 +145,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
         it('invokes delete without error using callback', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsDeleteRequest());
             request.project = '';
@@ -180,9 +180,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
         it('invokes delete with error', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsDeleteRequest());
             request.project = '';
@@ -205,9 +205,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
     describe('get', () => {
         it('invokes get without error', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsGetRequest());
             request.project = '';
@@ -229,9 +229,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
         it('invokes get without error using callback', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsGetRequest());
             request.project = '';
@@ -264,9 +264,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
         it('invokes get with error', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsGetRequest());
             request.project = '';
@@ -289,9 +289,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
     describe('insert', () => {
         it('invokes insert without error', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsInsertRequest());
             request.project = '';
@@ -313,9 +313,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
         it('invokes insert without error using callback', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsInsertRequest());
             request.project = '';
@@ -348,9 +348,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
         it('invokes insert with error', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsInsertRequest());
             request.project = '';
@@ -373,9 +373,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
     describe('list', () => {
         it('invokes list without error', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsListRequest());
             request.project = '';
@@ -397,9 +397,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
         it('invokes list without error using callback', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsListRequest());
             request.project = '';
@@ -432,9 +432,9 @@ describe('v1beta4.SqlSslCertsServiceClient', () => {
 
         it('invokes list with error', async () => {
             const client = new sqlsslcertsserviceModule.v1beta4.SqlSslCertsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlSslCertsListRequest());
             request.project = '';

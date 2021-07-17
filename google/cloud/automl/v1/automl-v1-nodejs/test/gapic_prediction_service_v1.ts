@@ -86,8 +86,8 @@ describe('v1.PredictionServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new predictionserviceModule.v1.PredictionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.predictionServiceStub, undefined);
         await client.initialize();
@@ -96,8 +96,8 @@ describe('v1.PredictionServiceClient', () => {
 
     it('has close method', () => {
         const client = new predictionserviceModule.v1.PredictionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -105,8 +105,8 @@ describe('v1.PredictionServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new predictionserviceModule.v1.PredictionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -117,8 +117,8 @@ describe('v1.PredictionServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new predictionserviceModule.v1.PredictionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -137,9 +137,9 @@ describe('v1.PredictionServiceClient', () => {
     describe('predict', () => {
         it('invokes predict without error', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.automl.v1.PredictRequest());
             request.name = '';
@@ -161,9 +161,9 @@ describe('v1.PredictionServiceClient', () => {
 
         it('invokes predict without error using callback', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.automl.v1.PredictRequest());
             request.name = '';
@@ -196,9 +196,9 @@ describe('v1.PredictionServiceClient', () => {
 
         it('invokes predict with error', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.automl.v1.PredictRequest());
             request.name = '';
@@ -221,9 +221,9 @@ describe('v1.PredictionServiceClient', () => {
     describe('batchPredict', () => {
         it('invokes batchPredict without error', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.automl.v1.BatchPredictRequest());
             request.name = '';
@@ -246,9 +246,9 @@ describe('v1.PredictionServiceClient', () => {
 
         it('invokes batchPredict without error using callback', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.automl.v1.BatchPredictRequest());
             request.name = '';
@@ -284,9 +284,9 @@ describe('v1.PredictionServiceClient', () => {
 
         it('invokes batchPredict with call error', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.automl.v1.BatchPredictRequest());
             request.name = '';
@@ -307,9 +307,9 @@ describe('v1.PredictionServiceClient', () => {
 
         it('invokes batchPredict with LRO error', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.automl.v1.BatchPredictRequest());
             request.name = '';
@@ -331,9 +331,9 @@ describe('v1.PredictionServiceClient', () => {
 
         it('invokes checkBatchPredictProgress without error', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -349,9 +349,9 @@ describe('v1.PredictionServiceClient', () => {
 
         it('invokes checkBatchPredictProgress with error', async () => {
             const client = new predictionserviceModule.v1.PredictionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 

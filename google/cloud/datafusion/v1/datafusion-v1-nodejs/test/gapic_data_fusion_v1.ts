@@ -133,8 +133,8 @@ describe('v1.DataFusionClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new datafusionModule.v1.DataFusionClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.dataFusionStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.DataFusionClient', () => {
 
     it('has close method', () => {
         const client = new datafusionModule.v1.DataFusionClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.DataFusionClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datafusionModule.v1.DataFusionClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.DataFusionClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datafusionModule.v1.DataFusionClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.DataFusionClient', () => {
     describe('getInstance', () => {
         it('invokes getInstance without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.GetInstanceRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes getInstance without error using callback', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.GetInstanceRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes getInstance with error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.GetInstanceRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.DataFusionClient', () => {
     describe('createInstance', () => {
         it('invokes createInstance without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.CreateInstanceRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes createInstance without error using callback', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.CreateInstanceRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes createInstance with call error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.CreateInstanceRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes createInstance with LRO error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.CreateInstanceRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes checkCreateInstanceProgress without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes checkCreateInstanceProgress with error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1.DataFusionClient', () => {
     describe('deleteInstance', () => {
         it('invokes deleteInstance without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.DeleteInstanceRequest());
             request.name = '';
@@ -437,9 +437,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes deleteInstance without error using callback', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.DeleteInstanceRequest());
             request.name = '';
@@ -475,9 +475,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes deleteInstance with call error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.DeleteInstanceRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes deleteInstance with LRO error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.DeleteInstanceRequest());
             request.name = '';
@@ -522,9 +522,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes checkDeleteInstanceProgress without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes checkDeleteInstanceProgress with error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -556,9 +556,9 @@ describe('v1.DataFusionClient', () => {
     describe('updateInstance', () => {
         it('invokes updateInstance without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -582,9 +582,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes updateInstance without error using callback', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -621,9 +621,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes updateInstance with call error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -645,9 +645,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes updateInstance with LRO error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -670,9 +670,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes checkUpdateInstanceProgress without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -688,9 +688,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes checkUpdateInstanceProgress with error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -704,9 +704,9 @@ describe('v1.DataFusionClient', () => {
     describe('restartInstance', () => {
         it('invokes restartInstance without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.RestartInstanceRequest());
             request.name = '';
@@ -729,9 +729,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes restartInstance without error using callback', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.RestartInstanceRequest());
             request.name = '';
@@ -767,9 +767,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes restartInstance with call error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.RestartInstanceRequest());
             request.name = '';
@@ -790,9 +790,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes restartInstance with LRO error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.RestartInstanceRequest());
             request.name = '';
@@ -814,9 +814,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes checkRestartInstanceProgress without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -832,9 +832,9 @@ describe('v1.DataFusionClient', () => {
 
         it('invokes checkRestartInstanceProgress with error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1011,13 +1011,14 @@ describe('v1.DataFusionClient', () => {
 
         it('uses async iteration with listAvailableVersions without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.ListAvailableVersionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.datafusion.v1.Version()),
               generateSampleMessage(new protos.google.cloud.datafusion.v1.Version()),
               generateSampleMessage(new protos.google.cloud.datafusion.v1.Version()),
@@ -1233,13 +1234,14 @@ describe('v1.DataFusionClient', () => {
 
         it('uses async iteration with listInstances without error', async () => {
             const client = new datafusionModule.v1.DataFusionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datafusion.v1.ListInstancesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.datafusion.v1.Instance()),
               generateSampleMessage(new protos.google.cloud.datafusion.v1.Instance()),
               generateSampleMessage(new protos.google.cloud.datafusion.v1.Instance()),

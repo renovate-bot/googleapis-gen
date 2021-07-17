@@ -117,8 +117,8 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.recaptchaEnterpriseServiceV1Beta1Stub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
     it('has close method', () => {
         const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     describe('createAssessment', () => {
         it('invokes createAssessment without error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.CreateAssessmentRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes createAssessment without error using callback', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.CreateAssessmentRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes createAssessment with error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.CreateAssessmentRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     describe('annotateAssessment', () => {
         it('invokes annotateAssessment without error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes annotateAssessment without error using callback', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes annotateAssessment with error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.AnnotateAssessmentRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     describe('createKey', () => {
         it('invokes createKey without error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.CreateKeyRequest());
             request.parent = '';
@@ -360,9 +360,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes createKey without error using callback', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.CreateKeyRequest());
             request.parent = '';
@@ -395,9 +395,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes createKey with error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.CreateKeyRequest());
             request.parent = '';
@@ -420,9 +420,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     describe('getKey', () => {
         it('invokes getKey without error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.GetKeyRequest());
             request.name = '';
@@ -444,9 +444,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes getKey without error using callback', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.GetKeyRequest());
             request.name = '';
@@ -479,9 +479,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes getKey with error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.GetKeyRequest());
             request.name = '';
@@ -504,9 +504,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     describe('updateKey', () => {
         it('invokes updateKey without error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.UpdateKeyRequest());
             request.key = {};
@@ -529,9 +529,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes updateKey without error using callback', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.UpdateKeyRequest());
             request.key = {};
@@ -565,9 +565,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes updateKey with error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.UpdateKeyRequest());
             request.key = {};
@@ -591,9 +591,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
     describe('deleteKey', () => {
         it('invokes deleteKey without error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.DeleteKeyRequest());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes deleteKey without error using callback', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.DeleteKeyRequest());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('invokes deleteKey with error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.DeleteKeyRequest());
             request.name = '';
@@ -838,13 +838,14 @@ describe('v1beta1.RecaptchaEnterpriseServiceV1Beta1Client', () => {
 
         it('uses async iteration with listKeys without error', async () => {
             const client = new recaptchaenterpriseservicev1beta1Module.v1beta1.RecaptchaEnterpriseServiceV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.ListKeysRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.Key()),
               generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.Key()),
               generateSampleMessage(new protos.google.cloud.recaptchaenterprise.v1beta1.Key()),

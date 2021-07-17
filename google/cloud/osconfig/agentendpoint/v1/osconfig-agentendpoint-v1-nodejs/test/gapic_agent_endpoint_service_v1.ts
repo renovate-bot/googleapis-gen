@@ -84,8 +84,8 @@ describe('v1.AgentEndpointServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.agentEndpointServiceStub, undefined);
         await client.initialize();
@@ -94,8 +94,8 @@ describe('v1.AgentEndpointServiceClient', () => {
 
     it('has close method', () => {
         const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -103,8 +103,8 @@ describe('v1.AgentEndpointServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -115,8 +115,8 @@ describe('v1.AgentEndpointServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -135,9 +135,9 @@ describe('v1.AgentEndpointServiceClient', () => {
     describe('startNextTask', () => {
         it('invokes startNextTask without error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.StartNextTaskRequest());
             const expectedOptions = {};
@@ -151,9 +151,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes startNextTask without error using callback', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.StartNextTaskRequest());
             const expectedOptions = {};
@@ -178,9 +178,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes startNextTask with error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.StartNextTaskRequest());
             const expectedOptions = {};
@@ -195,9 +195,9 @@ describe('v1.AgentEndpointServiceClient', () => {
     describe('reportTaskProgress', () => {
         it('invokes reportTaskProgress without error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressRequest());
             const expectedOptions = {};
@@ -211,9 +211,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes reportTaskProgress without error using callback', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressRequest());
             const expectedOptions = {};
@@ -238,9 +238,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes reportTaskProgress with error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskProgressRequest());
             const expectedOptions = {};
@@ -255,9 +255,9 @@ describe('v1.AgentEndpointServiceClient', () => {
     describe('reportTaskComplete', () => {
         it('invokes reportTaskComplete without error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteRequest());
             const expectedOptions = {};
@@ -271,9 +271,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes reportTaskComplete without error using callback', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteRequest());
             const expectedOptions = {};
@@ -298,9 +298,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes reportTaskComplete with error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportTaskCompleteRequest());
             const expectedOptions = {};
@@ -315,9 +315,9 @@ describe('v1.AgentEndpointServiceClient', () => {
     describe('registerAgent', () => {
         it('invokes registerAgent without error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.RegisterAgentRequest());
             const expectedOptions = {};
@@ -331,9 +331,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes registerAgent without error using callback', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.RegisterAgentRequest());
             const expectedOptions = {};
@@ -358,9 +358,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes registerAgent with error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.RegisterAgentRequest());
             const expectedOptions = {};
@@ -375,9 +375,9 @@ describe('v1.AgentEndpointServiceClient', () => {
     describe('reportInventory', () => {
         it('invokes reportInventory without error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportInventoryRequest());
             const expectedOptions = {};
@@ -391,9 +391,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes reportInventory without error using callback', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportInventoryRequest());
             const expectedOptions = {};
@@ -418,9 +418,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes reportInventory with error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReportInventoryRequest());
             const expectedOptions = {};
@@ -435,9 +435,9 @@ describe('v1.AgentEndpointServiceClient', () => {
     describe('receiveTaskNotification', () => {
         it('invokes receiveTaskNotification without error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReceiveTaskNotificationRequest());
             const expectedOptions = {};
@@ -460,9 +460,9 @@ describe('v1.AgentEndpointServiceClient', () => {
 
         it('invokes receiveTaskNotification with error', async () => {
             const client = new agentendpointserviceModule.v1.AgentEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.agentendpoint.v1.ReceiveTaskNotificationRequest());
             const expectedOptions = {};

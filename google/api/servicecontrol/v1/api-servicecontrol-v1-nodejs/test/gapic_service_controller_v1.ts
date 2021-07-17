@@ -70,8 +70,8 @@ describe('v1.ServiceControllerClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new servicecontrollerModule.v1.ServiceControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.serviceControllerStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.ServiceControllerClient', () => {
 
     it('has close method', () => {
         const client = new servicecontrollerModule.v1.ServiceControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.ServiceControllerClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new servicecontrollerModule.v1.ServiceControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.ServiceControllerClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new servicecontrollerModule.v1.ServiceControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.ServiceControllerClient', () => {
     describe('check', () => {
         it('invokes check without error', async () => {
             const client = new servicecontrollerModule.v1.ServiceControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicecontrol.v1.CheckRequest());
             request.serviceName = '';
@@ -145,9 +145,9 @@ describe('v1.ServiceControllerClient', () => {
 
         it('invokes check without error using callback', async () => {
             const client = new servicecontrollerModule.v1.ServiceControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicecontrol.v1.CheckRequest());
             request.serviceName = '';
@@ -180,9 +180,9 @@ describe('v1.ServiceControllerClient', () => {
 
         it('invokes check with error', async () => {
             const client = new servicecontrollerModule.v1.ServiceControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicecontrol.v1.CheckRequest());
             request.serviceName = '';
@@ -205,9 +205,9 @@ describe('v1.ServiceControllerClient', () => {
     describe('report', () => {
         it('invokes report without error', async () => {
             const client = new servicecontrollerModule.v1.ServiceControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicecontrol.v1.ReportRequest());
             request.serviceName = '';
@@ -229,9 +229,9 @@ describe('v1.ServiceControllerClient', () => {
 
         it('invokes report without error using callback', async () => {
             const client = new servicecontrollerModule.v1.ServiceControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicecontrol.v1.ReportRequest());
             request.serviceName = '';
@@ -264,9 +264,9 @@ describe('v1.ServiceControllerClient', () => {
 
         it('invokes report with error', async () => {
             const client = new servicecontrollerModule.v1.ServiceControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.servicecontrol.v1.ReportRequest());
             request.serviceName = '';

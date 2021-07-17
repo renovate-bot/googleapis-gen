@@ -133,8 +133,8 @@ describe('v3.TagBindingsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new tagbindingsModule.v3.TagBindingsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.tagBindingsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3.TagBindingsClient', () => {
 
     it('has close method', () => {
         const client = new tagbindingsModule.v3.TagBindingsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3.TagBindingsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tagbindingsModule.v3.TagBindingsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3.TagBindingsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tagbindingsModule.v3.TagBindingsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3.TagBindingsClient', () => {
     describe('createTagBinding', () => {
         it('invokes createTagBinding without error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagBindingRequest());
             const expectedOptions = {};
@@ -201,9 +201,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes createTagBinding without error using callback', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagBindingRequest());
             const expectedOptions = {};
@@ -231,9 +231,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes createTagBinding with call error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagBindingRequest());
             const expectedOptions = {};
@@ -246,9 +246,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes createTagBinding with LRO error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagBindingRequest());
             const expectedOptions = {};
@@ -262,9 +262,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes checkCreateTagBindingProgress without error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -280,9 +280,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes checkCreateTagBindingProgress with error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -296,9 +296,9 @@ describe('v3.TagBindingsClient', () => {
     describe('deleteTagBinding', () => {
         it('invokes deleteTagBinding without error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagBindingRequest());
             request.name = '';
@@ -321,9 +321,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes deleteTagBinding without error using callback', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagBindingRequest());
             request.name = '';
@@ -359,9 +359,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes deleteTagBinding with call error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagBindingRequest());
             request.name = '';
@@ -382,9 +382,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes deleteTagBinding with LRO error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagBindingRequest());
             request.name = '';
@@ -406,9 +406,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes checkDeleteTagBindingProgress without error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -424,9 +424,9 @@ describe('v3.TagBindingsClient', () => {
 
         it('invokes checkDeleteTagBindingProgress with error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -565,11 +565,12 @@ describe('v3.TagBindingsClient', () => {
 
         it('uses async iteration with listTagBindings without error', async () => {
             const client = new tagbindingsModule.v3.TagBindingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagBindingsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagBindingsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagBinding()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagBinding()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagBinding()),

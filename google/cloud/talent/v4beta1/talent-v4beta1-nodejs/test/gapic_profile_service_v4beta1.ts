@@ -117,8 +117,8 @@ describe('v4beta1.ProfileServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.profileServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v4beta1.ProfileServiceClient', () => {
 
     it('has close method', () => {
         const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v4beta1.ProfileServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v4beta1.ProfileServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v4beta1.ProfileServiceClient', () => {
     describe('createProfile', () => {
         it('invokes createProfile without error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CreateProfileRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes createProfile without error using callback', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CreateProfileRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes createProfile with error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CreateProfileRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v4beta1.ProfileServiceClient', () => {
     describe('getProfile', () => {
         it('invokes getProfile without error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.GetProfileRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes getProfile without error using callback', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.GetProfileRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes getProfile with error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.GetProfileRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v4beta1.ProfileServiceClient', () => {
     describe('updateProfile', () => {
         it('invokes updateProfile without error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.UpdateProfileRequest());
             request.profile = {};
@@ -361,9 +361,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes updateProfile without error using callback', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.UpdateProfileRequest());
             request.profile = {};
@@ -397,9 +397,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes updateProfile with error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.UpdateProfileRequest());
             request.profile = {};
@@ -423,9 +423,9 @@ describe('v4beta1.ProfileServiceClient', () => {
     describe('deleteProfile', () => {
         it('invokes deleteProfile without error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.DeleteProfileRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes deleteProfile without error using callback', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.DeleteProfileRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes deleteProfile with error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.DeleteProfileRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v4beta1.ProfileServiceClient', () => {
     describe('searchProfiles', () => {
         it('invokes searchProfiles without error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.SearchProfilesRequest());
             request.parent = '';
@@ -531,9 +531,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes searchProfiles without error using callback', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.SearchProfilesRequest());
             request.parent = '';
@@ -566,9 +566,9 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('invokes searchProfiles with error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.SearchProfilesRequest());
             request.parent = '';
@@ -754,13 +754,14 @@ describe('v4beta1.ProfileServiceClient', () => {
 
         it('uses async iteration with listProfiles without error', async () => {
             const client = new profileserviceModule.v4beta1.ProfileServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.ListProfilesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.talent.v4beta1.Profile()),
               generateSampleMessage(new protos.google.cloud.talent.v4beta1.Profile()),
               generateSampleMessage(new protos.google.cloud.talent.v4beta1.Profile()),

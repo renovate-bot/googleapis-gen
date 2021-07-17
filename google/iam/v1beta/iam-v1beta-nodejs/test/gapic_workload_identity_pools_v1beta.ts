@@ -133,8 +133,8 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.workloadIdentityPoolsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
     it('has close method', () => {
         const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('getWorkloadIdentityPool', () => {
         it('invokes getWorkloadIdentityPool without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.GetWorkloadIdentityPoolRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes getWorkloadIdentityPool without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.GetWorkloadIdentityPoolRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes getWorkloadIdentityPool with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.GetWorkloadIdentityPoolRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('getWorkloadIdentityPoolProvider', () => {
         it('invokes getWorkloadIdentityPoolProvider without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.GetWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes getWorkloadIdentityPoolProvider without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.GetWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes getWorkloadIdentityPoolProvider with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.GetWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('createWorkloadIdentityPool', () => {
         it('invokes createWorkloadIdentityPool without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.CreateWorkloadIdentityPoolRequest());
             request.parent = '';
@@ -377,9 +377,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes createWorkloadIdentityPool without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.CreateWorkloadIdentityPoolRequest());
             request.parent = '';
@@ -415,9 +415,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes createWorkloadIdentityPool with call error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.CreateWorkloadIdentityPoolRequest());
             request.parent = '';
@@ -438,9 +438,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes createWorkloadIdentityPool with LRO error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.CreateWorkloadIdentityPoolRequest());
             request.parent = '';
@@ -462,9 +462,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkCreateWorkloadIdentityPoolProgress without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -480,9 +480,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkCreateWorkloadIdentityPoolProgress with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -496,9 +496,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('updateWorkloadIdentityPool', () => {
         it('invokes updateWorkloadIdentityPool without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest());
             request.workloadIdentityPool = {};
@@ -522,9 +522,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes updateWorkloadIdentityPool without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest());
             request.workloadIdentityPool = {};
@@ -561,9 +561,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes updateWorkloadIdentityPool with call error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest());
             request.workloadIdentityPool = {};
@@ -585,9 +585,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes updateWorkloadIdentityPool with LRO error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UpdateWorkloadIdentityPoolRequest());
             request.workloadIdentityPool = {};
@@ -610,9 +610,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkUpdateWorkloadIdentityPoolProgress without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -628,9 +628,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkUpdateWorkloadIdentityPoolProgress with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -644,9 +644,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('deleteWorkloadIdentityPool', () => {
         it('invokes deleteWorkloadIdentityPool without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest());
             request.name = '';
@@ -669,9 +669,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes deleteWorkloadIdentityPool without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest());
             request.name = '';
@@ -707,9 +707,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes deleteWorkloadIdentityPool with call error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest());
             request.name = '';
@@ -730,9 +730,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes deleteWorkloadIdentityPool with LRO error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.DeleteWorkloadIdentityPoolRequest());
             request.name = '';
@@ -754,9 +754,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkDeleteWorkloadIdentityPoolProgress without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -772,9 +772,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkDeleteWorkloadIdentityPoolProgress with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -788,9 +788,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('undeleteWorkloadIdentityPool', () => {
         it('invokes undeleteWorkloadIdentityPool without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest());
             request.name = '';
@@ -813,9 +813,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes undeleteWorkloadIdentityPool without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest());
             request.name = '';
@@ -851,9 +851,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes undeleteWorkloadIdentityPool with call error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest());
             request.name = '';
@@ -874,9 +874,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes undeleteWorkloadIdentityPool with LRO error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UndeleteWorkloadIdentityPoolRequest());
             request.name = '';
@@ -898,9 +898,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkUndeleteWorkloadIdentityPoolProgress without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -916,9 +916,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkUndeleteWorkloadIdentityPoolProgress with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -932,9 +932,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('createWorkloadIdentityPoolProvider', () => {
         it('invokes createWorkloadIdentityPoolProvider without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest());
             request.parent = '';
@@ -957,9 +957,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes createWorkloadIdentityPoolProvider without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest());
             request.parent = '';
@@ -995,9 +995,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes createWorkloadIdentityPoolProvider with call error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest());
             request.parent = '';
@@ -1018,9 +1018,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes createWorkloadIdentityPoolProvider with LRO error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest());
             request.parent = '';
@@ -1042,9 +1042,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkCreateWorkloadIdentityPoolProviderProgress without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1060,9 +1060,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkCreateWorkloadIdentityPoolProviderProgress with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1076,9 +1076,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('updateWorkloadIdentityPoolProvider', () => {
         it('invokes updateWorkloadIdentityPoolProvider without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest());
             request.workloadIdentityPoolProvider = {};
@@ -1102,9 +1102,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes updateWorkloadIdentityPoolProvider without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest());
             request.workloadIdentityPoolProvider = {};
@@ -1141,9 +1141,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes updateWorkloadIdentityPoolProvider with call error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest());
             request.workloadIdentityPoolProvider = {};
@@ -1165,9 +1165,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes updateWorkloadIdentityPoolProvider with LRO error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UpdateWorkloadIdentityPoolProviderRequest());
             request.workloadIdentityPoolProvider = {};
@@ -1190,9 +1190,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkUpdateWorkloadIdentityPoolProviderProgress without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1208,9 +1208,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkUpdateWorkloadIdentityPoolProviderProgress with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1224,9 +1224,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('deleteWorkloadIdentityPoolProvider', () => {
         it('invokes deleteWorkloadIdentityPoolProvider without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -1249,9 +1249,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes deleteWorkloadIdentityPoolProvider without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -1287,9 +1287,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes deleteWorkloadIdentityPoolProvider with call error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -1310,9 +1310,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes deleteWorkloadIdentityPoolProvider with LRO error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.DeleteWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -1334,9 +1334,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkDeleteWorkloadIdentityPoolProviderProgress without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1352,9 +1352,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkDeleteWorkloadIdentityPoolProviderProgress with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1368,9 +1368,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
     describe('undeleteWorkloadIdentityPoolProvider', () => {
         it('invokes undeleteWorkloadIdentityPoolProvider without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -1393,9 +1393,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes undeleteWorkloadIdentityPoolProvider without error using callback', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -1431,9 +1431,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes undeleteWorkloadIdentityPoolProvider with call error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -1454,9 +1454,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes undeleteWorkloadIdentityPoolProvider with LRO error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.UndeleteWorkloadIdentityPoolProviderRequest());
             request.name = '';
@@ -1478,9 +1478,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkUndeleteWorkloadIdentityPoolProviderProgress without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1496,9 +1496,9 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('invokes checkUndeleteWorkloadIdentityPoolProviderProgress with error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1675,13 +1675,14 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('uses async iteration with listWorkloadIdentityPools without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.ListWorkloadIdentityPoolsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.iam.v1beta.WorkloadIdentityPool()),
               generateSampleMessage(new protos.google.iam.v1beta.WorkloadIdentityPool()),
               generateSampleMessage(new protos.google.iam.v1beta.WorkloadIdentityPool()),
@@ -1897,13 +1898,14 @@ describe('v1beta.WorkloadIdentityPoolsClient', () => {
 
         it('uses async iteration with listWorkloadIdentityPoolProviders without error', async () => {
             const client = new workloadidentitypoolsModule.v1beta.WorkloadIdentityPoolsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1beta.ListWorkloadIdentityPoolProvidersRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.iam.v1beta.WorkloadIdentityPoolProvider()),
               generateSampleMessage(new protos.google.iam.v1beta.WorkloadIdentityPoolProvider()),
               generateSampleMessage(new protos.google.iam.v1beta.WorkloadIdentityPoolProvider()),

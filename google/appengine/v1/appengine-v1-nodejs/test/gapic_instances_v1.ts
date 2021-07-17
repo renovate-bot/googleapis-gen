@@ -133,8 +133,8 @@ describe('v1.InstancesClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new instancesModule.v1.InstancesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.instancesStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.InstancesClient', () => {
 
     it('has close method', () => {
         const client = new instancesModule.v1.InstancesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.InstancesClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new instancesModule.v1.InstancesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.InstancesClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new instancesModule.v1.InstancesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.InstancesClient', () => {
     describe('getInstance', () => {
         it('invokes getInstance without error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetInstanceRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes getInstance without error using callback', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetInstanceRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes getInstance with error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetInstanceRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.InstancesClient', () => {
     describe('deleteInstance', () => {
         it('invokes deleteInstance without error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteInstanceRequest());
             request.name = '';
@@ -293,9 +293,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes deleteInstance without error using callback', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteInstanceRequest());
             request.name = '';
@@ -331,9 +331,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes deleteInstance with call error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteInstanceRequest());
             request.name = '';
@@ -354,9 +354,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes deleteInstance with LRO error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteInstanceRequest());
             request.name = '';
@@ -378,9 +378,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes checkDeleteInstanceProgress without error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes checkDeleteInstanceProgress with error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1.InstancesClient', () => {
     describe('debugInstance', () => {
         it('invokes debugInstance without error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DebugInstanceRequest());
             request.name = '';
@@ -437,9 +437,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes debugInstance without error using callback', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DebugInstanceRequest());
             request.name = '';
@@ -475,9 +475,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes debugInstance with call error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DebugInstanceRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes debugInstance with LRO error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DebugInstanceRequest());
             request.name = '';
@@ -522,9 +522,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes checkDebugInstanceProgress without error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1.InstancesClient', () => {
 
         it('invokes checkDebugInstanceProgress with error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -719,13 +719,14 @@ describe('v1.InstancesClient', () => {
 
         it('uses async iteration with listInstances without error', async () => {
             const client = new instancesModule.v1.InstancesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.ListInstancesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.appengine.v1.Instance()),
               generateSampleMessage(new protos.google.appengine.v1.Instance()),
               generateSampleMessage(new protos.google.appengine.v1.Instance()),

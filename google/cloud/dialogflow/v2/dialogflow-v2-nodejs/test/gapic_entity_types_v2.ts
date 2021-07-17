@@ -133,8 +133,8 @@ describe('v2.EntityTypesClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new entitytypesModule.v2.EntityTypesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.entityTypesStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v2.EntityTypesClient', () => {
 
     it('has close method', () => {
         const client = new entitytypesModule.v2.EntityTypesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v2.EntityTypesClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new entitytypesModule.v2.EntityTypesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v2.EntityTypesClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new entitytypesModule.v2.EntityTypesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v2.EntityTypesClient', () => {
     describe('getEntityType', () => {
         it('invokes getEntityType without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetEntityTypeRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes getEntityType without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetEntityTypeRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes getEntityType with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetEntityTypeRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v2.EntityTypesClient', () => {
     describe('createEntityType', () => {
         it('invokes createEntityType without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateEntityTypeRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes createEntityType without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateEntityTypeRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes createEntityType with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateEntityTypeRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v2.EntityTypesClient', () => {
     describe('updateEntityType', () => {
         it('invokes updateEntityType without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateEntityTypeRequest());
             request.entityType = {};
@@ -377,9 +377,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes updateEntityType without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateEntityTypeRequest());
             request.entityType = {};
@@ -413,9 +413,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes updateEntityType with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateEntityTypeRequest());
             request.entityType = {};
@@ -439,9 +439,9 @@ describe('v2.EntityTypesClient', () => {
     describe('deleteEntityType', () => {
         it('invokes deleteEntityType without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteEntityTypeRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes deleteEntityType without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteEntityTypeRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes deleteEntityType with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteEntityTypeRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v2.EntityTypesClient', () => {
     describe('batchUpdateEntityTypes', () => {
         it('invokes batchUpdateEntityTypes without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest());
             request.parent = '';
@@ -548,9 +548,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchUpdateEntityTypes without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest());
             request.parent = '';
@@ -586,9 +586,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchUpdateEntityTypes with call error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest());
             request.parent = '';
@@ -609,9 +609,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchUpdateEntityTypes with LRO error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest());
             request.parent = '';
@@ -633,9 +633,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchUpdateEntityTypesProgress without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -651,9 +651,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchUpdateEntityTypesProgress with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -667,9 +667,9 @@ describe('v2.EntityTypesClient', () => {
     describe('batchDeleteEntityTypes', () => {
         it('invokes batchDeleteEntityTypes without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest());
             request.parent = '';
@@ -692,9 +692,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchDeleteEntityTypes without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest());
             request.parent = '';
@@ -730,9 +730,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchDeleteEntityTypes with call error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest());
             request.parent = '';
@@ -753,9 +753,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchDeleteEntityTypes with LRO error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteEntityTypesRequest());
             request.parent = '';
@@ -777,9 +777,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchDeleteEntityTypesProgress without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -795,9 +795,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchDeleteEntityTypesProgress with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -811,9 +811,9 @@ describe('v2.EntityTypesClient', () => {
     describe('batchCreateEntities', () => {
         it('invokes batchCreateEntities without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest());
             request.parent = '';
@@ -836,9 +836,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchCreateEntities without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest());
             request.parent = '';
@@ -874,9 +874,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchCreateEntities with call error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest());
             request.parent = '';
@@ -897,9 +897,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchCreateEntities with LRO error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchCreateEntitiesRequest());
             request.parent = '';
@@ -921,9 +921,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchCreateEntitiesProgress without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -939,9 +939,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchCreateEntitiesProgress with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -955,9 +955,9 @@ describe('v2.EntityTypesClient', () => {
     describe('batchUpdateEntities', () => {
         it('invokes batchUpdateEntities without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest());
             request.parent = '';
@@ -980,9 +980,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchUpdateEntities without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest());
             request.parent = '';
@@ -1018,9 +1018,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchUpdateEntities with call error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest());
             request.parent = '';
@@ -1041,9 +1041,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchUpdateEntities with LRO error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest());
             request.parent = '';
@@ -1065,9 +1065,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchUpdateEntitiesProgress without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1083,9 +1083,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchUpdateEntitiesProgress with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1099,9 +1099,9 @@ describe('v2.EntityTypesClient', () => {
     describe('batchDeleteEntities', () => {
         it('invokes batchDeleteEntities without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest());
             request.parent = '';
@@ -1124,9 +1124,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchDeleteEntities without error using callback', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest());
             request.parent = '';
@@ -1162,9 +1162,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchDeleteEntities with call error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest());
             request.parent = '';
@@ -1185,9 +1185,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes batchDeleteEntities with LRO error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteEntitiesRequest());
             request.parent = '';
@@ -1209,9 +1209,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchDeleteEntitiesProgress without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1227,9 +1227,9 @@ describe('v2.EntityTypesClient', () => {
 
         it('invokes checkBatchDeleteEntitiesProgress with error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1406,13 +1406,14 @@ describe('v2.EntityTypesClient', () => {
 
         it('uses async iteration with listEntityTypes without error', async () => {
             const client = new entitytypesModule.v2.EntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.ListEntityTypesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.EntityType()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.EntityType()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.EntityType()),

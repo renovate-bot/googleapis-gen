@@ -133,8 +133,8 @@ describe('v1.VersionsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new versionsModule.v1.VersionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.versionsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.VersionsClient', () => {
 
     it('has close method', () => {
         const client = new versionsModule.v1.VersionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.VersionsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new versionsModule.v1.VersionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.VersionsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new versionsModule.v1.VersionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.VersionsClient', () => {
     describe('getVersion', () => {
         it('invokes getVersion without error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetVersionRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes getVersion without error using callback', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetVersionRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes getVersion with error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetVersionRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.VersionsClient', () => {
     describe('createVersion', () => {
         it('invokes createVersion without error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateVersionRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes createVersion without error using callback', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateVersionRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes createVersion with call error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateVersionRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes createVersion with LRO error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateVersionRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes checkCreateVersionProgress without error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes checkCreateVersionProgress with error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1.VersionsClient', () => {
     describe('updateVersion', () => {
         it('invokes updateVersion without error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateVersionRequest());
             request.name = '';
@@ -437,9 +437,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes updateVersion without error using callback', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateVersionRequest());
             request.name = '';
@@ -475,9 +475,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes updateVersion with call error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateVersionRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes updateVersion with LRO error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateVersionRequest());
             request.name = '';
@@ -522,9 +522,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes checkUpdateVersionProgress without error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes checkUpdateVersionProgress with error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -556,9 +556,9 @@ describe('v1.VersionsClient', () => {
     describe('deleteVersion', () => {
         it('invokes deleteVersion without error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteVersionRequest());
             request.name = '';
@@ -581,9 +581,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes deleteVersion without error using callback', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteVersionRequest());
             request.name = '';
@@ -619,9 +619,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes deleteVersion with call error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteVersionRequest());
             request.name = '';
@@ -642,9 +642,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes deleteVersion with LRO error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteVersionRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes checkDeleteVersionProgress without error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -684,9 +684,9 @@ describe('v1.VersionsClient', () => {
 
         it('invokes checkDeleteVersionProgress with error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -863,13 +863,14 @@ describe('v1.VersionsClient', () => {
 
         it('uses async iteration with listVersions without error', async () => {
             const client = new versionsModule.v1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.ListVersionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.appengine.v1.Version()),
               generateSampleMessage(new protos.google.appengine.v1.Version()),
               generateSampleMessage(new protos.google.appengine.v1.Version()),

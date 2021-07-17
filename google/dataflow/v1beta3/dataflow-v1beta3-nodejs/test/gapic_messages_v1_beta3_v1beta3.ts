@@ -117,8 +117,8 @@ describe('v1beta3.MessagesV1Beta3Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new messagesv1beta3Module.v1beta3.MessagesV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.messagesV1Beta3Stub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta3.MessagesV1Beta3Client', () => {
 
     it('has close method', () => {
         const client = new messagesv1beta3Module.v1beta3.MessagesV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta3.MessagesV1Beta3Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new messagesv1beta3Module.v1beta3.MessagesV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta3.MessagesV1Beta3Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new messagesv1beta3Module.v1beta3.MessagesV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -293,11 +293,12 @@ describe('v1beta3.MessagesV1Beta3Client', () => {
 
         it('uses async iteration with listJobMessages without error', async () => {
             const client = new messagesv1beta3Module.v1beta3.MessagesV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobMessagesRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.ListJobMessagesRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.JobMessage()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.JobMessage()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.JobMessage()),

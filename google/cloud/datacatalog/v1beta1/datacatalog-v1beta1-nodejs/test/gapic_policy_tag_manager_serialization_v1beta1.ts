@@ -70,8 +70,8 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.policyTagManagerSerializationStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
 
     it('has close method', () => {
         const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
     describe('importTaxonomies', () => {
         it('invokes importTaxonomies without error', async () => {
             const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest());
             request.parent = '';
@@ -145,9 +145,9 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
 
         it('invokes importTaxonomies without error using callback', async () => {
             const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest());
             request.parent = '';
@@ -180,9 +180,9 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
 
         it('invokes importTaxonomies with error', async () => {
             const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1beta1.ImportTaxonomiesRequest());
             request.parent = '';
@@ -205,9 +205,9 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
     describe('exportTaxonomies', () => {
         it('invokes exportTaxonomies without error', async () => {
             const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest());
             request.parent = '';
@@ -229,9 +229,9 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
 
         it('invokes exportTaxonomies without error using callback', async () => {
             const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest());
             request.parent = '';
@@ -264,9 +264,9 @@ describe('v1beta1.PolicyTagManagerSerializationClient', () => {
 
         it('invokes exportTaxonomies with error', async () => {
             const client = new policytagmanagerserializationModule.v1beta1.PolicyTagManagerSerializationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest());
             request.parent = '';

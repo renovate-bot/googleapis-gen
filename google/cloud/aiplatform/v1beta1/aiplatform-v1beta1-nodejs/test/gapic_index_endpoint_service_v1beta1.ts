@@ -133,8 +133,8 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.indexEndpointServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
     it('has close method', () => {
         const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
     describe('getIndexEndpoint', () => {
         it('invokes getIndexEndpoint without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetIndexEndpointRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes getIndexEndpoint without error using callback', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetIndexEndpointRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes getIndexEndpoint with error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetIndexEndpointRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
     describe('updateIndexEndpoint', () => {
         it('invokes updateIndexEndpoint without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateIndexEndpointRequest());
             request.indexEndpoint = {};
@@ -293,9 +293,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes updateIndexEndpoint without error using callback', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateIndexEndpointRequest());
             request.indexEndpoint = {};
@@ -329,9 +329,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes updateIndexEndpoint with error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateIndexEndpointRequest());
             request.indexEndpoint = {};
@@ -355,9 +355,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
     describe('createIndexEndpoint', () => {
         it('invokes createIndexEndpoint without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateIndexEndpointRequest());
             request.parent = '';
@@ -380,9 +380,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes createIndexEndpoint without error using callback', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateIndexEndpointRequest());
             request.parent = '';
@@ -418,9 +418,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes createIndexEndpoint with call error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateIndexEndpointRequest());
             request.parent = '';
@@ -441,9 +441,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes createIndexEndpoint with LRO error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateIndexEndpointRequest());
             request.parent = '';
@@ -465,9 +465,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes checkCreateIndexEndpointProgress without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -483,9 +483,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes checkCreateIndexEndpointProgress with error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -499,9 +499,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
     describe('deleteIndexEndpoint', () => {
         it('invokes deleteIndexEndpoint without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteIndexEndpointRequest());
             request.name = '';
@@ -524,9 +524,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes deleteIndexEndpoint without error using callback', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteIndexEndpointRequest());
             request.name = '';
@@ -562,9 +562,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes deleteIndexEndpoint with call error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteIndexEndpointRequest());
             request.name = '';
@@ -585,9 +585,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes deleteIndexEndpoint with LRO error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteIndexEndpointRequest());
             request.name = '';
@@ -609,9 +609,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes checkDeleteIndexEndpointProgress without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -627,9 +627,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes checkDeleteIndexEndpointProgress with error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -643,9 +643,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
     describe('deployIndex', () => {
         it('invokes deployIndex without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeployIndexRequest());
             request.indexEndpoint = '';
@@ -668,9 +668,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes deployIndex without error using callback', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeployIndexRequest());
             request.indexEndpoint = '';
@@ -706,9 +706,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes deployIndex with call error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeployIndexRequest());
             request.indexEndpoint = '';
@@ -729,9 +729,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes deployIndex with LRO error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeployIndexRequest());
             request.indexEndpoint = '';
@@ -753,9 +753,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes checkDeployIndexProgress without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -771,9 +771,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes checkDeployIndexProgress with error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -787,9 +787,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
     describe('undeployIndex', () => {
         it('invokes undeployIndex without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UndeployIndexRequest());
             request.indexEndpoint = '';
@@ -812,9 +812,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes undeployIndex without error using callback', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UndeployIndexRequest());
             request.indexEndpoint = '';
@@ -850,9 +850,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes undeployIndex with call error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UndeployIndexRequest());
             request.indexEndpoint = '';
@@ -873,9 +873,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes undeployIndex with LRO error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UndeployIndexRequest());
             request.indexEndpoint = '';
@@ -897,9 +897,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes checkUndeployIndexProgress without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -915,9 +915,9 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('invokes checkUndeployIndexProgress with error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1094,13 +1094,14 @@ describe('v1beta1.IndexEndpointServiceClient', () => {
 
         it('uses async iteration with listIndexEndpoints without error', async () => {
             const client = new indexendpointserviceModule.v1beta1.IndexEndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListIndexEndpointsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.IndexEndpoint()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.IndexEndpoint()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.IndexEndpoint()),

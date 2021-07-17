@@ -70,8 +70,8 @@ describe('v7.CampaignAssetServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.campaignAssetServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v7.CampaignAssetServiceClient', () => {
 
     it('has close method', () => {
         const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v7.CampaignAssetServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v7.CampaignAssetServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v7.CampaignAssetServiceClient', () => {
     describe('getCampaignAsset', () => {
         it('invokes getCampaignAsset without error', async () => {
             const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignAssetRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v7.CampaignAssetServiceClient', () => {
 
         it('invokes getCampaignAsset without error using callback', async () => {
             const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignAssetRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v7.CampaignAssetServiceClient', () => {
 
         it('invokes getCampaignAsset with error', async () => {
             const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignAssetRequest());
             request.resourceName = '';
@@ -205,9 +205,9 @@ describe('v7.CampaignAssetServiceClient', () => {
     describe('mutateCampaignAssets', () => {
         it('invokes mutateCampaignAssets without error', async () => {
             const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignAssetsRequest());
             request.customerId = '';
@@ -229,9 +229,9 @@ describe('v7.CampaignAssetServiceClient', () => {
 
         it('invokes mutateCampaignAssets without error using callback', async () => {
             const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignAssetsRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v7.CampaignAssetServiceClient', () => {
 
         it('invokes mutateCampaignAssets with error', async () => {
             const client = new campaignassetserviceModule.v7.CampaignAssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignAssetsRequest());
             request.customerId = '';

@@ -133,8 +133,8 @@ describe('v1.ApiGatewayServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.apiGatewayServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.ApiGatewayServiceClient', () => {
 
     it('has close method', () => {
         const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.ApiGatewayServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.ApiGatewayServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('getGateway', () => {
         it('invokes getGateway without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetGatewayRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes getGateway without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetGatewayRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes getGateway with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetGatewayRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('getApi', () => {
         it('invokes getApi without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetApiRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes getApi without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetApiRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes getApi with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetApiRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('getApiConfig', () => {
         it('invokes getApiConfig without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetApiConfigRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes getApiConfig without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetApiConfigRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes getApiConfig with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.GetApiConfigRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('createGateway', () => {
         it('invokes createGateway without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateGatewayRequest());
             request.parent = '';
@@ -461,9 +461,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createGateway without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateGatewayRequest());
             request.parent = '';
@@ -499,9 +499,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createGateway with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateGatewayRequest());
             request.parent = '';
@@ -522,9 +522,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createGateway with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateGatewayRequest());
             request.parent = '';
@@ -546,9 +546,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkCreateGatewayProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -564,9 +564,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkCreateGatewayProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -580,9 +580,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('updateGateway', () => {
         it('invokes updateGateway without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateGatewayRequest());
             request.gateway = {};
@@ -606,9 +606,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateGateway without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateGatewayRequest());
             request.gateway = {};
@@ -645,9 +645,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateGateway with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateGatewayRequest());
             request.gateway = {};
@@ -669,9 +669,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateGateway with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateGatewayRequest());
             request.gateway = {};
@@ -694,9 +694,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkUpdateGatewayProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -712,9 +712,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkUpdateGatewayProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -728,9 +728,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('deleteGateway', () => {
         it('invokes deleteGateway without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteGatewayRequest());
             request.name = '';
@@ -753,9 +753,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteGateway without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteGatewayRequest());
             request.name = '';
@@ -791,9 +791,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteGateway with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteGatewayRequest());
             request.name = '';
@@ -814,9 +814,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteGateway with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteGatewayRequest());
             request.name = '';
@@ -838,9 +838,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkDeleteGatewayProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -856,9 +856,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkDeleteGatewayProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -872,9 +872,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('createApi', () => {
         it('invokes createApi without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateApiRequest());
             request.parent = '';
@@ -897,9 +897,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createApi without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateApiRequest());
             request.parent = '';
@@ -935,9 +935,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createApi with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateApiRequest());
             request.parent = '';
@@ -958,9 +958,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createApi with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateApiRequest());
             request.parent = '';
@@ -982,9 +982,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkCreateApiProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1000,9 +1000,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkCreateApiProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1016,9 +1016,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('updateApi', () => {
         it('invokes updateApi without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateApiRequest());
             request.api = {};
@@ -1042,9 +1042,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateApi without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateApiRequest());
             request.api = {};
@@ -1081,9 +1081,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateApi with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateApiRequest());
             request.api = {};
@@ -1105,9 +1105,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateApi with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateApiRequest());
             request.api = {};
@@ -1130,9 +1130,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkUpdateApiProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1148,9 +1148,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkUpdateApiProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1164,9 +1164,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('deleteApi', () => {
         it('invokes deleteApi without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteApiRequest());
             request.name = '';
@@ -1189,9 +1189,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteApi without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteApiRequest());
             request.name = '';
@@ -1227,9 +1227,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteApi with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteApiRequest());
             request.name = '';
@@ -1250,9 +1250,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteApi with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteApiRequest());
             request.name = '';
@@ -1274,9 +1274,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkDeleteApiProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1292,9 +1292,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkDeleteApiProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1308,9 +1308,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('createApiConfig', () => {
         it('invokes createApiConfig without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateApiConfigRequest());
             request.parent = '';
@@ -1333,9 +1333,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createApiConfig without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateApiConfigRequest());
             request.parent = '';
@@ -1371,9 +1371,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createApiConfig with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateApiConfigRequest());
             request.parent = '';
@@ -1394,9 +1394,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes createApiConfig with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.CreateApiConfigRequest());
             request.parent = '';
@@ -1418,9 +1418,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkCreateApiConfigProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1436,9 +1436,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkCreateApiConfigProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1452,9 +1452,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('updateApiConfig', () => {
         it('invokes updateApiConfig without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateApiConfigRequest());
             request.apiConfig = {};
@@ -1478,9 +1478,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateApiConfig without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateApiConfigRequest());
             request.apiConfig = {};
@@ -1517,9 +1517,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateApiConfig with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateApiConfigRequest());
             request.apiConfig = {};
@@ -1541,9 +1541,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes updateApiConfig with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.UpdateApiConfigRequest());
             request.apiConfig = {};
@@ -1566,9 +1566,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkUpdateApiConfigProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1584,9 +1584,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkUpdateApiConfigProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1600,9 +1600,9 @@ describe('v1.ApiGatewayServiceClient', () => {
     describe('deleteApiConfig', () => {
         it('invokes deleteApiConfig without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteApiConfigRequest());
             request.name = '';
@@ -1625,9 +1625,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteApiConfig without error using callback', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteApiConfigRequest());
             request.name = '';
@@ -1663,9 +1663,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteApiConfig with call error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteApiConfigRequest());
             request.name = '';
@@ -1686,9 +1686,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes deleteApiConfig with LRO error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.DeleteApiConfigRequest());
             request.name = '';
@@ -1710,9 +1710,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkDeleteApiConfigProgress without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1728,9 +1728,9 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('invokes checkDeleteApiConfigProgress with error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1907,13 +1907,14 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('uses async iteration with listGateways without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.ListGatewaysRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.apigateway.v1.Gateway()),
               generateSampleMessage(new protos.google.cloud.apigateway.v1.Gateway()),
               generateSampleMessage(new protos.google.cloud.apigateway.v1.Gateway()),
@@ -2129,13 +2130,14 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('uses async iteration with listApis without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.ListApisRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.apigateway.v1.Api()),
               generateSampleMessage(new protos.google.cloud.apigateway.v1.Api()),
               generateSampleMessage(new protos.google.cloud.apigateway.v1.Api()),
@@ -2351,13 +2353,14 @@ describe('v1.ApiGatewayServiceClient', () => {
 
         it('uses async iteration with listApiConfigs without error', async () => {
             const client = new apigatewayserviceModule.v1.ApiGatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.apigateway.v1.ListApiConfigsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.apigateway.v1.ApiConfig()),
               generateSampleMessage(new protos.google.cloud.apigateway.v1.ApiConfig()),
               generateSampleMessage(new protos.google.cloud.apigateway.v1.ApiConfig()),

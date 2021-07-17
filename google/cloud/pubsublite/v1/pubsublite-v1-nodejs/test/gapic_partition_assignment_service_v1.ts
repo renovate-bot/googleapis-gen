@@ -73,8 +73,8 @@ describe('v1.PartitionAssignmentServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new partitionassignmentserviceModule.v1.PartitionAssignmentServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.partitionAssignmentServiceStub, undefined);
         await client.initialize();
@@ -83,8 +83,8 @@ describe('v1.PartitionAssignmentServiceClient', () => {
 
     it('has close method', () => {
         const client = new partitionassignmentserviceModule.v1.PartitionAssignmentServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -92,8 +92,8 @@ describe('v1.PartitionAssignmentServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new partitionassignmentserviceModule.v1.PartitionAssignmentServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -104,8 +104,8 @@ describe('v1.PartitionAssignmentServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new partitionassignmentserviceModule.v1.PartitionAssignmentServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -124,9 +124,9 @@ describe('v1.PartitionAssignmentServiceClient', () => {
     describe('assignPartitions', () => {
         it('invokes assignPartitions without error', async () => {
             const client = new partitionassignmentserviceModule.v1.PartitionAssignmentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.PartitionAssignmentRequest());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.PartitionAssignment());
@@ -152,9 +152,9 @@ describe('v1.PartitionAssignmentServiceClient', () => {
 
         it('invokes assignPartitions with error', async () => {
             const client = new partitionassignmentserviceModule.v1.PartitionAssignmentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.PartitionAssignmentRequest());const expectedError = new Error('expected');
             client.innerApiCalls.assignPartitions = stubBidiStreamingCall(undefined, expectedError);

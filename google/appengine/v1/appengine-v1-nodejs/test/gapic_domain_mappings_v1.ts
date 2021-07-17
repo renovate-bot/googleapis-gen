@@ -133,8 +133,8 @@ describe('v1.DomainMappingsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new domainmappingsModule.v1.DomainMappingsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.domainMappingsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.DomainMappingsClient', () => {
 
     it('has close method', () => {
         const client = new domainmappingsModule.v1.DomainMappingsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.DomainMappingsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new domainmappingsModule.v1.DomainMappingsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.DomainMappingsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new domainmappingsModule.v1.DomainMappingsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.DomainMappingsClient', () => {
     describe('getDomainMapping', () => {
         it('invokes getDomainMapping without error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetDomainMappingRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes getDomainMapping without error using callback', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetDomainMappingRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes getDomainMapping with error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetDomainMappingRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.DomainMappingsClient', () => {
     describe('createDomainMapping', () => {
         it('invokes createDomainMapping without error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateDomainMappingRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes createDomainMapping without error using callback', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateDomainMappingRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes createDomainMapping with call error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateDomainMappingRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes createDomainMapping with LRO error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateDomainMappingRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes checkCreateDomainMappingProgress without error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes checkCreateDomainMappingProgress with error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1.DomainMappingsClient', () => {
     describe('updateDomainMapping', () => {
         it('invokes updateDomainMapping without error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateDomainMappingRequest());
             request.name = '';
@@ -437,9 +437,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes updateDomainMapping without error using callback', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateDomainMappingRequest());
             request.name = '';
@@ -475,9 +475,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes updateDomainMapping with call error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateDomainMappingRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes updateDomainMapping with LRO error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateDomainMappingRequest());
             request.name = '';
@@ -522,9 +522,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes checkUpdateDomainMappingProgress without error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes checkUpdateDomainMappingProgress with error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -556,9 +556,9 @@ describe('v1.DomainMappingsClient', () => {
     describe('deleteDomainMapping', () => {
         it('invokes deleteDomainMapping without error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteDomainMappingRequest());
             request.name = '';
@@ -581,9 +581,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes deleteDomainMapping without error using callback', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteDomainMappingRequest());
             request.name = '';
@@ -619,9 +619,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes deleteDomainMapping with call error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteDomainMappingRequest());
             request.name = '';
@@ -642,9 +642,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes deleteDomainMapping with LRO error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.DeleteDomainMappingRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes checkDeleteDomainMappingProgress without error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -684,9 +684,9 @@ describe('v1.DomainMappingsClient', () => {
 
         it('invokes checkDeleteDomainMappingProgress with error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -863,13 +863,14 @@ describe('v1.DomainMappingsClient', () => {
 
         it('uses async iteration with listDomainMappings without error', async () => {
             const client = new domainmappingsModule.v1.DomainMappingsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.ListDomainMappingsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.appengine.v1.DomainMapping()),
               generateSampleMessage(new protos.google.appengine.v1.DomainMapping()),
               generateSampleMessage(new protos.google.appengine.v1.DomainMapping()),

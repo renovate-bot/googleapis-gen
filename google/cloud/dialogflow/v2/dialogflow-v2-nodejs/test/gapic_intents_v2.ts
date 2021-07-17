@@ -133,8 +133,8 @@ describe('v2.IntentsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new intentsModule.v2.IntentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.intentsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v2.IntentsClient', () => {
 
     it('has close method', () => {
         const client = new intentsModule.v2.IntentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v2.IntentsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new intentsModule.v2.IntentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v2.IntentsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new intentsModule.v2.IntentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v2.IntentsClient', () => {
     describe('getIntent', () => {
         it('invokes getIntent without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetIntentRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes getIntent without error using callback', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetIntentRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes getIntent with error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetIntentRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v2.IntentsClient', () => {
     describe('createIntent', () => {
         it('invokes createIntent without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateIntentRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes createIntent without error using callback', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateIntentRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes createIntent with error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateIntentRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v2.IntentsClient', () => {
     describe('updateIntent', () => {
         it('invokes updateIntent without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateIntentRequest());
             request.intent = {};
@@ -377,9 +377,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes updateIntent without error using callback', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateIntentRequest());
             request.intent = {};
@@ -413,9 +413,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes updateIntent with error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateIntentRequest());
             request.intent = {};
@@ -439,9 +439,9 @@ describe('v2.IntentsClient', () => {
     describe('deleteIntent', () => {
         it('invokes deleteIntent without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteIntentRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes deleteIntent without error using callback', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteIntentRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes deleteIntent with error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteIntentRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v2.IntentsClient', () => {
     describe('batchUpdateIntents', () => {
         it('invokes batchUpdateIntents without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest());
             request.parent = '';
@@ -548,9 +548,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes batchUpdateIntents without error using callback', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest());
             request.parent = '';
@@ -586,9 +586,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes batchUpdateIntents with call error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest());
             request.parent = '';
@@ -609,9 +609,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes batchUpdateIntents with LRO error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchUpdateIntentsRequest());
             request.parent = '';
@@ -633,9 +633,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes checkBatchUpdateIntentsProgress without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -651,9 +651,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes checkBatchUpdateIntentsProgress with error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -667,9 +667,9 @@ describe('v2.IntentsClient', () => {
     describe('batchDeleteIntents', () => {
         it('invokes batchDeleteIntents without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest());
             request.parent = '';
@@ -692,9 +692,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes batchDeleteIntents without error using callback', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest());
             request.parent = '';
@@ -730,9 +730,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes batchDeleteIntents with call error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest());
             request.parent = '';
@@ -753,9 +753,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes batchDeleteIntents with LRO error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest());
             request.parent = '';
@@ -777,9 +777,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes checkBatchDeleteIntentsProgress without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -795,9 +795,9 @@ describe('v2.IntentsClient', () => {
 
         it('invokes checkBatchDeleteIntentsProgress with error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -974,13 +974,14 @@ describe('v2.IntentsClient', () => {
 
         it('uses async iteration with listIntents without error', async () => {
             const client = new intentsModule.v2.IntentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.ListIntentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Intent()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Intent()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.Intent()),

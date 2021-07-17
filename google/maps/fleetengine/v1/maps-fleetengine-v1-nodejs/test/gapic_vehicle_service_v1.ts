@@ -117,8 +117,8 @@ describe('v1.VehicleServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new vehicleserviceModule.v1.VehicleServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.vehicleServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.VehicleServiceClient', () => {
 
     it('has close method', () => {
         const client = new vehicleserviceModule.v1.VehicleServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.VehicleServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new vehicleserviceModule.v1.VehicleServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.VehicleServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new vehicleserviceModule.v1.VehicleServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.VehicleServiceClient', () => {
     describe('createVehicle', () => {
         it('invokes createVehicle without error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.CreateVehicleRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes createVehicle without error using callback', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.CreateVehicleRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes createVehicle with error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.CreateVehicleRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.VehicleServiceClient', () => {
     describe('getVehicle', () => {
         it('invokes getVehicle without error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.GetVehicleRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes getVehicle without error using callback', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.GetVehicleRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes getVehicle with error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.GetVehicleRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.VehicleServiceClient', () => {
     describe('updateVehicle', () => {
         it('invokes updateVehicle without error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes updateVehicle without error using callback', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes updateVehicle with error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.VehicleServiceClient', () => {
     describe('updateVehicleLocation', () => {
         it('invokes updateVehicleLocation without error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleLocationRequest());
@@ -446,9 +446,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes updateVehicleLocation without error using callback', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleLocationRequest());
@@ -483,9 +483,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes updateVehicleLocation with error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleLocationRequest());
@@ -510,9 +510,9 @@ describe('v1.VehicleServiceClient', () => {
     describe('updateVehicleAttributes', () => {
         it('invokes updateVehicleAttributes without error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleAttributesRequest());
             request.name = '';
@@ -534,9 +534,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes updateVehicleAttributes without error using callback', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleAttributesRequest());
             request.name = '';
@@ -569,9 +569,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes updateVehicleAttributes with error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.UpdateVehicleAttributesRequest());
             request.name = '';
@@ -594,9 +594,9 @@ describe('v1.VehicleServiceClient', () => {
     describe('searchVehicles', () => {
         it('invokes searchVehicles without error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.SearchVehiclesRequest());
             request.parent = '';
@@ -618,9 +618,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes searchVehicles without error using callback', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.SearchVehiclesRequest());
             request.parent = '';
@@ -653,9 +653,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes searchVehicles with error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.SearchVehiclesRequest());
             request.parent = '';
@@ -678,9 +678,9 @@ describe('v1.VehicleServiceClient', () => {
     describe('searchFuzzedVehicles', () => {
         it('invokes searchFuzzedVehicles without error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.SearchVehiclesRequest());
             request.parent = '';
@@ -702,9 +702,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes searchFuzzedVehicles without error using callback', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.SearchVehiclesRequest());
             request.parent = '';
@@ -737,9 +737,9 @@ describe('v1.VehicleServiceClient', () => {
 
         it('invokes searchFuzzedVehicles with error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.SearchVehiclesRequest());
             request.parent = '';
@@ -925,13 +925,14 @@ describe('v1.VehicleServiceClient', () => {
 
         it('uses async iteration with listVehicles without error', async () => {
             const client = new vehicleserviceModule.v1.VehicleServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.maps.fleetengine.v1.ListVehiclesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.maps.fleetengine.v1.Vehicle()),
               generateSampleMessage(new protos.maps.fleetengine.v1.Vehicle()),
               generateSampleMessage(new protos.maps.fleetengine.v1.Vehicle()),

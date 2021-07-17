@@ -86,8 +86,8 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.assetServiceStub, undefined);
         await client.initialize();
@@ -96,8 +96,8 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
     it('has close method', () => {
         const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -105,8 +105,8 @@ describe('v1p4beta1.AssetServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -117,8 +117,8 @@ describe('v1p4beta1.AssetServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -137,9 +137,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
     describe('analyzeIamPolicy', () => {
         it('invokes analyzeIamPolicy without error', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest());
             request.analysisQuery = {};
@@ -162,9 +162,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
         it('invokes analyzeIamPolicy without error using callback', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest());
             request.analysisQuery = {};
@@ -198,9 +198,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
         it('invokes analyzeIamPolicy with error', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p4beta1.AnalyzeIamPolicyRequest());
             request.analysisQuery = {};
@@ -224,9 +224,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
     describe('exportIamPolicyAnalysis', () => {
         it('invokes exportIamPolicyAnalysis without error', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest());
             request.analysisQuery = {};
@@ -250,9 +250,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
         it('invokes exportIamPolicyAnalysis without error using callback', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest());
             request.analysisQuery = {};
@@ -289,9 +289,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
         it('invokes exportIamPolicyAnalysis with call error', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest());
             request.analysisQuery = {};
@@ -313,9 +313,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
         it('invokes exportIamPolicyAnalysis with LRO error', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p4beta1.ExportIamPolicyAnalysisRequest());
             request.analysisQuery = {};
@@ -338,9 +338,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
         it('invokes checkExportIamPolicyAnalysisProgress without error', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -356,9 +356,9 @@ describe('v1p4beta1.AssetServiceClient', () => {
 
         it('invokes checkExportIamPolicyAnalysisProgress with error', async () => {
             const client = new assetserviceModule.v1p4beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 

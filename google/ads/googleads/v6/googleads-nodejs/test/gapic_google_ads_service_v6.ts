@@ -129,8 +129,8 @@ describe('v6.GoogleAdsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.googleAdsServiceStub, undefined);
         await client.initialize();
@@ -139,8 +139,8 @@ describe('v6.GoogleAdsServiceClient', () => {
 
     it('has close method', () => {
         const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -148,8 +148,8 @@ describe('v6.GoogleAdsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -160,8 +160,8 @@ describe('v6.GoogleAdsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -180,9 +180,9 @@ describe('v6.GoogleAdsServiceClient', () => {
     describe('mutate', () => {
         it('invokes mutate without error', async () => {
             const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateGoogleAdsRequest());
             request.customerId = '';
@@ -204,9 +204,9 @@ describe('v6.GoogleAdsServiceClient', () => {
 
         it('invokes mutate without error using callback', async () => {
             const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateGoogleAdsRequest());
             request.customerId = '';
@@ -239,9 +239,9 @@ describe('v6.GoogleAdsServiceClient', () => {
 
         it('invokes mutate with error', async () => {
             const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateGoogleAdsRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v6.GoogleAdsServiceClient', () => {
     describe('searchStream', () => {
         it('invokes searchStream without error', async () => {
             const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.SearchGoogleAdsStreamRequest());
             request.customerId = '';
@@ -297,9 +297,9 @@ describe('v6.GoogleAdsServiceClient', () => {
 
         it('invokes searchStream with error', async () => {
             const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.SearchGoogleAdsStreamRequest());
             request.customerId = '';
@@ -494,13 +494,14 @@ describe('v6.GoogleAdsServiceClient', () => {
 
         it('uses async iteration with search without error', async () => {
             const client = new googleadsserviceModule.v6.GoogleAdsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.SearchGoogleAdsRequest());
             request.customerId = '';
-            const expectedHeaderRequestParams = "customer_id=";const expectedResponse = [
+            const expectedHeaderRequestParams = "customer_id=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.ads.googleads.v6.services.GoogleAdsRow()),
               generateSampleMessage(new protos.google.ads.googleads.v6.services.GoogleAdsRow()),
               generateSampleMessage(new protos.google.ads.googleads.v6.services.GoogleAdsRow()),

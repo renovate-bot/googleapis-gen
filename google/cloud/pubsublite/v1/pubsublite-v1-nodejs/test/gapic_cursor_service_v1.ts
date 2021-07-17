@@ -126,8 +126,8 @@ describe('v1.CursorServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new cursorserviceModule.v1.CursorServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.cursorServiceStub, undefined);
         await client.initialize();
@@ -136,8 +136,8 @@ describe('v1.CursorServiceClient', () => {
 
     it('has close method', () => {
         const client = new cursorserviceModule.v1.CursorServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -145,8 +145,8 @@ describe('v1.CursorServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cursorserviceModule.v1.CursorServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -157,8 +157,8 @@ describe('v1.CursorServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cursorserviceModule.v1.CursorServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -177,9 +177,9 @@ describe('v1.CursorServiceClient', () => {
     describe('commitCursor', () => {
         it('invokes commitCursor without error', async () => {
             const client = new cursorserviceModule.v1.CursorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CommitCursorRequest());
             request.subscription = '';
@@ -201,9 +201,9 @@ describe('v1.CursorServiceClient', () => {
 
         it('invokes commitCursor without error using callback', async () => {
             const client = new cursorserviceModule.v1.CursorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CommitCursorRequest());
             request.subscription = '';
@@ -236,9 +236,9 @@ describe('v1.CursorServiceClient', () => {
 
         it('invokes commitCursor with error', async () => {
             const client = new cursorserviceModule.v1.CursorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.CommitCursorRequest());
             request.subscription = '';
@@ -261,9 +261,9 @@ describe('v1.CursorServiceClient', () => {
     describe('streamingCommitCursor', () => {
         it('invokes streamingCommitCursor without error', async () => {
             const client = new cursorserviceModule.v1.CursorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.StreamingCommitCursorRequest());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.StreamingCommitCursorResponse());
@@ -289,9 +289,9 @@ describe('v1.CursorServiceClient', () => {
 
         it('invokes streamingCommitCursor with error', async () => {
             const client = new cursorserviceModule.v1.CursorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.StreamingCommitCursorRequest());const expectedError = new Error('expected');
             client.innerApiCalls.streamingCommitCursor = stubBidiStreamingCall(undefined, expectedError);
@@ -480,13 +480,14 @@ describe('v1.CursorServiceClient', () => {
 
         it('uses async iteration with listPartitionCursors without error', async () => {
             const client = new cursorserviceModule.v1.CursorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ListPartitionCursorsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.PartitionCursor()),
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.PartitionCursor()),
               generateSampleMessage(new protos.google.cloud.pubsublite.v1.PartitionCursor()),

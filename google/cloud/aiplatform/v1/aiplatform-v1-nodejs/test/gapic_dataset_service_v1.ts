@@ -133,8 +133,8 @@ describe('v1.DatasetServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new datasetserviceModule.v1.DatasetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.datasetServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.DatasetServiceClient', () => {
 
     it('has close method', () => {
         const client = new datasetserviceModule.v1.DatasetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.DatasetServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datasetserviceModule.v1.DatasetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.DatasetServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datasetserviceModule.v1.DatasetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.DatasetServiceClient', () => {
     describe('getDataset', () => {
         it('invokes getDataset without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetDatasetRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes getDataset without error using callback', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetDatasetRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes getDataset with error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetDatasetRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.DatasetServiceClient', () => {
     describe('updateDataset', () => {
         it('invokes updateDataset without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateDatasetRequest());
             request.dataset = {};
@@ -293,9 +293,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes updateDataset without error using callback', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateDatasetRequest());
             request.dataset = {};
@@ -329,9 +329,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes updateDataset with error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateDatasetRequest());
             request.dataset = {};
@@ -355,9 +355,9 @@ describe('v1.DatasetServiceClient', () => {
     describe('getAnnotationSpec', () => {
         it('invokes getAnnotationSpec without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetAnnotationSpecRequest());
             request.name = '';
@@ -379,9 +379,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes getAnnotationSpec without error using callback', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetAnnotationSpecRequest());
             request.name = '';
@@ -414,9 +414,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes getAnnotationSpec with error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetAnnotationSpecRequest());
             request.name = '';
@@ -439,9 +439,9 @@ describe('v1.DatasetServiceClient', () => {
     describe('createDataset', () => {
         it('invokes createDataset without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.CreateDatasetRequest());
             request.parent = '';
@@ -464,9 +464,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes createDataset without error using callback', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.CreateDatasetRequest());
             request.parent = '';
@@ -502,9 +502,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes createDataset with call error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.CreateDatasetRequest());
             request.parent = '';
@@ -525,9 +525,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes createDataset with LRO error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.CreateDatasetRequest());
             request.parent = '';
@@ -549,9 +549,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes checkCreateDatasetProgress without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -567,9 +567,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes checkCreateDatasetProgress with error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -583,9 +583,9 @@ describe('v1.DatasetServiceClient', () => {
     describe('deleteDataset', () => {
         it('invokes deleteDataset without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteDatasetRequest());
             request.name = '';
@@ -608,9 +608,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes deleteDataset without error using callback', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteDatasetRequest());
             request.name = '';
@@ -646,9 +646,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes deleteDataset with call error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteDatasetRequest());
             request.name = '';
@@ -669,9 +669,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes deleteDataset with LRO error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteDatasetRequest());
             request.name = '';
@@ -693,9 +693,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes checkDeleteDatasetProgress without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -711,9 +711,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes checkDeleteDatasetProgress with error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -727,9 +727,9 @@ describe('v1.DatasetServiceClient', () => {
     describe('importData', () => {
         it('invokes importData without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ImportDataRequest());
             request.name = '';
@@ -752,9 +752,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes importData without error using callback', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ImportDataRequest());
             request.name = '';
@@ -790,9 +790,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes importData with call error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ImportDataRequest());
             request.name = '';
@@ -813,9 +813,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes importData with LRO error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ImportDataRequest());
             request.name = '';
@@ -837,9 +837,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes checkImportDataProgress without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -855,9 +855,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes checkImportDataProgress with error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -871,9 +871,9 @@ describe('v1.DatasetServiceClient', () => {
     describe('exportData', () => {
         it('invokes exportData without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ExportDataRequest());
             request.name = '';
@@ -896,9 +896,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes exportData without error using callback', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ExportDataRequest());
             request.name = '';
@@ -934,9 +934,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes exportData with call error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ExportDataRequest());
             request.name = '';
@@ -957,9 +957,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes exportData with LRO error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ExportDataRequest());
             request.name = '';
@@ -981,9 +981,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes checkExportDataProgress without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -999,9 +999,9 @@ describe('v1.DatasetServiceClient', () => {
 
         it('invokes checkExportDataProgress with error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1178,13 +1178,14 @@ describe('v1.DatasetServiceClient', () => {
 
         it('uses async iteration with listDatasets without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ListDatasetsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Dataset()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Dataset()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Dataset()),
@@ -1400,13 +1401,14 @@ describe('v1.DatasetServiceClient', () => {
 
         it('uses async iteration with listDataItems without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ListDataItemsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.DataItem()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.DataItem()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.DataItem()),
@@ -1622,13 +1624,14 @@ describe('v1.DatasetServiceClient', () => {
 
         it('uses async iteration with listAnnotations without error', async () => {
             const client = new datasetserviceModule.v1.DatasetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ListAnnotationsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Annotation()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Annotation()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Annotation()),

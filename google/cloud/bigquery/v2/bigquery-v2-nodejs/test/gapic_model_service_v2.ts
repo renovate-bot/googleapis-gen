@@ -70,8 +70,8 @@ describe('v2.ModelServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new modelserviceModule.v2.ModelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.modelServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v2.ModelServiceClient', () => {
 
     it('has close method', () => {
         const client = new modelserviceModule.v2.ModelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v2.ModelServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new modelserviceModule.v2.ModelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v2.ModelServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new modelserviceModule.v2.ModelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v2.ModelServiceClient', () => {
     describe('getModel', () => {
         it('invokes getModel without error', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.GetModelRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v2.ModelServiceClient', () => {
 
         it('invokes getModel without error using callback', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.GetModelRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v2.ModelServiceClient', () => {
 
         it('invokes getModel with error', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.GetModelRequest());
             const expectedOptions = {};
@@ -181,9 +181,9 @@ describe('v2.ModelServiceClient', () => {
     describe('listModels', () => {
         it('invokes listModels without error', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.ListModelsRequest());
             const expectedOptions = {};
@@ -197,9 +197,9 @@ describe('v2.ModelServiceClient', () => {
 
         it('invokes listModels without error using callback', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.ListModelsRequest());
             const expectedOptions = {};
@@ -224,9 +224,9 @@ describe('v2.ModelServiceClient', () => {
 
         it('invokes listModels with error', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.ListModelsRequest());
             const expectedOptions = {};
@@ -241,9 +241,9 @@ describe('v2.ModelServiceClient', () => {
     describe('patchModel', () => {
         it('invokes patchModel without error', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.PatchModelRequest());
             const expectedOptions = {};
@@ -257,9 +257,9 @@ describe('v2.ModelServiceClient', () => {
 
         it('invokes patchModel without error using callback', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.PatchModelRequest());
             const expectedOptions = {};
@@ -284,9 +284,9 @@ describe('v2.ModelServiceClient', () => {
 
         it('invokes patchModel with error', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.PatchModelRequest());
             const expectedOptions = {};
@@ -301,9 +301,9 @@ describe('v2.ModelServiceClient', () => {
     describe('deleteModel', () => {
         it('invokes deleteModel without error', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.DeleteModelRequest());
             const expectedOptions = {};
@@ -317,9 +317,9 @@ describe('v2.ModelServiceClient', () => {
 
         it('invokes deleteModel without error using callback', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.DeleteModelRequest());
             const expectedOptions = {};
@@ -344,9 +344,9 @@ describe('v2.ModelServiceClient', () => {
 
         it('invokes deleteModel with error', async () => {
             const client = new modelserviceModule.v2.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.DeleteModelRequest());
             const expectedOptions = {};

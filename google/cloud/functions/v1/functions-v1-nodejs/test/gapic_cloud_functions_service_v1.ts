@@ -133,8 +133,8 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.cloudFunctionsServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
     it('has close method', () => {
         const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.CloudFunctionsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.CloudFunctionsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('getFunction', () => {
         it('invokes getFunction without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GetFunctionRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes getFunction without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GetFunctionRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes getFunction with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GetFunctionRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('callFunction', () => {
         it('invokes callFunction without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.CallFunctionRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes callFunction without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.CallFunctionRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes callFunction with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.CallFunctionRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('generateUploadUrl', () => {
         it('invokes generateUploadUrl without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GenerateUploadUrlRequest());
             request.parent = '';
@@ -376,9 +376,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes generateUploadUrl without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GenerateUploadUrlRequest());
             request.parent = '';
@@ -411,9 +411,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes generateUploadUrl with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GenerateUploadUrlRequest());
             request.parent = '';
@@ -436,9 +436,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('generateDownloadUrl', () => {
         it('invokes generateDownloadUrl without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GenerateDownloadUrlRequest());
             request.name = '';
@@ -460,9 +460,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes generateDownloadUrl without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GenerateDownloadUrlRequest());
             request.name = '';
@@ -495,9 +495,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes generateDownloadUrl with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.GenerateDownloadUrlRequest());
             request.name = '';
@@ -520,9 +520,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -544,9 +544,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -579,9 +579,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -604,9 +604,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -628,9 +628,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -663,9 +663,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -688,9 +688,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -712,9 +712,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -747,9 +747,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -772,9 +772,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('createFunction', () => {
         it('invokes createFunction without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.CreateFunctionRequest());
             request.location = '';
@@ -797,9 +797,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes createFunction without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.CreateFunctionRequest());
             request.location = '';
@@ -835,9 +835,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes createFunction with call error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.CreateFunctionRequest());
             request.location = '';
@@ -858,9 +858,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes createFunction with LRO error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.CreateFunctionRequest());
             request.location = '';
@@ -882,9 +882,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes checkCreateFunctionProgress without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -900,9 +900,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes checkCreateFunctionProgress with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -916,9 +916,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('updateFunction', () => {
         it('invokes updateFunction without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.UpdateFunctionRequest());
             request.function = {};
@@ -942,9 +942,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes updateFunction without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.UpdateFunctionRequest());
             request.function = {};
@@ -981,9 +981,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes updateFunction with call error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.UpdateFunctionRequest());
             request.function = {};
@@ -1005,9 +1005,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes updateFunction with LRO error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.UpdateFunctionRequest());
             request.function = {};
@@ -1030,9 +1030,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes checkUpdateFunctionProgress without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1048,9 +1048,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes checkUpdateFunctionProgress with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1064,9 +1064,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
     describe('deleteFunction', () => {
         it('invokes deleteFunction without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.DeleteFunctionRequest());
             request.name = '';
@@ -1089,9 +1089,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes deleteFunction without error using callback', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.DeleteFunctionRequest());
             request.name = '';
@@ -1127,9 +1127,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes deleteFunction with call error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.DeleteFunctionRequest());
             request.name = '';
@@ -1150,9 +1150,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes deleteFunction with LRO error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.DeleteFunctionRequest());
             request.name = '';
@@ -1174,9 +1174,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes checkDeleteFunctionProgress without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1192,9 +1192,9 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('invokes checkDeleteFunctionProgress with error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1371,13 +1371,14 @@ describe('v1.CloudFunctionsServiceClient', () => {
 
         it('uses async iteration with listFunctions without error', async () => {
             const client = new cloudfunctionsserviceModule.v1.CloudFunctionsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.functions.v1.ListFunctionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.functions.v1.CloudFunction()),
               generateSampleMessage(new protos.google.cloud.functions.v1.CloudFunction()),
               generateSampleMessage(new protos.google.cloud.functions.v1.CloudFunction()),

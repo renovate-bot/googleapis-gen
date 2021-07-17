@@ -117,8 +117,8 @@ describe('v4beta1.CompanyServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.companyServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v4beta1.CompanyServiceClient', () => {
 
     it('has close method', () => {
         const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v4beta1.CompanyServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v4beta1.CompanyServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v4beta1.CompanyServiceClient', () => {
     describe('createCompany', () => {
         it('invokes createCompany without error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CreateCompanyRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('invokes createCompany without error using callback', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CreateCompanyRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('invokes createCompany with error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CreateCompanyRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v4beta1.CompanyServiceClient', () => {
     describe('getCompany', () => {
         it('invokes getCompany without error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.GetCompanyRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('invokes getCompany without error using callback', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.GetCompanyRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('invokes getCompany with error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.GetCompanyRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v4beta1.CompanyServiceClient', () => {
     describe('updateCompany', () => {
         it('invokes updateCompany without error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.UpdateCompanyRequest());
             request.company = {};
@@ -361,9 +361,9 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('invokes updateCompany without error using callback', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.UpdateCompanyRequest());
             request.company = {};
@@ -397,9 +397,9 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('invokes updateCompany with error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.UpdateCompanyRequest());
             request.company = {};
@@ -423,9 +423,9 @@ describe('v4beta1.CompanyServiceClient', () => {
     describe('deleteCompany', () => {
         it('invokes deleteCompany without error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.DeleteCompanyRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('invokes deleteCompany without error using callback', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.DeleteCompanyRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('invokes deleteCompany with error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.DeleteCompanyRequest());
             request.name = '';
@@ -670,13 +670,14 @@ describe('v4beta1.CompanyServiceClient', () => {
 
         it('uses async iteration with listCompanies without error', async () => {
             const client = new companyserviceModule.v4beta1.CompanyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.ListCompaniesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.talent.v4beta1.Company()),
               generateSampleMessage(new protos.google.cloud.talent.v4beta1.Company()),
               generateSampleMessage(new protos.google.cloud.talent.v4beta1.Company()),

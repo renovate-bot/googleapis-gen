@@ -117,8 +117,8 @@ describe('v1.GSuiteAddOnsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.gSuiteAddOnsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.GSuiteAddOnsClient', () => {
 
     it('has close method', () => {
         const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.GSuiteAddOnsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.GSuiteAddOnsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.GSuiteAddOnsClient', () => {
     describe('getAuthorization', () => {
         it('invokes getAuthorization without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes getAuthorization without error using callback', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes getAuthorization with error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetAuthorizationRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1.GSuiteAddOnsClient', () => {
     describe('createDeployment', () => {
         it('invokes createDeployment without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes createDeployment without error using callback', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes createDeployment with error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.CreateDeploymentRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v1.GSuiteAddOnsClient', () => {
     describe('replaceDeployment', () => {
         it('invokes replaceDeployment without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest());
             request.deployment = {};
@@ -361,9 +361,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes replaceDeployment without error using callback', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest());
             request.deployment = {};
@@ -397,9 +397,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes replaceDeployment with error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.ReplaceDeploymentRequest());
             request.deployment = {};
@@ -423,9 +423,9 @@ describe('v1.GSuiteAddOnsClient', () => {
     describe('getDeployment', () => {
         it('invokes getDeployment without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetDeploymentRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes getDeployment without error using callback', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetDeploymentRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes getDeployment with error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetDeploymentRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v1.GSuiteAddOnsClient', () => {
     describe('deleteDeployment', () => {
         it('invokes deleteDeployment without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest());
             request.name = '';
@@ -531,9 +531,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes deleteDeployment without error using callback', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest());
             request.name = '';
@@ -566,9 +566,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes deleteDeployment with error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.DeleteDeploymentRequest());
             request.name = '';
@@ -591,9 +591,9 @@ describe('v1.GSuiteAddOnsClient', () => {
     describe('installDeployment', () => {
         it('invokes installDeployment without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes installDeployment without error using callback', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes installDeployment with error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.InstallDeploymentRequest());
             request.name = '';
@@ -675,9 +675,9 @@ describe('v1.GSuiteAddOnsClient', () => {
     describe('uninstallDeployment', () => {
         it('invokes uninstallDeployment without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest());
             request.name = '';
@@ -699,9 +699,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes uninstallDeployment without error using callback', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest());
             request.name = '';
@@ -734,9 +734,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes uninstallDeployment with error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.UninstallDeploymentRequest());
             request.name = '';
@@ -759,9 +759,9 @@ describe('v1.GSuiteAddOnsClient', () => {
     describe('getInstallStatus', () => {
         it('invokes getInstallStatus without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest());
             request.name = '';
@@ -783,9 +783,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes getInstallStatus without error using callback', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest());
             request.name = '';
@@ -818,9 +818,9 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('invokes getInstallStatus with error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.GetInstallStatusRequest());
             request.name = '';
@@ -1006,13 +1006,14 @@ describe('v1.GSuiteAddOnsClient', () => {
 
         it('uses async iteration with listDeployments without error', async () => {
             const client = new gsuiteaddonsModule.v1.GSuiteAddOnsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.ListDeploymentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.Deployment()),
               generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.Deployment()),
               generateSampleMessage(new protos.google.cloud.gsuiteaddons.v1.Deployment()),

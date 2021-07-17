@@ -117,8 +117,8 @@ describe('v1.PolicyTagManagerClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.policyTagManagerStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.PolicyTagManagerClient', () => {
 
     it('has close method', () => {
         const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.PolicyTagManagerClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.PolicyTagManagerClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('createTaxonomy', () => {
         it('invokes createTaxonomy without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTaxonomyRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes createTaxonomy without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTaxonomyRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes createTaxonomy with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTaxonomyRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('deleteTaxonomy', () => {
         it('invokes deleteTaxonomy without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTaxonomyRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes deleteTaxonomy without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTaxonomyRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes deleteTaxonomy with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTaxonomyRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('updateTaxonomy', () => {
         it('invokes updateTaxonomy without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTaxonomyRequest());
             request.taxonomy = {};
@@ -361,9 +361,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes updateTaxonomy without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTaxonomyRequest());
             request.taxonomy = {};
@@ -397,9 +397,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes updateTaxonomy with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTaxonomyRequest());
             request.taxonomy = {};
@@ -423,9 +423,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('getTaxonomy', () => {
         it('invokes getTaxonomy without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetTaxonomyRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes getTaxonomy without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetTaxonomyRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes getTaxonomy with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetTaxonomyRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('createPolicyTag', () => {
         it('invokes createPolicyTag without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreatePolicyTagRequest());
             request.parent = '';
@@ -531,9 +531,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes createPolicyTag without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreatePolicyTagRequest());
             request.parent = '';
@@ -566,9 +566,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes createPolicyTag with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreatePolicyTagRequest());
             request.parent = '';
@@ -591,9 +591,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('deletePolicyTag', () => {
         it('invokes deletePolicyTag without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeletePolicyTagRequest());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes deletePolicyTag without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeletePolicyTagRequest());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes deletePolicyTag with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeletePolicyTagRequest());
             request.name = '';
@@ -675,9 +675,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('updatePolicyTag', () => {
         it('invokes updatePolicyTag without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdatePolicyTagRequest());
             request.policyTag = {};
@@ -700,9 +700,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes updatePolicyTag without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdatePolicyTagRequest());
             request.policyTag = {};
@@ -736,9 +736,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes updatePolicyTag with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdatePolicyTagRequest());
             request.policyTag = {};
@@ -762,9 +762,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('getPolicyTag', () => {
         it('invokes getPolicyTag without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetPolicyTagRequest());
             request.name = '';
@@ -786,9 +786,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes getPolicyTag without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetPolicyTagRequest());
             request.name = '';
@@ -821,9 +821,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes getPolicyTag with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetPolicyTagRequest());
             request.name = '';
@@ -846,9 +846,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -870,9 +870,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -905,9 +905,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -930,9 +930,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -954,9 +954,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -989,9 +989,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -1014,9 +1014,9 @@ describe('v1.PolicyTagManagerClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -1038,9 +1038,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -1073,9 +1073,9 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -1261,13 +1261,14 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('uses async iteration with listTaxonomies without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.ListTaxonomiesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Taxonomy()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Taxonomy()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Taxonomy()),
@@ -1483,13 +1484,14 @@ describe('v1.PolicyTagManagerClient', () => {
 
         it('uses async iteration with listPolicyTags without error', async () => {
             const client = new policytagmanagerModule.v1.PolicyTagManagerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.ListPolicyTagsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.PolicyTag()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.PolicyTag()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.PolicyTag()),

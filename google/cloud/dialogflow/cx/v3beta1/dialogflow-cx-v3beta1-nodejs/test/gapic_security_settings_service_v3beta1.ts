@@ -117,8 +117,8 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.securitySettingsServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
     it('has close method', () => {
         const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
     describe('createSecuritySettings', () => {
         it('invokes createSecuritySettings without error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateSecuritySettingsRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('invokes createSecuritySettings without error using callback', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateSecuritySettingsRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('invokes createSecuritySettings with error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateSecuritySettingsRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
     describe('getSecuritySettings', () => {
         it('invokes getSecuritySettings without error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetSecuritySettingsRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('invokes getSecuritySettings without error using callback', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetSecuritySettingsRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('invokes getSecuritySettings with error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetSecuritySettingsRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
     describe('updateSecuritySettings', () => {
         it('invokes updateSecuritySettings without error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateSecuritySettingsRequest());
             request.securitySettings = {};
@@ -361,9 +361,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('invokes updateSecuritySettings without error using callback', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateSecuritySettingsRequest());
             request.securitySettings = {};
@@ -397,9 +397,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('invokes updateSecuritySettings with error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateSecuritySettingsRequest());
             request.securitySettings = {};
@@ -423,9 +423,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
     describe('deleteSecuritySettings', () => {
         it('invokes deleteSecuritySettings without error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteSecuritySettingsRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('invokes deleteSecuritySettings without error using callback', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteSecuritySettingsRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('invokes deleteSecuritySettings with error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteSecuritySettingsRequest());
             request.name = '';
@@ -670,13 +670,14 @@ describe('v3beta1.SecuritySettingsServiceClient', () => {
 
         it('uses async iteration with listSecuritySettings without error', async () => {
             const client = new securitysettingsserviceModule.v3beta1.SecuritySettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ListSecuritySettingsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.SecuritySettings()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.SecuritySettings()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.SecuritySettings()),

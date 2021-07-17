@@ -133,8 +133,8 @@ describe('v1.TpuClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new tpuModule.v1.TpuClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.tpuStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.TpuClient', () => {
 
     it('has close method', () => {
         const client = new tpuModule.v1.TpuClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.TpuClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tpuModule.v1.TpuClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.TpuClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tpuModule.v1.TpuClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.TpuClient', () => {
     describe('getNode', () => {
         it('invokes getNode without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetNodeRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes getNode without error using callback', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetNodeRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes getNode with error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetNodeRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.TpuClient', () => {
     describe('getTensorFlowVersion', () => {
         it('invokes getTensorFlowVersion without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetTensorFlowVersionRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes getTensorFlowVersion without error using callback', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetTensorFlowVersionRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes getTensorFlowVersion with error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetTensorFlowVersionRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1.TpuClient', () => {
     describe('getAcceleratorType', () => {
         it('invokes getAcceleratorType without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetAcceleratorTypeRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes getAcceleratorType without error using callback', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetAcceleratorTypeRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes getAcceleratorType with error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.GetAcceleratorTypeRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1.TpuClient', () => {
     describe('createNode', () => {
         it('invokes createNode without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.CreateNodeRequest());
             request.parent = '';
@@ -461,9 +461,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes createNode without error using callback', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.CreateNodeRequest());
             request.parent = '';
@@ -499,9 +499,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes createNode with call error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.CreateNodeRequest());
             request.parent = '';
@@ -522,9 +522,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes createNode with LRO error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.CreateNodeRequest());
             request.parent = '';
@@ -546,9 +546,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkCreateNodeProgress without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -564,9 +564,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkCreateNodeProgress with error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -580,9 +580,9 @@ describe('v1.TpuClient', () => {
     describe('deleteNode', () => {
         it('invokes deleteNode without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.DeleteNodeRequest());
             request.name = '';
@@ -605,9 +605,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes deleteNode without error using callback', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.DeleteNodeRequest());
             request.name = '';
@@ -643,9 +643,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes deleteNode with call error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.DeleteNodeRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes deleteNode with LRO error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.DeleteNodeRequest());
             request.name = '';
@@ -690,9 +690,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkDeleteNodeProgress without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -708,9 +708,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkDeleteNodeProgress with error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -724,9 +724,9 @@ describe('v1.TpuClient', () => {
     describe('reimageNode', () => {
         it('invokes reimageNode without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.ReimageNodeRequest());
             request.name = '';
@@ -749,9 +749,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes reimageNode without error using callback', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.ReimageNodeRequest());
             request.name = '';
@@ -787,9 +787,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes reimageNode with call error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.ReimageNodeRequest());
             request.name = '';
@@ -810,9 +810,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes reimageNode with LRO error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.ReimageNodeRequest());
             request.name = '';
@@ -834,9 +834,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkReimageNodeProgress without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -852,9 +852,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkReimageNodeProgress with error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -868,9 +868,9 @@ describe('v1.TpuClient', () => {
     describe('stopNode', () => {
         it('invokes stopNode without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.StopNodeRequest());
             request.name = '';
@@ -893,9 +893,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes stopNode without error using callback', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.StopNodeRequest());
             request.name = '';
@@ -931,9 +931,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes stopNode with call error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.StopNodeRequest());
             request.name = '';
@@ -954,9 +954,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes stopNode with LRO error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.StopNodeRequest());
             request.name = '';
@@ -978,9 +978,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkStopNodeProgress without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -996,9 +996,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkStopNodeProgress with error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1012,9 +1012,9 @@ describe('v1.TpuClient', () => {
     describe('startNode', () => {
         it('invokes startNode without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.StartNodeRequest());
             request.name = '';
@@ -1037,9 +1037,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes startNode without error using callback', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.StartNodeRequest());
             request.name = '';
@@ -1075,9 +1075,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes startNode with call error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.StartNodeRequest());
             request.name = '';
@@ -1098,9 +1098,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes startNode with LRO error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.StartNodeRequest());
             request.name = '';
@@ -1122,9 +1122,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkStartNodeProgress without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1140,9 +1140,9 @@ describe('v1.TpuClient', () => {
 
         it('invokes checkStartNodeProgress with error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1319,13 +1319,14 @@ describe('v1.TpuClient', () => {
 
         it('uses async iteration with listNodes without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.ListNodesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.tpu.v1.Node()),
               generateSampleMessage(new protos.google.cloud.tpu.v1.Node()),
               generateSampleMessage(new protos.google.cloud.tpu.v1.Node()),
@@ -1541,13 +1542,14 @@ describe('v1.TpuClient', () => {
 
         it('uses async iteration with listTensorFlowVersions without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.ListTensorFlowVersionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.tpu.v1.TensorFlowVersion()),
               generateSampleMessage(new protos.google.cloud.tpu.v1.TensorFlowVersion()),
               generateSampleMessage(new protos.google.cloud.tpu.v1.TensorFlowVersion()),
@@ -1763,13 +1765,14 @@ describe('v1.TpuClient', () => {
 
         it('uses async iteration with listAcceleratorTypes without error', async () => {
             const client = new tpuModule.v1.TpuClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.tpu.v1.ListAcceleratorTypesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.tpu.v1.AcceleratorType()),
               generateSampleMessage(new protos.google.cloud.tpu.v1.AcceleratorType()),
               generateSampleMessage(new protos.google.cloud.tpu.v1.AcceleratorType()),

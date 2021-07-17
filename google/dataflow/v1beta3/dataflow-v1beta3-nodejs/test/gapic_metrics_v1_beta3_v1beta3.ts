@@ -117,8 +117,8 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.metricsV1Beta3Stub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
 
     it('has close method', () => {
         const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
     describe('getJobMetrics', () => {
         it('invokes getJobMetrics without error', async () => {
             const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobMetricsRequest());
             const expectedOptions = {};
@@ -184,9 +184,9 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
 
         it('invokes getJobMetrics without error using callback', async () => {
             const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobMetricsRequest());
             const expectedOptions = {};
@@ -211,9 +211,9 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
 
         it('invokes getJobMetrics with error', async () => {
             const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobMetricsRequest());
             const expectedOptions = {};
@@ -353,11 +353,12 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
 
         it('uses async iteration with getJobExecutionDetails without error', async () => {
             const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobExecutionDetailsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetJobExecutionDetailsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.StageSummary()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.StageSummary()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.StageSummary()),
@@ -523,11 +524,12 @@ describe('v1beta3.MetricsV1Beta3Client', () => {
 
         it('uses async iteration with getStageExecutionDetails without error', async () => {
             const client = new metricsv1beta3Module.v1beta3.MetricsV1Beta3Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetStageExecutionDetailsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.dataflow.v1beta3.GetStageExecutionDetailsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.dataflow.v1beta3.WorkerDetails()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.WorkerDetails()),
               generateSampleMessage(new protos.google.dataflow.v1beta3.WorkerDetails()),

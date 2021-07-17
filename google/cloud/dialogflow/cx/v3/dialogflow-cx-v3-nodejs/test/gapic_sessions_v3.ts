@@ -81,8 +81,8 @@ describe('v3.SessionsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new sessionsModule.v3.SessionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.sessionsStub, undefined);
         await client.initialize();
@@ -91,8 +91,8 @@ describe('v3.SessionsClient', () => {
 
     it('has close method', () => {
         const client = new sessionsModule.v3.SessionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -100,8 +100,8 @@ describe('v3.SessionsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sessionsModule.v3.SessionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -112,8 +112,8 @@ describe('v3.SessionsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sessionsModule.v3.SessionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -132,9 +132,9 @@ describe('v3.SessionsClient', () => {
     describe('detectIntent', () => {
         it('invokes detectIntent without error', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DetectIntentRequest());
             request.session = '';
@@ -156,9 +156,9 @@ describe('v3.SessionsClient', () => {
 
         it('invokes detectIntent without error using callback', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DetectIntentRequest());
             request.session = '';
@@ -191,9 +191,9 @@ describe('v3.SessionsClient', () => {
 
         it('invokes detectIntent with error', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DetectIntentRequest());
             request.session = '';
@@ -216,9 +216,9 @@ describe('v3.SessionsClient', () => {
     describe('matchIntent', () => {
         it('invokes matchIntent without error', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.MatchIntentRequest());
             request.session = '';
@@ -240,9 +240,9 @@ describe('v3.SessionsClient', () => {
 
         it('invokes matchIntent without error using callback', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.MatchIntentRequest());
             request.session = '';
@@ -275,9 +275,9 @@ describe('v3.SessionsClient', () => {
 
         it('invokes matchIntent with error', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.MatchIntentRequest());
             request.session = '';
@@ -300,9 +300,9 @@ describe('v3.SessionsClient', () => {
     describe('fulfillIntent', () => {
         it('invokes fulfillIntent without error', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.FulfillIntentRequest());
             request.matchIntentRequest = {};
@@ -325,9 +325,9 @@ describe('v3.SessionsClient', () => {
 
         it('invokes fulfillIntent without error using callback', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.FulfillIntentRequest());
             request.matchIntentRequest = {};
@@ -361,9 +361,9 @@ describe('v3.SessionsClient', () => {
 
         it('invokes fulfillIntent with error', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.FulfillIntentRequest());
             request.matchIntentRequest = {};
@@ -387,9 +387,9 @@ describe('v3.SessionsClient', () => {
     describe('streamingDetectIntent', () => {
         it('invokes streamingDetectIntent without error', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StreamingDetectIntentResponse());
@@ -415,9 +415,9 @@ describe('v3.SessionsClient', () => {
 
         it('invokes streamingDetectIntent with error', async () => {
             const client = new sessionsModule.v3.SessionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StreamingDetectIntentRequest());const expectedError = new Error('expected');
             client.innerApiCalls.streamingDetectIntent = stubBidiStreamingCall(undefined, expectedError);

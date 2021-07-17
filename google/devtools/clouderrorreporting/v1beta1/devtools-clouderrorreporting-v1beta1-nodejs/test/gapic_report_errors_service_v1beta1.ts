@@ -70,8 +70,8 @@ describe('v1beta1.ReportErrorsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new reporterrorsserviceModule.v1beta1.ReportErrorsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.reportErrorsServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta1.ReportErrorsServiceClient', () => {
 
     it('has close method', () => {
         const client = new reporterrorsserviceModule.v1beta1.ReportErrorsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta1.ReportErrorsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new reporterrorsserviceModule.v1beta1.ReportErrorsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta1.ReportErrorsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new reporterrorsserviceModule.v1beta1.ReportErrorsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta1.ReportErrorsServiceClient', () => {
     describe('reportErrorEvent', () => {
         it('invokes reportErrorEvent without error', async () => {
             const client = new reporterrorsserviceModule.v1beta1.ReportErrorsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest());
             request.projectName = '';
@@ -145,9 +145,9 @@ describe('v1beta1.ReportErrorsServiceClient', () => {
 
         it('invokes reportErrorEvent without error using callback', async () => {
             const client = new reporterrorsserviceModule.v1beta1.ReportErrorsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest());
             request.projectName = '';
@@ -180,9 +180,9 @@ describe('v1beta1.ReportErrorsServiceClient', () => {
 
         it('invokes reportErrorEvent with error', async () => {
             const client = new reporterrorsserviceModule.v1beta1.ReportErrorsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest());
             request.projectName = '';

@@ -70,8 +70,8 @@ describe('v2.ActionsTestingClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new actionstestingModule.v2.ActionsTestingClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.actionsTestingStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v2.ActionsTestingClient', () => {
 
     it('has close method', () => {
         const client = new actionstestingModule.v2.ActionsTestingClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v2.ActionsTestingClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new actionstestingModule.v2.ActionsTestingClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v2.ActionsTestingClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new actionstestingModule.v2.ActionsTestingClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v2.ActionsTestingClient', () => {
     describe('sendInteraction', () => {
         it('invokes sendInteraction without error', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SendInteractionRequest());
             request.project = '';
@@ -145,9 +145,9 @@ describe('v2.ActionsTestingClient', () => {
 
         it('invokes sendInteraction without error using callback', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SendInteractionRequest());
             request.project = '';
@@ -180,9 +180,9 @@ describe('v2.ActionsTestingClient', () => {
 
         it('invokes sendInteraction with error', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SendInteractionRequest());
             request.project = '';
@@ -205,9 +205,9 @@ describe('v2.ActionsTestingClient', () => {
     describe('matchIntents', () => {
         it('invokes matchIntents without error', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.MatchIntentsRequest());
             request.project = '';
@@ -229,9 +229,9 @@ describe('v2.ActionsTestingClient', () => {
 
         it('invokes matchIntents without error using callback', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.MatchIntentsRequest());
             request.project = '';
@@ -264,9 +264,9 @@ describe('v2.ActionsTestingClient', () => {
 
         it('invokes matchIntents with error', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.MatchIntentsRequest());
             request.project = '';
@@ -289,9 +289,9 @@ describe('v2.ActionsTestingClient', () => {
     describe('setWebAndAppActivityControl', () => {
         it('invokes setWebAndAppActivityControl without error', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SetWebAndAppActivityControlRequest());
             const expectedOptions = {};
@@ -305,9 +305,9 @@ describe('v2.ActionsTestingClient', () => {
 
         it('invokes setWebAndAppActivityControl without error using callback', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SetWebAndAppActivityControlRequest());
             const expectedOptions = {};
@@ -332,9 +332,9 @@ describe('v2.ActionsTestingClient', () => {
 
         it('invokes setWebAndAppActivityControl with error', async () => {
             const client = new actionstestingModule.v2.ActionsTestingClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.SetWebAndAppActivityControlRequest());
             const expectedOptions = {};

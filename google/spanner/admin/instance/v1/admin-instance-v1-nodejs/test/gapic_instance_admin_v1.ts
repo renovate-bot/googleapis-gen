@@ -133,8 +133,8 @@ describe('v1.InstanceAdminClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new instanceadminModule.v1.InstanceAdminClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.instanceAdminStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.InstanceAdminClient', () => {
 
     it('has close method', () => {
         const client = new instanceadminModule.v1.InstanceAdminClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.InstanceAdminClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new instanceadminModule.v1.InstanceAdminClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.InstanceAdminClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new instanceadminModule.v1.InstanceAdminClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.InstanceAdminClient', () => {
     describe('getInstanceConfig', () => {
         it('invokes getInstanceConfig without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.GetInstanceConfigRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes getInstanceConfig without error using callback', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.GetInstanceConfigRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes getInstanceConfig with error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.GetInstanceConfigRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.InstanceAdminClient', () => {
     describe('getInstance', () => {
         it('invokes getInstance without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.GetInstanceRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes getInstance without error using callback', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.GetInstanceRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes getInstance with error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.GetInstanceRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1.InstanceAdminClient', () => {
     describe('deleteInstance', () => {
         it('invokes deleteInstance without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.DeleteInstanceRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes deleteInstance without error using callback', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.DeleteInstanceRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes deleteInstance with error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.DeleteInstanceRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1.InstanceAdminClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -460,9 +460,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -495,9 +495,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -520,9 +520,9 @@ describe('v1.InstanceAdminClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -544,9 +544,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -579,9 +579,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -604,9 +604,9 @@ describe('v1.InstanceAdminClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -628,9 +628,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -663,9 +663,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -688,9 +688,9 @@ describe('v1.InstanceAdminClient', () => {
     describe('createInstance', () => {
         it('invokes createInstance without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.CreateInstanceRequest());
             request.parent = '';
@@ -713,9 +713,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes createInstance without error using callback', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.CreateInstanceRequest());
             request.parent = '';
@@ -751,9 +751,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes createInstance with call error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.CreateInstanceRequest());
             request.parent = '';
@@ -774,9 +774,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes createInstance with LRO error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.CreateInstanceRequest());
             request.parent = '';
@@ -798,9 +798,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes checkCreateInstanceProgress without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -816,9 +816,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes checkCreateInstanceProgress with error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -832,9 +832,9 @@ describe('v1.InstanceAdminClient', () => {
     describe('updateInstance', () => {
         it('invokes updateInstance without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -858,9 +858,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes updateInstance without error using callback', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -897,9 +897,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes updateInstance with call error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -921,9 +921,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes updateInstance with LRO error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -946,9 +946,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes checkUpdateInstanceProgress without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -964,9 +964,9 @@ describe('v1.InstanceAdminClient', () => {
 
         it('invokes checkUpdateInstanceProgress with error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1143,13 +1143,14 @@ describe('v1.InstanceAdminClient', () => {
 
         it('uses async iteration with listInstanceConfigs without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.ListInstanceConfigsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.spanner.admin.instance.v1.InstanceConfig()),
               generateSampleMessage(new protos.google.spanner.admin.instance.v1.InstanceConfig()),
               generateSampleMessage(new protos.google.spanner.admin.instance.v1.InstanceConfig()),
@@ -1365,13 +1366,14 @@ describe('v1.InstanceAdminClient', () => {
 
         it('uses async iteration with listInstances without error', async () => {
             const client = new instanceadminModule.v1.InstanceAdminClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.admin.instance.v1.ListInstancesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.spanner.admin.instance.v1.Instance()),
               generateSampleMessage(new protos.google.spanner.admin.instance.v1.Instance()),
               generateSampleMessage(new protos.google.spanner.admin.instance.v1.Instance()),

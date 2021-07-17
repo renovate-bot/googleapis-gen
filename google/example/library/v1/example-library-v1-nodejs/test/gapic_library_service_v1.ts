@@ -117,8 +117,8 @@ describe('v1.LibraryServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new libraryserviceModule.v1.LibraryServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.libraryServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.LibraryServiceClient', () => {
 
     it('has close method', () => {
         const client = new libraryserviceModule.v1.LibraryServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.LibraryServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new libraryserviceModule.v1.LibraryServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.LibraryServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new libraryserviceModule.v1.LibraryServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('createShelf', () => {
         it('invokes createShelf without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateShelfRequest());
             const expectedOptions = {};
@@ -184,9 +184,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes createShelf without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateShelfRequest());
             const expectedOptions = {};
@@ -211,9 +211,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes createShelf with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateShelfRequest());
             const expectedOptions = {};
@@ -228,9 +228,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('getShelf', () => {
         it('invokes getShelf without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.GetShelfRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes getShelf without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.GetShelfRequest());
             request.name = '';
@@ -287,9 +287,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes getShelf with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.GetShelfRequest());
             request.name = '';
@@ -312,9 +312,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('deleteShelf', () => {
         it('invokes deleteShelf without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.DeleteShelfRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes deleteShelf without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.DeleteShelfRequest());
             request.name = '';
@@ -371,9 +371,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes deleteShelf with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.DeleteShelfRequest());
             request.name = '';
@@ -396,9 +396,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('mergeShelves', () => {
         it('invokes mergeShelves without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.MergeShelvesRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes mergeShelves without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.MergeShelvesRequest());
             request.name = '';
@@ -455,9 +455,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes mergeShelves with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.MergeShelvesRequest());
             request.name = '';
@@ -480,9 +480,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('createBook', () => {
         it('invokes createBook without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateBookRequest());
             request.parent = '';
@@ -504,9 +504,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes createBook without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateBookRequest());
             request.parent = '';
@@ -539,9 +539,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes createBook with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.CreateBookRequest());
             request.parent = '';
@@ -564,9 +564,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('getBook', () => {
         it('invokes getBook without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.GetBookRequest());
             request.name = '';
@@ -588,9 +588,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes getBook without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.GetBookRequest());
             request.name = '';
@@ -623,9 +623,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes getBook with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.GetBookRequest());
             request.name = '';
@@ -648,9 +648,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('deleteBook', () => {
         it('invokes deleteBook without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.DeleteBookRequest());
             request.name = '';
@@ -672,9 +672,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes deleteBook without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.DeleteBookRequest());
             request.name = '';
@@ -707,9 +707,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes deleteBook with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.DeleteBookRequest());
             request.name = '';
@@ -732,9 +732,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('updateBook', () => {
         it('invokes updateBook without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.UpdateBookRequest());
             request.book = {};
@@ -757,9 +757,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes updateBook without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.UpdateBookRequest());
             request.book = {};
@@ -793,9 +793,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes updateBook with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.UpdateBookRequest());
             request.book = {};
@@ -819,9 +819,9 @@ describe('v1.LibraryServiceClient', () => {
     describe('moveBook', () => {
         it('invokes moveBook without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.MoveBookRequest());
             request.name = '';
@@ -843,9 +843,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes moveBook without error using callback', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.MoveBookRequest());
             request.name = '';
@@ -878,9 +878,9 @@ describe('v1.LibraryServiceClient', () => {
 
         it('invokes moveBook with error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.MoveBookRequest());
             request.name = '';
@@ -1028,11 +1028,12 @@ describe('v1.LibraryServiceClient', () => {
 
         it('uses async iteration with listShelves without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.example.library.v1.ListShelvesRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.example.library.v1.ListShelvesRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.example.library.v1.Shelf()),
               generateSampleMessage(new protos.google.example.library.v1.Shelf()),
               generateSampleMessage(new protos.google.example.library.v1.Shelf()),
@@ -1236,13 +1237,14 @@ describe('v1.LibraryServiceClient', () => {
 
         it('uses async iteration with listBooks without error', async () => {
             const client = new libraryserviceModule.v1.LibraryServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.example.library.v1.ListBooksRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.example.library.v1.Book()),
               generateSampleMessage(new protos.google.example.library.v1.Book()),
               generateSampleMessage(new protos.google.example.library.v1.Book()),

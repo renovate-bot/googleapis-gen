@@ -70,8 +70,8 @@ describe('v1.TestExecutionServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.testExecutionServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.TestExecutionServiceClient', () => {
 
     it('has close method', () => {
         const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.TestExecutionServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.TestExecutionServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.TestExecutionServiceClient', () => {
     describe('createTestMatrix', () => {
         it('invokes createTestMatrix without error', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.CreateTestMatrixRequest());
             request.projectId = '';
@@ -145,9 +145,9 @@ describe('v1.TestExecutionServiceClient', () => {
 
         it('invokes createTestMatrix without error using callback', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.CreateTestMatrixRequest());
             request.projectId = '';
@@ -180,9 +180,9 @@ describe('v1.TestExecutionServiceClient', () => {
 
         it('invokes createTestMatrix with error', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.CreateTestMatrixRequest());
             request.projectId = '';
@@ -205,9 +205,9 @@ describe('v1.TestExecutionServiceClient', () => {
     describe('getTestMatrix', () => {
         it('invokes getTestMatrix without error', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.GetTestMatrixRequest());
             request.projectId = '';
@@ -229,9 +229,9 @@ describe('v1.TestExecutionServiceClient', () => {
 
         it('invokes getTestMatrix without error using callback', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.GetTestMatrixRequest());
             request.projectId = '';
@@ -264,9 +264,9 @@ describe('v1.TestExecutionServiceClient', () => {
 
         it('invokes getTestMatrix with error', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.GetTestMatrixRequest());
             request.projectId = '';
@@ -289,9 +289,9 @@ describe('v1.TestExecutionServiceClient', () => {
     describe('cancelTestMatrix', () => {
         it('invokes cancelTestMatrix without error', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.CancelTestMatrixRequest());
             request.projectId = '';
@@ -313,9 +313,9 @@ describe('v1.TestExecutionServiceClient', () => {
 
         it('invokes cancelTestMatrix without error using callback', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.CancelTestMatrixRequest());
             request.projectId = '';
@@ -348,9 +348,9 @@ describe('v1.TestExecutionServiceClient', () => {
 
         it('invokes cancelTestMatrix with error', async () => {
             const client = new testexecutionserviceModule.v1.TestExecutionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.testing.v1.CancelTestMatrixRequest());
             request.projectId = '';

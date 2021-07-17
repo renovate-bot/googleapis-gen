@@ -133,8 +133,8 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.productSearchStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
     it('has close method', () => {
         const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1p4beta1.ProductSearchClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1p4beta1.ProductSearchClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('createProductSet', () => {
         it('invokes createProductSet without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateProductSetRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes createProductSet without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateProductSetRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes createProductSet with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateProductSetRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('getProductSet', () => {
         it('invokes getProductSet without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetProductSetRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes getProductSet without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetProductSetRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes getProductSet with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetProductSetRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('updateProductSet', () => {
         it('invokes updateProductSet without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.UpdateProductSetRequest());
             request.productSet = {};
@@ -377,9 +377,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes updateProductSet without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.UpdateProductSetRequest());
             request.productSet = {};
@@ -413,9 +413,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes updateProductSet with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.UpdateProductSetRequest());
             request.productSet = {};
@@ -439,9 +439,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('deleteProductSet', () => {
         it('invokes deleteProductSet without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteProductSetRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes deleteProductSet without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteProductSetRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes deleteProductSet with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteProductSetRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('createProduct', () => {
         it('invokes createProduct without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateProductRequest());
             request.parent = '';
@@ -547,9 +547,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes createProduct without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateProductRequest());
             request.parent = '';
@@ -582,9 +582,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes createProduct with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateProductRequest());
             request.parent = '';
@@ -607,9 +607,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('getProduct', () => {
         it('invokes getProduct without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetProductRequest());
             request.name = '';
@@ -631,9 +631,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes getProduct without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetProductRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes getProduct with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetProductRequest());
             request.name = '';
@@ -691,9 +691,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('updateProduct', () => {
         it('invokes updateProduct without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.UpdateProductRequest());
             request.product = {};
@@ -716,9 +716,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes updateProduct without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.UpdateProductRequest());
             request.product = {};
@@ -752,9 +752,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes updateProduct with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.UpdateProductRequest());
             request.product = {};
@@ -778,9 +778,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('deleteProduct', () => {
         it('invokes deleteProduct without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteProductRequest());
             request.name = '';
@@ -802,9 +802,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes deleteProduct without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteProductRequest());
             request.name = '';
@@ -837,9 +837,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes deleteProduct with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteProductRequest());
             request.name = '';
@@ -862,9 +862,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('createReferenceImage', () => {
         it('invokes createReferenceImage without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateReferenceImageRequest());
             request.parent = '';
@@ -886,9 +886,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes createReferenceImage without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateReferenceImageRequest());
             request.parent = '';
@@ -921,9 +921,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes createReferenceImage with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.CreateReferenceImageRequest());
             request.parent = '';
@@ -946,9 +946,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('deleteReferenceImage', () => {
         it('invokes deleteReferenceImage without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteReferenceImageRequest());
             request.name = '';
@@ -970,9 +970,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes deleteReferenceImage without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteReferenceImageRequest());
             request.name = '';
@@ -1005,9 +1005,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes deleteReferenceImage with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.DeleteReferenceImageRequest());
             request.name = '';
@@ -1030,9 +1030,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('getReferenceImage', () => {
         it('invokes getReferenceImage without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetReferenceImageRequest());
             request.name = '';
@@ -1054,9 +1054,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes getReferenceImage without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetReferenceImageRequest());
             request.name = '';
@@ -1089,9 +1089,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes getReferenceImage with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.GetReferenceImageRequest());
             request.name = '';
@@ -1114,9 +1114,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('addProductToProductSet', () => {
         it('invokes addProductToProductSet without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest());
             request.name = '';
@@ -1138,9 +1138,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes addProductToProductSet without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest());
             request.name = '';
@@ -1173,9 +1173,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes addProductToProductSet with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.AddProductToProductSetRequest());
             request.name = '';
@@ -1198,9 +1198,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('removeProductFromProductSet', () => {
         it('invokes removeProductFromProductSet without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.RemoveProductFromProductSetRequest());
             request.name = '';
@@ -1222,9 +1222,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes removeProductFromProductSet without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.RemoveProductFromProductSetRequest());
             request.name = '';
@@ -1257,9 +1257,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes removeProductFromProductSet with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.RemoveProductFromProductSetRequest());
             request.name = '';
@@ -1282,9 +1282,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('importProductSets', () => {
         it('invokes importProductSets without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ImportProductSetsRequest());
             request.parent = '';
@@ -1307,9 +1307,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes importProductSets without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ImportProductSetsRequest());
             request.parent = '';
@@ -1345,9 +1345,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes importProductSets with call error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ImportProductSetsRequest());
             request.parent = '';
@@ -1368,9 +1368,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes importProductSets with LRO error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ImportProductSetsRequest());
             request.parent = '';
@@ -1392,9 +1392,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes checkImportProductSetsProgress without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1410,9 +1410,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes checkImportProductSetsProgress with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1426,9 +1426,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
     describe('purgeProducts', () => {
         it('invokes purgeProducts without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.PurgeProductsRequest());
             request.parent = '';
@@ -1451,9 +1451,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes purgeProducts without error using callback', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.PurgeProductsRequest());
             request.parent = '';
@@ -1489,9 +1489,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes purgeProducts with call error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.PurgeProductsRequest());
             request.parent = '';
@@ -1512,9 +1512,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes purgeProducts with LRO error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.PurgeProductsRequest());
             request.parent = '';
@@ -1536,9 +1536,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes checkPurgeProductsProgress without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1554,9 +1554,9 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('invokes checkPurgeProductsProgress with error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1733,13 +1733,14 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('uses async iteration with listProductSets without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ListProductSetsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ProductSet()),
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ProductSet()),
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ProductSet()),
@@ -1955,13 +1956,14 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('uses async iteration with listProducts without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ListProductsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.Product()),
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.Product()),
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.Product()),
@@ -2177,13 +2179,14 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('uses async iteration with listReferenceImages without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ListReferenceImagesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ReferenceImage()),
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ReferenceImage()),
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ReferenceImage()),
@@ -2399,13 +2402,14 @@ describe('v1p4beta1.ProductSearchClient', () => {
 
         it('uses async iteration with listProductsInProductSet without error', async () => {
             const client = new productsearchModule.v1p4beta1.ProductSearchClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.ListProductsInProductSetRequest());
             request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.Product()),
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.Product()),
               generateSampleMessage(new protos.google.cloud.vision.v1p4beta1.Product()),

@@ -141,8 +141,8 @@ describe('v2.ActionsSdkClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new actionssdkModule.v2.ActionsSdkClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.actionsSdkStub, undefined);
         await client.initialize();
@@ -151,8 +151,8 @@ describe('v2.ActionsSdkClient', () => {
 
     it('has close method', () => {
         const client = new actionssdkModule.v2.ActionsSdkClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -160,8 +160,8 @@ describe('v2.ActionsSdkClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new actionssdkModule.v2.ActionsSdkClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -172,8 +172,8 @@ describe('v2.ActionsSdkClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new actionssdkModule.v2.ActionsSdkClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -192,9 +192,9 @@ describe('v2.ActionsSdkClient', () => {
     describe('encryptSecret', () => {
         it('invokes encryptSecret without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.EncryptSecretRequest());
             const expectedOptions = {};
@@ -208,9 +208,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes encryptSecret without error using callback', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.EncryptSecretRequest());
             const expectedOptions = {};
@@ -235,9 +235,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes encryptSecret with error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.EncryptSecretRequest());
             const expectedOptions = {};
@@ -252,9 +252,9 @@ describe('v2.ActionsSdkClient', () => {
     describe('decryptSecret', () => {
         it('invokes decryptSecret without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.DecryptSecretRequest());
             const expectedOptions = {};
@@ -268,9 +268,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes decryptSecret without error using callback', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.DecryptSecretRequest());
             const expectedOptions = {};
@@ -295,9 +295,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes decryptSecret with error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.DecryptSecretRequest());
             const expectedOptions = {};
@@ -312,9 +312,9 @@ describe('v2.ActionsSdkClient', () => {
     describe('readDraft', () => {
         it('invokes readDraft without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ReadDraftRequest());
             request.name = '';
@@ -345,9 +345,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes readDraft with error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ReadDraftRequest());
             request.name = '';
@@ -379,9 +379,9 @@ describe('v2.ActionsSdkClient', () => {
     describe('readVersion', () => {
         it('invokes readVersion without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ReadVersionRequest());
             request.name = '';
@@ -412,9 +412,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes readVersion with error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ReadVersionRequest());
             request.name = '';
@@ -446,9 +446,9 @@ describe('v2.ActionsSdkClient', () => {
     describe('writeDraft', () => {
         it('invokes writeDraft without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.WriteDraftRequest());
             const expectedResponse = generateSampleMessage(new protos.google.actions.sdk.v2.Draft());
@@ -475,9 +475,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes writeDraft with error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.WriteDraftRequest());
             const expectedError = new Error('expected');
@@ -504,9 +504,9 @@ describe('v2.ActionsSdkClient', () => {
     describe('writePreview', () => {
         it('invokes writePreview without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.WritePreviewRequest());
             const expectedResponse = generateSampleMessage(new protos.google.actions.sdk.v2.Preview());
@@ -533,9 +533,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes writePreview with error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.WritePreviewRequest());
             const expectedError = new Error('expected');
@@ -562,9 +562,9 @@ describe('v2.ActionsSdkClient', () => {
     describe('createVersion', () => {
         it('invokes createVersion without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.CreateVersionRequest());
             const expectedResponse = generateSampleMessage(new protos.google.actions.sdk.v2.Version());
@@ -591,9 +591,9 @@ describe('v2.ActionsSdkClient', () => {
 
         it('invokes createVersion with error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.CreateVersionRequest());
             const expectedError = new Error('expected');
@@ -745,11 +745,12 @@ describe('v2.ActionsSdkClient', () => {
 
         it('uses async iteration with listSampleProjects without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.actions.sdk.v2.ListSampleProjectsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.actions.sdk.v2.ListSampleProjectsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.actions.sdk.v2.SampleProject()),
               generateSampleMessage(new protos.google.actions.sdk.v2.SampleProject()),
               generateSampleMessage(new protos.google.actions.sdk.v2.SampleProject()),
@@ -953,13 +954,14 @@ describe('v2.ActionsSdkClient', () => {
 
         it('uses async iteration with listReleaseChannels without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ListReleaseChannelsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.actions.sdk.v2.ReleaseChannel()),
               generateSampleMessage(new protos.google.actions.sdk.v2.ReleaseChannel()),
               generateSampleMessage(new protos.google.actions.sdk.v2.ReleaseChannel()),
@@ -1175,13 +1177,14 @@ describe('v2.ActionsSdkClient', () => {
 
         it('uses async iteration with listVersions without error', async () => {
             const client = new actionssdkModule.v2.ActionsSdkClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.actions.sdk.v2.ListVersionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.actions.sdk.v2.Version()),
               generateSampleMessage(new protos.google.actions.sdk.v2.Version()),
               generateSampleMessage(new protos.google.actions.sdk.v2.Version()),

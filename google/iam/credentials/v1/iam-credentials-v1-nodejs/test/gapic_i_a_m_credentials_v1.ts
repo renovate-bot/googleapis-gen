@@ -70,8 +70,8 @@ describe('v1.IAMCredentialsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.iAMCredentialsStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.IAMCredentialsClient', () => {
 
     it('has close method', () => {
         const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.IAMCredentialsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.IAMCredentialsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.IAMCredentialsClient', () => {
     describe('generateAccessToken', () => {
         it('invokes generateAccessToken without error', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.GenerateAccessTokenRequest());
             request.name = '';
@@ -145,9 +145,9 @@ describe('v1.IAMCredentialsClient', () => {
 
         it('invokes generateAccessToken without error using callback', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.GenerateAccessTokenRequest());
             request.name = '';
@@ -180,9 +180,9 @@ describe('v1.IAMCredentialsClient', () => {
 
         it('invokes generateAccessToken with error', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.GenerateAccessTokenRequest());
             request.name = '';
@@ -205,9 +205,9 @@ describe('v1.IAMCredentialsClient', () => {
     describe('generateIdToken', () => {
         it('invokes generateIdToken without error', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.GenerateIdTokenRequest());
             request.name = '';
@@ -229,9 +229,9 @@ describe('v1.IAMCredentialsClient', () => {
 
         it('invokes generateIdToken without error using callback', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.GenerateIdTokenRequest());
             request.name = '';
@@ -264,9 +264,9 @@ describe('v1.IAMCredentialsClient', () => {
 
         it('invokes generateIdToken with error', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.GenerateIdTokenRequest());
             request.name = '';
@@ -289,9 +289,9 @@ describe('v1.IAMCredentialsClient', () => {
     describe('signBlob', () => {
         it('invokes signBlob without error', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.SignBlobRequest());
             request.name = '';
@@ -313,9 +313,9 @@ describe('v1.IAMCredentialsClient', () => {
 
         it('invokes signBlob without error using callback', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.SignBlobRequest());
             request.name = '';
@@ -348,9 +348,9 @@ describe('v1.IAMCredentialsClient', () => {
 
         it('invokes signBlob with error', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.SignBlobRequest());
             request.name = '';
@@ -373,9 +373,9 @@ describe('v1.IAMCredentialsClient', () => {
     describe('signJwt', () => {
         it('invokes signJwt without error', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.SignJwtRequest());
             request.name = '';
@@ -397,9 +397,9 @@ describe('v1.IAMCredentialsClient', () => {
 
         it('invokes signJwt without error using callback', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.SignJwtRequest());
             request.name = '';
@@ -432,9 +432,9 @@ describe('v1.IAMCredentialsClient', () => {
 
         it('invokes signJwt with error', async () => {
             const client = new iamcredentialsModule.v1.IAMCredentialsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.credentials.v1.SignJwtRequest());
             request.name = '';

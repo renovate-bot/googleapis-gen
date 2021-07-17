@@ -133,8 +133,8 @@ describe('v1.GameServerClustersServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.gameServerClustersServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.GameServerClustersServiceClient', () => {
 
     it('has close method', () => {
         const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.GameServerClustersServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.GameServerClustersServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.GameServerClustersServiceClient', () => {
     describe('getGameServerCluster', () => {
         it('invokes getGameServerCluster without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.GetGameServerClusterRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes getGameServerCluster without error using callback', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.GetGameServerClusterRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes getGameServerCluster with error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.GetGameServerClusterRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.GameServerClustersServiceClient', () => {
     describe('previewCreateGameServerCluster', () => {
         it('invokes previewCreateGameServerCluster without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes previewCreateGameServerCluster without error using callback', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes previewCreateGameServerCluster with error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewCreateGameServerClusterRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v1.GameServerClustersServiceClient', () => {
     describe('previewDeleteGameServerCluster', () => {
         it('invokes previewDeleteGameServerCluster without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes previewDeleteGameServerCluster without error using callback', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes previewDeleteGameServerCluster with error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewDeleteGameServerClusterRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1.GameServerClustersServiceClient', () => {
     describe('previewUpdateGameServerCluster', () => {
         it('invokes previewUpdateGameServerCluster without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest());
             request.gameServerCluster = {};
@@ -461,9 +461,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes previewUpdateGameServerCluster without error using callback', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest());
             request.gameServerCluster = {};
@@ -497,9 +497,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes previewUpdateGameServerCluster with error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.PreviewUpdateGameServerClusterRequest());
             request.gameServerCluster = {};
@@ -523,9 +523,9 @@ describe('v1.GameServerClustersServiceClient', () => {
     describe('createGameServerCluster', () => {
         it('invokes createGameServerCluster without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.CreateGameServerClusterRequest());
             request.parent = '';
@@ -548,9 +548,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes createGameServerCluster without error using callback', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.CreateGameServerClusterRequest());
             request.parent = '';
@@ -586,9 +586,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes createGameServerCluster with call error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.CreateGameServerClusterRequest());
             request.parent = '';
@@ -609,9 +609,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes createGameServerCluster with LRO error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.CreateGameServerClusterRequest());
             request.parent = '';
@@ -633,9 +633,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes checkCreateGameServerClusterProgress without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -651,9 +651,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes checkCreateGameServerClusterProgress with error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -667,9 +667,9 @@ describe('v1.GameServerClustersServiceClient', () => {
     describe('deleteGameServerCluster', () => {
         it('invokes deleteGameServerCluster without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.DeleteGameServerClusterRequest());
             request.name = '';
@@ -692,9 +692,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes deleteGameServerCluster without error using callback', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.DeleteGameServerClusterRequest());
             request.name = '';
@@ -730,9 +730,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes deleteGameServerCluster with call error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.DeleteGameServerClusterRequest());
             request.name = '';
@@ -753,9 +753,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes deleteGameServerCluster with LRO error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.DeleteGameServerClusterRequest());
             request.name = '';
@@ -777,9 +777,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes checkDeleteGameServerClusterProgress without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -795,9 +795,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes checkDeleteGameServerClusterProgress with error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -811,9 +811,9 @@ describe('v1.GameServerClustersServiceClient', () => {
     describe('updateGameServerCluster', () => {
         it('invokes updateGameServerCluster without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.UpdateGameServerClusterRequest());
             request.gameServerCluster = {};
@@ -837,9 +837,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes updateGameServerCluster without error using callback', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.UpdateGameServerClusterRequest());
             request.gameServerCluster = {};
@@ -876,9 +876,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes updateGameServerCluster with call error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.UpdateGameServerClusterRequest());
             request.gameServerCluster = {};
@@ -900,9 +900,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes updateGameServerCluster with LRO error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.UpdateGameServerClusterRequest());
             request.gameServerCluster = {};
@@ -925,9 +925,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes checkUpdateGameServerClusterProgress without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -943,9 +943,9 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('invokes checkUpdateGameServerClusterProgress with error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1122,13 +1122,14 @@ describe('v1.GameServerClustersServiceClient', () => {
 
         it('uses async iteration with listGameServerClusters without error', async () => {
             const client = new gameserverclustersserviceModule.v1.GameServerClustersServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1.ListGameServerClustersRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.gaming.v1.GameServerCluster()),
               generateSampleMessage(new protos.google.cloud.gaming.v1.GameServerCluster()),
               generateSampleMessage(new protos.google.cloud.gaming.v1.GameServerCluster()),

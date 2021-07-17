@@ -133,8 +133,8 @@ describe('v1alpha1.AIStreamsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.aIStreamsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1alpha1.AIStreamsClient', () => {
 
     it('has close method', () => {
         const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1alpha1.AIStreamsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1alpha1.AIStreamsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1alpha1.AIStreamsClient', () => {
     describe('getCluster', () => {
         it('invokes getCluster without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.GetClusterRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes getCluster without error using callback', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.GetClusterRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes getCluster with error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.GetClusterRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1alpha1.AIStreamsClient', () => {
     describe('getStream', () => {
         it('invokes getStream without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.GetStreamRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes getStream without error using callback', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.GetStreamRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes getStream with error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.GetStreamRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1alpha1.AIStreamsClient', () => {
     describe('createCluster', () => {
         it('invokes createCluster without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.CreateClusterRequest());
             request.parent = '';
@@ -377,9 +377,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes createCluster without error using callback', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.CreateClusterRequest());
             request.parent = '';
@@ -415,9 +415,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes createCluster with call error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.CreateClusterRequest());
             request.parent = '';
@@ -438,9 +438,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes createCluster with LRO error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.CreateClusterRequest());
             request.parent = '';
@@ -462,9 +462,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkCreateClusterProgress without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -480,9 +480,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkCreateClusterProgress with error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -496,9 +496,9 @@ describe('v1alpha1.AIStreamsClient', () => {
     describe('updateCluster', () => {
         it('invokes updateCluster without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.UpdateClusterRequest());
             request.cluster = {};
@@ -522,9 +522,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes updateCluster without error using callback', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.UpdateClusterRequest());
             request.cluster = {};
@@ -561,9 +561,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes updateCluster with call error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.UpdateClusterRequest());
             request.cluster = {};
@@ -585,9 +585,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes updateCluster with LRO error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.UpdateClusterRequest());
             request.cluster = {};
@@ -610,9 +610,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkUpdateClusterProgress without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -628,9 +628,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkUpdateClusterProgress with error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -644,9 +644,9 @@ describe('v1alpha1.AIStreamsClient', () => {
     describe('deleteCluster', () => {
         it('invokes deleteCluster without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.DeleteClusterRequest());
             request.name = '';
@@ -669,9 +669,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes deleteCluster without error using callback', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.DeleteClusterRequest());
             request.name = '';
@@ -707,9 +707,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes deleteCluster with call error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.DeleteClusterRequest());
             request.name = '';
@@ -730,9 +730,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes deleteCluster with LRO error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.DeleteClusterRequest());
             request.name = '';
@@ -754,9 +754,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkDeleteClusterProgress without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -772,9 +772,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkDeleteClusterProgress with error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -788,9 +788,9 @@ describe('v1alpha1.AIStreamsClient', () => {
     describe('createStream', () => {
         it('invokes createStream without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.CreateStreamRequest());
             request.parent = '';
@@ -813,9 +813,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes createStream without error using callback', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.CreateStreamRequest());
             request.parent = '';
@@ -851,9 +851,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes createStream with call error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.CreateStreamRequest());
             request.parent = '';
@@ -874,9 +874,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes createStream with LRO error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.CreateStreamRequest());
             request.parent = '';
@@ -898,9 +898,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkCreateStreamProgress without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -916,9 +916,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkCreateStreamProgress with error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -932,9 +932,9 @@ describe('v1alpha1.AIStreamsClient', () => {
     describe('updateStream', () => {
         it('invokes updateStream without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.UpdateStreamRequest());
             request.stream = {};
@@ -958,9 +958,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes updateStream without error using callback', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.UpdateStreamRequest());
             request.stream = {};
@@ -997,9 +997,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes updateStream with call error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.UpdateStreamRequest());
             request.stream = {};
@@ -1021,9 +1021,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes updateStream with LRO error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.UpdateStreamRequest());
             request.stream = {};
@@ -1046,9 +1046,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkUpdateStreamProgress without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1064,9 +1064,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkUpdateStreamProgress with error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1080,9 +1080,9 @@ describe('v1alpha1.AIStreamsClient', () => {
     describe('deleteStream', () => {
         it('invokes deleteStream without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.DeleteStreamRequest());
             request.name = '';
@@ -1105,9 +1105,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes deleteStream without error using callback', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.DeleteStreamRequest());
             request.name = '';
@@ -1143,9 +1143,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes deleteStream with call error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.DeleteStreamRequest());
             request.name = '';
@@ -1166,9 +1166,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes deleteStream with LRO error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.DeleteStreamRequest());
             request.name = '';
@@ -1190,9 +1190,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkDeleteStreamProgress without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1208,9 +1208,9 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('invokes checkDeleteStreamProgress with error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1387,13 +1387,14 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('uses async iteration with listClusters without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.ListClustersRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.Cluster()),
               generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.Cluster()),
               generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.Cluster()),
@@ -1609,13 +1610,14 @@ describe('v1alpha1.AIStreamsClient', () => {
 
         it('uses async iteration with listStreams without error', async () => {
             const client = new aistreamsModule.v1alpha1.AIStreamsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.ListStreamsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.Stream()),
               generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.Stream()),
               generateSampleMessage(new protos.google.partner.aistreams.v1alpha1.Stream()),

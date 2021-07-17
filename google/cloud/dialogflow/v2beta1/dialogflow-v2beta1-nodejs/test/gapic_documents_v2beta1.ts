@@ -133,8 +133,8 @@ describe('v2beta1.DocumentsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new documentsModule.v2beta1.DocumentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.documentsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v2beta1.DocumentsClient', () => {
 
     it('has close method', () => {
         const client = new documentsModule.v2beta1.DocumentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v2beta1.DocumentsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new documentsModule.v2beta1.DocumentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v2beta1.DocumentsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new documentsModule.v2beta1.DocumentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v2beta1.DocumentsClient', () => {
     describe('getDocument', () => {
         it('invokes getDocument without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetDocumentRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes getDocument without error using callback', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetDocumentRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes getDocument with error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetDocumentRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v2beta1.DocumentsClient', () => {
     describe('createDocument', () => {
         it('invokes createDocument without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateDocumentRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes createDocument without error using callback', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateDocumentRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes createDocument with call error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateDocumentRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes createDocument with LRO error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateDocumentRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkCreateDocumentProgress without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkCreateDocumentProgress with error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v2beta1.DocumentsClient', () => {
     describe('importDocuments', () => {
         it('invokes importDocuments without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest());
             request.parent = '';
@@ -437,9 +437,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes importDocuments without error using callback', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest());
             request.parent = '';
@@ -475,9 +475,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes importDocuments with call error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest());
             request.parent = '';
@@ -498,9 +498,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes importDocuments with LRO error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ImportDocumentsRequest());
             request.parent = '';
@@ -522,9 +522,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkImportDocumentsProgress without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkImportDocumentsProgress with error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -556,9 +556,9 @@ describe('v2beta1.DocumentsClient', () => {
     describe('deleteDocument', () => {
         it('invokes deleteDocument without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest());
             request.name = '';
@@ -581,9 +581,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes deleteDocument without error using callback', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest());
             request.name = '';
@@ -619,9 +619,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes deleteDocument with call error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest());
             request.name = '';
@@ -642,9 +642,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes deleteDocument with LRO error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteDocumentRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkDeleteDocumentProgress without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -684,9 +684,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkDeleteDocumentProgress with error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -700,9 +700,9 @@ describe('v2beta1.DocumentsClient', () => {
     describe('updateDocument', () => {
         it('invokes updateDocument without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest());
             request.document = {};
@@ -726,9 +726,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes updateDocument without error using callback', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest());
             request.document = {};
@@ -765,9 +765,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes updateDocument with call error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest());
             request.document = {};
@@ -789,9 +789,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes updateDocument with LRO error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateDocumentRequest());
             request.document = {};
@@ -814,9 +814,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkUpdateDocumentProgress without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -832,9 +832,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkUpdateDocumentProgress with error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -848,9 +848,9 @@ describe('v2beta1.DocumentsClient', () => {
     describe('reloadDocument', () => {
         it('invokes reloadDocument without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest());
             request.name = '';
@@ -873,9 +873,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes reloadDocument without error using callback', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest());
             request.name = '';
@@ -911,9 +911,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes reloadDocument with call error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest());
             request.name = '';
@@ -934,9 +934,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes reloadDocument with LRO error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ReloadDocumentRequest());
             request.name = '';
@@ -958,9 +958,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkReloadDocumentProgress without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -976,9 +976,9 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('invokes checkReloadDocumentProgress with error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1155,13 +1155,14 @@ describe('v2beta1.DocumentsClient', () => {
 
         it('uses async iteration with listDocuments without error', async () => {
             const client = new documentsModule.v2beta1.DocumentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListDocumentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Document()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Document()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Document()),

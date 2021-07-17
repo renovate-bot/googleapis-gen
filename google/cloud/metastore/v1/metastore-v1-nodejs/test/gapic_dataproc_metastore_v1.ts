@@ -133,8 +133,8 @@ describe('v1.DataprocMetastoreClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.dataprocMetastoreStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.DataprocMetastoreClient', () => {
 
     it('has close method', () => {
         const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.DataprocMetastoreClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.DataprocMetastoreClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.DataprocMetastoreClient', () => {
     describe('getService', () => {
         it('invokes getService without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.GetServiceRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes getService without error using callback', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.GetServiceRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes getService with error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.GetServiceRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.DataprocMetastoreClient', () => {
     describe('getMetadataImport', () => {
         it('invokes getMetadataImport without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.GetMetadataImportRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes getMetadataImport without error using callback', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.GetMetadataImportRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes getMetadataImport with error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.GetMetadataImportRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1.DataprocMetastoreClient', () => {
     describe('createService', () => {
         it('invokes createService without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.CreateServiceRequest());
             request.parent = '';
@@ -377,9 +377,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes createService without error using callback', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.CreateServiceRequest());
             request.parent = '';
@@ -415,9 +415,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes createService with call error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.CreateServiceRequest());
             request.parent = '';
@@ -438,9 +438,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes createService with LRO error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.CreateServiceRequest());
             request.parent = '';
@@ -462,9 +462,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkCreateServiceProgress without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -480,9 +480,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkCreateServiceProgress with error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -496,9 +496,9 @@ describe('v1.DataprocMetastoreClient', () => {
     describe('updateService', () => {
         it('invokes updateService without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.UpdateServiceRequest());
             request.service = {};
@@ -522,9 +522,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes updateService without error using callback', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.UpdateServiceRequest());
             request.service = {};
@@ -561,9 +561,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes updateService with call error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.UpdateServiceRequest());
             request.service = {};
@@ -585,9 +585,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes updateService with LRO error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.UpdateServiceRequest());
             request.service = {};
@@ -610,9 +610,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkUpdateServiceProgress without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -628,9 +628,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkUpdateServiceProgress with error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -644,9 +644,9 @@ describe('v1.DataprocMetastoreClient', () => {
     describe('deleteService', () => {
         it('invokes deleteService without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.DeleteServiceRequest());
             request.name = '';
@@ -669,9 +669,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes deleteService without error using callback', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.DeleteServiceRequest());
             request.name = '';
@@ -707,9 +707,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes deleteService with call error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.DeleteServiceRequest());
             request.name = '';
@@ -730,9 +730,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes deleteService with LRO error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.DeleteServiceRequest());
             request.name = '';
@@ -754,9 +754,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkDeleteServiceProgress without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -772,9 +772,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkDeleteServiceProgress with error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -788,9 +788,9 @@ describe('v1.DataprocMetastoreClient', () => {
     describe('createMetadataImport', () => {
         it('invokes createMetadataImport without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.CreateMetadataImportRequest());
             request.parent = '';
@@ -813,9 +813,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes createMetadataImport without error using callback', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.CreateMetadataImportRequest());
             request.parent = '';
@@ -851,9 +851,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes createMetadataImport with call error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.CreateMetadataImportRequest());
             request.parent = '';
@@ -874,9 +874,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes createMetadataImport with LRO error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.CreateMetadataImportRequest());
             request.parent = '';
@@ -898,9 +898,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkCreateMetadataImportProgress without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -916,9 +916,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkCreateMetadataImportProgress with error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -932,9 +932,9 @@ describe('v1.DataprocMetastoreClient', () => {
     describe('updateMetadataImport', () => {
         it('invokes updateMetadataImport without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.UpdateMetadataImportRequest());
             request.metadataImport = {};
@@ -958,9 +958,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes updateMetadataImport without error using callback', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.UpdateMetadataImportRequest());
             request.metadataImport = {};
@@ -997,9 +997,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes updateMetadataImport with call error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.UpdateMetadataImportRequest());
             request.metadataImport = {};
@@ -1021,9 +1021,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes updateMetadataImport with LRO error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.UpdateMetadataImportRequest());
             request.metadataImport = {};
@@ -1046,9 +1046,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkUpdateMetadataImportProgress without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1064,9 +1064,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkUpdateMetadataImportProgress with error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1080,9 +1080,9 @@ describe('v1.DataprocMetastoreClient', () => {
     describe('exportMetadata', () => {
         it('invokes exportMetadata without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.ExportMetadataRequest());
             request.service = '';
@@ -1105,9 +1105,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes exportMetadata without error using callback', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.ExportMetadataRequest());
             request.service = '';
@@ -1143,9 +1143,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes exportMetadata with call error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.ExportMetadataRequest());
             request.service = '';
@@ -1166,9 +1166,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes exportMetadata with LRO error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.ExportMetadataRequest());
             request.service = '';
@@ -1190,9 +1190,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkExportMetadataProgress without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1208,9 +1208,9 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('invokes checkExportMetadataProgress with error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1387,13 +1387,14 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('uses async iteration with listServices without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.ListServicesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.metastore.v1.Service()),
               generateSampleMessage(new protos.google.cloud.metastore.v1.Service()),
               generateSampleMessage(new protos.google.cloud.metastore.v1.Service()),
@@ -1609,13 +1610,14 @@ describe('v1.DataprocMetastoreClient', () => {
 
         it('uses async iteration with listMetadataImports without error', async () => {
             const client = new dataprocmetastoreModule.v1.DataprocMetastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.metastore.v1.ListMetadataImportsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.metastore.v1.MetadataImport()),
               generateSampleMessage(new protos.google.cloud.metastore.v1.MetadataImport()),
               generateSampleMessage(new protos.google.cloud.metastore.v1.MetadataImport()),

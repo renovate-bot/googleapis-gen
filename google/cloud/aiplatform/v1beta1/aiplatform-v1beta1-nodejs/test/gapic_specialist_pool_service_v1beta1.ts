@@ -133,8 +133,8 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.specialistPoolServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
     it('has close method', () => {
         const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
     describe('getSpecialistPool', () => {
         it('invokes getSpecialistPool without error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes getSpecialistPool without error using callback', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes getSpecialistPool with error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetSpecialistPoolRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
     describe('createSpecialistPool', () => {
         it('invokes createSpecialistPool without error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes createSpecialistPool without error using callback', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes createSpecialistPool with call error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes createSpecialistPool with LRO error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateSpecialistPoolRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes checkCreateSpecialistPoolProgress without error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes checkCreateSpecialistPoolProgress with error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
     describe('deleteSpecialistPool', () => {
         it('invokes deleteSpecialistPool without error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest());
             request.name = '';
@@ -437,9 +437,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes deleteSpecialistPool without error using callback', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest());
             request.name = '';
@@ -475,9 +475,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes deleteSpecialistPool with call error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes deleteSpecialistPool with LRO error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest());
             request.name = '';
@@ -522,9 +522,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes checkDeleteSpecialistPoolProgress without error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes checkDeleteSpecialistPoolProgress with error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -556,9 +556,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
     describe('updateSpecialistPool', () => {
         it('invokes updateSpecialistPool without error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest());
             request.specialistPool = {};
@@ -582,9 +582,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes updateSpecialistPool without error using callback', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest());
             request.specialistPool = {};
@@ -621,9 +621,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes updateSpecialistPool with call error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest());
             request.specialistPool = {};
@@ -645,9 +645,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes updateSpecialistPool with LRO error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest());
             request.specialistPool = {};
@@ -670,9 +670,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes checkUpdateSpecialistPoolProgress without error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -688,9 +688,9 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('invokes checkUpdateSpecialistPoolProgress with error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -867,13 +867,14 @@ describe('v1beta1.SpecialistPoolServiceClient', () => {
 
         it('uses async iteration with listSpecialistPools without error', async () => {
             const client = new specialistpoolserviceModule.v1beta1.SpecialistPoolServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListSpecialistPoolsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.SpecialistPool()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.SpecialistPool()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.SpecialistPool()),

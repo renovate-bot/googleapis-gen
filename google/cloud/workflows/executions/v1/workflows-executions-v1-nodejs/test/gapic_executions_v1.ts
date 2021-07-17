@@ -117,8 +117,8 @@ describe('v1.ExecutionsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new executionsModule.v1.ExecutionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.executionsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.ExecutionsClient', () => {
 
     it('has close method', () => {
         const client = new executionsModule.v1.ExecutionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.ExecutionsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new executionsModule.v1.ExecutionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.ExecutionsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new executionsModule.v1.ExecutionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.ExecutionsClient', () => {
     describe('createExecution', () => {
         it('invokes createExecution without error', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.CreateExecutionRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.ExecutionsClient', () => {
 
         it('invokes createExecution without error using callback', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.CreateExecutionRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.ExecutionsClient', () => {
 
         it('invokes createExecution with error', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.CreateExecutionRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.ExecutionsClient', () => {
     describe('getExecution', () => {
         it('invokes getExecution without error', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.GetExecutionRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.ExecutionsClient', () => {
 
         it('invokes getExecution without error using callback', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.GetExecutionRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.ExecutionsClient', () => {
 
         it('invokes getExecution with error', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.GetExecutionRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.ExecutionsClient', () => {
     describe('cancelExecution', () => {
         it('invokes cancelExecution without error', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.CancelExecutionRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.ExecutionsClient', () => {
 
         it('invokes cancelExecution without error using callback', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.CancelExecutionRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.ExecutionsClient', () => {
 
         it('invokes cancelExecution with error', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.CancelExecutionRequest());
             request.name = '';
@@ -583,13 +583,14 @@ describe('v1.ExecutionsClient', () => {
 
         it('uses async iteration with listExecutions without error', async () => {
             const client = new executionsModule.v1.ExecutionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.workflows.executions.v1.ListExecutionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.workflows.executions.v1.Execution()),
               generateSampleMessage(new protos.google.cloud.workflows.executions.v1.Execution()),
               generateSampleMessage(new protos.google.cloud.workflows.executions.v1.Execution()),

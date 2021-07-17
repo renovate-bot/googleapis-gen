@@ -70,8 +70,8 @@ describe('v7.HotelGroupViewServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.hotelGroupViewServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v7.HotelGroupViewServiceClient', () => {
 
     it('has close method', () => {
         const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v7.HotelGroupViewServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v7.HotelGroupViewServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v7.HotelGroupViewServiceClient', () => {
     describe('getHotelGroupView', () => {
         it('invokes getHotelGroupView without error', async () => {
             const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetHotelGroupViewRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v7.HotelGroupViewServiceClient', () => {
 
         it('invokes getHotelGroupView without error using callback', async () => {
             const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetHotelGroupViewRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v7.HotelGroupViewServiceClient', () => {
 
         it('invokes getHotelGroupView with error', async () => {
             const client = new hotelgroupviewserviceModule.v7.HotelGroupViewServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetHotelGroupViewRequest());
             request.resourceName = '';

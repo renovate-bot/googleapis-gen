@@ -70,8 +70,8 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.identityAwareProxyAdminServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
     it('has close method', () => {
         const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -145,9 +145,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -180,9 +180,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -205,9 +205,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -229,9 +229,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -264,9 +264,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -289,9 +289,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -313,9 +313,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -348,9 +348,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -373,9 +373,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
     describe('getIapSettings', () => {
         it('invokes getIapSettings without error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.iap.v1.GetIapSettingsRequest());
             request.name = '';
@@ -397,9 +397,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes getIapSettings without error using callback', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.iap.v1.GetIapSettingsRequest());
             request.name = '';
@@ -432,9 +432,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes getIapSettings with error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.iap.v1.GetIapSettingsRequest());
             request.name = '';
@@ -457,9 +457,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
     describe('updateIapSettings', () => {
         it('invokes updateIapSettings without error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.iap.v1.UpdateIapSettingsRequest());
             request.iapSettings = {};
@@ -482,9 +482,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes updateIapSettings without error using callback', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.iap.v1.UpdateIapSettingsRequest());
             request.iapSettings = {};
@@ -518,9 +518,9 @@ describe('v1.IdentityAwareProxyAdminServiceClient', () => {
 
         it('invokes updateIapSettings with error', async () => {
             const client = new identityawareproxyadminserviceModule.v1.IdentityAwareProxyAdminServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.iap.v1.UpdateIapSettingsRequest());
             request.iapSettings = {};

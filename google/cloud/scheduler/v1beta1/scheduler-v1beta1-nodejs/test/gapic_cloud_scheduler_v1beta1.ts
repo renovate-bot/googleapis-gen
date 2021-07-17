@@ -117,8 +117,8 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.cloudSchedulerStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
     it('has close method', () => {
         const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta1.CloudSchedulerClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta1.CloudSchedulerClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
     describe('getJob', () => {
         it('invokes getJob without error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.GetJobRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes getJob without error using callback', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.GetJobRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes getJob with error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.GetJobRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
     describe('createJob', () => {
         it('invokes createJob without error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.CreateJobRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes createJob without error using callback', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.CreateJobRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes createJob with error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.CreateJobRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
     describe('updateJob', () => {
         it('invokes updateJob without error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.UpdateJobRequest());
             request.job = {};
@@ -361,9 +361,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes updateJob without error using callback', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.UpdateJobRequest());
             request.job = {};
@@ -397,9 +397,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes updateJob with error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.UpdateJobRequest());
             request.job = {};
@@ -423,9 +423,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
     describe('deleteJob', () => {
         it('invokes deleteJob without error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.DeleteJobRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes deleteJob without error using callback', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.DeleteJobRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes deleteJob with error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.DeleteJobRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
     describe('pauseJob', () => {
         it('invokes pauseJob without error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.PauseJobRequest());
             request.name = '';
@@ -531,9 +531,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes pauseJob without error using callback', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.PauseJobRequest());
             request.name = '';
@@ -566,9 +566,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes pauseJob with error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.PauseJobRequest());
             request.name = '';
@@ -591,9 +591,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
     describe('resumeJob', () => {
         it('invokes resumeJob without error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.ResumeJobRequest());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes resumeJob without error using callback', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.ResumeJobRequest());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes resumeJob with error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.ResumeJobRequest());
             request.name = '';
@@ -675,9 +675,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
     describe('runJob', () => {
         it('invokes runJob without error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.RunJobRequest());
             request.name = '';
@@ -699,9 +699,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes runJob without error using callback', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.RunJobRequest());
             request.name = '';
@@ -734,9 +734,9 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('invokes runJob with error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.RunJobRequest());
             request.name = '';
@@ -922,13 +922,14 @@ describe('v1beta1.CloudSchedulerClient', () => {
 
         it('uses async iteration with listJobs without error', async () => {
             const client = new cloudschedulerModule.v1beta1.CloudSchedulerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.ListJobsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.Job()),
               generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.Job()),
               generateSampleMessage(new protos.google.cloud.scheduler.v1beta1.Job()),

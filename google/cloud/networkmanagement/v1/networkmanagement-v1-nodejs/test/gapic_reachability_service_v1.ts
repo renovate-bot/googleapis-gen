@@ -133,8 +133,8 @@ describe('v1.ReachabilityServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.reachabilityServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.ReachabilityServiceClient', () => {
 
     it('has close method', () => {
         const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.ReachabilityServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.ReachabilityServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.ReachabilityServiceClient', () => {
     describe('getConnectivityTest', () => {
         it('invokes getConnectivityTest without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.GetConnectivityTestRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes getConnectivityTest without error using callback', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.GetConnectivityTestRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes getConnectivityTest with error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.GetConnectivityTestRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.ReachabilityServiceClient', () => {
     describe('createConnectivityTest', () => {
         it('invokes createConnectivityTest without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.CreateConnectivityTestRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes createConnectivityTest without error using callback', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.CreateConnectivityTestRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes createConnectivityTest with call error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.CreateConnectivityTestRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes createConnectivityTest with LRO error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.CreateConnectivityTestRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes checkCreateConnectivityTestProgress without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes checkCreateConnectivityTestProgress with error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1.ReachabilityServiceClient', () => {
     describe('updateConnectivityTest', () => {
         it('invokes updateConnectivityTest without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.UpdateConnectivityTestRequest());
             request.resource = {};
@@ -438,9 +438,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes updateConnectivityTest without error using callback', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.UpdateConnectivityTestRequest());
             request.resource = {};
@@ -477,9 +477,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes updateConnectivityTest with call error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.UpdateConnectivityTestRequest());
             request.resource = {};
@@ -501,9 +501,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes updateConnectivityTest with LRO error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.UpdateConnectivityTestRequest());
             request.resource = {};
@@ -526,9 +526,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes checkUpdateConnectivityTestProgress without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -544,9 +544,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes checkUpdateConnectivityTestProgress with error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -560,9 +560,9 @@ describe('v1.ReachabilityServiceClient', () => {
     describe('rerunConnectivityTest', () => {
         it('invokes rerunConnectivityTest without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.RerunConnectivityTestRequest());
             request.name = '';
@@ -585,9 +585,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes rerunConnectivityTest without error using callback', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.RerunConnectivityTestRequest());
             request.name = '';
@@ -623,9 +623,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes rerunConnectivityTest with call error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.RerunConnectivityTestRequest());
             request.name = '';
@@ -646,9 +646,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes rerunConnectivityTest with LRO error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.RerunConnectivityTestRequest());
             request.name = '';
@@ -670,9 +670,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes checkRerunConnectivityTestProgress without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -688,9 +688,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes checkRerunConnectivityTestProgress with error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -704,9 +704,9 @@ describe('v1.ReachabilityServiceClient', () => {
     describe('deleteConnectivityTest', () => {
         it('invokes deleteConnectivityTest without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest());
             request.name = '';
@@ -729,9 +729,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes deleteConnectivityTest without error using callback', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest());
             request.name = '';
@@ -767,9 +767,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes deleteConnectivityTest with call error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest());
             request.name = '';
@@ -790,9 +790,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes deleteConnectivityTest with LRO error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.DeleteConnectivityTestRequest());
             request.name = '';
@@ -814,9 +814,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes checkDeleteConnectivityTestProgress without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -832,9 +832,9 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('invokes checkDeleteConnectivityTestProgress with error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1011,13 +1011,14 @@ describe('v1.ReachabilityServiceClient', () => {
 
         it('uses async iteration with listConnectivityTests without error', async () => {
             const client = new reachabilityserviceModule.v1.ReachabilityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkmanagement.v1.ListConnectivityTestsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.networkmanagement.v1.ConnectivityTest()),
               generateSampleMessage(new protos.google.cloud.networkmanagement.v1.ConnectivityTest()),
               generateSampleMessage(new protos.google.cloud.networkmanagement.v1.ConnectivityTest()),

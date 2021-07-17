@@ -133,8 +133,8 @@ describe('v1beta1.UserEventServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.userEventServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.UserEventServiceClient', () => {
 
     it('has close method', () => {
         const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.UserEventServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.UserEventServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.UserEventServiceClient', () => {
     describe('writeUserEvent', () => {
         it('invokes writeUserEvent without error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes writeUserEvent without error using callback', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes writeUserEvent with error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.WriteUserEventRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1beta1.UserEventServiceClient', () => {
     describe('collectUserEvent', () => {
         it('invokes collectUserEvent without error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes collectUserEvent without error using callback', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes collectUserEvent with error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CollectUserEventRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v1beta1.UserEventServiceClient', () => {
     describe('purgeUserEvents', () => {
         it('invokes purgeUserEvents without error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest());
             request.parent = '';
@@ -377,9 +377,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes purgeUserEvents without error using callback', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest());
             request.parent = '';
@@ -415,9 +415,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes purgeUserEvents with call error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest());
             request.parent = '';
@@ -438,9 +438,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes purgeUserEvents with LRO error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.PurgeUserEventsRequest());
             request.parent = '';
@@ -462,9 +462,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes checkPurgeUserEventsProgress without error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -480,9 +480,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes checkPurgeUserEventsProgress with error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -496,9 +496,9 @@ describe('v1beta1.UserEventServiceClient', () => {
     describe('importUserEvents', () => {
         it('invokes importUserEvents without error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest());
             request.parent = '';
@@ -521,9 +521,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes importUserEvents without error using callback', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest());
             request.parent = '';
@@ -559,9 +559,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes importUserEvents with call error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest());
             request.parent = '';
@@ -582,9 +582,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes importUserEvents with LRO error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ImportUserEventsRequest());
             request.parent = '';
@@ -606,9 +606,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes checkImportUserEventsProgress without error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -624,9 +624,9 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('invokes checkImportUserEventsProgress with error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -803,13 +803,14 @@ describe('v1beta1.UserEventServiceClient', () => {
 
         it('uses async iteration with listUserEvents without error', async () => {
             const client = new usereventserviceModule.v1beta1.UserEventServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ListUserEventsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.UserEvent()),
               generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.UserEvent()),
               generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.UserEvent()),

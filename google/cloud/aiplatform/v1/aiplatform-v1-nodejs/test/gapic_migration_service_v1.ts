@@ -133,8 +133,8 @@ describe('v1.MigrationServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new migrationserviceModule.v1.MigrationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.migrationServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.MigrationServiceClient', () => {
 
     it('has close method', () => {
         const client = new migrationserviceModule.v1.MigrationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.MigrationServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new migrationserviceModule.v1.MigrationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.MigrationServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new migrationserviceModule.v1.MigrationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.MigrationServiceClient', () => {
     describe('batchMigrateResources', () => {
         it('invokes batchMigrateResources without error', async () => {
             const client = new migrationserviceModule.v1.MigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest());
             request.parent = '';
@@ -209,9 +209,9 @@ describe('v1.MigrationServiceClient', () => {
 
         it('invokes batchMigrateResources without error using callback', async () => {
             const client = new migrationserviceModule.v1.MigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest());
             request.parent = '';
@@ -247,9 +247,9 @@ describe('v1.MigrationServiceClient', () => {
 
         it('invokes batchMigrateResources with call error', async () => {
             const client = new migrationserviceModule.v1.MigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest());
             request.parent = '';
@@ -270,9 +270,9 @@ describe('v1.MigrationServiceClient', () => {
 
         it('invokes batchMigrateResources with LRO error', async () => {
             const client = new migrationserviceModule.v1.MigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.BatchMigrateResourcesRequest());
             request.parent = '';
@@ -294,9 +294,9 @@ describe('v1.MigrationServiceClient', () => {
 
         it('invokes checkBatchMigrateResourcesProgress without error', async () => {
             const client = new migrationserviceModule.v1.MigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -312,9 +312,9 @@ describe('v1.MigrationServiceClient', () => {
 
         it('invokes checkBatchMigrateResourcesProgress with error', async () => {
             const client = new migrationserviceModule.v1.MigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -491,13 +491,14 @@ describe('v1.MigrationServiceClient', () => {
 
         it('uses async iteration with searchMigratableResources without error', async () => {
             const client = new migrationserviceModule.v1.MigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.SearchMigratableResourcesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.MigratableResource()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.MigratableResource()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.MigratableResource()),

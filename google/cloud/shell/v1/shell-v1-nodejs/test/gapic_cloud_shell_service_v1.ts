@@ -86,8 +86,8 @@ describe('v1.CloudShellServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.cloudShellServiceStub, undefined);
         await client.initialize();
@@ -96,8 +96,8 @@ describe('v1.CloudShellServiceClient', () => {
 
     it('has close method', () => {
         const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -105,8 +105,8 @@ describe('v1.CloudShellServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -117,8 +117,8 @@ describe('v1.CloudShellServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -137,9 +137,9 @@ describe('v1.CloudShellServiceClient', () => {
     describe('getEnvironment', () => {
         it('invokes getEnvironment without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.GetEnvironmentRequest());
             request.name = '';
@@ -161,9 +161,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes getEnvironment without error using callback', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.GetEnvironmentRequest());
             request.name = '';
@@ -196,9 +196,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes getEnvironment with error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.GetEnvironmentRequest());
             request.name = '';
@@ -221,9 +221,9 @@ describe('v1.CloudShellServiceClient', () => {
     describe('startEnvironment', () => {
         it('invokes startEnvironment without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.StartEnvironmentRequest());
             request.name = '';
@@ -246,9 +246,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes startEnvironment without error using callback', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.StartEnvironmentRequest());
             request.name = '';
@@ -284,9 +284,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes startEnvironment with call error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.StartEnvironmentRequest());
             request.name = '';
@@ -307,9 +307,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes startEnvironment with LRO error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.StartEnvironmentRequest());
             request.name = '';
@@ -331,9 +331,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes checkStartEnvironmentProgress without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -349,9 +349,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes checkStartEnvironmentProgress with error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -365,9 +365,9 @@ describe('v1.CloudShellServiceClient', () => {
     describe('authorizeEnvironment', () => {
         it('invokes authorizeEnvironment without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.AuthorizeEnvironmentRequest());
             request.name = '';
@@ -390,9 +390,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes authorizeEnvironment without error using callback', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.AuthorizeEnvironmentRequest());
             request.name = '';
@@ -428,9 +428,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes authorizeEnvironment with call error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.AuthorizeEnvironmentRequest());
             request.name = '';
@@ -451,9 +451,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes authorizeEnvironment with LRO error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.AuthorizeEnvironmentRequest());
             request.name = '';
@@ -475,9 +475,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes checkAuthorizeEnvironmentProgress without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -493,9 +493,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes checkAuthorizeEnvironmentProgress with error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -509,9 +509,9 @@ describe('v1.CloudShellServiceClient', () => {
     describe('addPublicKey', () => {
         it('invokes addPublicKey without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.AddPublicKeyRequest());
             request.environment = '';
@@ -534,9 +534,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes addPublicKey without error using callback', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.AddPublicKeyRequest());
             request.environment = '';
@@ -572,9 +572,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes addPublicKey with call error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.AddPublicKeyRequest());
             request.environment = '';
@@ -595,9 +595,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes addPublicKey with LRO error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.AddPublicKeyRequest());
             request.environment = '';
@@ -619,9 +619,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes checkAddPublicKeyProgress without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -637,9 +637,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes checkAddPublicKeyProgress with error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -653,9 +653,9 @@ describe('v1.CloudShellServiceClient', () => {
     describe('removePublicKey', () => {
         it('invokes removePublicKey without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.RemovePublicKeyRequest());
             request.environment = '';
@@ -678,9 +678,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes removePublicKey without error using callback', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.RemovePublicKeyRequest());
             request.environment = '';
@@ -716,9 +716,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes removePublicKey with call error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.RemovePublicKeyRequest());
             request.environment = '';
@@ -739,9 +739,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes removePublicKey with LRO error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.shell.v1.RemovePublicKeyRequest());
             request.environment = '';
@@ -763,9 +763,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes checkRemovePublicKeyProgress without error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -781,9 +781,9 @@ describe('v1.CloudShellServiceClient', () => {
 
         it('invokes checkRemovePublicKeyProgress with error', async () => {
             const client = new cloudshellserviceModule.v1.CloudShellServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 

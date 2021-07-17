@@ -117,8 +117,8 @@ describe('v1.SchemaServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new schemaserviceModule.v1.SchemaServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.schemaServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.SchemaServiceClient', () => {
 
     it('has close method', () => {
         const client = new schemaserviceModule.v1.SchemaServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.SchemaServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new schemaserviceModule.v1.SchemaServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.SchemaServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new schemaserviceModule.v1.SchemaServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.SchemaServiceClient', () => {
     describe('createSchema', () => {
         it('invokes createSchema without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.CreateSchemaRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes createSchema without error using callback', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.CreateSchemaRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes createSchema with error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.CreateSchemaRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.SchemaServiceClient', () => {
     describe('getSchema', () => {
         it('invokes getSchema without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSchemaRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes getSchema without error using callback', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSchemaRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes getSchema with error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSchemaRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.SchemaServiceClient', () => {
     describe('deleteSchema', () => {
         it('invokes deleteSchema without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSchemaRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes deleteSchema without error using callback', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSchemaRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes deleteSchema with error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSchemaRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.SchemaServiceClient', () => {
     describe('validateSchema', () => {
         it('invokes validateSchema without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ValidateSchemaRequest());
             request.parent = '';
@@ -444,9 +444,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes validateSchema without error using callback', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ValidateSchemaRequest());
             request.parent = '';
@@ -479,9 +479,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes validateSchema with error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ValidateSchemaRequest());
             request.parent = '';
@@ -504,9 +504,9 @@ describe('v1.SchemaServiceClient', () => {
     describe('validateMessage', () => {
         it('invokes validateMessage without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ValidateMessageRequest());
             request.parent = '';
@@ -528,9 +528,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes validateMessage without error using callback', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ValidateMessageRequest());
             request.parent = '';
@@ -563,9 +563,9 @@ describe('v1.SchemaServiceClient', () => {
 
         it('invokes validateMessage with error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ValidateMessageRequest());
             request.parent = '';
@@ -751,13 +751,14 @@ describe('v1.SchemaServiceClient', () => {
 
         it('uses async iteration with listSchemas without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ListSchemasRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.pubsub.v1.Schema()),
               generateSampleMessage(new protos.google.pubsub.v1.Schema()),
               generateSampleMessage(new protos.google.pubsub.v1.Schema()),
@@ -809,9 +810,9 @@ describe('v1.SchemaServiceClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -836,9 +837,9 @@ describe('v1.SchemaServiceClient', () => {
         });
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -875,9 +876,9 @@ describe('v1.SchemaServiceClient', () => {
         });
         it('invokes getIamPolicy with error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -901,9 +902,9 @@ describe('v1.SchemaServiceClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -928,9 +929,9 @@ describe('v1.SchemaServiceClient', () => {
         });
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -967,9 +968,9 @@ describe('v1.SchemaServiceClient', () => {
         });
         it('invokes setIamPolicy with error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -993,9 +994,9 @@ describe('v1.SchemaServiceClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()
@@ -1020,9 +1021,9 @@ describe('v1.SchemaServiceClient', () => {
         });
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()
@@ -1059,9 +1060,9 @@ describe('v1.SchemaServiceClient', () => {
         });
         it('invokes testIamPermissions with error', async () => {
             const client = new schemaserviceModule.v1.SchemaServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()

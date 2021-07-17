@@ -70,8 +70,8 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.sqlDatabasesServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
     it('has close method', () => {
         const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
     describe('delete', () => {
         it('invokes delete without error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesDeleteRequest());
             request.project = '';
@@ -145,9 +145,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes delete without error using callback', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesDeleteRequest());
             request.project = '';
@@ -180,9 +180,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes delete with error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesDeleteRequest());
             request.project = '';
@@ -205,9 +205,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
     describe('get', () => {
         it('invokes get without error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesGetRequest());
             request.project = '';
@@ -229,9 +229,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes get without error using callback', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesGetRequest());
             request.project = '';
@@ -264,9 +264,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes get with error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesGetRequest());
             request.project = '';
@@ -289,9 +289,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
     describe('insert', () => {
         it('invokes insert without error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesInsertRequest());
             request.project = '';
@@ -313,9 +313,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes insert without error using callback', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesInsertRequest());
             request.project = '';
@@ -348,9 +348,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes insert with error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesInsertRequest());
             request.project = '';
@@ -373,9 +373,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
     describe('list', () => {
         it('invokes list without error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesListRequest());
             request.project = '';
@@ -397,9 +397,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes list without error using callback', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesListRequest());
             request.project = '';
@@ -432,9 +432,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes list with error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesListRequest());
             request.project = '';
@@ -457,9 +457,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
     describe('patch', () => {
         it('invokes patch without error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesUpdateRequest());
             request.project = '';
@@ -481,9 +481,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes patch without error using callback', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesUpdateRequest());
             request.project = '';
@@ -516,9 +516,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes patch with error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesUpdateRequest());
             request.project = '';
@@ -541,9 +541,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
     describe('update', () => {
         it('invokes update without error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesUpdateRequest());
             request.project = '';
@@ -565,9 +565,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes update without error using callback', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesUpdateRequest());
             request.project = '';
@@ -600,9 +600,9 @@ describe('v1beta4.SqlDatabasesServiceClient', () => {
 
         it('invokes update with error', async () => {
             const client = new sqldatabasesserviceModule.v1beta4.SqlDatabasesServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.sql.v1beta4.SqlDatabasesUpdateRequest());
             request.project = '';

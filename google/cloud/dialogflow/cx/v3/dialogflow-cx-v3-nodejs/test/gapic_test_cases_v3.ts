@@ -133,8 +133,8 @@ describe('v3.TestCasesClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new testcasesModule.v3.TestCasesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.testCasesStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3.TestCasesClient', () => {
 
     it('has close method', () => {
         const client = new testcasesModule.v3.TestCasesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3.TestCasesClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new testcasesModule.v3.TestCasesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3.TestCasesClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new testcasesModule.v3.TestCasesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3.TestCasesClient', () => {
     describe('batchDeleteTestCases', () => {
         it('invokes batchDeleteTestCases without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes batchDeleteTestCases without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes batchDeleteTestCases with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.BatchDeleteTestCasesRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v3.TestCasesClient', () => {
     describe('getTestCase', () => {
         it('invokes getTestCase without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTestCaseRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes getTestCase without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTestCaseRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes getTestCase with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTestCaseRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v3.TestCasesClient', () => {
     describe('createTestCase', () => {
         it('invokes createTestCase without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest());
             request.parent = '';
@@ -376,9 +376,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes createTestCase without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest());
             request.parent = '';
@@ -411,9 +411,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes createTestCase with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateTestCaseRequest());
             request.parent = '';
@@ -436,9 +436,9 @@ describe('v3.TestCasesClient', () => {
     describe('updateTestCase', () => {
         it('invokes updateTestCase without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest());
             request.testCase = {};
@@ -461,9 +461,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes updateTestCase without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest());
             request.testCase = {};
@@ -497,9 +497,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes updateTestCase with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateTestCaseRequest());
             request.testCase = {};
@@ -523,9 +523,9 @@ describe('v3.TestCasesClient', () => {
     describe('calculateCoverage', () => {
         it('invokes calculateCoverage without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest());
             request.agent = '';
@@ -547,9 +547,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes calculateCoverage without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest());
             request.agent = '';
@@ -582,9 +582,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes calculateCoverage with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CalculateCoverageRequest());
             request.agent = '';
@@ -607,9 +607,9 @@ describe('v3.TestCasesClient', () => {
     describe('getTestCaseResult', () => {
         it('invokes getTestCaseResult without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest());
             request.name = '';
@@ -631,9 +631,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes getTestCaseResult without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes getTestCaseResult with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTestCaseResultRequest());
             request.name = '';
@@ -691,9 +691,9 @@ describe('v3.TestCasesClient', () => {
     describe('runTestCase', () => {
         it('invokes runTestCase without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunTestCaseRequest());
             request.name = '';
@@ -716,9 +716,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes runTestCase without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunTestCaseRequest());
             request.name = '';
@@ -754,9 +754,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes runTestCase with call error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunTestCaseRequest());
             request.name = '';
@@ -777,9 +777,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes runTestCase with LRO error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunTestCaseRequest());
             request.name = '';
@@ -801,9 +801,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes checkRunTestCaseProgress without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -819,9 +819,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes checkRunTestCaseProgress with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -835,9 +835,9 @@ describe('v3.TestCasesClient', () => {
     describe('batchRunTestCases', () => {
         it('invokes batchRunTestCases without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest());
             request.parent = '';
@@ -860,9 +860,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes batchRunTestCases without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest());
             request.parent = '';
@@ -898,9 +898,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes batchRunTestCases with call error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest());
             request.parent = '';
@@ -921,9 +921,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes batchRunTestCases with LRO error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.BatchRunTestCasesRequest());
             request.parent = '';
@@ -945,9 +945,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes checkBatchRunTestCasesProgress without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -963,9 +963,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes checkBatchRunTestCasesProgress with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -979,9 +979,9 @@ describe('v3.TestCasesClient', () => {
     describe('importTestCases', () => {
         it('invokes importTestCases without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest());
             request.parent = '';
@@ -1004,9 +1004,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes importTestCases without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest());
             request.parent = '';
@@ -1042,9 +1042,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes importTestCases with call error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest());
             request.parent = '';
@@ -1065,9 +1065,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes importTestCases with LRO error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ImportTestCasesRequest());
             request.parent = '';
@@ -1089,9 +1089,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes checkImportTestCasesProgress without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1107,9 +1107,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes checkImportTestCasesProgress with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1123,9 +1123,9 @@ describe('v3.TestCasesClient', () => {
     describe('exportTestCases', () => {
         it('invokes exportTestCases without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest());
             request.parent = '';
@@ -1148,9 +1148,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes exportTestCases without error using callback', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest());
             request.parent = '';
@@ -1186,9 +1186,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes exportTestCases with call error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest());
             request.parent = '';
@@ -1209,9 +1209,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes exportTestCases with LRO error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ExportTestCasesRequest());
             request.parent = '';
@@ -1233,9 +1233,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes checkExportTestCasesProgress without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1251,9 +1251,9 @@ describe('v3.TestCasesClient', () => {
 
         it('invokes checkExportTestCasesProgress with error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1430,13 +1430,14 @@ describe('v3.TestCasesClient', () => {
 
         it('uses async iteration with listTestCases without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ListTestCasesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TestCase()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TestCase()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TestCase()),
@@ -1652,13 +1653,14 @@ describe('v3.TestCasesClient', () => {
 
         it('uses async iteration with listTestCaseResults without error', async () => {
             const client = new testcasesModule.v3.TestCasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ListTestCaseResultsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TestCaseResult()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TestCaseResult()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TestCaseResult()),

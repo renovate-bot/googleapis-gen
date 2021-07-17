@@ -133,8 +133,8 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.workflowTemplateServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
     it('has close method', () => {
         const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.WorkflowTemplateServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.WorkflowTemplateServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
     describe('createWorkflowTemplate', () => {
         it('invokes createWorkflowTemplate without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes createWorkflowTemplate without error using callback', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes createWorkflowTemplate with error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CreateWorkflowTemplateRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
     describe('getWorkflowTemplate', () => {
         it('invokes getWorkflowTemplate without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetWorkflowTemplateRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes getWorkflowTemplate without error using callback', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetWorkflowTemplateRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes getWorkflowTemplate with error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetWorkflowTemplateRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
     describe('updateWorkflowTemplate', () => {
         it('invokes updateWorkflowTemplate without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest());
             request.template = {};
@@ -377,9 +377,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes updateWorkflowTemplate without error using callback', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest());
             request.template = {};
@@ -413,9 +413,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes updateWorkflowTemplate with error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateWorkflowTemplateRequest());
             request.template = {};
@@ -439,9 +439,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
     describe('deleteWorkflowTemplate', () => {
         it('invokes deleteWorkflowTemplate without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes deleteWorkflowTemplate without error using callback', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes deleteWorkflowTemplate with error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteWorkflowTemplateRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
     describe('instantiateWorkflowTemplate', () => {
         it('invokes instantiateWorkflowTemplate without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest());
             request.name = '';
@@ -548,9 +548,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes instantiateWorkflowTemplate without error using callback', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest());
             request.name = '';
@@ -586,9 +586,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes instantiateWorkflowTemplate with call error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest());
             request.name = '';
@@ -609,9 +609,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes instantiateWorkflowTemplate with LRO error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.InstantiateWorkflowTemplateRequest());
             request.name = '';
@@ -633,9 +633,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes checkInstantiateWorkflowTemplateProgress without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -651,9 +651,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes checkInstantiateWorkflowTemplateProgress with error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -667,9 +667,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
     describe('instantiateInlineWorkflowTemplate', () => {
         it('invokes instantiateInlineWorkflowTemplate without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest());
             request.parent = '';
@@ -692,9 +692,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes instantiateInlineWorkflowTemplate without error using callback', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest());
             request.parent = '';
@@ -730,9 +730,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes instantiateInlineWorkflowTemplate with call error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest());
             request.parent = '';
@@ -753,9 +753,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes instantiateInlineWorkflowTemplate with LRO error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.InstantiateInlineWorkflowTemplateRequest());
             request.parent = '';
@@ -777,9 +777,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes checkInstantiateInlineWorkflowTemplateProgress without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -795,9 +795,9 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('invokes checkInstantiateInlineWorkflowTemplateProgress with error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -974,13 +974,14 @@ describe('v1.WorkflowTemplateServiceClient', () => {
 
         it('uses async iteration with listWorkflowTemplates without error', async () => {
             const client = new workflowtemplateserviceModule.v1.WorkflowTemplateServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.ListWorkflowTemplatesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dataproc.v1.WorkflowTemplate()),
               generateSampleMessage(new protos.google.cloud.dataproc.v1.WorkflowTemplate()),
               generateSampleMessage(new protos.google.cloud.dataproc.v1.WorkflowTemplate()),

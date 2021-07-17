@@ -117,8 +117,8 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.securityCenterSettingsServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
     it('has close method', () => {
         const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('getServiceAccount', () => {
         it('invokes getServiceAccount without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetServiceAccountRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes getServiceAccount without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetServiceAccountRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes getServiceAccount with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetServiceAccountRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('getSettings', () => {
         it('invokes getSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetSettingsRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes getSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetSettingsRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes getSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetSettingsRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('updateSettings', () => {
         it('invokes updateSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.UpdateSettingsRequest());
             request.settings = {};
@@ -361,9 +361,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes updateSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.UpdateSettingsRequest());
             request.settings = {};
@@ -397,9 +397,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes updateSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.UpdateSettingsRequest());
             request.settings = {};
@@ -423,9 +423,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('resetSettings', () => {
         it('invokes resetSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.ResetSettingsRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes resetSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.ResetSettingsRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes resetSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.ResetSettingsRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('batchGetSettings', () => {
         it('invokes batchGetSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsRequest());
             request.parent = '';
@@ -531,9 +531,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes batchGetSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsRequest());
             request.parent = '';
@@ -566,9 +566,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes batchGetSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.BatchGetSettingsRequest());
             request.parent = '';
@@ -591,9 +591,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('calculateEffectiveSettings', () => {
         it('invokes calculateEffectiveSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes calculateEffectiveSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes calculateEffectiveSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveSettingsRequest());
             request.name = '';
@@ -675,9 +675,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('batchCalculateEffectiveSettings', () => {
         it('invokes batchCalculateEffectiveSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.BatchCalculateEffectiveSettingsRequest());
             request.parent = '';
@@ -699,9 +699,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes batchCalculateEffectiveSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.BatchCalculateEffectiveSettingsRequest());
             request.parent = '';
@@ -734,9 +734,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes batchCalculateEffectiveSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.BatchCalculateEffectiveSettingsRequest());
             request.parent = '';
@@ -759,9 +759,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('getComponentSettings', () => {
         it('invokes getComponentSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetComponentSettingsRequest());
             request.name = '';
@@ -783,9 +783,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes getComponentSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetComponentSettingsRequest());
             request.name = '';
@@ -818,9 +818,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes getComponentSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.GetComponentSettingsRequest());
             request.name = '';
@@ -843,9 +843,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('updateComponentSettings', () => {
         it('invokes updateComponentSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.UpdateComponentSettingsRequest());
             request.componentSettings = {};
@@ -868,9 +868,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes updateComponentSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.UpdateComponentSettingsRequest());
             request.componentSettings = {};
@@ -904,9 +904,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes updateComponentSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.UpdateComponentSettingsRequest());
             request.componentSettings = {};
@@ -930,9 +930,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('resetComponentSettings', () => {
         it('invokes resetComponentSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.ResetComponentSettingsRequest());
             request.name = '';
@@ -954,9 +954,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes resetComponentSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.ResetComponentSettingsRequest());
             request.name = '';
@@ -989,9 +989,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes resetComponentSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.ResetComponentSettingsRequest());
             request.name = '';
@@ -1014,9 +1014,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
     describe('calculateEffectiveComponentSettings', () => {
         it('invokes calculateEffectiveComponentSettings without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveComponentSettingsRequest());
             request.name = '';
@@ -1038,9 +1038,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes calculateEffectiveComponentSettings without error using callback', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveComponentSettingsRequest());
             request.name = '';
@@ -1073,9 +1073,9 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('invokes calculateEffectiveComponentSettings with error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.CalculateEffectiveComponentSettingsRequest());
             request.name = '';
@@ -1261,13 +1261,14 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('uses async iteration with listDetectors without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.ListDetectorsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.Detector()),
               generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.Detector()),
               generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.Detector()),
@@ -1471,13 +1472,14 @@ describe('v1beta1.SecurityCenterSettingsServiceClient', () => {
 
         it('uses async iteration with listComponents without error', async () => {
             const client = new securitycentersettingsserviceModule.v1beta1.SecurityCenterSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.settings.v1beta1.ListComponentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [new String(), new String(), new String()];
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [new String(), new String(), new String()];
             client.descriptors.page.listComponents.asyncIterate = stubAsyncIterationCall(expectedResponse);
             const responses: string[] = [];
             const iterable = client.listComponentsAsync(request);

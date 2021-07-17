@@ -133,8 +133,8 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.certificateAuthorityServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
     it('has close method', () => {
         const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('createCertificate', () => {
         it('invokes createCertificate without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCertificate without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCertificate with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('getCertificate', () => {
         it('invokes getCertificate without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCertificate without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCertificate with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('revokeCertificate', () => {
         it('invokes revokeCertificate without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.RevokeCertificateRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes revokeCertificate without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.RevokeCertificateRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes revokeCertificate with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.RevokeCertificateRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('updateCertificate', () => {
         it('invokes updateCertificate without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateRequest());
             request.certificate = {};
@@ -461,9 +461,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificate without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateRequest());
             request.certificate = {};
@@ -497,9 +497,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificate with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateRequest());
             request.certificate = {};
@@ -523,9 +523,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('fetchCertificateAuthorityCsr', () => {
         it('invokes fetchCertificateAuthorityCsr without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrRequest());
             request.name = '';
@@ -547,9 +547,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes fetchCertificateAuthorityCsr without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrRequest());
             request.name = '';
@@ -582,9 +582,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes fetchCertificateAuthorityCsr with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.FetchCertificateAuthorityCsrRequest());
             request.name = '';
@@ -607,9 +607,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('getCertificateAuthority', () => {
         it('invokes getCertificateAuthority without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateAuthorityRequest());
             request.name = '';
@@ -631,9 +631,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCertificateAuthority without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateAuthorityRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCertificateAuthority with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateAuthorityRequest());
             request.name = '';
@@ -691,9 +691,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('getCaPool', () => {
         it('invokes getCaPool without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCaPoolRequest());
             request.name = '';
@@ -715,9 +715,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCaPool without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCaPoolRequest());
             request.name = '';
@@ -750,9 +750,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCaPool with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCaPoolRequest());
             request.name = '';
@@ -775,9 +775,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('fetchCaCerts', () => {
         it('invokes fetchCaCerts without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.FetchCaCertsRequest());
             request.caPool = '';
@@ -799,9 +799,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes fetchCaCerts without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.FetchCaCertsRequest());
             request.caPool = '';
@@ -834,9 +834,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes fetchCaCerts with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.FetchCaCertsRequest());
             request.caPool = '';
@@ -859,9 +859,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('getCertificateRevocationList', () => {
         it('invokes getCertificateRevocationList without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateRevocationListRequest());
             request.name = '';
@@ -883,9 +883,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCertificateRevocationList without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateRevocationListRequest());
             request.name = '';
@@ -918,9 +918,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCertificateRevocationList with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateRevocationListRequest());
             request.name = '';
@@ -943,9 +943,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('getCertificateTemplate', () => {
         it('invokes getCertificateTemplate without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateTemplateRequest());
             request.name = '';
@@ -967,9 +967,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCertificateTemplate without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateTemplateRequest());
             request.name = '';
@@ -1002,9 +1002,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes getCertificateTemplate with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.GetCertificateTemplateRequest());
             request.name = '';
@@ -1027,9 +1027,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('activateCertificateAuthority', () => {
         it('invokes activateCertificateAuthority without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ActivateCertificateAuthorityRequest());
             request.name = '';
@@ -1052,9 +1052,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes activateCertificateAuthority without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ActivateCertificateAuthorityRequest());
             request.name = '';
@@ -1090,9 +1090,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes activateCertificateAuthority with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ActivateCertificateAuthorityRequest());
             request.name = '';
@@ -1113,9 +1113,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes activateCertificateAuthority with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ActivateCertificateAuthorityRequest());
             request.name = '';
@@ -1137,9 +1137,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkActivateCertificateAuthorityProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1155,9 +1155,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkActivateCertificateAuthorityProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1171,9 +1171,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('createCertificateAuthority', () => {
         it('invokes createCertificateAuthority without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateAuthorityRequest());
             request.parent = '';
@@ -1196,9 +1196,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCertificateAuthority without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateAuthorityRequest());
             request.parent = '';
@@ -1234,9 +1234,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCertificateAuthority with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateAuthorityRequest());
             request.parent = '';
@@ -1257,9 +1257,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCertificateAuthority with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateAuthorityRequest());
             request.parent = '';
@@ -1281,9 +1281,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkCreateCertificateAuthorityProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1299,9 +1299,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkCreateCertificateAuthorityProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1315,9 +1315,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('disableCertificateAuthority', () => {
         it('invokes disableCertificateAuthority without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DisableCertificateAuthorityRequest());
             request.name = '';
@@ -1340,9 +1340,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes disableCertificateAuthority without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DisableCertificateAuthorityRequest());
             request.name = '';
@@ -1378,9 +1378,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes disableCertificateAuthority with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DisableCertificateAuthorityRequest());
             request.name = '';
@@ -1401,9 +1401,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes disableCertificateAuthority with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DisableCertificateAuthorityRequest());
             request.name = '';
@@ -1425,9 +1425,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkDisableCertificateAuthorityProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1443,9 +1443,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkDisableCertificateAuthorityProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1459,9 +1459,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('enableCertificateAuthority', () => {
         it('invokes enableCertificateAuthority without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.EnableCertificateAuthorityRequest());
             request.name = '';
@@ -1484,9 +1484,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes enableCertificateAuthority without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.EnableCertificateAuthorityRequest());
             request.name = '';
@@ -1522,9 +1522,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes enableCertificateAuthority with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.EnableCertificateAuthorityRequest());
             request.name = '';
@@ -1545,9 +1545,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes enableCertificateAuthority with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.EnableCertificateAuthorityRequest());
             request.name = '';
@@ -1569,9 +1569,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkEnableCertificateAuthorityProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1587,9 +1587,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkEnableCertificateAuthorityProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1603,9 +1603,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('undeleteCertificateAuthority', () => {
         it('invokes undeleteCertificateAuthority without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UndeleteCertificateAuthorityRequest());
             request.name = '';
@@ -1628,9 +1628,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes undeleteCertificateAuthority without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UndeleteCertificateAuthorityRequest());
             request.name = '';
@@ -1666,9 +1666,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes undeleteCertificateAuthority with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UndeleteCertificateAuthorityRequest());
             request.name = '';
@@ -1689,9 +1689,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes undeleteCertificateAuthority with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UndeleteCertificateAuthorityRequest());
             request.name = '';
@@ -1713,9 +1713,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUndeleteCertificateAuthorityProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1731,9 +1731,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUndeleteCertificateAuthorityProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1747,9 +1747,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('deleteCertificateAuthority', () => {
         it('invokes deleteCertificateAuthority without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCertificateAuthorityRequest());
             request.name = '';
@@ -1772,9 +1772,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCertificateAuthority without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCertificateAuthorityRequest());
             request.name = '';
@@ -1810,9 +1810,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCertificateAuthority with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCertificateAuthorityRequest());
             request.name = '';
@@ -1833,9 +1833,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCertificateAuthority with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCertificateAuthorityRequest());
             request.name = '';
@@ -1857,9 +1857,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkDeleteCertificateAuthorityProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1875,9 +1875,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkDeleteCertificateAuthorityProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1891,9 +1891,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('updateCertificateAuthority', () => {
         it('invokes updateCertificateAuthority without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateAuthorityRequest());
             request.certificateAuthority = {};
@@ -1917,9 +1917,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateAuthority without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateAuthorityRequest());
             request.certificateAuthority = {};
@@ -1956,9 +1956,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateAuthority with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateAuthorityRequest());
             request.certificateAuthority = {};
@@ -1980,9 +1980,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateAuthority with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateAuthorityRequest());
             request.certificateAuthority = {};
@@ -2005,9 +2005,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUpdateCertificateAuthorityProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2023,9 +2023,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUpdateCertificateAuthorityProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2039,9 +2039,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('createCaPool', () => {
         it('invokes createCaPool without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCaPoolRequest());
             request.parent = '';
@@ -2064,9 +2064,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCaPool without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCaPoolRequest());
             request.parent = '';
@@ -2102,9 +2102,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCaPool with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCaPoolRequest());
             request.parent = '';
@@ -2125,9 +2125,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCaPool with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCaPoolRequest());
             request.parent = '';
@@ -2149,9 +2149,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkCreateCaPoolProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2167,9 +2167,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkCreateCaPoolProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2183,9 +2183,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('updateCaPool', () => {
         it('invokes updateCaPool without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCaPoolRequest());
             request.caPool = {};
@@ -2209,9 +2209,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCaPool without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCaPoolRequest());
             request.caPool = {};
@@ -2248,9 +2248,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCaPool with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCaPoolRequest());
             request.caPool = {};
@@ -2272,9 +2272,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCaPool with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCaPoolRequest());
             request.caPool = {};
@@ -2297,9 +2297,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUpdateCaPoolProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2315,9 +2315,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUpdateCaPoolProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2331,9 +2331,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('deleteCaPool', () => {
         it('invokes deleteCaPool without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCaPoolRequest());
             request.name = '';
@@ -2356,9 +2356,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCaPool without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCaPoolRequest());
             request.name = '';
@@ -2394,9 +2394,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCaPool with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCaPoolRequest());
             request.name = '';
@@ -2417,9 +2417,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCaPool with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCaPoolRequest());
             request.name = '';
@@ -2441,9 +2441,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkDeleteCaPoolProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2459,9 +2459,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkDeleteCaPoolProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2475,9 +2475,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('updateCertificateRevocationList', () => {
         it('invokes updateCertificateRevocationList without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateRevocationListRequest());
             request.certificateRevocationList = {};
@@ -2501,9 +2501,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateRevocationList without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateRevocationListRequest());
             request.certificateRevocationList = {};
@@ -2540,9 +2540,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateRevocationList with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateRevocationListRequest());
             request.certificateRevocationList = {};
@@ -2564,9 +2564,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateRevocationList with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateRevocationListRequest());
             request.certificateRevocationList = {};
@@ -2589,9 +2589,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUpdateCertificateRevocationListProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2607,9 +2607,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUpdateCertificateRevocationListProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2623,9 +2623,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('createCertificateTemplate', () => {
         it('invokes createCertificateTemplate without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateTemplateRequest());
             request.parent = '';
@@ -2648,9 +2648,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCertificateTemplate without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateTemplateRequest());
             request.parent = '';
@@ -2686,9 +2686,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCertificateTemplate with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateTemplateRequest());
             request.parent = '';
@@ -2709,9 +2709,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes createCertificateTemplate with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.CreateCertificateTemplateRequest());
             request.parent = '';
@@ -2733,9 +2733,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkCreateCertificateTemplateProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2751,9 +2751,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkCreateCertificateTemplateProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2767,9 +2767,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('deleteCertificateTemplate', () => {
         it('invokes deleteCertificateTemplate without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCertificateTemplateRequest());
             request.name = '';
@@ -2792,9 +2792,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCertificateTemplate without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCertificateTemplateRequest());
             request.name = '';
@@ -2830,9 +2830,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCertificateTemplate with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCertificateTemplateRequest());
             request.name = '';
@@ -2853,9 +2853,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes deleteCertificateTemplate with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.DeleteCertificateTemplateRequest());
             request.name = '';
@@ -2877,9 +2877,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkDeleteCertificateTemplateProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2895,9 +2895,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkDeleteCertificateTemplateProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2911,9 +2911,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
     describe('updateCertificateTemplate', () => {
         it('invokes updateCertificateTemplate without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateTemplateRequest());
             request.certificateTemplate = {};
@@ -2937,9 +2937,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateTemplate without error using callback', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateTemplateRequest());
             request.certificateTemplate = {};
@@ -2976,9 +2976,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateTemplate with call error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateTemplateRequest());
             request.certificateTemplate = {};
@@ -3000,9 +3000,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes updateCertificateTemplate with LRO error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.UpdateCertificateTemplateRequest());
             request.certificateTemplate = {};
@@ -3025,9 +3025,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUpdateCertificateTemplateProgress without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -3043,9 +3043,9 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('invokes checkUpdateCertificateTemplateProgress with error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -3222,13 +3222,14 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('uses async iteration with listCertificates without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ListCertificatesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.Certificate()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.Certificate()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.Certificate()),
@@ -3444,13 +3445,14 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('uses async iteration with listCertificateAuthorities without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ListCertificateAuthoritiesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateAuthority()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateAuthority()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateAuthority()),
@@ -3666,13 +3668,14 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('uses async iteration with listCaPools without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ListCaPoolsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CaPool()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CaPool()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CaPool()),
@@ -3888,13 +3891,14 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('uses async iteration with listCertificateRevocationLists without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ListCertificateRevocationListsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateRevocationList()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateRevocationList()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateRevocationList()),
@@ -4110,13 +4114,14 @@ describe('v1.CertificateAuthorityServiceClient', () => {
 
         it('uses async iteration with listCertificateTemplates without error', async () => {
             const client = new certificateauthorityserviceModule.v1.CertificateAuthorityServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.security.privateca.v1.ListCertificateTemplatesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateTemplate()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateTemplate()),
               generateSampleMessage(new protos.google.cloud.security.privateca.v1.CertificateTemplate()),

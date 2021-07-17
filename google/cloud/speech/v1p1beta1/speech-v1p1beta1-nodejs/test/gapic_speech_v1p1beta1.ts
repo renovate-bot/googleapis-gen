@@ -97,8 +97,8 @@ describe('v1p1beta1.SpeechClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new speechModule.v1p1beta1.SpeechClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.speechStub, undefined);
         await client.initialize();
@@ -107,8 +107,8 @@ describe('v1p1beta1.SpeechClient', () => {
 
     it('has close method', () => {
         const client = new speechModule.v1p1beta1.SpeechClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -116,8 +116,8 @@ describe('v1p1beta1.SpeechClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new speechModule.v1p1beta1.SpeechClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -128,8 +128,8 @@ describe('v1p1beta1.SpeechClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new speechModule.v1p1beta1.SpeechClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -148,9 +148,9 @@ describe('v1p1beta1.SpeechClient', () => {
     describe('recognize', () => {
         it('invokes recognize without error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.RecognizeRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v1p1beta1.SpeechClient', () => {
 
         it('invokes recognize without error using callback', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.RecognizeRequest());
             const expectedOptions = {};
@@ -191,9 +191,9 @@ describe('v1p1beta1.SpeechClient', () => {
 
         it('invokes recognize with error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.RecognizeRequest());
             const expectedOptions = {};
@@ -208,9 +208,9 @@ describe('v1p1beta1.SpeechClient', () => {
     describe('longRunningRecognize', () => {
         it('invokes longRunningRecognize without error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest());
             const expectedOptions = {};
@@ -225,9 +225,9 @@ describe('v1p1beta1.SpeechClient', () => {
 
         it('invokes longRunningRecognize without error using callback', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest());
             const expectedOptions = {};
@@ -255,9 +255,9 @@ describe('v1p1beta1.SpeechClient', () => {
 
         it('invokes longRunningRecognize with call error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest());
             const expectedOptions = {};
@@ -270,9 +270,9 @@ describe('v1p1beta1.SpeechClient', () => {
 
         it('invokes longRunningRecognize with LRO error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.LongRunningRecognizeRequest());
             const expectedOptions = {};
@@ -286,9 +286,9 @@ describe('v1p1beta1.SpeechClient', () => {
 
         it('invokes checkLongRunningRecognizeProgress without error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -304,9 +304,9 @@ describe('v1p1beta1.SpeechClient', () => {
 
         it('invokes checkLongRunningRecognizeProgress with error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -320,9 +320,9 @@ describe('v1p1beta1.SpeechClient', () => {
     describe('streamingRecognize', () => {
         it('invokes streamingRecognize without error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse());
@@ -348,9 +348,9 @@ describe('v1p1beta1.SpeechClient', () => {
 
         it('invokes streamingRecognize with error', async () => {
             const client = new speechModule.v1p1beta1.SpeechClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.StreamingRecognizeRequest());const expectedError = new Error('expected');
             client.innerApiCalls.streamingRecognize = stubBidiStreamingCall(undefined, expectedError);

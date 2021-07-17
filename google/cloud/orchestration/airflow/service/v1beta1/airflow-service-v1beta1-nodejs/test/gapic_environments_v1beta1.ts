@@ -133,8 +133,8 @@ describe('v1beta1.EnvironmentsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new environmentsModule.v1beta1.EnvironmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.environmentsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.EnvironmentsClient', () => {
 
     it('has close method', () => {
         const client = new environmentsModule.v1beta1.EnvironmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.EnvironmentsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new environmentsModule.v1beta1.EnvironmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.EnvironmentsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new environmentsModule.v1beta1.EnvironmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.EnvironmentsClient', () => {
     describe('getEnvironment', () => {
         it('invokes getEnvironment without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes getEnvironment without error using callback', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes getEnvironment with error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.GetEnvironmentRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta1.EnvironmentsClient', () => {
     describe('createEnvironment', () => {
         it('invokes createEnvironment without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes createEnvironment without error using callback', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes createEnvironment with call error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes createEnvironment with LRO error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.CreateEnvironmentRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkCreateEnvironmentProgress without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkCreateEnvironmentProgress with error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1beta1.EnvironmentsClient', () => {
     describe('updateEnvironment', () => {
         it('invokes updateEnvironment without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest());
             request.name = '';
@@ -437,9 +437,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes updateEnvironment without error using callback', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest());
             request.name = '';
@@ -475,9 +475,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes updateEnvironment with call error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes updateEnvironment with LRO error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.UpdateEnvironmentRequest());
             request.name = '';
@@ -522,9 +522,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkUpdateEnvironmentProgress without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkUpdateEnvironmentProgress with error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -556,9 +556,9 @@ describe('v1beta1.EnvironmentsClient', () => {
     describe('deleteEnvironment', () => {
         it('invokes deleteEnvironment without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest());
             request.name = '';
@@ -581,9 +581,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes deleteEnvironment without error using callback', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest());
             request.name = '';
@@ -619,9 +619,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes deleteEnvironment with call error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest());
             request.name = '';
@@ -642,9 +642,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes deleteEnvironment with LRO error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.DeleteEnvironmentRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkDeleteEnvironmentProgress without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -684,9 +684,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkDeleteEnvironmentProgress with error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -700,9 +700,9 @@ describe('v1beta1.EnvironmentsClient', () => {
     describe('restartWebServer', () => {
         it('invokes restartWebServer without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest());
             request.name = '';
@@ -725,9 +725,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes restartWebServer without error using callback', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest());
             request.name = '';
@@ -763,9 +763,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes restartWebServer with call error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest());
             request.name = '';
@@ -786,9 +786,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes restartWebServer with LRO error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.RestartWebServerRequest());
             request.name = '';
@@ -810,9 +810,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkRestartWebServerProgress without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -828,9 +828,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkRestartWebServerProgress with error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -844,9 +844,9 @@ describe('v1beta1.EnvironmentsClient', () => {
     describe('checkUpgrade', () => {
         it('invokes checkUpgrade without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest());
             request.environment = '';
@@ -869,9 +869,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkUpgrade without error using callback', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest());
             request.environment = '';
@@ -907,9 +907,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkUpgrade with call error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest());
             request.environment = '';
@@ -930,9 +930,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkUpgrade with LRO error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.CheckUpgradeRequest());
             request.environment = '';
@@ -954,9 +954,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkCheckUpgradeProgress without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -972,9 +972,9 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('invokes checkCheckUpgradeProgress with error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1151,13 +1151,14 @@ describe('v1beta1.EnvironmentsClient', () => {
 
         it('uses async iteration with listEnvironments without error', async () => {
             const client = new environmentsModule.v1beta1.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.ListEnvironmentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.Environment()),
               generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.Environment()),
               generateSampleMessage(new protos.google.cloud.orchestration.airflow.service.v1beta1.Environment()),

@@ -117,8 +117,8 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.transitionRouteGroupsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
     it('has close method', () => {
         const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v3.TransitionRouteGroupsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v3.TransitionRouteGroupsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
     describe('getTransitionRouteGroup', () => {
         it('invokes getTransitionRouteGroup without error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTransitionRouteGroupRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('invokes getTransitionRouteGroup without error using callback', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTransitionRouteGroupRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('invokes getTransitionRouteGroup with error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetTransitionRouteGroupRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
     describe('createTransitionRouteGroup', () => {
         it('invokes createTransitionRouteGroup without error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateTransitionRouteGroupRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('invokes createTransitionRouteGroup without error using callback', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateTransitionRouteGroupRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('invokes createTransitionRouteGroup with error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateTransitionRouteGroupRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
     describe('updateTransitionRouteGroup', () => {
         it('invokes updateTransitionRouteGroup without error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateTransitionRouteGroupRequest());
             request.transitionRouteGroup = {};
@@ -361,9 +361,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('invokes updateTransitionRouteGroup without error using callback', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateTransitionRouteGroupRequest());
             request.transitionRouteGroup = {};
@@ -397,9 +397,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('invokes updateTransitionRouteGroup with error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateTransitionRouteGroupRequest());
             request.transitionRouteGroup = {};
@@ -423,9 +423,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
     describe('deleteTransitionRouteGroup', () => {
         it('invokes deleteTransitionRouteGroup without error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('invokes deleteTransitionRouteGroup without error using callback', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('invokes deleteTransitionRouteGroup with error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteTransitionRouteGroupRequest());
             request.name = '';
@@ -670,13 +670,14 @@ describe('v3.TransitionRouteGroupsClient', () => {
 
         it('uses async iteration with listTransitionRouteGroups without error', async () => {
             const client = new transitionroutegroupsModule.v3.TransitionRouteGroupsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ListTransitionRouteGroupsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TransitionRouteGroup()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TransitionRouteGroup()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.TransitionRouteGroup()),

@@ -133,8 +133,8 @@ describe('v1.ModelServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new modelserviceModule.v1.ModelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.modelServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.ModelServiceClient', () => {
 
     it('has close method', () => {
         const client = new modelserviceModule.v1.ModelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.ModelServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new modelserviceModule.v1.ModelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.ModelServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new modelserviceModule.v1.ModelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.ModelServiceClient', () => {
     describe('getModel', () => {
         it('invokes getModel without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes getModel without error using callback', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes getModel with error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.ModelServiceClient', () => {
     describe('updateModel', () => {
         it('invokes updateModel without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateModelRequest());
             request.model = {};
@@ -293,9 +293,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes updateModel without error using callback', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateModelRequest());
             request.model = {};
@@ -329,9 +329,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes updateModel with error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateModelRequest());
             request.model = {};
@@ -355,9 +355,9 @@ describe('v1.ModelServiceClient', () => {
     describe('getModelEvaluation', () => {
         it('invokes getModelEvaluation without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelEvaluationRequest());
             request.name = '';
@@ -379,9 +379,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes getModelEvaluation without error using callback', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelEvaluationRequest());
             request.name = '';
@@ -414,9 +414,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes getModelEvaluation with error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelEvaluationRequest());
             request.name = '';
@@ -439,9 +439,9 @@ describe('v1.ModelServiceClient', () => {
     describe('getModelEvaluationSlice', () => {
         it('invokes getModelEvaluationSlice without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes getModelEvaluationSlice without error using callback', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes getModelEvaluationSlice with error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetModelEvaluationSliceRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v1.ModelServiceClient', () => {
     describe('uploadModel', () => {
         it('invokes uploadModel without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UploadModelRequest());
             request.parent = '';
@@ -548,9 +548,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes uploadModel without error using callback', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UploadModelRequest());
             request.parent = '';
@@ -586,9 +586,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes uploadModel with call error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UploadModelRequest());
             request.parent = '';
@@ -609,9 +609,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes uploadModel with LRO error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UploadModelRequest());
             request.parent = '';
@@ -633,9 +633,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes checkUploadModelProgress without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -651,9 +651,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes checkUploadModelProgress with error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -667,9 +667,9 @@ describe('v1.ModelServiceClient', () => {
     describe('deleteModel', () => {
         it('invokes deleteModel without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteModelRequest());
             request.name = '';
@@ -692,9 +692,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes deleteModel without error using callback', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteModelRequest());
             request.name = '';
@@ -730,9 +730,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes deleteModel with call error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteModelRequest());
             request.name = '';
@@ -753,9 +753,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes deleteModel with LRO error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteModelRequest());
             request.name = '';
@@ -777,9 +777,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes checkDeleteModelProgress without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -795,9 +795,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes checkDeleteModelProgress with error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -811,9 +811,9 @@ describe('v1.ModelServiceClient', () => {
     describe('exportModel', () => {
         it('invokes exportModel without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ExportModelRequest());
             request.name = '';
@@ -836,9 +836,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes exportModel without error using callback', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ExportModelRequest());
             request.name = '';
@@ -874,9 +874,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes exportModel with call error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ExportModelRequest());
             request.name = '';
@@ -897,9 +897,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes exportModel with LRO error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ExportModelRequest());
             request.name = '';
@@ -921,9 +921,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes checkExportModelProgress without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -939,9 +939,9 @@ describe('v1.ModelServiceClient', () => {
 
         it('invokes checkExportModelProgress with error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1118,13 +1118,14 @@ describe('v1.ModelServiceClient', () => {
 
         it('uses async iteration with listModels without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ListModelsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Model()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Model()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Model()),
@@ -1340,13 +1341,14 @@ describe('v1.ModelServiceClient', () => {
 
         it('uses async iteration with listModelEvaluations without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ListModelEvaluationsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.ModelEvaluation()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.ModelEvaluation()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.ModelEvaluation()),
@@ -1562,13 +1564,14 @@ describe('v1.ModelServiceClient', () => {
 
         it('uses async iteration with listModelEvaluationSlices without error', async () => {
             const client = new modelserviceModule.v1.ModelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ListModelEvaluationSlicesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.ModelEvaluationSlice()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.ModelEvaluationSlice()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.ModelEvaluationSlice()),

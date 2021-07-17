@@ -133,8 +133,8 @@ describe('v1beta1.SecurityCenterClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.securityCenterStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.SecurityCenterClient', () => {
 
     it('has close method', () => {
         const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.SecurityCenterClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.SecurityCenterClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('createSource', () => {
         it('invokes createSource without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.CreateSourceRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes createSource without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.CreateSourceRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes createSource with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.CreateSourceRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('createFinding', () => {
         it('invokes createFinding without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.CreateFindingRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes createFinding without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.CreateFindingRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes createFinding with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.CreateFindingRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -376,9 +376,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -411,9 +411,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -436,9 +436,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('getOrganizationSettings', () => {
         it('invokes getOrganizationSettings without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GetOrganizationSettingsRequest());
             request.name = '';
@@ -460,9 +460,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes getOrganizationSettings without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GetOrganizationSettingsRequest());
             request.name = '';
@@ -495,9 +495,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes getOrganizationSettings with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GetOrganizationSettingsRequest());
             request.name = '';
@@ -520,9 +520,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('getSource', () => {
         it('invokes getSource without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GetSourceRequest());
             request.name = '';
@@ -544,9 +544,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes getSource without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GetSourceRequest());
             request.name = '';
@@ -579,9 +579,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes getSource with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GetSourceRequest());
             request.name = '';
@@ -604,9 +604,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('setFindingState', () => {
         it('invokes setFindingState without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.SetFindingStateRequest());
             request.name = '';
@@ -628,9 +628,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes setFindingState without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.SetFindingStateRequest());
             request.name = '';
@@ -663,9 +663,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes setFindingState with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.SetFindingStateRequest());
             request.name = '';
@@ -688,9 +688,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -712,9 +712,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -747,9 +747,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -772,9 +772,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -796,9 +796,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -831,9 +831,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -856,9 +856,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('updateFinding', () => {
         it('invokes updateFinding without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateFindingRequest());
             request.finding = {};
@@ -881,9 +881,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes updateFinding without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateFindingRequest());
             request.finding = {};
@@ -917,9 +917,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes updateFinding with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateFindingRequest());
             request.finding = {};
@@ -943,9 +943,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('updateOrganizationSettings', () => {
         it('invokes updateOrganizationSettings without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateOrganizationSettingsRequest());
             request.organizationSettings = {};
@@ -968,9 +968,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes updateOrganizationSettings without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateOrganizationSettingsRequest());
             request.organizationSettings = {};
@@ -1004,9 +1004,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes updateOrganizationSettings with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateOrganizationSettingsRequest());
             request.organizationSettings = {};
@@ -1030,9 +1030,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('updateSource', () => {
         it('invokes updateSource without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateSourceRequest());
             request.source = {};
@@ -1055,9 +1055,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes updateSource without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateSourceRequest());
             request.source = {};
@@ -1091,9 +1091,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes updateSource with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateSourceRequest());
             request.source = {};
@@ -1117,9 +1117,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('updateSecurityMarks', () => {
         it('invokes updateSecurityMarks without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest());
             request.securityMarks = {};
@@ -1142,9 +1142,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes updateSecurityMarks without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest());
             request.securityMarks = {};
@@ -1178,9 +1178,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes updateSecurityMarks with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.UpdateSecurityMarksRequest());
             request.securityMarks = {};
@@ -1204,9 +1204,9 @@ describe('v1beta1.SecurityCenterClient', () => {
     describe('runAssetDiscovery', () => {
         it('invokes runAssetDiscovery without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.RunAssetDiscoveryRequest());
             request.parent = '';
@@ -1229,9 +1229,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes runAssetDiscovery without error using callback', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.RunAssetDiscoveryRequest());
             request.parent = '';
@@ -1267,9 +1267,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes runAssetDiscovery with call error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.RunAssetDiscoveryRequest());
             request.parent = '';
@@ -1290,9 +1290,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes runAssetDiscovery with LRO error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.RunAssetDiscoveryRequest());
             request.parent = '';
@@ -1314,9 +1314,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes checkRunAssetDiscoveryProgress without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1332,9 +1332,9 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('invokes checkRunAssetDiscoveryProgress with error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1511,13 +1511,14 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('uses async iteration with groupAssets without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GroupAssetsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GroupResult()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GroupResult()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GroupResult()),
@@ -1733,13 +1734,14 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('uses async iteration with groupFindings without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GroupFindingsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GroupResult()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GroupResult()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.GroupResult()),
@@ -1955,13 +1957,14 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('uses async iteration with listAssets without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.ListAssetsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.ListAssetsResponse.ListAssetsResult()),
@@ -2177,13 +2180,14 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('uses async iteration with listFindings without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.ListFindingsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.Finding()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.Finding()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.Finding()),
@@ -2399,13 +2403,14 @@ describe('v1beta1.SecurityCenterClient', () => {
 
         it('uses async iteration with listSources without error', async () => {
             const client = new securitycenterModule.v1beta1.SecurityCenterClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.ListSourcesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.Source()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.Source()),
               generateSampleMessage(new protos.google.cloud.securitycenter.v1beta1.Source()),

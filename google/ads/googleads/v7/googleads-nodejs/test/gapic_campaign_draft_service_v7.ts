@@ -133,8 +133,8 @@ describe('v7.CampaignDraftServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.campaignDraftServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v7.CampaignDraftServiceClient', () => {
 
     it('has close method', () => {
         const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v7.CampaignDraftServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v7.CampaignDraftServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v7.CampaignDraftServiceClient', () => {
     describe('getCampaignDraft', () => {
         it('invokes getCampaignDraft without error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignDraftRequest());
             request.resourceName = '';
@@ -208,9 +208,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes getCampaignDraft without error using callback', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignDraftRequest());
             request.resourceName = '';
@@ -243,9 +243,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes getCampaignDraft with error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignDraftRequest());
             request.resourceName = '';
@@ -268,9 +268,9 @@ describe('v7.CampaignDraftServiceClient', () => {
     describe('mutateCampaignDrafts', () => {
         it('invokes mutateCampaignDrafts without error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignDraftsRequest());
             request.customerId = '';
@@ -292,9 +292,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes mutateCampaignDrafts without error using callback', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignDraftsRequest());
             request.customerId = '';
@@ -327,9 +327,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes mutateCampaignDrafts with error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignDraftsRequest());
             request.customerId = '';
@@ -352,9 +352,9 @@ describe('v7.CampaignDraftServiceClient', () => {
     describe('promoteCampaignDraft', () => {
         it('invokes promoteCampaignDraft without error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.PromoteCampaignDraftRequest());
             request.campaignDraft = '';
@@ -377,9 +377,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes promoteCampaignDraft without error using callback', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.PromoteCampaignDraftRequest());
             request.campaignDraft = '';
@@ -415,9 +415,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes promoteCampaignDraft with call error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.PromoteCampaignDraftRequest());
             request.campaignDraft = '';
@@ -438,9 +438,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes promoteCampaignDraft with LRO error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.PromoteCampaignDraftRequest());
             request.campaignDraft = '';
@@ -462,9 +462,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes checkPromoteCampaignDraftProgress without error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -480,9 +480,9 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('invokes checkPromoteCampaignDraftProgress with error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -659,13 +659,14 @@ describe('v7.CampaignDraftServiceClient', () => {
 
         it('uses async iteration with listCampaignDraftAsyncErrors without error', async () => {
             const client = new campaigndraftserviceModule.v7.CampaignDraftServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.ListCampaignDraftAsyncErrorsRequest());
             request.resourceName = '';
-            const expectedHeaderRequestParams = "resource_name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "resource_name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.rpc.Status()),
               generateSampleMessage(new protos.google.rpc.Status()),
               generateSampleMessage(new protos.google.rpc.Status()),

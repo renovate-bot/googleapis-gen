@@ -117,8 +117,8 @@ describe('v1.ResourceSettingsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.resourceSettingsServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.ResourceSettingsServiceClient', () => {
 
     it('has close method', () => {
         const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.ResourceSettingsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.ResourceSettingsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.ResourceSettingsServiceClient', () => {
     describe('getSetting', () => {
         it('invokes getSetting without error', async () => {
             const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcesettings.v1.GetSettingRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1.ResourceSettingsServiceClient', () => {
 
         it('invokes getSetting without error using callback', async () => {
             const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcesettings.v1.GetSettingRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1.ResourceSettingsServiceClient', () => {
 
         it('invokes getSetting with error', async () => {
             const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcesettings.v1.GetSettingRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1.ResourceSettingsServiceClient', () => {
     describe('updateSetting', () => {
         it('invokes updateSetting without error', async () => {
             const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcesettings.v1.UpdateSettingRequest());
             request.setting = {};
@@ -277,9 +277,9 @@ describe('v1.ResourceSettingsServiceClient', () => {
 
         it('invokes updateSetting without error using callback', async () => {
             const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcesettings.v1.UpdateSettingRequest());
             request.setting = {};
@@ -313,9 +313,9 @@ describe('v1.ResourceSettingsServiceClient', () => {
 
         it('invokes updateSetting with error', async () => {
             const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcesettings.v1.UpdateSettingRequest());
             request.setting = {};
@@ -502,13 +502,14 @@ describe('v1.ResourceSettingsServiceClient', () => {
 
         it('uses async iteration with listSettings without error', async () => {
             const client = new resourcesettingsserviceModule.v1.ResourceSettingsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcesettings.v1.ListSettingsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcesettings.v1.Setting()),
               generateSampleMessage(new protos.google.cloud.resourcesettings.v1.Setting()),
               generateSampleMessage(new protos.google.cloud.resourcesettings.v1.Setting()),

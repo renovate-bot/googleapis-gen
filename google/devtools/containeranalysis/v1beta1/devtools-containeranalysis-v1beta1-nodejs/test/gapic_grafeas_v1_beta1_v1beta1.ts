@@ -117,8 +117,8 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.grafeasV1Beta1Stub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
     it('has close method', () => {
         const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('getOccurrence', () => {
         it('invokes getOccurrence without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetOccurrenceRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes getOccurrence without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetOccurrenceRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes getOccurrence with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetOccurrenceRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('deleteOccurrence', () => {
         it('invokes deleteOccurrence without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.DeleteOccurrenceRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes deleteOccurrence without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.DeleteOccurrenceRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes deleteOccurrence with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.DeleteOccurrenceRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('createOccurrence', () => {
         it('invokes createOccurrence without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.CreateOccurrenceRequest());
             request.parent = '';
@@ -360,9 +360,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes createOccurrence without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.CreateOccurrenceRequest());
             request.parent = '';
@@ -395,9 +395,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes createOccurrence with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.CreateOccurrenceRequest());
             request.parent = '';
@@ -420,9 +420,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('batchCreateOccurrences', () => {
         it('invokes batchCreateOccurrences without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.BatchCreateOccurrencesRequest());
             request.parent = '';
@@ -444,9 +444,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes batchCreateOccurrences without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.BatchCreateOccurrencesRequest());
             request.parent = '';
@@ -479,9 +479,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes batchCreateOccurrences with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.BatchCreateOccurrencesRequest());
             request.parent = '';
@@ -504,9 +504,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('updateOccurrence', () => {
         it('invokes updateOccurrence without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.UpdateOccurrenceRequest());
             request.name = '';
@@ -528,9 +528,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes updateOccurrence without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.UpdateOccurrenceRequest());
             request.name = '';
@@ -563,9 +563,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes updateOccurrence with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.UpdateOccurrenceRequest());
             request.name = '';
@@ -588,9 +588,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('getOccurrenceNote', () => {
         it('invokes getOccurrenceNote without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetOccurrenceNoteRequest());
             request.name = '';
@@ -612,9 +612,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes getOccurrenceNote without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetOccurrenceNoteRequest());
             request.name = '';
@@ -647,9 +647,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes getOccurrenceNote with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetOccurrenceNoteRequest());
             request.name = '';
@@ -672,9 +672,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('getNote', () => {
         it('invokes getNote without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetNoteRequest());
             request.name = '';
@@ -696,9 +696,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes getNote without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetNoteRequest());
             request.name = '';
@@ -731,9 +731,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes getNote with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetNoteRequest());
             request.name = '';
@@ -756,9 +756,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('deleteNote', () => {
         it('invokes deleteNote without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.DeleteNoteRequest());
             request.name = '';
@@ -780,9 +780,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes deleteNote without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.DeleteNoteRequest());
             request.name = '';
@@ -815,9 +815,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes deleteNote with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.DeleteNoteRequest());
             request.name = '';
@@ -840,9 +840,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('createNote', () => {
         it('invokes createNote without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.CreateNoteRequest());
             request.parent = '';
@@ -864,9 +864,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes createNote without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.CreateNoteRequest());
             request.parent = '';
@@ -899,9 +899,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes createNote with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.CreateNoteRequest());
             request.parent = '';
@@ -924,9 +924,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('batchCreateNotes', () => {
         it('invokes batchCreateNotes without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.BatchCreateNotesRequest());
             request.parent = '';
@@ -948,9 +948,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes batchCreateNotes without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.BatchCreateNotesRequest());
             request.parent = '';
@@ -983,9 +983,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes batchCreateNotes with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.BatchCreateNotesRequest());
             request.parent = '';
@@ -1008,9 +1008,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('updateNote', () => {
         it('invokes updateNote without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.UpdateNoteRequest());
             request.name = '';
@@ -1032,9 +1032,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes updateNote without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.UpdateNoteRequest());
             request.name = '';
@@ -1067,9 +1067,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes updateNote with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.UpdateNoteRequest());
             request.name = '';
@@ -1092,9 +1092,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
     describe('getVulnerabilityOccurrencesSummary', () => {
         it('invokes getVulnerabilityOccurrencesSummary without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest());
             request.parent = '';
@@ -1116,9 +1116,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes getVulnerabilityOccurrencesSummary without error using callback', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest());
             request.parent = '';
@@ -1151,9 +1151,9 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('invokes getVulnerabilityOccurrencesSummary with error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.GetVulnerabilityOccurrencesSummaryRequest());
             request.parent = '';
@@ -1339,13 +1339,14 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('uses async iteration with listOccurrences without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.ListOccurrencesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.grafeas.v1beta1.Occurrence()),
               generateSampleMessage(new protos.grafeas.v1beta1.Occurrence()),
               generateSampleMessage(new protos.grafeas.v1beta1.Occurrence()),
@@ -1561,13 +1562,14 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('uses async iteration with listNotes without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.ListNotesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.grafeas.v1beta1.Note()),
               generateSampleMessage(new protos.grafeas.v1beta1.Note()),
               generateSampleMessage(new protos.grafeas.v1beta1.Note()),
@@ -1783,13 +1785,14 @@ describe('v1beta1.GrafeasV1Beta1Client', () => {
 
         it('uses async iteration with listNoteOccurrences without error', async () => {
             const client = new grafeasv1beta1Module.v1beta1.GrafeasV1Beta1Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.grafeas.v1beta1.ListNoteOccurrencesRequest());
             request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.grafeas.v1beta1.Occurrence()),
               generateSampleMessage(new protos.grafeas.v1beta1.Occurrence()),
               generateSampleMessage(new protos.grafeas.v1beta1.Occurrence()),

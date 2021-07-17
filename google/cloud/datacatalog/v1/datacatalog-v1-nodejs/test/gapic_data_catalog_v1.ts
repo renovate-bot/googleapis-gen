@@ -117,8 +117,8 @@ describe('v1.DataCatalogClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new datacatalogModule.v1.DataCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.dataCatalogStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.DataCatalogClient', () => {
 
     it('has close method', () => {
         const client = new datacatalogModule.v1.DataCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.DataCatalogClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datacatalogModule.v1.DataCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.DataCatalogClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datacatalogModule.v1.DataCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.DataCatalogClient', () => {
     describe('createEntryGroup', () => {
         it('invokes createEntryGroup without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateEntryGroupRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createEntryGroup without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateEntryGroupRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createEntryGroup with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateEntryGroupRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.DataCatalogClient', () => {
     describe('getEntryGroup', () => {
         it('invokes getEntryGroup without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetEntryGroupRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes getEntryGroup without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetEntryGroupRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes getEntryGroup with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetEntryGroupRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.DataCatalogClient', () => {
     describe('updateEntryGroup', () => {
         it('invokes updateEntryGroup without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateEntryGroupRequest());
             request.entryGroup = {};
@@ -361,9 +361,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateEntryGroup without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateEntryGroupRequest());
             request.entryGroup = {};
@@ -397,9 +397,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateEntryGroup with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateEntryGroupRequest());
             request.entryGroup = {};
@@ -423,9 +423,9 @@ describe('v1.DataCatalogClient', () => {
     describe('deleteEntryGroup', () => {
         it('invokes deleteEntryGroup without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteEntryGroupRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteEntryGroup without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteEntryGroupRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteEntryGroup with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteEntryGroupRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v1.DataCatalogClient', () => {
     describe('createEntry', () => {
         it('invokes createEntry without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateEntryRequest());
             request.parent = '';
@@ -531,9 +531,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createEntry without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateEntryRequest());
             request.parent = '';
@@ -566,9 +566,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createEntry with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateEntryRequest());
             request.parent = '';
@@ -591,9 +591,9 @@ describe('v1.DataCatalogClient', () => {
     describe('updateEntry', () => {
         it('invokes updateEntry without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateEntryRequest());
             request.entry = {};
@@ -616,9 +616,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateEntry without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateEntryRequest());
             request.entry = {};
@@ -652,9 +652,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateEntry with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateEntryRequest());
             request.entry = {};
@@ -678,9 +678,9 @@ describe('v1.DataCatalogClient', () => {
     describe('deleteEntry', () => {
         it('invokes deleteEntry without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteEntryRequest());
             request.name = '';
@@ -702,9 +702,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteEntry without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteEntryRequest());
             request.name = '';
@@ -737,9 +737,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteEntry with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteEntryRequest());
             request.name = '';
@@ -762,9 +762,9 @@ describe('v1.DataCatalogClient', () => {
     describe('getEntry', () => {
         it('invokes getEntry without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetEntryRequest());
             request.name = '';
@@ -786,9 +786,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes getEntry without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetEntryRequest());
             request.name = '';
@@ -821,9 +821,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes getEntry with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetEntryRequest());
             request.name = '';
@@ -846,9 +846,9 @@ describe('v1.DataCatalogClient', () => {
     describe('lookupEntry', () => {
         it('invokes lookupEntry without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.LookupEntryRequest());
             const expectedOptions = {};
@@ -862,9 +862,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes lookupEntry without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.LookupEntryRequest());
             const expectedOptions = {};
@@ -889,9 +889,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes lookupEntry with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.LookupEntryRequest());
             const expectedOptions = {};
@@ -906,9 +906,9 @@ describe('v1.DataCatalogClient', () => {
     describe('createTagTemplate', () => {
         it('invokes createTagTemplate without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagTemplateRequest());
             request.parent = '';
@@ -930,9 +930,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createTagTemplate without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagTemplateRequest());
             request.parent = '';
@@ -965,9 +965,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createTagTemplate with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagTemplateRequest());
             request.parent = '';
@@ -990,9 +990,9 @@ describe('v1.DataCatalogClient', () => {
     describe('getTagTemplate', () => {
         it('invokes getTagTemplate without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetTagTemplateRequest());
             request.name = '';
@@ -1014,9 +1014,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes getTagTemplate without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetTagTemplateRequest());
             request.name = '';
@@ -1049,9 +1049,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes getTagTemplate with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.GetTagTemplateRequest());
             request.name = '';
@@ -1074,9 +1074,9 @@ describe('v1.DataCatalogClient', () => {
     describe('updateTagTemplate', () => {
         it('invokes updateTagTemplate without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagTemplateRequest());
             request.tagTemplate = {};
@@ -1099,9 +1099,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateTagTemplate without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagTemplateRequest());
             request.tagTemplate = {};
@@ -1135,9 +1135,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateTagTemplate with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagTemplateRequest());
             request.tagTemplate = {};
@@ -1161,9 +1161,9 @@ describe('v1.DataCatalogClient', () => {
     describe('deleteTagTemplate', () => {
         it('invokes deleteTagTemplate without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagTemplateRequest());
             request.name = '';
@@ -1185,9 +1185,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteTagTemplate without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagTemplateRequest());
             request.name = '';
@@ -1220,9 +1220,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteTagTemplate with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagTemplateRequest());
             request.name = '';
@@ -1245,9 +1245,9 @@ describe('v1.DataCatalogClient', () => {
     describe('createTagTemplateField', () => {
         it('invokes createTagTemplateField without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest());
             request.parent = '';
@@ -1269,9 +1269,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createTagTemplateField without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest());
             request.parent = '';
@@ -1304,9 +1304,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createTagTemplateField with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest());
             request.parent = '';
@@ -1329,9 +1329,9 @@ describe('v1.DataCatalogClient', () => {
     describe('updateTagTemplateField', () => {
         it('invokes updateTagTemplateField without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest());
             request.name = '';
@@ -1353,9 +1353,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateTagTemplateField without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest());
             request.name = '';
@@ -1388,9 +1388,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateTagTemplateField with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest());
             request.name = '';
@@ -1413,9 +1413,9 @@ describe('v1.DataCatalogClient', () => {
     describe('renameTagTemplateField', () => {
         it('invokes renameTagTemplateField without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest());
             request.name = '';
@@ -1437,9 +1437,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes renameTagTemplateField without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest());
             request.name = '';
@@ -1472,9 +1472,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes renameTagTemplateField with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest());
             request.name = '';
@@ -1497,9 +1497,9 @@ describe('v1.DataCatalogClient', () => {
     describe('renameTagTemplateFieldEnumValue', () => {
         it('invokes renameTagTemplateFieldEnumValue without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest());
             request.name = '';
@@ -1521,9 +1521,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes renameTagTemplateFieldEnumValue without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest());
             request.name = '';
@@ -1556,9 +1556,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes renameTagTemplateFieldEnumValue with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest());
             request.name = '';
@@ -1581,9 +1581,9 @@ describe('v1.DataCatalogClient', () => {
     describe('deleteTagTemplateField', () => {
         it('invokes deleteTagTemplateField without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest());
             request.name = '';
@@ -1605,9 +1605,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteTagTemplateField without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest());
             request.name = '';
@@ -1640,9 +1640,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteTagTemplateField with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest());
             request.name = '';
@@ -1665,9 +1665,9 @@ describe('v1.DataCatalogClient', () => {
     describe('createTag', () => {
         it('invokes createTag without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagRequest());
             request.parent = '';
@@ -1689,9 +1689,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createTag without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagRequest());
             request.parent = '';
@@ -1724,9 +1724,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes createTag with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.CreateTagRequest());
             request.parent = '';
@@ -1749,9 +1749,9 @@ describe('v1.DataCatalogClient', () => {
     describe('updateTag', () => {
         it('invokes updateTag without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagRequest());
             request.tag = {};
@@ -1774,9 +1774,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateTag without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagRequest());
             request.tag = {};
@@ -1810,9 +1810,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes updateTag with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.UpdateTagRequest());
             request.tag = {};
@@ -1836,9 +1836,9 @@ describe('v1.DataCatalogClient', () => {
     describe('deleteTag', () => {
         it('invokes deleteTag without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagRequest());
             request.name = '';
@@ -1860,9 +1860,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteTag without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagRequest());
             request.name = '';
@@ -1895,9 +1895,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes deleteTag with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.DeleteTagRequest());
             request.name = '';
@@ -1920,9 +1920,9 @@ describe('v1.DataCatalogClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -1944,9 +1944,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -1979,9 +1979,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -2004,9 +2004,9 @@ describe('v1.DataCatalogClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -2028,9 +2028,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -2063,9 +2063,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -2088,9 +2088,9 @@ describe('v1.DataCatalogClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -2112,9 +2112,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -2147,9 +2147,9 @@ describe('v1.DataCatalogClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -2297,11 +2297,12 @@ describe('v1.DataCatalogClient', () => {
 
         it('uses async iteration with searchCatalog without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.SearchCatalogRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.SearchCatalogRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.SearchCatalogResult()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.SearchCatalogResult()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.SearchCatalogResult()),
@@ -2505,13 +2506,14 @@ describe('v1.DataCatalogClient', () => {
 
         it('uses async iteration with listEntryGroups without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.ListEntryGroupsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.EntryGroup()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.EntryGroup()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.EntryGroup()),
@@ -2727,13 +2729,14 @@ describe('v1.DataCatalogClient', () => {
 
         it('uses async iteration with listEntries without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.ListEntriesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Entry()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Entry()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Entry()),
@@ -2949,13 +2952,14 @@ describe('v1.DataCatalogClient', () => {
 
         it('uses async iteration with listTags without error', async () => {
             const client = new datacatalogModule.v1.DataCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.datacatalog.v1.ListTagsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Tag()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Tag()),
               generateSampleMessage(new protos.google.cloud.datacatalog.v1.Tag()),

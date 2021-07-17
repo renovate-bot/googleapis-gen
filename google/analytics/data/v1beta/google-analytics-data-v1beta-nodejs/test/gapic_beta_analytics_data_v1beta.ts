@@ -70,8 +70,8 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.betaAnalyticsDataStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
     it('has close method', () => {
         const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
     describe('runReport', () => {
         it('invokes runReport without error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunReportRequest());
             request.property = '';
@@ -145,9 +145,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes runReport without error using callback', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunReportRequest());
             request.property = '';
@@ -180,9 +180,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes runReport with error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunReportRequest());
             request.property = '';
@@ -205,9 +205,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
     describe('runPivotReport', () => {
         it('invokes runPivotReport without error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunPivotReportRequest());
             request.property = '';
@@ -229,9 +229,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes runPivotReport without error using callback', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunPivotReportRequest());
             request.property = '';
@@ -264,9 +264,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes runPivotReport with error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunPivotReportRequest());
             request.property = '';
@@ -289,9 +289,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
     describe('batchRunReports', () => {
         it('invokes batchRunReports without error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.BatchRunReportsRequest());
             request.property = '';
@@ -313,9 +313,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes batchRunReports without error using callback', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.BatchRunReportsRequest());
             request.property = '';
@@ -348,9 +348,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes batchRunReports with error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.BatchRunReportsRequest());
             request.property = '';
@@ -373,9 +373,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
     describe('batchRunPivotReports', () => {
         it('invokes batchRunPivotReports without error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.BatchRunPivotReportsRequest());
             request.property = '';
@@ -397,9 +397,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes batchRunPivotReports without error using callback', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.BatchRunPivotReportsRequest());
             request.property = '';
@@ -432,9 +432,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes batchRunPivotReports with error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.BatchRunPivotReportsRequest());
             request.property = '';
@@ -457,9 +457,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
     describe('getMetadata', () => {
         it('invokes getMetadata without error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.GetMetadataRequest());
             request.name = '';
@@ -481,9 +481,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes getMetadata without error using callback', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.GetMetadataRequest());
             request.name = '';
@@ -516,9 +516,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes getMetadata with error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.GetMetadataRequest());
             request.name = '';
@@ -541,9 +541,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
     describe('runRealtimeReport', () => {
         it('invokes runRealtimeReport without error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunRealtimeReportRequest());
             request.property = '';
@@ -565,9 +565,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes runRealtimeReport without error using callback', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunRealtimeReportRequest());
             request.property = '';
@@ -600,9 +600,9 @@ describe('v1beta.BetaAnalyticsDataClient', () => {
 
         it('invokes runRealtimeReport with error', async () => {
             const client = new betaanalyticsdataModule.v1beta.BetaAnalyticsDataClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.analytics.data.v1beta.RunRealtimeReportRequest());
             request.property = '';

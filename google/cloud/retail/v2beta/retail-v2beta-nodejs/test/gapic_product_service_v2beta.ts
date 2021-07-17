@@ -86,8 +86,8 @@ describe('v2beta.ProductServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new productserviceModule.v2beta.ProductServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.productServiceStub, undefined);
         await client.initialize();
@@ -96,8 +96,8 @@ describe('v2beta.ProductServiceClient', () => {
 
     it('has close method', () => {
         const client = new productserviceModule.v2beta.ProductServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -105,8 +105,8 @@ describe('v2beta.ProductServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new productserviceModule.v2beta.ProductServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -117,8 +117,8 @@ describe('v2beta.ProductServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new productserviceModule.v2beta.ProductServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -137,9 +137,9 @@ describe('v2beta.ProductServiceClient', () => {
     describe('createProduct', () => {
         it('invokes createProduct without error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.CreateProductRequest());
             request.parent = '';
@@ -161,9 +161,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes createProduct without error using callback', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.CreateProductRequest());
             request.parent = '';
@@ -196,9 +196,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes createProduct with error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.CreateProductRequest());
             request.parent = '';
@@ -221,9 +221,9 @@ describe('v2beta.ProductServiceClient', () => {
     describe('getProduct', () => {
         it('invokes getProduct without error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.GetProductRequest());
             request.name = '';
@@ -245,9 +245,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes getProduct without error using callback', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.GetProductRequest());
             request.name = '';
@@ -280,9 +280,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes getProduct with error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.GetProductRequest());
             request.name = '';
@@ -305,9 +305,9 @@ describe('v2beta.ProductServiceClient', () => {
     describe('updateProduct', () => {
         it('invokes updateProduct without error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.UpdateProductRequest());
             request.product = {};
@@ -330,9 +330,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes updateProduct without error using callback', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.UpdateProductRequest());
             request.product = {};
@@ -366,9 +366,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes updateProduct with error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.UpdateProductRequest());
             request.product = {};
@@ -392,9 +392,9 @@ describe('v2beta.ProductServiceClient', () => {
     describe('deleteProduct', () => {
         it('invokes deleteProduct without error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.DeleteProductRequest());
             request.name = '';
@@ -416,9 +416,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes deleteProduct without error using callback', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.DeleteProductRequest());
             request.name = '';
@@ -451,9 +451,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes deleteProduct with error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.DeleteProductRequest());
             request.name = '';
@@ -476,9 +476,9 @@ describe('v2beta.ProductServiceClient', () => {
     describe('importProducts', () => {
         it('invokes importProducts without error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.ImportProductsRequest());
             request.parent = '';
@@ -501,9 +501,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes importProducts without error using callback', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.ImportProductsRequest());
             request.parent = '';
@@ -539,9 +539,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes importProducts with call error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.ImportProductsRequest());
             request.parent = '';
@@ -562,9 +562,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes importProducts with LRO error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2beta.ImportProductsRequest());
             request.parent = '';
@@ -586,9 +586,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes checkImportProductsProgress without error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -604,9 +604,9 @@ describe('v2beta.ProductServiceClient', () => {
 
         it('invokes checkImportProductsProgress with error', async () => {
             const client = new productserviceModule.v2beta.ProductServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 

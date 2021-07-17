@@ -126,8 +126,8 @@ describe('v1.SubscriberClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new subscriberModule.v1.SubscriberClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.subscriberStub, undefined);
         await client.initialize();
@@ -136,8 +136,8 @@ describe('v1.SubscriberClient', () => {
 
     it('has close method', () => {
         const client = new subscriberModule.v1.SubscriberClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -145,8 +145,8 @@ describe('v1.SubscriberClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new subscriberModule.v1.SubscriberClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -157,8 +157,8 @@ describe('v1.SubscriberClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new subscriberModule.v1.SubscriberClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -177,9 +177,9 @@ describe('v1.SubscriberClient', () => {
     describe('createSubscription', () => {
         it('invokes createSubscription without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.Subscription());
             request.name = '';
@@ -201,9 +201,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes createSubscription without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.Subscription());
             request.name = '';
@@ -236,9 +236,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes createSubscription with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.Subscription());
             request.name = '';
@@ -261,9 +261,9 @@ describe('v1.SubscriberClient', () => {
     describe('getSubscription', () => {
         it('invokes getSubscription without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSubscriptionRequest());
             request.subscription = '';
@@ -285,9 +285,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes getSubscription without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSubscriptionRequest());
             request.subscription = '';
@@ -320,9 +320,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes getSubscription with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSubscriptionRequest());
             request.subscription = '';
@@ -345,9 +345,9 @@ describe('v1.SubscriberClient', () => {
     describe('updateSubscription', () => {
         it('invokes updateSubscription without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateSubscriptionRequest());
             request.subscription = {};
@@ -370,9 +370,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes updateSubscription without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateSubscriptionRequest());
             request.subscription = {};
@@ -406,9 +406,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes updateSubscription with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateSubscriptionRequest());
             request.subscription = {};
@@ -432,9 +432,9 @@ describe('v1.SubscriberClient', () => {
     describe('deleteSubscription', () => {
         it('invokes deleteSubscription without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSubscriptionRequest());
             request.subscription = '';
@@ -456,9 +456,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes deleteSubscription without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSubscriptionRequest());
             request.subscription = '';
@@ -491,9 +491,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes deleteSubscription with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSubscriptionRequest());
             request.subscription = '';
@@ -516,9 +516,9 @@ describe('v1.SubscriberClient', () => {
     describe('modifyAckDeadline', () => {
         it('invokes modifyAckDeadline without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ModifyAckDeadlineRequest());
             request.subscription = '';
@@ -540,9 +540,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes modifyAckDeadline without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ModifyAckDeadlineRequest());
             request.subscription = '';
@@ -575,9 +575,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes modifyAckDeadline with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ModifyAckDeadlineRequest());
             request.subscription = '';
@@ -600,9 +600,9 @@ describe('v1.SubscriberClient', () => {
     describe('acknowledge', () => {
         it('invokes acknowledge without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.AcknowledgeRequest());
             request.subscription = '';
@@ -624,9 +624,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes acknowledge without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.AcknowledgeRequest());
             request.subscription = '';
@@ -659,9 +659,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes acknowledge with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.AcknowledgeRequest());
             request.subscription = '';
@@ -684,9 +684,9 @@ describe('v1.SubscriberClient', () => {
     describe('pull', () => {
         it('invokes pull without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.PullRequest());
             request.subscription = '';
@@ -708,9 +708,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes pull without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.PullRequest());
             request.subscription = '';
@@ -743,9 +743,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes pull with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.PullRequest());
             request.subscription = '';
@@ -768,9 +768,9 @@ describe('v1.SubscriberClient', () => {
     describe('modifyPushConfig', () => {
         it('invokes modifyPushConfig without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ModifyPushConfigRequest());
             request.subscription = '';
@@ -792,9 +792,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes modifyPushConfig without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ModifyPushConfigRequest());
             request.subscription = '';
@@ -827,9 +827,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes modifyPushConfig with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ModifyPushConfigRequest());
             request.subscription = '';
@@ -852,9 +852,9 @@ describe('v1.SubscriberClient', () => {
     describe('getSnapshot', () => {
         it('invokes getSnapshot without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSnapshotRequest());
             request.snapshot = '';
@@ -876,9 +876,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes getSnapshot without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSnapshotRequest());
             request.snapshot = '';
@@ -911,9 +911,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes getSnapshot with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.GetSnapshotRequest());
             request.snapshot = '';
@@ -936,9 +936,9 @@ describe('v1.SubscriberClient', () => {
     describe('createSnapshot', () => {
         it('invokes createSnapshot without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.CreateSnapshotRequest());
             request.name = '';
@@ -960,9 +960,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes createSnapshot without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.CreateSnapshotRequest());
             request.name = '';
@@ -995,9 +995,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes createSnapshot with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.CreateSnapshotRequest());
             request.name = '';
@@ -1020,9 +1020,9 @@ describe('v1.SubscriberClient', () => {
     describe('updateSnapshot', () => {
         it('invokes updateSnapshot without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateSnapshotRequest());
             request.snapshot = {};
@@ -1045,9 +1045,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes updateSnapshot without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateSnapshotRequest());
             request.snapshot = {};
@@ -1081,9 +1081,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes updateSnapshot with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.UpdateSnapshotRequest());
             request.snapshot = {};
@@ -1107,9 +1107,9 @@ describe('v1.SubscriberClient', () => {
     describe('deleteSnapshot', () => {
         it('invokes deleteSnapshot without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSnapshotRequest());
             request.snapshot = '';
@@ -1131,9 +1131,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes deleteSnapshot without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSnapshotRequest());
             request.snapshot = '';
@@ -1166,9 +1166,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes deleteSnapshot with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.DeleteSnapshotRequest());
             request.snapshot = '';
@@ -1191,9 +1191,9 @@ describe('v1.SubscriberClient', () => {
     describe('seek', () => {
         it('invokes seek without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.SeekRequest());
             request.subscription = '';
@@ -1215,9 +1215,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes seek without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.SeekRequest());
             request.subscription = '';
@@ -1250,9 +1250,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes seek with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.SeekRequest());
             request.subscription = '';
@@ -1275,9 +1275,9 @@ describe('v1.SubscriberClient', () => {
     describe('streamingPull', () => {
         it('invokes streamingPull without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.StreamingPullRequest());
             const expectedResponse = generateSampleMessage(new protos.google.pubsub.v1.StreamingPullResponse());
@@ -1303,9 +1303,9 @@ describe('v1.SubscriberClient', () => {
 
         it('invokes streamingPull with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.StreamingPullRequest());const expectedError = new Error('expected');
             client.innerApiCalls.streamingPull = stubBidiStreamingCall(undefined, expectedError);
@@ -1494,13 +1494,14 @@ describe('v1.SubscriberClient', () => {
 
         it('uses async iteration with listSubscriptions without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ListSubscriptionsRequest());
             request.project = '';
-            const expectedHeaderRequestParams = "project=";const expectedResponse = [
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.pubsub.v1.Subscription()),
               generateSampleMessage(new protos.google.pubsub.v1.Subscription()),
               generateSampleMessage(new protos.google.pubsub.v1.Subscription()),
@@ -1716,13 +1717,14 @@ describe('v1.SubscriberClient', () => {
 
         it('uses async iteration with listSnapshots without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.pubsub.v1.ListSnapshotsRequest());
             request.project = '';
-            const expectedHeaderRequestParams = "project=";const expectedResponse = [
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.pubsub.v1.Snapshot()),
               generateSampleMessage(new protos.google.pubsub.v1.Snapshot()),
               generateSampleMessage(new protos.google.pubsub.v1.Snapshot()),
@@ -1774,9 +1776,9 @@ describe('v1.SubscriberClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -1801,9 +1803,9 @@ describe('v1.SubscriberClient', () => {
         });
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -1840,9 +1842,9 @@ describe('v1.SubscriberClient', () => {
         });
         it('invokes getIamPolicy with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.GetIamPolicyRequest()
@@ -1866,9 +1868,9 @@ describe('v1.SubscriberClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -1893,9 +1895,9 @@ describe('v1.SubscriberClient', () => {
         });
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -1932,9 +1934,9 @@ describe('v1.SubscriberClient', () => {
         });
         it('invokes setIamPolicy with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.SetIamPolicyRequest()
@@ -1958,9 +1960,9 @@ describe('v1.SubscriberClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()
@@ -1985,9 +1987,9 @@ describe('v1.SubscriberClient', () => {
         });
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()
@@ -2024,9 +2026,9 @@ describe('v1.SubscriberClient', () => {
         });
         it('invokes testIamPermissions with error', async () => {
             const client = new subscriberModule.v1.SubscriberClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(
                 new IamProtos.google.iam.v1.TestIamPermissionsRequest()

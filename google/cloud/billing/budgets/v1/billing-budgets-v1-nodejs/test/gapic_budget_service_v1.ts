@@ -117,8 +117,8 @@ describe('v1.BudgetServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new budgetserviceModule.v1.BudgetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.budgetServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.BudgetServiceClient', () => {
 
     it('has close method', () => {
         const client = new budgetserviceModule.v1.BudgetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.BudgetServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new budgetserviceModule.v1.BudgetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.BudgetServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new budgetserviceModule.v1.BudgetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.BudgetServiceClient', () => {
     describe('createBudget', () => {
         it('invokes createBudget without error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.CreateBudgetRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.BudgetServiceClient', () => {
 
         it('invokes createBudget without error using callback', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.CreateBudgetRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.BudgetServiceClient', () => {
 
         it('invokes createBudget with error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.CreateBudgetRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.BudgetServiceClient', () => {
     describe('updateBudget', () => {
         it('invokes updateBudget without error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.UpdateBudgetRequest());
             request.budget = {};
@@ -277,9 +277,9 @@ describe('v1.BudgetServiceClient', () => {
 
         it('invokes updateBudget without error using callback', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.UpdateBudgetRequest());
             request.budget = {};
@@ -313,9 +313,9 @@ describe('v1.BudgetServiceClient', () => {
 
         it('invokes updateBudget with error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.UpdateBudgetRequest());
             request.budget = {};
@@ -339,9 +339,9 @@ describe('v1.BudgetServiceClient', () => {
     describe('getBudget', () => {
         it('invokes getBudget without error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.GetBudgetRequest());
             request.name = '';
@@ -363,9 +363,9 @@ describe('v1.BudgetServiceClient', () => {
 
         it('invokes getBudget without error using callback', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.GetBudgetRequest());
             request.name = '';
@@ -398,9 +398,9 @@ describe('v1.BudgetServiceClient', () => {
 
         it('invokes getBudget with error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.GetBudgetRequest());
             request.name = '';
@@ -423,9 +423,9 @@ describe('v1.BudgetServiceClient', () => {
     describe('deleteBudget', () => {
         it('invokes deleteBudget without error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.DeleteBudgetRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v1.BudgetServiceClient', () => {
 
         it('invokes deleteBudget without error using callback', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.DeleteBudgetRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v1.BudgetServiceClient', () => {
 
         it('invokes deleteBudget with error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.DeleteBudgetRequest());
             request.name = '';
@@ -670,13 +670,14 @@ describe('v1.BudgetServiceClient', () => {
 
         it('uses async iteration with listBudgets without error', async () => {
             const client = new budgetserviceModule.v1.BudgetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.budgets.v1.ListBudgetsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.budgets.v1.Budget()),
               generateSampleMessage(new protos.google.cloud.billing.budgets.v1.Budget()),
               generateSampleMessage(new protos.google.cloud.billing.budgets.v1.Budget()),

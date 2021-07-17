@@ -117,8 +117,8 @@ describe('v1p1beta1.AdaptationClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adaptationModule.v1p1beta1.AdaptationClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.adaptationStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1p1beta1.AdaptationClient', () => {
 
     it('has close method', () => {
         const client = new adaptationModule.v1p1beta1.AdaptationClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1p1beta1.AdaptationClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new adaptationModule.v1p1beta1.AdaptationClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1p1beta1.AdaptationClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new adaptationModule.v1p1beta1.AdaptationClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1p1beta1.AdaptationClient', () => {
     describe('createPhraseSet', () => {
         it('invokes createPhraseSet without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes createPhraseSet without error using callback', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes createPhraseSet with error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CreatePhraseSetRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1p1beta1.AdaptationClient', () => {
     describe('getPhraseSet', () => {
         it('invokes getPhraseSet without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.GetPhraseSetRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes getPhraseSet without error using callback', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.GetPhraseSetRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes getPhraseSet with error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.GetPhraseSetRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1p1beta1.AdaptationClient', () => {
     describe('updatePhraseSet', () => {
         it('invokes updatePhraseSet without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest());
             request.phraseSet = {};
@@ -361,9 +361,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes updatePhraseSet without error using callback', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest());
             request.phraseSet = {};
@@ -397,9 +397,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes updatePhraseSet with error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.UpdatePhraseSetRequest());
             request.phraseSet = {};
@@ -423,9 +423,9 @@ describe('v1p1beta1.AdaptationClient', () => {
     describe('deletePhraseSet', () => {
         it('invokes deletePhraseSet without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes deletePhraseSet without error using callback', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes deletePhraseSet with error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.DeletePhraseSetRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v1p1beta1.AdaptationClient', () => {
     describe('createCustomClass', () => {
         it('invokes createCustomClass without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CreateCustomClassRequest());
             request.parent = '';
@@ -531,9 +531,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes createCustomClass without error using callback', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CreateCustomClassRequest());
             request.parent = '';
@@ -566,9 +566,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes createCustomClass with error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CreateCustomClassRequest());
             request.parent = '';
@@ -591,9 +591,9 @@ describe('v1p1beta1.AdaptationClient', () => {
     describe('getCustomClass', () => {
         it('invokes getCustomClass without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.GetCustomClassRequest());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes getCustomClass without error using callback', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.GetCustomClassRequest());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes getCustomClass with error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.GetCustomClassRequest());
             request.name = '';
@@ -675,9 +675,9 @@ describe('v1p1beta1.AdaptationClient', () => {
     describe('updateCustomClass', () => {
         it('invokes updateCustomClass without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest());
             request.customClass = {};
@@ -700,9 +700,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes updateCustomClass without error using callback', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest());
             request.customClass = {};
@@ -736,9 +736,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes updateCustomClass with error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.UpdateCustomClassRequest());
             request.customClass = {};
@@ -762,9 +762,9 @@ describe('v1p1beta1.AdaptationClient', () => {
     describe('deleteCustomClass', () => {
         it('invokes deleteCustomClass without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest());
             request.name = '';
@@ -786,9 +786,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes deleteCustomClass without error using callback', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest());
             request.name = '';
@@ -821,9 +821,9 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('invokes deleteCustomClass with error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.DeleteCustomClassRequest());
             request.name = '';
@@ -1009,13 +1009,14 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('uses async iteration with listPhraseSet without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.ListPhraseSetRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.PhraseSet()),
               generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.PhraseSet()),
               generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.PhraseSet()),
@@ -1231,13 +1232,14 @@ describe('v1p1beta1.AdaptationClient', () => {
 
         it('uses async iteration with listCustomClasses without error', async () => {
             const client = new adaptationModule.v1p1beta1.AdaptationClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.ListCustomClassesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CustomClass()),
               generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CustomClass()),
               generateSampleMessage(new protos.google.cloud.speech.v1p1beta1.CustomClass()),

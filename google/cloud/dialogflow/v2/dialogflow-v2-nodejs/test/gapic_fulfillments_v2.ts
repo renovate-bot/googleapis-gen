@@ -70,8 +70,8 @@ describe('v2.FulfillmentsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new fulfillmentsModule.v2.FulfillmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.fulfillmentsStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v2.FulfillmentsClient', () => {
 
     it('has close method', () => {
         const client = new fulfillmentsModule.v2.FulfillmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v2.FulfillmentsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new fulfillmentsModule.v2.FulfillmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v2.FulfillmentsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new fulfillmentsModule.v2.FulfillmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v2.FulfillmentsClient', () => {
     describe('getFulfillment', () => {
         it('invokes getFulfillment without error', async () => {
             const client = new fulfillmentsModule.v2.FulfillmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetFulfillmentRequest());
             request.name = '';
@@ -145,9 +145,9 @@ describe('v2.FulfillmentsClient', () => {
 
         it('invokes getFulfillment without error using callback', async () => {
             const client = new fulfillmentsModule.v2.FulfillmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetFulfillmentRequest());
             request.name = '';
@@ -180,9 +180,9 @@ describe('v2.FulfillmentsClient', () => {
 
         it('invokes getFulfillment with error', async () => {
             const client = new fulfillmentsModule.v2.FulfillmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetFulfillmentRequest());
             request.name = '';
@@ -205,9 +205,9 @@ describe('v2.FulfillmentsClient', () => {
     describe('updateFulfillment', () => {
         it('invokes updateFulfillment without error', async () => {
             const client = new fulfillmentsModule.v2.FulfillmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateFulfillmentRequest());
             request.fulfillment = {};
@@ -230,9 +230,9 @@ describe('v2.FulfillmentsClient', () => {
 
         it('invokes updateFulfillment without error using callback', async () => {
             const client = new fulfillmentsModule.v2.FulfillmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateFulfillmentRequest());
             request.fulfillment = {};
@@ -266,9 +266,9 @@ describe('v2.FulfillmentsClient', () => {
 
         it('invokes updateFulfillment with error', async () => {
             const client = new fulfillmentsModule.v2.FulfillmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateFulfillmentRequest());
             request.fulfillment = {};

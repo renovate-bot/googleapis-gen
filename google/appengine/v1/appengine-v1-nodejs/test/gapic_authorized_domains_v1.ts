@@ -117,8 +117,8 @@ describe('v1.AuthorizedDomainsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new authorizeddomainsModule.v1.AuthorizedDomainsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.authorizedDomainsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.AuthorizedDomainsClient', () => {
 
     it('has close method', () => {
         const client = new authorizeddomainsModule.v1.AuthorizedDomainsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.AuthorizedDomainsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new authorizeddomainsModule.v1.AuthorizedDomainsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.AuthorizedDomainsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new authorizeddomainsModule.v1.AuthorizedDomainsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -331,13 +331,14 @@ describe('v1.AuthorizedDomainsClient', () => {
 
         it('uses async iteration with listAuthorizedDomains without error', async () => {
             const client = new authorizeddomainsModule.v1.AuthorizedDomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.ListAuthorizedDomainsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.appengine.v1.AuthorizedDomain()),
               generateSampleMessage(new protos.google.appengine.v1.AuthorizedDomain()),
               generateSampleMessage(new protos.google.appengine.v1.AuthorizedDomain()),

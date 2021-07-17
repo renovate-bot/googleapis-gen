@@ -133,8 +133,8 @@ describe('v1.CloudChannelServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.cloudChannelServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.CloudChannelServiceClient', () => {
 
     it('has close method', () => {
         const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.CloudChannelServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.CloudChannelServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('getCustomer', () => {
         it('invokes getCustomer without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetCustomerRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes getCustomer without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetCustomerRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes getCustomer with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetCustomerRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('checkCloudIdentityAccountsExist', () => {
         it('invokes checkCloudIdentityAccountsExist without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkCloudIdentityAccountsExist without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkCloudIdentityAccountsExist with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CheckCloudIdentityAccountsExistRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('createCustomer', () => {
         it('invokes createCustomer without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateCustomerRequest());
             request.parent = '';
@@ -376,9 +376,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes createCustomer without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateCustomerRequest());
             request.parent = '';
@@ -411,9 +411,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes createCustomer with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateCustomerRequest());
             request.parent = '';
@@ -436,9 +436,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('updateCustomer', () => {
         it('invokes updateCustomer without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UpdateCustomerRequest());
             request.customer = {};
@@ -461,9 +461,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes updateCustomer without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UpdateCustomerRequest());
             request.customer = {};
@@ -497,9 +497,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes updateCustomer with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UpdateCustomerRequest());
             request.customer = {};
@@ -523,9 +523,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('deleteCustomer', () => {
         it('invokes deleteCustomer without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.DeleteCustomerRequest());
             request.name = '';
@@ -547,9 +547,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes deleteCustomer without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.DeleteCustomerRequest());
             request.name = '';
@@ -582,9 +582,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes deleteCustomer with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.DeleteCustomerRequest());
             request.name = '';
@@ -607,9 +607,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('getEntitlement', () => {
         it('invokes getEntitlement without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetEntitlementRequest());
             request.name = '';
@@ -631,9 +631,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes getEntitlement without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetEntitlementRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes getEntitlement with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetEntitlementRequest());
             request.name = '';
@@ -691,9 +691,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('getChannelPartnerLink', () => {
         it('invokes getChannelPartnerLink without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetChannelPartnerLinkRequest());
             request.name = '';
@@ -715,9 +715,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes getChannelPartnerLink without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetChannelPartnerLinkRequest());
             request.name = '';
@@ -750,9 +750,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes getChannelPartnerLink with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.GetChannelPartnerLinkRequest());
             request.name = '';
@@ -775,9 +775,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('createChannelPartnerLink', () => {
         it('invokes createChannelPartnerLink without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateChannelPartnerLinkRequest());
             request.parent = '';
@@ -799,9 +799,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes createChannelPartnerLink without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateChannelPartnerLinkRequest());
             request.parent = '';
@@ -834,9 +834,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes createChannelPartnerLink with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateChannelPartnerLinkRequest());
             request.parent = '';
@@ -859,9 +859,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('updateChannelPartnerLink', () => {
         it('invokes updateChannelPartnerLink without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest());
             request.name = '';
@@ -883,9 +883,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes updateChannelPartnerLink without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest());
             request.name = '';
@@ -918,9 +918,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes updateChannelPartnerLink with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UpdateChannelPartnerLinkRequest());
             request.name = '';
@@ -943,9 +943,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('lookupOffer', () => {
         it('invokes lookupOffer without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.LookupOfferRequest());
             request.entitlement = '';
@@ -967,9 +967,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes lookupOffer without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.LookupOfferRequest());
             request.entitlement = '';
@@ -1002,9 +1002,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes lookupOffer with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.LookupOfferRequest());
             request.entitlement = '';
@@ -1027,9 +1027,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('registerSubscriber', () => {
         it('invokes registerSubscriber without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.RegisterSubscriberRequest());
             request.account = '';
@@ -1051,9 +1051,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes registerSubscriber without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.RegisterSubscriberRequest());
             request.account = '';
@@ -1086,9 +1086,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes registerSubscriber with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.RegisterSubscriberRequest());
             request.account = '';
@@ -1111,9 +1111,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('unregisterSubscriber', () => {
         it('invokes unregisterSubscriber without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UnregisterSubscriberRequest());
             request.account = '';
@@ -1135,9 +1135,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes unregisterSubscriber without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UnregisterSubscriberRequest());
             request.account = '';
@@ -1170,9 +1170,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes unregisterSubscriber with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.UnregisterSubscriberRequest());
             request.account = '';
@@ -1195,9 +1195,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('provisionCloudIdentity', () => {
         it('invokes provisionCloudIdentity without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ProvisionCloudIdentityRequest());
             request.customer = '';
@@ -1220,9 +1220,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes provisionCloudIdentity without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ProvisionCloudIdentityRequest());
             request.customer = '';
@@ -1258,9 +1258,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes provisionCloudIdentity with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ProvisionCloudIdentityRequest());
             request.customer = '';
@@ -1281,9 +1281,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes provisionCloudIdentity with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ProvisionCloudIdentityRequest());
             request.customer = '';
@@ -1305,9 +1305,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkProvisionCloudIdentityProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1323,9 +1323,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkProvisionCloudIdentityProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1339,9 +1339,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('createEntitlement', () => {
         it('invokes createEntitlement without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateEntitlementRequest());
             request.parent = '';
@@ -1364,9 +1364,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes createEntitlement without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateEntitlementRequest());
             request.parent = '';
@@ -1402,9 +1402,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes createEntitlement with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateEntitlementRequest());
             request.parent = '';
@@ -1425,9 +1425,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes createEntitlement with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CreateEntitlementRequest());
             request.parent = '';
@@ -1449,9 +1449,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkCreateEntitlementProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1467,9 +1467,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkCreateEntitlementProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1483,9 +1483,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('changeParameters', () => {
         it('invokes changeParameters without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeParametersRequest());
             request.name = '';
@@ -1508,9 +1508,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeParameters without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeParametersRequest());
             request.name = '';
@@ -1546,9 +1546,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeParameters with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeParametersRequest());
             request.name = '';
@@ -1569,9 +1569,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeParameters with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeParametersRequest());
             request.name = '';
@@ -1593,9 +1593,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkChangeParametersProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1611,9 +1611,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkChangeParametersProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1627,9 +1627,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('changeRenewalSettings', () => {
         it('invokes changeRenewalSettings without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeRenewalSettingsRequest());
             request.name = '';
@@ -1652,9 +1652,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeRenewalSettings without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeRenewalSettingsRequest());
             request.name = '';
@@ -1690,9 +1690,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeRenewalSettings with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeRenewalSettingsRequest());
             request.name = '';
@@ -1713,9 +1713,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeRenewalSettings with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeRenewalSettingsRequest());
             request.name = '';
@@ -1737,9 +1737,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkChangeRenewalSettingsProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1755,9 +1755,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkChangeRenewalSettingsProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1771,9 +1771,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('changeOffer', () => {
         it('invokes changeOffer without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeOfferRequest());
             request.name = '';
@@ -1796,9 +1796,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeOffer without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeOfferRequest());
             request.name = '';
@@ -1834,9 +1834,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeOffer with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeOfferRequest());
             request.name = '';
@@ -1857,9 +1857,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes changeOffer with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ChangeOfferRequest());
             request.name = '';
@@ -1881,9 +1881,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkChangeOfferProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1899,9 +1899,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkChangeOfferProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1915,9 +1915,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('startPaidService', () => {
         it('invokes startPaidService without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.StartPaidServiceRequest());
             request.name = '';
@@ -1940,9 +1940,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes startPaidService without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.StartPaidServiceRequest());
             request.name = '';
@@ -1978,9 +1978,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes startPaidService with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.StartPaidServiceRequest());
             request.name = '';
@@ -2001,9 +2001,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes startPaidService with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.StartPaidServiceRequest());
             request.name = '';
@@ -2025,9 +2025,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkStartPaidServiceProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2043,9 +2043,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkStartPaidServiceProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2059,9 +2059,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('suspendEntitlement', () => {
         it('invokes suspendEntitlement without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.SuspendEntitlementRequest());
             request.name = '';
@@ -2084,9 +2084,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes suspendEntitlement without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.SuspendEntitlementRequest());
             request.name = '';
@@ -2122,9 +2122,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes suspendEntitlement with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.SuspendEntitlementRequest());
             request.name = '';
@@ -2145,9 +2145,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes suspendEntitlement with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.SuspendEntitlementRequest());
             request.name = '';
@@ -2169,9 +2169,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkSuspendEntitlementProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2187,9 +2187,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkSuspendEntitlementProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2203,9 +2203,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('cancelEntitlement', () => {
         it('invokes cancelEntitlement without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CancelEntitlementRequest());
             request.name = '';
@@ -2228,9 +2228,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes cancelEntitlement without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CancelEntitlementRequest());
             request.name = '';
@@ -2266,9 +2266,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes cancelEntitlement with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CancelEntitlementRequest());
             request.name = '';
@@ -2289,9 +2289,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes cancelEntitlement with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.CancelEntitlementRequest());
             request.name = '';
@@ -2313,9 +2313,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkCancelEntitlementProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2331,9 +2331,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkCancelEntitlementProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2347,9 +2347,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('activateEntitlement', () => {
         it('invokes activateEntitlement without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ActivateEntitlementRequest());
             request.name = '';
@@ -2372,9 +2372,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes activateEntitlement without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ActivateEntitlementRequest());
             request.name = '';
@@ -2410,9 +2410,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes activateEntitlement with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ActivateEntitlementRequest());
             request.name = '';
@@ -2433,9 +2433,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes activateEntitlement with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ActivateEntitlementRequest());
             request.name = '';
@@ -2457,9 +2457,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkActivateEntitlementProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2475,9 +2475,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkActivateEntitlementProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2491,9 +2491,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('transferEntitlements', () => {
         it('invokes transferEntitlements without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.TransferEntitlementsRequest());
             request.parent = '';
@@ -2516,9 +2516,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes transferEntitlements without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.TransferEntitlementsRequest());
             request.parent = '';
@@ -2554,9 +2554,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes transferEntitlements with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.TransferEntitlementsRequest());
             request.parent = '';
@@ -2577,9 +2577,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes transferEntitlements with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.TransferEntitlementsRequest());
             request.parent = '';
@@ -2601,9 +2601,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkTransferEntitlementsProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2619,9 +2619,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkTransferEntitlementsProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2635,9 +2635,9 @@ describe('v1.CloudChannelServiceClient', () => {
     describe('transferEntitlementsToGoogle', () => {
         it('invokes transferEntitlementsToGoogle without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest());
             request.parent = '';
@@ -2660,9 +2660,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes transferEntitlementsToGoogle without error using callback', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest());
             request.parent = '';
@@ -2698,9 +2698,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes transferEntitlementsToGoogle with call error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest());
             request.parent = '';
@@ -2721,9 +2721,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes transferEntitlementsToGoogle with LRO error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.TransferEntitlementsToGoogleRequest());
             request.parent = '';
@@ -2745,9 +2745,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkTransferEntitlementsToGoogleProgress without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2763,9 +2763,9 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('invokes checkTransferEntitlementsToGoogleProgress with error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2942,13 +2942,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listCustomers without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListCustomersRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.Customer()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Customer()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Customer()),
@@ -3164,13 +3165,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listEntitlements without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListEntitlementsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.Entitlement()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Entitlement()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Entitlement()),
@@ -3386,13 +3388,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listTransferableSkus without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListTransferableSkusRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.TransferableSku()),
               generateSampleMessage(new protos.google.cloud.channel.v1.TransferableSku()),
               generateSampleMessage(new protos.google.cloud.channel.v1.TransferableSku()),
@@ -3608,13 +3611,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listTransferableOffers without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListTransferableOffersRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.TransferableOffer()),
               generateSampleMessage(new protos.google.cloud.channel.v1.TransferableOffer()),
               generateSampleMessage(new protos.google.cloud.channel.v1.TransferableOffer()),
@@ -3830,13 +3834,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listChannelPartnerLinks without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListChannelPartnerLinksRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.ChannelPartnerLink()),
               generateSampleMessage(new protos.google.cloud.channel.v1.ChannelPartnerLink()),
               generateSampleMessage(new protos.google.cloud.channel.v1.ChannelPartnerLink()),
@@ -4014,11 +4019,12 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listProducts without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListProductsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListProductsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.Product()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Product()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Product()),
@@ -4222,13 +4228,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listSkus without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListSkusRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.Sku()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Sku()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Sku()),
@@ -4444,13 +4451,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listOffers without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListOffersRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.Offer()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Offer()),
               generateSampleMessage(new protos.google.cloud.channel.v1.Offer()),
@@ -4666,13 +4674,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listPurchasableSkus without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListPurchasableSkusRequest());
             request.customer = '';
-            const expectedHeaderRequestParams = "customer=";const expectedResponse = [
+            const expectedHeaderRequestParams = "customer=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.PurchasableSku()),
               generateSampleMessage(new protos.google.cloud.channel.v1.PurchasableSku()),
               generateSampleMessage(new protos.google.cloud.channel.v1.PurchasableSku()),
@@ -4888,13 +4897,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listPurchasableOffers without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListPurchasableOffersRequest());
             request.customer = '';
-            const expectedHeaderRequestParams = "customer=";const expectedResponse = [
+            const expectedHeaderRequestParams = "customer=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.channel.v1.PurchasableOffer()),
               generateSampleMessage(new protos.google.cloud.channel.v1.PurchasableOffer()),
               generateSampleMessage(new protos.google.cloud.channel.v1.PurchasableOffer()),
@@ -5098,13 +5108,14 @@ describe('v1.CloudChannelServiceClient', () => {
 
         it('uses async iteration with listSubscribers without error', async () => {
             const client = new cloudchannelserviceModule.v1.CloudChannelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.channel.v1.ListSubscribersRequest());
             request.account = '';
-            const expectedHeaderRequestParams = "account=";const expectedResponse = [new String(), new String(), new String()];
+            const expectedHeaderRequestParams = "account=";
+            const expectedResponse = [new String(), new String(), new String()];
             client.descriptors.page.listSubscribers.asyncIterate = stubAsyncIterationCall(expectedResponse);
             const responses: string[] = [];
             const iterable = client.listSubscribersAsync(request);

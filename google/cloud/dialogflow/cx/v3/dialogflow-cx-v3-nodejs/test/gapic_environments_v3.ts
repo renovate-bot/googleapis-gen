@@ -133,8 +133,8 @@ describe('v3.EnvironmentsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new environmentsModule.v3.EnvironmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.environmentsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3.EnvironmentsClient', () => {
 
     it('has close method', () => {
         const client = new environmentsModule.v3.EnvironmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3.EnvironmentsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new environmentsModule.v3.EnvironmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3.EnvironmentsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new environmentsModule.v3.EnvironmentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3.EnvironmentsClient', () => {
     describe('getEnvironment', () => {
         it('invokes getEnvironment without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes getEnvironment without error using callback', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes getEnvironment with error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetEnvironmentRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v3.EnvironmentsClient', () => {
     describe('deleteEnvironment', () => {
         it('invokes deleteEnvironment without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes deleteEnvironment without error using callback', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes deleteEnvironment with error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteEnvironmentRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v3.EnvironmentsClient', () => {
     describe('createEnvironment', () => {
         it('invokes createEnvironment without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest());
             request.parent = '';
@@ -377,9 +377,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes createEnvironment without error using callback', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest());
             request.parent = '';
@@ -415,9 +415,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes createEnvironment with call error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest());
             request.parent = '';
@@ -438,9 +438,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes createEnvironment with LRO error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateEnvironmentRequest());
             request.parent = '';
@@ -462,9 +462,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes checkCreateEnvironmentProgress without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -480,9 +480,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes checkCreateEnvironmentProgress with error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -496,9 +496,9 @@ describe('v3.EnvironmentsClient', () => {
     describe('updateEnvironment', () => {
         it('invokes updateEnvironment without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest());
             request.environment = {};
@@ -522,9 +522,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes updateEnvironment without error using callback', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest());
             request.environment = {};
@@ -561,9 +561,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes updateEnvironment with call error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest());
             request.environment = {};
@@ -585,9 +585,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes updateEnvironment with LRO error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateEnvironmentRequest());
             request.environment = {};
@@ -610,9 +610,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes checkUpdateEnvironmentProgress without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -628,9 +628,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes checkUpdateEnvironmentProgress with error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -644,9 +644,9 @@ describe('v3.EnvironmentsClient', () => {
     describe('runContinuousTest', () => {
         it('invokes runContinuousTest without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest());
             request.environment = '';
@@ -669,9 +669,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes runContinuousTest without error using callback', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest());
             request.environment = '';
@@ -707,9 +707,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes runContinuousTest with call error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest());
             request.environment = '';
@@ -730,9 +730,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes runContinuousTest with LRO error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.RunContinuousTestRequest());
             request.environment = '';
@@ -754,9 +754,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes checkRunContinuousTestProgress without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -772,9 +772,9 @@ describe('v3.EnvironmentsClient', () => {
 
         it('invokes checkRunContinuousTestProgress with error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -951,13 +951,14 @@ describe('v3.EnvironmentsClient', () => {
 
         it('uses async iteration with listEnvironments without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ListEnvironmentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Environment()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Environment()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Environment()),
@@ -1173,13 +1174,14 @@ describe('v3.EnvironmentsClient', () => {
 
         it('uses async iteration with lookupEnvironmentHistory without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.LookupEnvironmentHistoryRequest());
             request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Environment()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Environment()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Environment()),
@@ -1395,13 +1397,14 @@ describe('v3.EnvironmentsClient', () => {
 
         it('uses async iteration with listContinuousTestResults without error', async () => {
             const client = new environmentsModule.v3.EnvironmentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ListContinuousTestResultsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ContinuousTestResult()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ContinuousTestResult()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ContinuousTestResult()),

@@ -133,8 +133,8 @@ describe('v1alpha2.DomainsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new domainsModule.v1alpha2.DomainsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.domainsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1alpha2.DomainsClient', () => {
 
     it('has close method', () => {
         const client = new domainsModule.v1alpha2.DomainsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1alpha2.DomainsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new domainsModule.v1alpha2.DomainsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1alpha2.DomainsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new domainsModule.v1alpha2.DomainsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('searchDomains', () => {
         it('invokes searchDomains without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.SearchDomainsRequest());
             request.location = '';
@@ -208,9 +208,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes searchDomains without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.SearchDomainsRequest());
             request.location = '';
@@ -243,9 +243,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes searchDomains with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.SearchDomainsRequest());
             request.location = '';
@@ -268,9 +268,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('retrieveRegisterParameters', () => {
         it('invokes retrieveRegisterParameters without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest());
             request.location = '';
@@ -292,9 +292,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes retrieveRegisterParameters without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest());
             request.location = '';
@@ -327,9 +327,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes retrieveRegisterParameters with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RetrieveRegisterParametersRequest());
             request.location = '';
@@ -352,9 +352,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('getRegistration', () => {
         it('invokes getRegistration without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.GetRegistrationRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes getRegistration without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.GetRegistrationRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes getRegistration with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.GetRegistrationRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('retrieveAuthorizationCode', () => {
         it('invokes retrieveAuthorizationCode without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest());
             request.registration = '';
@@ -460,9 +460,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes retrieveAuthorizationCode without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest());
             request.registration = '';
@@ -495,9 +495,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes retrieveAuthorizationCode with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RetrieveAuthorizationCodeRequest());
             request.registration = '';
@@ -520,9 +520,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('resetAuthorizationCode', () => {
         it('invokes resetAuthorizationCode without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest());
             request.registration = '';
@@ -544,9 +544,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes resetAuthorizationCode without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest());
             request.registration = '';
@@ -579,9 +579,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes resetAuthorizationCode with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ResetAuthorizationCodeRequest());
             request.registration = '';
@@ -604,9 +604,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('registerDomain', () => {
         it('invokes registerDomain without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RegisterDomainRequest());
             request.parent = '';
@@ -629,9 +629,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes registerDomain without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RegisterDomainRequest());
             request.parent = '';
@@ -667,9 +667,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes registerDomain with call error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RegisterDomainRequest());
             request.parent = '';
@@ -690,9 +690,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes registerDomain with LRO error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.RegisterDomainRequest());
             request.parent = '';
@@ -714,9 +714,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkRegisterDomainProgress without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -732,9 +732,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkRegisterDomainProgress with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -748,9 +748,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('updateRegistration', () => {
         it('invokes updateRegistration without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.UpdateRegistrationRequest());
             request.registration = {};
@@ -774,9 +774,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes updateRegistration without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.UpdateRegistrationRequest());
             request.registration = {};
@@ -813,9 +813,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes updateRegistration with call error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.UpdateRegistrationRequest());
             request.registration = {};
@@ -837,9 +837,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes updateRegistration with LRO error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.UpdateRegistrationRequest());
             request.registration = {};
@@ -862,9 +862,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkUpdateRegistrationProgress without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -880,9 +880,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkUpdateRegistrationProgress with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -896,9 +896,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('configureManagementSettings', () => {
         it('invokes configureManagementSettings without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest());
             request.registration = '';
@@ -921,9 +921,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureManagementSettings without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest());
             request.registration = '';
@@ -959,9 +959,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureManagementSettings with call error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest());
             request.registration = '';
@@ -982,9 +982,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureManagementSettings with LRO error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureManagementSettingsRequest());
             request.registration = '';
@@ -1006,9 +1006,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkConfigureManagementSettingsProgress without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1024,9 +1024,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkConfigureManagementSettingsProgress with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1040,9 +1040,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('configureDnsSettings', () => {
         it('invokes configureDnsSettings without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest());
             request.registration = '';
@@ -1065,9 +1065,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureDnsSettings without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest());
             request.registration = '';
@@ -1103,9 +1103,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureDnsSettings with call error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest());
             request.registration = '';
@@ -1126,9 +1126,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureDnsSettings with LRO error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureDnsSettingsRequest());
             request.registration = '';
@@ -1150,9 +1150,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkConfigureDnsSettingsProgress without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1168,9 +1168,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkConfigureDnsSettingsProgress with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1184,9 +1184,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('configureContactSettings', () => {
         it('invokes configureContactSettings without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest());
             request.registration = '';
@@ -1209,9 +1209,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureContactSettings without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest());
             request.registration = '';
@@ -1247,9 +1247,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureContactSettings with call error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest());
             request.registration = '';
@@ -1270,9 +1270,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes configureContactSettings with LRO error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ConfigureContactSettingsRequest());
             request.registration = '';
@@ -1294,9 +1294,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkConfigureContactSettingsProgress without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1312,9 +1312,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkConfigureContactSettingsProgress with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1328,9 +1328,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('exportRegistration', () => {
         it('invokes exportRegistration without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ExportRegistrationRequest());
             request.name = '';
@@ -1353,9 +1353,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes exportRegistration without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ExportRegistrationRequest());
             request.name = '';
@@ -1391,9 +1391,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes exportRegistration with call error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ExportRegistrationRequest());
             request.name = '';
@@ -1414,9 +1414,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes exportRegistration with LRO error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ExportRegistrationRequest());
             request.name = '';
@@ -1438,9 +1438,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkExportRegistrationProgress without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1456,9 +1456,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkExportRegistrationProgress with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1472,9 +1472,9 @@ describe('v1alpha2.DomainsClient', () => {
     describe('deleteRegistration', () => {
         it('invokes deleteRegistration without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.DeleteRegistrationRequest());
             request.name = '';
@@ -1497,9 +1497,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes deleteRegistration without error using callback', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.DeleteRegistrationRequest());
             request.name = '';
@@ -1535,9 +1535,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes deleteRegistration with call error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.DeleteRegistrationRequest());
             request.name = '';
@@ -1558,9 +1558,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes deleteRegistration with LRO error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.DeleteRegistrationRequest());
             request.name = '';
@@ -1582,9 +1582,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkDeleteRegistrationProgress without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1600,9 +1600,9 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('invokes checkDeleteRegistrationProgress with error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1779,13 +1779,14 @@ describe('v1alpha2.DomainsClient', () => {
 
         it('uses async iteration with listRegistrations without error', async () => {
             const client = new domainsModule.v1alpha2.DomainsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.domains.v1alpha2.ListRegistrationsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.domains.v1alpha2.Registration()),
               generateSampleMessage(new protos.google.cloud.domains.v1alpha2.Registration()),
               generateSampleMessage(new protos.google.cloud.domains.v1alpha2.Registration()),

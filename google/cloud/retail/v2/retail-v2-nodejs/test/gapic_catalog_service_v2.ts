@@ -117,8 +117,8 @@ describe('v2.CatalogServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new catalogserviceModule.v2.CatalogServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.catalogServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2.CatalogServiceClient', () => {
 
     it('has close method', () => {
         const client = new catalogserviceModule.v2.CatalogServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2.CatalogServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new catalogserviceModule.v2.CatalogServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2.CatalogServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new catalogserviceModule.v2.CatalogServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2.CatalogServiceClient', () => {
     describe('updateCatalog', () => {
         it('invokes updateCatalog without error', async () => {
             const client = new catalogserviceModule.v2.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2.UpdateCatalogRequest());
             request.catalog = {};
@@ -193,9 +193,9 @@ describe('v2.CatalogServiceClient', () => {
 
         it('invokes updateCatalog without error using callback', async () => {
             const client = new catalogserviceModule.v2.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2.UpdateCatalogRequest());
             request.catalog = {};
@@ -229,9 +229,9 @@ describe('v2.CatalogServiceClient', () => {
 
         it('invokes updateCatalog with error', async () => {
             const client = new catalogserviceModule.v2.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2.UpdateCatalogRequest());
             request.catalog = {};
@@ -418,13 +418,14 @@ describe('v2.CatalogServiceClient', () => {
 
         it('uses async iteration with listCatalogs without error', async () => {
             const client = new catalogserviceModule.v2.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.retail.v2.ListCatalogsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.retail.v2.Catalog()),
               generateSampleMessage(new protos.google.cloud.retail.v2.Catalog()),
               generateSampleMessage(new protos.google.cloud.retail.v2.Catalog()),

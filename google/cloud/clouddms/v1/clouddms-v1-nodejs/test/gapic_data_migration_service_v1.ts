@@ -133,8 +133,8 @@ describe('v1.DataMigrationServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.dataMigrationServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.DataMigrationServiceClient', () => {
 
     it('has close method', () => {
         const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.DataMigrationServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.DataMigrationServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('getMigrationJob', () => {
         it('invokes getMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GetMigrationJobRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes getMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GetMigrationJobRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes getMigrationJob with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GetMigrationJobRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('generateSshScript', () => {
         it('invokes generateSshScript without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GenerateSshScriptRequest());
             request.migrationJob = '';
@@ -292,9 +292,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes generateSshScript without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GenerateSshScriptRequest());
             request.migrationJob = '';
@@ -327,9 +327,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes generateSshScript with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GenerateSshScriptRequest());
             request.migrationJob = '';
@@ -352,9 +352,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('getConnectionProfile', () => {
         it('invokes getConnectionProfile without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GetConnectionProfileRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes getConnectionProfile without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GetConnectionProfileRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes getConnectionProfile with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.GetConnectionProfileRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('createMigrationJob', () => {
         it('invokes createMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.CreateMigrationJobRequest());
             request.parent = '';
@@ -461,9 +461,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes createMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.CreateMigrationJobRequest());
             request.parent = '';
@@ -499,9 +499,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes createMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.CreateMigrationJobRequest());
             request.parent = '';
@@ -522,9 +522,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes createMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.CreateMigrationJobRequest());
             request.parent = '';
@@ -546,9 +546,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkCreateMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -564,9 +564,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkCreateMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -580,9 +580,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('updateMigrationJob', () => {
         it('invokes updateMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.UpdateMigrationJobRequest());
             request.migrationJob = {};
@@ -606,9 +606,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes updateMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.UpdateMigrationJobRequest());
             request.migrationJob = {};
@@ -645,9 +645,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes updateMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.UpdateMigrationJobRequest());
             request.migrationJob = {};
@@ -669,9 +669,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes updateMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.UpdateMigrationJobRequest());
             request.migrationJob = {};
@@ -694,9 +694,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkUpdateMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -712,9 +712,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkUpdateMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -728,9 +728,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('deleteMigrationJob', () => {
         it('invokes deleteMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.DeleteMigrationJobRequest());
             request.name = '';
@@ -753,9 +753,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes deleteMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.DeleteMigrationJobRequest());
             request.name = '';
@@ -791,9 +791,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes deleteMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.DeleteMigrationJobRequest());
             request.name = '';
@@ -814,9 +814,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes deleteMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.DeleteMigrationJobRequest());
             request.name = '';
@@ -838,9 +838,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkDeleteMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -856,9 +856,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkDeleteMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -872,9 +872,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('startMigrationJob', () => {
         it('invokes startMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.StartMigrationJobRequest());
             request.name = '';
@@ -897,9 +897,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes startMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.StartMigrationJobRequest());
             request.name = '';
@@ -935,9 +935,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes startMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.StartMigrationJobRequest());
             request.name = '';
@@ -958,9 +958,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes startMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.StartMigrationJobRequest());
             request.name = '';
@@ -982,9 +982,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkStartMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1000,9 +1000,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkStartMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1016,9 +1016,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('stopMigrationJob', () => {
         it('invokes stopMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.StopMigrationJobRequest());
             request.name = '';
@@ -1041,9 +1041,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes stopMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.StopMigrationJobRequest());
             request.name = '';
@@ -1079,9 +1079,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes stopMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.StopMigrationJobRequest());
             request.name = '';
@@ -1102,9 +1102,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes stopMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.StopMigrationJobRequest());
             request.name = '';
@@ -1126,9 +1126,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkStopMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1144,9 +1144,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkStopMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1160,9 +1160,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('resumeMigrationJob', () => {
         it('invokes resumeMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.ResumeMigrationJobRequest());
             request.name = '';
@@ -1185,9 +1185,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes resumeMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.ResumeMigrationJobRequest());
             request.name = '';
@@ -1223,9 +1223,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes resumeMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.ResumeMigrationJobRequest());
             request.name = '';
@@ -1246,9 +1246,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes resumeMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.ResumeMigrationJobRequest());
             request.name = '';
@@ -1270,9 +1270,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkResumeMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1288,9 +1288,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkResumeMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1304,9 +1304,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('promoteMigrationJob', () => {
         it('invokes promoteMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.PromoteMigrationJobRequest());
             request.name = '';
@@ -1329,9 +1329,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes promoteMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.PromoteMigrationJobRequest());
             request.name = '';
@@ -1367,9 +1367,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes promoteMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.PromoteMigrationJobRequest());
             request.name = '';
@@ -1390,9 +1390,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes promoteMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.PromoteMigrationJobRequest());
             request.name = '';
@@ -1414,9 +1414,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkPromoteMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1432,9 +1432,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkPromoteMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1448,9 +1448,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('verifyMigrationJob', () => {
         it('invokes verifyMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.VerifyMigrationJobRequest());
             request.name = '';
@@ -1473,9 +1473,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes verifyMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.VerifyMigrationJobRequest());
             request.name = '';
@@ -1511,9 +1511,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes verifyMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.VerifyMigrationJobRequest());
             request.name = '';
@@ -1534,9 +1534,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes verifyMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.VerifyMigrationJobRequest());
             request.name = '';
@@ -1558,9 +1558,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkVerifyMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1576,9 +1576,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkVerifyMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1592,9 +1592,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('restartMigrationJob', () => {
         it('invokes restartMigrationJob without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.RestartMigrationJobRequest());
             request.name = '';
@@ -1617,9 +1617,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes restartMigrationJob without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.RestartMigrationJobRequest());
             request.name = '';
@@ -1655,9 +1655,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes restartMigrationJob with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.RestartMigrationJobRequest());
             request.name = '';
@@ -1678,9 +1678,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes restartMigrationJob with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.RestartMigrationJobRequest());
             request.name = '';
@@ -1702,9 +1702,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkRestartMigrationJobProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1720,9 +1720,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkRestartMigrationJobProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1736,9 +1736,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('createConnectionProfile', () => {
         it('invokes createConnectionProfile without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.CreateConnectionProfileRequest());
             request.parent = '';
@@ -1761,9 +1761,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes createConnectionProfile without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.CreateConnectionProfileRequest());
             request.parent = '';
@@ -1799,9 +1799,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes createConnectionProfile with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.CreateConnectionProfileRequest());
             request.parent = '';
@@ -1822,9 +1822,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes createConnectionProfile with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.CreateConnectionProfileRequest());
             request.parent = '';
@@ -1846,9 +1846,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkCreateConnectionProfileProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1864,9 +1864,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkCreateConnectionProfileProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1880,9 +1880,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('updateConnectionProfile', () => {
         it('invokes updateConnectionProfile without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.UpdateConnectionProfileRequest());
             request.connectionProfile = {};
@@ -1906,9 +1906,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes updateConnectionProfile without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.UpdateConnectionProfileRequest());
             request.connectionProfile = {};
@@ -1945,9 +1945,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes updateConnectionProfile with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.UpdateConnectionProfileRequest());
             request.connectionProfile = {};
@@ -1969,9 +1969,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes updateConnectionProfile with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.UpdateConnectionProfileRequest());
             request.connectionProfile = {};
@@ -1994,9 +1994,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkUpdateConnectionProfileProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2012,9 +2012,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkUpdateConnectionProfileProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2028,9 +2028,9 @@ describe('v1.DataMigrationServiceClient', () => {
     describe('deleteConnectionProfile', () => {
         it('invokes deleteConnectionProfile without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.DeleteConnectionProfileRequest());
             request.name = '';
@@ -2053,9 +2053,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes deleteConnectionProfile without error using callback', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.DeleteConnectionProfileRequest());
             request.name = '';
@@ -2091,9 +2091,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes deleteConnectionProfile with call error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.DeleteConnectionProfileRequest());
             request.name = '';
@@ -2114,9 +2114,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes deleteConnectionProfile with LRO error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.DeleteConnectionProfileRequest());
             request.name = '';
@@ -2138,9 +2138,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkDeleteConnectionProfileProgress without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2156,9 +2156,9 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('invokes checkDeleteConnectionProfileProgress with error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2335,13 +2335,14 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('uses async iteration with listMigrationJobs without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.ListMigrationJobsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.clouddms.v1.MigrationJob()),
               generateSampleMessage(new protos.google.cloud.clouddms.v1.MigrationJob()),
               generateSampleMessage(new protos.google.cloud.clouddms.v1.MigrationJob()),
@@ -2557,13 +2558,14 @@ describe('v1.DataMigrationServiceClient', () => {
 
         it('uses async iteration with listConnectionProfiles without error', async () => {
             const client = new datamigrationserviceModule.v1.DataMigrationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.clouddms.v1.ListConnectionProfilesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.clouddms.v1.ConnectionProfile()),
               generateSampleMessage(new protos.google.cloud.clouddms.v1.ConnectionProfile()),
               generateSampleMessage(new protos.google.cloud.clouddms.v1.ConnectionProfile()),

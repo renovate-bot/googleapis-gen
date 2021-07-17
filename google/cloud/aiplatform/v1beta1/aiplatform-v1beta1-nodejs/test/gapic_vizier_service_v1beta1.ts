@@ -133,8 +133,8 @@ describe('v1beta1.VizierServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.vizierServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.VizierServiceClient', () => {
 
     it('has close method', () => {
         const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.VizierServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.VizierServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('createStudy', () => {
         it('invokes createStudy without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateStudyRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes createStudy without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateStudyRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes createStudy with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateStudyRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('getStudy', () => {
         it('invokes getStudy without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetStudyRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes getStudy without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetStudyRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes getStudy with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetStudyRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('deleteStudy', () => {
         it('invokes deleteStudy without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteStudyRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes deleteStudy without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteStudyRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes deleteStudy with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteStudyRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('lookupStudy', () => {
         it('invokes lookupStudy without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.LookupStudyRequest());
             request.parent = '';
@@ -460,9 +460,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes lookupStudy without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.LookupStudyRequest());
             request.parent = '';
@@ -495,9 +495,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes lookupStudy with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.LookupStudyRequest());
             request.parent = '';
@@ -520,9 +520,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('createTrial', () => {
         it('invokes createTrial without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTrialRequest());
             request.parent = '';
@@ -544,9 +544,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes createTrial without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTrialRequest());
             request.parent = '';
@@ -579,9 +579,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes createTrial with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTrialRequest());
             request.parent = '';
@@ -604,9 +604,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('getTrial', () => {
         it('invokes getTrial without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTrialRequest());
             request.name = '';
@@ -628,9 +628,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes getTrial without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTrialRequest());
             request.name = '';
@@ -663,9 +663,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes getTrial with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTrialRequest());
             request.name = '';
@@ -688,9 +688,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('addTrialMeasurement', () => {
         it('invokes addTrialMeasurement without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest());
             request.trialName = '';
@@ -712,9 +712,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes addTrialMeasurement without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest());
             request.trialName = '';
@@ -747,9 +747,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes addTrialMeasurement with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.AddTrialMeasurementRequest());
             request.trialName = '';
@@ -772,9 +772,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('completeTrial', () => {
         it('invokes completeTrial without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CompleteTrialRequest());
             request.name = '';
@@ -796,9 +796,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes completeTrial without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CompleteTrialRequest());
             request.name = '';
@@ -831,9 +831,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes completeTrial with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CompleteTrialRequest());
             request.name = '';
@@ -856,9 +856,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('deleteTrial', () => {
         it('invokes deleteTrial without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTrialRequest());
             request.name = '';
@@ -880,9 +880,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes deleteTrial without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTrialRequest());
             request.name = '';
@@ -915,9 +915,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes deleteTrial with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTrialRequest());
             request.name = '';
@@ -940,9 +940,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('stopTrial', () => {
         it('invokes stopTrial without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.StopTrialRequest());
             request.name = '';
@@ -964,9 +964,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes stopTrial without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.StopTrialRequest());
             request.name = '';
@@ -999,9 +999,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes stopTrial with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.StopTrialRequest());
             request.name = '';
@@ -1024,9 +1024,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('listOptimalTrials', () => {
         it('invokes listOptimalTrials without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListOptimalTrialsRequest());
             request.parent = '';
@@ -1048,9 +1048,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes listOptimalTrials without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListOptimalTrialsRequest());
             request.parent = '';
@@ -1083,9 +1083,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes listOptimalTrials with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListOptimalTrialsRequest());
             request.parent = '';
@@ -1108,9 +1108,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('suggestTrials', () => {
         it('invokes suggestTrials without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest());
             request.parent = '';
@@ -1133,9 +1133,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes suggestTrials without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest());
             request.parent = '';
@@ -1171,9 +1171,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes suggestTrials with call error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest());
             request.parent = '';
@@ -1194,9 +1194,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes suggestTrials with LRO error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.SuggestTrialsRequest());
             request.parent = '';
@@ -1218,9 +1218,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes checkSuggestTrialsProgress without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1236,9 +1236,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes checkSuggestTrialsProgress with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1252,9 +1252,9 @@ describe('v1beta1.VizierServiceClient', () => {
     describe('checkTrialEarlyStoppingState', () => {
         it('invokes checkTrialEarlyStoppingState without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateRequest());
             request.trialName = '';
@@ -1277,9 +1277,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes checkTrialEarlyStoppingState without error using callback', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateRequest());
             request.trialName = '';
@@ -1315,9 +1315,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes checkTrialEarlyStoppingState with call error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateRequest());
             request.trialName = '';
@@ -1338,9 +1338,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes checkTrialEarlyStoppingState with LRO error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateRequest());
             request.trialName = '';
@@ -1362,9 +1362,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes checkCheckTrialEarlyStoppingStateProgress without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1380,9 +1380,9 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('invokes checkCheckTrialEarlyStoppingStateProgress with error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1559,13 +1559,14 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('uses async iteration with listStudies without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListStudiesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Study()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Study()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Study()),
@@ -1781,13 +1782,14 @@ describe('v1beta1.VizierServiceClient', () => {
 
         it('uses async iteration with listTrials without error', async () => {
             const client = new vizierserviceModule.v1beta1.VizierServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListTrialsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Trial()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Trial()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Trial()),

@@ -133,8 +133,8 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.documentProcessorServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
     it('has close method', () => {
         const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     describe('processDocument', () => {
         it('invokes processDocument without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.ProcessRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes processDocument without error using callback', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.ProcessRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes processDocument with error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.ProcessRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     describe('fetchProcessorTypes', () => {
         it('invokes fetchProcessorTypes without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes fetchProcessorTypes without error using callback', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes fetchProcessorTypes with error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.FetchProcessorTypesRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     describe('createProcessor', () => {
         it('invokes createProcessor without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.CreateProcessorRequest());
             request.parent = '';
@@ -376,9 +376,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes createProcessor without error using callback', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.CreateProcessorRequest());
             request.parent = '';
@@ -411,9 +411,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes createProcessor with error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.CreateProcessorRequest());
             request.parent = '';
@@ -436,9 +436,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     describe('batchProcessDocuments', () => {
         it('invokes batchProcessDocuments without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.BatchProcessRequest());
             request.name = '';
@@ -461,9 +461,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes batchProcessDocuments without error using callback', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.BatchProcessRequest());
             request.name = '';
@@ -499,9 +499,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes batchProcessDocuments with call error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.BatchProcessRequest());
             request.name = '';
@@ -522,9 +522,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes batchProcessDocuments with LRO error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.BatchProcessRequest());
             request.name = '';
@@ -546,9 +546,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkBatchProcessDocumentsProgress without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -564,9 +564,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkBatchProcessDocumentsProgress with error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -580,9 +580,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     describe('deleteProcessor', () => {
         it('invokes deleteProcessor without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.DeleteProcessorRequest());
             request.name = '';
@@ -605,9 +605,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes deleteProcessor without error using callback', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.DeleteProcessorRequest());
             request.name = '';
@@ -643,9 +643,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes deleteProcessor with call error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.DeleteProcessorRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes deleteProcessor with LRO error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.DeleteProcessorRequest());
             request.name = '';
@@ -690,9 +690,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkDeleteProcessorProgress without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -708,9 +708,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkDeleteProcessorProgress with error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -724,9 +724,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     describe('enableProcessor', () => {
         it('invokes enableProcessor without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.EnableProcessorRequest());
             request.name = '';
@@ -749,9 +749,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes enableProcessor without error using callback', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.EnableProcessorRequest());
             request.name = '';
@@ -787,9 +787,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes enableProcessor with call error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.EnableProcessorRequest());
             request.name = '';
@@ -810,9 +810,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes enableProcessor with LRO error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.EnableProcessorRequest());
             request.name = '';
@@ -834,9 +834,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkEnableProcessorProgress without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -852,9 +852,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkEnableProcessorProgress with error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -868,9 +868,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     describe('disableProcessor', () => {
         it('invokes disableProcessor without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.DisableProcessorRequest());
             request.name = '';
@@ -893,9 +893,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes disableProcessor without error using callback', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.DisableProcessorRequest());
             request.name = '';
@@ -931,9 +931,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes disableProcessor with call error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.DisableProcessorRequest());
             request.name = '';
@@ -954,9 +954,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes disableProcessor with LRO error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.DisableProcessorRequest());
             request.name = '';
@@ -978,9 +978,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkDisableProcessorProgress without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -996,9 +996,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkDisableProcessorProgress with error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1012,9 +1012,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
     describe('reviewDocument', () => {
         it('invokes reviewDocument without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.ReviewDocumentRequest());
             request.humanReviewConfig = '';
@@ -1037,9 +1037,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes reviewDocument without error using callback', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.ReviewDocumentRequest());
             request.humanReviewConfig = '';
@@ -1075,9 +1075,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes reviewDocument with call error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.ReviewDocumentRequest());
             request.humanReviewConfig = '';
@@ -1098,9 +1098,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes reviewDocument with LRO error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.ReviewDocumentRequest());
             request.humanReviewConfig = '';
@@ -1122,9 +1122,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkReviewDocumentProgress without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1140,9 +1140,9 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('invokes checkReviewDocumentProgress with error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1319,13 +1319,14 @@ describe('v1beta3.DocumentProcessorServiceClient', () => {
 
         it('uses async iteration with listProcessors without error', async () => {
             const client = new documentprocessorserviceModule.v1beta3.DocumentProcessorServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.documentai.v1beta3.ListProcessorsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.documentai.v1beta3.Processor()),
               generateSampleMessage(new protos.google.cloud.documentai.v1beta3.Processor()),
               generateSampleMessage(new protos.google.cloud.documentai.v1beta3.Processor()),

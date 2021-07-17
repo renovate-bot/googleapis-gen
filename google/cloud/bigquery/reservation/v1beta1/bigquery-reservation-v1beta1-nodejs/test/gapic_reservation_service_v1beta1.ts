@@ -117,8 +117,8 @@ describe('v1beta1.ReservationServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.reservationServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta1.ReservationServiceClient', () => {
 
     it('has close method', () => {
         const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta1.ReservationServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta1.ReservationServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('createReservation', () => {
         it('invokes createReservation without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateReservationRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes createReservation without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateReservationRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes createReservation with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateReservationRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('getReservation', () => {
         it('invokes getReservation without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetReservationRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes getReservation without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetReservationRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes getReservation with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetReservationRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('deleteReservation', () => {
         it('invokes deleteReservation without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteReservationRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes deleteReservation without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteReservationRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes deleteReservation with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteReservationRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('updateReservation', () => {
         it('invokes updateReservation without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateReservationRequest());
             request.reservation = {};
@@ -445,9 +445,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes updateReservation without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateReservationRequest());
             request.reservation = {};
@@ -481,9 +481,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes updateReservation with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateReservationRequest());
             request.reservation = {};
@@ -507,9 +507,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('createCapacityCommitment', () => {
         it('invokes createCapacityCommitment without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateCapacityCommitmentRequest());
             request.parent = '';
@@ -531,9 +531,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes createCapacityCommitment without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateCapacityCommitmentRequest());
             request.parent = '';
@@ -566,9 +566,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes createCapacityCommitment with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateCapacityCommitmentRequest());
             request.parent = '';
@@ -591,9 +591,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('getCapacityCommitment', () => {
         it('invokes getCapacityCommitment without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetCapacityCommitmentRequest());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes getCapacityCommitment without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetCapacityCommitmentRequest());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes getCapacityCommitment with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetCapacityCommitmentRequest());
             request.name = '';
@@ -675,9 +675,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('deleteCapacityCommitment', () => {
         it('invokes deleteCapacityCommitment without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteCapacityCommitmentRequest());
             request.name = '';
@@ -699,9 +699,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes deleteCapacityCommitment without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteCapacityCommitmentRequest());
             request.name = '';
@@ -734,9 +734,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes deleteCapacityCommitment with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteCapacityCommitmentRequest());
             request.name = '';
@@ -759,9 +759,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('updateCapacityCommitment', () => {
         it('invokes updateCapacityCommitment without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateCapacityCommitmentRequest());
             request.capacityCommitment = {};
@@ -784,9 +784,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes updateCapacityCommitment without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateCapacityCommitmentRequest());
             request.capacityCommitment = {};
@@ -820,9 +820,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes updateCapacityCommitment with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateCapacityCommitmentRequest());
             request.capacityCommitment = {};
@@ -846,9 +846,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('splitCapacityCommitment', () => {
         it('invokes splitCapacityCommitment without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.SplitCapacityCommitmentRequest());
             request.name = '';
@@ -870,9 +870,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes splitCapacityCommitment without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.SplitCapacityCommitmentRequest());
             request.name = '';
@@ -905,9 +905,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes splitCapacityCommitment with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.SplitCapacityCommitmentRequest());
             request.name = '';
@@ -930,9 +930,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('mergeCapacityCommitments', () => {
         it('invokes mergeCapacityCommitments without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.MergeCapacityCommitmentsRequest());
             request.parent = '';
@@ -954,9 +954,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes mergeCapacityCommitments without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.MergeCapacityCommitmentsRequest());
             request.parent = '';
@@ -989,9 +989,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes mergeCapacityCommitments with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.MergeCapacityCommitmentsRequest());
             request.parent = '';
@@ -1014,9 +1014,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('createAssignment', () => {
         it('invokes createAssignment without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateAssignmentRequest());
             request.parent = '';
@@ -1038,9 +1038,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes createAssignment without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateAssignmentRequest());
             request.parent = '';
@@ -1073,9 +1073,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes createAssignment with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CreateAssignmentRequest());
             request.parent = '';
@@ -1098,9 +1098,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('deleteAssignment', () => {
         it('invokes deleteAssignment without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteAssignmentRequest());
             request.name = '';
@@ -1122,9 +1122,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes deleteAssignment without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteAssignmentRequest());
             request.name = '';
@@ -1157,9 +1157,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes deleteAssignment with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.DeleteAssignmentRequest());
             request.name = '';
@@ -1182,9 +1182,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('moveAssignment', () => {
         it('invokes moveAssignment without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.MoveAssignmentRequest());
             request.name = '';
@@ -1206,9 +1206,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes moveAssignment without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.MoveAssignmentRequest());
             request.name = '';
@@ -1241,9 +1241,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes moveAssignment with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.MoveAssignmentRequest());
             request.name = '';
@@ -1266,9 +1266,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('getBiReservation', () => {
         it('invokes getBiReservation without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetBiReservationRequest());
             request.name = '';
@@ -1290,9 +1290,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes getBiReservation without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetBiReservationRequest());
             request.name = '';
@@ -1325,9 +1325,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes getBiReservation with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.GetBiReservationRequest());
             request.name = '';
@@ -1350,9 +1350,9 @@ describe('v1beta1.ReservationServiceClient', () => {
     describe('updateBiReservation', () => {
         it('invokes updateBiReservation without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateBiReservationRequest());
             request.reservation = {};
@@ -1375,9 +1375,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes updateBiReservation without error using callback', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateBiReservationRequest());
             request.reservation = {};
@@ -1411,9 +1411,9 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('invokes updateBiReservation with error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.UpdateBiReservationRequest());
             request.reservation = {};
@@ -1600,13 +1600,14 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('uses async iteration with listReservations without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.ListReservationsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Reservation()),
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Reservation()),
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Reservation()),
@@ -1822,13 +1823,14 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('uses async iteration with listCapacityCommitments without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.ListCapacityCommitmentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CapacityCommitment()),
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CapacityCommitment()),
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.CapacityCommitment()),
@@ -2044,13 +2046,14 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('uses async iteration with listAssignments without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.ListAssignmentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Assignment()),
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Assignment()),
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Assignment()),
@@ -2266,13 +2269,14 @@ describe('v1beta1.ReservationServiceClient', () => {
 
         it('uses async iteration with searchAssignments without error', async () => {
             const client = new reservationserviceModule.v1beta1.ReservationServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.SearchAssignmentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Assignment()),
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Assignment()),
               generateSampleMessage(new protos.google.cloud.bigquery.reservation.v1beta1.Assignment()),

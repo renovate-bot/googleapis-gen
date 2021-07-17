@@ -133,8 +133,8 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.osConfigZonalServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
     it('has close method', () => {
         const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     describe('getOSPolicyAssignment', () => {
         it('invokes getOSPolicyAssignment without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes getOSPolicyAssignment without error using callback', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes getOSPolicyAssignment with error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetOSPolicyAssignmentRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     describe('getInstanceOSPoliciesCompliance', () => {
         it('invokes getInstanceOSPoliciesCompliance without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes getInstanceOSPoliciesCompliance without error using callback', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes getInstanceOSPoliciesCompliance with error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     describe('getInventory', () => {
         it('invokes getInventory without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetInventoryRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes getInventory without error using callback', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetInventoryRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes getInventory with error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetInventoryRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     describe('getVulnerabilityReport', () => {
         it('invokes getVulnerabilityReport without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetVulnerabilityReportRequest());
             request.name = '';
@@ -460,9 +460,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes getVulnerabilityReport without error using callback', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetVulnerabilityReportRequest());
             request.name = '';
@@ -495,9 +495,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes getVulnerabilityReport with error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.GetVulnerabilityReportRequest());
             request.name = '';
@@ -520,9 +520,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     describe('createOSPolicyAssignment', () => {
         it('invokes createOSPolicyAssignment without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest());
             request.parent = '';
@@ -545,9 +545,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes createOSPolicyAssignment without error using callback', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest());
             request.parent = '';
@@ -583,9 +583,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes createOSPolicyAssignment with call error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest());
             request.parent = '';
@@ -606,9 +606,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes createOSPolicyAssignment with LRO error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.CreateOSPolicyAssignmentRequest());
             request.parent = '';
@@ -630,9 +630,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes checkCreateOSPolicyAssignmentProgress without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -648,9 +648,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes checkCreateOSPolicyAssignmentProgress with error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -664,9 +664,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     describe('updateOSPolicyAssignment', () => {
         it('invokes updateOSPolicyAssignment without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest());
             request.osPolicyAssignment = {};
@@ -690,9 +690,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes updateOSPolicyAssignment without error using callback', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest());
             request.osPolicyAssignment = {};
@@ -729,9 +729,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes updateOSPolicyAssignment with call error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest());
             request.osPolicyAssignment = {};
@@ -753,9 +753,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes updateOSPolicyAssignment with LRO error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.UpdateOSPolicyAssignmentRequest());
             request.osPolicyAssignment = {};
@@ -778,9 +778,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes checkUpdateOSPolicyAssignmentProgress without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -796,9 +796,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes checkUpdateOSPolicyAssignmentProgress with error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -812,9 +812,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
     describe('deleteOSPolicyAssignment', () => {
         it('invokes deleteOSPolicyAssignment without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest());
             request.name = '';
@@ -837,9 +837,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes deleteOSPolicyAssignment without error using callback', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest());
             request.name = '';
@@ -875,9 +875,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes deleteOSPolicyAssignment with call error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest());
             request.name = '';
@@ -898,9 +898,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes deleteOSPolicyAssignment with LRO error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.DeleteOSPolicyAssignmentRequest());
             request.name = '';
@@ -922,9 +922,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes checkDeleteOSPolicyAssignmentProgress without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -940,9 +940,9 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('invokes checkDeleteOSPolicyAssignmentProgress with error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1119,13 +1119,14 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('uses async iteration with listOSPolicyAssignments without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment()),
@@ -1341,13 +1342,14 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('uses async iteration with listOSPolicyAssignmentRevisions without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.ListOSPolicyAssignmentRevisionsRequest());
             request.name = '';
-            const expectedHeaderRequestParams = "name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.OSPolicyAssignment()),
@@ -1563,13 +1565,14 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('uses async iteration with listInstanceOSPoliciesCompliances without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance()),
@@ -1785,13 +1788,14 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('uses async iteration with listInventories without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.ListInventoriesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.Inventory()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.Inventory()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.Inventory()),
@@ -2007,13 +2011,14 @@ describe('v1alpha.OsConfigZonalServiceClient', () => {
 
         it('uses async iteration with listVulnerabilityReports without error', async () => {
             const client = new osconfigzonalserviceModule.v1alpha.OsConfigZonalServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.ListVulnerabilityReportsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.VulnerabilityReport()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.VulnerabilityReport()),
               generateSampleMessage(new protos.google.cloud.osconfig.v1alpha.VulnerabilityReport()),

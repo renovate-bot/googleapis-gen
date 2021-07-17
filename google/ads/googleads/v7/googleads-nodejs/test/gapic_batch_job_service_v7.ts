@@ -133,8 +133,8 @@ describe('v7.BatchJobServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.batchJobServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v7.BatchJobServiceClient', () => {
 
     it('has close method', () => {
         const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v7.BatchJobServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v7.BatchJobServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v7.BatchJobServiceClient', () => {
     describe('mutateBatchJob', () => {
         it('invokes mutateBatchJob without error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateBatchJobRequest());
             request.customerId = '';
@@ -208,9 +208,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes mutateBatchJob without error using callback', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateBatchJobRequest());
             request.customerId = '';
@@ -243,9 +243,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes mutateBatchJob with error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateBatchJobRequest());
             request.customerId = '';
@@ -268,9 +268,9 @@ describe('v7.BatchJobServiceClient', () => {
     describe('getBatchJob', () => {
         it('invokes getBatchJob without error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetBatchJobRequest());
             request.resourceName = '';
@@ -292,9 +292,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes getBatchJob without error using callback', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetBatchJobRequest());
             request.resourceName = '';
@@ -327,9 +327,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes getBatchJob with error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetBatchJobRequest());
             request.resourceName = '';
@@ -352,9 +352,9 @@ describe('v7.BatchJobServiceClient', () => {
     describe('addBatchJobOperations', () => {
         it('invokes addBatchJobOperations without error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.AddBatchJobOperationsRequest());
             request.resourceName = '';
@@ -376,9 +376,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes addBatchJobOperations without error using callback', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.AddBatchJobOperationsRequest());
             request.resourceName = '';
@@ -411,9 +411,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes addBatchJobOperations with error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.AddBatchJobOperationsRequest());
             request.resourceName = '';
@@ -436,9 +436,9 @@ describe('v7.BatchJobServiceClient', () => {
     describe('runBatchJob', () => {
         it('invokes runBatchJob without error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.RunBatchJobRequest());
             request.resourceName = '';
@@ -461,9 +461,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes runBatchJob without error using callback', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.RunBatchJobRequest());
             request.resourceName = '';
@@ -499,9 +499,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes runBatchJob with call error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.RunBatchJobRequest());
             request.resourceName = '';
@@ -522,9 +522,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes runBatchJob with LRO error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.RunBatchJobRequest());
             request.resourceName = '';
@@ -546,9 +546,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes checkRunBatchJobProgress without error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -564,9 +564,9 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('invokes checkRunBatchJobProgress with error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -743,13 +743,14 @@ describe('v7.BatchJobServiceClient', () => {
 
         it('uses async iteration with listBatchJobResults without error', async () => {
             const client = new batchjobserviceModule.v7.BatchJobServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.ListBatchJobResultsRequest());
             request.resourceName = '';
-            const expectedHeaderRequestParams = "resource_name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "resource_name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.ads.googleads.v7.services.BatchJobResult()),
               generateSampleMessage(new protos.google.ads.googleads.v7.services.BatchJobResult()),
               generateSampleMessage(new protos.google.ads.googleads.v7.services.BatchJobResult()),

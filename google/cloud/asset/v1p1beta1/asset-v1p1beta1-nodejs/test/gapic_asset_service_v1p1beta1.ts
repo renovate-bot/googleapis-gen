@@ -117,8 +117,8 @@ describe('v1p1beta1.AssetServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new assetserviceModule.v1p1beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.assetServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1p1beta1.AssetServiceClient', () => {
 
     it('has close method', () => {
         const client = new assetserviceModule.v1p1beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1p1beta1.AssetServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new assetserviceModule.v1p1beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1p1beta1.AssetServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new assetserviceModule.v1p1beta1.AssetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -331,13 +331,14 @@ describe('v1p1beta1.AssetServiceClient', () => {
 
         it('uses async iteration with searchAllResources without error', async () => {
             const client = new assetserviceModule.v1p1beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p1beta1.SearchAllResourcesRequest());
             request.scope = '';
-            const expectedHeaderRequestParams = "scope=";const expectedResponse = [
+            const expectedHeaderRequestParams = "scope=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.asset.v1p1beta1.StandardResourceMetadata()),
               generateSampleMessage(new protos.google.cloud.asset.v1p1beta1.StandardResourceMetadata()),
               generateSampleMessage(new protos.google.cloud.asset.v1p1beta1.StandardResourceMetadata()),
@@ -553,13 +554,14 @@ describe('v1p1beta1.AssetServiceClient', () => {
 
         it('uses async iteration with searchAllIamPolicies without error', async () => {
             const client = new assetserviceModule.v1p1beta1.AssetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.asset.v1p1beta1.SearchAllIamPoliciesRequest());
             request.scope = '';
-            const expectedHeaderRequestParams = "scope=";const expectedResponse = [
+            const expectedHeaderRequestParams = "scope=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.asset.v1p1beta1.IamPolicySearchResult()),
               generateSampleMessage(new protos.google.cloud.asset.v1p1beta1.IamPolicySearchResult()),
               generateSampleMessage(new protos.google.cloud.asset.v1p1beta1.IamPolicySearchResult()),

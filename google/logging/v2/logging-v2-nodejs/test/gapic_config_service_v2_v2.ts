@@ -117,8 +117,8 @@ describe('v2.ConfigServiceV2Client', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new configservicev2Module.v2.ConfigServiceV2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.configServiceV2Stub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2.ConfigServiceV2Client', () => {
 
     it('has close method', () => {
         const client = new configservicev2Module.v2.ConfigServiceV2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2.ConfigServiceV2Client', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new configservicev2Module.v2.ConfigServiceV2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2.ConfigServiceV2Client', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new configservicev2Module.v2.ConfigServiceV2Client({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('getBucket', () => {
         it('invokes getBucket without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetBucketRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getBucket without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetBucketRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getBucket with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetBucketRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('createBucket', () => {
         it('invokes createBucket without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateBucketRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes createBucket without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateBucketRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes createBucket with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateBucketRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('updateBucket', () => {
         it('invokes updateBucket without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateBucketRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateBucket without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateBucketRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateBucket with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateBucketRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('deleteBucket', () => {
         it('invokes deleteBucket without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteBucketRequest());
             request.name = '';
@@ -444,9 +444,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes deleteBucket without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteBucketRequest());
             request.name = '';
@@ -479,9 +479,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes deleteBucket with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteBucketRequest());
             request.name = '';
@@ -504,9 +504,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('undeleteBucket', () => {
         it('invokes undeleteBucket without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UndeleteBucketRequest());
             request.name = '';
@@ -528,9 +528,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes undeleteBucket without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UndeleteBucketRequest());
             request.name = '';
@@ -563,9 +563,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes undeleteBucket with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UndeleteBucketRequest());
             request.name = '';
@@ -588,9 +588,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('getView', () => {
         it('invokes getView without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetViewRequest());
             request.name = '';
@@ -612,9 +612,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getView without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetViewRequest());
             request.name = '';
@@ -647,9 +647,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getView with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetViewRequest());
             request.name = '';
@@ -672,9 +672,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('createView', () => {
         it('invokes createView without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateViewRequest());
             request.parent = '';
@@ -696,9 +696,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes createView without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateViewRequest());
             request.parent = '';
@@ -731,9 +731,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes createView with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateViewRequest());
             request.parent = '';
@@ -756,9 +756,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('updateView', () => {
         it('invokes updateView without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateViewRequest());
             request.name = '';
@@ -780,9 +780,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateView without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateViewRequest());
             request.name = '';
@@ -815,9 +815,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateView with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateViewRequest());
             request.name = '';
@@ -840,9 +840,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('deleteView', () => {
         it('invokes deleteView without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteViewRequest());
             request.name = '';
@@ -864,9 +864,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes deleteView without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteViewRequest());
             request.name = '';
@@ -899,9 +899,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes deleteView with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteViewRequest());
             request.name = '';
@@ -924,9 +924,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('getSink', () => {
         it('invokes getSink without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetSinkRequest());
             request.sinkName = '';
@@ -948,9 +948,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getSink without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetSinkRequest());
             request.sinkName = '';
@@ -983,9 +983,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getSink with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetSinkRequest());
             request.sinkName = '';
@@ -1008,9 +1008,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('createSink', () => {
         it('invokes createSink without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateSinkRequest());
             request.parent = '';
@@ -1032,9 +1032,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes createSink without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateSinkRequest());
             request.parent = '';
@@ -1067,9 +1067,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes createSink with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateSinkRequest());
             request.parent = '';
@@ -1092,9 +1092,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('updateSink', () => {
         it('invokes updateSink without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateSinkRequest());
             request.sinkName = '';
@@ -1116,9 +1116,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateSink without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateSinkRequest());
             request.sinkName = '';
@@ -1151,9 +1151,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateSink with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateSinkRequest());
             request.sinkName = '';
@@ -1176,9 +1176,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('deleteSink', () => {
         it('invokes deleteSink without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteSinkRequest());
             request.sinkName = '';
@@ -1200,9 +1200,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes deleteSink without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteSinkRequest());
             request.sinkName = '';
@@ -1235,9 +1235,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes deleteSink with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteSinkRequest());
             request.sinkName = '';
@@ -1260,9 +1260,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('getExclusion', () => {
         it('invokes getExclusion without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetExclusionRequest());
             request.name = '';
@@ -1284,9 +1284,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getExclusion without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetExclusionRequest());
             request.name = '';
@@ -1319,9 +1319,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getExclusion with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetExclusionRequest());
             request.name = '';
@@ -1344,9 +1344,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('createExclusion', () => {
         it('invokes createExclusion without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateExclusionRequest());
             request.parent = '';
@@ -1368,9 +1368,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes createExclusion without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateExclusionRequest());
             request.parent = '';
@@ -1403,9 +1403,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes createExclusion with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.CreateExclusionRequest());
             request.parent = '';
@@ -1428,9 +1428,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('updateExclusion', () => {
         it('invokes updateExclusion without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateExclusionRequest());
             request.name = '';
@@ -1452,9 +1452,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateExclusion without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateExclusionRequest());
             request.name = '';
@@ -1487,9 +1487,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateExclusion with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateExclusionRequest());
             request.name = '';
@@ -1512,9 +1512,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('deleteExclusion', () => {
         it('invokes deleteExclusion without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteExclusionRequest());
             request.name = '';
@@ -1536,9 +1536,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes deleteExclusion without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteExclusionRequest());
             request.name = '';
@@ -1571,9 +1571,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes deleteExclusion with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.DeleteExclusionRequest());
             request.name = '';
@@ -1596,9 +1596,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('getCmekSettings', () => {
         it('invokes getCmekSettings without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetCmekSettingsRequest());
             request.name = '';
@@ -1620,9 +1620,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getCmekSettings without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetCmekSettingsRequest());
             request.name = '';
@@ -1655,9 +1655,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes getCmekSettings with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.GetCmekSettingsRequest());
             request.name = '';
@@ -1680,9 +1680,9 @@ describe('v2.ConfigServiceV2Client', () => {
     describe('updateCmekSettings', () => {
         it('invokes updateCmekSettings without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateCmekSettingsRequest());
             request.name = '';
@@ -1704,9 +1704,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateCmekSettings without error using callback', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateCmekSettingsRequest());
             request.name = '';
@@ -1739,9 +1739,9 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('invokes updateCmekSettings with error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.UpdateCmekSettingsRequest());
             request.name = '';
@@ -1927,13 +1927,14 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('uses async iteration with listBuckets without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListBucketsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.logging.v2.LogBucket()),
               generateSampleMessage(new protos.google.logging.v2.LogBucket()),
               generateSampleMessage(new protos.google.logging.v2.LogBucket()),
@@ -2149,13 +2150,14 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('uses async iteration with listViews without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListViewsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.logging.v2.LogView()),
               generateSampleMessage(new protos.google.logging.v2.LogView()),
               generateSampleMessage(new protos.google.logging.v2.LogView()),
@@ -2371,13 +2373,14 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('uses async iteration with listSinks without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListSinksRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.logging.v2.LogSink()),
               generateSampleMessage(new protos.google.logging.v2.LogSink()),
               generateSampleMessage(new protos.google.logging.v2.LogSink()),
@@ -2593,13 +2596,14 @@ describe('v2.ConfigServiceV2Client', () => {
 
         it('uses async iteration with listExclusions without error', async () => {
             const client = new configservicev2Module.v2.ConfigServiceV2Client({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.logging.v2.ListExclusionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.logging.v2.LogExclusion()),
               generateSampleMessage(new protos.google.logging.v2.LogExclusion()),
               generateSampleMessage(new protos.google.logging.v2.LogExclusion()),

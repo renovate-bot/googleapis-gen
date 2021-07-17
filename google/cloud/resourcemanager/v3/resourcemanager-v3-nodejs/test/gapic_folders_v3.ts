@@ -133,8 +133,8 @@ describe('v3.FoldersClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new foldersModule.v3.FoldersClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.foldersStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3.FoldersClient', () => {
 
     it('has close method', () => {
         const client = new foldersModule.v3.FoldersClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3.FoldersClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new foldersModule.v3.FoldersClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3.FoldersClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new foldersModule.v3.FoldersClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3.FoldersClient', () => {
     describe('getFolder', () => {
         it('invokes getFolder without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetFolderRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes getFolder without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetFolderRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes getFolder with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetFolderRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v3.FoldersClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -292,9 +292,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -327,9 +327,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -352,9 +352,9 @@ describe('v3.FoldersClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -376,9 +376,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -411,9 +411,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -436,9 +436,9 @@ describe('v3.FoldersClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -460,9 +460,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -495,9 +495,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -520,9 +520,9 @@ describe('v3.FoldersClient', () => {
     describe('createFolder', () => {
         it('invokes createFolder without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateFolderRequest());
             const expectedOptions = {};
@@ -537,9 +537,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes createFolder without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateFolderRequest());
             const expectedOptions = {};
@@ -567,9 +567,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes createFolder with call error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateFolderRequest());
             const expectedOptions = {};
@@ -582,9 +582,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes createFolder with LRO error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateFolderRequest());
             const expectedOptions = {};
@@ -598,9 +598,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkCreateFolderProgress without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -616,9 +616,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkCreateFolderProgress with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -632,9 +632,9 @@ describe('v3.FoldersClient', () => {
     describe('updateFolder', () => {
         it('invokes updateFolder without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateFolderRequest());
             request.folder = {};
@@ -658,9 +658,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes updateFolder without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateFolderRequest());
             request.folder = {};
@@ -697,9 +697,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes updateFolder with call error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateFolderRequest());
             request.folder = {};
@@ -721,9 +721,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes updateFolder with LRO error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateFolderRequest());
             request.folder = {};
@@ -746,9 +746,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkUpdateFolderProgress without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -764,9 +764,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkUpdateFolderProgress with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -780,9 +780,9 @@ describe('v3.FoldersClient', () => {
     describe('moveFolder', () => {
         it('invokes moveFolder without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.MoveFolderRequest());
             request.name = '';
@@ -805,9 +805,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes moveFolder without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.MoveFolderRequest());
             request.name = '';
@@ -843,9 +843,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes moveFolder with call error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.MoveFolderRequest());
             request.name = '';
@@ -866,9 +866,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes moveFolder with LRO error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.MoveFolderRequest());
             request.name = '';
@@ -890,9 +890,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkMoveFolderProgress without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -908,9 +908,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkMoveFolderProgress with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -924,9 +924,9 @@ describe('v3.FoldersClient', () => {
     describe('deleteFolder', () => {
         it('invokes deleteFolder without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteFolderRequest());
             request.name = '';
@@ -949,9 +949,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes deleteFolder without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteFolderRequest());
             request.name = '';
@@ -987,9 +987,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes deleteFolder with call error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteFolderRequest());
             request.name = '';
@@ -1010,9 +1010,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes deleteFolder with LRO error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteFolderRequest());
             request.name = '';
@@ -1034,9 +1034,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkDeleteFolderProgress without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1052,9 +1052,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkDeleteFolderProgress with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1068,9 +1068,9 @@ describe('v3.FoldersClient', () => {
     describe('undeleteFolder', () => {
         it('invokes undeleteFolder without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UndeleteFolderRequest());
             request.name = '';
@@ -1093,9 +1093,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes undeleteFolder without error using callback', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UndeleteFolderRequest());
             request.name = '';
@@ -1131,9 +1131,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes undeleteFolder with call error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UndeleteFolderRequest());
             request.name = '';
@@ -1154,9 +1154,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes undeleteFolder with LRO error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UndeleteFolderRequest());
             request.name = '';
@@ -1178,9 +1178,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkUndeleteFolderProgress without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1196,9 +1196,9 @@ describe('v3.FoldersClient', () => {
 
         it('invokes checkUndeleteFolderProgress with error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1337,11 +1337,12 @@ describe('v3.FoldersClient', () => {
 
         it('uses async iteration with listFolders without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListFoldersRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListFoldersRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
@@ -1507,11 +1508,12 @@ describe('v3.FoldersClient', () => {
 
         it('uses async iteration with searchFolders without error', async () => {
             const client = new foldersModule.v3.FoldersClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchFoldersRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchFoldersRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Folder()),

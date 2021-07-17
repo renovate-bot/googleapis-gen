@@ -117,8 +117,8 @@ describe('v2.ConversationProfilesClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.conversationProfilesStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2.ConversationProfilesClient', () => {
 
     it('has close method', () => {
         const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2.ConversationProfilesClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2.ConversationProfilesClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2.ConversationProfilesClient', () => {
     describe('getConversationProfile', () => {
         it('invokes getConversationProfile without error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetConversationProfileRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('invokes getConversationProfile without error using callback', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetConversationProfileRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('invokes getConversationProfile with error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.GetConversationProfileRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v2.ConversationProfilesClient', () => {
     describe('createConversationProfile', () => {
         it('invokes createConversationProfile without error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateConversationProfileRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('invokes createConversationProfile without error using callback', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateConversationProfileRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('invokes createConversationProfile with error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.CreateConversationProfileRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v2.ConversationProfilesClient', () => {
     describe('updateConversationProfile', () => {
         it('invokes updateConversationProfile without error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateConversationProfileRequest());
             request.conversationProfile = {};
@@ -361,9 +361,9 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('invokes updateConversationProfile without error using callback', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateConversationProfileRequest());
             request.conversationProfile = {};
@@ -397,9 +397,9 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('invokes updateConversationProfile with error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.UpdateConversationProfileRequest());
             request.conversationProfile = {};
@@ -423,9 +423,9 @@ describe('v2.ConversationProfilesClient', () => {
     describe('deleteConversationProfile', () => {
         it('invokes deleteConversationProfile without error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteConversationProfileRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('invokes deleteConversationProfile without error using callback', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteConversationProfileRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('invokes deleteConversationProfile with error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.DeleteConversationProfileRequest());
             request.name = '';
@@ -670,13 +670,14 @@ describe('v2.ConversationProfilesClient', () => {
 
         it('uses async iteration with listConversationProfiles without error', async () => {
             const client = new conversationprofilesModule.v2.ConversationProfilesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2.ListConversationProfilesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.ConversationProfile()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.ConversationProfile()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2.ConversationProfile()),

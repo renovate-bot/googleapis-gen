@@ -133,8 +133,8 @@ describe('v1beta1.CatalogServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.catalogServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.CatalogServiceClient', () => {
 
     it('has close method', () => {
         const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.CatalogServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.CatalogServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.CatalogServiceClient', () => {
     describe('createCatalogItem', () => {
         it('invokes createCatalogItem without error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes createCatalogItem without error using callback', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes createCatalogItem with error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CreateCatalogItemRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1beta1.CatalogServiceClient', () => {
     describe('getCatalogItem', () => {
         it('invokes getCatalogItem without error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes getCatalogItem without error using callback', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes getCatalogItem with error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.GetCatalogItemRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1beta1.CatalogServiceClient', () => {
     describe('updateCatalogItem', () => {
         it('invokes updateCatalogItem without error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes updateCatalogItem without error using callback', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes updateCatalogItem with error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.UpdateCatalogItemRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1beta1.CatalogServiceClient', () => {
     describe('deleteCatalogItem', () => {
         it('invokes deleteCatalogItem without error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest());
             request.name = '';
@@ -460,9 +460,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes deleteCatalogItem without error using callback', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest());
             request.name = '';
@@ -495,9 +495,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes deleteCatalogItem with error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.DeleteCatalogItemRequest());
             request.name = '';
@@ -520,9 +520,9 @@ describe('v1beta1.CatalogServiceClient', () => {
     describe('importCatalogItems', () => {
         it('invokes importCatalogItems without error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest());
             request.parent = '';
@@ -545,9 +545,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes importCatalogItems without error using callback', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest());
             request.parent = '';
@@ -583,9 +583,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes importCatalogItems with call error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest());
             request.parent = '';
@@ -606,9 +606,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes importCatalogItems with LRO error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ImportCatalogItemsRequest());
             request.parent = '';
@@ -630,9 +630,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes checkImportCatalogItemsProgress without error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -648,9 +648,9 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('invokes checkImportCatalogItemsProgress with error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -827,13 +827,14 @@ describe('v1beta1.CatalogServiceClient', () => {
 
         it('uses async iteration with listCatalogItems without error', async () => {
             const client = new catalogserviceModule.v1beta1.CatalogServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.ListCatalogItemsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CatalogItem()),
               generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CatalogItem()),
               generateSampleMessage(new protos.google.cloud.recommendationengine.v1beta1.CatalogItem()),

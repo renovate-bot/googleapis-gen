@@ -133,8 +133,8 @@ describe('v1beta2.ClusterControllerClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.clusterControllerStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta2.ClusterControllerClient', () => {
 
     it('has close method', () => {
         const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta2.ClusterControllerClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta2.ClusterControllerClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta2.ClusterControllerClient', () => {
     describe('getCluster', () => {
         it('invokes getCluster without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.GetClusterRequest());
             request.projectId = '';
@@ -208,9 +208,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes getCluster without error using callback', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.GetClusterRequest());
             request.projectId = '';
@@ -243,9 +243,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes getCluster with error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.GetClusterRequest());
             request.projectId = '';
@@ -268,9 +268,9 @@ describe('v1beta2.ClusterControllerClient', () => {
     describe('createCluster', () => {
         it('invokes createCluster without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.CreateClusterRequest());
             request.projectId = '';
@@ -293,9 +293,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes createCluster without error using callback', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.CreateClusterRequest());
             request.projectId = '';
@@ -331,9 +331,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes createCluster with call error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.CreateClusterRequest());
             request.projectId = '';
@@ -354,9 +354,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes createCluster with LRO error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.CreateClusterRequest());
             request.projectId = '';
@@ -378,9 +378,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes checkCreateClusterProgress without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes checkCreateClusterProgress with error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1beta2.ClusterControllerClient', () => {
     describe('updateCluster', () => {
         it('invokes updateCluster without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.UpdateClusterRequest());
             request.projectId = '';
@@ -437,9 +437,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes updateCluster without error using callback', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.UpdateClusterRequest());
             request.projectId = '';
@@ -475,9 +475,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes updateCluster with call error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.UpdateClusterRequest());
             request.projectId = '';
@@ -498,9 +498,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes updateCluster with LRO error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.UpdateClusterRequest());
             request.projectId = '';
@@ -522,9 +522,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes checkUpdateClusterProgress without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes checkUpdateClusterProgress with error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -556,9 +556,9 @@ describe('v1beta2.ClusterControllerClient', () => {
     describe('deleteCluster', () => {
         it('invokes deleteCluster without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.DeleteClusterRequest());
             request.projectId = '';
@@ -581,9 +581,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes deleteCluster without error using callback', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.DeleteClusterRequest());
             request.projectId = '';
@@ -619,9 +619,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes deleteCluster with call error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.DeleteClusterRequest());
             request.projectId = '';
@@ -642,9 +642,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes deleteCluster with LRO error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.DeleteClusterRequest());
             request.projectId = '';
@@ -666,9 +666,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes checkDeleteClusterProgress without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -684,9 +684,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes checkDeleteClusterProgress with error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -700,9 +700,9 @@ describe('v1beta2.ClusterControllerClient', () => {
     describe('diagnoseCluster', () => {
         it('invokes diagnoseCluster without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.DiagnoseClusterRequest());
             request.projectId = '';
@@ -725,9 +725,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes diagnoseCluster without error using callback', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.DiagnoseClusterRequest());
             request.projectId = '';
@@ -763,9 +763,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes diagnoseCluster with call error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.DiagnoseClusterRequest());
             request.projectId = '';
@@ -786,9 +786,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes diagnoseCluster with LRO error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.DiagnoseClusterRequest());
             request.projectId = '';
@@ -810,9 +810,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes checkDiagnoseClusterProgress without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -828,9 +828,9 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('invokes checkDiagnoseClusterProgress with error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1007,13 +1007,14 @@ describe('v1beta2.ClusterControllerClient', () => {
 
         it('uses async iteration with listClusters without error', async () => {
             const client = new clustercontrollerModule.v1beta2.ClusterControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.ListClustersRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";const expectedResponse = [
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.Cluster()),
               generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.Cluster()),
               generateSampleMessage(new protos.google.cloud.dataproc.v1beta2.Cluster()),

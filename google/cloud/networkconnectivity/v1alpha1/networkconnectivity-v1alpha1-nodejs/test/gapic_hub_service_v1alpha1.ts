@@ -133,8 +133,8 @@ describe('v1alpha1.HubServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new hubserviceModule.v1alpha1.HubServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.hubServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1alpha1.HubServiceClient', () => {
 
     it('has close method', () => {
         const client = new hubserviceModule.v1alpha1.HubServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1alpha1.HubServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new hubserviceModule.v1alpha1.HubServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1alpha1.HubServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new hubserviceModule.v1alpha1.HubServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1alpha1.HubServiceClient', () => {
     describe('getHub', () => {
         it('invokes getHub without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.GetHubRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes getHub without error using callback', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.GetHubRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes getHub with error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.GetHubRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1alpha1.HubServiceClient', () => {
     describe('getSpoke', () => {
         it('invokes getSpoke without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes getSpoke without error using callback', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes getSpoke with error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.GetSpokeRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1alpha1.HubServiceClient', () => {
     describe('createHub', () => {
         it('invokes createHub without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest());
             request.parent = '';
@@ -377,9 +377,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes createHub without error using callback', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest());
             request.parent = '';
@@ -415,9 +415,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes createHub with call error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest());
             request.parent = '';
@@ -438,9 +438,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes createHub with LRO error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.CreateHubRequest());
             request.parent = '';
@@ -462,9 +462,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkCreateHubProgress without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -480,9 +480,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkCreateHubProgress with error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -496,9 +496,9 @@ describe('v1alpha1.HubServiceClient', () => {
     describe('updateHub', () => {
         it('invokes updateHub without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest());
             request.hub = {};
@@ -522,9 +522,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes updateHub without error using callback', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest());
             request.hub = {};
@@ -561,9 +561,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes updateHub with call error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest());
             request.hub = {};
@@ -585,9 +585,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes updateHub with LRO error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.UpdateHubRequest());
             request.hub = {};
@@ -610,9 +610,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkUpdateHubProgress without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -628,9 +628,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkUpdateHubProgress with error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -644,9 +644,9 @@ describe('v1alpha1.HubServiceClient', () => {
     describe('deleteHub', () => {
         it('invokes deleteHub without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest());
             request.name = '';
@@ -669,9 +669,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes deleteHub without error using callback', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest());
             request.name = '';
@@ -707,9 +707,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes deleteHub with call error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest());
             request.name = '';
@@ -730,9 +730,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes deleteHub with LRO error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.DeleteHubRequest());
             request.name = '';
@@ -754,9 +754,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkDeleteHubProgress without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -772,9 +772,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkDeleteHubProgress with error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -788,9 +788,9 @@ describe('v1alpha1.HubServiceClient', () => {
     describe('createSpoke', () => {
         it('invokes createSpoke without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest());
             request.parent = '';
@@ -813,9 +813,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes createSpoke without error using callback', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest());
             request.parent = '';
@@ -851,9 +851,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes createSpoke with call error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest());
             request.parent = '';
@@ -874,9 +874,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes createSpoke with LRO error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.CreateSpokeRequest());
             request.parent = '';
@@ -898,9 +898,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkCreateSpokeProgress without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -916,9 +916,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkCreateSpokeProgress with error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -932,9 +932,9 @@ describe('v1alpha1.HubServiceClient', () => {
     describe('updateSpoke', () => {
         it('invokes updateSpoke without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest());
             request.spoke = {};
@@ -958,9 +958,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes updateSpoke without error using callback', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest());
             request.spoke = {};
@@ -997,9 +997,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes updateSpoke with call error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest());
             request.spoke = {};
@@ -1021,9 +1021,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes updateSpoke with LRO error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.UpdateSpokeRequest());
             request.spoke = {};
@@ -1046,9 +1046,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkUpdateSpokeProgress without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1064,9 +1064,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkUpdateSpokeProgress with error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1080,9 +1080,9 @@ describe('v1alpha1.HubServiceClient', () => {
     describe('deleteSpoke', () => {
         it('invokes deleteSpoke without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest());
             request.name = '';
@@ -1105,9 +1105,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes deleteSpoke without error using callback', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest());
             request.name = '';
@@ -1143,9 +1143,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes deleteSpoke with call error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest());
             request.name = '';
@@ -1166,9 +1166,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes deleteSpoke with LRO error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.DeleteSpokeRequest());
             request.name = '';
@@ -1190,9 +1190,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkDeleteSpokeProgress without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1208,9 +1208,9 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('invokes checkDeleteSpokeProgress with error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1387,13 +1387,14 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('uses async iteration with listHubs without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.ListHubsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.Hub()),
               generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.Hub()),
               generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.Hub()),
@@ -1609,13 +1610,14 @@ describe('v1alpha1.HubServiceClient', () => {
 
         it('uses async iteration with listSpokes without error', async () => {
             const client = new hubserviceModule.v1alpha1.HubServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.ListSpokesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.Spoke()),
               generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.Spoke()),
               generateSampleMessage(new protos.google.cloud.networkconnectivity.v1alpha1.Spoke()),

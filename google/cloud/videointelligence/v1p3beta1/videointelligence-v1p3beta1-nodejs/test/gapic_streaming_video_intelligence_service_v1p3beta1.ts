@@ -73,8 +73,8 @@ describe('v1p3beta1.StreamingVideoIntelligenceServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new streamingvideointelligenceserviceModule.v1p3beta1.StreamingVideoIntelligenceServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.streamingVideoIntelligenceServiceStub, undefined);
         await client.initialize();
@@ -83,8 +83,8 @@ describe('v1p3beta1.StreamingVideoIntelligenceServiceClient', () => {
 
     it('has close method', () => {
         const client = new streamingvideointelligenceserviceModule.v1p3beta1.StreamingVideoIntelligenceServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -92,8 +92,8 @@ describe('v1p3beta1.StreamingVideoIntelligenceServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new streamingvideointelligenceserviceModule.v1p3beta1.StreamingVideoIntelligenceServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -104,8 +104,8 @@ describe('v1p3beta1.StreamingVideoIntelligenceServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new streamingvideointelligenceserviceModule.v1p3beta1.StreamingVideoIntelligenceServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -124,9 +124,9 @@ describe('v1p3beta1.StreamingVideoIntelligenceServiceClient', () => {
     describe('streamingAnnotateVideo', () => {
         it('invokes streamingAnnotateVideo without error', async () => {
             const client = new streamingvideointelligenceserviceModule.v1p3beta1.StreamingVideoIntelligenceServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse());
@@ -152,9 +152,9 @@ describe('v1p3beta1.StreamingVideoIntelligenceServiceClient', () => {
 
         it('invokes streamingAnnotateVideo with error', async () => {
             const client = new streamingvideointelligenceserviceModule.v1p3beta1.StreamingVideoIntelligenceServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest());const expectedError = new Error('expected');
             client.innerApiCalls.streamingAnnotateVideo = stubBidiStreamingCall(undefined, expectedError);

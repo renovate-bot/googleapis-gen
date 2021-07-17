@@ -70,8 +70,8 @@ describe('v1.ContainerAnalysisClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.containerAnalysisStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.ContainerAnalysisClient', () => {
 
     it('has close method', () => {
         const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.ContainerAnalysisClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.ContainerAnalysisClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.ContainerAnalysisClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -145,9 +145,9 @@ describe('v1.ContainerAnalysisClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -180,9 +180,9 @@ describe('v1.ContainerAnalysisClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -205,9 +205,9 @@ describe('v1.ContainerAnalysisClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -229,9 +229,9 @@ describe('v1.ContainerAnalysisClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -264,9 +264,9 @@ describe('v1.ContainerAnalysisClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -289,9 +289,9 @@ describe('v1.ContainerAnalysisClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -313,9 +313,9 @@ describe('v1.ContainerAnalysisClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -348,9 +348,9 @@ describe('v1.ContainerAnalysisClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -373,9 +373,9 @@ describe('v1.ContainerAnalysisClient', () => {
     describe('getVulnerabilityOccurrencesSummary', () => {
         it('invokes getVulnerabilityOccurrencesSummary without error', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest());
             request.parent = '';
@@ -397,9 +397,9 @@ describe('v1.ContainerAnalysisClient', () => {
 
         it('invokes getVulnerabilityOccurrencesSummary without error using callback', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest());
             request.parent = '';
@@ -432,9 +432,9 @@ describe('v1.ContainerAnalysisClient', () => {
 
         it('invokes getVulnerabilityOccurrencesSummary with error', async () => {
             const client = new containeranalysisModule.v1.ContainerAnalysisClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.containeranalysis.v1.GetVulnerabilityOccurrencesSummaryRequest());
             request.parent = '';

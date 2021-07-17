@@ -70,8 +70,8 @@ describe('v1.IamCheckerClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new iamcheckerModule.v1.IamCheckerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.iamCheckerStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.IamCheckerClient', () => {
 
     it('has close method', () => {
         const client = new iamcheckerModule.v1.IamCheckerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.IamCheckerClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new iamcheckerModule.v1.IamCheckerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.IamCheckerClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new iamcheckerModule.v1.IamCheckerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.IamCheckerClient', () => {
     describe('troubleshootIamPolicy', () => {
         it('invokes troubleshootIamPolicy without error', async () => {
             const client = new iamcheckerModule.v1.IamCheckerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v1.IamCheckerClient', () => {
 
         it('invokes troubleshootIamPolicy without error using callback', async () => {
             const client = new iamcheckerModule.v1.IamCheckerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v1.IamCheckerClient', () => {
 
         it('invokes troubleshootIamPolicy with error', async () => {
             const client = new iamcheckerModule.v1.IamCheckerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyRequest());
             const expectedOptions = {};

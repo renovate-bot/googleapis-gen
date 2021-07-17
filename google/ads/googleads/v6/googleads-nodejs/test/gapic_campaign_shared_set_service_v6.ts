@@ -70,8 +70,8 @@ describe('v6.CampaignSharedSetServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.campaignSharedSetServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v6.CampaignSharedSetServiceClient', () => {
 
     it('has close method', () => {
         const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v6.CampaignSharedSetServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v6.CampaignSharedSetServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v6.CampaignSharedSetServiceClient', () => {
     describe('getCampaignSharedSet', () => {
         it('invokes getCampaignSharedSet without error', async () => {
             const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetCampaignSharedSetRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v6.CampaignSharedSetServiceClient', () => {
 
         it('invokes getCampaignSharedSet without error using callback', async () => {
             const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetCampaignSharedSetRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v6.CampaignSharedSetServiceClient', () => {
 
         it('invokes getCampaignSharedSet with error', async () => {
             const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetCampaignSharedSetRequest());
             request.resourceName = '';
@@ -205,9 +205,9 @@ describe('v6.CampaignSharedSetServiceClient', () => {
     describe('mutateCampaignSharedSets', () => {
         it('invokes mutateCampaignSharedSets without error', async () => {
             const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateCampaignSharedSetsRequest());
             request.customerId = '';
@@ -229,9 +229,9 @@ describe('v6.CampaignSharedSetServiceClient', () => {
 
         it('invokes mutateCampaignSharedSets without error using callback', async () => {
             const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateCampaignSharedSetsRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v6.CampaignSharedSetServiceClient', () => {
 
         it('invokes mutateCampaignSharedSets with error', async () => {
             const client = new campaignsharedsetserviceModule.v6.CampaignSharedSetServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateCampaignSharedSetsRequest());
             request.customerId = '';

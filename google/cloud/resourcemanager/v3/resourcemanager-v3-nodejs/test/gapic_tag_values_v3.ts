@@ -133,8 +133,8 @@ describe('v3.TagValuesClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new tagvaluesModule.v3.TagValuesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.tagValuesStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3.TagValuesClient', () => {
 
     it('has close method', () => {
         const client = new tagvaluesModule.v3.TagValuesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3.TagValuesClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tagvaluesModule.v3.TagValuesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3.TagValuesClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tagvaluesModule.v3.TagValuesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3.TagValuesClient', () => {
     describe('getTagValue', () => {
         it('invokes getTagValue without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetTagValueRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes getTagValue without error using callback', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetTagValueRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes getTagValue with error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetTagValueRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v3.TagValuesClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -292,9 +292,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -327,9 +327,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -352,9 +352,9 @@ describe('v3.TagValuesClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -376,9 +376,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -411,9 +411,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -436,9 +436,9 @@ describe('v3.TagValuesClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -460,9 +460,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -495,9 +495,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -520,9 +520,9 @@ describe('v3.TagValuesClient', () => {
     describe('createTagValue', () => {
         it('invokes createTagValue without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagValueRequest());
             const expectedOptions = {};
@@ -537,9 +537,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes createTagValue without error using callback', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagValueRequest());
             const expectedOptions = {};
@@ -567,9 +567,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes createTagValue with call error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagValueRequest());
             const expectedOptions = {};
@@ -582,9 +582,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes createTagValue with LRO error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagValueRequest());
             const expectedOptions = {};
@@ -598,9 +598,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes checkCreateTagValueProgress without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -616,9 +616,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes checkCreateTagValueProgress with error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -632,9 +632,9 @@ describe('v3.TagValuesClient', () => {
     describe('updateTagValue', () => {
         it('invokes updateTagValue without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateTagValueRequest());
             request.tagValue = {};
@@ -658,9 +658,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes updateTagValue without error using callback', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateTagValueRequest());
             request.tagValue = {};
@@ -697,9 +697,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes updateTagValue with call error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateTagValueRequest());
             request.tagValue = {};
@@ -721,9 +721,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes updateTagValue with LRO error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateTagValueRequest());
             request.tagValue = {};
@@ -746,9 +746,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes checkUpdateTagValueProgress without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -764,9 +764,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes checkUpdateTagValueProgress with error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -780,9 +780,9 @@ describe('v3.TagValuesClient', () => {
     describe('deleteTagValue', () => {
         it('invokes deleteTagValue without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagValueRequest());
             request.name = '';
@@ -805,9 +805,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes deleteTagValue without error using callback', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagValueRequest());
             request.name = '';
@@ -843,9 +843,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes deleteTagValue with call error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagValueRequest());
             request.name = '';
@@ -866,9 +866,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes deleteTagValue with LRO error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagValueRequest());
             request.name = '';
@@ -890,9 +890,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes checkDeleteTagValueProgress without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -908,9 +908,9 @@ describe('v3.TagValuesClient', () => {
 
         it('invokes checkDeleteTagValueProgress with error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1049,11 +1049,12 @@ describe('v3.TagValuesClient', () => {
 
         it('uses async iteration with listTagValues without error', async () => {
             const client = new tagvaluesModule.v3.TagValuesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagValuesRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagValuesRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagValue()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagValue()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagValue()),

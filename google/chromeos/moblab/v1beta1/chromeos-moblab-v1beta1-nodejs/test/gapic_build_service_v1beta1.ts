@@ -133,8 +133,8 @@ describe('v1beta1.BuildServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new buildserviceModule.v1beta1.BuildServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.buildServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.BuildServiceClient', () => {
 
     it('has close method', () => {
         const client = new buildserviceModule.v1beta1.BuildServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.BuildServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new buildserviceModule.v1beta1.BuildServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.BuildServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new buildserviceModule.v1beta1.BuildServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.BuildServiceClient', () => {
     describe('checkBuildStageStatus', () => {
         it('invokes checkBuildStageStatus without error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('invokes checkBuildStageStatus without error using callback', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('invokes checkBuildStageStatus with error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta1.BuildServiceClient', () => {
     describe('stageBuild', () => {
         it('invokes stageBuild without error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.StageBuildRequest());
             request.name = '';
@@ -293,9 +293,9 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('invokes stageBuild without error using callback', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.StageBuildRequest());
             request.name = '';
@@ -331,9 +331,9 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('invokes stageBuild with call error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.StageBuildRequest());
             request.name = '';
@@ -354,9 +354,9 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('invokes stageBuild with LRO error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.StageBuildRequest());
             request.name = '';
@@ -378,9 +378,9 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('invokes checkStageBuildProgress without error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('invokes checkStageBuildProgress with error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -537,11 +537,12 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('uses async iteration with listBuildTargets without error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.BuildTarget()),
@@ -745,13 +746,14 @@ describe('v1beta1.BuildServiceClient', () => {
 
         it('uses async iteration with listBuilds without error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.ListBuildsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Build()),
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Build()),
               generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.Build()),

@@ -133,8 +133,8 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.gameServerConfigsServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
     it('has close method', () => {
         const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
     describe('getGameServerConfig', () => {
         it('invokes getGameServerConfig without error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.GetGameServerConfigRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes getGameServerConfig without error using callback', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.GetGameServerConfigRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes getGameServerConfig with error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.GetGameServerConfigRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
     describe('createGameServerConfig', () => {
         it('invokes createGameServerConfig without error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.CreateGameServerConfigRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes createGameServerConfig without error using callback', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.CreateGameServerConfigRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes createGameServerConfig with call error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.CreateGameServerConfigRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes createGameServerConfig with LRO error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.CreateGameServerConfigRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes checkCreateGameServerConfigProgress without error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes checkCreateGameServerConfigProgress with error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
     describe('deleteGameServerConfig', () => {
         it('invokes deleteGameServerConfig without error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.DeleteGameServerConfigRequest());
             request.name = '';
@@ -437,9 +437,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes deleteGameServerConfig without error using callback', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.DeleteGameServerConfigRequest());
             request.name = '';
@@ -475,9 +475,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes deleteGameServerConfig with call error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.DeleteGameServerConfigRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes deleteGameServerConfig with LRO error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.DeleteGameServerConfigRequest());
             request.name = '';
@@ -522,9 +522,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes checkDeleteGameServerConfigProgress without error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -540,9 +540,9 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('invokes checkDeleteGameServerConfigProgress with error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -719,13 +719,14 @@ describe('v1beta.GameServerConfigsServiceClient', () => {
 
         it('uses async iteration with listGameServerConfigs without error', async () => {
             const client = new gameserverconfigsserviceModule.v1beta.GameServerConfigsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.gaming.v1beta.ListGameServerConfigsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.gaming.v1beta.GameServerConfig()),
               generateSampleMessage(new protos.google.cloud.gaming.v1beta.GameServerConfig()),
               generateSampleMessage(new protos.google.cloud.gaming.v1beta.GameServerConfig()),

@@ -117,8 +117,8 @@ describe('v1.AccessApprovalClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new accessapprovalModule.v1.AccessApprovalClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.accessApprovalStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.AccessApprovalClient', () => {
 
     it('has close method', () => {
         const client = new accessapprovalModule.v1.AccessApprovalClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.AccessApprovalClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new accessapprovalModule.v1.AccessApprovalClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.AccessApprovalClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new accessapprovalModule.v1.AccessApprovalClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.AccessApprovalClient', () => {
     describe('getApprovalRequest', () => {
         it('invokes getApprovalRequest without error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.GetApprovalRequestMessage());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes getApprovalRequest without error using callback', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.GetApprovalRequestMessage());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes getApprovalRequest with error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.GetApprovalRequestMessage());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1.AccessApprovalClient', () => {
     describe('approveApprovalRequest', () => {
         it('invokes approveApprovalRequest without error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes approveApprovalRequest without error using callback', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes approveApprovalRequest with error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.ApproveApprovalRequestMessage());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.AccessApprovalClient', () => {
     describe('dismissApprovalRequest', () => {
         it('invokes dismissApprovalRequest without error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.DismissApprovalRequestMessage());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes dismissApprovalRequest without error using callback', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.DismissApprovalRequestMessage());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes dismissApprovalRequest with error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.DismissApprovalRequestMessage());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.AccessApprovalClient', () => {
     describe('getAccessApprovalSettings', () => {
         it('invokes getAccessApprovalSettings without error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage());
             request.name = '';
@@ -444,9 +444,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes getAccessApprovalSettings without error using callback', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage());
             request.name = '';
@@ -479,9 +479,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes getAccessApprovalSettings with error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.GetAccessApprovalSettingsMessage());
             request.name = '';
@@ -504,9 +504,9 @@ describe('v1.AccessApprovalClient', () => {
     describe('updateAccessApprovalSettings', () => {
         it('invokes updateAccessApprovalSettings without error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage());
             request.settings = {};
@@ -529,9 +529,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes updateAccessApprovalSettings without error using callback', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage());
             request.settings = {};
@@ -565,9 +565,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes updateAccessApprovalSettings with error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.UpdateAccessApprovalSettingsMessage());
             request.settings = {};
@@ -591,9 +591,9 @@ describe('v1.AccessApprovalClient', () => {
     describe('deleteAccessApprovalSettings', () => {
         it('invokes deleteAccessApprovalSettings without error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes deleteAccessApprovalSettings without error using callback', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v1.AccessApprovalClient', () => {
 
         it('invokes deleteAccessApprovalSettings with error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.DeleteAccessApprovalSettingsMessage());
             request.name = '';
@@ -838,13 +838,14 @@ describe('v1.AccessApprovalClient', () => {
 
         it('uses async iteration with listApprovalRequests without error', async () => {
             const client = new accessapprovalModule.v1.AccessApprovalClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.accessapproval.v1.ListApprovalRequestsMessage());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.accessapproval.v1.ApprovalRequest()),
               generateSampleMessage(new protos.google.cloud.accessapproval.v1.ApprovalRequest()),
               generateSampleMessage(new protos.google.cloud.accessapproval.v1.ApprovalRequest()),

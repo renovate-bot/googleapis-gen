@@ -117,8 +117,8 @@ describe('v2beta1.ParticipantsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new participantsModule.v2beta1.ParticipantsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.participantsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2beta1.ParticipantsClient', () => {
 
     it('has close method', () => {
         const client = new participantsModule.v2beta1.ParticipantsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2beta1.ParticipantsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new participantsModule.v2beta1.ParticipantsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2beta1.ParticipantsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new participantsModule.v2beta1.ParticipantsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2beta1.ParticipantsClient', () => {
     describe('createParticipant', () => {
         it('invokes createParticipant without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateParticipantRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes createParticipant without error using callback', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateParticipantRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes createParticipant with error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateParticipantRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v2beta1.ParticipantsClient', () => {
     describe('getParticipant', () => {
         it('invokes getParticipant without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetParticipantRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes getParticipant without error using callback', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetParticipantRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes getParticipant with error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetParticipantRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v2beta1.ParticipantsClient', () => {
     describe('updateParticipant', () => {
         it('invokes updateParticipant without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest());
             request.participant = {};
@@ -361,9 +361,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes updateParticipant without error using callback', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest());
             request.participant = {};
@@ -397,9 +397,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes updateParticipant with error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateParticipantRequest());
             request.participant = {};
@@ -423,9 +423,9 @@ describe('v2beta1.ParticipantsClient', () => {
     describe('analyzeContent', () => {
         it('invokes analyzeContent without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest());
             request.participant = '';
@@ -447,9 +447,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes analyzeContent without error using callback', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest());
             request.participant = '';
@@ -482,9 +482,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes analyzeContent with error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.AnalyzeContentRequest());
             request.participant = '';
@@ -507,9 +507,9 @@ describe('v2beta1.ParticipantsClient', () => {
     describe('suggestArticles', () => {
         it('invokes suggestArticles without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest());
             request.parent = '';
@@ -531,9 +531,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes suggestArticles without error using callback', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest());
             request.parent = '';
@@ -566,9 +566,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes suggestArticles with error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestArticlesRequest());
             request.parent = '';
@@ -591,9 +591,9 @@ describe('v2beta1.ParticipantsClient', () => {
     describe('suggestFaqAnswers', () => {
         it('invokes suggestFaqAnswers without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest());
             request.parent = '';
@@ -615,9 +615,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes suggestFaqAnswers without error using callback', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest());
             request.parent = '';
@@ -650,9 +650,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes suggestFaqAnswers with error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest());
             request.parent = '';
@@ -675,9 +675,9 @@ describe('v2beta1.ParticipantsClient', () => {
     describe('suggestSmartReplies', () => {
         it('invokes suggestSmartReplies without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest());
             request.parent = '';
@@ -699,9 +699,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes suggestSmartReplies without error using callback', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest());
             request.parent = '';
@@ -734,9 +734,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes suggestSmartReplies with error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest());
             request.parent = '';
@@ -759,9 +759,9 @@ describe('v2beta1.ParticipantsClient', () => {
     describe('compileSuggestion', () => {
         it('invokes compileSuggestion without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest());
@@ -785,9 +785,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes compileSuggestion without error using callback', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest());
@@ -822,9 +822,9 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('invokes compileSuggestion with error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CompileSuggestionRequest());
@@ -1012,13 +1012,14 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('uses async iteration with listParticipants without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListParticipantsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Participant()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Participant()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Participant()),
@@ -1244,14 +1245,15 @@ describe('v2beta1.ParticipantsClient', () => {
 
         it('uses async iteration with listSuggestions without error', async () => {
             const client = new participantsModule.v2beta1.ParticipantsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             const stub = sinon.stub(client, 'warn');
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSuggestionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Suggestion()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Suggestion()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Suggestion()),

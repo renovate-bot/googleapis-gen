@@ -117,8 +117,8 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.knowledgeBasesStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
     it('has close method', () => {
         const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2beta1.KnowledgeBasesClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2beta1.KnowledgeBasesClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
     describe('getKnowledgeBase', () => {
         it('invokes getKnowledgeBase without error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('invokes getKnowledgeBase without error using callback', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('invokes getKnowledgeBase with error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetKnowledgeBaseRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
     describe('createKnowledgeBase', () => {
         it('invokes createKnowledgeBase without error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('invokes createKnowledgeBase without error using callback', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('invokes createKnowledgeBase with error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
     describe('deleteKnowledgeBase', () => {
         it('invokes deleteKnowledgeBase without error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('invokes deleteKnowledgeBase without error using callback', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('invokes deleteKnowledgeBase with error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteKnowledgeBaseRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
     describe('updateKnowledgeBase', () => {
         it('invokes updateKnowledgeBase without error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest());
             request.knowledgeBase = {};
@@ -445,9 +445,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('invokes updateKnowledgeBase without error using callback', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest());
             request.knowledgeBase = {};
@@ -481,9 +481,9 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('invokes updateKnowledgeBase with error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateKnowledgeBaseRequest());
             request.knowledgeBase = {};
@@ -670,13 +670,14 @@ describe('v2beta1.KnowledgeBasesClient', () => {
 
         it('uses async iteration with listKnowledgeBases without error', async () => {
             const client = new knowledgebasesModule.v2beta1.KnowledgeBasesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListKnowledgeBasesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.KnowledgeBase()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.KnowledgeBase()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.KnowledgeBase()),

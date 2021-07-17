@@ -133,8 +133,8 @@ describe('v1.CloudMemcacheClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.cloudMemcacheStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.CloudMemcacheClient', () => {
 
     it('has close method', () => {
         const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.CloudMemcacheClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.CloudMemcacheClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.CloudMemcacheClient', () => {
     describe('getInstance', () => {
         it('invokes getInstance without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.GetInstanceRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes getInstance without error using callback', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.GetInstanceRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes getInstance with error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.GetInstanceRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.CloudMemcacheClient', () => {
     describe('createInstance', () => {
         it('invokes createInstance without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.CreateInstanceRequest());
             request.parent = '';
@@ -293,9 +293,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes createInstance without error using callback', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.CreateInstanceRequest());
             request.parent = '';
@@ -331,9 +331,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes createInstance with call error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.CreateInstanceRequest());
             request.parent = '';
@@ -354,9 +354,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes createInstance with LRO error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.CreateInstanceRequest());
             request.parent = '';
@@ -378,9 +378,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkCreateInstanceProgress without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -396,9 +396,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkCreateInstanceProgress with error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -412,9 +412,9 @@ describe('v1.CloudMemcacheClient', () => {
     describe('updateInstance', () => {
         it('invokes updateInstance without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -438,9 +438,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes updateInstance without error using callback', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -477,9 +477,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes updateInstance with call error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -501,9 +501,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes updateInstance with LRO error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.UpdateInstanceRequest());
             request.instance = {};
@@ -526,9 +526,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkUpdateInstanceProgress without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -544,9 +544,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkUpdateInstanceProgress with error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -560,9 +560,9 @@ describe('v1.CloudMemcacheClient', () => {
     describe('updateParameters', () => {
         it('invokes updateParameters without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.UpdateParametersRequest());
             request.name = '';
@@ -585,9 +585,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes updateParameters without error using callback', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.UpdateParametersRequest());
             request.name = '';
@@ -623,9 +623,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes updateParameters with call error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.UpdateParametersRequest());
             request.name = '';
@@ -646,9 +646,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes updateParameters with LRO error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.UpdateParametersRequest());
             request.name = '';
@@ -670,9 +670,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkUpdateParametersProgress without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -688,9 +688,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkUpdateParametersProgress with error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -704,9 +704,9 @@ describe('v1.CloudMemcacheClient', () => {
     describe('deleteInstance', () => {
         it('invokes deleteInstance without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.DeleteInstanceRequest());
             request.name = '';
@@ -729,9 +729,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes deleteInstance without error using callback', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.DeleteInstanceRequest());
             request.name = '';
@@ -767,9 +767,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes deleteInstance with call error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.DeleteInstanceRequest());
             request.name = '';
@@ -790,9 +790,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes deleteInstance with LRO error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.DeleteInstanceRequest());
             request.name = '';
@@ -814,9 +814,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkDeleteInstanceProgress without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -832,9 +832,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkDeleteInstanceProgress with error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -848,9 +848,9 @@ describe('v1.CloudMemcacheClient', () => {
     describe('applyParameters', () => {
         it('invokes applyParameters without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.ApplyParametersRequest());
             request.name = '';
@@ -873,9 +873,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes applyParameters without error using callback', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.ApplyParametersRequest());
             request.name = '';
@@ -911,9 +911,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes applyParameters with call error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.ApplyParametersRequest());
             request.name = '';
@@ -934,9 +934,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes applyParameters with LRO error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.ApplyParametersRequest());
             request.name = '';
@@ -958,9 +958,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkApplyParametersProgress without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -976,9 +976,9 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('invokes checkApplyParametersProgress with error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1155,13 +1155,14 @@ describe('v1.CloudMemcacheClient', () => {
 
         it('uses async iteration with listInstances without error', async () => {
             const client = new cloudmemcacheModule.v1.CloudMemcacheClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.memcache.v1.ListInstancesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.memcache.v1.Instance()),
               generateSampleMessage(new protos.google.cloud.memcache.v1.Instance()),
               generateSampleMessage(new protos.google.cloud.memcache.v1.Instance()),

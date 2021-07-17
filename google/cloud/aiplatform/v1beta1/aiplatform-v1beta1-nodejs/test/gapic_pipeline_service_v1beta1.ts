@@ -133,8 +133,8 @@ describe('v1beta1.PipelineServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.pipelineServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.PipelineServiceClient', () => {
 
     it('has close method', () => {
         const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.PipelineServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.PipelineServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.PipelineServiceClient', () => {
     describe('createTrainingPipeline', () => {
         it('invokes createTrainingPipeline without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest());
             request.parent = '';
@@ -208,9 +208,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes createTrainingPipeline without error using callback', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest());
             request.parent = '';
@@ -243,9 +243,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes createTrainingPipeline with error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateTrainingPipelineRequest());
             request.parent = '';
@@ -268,9 +268,9 @@ describe('v1beta1.PipelineServiceClient', () => {
     describe('getTrainingPipeline', () => {
         it('invokes getTrainingPipeline without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes getTrainingPipeline without error using callback', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes getTrainingPipeline with error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetTrainingPipelineRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1beta1.PipelineServiceClient', () => {
     describe('cancelTrainingPipeline', () => {
         it('invokes cancelTrainingPipeline without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest());
             request.name = '';
@@ -376,9 +376,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes cancelTrainingPipeline without error using callback', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest());
             request.name = '';
@@ -411,9 +411,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes cancelTrainingPipeline with error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CancelTrainingPipelineRequest());
             request.name = '';
@@ -436,9 +436,9 @@ describe('v1beta1.PipelineServiceClient', () => {
     describe('createPipelineJob', () => {
         it('invokes createPipelineJob without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest());
             request.parent = '';
@@ -460,9 +460,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes createPipelineJob without error using callback', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest());
             request.parent = '';
@@ -495,9 +495,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes createPipelineJob with error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreatePipelineJobRequest());
             request.parent = '';
@@ -520,9 +520,9 @@ describe('v1beta1.PipelineServiceClient', () => {
     describe('getPipelineJob', () => {
         it('invokes getPipelineJob without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest());
             request.name = '';
@@ -544,9 +544,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes getPipelineJob without error using callback', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest());
             request.name = '';
@@ -579,9 +579,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes getPipelineJob with error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetPipelineJobRequest());
             request.name = '';
@@ -604,9 +604,9 @@ describe('v1beta1.PipelineServiceClient', () => {
     describe('cancelPipelineJob', () => {
         it('invokes cancelPipelineJob without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest());
             request.name = '';
@@ -628,9 +628,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes cancelPipelineJob without error using callback', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest());
             request.name = '';
@@ -663,9 +663,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes cancelPipelineJob with error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest());
             request.name = '';
@@ -688,9 +688,9 @@ describe('v1beta1.PipelineServiceClient', () => {
     describe('deleteTrainingPipeline', () => {
         it('invokes deleteTrainingPipeline without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest());
             request.name = '';
@@ -713,9 +713,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes deleteTrainingPipeline without error using callback', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest());
             request.name = '';
@@ -751,9 +751,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes deleteTrainingPipeline with call error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest());
             request.name = '';
@@ -774,9 +774,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes deleteTrainingPipeline with LRO error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteTrainingPipelineRequest());
             request.name = '';
@@ -798,9 +798,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes checkDeleteTrainingPipelineProgress without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -816,9 +816,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes checkDeleteTrainingPipelineProgress with error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -832,9 +832,9 @@ describe('v1beta1.PipelineServiceClient', () => {
     describe('deletePipelineJob', () => {
         it('invokes deletePipelineJob without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest());
             request.name = '';
@@ -857,9 +857,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes deletePipelineJob without error using callback', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest());
             request.name = '';
@@ -895,9 +895,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes deletePipelineJob with call error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest());
             request.name = '';
@@ -918,9 +918,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes deletePipelineJob with LRO error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest());
             request.name = '';
@@ -942,9 +942,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes checkDeletePipelineJobProgress without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -960,9 +960,9 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('invokes checkDeletePipelineJobProgress with error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1139,13 +1139,14 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('uses async iteration with listTrainingPipelines without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListTrainingPipelinesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TrainingPipeline()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TrainingPipeline()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.TrainingPipeline()),
@@ -1361,13 +1362,14 @@ describe('v1beta1.PipelineServiceClient', () => {
 
         it('uses async iteration with listPipelineJobs without error', async () => {
             const client = new pipelineserviceModule.v1beta1.PipelineServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.PipelineJob()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.PipelineJob()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.PipelineJob()),

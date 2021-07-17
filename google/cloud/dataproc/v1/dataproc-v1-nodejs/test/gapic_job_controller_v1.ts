@@ -133,8 +133,8 @@ describe('v1.JobControllerClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new jobcontrollerModule.v1.JobControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.jobControllerStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.JobControllerClient', () => {
 
     it('has close method', () => {
         const client = new jobcontrollerModule.v1.JobControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.JobControllerClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new jobcontrollerModule.v1.JobControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.JobControllerClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new jobcontrollerModule.v1.JobControllerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.JobControllerClient', () => {
     describe('submitJob', () => {
         it('invokes submitJob without error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.SubmitJobRequest());
             request.projectId = '';
@@ -208,9 +208,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes submitJob without error using callback', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.SubmitJobRequest());
             request.projectId = '';
@@ -243,9 +243,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes submitJob with error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.SubmitJobRequest());
             request.projectId = '';
@@ -268,9 +268,9 @@ describe('v1.JobControllerClient', () => {
     describe('getJob', () => {
         it('invokes getJob without error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetJobRequest());
             request.projectId = '';
@@ -292,9 +292,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes getJob without error using callback', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetJobRequest());
             request.projectId = '';
@@ -327,9 +327,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes getJob with error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetJobRequest());
             request.projectId = '';
@@ -352,9 +352,9 @@ describe('v1.JobControllerClient', () => {
     describe('updateJob', () => {
         it('invokes updateJob without error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateJobRequest());
             request.projectId = '';
@@ -376,9 +376,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes updateJob without error using callback', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateJobRequest());
             request.projectId = '';
@@ -411,9 +411,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes updateJob with error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateJobRequest());
             request.projectId = '';
@@ -436,9 +436,9 @@ describe('v1.JobControllerClient', () => {
     describe('cancelJob', () => {
         it('invokes cancelJob without error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CancelJobRequest());
             request.projectId = '';
@@ -460,9 +460,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes cancelJob without error using callback', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CancelJobRequest());
             request.projectId = '';
@@ -495,9 +495,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes cancelJob with error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CancelJobRequest());
             request.projectId = '';
@@ -520,9 +520,9 @@ describe('v1.JobControllerClient', () => {
     describe('deleteJob', () => {
         it('invokes deleteJob without error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteJobRequest());
             request.projectId = '';
@@ -544,9 +544,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes deleteJob without error using callback', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteJobRequest());
             request.projectId = '';
@@ -579,9 +579,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes deleteJob with error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteJobRequest());
             request.projectId = '';
@@ -604,9 +604,9 @@ describe('v1.JobControllerClient', () => {
     describe('submitJobAsOperation', () => {
         it('invokes submitJobAsOperation without error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.SubmitJobRequest());
             request.projectId = '';
@@ -629,9 +629,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes submitJobAsOperation without error using callback', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.SubmitJobRequest());
             request.projectId = '';
@@ -667,9 +667,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes submitJobAsOperation with call error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.SubmitJobRequest());
             request.projectId = '';
@@ -690,9 +690,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes submitJobAsOperation with LRO error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.SubmitJobRequest());
             request.projectId = '';
@@ -714,9 +714,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes checkSubmitJobAsOperationProgress without error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -732,9 +732,9 @@ describe('v1.JobControllerClient', () => {
 
         it('invokes checkSubmitJobAsOperationProgress with error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -911,13 +911,14 @@ describe('v1.JobControllerClient', () => {
 
         it('uses async iteration with listJobs without error', async () => {
             const client = new jobcontrollerModule.v1.JobControllerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.ListJobsRequest());
             request.projectId = '';
-            const expectedHeaderRequestParams = "project_id=";const expectedResponse = [
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dataproc.v1.Job()),
               generateSampleMessage(new protos.google.cloud.dataproc.v1.Job()),
               generateSampleMessage(new protos.google.cloud.dataproc.v1.Job()),

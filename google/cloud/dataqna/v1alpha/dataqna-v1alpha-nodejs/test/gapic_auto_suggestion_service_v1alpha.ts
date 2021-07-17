@@ -70,8 +70,8 @@ describe('v1alpha.AutoSuggestionServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new autosuggestionserviceModule.v1alpha.AutoSuggestionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.autoSuggestionServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1alpha.AutoSuggestionServiceClient', () => {
 
     it('has close method', () => {
         const client = new autosuggestionserviceModule.v1alpha.AutoSuggestionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1alpha.AutoSuggestionServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new autosuggestionserviceModule.v1alpha.AutoSuggestionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1alpha.AutoSuggestionServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new autosuggestionserviceModule.v1alpha.AutoSuggestionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1alpha.AutoSuggestionServiceClient', () => {
     describe('suggestQueries', () => {
         it('invokes suggestQueries without error', async () => {
             const client = new autosuggestionserviceModule.v1alpha.AutoSuggestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.SuggestQueriesRequest());
             request.parent = '';
@@ -145,9 +145,9 @@ describe('v1alpha.AutoSuggestionServiceClient', () => {
 
         it('invokes suggestQueries without error using callback', async () => {
             const client = new autosuggestionserviceModule.v1alpha.AutoSuggestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.SuggestQueriesRequest());
             request.parent = '';
@@ -180,9 +180,9 @@ describe('v1alpha.AutoSuggestionServiceClient', () => {
 
         it('invokes suggestQueries with error', async () => {
             const client = new autosuggestionserviceModule.v1alpha.AutoSuggestionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataqna.v1alpha.SuggestQueriesRequest());
             request.parent = '';

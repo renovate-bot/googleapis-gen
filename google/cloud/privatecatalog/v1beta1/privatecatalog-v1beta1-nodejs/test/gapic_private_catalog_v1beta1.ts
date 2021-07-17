@@ -117,8 +117,8 @@ describe('v1beta1.PrivateCatalogClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new privatecatalogModule.v1beta1.PrivateCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.privateCatalogStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1beta1.PrivateCatalogClient', () => {
 
     it('has close method', () => {
         const client = new privatecatalogModule.v1beta1.PrivateCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1beta1.PrivateCatalogClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new privatecatalogModule.v1beta1.PrivateCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1beta1.PrivateCatalogClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new privatecatalogModule.v1beta1.PrivateCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -331,13 +331,14 @@ describe('v1beta1.PrivateCatalogClient', () => {
 
         it('uses async iteration with searchCatalogs without error', async () => {
             const client = new privatecatalogModule.v1beta1.PrivateCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.SearchCatalogsRequest());
             request.resource = '';
-            const expectedHeaderRequestParams = "resource=";const expectedResponse = [
+            const expectedHeaderRequestParams = "resource=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Catalog()),
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Catalog()),
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Catalog()),
@@ -553,13 +554,14 @@ describe('v1beta1.PrivateCatalogClient', () => {
 
         it('uses async iteration with searchProducts without error', async () => {
             const client = new privatecatalogModule.v1beta1.PrivateCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.SearchProductsRequest());
             request.resource = '';
-            const expectedHeaderRequestParams = "resource=";const expectedResponse = [
+            const expectedHeaderRequestParams = "resource=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Product()),
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Product()),
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Product()),
@@ -775,13 +777,14 @@ describe('v1beta1.PrivateCatalogClient', () => {
 
         it('uses async iteration with searchVersions without error', async () => {
             const client = new privatecatalogModule.v1beta1.PrivateCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.SearchVersionsRequest());
             request.resource = '';
-            const expectedHeaderRequestParams = "resource=";const expectedResponse = [
+            const expectedHeaderRequestParams = "resource=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Version()),
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Version()),
               generateSampleMessage(new protos.google.cloud.privatecatalog.v1beta1.Version()),

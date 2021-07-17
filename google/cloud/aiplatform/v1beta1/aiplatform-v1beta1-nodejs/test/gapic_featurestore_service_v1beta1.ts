@@ -133,8 +133,8 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.featurestoreServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
     it('has close method', () => {
         const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('getFeaturestore', () => {
         it('invokes getFeaturestore without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes getFeaturestore without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes getFeaturestore with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('getEntityType', () => {
         it('invokes getEntityType without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetEntityTypeRequest());
             request.name = '';
@@ -292,9 +292,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes getEntityType without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetEntityTypeRequest());
             request.name = '';
@@ -327,9 +327,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes getEntityType with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetEntityTypeRequest());
             request.name = '';
@@ -352,9 +352,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('updateEntityType', () => {
         it('invokes updateEntityType without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest());
             request.entityType = {};
@@ -377,9 +377,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes updateEntityType without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest());
             request.entityType = {};
@@ -413,9 +413,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes updateEntityType with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateEntityTypeRequest());
             request.entityType = {};
@@ -439,9 +439,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('getFeature', () => {
         it('invokes getFeature without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetFeatureRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes getFeature without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetFeatureRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes getFeature with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.GetFeatureRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('updateFeature', () => {
         it('invokes updateFeature without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest());
             request.feature = {};
@@ -548,9 +548,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes updateFeature without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest());
             request.feature = {};
@@ -584,9 +584,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes updateFeature with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateFeatureRequest());
             request.feature = {};
@@ -610,9 +610,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('createFeaturestore', () => {
         it('invokes createFeaturestore without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest());
             request.parent = '';
@@ -635,9 +635,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createFeaturestore without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest());
             request.parent = '';
@@ -673,9 +673,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createFeaturestore with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest());
             request.parent = '';
@@ -696,9 +696,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createFeaturestore with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest());
             request.parent = '';
@@ -720,9 +720,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkCreateFeaturestoreProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -738,9 +738,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkCreateFeaturestoreProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -754,9 +754,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('updateFeaturestore', () => {
         it('invokes updateFeaturestore without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest());
             request.featurestore = {};
@@ -780,9 +780,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes updateFeaturestore without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest());
             request.featurestore = {};
@@ -819,9 +819,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes updateFeaturestore with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest());
             request.featurestore = {};
@@ -843,9 +843,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes updateFeaturestore with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.UpdateFeaturestoreRequest());
             request.featurestore = {};
@@ -868,9 +868,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkUpdateFeaturestoreProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -886,9 +886,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkUpdateFeaturestoreProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -902,9 +902,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('deleteFeaturestore', () => {
         it('invokes deleteFeaturestore without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteFeaturestoreRequest());
             request.name = '';
@@ -927,9 +927,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteFeaturestore without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteFeaturestoreRequest());
             request.name = '';
@@ -965,9 +965,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteFeaturestore with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteFeaturestoreRequest());
             request.name = '';
@@ -988,9 +988,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteFeaturestore with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteFeaturestoreRequest());
             request.name = '';
@@ -1012,9 +1012,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkDeleteFeaturestoreProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1030,9 +1030,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkDeleteFeaturestoreProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1046,9 +1046,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('createEntityType', () => {
         it('invokes createEntityType without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateEntityTypeRequest());
             request.parent = '';
@@ -1071,9 +1071,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createEntityType without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateEntityTypeRequest());
             request.parent = '';
@@ -1109,9 +1109,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createEntityType with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateEntityTypeRequest());
             request.parent = '';
@@ -1132,9 +1132,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createEntityType with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateEntityTypeRequest());
             request.parent = '';
@@ -1156,9 +1156,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkCreateEntityTypeProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1174,9 +1174,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkCreateEntityTypeProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1190,9 +1190,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('deleteEntityType', () => {
         it('invokes deleteEntityType without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteEntityTypeRequest());
             request.name = '';
@@ -1215,9 +1215,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteEntityType without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteEntityTypeRequest());
             request.name = '';
@@ -1253,9 +1253,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteEntityType with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteEntityTypeRequest());
             request.name = '';
@@ -1276,9 +1276,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteEntityType with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteEntityTypeRequest());
             request.name = '';
@@ -1300,9 +1300,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkDeleteEntityTypeProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1318,9 +1318,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkDeleteEntityTypeProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1334,9 +1334,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('createFeature', () => {
         it('invokes createFeature without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateFeatureRequest());
             request.parent = '';
@@ -1359,9 +1359,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createFeature without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateFeatureRequest());
             request.parent = '';
@@ -1397,9 +1397,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createFeature with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateFeatureRequest());
             request.parent = '';
@@ -1420,9 +1420,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes createFeature with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.CreateFeatureRequest());
             request.parent = '';
@@ -1444,9 +1444,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkCreateFeatureProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1462,9 +1462,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkCreateFeatureProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1478,9 +1478,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('batchCreateFeatures', () => {
         it('invokes batchCreateFeatures without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest());
             request.parent = '';
@@ -1503,9 +1503,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes batchCreateFeatures without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest());
             request.parent = '';
@@ -1541,9 +1541,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes batchCreateFeatures with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest());
             request.parent = '';
@@ -1564,9 +1564,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes batchCreateFeatures with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.BatchCreateFeaturesRequest());
             request.parent = '';
@@ -1588,9 +1588,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkBatchCreateFeaturesProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1606,9 +1606,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkBatchCreateFeaturesProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1622,9 +1622,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('deleteFeature', () => {
         it('invokes deleteFeature without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest());
             request.name = '';
@@ -1647,9 +1647,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteFeature without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest());
             request.name = '';
@@ -1685,9 +1685,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteFeature with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest());
             request.name = '';
@@ -1708,9 +1708,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes deleteFeature with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.DeleteFeatureRequest());
             request.name = '';
@@ -1732,9 +1732,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkDeleteFeatureProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1750,9 +1750,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkDeleteFeatureProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1766,9 +1766,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('importFeatureValues', () => {
         it('invokes importFeatureValues without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest());
             request.entityType = '';
@@ -1791,9 +1791,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes importFeatureValues without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest());
             request.entityType = '';
@@ -1829,9 +1829,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes importFeatureValues with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest());
             request.entityType = '';
@@ -1852,9 +1852,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes importFeatureValues with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest());
             request.entityType = '';
@@ -1876,9 +1876,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkImportFeatureValuesProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1894,9 +1894,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkImportFeatureValuesProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1910,9 +1910,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('batchReadFeatureValues', () => {
         it('invokes batchReadFeatureValues without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest());
             request.featurestore = '';
@@ -1935,9 +1935,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes batchReadFeatureValues without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest());
             request.featurestore = '';
@@ -1973,9 +1973,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes batchReadFeatureValues with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest());
             request.featurestore = '';
@@ -1996,9 +1996,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes batchReadFeatureValues with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest());
             request.featurestore = '';
@@ -2020,9 +2020,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkBatchReadFeatureValuesProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2038,9 +2038,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkBatchReadFeatureValuesProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2054,9 +2054,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
     describe('exportFeatureValues', () => {
         it('invokes exportFeatureValues without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest());
             request.entityType = '';
@@ -2079,9 +2079,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes exportFeatureValues without error using callback', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest());
             request.entityType = '';
@@ -2117,9 +2117,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes exportFeatureValues with call error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest());
             request.entityType = '';
@@ -2140,9 +2140,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes exportFeatureValues with LRO error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest());
             request.entityType = '';
@@ -2164,9 +2164,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkExportFeatureValuesProgress without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -2182,9 +2182,9 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('invokes checkExportFeatureValuesProgress with error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -2361,13 +2361,14 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('uses async iteration with listFeaturestores without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListFeaturestoresRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Featurestore()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Featurestore()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Featurestore()),
@@ -2583,13 +2584,14 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('uses async iteration with listEntityTypes without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListEntityTypesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.EntityType()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.EntityType()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.EntityType()),
@@ -2805,13 +2807,14 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('uses async iteration with listFeatures without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ListFeaturesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Feature()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Feature()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Feature()),
@@ -3027,13 +3030,14 @@ describe('v1beta1.FeaturestoreServiceClient', () => {
 
         it('uses async iteration with searchFeatures without error', async () => {
             const client = new featurestoreserviceModule.v1beta1.FeaturestoreServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.SearchFeaturesRequest());
             request.location = '';
-            const expectedHeaderRequestParams = "location=";const expectedResponse = [
+            const expectedHeaderRequestParams = "location=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Feature()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Feature()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.Feature()),

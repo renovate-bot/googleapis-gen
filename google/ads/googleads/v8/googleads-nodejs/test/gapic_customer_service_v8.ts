@@ -70,8 +70,8 @@ describe('v8.CustomerServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new customerserviceModule.v8.CustomerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.customerServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v8.CustomerServiceClient', () => {
 
     it('has close method', () => {
         const client = new customerserviceModule.v8.CustomerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v8.CustomerServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new customerserviceModule.v8.CustomerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v8.CustomerServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new customerserviceModule.v8.CustomerServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v8.CustomerServiceClient', () => {
     describe('getCustomer', () => {
         it('invokes getCustomer without error', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetCustomerRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v8.CustomerServiceClient', () => {
 
         it('invokes getCustomer without error using callback', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetCustomerRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v8.CustomerServiceClient', () => {
 
         it('invokes getCustomer with error', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetCustomerRequest());
             request.resourceName = '';
@@ -205,9 +205,9 @@ describe('v8.CustomerServiceClient', () => {
     describe('mutateCustomer', () => {
         it('invokes mutateCustomer without error', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateCustomerRequest());
             request.customerId = '';
@@ -229,9 +229,9 @@ describe('v8.CustomerServiceClient', () => {
 
         it('invokes mutateCustomer without error using callback', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateCustomerRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v8.CustomerServiceClient', () => {
 
         it('invokes mutateCustomer with error', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateCustomerRequest());
             request.customerId = '';
@@ -289,9 +289,9 @@ describe('v8.CustomerServiceClient', () => {
     describe('listAccessibleCustomers', () => {
         it('invokes listAccessibleCustomers without error', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListAccessibleCustomersRequest());
             const expectedOptions = {};
@@ -305,9 +305,9 @@ describe('v8.CustomerServiceClient', () => {
 
         it('invokes listAccessibleCustomers without error using callback', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListAccessibleCustomersRequest());
             const expectedOptions = {};
@@ -332,9 +332,9 @@ describe('v8.CustomerServiceClient', () => {
 
         it('invokes listAccessibleCustomers with error', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListAccessibleCustomersRequest());
             const expectedOptions = {};
@@ -349,9 +349,9 @@ describe('v8.CustomerServiceClient', () => {
     describe('createCustomerClient', () => {
         it('invokes createCustomerClient without error', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.CreateCustomerClientRequest());
             request.customerId = '';
@@ -373,9 +373,9 @@ describe('v8.CustomerServiceClient', () => {
 
         it('invokes createCustomerClient without error using callback', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.CreateCustomerClientRequest());
             request.customerId = '';
@@ -408,9 +408,9 @@ describe('v8.CustomerServiceClient', () => {
 
         it('invokes createCustomerClient with error', async () => {
             const client = new customerserviceModule.v8.CustomerServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.CreateCustomerClientRequest());
             request.customerId = '';

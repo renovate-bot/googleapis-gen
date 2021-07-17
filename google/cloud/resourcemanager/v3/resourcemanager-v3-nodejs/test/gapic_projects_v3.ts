@@ -133,8 +133,8 @@ describe('v3.ProjectsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new projectsModule.v3.ProjectsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.projectsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3.ProjectsClient', () => {
 
     it('has close method', () => {
         const client = new projectsModule.v3.ProjectsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3.ProjectsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new projectsModule.v3.ProjectsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3.ProjectsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new projectsModule.v3.ProjectsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3.ProjectsClient', () => {
     describe('getProject', () => {
         it('invokes getProject without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetProjectRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes getProject without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetProjectRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes getProject with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetProjectRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v3.ProjectsClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -292,9 +292,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -327,9 +327,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -352,9 +352,9 @@ describe('v3.ProjectsClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -376,9 +376,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -411,9 +411,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -436,9 +436,9 @@ describe('v3.ProjectsClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -460,9 +460,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -495,9 +495,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -520,9 +520,9 @@ describe('v3.ProjectsClient', () => {
     describe('createProject', () => {
         it('invokes createProject without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateProjectRequest());
             const expectedOptions = {};
@@ -537,9 +537,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes createProject without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateProjectRequest());
             const expectedOptions = {};
@@ -567,9 +567,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes createProject with call error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateProjectRequest());
             const expectedOptions = {};
@@ -582,9 +582,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes createProject with LRO error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateProjectRequest());
             const expectedOptions = {};
@@ -598,9 +598,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkCreateProjectProgress without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -616,9 +616,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkCreateProjectProgress with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -632,9 +632,9 @@ describe('v3.ProjectsClient', () => {
     describe('updateProject', () => {
         it('invokes updateProject without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateProjectRequest());
             request.project = {};
@@ -658,9 +658,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes updateProject without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateProjectRequest());
             request.project = {};
@@ -697,9 +697,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes updateProject with call error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateProjectRequest());
             request.project = {};
@@ -721,9 +721,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes updateProject with LRO error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateProjectRequest());
             request.project = {};
@@ -746,9 +746,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkUpdateProjectProgress without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -764,9 +764,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkUpdateProjectProgress with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -780,9 +780,9 @@ describe('v3.ProjectsClient', () => {
     describe('moveProject', () => {
         it('invokes moveProject without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.MoveProjectRequest());
             request.name = '';
@@ -805,9 +805,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes moveProject without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.MoveProjectRequest());
             request.name = '';
@@ -843,9 +843,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes moveProject with call error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.MoveProjectRequest());
             request.name = '';
@@ -866,9 +866,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes moveProject with LRO error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.MoveProjectRequest());
             request.name = '';
@@ -890,9 +890,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkMoveProjectProgress without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -908,9 +908,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkMoveProjectProgress with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -924,9 +924,9 @@ describe('v3.ProjectsClient', () => {
     describe('deleteProject', () => {
         it('invokes deleteProject without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteProjectRequest());
             request.name = '';
@@ -949,9 +949,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes deleteProject without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteProjectRequest());
             request.name = '';
@@ -987,9 +987,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes deleteProject with call error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteProjectRequest());
             request.name = '';
@@ -1010,9 +1010,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes deleteProject with LRO error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteProjectRequest());
             request.name = '';
@@ -1034,9 +1034,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkDeleteProjectProgress without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1052,9 +1052,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkDeleteProjectProgress with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1068,9 +1068,9 @@ describe('v3.ProjectsClient', () => {
     describe('undeleteProject', () => {
         it('invokes undeleteProject without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UndeleteProjectRequest());
             request.name = '';
@@ -1093,9 +1093,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes undeleteProject without error using callback', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UndeleteProjectRequest());
             request.name = '';
@@ -1131,9 +1131,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes undeleteProject with call error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UndeleteProjectRequest());
             request.name = '';
@@ -1154,9 +1154,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes undeleteProject with LRO error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UndeleteProjectRequest());
             request.name = '';
@@ -1178,9 +1178,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkUndeleteProjectProgress without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1196,9 +1196,9 @@ describe('v3.ProjectsClient', () => {
 
         it('invokes checkUndeleteProjectProgress with error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1337,11 +1337,12 @@ describe('v3.ProjectsClient', () => {
 
         it('uses async iteration with listProjects without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListProjectsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListProjectsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
@@ -1507,11 +1508,12 @@ describe('v3.ProjectsClient', () => {
 
         it('uses async iteration with searchProjects without error', async () => {
             const client = new projectsModule.v3.ProjectsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchProjectsRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.SearchProjectsRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.Project()),

@@ -117,8 +117,8 @@ describe('v3.ExperimentsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new experimentsModule.v3.ExperimentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.experimentsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v3.ExperimentsClient', () => {
 
     it('has close method', () => {
         const client = new experimentsModule.v3.ExperimentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v3.ExperimentsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new experimentsModule.v3.ExperimentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v3.ExperimentsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new experimentsModule.v3.ExperimentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v3.ExperimentsClient', () => {
     describe('getExperiment', () => {
         it('invokes getExperiment without error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetExperimentRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes getExperiment without error using callback', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetExperimentRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes getExperiment with error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.GetExperimentRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v3.ExperimentsClient', () => {
     describe('createExperiment', () => {
         it('invokes createExperiment without error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateExperimentRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes createExperiment without error using callback', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateExperimentRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes createExperiment with error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.CreateExperimentRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v3.ExperimentsClient', () => {
     describe('updateExperiment', () => {
         it('invokes updateExperiment without error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest());
             request.experiment = {};
@@ -361,9 +361,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes updateExperiment without error using callback', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest());
             request.experiment = {};
@@ -397,9 +397,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes updateExperiment with error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.UpdateExperimentRequest());
             request.experiment = {};
@@ -423,9 +423,9 @@ describe('v3.ExperimentsClient', () => {
     describe('deleteExperiment', () => {
         it('invokes deleteExperiment without error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes deleteExperiment without error using callback', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes deleteExperiment with error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest());
             request.name = '';
@@ -507,9 +507,9 @@ describe('v3.ExperimentsClient', () => {
     describe('startExperiment', () => {
         it('invokes startExperiment without error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StartExperimentRequest());
             request.name = '';
@@ -531,9 +531,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes startExperiment without error using callback', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StartExperimentRequest());
             request.name = '';
@@ -566,9 +566,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes startExperiment with error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StartExperimentRequest());
             request.name = '';
@@ -591,9 +591,9 @@ describe('v3.ExperimentsClient', () => {
     describe('stopExperiment', () => {
         it('invokes stopExperiment without error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StopExperimentRequest());
             request.name = '';
@@ -615,9 +615,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes stopExperiment without error using callback', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StopExperimentRequest());
             request.name = '';
@@ -650,9 +650,9 @@ describe('v3.ExperimentsClient', () => {
 
         it('invokes stopExperiment with error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.StopExperimentRequest());
             request.name = '';
@@ -838,13 +838,14 @@ describe('v3.ExperimentsClient', () => {
 
         it('uses async iteration with listExperiments without error', async () => {
             const client = new experimentsModule.v3.ExperimentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.ListExperimentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Experiment()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Experiment()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3.Experiment()),

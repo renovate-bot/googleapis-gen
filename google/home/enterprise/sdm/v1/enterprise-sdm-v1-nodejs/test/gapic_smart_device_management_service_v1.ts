@@ -117,8 +117,8 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.smartDeviceManagementServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
     it('has close method', () => {
         const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
     describe('getDevice', () => {
         it('invokes getDevice without error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetDeviceRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('invokes getDevice without error using callback', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetDeviceRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('invokes getDevice with error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetDeviceRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
     describe('executeDeviceCommand', () => {
         it('invokes executeDeviceCommand without error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.ExecuteDeviceCommandRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('invokes executeDeviceCommand without error using callback', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.ExecuteDeviceCommandRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('invokes executeDeviceCommand with error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.ExecuteDeviceCommandRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
     describe('getStructure', () => {
         it('invokes getStructure without error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetStructureRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('invokes getStructure without error using callback', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetStructureRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('invokes getStructure with error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetStructureRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
     describe('getRoom', () => {
         it('invokes getRoom without error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetRoomRequest());
             request.name = '';
@@ -444,9 +444,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('invokes getRoom without error using callback', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetRoomRequest());
             request.name = '';
@@ -479,9 +479,9 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('invokes getRoom with error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.GetRoomRequest());
             request.name = '';
@@ -667,13 +667,14 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('uses async iteration with listDevices without error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.ListDevicesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Device()),
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Device()),
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Device()),
@@ -889,13 +890,14 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('uses async iteration with listStructures without error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.ListStructuresRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Structure()),
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Structure()),
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Structure()),
@@ -1111,13 +1113,14 @@ describe('v1.SmartDeviceManagementServiceClient', () => {
 
         it('uses async iteration with listRooms without error', async () => {
             const client = new smartdevicemanagementserviceModule.v1.SmartDeviceManagementServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.home.enterprise.sdm.v1.ListRoomsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Room()),
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Room()),
               generateSampleMessage(new protos.google.home.enterprise.sdm.v1.Room()),

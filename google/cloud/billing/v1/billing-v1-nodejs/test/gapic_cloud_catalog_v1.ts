@@ -117,8 +117,8 @@ describe('v1.CloudCatalogClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new cloudcatalogModule.v1.CloudCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.cloudCatalogStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.CloudCatalogClient', () => {
 
     it('has close method', () => {
         const client = new cloudcatalogModule.v1.CloudCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.CloudCatalogClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudcatalogModule.v1.CloudCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.CloudCatalogClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new cloudcatalogModule.v1.CloudCatalogClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -293,11 +293,12 @@ describe('v1.CloudCatalogClient', () => {
 
         it('uses async iteration with listServices without error', async () => {
             const client = new cloudcatalogModule.v1.CloudCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListServicesRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListServicesRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.v1.Service()),
               generateSampleMessage(new protos.google.cloud.billing.v1.Service()),
               generateSampleMessage(new protos.google.cloud.billing.v1.Service()),
@@ -501,13 +502,14 @@ describe('v1.CloudCatalogClient', () => {
 
         it('uses async iteration with listSkus without error', async () => {
             const client = new cloudcatalogModule.v1.CloudCatalogClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.billing.v1.ListSkusRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.billing.v1.Sku()),
               generateSampleMessage(new protos.google.cloud.billing.v1.Sku()),
               generateSampleMessage(new protos.google.cloud.billing.v1.Sku()),

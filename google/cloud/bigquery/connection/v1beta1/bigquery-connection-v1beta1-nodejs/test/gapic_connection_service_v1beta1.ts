@@ -70,8 +70,8 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.connectionServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
     it('has close method', () => {
         const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta1.ConnectionServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta1.ConnectionServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('createConnection', () => {
         it('invokes createConnection without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.CreateConnectionRequest());
             request.parent = '';
@@ -145,9 +145,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes createConnection without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.CreateConnectionRequest());
             request.parent = '';
@@ -180,9 +180,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes createConnection with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.CreateConnectionRequest());
             request.parent = '';
@@ -205,9 +205,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('getConnection', () => {
         it('invokes getConnection without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.GetConnectionRequest());
             request.name = '';
@@ -229,9 +229,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes getConnection without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.GetConnectionRequest());
             request.name = '';
@@ -264,9 +264,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes getConnection with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.GetConnectionRequest());
             request.name = '';
@@ -289,9 +289,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('listConnections', () => {
         it('invokes listConnections without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.ListConnectionsRequest());
             request.parent = '';
@@ -313,9 +313,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes listConnections without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.ListConnectionsRequest());
             request.parent = '';
@@ -348,9 +348,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes listConnections with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.ListConnectionsRequest());
             request.parent = '';
@@ -373,9 +373,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('updateConnection', () => {
         it('invokes updateConnection without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.UpdateConnectionRequest());
             request.name = '';
@@ -397,9 +397,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes updateConnection without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.UpdateConnectionRequest());
             request.name = '';
@@ -432,9 +432,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes updateConnection with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.UpdateConnectionRequest());
             request.name = '';
@@ -457,9 +457,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('updateConnectionCredential', () => {
         it('invokes updateConnectionCredential without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.UpdateConnectionCredentialRequest());
             request.name = '';
@@ -481,9 +481,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes updateConnectionCredential without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.UpdateConnectionCredentialRequest());
             request.name = '';
@@ -516,9 +516,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes updateConnectionCredential with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.UpdateConnectionCredentialRequest());
             request.name = '';
@@ -541,9 +541,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('deleteConnection', () => {
         it('invokes deleteConnection without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.DeleteConnectionRequest());
             request.name = '';
@@ -565,9 +565,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes deleteConnection without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.DeleteConnectionRequest());
             request.name = '';
@@ -600,9 +600,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes deleteConnection with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.connection.v1beta1.DeleteConnectionRequest());
             request.name = '';
@@ -625,9 +625,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -649,9 +649,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -684,9 +684,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -709,9 +709,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -733,9 +733,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -768,9 +768,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -793,9 +793,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -817,9 +817,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -852,9 +852,9 @@ describe('v1beta1.ConnectionServiceClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new connectionserviceModule.v1beta1.ConnectionServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';

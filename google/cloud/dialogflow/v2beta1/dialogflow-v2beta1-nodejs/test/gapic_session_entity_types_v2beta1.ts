@@ -117,8 +117,8 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.sessionEntityTypesStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
     it('has close method', () => {
         const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2beta1.SessionEntityTypesClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2beta1.SessionEntityTypesClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
     describe('getSessionEntityType', () => {
         it('invokes getSessionEntityType without error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('invokes getSessionEntityType without error using callback', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('invokes getSessionEntityType with error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetSessionEntityTypeRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
     describe('createSessionEntityType', () => {
         it('invokes createSessionEntityType without error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('invokes createSessionEntityType without error using callback', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('invokes createSessionEntityType with error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateSessionEntityTypeRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
     describe('updateSessionEntityType', () => {
         it('invokes updateSessionEntityType without error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest());
             request.sessionEntityType = {};
@@ -361,9 +361,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('invokes updateSessionEntityType without error using callback', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest());
             request.sessionEntityType = {};
@@ -397,9 +397,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('invokes updateSessionEntityType with error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest());
             request.sessionEntityType = {};
@@ -423,9 +423,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
     describe('deleteSessionEntityType', () => {
         it('invokes deleteSessionEntityType without error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('invokes deleteSessionEntityType without error using callback', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('invokes deleteSessionEntityType with error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteSessionEntityTypeRequest());
             request.name = '';
@@ -670,13 +670,14 @@ describe('v2beta1.SessionEntityTypesClient', () => {
 
         it('uses async iteration with listSessionEntityTypes without error', async () => {
             const client = new sessionentitytypesModule.v2beta1.SessionEntityTypesClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListSessionEntityTypesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SessionEntityType()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SessionEntityType()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.SessionEntityType()),

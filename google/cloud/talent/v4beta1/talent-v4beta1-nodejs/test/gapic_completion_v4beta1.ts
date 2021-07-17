@@ -70,8 +70,8 @@ describe('v4beta1.CompletionClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new completionModule.v4beta1.CompletionClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.completionStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v4beta1.CompletionClient', () => {
 
     it('has close method', () => {
         const client = new completionModule.v4beta1.CompletionClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v4beta1.CompletionClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new completionModule.v4beta1.CompletionClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v4beta1.CompletionClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new completionModule.v4beta1.CompletionClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v4beta1.CompletionClient', () => {
     describe('completeQuery', () => {
         it('invokes completeQuery without error', async () => {
             const client = new completionModule.v4beta1.CompletionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CompleteQueryRequest());
             request.parent = '';
@@ -145,9 +145,9 @@ describe('v4beta1.CompletionClient', () => {
 
         it('invokes completeQuery without error using callback', async () => {
             const client = new completionModule.v4beta1.CompletionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CompleteQueryRequest());
             request.parent = '';
@@ -180,9 +180,9 @@ describe('v4beta1.CompletionClient', () => {
 
         it('invokes completeQuery with error', async () => {
             const client = new completionModule.v4beta1.CompletionClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.talent.v4beta1.CompleteQueryRequest());
             request.parent = '';

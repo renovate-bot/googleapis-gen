@@ -133,8 +133,8 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.campaignExperimentServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
     it('has close method', () => {
         const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v7.CampaignExperimentServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v7.CampaignExperimentServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
     describe('getCampaignExperiment', () => {
         it('invokes getCampaignExperiment without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignExperimentRequest());
             request.resourceName = '';
@@ -208,9 +208,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes getCampaignExperiment without error using callback', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignExperimentRequest());
             request.resourceName = '';
@@ -243,9 +243,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes getCampaignExperiment with error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetCampaignExperimentRequest());
             request.resourceName = '';
@@ -268,9 +268,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
     describe('mutateCampaignExperiments', () => {
         it('invokes mutateCampaignExperiments without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignExperimentsRequest());
             request.customerId = '';
@@ -292,9 +292,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes mutateCampaignExperiments without error using callback', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignExperimentsRequest());
             request.customerId = '';
@@ -327,9 +327,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes mutateCampaignExperiments with error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateCampaignExperimentsRequest());
             request.customerId = '';
@@ -352,9 +352,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
     describe('graduateCampaignExperiment', () => {
         it('invokes graduateCampaignExperiment without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GraduateCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -376,9 +376,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes graduateCampaignExperiment without error using callback', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GraduateCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -411,9 +411,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes graduateCampaignExperiment with error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GraduateCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -436,9 +436,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
     describe('endCampaignExperiment', () => {
         it('invokes endCampaignExperiment without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.EndCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -460,9 +460,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes endCampaignExperiment without error using callback', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.EndCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -495,9 +495,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes endCampaignExperiment with error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.EndCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -520,9 +520,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
     describe('createCampaignExperiment', () => {
         it('invokes createCampaignExperiment without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.CreateCampaignExperimentRequest());
             request.customerId = '';
@@ -545,9 +545,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes createCampaignExperiment without error using callback', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.CreateCampaignExperimentRequest());
             request.customerId = '';
@@ -583,9 +583,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes createCampaignExperiment with call error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.CreateCampaignExperimentRequest());
             request.customerId = '';
@@ -606,9 +606,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes createCampaignExperiment with LRO error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.CreateCampaignExperimentRequest());
             request.customerId = '';
@@ -630,9 +630,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes checkCreateCampaignExperimentProgress without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -648,9 +648,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes checkCreateCampaignExperimentProgress with error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -664,9 +664,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
     describe('promoteCampaignExperiment', () => {
         it('invokes promoteCampaignExperiment without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.PromoteCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -689,9 +689,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes promoteCampaignExperiment without error using callback', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.PromoteCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -727,9 +727,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes promoteCampaignExperiment with call error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.PromoteCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -750,9 +750,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes promoteCampaignExperiment with LRO error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.PromoteCampaignExperimentRequest());
             request.campaignExperiment = '';
@@ -774,9 +774,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes checkPromoteCampaignExperimentProgress without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -792,9 +792,9 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('invokes checkPromoteCampaignExperimentProgress with error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -971,13 +971,14 @@ describe('v7.CampaignExperimentServiceClient', () => {
 
         it('uses async iteration with listCampaignExperimentAsyncErrors without error', async () => {
             const client = new campaignexperimentserviceModule.v7.CampaignExperimentServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.ListCampaignExperimentAsyncErrorsRequest());
             request.resourceName = '';
-            const expectedHeaderRequestParams = "resource_name=";const expectedResponse = [
+            const expectedHeaderRequestParams = "resource_name=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.rpc.Status()),
               generateSampleMessage(new protos.google.rpc.Status()),
               generateSampleMessage(new protos.google.rpc.Status()),

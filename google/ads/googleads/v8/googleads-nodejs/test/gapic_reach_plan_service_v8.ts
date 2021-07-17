@@ -70,8 +70,8 @@ describe('v8.ReachPlanServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.reachPlanServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v8.ReachPlanServiceClient', () => {
 
     it('has close method', () => {
         const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v8.ReachPlanServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v8.ReachPlanServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v8.ReachPlanServiceClient', () => {
     describe('listPlannableLocations', () => {
         it('invokes listPlannableLocations without error', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListPlannableLocationsRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v8.ReachPlanServiceClient', () => {
 
         it('invokes listPlannableLocations without error using callback', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListPlannableLocationsRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v8.ReachPlanServiceClient', () => {
 
         it('invokes listPlannableLocations with error', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListPlannableLocationsRequest());
             const expectedOptions = {};
@@ -181,9 +181,9 @@ describe('v8.ReachPlanServiceClient', () => {
     describe('listPlannableProducts', () => {
         it('invokes listPlannableProducts without error', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListPlannableProductsRequest());
             const expectedOptions = {};
@@ -197,9 +197,9 @@ describe('v8.ReachPlanServiceClient', () => {
 
         it('invokes listPlannableProducts without error using callback', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListPlannableProductsRequest());
             const expectedOptions = {};
@@ -224,9 +224,9 @@ describe('v8.ReachPlanServiceClient', () => {
 
         it('invokes listPlannableProducts with error', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.ListPlannableProductsRequest());
             const expectedOptions = {};
@@ -241,9 +241,9 @@ describe('v8.ReachPlanServiceClient', () => {
     describe('generateProductMixIdeas', () => {
         it('invokes generateProductMixIdeas without error', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GenerateProductMixIdeasRequest());
             request.customerId = '';
@@ -265,9 +265,9 @@ describe('v8.ReachPlanServiceClient', () => {
 
         it('invokes generateProductMixIdeas without error using callback', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GenerateProductMixIdeasRequest());
             request.customerId = '';
@@ -300,9 +300,9 @@ describe('v8.ReachPlanServiceClient', () => {
 
         it('invokes generateProductMixIdeas with error', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GenerateProductMixIdeasRequest());
             request.customerId = '';
@@ -325,9 +325,9 @@ describe('v8.ReachPlanServiceClient', () => {
     describe('generateReachForecast', () => {
         it('invokes generateReachForecast without error', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GenerateReachForecastRequest());
             request.customerId = '';
@@ -349,9 +349,9 @@ describe('v8.ReachPlanServiceClient', () => {
 
         it('invokes generateReachForecast without error using callback', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GenerateReachForecastRequest());
             request.customerId = '';
@@ -384,9 +384,9 @@ describe('v8.ReachPlanServiceClient', () => {
 
         it('invokes generateReachForecast with error', async () => {
             const client = new reachplanserviceModule.v8.ReachPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GenerateReachForecastRequest());
             request.customerId = '';

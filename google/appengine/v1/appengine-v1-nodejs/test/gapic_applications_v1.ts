@@ -86,8 +86,8 @@ describe('v1.ApplicationsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new applicationsModule.v1.ApplicationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.applicationsStub, undefined);
         await client.initialize();
@@ -96,8 +96,8 @@ describe('v1.ApplicationsClient', () => {
 
     it('has close method', () => {
         const client = new applicationsModule.v1.ApplicationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -105,8 +105,8 @@ describe('v1.ApplicationsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new applicationsModule.v1.ApplicationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -117,8 +117,8 @@ describe('v1.ApplicationsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new applicationsModule.v1.ApplicationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -137,9 +137,9 @@ describe('v1.ApplicationsClient', () => {
     describe('getApplication', () => {
         it('invokes getApplication without error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetApplicationRequest());
             request.name = '';
@@ -161,9 +161,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes getApplication without error using callback', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetApplicationRequest());
             request.name = '';
@@ -196,9 +196,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes getApplication with error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.GetApplicationRequest());
             request.name = '';
@@ -221,9 +221,9 @@ describe('v1.ApplicationsClient', () => {
     describe('createApplication', () => {
         it('invokes createApplication without error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateApplicationRequest());
             const expectedOptions = {};
@@ -238,9 +238,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes createApplication without error using callback', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateApplicationRequest());
             const expectedOptions = {};
@@ -268,9 +268,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes createApplication with call error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateApplicationRequest());
             const expectedOptions = {};
@@ -283,9 +283,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes createApplication with LRO error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.CreateApplicationRequest());
             const expectedOptions = {};
@@ -299,9 +299,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes checkCreateApplicationProgress without error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -317,9 +317,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes checkCreateApplicationProgress with error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -333,9 +333,9 @@ describe('v1.ApplicationsClient', () => {
     describe('updateApplication', () => {
         it('invokes updateApplication without error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateApplicationRequest());
             request.name = '';
@@ -358,9 +358,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes updateApplication without error using callback', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateApplicationRequest());
             request.name = '';
@@ -396,9 +396,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes updateApplication with call error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateApplicationRequest());
             request.name = '';
@@ -419,9 +419,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes updateApplication with LRO error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.UpdateApplicationRequest());
             request.name = '';
@@ -443,9 +443,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes checkUpdateApplicationProgress without error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -461,9 +461,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes checkUpdateApplicationProgress with error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -477,9 +477,9 @@ describe('v1.ApplicationsClient', () => {
     describe('repairApplication', () => {
         it('invokes repairApplication without error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.RepairApplicationRequest());
             request.name = '';
@@ -502,9 +502,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes repairApplication without error using callback', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.RepairApplicationRequest());
             request.name = '';
@@ -540,9 +540,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes repairApplication with call error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.RepairApplicationRequest());
             request.name = '';
@@ -563,9 +563,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes repairApplication with LRO error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.appengine.v1.RepairApplicationRequest());
             request.name = '';
@@ -587,9 +587,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes checkRepairApplicationProgress without error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -605,9 +605,9 @@ describe('v1.ApplicationsClient', () => {
 
         it('invokes checkRepairApplicationProgress with error', async () => {
             const client = new applicationsModule.v1.ApplicationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 

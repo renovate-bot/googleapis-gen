@@ -133,8 +133,8 @@ describe('v1.ServiceUsageClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new serviceusageModule.v1.ServiceUsageClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.serviceUsageStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.ServiceUsageClient', () => {
 
     it('has close method', () => {
         const client = new serviceusageModule.v1.ServiceUsageClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.ServiceUsageClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new serviceusageModule.v1.ServiceUsageClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.ServiceUsageClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new serviceusageModule.v1.ServiceUsageClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.ServiceUsageClient', () => {
     describe('getService', () => {
         it('invokes getService without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.GetServiceRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes getService without error using callback', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.GetServiceRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes getService with error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.GetServiceRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.ServiceUsageClient', () => {
     describe('batchGetServices', () => {
         it('invokes batchGetServices without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.BatchGetServicesRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes batchGetServices without error using callback', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.BatchGetServicesRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes batchGetServices with error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.BatchGetServicesRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v1.ServiceUsageClient', () => {
     describe('enableService', () => {
         it('invokes enableService without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.EnableServiceRequest());
             request.name = '';
@@ -377,9 +377,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes enableService without error using callback', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.EnableServiceRequest());
             request.name = '';
@@ -415,9 +415,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes enableService with call error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.EnableServiceRequest());
             request.name = '';
@@ -438,9 +438,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes enableService with LRO error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.EnableServiceRequest());
             request.name = '';
@@ -462,9 +462,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes checkEnableServiceProgress without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -480,9 +480,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes checkEnableServiceProgress with error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -496,9 +496,9 @@ describe('v1.ServiceUsageClient', () => {
     describe('disableService', () => {
         it('invokes disableService without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.DisableServiceRequest());
             request.name = '';
@@ -521,9 +521,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes disableService without error using callback', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.DisableServiceRequest());
             request.name = '';
@@ -559,9 +559,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes disableService with call error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.DisableServiceRequest());
             request.name = '';
@@ -582,9 +582,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes disableService with LRO error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.DisableServiceRequest());
             request.name = '';
@@ -606,9 +606,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes checkDisableServiceProgress without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -624,9 +624,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes checkDisableServiceProgress with error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -640,9 +640,9 @@ describe('v1.ServiceUsageClient', () => {
     describe('batchEnableServices', () => {
         it('invokes batchEnableServices without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.BatchEnableServicesRequest());
             request.parent = '';
@@ -665,9 +665,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes batchEnableServices without error using callback', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.BatchEnableServicesRequest());
             request.parent = '';
@@ -703,9 +703,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes batchEnableServices with call error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.BatchEnableServicesRequest());
             request.parent = '';
@@ -726,9 +726,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes batchEnableServices with LRO error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.BatchEnableServicesRequest());
             request.parent = '';
@@ -750,9 +750,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes checkBatchEnableServicesProgress without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -768,9 +768,9 @@ describe('v1.ServiceUsageClient', () => {
 
         it('invokes checkBatchEnableServicesProgress with error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -947,13 +947,14 @@ describe('v1.ServiceUsageClient', () => {
 
         it('uses async iteration with listServices without error', async () => {
             const client = new serviceusageModule.v1.ServiceUsageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.serviceusage.v1.ListServicesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.api.serviceusage.v1.Service()),
               generateSampleMessage(new protos.google.api.serviceusage.v1.Service()),
               generateSampleMessage(new protos.google.api.serviceusage.v1.Service()),

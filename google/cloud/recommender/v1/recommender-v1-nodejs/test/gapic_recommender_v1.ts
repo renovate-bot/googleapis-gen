@@ -117,8 +117,8 @@ describe('v1.RecommenderClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new recommenderModule.v1.RecommenderClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.recommenderStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.RecommenderClient', () => {
 
     it('has close method', () => {
         const client = new recommenderModule.v1.RecommenderClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.RecommenderClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new recommenderModule.v1.RecommenderClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.RecommenderClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new recommenderModule.v1.RecommenderClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.RecommenderClient', () => {
     describe('getInsight', () => {
         it('invokes getInsight without error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.GetInsightRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes getInsight without error using callback', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.GetInsightRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes getInsight with error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.GetInsightRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v1.RecommenderClient', () => {
     describe('markInsightAccepted', () => {
         it('invokes markInsightAccepted without error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkInsightAcceptedRequest());
             request.name = '';
@@ -276,9 +276,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes markInsightAccepted without error using callback', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkInsightAcceptedRequest());
             request.name = '';
@@ -311,9 +311,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes markInsightAccepted with error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkInsightAcceptedRequest());
             request.name = '';
@@ -336,9 +336,9 @@ describe('v1.RecommenderClient', () => {
     describe('getRecommendation', () => {
         it('invokes getRecommendation without error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.GetRecommendationRequest());
             request.name = '';
@@ -360,9 +360,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes getRecommendation without error using callback', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.GetRecommendationRequest());
             request.name = '';
@@ -395,9 +395,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes getRecommendation with error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.GetRecommendationRequest());
             request.name = '';
@@ -420,9 +420,9 @@ describe('v1.RecommenderClient', () => {
     describe('markRecommendationClaimed', () => {
         it('invokes markRecommendationClaimed without error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationClaimedRequest());
             request.name = '';
@@ -444,9 +444,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes markRecommendationClaimed without error using callback', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationClaimedRequest());
             request.name = '';
@@ -479,9 +479,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes markRecommendationClaimed with error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationClaimedRequest());
             request.name = '';
@@ -504,9 +504,9 @@ describe('v1.RecommenderClient', () => {
     describe('markRecommendationSucceeded', () => {
         it('invokes markRecommendationSucceeded without error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationSucceededRequest());
             request.name = '';
@@ -528,9 +528,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes markRecommendationSucceeded without error using callback', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationSucceededRequest());
             request.name = '';
@@ -563,9 +563,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes markRecommendationSucceeded with error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationSucceededRequest());
             request.name = '';
@@ -588,9 +588,9 @@ describe('v1.RecommenderClient', () => {
     describe('markRecommendationFailed', () => {
         it('invokes markRecommendationFailed without error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationFailedRequest());
             request.name = '';
@@ -612,9 +612,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes markRecommendationFailed without error using callback', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationFailedRequest());
             request.name = '';
@@ -647,9 +647,9 @@ describe('v1.RecommenderClient', () => {
 
         it('invokes markRecommendationFailed with error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.MarkRecommendationFailedRequest());
             request.name = '';
@@ -835,13 +835,14 @@ describe('v1.RecommenderClient', () => {
 
         it('uses async iteration with listInsights without error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.ListInsightsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.recommender.v1.Insight()),
               generateSampleMessage(new protos.google.cloud.recommender.v1.Insight()),
               generateSampleMessage(new protos.google.cloud.recommender.v1.Insight()),
@@ -1057,13 +1058,14 @@ describe('v1.RecommenderClient', () => {
 
         it('uses async iteration with listRecommendations without error', async () => {
             const client = new recommenderModule.v1.RecommenderClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.recommender.v1.ListRecommendationsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.recommender.v1.Recommendation()),
               generateSampleMessage(new protos.google.cloud.recommender.v1.Recommendation()),
               generateSampleMessage(new protos.google.cloud.recommender.v1.Recommendation()),

@@ -129,8 +129,8 @@ describe('v1.SpannerClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new spannerModule.v1.SpannerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.spannerStub, undefined);
         await client.initialize();
@@ -139,8 +139,8 @@ describe('v1.SpannerClient', () => {
 
     it('has close method', () => {
         const client = new spannerModule.v1.SpannerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -148,8 +148,8 @@ describe('v1.SpannerClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new spannerModule.v1.SpannerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -160,8 +160,8 @@ describe('v1.SpannerClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new spannerModule.v1.SpannerClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -180,9 +180,9 @@ describe('v1.SpannerClient', () => {
     describe('createSession', () => {
         it('invokes createSession without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.CreateSessionRequest());
             request.database = '';
@@ -204,9 +204,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes createSession without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.CreateSessionRequest());
             request.database = '';
@@ -239,9 +239,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes createSession with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.CreateSessionRequest());
             request.database = '';
@@ -264,9 +264,9 @@ describe('v1.SpannerClient', () => {
     describe('batchCreateSessions', () => {
         it('invokes batchCreateSessions without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.BatchCreateSessionsRequest());
             request.database = '';
@@ -288,9 +288,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes batchCreateSessions without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.BatchCreateSessionsRequest());
             request.database = '';
@@ -323,9 +323,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes batchCreateSessions with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.BatchCreateSessionsRequest());
             request.database = '';
@@ -348,9 +348,9 @@ describe('v1.SpannerClient', () => {
     describe('getSession', () => {
         it('invokes getSession without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.GetSessionRequest());
             request.name = '';
@@ -372,9 +372,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes getSession without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.GetSessionRequest());
             request.name = '';
@@ -407,9 +407,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes getSession with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.GetSessionRequest());
             request.name = '';
@@ -432,9 +432,9 @@ describe('v1.SpannerClient', () => {
     describe('deleteSession', () => {
         it('invokes deleteSession without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.DeleteSessionRequest());
             request.name = '';
@@ -456,9 +456,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes deleteSession without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.DeleteSessionRequest());
             request.name = '';
@@ -491,9 +491,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes deleteSession with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.DeleteSessionRequest());
             request.name = '';
@@ -516,9 +516,9 @@ describe('v1.SpannerClient', () => {
     describe('executeSql', () => {
         it('invokes executeSql without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ExecuteSqlRequest());
             request.session = '';
@@ -540,9 +540,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes executeSql without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ExecuteSqlRequest());
             request.session = '';
@@ -575,9 +575,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes executeSql with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ExecuteSqlRequest());
             request.session = '';
@@ -600,9 +600,9 @@ describe('v1.SpannerClient', () => {
     describe('executeBatchDml', () => {
         it('invokes executeBatchDml without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ExecuteBatchDmlRequest());
             request.session = '';
@@ -624,9 +624,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes executeBatchDml without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ExecuteBatchDmlRequest());
             request.session = '';
@@ -659,9 +659,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes executeBatchDml with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ExecuteBatchDmlRequest());
             request.session = '';
@@ -684,9 +684,9 @@ describe('v1.SpannerClient', () => {
     describe('read', () => {
         it('invokes read without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ReadRequest());
             request.session = '';
@@ -708,9 +708,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes read without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ReadRequest());
             request.session = '';
@@ -743,9 +743,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes read with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ReadRequest());
             request.session = '';
@@ -768,9 +768,9 @@ describe('v1.SpannerClient', () => {
     describe('beginTransaction', () => {
         it('invokes beginTransaction without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.BeginTransactionRequest());
             request.session = '';
@@ -792,9 +792,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes beginTransaction without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.BeginTransactionRequest());
             request.session = '';
@@ -827,9 +827,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes beginTransaction with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.BeginTransactionRequest());
             request.session = '';
@@ -852,9 +852,9 @@ describe('v1.SpannerClient', () => {
     describe('commit', () => {
         it('invokes commit without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.CommitRequest());
             request.session = '';
@@ -876,9 +876,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes commit without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.CommitRequest());
             request.session = '';
@@ -911,9 +911,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes commit with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.CommitRequest());
             request.session = '';
@@ -936,9 +936,9 @@ describe('v1.SpannerClient', () => {
     describe('rollback', () => {
         it('invokes rollback without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.RollbackRequest());
             request.session = '';
@@ -960,9 +960,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes rollback without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.RollbackRequest());
             request.session = '';
@@ -995,9 +995,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes rollback with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.RollbackRequest());
             request.session = '';
@@ -1020,9 +1020,9 @@ describe('v1.SpannerClient', () => {
     describe('partitionQuery', () => {
         it('invokes partitionQuery without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.PartitionQueryRequest());
             request.session = '';
@@ -1044,9 +1044,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes partitionQuery without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.PartitionQueryRequest());
             request.session = '';
@@ -1079,9 +1079,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes partitionQuery with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.PartitionQueryRequest());
             request.session = '';
@@ -1104,9 +1104,9 @@ describe('v1.SpannerClient', () => {
     describe('partitionRead', () => {
         it('invokes partitionRead without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.PartitionReadRequest());
             request.session = '';
@@ -1128,9 +1128,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes partitionRead without error using callback', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.PartitionReadRequest());
             request.session = '';
@@ -1163,9 +1163,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes partitionRead with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.PartitionReadRequest());
             request.session = '';
@@ -1188,9 +1188,9 @@ describe('v1.SpannerClient', () => {
     describe('executeStreamingSql', () => {
         it('invokes executeStreamingSql without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ExecuteSqlRequest());
             request.session = '';
@@ -1221,9 +1221,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes executeStreamingSql with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ExecuteSqlRequest());
             request.session = '';
@@ -1255,9 +1255,9 @@ describe('v1.SpannerClient', () => {
     describe('streamingRead', () => {
         it('invokes streamingRead without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ReadRequest());
             request.session = '';
@@ -1288,9 +1288,9 @@ describe('v1.SpannerClient', () => {
 
         it('invokes streamingRead with error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ReadRequest());
             request.session = '';
@@ -1485,13 +1485,14 @@ describe('v1.SpannerClient', () => {
 
         it('uses async iteration with listSessions without error', async () => {
             const client = new spannerModule.v1.SpannerClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.spanner.v1.ListSessionsRequest());
             request.database = '';
-            const expectedHeaderRequestParams = "database=";const expectedResponse = [
+            const expectedHeaderRequestParams = "database=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.spanner.v1.Session()),
               generateSampleMessage(new protos.google.spanner.v1.Session()),
               generateSampleMessage(new protos.google.spanner.v1.Session()),

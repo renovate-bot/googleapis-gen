@@ -70,8 +70,8 @@ describe('v1.OsLoginServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new osloginserviceModule.v1.OsLoginServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.osLoginServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.OsLoginServiceClient', () => {
 
     it('has close method', () => {
         const client = new osloginserviceModule.v1.OsLoginServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.OsLoginServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new osloginserviceModule.v1.OsLoginServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.OsLoginServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new osloginserviceModule.v1.OsLoginServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.OsLoginServiceClient', () => {
     describe('deletePosixAccount', () => {
         it('invokes deletePosixAccount without error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.DeletePosixAccountRequest());
             request.name = '';
@@ -145,9 +145,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes deletePosixAccount without error using callback', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.DeletePosixAccountRequest());
             request.name = '';
@@ -180,9 +180,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes deletePosixAccount with error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.DeletePosixAccountRequest());
             request.name = '';
@@ -205,9 +205,9 @@ describe('v1.OsLoginServiceClient', () => {
     describe('deleteSshPublicKey', () => {
         it('invokes deleteSshPublicKey without error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest());
             request.name = '';
@@ -229,9 +229,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes deleteSshPublicKey without error using callback', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest());
             request.name = '';
@@ -264,9 +264,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes deleteSshPublicKey with error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.DeleteSshPublicKeyRequest());
             request.name = '';
@@ -289,9 +289,9 @@ describe('v1.OsLoginServiceClient', () => {
     describe('getLoginProfile', () => {
         it('invokes getLoginProfile without error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.GetLoginProfileRequest());
             request.name = '';
@@ -313,9 +313,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes getLoginProfile without error using callback', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.GetLoginProfileRequest());
             request.name = '';
@@ -348,9 +348,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes getLoginProfile with error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.GetLoginProfileRequest());
             request.name = '';
@@ -373,9 +373,9 @@ describe('v1.OsLoginServiceClient', () => {
     describe('getSshPublicKey', () => {
         it('invokes getSshPublicKey without error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.GetSshPublicKeyRequest());
             request.name = '';
@@ -397,9 +397,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes getSshPublicKey without error using callback', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.GetSshPublicKeyRequest());
             request.name = '';
@@ -432,9 +432,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes getSshPublicKey with error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.GetSshPublicKeyRequest());
             request.name = '';
@@ -457,9 +457,9 @@ describe('v1.OsLoginServiceClient', () => {
     describe('importSshPublicKey', () => {
         it('invokes importSshPublicKey without error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.ImportSshPublicKeyRequest());
             request.parent = '';
@@ -481,9 +481,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes importSshPublicKey without error using callback', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.ImportSshPublicKeyRequest());
             request.parent = '';
@@ -516,9 +516,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes importSshPublicKey with error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.ImportSshPublicKeyRequest());
             request.parent = '';
@@ -541,9 +541,9 @@ describe('v1.OsLoginServiceClient', () => {
     describe('updateSshPublicKey', () => {
         it('invokes updateSshPublicKey without error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest());
             request.name = '';
@@ -565,9 +565,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes updateSshPublicKey without error using callback', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest());
             request.name = '';
@@ -600,9 +600,9 @@ describe('v1.OsLoginServiceClient', () => {
 
         it('invokes updateSshPublicKey with error', async () => {
             const client = new osloginserviceModule.v1.OsLoginServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.oslogin.v1.UpdateSshPublicKeyRequest());
             request.name = '';

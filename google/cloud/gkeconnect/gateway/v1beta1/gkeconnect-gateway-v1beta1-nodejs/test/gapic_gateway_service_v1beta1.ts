@@ -70,8 +70,8 @@ describe('v1beta1.GatewayServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.gatewayServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta1.GatewayServiceClient', () => {
 
     it('has close method', () => {
         const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta1.GatewayServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta1.GatewayServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta1.GatewayServiceClient', () => {
     describe('getResource', () => {
         it('invokes getResource without error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes getResource without error using callback', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes getResource with error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -181,9 +181,9 @@ describe('v1beta1.GatewayServiceClient', () => {
     describe('postResource', () => {
         it('invokes postResource without error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -197,9 +197,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes postResource without error using callback', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -224,9 +224,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes postResource with error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -241,9 +241,9 @@ describe('v1beta1.GatewayServiceClient', () => {
     describe('deleteResource', () => {
         it('invokes deleteResource without error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -257,9 +257,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes deleteResource without error using callback', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -284,9 +284,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes deleteResource with error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -301,9 +301,9 @@ describe('v1beta1.GatewayServiceClient', () => {
     describe('putResource', () => {
         it('invokes putResource without error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -317,9 +317,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes putResource without error using callback', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -344,9 +344,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes putResource with error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -361,9 +361,9 @@ describe('v1beta1.GatewayServiceClient', () => {
     describe('patchResource', () => {
         it('invokes patchResource without error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -377,9 +377,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes patchResource without error using callback', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};
@@ -404,9 +404,9 @@ describe('v1beta1.GatewayServiceClient', () => {
 
         it('invokes patchResource with error', async () => {
             const client = new gatewayserviceModule.v1beta1.GatewayServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.api.HttpBody());
             const expectedOptions = {};

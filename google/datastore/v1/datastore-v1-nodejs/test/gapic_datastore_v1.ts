@@ -70,8 +70,8 @@ describe('v1.DatastoreClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new datastoreModule.v1.DatastoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.datastoreStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.DatastoreClient', () => {
 
     it('has close method', () => {
         const client = new datastoreModule.v1.DatastoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.DatastoreClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datastoreModule.v1.DatastoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.DatastoreClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new datastoreModule.v1.DatastoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.DatastoreClient', () => {
     describe('lookup', () => {
         it('invokes lookup without error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.LookupRequest());
             request.projectId = '';
@@ -145,9 +145,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes lookup without error using callback', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.LookupRequest());
             request.projectId = '';
@@ -180,9 +180,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes lookup with error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.LookupRequest());
             request.projectId = '';
@@ -205,9 +205,9 @@ describe('v1.DatastoreClient', () => {
     describe('runQuery', () => {
         it('invokes runQuery without error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.RunQueryRequest());
             request.projectId = '';
@@ -229,9 +229,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes runQuery without error using callback', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.RunQueryRequest());
             request.projectId = '';
@@ -264,9 +264,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes runQuery with error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.RunQueryRequest());
             request.projectId = '';
@@ -289,9 +289,9 @@ describe('v1.DatastoreClient', () => {
     describe('beginTransaction', () => {
         it('invokes beginTransaction without error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.BeginTransactionRequest());
             request.projectId = '';
@@ -313,9 +313,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes beginTransaction without error using callback', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.BeginTransactionRequest());
             request.projectId = '';
@@ -348,9 +348,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes beginTransaction with error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.BeginTransactionRequest());
             request.projectId = '';
@@ -373,9 +373,9 @@ describe('v1.DatastoreClient', () => {
     describe('commit', () => {
         it('invokes commit without error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.CommitRequest());
             request.projectId = '';
@@ -397,9 +397,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes commit without error using callback', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.CommitRequest());
             request.projectId = '';
@@ -432,9 +432,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes commit with error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.CommitRequest());
             request.projectId = '';
@@ -457,9 +457,9 @@ describe('v1.DatastoreClient', () => {
     describe('rollback', () => {
         it('invokes rollback without error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.RollbackRequest());
             request.projectId = '';
@@ -481,9 +481,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes rollback without error using callback', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.RollbackRequest());
             request.projectId = '';
@@ -516,9 +516,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes rollback with error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.RollbackRequest());
             request.projectId = '';
@@ -541,9 +541,9 @@ describe('v1.DatastoreClient', () => {
     describe('allocateIds', () => {
         it('invokes allocateIds without error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.AllocateIdsRequest());
             request.projectId = '';
@@ -565,9 +565,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes allocateIds without error using callback', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.AllocateIdsRequest());
             request.projectId = '';
@@ -600,9 +600,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes allocateIds with error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.AllocateIdsRequest());
             request.projectId = '';
@@ -625,9 +625,9 @@ describe('v1.DatastoreClient', () => {
     describe('reserveIds', () => {
         it('invokes reserveIds without error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.ReserveIdsRequest());
             request.projectId = '';
@@ -649,9 +649,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes reserveIds without error using callback', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.ReserveIdsRequest());
             request.projectId = '';
@@ -684,9 +684,9 @@ describe('v1.DatastoreClient', () => {
 
         it('invokes reserveIds with error', async () => {
             const client = new datastoreModule.v1.DatastoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.datastore.v1.ReserveIdsRequest());
             request.projectId = '';

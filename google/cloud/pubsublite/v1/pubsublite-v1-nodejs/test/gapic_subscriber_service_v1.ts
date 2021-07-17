@@ -73,8 +73,8 @@ describe('v1.SubscriberServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new subscriberserviceModule.v1.SubscriberServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.subscriberServiceStub, undefined);
         await client.initialize();
@@ -83,8 +83,8 @@ describe('v1.SubscriberServiceClient', () => {
 
     it('has close method', () => {
         const client = new subscriberserviceModule.v1.SubscriberServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -92,8 +92,8 @@ describe('v1.SubscriberServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new subscriberserviceModule.v1.SubscriberServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -104,8 +104,8 @@ describe('v1.SubscriberServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new subscriberserviceModule.v1.SubscriberServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -124,9 +124,9 @@ describe('v1.SubscriberServiceClient', () => {
     describe('subscribe', () => {
         it('invokes subscribe without error', async () => {
             const client = new subscriberserviceModule.v1.SubscriberServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SubscribeRequest());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SubscribeResponse());
@@ -152,9 +152,9 @@ describe('v1.SubscriberServiceClient', () => {
 
         it('invokes subscribe with error', async () => {
             const client = new subscriberserviceModule.v1.SubscriberServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.SubscribeRequest());const expectedError = new Error('expected');
             client.innerApiCalls.subscribe = stubBidiStreamingCall(undefined, expectedError);

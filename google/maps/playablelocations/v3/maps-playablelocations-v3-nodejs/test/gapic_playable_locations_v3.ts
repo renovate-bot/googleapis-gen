@@ -70,8 +70,8 @@ describe('v3.PlayableLocationsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new playablelocationsModule.v3.PlayableLocationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.playableLocationsStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v3.PlayableLocationsClient', () => {
 
     it('has close method', () => {
         const client = new playablelocationsModule.v3.PlayableLocationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v3.PlayableLocationsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new playablelocationsModule.v3.PlayableLocationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v3.PlayableLocationsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new playablelocationsModule.v3.PlayableLocationsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v3.PlayableLocationsClient', () => {
     describe('samplePlayableLocations', () => {
         it('invokes samplePlayableLocations without error', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.SamplePlayableLocationsRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v3.PlayableLocationsClient', () => {
 
         it('invokes samplePlayableLocations without error using callback', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.SamplePlayableLocationsRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v3.PlayableLocationsClient', () => {
 
         it('invokes samplePlayableLocations with error', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.SamplePlayableLocationsRequest());
             const expectedOptions = {};
@@ -181,9 +181,9 @@ describe('v3.PlayableLocationsClient', () => {
     describe('logPlayerReports', () => {
         it('invokes logPlayerReports without error', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogPlayerReportsRequest());
             const expectedOptions = {};
@@ -197,9 +197,9 @@ describe('v3.PlayableLocationsClient', () => {
 
         it('invokes logPlayerReports without error using callback', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogPlayerReportsRequest());
             const expectedOptions = {};
@@ -224,9 +224,9 @@ describe('v3.PlayableLocationsClient', () => {
 
         it('invokes logPlayerReports with error', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogPlayerReportsRequest());
             const expectedOptions = {};
@@ -241,9 +241,9 @@ describe('v3.PlayableLocationsClient', () => {
     describe('logImpressions', () => {
         it('invokes logImpressions without error', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogImpressionsRequest());
             const expectedOptions = {};
@@ -257,9 +257,9 @@ describe('v3.PlayableLocationsClient', () => {
 
         it('invokes logImpressions without error using callback', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogImpressionsRequest());
             const expectedOptions = {};
@@ -284,9 +284,9 @@ describe('v3.PlayableLocationsClient', () => {
 
         it('invokes logImpressions with error', async () => {
             const client = new playablelocationsModule.v3.PlayableLocationsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.maps.playablelocations.v3.LogImpressionsRequest());
             const expectedOptions = {};

@@ -70,8 +70,8 @@ describe('v1.WebRiskServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new webriskserviceModule.v1.WebRiskServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.webRiskServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.WebRiskServiceClient', () => {
 
     it('has close method', () => {
         const client = new webriskserviceModule.v1.WebRiskServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.WebRiskServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new webriskserviceModule.v1.WebRiskServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.WebRiskServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new webriskserviceModule.v1.WebRiskServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.WebRiskServiceClient', () => {
     describe('computeThreatListDiff', () => {
         it('invokes computeThreatListDiff without error', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.ComputeThreatListDiffRequest());
             const expectedOptions = {};
@@ -137,9 +137,9 @@ describe('v1.WebRiskServiceClient', () => {
 
         it('invokes computeThreatListDiff without error using callback', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.ComputeThreatListDiffRequest());
             const expectedOptions = {};
@@ -164,9 +164,9 @@ describe('v1.WebRiskServiceClient', () => {
 
         it('invokes computeThreatListDiff with error', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.ComputeThreatListDiffRequest());
             const expectedOptions = {};
@@ -181,9 +181,9 @@ describe('v1.WebRiskServiceClient', () => {
     describe('searchUris', () => {
         it('invokes searchUris without error', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.SearchUrisRequest());
             const expectedOptions = {};
@@ -197,9 +197,9 @@ describe('v1.WebRiskServiceClient', () => {
 
         it('invokes searchUris without error using callback', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.SearchUrisRequest());
             const expectedOptions = {};
@@ -224,9 +224,9 @@ describe('v1.WebRiskServiceClient', () => {
 
         it('invokes searchUris with error', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.SearchUrisRequest());
             const expectedOptions = {};
@@ -241,9 +241,9 @@ describe('v1.WebRiskServiceClient', () => {
     describe('searchHashes', () => {
         it('invokes searchHashes without error', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.SearchHashesRequest());
             const expectedOptions = {};
@@ -257,9 +257,9 @@ describe('v1.WebRiskServiceClient', () => {
 
         it('invokes searchHashes without error using callback', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.SearchHashesRequest());
             const expectedOptions = {};
@@ -284,9 +284,9 @@ describe('v1.WebRiskServiceClient', () => {
 
         it('invokes searchHashes with error', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.SearchHashesRequest());
             const expectedOptions = {};
@@ -301,9 +301,9 @@ describe('v1.WebRiskServiceClient', () => {
     describe('createSubmission', () => {
         it('invokes createSubmission without error', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.CreateSubmissionRequest());
             request.parent = '';
@@ -325,9 +325,9 @@ describe('v1.WebRiskServiceClient', () => {
 
         it('invokes createSubmission without error using callback', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.CreateSubmissionRequest());
             request.parent = '';
@@ -360,9 +360,9 @@ describe('v1.WebRiskServiceClient', () => {
 
         it('invokes createSubmission with error', async () => {
             const client = new webriskserviceModule.v1.WebRiskServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.webrisk.v1.CreateSubmissionRequest());
             request.parent = '';

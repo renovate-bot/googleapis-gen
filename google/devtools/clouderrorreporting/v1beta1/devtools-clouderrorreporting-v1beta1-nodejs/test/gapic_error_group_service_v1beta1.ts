@@ -70,8 +70,8 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.errorGroupServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
 
     it('has close method', () => {
         const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
     describe('getGroup', () => {
         it('invokes getGroup without error', async () => {
             const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest());
             request.groupName = '';
@@ -145,9 +145,9 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
 
         it('invokes getGroup without error using callback', async () => {
             const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest());
             request.groupName = '';
@@ -180,9 +180,9 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
 
         it('invokes getGroup with error', async () => {
             const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest());
             request.groupName = '';
@@ -205,9 +205,9 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
     describe('updateGroup', () => {
         it('invokes updateGroup without error', async () => {
             const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest());
             request.group = {};
@@ -230,9 +230,9 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
 
         it('invokes updateGroup without error using callback', async () => {
             const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest());
             request.group = {};
@@ -266,9 +266,9 @@ describe('v1beta1.ErrorGroupServiceClient', () => {
 
         it('invokes updateGroup with error', async () => {
             const client = new errorgroupserviceModule.v1beta1.ErrorGroupServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest());
             request.group = {};

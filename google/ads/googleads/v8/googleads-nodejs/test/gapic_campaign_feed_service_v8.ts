@@ -70,8 +70,8 @@ describe('v8.CampaignFeedServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.campaignFeedServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v8.CampaignFeedServiceClient', () => {
 
     it('has close method', () => {
         const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v8.CampaignFeedServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v8.CampaignFeedServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v8.CampaignFeedServiceClient', () => {
     describe('getCampaignFeed', () => {
         it('invokes getCampaignFeed without error', async () => {
             const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetCampaignFeedRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v8.CampaignFeedServiceClient', () => {
 
         it('invokes getCampaignFeed without error using callback', async () => {
             const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetCampaignFeedRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v8.CampaignFeedServiceClient', () => {
 
         it('invokes getCampaignFeed with error', async () => {
             const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetCampaignFeedRequest());
             request.resourceName = '';
@@ -205,9 +205,9 @@ describe('v8.CampaignFeedServiceClient', () => {
     describe('mutateCampaignFeeds', () => {
         it('invokes mutateCampaignFeeds without error', async () => {
             const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateCampaignFeedsRequest());
             request.customerId = '';
@@ -229,9 +229,9 @@ describe('v8.CampaignFeedServiceClient', () => {
 
         it('invokes mutateCampaignFeeds without error using callback', async () => {
             const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateCampaignFeedsRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v8.CampaignFeedServiceClient', () => {
 
         it('invokes mutateCampaignFeeds with error', async () => {
             const client = new campaignfeedserviceModule.v8.CampaignFeedServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.MutateCampaignFeedsRequest());
             request.customerId = '';

@@ -133,8 +133,8 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.artifactRegistryStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
     it('has close method', () => {
         const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('getRepository', () => {
         it('invokes getRepository without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getRepository without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getRepository with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetRepositoryRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('updateRepository', () => {
         it('invokes updateRepository without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest());
             request.repository = {};
@@ -293,9 +293,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes updateRepository without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest());
             request.repository = {};
@@ -329,9 +329,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes updateRepository with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.UpdateRepositoryRequest());
             request.repository = {};
@@ -355,9 +355,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('getPackage', () => {
         it('invokes getPackage without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetPackageRequest());
             request.name = '';
@@ -379,9 +379,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getPackage without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetPackageRequest());
             request.name = '';
@@ -414,9 +414,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getPackage with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetPackageRequest());
             request.name = '';
@@ -439,9 +439,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('getVersion', () => {
         it('invokes getVersion without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetVersionRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getVersion without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetVersionRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getVersion with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetVersionRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('getFile', () => {
         it('invokes getFile without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetFileRequest());
             request.name = '';
@@ -547,9 +547,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getFile without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetFileRequest());
             request.name = '';
@@ -582,9 +582,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getFile with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetFileRequest());
             request.name = '';
@@ -607,9 +607,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('getTag', () => {
         it('invokes getTag without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetTagRequest());
             request.name = '';
@@ -631,9 +631,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getTag without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetTagRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getTag with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.GetTagRequest());
             request.name = '';
@@ -691,9 +691,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('createTag', () => {
         it('invokes createTag without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.CreateTagRequest());
             request.parent = '';
@@ -715,9 +715,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes createTag without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.CreateTagRequest());
             request.parent = '';
@@ -750,9 +750,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes createTag with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.CreateTagRequest());
             request.parent = '';
@@ -775,9 +775,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('updateTag', () => {
         it('invokes updateTag without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.UpdateTagRequest());
             request.tag = {};
@@ -800,9 +800,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes updateTag without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.UpdateTagRequest());
             request.tag = {};
@@ -836,9 +836,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes updateTag with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.UpdateTagRequest());
             request.tag = {};
@@ -862,9 +862,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('deleteTag', () => {
         it('invokes deleteTag without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteTagRequest());
             request.name = '';
@@ -886,9 +886,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deleteTag without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteTagRequest());
             request.name = '';
@@ -921,9 +921,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deleteTag with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteTagRequest());
             request.name = '';
@@ -946,9 +946,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -970,9 +970,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -1005,9 +1005,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -1030,9 +1030,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -1054,9 +1054,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -1089,9 +1089,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -1114,9 +1114,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -1138,9 +1138,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -1173,9 +1173,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -1198,9 +1198,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('createRepository', () => {
         it('invokes createRepository without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest());
             request.parent = '';
@@ -1223,9 +1223,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes createRepository without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest());
             request.parent = '';
@@ -1261,9 +1261,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes createRepository with call error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest());
             request.parent = '';
@@ -1284,9 +1284,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes createRepository with LRO error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.CreateRepositoryRequest());
             request.parent = '';
@@ -1308,9 +1308,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes checkCreateRepositoryProgress without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1326,9 +1326,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes checkCreateRepositoryProgress with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1342,9 +1342,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('deleteRepository', () => {
         it('invokes deleteRepository without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest());
             request.name = '';
@@ -1367,9 +1367,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deleteRepository without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest());
             request.name = '';
@@ -1405,9 +1405,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deleteRepository with call error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest());
             request.name = '';
@@ -1428,9 +1428,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deleteRepository with LRO error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteRepositoryRequest());
             request.name = '';
@@ -1452,9 +1452,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes checkDeleteRepositoryProgress without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1470,9 +1470,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes checkDeleteRepositoryProgress with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1486,9 +1486,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('deletePackage', () => {
         it('invokes deletePackage without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeletePackageRequest());
             request.name = '';
@@ -1511,9 +1511,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deletePackage without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeletePackageRequest());
             request.name = '';
@@ -1549,9 +1549,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deletePackage with call error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeletePackageRequest());
             request.name = '';
@@ -1572,9 +1572,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deletePackage with LRO error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeletePackageRequest());
             request.name = '';
@@ -1596,9 +1596,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes checkDeletePackageProgress without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1614,9 +1614,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes checkDeletePackageProgress with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1630,9 +1630,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
     describe('deleteVersion', () => {
         it('invokes deleteVersion without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest());
             request.name = '';
@@ -1655,9 +1655,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deleteVersion without error using callback', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest());
             request.name = '';
@@ -1693,9 +1693,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deleteVersion with call error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest());
             request.name = '';
@@ -1716,9 +1716,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes deleteVersion with LRO error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.DeleteVersionRequest());
             request.name = '';
@@ -1740,9 +1740,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes checkDeleteVersionProgress without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -1758,9 +1758,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('invokes checkDeleteVersionProgress with error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1937,13 +1937,14 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('uses async iteration with listRepositories without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.ListRepositoriesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Repository()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Repository()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Repository()),
@@ -2159,13 +2160,14 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('uses async iteration with listPackages without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.ListPackagesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Package()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Package()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Package()),
@@ -2381,13 +2383,14 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('uses async iteration with listVersions without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.ListVersionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Version()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Version()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Version()),
@@ -2603,13 +2606,14 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('uses async iteration with listFiles without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.ListFilesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.File()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.File()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.File()),
@@ -2825,13 +2829,14 @@ describe('v1beta2.ArtifactRegistryClient', () => {
 
         it('uses async iteration with listTags without error', async () => {
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.ListTagsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Tag()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Tag()),
               generateSampleMessage(new protos.google.devtools.artifactregistry.v1beta2.Tag()),

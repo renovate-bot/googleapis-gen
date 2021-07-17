@@ -70,8 +70,8 @@ describe('v6.AdServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adserviceModule.v6.AdServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.adServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v6.AdServiceClient', () => {
 
     it('has close method', () => {
         const client = new adserviceModule.v6.AdServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v6.AdServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new adserviceModule.v6.AdServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v6.AdServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new adserviceModule.v6.AdServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v6.AdServiceClient', () => {
     describe('getAd', () => {
         it('invokes getAd without error', async () => {
             const client = new adserviceModule.v6.AdServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetAdRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v6.AdServiceClient', () => {
 
         it('invokes getAd without error using callback', async () => {
             const client = new adserviceModule.v6.AdServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetAdRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v6.AdServiceClient', () => {
 
         it('invokes getAd with error', async () => {
             const client = new adserviceModule.v6.AdServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.GetAdRequest());
             request.resourceName = '';
@@ -205,9 +205,9 @@ describe('v6.AdServiceClient', () => {
     describe('mutateAds', () => {
         it('invokes mutateAds without error', async () => {
             const client = new adserviceModule.v6.AdServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateAdsRequest());
             request.customerId = '';
@@ -229,9 +229,9 @@ describe('v6.AdServiceClient', () => {
 
         it('invokes mutateAds without error using callback', async () => {
             const client = new adserviceModule.v6.AdServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateAdsRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v6.AdServiceClient', () => {
 
         it('invokes mutateAds with error', async () => {
             const client = new adserviceModule.v6.AdServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v6.services.MutateAdsRequest());
             request.customerId = '';

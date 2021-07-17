@@ -133,8 +133,8 @@ describe('v3.TagKeysClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new tagkeysModule.v3.TagKeysClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.tagKeysStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3.TagKeysClient', () => {
 
     it('has close method', () => {
         const client = new tagkeysModule.v3.TagKeysClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3.TagKeysClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tagkeysModule.v3.TagKeysClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3.TagKeysClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new tagkeysModule.v3.TagKeysClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3.TagKeysClient', () => {
     describe('getTagKey', () => {
         it('invokes getTagKey without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetTagKeyRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes getTagKey without error using callback', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetTagKeyRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes getTagKey with error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.GetTagKeyRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v3.TagKeysClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -292,9 +292,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -327,9 +327,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.GetIamPolicyRequest());
             request.resource = '';
@@ -352,9 +352,9 @@ describe('v3.TagKeysClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -376,9 +376,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -411,9 +411,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.SetIamPolicyRequest());
             request.resource = '';
@@ -436,9 +436,9 @@ describe('v3.TagKeysClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -460,9 +460,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -495,9 +495,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.iam.v1.TestIamPermissionsRequest());
             request.resource = '';
@@ -520,9 +520,9 @@ describe('v3.TagKeysClient', () => {
     describe('createTagKey', () => {
         it('invokes createTagKey without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagKeyRequest());
             const expectedOptions = {};
@@ -537,9 +537,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes createTagKey without error using callback', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagKeyRequest());
             const expectedOptions = {};
@@ -567,9 +567,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes createTagKey with call error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagKeyRequest());
             const expectedOptions = {};
@@ -582,9 +582,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes createTagKey with LRO error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.CreateTagKeyRequest());
             const expectedOptions = {};
@@ -598,9 +598,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes checkCreateTagKeyProgress without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -616,9 +616,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes checkCreateTagKeyProgress with error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -632,9 +632,9 @@ describe('v3.TagKeysClient', () => {
     describe('updateTagKey', () => {
         it('invokes updateTagKey without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateTagKeyRequest());
             request.tagKey = {};
@@ -658,9 +658,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes updateTagKey without error using callback', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateTagKeyRequest());
             request.tagKey = {};
@@ -697,9 +697,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes updateTagKey with call error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateTagKeyRequest());
             request.tagKey = {};
@@ -721,9 +721,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes updateTagKey with LRO error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.UpdateTagKeyRequest());
             request.tagKey = {};
@@ -746,9 +746,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes checkUpdateTagKeyProgress without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -764,9 +764,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes checkUpdateTagKeyProgress with error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -780,9 +780,9 @@ describe('v3.TagKeysClient', () => {
     describe('deleteTagKey', () => {
         it('invokes deleteTagKey without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagKeyRequest());
             request.name = '';
@@ -805,9 +805,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes deleteTagKey without error using callback', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagKeyRequest());
             request.name = '';
@@ -843,9 +843,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes deleteTagKey with call error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagKeyRequest());
             request.name = '';
@@ -866,9 +866,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes deleteTagKey with LRO error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.DeleteTagKeyRequest());
             request.name = '';
@@ -890,9 +890,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes checkDeleteTagKeyProgress without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -908,9 +908,9 @@ describe('v3.TagKeysClient', () => {
 
         it('invokes checkDeleteTagKeyProgress with error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1049,11 +1049,12 @@ describe('v3.TagKeysClient', () => {
 
         it('uses async iteration with listTagKeys without error', async () => {
             const client = new tagkeysModule.v3.TagKeysClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagKeysRequest());const expectedResponse = [
+            const request = generateSampleMessage(new protos.google.cloud.resourcemanager.v3.ListTagKeysRequest());
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagKey()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagKey()),
               generateSampleMessage(new protos.google.cloud.resourcemanager.v3.TagKey()),

@@ -84,8 +84,8 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.featurestoreOnlineServingServiceStub, undefined);
         await client.initialize();
@@ -94,8 +94,8 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
 
     it('has close method', () => {
         const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -103,8 +103,8 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -115,8 +115,8 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -135,9 +135,9 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
     describe('readFeatureValues', () => {
         it('invokes readFeatureValues without error', async () => {
             const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest());
             request.entityType = '';
@@ -159,9 +159,9 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
 
         it('invokes readFeatureValues without error using callback', async () => {
             const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest());
             request.entityType = '';
@@ -194,9 +194,9 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
 
         it('invokes readFeatureValues with error', async () => {
             const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.ReadFeatureValuesRequest());
             request.entityType = '';
@@ -219,9 +219,9 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
     describe('streamingReadFeatureValues', () => {
         it('invokes streamingReadFeatureValues without error', async () => {
             const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest());
             request.entityType = '';
@@ -252,9 +252,9 @@ describe('v1beta1.FeaturestoreOnlineServingServiceClient', () => {
 
         it('invokes streamingReadFeatureValues with error', async () => {
             const client = new featurestoreonlineservingserviceModule.v1beta1.FeaturestoreOnlineServingServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1beta1.StreamingReadFeatureValuesRequest());
             request.entityType = '';

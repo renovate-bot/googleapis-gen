@@ -81,8 +81,8 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.bigQueryWriteStub, undefined);
         await client.initialize();
@@ -91,8 +91,8 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
     it('has close method', () => {
         const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -100,8 +100,8 @@ describe('v1beta2.BigQueryWriteClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -112,8 +112,8 @@ describe('v1beta2.BigQueryWriteClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -132,9 +132,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
     describe('createWriteStream', () => {
         it('invokes createWriteStream without error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest());
             request.parent = '';
@@ -156,9 +156,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes createWriteStream without error using callback', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest());
             request.parent = '';
@@ -191,9 +191,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes createWriteStream with error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest());
             request.parent = '';
@@ -216,9 +216,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
     describe('getWriteStream', () => {
         it('invokes getWriteStream without error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest());
             request.name = '';
@@ -240,9 +240,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes getWriteStream without error using callback', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest());
             request.name = '';
@@ -275,9 +275,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes getWriteStream with error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.GetWriteStreamRequest());
             request.name = '';
@@ -300,9 +300,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
     describe('finalizeWriteStream', () => {
         it('invokes finalizeWriteStream without error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest());
             request.name = '';
@@ -324,9 +324,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes finalizeWriteStream without error using callback', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest());
             request.name = '';
@@ -359,9 +359,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes finalizeWriteStream with error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.FinalizeWriteStreamRequest());
             request.name = '';
@@ -384,9 +384,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
     describe('batchCommitWriteStreams', () => {
         it('invokes batchCommitWriteStreams without error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest());
             request.parent = '';
@@ -408,9 +408,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes batchCommitWriteStreams without error using callback', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest());
             request.parent = '';
@@ -443,9 +443,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes batchCommitWriteStreams with error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.BatchCommitWriteStreamsRequest());
             request.parent = '';
@@ -468,9 +468,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
     describe('flushRows', () => {
         it('invokes flushRows without error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest());
             request.writeStream = '';
@@ -492,9 +492,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes flushRows without error using callback', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest());
             request.writeStream = '';
@@ -527,9 +527,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes flushRows with error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.FlushRowsRequest());
             request.writeStream = '';
@@ -552,9 +552,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
     describe('appendRows', () => {
         it('invokes appendRows without error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest());
             const expectedResponse = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse());
@@ -580,9 +580,9 @@ describe('v1beta2.BigQueryWriteClient', () => {
 
         it('invokes appendRows with error', async () => {
             const client = new bigquerywriteModule.v1beta2.BigQueryWriteClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest());
             request.writeStream = '';

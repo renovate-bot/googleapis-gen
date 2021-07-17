@@ -70,8 +70,8 @@ describe('v7.AdGroupLabelServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.adGroupLabelServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v7.AdGroupLabelServiceClient', () => {
 
     it('has close method', () => {
         const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v7.AdGroupLabelServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v7.AdGroupLabelServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v7.AdGroupLabelServiceClient', () => {
     describe('getAdGroupLabel', () => {
         it('invokes getAdGroupLabel without error', async () => {
             const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetAdGroupLabelRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v7.AdGroupLabelServiceClient', () => {
 
         it('invokes getAdGroupLabel without error using callback', async () => {
             const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetAdGroupLabelRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v7.AdGroupLabelServiceClient', () => {
 
         it('invokes getAdGroupLabel with error', async () => {
             const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetAdGroupLabelRequest());
             request.resourceName = '';
@@ -205,9 +205,9 @@ describe('v7.AdGroupLabelServiceClient', () => {
     describe('mutateAdGroupLabels', () => {
         it('invokes mutateAdGroupLabels without error', async () => {
             const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateAdGroupLabelsRequest());
             request.customerId = '';
@@ -229,9 +229,9 @@ describe('v7.AdGroupLabelServiceClient', () => {
 
         it('invokes mutateAdGroupLabels without error using callback', async () => {
             const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateAdGroupLabelsRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v7.AdGroupLabelServiceClient', () => {
 
         it('invokes mutateAdGroupLabels with error', async () => {
             const client = new adgrouplabelserviceModule.v7.AdGroupLabelServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateAdGroupLabelsRequest());
             request.customerId = '';

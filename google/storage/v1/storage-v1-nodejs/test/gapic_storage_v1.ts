@@ -96,8 +96,8 @@ describe('v1.StorageClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new storageModule.v1.StorageClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.storageStub, undefined);
         await client.initialize();
@@ -106,8 +106,8 @@ describe('v1.StorageClient', () => {
 
     it('has close method', () => {
         const client = new storageModule.v1.StorageClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -115,8 +115,8 @@ describe('v1.StorageClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new storageModule.v1.StorageClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -127,8 +127,8 @@ describe('v1.StorageClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new storageModule.v1.StorageClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -147,9 +147,9 @@ describe('v1.StorageClient', () => {
     describe('deleteBucketAccessControl', () => {
         it('invokes deleteBucketAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketAccessControlRequest());
             const expectedOptions = {};
@@ -163,9 +163,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteBucketAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketAccessControlRequest());
             const expectedOptions = {};
@@ -190,9 +190,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteBucketAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketAccessControlRequest());
             const expectedOptions = {};
@@ -207,9 +207,9 @@ describe('v1.StorageClient', () => {
     describe('getBucketAccessControl', () => {
         it('invokes getBucketAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketAccessControlRequest());
             const expectedOptions = {};
@@ -223,9 +223,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getBucketAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketAccessControlRequest());
             const expectedOptions = {};
@@ -250,9 +250,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getBucketAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketAccessControlRequest());
             const expectedOptions = {};
@@ -267,9 +267,9 @@ describe('v1.StorageClient', () => {
     describe('insertBucketAccessControl', () => {
         it('invokes insertBucketAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketAccessControlRequest());
             const expectedOptions = {};
@@ -283,9 +283,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertBucketAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketAccessControlRequest());
             const expectedOptions = {};
@@ -310,9 +310,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertBucketAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketAccessControlRequest());
             const expectedOptions = {};
@@ -327,9 +327,9 @@ describe('v1.StorageClient', () => {
     describe('listBucketAccessControls', () => {
         it('invokes listBucketAccessControls without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketAccessControlsRequest());
             const expectedOptions = {};
@@ -343,9 +343,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listBucketAccessControls without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketAccessControlsRequest());
             const expectedOptions = {};
@@ -370,9 +370,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listBucketAccessControls with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketAccessControlsRequest());
             const expectedOptions = {};
@@ -387,9 +387,9 @@ describe('v1.StorageClient', () => {
     describe('updateBucketAccessControl', () => {
         it('invokes updateBucketAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketAccessControlRequest());
             const expectedOptions = {};
@@ -403,9 +403,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateBucketAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketAccessControlRequest());
             const expectedOptions = {};
@@ -430,9 +430,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateBucketAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketAccessControlRequest());
             const expectedOptions = {};
@@ -447,9 +447,9 @@ describe('v1.StorageClient', () => {
     describe('patchBucketAccessControl', () => {
         it('invokes patchBucketAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketAccessControlRequest());
             const expectedOptions = {};
@@ -463,9 +463,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchBucketAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketAccessControlRequest());
             const expectedOptions = {};
@@ -490,9 +490,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchBucketAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketAccessControlRequest());
             const expectedOptions = {};
@@ -507,9 +507,9 @@ describe('v1.StorageClient', () => {
     describe('deleteBucket', () => {
         it('invokes deleteBucket without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketRequest());
             const expectedOptions = {};
@@ -523,9 +523,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteBucket without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketRequest());
             const expectedOptions = {};
@@ -550,9 +550,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteBucket with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteBucketRequest());
             const expectedOptions = {};
@@ -567,9 +567,9 @@ describe('v1.StorageClient', () => {
     describe('getBucket', () => {
         it('invokes getBucket without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketRequest());
             const expectedOptions = {};
@@ -583,9 +583,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getBucket without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketRequest());
             const expectedOptions = {};
@@ -610,9 +610,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getBucket with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetBucketRequest());
             const expectedOptions = {};
@@ -627,9 +627,9 @@ describe('v1.StorageClient', () => {
     describe('insertBucket', () => {
         it('invokes insertBucket without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketRequest());
             const expectedOptions = {};
@@ -643,9 +643,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertBucket without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketRequest());
             const expectedOptions = {};
@@ -670,9 +670,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertBucket with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertBucketRequest());
             const expectedOptions = {};
@@ -687,9 +687,9 @@ describe('v1.StorageClient', () => {
     describe('listChannels', () => {
         it('invokes listChannels without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListChannelsRequest());
             const expectedOptions = {};
@@ -703,9 +703,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listChannels without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListChannelsRequest());
             const expectedOptions = {};
@@ -730,9 +730,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listChannels with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListChannelsRequest());
             const expectedOptions = {};
@@ -747,9 +747,9 @@ describe('v1.StorageClient', () => {
     describe('listBuckets', () => {
         it('invokes listBuckets without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketsRequest());
             const expectedOptions = {};
@@ -763,9 +763,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listBuckets without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketsRequest());
             const expectedOptions = {};
@@ -790,9 +790,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listBuckets with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListBucketsRequest());
             const expectedOptions = {};
@@ -807,9 +807,9 @@ describe('v1.StorageClient', () => {
     describe('lockBucketRetentionPolicy', () => {
         it('invokes lockBucketRetentionPolicy without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.LockRetentionPolicyRequest());
             const expectedOptions = {};
@@ -823,9 +823,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes lockBucketRetentionPolicy without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.LockRetentionPolicyRequest());
             const expectedOptions = {};
@@ -850,9 +850,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes lockBucketRetentionPolicy with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.LockRetentionPolicyRequest());
             const expectedOptions = {};
@@ -867,9 +867,9 @@ describe('v1.StorageClient', () => {
     describe('getBucketIamPolicy', () => {
         it('invokes getBucketIamPolicy without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
             const expectedOptions = {};
@@ -883,9 +883,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getBucketIamPolicy without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
             const expectedOptions = {};
@@ -910,9 +910,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getBucketIamPolicy with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
             const expectedOptions = {};
@@ -927,9 +927,9 @@ describe('v1.StorageClient', () => {
     describe('setBucketIamPolicy', () => {
         it('invokes setBucketIamPolicy without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
             const expectedOptions = {};
@@ -943,9 +943,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes setBucketIamPolicy without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
             const expectedOptions = {};
@@ -970,9 +970,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes setBucketIamPolicy with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
             const expectedOptions = {};
@@ -987,9 +987,9 @@ describe('v1.StorageClient', () => {
     describe('testBucketIamPermissions', () => {
         it('invokes testBucketIamPermissions without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
             const expectedOptions = {};
@@ -1003,9 +1003,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes testBucketIamPermissions without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
             const expectedOptions = {};
@@ -1030,9 +1030,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes testBucketIamPermissions with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
             const expectedOptions = {};
@@ -1047,9 +1047,9 @@ describe('v1.StorageClient', () => {
     describe('patchBucket', () => {
         it('invokes patchBucket without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketRequest());
             const expectedOptions = {};
@@ -1063,9 +1063,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchBucket without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketRequest());
             const expectedOptions = {};
@@ -1090,9 +1090,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchBucket with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchBucketRequest());
             const expectedOptions = {};
@@ -1107,9 +1107,9 @@ describe('v1.StorageClient', () => {
     describe('updateBucket', () => {
         it('invokes updateBucket without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketRequest());
             const expectedOptions = {};
@@ -1123,9 +1123,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateBucket without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketRequest());
             const expectedOptions = {};
@@ -1150,9 +1150,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateBucket with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateBucketRequest());
             const expectedOptions = {};
@@ -1167,9 +1167,9 @@ describe('v1.StorageClient', () => {
     describe('stopChannel', () => {
         it('invokes stopChannel without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StopChannelRequest());
             const expectedOptions = {};
@@ -1183,9 +1183,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes stopChannel without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StopChannelRequest());
             const expectedOptions = {};
@@ -1210,9 +1210,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes stopChannel with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StopChannelRequest());
             const expectedOptions = {};
@@ -1227,9 +1227,9 @@ describe('v1.StorageClient', () => {
     describe('deleteDefaultObjectAccessControl', () => {
         it('invokes deleteDefaultObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1243,9 +1243,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteDefaultObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1270,9 +1270,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteDefaultObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1287,9 +1287,9 @@ describe('v1.StorageClient', () => {
     describe('getDefaultObjectAccessControl', () => {
         it('invokes getDefaultObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1303,9 +1303,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getDefaultObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1330,9 +1330,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getDefaultObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1347,9 +1347,9 @@ describe('v1.StorageClient', () => {
     describe('insertDefaultObjectAccessControl', () => {
         it('invokes insertDefaultObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1363,9 +1363,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertDefaultObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1390,9 +1390,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertDefaultObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1407,9 +1407,9 @@ describe('v1.StorageClient', () => {
     describe('listDefaultObjectAccessControls', () => {
         it('invokes listDefaultObjectAccessControls without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListDefaultObjectAccessControlsRequest());
             const expectedOptions = {};
@@ -1423,9 +1423,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listDefaultObjectAccessControls without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListDefaultObjectAccessControlsRequest());
             const expectedOptions = {};
@@ -1450,9 +1450,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listDefaultObjectAccessControls with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListDefaultObjectAccessControlsRequest());
             const expectedOptions = {};
@@ -1467,9 +1467,9 @@ describe('v1.StorageClient', () => {
     describe('patchDefaultObjectAccessControl', () => {
         it('invokes patchDefaultObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1483,9 +1483,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchDefaultObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1510,9 +1510,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchDefaultObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1527,9 +1527,9 @@ describe('v1.StorageClient', () => {
     describe('updateDefaultObjectAccessControl', () => {
         it('invokes updateDefaultObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1543,9 +1543,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateDefaultObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1570,9 +1570,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateDefaultObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateDefaultObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1587,9 +1587,9 @@ describe('v1.StorageClient', () => {
     describe('deleteNotification', () => {
         it('invokes deleteNotification without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteNotificationRequest());
             const expectedOptions = {};
@@ -1603,9 +1603,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteNotification without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteNotificationRequest());
             const expectedOptions = {};
@@ -1630,9 +1630,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteNotification with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteNotificationRequest());
             const expectedOptions = {};
@@ -1647,9 +1647,9 @@ describe('v1.StorageClient', () => {
     describe('getNotification', () => {
         it('invokes getNotification without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetNotificationRequest());
             const expectedOptions = {};
@@ -1663,9 +1663,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getNotification without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetNotificationRequest());
             const expectedOptions = {};
@@ -1690,9 +1690,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getNotification with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetNotificationRequest());
             const expectedOptions = {};
@@ -1707,9 +1707,9 @@ describe('v1.StorageClient', () => {
     describe('insertNotification', () => {
         it('invokes insertNotification without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertNotificationRequest());
             const expectedOptions = {};
@@ -1723,9 +1723,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertNotification without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertNotificationRequest());
             const expectedOptions = {};
@@ -1750,9 +1750,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertNotification with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertNotificationRequest());
             const expectedOptions = {};
@@ -1767,9 +1767,9 @@ describe('v1.StorageClient', () => {
     describe('listNotifications', () => {
         it('invokes listNotifications without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListNotificationsRequest());
             const expectedOptions = {};
@@ -1783,9 +1783,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listNotifications without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListNotificationsRequest());
             const expectedOptions = {};
@@ -1810,9 +1810,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listNotifications with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListNotificationsRequest());
             const expectedOptions = {};
@@ -1827,9 +1827,9 @@ describe('v1.StorageClient', () => {
     describe('deleteObjectAccessControl', () => {
         it('invokes deleteObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1843,9 +1843,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1870,9 +1870,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1887,9 +1887,9 @@ describe('v1.StorageClient', () => {
     describe('getObjectAccessControl', () => {
         it('invokes getObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1903,9 +1903,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1930,9 +1930,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1947,9 +1947,9 @@ describe('v1.StorageClient', () => {
     describe('insertObjectAccessControl', () => {
         it('invokes insertObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1963,9 +1963,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertObjectAccessControlRequest());
             const expectedOptions = {};
@@ -1990,9 +1990,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertObjectAccessControlRequest());
             const expectedOptions = {};
@@ -2007,9 +2007,9 @@ describe('v1.StorageClient', () => {
     describe('listObjectAccessControls', () => {
         it('invokes listObjectAccessControls without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsRequest());
             const expectedOptions = {};
@@ -2023,9 +2023,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listObjectAccessControls without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsRequest());
             const expectedOptions = {};
@@ -2050,9 +2050,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listObjectAccessControls with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectAccessControlsRequest());
             const expectedOptions = {};
@@ -2067,9 +2067,9 @@ describe('v1.StorageClient', () => {
     describe('patchObjectAccessControl', () => {
         it('invokes patchObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectAccessControlRequest());
             const expectedOptions = {};
@@ -2083,9 +2083,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectAccessControlRequest());
             const expectedOptions = {};
@@ -2110,9 +2110,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectAccessControlRequest());
             const expectedOptions = {};
@@ -2127,9 +2127,9 @@ describe('v1.StorageClient', () => {
     describe('updateObjectAccessControl', () => {
         it('invokes updateObjectAccessControl without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectAccessControlRequest());
             const expectedOptions = {};
@@ -2143,9 +2143,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateObjectAccessControl without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectAccessControlRequest());
             const expectedOptions = {};
@@ -2170,9 +2170,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateObjectAccessControl with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectAccessControlRequest());
             const expectedOptions = {};
@@ -2187,9 +2187,9 @@ describe('v1.StorageClient', () => {
     describe('composeObject', () => {
         it('invokes composeObject without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ComposeObjectRequest());
             const expectedOptions = {};
@@ -2203,9 +2203,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes composeObject without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ComposeObjectRequest());
             const expectedOptions = {};
@@ -2230,9 +2230,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes composeObject with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ComposeObjectRequest());
             const expectedOptions = {};
@@ -2247,9 +2247,9 @@ describe('v1.StorageClient', () => {
     describe('copyObject', () => {
         it('invokes copyObject without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CopyObjectRequest());
             const expectedOptions = {};
@@ -2263,9 +2263,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes copyObject without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CopyObjectRequest());
             const expectedOptions = {};
@@ -2290,9 +2290,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes copyObject with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CopyObjectRequest());
             const expectedOptions = {};
@@ -2307,9 +2307,9 @@ describe('v1.StorageClient', () => {
     describe('deleteObject', () => {
         it('invokes deleteObject without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectRequest());
             const expectedOptions = {};
@@ -2323,9 +2323,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteObject without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectRequest());
             const expectedOptions = {};
@@ -2350,9 +2350,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteObject with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteObjectRequest());
             const expectedOptions = {};
@@ -2367,9 +2367,9 @@ describe('v1.StorageClient', () => {
     describe('getObject', () => {
         it('invokes getObject without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectRequest());
             const expectedOptions = {};
@@ -2383,9 +2383,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getObject without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectRequest());
             const expectedOptions = {};
@@ -2410,9 +2410,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getObject with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectRequest());
             const expectedOptions = {};
@@ -2427,9 +2427,9 @@ describe('v1.StorageClient', () => {
     describe('listObjects', () => {
         it('invokes listObjects without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectsRequest());
             const expectedOptions = {};
@@ -2443,9 +2443,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listObjects without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectsRequest());
             const expectedOptions = {};
@@ -2470,9 +2470,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listObjects with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListObjectsRequest());
             const expectedOptions = {};
@@ -2487,9 +2487,9 @@ describe('v1.StorageClient', () => {
     describe('rewriteObject', () => {
         it('invokes rewriteObject without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.RewriteObjectRequest());
             const expectedOptions = {};
@@ -2503,9 +2503,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes rewriteObject without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.RewriteObjectRequest());
             const expectedOptions = {};
@@ -2530,9 +2530,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes rewriteObject with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.RewriteObjectRequest());
             const expectedOptions = {};
@@ -2547,9 +2547,9 @@ describe('v1.StorageClient', () => {
     describe('startResumableWrite', () => {
         it('invokes startResumableWrite without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StartResumableWriteRequest());
             const expectedOptions = {};
@@ -2563,9 +2563,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes startResumableWrite without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StartResumableWriteRequest());
             const expectedOptions = {};
@@ -2590,9 +2590,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes startResumableWrite with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.StartResumableWriteRequest());
             const expectedOptions = {};
@@ -2607,9 +2607,9 @@ describe('v1.StorageClient', () => {
     describe('queryWriteStatus', () => {
         it('invokes queryWriteStatus without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.QueryWriteStatusRequest());
             const expectedOptions = {};
@@ -2623,9 +2623,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes queryWriteStatus without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.QueryWriteStatusRequest());
             const expectedOptions = {};
@@ -2650,9 +2650,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes queryWriteStatus with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.QueryWriteStatusRequest());
             const expectedOptions = {};
@@ -2667,9 +2667,9 @@ describe('v1.StorageClient', () => {
     describe('patchObject', () => {
         it('invokes patchObject without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectRequest());
             const expectedOptions = {};
@@ -2683,9 +2683,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchObject without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectRequest());
             const expectedOptions = {};
@@ -2710,9 +2710,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes patchObject with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.PatchObjectRequest());
             const expectedOptions = {};
@@ -2727,9 +2727,9 @@ describe('v1.StorageClient', () => {
     describe('updateObject', () => {
         it('invokes updateObject without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectRequest());
             const expectedOptions = {};
@@ -2743,9 +2743,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateObject without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectRequest());
             const expectedOptions = {};
@@ -2770,9 +2770,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateObject with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateObjectRequest());
             const expectedOptions = {};
@@ -2787,9 +2787,9 @@ describe('v1.StorageClient', () => {
     describe('getObjectIamPolicy', () => {
         it('invokes getObjectIamPolicy without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
             const expectedOptions = {};
@@ -2803,9 +2803,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getObjectIamPolicy without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
             const expectedOptions = {};
@@ -2830,9 +2830,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getObjectIamPolicy with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetIamPolicyRequest());
             const expectedOptions = {};
@@ -2847,9 +2847,9 @@ describe('v1.StorageClient', () => {
     describe('setObjectIamPolicy', () => {
         it('invokes setObjectIamPolicy without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
             const expectedOptions = {};
@@ -2863,9 +2863,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes setObjectIamPolicy without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
             const expectedOptions = {};
@@ -2890,9 +2890,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes setObjectIamPolicy with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.SetIamPolicyRequest());
             const expectedOptions = {};
@@ -2907,9 +2907,9 @@ describe('v1.StorageClient', () => {
     describe('testObjectIamPermissions', () => {
         it('invokes testObjectIamPermissions without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
             const expectedOptions = {};
@@ -2923,9 +2923,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes testObjectIamPermissions without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
             const expectedOptions = {};
@@ -2950,9 +2950,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes testObjectIamPermissions with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.TestIamPermissionsRequest());
             const expectedOptions = {};
@@ -2967,9 +2967,9 @@ describe('v1.StorageClient', () => {
     describe('watchAllObjects', () => {
         it('invokes watchAllObjects without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.WatchAllObjectsRequest());
             const expectedOptions = {};
@@ -2983,9 +2983,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes watchAllObjects without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.WatchAllObjectsRequest());
             const expectedOptions = {};
@@ -3010,9 +3010,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes watchAllObjects with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.WatchAllObjectsRequest());
             const expectedOptions = {};
@@ -3027,9 +3027,9 @@ describe('v1.StorageClient', () => {
     describe('getServiceAccount', () => {
         it('invokes getServiceAccount without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetProjectServiceAccountRequest());
             const expectedOptions = {};
@@ -3043,9 +3043,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getServiceAccount without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetProjectServiceAccountRequest());
             const expectedOptions = {};
@@ -3070,9 +3070,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getServiceAccount with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetProjectServiceAccountRequest());
             const expectedOptions = {};
@@ -3087,9 +3087,9 @@ describe('v1.StorageClient', () => {
     describe('createHmacKey', () => {
         it('invokes createHmacKey without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CreateHmacKeyRequest());
             const expectedOptions = {};
@@ -3103,9 +3103,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes createHmacKey without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CreateHmacKeyRequest());
             const expectedOptions = {};
@@ -3130,9 +3130,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes createHmacKey with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.CreateHmacKeyRequest());
             const expectedOptions = {};
@@ -3147,9 +3147,9 @@ describe('v1.StorageClient', () => {
     describe('deleteHmacKey', () => {
         it('invokes deleteHmacKey without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteHmacKeyRequest());
             const expectedOptions = {};
@@ -3163,9 +3163,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteHmacKey without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteHmacKeyRequest());
             const expectedOptions = {};
@@ -3190,9 +3190,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes deleteHmacKey with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.DeleteHmacKeyRequest());
             const expectedOptions = {};
@@ -3207,9 +3207,9 @@ describe('v1.StorageClient', () => {
     describe('getHmacKey', () => {
         it('invokes getHmacKey without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetHmacKeyRequest());
             const expectedOptions = {};
@@ -3223,9 +3223,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getHmacKey without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetHmacKeyRequest());
             const expectedOptions = {};
@@ -3250,9 +3250,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getHmacKey with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetHmacKeyRequest());
             const expectedOptions = {};
@@ -3267,9 +3267,9 @@ describe('v1.StorageClient', () => {
     describe('listHmacKeys', () => {
         it('invokes listHmacKeys without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListHmacKeysRequest());
             const expectedOptions = {};
@@ -3283,9 +3283,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listHmacKeys without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListHmacKeysRequest());
             const expectedOptions = {};
@@ -3310,9 +3310,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes listHmacKeys with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.ListHmacKeysRequest());
             const expectedOptions = {};
@@ -3327,9 +3327,9 @@ describe('v1.StorageClient', () => {
     describe('updateHmacKey', () => {
         it('invokes updateHmacKey without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateHmacKeyRequest());
             const expectedOptions = {};
@@ -3343,9 +3343,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateHmacKey without error using callback', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateHmacKeyRequest());
             const expectedOptions = {};
@@ -3370,9 +3370,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes updateHmacKey with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.UpdateHmacKeyRequest());
             const expectedOptions = {};
@@ -3387,9 +3387,9 @@ describe('v1.StorageClient', () => {
     describe('getObjectMedia', () => {
         it('invokes getObjectMedia without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectMediaRequest());
             const expectedOptions = {};
@@ -3412,9 +3412,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes getObjectMedia with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.GetObjectMediaRequest());
             const expectedOptions = {};
@@ -3438,9 +3438,9 @@ describe('v1.StorageClient', () => {
     describe('insertObject', () => {
         it('invokes insertObject without error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertObjectRequest());
             const expectedResponse = generateSampleMessage(new protos.google.storage.v1.Object());
@@ -3467,9 +3467,9 @@ describe('v1.StorageClient', () => {
 
         it('invokes insertObject with error', async () => {
             const client = new storageModule.v1.StorageClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.storage.v1.InsertObjectRequest());
             const expectedError = new Error('expected');

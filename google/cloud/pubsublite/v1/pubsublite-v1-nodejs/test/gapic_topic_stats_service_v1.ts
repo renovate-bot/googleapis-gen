@@ -70,8 +70,8 @@ describe('v1.TopicStatsServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.topicStatsServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v1.TopicStatsServiceClient', () => {
 
     it('has close method', () => {
         const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v1.TopicStatsServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v1.TopicStatsServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v1.TopicStatsServiceClient', () => {
     describe('computeMessageStats', () => {
         it('invokes computeMessageStats without error', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeMessageStatsRequest());
             request.topic = '';
@@ -145,9 +145,9 @@ describe('v1.TopicStatsServiceClient', () => {
 
         it('invokes computeMessageStats without error using callback', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeMessageStatsRequest());
             request.topic = '';
@@ -180,9 +180,9 @@ describe('v1.TopicStatsServiceClient', () => {
 
         it('invokes computeMessageStats with error', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeMessageStatsRequest());
             request.topic = '';
@@ -205,9 +205,9 @@ describe('v1.TopicStatsServiceClient', () => {
     describe('computeHeadCursor', () => {
         it('invokes computeHeadCursor without error', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeHeadCursorRequest());
             request.topic = '';
@@ -229,9 +229,9 @@ describe('v1.TopicStatsServiceClient', () => {
 
         it('invokes computeHeadCursor without error using callback', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeHeadCursorRequest());
             request.topic = '';
@@ -264,9 +264,9 @@ describe('v1.TopicStatsServiceClient', () => {
 
         it('invokes computeHeadCursor with error', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeHeadCursorRequest());
             request.topic = '';
@@ -289,9 +289,9 @@ describe('v1.TopicStatsServiceClient', () => {
     describe('computeTimeCursor', () => {
         it('invokes computeTimeCursor without error', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeTimeCursorRequest());
             request.topic = '';
@@ -313,9 +313,9 @@ describe('v1.TopicStatsServiceClient', () => {
 
         it('invokes computeTimeCursor without error using callback', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeTimeCursorRequest());
             request.topic = '';
@@ -348,9 +348,9 @@ describe('v1.TopicStatsServiceClient', () => {
 
         it('invokes computeTimeCursor with error', async () => {
             const client = new topicstatsserviceModule.v1.TopicStatsServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.pubsublite.v1.ComputeTimeCursorRequest());
             request.topic = '';

@@ -117,8 +117,8 @@ describe('v2beta1.VersionsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new versionsModule.v2beta1.VersionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.versionsStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v2beta1.VersionsClient', () => {
 
     it('has close method', () => {
         const client = new versionsModule.v2beta1.VersionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v2beta1.VersionsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new versionsModule.v2beta1.VersionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v2beta1.VersionsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new versionsModule.v2beta1.VersionsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v2beta1.VersionsClient', () => {
     describe('getVersion', () => {
         it('invokes getVersion without error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetVersionRequest());
             request.name = '';
@@ -192,9 +192,9 @@ describe('v2beta1.VersionsClient', () => {
 
         it('invokes getVersion without error using callback', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetVersionRequest());
             request.name = '';
@@ -227,9 +227,9 @@ describe('v2beta1.VersionsClient', () => {
 
         it('invokes getVersion with error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.GetVersionRequest());
             request.name = '';
@@ -252,9 +252,9 @@ describe('v2beta1.VersionsClient', () => {
     describe('createVersion', () => {
         it('invokes createVersion without error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateVersionRequest());
             request.parent = '';
@@ -276,9 +276,9 @@ describe('v2beta1.VersionsClient', () => {
 
         it('invokes createVersion without error using callback', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateVersionRequest());
             request.parent = '';
@@ -311,9 +311,9 @@ describe('v2beta1.VersionsClient', () => {
 
         it('invokes createVersion with error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.CreateVersionRequest());
             request.parent = '';
@@ -336,9 +336,9 @@ describe('v2beta1.VersionsClient', () => {
     describe('updateVersion', () => {
         it('invokes updateVersion without error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateVersionRequest());
             request.version = {};
@@ -361,9 +361,9 @@ describe('v2beta1.VersionsClient', () => {
 
         it('invokes updateVersion without error using callback', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateVersionRequest());
             request.version = {};
@@ -397,9 +397,9 @@ describe('v2beta1.VersionsClient', () => {
 
         it('invokes updateVersion with error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.UpdateVersionRequest());
             request.version = {};
@@ -423,9 +423,9 @@ describe('v2beta1.VersionsClient', () => {
     describe('deleteVersion', () => {
         it('invokes deleteVersion without error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteVersionRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v2beta1.VersionsClient', () => {
 
         it('invokes deleteVersion without error using callback', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteVersionRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v2beta1.VersionsClient', () => {
 
         it('invokes deleteVersion with error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.DeleteVersionRequest());
             request.name = '';
@@ -670,13 +670,14 @@ describe('v2beta1.VersionsClient', () => {
 
         it('uses async iteration with listVersions without error', async () => {
             const client = new versionsModule.v2beta1.VersionsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.ListVersionsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Version()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Version()),
               generateSampleMessage(new protos.google.cloud.dialogflow.v2beta1.Version()),

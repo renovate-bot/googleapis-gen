@@ -70,8 +70,8 @@ describe('v8.VideoServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new videoserviceModule.v8.VideoServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.videoServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v8.VideoServiceClient', () => {
 
     it('has close method', () => {
         const client = new videoserviceModule.v8.VideoServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v8.VideoServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new videoserviceModule.v8.VideoServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v8.VideoServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new videoserviceModule.v8.VideoServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v8.VideoServiceClient', () => {
     describe('getVideo', () => {
         it('invokes getVideo without error', async () => {
             const client = new videoserviceModule.v8.VideoServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetVideoRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v8.VideoServiceClient', () => {
 
         it('invokes getVideo without error using callback', async () => {
             const client = new videoserviceModule.v8.VideoServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetVideoRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v8.VideoServiceClient', () => {
 
         it('invokes getVideo with error', async () => {
             const client = new videoserviceModule.v8.VideoServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v8.services.GetVideoRequest());
             request.resourceName = '';

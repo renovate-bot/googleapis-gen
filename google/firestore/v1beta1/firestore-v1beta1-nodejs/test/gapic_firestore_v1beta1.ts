@@ -138,8 +138,8 @@ describe('v1beta1.FirestoreClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new firestoreModule.v1beta1.FirestoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.firestoreStub, undefined);
         await client.initialize();
@@ -148,8 +148,8 @@ describe('v1beta1.FirestoreClient', () => {
 
     it('has close method', () => {
         const client = new firestoreModule.v1beta1.FirestoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -157,8 +157,8 @@ describe('v1beta1.FirestoreClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new firestoreModule.v1beta1.FirestoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -169,8 +169,8 @@ describe('v1beta1.FirestoreClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new firestoreModule.v1beta1.FirestoreClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -189,9 +189,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('getDocument', () => {
         it('invokes getDocument without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.GetDocumentRequest());
             request.name = '';
@@ -213,9 +213,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes getDocument without error using callback', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.GetDocumentRequest());
             request.name = '';
@@ -248,9 +248,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes getDocument with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.GetDocumentRequest());
             request.name = '';
@@ -273,9 +273,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('updateDocument', () => {
         it('invokes updateDocument without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.UpdateDocumentRequest());
             request.document = {};
@@ -298,9 +298,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes updateDocument without error using callback', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.UpdateDocumentRequest());
             request.document = {};
@@ -334,9 +334,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes updateDocument with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.UpdateDocumentRequest());
             request.document = {};
@@ -360,9 +360,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('deleteDocument', () => {
         it('invokes deleteDocument without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.DeleteDocumentRequest());
             request.name = '';
@@ -384,9 +384,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes deleteDocument without error using callback', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.DeleteDocumentRequest());
             request.name = '';
@@ -419,9 +419,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes deleteDocument with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.DeleteDocumentRequest());
             request.name = '';
@@ -444,9 +444,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('beginTransaction', () => {
         it('invokes beginTransaction without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.BeginTransactionRequest());
             request.database = '';
@@ -468,9 +468,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes beginTransaction without error using callback', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.BeginTransactionRequest());
             request.database = '';
@@ -503,9 +503,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes beginTransaction with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.BeginTransactionRequest());
             request.database = '';
@@ -528,9 +528,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('commit', () => {
         it('invokes commit without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.CommitRequest());
             request.database = '';
@@ -552,9 +552,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes commit without error using callback', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.CommitRequest());
             request.database = '';
@@ -587,9 +587,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes commit with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.CommitRequest());
             request.database = '';
@@ -612,9 +612,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('rollback', () => {
         it('invokes rollback without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.RollbackRequest());
             request.database = '';
@@ -636,9 +636,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes rollback without error using callback', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.RollbackRequest());
             request.database = '';
@@ -671,9 +671,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes rollback with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.RollbackRequest());
             request.database = '';
@@ -696,9 +696,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('batchWrite', () => {
         it('invokes batchWrite without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.BatchWriteRequest());
             request.database = '';
@@ -720,9 +720,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes batchWrite without error using callback', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.BatchWriteRequest());
             request.database = '';
@@ -755,9 +755,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes batchWrite with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.BatchWriteRequest());
             request.database = '';
@@ -780,9 +780,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('createDocument', () => {
         it('invokes createDocument without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.CreateDocumentRequest());
             request.parent = '';
@@ -804,9 +804,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes createDocument without error using callback', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.CreateDocumentRequest());
             request.parent = '';
@@ -839,9 +839,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes createDocument with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.CreateDocumentRequest());
             request.parent = '';
@@ -864,9 +864,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('batchGetDocuments', () => {
         it('invokes batchGetDocuments without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.BatchGetDocumentsRequest());
             request.database = '';
@@ -897,9 +897,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes batchGetDocuments with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.BatchGetDocumentsRequest());
             request.database = '';
@@ -931,9 +931,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('runQuery', () => {
         it('invokes runQuery without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.RunQueryRequest());
             request.parent = '';
@@ -964,9 +964,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes runQuery with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.RunQueryRequest());
             request.parent = '';
@@ -998,9 +998,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('write', () => {
         it('invokes write without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.WriteRequest());
             const expectedResponse = generateSampleMessage(new protos.google.firestore.v1beta1.WriteResponse());
@@ -1026,9 +1026,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes write with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.WriteRequest());
             request.database = '';
@@ -1056,9 +1056,9 @@ describe('v1beta1.FirestoreClient', () => {
     describe('listen', () => {
         it('invokes listen without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.ListenRequest());
             const expectedResponse = generateSampleMessage(new protos.google.firestore.v1beta1.ListenResponse());
@@ -1084,9 +1084,9 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('invokes listen with error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.ListenRequest());
             request.database = '';
@@ -1277,13 +1277,14 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('uses async iteration with listDocuments without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.ListDocumentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.firestore.v1beta1.Document()),
               generateSampleMessage(new protos.google.firestore.v1beta1.Document()),
               generateSampleMessage(new protos.google.firestore.v1beta1.Document()),
@@ -1499,13 +1500,14 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('uses async iteration with partitionQuery without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.PartitionQueryRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.firestore.v1beta1.Cursor()),
               generateSampleMessage(new protos.google.firestore.v1beta1.Cursor()),
               generateSampleMessage(new protos.google.firestore.v1beta1.Cursor()),
@@ -1709,13 +1711,14 @@ describe('v1beta1.FirestoreClient', () => {
 
         it('uses async iteration with listCollectionIds without error', async () => {
             const client = new firestoreModule.v1beta1.FirestoreClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.firestore.v1beta1.ListCollectionIdsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [new String(), new String(), new String()];
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [new String(), new String(), new String()];
             client.descriptors.page.listCollectionIds.asyncIterate = stubAsyncIterationCall(expectedResponse);
             const responses: string[] = [];
             const iterable = client.listCollectionIdsAsync(request);

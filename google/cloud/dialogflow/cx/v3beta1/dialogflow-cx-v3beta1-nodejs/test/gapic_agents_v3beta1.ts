@@ -133,8 +133,8 @@ describe('v3beta1.AgentsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new agentsModule.v3beta1.AgentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.agentsStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v3beta1.AgentsClient', () => {
 
     it('has close method', () => {
         const client = new agentsModule.v3beta1.AgentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v3beta1.AgentsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new agentsModule.v3beta1.AgentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v3beta1.AgentsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new agentsModule.v3beta1.AgentsClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v3beta1.AgentsClient', () => {
     describe('getAgent', () => {
         it('invokes getAgent without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes getAgent without error using callback', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes getAgent with error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v3beta1.AgentsClient', () => {
     describe('createAgent', () => {
         it('invokes createAgent without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest());
             request.parent = '';
@@ -292,9 +292,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes createAgent without error using callback', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest());
             request.parent = '';
@@ -327,9 +327,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes createAgent with error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest());
             request.parent = '';
@@ -352,9 +352,9 @@ describe('v3beta1.AgentsClient', () => {
     describe('updateAgent', () => {
         it('invokes updateAgent without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest());
             request.agent = {};
@@ -377,9 +377,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes updateAgent without error using callback', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest());
             request.agent = {};
@@ -413,9 +413,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes updateAgent with error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest());
             request.agent = {};
@@ -439,9 +439,9 @@ describe('v3beta1.AgentsClient', () => {
     describe('deleteAgent', () => {
         it('invokes deleteAgent without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest());
             request.name = '';
@@ -463,9 +463,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes deleteAgent without error using callback', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest());
             request.name = '';
@@ -498,9 +498,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes deleteAgent with error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest());
             request.name = '';
@@ -523,9 +523,9 @@ describe('v3beta1.AgentsClient', () => {
     describe('validateAgent', () => {
         it('invokes validateAgent without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest());
             request.name = '';
@@ -547,9 +547,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes validateAgent without error using callback', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest());
             request.name = '';
@@ -582,9 +582,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes validateAgent with error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest());
             request.name = '';
@@ -607,9 +607,9 @@ describe('v3beta1.AgentsClient', () => {
     describe('getAgentValidationResult', () => {
         it('invokes getAgentValidationResult without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest());
             request.name = '';
@@ -631,9 +631,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes getAgentValidationResult without error using callback', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest());
             request.name = '';
@@ -666,9 +666,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes getAgentValidationResult with error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest());
             request.name = '';
@@ -691,9 +691,9 @@ describe('v3beta1.AgentsClient', () => {
     describe('exportAgent', () => {
         it('invokes exportAgent without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest());
             request.name = '';
@@ -716,9 +716,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes exportAgent without error using callback', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest());
             request.name = '';
@@ -754,9 +754,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes exportAgent with call error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest());
             request.name = '';
@@ -777,9 +777,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes exportAgent with LRO error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest());
             request.name = '';
@@ -801,9 +801,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes checkExportAgentProgress without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -819,9 +819,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes checkExportAgentProgress with error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -835,9 +835,9 @@ describe('v3beta1.AgentsClient', () => {
     describe('restoreAgent', () => {
         it('invokes restoreAgent without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest());
             request.name = '';
@@ -860,9 +860,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes restoreAgent without error using callback', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest());
             request.name = '';
@@ -898,9 +898,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes restoreAgent with call error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest());
             request.name = '';
@@ -921,9 +921,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes restoreAgent with LRO error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest());
             request.name = '';
@@ -945,9 +945,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes checkRestoreAgentProgress without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -963,9 +963,9 @@ describe('v3beta1.AgentsClient', () => {
 
         it('invokes checkRestoreAgentProgress with error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1142,13 +1142,14 @@ describe('v3beta1.AgentsClient', () => {
 
         it('uses async iteration with listAgents without error', async () => {
             const client = new agentsModule.v3beta1.AgentsClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.Agent()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.Agent()),
               generateSampleMessage(new protos.google.cloud.dialogflow.cx.v3beta1.Agent()),

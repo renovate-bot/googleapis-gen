@@ -117,8 +117,8 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.autoscalingPolicyServiceStub, undefined);
         await client.initialize();
@@ -127,8 +127,8 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
     it('has close method', () => {
         const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -136,8 +136,8 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -148,8 +148,8 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -168,9 +168,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
     describe('createAutoscalingPolicy', () => {
         it('invokes createAutoscalingPolicy without error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest());
             request.parent = '';
@@ -192,9 +192,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('invokes createAutoscalingPolicy without error using callback', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest());
             request.parent = '';
@@ -227,9 +227,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('invokes createAutoscalingPolicy with error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.CreateAutoscalingPolicyRequest());
             request.parent = '';
@@ -252,9 +252,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
     describe('updateAutoscalingPolicy', () => {
         it('invokes updateAutoscalingPolicy without error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest());
             request.policy = {};
@@ -277,9 +277,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('invokes updateAutoscalingPolicy without error using callback', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest());
             request.policy = {};
@@ -313,9 +313,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('invokes updateAutoscalingPolicy with error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.UpdateAutoscalingPolicyRequest());
             request.policy = {};
@@ -339,9 +339,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
     describe('getAutoscalingPolicy', () => {
         it('invokes getAutoscalingPolicy without error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest());
             request.name = '';
@@ -363,9 +363,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('invokes getAutoscalingPolicy without error using callback', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest());
             request.name = '';
@@ -398,9 +398,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('invokes getAutoscalingPolicy with error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.GetAutoscalingPolicyRequest());
             request.name = '';
@@ -423,9 +423,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
     describe('deleteAutoscalingPolicy', () => {
         it('invokes deleteAutoscalingPolicy without error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest());
             request.name = '';
@@ -447,9 +447,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('invokes deleteAutoscalingPolicy without error using callback', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest());
             request.name = '';
@@ -482,9 +482,9 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('invokes deleteAutoscalingPolicy with error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.DeleteAutoscalingPolicyRequest());
             request.name = '';
@@ -670,13 +670,14 @@ describe('v1.AutoscalingPolicyServiceClient', () => {
 
         it('uses async iteration with listAutoscalingPolicies without error', async () => {
             const client = new autoscalingpolicyserviceModule.v1.AutoscalingPolicyServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.dataproc.v1.ListAutoscalingPoliciesRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.dataproc.v1.AutoscalingPolicy()),
               generateSampleMessage(new protos.google.cloud.dataproc.v1.AutoscalingPolicy()),
               generateSampleMessage(new protos.google.cloud.dataproc.v1.AutoscalingPolicy()),

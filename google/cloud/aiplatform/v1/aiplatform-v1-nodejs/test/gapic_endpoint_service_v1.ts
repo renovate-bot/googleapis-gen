@@ -133,8 +133,8 @@ describe('v1.EndpointServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new endpointserviceModule.v1.EndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.endpointServiceStub, undefined);
         await client.initialize();
@@ -143,8 +143,8 @@ describe('v1.EndpointServiceClient', () => {
 
     it('has close method', () => {
         const client = new endpointserviceModule.v1.EndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -152,8 +152,8 @@ describe('v1.EndpointServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new endpointserviceModule.v1.EndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -164,8 +164,8 @@ describe('v1.EndpointServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new endpointserviceModule.v1.EndpointServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -184,9 +184,9 @@ describe('v1.EndpointServiceClient', () => {
     describe('getEndpoint', () => {
         it('invokes getEndpoint without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetEndpointRequest());
             request.name = '';
@@ -208,9 +208,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes getEndpoint without error using callback', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetEndpointRequest());
             request.name = '';
@@ -243,9 +243,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes getEndpoint with error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.GetEndpointRequest());
             request.name = '';
@@ -268,9 +268,9 @@ describe('v1.EndpointServiceClient', () => {
     describe('updateEndpoint', () => {
         it('invokes updateEndpoint without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateEndpointRequest());
             request.endpoint = {};
@@ -293,9 +293,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes updateEndpoint without error using callback', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateEndpointRequest());
             request.endpoint = {};
@@ -329,9 +329,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes updateEndpoint with error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UpdateEndpointRequest());
             request.endpoint = {};
@@ -355,9 +355,9 @@ describe('v1.EndpointServiceClient', () => {
     describe('createEndpoint', () => {
         it('invokes createEndpoint without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.CreateEndpointRequest());
             request.parent = '';
@@ -380,9 +380,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes createEndpoint without error using callback', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.CreateEndpointRequest());
             request.parent = '';
@@ -418,9 +418,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes createEndpoint with call error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.CreateEndpointRequest());
             request.parent = '';
@@ -441,9 +441,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes createEndpoint with LRO error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.CreateEndpointRequest());
             request.parent = '';
@@ -465,9 +465,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes checkCreateEndpointProgress without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -483,9 +483,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes checkCreateEndpointProgress with error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -499,9 +499,9 @@ describe('v1.EndpointServiceClient', () => {
     describe('deleteEndpoint', () => {
         it('invokes deleteEndpoint without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteEndpointRequest());
             request.name = '';
@@ -524,9 +524,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes deleteEndpoint without error using callback', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteEndpointRequest());
             request.name = '';
@@ -562,9 +562,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes deleteEndpoint with call error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteEndpointRequest());
             request.name = '';
@@ -585,9 +585,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes deleteEndpoint with LRO error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeleteEndpointRequest());
             request.name = '';
@@ -609,9 +609,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes checkDeleteEndpointProgress without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -627,9 +627,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes checkDeleteEndpointProgress with error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -643,9 +643,9 @@ describe('v1.EndpointServiceClient', () => {
     describe('deployModel', () => {
         it('invokes deployModel without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeployModelRequest());
             request.endpoint = '';
@@ -668,9 +668,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes deployModel without error using callback', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeployModelRequest());
             request.endpoint = '';
@@ -706,9 +706,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes deployModel with call error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeployModelRequest());
             request.endpoint = '';
@@ -729,9 +729,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes deployModel with LRO error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.DeployModelRequest());
             request.endpoint = '';
@@ -753,9 +753,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes checkDeployModelProgress without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -771,9 +771,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes checkDeployModelProgress with error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -787,9 +787,9 @@ describe('v1.EndpointServiceClient', () => {
     describe('undeployModel', () => {
         it('invokes undeployModel without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UndeployModelRequest());
             request.endpoint = '';
@@ -812,9 +812,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes undeployModel without error using callback', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UndeployModelRequest());
             request.endpoint = '';
@@ -850,9 +850,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes undeployModel with call error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UndeployModelRequest());
             request.endpoint = '';
@@ -873,9 +873,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes undeployModel with LRO error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.UndeployModelRequest());
             request.endpoint = '';
@@ -897,9 +897,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes checkUndeployModelProgress without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedResponse = generateSampleMessage(new operationsProtos.google.longrunning.Operation());
             expectedResponse.name = 'test';
@@ -915,9 +915,9 @@ describe('v1.EndpointServiceClient', () => {
 
         it('invokes checkUndeployModelProgress with error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const expectedError = new Error('expected');
 
@@ -1094,13 +1094,14 @@ describe('v1.EndpointServiceClient', () => {
 
         it('uses async iteration with listEndpoints without error', async () => {
             const client = new endpointserviceModule.v1.EndpointServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.aiplatform.v1.ListEndpointsRequest());
             request.parent = '';
-            const expectedHeaderRequestParams = "parent=";const expectedResponse = [
+            const expectedHeaderRequestParams = "parent=";
+            const expectedResponse = [
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Endpoint()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Endpoint()),
               generateSampleMessage(new protos.google.cloud.aiplatform.v1.Endpoint()),

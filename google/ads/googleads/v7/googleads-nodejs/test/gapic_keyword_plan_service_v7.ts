@@ -70,8 +70,8 @@ describe('v7.KeywordPlanServiceClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         assert.strictEqual(client.keywordPlanServiceStub, undefined);
         await client.initialize();
@@ -80,8 +80,8 @@ describe('v7.KeywordPlanServiceClient', () => {
 
     it('has close method', () => {
         const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.close();
     });
@@ -89,8 +89,8 @@ describe('v7.KeywordPlanServiceClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
         const result = await client.getProjectId();
@@ -101,8 +101,8 @@ describe('v7.KeywordPlanServiceClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-            credentials: { client_email: 'bogus', private_key: 'bogus' },
-            projectId: 'bogus',
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
         const promise = new Promise((resolve, reject) => {
@@ -121,9 +121,9 @@ describe('v7.KeywordPlanServiceClient', () => {
     describe('getKeywordPlan', () => {
         it('invokes getKeywordPlan without error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetKeywordPlanRequest());
             request.resourceName = '';
@@ -145,9 +145,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes getKeywordPlan without error using callback', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetKeywordPlanRequest());
             request.resourceName = '';
@@ -180,9 +180,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes getKeywordPlan with error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GetKeywordPlanRequest());
             request.resourceName = '';
@@ -205,9 +205,9 @@ describe('v7.KeywordPlanServiceClient', () => {
     describe('mutateKeywordPlans', () => {
         it('invokes mutateKeywordPlans without error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateKeywordPlansRequest());
             request.customerId = '';
@@ -229,9 +229,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes mutateKeywordPlans without error using callback', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateKeywordPlansRequest());
             request.customerId = '';
@@ -264,9 +264,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes mutateKeywordPlans with error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.MutateKeywordPlansRequest());
             request.customerId = '';
@@ -289,9 +289,9 @@ describe('v7.KeywordPlanServiceClient', () => {
     describe('generateForecastCurve', () => {
         it('invokes generateForecastCurve without error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastCurveRequest());
             request.keywordPlan = '';
@@ -313,9 +313,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes generateForecastCurve without error using callback', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastCurveRequest());
             request.keywordPlan = '';
@@ -348,9 +348,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes generateForecastCurve with error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastCurveRequest());
             request.keywordPlan = '';
@@ -373,9 +373,9 @@ describe('v7.KeywordPlanServiceClient', () => {
     describe('generateForecastTimeSeries', () => {
         it('invokes generateForecastTimeSeries without error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastTimeSeriesRequest());
             request.keywordPlan = '';
@@ -397,9 +397,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes generateForecastTimeSeries without error using callback', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastTimeSeriesRequest());
             request.keywordPlan = '';
@@ -432,9 +432,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes generateForecastTimeSeries with error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastTimeSeriesRequest());
             request.keywordPlan = '';
@@ -457,9 +457,9 @@ describe('v7.KeywordPlanServiceClient', () => {
     describe('generateForecastMetrics', () => {
         it('invokes generateForecastMetrics without error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastMetricsRequest());
             request.keywordPlan = '';
@@ -481,9 +481,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes generateForecastMetrics without error using callback', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastMetricsRequest());
             request.keywordPlan = '';
@@ -516,9 +516,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes generateForecastMetrics with error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateForecastMetricsRequest());
             request.keywordPlan = '';
@@ -541,9 +541,9 @@ describe('v7.KeywordPlanServiceClient', () => {
     describe('generateHistoricalMetrics', () => {
         it('invokes generateHistoricalMetrics without error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateHistoricalMetricsRequest());
             request.keywordPlan = '';
@@ -565,9 +565,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes generateHistoricalMetrics without error using callback', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateHistoricalMetricsRequest());
             request.keywordPlan = '';
@@ -600,9 +600,9 @@ describe('v7.KeywordPlanServiceClient', () => {
 
         it('invokes generateHistoricalMetrics with error', async () => {
             const client = new keywordplanserviceModule.v7.KeywordPlanServiceClient({
-                credentials: {client_email: 'bogus', private_key: 'bogus'},
-                projectId: 'bogus',
-            });
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
             client.initialize();
             const request = generateSampleMessage(new protos.google.ads.googleads.v7.services.GenerateHistoricalMetricsRequest());
             request.keywordPlan = '';
