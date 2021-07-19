@@ -16,7 +16,9 @@
 
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.CloudBuild.V1;
+    using Google.LongRunning;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
@@ -33,11 +35,29 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             // Initialize request argument(s)
             CreateWorkerPoolRequest request = new CreateWorkerPoolRequest
             {
-                Parent = "",
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 WorkerPool = new WorkerPool(),
+                WorkerPoolId = "",
+                ValidateOnly = false,
             };
             // Make the request
-            WorkerPool response = await cloudBuildClient.CreateWorkerPoolAsync(request);
+            Operation<WorkerPool, CreateWorkerPoolOperationMetadata> response = await cloudBuildClient.CreateWorkerPoolAsync(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<WorkerPool, CreateWorkerPoolOperationMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            WorkerPool result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<WorkerPool, CreateWorkerPoolOperationMetadata> retrievedResponse = await cloudBuildClient.PollOnceCreateWorkerPoolAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                WorkerPool retrievedResult = retrievedResponse.Result;
+            }
         }
     }
 }

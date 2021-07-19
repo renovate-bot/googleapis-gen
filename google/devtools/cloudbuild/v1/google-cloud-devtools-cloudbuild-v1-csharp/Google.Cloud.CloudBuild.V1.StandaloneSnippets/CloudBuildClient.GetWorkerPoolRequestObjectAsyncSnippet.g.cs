@@ -31,7 +31,10 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             // Create client
             CloudBuildClient cloudBuildClient = await CloudBuildClient.CreateAsync();
             // Initialize request argument(s)
-            GetWorkerPoolRequest request = new GetWorkerPoolRequest { Name = "", };
+            GetWorkerPoolRequest request = new GetWorkerPoolRequest
+            {
+                WorkerPoolName = WorkerPoolName.FromProjectLocationWorkerPool("[PROJECT]", "[LOCATION]", "[WORKER_POOL]"),
+            };
             // Make the request
             WorkerPool response = await cloudBuildClient.GetWorkerPoolAsync(request);
         }

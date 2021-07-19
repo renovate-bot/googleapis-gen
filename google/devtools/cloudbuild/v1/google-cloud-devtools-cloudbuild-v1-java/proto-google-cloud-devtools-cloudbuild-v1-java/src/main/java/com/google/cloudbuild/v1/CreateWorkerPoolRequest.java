@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateWorkerPoolRequest() {
     parent_ = "";
+    workerPoolId_ = "";
   }
 
   @java.lang.Override
@@ -72,6 +73,17 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            workerPoolId_ = s;
+            break;
+          }
+          case 32: {
+
+            validateOnly_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -108,10 +120,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * ID of the parent project.
+   * Required. The parent resource where this worker pool will be created.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   @java.lang.Override
@@ -129,10 +142,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ID of the parent project.
+   * Required. The parent resource where this worker pool will be created.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   @java.lang.Override
@@ -154,10 +168,10 @@ private static final long serialVersionUID = 0L;
   private com.google.cloudbuild.v1.WorkerPool workerPool_;
   /**
    * <pre>
-   * `WorkerPool` resource to create.
+   * Required. `WorkerPool` resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the workerPool field is set.
    */
   @java.lang.Override
@@ -166,10 +180,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `WorkerPool` resource to create.
+   * Required. `WorkerPool` resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The workerPool.
    */
   @java.lang.Override
@@ -178,14 +192,82 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `WorkerPool` resource to create.
+   * Required. `WorkerPool` resource to create.
    * </pre>
    *
-   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+   * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolOrBuilder() {
     return getWorkerPool();
+  }
+
+  public static final int WORKER_POOL_ID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object workerPoolId_;
+  /**
+   * <pre>
+   * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+   * the final component of the resource name.
+   * This value should be 1-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * </pre>
+   *
+   * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];</code>
+   * @return The workerPoolId.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkerPoolId() {
+    java.lang.Object ref = workerPoolId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workerPoolId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+   * the final component of the resource name.
+   * This value should be 1-63 characters, and valid characters
+   * are /[a-z][0-9]-/.
+   * </pre>
+   *
+   * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];</code>
+   * @return The bytes for workerPoolId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getWorkerPoolIdBytes() {
+    java.lang.Object ref = workerPoolId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      workerPoolId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
+  private boolean validateOnly_;
+  /**
+   * <pre>
+   * If set, validate the request and preview the response, but do not actually
+   * post it.
+   * </pre>
+   *
+   * <code>bool validate_only = 4;</code>
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -208,6 +290,12 @@ private static final long serialVersionUID = 0L;
     if (workerPool_ != null) {
       output.writeMessage(2, getWorkerPool());
     }
+    if (!getWorkerPoolIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, workerPoolId_);
+    }
+    if (validateOnly_ != false) {
+      output.writeBool(4, validateOnly_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -223,6 +311,13 @@ private static final long serialVersionUID = 0L;
     if (workerPool_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getWorkerPool());
+    }
+    if (!getWorkerPoolIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, workerPoolId_);
+    }
+    if (validateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, validateOnly_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -246,6 +341,10 @@ private static final long serialVersionUID = 0L;
       if (!getWorkerPool()
           .equals(other.getWorkerPool())) return false;
     }
+    if (!getWorkerPoolId()
+        .equals(other.getWorkerPoolId())) return false;
+    if (getValidateOnly()
+        != other.getValidateOnly()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -263,6 +362,11 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WORKER_POOL_FIELD_NUMBER;
       hash = (53 * hash) + getWorkerPool().hashCode();
     }
+    hash = (37 * hash) + WORKER_POOL_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getWorkerPoolId().hashCode();
+    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getValidateOnly());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -408,6 +512,10 @@ private static final long serialVersionUID = 0L;
         workerPool_ = null;
         workerPoolBuilder_ = null;
       }
+      workerPoolId_ = "";
+
+      validateOnly_ = false;
+
       return this;
     }
 
@@ -440,6 +548,8 @@ private static final long serialVersionUID = 0L;
       } else {
         result.workerPool_ = workerPoolBuilder_.build();
       }
+      result.workerPoolId_ = workerPoolId_;
+      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
     }
@@ -495,6 +605,13 @@ private static final long serialVersionUID = 0L;
       if (other.hasWorkerPool()) {
         mergeWorkerPool(other.getWorkerPool());
       }
+      if (!other.getWorkerPoolId().isEmpty()) {
+        workerPoolId_ = other.workerPoolId_;
+        onChanged();
+      }
+      if (other.getValidateOnly() != false) {
+        setValidateOnly(other.getValidateOnly());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -527,10 +644,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent resource where this worker pool will be created.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The parent.
      */
     public java.lang.String getParent() {
@@ -547,10 +665,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent resource where this worker pool will be created.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
@@ -568,10 +687,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent resource where this worker pool will be created.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The parent to set.
      * @return This builder for chaining.
      */
@@ -587,10 +707,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent resource where this worker pool will be created.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearParent() {
@@ -601,10 +722,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent resource where this worker pool will be created.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
      */
@@ -625,10 +747,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloudbuild.v1.WorkerPool, com.google.cloudbuild.v1.WorkerPool.Builder, com.google.cloudbuild.v1.WorkerPoolOrBuilder> workerPoolBuilder_;
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the workerPool field is set.
      */
     public boolean hasWorkerPool() {
@@ -636,10 +758,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The workerPool.
      */
     public com.google.cloudbuild.v1.WorkerPool getWorkerPool() {
@@ -651,10 +773,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setWorkerPool(com.google.cloudbuild.v1.WorkerPool value) {
       if (workerPoolBuilder_ == null) {
@@ -671,10 +793,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setWorkerPool(
         com.google.cloudbuild.v1.WorkerPool.Builder builderForValue) {
@@ -689,10 +811,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeWorkerPool(com.google.cloudbuild.v1.WorkerPool value) {
       if (workerPoolBuilder_ == null) {
@@ -711,10 +833,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearWorkerPool() {
       if (workerPoolBuilder_ == null) {
@@ -729,10 +851,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloudbuild.v1.WorkerPool.Builder getWorkerPoolBuilder() {
       
@@ -741,10 +863,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolOrBuilder() {
       if (workerPoolBuilder_ != null) {
@@ -756,10 +878,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPool` resource to create.
+     * Required. `WorkerPool` resource to create.
      * </pre>
      *
-     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2;</code>
+     * <code>.google.devtools.cloudbuild.v1.WorkerPool worker_pool = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloudbuild.v1.WorkerPool, com.google.cloudbuild.v1.WorkerPool.Builder, com.google.cloudbuild.v1.WorkerPoolOrBuilder> 
@@ -773,6 +895,163 @@ private static final long serialVersionUID = 0L;
         workerPool_ = null;
       }
       return workerPoolBuilder_;
+    }
+
+    private java.lang.Object workerPoolId_ = "";
+    /**
+     * <pre>
+     * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+     * the final component of the resource name.
+     * This value should be 1-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * </pre>
+     *
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];</code>
+     * @return The workerPoolId.
+     */
+    public java.lang.String getWorkerPoolId() {
+      java.lang.Object ref = workerPoolId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workerPoolId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+     * the final component of the resource name.
+     * This value should be 1-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * </pre>
+     *
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];</code>
+     * @return The bytes for workerPoolId.
+     */
+    public com.google.protobuf.ByteString
+        getWorkerPoolIdBytes() {
+      java.lang.Object ref = workerPoolId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        workerPoolId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+     * the final component of the resource name.
+     * This value should be 1-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * </pre>
+     *
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The workerPoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkerPoolId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      workerPoolId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+     * the final component of the resource name.
+     * This value should be 1-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * </pre>
+     *
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkerPoolId() {
+      
+      workerPoolId_ = getDefaultInstance().getWorkerPoolId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Required. Immutable. The ID to use for the `WorkerPool`, which will become
+     * the final component of the resource name.
+     * This value should be 1-63 characters, and valid characters
+     * are /[a-z][0-9]-/.
+     * </pre>
+     *
+     * <code>string worker_pool_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = REQUIRED];</code>
+     * @param value The bytes for workerPoolId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkerPoolIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      workerPoolId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean validateOnly_ ;
+    /**
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+    /**
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+      
+      validateOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+      
+      validateOnly_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -9,23 +9,69 @@ public interface DeleteWorkerPoolRequestOrBuilder extends
 
   /**
    * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
+   * Required. The name of the `WorkerPool` to delete.
+   * Format:
+   * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
+   * Required. The name of the `WorkerPool` to delete.
+   * Format:
+   * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <pre>
+   * Optional. If this is provided, it must match the server's etag on the
+   * workerpool for the request to be processed.
+   * </pre>
+   *
+   * <code>string etag = 2;</code>
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   * <pre>
+   * Optional. If this is provided, it must match the server's etag on the
+   * workerpool for the request to be processed.
+   * </pre>
+   *
+   * <code>string etag = 2;</code>
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString
+      getEtagBytes();
+
+  /**
+   * <pre>
+   * If set to true, and the `WorkerPool` is not found, the request will succeed
+   * but no action will be taken on the server.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
+
+  /**
+   * <pre>
+   * If set, validate the request and preview the response, but do not actually
+   * post it.
+   * </pre>
+   *
+   * <code>bool validate_only = 4;</code>
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

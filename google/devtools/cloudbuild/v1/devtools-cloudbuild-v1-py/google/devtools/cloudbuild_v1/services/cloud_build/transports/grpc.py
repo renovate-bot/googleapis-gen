@@ -612,17 +612,14 @@ class CloudBuildGrpcTransport(CloudBuildTransport):
     @property
     def create_worker_pool(self) -> Callable[
             [cloudbuild.CreateWorkerPoolRequest],
-            cloudbuild.WorkerPool]:
+            operations_pb2.Operation]:
         r"""Return a callable for the create worker pool method over gRPC.
 
-        Creates a ``WorkerPool`` to run the builds, and returns the new
-        worker pool.
-
-        This API is experimental.
+        Creates a ``WorkerPool``.
 
         Returns:
             Callable[[~.CreateWorkerPoolRequest],
-                    ~.WorkerPool]:
+                    ~.Operation]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -634,7 +631,7 @@ class CloudBuildGrpcTransport(CloudBuildTransport):
             self._stubs['create_worker_pool'] = self.grpc_channel.unary_unary(
                 '/google.devtools.cloudbuild.v1.CloudBuild/CreateWorkerPool',
                 request_serializer=cloudbuild.CreateWorkerPoolRequest.serialize,
-                response_deserializer=cloudbuild.WorkerPool.deserialize,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['create_worker_pool']
 
@@ -644,9 +641,7 @@ class CloudBuildGrpcTransport(CloudBuildTransport):
             cloudbuild.WorkerPool]:
         r"""Return a callable for the get worker pool method over gRPC.
 
-        Returns information about a ``WorkerPool``.
-
-        This API is experimental.
+        Returns details of a ``WorkerPool``.
 
         Returns:
             Callable[[~.GetWorkerPoolRequest],
@@ -669,16 +664,14 @@ class CloudBuildGrpcTransport(CloudBuildTransport):
     @property
     def delete_worker_pool(self) -> Callable[
             [cloudbuild.DeleteWorkerPoolRequest],
-            empty_pb2.Empty]:
+            operations_pb2.Operation]:
         r"""Return a callable for the delete worker pool method over gRPC.
 
-        Deletes a ``WorkerPool`` by its project ID and WorkerPool name.
-
-        This API is experimental.
+        Deletes a ``WorkerPool``.
 
         Returns:
             Callable[[~.DeleteWorkerPoolRequest],
-                    ~.Empty]:
+                    ~.Operation]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -690,23 +683,21 @@ class CloudBuildGrpcTransport(CloudBuildTransport):
             self._stubs['delete_worker_pool'] = self.grpc_channel.unary_unary(
                 '/google.devtools.cloudbuild.v1.CloudBuild/DeleteWorkerPool',
                 request_serializer=cloudbuild.DeleteWorkerPoolRequest.serialize,
-                response_deserializer=empty_pb2.Empty.FromString,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['delete_worker_pool']
 
     @property
     def update_worker_pool(self) -> Callable[
             [cloudbuild.UpdateWorkerPoolRequest],
-            cloudbuild.WorkerPool]:
+            operations_pb2.Operation]:
         r"""Return a callable for the update worker pool method over gRPC.
 
-        Update a ``WorkerPool``.
-
-        This API is experimental.
+        Updates a ``WorkerPool``.
 
         Returns:
             Callable[[~.UpdateWorkerPoolRequest],
-                    ~.WorkerPool]:
+                    ~.Operation]:
                 A function that, when called, will call the underlying RPC
                 on the server.
         """
@@ -718,7 +709,7 @@ class CloudBuildGrpcTransport(CloudBuildTransport):
             self._stubs['update_worker_pool'] = self.grpc_channel.unary_unary(
                 '/google.devtools.cloudbuild.v1.CloudBuild/UpdateWorkerPool',
                 request_serializer=cloudbuild.UpdateWorkerPoolRequest.serialize,
-                response_deserializer=cloudbuild.WorkerPool.deserialize,
+                response_deserializer=operations_pb2.Operation.FromString,
             )
         return self._stubs['update_worker_pool']
 
@@ -728,9 +719,7 @@ class CloudBuildGrpcTransport(CloudBuildTransport):
             cloudbuild.ListWorkerPoolsResponse]:
         r"""Return a callable for the list worker pools method over gRPC.
 
-        List project's ``WorkerPools``.
-
-        This API is experimental.
+        Lists ``WorkerPool``\ s.
 
         Returns:
             Callable[[~.ListWorkerPoolsRequest],

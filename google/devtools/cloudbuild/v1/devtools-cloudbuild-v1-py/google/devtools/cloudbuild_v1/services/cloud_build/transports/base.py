@@ -402,8 +402,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
     def create_worker_pool(self) -> Callable[
             [cloudbuild.CreateWorkerPoolRequest],
             Union[
-                cloudbuild.WorkerPool,
-                Awaitable[cloudbuild.WorkerPool]
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
             ]]:
         raise NotImplementedError()
 
@@ -420,8 +420,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
     def delete_worker_pool(self) -> Callable[
             [cloudbuild.DeleteWorkerPoolRequest],
             Union[
-                empty_pb2.Empty,
-                Awaitable[empty_pb2.Empty]
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
             ]]:
         raise NotImplementedError()
 
@@ -429,8 +429,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
     def update_worker_pool(self) -> Callable[
             [cloudbuild.UpdateWorkerPoolRequest],
             Union[
-                cloudbuild.WorkerPool,
-                Awaitable[cloudbuild.WorkerPool]
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
             ]]:
         raise NotImplementedError()
 

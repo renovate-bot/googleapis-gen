@@ -260,6 +260,11 @@ public final class Cloudbuild {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudbuild_v1_BuildOptions_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_devtools_cloudbuild_v1_ReceiveTriggerWebhookRequest_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -275,15 +280,25 @@ public final class Cloudbuild {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudbuild_v1_WorkerPool_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_devtools_cloudbuild_v1_WorkerConfig_descriptor;
+    internal_static_google_devtools_cloudbuild_v1_WorkerPool_AnnotationsEntry_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_devtools_cloudbuild_v1_WorkerConfig_fieldAccessorTable;
+      internal_static_google_devtools_cloudbuild_v1_WorkerPool_AnnotationsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_devtools_cloudbuild_v1_Network_descriptor;
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_devtools_cloudbuild_v1_Network_fieldAccessorTable;
+      internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_WorkerConfig_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_WorkerConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_NetworkConfig_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_NetworkConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_descriptor;
   static final 
@@ -314,6 +329,21 @@ public final class Cloudbuild {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolOperationMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolOperationMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolOperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolOperationMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolOperationMetadata_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -561,7 +591,7 @@ public final class Cloudbuild {
       "BuildTriggerRequest\022\027\n\nproject_id\030\001 \001(\tB" +
       "\003\340A\002\022\027\n\ntrigger_id\030\002 \001(\tB\003\340A\002\022A\n\007trigger" +
       "\030\003 \001(\0132+.google.devtools.cloudbuild.v1.B" +
-      "uildTriggerB\003\340A\002\"\306\010\n\014BuildOptions\022L\n\026sou" +
+      "uildTriggerB\003\340A\002\"\334\t\n\014BuildOptions\022L\n\026sou" +
       "rce_provenance_hash\030\001 \003(\0162,.google.devto" +
       "ols.cloudbuild.v1.Hash.HashType\022Y\n\027reque" +
       "sted_verify_option\030\002 \001(\01628.google.devtoo" +
@@ -574,170 +604,225 @@ public final class Cloudbuild {
       "dynamic_substitutions\030\021 \001(\010\022\\\n\024log_strea" +
       "ming_option\030\005 \001(\0162>.google.devtools.clou" +
       "dbuild.v1.BuildOptions.LogStreamingOptio" +
-      "n\022\023\n\013worker_pool\030\007 \001(\t\022H\n\007logging\030\013 \001(\0162" +
-      "7.google.devtools.cloudbuild.v1.BuildOpt" +
-      "ions.LoggingMode\022\013\n\003env\030\014 \003(\t\022\022\n\nsecret_" +
-      "env\030\r \003(\t\0226\n\007volumes\030\016 \003(\0132%.google.devt" +
-      "ools.cloudbuild.v1.Volume\".\n\014VerifyOptio" +
-      "n\022\020\n\014NOT_VERIFIED\020\000\022\014\n\010VERIFIED\020\001\"h\n\013Mac" +
-      "hineType\022\017\n\013UNSPECIFIED\020\000\022\020\n\014N1_HIGHCPU_" +
-      "8\020\001\022\021\n\rN1_HIGHCPU_32\020\002\022\020\n\014E2_HIGHCPU_8\020\005" +
-      "\022\021\n\rE2_HIGHCPU_32\020\006\"5\n\022SubstitutionOptio" +
-      "n\022\016\n\nMUST_MATCH\020\000\022\017\n\013ALLOW_LOOSE\020\001\"G\n\022Lo" +
-      "gStreamingOption\022\022\n\016STREAM_DEFAULT\020\000\022\r\n\t" +
-      "STREAM_ON\020\001\022\016\n\nSTREAM_OFF\020\002\"|\n\013LoggingMo" +
-      "de\022\027\n\023LOGGING_UNSPECIFIED\020\000\022\n\n\006LEGACY\020\001\022" +
-      "\014\n\010GCS_ONLY\020\002\022\030\n\020STACKDRIVER_ONLY\020\003\032\002\010\001\022" +
-      "\026\n\022CLOUD_LOGGING_ONLY\020\005\022\010\n\004NONE\020\004\"\205\001\n\034Re" +
-      "ceiveTriggerWebhookRequest\022\014\n\004name\030\005 \001(\t" +
-      "\022\"\n\004body\030\001 \001(\0132\024.google.api.HttpBody\022\022\n\n" +
-      "project_id\030\002 \001(\t\022\017\n\007trigger\030\003 \001(\t\022\016\n\006sec" +
-      "ret\030\004 \001(\t\"\037\n\035ReceiveTriggerWebhookRespon" +
-      "se\"\364\004\n\nWorkerPool\022\014\n\004name\030\016 \001(\t\022\022\n\nproje" +
-      "ct_id\030\002 \001(\t\022\035\n\025service_account_email\030\003 \001" +
-      "(\t\022\024\n\014worker_count\030\004 \001(\003\022B\n\rworker_confi" +
-      "g\030\020 \001(\0132+.google.devtools.cloudbuild.v1." +
-      "WorkerConfig\022A\n\007regions\030\t \003(\01620.google.d" +
-      "evtools.cloudbuild.v1.WorkerPool.Region\022" +
-      "/\n\013create_time\030\013 \001(\0132\032.google.protobuf.T" +
-      "imestamp\022/\n\013update_time\030\021 \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022/\n\013delete_time\030\014 \001(\0132\032" +
-      ".google.protobuf.Timestamp\022@\n\006status\030\r \001" +
-      "(\01620.google.devtools.cloudbuild.v1.Worke" +
-      "rPool.Status\"[\n\006Region\022\026\n\022REGION_UNSPECI" +
-      "FIED\020\000\022\017\n\013US_CENTRAL1\020\001\022\014\n\010US_WEST1\020\002\022\014\n" +
-      "\010US_EAST1\020\003\022\014\n\010US_EAST4\020\004\"V\n\006Status\022\026\n\022S" +
-      "TATUS_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\013\n\007RUN" +
-      "NING\020\002\022\014\n\010DELETING\020\003\022\013\n\007DELETED\020\004\"\200\001\n\014Wo" +
-      "rkerConfig\022\024\n\014machine_type\030\001 \001(\t\022\024\n\014disk" +
-      "_size_gb\030\002 \001(\003\0227\n\007network\030\003 \001(\0132&.google" +
-      ".devtools.cloudbuild.v1.Network\022\013\n\003tag\030\004" +
-      " \001(\t\"B\n\007Network\022\022\n\nproject_id\030\001 \001(\t\022\017\n\007n" +
-      "etwork\030\002 \001(\t\022\022\n\nsubnetwork\030\003 \001(\t\"i\n\027Crea" +
-      "teWorkerPoolRequest\022\016\n\006parent\030\001 \001(\t\022>\n\013w" +
+      "n\022\027\n\013worker_pool\030\007 \001(\tB\002\030\001\022I\n\004pool\030\023 \001(\013" +
+      "26.google.devtools.cloudbuild.v1.BuildOp" +
+      "tions.PoolOptionB\003\340A\001\022H\n\007logging\030\013 \001(\01627" +
+      ".google.devtools.cloudbuild.v1.BuildOpti" +
+      "ons.LoggingMode\022\013\n\003env\030\014 \003(\t\022\022\n\nsecret_e" +
+      "nv\030\r \003(\t\0226\n\007volumes\030\016 \003(\0132%.google.devto" +
+      "ols.cloudbuild.v1.Volume\032E\n\nPoolOption\0227" +
+      "\n\004name\030\001 \001(\tB)\372A&\n$cloudbuild.googleapis" +
+      ".com/WorkerPool\".\n\014VerifyOption\022\020\n\014NOT_V" +
+      "ERIFIED\020\000\022\014\n\010VERIFIED\020\001\"h\n\013MachineType\022\017" +
+      "\n\013UNSPECIFIED\020\000\022\020\n\014N1_HIGHCPU_8\020\001\022\021\n\rN1_" +
+      "HIGHCPU_32\020\002\022\020\n\014E2_HIGHCPU_8\020\005\022\021\n\rE2_HIG" +
+      "HCPU_32\020\006\"5\n\022SubstitutionOption\022\016\n\nMUST_" +
+      "MATCH\020\000\022\017\n\013ALLOW_LOOSE\020\001\"G\n\022LogStreaming" +
+      "Option\022\022\n\016STREAM_DEFAULT\020\000\022\r\n\tSTREAM_ON\020" +
+      "\001\022\016\n\nSTREAM_OFF\020\002\"|\n\013LoggingMode\022\027\n\023LOGG" +
+      "ING_UNSPECIFIED\020\000\022\n\n\006LEGACY\020\001\022\014\n\010GCS_ONL" +
+      "Y\020\002\022\030\n\020STACKDRIVER_ONLY\020\003\032\002\010\001\022\026\n\022CLOUD_L" +
+      "OGGING_ONLY\020\005\022\010\n\004NONE\020\004\"\205\001\n\034ReceiveTrigg" +
+      "erWebhookRequest\022\014\n\004name\030\005 \001(\t\022\"\n\004body\030\001" +
+      " \001(\0132\024.google.api.HttpBody\022\022\n\nproject_id" +
+      "\030\002 \001(\t\022\017\n\007trigger\030\003 \001(\t\022\016\n\006secret\030\004 \001(\t\"" +
+      "\037\n\035ReceiveTriggerWebhookResponse\"\210\006\n\nWor" +
+      "kerPool\022\021\n\004name\030\001 \001(\tB\003\340A\003\022\024\n\014display_na" +
+      "me\030\002 \001(\t\022\020\n\003uid\030\003 \001(\tB\003\340A\003\022O\n\013annotation" +
+      "s\030\004 \003(\0132:.google.devtools.cloudbuild.v1." +
+      "WorkerPool.AnnotationsEntry\0224\n\013create_ti" +
+      "me\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A" +
+      "\003\0224\n\013update_time\030\006 \001(\0132\032.google.protobuf" +
+      ".TimestampB\003\340A\003\0224\n\013delete_time\030\007 \001(\0132\032.g" +
+      "oogle.protobuf.TimestampB\003\340A\003\022C\n\005state\030\010" +
+      " \001(\0162/.google.devtools.cloudbuild.v1.Wor" +
+      "kerPool.StateB\003\340A\003\022T\n\026private_pool_v1_co" +
+      "nfig\030\014 \001(\01322.google.devtools.cloudbuild." +
+      "v1.PrivatePoolV1ConfigH\000\022\021\n\004etag\030\013 \001(\tB\003" +
+      "\340A\003\0322\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
+      "value\030\002 \001(\t:\0028\001\"T\n\005State\022\025\n\021STATE_UNSPEC" +
+      "IFIED\020\000\022\014\n\010CREATING\020\001\022\013\n\007RUNNING\020\002\022\014\n\010DE" +
+      "LETING\020\003\022\013\n\007DELETED\020\004:\211\001\352A\205\001\n$cloudbuild" +
+      ".googleapis.com/WorkerPool\022Aprojects/{pr" +
+      "oject}/locations/{location}/workerPools/" +
+      "{worker_pool}*\013workerPools2\nworkerPoolR\001" +
+      "\001B\010\n\006config\"\226\004\n\023PrivatePoolV1Config\022V\n\rw" +
+      "orker_config\030\001 \001(\0132?.google.devtools.clo" +
+      "udbuild.v1.PrivatePoolV1Config.WorkerCon" +
+      "fig\022X\n\016network_config\030\002 \001(\0132@.google.dev" +
+      "tools.cloudbuild.v1.PrivatePoolV1Config." +
+      "NetworkConfig\032:\n\014WorkerConfig\022\024\n\014machine" +
+      "_type\030\001 \001(\t\022\024\n\014disk_size_gb\030\002 \001(\003\032\220\002\n\rNe" +
+      "tworkConfig\022A\n\016peered_network\030\001 \001(\tB)\340A\005" +
+      "\340A\002\372A \n\036compute.googleapis.com/Network\022d" +
+      "\n\regress_option\030\002 \001(\0162M.google.devtools." +
+      "cloudbuild.v1.PrivatePoolV1Config.Networ" +
+      "kConfig.EgressOption\"V\n\014EgressOption\022\035\n\031" +
+      "EGRESS_OPTION_UNSPECIFIED\020\000\022\024\n\020NO_PUBLIC" +
+      "_EGRESS\020\001\022\021\n\rPUBLIC_EGRESS\020\002\"\320\001\n\027CreateW" +
+      "orkerPoolRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#" +
+      "\n!locations.googleapis.com/Location\022C\n\013w" +
       "orker_pool\030\002 \001(\0132).google.devtools.cloud" +
-      "build.v1.WorkerPool\"$\n\024GetWorkerPoolRequ" +
-      "est\022\014\n\004name\030\001 \001(\t\"\'\n\027DeleteWorkerPoolReq" +
-      "uest\022\014\n\004name\030\001 \001(\t\"g\n\027UpdateWorkerPoolRe" +
-      "quest\022\014\n\004name\030\002 \001(\t\022>\n\013worker_pool\030\003 \001(\013" +
+      "build.v1.WorkerPoolB\003\340A\002\022\036\n\016worker_pool_" +
+      "id\030\003 \001(\tB\006\340A\005\340A\002\022\025\n\rvalidate_only\030\004 \001(\010\"" +
+      "R\n\024GetWorkerPoolRequest\022:\n\004name\030\001 \001(\tB,\340" +
+      "A\002\372A&\n$cloudbuild.googleapis.com/WorkerP" +
+      "ool\"\221\001\n\027DeleteWorkerPoolRequest\022:\n\004name\030" +
+      "\001 \001(\tB,\340A\002\372A&\n$cloudbuild.googleapis.com" +
+      "/WorkerPool\022\014\n\004etag\030\002 \001(\t\022\025\n\rallow_missi" +
+      "ng\030\003 \001(\010\022\025\n\rvalidate_only\030\004 \001(\010\"\246\001\n\027Upda" +
+      "teWorkerPoolRequest\022C\n\013worker_pool\030\001 \001(\013" +
       "2).google.devtools.cloudbuild.v1.WorkerP" +
-      "ool\"(\n\026ListWorkerPoolsRequest\022\016\n\006parent\030" +
-      "\001 \001(\t\"Z\n\027ListWorkerPoolsResponse\022?\n\014work" +
-      "er_pools\030\001 \003(\0132).google.devtools.cloudbu" +
-      "ild.v1.WorkerPool2\210\035\n\nCloudBuild\022\373\001\n\013Cre" +
-      "ateBuild\0221.google.devtools.cloudbuild.v1" +
-      ".CreateBuildRequest\032\035.google.longrunning" +
-      ".Operation\"\231\001\202\323\344\223\002^\" /v1/projects/{proje" +
-      "ct_id}/builds:\005buildZ3\"*/v1/{parent=proj" +
-      "ects/*/locations/*}/builds:\005build\332A\020proj" +
-      "ect_id,build\312A\037\n\005Build\022\026BuildOperationMe" +
-      "tadata\022\315\001\n\010GetBuild\022..google.devtools.cl" +
-      "oudbuild.v1.GetBuildRequest\032$.google.dev" +
-      "tools.cloudbuild.v1.Build\"k\202\323\344\223\002U\022%/v1/p" +
-      "rojects/{project_id}/builds/{id}Z,\022*/v1/" +
-      "{name=projects/*/locations/*/builds/*}\332A" +
-      "\rproject_id,id\022\335\001\n\nListBuilds\0220.google.d" +
-      "evtools.cloudbuild.v1.ListBuildsRequest\032" +
-      "1.google.devtools.cloudbuild.v1.ListBuil" +
-      "dsResponse\"j\202\323\344\223\002P\022 /v1/projects/{projec" +
-      "t_id}/buildsZ,\022*/v1/{parent=projects/*/l" +
-      "ocations/*}/builds\332A\021project_id,filter\022\347" +
-      "\001\n\013CancelBuild\0221.google.devtools.cloudbu" +
-      "ild.v1.CancelBuildRequest\032$.google.devto" +
-      "ols.cloudbuild.v1.Build\"\177\202\323\344\223\002i\",/v1/pro" +
-      "jects/{project_id}/builds/{id}:cancel:\001*" +
-      "Z6\"1/v1/{name=projects/*/locations/*/bui" +
-      "lds/*}:cancel:\001*\332A\rproject_id,id\022\377\001\n\nRet" +
-      "ryBuild\0220.google.devtools.cloudbuild.v1." +
-      "RetryBuildRequest\032\035.google.longrunning.O" +
-      "peration\"\237\001\202\323\344\223\002g\"+/v1/projects/{project" +
-      "_id}/builds/{id}:retry:\001*Z5\"0/v1/{name=p" +
-      "rojects/*/locations/*/builds/*}:retry:\001*" +
-      "\332A\rproject_id,id\312A\037\n\005Build\022\026BuildOperati" +
-      "onMetadata\022\377\001\n\022CreateBuildTrigger\0228.goog" +
-      "le.devtools.cloudbuild.v1.CreateBuildTri" +
-      "ggerRequest\032+.google.devtools.cloudbuild" +
-      ".v1.BuildTrigger\"\201\001\202\323\344\223\002f\"\"/v1/projects/" +
-      "{project_id}/triggers:\007triggerZ7\",/v1/{p" +
-      "arent=projects/*/locations/*}/triggers:\007" +
-      "trigger\332A\022project_id,trigger\022\366\001\n\017GetBuil" +
-      "dTrigger\0225.google.devtools.cloudbuild.v1" +
-      ".GetBuildTriggerRequest\032+.google.devtool" +
-      "s.cloudbuild.v1.BuildTrigger\"\177\202\323\344\223\002a\022//v" +
-      "1/projects/{project_id}/triggers/{trigge" +
-      "r_id}Z.\022,/v1/{name=projects/*/locations/" +
-      "*/triggers/*}\332A\025project_id,trigger_id\022\357\001" +
-      "\n\021ListBuildTriggers\0227.google.devtools.cl" +
-      "oudbuild.v1.ListBuildTriggersRequest\0328.g" +
-      "oogle.devtools.cloudbuild.v1.ListBuildTr" +
-      "iggersResponse\"g\202\323\344\223\002T\022\"/v1/projects/{pr" +
-      "oject_id}/triggersZ.\022,/v1/{parent=projec" +
-      "ts/*/locations/*}/triggers\332A\nproject_id\022" +
-      "\347\001\n\022DeleteBuildTrigger\0228.google.devtools" +
-      ".cloudbuild.v1.DeleteBuildTriggerRequest" +
-      "\032\026.google.protobuf.Empty\"\177\202\323\344\223\002a*//v1/pr" +
-      "ojects/{project_id}/triggers/{trigger_id" +
-      "}Z.*,/v1/{name=projects/*/locations/*/tr" +
-      "iggers/*}\332A\025project_id,trigger_id\022\251\002\n\022Up" +
-      "dateBuildTrigger\0228.google.devtools.cloud" +
-      "build.v1.UpdateBuildTriggerRequest\032+.goo" +
-      "gle.devtools.cloudbuild.v1.BuildTrigger\"" +
-      "\253\001\202\323\344\223\002\204\0012//v1/projects/{project_id}/tri" +
-      "ggers/{trigger_id}:\007triggerZH2=/v1/{trig" +
-      "ger.resource_name=projects/*/locations/*" +
-      "/triggers/*}:\007trigger\332A\035project_id,trigg" +
-      "er_id,trigger\022\245\002\n\017RunBuildTrigger\0225.goog" +
-      "le.devtools.cloudbuild.v1.RunBuildTrigge" +
-      "rRequest\032\035.google.longrunning.Operation\"" +
-      "\273\001\202\323\344\223\002t\"3/v1/projects/{project_id}/trig" +
-      "gers/{trigger_id}:run:\006sourceZ5\"0/v1/{na" +
-      "me=projects/*/locations/*/triggers/*}:ru" +
-      "n:\001*\332A\034project_id,trigger_id,source\312A\037\n\005" +
-      "Build\022\026BuildOperationMetadata\022\225\002\n\025Receiv" +
-      "eTriggerWebhook\022;.google.devtools.cloudb" +
-      "uild.v1.ReceiveTriggerWebhookRequest\032<.g" +
-      "oogle.devtools.cloudbuild.v1.ReceiveTrig" +
-      "gerWebhookResponse\"\200\001\202\323\344\223\002z\"4/v1/project" +
-      "s/{project_id}/triggers/{trigger}:webhoo" +
-      "k:\004bodyZ<\"4/v1/{name=projects/*/location" +
-      "s/*/triggers/*}:webhook:\004body\022w\n\020CreateW" +
-      "orkerPool\0226.google.devtools.cloudbuild.v" +
-      "1.CreateWorkerPoolRequest\032).google.devto" +
-      "ols.cloudbuild.v1.WorkerPool\"\000\022q\n\rGetWor" +
-      "kerPool\0223.google.devtools.cloudbuild.v1." +
-      "GetWorkerPoolRequest\032).google.devtools.c" +
-      "loudbuild.v1.WorkerPool\"\000\022d\n\020DeleteWorke" +
-      "rPool\0226.google.devtools.cloudbuild.v1.De" +
-      "leteWorkerPoolRequest\032\026.google.protobuf." +
-      "Empty\"\000\022w\n\020UpdateWorkerPool\0226.google.dev" +
-      "tools.cloudbuild.v1.UpdateWorkerPoolRequ" +
-      "est\032).google.devtools.cloudbuild.v1.Work" +
-      "erPool\"\000\022\202\001\n\017ListWorkerPools\0225.google.de" +
-      "vtools.cloudbuild.v1.ListWorkerPoolsRequ" +
-      "est\0326.google.devtools.cloudbuild.v1.List" +
-      "WorkerPoolsResponse\"\000\032M\312A\031cloudbuild.goo" +
-      "gleapis.com\322A.https://www.googleapis.com" +
-      "/auth/cloud-platformB\222\006\n\030com.google.clou" +
-      "dbuild.v1P\001ZGgoogle.golang.org/genproto/" +
-      "googleapis/devtools/cloudbuild/v1;cloudb" +
-      "uild\242\002\003GCB\252\002\032Google.Cloud.CloudBuild.V1\352" +
-      "\002\030Google::Cloud::Build::V1\352AN\n\036compute.g" +
-      "oogleapis.com/Network\022,projects/{project",
-      "}/global/networks/{network}\352AY\n!iam.goog" +
-      "leapis.com/ServiceAccount\0224projects/{pro" +
-      "ject}/serviceAccounts/{service_account}\352" +
-      "AJ\n#secretmanager.googleapis.com/Secret\022" +
-      "#projects/{project}/secrets/{secret}\352Ad\n" +
-      "*secretmanager.googleapis.com/SecretVers" +
-      "ion\0226projects/{project}/secrets/{secret}" +
-      "/versions/{version}\352Ap\n!cloudkms.googlea" +
-      "pis.com/CryptoKey\022Kprojects/{project}/lo" +
-      "cations/{location}/keyRings/{keyring}/cr" +
-      "yptoKeys/{key}\352AU\n\"pubsub.googleapis.com" +
-      "/Subscription\022/projects/{project}/subscr" +
-      "iptions/{subscription}\352A@\n\033pubsub.google" +
-      "apis.com/Topic\022!projects/{project}/topic" +
-      "s/{topic}b\006proto3"
+      "oolB\003\340A\002\022/\n\013update_mask\030\002 \001(\0132\032.google.p" +
+      "rotobuf.FieldMask\022\025\n\rvalidate_only\030\004 \001(\010" +
+      "\"z\n\026ListWorkerPoolsRequest\0229\n\006parent\030\001 \001" +
+      "(\tB)\340A\002\372A#\n!locations.googleapis.com/Loc" +
+      "ation\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003" +
+      " \001(\t\"s\n\027ListWorkerPoolsResponse\022?\n\014worke" +
+      "r_pools\030\001 \003(\0132).google.devtools.cloudbui" +
+      "ld.v1.WorkerPool\022\027\n\017next_page_token\030\002 \001(" +
+      "\t\"\307\001\n!CreateWorkerPoolOperationMetadata\022" +
+      ">\n\013worker_pool\030\001 \001(\tB)\372A&\n$cloudbuild.go" +
+      "ogleapis.com/WorkerPool\022/\n\013create_time\030\002" +
+      " \001(\0132\032.google.protobuf.Timestamp\0221\n\rcomp" +
+      "lete_time\030\003 \001(\0132\032.google.protobuf.Timest" +
+      "amp\"\307\001\n!UpdateWorkerPoolOperationMetadat" +
+      "a\022>\n\013worker_pool\030\001 \001(\tB)\372A&\n$cloudbuild." +
+      "googleapis.com/WorkerPool\022/\n\013create_time" +
+      "\030\002 \001(\0132\032.google.protobuf.Timestamp\0221\n\rco" +
+      "mplete_time\030\003 \001(\0132\032.google.protobuf.Time" +
+      "stamp\"\307\001\n!DeleteWorkerPoolOperationMetad" +
+      "ata\022>\n\013worker_pool\030\001 \001(\tB)\372A&\n$cloudbuil" +
+      "d.googleapis.com/WorkerPool\022/\n\013create_ti" +
+      "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0221\n\r" +
+      "complete_time\030\003 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp2\254!\n\nCloudBuild\022\373\001\n\013CreateBuild\0221" +
+      ".google.devtools.cloudbuild.v1.CreateBui" +
+      "ldRequest\032\035.google.longrunning.Operation" +
+      "\"\231\001\202\323\344\223\002^\" /v1/projects/{project_id}/bui" +
+      "lds:\005buildZ3\"*/v1/{parent=projects/*/loc" +
+      "ations/*}/builds:\005build\332A\020project_id,bui" +
+      "ld\312A\037\n\005Build\022\026BuildOperationMetadata\022\315\001\n" +
+      "\010GetBuild\022..google.devtools.cloudbuild.v" +
+      "1.GetBuildRequest\032$.google.devtools.clou" +
+      "dbuild.v1.Build\"k\202\323\344\223\002U\022%/v1/projects/{p" +
+      "roject_id}/builds/{id}Z,\022*/v1/{name=proj" +
+      "ects/*/locations/*/builds/*}\332A\rproject_i" +
+      "d,id\022\335\001\n\nListBuilds\0220.google.devtools.cl" +
+      "oudbuild.v1.ListBuildsRequest\0321.google.d" +
+      "evtools.cloudbuild.v1.ListBuildsResponse" +
+      "\"j\202\323\344\223\002P\022 /v1/projects/{project_id}/buil" +
+      "dsZ,\022*/v1/{parent=projects/*/locations/*" +
+      "}/builds\332A\021project_id,filter\022\347\001\n\013CancelB" +
+      "uild\0221.google.devtools.cloudbuild.v1.Can" +
+      "celBuildRequest\032$.google.devtools.cloudb" +
+      "uild.v1.Build\"\177\202\323\344\223\002i\",/v1/projects/{pro" +
+      "ject_id}/builds/{id}:cancel:\001*Z6\"1/v1/{n" +
+      "ame=projects/*/locations/*/builds/*}:can" +
+      "cel:\001*\332A\rproject_id,id\022\377\001\n\nRetryBuild\0220." +
+      "google.devtools.cloudbuild.v1.RetryBuild" +
+      "Request\032\035.google.longrunning.Operation\"\237" +
+      "\001\202\323\344\223\002g\"+/v1/projects/{project_id}/build" +
+      "s/{id}:retry:\001*Z5\"0/v1/{name=projects/*/" +
+      "locations/*/builds/*}:retry:\001*\332A\rproject" +
+      "_id,id\312A\037\n\005Build\022\026BuildOperationMetadata" +
+      "\022\377\001\n\022CreateBuildTrigger\0228.google.devtool" +
+      "s.cloudbuild.v1.CreateBuildTriggerReques" +
+      "t\032+.google.devtools.cloudbuild.v1.BuildT" +
+      "rigger\"\201\001\202\323\344\223\002f\"\"/v1/projects/{project_i" +
+      "d}/triggers:\007triggerZ7\",/v1/{parent=proj" +
+      "ects/*/locations/*}/triggers:\007trigger\332A\022" +
+      "project_id,trigger\022\366\001\n\017GetBuildTrigger\0225" +
+      ".google.devtools.cloudbuild.v1.GetBuildT" +
+      "riggerRequest\032+.google.devtools.cloudbui" +
+      "ld.v1.BuildTrigger\"\177\202\323\344\223\002a\022//v1/projects" +
+      "/{project_id}/triggers/{trigger_id}Z.\022,/" +
+      "v1/{name=projects/*/locations/*/triggers" +
+      "/*}\332A\025project_id,trigger_id\022\357\001\n\021ListBuil" +
+      "dTriggers\0227.google.devtools.cloudbuild.v" +
+      "1.ListBuildTriggersRequest\0328.google.devt" +
+      "ools.cloudbuild.v1.ListBuildTriggersResp" +
+      "onse\"g\202\323\344\223\002T\022\"/v1/projects/{project_id}/" +
+      "triggersZ.\022,/v1/{parent=projects/*/locat" +
+      "ions/*}/triggers\332A\nproject_id\022\347\001\n\022Delete" +
+      "BuildTrigger\0228.google.devtools.cloudbuil" +
+      "d.v1.DeleteBuildTriggerRequest\032\026.google." +
+      "protobuf.Empty\"\177\202\323\344\223\002a*//v1/projects/{pr" +
+      "oject_id}/triggers/{trigger_id}Z.*,/v1/{" +
+      "name=projects/*/locations/*/triggers/*}\332" +
+      "A\025project_id,trigger_id\022\251\002\n\022UpdateBuildT" +
+      "rigger\0228.google.devtools.cloudbuild.v1.U" +
+      "pdateBuildTriggerRequest\032+.google.devtoo",
+      "ls.cloudbuild.v1.BuildTrigger\"\253\001\202\323\344\223\002\204\0012" +
+      "//v1/projects/{project_id}/triggers/{tri" +
+      "gger_id}:\007triggerZH2=/v1/{trigger.resour" +
+      "ce_name=projects/*/locations/*/triggers/" +
+      "*}:\007trigger\332A\035project_id,trigger_id,trig" +
+      "ger\022\245\002\n\017RunBuildTrigger\0225.google.devtool" +
+      "s.cloudbuild.v1.RunBuildTriggerRequest\032\035" +
+      ".google.longrunning.Operation\"\273\001\202\323\344\223\002t\"3" +
+      "/v1/projects/{project_id}/triggers/{trig" +
+      "ger_id}:run:\006sourceZ5\"0/v1/{name=project" +
+      "s/*/locations/*/triggers/*}:run:\001*\332A\034pro" +
+      "ject_id,trigger_id,source\312A\037\n\005Build\022\026Bui" +
+      "ldOperationMetadata\022\225\002\n\025ReceiveTriggerWe" +
+      "bhook\022;.google.devtools.cloudbuild.v1.Re" +
+      "ceiveTriggerWebhookRequest\032<.google.devt" +
+      "ools.cloudbuild.v1.ReceiveTriggerWebhook" +
+      "Response\"\200\001\202\323\344\223\002z\"4/v1/projects/{project" +
+      "_id}/triggers/{trigger}:webhook:\004bodyZ<\"" +
+      "4/v1/{name=projects/*/locations/*/trigge" +
+      "rs/*}:webhook:\004body\022\206\002\n\020CreateWorkerPool" +
+      "\0226.google.devtools.cloudbuild.v1.CreateW" +
+      "orkerPoolRequest\032\035.google.longrunning.Op" +
+      "eration\"\232\001\202\323\344\223\002>\"//v1/{parent=projects/*" +
+      "/locations/*}/workerPools:\013worker_pool\332A" +
+      "!parent,worker_pool,worker_pool_id\312A/\n\nW" +
+      "orkerPool\022!CreateWorkerPoolOperationMeta" +
+      "data\022\257\001\n\rGetWorkerPool\0223.google.devtools" +
+      ".cloudbuild.v1.GetWorkerPoolRequest\032).go" +
+      "ogle.devtools.cloudbuild.v1.WorkerPool\">" +
+      "\202\323\344\223\0021\022//v1/{name=projects/*/locations/*" +
+      "/workerPools/*}\332A\004name\022\346\001\n\020DeleteWorkerP" +
+      "ool\0226.google.devtools.cloudbuild.v1.Dele" +
+      "teWorkerPoolRequest\032\035.google.longrunning" +
+      ".Operation\"{\202\323\344\223\0021*//v1/{name=projects/*" +
+      "/locations/*/workerPools/*}\332A\004name\312A:\n\025g" +
+      "oogle.protobuf.Empty\022!DeleteWorkerPoolOp" +
+      "erationMetadata\022\210\002\n\020UpdateWorkerPool\0226.g" +
+      "oogle.devtools.cloudbuild.v1.UpdateWorke" +
+      "rPoolRequest\032\035.google.longrunning.Operat" +
+      "ion\"\234\001\202\323\344\223\002J2;/v1/{worker_pool.name=proj" +
+      "ects/*/locations/*/workerPools/*}:\013worke" +
+      "r_pool\332A\027worker_pool,update_mask\312A/\n\nWor" +
+      "kerPool\022!UpdateWorkerPoolOperationMetada" +
+      "ta\022\302\001\n\017ListWorkerPools\0225.google.devtools" +
+      ".cloudbuild.v1.ListWorkerPoolsRequest\0326." +
+      "google.devtools.cloudbuild.v1.ListWorker" +
+      "PoolsResponse\"@\202\323\344\223\0021\022//v1/{parent=proje" +
+      "cts/*/locations/*}/workerPools\332A\006parent\032" +
+      "M\312A\031cloudbuild.googleapis.com\322A.https://" +
+      "www.googleapis.com/auth/cloud-platformB\222" +
+      "\006\n\030com.google.cloudbuild.v1P\001ZGgoogle.go" +
+      "lang.org/genproto/googleapis/devtools/cl" +
+      "oudbuild/v1;cloudbuild\242\002\003GCB\252\002\032Google.Cl" +
+      "oud.CloudBuild.V1\352\002\030Google::Cloud::Build" +
+      "::V1\352AN\n\036compute.googleapis.com/Network\022" +
+      ",projects/{project}/global/networks/{net" +
+      "work}\352AY\n!iam.googleapis.com/ServiceAcco" +
+      "unt\0224projects/{project}/serviceAccounts/" +
+      "{service_account}\352AJ\n#secretmanager.goog" +
+      "leapis.com/Secret\022#projects/{project}/se" +
+      "crets/{secret}\352Ad\n*secretmanager.googlea" +
+      "pis.com/SecretVersion\0226projects/{project" +
+      "}/secrets/{secret}/versions/{version}\352Ap" +
+      "\n!cloudkms.googleapis.com/CryptoKey\022Kpro" +
+      "jects/{project}/locations/{location}/key" +
+      "Rings/{keyring}/cryptoKeys/{key}\352AU\n\"pub" +
+      "sub.googleapis.com/Subscription\022/project" +
+      "s/{project}/subscriptions/{subscription}" +
+      "\352A@\n\033pubsub.googleapis.com/Topic\022!projec" +
+      "ts/{project}/topics/{topic}b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1046,7 +1131,13 @@ public final class Cloudbuild {
     internal_static_google_devtools_cloudbuild_v1_BuildOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_devtools_cloudbuild_v1_BuildOptions_descriptor,
-        new java.lang.String[] { "SourceProvenanceHash", "RequestedVerifyOption", "MachineType", "DiskSizeGb", "SubstitutionOption", "DynamicSubstitutions", "LogStreamingOption", "WorkerPool", "Logging", "Env", "SecretEnv", "Volumes", });
+        new java.lang.String[] { "SourceProvenanceHash", "RequestedVerifyOption", "MachineType", "DiskSizeGb", "SubstitutionOption", "DynamicSubstitutions", "LogStreamingOption", "WorkerPool", "Pool", "Logging", "Env", "SecretEnv", "Volumes", });
+    internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_descriptor =
+      internal_static_google_devtools_cloudbuild_v1_BuildOptions_descriptor.getNestedTypes().get(0);
+    internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_devtools_cloudbuild_v1_BuildOptions_PoolOption_descriptor,
+        new java.lang.String[] { "Name", });
     internal_static_google_devtools_cloudbuild_v1_ReceiveTriggerWebhookRequest_descriptor =
       getDescriptor().getMessageTypes().get(40);
     internal_static_google_devtools_cloudbuild_v1_ReceiveTriggerWebhookRequest_fieldAccessorTable = new
@@ -1064,55 +1155,85 @@ public final class Cloudbuild {
     internal_static_google_devtools_cloudbuild_v1_WorkerPool_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_devtools_cloudbuild_v1_WorkerPool_descriptor,
-        new java.lang.String[] { "Name", "ProjectId", "ServiceAccountEmail", "WorkerCount", "WorkerConfig", "Regions", "CreateTime", "UpdateTime", "DeleteTime", "Status", });
-    internal_static_google_devtools_cloudbuild_v1_WorkerConfig_descriptor =
+        new java.lang.String[] { "Name", "DisplayName", "Uid", "Annotations", "CreateTime", "UpdateTime", "DeleteTime", "State", "PrivatePoolV1Config", "Etag", "Config", });
+    internal_static_google_devtools_cloudbuild_v1_WorkerPool_AnnotationsEntry_descriptor =
+      internal_static_google_devtools_cloudbuild_v1_WorkerPool_descriptor.getNestedTypes().get(0);
+    internal_static_google_devtools_cloudbuild_v1_WorkerPool_AnnotationsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_devtools_cloudbuild_v1_WorkerPool_AnnotationsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_descriptor =
       getDescriptor().getMessageTypes().get(43);
-    internal_static_google_devtools_cloudbuild_v1_WorkerConfig_fieldAccessorTable = new
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_devtools_cloudbuild_v1_WorkerConfig_descriptor,
-        new java.lang.String[] { "MachineType", "DiskSizeGb", "Network", "Tag", });
-    internal_static_google_devtools_cloudbuild_v1_Network_descriptor =
-      getDescriptor().getMessageTypes().get(44);
-    internal_static_google_devtools_cloudbuild_v1_Network_fieldAccessorTable = new
+        internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_descriptor,
+        new java.lang.String[] { "WorkerConfig", "NetworkConfig", });
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_WorkerConfig_descriptor =
+      internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_descriptor.getNestedTypes().get(0);
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_WorkerConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_devtools_cloudbuild_v1_Network_descriptor,
-        new java.lang.String[] { "ProjectId", "Network", "Subnetwork", });
+        internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_WorkerConfig_descriptor,
+        new java.lang.String[] { "MachineType", "DiskSizeGb", });
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_NetworkConfig_descriptor =
+      internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_descriptor.getNestedTypes().get(1);
+    internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_NetworkConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_devtools_cloudbuild_v1_PrivatePoolV1Config_NetworkConfig_descriptor,
+        new java.lang.String[] { "PeeredNetwork", "EgressOption", });
     internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_descriptor =
-      getDescriptor().getMessageTypes().get(45);
+      getDescriptor().getMessageTypes().get(44);
     internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolRequest_descriptor,
-        new java.lang.String[] { "Parent", "WorkerPool", });
+        new java.lang.String[] { "Parent", "WorkerPool", "WorkerPoolId", "ValidateOnly", });
     internal_static_google_devtools_cloudbuild_v1_GetWorkerPoolRequest_descriptor =
-      getDescriptor().getMessageTypes().get(46);
+      getDescriptor().getMessageTypes().get(45);
     internal_static_google_devtools_cloudbuild_v1_GetWorkerPoolRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_devtools_cloudbuild_v1_GetWorkerPoolRequest_descriptor,
         new java.lang.String[] { "Name", });
     internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolRequest_descriptor =
-      getDescriptor().getMessageTypes().get(47);
+      getDescriptor().getMessageTypes().get(46);
     internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolRequest_descriptor,
-        new java.lang.String[] { "Name", });
+        new java.lang.String[] { "Name", "Etag", "AllowMissing", "ValidateOnly", });
     internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolRequest_descriptor =
-      getDescriptor().getMessageTypes().get(48);
+      getDescriptor().getMessageTypes().get(47);
     internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolRequest_descriptor,
-        new java.lang.String[] { "Name", "WorkerPool", });
+        new java.lang.String[] { "WorkerPool", "UpdateMask", "ValidateOnly", });
     internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(49);
+      getDescriptor().getMessageTypes().get(48);
     internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsRequest_descriptor,
-        new java.lang.String[] { "Parent", });
+        new java.lang.String[] { "Parent", "PageSize", "PageToken", });
     internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(50);
+      getDescriptor().getMessageTypes().get(49);
     internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_devtools_cloudbuild_v1_ListWorkerPoolsResponse_descriptor,
-        new java.lang.String[] { "WorkerPools", });
+        new java.lang.String[] { "WorkerPools", "NextPageToken", });
+    internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolOperationMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(50);
+    internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolOperationMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_devtools_cloudbuild_v1_CreateWorkerPoolOperationMetadata_descriptor,
+        new java.lang.String[] { "WorkerPool", "CreateTime", "CompleteTime", });
+    internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolOperationMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(51);
+    internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolOperationMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_devtools_cloudbuild_v1_UpdateWorkerPoolOperationMetadata_descriptor,
+        new java.lang.String[] { "WorkerPool", "CreateTime", "CompleteTime", });
+    internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolOperationMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(52);
+    internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolOperationMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_devtools_cloudbuild_v1_DeleteWorkerPoolOperationMetadata_descriptor,
+        new java.lang.String[] { "WorkerPool", "CreateTime", "CompleteTime", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

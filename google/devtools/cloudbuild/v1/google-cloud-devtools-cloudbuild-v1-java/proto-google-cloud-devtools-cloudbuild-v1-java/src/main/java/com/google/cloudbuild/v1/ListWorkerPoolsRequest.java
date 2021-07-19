@@ -5,7 +5,7 @@ package com.google.cloudbuild.v1;
 
 /**
  * <pre>
- * Request to list `WorkerPools`.
+ * Request to list `WorkerPool`s.
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudbuild.v1.ListWorkerPoolsRequest}
@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListWorkerPoolsRequest() {
     parent_ = "";
+    pageToken_ = "";
   }
 
   @java.lang.Override
@@ -59,6 +60,17 @@ private static final long serialVersionUID = 0L;
             parent_ = s;
             break;
           }
+          case 16: {
+
+            pageSize_ = input.readInt32();
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            pageToken_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -95,10 +107,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * ID of the parent project.
+   * Required. The parent of the collection of `WorkerPools`.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   @java.lang.Override
@@ -116,10 +129,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ID of the parent project.
+   * Required. The parent of the collection of `WorkerPools`.
+   * Format: `projects/{project}/locations/{location}`.
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   @java.lang.Override
@@ -131,6 +145,70 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       parent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PAGE_SIZE_FIELD_NUMBER = 2;
+  private int pageSize_;
+  /**
+   * <pre>
+   * The maximum number of `WorkerPool`s to return. The service may return
+   * fewer than this value. If omitted, the server will use a sensible default.
+   * </pre>
+   *
+   * <code>int32 page_size = 2;</code>
+   * @return The pageSize.
+   */
+  @java.lang.Override
+  public int getPageSize() {
+    return pageSize_;
+  }
+
+  public static final int PAGE_TOKEN_FIELD_NUMBER = 3;
+  private volatile java.lang.Object pageToken_;
+  /**
+   * <pre>
+   * A page token, received from a previous `ListWorkerPools` call. Provide this
+   * to retrieve the subsequent page.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   * @return The pageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getPageToken() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * A page token, received from a previous `ListWorkerPools` call. Provide this
+   * to retrieve the subsequent page.
+   * </pre>
+   *
+   * <code>string page_token = 3;</code>
+   * @return The bytes for pageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPageTokenBytes() {
+    java.lang.Object ref = pageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      pageToken_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -154,6 +232,12 @@ private static final long serialVersionUID = 0L;
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
+    if (pageSize_ != 0) {
+      output.writeInt32(2, pageSize_);
+    }
+    if (!getPageTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, pageToken_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -165,6 +249,13 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getParentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
+    }
+    if (pageSize_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(2, pageSize_);
+    }
+    if (!getPageTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -183,6 +274,10 @@ private static final long serialVersionUID = 0L;
 
     if (!getParent()
         .equals(other.getParent())) return false;
+    if (getPageSize()
+        != other.getPageSize()) return false;
+    if (!getPageToken()
+        .equals(other.getPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -196,6 +291,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + PARENT_FIELD_NUMBER;
     hash = (53 * hash) + getParent().hashCode();
+    hash = (37 * hash) + PAGE_SIZE_FIELD_NUMBER;
+    hash = (53 * hash) + getPageSize();
+    hash = (37 * hash) + PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -293,7 +392,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Request to list `WorkerPools`.
+   * Request to list `WorkerPool`s.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudbuild.v1.ListWorkerPoolsRequest}
@@ -335,6 +434,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       parent_ = "";
 
+      pageSize_ = 0;
+
+      pageToken_ = "";
+
       return this;
     }
 
@@ -362,6 +465,8 @@ private static final long serialVersionUID = 0L;
     public com.google.cloudbuild.v1.ListWorkerPoolsRequest buildPartial() {
       com.google.cloudbuild.v1.ListWorkerPoolsRequest result = new com.google.cloudbuild.v1.ListWorkerPoolsRequest(this);
       result.parent_ = parent_;
+      result.pageSize_ = pageSize_;
+      result.pageToken_ = pageToken_;
       onBuilt();
       return result;
     }
@@ -414,6 +519,13 @@ private static final long serialVersionUID = 0L;
         parent_ = other.parent_;
         onChanged();
       }
+      if (other.getPageSize() != 0) {
+        setPageSize(other.getPageSize());
+      }
+      if (!other.getPageToken().isEmpty()) {
+        pageToken_ = other.pageToken_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -446,10 +558,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent of the collection of `WorkerPools`.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The parent.
      */
     public java.lang.String getParent() {
@@ -466,10 +579,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent of the collection of `WorkerPools`.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
@@ -487,10 +601,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent of the collection of `WorkerPools`.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The parent to set.
      * @return This builder for chaining.
      */
@@ -506,10 +621,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent of the collection of `WorkerPools`.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearParent() {
@@ -520,10 +636,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ID of the parent project.
+     * Required. The parent of the collection of `WorkerPools`.
+     * Format: `projects/{project}/locations/{location}`.
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
      */
@@ -535,6 +652,153 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       parent_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int pageSize_ ;
+    /**
+     * <pre>
+     * The maximum number of `WorkerPool`s to return. The service may return
+     * fewer than this value. If omitted, the server will use a sensible default.
+     * </pre>
+     *
+     * <code>int32 page_size = 2;</code>
+     * @return The pageSize.
+     */
+    @java.lang.Override
+    public int getPageSize() {
+      return pageSize_;
+    }
+    /**
+     * <pre>
+     * The maximum number of `WorkerPool`s to return. The service may return
+     * fewer than this value. If omitted, the server will use a sensible default.
+     * </pre>
+     *
+     * <code>int32 page_size = 2;</code>
+     * @param value The pageSize to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageSize(int value) {
+      
+      pageSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The maximum number of `WorkerPool`s to return. The service may return
+     * fewer than this value. If omitted, the server will use a sensible default.
+     * </pre>
+     *
+     * <code>int32 page_size = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPageSize() {
+      
+      pageSize_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object pageToken_ = "";
+    /**
+     * <pre>
+     * A page token, received from a previous `ListWorkerPools` call. Provide this
+     * to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     * @return The pageToken.
+     */
+    public java.lang.String getPageToken() {
+      java.lang.Object ref = pageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A page token, received from a previous `ListWorkerPools` call. Provide this
+     * to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     * @return The bytes for pageToken.
+     */
+    public com.google.protobuf.ByteString
+        getPageTokenBytes() {
+      java.lang.Object ref = pageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A page token, received from a previous `ListWorkerPools` call. Provide this
+     * to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     * @param value The pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      pageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A page token, received from a previous `ListWorkerPools` call. Provide this
+     * to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPageToken() {
+      
+      pageToken_ = getDefaultInstance().getPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A page token, received from a previous `ListWorkerPools` call. Provide this
+     * to retrieve the subsequent page.
+     * </pre>
+     *
+     * <code>string page_token = 3;</code>
+     * @param value The bytes for pageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      pageToken_ = value;
       onChanged();
       return this;
     }

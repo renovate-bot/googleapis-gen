@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private DeleteWorkerPoolRequest() {
     name_ = "";
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -59,6 +60,22 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            etag_ = s;
+            break;
+          }
+          case 24: {
+
+            allowMissing_ = input.readBool();
+            break;
+          }
+          case 32: {
+
+            validateOnly_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -95,11 +112,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
+   * Required. The name of the `WorkerPool` to delete.
+   * Format:
+   * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -117,11 +135,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The field will contain name of the resource requested, for example:
-   * "projects/project-1/workerPools/workerpool-name"
+   * Required. The name of the `WorkerPool` to delete.
+   * Format:
+   * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -137,6 +156,86 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ETAG_FIELD_NUMBER = 2;
+  private volatile java.lang.Object etag_;
+  /**
+   * <pre>
+   * Optional. If this is provided, it must match the server's etag on the
+   * workerpool for the request to be processed.
+   * </pre>
+   *
+   * <code>string etag = 2;</code>
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. If this is provided, it must match the server's etag on the
+   * workerpool for the request to be processed.
+   * </pre>
+   *
+   * <code>string etag = 2;</code>
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
+  private boolean allowMissing_;
+  /**
+   * <pre>
+   * If set to true, and the `WorkerPool` is not found, the request will succeed
+   * but no action will be taken on the server.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   * @return The allowMissing.
+   */
+  @java.lang.Override
+  public boolean getAllowMissing() {
+    return allowMissing_;
+  }
+
+  public static final int VALIDATE_ONLY_FIELD_NUMBER = 4;
+  private boolean validateOnly_;
+  /**
+   * <pre>
+   * If set, validate the request and preview the response, but do not actually
+   * post it.
+   * </pre>
+   *
+   * <code>bool validate_only = 4;</code>
+   * @return The validateOnly.
+   */
+  @java.lang.Override
+  public boolean getValidateOnly() {
+    return validateOnly_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -156,6 +255,15 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, etag_);
+    }
+    if (allowMissing_ != false) {
+      output.writeBool(3, allowMissing_);
+    }
+    if (validateOnly_ != false) {
+      output.writeBool(4, validateOnly_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -167,6 +275,17 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, etag_);
+    }
+    if (allowMissing_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, allowMissing_);
+    }
+    if (validateOnly_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, validateOnly_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -185,6 +304,12 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (!getEtag()
+        .equals(other.getEtag())) return false;
+    if (getAllowMissing()
+        != other.getAllowMissing()) return false;
+    if (getValidateOnly()
+        != other.getValidateOnly()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -198,6 +323,14 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + ALLOW_MISSING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAllowMissing());
+    hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getValidateOnly());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -337,6 +470,12 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
+      etag_ = "";
+
+      allowMissing_ = false;
+
+      validateOnly_ = false;
+
       return this;
     }
 
@@ -364,6 +503,9 @@ private static final long serialVersionUID = 0L;
     public com.google.cloudbuild.v1.DeleteWorkerPoolRequest buildPartial() {
       com.google.cloudbuild.v1.DeleteWorkerPoolRequest result = new com.google.cloudbuild.v1.DeleteWorkerPoolRequest(this);
       result.name_ = name_;
+      result.etag_ = etag_;
+      result.allowMissing_ = allowMissing_;
+      result.validateOnly_ = validateOnly_;
       onBuilt();
       return result;
     }
@@ -416,6 +558,16 @@ private static final long serialVersionUID = 0L;
         name_ = other.name_;
         onChanged();
       }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
+      }
+      if (other.getAllowMissing() != false) {
+        setAllowMissing(other.getAllowMissing());
+      }
+      if (other.getValidateOnly() != false) {
+        setValidateOnly(other.getValidateOnly());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -448,11 +600,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
+     * Required. The name of the `WorkerPool` to delete.
+     * Format:
+     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -469,11 +622,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
+     * Required. The name of the `WorkerPool` to delete.
+     * Format:
+     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -491,11 +645,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
+     * Required. The name of the `WorkerPool` to delete.
+     * Format:
+     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -511,11 +666,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
+     * Required. The name of the `WorkerPool` to delete.
+     * Format:
+     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -526,11 +682,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The field will contain name of the resource requested, for example:
-     * "projects/project-1/workerPools/workerpool-name"
+     * Required. The name of the `WorkerPool` to delete.
+     * Format:
+     * `projects/{project}/locations/{workerPool}/workerPools/{workerPool}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -542,6 +699,199 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     * <pre>
+     * Optional. If this is provided, it must match the server's etag on the
+     * workerpool for the request to be processed.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. If this is provided, it must match the server's etag on the
+     * workerpool for the request to be processed.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString
+        getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. If this is provided, it must match the server's etag on the
+     * workerpool for the request to be processed.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. If this is provided, it must match the server's etag on the
+     * workerpool for the request to be processed.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. If this is provided, it must match the server's etag on the
+     * workerpool for the request to be processed.
+     * </pre>
+     *
+     * <code>string etag = 2;</code>
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean allowMissing_ ;
+    /**
+     * <pre>
+     * If set to true, and the `WorkerPool` is not found, the request will succeed
+     * but no action will be taken on the server.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @return The allowMissing.
+     */
+    @java.lang.Override
+    public boolean getAllowMissing() {
+      return allowMissing_;
+    }
+    /**
+     * <pre>
+     * If set to true, and the `WorkerPool` is not found, the request will succeed
+     * but no action will be taken on the server.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @param value The allowMissing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowMissing(boolean value) {
+      
+      allowMissing_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set to true, and the `WorkerPool` is not found, the request will succeed
+     * but no action will be taken on the server.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowMissing() {
+      
+      allowMissing_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean validateOnly_ ;
+    /**
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     * @return The validateOnly.
+     */
+    @java.lang.Override
+    public boolean getValidateOnly() {
+      return validateOnly_;
+    }
+    /**
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     * @param value The validateOnly to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValidateOnly(boolean value) {
+      
+      validateOnly_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set, validate the request and preview the response, but do not actually
+     * post it.
+     * </pre>
+     *
+     * <code>bool validate_only = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearValidateOnly() {
+      
+      validateOnly_ = false;
       onChanged();
       return this;
     }

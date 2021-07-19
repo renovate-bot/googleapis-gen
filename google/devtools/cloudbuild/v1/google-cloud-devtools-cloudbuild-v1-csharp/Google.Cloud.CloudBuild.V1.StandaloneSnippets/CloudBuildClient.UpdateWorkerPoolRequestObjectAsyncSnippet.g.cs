@@ -17,6 +17,8 @@
 namespace Google.Cloud.CloudBuild.V1.Snippets
 {
     using Google.Cloud.CloudBuild.V1;
+    using Google.LongRunning;
+    using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedCloudBuildClientStandaloneSnippets
@@ -33,11 +35,28 @@ namespace Google.Cloud.CloudBuild.V1.Snippets
             // Initialize request argument(s)
             UpdateWorkerPoolRequest request = new UpdateWorkerPoolRequest
             {
-                Name = "",
                 WorkerPool = new WorkerPool(),
+                UpdateMask = new FieldMask(),
+                ValidateOnly = false,
             };
             // Make the request
-            WorkerPool response = await cloudBuildClient.UpdateWorkerPoolAsync(request);
+            Operation<WorkerPool, UpdateWorkerPoolOperationMetadata> response = await cloudBuildClient.UpdateWorkerPoolAsync(request);
+
+            // Poll until the returned long-running operation is complete
+            Operation<WorkerPool, UpdateWorkerPoolOperationMetadata> completedResponse = await response.PollUntilCompletedAsync();
+            // Retrieve the operation result
+            WorkerPool result = completedResponse.Result;
+
+            // Or get the name of the operation
+            string operationName = response.Name;
+            // This name can be stored, then the long-running operation retrieved later by name
+            Operation<WorkerPool, UpdateWorkerPoolOperationMetadata> retrievedResponse = await cloudBuildClient.PollOnceUpdateWorkerPoolAsync(operationName);
+            // Check if the retrieved long-running operation has completed
+            if (retrievedResponse.IsCompleted)
+            {
+                // If it has completed, then access the result
+                WorkerPool retrievedResult = retrievedResponse.Result;
+            }
         }
     }
 }

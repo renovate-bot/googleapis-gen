@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ListWorkerPoolsResponse() {
     workerPools_ = java.util.Collections.emptyList();
+    nextPageToken_ = "";
   }
 
   @java.lang.Override
@@ -63,6 +64,12 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloudbuild.v1.WorkerPool.parser(), extensionRegistry));
             break;
           }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            nextPageToken_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -102,7 +109,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloudbuild.v1.WorkerPool> workerPools_;
   /**
    * <pre>
-   * `WorkerPools` for the project.
+   * `WorkerPools` for the specified project.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -113,7 +120,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `WorkerPools` for the project.
+   * `WorkerPools` for the specified project.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -125,7 +132,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `WorkerPools` for the project.
+   * `WorkerPools` for the specified project.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -136,7 +143,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `WorkerPools` for the project.
+   * `WorkerPools` for the specified project.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -147,7 +154,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * `WorkerPools` for the project.
+   * `WorkerPools` for the specified project.
    * </pre>
    *
    * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -156,6 +163,56 @@ private static final long serialVersionUID = 0L;
   public com.google.cloudbuild.v1.WorkerPoolOrBuilder getWorkerPoolsOrBuilder(
       int index) {
     return workerPools_.get(index);
+  }
+
+  public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
+  private volatile java.lang.Object nextPageToken_;
+  /**
+   * <pre>
+   * Continuation token used to page through large result sets. Provide this
+   * value in a subsequent ListWorkerPoolsRequest to return the next page of
+   * results.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   * @return The nextPageToken.
+   */
+  @java.lang.Override
+  public java.lang.String getNextPageToken() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextPageToken_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Continuation token used to page through large result sets. Provide this
+   * value in a subsequent ListWorkerPoolsRequest to return the next page of
+   * results.
+   * </pre>
+   *
+   * <code>string next_page_token = 2;</code>
+   * @return The bytes for nextPageToken.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNextPageTokenBytes() {
+    java.lang.Object ref = nextPageToken_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nextPageToken_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -175,6 +232,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < workerPools_.size(); i++) {
       output.writeMessage(1, workerPools_.get(i));
     }
+    if (!getNextPageTokenBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nextPageToken_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -187,6 +247,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < workerPools_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, workerPools_.get(i));
+    }
+    if (!getNextPageTokenBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -205,6 +268,8 @@ private static final long serialVersionUID = 0L;
 
     if (!getWorkerPoolsList()
         .equals(other.getWorkerPoolsList())) return false;
+    if (!getNextPageToken()
+        .equals(other.getNextPageToken())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -220,6 +285,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + WORKER_POOLS_FIELD_NUMBER;
       hash = (53 * hash) + getWorkerPoolsList().hashCode();
     }
+    hash = (37 * hash) + NEXT_PAGE_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getNextPageToken().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -364,6 +431,8 @@ private static final long serialVersionUID = 0L;
       } else {
         workerPoolsBuilder_.clear();
       }
+      nextPageToken_ = "";
+
       return this;
     }
 
@@ -400,6 +469,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.workerPools_ = workerPoolsBuilder_.build();
       }
+      result.nextPageToken_ = nextPageToken_;
       onBuilt();
       return result;
     }
@@ -474,6 +544,10 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (!other.getNextPageToken().isEmpty()) {
+        nextPageToken_ = other.nextPageToken_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -518,7 +592,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -532,7 +606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -546,7 +620,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -560,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -581,7 +655,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -599,7 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -619,7 +693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -640,7 +714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -658,7 +732,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -676,7 +750,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -695,7 +769,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -712,7 +786,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -729,7 +803,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -740,7 +814,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -754,7 +828,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -769,7 +843,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -780,7 +854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -792,7 +866,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * `WorkerPools` for the project.
+     * `WorkerPools` for the specified project.
      * </pre>
      *
      * <code>repeated .google.devtools.cloudbuild.v1.WorkerPool worker_pools = 1;</code>
@@ -814,6 +888,112 @@ private static final long serialVersionUID = 0L;
         workerPools_ = null;
       }
       return workerPoolsBuilder_;
+    }
+
+    private java.lang.Object nextPageToken_ = "";
+    /**
+     * <pre>
+     * Continuation token used to page through large result sets. Provide this
+     * value in a subsequent ListWorkerPoolsRequest to return the next page of
+     * results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     * @return The nextPageToken.
+     */
+    public java.lang.String getNextPageToken() {
+      java.lang.Object ref = nextPageToken_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextPageToken_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Continuation token used to page through large result sets. Provide this
+     * value in a subsequent ListWorkerPoolsRequest to return the next page of
+     * results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     * @return The bytes for nextPageToken.
+     */
+    public com.google.protobuf.ByteString
+        getNextPageTokenBytes() {
+      java.lang.Object ref = nextPageToken_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nextPageToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Continuation token used to page through large result sets. Provide this
+     * value in a subsequent ListWorkerPoolsRequest to return the next page of
+     * results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     * @param value The nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageToken(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      nextPageToken_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Continuation token used to page through large result sets. Provide this
+     * value in a subsequent ListWorkerPoolsRequest to return the next page of
+     * results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNextPageToken() {
+      
+      nextPageToken_ = getDefaultInstance().getNextPageToken();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Continuation token used to page through large result sets. Provide this
+     * value in a subsequent ListWorkerPoolsRequest to return the next page of
+     * results.
+     * </pre>
+     *
+     * <code>string next_page_token = 2;</code>
+     * @param value The bytes for nextPageToken to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextPageTokenBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      nextPageToken_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
