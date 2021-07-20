@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/gateway",
+  "name": "@google-cloud/gke-connect-gateway",
   "version": "0.1.0",
   "description": "Gateway client for Node.js",
   "repository": "googleapis/nodejs-gateway",
