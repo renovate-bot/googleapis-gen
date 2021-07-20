@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const lifesciences = require('@google-cloud/lifesciences');
+const lifesciences = require('@google-cloud/life-sciences');
 
 function main() {
   const workflowsServiceV2BetaClient = new lifesciences.WorkflowsServiceV2BetaClient();

@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/lifesciences",
+  "name": "@google-cloud/life-sciences",
   "version": "0.1.0",
   "description": "Lifesciences client for Node.js",
   "repository": "googleapis/nodejs-lifesciences",
