@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Networkmanagement
+    module DataFusion
       module V1beta1
         VERSION = "0.0.1"
       end

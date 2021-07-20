@@ -1,13 +1,13 @@
-# Ruby Client for the Google Cloud Filestore V1beta1 API
+# Ruby Client for the Filestore V1beta1 API
 
-API Client library for the Google Cloud Filestore V1beta1 API
+API Client library for the Filestore V1beta1 API
 
-google-cloud-filestore-v1beta1 is the official client library for the Google Cloud Filestore V1beta1 API.
+Filestore instances are fully managed NFS file servers on Google Cloud for use with applications running on Compute Engine virtual machines (VMs) instances or Google Kubernetes Engine clusters.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Filestore V1beta1 API. Most users should consider using
+specific version of the Filestore V1beta1 API. Most users should consider using
 the main client gem,
 [google-cloud-filestore](https://rubygems.org/gems/google-cloud-filestore).
 See the section below titled *Which client should I use?* for more information.
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/file.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -38,6 +39,9 @@ response = client.list_instances request
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-filestore-v1beta1/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/filestore/)
+for general usage information.
 
 ## Enabling Logging
 

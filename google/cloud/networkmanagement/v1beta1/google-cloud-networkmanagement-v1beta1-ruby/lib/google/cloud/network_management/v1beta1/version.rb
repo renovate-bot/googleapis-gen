@@ -19,8 +19,8 @@
 
 module Google
   module Cloud
-    module Networkmanagement
-      module V1
+    module NetworkManagement
+      module V1beta1
         VERSION = "0.0.1"
       end
     end

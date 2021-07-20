@@ -1,21 +1,21 @@
-# Ruby Client for the Google Cloud Networkmanagement V1 API
+# Ruby Client for the Network Management V1 API
 
-API Client library for the Google Cloud Networkmanagement V1 API
+API Client library for the Network Management V1 API
 
-google-cloud-networkmanagement-v1 is the official client library for the Google Cloud Networkmanagement V1 API.
+The Network Management API provides a collection of network performance monitoring and diagnostic capabilities.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Networkmanagement V1 API. Most users should consider using
+specific version of the Network Management V1 API. Most users should consider using
 the main client gem,
-[google-cloud-networkmanagement](https://rubygems.org/gems/google-cloud-networkmanagement).
+[google-cloud-network_management](https://rubygems.org/gems/google-cloud-network_management).
 See the section below titled *Which client should I use?* for more information.
 
 ## Installation
 
 ```
-$ gem install google-cloud-networkmanagement-v1
+$ gem install google-cloud-network_management-v1
 ```
 
 ## Before You Begin
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/networkmanagement.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -36,8 +37,11 @@ request = ::Google::Cloud::NetworkManagement::V1::ListConnectivityTestsRequest.n
 response = client.list_connectivity_tests request
 ```
 
-View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-networkmanagement-v1/latest)
+View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-network_management-v1/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/network-intelligence-center/docs/connectivity-tests/reference/networkmanagement/rest)
+for general usage information.
 
 ## Enabling Logging
 
@@ -79,9 +83,9 @@ about the Ruby support schedule.
 ## Which client should I use?
 
 Most modern Ruby client libraries for Google APIs come in two flavors: the main
-client library with a name such as `google-cloud-networkmanagement`,
+client library with a name such as `google-cloud-network_management`,
 and lower-level _versioned_ client libraries with names such as
-`google-cloud-networkmanagement-v1`.
+`google-cloud-network_management-v1`.
 _In most cases, you should install the main client._
 
 ### What's the difference between the main client and a versioned client?
@@ -106,7 +110,7 @@ service version.
 
 We recommend that most users install the main client gem for a service. You can
 identify this gem as the one _without_ a version in its name, e.g.
-`google-cloud-networkmanagement`.
+`google-cloud-network_management`.
 The main client is recommended because it will embody the best practices for
 accessing the service, and may also provide more convenient interfaces or
 tighter integration into frameworks and third-party libraries. In addition, the
@@ -119,7 +123,7 @@ You can use a versioned client if you are content with a possibly lower-level
 class interface, you explicitly want to avoid features provided by the main
 client, or you want to access a specific service version not be covered by the
 main client. You can identify versioned client gems because the service version
-is part of the name, e.g. `google-cloud-networkmanagement-v1`.
+is part of the name, e.g. `google-cloud-network_management-v1`.
 
 ### What about the google-apis-<name> clients?
 

@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/networkmanagement/v1beta1/version", __dir__)
+require File.expand_path("lib/google/cloud/data_fusion/v1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-networkmanagement-v1beta1"
-  gem.version       = Google::Cloud::Networkmanagement::V1beta1::VERSION
+  gem.name          = "google-cloud-data_fusion-v1"
+  gem.version       = Google::Cloud::DataFusion::V1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-networkmanagement-v1beta1 is the official client library for the Google Cloud Networkmanagement V1beta1 API. Note that google-cloud-networkmanagement-v1beta1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-networkmanagement instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Networkmanagement V1beta1 API"
+  gem.description   = "Cloud Data Fusion is a fully managed, cloud-native, enterprise data integration service for quickly building and managing data pipelines. Note that google-cloud-data_fusion-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-data_fusion instead. See the readme for more details."
+  gem.summary       = "API Client library for the Cloud Data Fusion V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

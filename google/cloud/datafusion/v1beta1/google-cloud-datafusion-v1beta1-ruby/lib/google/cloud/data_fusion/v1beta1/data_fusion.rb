@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/datafusion/v1beta1/version"
+require "google/cloud/data_fusion/v1beta1/version"
 
 require "google/cloud/data_fusion/v1beta1/data_fusion/credentials"
 require "google/cloud/data_fusion/v1beta1/data_fusion/paths"

@@ -1,5 +1,5 @@
 --no-private
---title=Google Cloud Datafusion V1beta1 API
+--title=Cloud Data Fusion V1beta1 API
 --exclude _pb\.rb$
 --format yaml
 --template-path ../template

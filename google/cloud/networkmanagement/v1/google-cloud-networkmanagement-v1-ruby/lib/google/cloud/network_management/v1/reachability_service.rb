@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/networkmanagement/v1/version"
+require "google/cloud/network_management/v1/version"
 
 require "google/cloud/network_management/v1/reachability_service/credentials"
 require "google/cloud/network_management/v1/reachability_service/paths"
