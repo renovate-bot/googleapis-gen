@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 #
-# google-cloud-orchestration-airflow-service documentation build configuration file
+# google-cloud-orchestration-airflow documentation build configuration file
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -78,7 +78,7 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-orchestration-airflow-service"
+project = u"google-cloud-orchestration-airflow"
 copyright = u"2020, Google, LLC"
 author = u"Google APIs"         # TODO: autogenerate this bit
 
@@ -240,7 +240,7 @@ html_static_path = ["_static"]
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "google-cloud-orchestration-airflow-service-doc"
+htmlhelp_basename = "google-cloud-orchestration-airflow-doc"
 
 # -- Options for warnings ------------------------------------------------------
 
@@ -273,8 +273,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "google-cloud-orchestration-airflow-service.tex",
-        u"google-cloud-orchestration-airflow-service Documentation",
+        "google-cloud-orchestration-airflow.tex",
+        u"google-cloud-orchestration-airflow Documentation",
         author,
         "manual",
     )
@@ -308,7 +308,7 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "google-cloud-orchestration-airflow-service",
+        "google-cloud-orchestration-airflow",
         u"Google Cloud Orchestration Airflow Service Documentation",
         [author],
         1,
@@ -327,10 +327,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "google-cloud-orchestration-airflow-service",
-        u"google-cloud-orchestration-airflow-service Documentation",
+        "google-cloud-orchestration-airflow",
+        u"google-cloud-orchestration-airflow Documentation",
         author,
-        "google-cloud-orchestration-airflow-service",
+        "google-cloud-orchestration-airflow",
         "GAPIC library for Google Cloud Orchestration Airflow Service API",
         "APIs",
     )
