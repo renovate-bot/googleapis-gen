@@ -541,6 +541,17 @@ export class AgentEndpointServiceClient {
  *   PATCH_GA
  *   GUEST_POLICY_BETA
  *   CONFIG_V1
+ * @param {string} request.osLongName
+ *   The operating system long name.
+ *   For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+ *   Datacenter'.
+ * @param {string} request.osShortName
+ *   The operating system short name.
+ *   For example, 'windows' or 'debian'.
+ * @param {string} request.osVersion
+ *   The version of the operating system.
+ * @param {string} request.osArchitecture
+ *   The system architecture of the operating system.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.

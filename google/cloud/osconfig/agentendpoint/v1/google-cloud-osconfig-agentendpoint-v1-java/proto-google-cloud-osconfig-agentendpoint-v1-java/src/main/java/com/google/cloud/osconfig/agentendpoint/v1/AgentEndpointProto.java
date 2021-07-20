@@ -123,52 +123,54 @@ public final class AgentEndpointProto {
       "tepTaskOutputH\000\022a\n\030apply_config_task_out" +
       "put\030\007 \001(\0132=.google.cloud.osconfig.agente" +
       "ndpoint.v1.ApplyConfigTaskOutputH\000B\010\n\006ou" +
-      "tput\"\034\n\032ReportTaskCompleteResponse\"w\n\024Re" +
-      "gisterAgentRequest\022\036\n\021instance_id_token\030" +
-      "\001 \001(\tB\003\340A\002\022\032\n\ragent_version\030\002 \001(\tB\003\340A\002\022#" +
-      "\n\026supported_capabilities\030\003 \003(\tB\003\340A\002\"\027\n\025R" +
-      "egisterAgentResponse\"\244\001\n\026ReportInventory" +
-      "Request\022\036\n\021instance_id_token\030\001 \001(\tB\003\340A\002\022" +
-      "\037\n\022inventory_checksum\030\002 \001(\tB\003\340A\002\022I\n\tinve" +
-      "ntory\030\003 \001(\01321.google.cloud.osconfig.agen" +
-      "tendpoint.v1.InventoryB\003\340A\001\"8\n\027ReportInv" +
-      "entoryResponse\022\035\n\025report_full_inventory\030" +
-      "\001 \001(\0102\326\t\n\024AgentEndpointService\022\320\001\n\027Recei" +
-      "veTaskNotification\022F.google.cloud.osconf" +
-      "ig.agentendpoint.v1.ReceiveTaskNotificat" +
-      "ionRequest\032G.google.cloud.osconfig.agent" +
-      "endpoint.v1.ReceiveTaskNotificationRespo" +
-      "nse\"\"\332A\037instance_id_token,agent_version0" +
-      "\001\022\242\001\n\rStartNextTask\022<.google.cloud.oscon" +
-      "fig.agentendpoint.v1.StartNextTaskReques" +
-      "t\032=.google.cloud.osconfig.agentendpoint." +
-      "v1.StartNextTaskResponse\"\024\332A\021instance_id" +
-      "_token\022\303\001\n\022ReportTaskProgress\022A.google.c" +
-      "loud.osconfig.agentendpoint.v1.ReportTas" +
-      "kProgressRequest\032B.google.cloud.osconfig" +
-      ".agentendpoint.v1.ReportTaskProgressResp" +
-      "onse\"&\332A#instance_id_token,task_id,task_" +
-      "type\022\321\001\n\022ReportTaskComplete\022A.google.clo" +
-      "ud.osconfig.agentendpoint.v1.ReportTaskC" +
-      "ompleteRequest\032B.google.cloud.osconfig.a" +
-      "gentendpoint.v1.ReportTaskCompleteRespon" +
-      "se\"4\332A1instance_id_token,task_id,task_ty" +
-      "pe,error_message\022\307\001\n\rRegisterAgent\022<.goo" +
-      "gle.cloud.osconfig.agentendpoint.v1.Regi" +
-      "sterAgentRequest\032=.google.cloud.osconfig" +
-      ".agentendpoint.v1.RegisterAgentResponse\"" +
-      "9\332A6instance_id_token,agent_version,supp" +
-      "orted_capabilities\022\305\001\n\017ReportInventory\022>" +
+      "tput\"\034\n\032ReportTaskCompleteResponse\"\321\001\n\024R" +
+      "egisterAgentRequest\022\036\n\021instance_id_token" +
+      "\030\001 \001(\tB\003\340A\002\022\032\n\ragent_version\030\002 \001(\tB\003\340A\002\022" +
+      "#\n\026supported_capabilities\030\003 \003(\tB\003\340A\002\022\024\n\014" +
+      "os_long_name\030\004 \001(\t\022\025\n\ros_short_name\030\005 \001(" +
+      "\t\022\022\n\nos_version\030\006 \001(\t\022\027\n\017os_architecture" +
+      "\030\007 \001(\t\"\027\n\025RegisterAgentResponse\"\244\001\n\026Repo" +
+      "rtInventoryRequest\022\036\n\021instance_id_token\030" +
+      "\001 \001(\tB\003\340A\002\022\037\n\022inventory_checksum\030\002 \001(\tB\003" +
+      "\340A\002\022I\n\tinventory\030\003 \001(\01321.google.cloud.os" +
+      "config.agentendpoint.v1.InventoryB\003\340A\001\"8" +
+      "\n\027ReportInventoryResponse\022\035\n\025report_full" +
+      "_inventory\030\001 \001(\0102\326\t\n\024AgentEndpointServic" +
+      "e\022\320\001\n\027ReceiveTaskNotification\022F.google.c" +
+      "loud.osconfig.agentendpoint.v1.ReceiveTa" +
+      "skNotificationRequest\032G.google.cloud.osc" +
+      "onfig.agentendpoint.v1.ReceiveTaskNotifi" +
+      "cationResponse\"\"\332A\037instance_id_token,age" +
+      "nt_version0\001\022\242\001\n\rStartNextTask\022<.google." +
+      "cloud.osconfig.agentendpoint.v1.StartNex" +
+      "tTaskRequest\032=.google.cloud.osconfig.age" +
+      "ntendpoint.v1.StartNextTaskResponse\"\024\332A\021" +
+      "instance_id_token\022\303\001\n\022ReportTaskProgress" +
+      "\022A.google.cloud.osconfig.agentendpoint.v" +
+      "1.ReportTaskProgressRequest\032B.google.clo" +
+      "ud.osconfig.agentendpoint.v1.ReportTaskP" +
+      "rogressResponse\"&\332A#instance_id_token,ta" +
+      "sk_id,task_type\022\321\001\n\022ReportTaskComplete\022A" +
       ".google.cloud.osconfig.agentendpoint.v1." +
-      "ReportInventoryRequest\032?.google.cloud.os" +
-      "config.agentendpoint.v1.ReportInventoryR" +
-      "esponse\"1\332A.instance_id_token,inventory_" +
-      "checksum,inventory\032\032\312A\027osconfig.googleap" +
-      "is.comB\227\001\n*com.google.cloud.osconfig.age" +
-      "ntendpoint.v1B\022AgentEndpointProtoP\001ZSgoo" +
-      "gle.golang.org/genproto/googleapis/cloud" +
-      "/osconfig/agentendpoint/v1;agentendpoint" +
-      "b\006proto3"
+      "ReportTaskCompleteRequest\032B.google.cloud" +
+      ".osconfig.agentendpoint.v1.ReportTaskCom" +
+      "pleteResponse\"4\332A1instance_id_token,task" +
+      "_id,task_type,error_message\022\307\001\n\rRegister" +
+      "Agent\022<.google.cloud.osconfig.agentendpo" +
+      "int.v1.RegisterAgentRequest\032=.google.clo" +
+      "ud.osconfig.agentendpoint.v1.RegisterAge" +
+      "ntResponse\"9\332A6instance_id_token,agent_v" +
+      "ersion,supported_capabilities\022\305\001\n\017Report" +
+      "Inventory\022>.google.cloud.osconfig.agente" +
+      "ndpoint.v1.ReportInventoryRequest\032?.goog" +
+      "le.cloud.osconfig.agentendpoint.v1.Repor" +
+      "tInventoryResponse\"1\332A.instance_id_token" +
+      ",inventory_checksum,inventory\032\032\312A\027osconf" +
+      "ig.googleapis.comB\227\001\n*com.google.cloud.o" +
+      "sconfig.agentendpoint.v1B\022AgentEndpointP" +
+      "rotoP\001ZSgoogle.golang.org/genproto/googl" +
+      "eapis/cloud/osconfig/agentendpoint/v1;ag" +
+      "entendpointb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -231,7 +233,7 @@ public final class AgentEndpointProto {
     internal_static_google_cloud_osconfig_agentendpoint_v1_RegisterAgentRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_RegisterAgentRequest_descriptor,
-        new java.lang.String[] { "InstanceIdToken", "AgentVersion", "SupportedCapabilities", });
+        new java.lang.String[] { "InstanceIdToken", "AgentVersion", "SupportedCapabilities", "OsLongName", "OsShortName", "OsVersion", "OsArchitecture", });
     internal_static_google_cloud_osconfig_agentendpoint_v1_RegisterAgentResponse_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_osconfig_agentendpoint_v1_RegisterAgentResponse_fieldAccessorTable = new

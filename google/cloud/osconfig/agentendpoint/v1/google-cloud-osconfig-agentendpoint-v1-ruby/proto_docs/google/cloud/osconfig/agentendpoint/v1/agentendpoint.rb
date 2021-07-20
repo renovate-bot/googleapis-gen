@@ -161,6 +161,21 @@ module Google
           #     PATCH_GA
           #     GUEST_POLICY_BETA
           #     CONFIG_V1
+          # @!attribute [rw] os_long_name
+          #   @return [::String]
+          #     The operating system long name.
+          #     For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+          #     Datacenter'.
+          # @!attribute [rw] os_short_name
+          #   @return [::String]
+          #     The operating system short name.
+          #     For example, 'windows' or 'debian'.
+          # @!attribute [rw] os_version
+          #   @return [::String]
+          #     The version of the operating system.
+          # @!attribute [rw] os_architecture
+          #   @return [::String]
+          #     The system architecture of the operating system.
           class RegisterAgentRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

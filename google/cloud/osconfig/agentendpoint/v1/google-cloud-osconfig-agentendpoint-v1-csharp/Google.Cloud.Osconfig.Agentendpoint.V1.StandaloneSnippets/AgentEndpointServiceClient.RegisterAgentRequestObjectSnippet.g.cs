@@ -35,6 +35,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Snippets
                 InstanceIdToken = "",
                 AgentVersion = "",
                 SupportedCapabilities = { "", },
+                OsLongName = "",
+                OsShortName = "",
+                OsVersion = "",
+                OsArchitecture = "",
             };
             // Make the request
             RegisterAgentResponse response = agentEndpointServiceClient.RegisterAgent(request);

@@ -286,6 +286,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Tests
                 {
                     "supported_capabilities0e7e5a9c",
                 },
+                OsLongName = "os_long_namea52c92bd",
+                OsShortName = "os_short_name9fb1ea45",
+                OsVersion = "os_versionc4976daf",
+                OsArchitecture = "os_architecture40da382d",
             };
             RegisterAgentResponse expectedResponse = new RegisterAgentResponse { };
             mockGrpcClient.Setup(x => x.RegisterAgent(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
@@ -307,6 +311,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1.Tests
                 {
                     "supported_capabilities0e7e5a9c",
                 },
+                OsLongName = "os_long_namea52c92bd",
+                OsShortName = "os_short_name9fb1ea45",
+                OsVersion = "os_versionc4976daf",
+                OsArchitecture = "os_architecture40da382d",
             };
             RegisterAgentResponse expectedResponse = new RegisterAgentResponse { };
             mockGrpcClient.Setup(x => x.RegisterAgentAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<RegisterAgentResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));

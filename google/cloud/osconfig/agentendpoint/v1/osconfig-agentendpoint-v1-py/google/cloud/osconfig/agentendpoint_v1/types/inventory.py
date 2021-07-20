@@ -16,6 +16,7 @@
 import proto  # type: ignore
 
 from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import date_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -134,6 +135,8 @@ class Inventory(proto.Message):
                 for info in Windows Quick Fix Engineering.
             cos_package (google.cloud.osconfig.agentendpoint_v1.types.Inventory.VersionedPackage):
                 Details of a COS package.
+            windows_application (google.cloud.osconfig.agentendpoint_v1.types.Inventory.WindowsApplication):
+                Details of Windows Application.
         """
 
         yum_package = proto.Field(
@@ -184,6 +187,12 @@ class Inventory(proto.Message):
             oneof='details',
             message='Inventory.VersionedPackage',
         )
+        windows_application = proto.Field(
+            proto.MESSAGE,
+            number=9,
+            oneof='details',
+            message='Inventory.WindowsApplication',
+        )
 
     class VersionedPackage(proto.Message):
         r"""Information related to the a standard versioned package.
@@ -211,6 +220,45 @@ class Inventory(proto.Message):
         version = proto.Field(
             proto.STRING,
             number=3,
+        )
+
+    class WindowsQuickFixEngineeringPackage(proto.Message):
+        r"""Information related to a Quick Fix Engineering package.
+        Fields are taken from Windows QuickFixEngineering Interface and
+        match the source names:
+        https://docs.microsoft.com/en-
+        us/windows/win32/cimwin32prov/win32-quickfixengineering
+
+        Attributes:
+            caption (str):
+                A short textual description of the QFE
+                update.
+            description (str):
+                A textual description of the QFE update.
+            hot_fix_id (str):
+                Unique identifier associated with a
+                particular QFE update.
+            install_time (google.protobuf.timestamp_pb2.Timestamp):
+                Date that the QFE update was installed. Mapped from
+                installed_on field.
+        """
+
+        caption = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        description = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        hot_fix_id = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        install_time = proto.Field(
+            proto.MESSAGE,
+            number=4,
+            message=timestamp_pb2.Timestamp,
         )
 
     class ZypperPatch(proto.Message):
@@ -338,43 +386,46 @@ class Inventory(proto.Message):
             message=timestamp_pb2.Timestamp,
         )
 
-    class WindowsQuickFixEngineeringPackage(proto.Message):
-        r"""Information related to a Quick Fix Engineering package.
-        Fields are taken from Windows QuickFixEngineering Interface and
-        match the source names:
-        https://docs.microsoft.com/en-
-        us/windows/win32/cimwin32prov/win32-quickfixengineering
+    class WindowsApplication(proto.Message):
+        r"""Details about Windows Application - based on Windows
+        Registry. All fields in this message are taken from:
+        https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-
+        registry-key
 
         Attributes:
-            caption (str):
-                A short textual description of the QFE
-                update.
-            description (str):
-                A textual description of the QFE update.
-            hot_fix_id (str):
-                Unique identifier associated with a
-                particular QFE update.
-            install_time (google.protobuf.timestamp_pb2.Timestamp):
-                Date that the QFE update was installed. Mapped from
-                installed_on field.
+            display_name (str):
+                DisplayName field from Windows Registry.
+            display_version (str):
+                DisplayVersion field from Windows Registry.
+            publisher (str):
+                Publisher field from Windows Registry.
+            install_date (google.type.date_pb2.Date):
+                Installation date field from Windows
+                Registry.
+            help_link (str):
+                HelpLink field from Windows Registry.
         """
 
-        caption = proto.Field(
+        display_name = proto.Field(
             proto.STRING,
             number=1,
         )
-        description = proto.Field(
+        display_version = proto.Field(
             proto.STRING,
             number=2,
         )
-        hot_fix_id = proto.Field(
+        publisher = proto.Field(
             proto.STRING,
             number=3,
         )
-        install_time = proto.Field(
+        install_date = proto.Field(
             proto.MESSAGE,
             number=4,
-            message=timestamp_pb2.Timestamp,
+            message=date_pb2.Date,
+        )
+        help_link = proto.Field(
+            proto.STRING,
+            number=5,
         )
 
     os_info = proto.Field(

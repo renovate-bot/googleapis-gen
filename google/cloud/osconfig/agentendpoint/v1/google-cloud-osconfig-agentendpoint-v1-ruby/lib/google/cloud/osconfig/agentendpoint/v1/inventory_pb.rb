@@ -4,6 +4,7 @@
 require 'google/protobuf'
 
 require 'google/protobuf/timestamp_pb'
+require 'google/type/date_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/osconfig/agentendpoint/v1/inventory.proto", :syntax => :proto3) do
     add_message "google.cloud.osconfig.agentendpoint.v1.Inventory" do
@@ -31,12 +32,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :wua_package, :message, 6, "google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsUpdatePackage"
         optional :qfe_package, :message, 7, "google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsQuickFixEngineeringPackage"
         optional :cos_package, :message, 8, "google.cloud.osconfig.agentendpoint.v1.Inventory.VersionedPackage"
+        optional :windows_application, :message, 9, "google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsApplication"
       end
     end
     add_message "google.cloud.osconfig.agentendpoint.v1.Inventory.VersionedPackage" do
       optional :package_name, :string, 1
       optional :architecture, :string, 2
       optional :version, :string, 3
+    end
+    add_message "google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsQuickFixEngineeringPackage" do
+      optional :caption, :string, 1
+      optional :description, :string, 2
+      optional :hot_fix_id, :string, 3
+      optional :install_time, :message, 4, "google.protobuf.Timestamp"
     end
     add_message "google.cloud.osconfig.agentendpoint.v1.Inventory.ZypperPatch" do
       optional :patch_name, :string, 1
@@ -59,11 +67,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :id, :string, 1
       optional :name, :string, 2
     end
-    add_message "google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsQuickFixEngineeringPackage" do
-      optional :caption, :string, 1
-      optional :description, :string, 2
-      optional :hot_fix_id, :string, 3
-      optional :install_time, :message, 4, "google.protobuf.Timestamp"
+    add_message "google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsApplication" do
+      optional :display_name, :string, 1
+      optional :display_version, :string, 2
+      optional :publisher, :string, 3
+      optional :install_date, :message, 4, "google.type.Date"
+      optional :help_link, :string, 5
     end
   end
 end
@@ -77,10 +86,11 @@ module Google
           Inventory::OsInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.OsInfo").msgclass
           Inventory::SoftwarePackage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.SoftwarePackage").msgclass
           Inventory::VersionedPackage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.VersionedPackage").msgclass
+          Inventory::WindowsQuickFixEngineeringPackage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsQuickFixEngineeringPackage").msgclass
           Inventory::ZypperPatch = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.ZypperPatch").msgclass
           Inventory::WindowsUpdatePackage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsUpdatePackage").msgclass
           Inventory::WindowsUpdatePackage::WindowsUpdateCategory = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsUpdatePackage.WindowsUpdateCategory").msgclass
-          Inventory::WindowsQuickFixEngineeringPackage = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsQuickFixEngineeringPackage").msgclass
+          Inventory::WindowsApplication = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.osconfig.agentendpoint.v1.Inventory.WindowsApplication").msgclass
         end
       end
     end

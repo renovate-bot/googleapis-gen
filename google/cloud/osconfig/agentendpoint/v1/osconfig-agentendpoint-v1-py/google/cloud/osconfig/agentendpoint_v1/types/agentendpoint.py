@@ -280,6 +280,18 @@ class RegisterAgentRequest(proto.Message):
         supported_capabilities (Sequence[str]):
             Required. The capabilities supported by the agent. Supported
             values are: PATCH_GA GUEST_POLICY_BETA CONFIG_V1
+        os_long_name (str):
+            The operating system long name.
+            For example 'Debian GNU/Linux 9' or 'Microsoft
+            Window Server 2019 Datacenter'.
+        os_short_name (str):
+            The operating system short name.
+            For example, 'windows' or 'debian'.
+        os_version (str):
+            The version of the operating system.
+        os_architecture (str):
+            The system architecture of the operating
+            system.
     """
 
     instance_id_token = proto.Field(
@@ -293,6 +305,22 @@ class RegisterAgentRequest(proto.Message):
     supported_capabilities = proto.RepeatedField(
         proto.STRING,
         number=3,
+    )
+    os_long_name = proto.Field(
+        proto.STRING,
+        number=4,
+    )
+    os_short_name = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    os_version = proto.Field(
+        proto.STRING,
+        number=6,
+    )
+    os_architecture = proto.Field(
+        proto.STRING,
+        number=7,
     )
 
 

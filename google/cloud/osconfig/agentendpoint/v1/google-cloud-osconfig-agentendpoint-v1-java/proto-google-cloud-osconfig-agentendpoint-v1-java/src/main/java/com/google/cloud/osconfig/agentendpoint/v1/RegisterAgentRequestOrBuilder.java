@@ -103,4 +103,90 @@ public interface RegisterAgentRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSupportedCapabilitiesBytes(int index);
+
+  /**
+   * <pre>
+   * The operating system long name.
+   * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+   * Datacenter'.
+   * </pre>
+   *
+   * <code>string os_long_name = 4;</code>
+   * @return The osLongName.
+   */
+  java.lang.String getOsLongName();
+  /**
+   * <pre>
+   * The operating system long name.
+   * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+   * Datacenter'.
+   * </pre>
+   *
+   * <code>string os_long_name = 4;</code>
+   * @return The bytes for osLongName.
+   */
+  com.google.protobuf.ByteString
+      getOsLongNameBytes();
+
+  /**
+   * <pre>
+   * The operating system short name.
+   * For example, 'windows' or 'debian'.
+   * </pre>
+   *
+   * <code>string os_short_name = 5;</code>
+   * @return The osShortName.
+   */
+  java.lang.String getOsShortName();
+  /**
+   * <pre>
+   * The operating system short name.
+   * For example, 'windows' or 'debian'.
+   * </pre>
+   *
+   * <code>string os_short_name = 5;</code>
+   * @return The bytes for osShortName.
+   */
+  com.google.protobuf.ByteString
+      getOsShortNameBytes();
+
+  /**
+   * <pre>
+   * The version of the operating system.
+   * </pre>
+   *
+   * <code>string os_version = 6;</code>
+   * @return The osVersion.
+   */
+  java.lang.String getOsVersion();
+  /**
+   * <pre>
+   * The version of the operating system.
+   * </pre>
+   *
+   * <code>string os_version = 6;</code>
+   * @return The bytes for osVersion.
+   */
+  com.google.protobuf.ByteString
+      getOsVersionBytes();
+
+  /**
+   * <pre>
+   * The system architecture of the operating system.
+   * </pre>
+   *
+   * <code>string os_architecture = 7;</code>
+   * @return The osArchitecture.
+   */
+  java.lang.String getOsArchitecture();
+  /**
+   * <pre>
+   * The system architecture of the operating system.
+   * </pre>
+   *
+   * <code>string os_architecture = 7;</code>
+   * @return The bytes for osArchitecture.
+   */
+  com.google.protobuf.ByteString
+      getOsArchitectureBytes();
 }

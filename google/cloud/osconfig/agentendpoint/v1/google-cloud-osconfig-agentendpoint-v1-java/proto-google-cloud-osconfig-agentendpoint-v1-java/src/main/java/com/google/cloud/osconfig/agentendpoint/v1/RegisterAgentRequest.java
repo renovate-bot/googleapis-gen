@@ -23,6 +23,10 @@ private static final long serialVersionUID = 0L;
     instanceIdToken_ = "";
     agentVersion_ = "";
     supportedCapabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    osLongName_ = "";
+    osShortName_ = "";
+    osVersion_ = "";
+    osArchitecture_ = "";
   }
 
   @java.lang.Override
@@ -75,6 +79,30 @@ private static final long serialVersionUID = 0L;
               mutable_bitField0_ |= 0x00000001;
             }
             supportedCapabilities_.add(s);
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            osLongName_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            osShortName_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            osVersion_ = s;
+            break;
+          }
+          case 58: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            osArchitecture_ = s;
             break;
           }
           default: {
@@ -271,6 +299,196 @@ private static final long serialVersionUID = 0L;
     return supportedCapabilities_.getByteString(index);
   }
 
+  public static final int OS_LONG_NAME_FIELD_NUMBER = 4;
+  private volatile java.lang.Object osLongName_;
+  /**
+   * <pre>
+   * The operating system long name.
+   * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+   * Datacenter'.
+   * </pre>
+   *
+   * <code>string os_long_name = 4;</code>
+   * @return The osLongName.
+   */
+  @java.lang.Override
+  public java.lang.String getOsLongName() {
+    java.lang.Object ref = osLongName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      osLongName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The operating system long name.
+   * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+   * Datacenter'.
+   * </pre>
+   *
+   * <code>string os_long_name = 4;</code>
+   * @return The bytes for osLongName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOsLongNameBytes() {
+    java.lang.Object ref = osLongName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      osLongName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OS_SHORT_NAME_FIELD_NUMBER = 5;
+  private volatile java.lang.Object osShortName_;
+  /**
+   * <pre>
+   * The operating system short name.
+   * For example, 'windows' or 'debian'.
+   * </pre>
+   *
+   * <code>string os_short_name = 5;</code>
+   * @return The osShortName.
+   */
+  @java.lang.Override
+  public java.lang.String getOsShortName() {
+    java.lang.Object ref = osShortName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      osShortName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The operating system short name.
+   * For example, 'windows' or 'debian'.
+   * </pre>
+   *
+   * <code>string os_short_name = 5;</code>
+   * @return The bytes for osShortName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOsShortNameBytes() {
+    java.lang.Object ref = osShortName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      osShortName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OS_VERSION_FIELD_NUMBER = 6;
+  private volatile java.lang.Object osVersion_;
+  /**
+   * <pre>
+   * The version of the operating system.
+   * </pre>
+   *
+   * <code>string os_version = 6;</code>
+   * @return The osVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getOsVersion() {
+    java.lang.Object ref = osVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      osVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The version of the operating system.
+   * </pre>
+   *
+   * <code>string os_version = 6;</code>
+   * @return The bytes for osVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOsVersionBytes() {
+    java.lang.Object ref = osVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      osVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OS_ARCHITECTURE_FIELD_NUMBER = 7;
+  private volatile java.lang.Object osArchitecture_;
+  /**
+   * <pre>
+   * The system architecture of the operating system.
+   * </pre>
+   *
+   * <code>string os_architecture = 7;</code>
+   * @return The osArchitecture.
+   */
+  @java.lang.Override
+  public java.lang.String getOsArchitecture() {
+    java.lang.Object ref = osArchitecture_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      osArchitecture_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The system architecture of the operating system.
+   * </pre>
+   *
+   * <code>string os_architecture = 7;</code>
+   * @return The bytes for osArchitecture.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOsArchitectureBytes() {
+    java.lang.Object ref = osArchitecture_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      osArchitecture_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -293,6 +511,18 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < supportedCapabilities_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, supportedCapabilities_.getRaw(i));
+    }
+    if (!getOsLongNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, osLongName_);
+    }
+    if (!getOsShortNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, osShortName_);
+    }
+    if (!getOsVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, osVersion_);
+    }
+    if (!getOsArchitectureBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, osArchitecture_);
     }
     unknownFields.writeTo(output);
   }
@@ -317,6 +547,18 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getSupportedCapabilitiesList().size();
     }
+    if (!getOsLongNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, osLongName_);
+    }
+    if (!getOsShortNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, osShortName_);
+    }
+    if (!getOsVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, osVersion_);
+    }
+    if (!getOsArchitectureBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, osArchitecture_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -338,6 +580,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAgentVersion())) return false;
     if (!getSupportedCapabilitiesList()
         .equals(other.getSupportedCapabilitiesList())) return false;
+    if (!getOsLongName()
+        .equals(other.getOsLongName())) return false;
+    if (!getOsShortName()
+        .equals(other.getOsShortName())) return false;
+    if (!getOsVersion()
+        .equals(other.getOsVersion())) return false;
+    if (!getOsArchitecture()
+        .equals(other.getOsArchitecture())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -357,6 +607,14 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SUPPORTED_CAPABILITIES_FIELD_NUMBER;
       hash = (53 * hash) + getSupportedCapabilitiesList().hashCode();
     }
+    hash = (37 * hash) + OS_LONG_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getOsLongName().hashCode();
+    hash = (37 * hash) + OS_SHORT_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getOsShortName().hashCode();
+    hash = (37 * hash) + OS_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getOsVersion().hashCode();
+    hash = (37 * hash) + OS_ARCHITECTURE_FIELD_NUMBER;
+    hash = (53 * hash) + getOsArchitecture().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -500,6 +758,14 @@ private static final long serialVersionUID = 0L;
 
       supportedCapabilities_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000001);
+      osLongName_ = "";
+
+      osShortName_ = "";
+
+      osVersion_ = "";
+
+      osArchitecture_ = "";
+
       return this;
     }
 
@@ -534,6 +800,10 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000001);
       }
       result.supportedCapabilities_ = supportedCapabilities_;
+      result.osLongName_ = osLongName_;
+      result.osShortName_ = osShortName_;
+      result.osVersion_ = osVersion_;
+      result.osArchitecture_ = osArchitecture_;
       onBuilt();
       return result;
     }
@@ -598,6 +868,22 @@ private static final long serialVersionUID = 0L;
           ensureSupportedCapabilitiesIsMutable();
           supportedCapabilities_.addAll(other.supportedCapabilities_);
         }
+        onChanged();
+      }
+      if (!other.getOsLongName().isEmpty()) {
+        osLongName_ = other.osLongName_;
+        onChanged();
+      }
+      if (!other.getOsShortName().isEmpty()) {
+        osShortName_ = other.osShortName_;
+        onChanged();
+      }
+      if (!other.getOsVersion().isEmpty()) {
+        osVersion_ = other.osVersion_;
+        onChanged();
+      }
+      if (!other.getOsArchitecture().isEmpty()) {
+        osArchitecture_ = other.osArchitecture_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1001,6 +1287,405 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       ensureSupportedCapabilitiesIsMutable();
       supportedCapabilities_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object osLongName_ = "";
+    /**
+     * <pre>
+     * The operating system long name.
+     * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+     * Datacenter'.
+     * </pre>
+     *
+     * <code>string os_long_name = 4;</code>
+     * @return The osLongName.
+     */
+    public java.lang.String getOsLongName() {
+      java.lang.Object ref = osLongName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osLongName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The operating system long name.
+     * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+     * Datacenter'.
+     * </pre>
+     *
+     * <code>string os_long_name = 4;</code>
+     * @return The bytes for osLongName.
+     */
+    public com.google.protobuf.ByteString
+        getOsLongNameBytes() {
+      java.lang.Object ref = osLongName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osLongName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The operating system long name.
+     * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+     * Datacenter'.
+     * </pre>
+     *
+     * <code>string os_long_name = 4;</code>
+     * @param value The osLongName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsLongName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      osLongName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The operating system long name.
+     * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+     * Datacenter'.
+     * </pre>
+     *
+     * <code>string os_long_name = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOsLongName() {
+      
+      osLongName_ = getDefaultInstance().getOsLongName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The operating system long name.
+     * For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+     * Datacenter'.
+     * </pre>
+     *
+     * <code>string os_long_name = 4;</code>
+     * @param value The bytes for osLongName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsLongNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      osLongName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object osShortName_ = "";
+    /**
+     * <pre>
+     * The operating system short name.
+     * For example, 'windows' or 'debian'.
+     * </pre>
+     *
+     * <code>string os_short_name = 5;</code>
+     * @return The osShortName.
+     */
+    public java.lang.String getOsShortName() {
+      java.lang.Object ref = osShortName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osShortName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The operating system short name.
+     * For example, 'windows' or 'debian'.
+     * </pre>
+     *
+     * <code>string os_short_name = 5;</code>
+     * @return The bytes for osShortName.
+     */
+    public com.google.protobuf.ByteString
+        getOsShortNameBytes() {
+      java.lang.Object ref = osShortName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osShortName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The operating system short name.
+     * For example, 'windows' or 'debian'.
+     * </pre>
+     *
+     * <code>string os_short_name = 5;</code>
+     * @param value The osShortName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsShortName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      osShortName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The operating system short name.
+     * For example, 'windows' or 'debian'.
+     * </pre>
+     *
+     * <code>string os_short_name = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOsShortName() {
+      
+      osShortName_ = getDefaultInstance().getOsShortName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The operating system short name.
+     * For example, 'windows' or 'debian'.
+     * </pre>
+     *
+     * <code>string os_short_name = 5;</code>
+     * @param value The bytes for osShortName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsShortNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      osShortName_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object osVersion_ = "";
+    /**
+     * <pre>
+     * The version of the operating system.
+     * </pre>
+     *
+     * <code>string os_version = 6;</code>
+     * @return The osVersion.
+     */
+    public java.lang.String getOsVersion() {
+      java.lang.Object ref = osVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The version of the operating system.
+     * </pre>
+     *
+     * <code>string os_version = 6;</code>
+     * @return The bytes for osVersion.
+     */
+    public com.google.protobuf.ByteString
+        getOsVersionBytes() {
+      java.lang.Object ref = osVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The version of the operating system.
+     * </pre>
+     *
+     * <code>string os_version = 6;</code>
+     * @param value The osVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      osVersion_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The version of the operating system.
+     * </pre>
+     *
+     * <code>string os_version = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOsVersion() {
+      
+      osVersion_ = getDefaultInstance().getOsVersion();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The version of the operating system.
+     * </pre>
+     *
+     * <code>string os_version = 6;</code>
+     * @param value The bytes for osVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      osVersion_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object osArchitecture_ = "";
+    /**
+     * <pre>
+     * The system architecture of the operating system.
+     * </pre>
+     *
+     * <code>string os_architecture = 7;</code>
+     * @return The osArchitecture.
+     */
+    public java.lang.String getOsArchitecture() {
+      java.lang.Object ref = osArchitecture_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        osArchitecture_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The system architecture of the operating system.
+     * </pre>
+     *
+     * <code>string os_architecture = 7;</code>
+     * @return The bytes for osArchitecture.
+     */
+    public com.google.protobuf.ByteString
+        getOsArchitectureBytes() {
+      java.lang.Object ref = osArchitecture_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        osArchitecture_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The system architecture of the operating system.
+     * </pre>
+     *
+     * <code>string os_architecture = 7;</code>
+     * @param value The osArchitecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsArchitecture(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      osArchitecture_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The system architecture of the operating system.
+     * </pre>
+     *
+     * <code>string os_architecture = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOsArchitecture() {
+      
+      osArchitecture_ = getDefaultInstance().getOsArchitecture();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The system architecture of the operating system.
+     * </pre>
+     *
+     * <code>string os_architecture = 7;</code>
+     * @param value The bytes for osArchitecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOsArchitectureBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      osArchitecture_ = value;
       onChanged();
       return this;
     }

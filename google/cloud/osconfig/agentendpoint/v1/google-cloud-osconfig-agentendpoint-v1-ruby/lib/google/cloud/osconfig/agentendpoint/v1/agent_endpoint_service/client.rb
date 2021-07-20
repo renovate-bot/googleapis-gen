@@ -459,7 +459,7 @@ module Google
               #   @param options [::Gapic::CallOptions, ::Hash]
               #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
               #
-              # @overload register_agent(instance_id_token: nil, agent_version: nil, supported_capabilities: nil)
+              # @overload register_agent(instance_id_token: nil, agent_version: nil, supported_capabilities: nil, os_long_name: nil, os_short_name: nil, os_version: nil, os_architecture: nil)
               #   Pass arguments to `register_agent` via keyword arguments. Note that at
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -475,6 +475,17 @@ module Google
               #     PATCH_GA
               #     GUEST_POLICY_BETA
               #     CONFIG_V1
+              #   @param os_long_name [::String]
+              #     The operating system long name.
+              #     For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+              #     Datacenter'.
+              #   @param os_short_name [::String]
+              #     The operating system short name.
+              #     For example, 'windows' or 'debian'.
+              #   @param os_version [::String]
+              #     The version of the operating system.
+              #   @param os_architecture [::String]
+              #     The system architecture of the operating system.
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentResponse]

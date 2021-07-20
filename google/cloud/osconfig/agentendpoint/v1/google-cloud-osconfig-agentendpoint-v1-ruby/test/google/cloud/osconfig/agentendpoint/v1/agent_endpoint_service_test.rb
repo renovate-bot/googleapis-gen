@@ -323,6 +323,10 @@ class ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client
     instance_id_token = "hello world"
     agent_version = "hello world"
     supported_capabilities = ["hello world"]
+    os_long_name = "hello world"
+    os_short_name = "hello world"
+    os_version = "hello world"
+    os_architecture = "hello world"
 
     register_agent_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :register_agent, name
@@ -330,6 +334,10 @@ class ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client
       assert_equal "hello world", request["instance_id_token"]
       assert_equal "hello world", request["agent_version"]
       assert_equal ["hello world"], request["supported_capabilities"]
+      assert_equal "hello world", request["os_long_name"]
+      assert_equal "hello world", request["os_short_name"]
+      assert_equal "hello world", request["os_version"]
+      assert_equal "hello world", request["os_architecture"]
       refute_nil options
     end
 
@@ -340,31 +348,31 @@ class ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client
       end
 
       # Use hash object
-      client.register_agent({ instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities }) do |response, operation|
+      client.register_agent({ instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities, os_long_name: os_long_name, os_short_name: os_short_name, os_version: os_version, os_architecture: os_architecture }) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.register_agent instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities do |response, operation|
+      client.register_agent instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities, os_long_name: os_long_name, os_short_name: os_short_name, os_version: os_version, os_architecture: os_architecture do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.register_agent ::Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentRequest.new(instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities) do |response, operation|
+      client.register_agent ::Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentRequest.new(instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities, os_long_name: os_long_name, os_short_name: os_short_name, os_version: os_version, os_architecture: os_architecture) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.register_agent({ instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities }, grpc_options) do |response, operation|
+      client.register_agent({ instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities, os_long_name: os_long_name, os_short_name: os_short_name, os_version: os_version, os_architecture: os_architecture }, grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.register_agent(::Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentRequest.new(instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities), grpc_options) do |response, operation|
+      client.register_agent(::Google::Cloud::Osconfig::Agentendpoint::V1::RegisterAgentRequest.new(instance_id_token: instance_id_token, agent_version: agent_version, supported_capabilities: supported_capabilities, os_long_name: os_long_name, os_short_name: os_short_name, os_version: os_version, os_architecture: os_architecture), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

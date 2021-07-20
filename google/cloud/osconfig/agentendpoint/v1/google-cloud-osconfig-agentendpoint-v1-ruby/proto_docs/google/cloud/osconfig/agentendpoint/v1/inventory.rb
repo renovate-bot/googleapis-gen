@@ -110,6 +110,9 @@ module Google
             # @!attribute [rw] cos_package
             #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::Inventory::VersionedPackage]
             #     Details of a COS package.
+            # @!attribute [rw] windows_application
+            #   @return [::Google::Cloud::Osconfig::Agentendpoint::V1::Inventory::WindowsApplication]
+            #     Details of Windows Application.
             class SoftwarePackage
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -127,6 +130,27 @@ module Google
             #   @return [::String]
             #     The version of the package.
             class VersionedPackage
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Information related to a Quick Fix Engineering package.
+            # Fields are taken from Windows QuickFixEngineering Interface and match
+            # the source names:
+            # https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering
+            # @!attribute [rw] caption
+            #   @return [::String]
+            #     A short textual description of the QFE update.
+            # @!attribute [rw] description
+            #   @return [::String]
+            #     A textual description of the QFE update.
+            # @!attribute [rw] hot_fix_id
+            #   @return [::String]
+            #     Unique identifier associated with a particular QFE update.
+            # @!attribute [rw] install_time
+            #   @return [::Google::Protobuf::Timestamp]
+            #     Date that the QFE update was installed.  Mapped from installed_on field.
+            class WindowsQuickFixEngineeringPackage
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -201,23 +225,25 @@ module Google
               end
             end
 
-            # Information related to a Quick Fix Engineering package.
-            # Fields are taken from Windows QuickFixEngineering Interface and match
-            # the source names:
-            # https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering
-            # @!attribute [rw] caption
+            # Details about Windows Application - based on Windows Registry.
+            # All fields in this message are taken from:
+            # https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key
+            # @!attribute [rw] display_name
             #   @return [::String]
-            #     A short textual description of the QFE update.
-            # @!attribute [rw] description
+            #     DisplayName field from Windows Registry.
+            # @!attribute [rw] display_version
             #   @return [::String]
-            #     A textual description of the QFE update.
-            # @!attribute [rw] hot_fix_id
+            #     DisplayVersion field from Windows Registry.
+            # @!attribute [rw] publisher
             #   @return [::String]
-            #     Unique identifier associated with a particular QFE update.
-            # @!attribute [rw] install_time
-            #   @return [::Google::Protobuf::Timestamp]
-            #     Date that the QFE update was installed.  Mapped from installed_on field.
-            class WindowsQuickFixEngineeringPackage
+            #     Publisher field from Windows Registry.
+            # @!attribute [rw] install_date
+            #   @return [::Google::Type::Date]
+            #     Installation date field from Windows Registry.
+            # @!attribute [rw] help_link
+            #   @return [::String]
+            #     HelpLink field from Windows Registry.
+            class WindowsApplication
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

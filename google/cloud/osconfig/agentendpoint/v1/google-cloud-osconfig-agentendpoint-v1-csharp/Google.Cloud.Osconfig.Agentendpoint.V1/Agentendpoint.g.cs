@@ -60,46 +60,48 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             "c2tPdXRwdXRIABJhChhhcHBseV9jb25maWdfdGFza19vdXRwdXQYByABKAsy",
             "PS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52MS5BcHBs",
             "eUNvbmZpZ1Rhc2tPdXRwdXRIAEIICgZvdXRwdXQiHAoaUmVwb3J0VGFza0Nv",
-            "bXBsZXRlUmVzcG9uc2UidwoUUmVnaXN0ZXJBZ2VudFJlcXVlc3QSHgoRaW5z",
-            "dGFuY2VfaWRfdG9rZW4YASABKAlCA+BBAhIaCg1hZ2VudF92ZXJzaW9uGAIg",
-            "ASgJQgPgQQISIwoWc3VwcG9ydGVkX2NhcGFiaWxpdGllcxgDIAMoCUID4EEC",
-            "IhcKFVJlZ2lzdGVyQWdlbnRSZXNwb25zZSKkAQoWUmVwb3J0SW52ZW50b3J5",
-            "UmVxdWVzdBIeChFpbnN0YW5jZV9pZF90b2tlbhgBIAEoCUID4EECEh8KEmlu",
-            "dmVudG9yeV9jaGVja3N1bRgCIAEoCUID4EECEkkKCWludmVudG9yeRgDIAEo",
-            "CzIxLmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYxLklu",
-            "dmVudG9yeUID4EEBIjgKF1JlcG9ydEludmVudG9yeVJlc3BvbnNlEh0KFXJl",
-            "cG9ydF9mdWxsX2ludmVudG9yeRgBIAEoCDLWCQoUQWdlbnRFbmRwb2ludFNl",
-            "cnZpY2US0AEKF1JlY2VpdmVUYXNrTm90aWZpY2F0aW9uEkYuZ29vZ2xlLmNs",
-            "b3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuUmVjZWl2ZVRhc2tOb3Rp",
-            "ZmljYXRpb25SZXF1ZXN0GkcuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50",
-            "ZW5kcG9pbnQudjEuUmVjZWl2ZVRhc2tOb3RpZmljYXRpb25SZXNwb25zZSIi",
-            "2kEfaW5zdGFuY2VfaWRfdG9rZW4sYWdlbnRfdmVyc2lvbjABEqIBCg1TdGFy",
-            "dE5leHRUYXNrEjwuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9p",
-            "bnQudjEuU3RhcnROZXh0VGFza1JlcXVlc3QaPS5nb29nbGUuY2xvdWQub3Nj",
-            "b25maWcuYWdlbnRlbmRwb2ludC52MS5TdGFydE5leHRUYXNrUmVzcG9uc2Ui",
-            "FNpBEWluc3RhbmNlX2lkX3Rva2VuEsMBChJSZXBvcnRUYXNrUHJvZ3Jlc3MS",
-            "QS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52MS5SZXBv",
-            "cnRUYXNrUHJvZ3Jlc3NSZXF1ZXN0GkIuZ29vZ2xlLmNsb3VkLm9zY29uZmln",
-            "LmFnZW50ZW5kcG9pbnQudjEuUmVwb3J0VGFza1Byb2dyZXNzUmVzcG9uc2Ui",
-            "JtpBI2luc3RhbmNlX2lkX3Rva2VuLHRhc2tfaWQsdGFza190eXBlEtEBChJS",
-            "ZXBvcnRUYXNrQ29tcGxldGUSQS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdl",
-            "bnRlbmRwb2ludC52MS5SZXBvcnRUYXNrQ29tcGxldGVSZXF1ZXN0GkIuZ29v",
-            "Z2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuUmVwb3J0VGFz",
-            "a0NvbXBsZXRlUmVzcG9uc2UiNNpBMWluc3RhbmNlX2lkX3Rva2VuLHRhc2tf",
-            "aWQsdGFza190eXBlLGVycm9yX21lc3NhZ2USxwEKDVJlZ2lzdGVyQWdlbnQS",
-            "PC5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52MS5SZWdp",
-            "c3RlckFnZW50UmVxdWVzdBo9Lmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2Vu",
-            "dGVuZHBvaW50LnYxLlJlZ2lzdGVyQWdlbnRSZXNwb25zZSI52kE2aW5zdGFu",
-            "Y2VfaWRfdG9rZW4sYWdlbnRfdmVyc2lvbixzdXBwb3J0ZWRfY2FwYWJpbGl0",
-            "aWVzEsUBCg9SZXBvcnRJbnZlbnRvcnkSPi5nb29nbGUuY2xvdWQub3Njb25m",
-            "aWcuYWdlbnRlbmRwb2ludC52MS5SZXBvcnRJbnZlbnRvcnlSZXF1ZXN0Gj8u",
-            "Z29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuUmVwb3J0",
-            "SW52ZW50b3J5UmVzcG9uc2UiMdpBLmluc3RhbmNlX2lkX3Rva2VuLGludmVu",
-            "dG9yeV9jaGVja3N1bSxpbnZlbnRvcnkaGspBF29zY29uZmlnLmdvb2dsZWFw",
-            "aXMuY29tQpcBCipjb20uZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5k",
-            "cG9pbnQudjFCEkFnZW50RW5kcG9pbnRQcm90b1ABWlNnb29nbGUuZ29sYW5n",
-            "Lm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2Nsb3VkL29zY29uZmlnL2FnZW50",
-            "ZW5kcG9pbnQvdjE7YWdlbnRlbmRwb2ludGIGcHJvdG8z"));
+            "bXBsZXRlUmVzcG9uc2Ui0QEKFFJlZ2lzdGVyQWdlbnRSZXF1ZXN0Eh4KEWlu",
+            "c3RhbmNlX2lkX3Rva2VuGAEgASgJQgPgQQISGgoNYWdlbnRfdmVyc2lvbhgC",
+            "IAEoCUID4EECEiMKFnN1cHBvcnRlZF9jYXBhYmlsaXRpZXMYAyADKAlCA+BB",
+            "AhIUCgxvc19sb25nX25hbWUYBCABKAkSFQoNb3Nfc2hvcnRfbmFtZRgFIAEo",
+            "CRISCgpvc192ZXJzaW9uGAYgASgJEhcKD29zX2FyY2hpdGVjdHVyZRgHIAEo",
+            "CSIXChVSZWdpc3RlckFnZW50UmVzcG9uc2UipAEKFlJlcG9ydEludmVudG9y",
+            "eVJlcXVlc3QSHgoRaW5zdGFuY2VfaWRfdG9rZW4YASABKAlCA+BBAhIfChJp",
+            "bnZlbnRvcnlfY2hlY2tzdW0YAiABKAlCA+BBAhJJCglpbnZlbnRvcnkYAyAB",
+            "KAsyMS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52MS5J",
+            "bnZlbnRvcnlCA+BBASI4ChdSZXBvcnRJbnZlbnRvcnlSZXNwb25zZRIdChVy",
+            "ZXBvcnRfZnVsbF9pbnZlbnRvcnkYASABKAgy1gkKFEFnZW50RW5kcG9pbnRT",
+            "ZXJ2aWNlEtABChdSZWNlaXZlVGFza05vdGlmaWNhdGlvbhJGLmdvb2dsZS5j",
+            "bG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYxLlJlY2VpdmVUYXNrTm90",
+            "aWZpY2F0aW9uUmVxdWVzdBpHLmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2Vu",
+            "dGVuZHBvaW50LnYxLlJlY2VpdmVUYXNrTm90aWZpY2F0aW9uUmVzcG9uc2Ui",
+            "ItpBH2luc3RhbmNlX2lkX3Rva2VuLGFnZW50X3ZlcnNpb24wARKiAQoNU3Rh",
+            "cnROZXh0VGFzaxI8Lmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBv",
+            "aW50LnYxLlN0YXJ0TmV4dFRhc2tSZXF1ZXN0Gj0uZ29vZ2xlLmNsb3VkLm9z",
+            "Y29uZmlnLmFnZW50ZW5kcG9pbnQudjEuU3RhcnROZXh0VGFza1Jlc3BvbnNl",
+            "IhTaQRFpbnN0YW5jZV9pZF90b2tlbhLDAQoSUmVwb3J0VGFza1Byb2dyZXNz",
+            "EkEuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuUmVw",
+            "b3J0VGFza1Byb2dyZXNzUmVxdWVzdBpCLmdvb2dsZS5jbG91ZC5vc2NvbmZp",
+            "Zy5hZ2VudGVuZHBvaW50LnYxLlJlcG9ydFRhc2tQcm9ncmVzc1Jlc3BvbnNl",
+            "IibaQSNpbnN0YW5jZV9pZF90b2tlbix0YXNrX2lkLHRhc2tfdHlwZRLRAQoS",
+            "UmVwb3J0VGFza0NvbXBsZXRlEkEuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFn",
+            "ZW50ZW5kcG9pbnQudjEuUmVwb3J0VGFza0NvbXBsZXRlUmVxdWVzdBpCLmdv",
+            "b2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYxLlJlcG9ydFRh",
+            "c2tDb21wbGV0ZVJlc3BvbnNlIjTaQTFpbnN0YW5jZV9pZF90b2tlbix0YXNr",
+            "X2lkLHRhc2tfdHlwZSxlcnJvcl9tZXNzYWdlEscBCg1SZWdpc3RlckFnZW50",
+            "EjwuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuUmVn",
+            "aXN0ZXJBZ2VudFJlcXVlc3QaPS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdl",
+            "bnRlbmRwb2ludC52MS5SZWdpc3RlckFnZW50UmVzcG9uc2UiOdpBNmluc3Rh",
+            "bmNlX2lkX3Rva2VuLGFnZW50X3ZlcnNpb24sc3VwcG9ydGVkX2NhcGFiaWxp",
+            "dGllcxLFAQoPUmVwb3J0SW52ZW50b3J5Ej4uZ29vZ2xlLmNsb3VkLm9zY29u",
+            "ZmlnLmFnZW50ZW5kcG9pbnQudjEuUmVwb3J0SW52ZW50b3J5UmVxdWVzdBo/",
+            "Lmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYxLlJlcG9y",
+            "dEludmVudG9yeVJlc3BvbnNlIjHaQS5pbnN0YW5jZV9pZF90b2tlbixpbnZl",
+            "bnRvcnlfY2hlY2tzdW0saW52ZW50b3J5GhrKQRdvc2NvbmZpZy5nb29nbGVh",
+            "cGlzLmNvbUKXAQoqY29tLmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVu",
+            "ZHBvaW50LnYxQhJBZ2VudEVuZHBvaW50UHJvdG9QAVpTZ29vZ2xlLmdvbGFu",
+            "Zy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91ZC9vc2NvbmZpZy9hZ2Vu",
+            "dGVuZHBvaW50L3YxO2FnZW50ZW5kcG9pbnRiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Cloud.Osconfig.Agentendpoint.V1.InventoryReflection.Descriptor, global::Google.Cloud.Osconfig.Agentendpoint.V1.TasksReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -111,7 +113,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportTaskProgressResponse), global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportTaskProgressResponse.Parser, new[]{ "TaskDirective" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportTaskCompleteRequest), global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportTaskCompleteRequest.Parser, new[]{ "InstanceIdToken", "TaskId", "TaskType", "ErrorMessage", "ApplyPatchesTaskOutput", "ExecStepTaskOutput", "ApplyConfigTaskOutput" }, new[]{ "Output" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportTaskCompleteResponse), global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportTaskCompleteResponse.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.RegisterAgentRequest), global::Google.Cloud.Osconfig.Agentendpoint.V1.RegisterAgentRequest.Parser, new[]{ "InstanceIdToken", "AgentVersion", "SupportedCapabilities" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.RegisterAgentRequest), global::Google.Cloud.Osconfig.Agentendpoint.V1.RegisterAgentRequest.Parser, new[]{ "InstanceIdToken", "AgentVersion", "SupportedCapabilities", "OsLongName", "OsShortName", "OsVersion", "OsArchitecture" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.RegisterAgentResponse), global::Google.Cloud.Osconfig.Agentendpoint.V1.RegisterAgentResponse.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportInventoryRequest), global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportInventoryRequest.Parser, new[]{ "InstanceIdToken", "InventoryChecksum", "Inventory" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportInventoryResponse), global::Google.Cloud.Osconfig.Agentendpoint.V1.ReportInventoryResponse.Parser, new[]{ "ReportFullInventory" }, null, null, null, null)
@@ -2147,6 +2149,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
       instanceIdToken_ = other.instanceIdToken_;
       agentVersion_ = other.agentVersion_;
       supportedCapabilities_ = other.supportedCapabilities_.Clone();
+      osLongName_ = other.osLongName_;
+      osShortName_ = other.osShortName_;
+      osVersion_ = other.osVersion_;
+      osArchitecture_ = other.osArchitecture_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -2201,6 +2207,65 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
       get { return supportedCapabilities_; }
     }
 
+    /// <summary>Field number for the "os_long_name" field.</summary>
+    public const int OsLongNameFieldNumber = 4;
+    private string osLongName_ = "";
+    /// <summary>
+    /// The operating system long name.
+    /// For example 'Debian GNU/Linux 9' or 'Microsoft Window Server 2019
+    /// Datacenter'.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string OsLongName {
+      get { return osLongName_; }
+      set {
+        osLongName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "os_short_name" field.</summary>
+    public const int OsShortNameFieldNumber = 5;
+    private string osShortName_ = "";
+    /// <summary>
+    /// The operating system short name.
+    /// For example, 'windows' or 'debian'.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string OsShortName {
+      get { return osShortName_; }
+      set {
+        osShortName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "os_version" field.</summary>
+    public const int OsVersionFieldNumber = 6;
+    private string osVersion_ = "";
+    /// <summary>
+    /// The version of the operating system.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string OsVersion {
+      get { return osVersion_; }
+      set {
+        osVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "os_architecture" field.</summary>
+    public const int OsArchitectureFieldNumber = 7;
+    private string osArchitecture_ = "";
+    /// <summary>
+    /// The system architecture of the operating system.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string OsArchitecture {
+      get { return osArchitecture_; }
+      set {
+        osArchitecture_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as RegisterAgentRequest);
@@ -2217,6 +2282,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
       if (InstanceIdToken != other.InstanceIdToken) return false;
       if (AgentVersion != other.AgentVersion) return false;
       if(!supportedCapabilities_.Equals(other.supportedCapabilities_)) return false;
+      if (OsLongName != other.OsLongName) return false;
+      if (OsShortName != other.OsShortName) return false;
+      if (OsVersion != other.OsVersion) return false;
+      if (OsArchitecture != other.OsArchitecture) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -2226,6 +2295,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
       if (InstanceIdToken.Length != 0) hash ^= InstanceIdToken.GetHashCode();
       if (AgentVersion.Length != 0) hash ^= AgentVersion.GetHashCode();
       hash ^= supportedCapabilities_.GetHashCode();
+      if (OsLongName.Length != 0) hash ^= OsLongName.GetHashCode();
+      if (OsShortName.Length != 0) hash ^= OsShortName.GetHashCode();
+      if (OsVersion.Length != 0) hash ^= OsVersion.GetHashCode();
+      if (OsArchitecture.Length != 0) hash ^= OsArchitecture.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -2251,6 +2324,22 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         output.WriteString(AgentVersion);
       }
       supportedCapabilities_.WriteTo(output, _repeated_supportedCapabilities_codec);
+      if (OsLongName.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(OsLongName);
+      }
+      if (OsShortName.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(OsShortName);
+      }
+      if (OsVersion.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(OsVersion);
+      }
+      if (OsArchitecture.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(OsArchitecture);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -2269,6 +2358,22 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         output.WriteString(AgentVersion);
       }
       supportedCapabilities_.WriteTo(ref output, _repeated_supportedCapabilities_codec);
+      if (OsLongName.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteString(OsLongName);
+      }
+      if (OsShortName.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(OsShortName);
+      }
+      if (OsVersion.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(OsVersion);
+      }
+      if (OsArchitecture.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(OsArchitecture);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -2285,6 +2390,18 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(AgentVersion);
       }
       size += supportedCapabilities_.CalculateSize(_repeated_supportedCapabilities_codec);
+      if (OsLongName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OsLongName);
+      }
+      if (OsShortName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OsShortName);
+      }
+      if (OsVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OsVersion);
+      }
+      if (OsArchitecture.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(OsArchitecture);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -2303,6 +2420,18 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         AgentVersion = other.AgentVersion;
       }
       supportedCapabilities_.Add(other.supportedCapabilities_);
+      if (other.OsLongName.Length != 0) {
+        OsLongName = other.OsLongName;
+      }
+      if (other.OsShortName.Length != 0) {
+        OsShortName = other.OsShortName;
+      }
+      if (other.OsVersion.Length != 0) {
+        OsVersion = other.OsVersion;
+      }
+      if (other.OsArchitecture.Length != 0) {
+        OsArchitecture = other.OsArchitecture;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -2329,6 +2458,22 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             supportedCapabilities_.AddEntriesFrom(input, _repeated_supportedCapabilities_codec);
             break;
           }
+          case 34: {
+            OsLongName = input.ReadString();
+            break;
+          }
+          case 42: {
+            OsShortName = input.ReadString();
+            break;
+          }
+          case 50: {
+            OsVersion = input.ReadString();
+            break;
+          }
+          case 58: {
+            OsArchitecture = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -2353,6 +2498,22 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
           }
           case 26: {
             supportedCapabilities_.AddEntriesFrom(ref input, _repeated_supportedCapabilities_codec);
+            break;
+          }
+          case 34: {
+            OsLongName = input.ReadString();
+            break;
+          }
+          case 42: {
+            OsShortName = input.ReadString();
+            break;
+          }
+          case 50: {
+            OsVersion = input.ReadString();
+            break;
+          }
+          case 58: {
+            OsArchitecture = input.ReadString();
             break;
           }
         }

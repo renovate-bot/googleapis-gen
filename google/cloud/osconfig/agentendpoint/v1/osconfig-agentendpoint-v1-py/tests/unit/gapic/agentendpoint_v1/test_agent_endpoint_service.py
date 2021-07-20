@@ -41,6 +41,7 @@ from google.cloud.osconfig.agentendpoint_v1.types import inventory as gcoa_inven
 from google.cloud.osconfig.agentendpoint_v1.types import tasks
 from google.oauth2 import service_account
 from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import date_pb2  # type: ignore
 import google.auth
 
 

@@ -480,6 +480,10 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    *           .setInstanceIdToken("instanceIdToken55138121")
    *           .setAgentVersion("agentVersion1928000019")
    *           .addAllSupportedCapabilities(new ArrayList<String>())
+   *           .setOsLongName("osLongName248014123")
+   *           .setOsShortName("osShortName1253394339")
+   *           .setOsVersion("osVersion1812004436")
+   *           .setOsArchitecture("osArchitecture1339954519")
    *           .build();
    *   RegisterAgentResponse response = agentEndpointServiceClient.registerAgent(request);
    * }
@@ -506,6 +510,10 @@ public class AgentEndpointServiceClient implements BackgroundResource {
    *           .setInstanceIdToken("instanceIdToken55138121")
    *           .setAgentVersion("agentVersion1928000019")
    *           .addAllSupportedCapabilities(new ArrayList<String>())
+   *           .setOsLongName("osLongName248014123")
+   *           .setOsShortName("osShortName1253394339")
+   *           .setOsVersion("osVersion1812004436")
+   *           .setOsArchitecture("osArchitecture1339954519")
    *           .build();
    *   ApiFuture<RegisterAgentResponse> future =
    *       agentEndpointServiceClient.registerAgentCallable().futureCall(request);

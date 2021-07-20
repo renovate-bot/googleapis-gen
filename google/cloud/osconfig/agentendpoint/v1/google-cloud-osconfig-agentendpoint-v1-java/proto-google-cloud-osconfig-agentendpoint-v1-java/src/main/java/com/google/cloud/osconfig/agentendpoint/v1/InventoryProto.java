@@ -35,6 +35,11 @@ public final class InventoryProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_VersionedPackage_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_ZypperPatch_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -50,10 +55,10 @@ public final class InventoryProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsUpdatePackage_WindowsUpdateCategory_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_descriptor;
+    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsApplication_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_fieldAccessorTable;
+      internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsApplication_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -66,65 +71,73 @@ public final class InventoryProto {
       "\n6google/cloud/osconfig/agentendpoint/v1" +
       "/inventory.proto\022&google.cloud.osconfig." +
       "agentendpoint.v1\032\037google/protobuf/timest" +
-      "amp.proto\"\254\017\n\tInventory\022I\n\007os_info\030\001 \001(\013" +
-      "28.google.cloud.osconfig.agentendpoint.v" +
-      "1.Inventory.OsInfo\022]\n\022installed_packages" +
-      "\030\002 \003(\0132A.google.cloud.osconfig.agentendp" +
-      "oint.v1.Inventory.SoftwarePackage\022]\n\022ava" +
-      "ilable_packages\030\003 \003(\0132A.google.cloud.osc" +
-      "onfig.agentendpoint.v1.Inventory.Softwar" +
-      "ePackage\032\270\001\n\006OsInfo\022\020\n\010hostname\030\001 \001(\t\022\021\n" +
-      "\tlong_name\030\002 \001(\t\022\022\n\nshort_name\030\003 \001(\t\022\017\n\007" +
-      "version\030\004 \001(\t\022\024\n\014architecture\030\005 \001(\t\022\026\n\016k" +
-      "ernel_version\030\006 \001(\t\022\026\n\016kernel_release\030\007 " +
-      "\001(\t\022\036\n\026osconfig_agent_version\030\010 \001(\t\032\213\006\n\017" +
-      "SoftwarePackage\022Y\n\013yum_package\030\001 \001(\0132B.g" +
-      "oogle.cloud.osconfig.agentendpoint.v1.In" +
-      "ventory.VersionedPackageH\000\022Y\n\013apt_packag" +
-      "e\030\002 \001(\0132B.google.cloud.osconfig.agentend" +
-      "point.v1.Inventory.VersionedPackageH\000\022\\\n" +
-      "\016zypper_package\030\003 \001(\0132B.google.cloud.osc" +
-      "onfig.agentendpoint.v1.Inventory.Version" +
-      "edPackageH\000\022\\\n\016googet_package\030\004 \001(\0132B.go" +
-      "ogle.cloud.osconfig.agentendpoint.v1.Inv" +
-      "entory.VersionedPackageH\000\022U\n\014zypper_patc" +
-      "h\030\005 \001(\0132=.google.cloud.osconfig.agentend" +
-      "point.v1.Inventory.ZypperPatchH\000\022]\n\013wua_" +
-      "package\030\006 \001(\0132F.google.cloud.osconfig.ag" +
-      "entendpoint.v1.Inventory.WindowsUpdatePa" +
-      "ckageH\000\022j\n\013qfe_package\030\007 \001(\0132S.google.cl" +
-      "oud.osconfig.agentendpoint.v1.Inventory." +
-      "WindowsQuickFixEngineeringPackageH\000\022Y\n\013c" +
-      "os_package\030\010 \001(\0132B.google.cloud.osconfig" +
-      ".agentendpoint.v1.Inventory.VersionedPac" +
-      "kageH\000B\t\n\007details\032O\n\020VersionedPackage\022\024\n" +
-      "\014package_name\030\001 \001(\t\022\024\n\014architecture\030\002 \001(" +
-      "\t\022\017\n\007version\030\003 \001(\t\032V\n\013ZypperPatch\022\022\n\npat" +
-      "ch_name\030\001 \001(\t\022\020\n\010category\030\002 \001(\t\022\020\n\010sever" +
-      "ity\030\003 \001(\t\022\017\n\007summary\030\004 \001(\t\032\221\003\n\024WindowsUp" +
-      "datePackage\022\r\n\005title\030\001 \001(\t\022\023\n\013descriptio" +
-      "n\030\002 \001(\t\022p\n\ncategories\030\003 \003(\0132\\.google.clo" +
-      "ud.osconfig.agentendpoint.v1.Inventory.W" +
-      "indowsUpdatePackage.WindowsUpdateCategor" +
-      "y\022\026\n\016kb_article_ids\030\004 \003(\t\022\023\n\013support_url" +
-      "\030\005 \001(\t\022\026\n\016more_info_urls\030\006 \003(\t\022\021\n\tupdate" +
-      "_id\030\007 \001(\t\022\027\n\017revision_number\030\010 \001(\005\022?\n\033la" +
-      "st_deployment_change_time\030\t \001(\0132\032.google" +
-      ".protobuf.Timestamp\0321\n\025WindowsUpdateCate" +
-      "gory\022\n\n\002id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\032\217\001\n!Windo" +
-      "wsQuickFixEngineeringPackage\022\017\n\007caption\030" +
-      "\001 \001(\t\022\023\n\013description\030\002 \001(\t\022\022\n\nhot_fix_id" +
-      "\030\003 \001(\t\0220\n\014install_time\030\004 \001(\0132\032.google.pr" +
-      "otobuf.TimestampB\223\001\n*com.google.cloud.os" +
-      "config.agentendpoint.v1B\016InventoryProtoP" +
-      "\001ZSgoogle.golang.org/genproto/googleapis" +
-      "/cloud/osconfig/agentendpoint/v1;agenten" +
-      "dpointb\006proto3"
+      "amp.proto\032\026google/type/date.proto\"\246\021\n\tIn" +
+      "ventory\022I\n\007os_info\030\001 \001(\01328.google.cloud." +
+      "osconfig.agentendpoint.v1.Inventory.OsIn" +
+      "fo\022]\n\022installed_packages\030\002 \003(\0132A.google." +
+      "cloud.osconfig.agentendpoint.v1.Inventor" +
+      "y.SoftwarePackage\022]\n\022available_packages\030" +
+      "\003 \003(\0132A.google.cloud.osconfig.agentendpo" +
+      "int.v1.Inventory.SoftwarePackage\032\270\001\n\006OsI" +
+      "nfo\022\020\n\010hostname\030\001 \001(\t\022\021\n\tlong_name\030\002 \001(\t" +
+      "\022\022\n\nshort_name\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\024\n" +
+      "\014architecture\030\005 \001(\t\022\026\n\016kernel_version\030\006 " +
+      "\001(\t\022\026\n\016kernel_release\030\007 \001(\t\022\036\n\026osconfig_" +
+      "agent_version\030\010 \001(\t\032\360\006\n\017SoftwarePackage\022" +
+      "Y\n\013yum_package\030\001 \001(\0132B.google.cloud.osco" +
+      "nfig.agentendpoint.v1.Inventory.Versione" +
+      "dPackageH\000\022Y\n\013apt_package\030\002 \001(\0132B.google" +
+      ".cloud.osconfig.agentendpoint.v1.Invento" +
+      "ry.VersionedPackageH\000\022\\\n\016zypper_package\030" +
+      "\003 \001(\0132B.google.cloud.osconfig.agentendpo" +
+      "int.v1.Inventory.VersionedPackageH\000\022\\\n\016g" +
+      "ooget_package\030\004 \001(\0132B.google.cloud.oscon" +
+      "fig.agentendpoint.v1.Inventory.Versioned" +
+      "PackageH\000\022U\n\014zypper_patch\030\005 \001(\0132=.google" +
+      ".cloud.osconfig.agentendpoint.v1.Invento" +
+      "ry.ZypperPatchH\000\022]\n\013wua_package\030\006 \001(\0132F." +
+      "google.cloud.osconfig.agentendpoint.v1.I" +
+      "nventory.WindowsUpdatePackageH\000\022j\n\013qfe_p" +
+      "ackage\030\007 \001(\0132S.google.cloud.osconfig.age" +
+      "ntendpoint.v1.Inventory.WindowsQuickFixE" +
+      "ngineeringPackageH\000\022Y\n\013cos_package\030\010 \001(\013" +
+      "2B.google.cloud.osconfig.agentendpoint.v" +
+      "1.Inventory.VersionedPackageH\000\022c\n\023window" +
+      "s_application\030\t \001(\0132D.google.cloud.oscon" +
+      "fig.agentendpoint.v1.Inventory.WindowsAp" +
+      "plicationH\000B\t\n\007details\032O\n\020VersionedPacka" +
+      "ge\022\024\n\014package_name\030\001 \001(\t\022\024\n\014architecture" +
+      "\030\002 \001(\t\022\017\n\007version\030\003 \001(\t\032\217\001\n!WindowsQuick" +
+      "FixEngineeringPackage\022\017\n\007caption\030\001 \001(\t\022\023" +
+      "\n\013description\030\002 \001(\t\022\022\n\nhot_fix_id\030\003 \001(\t\022" +
+      "0\n\014install_time\030\004 \001(\0132\032.google.protobuf." +
+      "Timestamp\032V\n\013ZypperPatch\022\022\n\npatch_name\030\001" +
+      " \001(\t\022\020\n\010category\030\002 \001(\t\022\020\n\010severity\030\003 \001(\t" +
+      "\022\017\n\007summary\030\004 \001(\t\032\221\003\n\024WindowsUpdatePacka" +
+      "ge\022\r\n\005title\030\001 \001(\t\022\023\n\013description\030\002 \001(\t\022p" +
+      "\n\ncategories\030\003 \003(\0132\\.google.cloud.osconf" +
+      "ig.agentendpoint.v1.Inventory.WindowsUpd" +
+      "atePackage.WindowsUpdateCategory\022\026\n\016kb_a" +
+      "rticle_ids\030\004 \003(\t\022\023\n\013support_url\030\005 \001(\t\022\026\n" +
+      "\016more_info_urls\030\006 \003(\t\022\021\n\tupdate_id\030\007 \001(\t" +
+      "\022\027\n\017revision_number\030\010 \001(\005\022?\n\033last_deploy" +
+      "ment_change_time\030\t \001(\0132\032.google.protobuf" +
+      ".Timestamp\0321\n\025WindowsUpdateCategory\022\n\n\002i" +
+      "d\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\032\222\001\n\022WindowsApplica" +
+      "tion\022\024\n\014display_name\030\001 \001(\t\022\027\n\017display_ve" +
+      "rsion\030\002 \001(\t\022\021\n\tpublisher\030\003 \001(\t\022\'\n\014instal" +
+      "l_date\030\004 \001(\0132\021.google.type.Date\022\021\n\thelp_" +
+      "link\030\005 \001(\tB\223\001\n*com.google.cloud.osconfig" +
+      ".agentendpoint.v1B\016InventoryProtoP\001ZSgoo" +
+      "gle.golang.org/genproto/googleapis/cloud" +
+      "/osconfig/agentendpoint/v1;agentendpoint" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.TimestampProto.getDescriptor(),
+          com.google.type.DateProto.getDescriptor(),
         });
     internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -143,21 +156,27 @@ public final class InventoryProto {
     internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_SoftwarePackage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_SoftwarePackage_descriptor,
-        new java.lang.String[] { "YumPackage", "AptPackage", "ZypperPackage", "GoogetPackage", "ZypperPatch", "WuaPackage", "QfePackage", "CosPackage", "Details", });
+        new java.lang.String[] { "YumPackage", "AptPackage", "ZypperPackage", "GoogetPackage", "ZypperPatch", "WuaPackage", "QfePackage", "CosPackage", "WindowsApplication", "Details", });
     internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_VersionedPackage_descriptor =
       internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_descriptor.getNestedTypes().get(2);
     internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_VersionedPackage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_VersionedPackage_descriptor,
         new java.lang.String[] { "PackageName", "Architecture", "Version", });
-    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_ZypperPatch_descriptor =
+    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_descriptor =
       internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_descriptor.getNestedTypes().get(3);
+    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_descriptor,
+        new java.lang.String[] { "Caption", "Description", "HotFixId", "InstallTime", });
+    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_ZypperPatch_descriptor =
+      internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_descriptor.getNestedTypes().get(4);
     internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_ZypperPatch_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_ZypperPatch_descriptor,
         new java.lang.String[] { "PatchName", "Category", "Severity", "Summary", });
     internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsUpdatePackage_descriptor =
-      internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_descriptor.getNestedTypes().get(4);
+      internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_descriptor.getNestedTypes().get(5);
     internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsUpdatePackage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsUpdatePackage_descriptor,
@@ -168,13 +187,14 @@ public final class InventoryProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsUpdatePackage_WindowsUpdateCategory_descriptor,
         new java.lang.String[] { "Id", "Name", });
-    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_descriptor =
-      internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_descriptor.getNestedTypes().get(5);
-    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_fieldAccessorTable = new
+    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsApplication_descriptor =
+      internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_descriptor.getNestedTypes().get(6);
+    internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsApplication_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsQuickFixEngineeringPackage_descriptor,
-        new java.lang.String[] { "Caption", "Description", "HotFixId", "InstallTime", });
+        internal_static_google_cloud_osconfig_agentendpoint_v1_Inventory_WindowsApplication_descriptor,
+        new java.lang.String[] { "DisplayName", "DisplayVersion", "Publisher", "InstallDate", "HelpLink", });
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.DateProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

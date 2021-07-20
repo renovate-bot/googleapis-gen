@@ -51,6 +51,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :instance_id_token, :string, 1
       optional :agent_version, :string, 2
       repeated :supported_capabilities, :string, 3
+      optional :os_long_name, :string, 4
+      optional :os_short_name, :string, 5
+      optional :os_version, :string, 6
+      optional :os_architecture, :string, 7
     end
     add_message "google.cloud.osconfig.agentendpoint.v1.RegisterAgentResponse" do
     end

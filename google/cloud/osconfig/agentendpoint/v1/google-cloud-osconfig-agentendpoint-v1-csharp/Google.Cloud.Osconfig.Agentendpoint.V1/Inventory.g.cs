@@ -26,64 +26,71 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
           string.Concat(
             "CjZnb29nbGUvY2xvdWQvb3Njb25maWcvYWdlbnRlbmRwb2ludC92MS9pbnZl",
             "bnRvcnkucHJvdG8SJmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBv",
-            "aW50LnYxGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvIqwPCglJ",
-            "bnZlbnRvcnkSSQoHb3NfaW5mbxgBIAEoCzI4Lmdvb2dsZS5jbG91ZC5vc2Nv",
-            "bmZpZy5hZ2VudGVuZHBvaW50LnYxLkludmVudG9yeS5Pc0luZm8SXQoSaW5z",
-            "dGFsbGVkX3BhY2thZ2VzGAIgAygLMkEuZ29vZ2xlLmNsb3VkLm9zY29uZmln",
-            "LmFnZW50ZW5kcG9pbnQudjEuSW52ZW50b3J5LlNvZnR3YXJlUGFja2FnZRJd",
-            "ChJhdmFpbGFibGVfcGFja2FnZXMYAyADKAsyQS5nb29nbGUuY2xvdWQub3Nj",
-            "b25maWcuYWdlbnRlbmRwb2ludC52MS5JbnZlbnRvcnkuU29mdHdhcmVQYWNr",
-            "YWdlGrgBCgZPc0luZm8SEAoIaG9zdG5hbWUYASABKAkSEQoJbG9uZ19uYW1l",
-            "GAIgASgJEhIKCnNob3J0X25hbWUYAyABKAkSDwoHdmVyc2lvbhgEIAEoCRIU",
-            "CgxhcmNoaXRlY3R1cmUYBSABKAkSFgoOa2VybmVsX3ZlcnNpb24YBiABKAkS",
-            "FgoOa2VybmVsX3JlbGVhc2UYByABKAkSHgoWb3Njb25maWdfYWdlbnRfdmVy",
-            "c2lvbhgIIAEoCRqLBgoPU29mdHdhcmVQYWNrYWdlElkKC3l1bV9wYWNrYWdl",
-            "GAEgASgLMkIuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQu",
-            "djEuSW52ZW50b3J5LlZlcnNpb25lZFBhY2thZ2VIABJZCgthcHRfcGFja2Fn",
-            "ZRgCIAEoCzJCLmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50",
-            "LnYxLkludmVudG9yeS5WZXJzaW9uZWRQYWNrYWdlSAASXAoOenlwcGVyX3Bh",
-            "Y2thZ2UYAyABKAsyQi5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRw",
-            "b2ludC52MS5JbnZlbnRvcnkuVmVyc2lvbmVkUGFja2FnZUgAElwKDmdvb2dl",
-            "dF9wYWNrYWdlGAQgASgLMkIuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50",
-            "ZW5kcG9pbnQudjEuSW52ZW50b3J5LlZlcnNpb25lZFBhY2thZ2VIABJVCgx6",
-            "eXBwZXJfcGF0Y2gYBSABKAsyPS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdl",
-            "bnRlbmRwb2ludC52MS5JbnZlbnRvcnkuWnlwcGVyUGF0Y2hIABJdCgt3dWFf",
-            "cGFja2FnZRgGIAEoCzJGLmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVu",
-            "ZHBvaW50LnYxLkludmVudG9yeS5XaW5kb3dzVXBkYXRlUGFja2FnZUgAEmoK",
-            "C3FmZV9wYWNrYWdlGAcgASgLMlMuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFn",
-            "ZW50ZW5kcG9pbnQudjEuSW52ZW50b3J5LldpbmRvd3NRdWlja0ZpeEVuZ2lu",
-            "ZWVyaW5nUGFja2FnZUgAElkKC2Nvc19wYWNrYWdlGAggASgLMkIuZ29vZ2xl",
-            "LmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuSW52ZW50b3J5LlZl",
-            "cnNpb25lZFBhY2thZ2VIAEIJCgdkZXRhaWxzGk8KEFZlcnNpb25lZFBhY2th",
-            "Z2USFAoMcGFja2FnZV9uYW1lGAEgASgJEhQKDGFyY2hpdGVjdHVyZRgCIAEo",
-            "CRIPCgd2ZXJzaW9uGAMgASgJGlYKC1p5cHBlclBhdGNoEhIKCnBhdGNoX25h",
-            "bWUYASABKAkSEAoIY2F0ZWdvcnkYAiABKAkSEAoIc2V2ZXJpdHkYAyABKAkS",
-            "DwoHc3VtbWFyeRgEIAEoCRqRAwoUV2luZG93c1VwZGF0ZVBhY2thZ2USDQoF",
-            "dGl0bGUYASABKAkSEwoLZGVzY3JpcHRpb24YAiABKAkScAoKY2F0ZWdvcmll",
-            "cxgDIAMoCzJcLmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50",
-            "LnYxLkludmVudG9yeS5XaW5kb3dzVXBkYXRlUGFja2FnZS5XaW5kb3dzVXBk",
-            "YXRlQ2F0ZWdvcnkSFgoOa2JfYXJ0aWNsZV9pZHMYBCADKAkSEwoLc3VwcG9y",
-            "dF91cmwYBSABKAkSFgoObW9yZV9pbmZvX3VybHMYBiADKAkSEQoJdXBkYXRl",
-            "X2lkGAcgASgJEhcKD3JldmlzaW9uX251bWJlchgIIAEoBRI/ChtsYXN0X2Rl",
-            "cGxveW1lbnRfY2hhbmdlX3RpbWUYCSABKAsyGi5nb29nbGUucHJvdG9idWYu",
-            "VGltZXN0YW1wGjEKFVdpbmRvd3NVcGRhdGVDYXRlZ29yeRIKCgJpZBgBIAEo",
-            "CRIMCgRuYW1lGAIgASgJGo8BCiFXaW5kb3dzUXVpY2tGaXhFbmdpbmVlcmlu",
-            "Z1BhY2thZ2USDwoHY2FwdGlvbhgBIAEoCRITCgtkZXNjcmlwdGlvbhgCIAEo",
-            "CRISCgpob3RfZml4X2lkGAMgASgJEjAKDGluc3RhbGxfdGltZRgEIAEoCzIa",
-            "Lmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCkwEKKmNvbS5nb29nbGUuY2xv",
-            "dWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52MUIOSW52ZW50b3J5UHJvdG9Q",
-            "AVpTZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91",
-            "ZC9vc2NvbmZpZy9hZ2VudGVuZHBvaW50L3YxO2FnZW50ZW5kcG9pbnRiBnBy",
-            "b3RvMw=="));
+            "aW50LnYxGh9nb29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvGhZnb29n",
+            "bGUvdHlwZS9kYXRlLnByb3RvIqYRCglJbnZlbnRvcnkSSQoHb3NfaW5mbxgB",
+            "IAEoCzI4Lmdvb2dsZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYx",
+            "LkludmVudG9yeS5Pc0luZm8SXQoSaW5zdGFsbGVkX3BhY2thZ2VzGAIgAygL",
+            "MkEuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuSW52",
+            "ZW50b3J5LlNvZnR3YXJlUGFja2FnZRJdChJhdmFpbGFibGVfcGFja2FnZXMY",
+            "AyADKAsyQS5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52",
+            "MS5JbnZlbnRvcnkuU29mdHdhcmVQYWNrYWdlGrgBCgZPc0luZm8SEAoIaG9z",
+            "dG5hbWUYASABKAkSEQoJbG9uZ19uYW1lGAIgASgJEhIKCnNob3J0X25hbWUY",
+            "AyABKAkSDwoHdmVyc2lvbhgEIAEoCRIUCgxhcmNoaXRlY3R1cmUYBSABKAkS",
+            "FgoOa2VybmVsX3ZlcnNpb24YBiABKAkSFgoOa2VybmVsX3JlbGVhc2UYByAB",
+            "KAkSHgoWb3Njb25maWdfYWdlbnRfdmVyc2lvbhgIIAEoCRrwBgoPU29mdHdh",
+            "cmVQYWNrYWdlElkKC3l1bV9wYWNrYWdlGAEgASgLMkIuZ29vZ2xlLmNsb3Vk",
+            "Lm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuSW52ZW50b3J5LlZlcnNpb25l",
+            "ZFBhY2thZ2VIABJZCgthcHRfcGFja2FnZRgCIAEoCzJCLmdvb2dsZS5jbG91",
+            "ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYxLkludmVudG9yeS5WZXJzaW9u",
+            "ZWRQYWNrYWdlSAASXAoOenlwcGVyX3BhY2thZ2UYAyABKAsyQi5nb29nbGUu",
+            "Y2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52MS5JbnZlbnRvcnkuVmVy",
+            "c2lvbmVkUGFja2FnZUgAElwKDmdvb2dldF9wYWNrYWdlGAQgASgLMkIuZ29v",
+            "Z2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuSW52ZW50b3J5",
+            "LlZlcnNpb25lZFBhY2thZ2VIABJVCgx6eXBwZXJfcGF0Y2gYBSABKAsyPS5n",
+            "b29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2ludC52MS5JbnZlbnRv",
+            "cnkuWnlwcGVyUGF0Y2hIABJdCgt3dWFfcGFja2FnZRgGIAEoCzJGLmdvb2ds",
+            "ZS5jbG91ZC5vc2NvbmZpZy5hZ2VudGVuZHBvaW50LnYxLkludmVudG9yeS5X",
+            "aW5kb3dzVXBkYXRlUGFja2FnZUgAEmoKC3FmZV9wYWNrYWdlGAcgASgLMlMu",
+            "Z29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjEuSW52ZW50",
+            "b3J5LldpbmRvd3NRdWlja0ZpeEVuZ2luZWVyaW5nUGFja2FnZUgAElkKC2Nv",
+            "c19wYWNrYWdlGAggASgLMkIuZ29vZ2xlLmNsb3VkLm9zY29uZmlnLmFnZW50",
+            "ZW5kcG9pbnQudjEuSW52ZW50b3J5LlZlcnNpb25lZFBhY2thZ2VIABJjChN3",
+            "aW5kb3dzX2FwcGxpY2F0aW9uGAkgASgLMkQuZ29vZ2xlLmNsb3VkLm9zY29u",
+            "ZmlnLmFnZW50ZW5kcG9pbnQudjEuSW52ZW50b3J5LldpbmRvd3NBcHBsaWNh",
+            "dGlvbkgAQgkKB2RldGFpbHMaTwoQVmVyc2lvbmVkUGFja2FnZRIUCgxwYWNr",
+            "YWdlX25hbWUYASABKAkSFAoMYXJjaGl0ZWN0dXJlGAIgASgJEg8KB3ZlcnNp",
+            "b24YAyABKAkajwEKIVdpbmRvd3NRdWlja0ZpeEVuZ2luZWVyaW5nUGFja2Fn",
+            "ZRIPCgdjYXB0aW9uGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEhIKCmhv",
+            "dF9maXhfaWQYAyABKAkSMAoMaW5zdGFsbF90aW1lGAQgASgLMhouZ29vZ2xl",
+            "LnByb3RvYnVmLlRpbWVzdGFtcBpWCgtaeXBwZXJQYXRjaBISCgpwYXRjaF9u",
+            "YW1lGAEgASgJEhAKCGNhdGVnb3J5GAIgASgJEhAKCHNldmVyaXR5GAMgASgJ",
+            "Eg8KB3N1bW1hcnkYBCABKAkakQMKFFdpbmRvd3NVcGRhdGVQYWNrYWdlEg0K",
+            "BXRpdGxlGAEgASgJEhMKC2Rlc2NyaXB0aW9uGAIgASgJEnAKCmNhdGVnb3Jp",
+            "ZXMYAyADKAsyXC5nb29nbGUuY2xvdWQub3Njb25maWcuYWdlbnRlbmRwb2lu",
+            "dC52MS5JbnZlbnRvcnkuV2luZG93c1VwZGF0ZVBhY2thZ2UuV2luZG93c1Vw",
+            "ZGF0ZUNhdGVnb3J5EhYKDmtiX2FydGljbGVfaWRzGAQgAygJEhMKC3N1cHBv",
+            "cnRfdXJsGAUgASgJEhYKDm1vcmVfaW5mb191cmxzGAYgAygJEhEKCXVwZGF0",
+            "ZV9pZBgHIAEoCRIXCg9yZXZpc2lvbl9udW1iZXIYCCABKAUSPwobbGFzdF9k",
+            "ZXBsb3ltZW50X2NoYW5nZV90aW1lGAkgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcBoxChVXaW5kb3dzVXBkYXRlQ2F0ZWdvcnkSCgoCaWQYASAB",
+            "KAkSDAoEbmFtZRgCIAEoCRqSAQoSV2luZG93c0FwcGxpY2F0aW9uEhQKDGRp",
+            "c3BsYXlfbmFtZRgBIAEoCRIXCg9kaXNwbGF5X3ZlcnNpb24YAiABKAkSEQoJ",
+            "cHVibGlzaGVyGAMgASgJEicKDGluc3RhbGxfZGF0ZRgEIAEoCzIRLmdvb2ds",
+            "ZS50eXBlLkRhdGUSEQoJaGVscF9saW5rGAUgASgJQpMBCipjb20uZ29vZ2xl",
+            "LmNsb3VkLm9zY29uZmlnLmFnZW50ZW5kcG9pbnQudjFCDkludmVudG9yeVBy",
+            "b3RvUAFaU2dvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMv",
+            "Y2xvdWQvb3Njb25maWcvYWdlbnRlbmRwb2ludC92MTthZ2VudGVuZHBvaW50",
+            "YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Type.DateReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Parser, new[]{ "OsInfo", "InstalledPackages", "AvailablePackages" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.OsInfo), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.OsInfo.Parser, new[]{ "Hostname", "LongName", "ShortName", "Version", "Architecture", "KernelVersion", "KernelRelease", "OsconfigAgentVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.SoftwarePackage), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.SoftwarePackage.Parser, new[]{ "YumPackage", "AptPackage", "ZypperPackage", "GoogetPackage", "ZypperPatch", "WuaPackage", "QfePackage", "CosPackage" }, new[]{ "Details" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.SoftwarePackage), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.SoftwarePackage.Parser, new[]{ "YumPackage", "AptPackage", "ZypperPackage", "GoogetPackage", "ZypperPatch", "WuaPackage", "QfePackage", "CosPackage", "WindowsApplication" }, new[]{ "Details" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.VersionedPackage), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.VersionedPackage.Parser, new[]{ "PackageName", "Architecture", "Version" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsQuickFixEngineeringPackage), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsQuickFixEngineeringPackage.Parser, new[]{ "Caption", "Description", "HotFixId", "InstallTime" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.ZypperPatch), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.ZypperPatch.Parser, new[]{ "PatchName", "Category", "Severity", "Summary" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsUpdatePackage), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsUpdatePackage.Parser, new[]{ "Title", "Description", "Categories", "KbArticleIds", "SupportUrl", "MoreInfoUrls", "UpdateId", "RevisionNumber", "LastDeploymentChangeTime" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsUpdatePackage.Types.WindowsUpdateCategory), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsUpdatePackage.Types.WindowsUpdateCategory.Parser, new[]{ "Id", "Name" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsQuickFixEngineeringPackage), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsQuickFixEngineeringPackage.Parser, new[]{ "Caption", "Description", "HotFixId", "InstallTime" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication), global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication.Parser, new[]{ "DisplayName", "DisplayVersion", "Publisher", "InstallDate", "HelpLink" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -847,6 +854,9 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             case DetailsOneofCase.CosPackage:
               CosPackage = other.CosPackage.Clone();
               break;
+            case DetailsOneofCase.WindowsApplication:
+              WindowsApplication = other.WindowsApplication.Clone();
+              break;
           }
 
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -984,6 +994,20 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
           }
         }
 
+        /// <summary>Field number for the "windows_application" field.</summary>
+        public const int WindowsApplicationFieldNumber = 9;
+        /// <summary>
+        /// Details of Windows Application.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication WindowsApplication {
+          get { return detailsCase_ == DetailsOneofCase.WindowsApplication ? (global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication) details_ : null; }
+          set {
+            details_ = value;
+            detailsCase_ = value == null ? DetailsOneofCase.None : DetailsOneofCase.WindowsApplication;
+          }
+        }
+
         private object details_;
         /// <summary>Enum of possible cases for the "details" oneof.</summary>
         public enum DetailsOneofCase {
@@ -996,6 +1020,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
           WuaPackage = 6,
           QfePackage = 7,
           CosPackage = 8,
+          WindowsApplication = 9,
         }
         private DetailsOneofCase detailsCase_ = DetailsOneofCase.None;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1030,6 +1055,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
           if (!object.Equals(WuaPackage, other.WuaPackage)) return false;
           if (!object.Equals(QfePackage, other.QfePackage)) return false;
           if (!object.Equals(CosPackage, other.CosPackage)) return false;
+          if (!object.Equals(WindowsApplication, other.WindowsApplication)) return false;
           if (DetailsCase != other.DetailsCase) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
@@ -1045,6 +1071,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
           if (detailsCase_ == DetailsOneofCase.WuaPackage) hash ^= WuaPackage.GetHashCode();
           if (detailsCase_ == DetailsOneofCase.QfePackage) hash ^= QfePackage.GetHashCode();
           if (detailsCase_ == DetailsOneofCase.CosPackage) hash ^= CosPackage.GetHashCode();
+          if (detailsCase_ == DetailsOneofCase.WindowsApplication) hash ^= WindowsApplication.GetHashCode();
           hash ^= (int) detailsCase_;
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -1094,6 +1121,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             output.WriteRawTag(66);
             output.WriteMessage(CosPackage);
           }
+          if (detailsCase_ == DetailsOneofCase.WindowsApplication) {
+            output.WriteRawTag(74);
+            output.WriteMessage(WindowsApplication);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -1135,6 +1166,10 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
             output.WriteRawTag(66);
             output.WriteMessage(CosPackage);
           }
+          if (detailsCase_ == DetailsOneofCase.WindowsApplication) {
+            output.WriteRawTag(74);
+            output.WriteMessage(WindowsApplication);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -1167,6 +1202,9 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
           }
           if (detailsCase_ == DetailsOneofCase.CosPackage) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(CosPackage);
+          }
+          if (detailsCase_ == DetailsOneofCase.WindowsApplication) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(WindowsApplication);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -1227,6 +1265,12 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 CosPackage = new global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.VersionedPackage();
               }
               CosPackage.MergeFrom(other.CosPackage);
+              break;
+            case DetailsOneofCase.WindowsApplication:
+              if (WindowsApplication == null) {
+                WindowsApplication = new global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication();
+              }
+              WindowsApplication.MergeFrom(other.WindowsApplication);
               break;
           }
 
@@ -1316,6 +1360,15 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 CosPackage = subBuilder;
                 break;
               }
+              case 74: {
+                global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication subBuilder = new global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication();
+                if (detailsCase_ == DetailsOneofCase.WindowsApplication) {
+                  subBuilder.MergeFrom(WindowsApplication);
+                }
+                input.ReadMessage(subBuilder);
+                WindowsApplication = subBuilder;
+                break;
+              }
             }
           }
         #endif
@@ -1400,6 +1453,15 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 }
                 input.ReadMessage(subBuilder);
                 CosPackage = subBuilder;
+                break;
+              }
+              case 74: {
+                global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication subBuilder = new global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Types.WindowsApplication();
+                if (detailsCase_ == DetailsOneofCase.WindowsApplication) {
+                  subBuilder.MergeFrom(WindowsApplication);
+                }
+                input.ReadMessage(subBuilder);
+                WindowsApplication = subBuilder;
                 break;
               }
             }
@@ -1667,6 +1729,313 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
       }
 
       /// <summary>
+      /// Information related to a Quick Fix Engineering package.
+      /// Fields are taken from Windows QuickFixEngineering Interface and match
+      /// the source names:
+      /// https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering
+      /// </summary>
+      public sealed partial class WindowsQuickFixEngineeringPackage : pb::IMessage<WindowsQuickFixEngineeringPackage>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<WindowsQuickFixEngineeringPackage> _parser = new pb::MessageParser<WindowsQuickFixEngineeringPackage>(() => new WindowsQuickFixEngineeringPackage());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<WindowsQuickFixEngineeringPackage> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Descriptor.NestedTypes[3]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public WindowsQuickFixEngineeringPackage() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public WindowsQuickFixEngineeringPackage(WindowsQuickFixEngineeringPackage other) : this() {
+          caption_ = other.caption_;
+          description_ = other.description_;
+          hotFixId_ = other.hotFixId_;
+          installTime_ = other.installTime_ != null ? other.installTime_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public WindowsQuickFixEngineeringPackage Clone() {
+          return new WindowsQuickFixEngineeringPackage(this);
+        }
+
+        /// <summary>Field number for the "caption" field.</summary>
+        public const int CaptionFieldNumber = 1;
+        private string caption_ = "";
+        /// <summary>
+        /// A short textual description of the QFE update.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string Caption {
+          get { return caption_; }
+          set {
+            caption_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "description" field.</summary>
+        public const int DescriptionFieldNumber = 2;
+        private string description_ = "";
+        /// <summary>
+        /// A textual description of the QFE update.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string Description {
+          get { return description_; }
+          set {
+            description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "hot_fix_id" field.</summary>
+        public const int HotFixIdFieldNumber = 3;
+        private string hotFixId_ = "";
+        /// <summary>
+        /// Unique identifier associated with a particular QFE update.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string HotFixId {
+          get { return hotFixId_; }
+          set {
+            hotFixId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        /// <summary>Field number for the "install_time" field.</summary>
+        public const int InstallTimeFieldNumber = 4;
+        private global::Google.Protobuf.WellKnownTypes.Timestamp installTime_;
+        /// <summary>
+        /// Date that the QFE update was installed.  Mapped from installed_on field.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Google.Protobuf.WellKnownTypes.Timestamp InstallTime {
+          get { return installTime_; }
+          set {
+            installTime_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as WindowsQuickFixEngineeringPackage);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(WindowsQuickFixEngineeringPackage other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Caption != other.Caption) return false;
+          if (Description != other.Description) return false;
+          if (HotFixId != other.HotFixId) return false;
+          if (!object.Equals(InstallTime, other.InstallTime)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Caption.Length != 0) hash ^= Caption.GetHashCode();
+          if (Description.Length != 0) hash ^= Description.GetHashCode();
+          if (HotFixId.Length != 0) hash ^= HotFixId.GetHashCode();
+          if (installTime_ != null) hash ^= InstallTime.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Caption.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Caption);
+          }
+          if (Description.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Description);
+          }
+          if (HotFixId.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(HotFixId);
+          }
+          if (installTime_ != null) {
+            output.WriteRawTag(34);
+            output.WriteMessage(InstallTime);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Caption.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Caption);
+          }
+          if (Description.Length != 0) {
+            output.WriteRawTag(18);
+            output.WriteString(Description);
+          }
+          if (HotFixId.Length != 0) {
+            output.WriteRawTag(26);
+            output.WriteString(HotFixId);
+          }
+          if (installTime_ != null) {
+            output.WriteRawTag(34);
+            output.WriteMessage(InstallTime);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (Caption.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Caption);
+          }
+          if (Description.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+          }
+          if (HotFixId.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(HotFixId);
+          }
+          if (installTime_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(InstallTime);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(WindowsQuickFixEngineeringPackage other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Caption.Length != 0) {
+            Caption = other.Caption;
+          }
+          if (other.Description.Length != 0) {
+            Description = other.Description;
+          }
+          if (other.HotFixId.Length != 0) {
+            HotFixId = other.HotFixId;
+          }
+          if (other.installTime_ != null) {
+            if (installTime_ == null) {
+              InstallTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            InstallTime.MergeFrom(other.InstallTime);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                Caption = input.ReadString();
+                break;
+              }
+              case 18: {
+                Description = input.ReadString();
+                break;
+              }
+              case 26: {
+                HotFixId = input.ReadString();
+                break;
+              }
+              case 34: {
+                if (installTime_ == null) {
+                  InstallTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+                }
+                input.ReadMessage(InstallTime);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                Caption = input.ReadString();
+                break;
+              }
+              case 18: {
+                Description = input.ReadString();
+                break;
+              }
+              case 26: {
+                HotFixId = input.ReadString();
+                break;
+              }
+              case 34: {
+                if (installTime_ == null) {
+                  InstallTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+                }
+                input.ReadMessage(InstallTime);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      /// <summary>
       /// Details related to a Zypper Patch.
       /// </summary>
       public sealed partial class ZypperPatch : pb::IMessage<ZypperPatch>
@@ -1681,7 +2050,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Descriptor.NestedTypes[3]; }
+          get { return global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1980,7 +2349,7 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Descriptor.NestedTypes[4]; }
+          get { return global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2659,24 +3028,23 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
       }
 
       /// <summary>
-      /// Information related to a Quick Fix Engineering package.
-      /// Fields are taken from Windows QuickFixEngineering Interface and match
-      /// the source names:
-      /// https://docs.microsoft.com/en-us/windows/win32/cimwin32prov/win32-quickfixengineering
+      /// Details about Windows Application - based on Windows Registry.
+      /// All fields in this message are taken from:
+      /// https://docs.microsoft.com/en-us/windows/win32/msi/uninstall-registry-key
       /// </summary>
-      public sealed partial class WindowsQuickFixEngineeringPackage : pb::IMessage<WindowsQuickFixEngineeringPackage>
+      public sealed partial class WindowsApplication : pb::IMessage<WindowsApplication>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
       #endif
       {
-        private static readonly pb::MessageParser<WindowsQuickFixEngineeringPackage> _parser = new pb::MessageParser<WindowsQuickFixEngineeringPackage>(() => new WindowsQuickFixEngineeringPackage());
+        private static readonly pb::MessageParser<WindowsApplication> _parser = new pb::MessageParser<WindowsApplication>(() => new WindowsApplication());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public static pb::MessageParser<WindowsQuickFixEngineeringPackage> Parser { get { return _parser; } }
+        public static pb::MessageParser<WindowsApplication> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Descriptor.NestedTypes[5]; }
+          get { return global::Google.Cloud.Osconfig.Agentendpoint.V1.Inventory.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2685,109 +3053,126 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public WindowsQuickFixEngineeringPackage() {
+        public WindowsApplication() {
           OnConstruction();
         }
 
         partial void OnConstruction();
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public WindowsQuickFixEngineeringPackage(WindowsQuickFixEngineeringPackage other) : this() {
-          caption_ = other.caption_;
-          description_ = other.description_;
-          hotFixId_ = other.hotFixId_;
-          installTime_ = other.installTime_ != null ? other.installTime_.Clone() : null;
+        public WindowsApplication(WindowsApplication other) : this() {
+          displayName_ = other.displayName_;
+          displayVersion_ = other.displayVersion_;
+          publisher_ = other.publisher_;
+          installDate_ = other.installDate_ != null ? other.installDate_.Clone() : null;
+          helpLink_ = other.helpLink_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public WindowsQuickFixEngineeringPackage Clone() {
-          return new WindowsQuickFixEngineeringPackage(this);
+        public WindowsApplication Clone() {
+          return new WindowsApplication(this);
         }
 
-        /// <summary>Field number for the "caption" field.</summary>
-        public const int CaptionFieldNumber = 1;
-        private string caption_ = "";
+        /// <summary>Field number for the "display_name" field.</summary>
+        public const int DisplayNameFieldNumber = 1;
+        private string displayName_ = "";
         /// <summary>
-        /// A short textual description of the QFE update.
+        /// DisplayName field from Windows Registry.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string Caption {
-          get { return caption_; }
+        public string DisplayName {
+          get { return displayName_; }
           set {
-            caption_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+            displayName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
 
-        /// <summary>Field number for the "description" field.</summary>
-        public const int DescriptionFieldNumber = 2;
-        private string description_ = "";
+        /// <summary>Field number for the "display_version" field.</summary>
+        public const int DisplayVersionFieldNumber = 2;
+        private string displayVersion_ = "";
         /// <summary>
-        /// A textual description of the QFE update.
+        /// DisplayVersion field from Windows Registry.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string Description {
-          get { return description_; }
+        public string DisplayVersion {
+          get { return displayVersion_; }
           set {
-            description_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+            displayVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
 
-        /// <summary>Field number for the "hot_fix_id" field.</summary>
-        public const int HotFixIdFieldNumber = 3;
-        private string hotFixId_ = "";
+        /// <summary>Field number for the "publisher" field.</summary>
+        public const int PublisherFieldNumber = 3;
+        private string publisher_ = "";
         /// <summary>
-        /// Unique identifier associated with a particular QFE update.
+        /// Publisher field from Windows Registry.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public string HotFixId {
-          get { return hotFixId_; }
+        public string Publisher {
+          get { return publisher_; }
           set {
-            hotFixId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+            publisher_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
 
-        /// <summary>Field number for the "install_time" field.</summary>
-        public const int InstallTimeFieldNumber = 4;
-        private global::Google.Protobuf.WellKnownTypes.Timestamp installTime_;
+        /// <summary>Field number for the "install_date" field.</summary>
+        public const int InstallDateFieldNumber = 4;
+        private global::Google.Type.Date installDate_;
         /// <summary>
-        /// Date that the QFE update was installed.  Mapped from installed_on field.
+        /// Installation date field from Windows Registry.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public global::Google.Protobuf.WellKnownTypes.Timestamp InstallTime {
-          get { return installTime_; }
+        public global::Google.Type.Date InstallDate {
+          get { return installDate_; }
           set {
-            installTime_ = value;
+            installDate_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "help_link" field.</summary>
+        public const int HelpLinkFieldNumber = 5;
+        private string helpLink_ = "";
+        /// <summary>
+        /// HelpLink field from Windows Registry.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string HelpLink {
+          get { return helpLink_; }
+          set {
+            helpLink_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
-          return Equals(other as WindowsQuickFixEngineeringPackage);
+          return Equals(other as WindowsApplication);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public bool Equals(WindowsQuickFixEngineeringPackage other) {
+        public bool Equals(WindowsApplication other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (Caption != other.Caption) return false;
-          if (Description != other.Description) return false;
-          if (HotFixId != other.HotFixId) return false;
-          if (!object.Equals(InstallTime, other.InstallTime)) return false;
+          if (DisplayName != other.DisplayName) return false;
+          if (DisplayVersion != other.DisplayVersion) return false;
+          if (Publisher != other.Publisher) return false;
+          if (!object.Equals(InstallDate, other.InstallDate)) return false;
+          if (HelpLink != other.HelpLink) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override int GetHashCode() {
           int hash = 1;
-          if (Caption.Length != 0) hash ^= Caption.GetHashCode();
-          if (Description.Length != 0) hash ^= Description.GetHashCode();
-          if (HotFixId.Length != 0) hash ^= HotFixId.GetHashCode();
-          if (installTime_ != null) hash ^= InstallTime.GetHashCode();
+          if (DisplayName.Length != 0) hash ^= DisplayName.GetHashCode();
+          if (DisplayVersion.Length != 0) hash ^= DisplayVersion.GetHashCode();
+          if (Publisher.Length != 0) hash ^= Publisher.GetHashCode();
+          if (installDate_ != null) hash ^= InstallDate.GetHashCode();
+          if (HelpLink.Length != 0) hash ^= HelpLink.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -2804,21 +3189,25 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (Caption.Length != 0) {
+          if (DisplayName.Length != 0) {
             output.WriteRawTag(10);
-            output.WriteString(Caption);
+            output.WriteString(DisplayName);
           }
-          if (Description.Length != 0) {
+          if (DisplayVersion.Length != 0) {
             output.WriteRawTag(18);
-            output.WriteString(Description);
+            output.WriteString(DisplayVersion);
           }
-          if (HotFixId.Length != 0) {
+          if (Publisher.Length != 0) {
             output.WriteRawTag(26);
-            output.WriteString(HotFixId);
+            output.WriteString(Publisher);
           }
-          if (installTime_ != null) {
+          if (installDate_ != null) {
             output.WriteRawTag(34);
-            output.WriteMessage(InstallTime);
+            output.WriteMessage(InstallDate);
+          }
+          if (HelpLink.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(HelpLink);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -2829,21 +3218,25 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Caption.Length != 0) {
+          if (DisplayName.Length != 0) {
             output.WriteRawTag(10);
-            output.WriteString(Caption);
+            output.WriteString(DisplayName);
           }
-          if (Description.Length != 0) {
+          if (DisplayVersion.Length != 0) {
             output.WriteRawTag(18);
-            output.WriteString(Description);
+            output.WriteString(DisplayVersion);
           }
-          if (HotFixId.Length != 0) {
+          if (Publisher.Length != 0) {
             output.WriteRawTag(26);
-            output.WriteString(HotFixId);
+            output.WriteString(Publisher);
           }
-          if (installTime_ != null) {
+          if (installDate_ != null) {
             output.WriteRawTag(34);
-            output.WriteMessage(InstallTime);
+            output.WriteMessage(InstallDate);
+          }
+          if (HelpLink.Length != 0) {
+            output.WriteRawTag(42);
+            output.WriteString(HelpLink);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -2854,17 +3247,20 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public int CalculateSize() {
           int size = 0;
-          if (Caption.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(Caption);
+          if (DisplayName.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(DisplayName);
           }
-          if (Description.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(Description);
+          if (DisplayVersion.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(DisplayVersion);
           }
-          if (HotFixId.Length != 0) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(HotFixId);
+          if (Publisher.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Publisher);
           }
-          if (installTime_ != null) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(InstallTime);
+          if (installDate_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(InstallDate);
+          }
+          if (HelpLink.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(HelpLink);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -2873,24 +3269,27 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public void MergeFrom(WindowsQuickFixEngineeringPackage other) {
+        public void MergeFrom(WindowsApplication other) {
           if (other == null) {
             return;
           }
-          if (other.Caption.Length != 0) {
-            Caption = other.Caption;
+          if (other.DisplayName.Length != 0) {
+            DisplayName = other.DisplayName;
           }
-          if (other.Description.Length != 0) {
-            Description = other.Description;
+          if (other.DisplayVersion.Length != 0) {
+            DisplayVersion = other.DisplayVersion;
           }
-          if (other.HotFixId.Length != 0) {
-            HotFixId = other.HotFixId;
+          if (other.Publisher.Length != 0) {
+            Publisher = other.Publisher;
           }
-          if (other.installTime_ != null) {
-            if (installTime_ == null) {
-              InstallTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+          if (other.installDate_ != null) {
+            if (installDate_ == null) {
+              InstallDate = new global::Google.Type.Date();
             }
-            InstallTime.MergeFrom(other.InstallTime);
+            InstallDate.MergeFrom(other.InstallDate);
+          }
+          if (other.HelpLink.Length != 0) {
+            HelpLink = other.HelpLink;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -2907,22 +3306,26 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 10: {
-                Caption = input.ReadString();
+                DisplayName = input.ReadString();
                 break;
               }
               case 18: {
-                Description = input.ReadString();
+                DisplayVersion = input.ReadString();
                 break;
               }
               case 26: {
-                HotFixId = input.ReadString();
+                Publisher = input.ReadString();
                 break;
               }
               case 34: {
-                if (installTime_ == null) {
-                  InstallTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+                if (installDate_ == null) {
+                  InstallDate = new global::Google.Type.Date();
                 }
-                input.ReadMessage(InstallTime);
+                input.ReadMessage(InstallDate);
+                break;
+              }
+              case 42: {
+                HelpLink = input.ReadString();
                 break;
               }
             }
@@ -2940,22 +3343,26 @@ namespace Google.Cloud.Osconfig.Agentendpoint.V1 {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 10: {
-                Caption = input.ReadString();
+                DisplayName = input.ReadString();
                 break;
               }
               case 18: {
-                Description = input.ReadString();
+                DisplayVersion = input.ReadString();
                 break;
               }
               case 26: {
-                HotFixId = input.ReadString();
+                Publisher = input.ReadString();
                 break;
               }
               case 34: {
-                if (installTime_ == null) {
-                  InstallTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+                if (installDate_ == null) {
+                  InstallDate = new global::Google.Type.Date();
                 }
-                input.ReadMessage(InstallTime);
+                input.ReadMessage(InstallDate);
+                break;
+              }
+              case 42: {
+                HelpLink = input.ReadString();
                 break;
               }
             }
