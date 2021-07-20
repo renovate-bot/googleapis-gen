@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/contactcenterinsights",
+  "name": "@google-cloud/contact-center-insights",
   "version": "0.1.0",
   "description": "Contactcenterinsights client for Node.js",
   "repository": "googleapis/nodejs-contactcenterinsights",
