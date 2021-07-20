@@ -163,6 +163,7 @@ public class CloudBuildClientTest {
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -237,6 +238,7 @@ public class CloudBuildClientTest {
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -350,6 +352,7 @@ public class CloudBuildClientTest {
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     mockCloudBuild.addResponse(expectedResponse);
 
@@ -416,6 +419,7 @@ public class CloudBuildClientTest {
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -739,6 +743,7 @@ public class CloudBuildClientTest {
             .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
+            .setFailureInfo(Build.FailureInfo.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

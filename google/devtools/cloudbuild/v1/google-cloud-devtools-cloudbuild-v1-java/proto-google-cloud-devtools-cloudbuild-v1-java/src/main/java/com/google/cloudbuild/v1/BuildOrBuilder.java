@@ -929,4 +929,31 @@ public interface BuildOrBuilder extends
    */
   com.google.cloudbuild.v1.Build.WarningOrBuilder getWarningsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the failureInfo field is set.
+   */
+  boolean hasFailureInfo();
+  /**
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The failureInfo.
+   */
+  com.google.cloudbuild.v1.Build.FailureInfo getFailureInfo();
+  /**
+   * <pre>
+   * Output only. Contains information about the build when status=FAILURE.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.Build.FailureInfo failure_info = 51 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.cloudbuild.v1.Build.FailureInfoOrBuilder getFailureInfoOrBuilder();
 }
