@@ -22,7 +22,7 @@ class PredictionService
         \GPBMetadata\Google\Protobuf\Struct::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Æ
+ü
 3google/cloud/aiplatform/v1/prediction_service.protogoogle.cloud.aiplatform.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/httpbody.protogoogle/api/resource.protogoogle/protobuf/struct.proto"ª
 PredictRequest<
 endpoint (	B*àAúA$
@@ -32,9 +32,9 @@ class PredictionService
 parameters (2.google.protobuf.Value"Y
 PredictResponse+
 predictions (2.google.protobuf.Value
-deployed_model_id (	2÷
-PredictionService’
-Predict*.google.cloud.aiplatform.v1.PredictRequest+.google.cloud.aiplatform.v1.PredictResponse"­‚Óä“†"9/v1/{endpoint=projects/*/locations/*/endpoints/*}:predict:*ZF"A/v1/{endpoint=projects/*/locations/*/endpoints/*}:predictInternal:*ÚAendpoint,parameters,instancesMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÚ
+deployed_model_id (	2­
+PredictionServiceÈ
+Predict*.google.cloud.aiplatform.v1.PredictRequest+.google.cloud.aiplatform.v1.PredictResponse"d‚Óä“>"9/v1/{endpoint=projects/*/locations/*/endpoints/*}:predict:*ÚAendpoint,instances,parametersMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÚ
 com.google.cloud.aiplatform.v1BPredictionServiceProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatformªGoogle.Cloud.AIPlatform.V1ÊGoogle\\Cloud\\AIPlatform\\V1êGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 

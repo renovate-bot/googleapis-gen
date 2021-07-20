@@ -7,13 +7,6 @@ return [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{endpoint=projects/*/locations/*/endpoints/*}:predict',
                 'body' => '*',
-                'additionalBindings' => [
-                    [
-                        'method' => 'post',
-                        'uriTemplate' => '/v1/{endpoint=projects/*/locations/*/endpoints/*}:predictInternal',
-                        'body' => '*',
-                    ],
-                ],
                 'placeholders' => [
                     'endpoint' => [
                         'getters' => [

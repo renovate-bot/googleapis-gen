@@ -87,10 +87,10 @@ public class PredictionServiceClientTest {
     mockPredictionService.addResponse(expectedResponse);
 
     EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-    Value parameters = Value.newBuilder().build();
     List<Value> instances = new ArrayList<>();
+    Value parameters = Value.newBuilder().build();
 
-    PredictResponse actualResponse = client.predict(endpoint, parameters, instances);
+    PredictResponse actualResponse = client.predict(endpoint, instances, parameters);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
@@ -98,8 +98,8 @@ public class PredictionServiceClientTest {
     PredictRequest actualRequest = ((PredictRequest) actualRequests.get(0));
 
     Assert.assertEquals(endpoint.toString(), actualRequest.getEndpoint());
-    Assert.assertEquals(parameters, actualRequest.getParameters());
     Assert.assertEquals(instances, actualRequest.getInstancesList());
+    Assert.assertEquals(parameters, actualRequest.getParameters());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -113,9 +113,9 @@ public class PredictionServiceClientTest {
 
     try {
       EndpointName endpoint = EndpointName.of("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
-      Value parameters = Value.newBuilder().build();
       List<Value> instances = new ArrayList<>();
-      client.predict(endpoint, parameters, instances);
+      Value parameters = Value.newBuilder().build();
+      client.predict(endpoint, instances, parameters);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -132,10 +132,10 @@ public class PredictionServiceClientTest {
     mockPredictionService.addResponse(expectedResponse);
 
     String endpoint = "endpoint1741102485";
-    Value parameters = Value.newBuilder().build();
     List<Value> instances = new ArrayList<>();
+    Value parameters = Value.newBuilder().build();
 
-    PredictResponse actualResponse = client.predict(endpoint, parameters, instances);
+    PredictResponse actualResponse = client.predict(endpoint, instances, parameters);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<AbstractMessage> actualRequests = mockPredictionService.getRequests();
@@ -143,8 +143,8 @@ public class PredictionServiceClientTest {
     PredictRequest actualRequest = ((PredictRequest) actualRequests.get(0));
 
     Assert.assertEquals(endpoint, actualRequest.getEndpoint());
-    Assert.assertEquals(parameters, actualRequest.getParameters());
     Assert.assertEquals(instances, actualRequest.getInstancesList());
+    Assert.assertEquals(parameters, actualRequest.getParameters());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -158,9 +158,9 @@ public class PredictionServiceClientTest {
 
     try {
       String endpoint = "endpoint1741102485";
-      Value parameters = Value.newBuilder().build();
       List<Value> instances = new ArrayList<>();
-      client.predict(endpoint, parameters, instances);
+      Value parameters = Value.newBuilder().build();
+      client.predict(endpoint, instances, parameters);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
