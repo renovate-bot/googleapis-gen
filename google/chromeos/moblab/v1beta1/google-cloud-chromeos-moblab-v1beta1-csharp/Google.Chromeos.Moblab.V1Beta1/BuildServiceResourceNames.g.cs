@@ -18,6 +18,18 @@ using gcmv = Google.Chromeos.Moblab.V1Beta1;
 
 namespace Google.Chromeos.Moblab.V1Beta1
 {
+    public partial class FindMostStableBuildRequest
+    {
+        /// <summary>
+        /// <see cref="BuildTargetName"/>-typed view over the <see cref="BuildTarget"/> resource name property.
+        /// </summary>
+        public BuildTargetName BuildTargetAsBuildTargetName
+        {
+            get => string.IsNullOrEmpty(BuildTarget) ? null : BuildTargetName.Parse(BuildTarget, allowUnparsed: true);
+            set => BuildTarget = value?.ToString() ?? "";
+        }
+    }
+
     public partial class ListBuildsRequest
     {
         /// <summary><see cref="ModelName"/>-typed view over the <see cref="Parent"/> resource name property.</summary>

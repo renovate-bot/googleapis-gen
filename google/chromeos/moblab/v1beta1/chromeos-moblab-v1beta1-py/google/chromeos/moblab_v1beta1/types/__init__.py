@@ -16,6 +16,8 @@
 from .build_service import (
     CheckBuildStageStatusRequest,
     CheckBuildStageStatusResponse,
+    FindMostStableBuildRequest,
+    FindMostStableBuildResponse,
     ListBuildsRequest,
     ListBuildsResponse,
     ListBuildTargetsRequest,
@@ -35,6 +37,8 @@ from .resources import (
 __all__ = (
     'CheckBuildStageStatusRequest',
     'CheckBuildStageStatusResponse',
+    'FindMostStableBuildRequest',
+    'FindMostStableBuildResponse',
     'ListBuildsRequest',
     'ListBuildsResponse',
     'ListBuildTargetsRequest',

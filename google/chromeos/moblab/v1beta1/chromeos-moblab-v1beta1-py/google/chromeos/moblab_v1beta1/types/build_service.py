@@ -23,6 +23,8 @@ from google.protobuf import timestamp_pb2  # type: ignore
 __protobuf__ = proto.module(
     package='google.chromeos.moblab.v1beta1',
     manifest={
+        'FindMostStableBuildRequest',
+        'FindMostStableBuildResponse',
         'ListBuildTargetsRequest',
         'ListBuildTargetsResponse',
         'ListBuildsRequest',
@@ -34,6 +36,35 @@ __protobuf__ = proto.module(
         'StageBuildMetadata',
     },
 )
+
+
+class FindMostStableBuildRequest(proto.Message):
+    r"""Request message for finding the most stable build.
+    Attributes:
+        build_target (str):
+            Required. The full resource name of the build
+            target. For example,
+            'buildTargets/octopus'.
+    """
+
+    build_target = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class FindMostStableBuildResponse(proto.Message):
+    r"""Response message for finding the most stable build.
+    Attributes:
+        build (google.chromeos.moblab_v1beta1.types.Build):
+            The most stable build.
+    """
+
+    build = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=resources.Build,
+    )
 
 
 class ListBuildTargetsRequest(proto.Message):

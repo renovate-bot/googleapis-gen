@@ -13,6 +13,12 @@ require 'google/protobuf/field_mask_pb'
 require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/chromeos/moblab/v1beta1/build_service.proto", :syntax => :proto3) do
+    add_message "google.chromeos.moblab.v1beta1.FindMostStableBuildRequest" do
+      optional :build_target, :string, 1
+    end
+    add_message "google.chromeos.moblab.v1beta1.FindMostStableBuildResponse" do
+      optional :build, :message, 1, "google.chromeos.moblab.v1beta1.Build"
+    end
     add_message "google.chromeos.moblab.v1beta1.ListBuildTargetsRequest" do
       optional :page_size, :int32, 1
       optional :page_token, :string, 2
@@ -63,6 +69,8 @@ module Google
   module Chromeos
     module Moblab
       module V1beta1
+        FindMostStableBuildRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.FindMostStableBuildRequest").msgclass
+        FindMostStableBuildResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.FindMostStableBuildResponse").msgclass
         ListBuildTargetsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildTargetsRequest").msgclass
         ListBuildTargetsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildTargetsResponse").msgclass
         ListBuildsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.chromeos.moblab.v1beta1.ListBuildsRequest").msgclass

@@ -128,3 +128,22 @@ func ExampleBuildClient_StageBuild() {
 	// TODO: Use resp.
 	_ = resp
 }
+
+func ExampleBuildClient_FindMostStableBuild() {
+	ctx := context.Background()
+	c, err := moblab.NewBuildClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &moblabpb.FindMostStableBuildRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.FindMostStableBuild(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}

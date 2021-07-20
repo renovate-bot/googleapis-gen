@@ -13,6 +13,9 @@
             "CheckBuildStageStatus": {
               "methods": ["checkBuildStageStatus", "checkBuildStageStatus", "checkBuildStageStatus", "checkBuildStageStatusCallable"]
             },
+            "FindMostStableBuild": {
+              "methods": ["findMostStableBuild", "findMostStableBuild", "findMostStableBuild", "findMostStableBuildCallable"]
+            },
             "ListBuildTargets": {
               "methods": ["listBuildTargets", "listBuildTargetsPagedCallable", "listBuildTargetsCallable"]
             },

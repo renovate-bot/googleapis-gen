@@ -19,6 +19,8 @@ from .services.build_service import BuildServiceAsyncClient
 
 from .types.build_service import CheckBuildStageStatusRequest
 from .types.build_service import CheckBuildStageStatusResponse
+from .types.build_service import FindMostStableBuildRequest
+from .types.build_service import FindMostStableBuildResponse
 from .types.build_service import ListBuildsRequest
 from .types.build_service import ListBuildsResponse
 from .types.build_service import ListBuildTargetsRequest
@@ -40,6 +42,8 @@ __all__ = (
 'BuildTarget',
 'CheckBuildStageStatusRequest',
 'CheckBuildStageStatusResponse',
+'FindMostStableBuildRequest',
+'FindMostStableBuildResponse',
 'ListBuildTargetsRequest',
 'ListBuildTargetsResponse',
 'ListBuildsRequest',

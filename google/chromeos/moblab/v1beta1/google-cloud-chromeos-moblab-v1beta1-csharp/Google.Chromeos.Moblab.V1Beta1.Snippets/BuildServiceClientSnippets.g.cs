@@ -671,5 +671,92 @@ namespace Google.Chromeos.Moblab.V1Beta1.Snippets
             }
             // End snippet
         }
+
+        /// <summary>Snippet for FindMostStableBuild</summary>
+        public void FindMostStableBuildRequestObject()
+        {
+            // Snippet: FindMostStableBuild(FindMostStableBuildRequest, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = BuildServiceClient.Create();
+            // Initialize request argument(s)
+            FindMostStableBuildRequest request = new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            // Make the request
+            FindMostStableBuildResponse response = buildServiceClient.FindMostStableBuild(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FindMostStableBuildAsync</summary>
+        public async Task FindMostStableBuildRequestObjectAsync()
+        {
+            // Snippet: FindMostStableBuildAsync(FindMostStableBuildRequest, CallSettings)
+            // Additional: FindMostStableBuildAsync(FindMostStableBuildRequest, CancellationToken)
+            // Create client
+            BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            FindMostStableBuildRequest request = new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            // Make the request
+            FindMostStableBuildResponse response = await buildServiceClient.FindMostStableBuildAsync(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FindMostStableBuild</summary>
+        public void FindMostStableBuild()
+        {
+            // Snippet: FindMostStableBuild(string, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = BuildServiceClient.Create();
+            // Initialize request argument(s)
+            string buildTarget = "buildTargets/[BUILD_TARGET]";
+            // Make the request
+            FindMostStableBuildResponse response = buildServiceClient.FindMostStableBuild(buildTarget);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FindMostStableBuildAsync</summary>
+        public async Task FindMostStableBuildAsync()
+        {
+            // Snippet: FindMostStableBuildAsync(string, CallSettings)
+            // Additional: FindMostStableBuildAsync(string, CancellationToken)
+            // Create client
+            BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            string buildTarget = "buildTargets/[BUILD_TARGET]";
+            // Make the request
+            FindMostStableBuildResponse response = await buildServiceClient.FindMostStableBuildAsync(buildTarget);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FindMostStableBuild</summary>
+        public void FindMostStableBuildResourceNames()
+        {
+            // Snippet: FindMostStableBuild(BuildTargetName, CallSettings)
+            // Create client
+            BuildServiceClient buildServiceClient = BuildServiceClient.Create();
+            // Initialize request argument(s)
+            BuildTargetName buildTarget = BuildTargetName.FromBuildTarget("[BUILD_TARGET]");
+            // Make the request
+            FindMostStableBuildResponse response = buildServiceClient.FindMostStableBuild(buildTarget);
+            // End snippet
+        }
+
+        /// <summary>Snippet for FindMostStableBuildAsync</summary>
+        public async Task FindMostStableBuildResourceNamesAsync()
+        {
+            // Snippet: FindMostStableBuildAsync(BuildTargetName, CallSettings)
+            // Additional: FindMostStableBuildAsync(BuildTargetName, CancellationToken)
+            // Create client
+            BuildServiceClient buildServiceClient = await BuildServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            BuildTargetName buildTarget = BuildTargetName.FromBuildTarget("[BUILD_TARGET]");
+            // Make the request
+            FindMostStableBuildResponse response = await buildServiceClient.FindMostStableBuildAsync(buildTarget);
+            // End snippet
+        }
     }
 }

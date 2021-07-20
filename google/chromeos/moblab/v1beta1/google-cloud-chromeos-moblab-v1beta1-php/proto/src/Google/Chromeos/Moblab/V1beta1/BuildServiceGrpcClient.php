@@ -98,4 +98,30 @@ class BuildServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Finds the most stable build for the given build target. The definition of
+     * the most stable build is determined by evaluating the following rules in
+     * order until one is true. If none are true, then there is no stable build
+     * and it will return an empty response.
+     *
+     * Evaluation rules:
+     *   1. Stable channel build with label “Live”
+     *   2. Beta channel build with label “Live”
+     *   3. Dev channel build with label “Live”
+     *   4. Most recent stable channel build with build status Pass
+     *   5. Most recent beta channel build with build status Pass
+     *   6. Most recent dev channel build with build status Pass
+     * @param \Google\Chromeos\Moblab\V1beta1\FindMostStableBuildRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function FindMostStableBuild(\Google\Chromeos\Moblab\V1beta1\FindMostStableBuildRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.chromeos.moblab.v1beta1.BuildService/FindMostStableBuild',
+        $argument,
+        ['\Google\Chromeos\Moblab\V1beta1\FindMostStableBuildResponse', 'decode'],
+        $metadata, $options);
+    }
+
 }

@@ -180,6 +180,11 @@ initial=1.0,maximum=10.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.find_most_stable_build: gapic_v1.method.wrap_method(
+                self.find_most_stable_build,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     @property
@@ -220,6 +225,15 @@ initial=1.0,maximum=10.0,multiplier=1.3,                    predicate=retries.if
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def find_most_stable_build(self) -> Callable[
+            [build_service.FindMostStableBuildRequest],
+            Union[
+                build_service.FindMostStableBuildResponse,
+                Awaitable[build_service.FindMostStableBuildResponse]
             ]]:
         raise NotImplementedError()
 

@@ -94,6 +94,10 @@ class Build(proto.Message):
             The type of the build.
         branch (str):
             The branch of the build.
+        rw_firmware_version (str):
+            The read write firmware version of the
+            software that is flashed to the chip on the
+            Chrome OS device.
     """
     class BuildStatus(proto.Enum):
         r"""The build status types."""
@@ -134,6 +138,10 @@ class Build(proto.Message):
     branch = proto.Field(
         proto.STRING,
         number=6,
+    )
+    rw_firmware_version = proto.Field(
+        proto.STRING,
+        number=7,
     )
 
 

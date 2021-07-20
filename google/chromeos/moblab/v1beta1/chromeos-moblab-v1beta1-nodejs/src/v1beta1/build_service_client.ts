@@ -242,7 +242,7 @@ export class BuildServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const buildServiceStubMethods =
-        ['listBuildTargets', 'listBuilds', 'checkBuildStageStatus', 'stageBuild'];
+        ['listBuildTargets', 'listBuilds', 'checkBuildStageStatus', 'stageBuild', 'findMostStableBuild'];
     for (const methodName of buildServiceStubMethods) {
       const callPromise = this.buildServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -403,6 +403,90 @@ export class BuildServiceClient {
     });
     this.initialize();
     return this.innerApiCalls.checkBuildStageStatus(request, options, callback);
+  }
+  findMostStableBuild(
+      request?: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+        protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|undefined, {}|undefined
+      ]>;
+  findMostStableBuild(
+      request: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|null|undefined,
+          {}|null|undefined>): void;
+  findMostStableBuild(
+      request: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
+      callback: Callback<
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Finds the most stable build for the given build target. The definition of
+ * the most stable build is determined by evaluating the following rules in
+ * order until one is true. If none are true, then there is no stable build
+ * and it will return an empty response.
+ *
+ * Evaluation rules:
+ *   1. Stable channel build with label “Live”
+ *   2. Beta channel build with label “Live”
+ *   3. Dev channel build with label “Live”
+ *   4. Most recent stable channel build with build status Pass
+ *   5. Most recent beta channel build with build status Pass
+ *   6. Most recent dev channel build with build status Pass
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.buildTarget
+ *   Required. The full resource name of the build target.
+ *   For example,
+ *   'buildTargets/octopus'.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [FindMostStableBuildResponse]{@link google.chromeos.moblab.v1beta1.FindMostStableBuildResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.findMostStableBuild(request);
+ */
+  findMostStableBuild(
+      request?: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+          protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse,
+        protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'build_target': request.buildTarget || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.findMostStableBuild(request, options, callback);
   }
 
   stageBuild(

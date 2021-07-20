@@ -49,6 +49,8 @@ import com.google.chromeos.moblab.v1beta1.Build;
 import com.google.chromeos.moblab.v1beta1.BuildTarget;
 import com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest;
 import com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse;
+import com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest;
+import com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildsRequest;
@@ -116,6 +118,8 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
   private final UnaryCallSettings<StageBuildRequest, Operation> stageBuildSettings;
   private final OperationCallSettings<StageBuildRequest, StageBuildResponse, StageBuildMetadata>
       stageBuildOperationSettings;
+  private final UnaryCallSettings<FindMostStableBuildRequest, FindMostStableBuildResponse>
+      findMostStableBuildSettings;
 
   private static final PagedListDescriptor<
           ListBuildTargetsRequest, ListBuildTargetsResponse, BuildTarget>
@@ -259,6 +263,12 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
     return stageBuildOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to findMostStableBuild. */
+  public UnaryCallSettings<FindMostStableBuildRequest, FindMostStableBuildResponse>
+      findMostStableBuildSettings() {
+    return findMostStableBuildSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public BuildServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -338,6 +348,7 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
     checkBuildStageStatusSettings = settingsBuilder.checkBuildStageStatusSettings().build();
     stageBuildSettings = settingsBuilder.stageBuildSettings().build();
     stageBuildOperationSettings = settingsBuilder.stageBuildOperationSettings().build();
+    findMostStableBuildSettings = settingsBuilder.findMostStableBuildSettings().build();
   }
 
   /** Builder for BuildServiceStubSettings. */
@@ -356,6 +367,8 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
     private final OperationCallSettings.Builder<
             StageBuildRequest, StageBuildResponse, StageBuildMetadata>
         stageBuildOperationSettings;
+    private final UnaryCallSettings.Builder<FindMostStableBuildRequest, FindMostStableBuildResponse>
+        findMostStableBuildSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -412,13 +425,15 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
       checkBuildStageStatusSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stageBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       stageBuildOperationSettings = OperationCallSettings.newBuilder();
+      findMostStableBuildSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listBuildTargetsSettings,
               listBuildsSettings,
               checkBuildStageStatusSettings,
-              stageBuildSettings);
+              stageBuildSettings,
+              findMostStableBuildSettings);
       initDefaults(this);
     }
 
@@ -430,13 +445,15 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
       checkBuildStageStatusSettings = settings.checkBuildStageStatusSettings.toBuilder();
       stageBuildSettings = settings.stageBuildSettings.toBuilder();
       stageBuildOperationSettings = settings.stageBuildOperationSettings.toBuilder();
+      findMostStableBuildSettings = settings.findMostStableBuildSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               listBuildTargetsSettings,
               listBuildsSettings,
               checkBuildStageStatusSettings,
-              stageBuildSettings);
+              stageBuildSettings,
+              findMostStableBuildSettings);
     }
 
     private static Builder createDefault() {
@@ -472,6 +489,11 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
           .stageBuildSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .findMostStableBuildSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .stageBuildOperationSettings()
@@ -545,6 +567,12 @@ public class BuildServiceStubSettings extends StubSettings<BuildServiceStubSetti
     public OperationCallSettings.Builder<StageBuildRequest, StageBuildResponse, StageBuildMetadata>
         stageBuildOperationSettings() {
       return stageBuildOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to findMostStableBuild. */
+    public UnaryCallSettings.Builder<FindMostStableBuildRequest, FindMostStableBuildResponse>
+        findMostStableBuildSettings() {
+      return findMostStableBuildSettings;
     }
 
     @Override

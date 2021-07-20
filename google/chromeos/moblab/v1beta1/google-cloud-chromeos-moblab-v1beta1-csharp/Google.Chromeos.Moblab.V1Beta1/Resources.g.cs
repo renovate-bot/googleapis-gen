@@ -33,34 +33,35 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             "b20vTW9kZWwSKmJ1aWxkVGFyZ2V0cy97YnVpbGRfdGFyZ2V0fS9tb2RlbHMv",
             "e21vZGVsfSJfCglNaWxlc3RvbmUSDAoEbmFtZRgBIAEoCTpE6kFBCidjaHJv",
             "bWVvc21vYmxhYi5nb29nbGVhcGlzLmNvbS9NaWxlc3RvbmUSFm1pbGVzdG9u",
-            "ZXMve21pbGVzdG9uZX0igwQKBUJ1aWxkEgwKBG5hbWUYASABKAkSPwoJbWls",
+            "ZXMve21pbGVzdG9uZX0ioAQKBUJ1aWxkEgwKBG5hbWUYASABKAkSPwoJbWls",
             "ZXN0b25lGAIgASgJQiz6QSkKJ2Nocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMu",
             "Y29tL01pbGVzdG9uZRIVCg1idWlsZF92ZXJzaW9uGAMgASgJEkEKBnN0YXR1",
             "cxgEIAEoDjIxLmdvb2dsZS5jaHJvbWVvcy5tb2JsYWIudjFiZXRhMS5CdWls",
             "ZC5CdWlsZFN0YXR1cxI9CgR0eXBlGAUgASgOMi8uZ29vZ2xlLmNocm9tZW9z",
             "Lm1vYmxhYi52MWJldGExLkJ1aWxkLkJ1aWxkVHlwZRIOCgZicmFuY2gYBiAB",
-            "KAkiWQoLQnVpbGRTdGF0dXMSHAoYQlVJTERfU1RBVFVTX1VOU1BFQ0lGSUVE",
-            "EAASCAoEUEFTUxABEggKBEZBSUwQAhILCgdSVU5OSU5HEAMSCwoHQUJPUlRF",
-            "RBAEIkIKCUJ1aWxkVHlwZRIaChZCVUlMRF9UWVBFX1VOU1BFQ0lGSUVEEAAS",
-            "CwoHUkVMRUFTRRABEgwKCEZJUk1XQVJFEAI6Y+pBYAojY2hyb21lb3Ntb2Js",
-            "YWIuZ29vZ2xlYXBpcy5jb20vQnVpbGQSOWJ1aWxkVGFyZ2V0cy97YnVpbGRf",
-            "dGFyZ2V0fS9tb2RlbHMve21vZGVsfS9idWlsZHMve2J1aWxkfSKNAgoNQnVp",
-            "bGRBcnRpZmFjdBIMCgRuYW1lGAEgASgJEjcKBWJ1aWxkGAIgASgJQij6QSUK",
-            "I2Nocm9tZW9zbW9ibGFiLmdvb2dsZWFwaXMuY29tL0J1aWxkEg4KBmJ1Y2tl",
-            "dBgDIAEoCRIMCgRwYXRoGAQgASgJEhQKDG9iamVjdF9jb3VudBgFIAEoDTqA",
-            "AepBfQorY2hyb21lb3Ntb2JsYWIuZ29vZ2xlYXBpcy5jb20vQnVpbGRBcnRp",
-            "ZmFjdBJOYnVpbGRUYXJnZXRzL3tidWlsZF90YXJnZXR9L21vZGVscy97bW9k",
-            "ZWx9L2J1aWxkcy97YnVpbGR9L2FydGlmYWN0cy97YXJ0aWZhY3R9Qn4KImNv",
-            "bS5nb29nbGUuY2hyb21lb3MubW9ibGFiLnYxYmV0YTFCDlJlc291cmNlc1By",
-            "b3RvSAFQAVpEZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBp",
-            "cy9jaHJvbWVvcy9tb2JsYWIvdjFiZXRhMTttb2JsYWJiBnByb3RvMw=="));
+            "KAkSGwoTcndfZmlybXdhcmVfdmVyc2lvbhgHIAEoCSJZCgtCdWlsZFN0YXR1",
+            "cxIcChhCVUlMRF9TVEFUVVNfVU5TUEVDSUZJRUQQABIICgRQQVNTEAESCAoE",
+            "RkFJTBACEgsKB1JVTk5JTkcQAxILCgdBQk9SVEVEEAQiQgoJQnVpbGRUeXBl",
+            "EhoKFkJVSUxEX1RZUEVfVU5TUEVDSUZJRUQQABILCgdSRUxFQVNFEAESDAoI",
+            "RklSTVdBUkUQAjpj6kFgCiNjaHJvbWVvc21vYmxhYi5nb29nbGVhcGlzLmNv",
+            "bS9CdWlsZBI5YnVpbGRUYXJnZXRzL3tidWlsZF90YXJnZXR9L21vZGVscy97",
+            "bW9kZWx9L2J1aWxkcy97YnVpbGR9Io0CCg1CdWlsZEFydGlmYWN0EgwKBG5h",
+            "bWUYASABKAkSNwoFYnVpbGQYAiABKAlCKPpBJQojY2hyb21lb3Ntb2JsYWIu",
+            "Z29vZ2xlYXBpcy5jb20vQnVpbGQSDgoGYnVja2V0GAMgASgJEgwKBHBhdGgY",
+            "BCABKAkSFAoMb2JqZWN0X2NvdW50GAUgASgNOoAB6kF9CitjaHJvbWVvc21v",
+            "YmxhYi5nb29nbGVhcGlzLmNvbS9CdWlsZEFydGlmYWN0Ek5idWlsZFRhcmdl",
+            "dHMve2J1aWxkX3RhcmdldH0vbW9kZWxzL3ttb2RlbH0vYnVpbGRzL3tidWls",
+            "ZH0vYXJ0aWZhY3RzL3thcnRpZmFjdH1CfgoiY29tLmdvb2dsZS5jaHJvbWVv",
+            "cy5tb2JsYWIudjFiZXRhMUIOUmVzb3VyY2VzUHJvdG9IAVABWkRnb29nbGUu",
+            "Z29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2Nocm9tZW9zL21vYmxh",
+            "Yi92MWJldGExO21vYmxhYmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.ResourceReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.BuildTarget), global::Google.Chromeos.Moblab.V1Beta1.BuildTarget.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.Model), global::Google.Chromeos.Moblab.V1Beta1.Model.Parser, new[]{ "Name" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.Milestone), global::Google.Chromeos.Moblab.V1Beta1.Milestone.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.Build), global::Google.Chromeos.Moblab.V1Beta1.Build.Parser, new[]{ "Name", "Milestone", "BuildVersion", "Status", "Type", "Branch" }, null, new[]{ typeof(global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus), typeof(global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.Build), global::Google.Chromeos.Moblab.V1Beta1.Build.Parser, new[]{ "Name", "Milestone", "BuildVersion", "Status", "Type", "Branch", "RwFirmwareVersion" }, null, new[]{ typeof(global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus), typeof(global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Chromeos.Moblab.V1Beta1.BuildArtifact), global::Google.Chromeos.Moblab.V1Beta1.BuildArtifact.Parser, new[]{ "Name", "Build", "Bucket", "Path", "ObjectCount" }, null, null, null, null)
           }));
     }
@@ -645,6 +646,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       status_ = other.status_;
       type_ = other.type_;
       branch_ = other.branch_;
+      rwFirmwareVersion_ = other.rwFirmwareVersion_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -740,6 +742,21 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
     }
 
+    /// <summary>Field number for the "rw_firmware_version" field.</summary>
+    public const int RwFirmwareVersionFieldNumber = 7;
+    private string rwFirmwareVersion_ = "";
+    /// <summary>
+    /// The read write firmware version of the software that is flashed to the chip
+    /// on the Chrome OS device.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string RwFirmwareVersion {
+      get { return rwFirmwareVersion_; }
+      set {
+        rwFirmwareVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Build);
@@ -759,6 +776,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       if (Status != other.Status) return false;
       if (Type != other.Type) return false;
       if (Branch != other.Branch) return false;
+      if (RwFirmwareVersion != other.RwFirmwareVersion) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -771,6 +789,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       if (Status != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildStatus.Unspecified) hash ^= Status.GetHashCode();
       if (Type != global::Google.Chromeos.Moblab.V1Beta1.Build.Types.BuildType.Unspecified) hash ^= Type.GetHashCode();
       if (Branch.Length != 0) hash ^= Branch.GetHashCode();
+      if (RwFirmwareVersion.Length != 0) hash ^= RwFirmwareVersion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -811,6 +830,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         output.WriteRawTag(50);
         output.WriteString(Branch);
       }
+      if (RwFirmwareVersion.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(RwFirmwareVersion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -844,6 +867,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         output.WriteRawTag(50);
         output.WriteString(Branch);
       }
+      if (RwFirmwareVersion.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(RwFirmwareVersion);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -870,6 +897,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
       if (Branch.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Branch);
+      }
+      if (RwFirmwareVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(RwFirmwareVersion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -899,6 +929,9 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       }
       if (other.Branch.Length != 0) {
         Branch = other.Branch;
+      }
+      if (other.RwFirmwareVersion.Length != 0) {
+        RwFirmwareVersion = other.RwFirmwareVersion;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -938,6 +971,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
             Branch = input.ReadString();
             break;
           }
+          case 58: {
+            RwFirmwareVersion = input.ReadString();
+            break;
+          }
         }
       }
     #endif
@@ -974,6 +1011,10 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
           }
           case 50: {
             Branch = input.ReadString();
+            break;
+          }
+          case 58: {
+            RwFirmwareVersion = input.ReadString();
             break;
           }
         }

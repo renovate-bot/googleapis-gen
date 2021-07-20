@@ -30,6 +30,8 @@ import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest;
 import com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse;
+import com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest;
+import com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildsRequest;
@@ -96,6 +98,17 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<FindMostStableBuildRequest, FindMostStableBuildResponse>
+      findMostStableBuildMethodDescriptor =
+          MethodDescriptor.<FindMostStableBuildRequest, FindMostStableBuildResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.chromeos.moblab.v1beta1.BuildService/FindMostStableBuild")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FindMostStableBuildRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FindMostStableBuildResponse.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListBuildTargetsRequest, ListBuildTargetsResponse>
       listBuildTargetsCallable;
   private final UnaryCallable<ListBuildTargetsRequest, ListBuildTargetsPagedResponse>
@@ -107,6 +120,8 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
   private final UnaryCallable<StageBuildRequest, Operation> stageBuildCallable;
   private final OperationCallable<StageBuildRequest, StageBuildResponse, StageBuildMetadata>
       stageBuildOperationCallable;
+  private final UnaryCallable<FindMostStableBuildRequest, FindMostStableBuildResponse>
+      findMostStableBuildCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -196,6 +211,20 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<FindMostStableBuildRequest, FindMostStableBuildResponse>
+        findMostStableBuildTransportSettings =
+            GrpcCallSettings.<FindMostStableBuildRequest, FindMostStableBuildResponse>newBuilder()
+                .setMethodDescriptor(findMostStableBuildMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<FindMostStableBuildRequest>() {
+                      @Override
+                      public Map<String, String> extract(FindMostStableBuildRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("build_target", String.valueOf(request.getBuildTarget()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.listBuildTargetsCallable =
         callableFactory.createUnaryCallable(
@@ -223,6 +252,11 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
             settings.stageBuildOperationSettings(),
             clientContext,
             operationsStub);
+    this.findMostStableBuildCallable =
+        callableFactory.createUnaryCallable(
+            findMostStableBuildTransportSettings,
+            settings.findMostStableBuildSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -269,6 +303,12 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
   public OperationCallable<StageBuildRequest, StageBuildResponse, StageBuildMetadata>
       stageBuildOperationCallable() {
     return stageBuildOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FindMostStableBuildRequest, FindMostStableBuildResponse>
+      findMostStableBuildCallable() {
+    return findMostStableBuildCallable;
   }
 
   @Override

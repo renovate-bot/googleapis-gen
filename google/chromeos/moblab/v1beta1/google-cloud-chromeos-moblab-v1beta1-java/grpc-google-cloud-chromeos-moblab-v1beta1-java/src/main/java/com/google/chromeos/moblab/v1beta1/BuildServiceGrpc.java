@@ -141,6 +141,37 @@ public final class BuildServiceGrpc {
     return getStageBuildMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest,
+      com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse> getFindMostStableBuildMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FindMostStableBuild",
+      requestType = com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest.class,
+      responseType = com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest,
+      com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse> getFindMostStableBuildMethod() {
+    io.grpc.MethodDescriptor<com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest, com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse> getFindMostStableBuildMethod;
+    if ((getFindMostStableBuildMethod = BuildServiceGrpc.getFindMostStableBuildMethod) == null) {
+      synchronized (BuildServiceGrpc.class) {
+        if ((getFindMostStableBuildMethod = BuildServiceGrpc.getFindMostStableBuildMethod) == null) {
+          BuildServiceGrpc.getFindMostStableBuildMethod = getFindMostStableBuildMethod =
+              io.grpc.MethodDescriptor.<com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest, com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FindMostStableBuild"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new BuildServiceMethodDescriptorSupplier("FindMostStableBuild"))
+              .build();
+        }
+      }
+    }
+    return getFindMostStableBuildMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -238,6 +269,26 @@ public final class BuildServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStageBuildMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Finds the most stable build for the given build target. The definition of
+     * the most stable build is determined by evaluating the following rules in
+     * order until one is true. If none are true, then there is no stable build
+     * and it will return an empty response.
+     * Evaluation rules:
+     *   1. Stable channel build with label “Live”
+     *   2. Beta channel build with label “Live”
+     *   3. Dev channel build with label “Live”
+     *   4. Most recent stable channel build with build status Pass
+     *   5. Most recent beta channel build with build status Pass
+     *   6. Most recent dev channel build with build status Pass
+     * </pre>
+     */
+    public void findMostStableBuild(com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest request,
+        io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFindMostStableBuildMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -268,6 +319,13 @@ public final class BuildServiceGrpc {
                 com.google.chromeos.moblab.v1beta1.StageBuildRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_STAGE_BUILD)))
+          .addMethod(
+            getFindMostStableBuildMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest,
+                com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse>(
+                  this, METHODID_FIND_MOST_STABLE_BUILD)))
           .build();
     }
   }
@@ -338,6 +396,27 @@ public final class BuildServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStageBuildMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Finds the most stable build for the given build target. The definition of
+     * the most stable build is determined by evaluating the following rules in
+     * order until one is true. If none are true, then there is no stable build
+     * and it will return an empty response.
+     * Evaluation rules:
+     *   1. Stable channel build with label “Live”
+     *   2. Beta channel build with label “Live”
+     *   3. Dev channel build with label “Live”
+     *   4. Most recent stable channel build with build status Pass
+     *   5. Most recent beta channel build with build status Pass
+     *   6. Most recent dev channel build with build status Pass
+     * </pre>
+     */
+    public void findMostStableBuild(com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest request,
+        io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFindMostStableBuildMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -401,6 +480,26 @@ public final class BuildServiceGrpc {
     public com.google.longrunning.Operation stageBuild(com.google.chromeos.moblab.v1beta1.StageBuildRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStageBuildMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Finds the most stable build for the given build target. The definition of
+     * the most stable build is determined by evaluating the following rules in
+     * order until one is true. If none are true, then there is no stable build
+     * and it will return an empty response.
+     * Evaluation rules:
+     *   1. Stable channel build with label “Live”
+     *   2. Beta channel build with label “Live”
+     *   3. Dev channel build with label “Live”
+     *   4. Most recent stable channel build with build status Pass
+     *   5. Most recent beta channel build with build status Pass
+     *   6. Most recent dev channel build with build status Pass
+     * </pre>
+     */
+    public com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse findMostStableBuild(com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFindMostStableBuildMethod(), getCallOptions(), request);
     }
   }
 
@@ -470,12 +569,34 @@ public final class BuildServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStageBuildMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Finds the most stable build for the given build target. The definition of
+     * the most stable build is determined by evaluating the following rules in
+     * order until one is true. If none are true, then there is no stable build
+     * and it will return an empty response.
+     * Evaluation rules:
+     *   1. Stable channel build with label “Live”
+     *   2. Beta channel build with label “Live”
+     *   3. Dev channel build with label “Live”
+     *   4. Most recent stable channel build with build status Pass
+     *   5. Most recent beta channel build with build status Pass
+     *   6. Most recent dev channel build with build status Pass
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse> findMostStableBuild(
+        com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFindMostStableBuildMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_BUILD_TARGETS = 0;
   private static final int METHODID_LIST_BUILDS = 1;
   private static final int METHODID_CHECK_BUILD_STAGE_STATUS = 2;
   private static final int METHODID_STAGE_BUILD = 3;
+  private static final int METHODID_FIND_MOST_STABLE_BUILD = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -509,6 +630,10 @@ public final class BuildServiceGrpc {
         case METHODID_STAGE_BUILD:
           serviceImpl.stageBuild((com.google.chromeos.moblab.v1beta1.StageBuildRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_FIND_MOST_STABLE_BUILD:
+          serviceImpl.findMostStableBuild((com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -575,6 +700,7 @@ public final class BuildServiceGrpc {
               .addMethod(getListBuildsMethod())
               .addMethod(getCheckBuildStageStatusMethod())
               .addMethod(getStageBuildMethod())
+              .addMethod(getFindMostStableBuildMethod())
               .build();
         }
       }

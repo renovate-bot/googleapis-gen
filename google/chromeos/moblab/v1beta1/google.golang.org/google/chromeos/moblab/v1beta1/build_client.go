@@ -46,6 +46,7 @@ type BuildCallOptions struct {
 	ListBuilds            []gax.CallOption
 	CheckBuildStageStatus []gax.CallOption
 	StageBuild            []gax.CallOption
+	FindMostStableBuild   []gax.CallOption
 }
 
 func defaultBuildGRPCClientOptions() []option.ClientOption {
@@ -86,7 +87,8 @@ func defaultBuildCallOptions() *BuildCallOptions {
 				})
 			}),
 		},
-		StageBuild: []gax.CallOption{},
+		StageBuild:          []gax.CallOption{},
+		FindMostStableBuild: []gax.CallOption{},
 	}
 }
 
@@ -100,6 +102,7 @@ type internalBuildClient interface {
 	CheckBuildStageStatus(context.Context, *moblabpb.CheckBuildStageStatusRequest, ...gax.CallOption) (*moblabpb.CheckBuildStageStatusResponse, error)
 	StageBuild(context.Context, *moblabpb.StageBuildRequest, ...gax.CallOption) (*StageBuildOperation, error)
 	StageBuildOperation(name string) *StageBuildOperation
+	FindMostStableBuild(context.Context, *moblabpb.FindMostStableBuildRequest, ...gax.CallOption) (*moblabpb.FindMostStableBuildResponse, error)
 }
 
 // BuildClient is a client for interacting with Chrome OS Moblab API.
@@ -171,6 +174,28 @@ func (c *BuildClient) StageBuild(ctx context.Context, req *moblabpb.StageBuildRe
 // The name must be that of a previously created StageBuildOperation, possibly from a different process.
 func (c *BuildClient) StageBuildOperation(name string) *StageBuildOperation {
 	return c.internalClient.StageBuildOperation(name)
+}
+
+// FindMostStableBuild finds the most stable build for the given build target. The definition of
+// the most stable build is determined by evaluating the following rules in
+// order until one is true. If none are true, then there is no stable build
+// and it will return an empty response.
+//
+// Evaluation rules:
+//
+// Stable channel build with label “Live”
+//
+// Beta channel build with label “Live”
+//
+// Dev channel build with label “Live”
+//
+// Most recent stable channel build with build status Pass
+//
+// Most recent beta channel build with build status Pass
+//
+// Most recent dev channel build with build status Pass
+func (c *BuildClient) FindMostStableBuild(ctx context.Context, req *moblabpb.FindMostStableBuildRequest, opts ...gax.CallOption) (*moblabpb.FindMostStableBuildResponse, error) {
+	return c.internalClient.FindMostStableBuild(ctx, req, opts...)
 }
 
 // buildGRPCClient is a client for interacting with Chrome OS Moblab API over gRPC transport.
@@ -390,6 +415,22 @@ func (c *buildGRPCClient) StageBuild(ctx context.Context, req *moblabpb.StageBui
 	return &StageBuildOperation{
 		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
+}
+
+func (c *buildGRPCClient) FindMostStableBuild(ctx context.Context, req *moblabpb.FindMostStableBuildRequest, opts ...gax.CallOption) (*moblabpb.FindMostStableBuildResponse, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "build_target", url.QueryEscape(req.GetBuildTarget())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).FindMostStableBuild[0:len((*c.CallOptions).FindMostStableBuild):len((*c.CallOptions).FindMostStableBuild)], opts...)
+	var resp *moblabpb.FindMostStableBuildResponse
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.buildClient.FindMostStableBuild(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
 }
 
 // StageBuildOperation manages a long-running operation from StageBuild.

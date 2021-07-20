@@ -142,4 +142,26 @@ public class MockBuildServiceImpl extends BuildServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void findMostStableBuild(
+      FindMostStableBuildRequest request,
+      StreamObserver<FindMostStableBuildResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof FindMostStableBuildResponse) {
+      requests.add(request);
+      responseObserver.onNext(((FindMostStableBuildResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method FindMostStableBuild, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  FindMostStableBuildResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

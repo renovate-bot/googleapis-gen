@@ -50,6 +50,7 @@ namespace Google.Chromeos.Moblab.V1Beta1
             CheckBuildStageStatusSettings = existing.CheckBuildStageStatusSettings;
             StageBuildSettings = existing.StageBuildSettings;
             StageBuildOperationsSettings = existing.StageBuildOperationsSettings.Clone();
+            FindMostStableBuildSettings = existing.FindMostStableBuildSettings;
             OnCopy(existing);
         }
 
@@ -126,6 +127,18 @@ namespace Google.Chromeos.Moblab.V1Beta1
         {
             DefaultPollSettings = new gax::PollSettings(gax::Expiration.FromTimeout(sys::TimeSpan.FromHours(24)), sys::TimeSpan.FromSeconds(20), 1.5, sys::TimeSpan.FromSeconds(45)),
         };
+
+        /// <summary>
+        /// <see cref="gaxgrpc::CallSettings"/> for synchronous and asynchronous calls to
+        /// <c>BuildServiceClient.FindMostStableBuild</c> and <c>BuildServiceClient.FindMostStableBuildAsync</c>.
+        /// </summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <item><description>This call will not be retried.</description></item>
+        /// <item><description>No timeout is applied.</description></item>
+        /// </list>
+        /// </remarks>
+        public gaxgrpc::CallSettings FindMostStableBuildSettings { get; set; } = gaxgrpc::CallSettings.FromExpiration(gax::Expiration.None);
 
         /// <summary>Creates a deep clone of this object, with all the same property values.</summary>
         /// <returns>A deep clone of this <see cref="BuildServiceSettings"/> object.</returns>
@@ -723,6 +736,222 @@ namespace Google.Chromeos.Moblab.V1Beta1
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task<lro::Operation<StageBuildResponse, StageBuildMetadata>> StageBuildAsync(BuildArtifactName name, st::CancellationToken cancellationToken) =>
             StageBuildAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual FindMostStableBuildResponse FindMostStableBuild(FindMostStableBuildRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FindMostStableBuildResponse> FindMostStableBuildAsync(FindMostStableBuildRequest request, gaxgrpc::CallSettings callSettings = null) =>
+            throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FindMostStableBuildResponse> FindMostStableBuildAsync(FindMostStableBuildRequest request, st::CancellationToken cancellationToken) =>
+            FindMostStableBuildAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="buildTarget">
+        /// Required. The full resource name of the build target.
+        /// For example,
+        /// 'buildTargets/octopus'.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual FindMostStableBuildResponse FindMostStableBuild(string buildTarget, gaxgrpc::CallSettings callSettings = null) =>
+            FindMostStableBuild(new FindMostStableBuildRequest
+            {
+                BuildTarget = gax::GaxPreconditions.CheckNotNullOrEmpty(buildTarget, nameof(buildTarget)),
+            }, callSettings);
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="buildTarget">
+        /// Required. The full resource name of the build target.
+        /// For example,
+        /// 'buildTargets/octopus'.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FindMostStableBuildResponse> FindMostStableBuildAsync(string buildTarget, gaxgrpc::CallSettings callSettings = null) =>
+            FindMostStableBuildAsync(new FindMostStableBuildRequest
+            {
+                BuildTarget = gax::GaxPreconditions.CheckNotNullOrEmpty(buildTarget, nameof(buildTarget)),
+            }, callSettings);
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="buildTarget">
+        /// Required. The full resource name of the build target.
+        /// For example,
+        /// 'buildTargets/octopus'.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FindMostStableBuildResponse> FindMostStableBuildAsync(string buildTarget, st::CancellationToken cancellationToken) =>
+            FindMostStableBuildAsync(buildTarget, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="buildTarget">
+        /// Required. The full resource name of the build target.
+        /// For example,
+        /// 'buildTargets/octopus'.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual FindMostStableBuildResponse FindMostStableBuild(BuildTargetName buildTarget, gaxgrpc::CallSettings callSettings = null) =>
+            FindMostStableBuild(new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = gax::GaxPreconditions.CheckNotNull(buildTarget, nameof(buildTarget)),
+            }, callSettings);
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="buildTarget">
+        /// Required. The full resource name of the build target.
+        /// For example,
+        /// 'buildTargets/octopus'.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FindMostStableBuildResponse> FindMostStableBuildAsync(BuildTargetName buildTarget, gaxgrpc::CallSettings callSettings = null) =>
+            FindMostStableBuildAsync(new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = gax::GaxPreconditions.CheckNotNull(buildTarget, nameof(buildTarget)),
+            }, callSettings);
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="buildTarget">
+        /// Required. The full resource name of the build target.
+        /// For example,
+        /// 'buildTargets/octopus'.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<FindMostStableBuildResponse> FindMostStableBuildAsync(BuildTargetName buildTarget, st::CancellationToken cancellationToken) =>
+            FindMostStableBuildAsync(buildTarget, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
     }
 
     /// <summary>BuildService client wrapper implementation, for convenient use.</summary>
@@ -738,6 +967,8 @@ namespace Google.Chromeos.Moblab.V1Beta1
         private readonly gaxgrpc::ApiCall<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse> _callCheckBuildStageStatus;
 
         private readonly gaxgrpc::ApiCall<StageBuildRequest, lro::Operation> _callStageBuild;
+
+        private readonly gaxgrpc::ApiCall<FindMostStableBuildRequest, FindMostStableBuildResponse> _callFindMostStableBuild;
 
         /// <summary>
         /// Constructs a client wrapper for the BuildService service, with the specified gRPC client and settings.
@@ -762,6 +993,9 @@ namespace Google.Chromeos.Moblab.V1Beta1
             _callStageBuild = clientHelper.BuildApiCall<StageBuildRequest, lro::Operation>(grpcClient.StageBuildAsync, grpcClient.StageBuild, effectiveSettings.StageBuildSettings).WithGoogleRequestParam("name", request => request.Name);
             Modify_ApiCall(ref _callStageBuild);
             Modify_StageBuildApiCall(ref _callStageBuild);
+            _callFindMostStableBuild = clientHelper.BuildApiCall<FindMostStableBuildRequest, FindMostStableBuildResponse>(grpcClient.FindMostStableBuildAsync, grpcClient.FindMostStableBuild, effectiveSettings.FindMostStableBuildSettings).WithGoogleRequestParam("build_target", request => request.BuildTarget);
+            Modify_ApiCall(ref _callFindMostStableBuild);
+            Modify_FindMostStableBuildApiCall(ref _callFindMostStableBuild);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
         }
 
@@ -775,6 +1009,8 @@ namespace Google.Chromeos.Moblab.V1Beta1
 
         partial void Modify_StageBuildApiCall(ref gaxgrpc::ApiCall<StageBuildRequest, lro::Operation> call);
 
+        partial void Modify_FindMostStableBuildApiCall(ref gaxgrpc::ApiCall<FindMostStableBuildRequest, FindMostStableBuildResponse> call);
+
         partial void OnConstruction(BuildService.BuildServiceClient grpcClient, BuildServiceSettings effectiveSettings, gaxgrpc::ClientHelper clientHelper);
 
         /// <summary>The underlying gRPC BuildService client</summary>
@@ -787,6 +1023,8 @@ namespace Google.Chromeos.Moblab.V1Beta1
         partial void Modify_CheckBuildStageStatusRequest(ref CheckBuildStageStatusRequest request, ref gaxgrpc::CallSettings settings);
 
         partial void Modify_StageBuildRequest(ref StageBuildRequest request, ref gaxgrpc::CallSettings settings);
+
+        partial void Modify_FindMostStableBuildRequest(ref FindMostStableBuildRequest request, ref gaxgrpc::CallSettings settings);
 
         /// <summary>
         /// Lists all build targets that a user has access to.
@@ -897,6 +1135,52 @@ namespace Google.Chromeos.Moblab.V1Beta1
         {
             Modify_StageBuildRequest(ref request, ref callSettings);
             return new lro::Operation<StageBuildResponse, StageBuildMetadata>(await _callStageBuild.Async(request, callSettings).ConfigureAwait(false), StageBuildOperationsClient);
+        }
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public override FindMostStableBuildResponse FindMostStableBuild(FindMostStableBuildRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_FindMostStableBuildRequest(ref request, ref callSettings);
+            return _callFindMostStableBuild.Sync(request, callSettings);
+        }
+
+        /// <summary>
+        /// Finds the most stable build for the given build target. The definition of
+        /// the most stable build is determined by evaluating the following rules in
+        /// order until one is true. If none are true, then there is no stable build
+        /// and it will return an empty response.
+        /// 
+        /// Evaluation rules:
+        /// 1. Stable channel build with label “Live”
+        /// 2. Beta channel build with label “Live”
+        /// 3. Dev channel build with label “Live”
+        /// 4. Most recent stable channel build with build status Pass
+        /// 5. Most recent beta channel build with build status Pass
+        /// 6. Most recent dev channel build with build status Pass
+        /// </summary>
+        /// <param name="request">The request object containing all of the parameters for the API call.</param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public override stt::Task<FindMostStableBuildResponse> FindMostStableBuildAsync(FindMostStableBuildRequest request, gaxgrpc::CallSettings callSettings = null)
+        {
+            Modify_FindMostStableBuildRequest(ref request, ref callSettings);
+            return _callFindMostStableBuild.Async(request, callSettings);
         }
     }
 

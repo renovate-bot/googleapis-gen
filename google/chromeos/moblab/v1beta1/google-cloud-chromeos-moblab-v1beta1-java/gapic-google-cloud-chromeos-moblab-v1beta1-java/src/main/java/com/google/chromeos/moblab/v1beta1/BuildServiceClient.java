@@ -651,6 +651,129 @@ public class BuildServiceClient implements BackgroundResource {
     return stub.stageBuildCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the most stable build for the given build target. The definition of the most stable build
+   * is determined by evaluating the following rules in order until one is true. If none are true,
+   * then there is no stable build and it will return an empty response.
+   *
+   * <p>Evaluation rules: 1. Stable channel build with label ?Live? 2. Beta channel build with label
+   * ?Live? 3. Dev channel build with label ?Live? 4. Most recent stable channel build with build
+   * status Pass 5. Most recent beta channel build with build status Pass 6. Most recent dev channel
+   * build with build status Pass
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   BuildTargetName buildTarget = BuildTargetName.of("[BUILD_TARGET]");
+   *   FindMostStableBuildResponse response = buildServiceClient.findMostStableBuild(buildTarget);
+   * }
+   * }</pre>
+   *
+   * @param buildTarget Required. The full resource name of the build target. For example,
+   *     'buildTargets/octopus'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FindMostStableBuildResponse findMostStableBuild(BuildTargetName buildTarget) {
+    FindMostStableBuildRequest request =
+        FindMostStableBuildRequest.newBuilder()
+            .setBuildTarget(buildTarget == null ? null : buildTarget.toString())
+            .build();
+    return findMostStableBuild(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the most stable build for the given build target. The definition of the most stable build
+   * is determined by evaluating the following rules in order until one is true. If none are true,
+   * then there is no stable build and it will return an empty response.
+   *
+   * <p>Evaluation rules: 1. Stable channel build with label ?Live? 2. Beta channel build with label
+   * ?Live? 3. Dev channel build with label ?Live? 4. Most recent stable channel build with build
+   * status Pass 5. Most recent beta channel build with build status Pass 6. Most recent dev channel
+   * build with build status Pass
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   String buildTarget = BuildTargetName.of("[BUILD_TARGET]").toString();
+   *   FindMostStableBuildResponse response = buildServiceClient.findMostStableBuild(buildTarget);
+   * }
+   * }</pre>
+   *
+   * @param buildTarget Required. The full resource name of the build target. For example,
+   *     'buildTargets/octopus'.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FindMostStableBuildResponse findMostStableBuild(String buildTarget) {
+    FindMostStableBuildRequest request =
+        FindMostStableBuildRequest.newBuilder().setBuildTarget(buildTarget).build();
+    return findMostStableBuild(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the most stable build for the given build target. The definition of the most stable build
+   * is determined by evaluating the following rules in order until one is true. If none are true,
+   * then there is no stable build and it will return an empty response.
+   *
+   * <p>Evaluation rules: 1. Stable channel build with label ?Live? 2. Beta channel build with label
+   * ?Live? 3. Dev channel build with label ?Live? 4. Most recent stable channel build with build
+   * status Pass 5. Most recent beta channel build with build status Pass 6. Most recent dev channel
+   * build with build status Pass
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   FindMostStableBuildRequest request =
+   *       FindMostStableBuildRequest.newBuilder()
+   *           .setBuildTarget(BuildTargetName.of("[BUILD_TARGET]").toString())
+   *           .build();
+   *   FindMostStableBuildResponse response = buildServiceClient.findMostStableBuild(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FindMostStableBuildResponse findMostStableBuild(FindMostStableBuildRequest request) {
+    return findMostStableBuildCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Finds the most stable build for the given build target. The definition of the most stable build
+   * is determined by evaluating the following rules in order until one is true. If none are true,
+   * then there is no stable build and it will return an empty response.
+   *
+   * <p>Evaluation rules: 1. Stable channel build with label ?Live? 2. Beta channel build with label
+   * ?Live? 3. Dev channel build with label ?Live? 4. Most recent stable channel build with build
+   * status Pass 5. Most recent beta channel build with build status Pass 6. Most recent dev channel
+   * build with build status Pass
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * try (BuildServiceClient buildServiceClient = BuildServiceClient.create()) {
+   *   FindMostStableBuildRequest request =
+   *       FindMostStableBuildRequest.newBuilder()
+   *           .setBuildTarget(BuildTargetName.of("[BUILD_TARGET]").toString())
+   *           .build();
+   *   ApiFuture<FindMostStableBuildResponse> future =
+   *       buildServiceClient.findMostStableBuildCallable().futureCall(request);
+   *   // Do something.
+   *   FindMostStableBuildResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FindMostStableBuildRequest, FindMostStableBuildResponse>
+      findMostStableBuildCallable() {
+    return stub.findMostStableBuildCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();

@@ -480,6 +480,85 @@ module Google
             end
 
             ##
+            # Finds the most stable build for the given build target. The definition of
+            # the most stable build is determined by evaluating the following rules in
+            # order until one is true. If none are true, then there is no stable build
+            # and it will return an empty response.
+            #
+            # Evaluation rules:
+            #   1. Stable channel build with label “Live”
+            #   2. Beta channel build with label “Live”
+            #   3. Dev channel build with label “Live”
+            #   4. Most recent stable channel build with build status Pass
+            #   5. Most recent beta channel build with build status Pass
+            #   6. Most recent dev channel build with build status Pass
+            #
+            # @overload find_most_stable_build(request, options = nil)
+            #   Pass arguments to `find_most_stable_build` via a request object, either of type
+            #   {::Google::Chromeos::Moblab::V1beta1::FindMostStableBuildRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Chromeos::Moblab::V1beta1::FindMostStableBuildRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload find_most_stable_build(build_target: nil)
+            #   Pass arguments to `find_most_stable_build` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param build_target [::String]
+            #     Required. The full resource name of the build target.
+            #     For example,
+            #     'buildTargets/octopus'.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Chromeos::Moblab::V1beta1::FindMostStableBuildResponse]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Chromeos::Moblab::V1beta1::FindMostStableBuildResponse]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def find_most_stable_build request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Chromeos::Moblab::V1beta1::FindMostStableBuildRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.find_most_stable_build.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Chromeos::Moblab::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "build_target" => request.build_target
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.find_most_stable_build.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.find_most_stable_build.retry_policy
+              options.apply_defaults metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @build_service_stub.call_rpc :find_most_stable_build, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Configuration class for the BuildService API.
             #
             # This class represents the configuration for BuildService,
@@ -635,6 +714,11 @@ module Google
                 # @return [::Gapic::Config::Method]
                 #
                 attr_reader :stage_build
+                ##
+                # RPC-specific configuration for `find_most_stable_build`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :find_most_stable_build
 
                 # @private
                 def initialize parent_rpcs = nil
@@ -646,6 +730,8 @@ module Google
                   @check_build_stage_status = ::Gapic::Config::Method.new check_build_stage_status_config
                   stage_build_config = parent_rpcs.stage_build if parent_rpcs.respond_to? :stage_build
                   @stage_build = ::Gapic::Config::Method.new stage_build_config
+                  find_most_stable_build_config = parent_rpcs.find_most_stable_build if parent_rpcs.respond_to? :find_most_stable_build
+                  @find_most_stable_build = ::Gapic::Config::Method.new find_most_stable_build_config
 
                   yield self if block_given?
                 end

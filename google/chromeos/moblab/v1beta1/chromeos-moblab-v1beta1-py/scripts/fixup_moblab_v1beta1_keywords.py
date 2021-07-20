@@ -40,6 +40,7 @@ class moblabCallTransformer(cst.CSTTransformer):
     CTRL_PARAMS: Tuple[str] = ('retry', 'timeout', 'metadata')
     METHOD_TO_PARAMS: Dict[str, Tuple[str]] = {
           'check_build_stage_status': ('name', 'filter', ),
+          'find_most_stable_build': ('build_target', ),
           'list_builds': ('parent', 'page_size', 'page_token', 'filter', 'read_mask', 'group_by', ),
           'list_build_targets': ('page_size', 'page_token', ),
           'stage_build': ('name', 'filter', ),

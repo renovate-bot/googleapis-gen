@@ -40,6 +40,8 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Chromeos\Moblab\V1beta1\CheckBuildStageStatusRequest;
 use Google\Chromeos\Moblab\V1beta1\CheckBuildStageStatusResponse;
+use Google\Chromeos\Moblab\V1beta1\FindMostStableBuildRequest;
+use Google\Chromeos\Moblab\V1beta1\FindMostStableBuildResponse;
 use Google\Chromeos\Moblab\V1beta1\ListBuildsRequest;
 use Google\Chromeos\Moblab\V1beta1\ListBuildsResponse;
 use Google\Chromeos\Moblab\V1beta1\ListBuildTargetsRequest;
@@ -106,6 +108,8 @@ class BuildServiceGapicClient
 
     private static $buildArtifactNameTemplate;
 
+    private static $buildTargetNameTemplate;
+
     private static $modelNameTemplate;
 
     private static $pathTemplateMap;
@@ -140,6 +144,15 @@ class BuildServiceGapicClient
         return self::$buildArtifactNameTemplate;
     }
 
+    private static function getBuildTargetNameTemplate()
+    {
+        if (self::$buildTargetNameTemplate == null) {
+            self::$buildTargetNameTemplate = new PathTemplate('buildTargets/{build_target}');
+        }
+
+        return self::$buildTargetNameTemplate;
+    }
+
     private static function getModelNameTemplate()
     {
         if (self::$modelNameTemplate == null) {
@@ -154,6 +167,7 @@ class BuildServiceGapicClient
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
                 'buildArtifact' => self::getBuildArtifactNameTemplate(),
+                'buildTarget' => self::getBuildTargetNameTemplate(),
                 'model' => self::getModelNameTemplate(),
             ];
         }
@@ -185,6 +199,23 @@ class BuildServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a build_target
+     * resource.
+     *
+     * @param string $buildTarget
+     *
+     * @return string The formatted build_target resource.
+     *
+     * @experimental
+     */
+    public static function buildTargetName($buildTarget)
+    {
+        return self::getBuildTargetNameTemplate()->render([
+            'build_target' => $buildTarget,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a model
      * resource.
      *
@@ -208,6 +239,7 @@ class BuildServiceGapicClient
      * The following name formats are supported:
      * Template: Pattern
      * - buildArtifact: buildTargets/{build_target}/models/{model}/builds/{build}/artifacts/{artifact}
+     * - buildTarget: buildTargets/{build_target}
      * - model: buildTargets/{build_target}/models/{model}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
@@ -391,6 +423,61 @@ class BuildServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('CheckBuildStageStatus', CheckBuildStageStatusResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Finds the most stable build for the given build target. The definition of
+     * the most stable build is determined by evaluating the following rules in
+     * order until one is true. If none are true, then there is no stable build
+     * and it will return an empty response.
+     *
+     * Evaluation rules:
+     * 1. Stable channel build with label “Live”
+     * 2. Beta channel build with label “Live”
+     * 3. Dev channel build with label “Live”
+     * 4. Most recent stable channel build with build status Pass
+     * 5. Most recent beta channel build with build status Pass
+     * 6. Most recent dev channel build with build status Pass
+     *
+     * Sample code:
+     * ```
+     * $buildServiceClient = new BuildServiceClient();
+     * try {
+     *     $formattedBuildTarget = $buildServiceClient->buildTargetName('[BUILD_TARGET]');
+     *     $response = $buildServiceClient->findMostStableBuild($formattedBuildTarget);
+     * } finally {
+     *     $buildServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $buildTarget  Required. The full resource name of the build target.
+     *                             For example,
+     *                             'buildTargets/octopus'.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Chromeos\Moblab\V1beta1\FindMostStableBuildResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function findMostStableBuild($buildTarget, array $optionalArgs = [])
+    {
+        $request = new FindMostStableBuildRequest();
+        $requestParamHeaders = [];
+        $request->setBuildTarget($buildTarget);
+        $requestParamHeaders['build_target'] = $buildTarget;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('FindMostStableBuild', FindMostStableBuildResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**

@@ -15,6 +15,11 @@
                 "check_build_stage_status"
               ]
             },
+            "FindMostStableBuild": {
+              "methods": [
+                "find_most_stable_build"
+              ]
+            },
             "ListBuildTargets": {
               "methods": [
                 "list_build_targets"
@@ -38,6 +43,11 @@
             "CheckBuildStageStatus": {
               "methods": [
                 "check_build_stage_status"
+              ]
+            },
+            "FindMostStableBuild": {
+              "methods": [
+                "find_most_stable_build"
               ]
             },
             "ListBuildTargets": {

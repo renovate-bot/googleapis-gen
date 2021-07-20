@@ -25,6 +25,8 @@ import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest;
 import com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse;
+import com.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest;
+import com.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest;
 import com.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse;
 import com.google.chromeos.moblab.v1beta1.ListBuildsRequest;
@@ -80,6 +82,11 @@ public abstract class BuildServiceStub implements BackgroundResource {
 
   public UnaryCallable<StageBuildRequest, Operation> stageBuildCallable() {
     throw new UnsupportedOperationException("Not implemented: stageBuildCallable()");
+  }
+
+  public UnaryCallable<FindMostStableBuildRequest, FindMostStableBuildResponse>
+      findMostStableBuildCallable() {
+    throw new UnsupportedOperationException("Not implemented: findMostStableBuildCallable()");
   }
 
   @Override

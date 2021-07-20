@@ -104,6 +104,12 @@ public class BuildServiceSettings extends ClientSettings<BuildServiceSettings> {
     return ((BuildServiceStubSettings) getStubSettings()).stageBuildOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to findMostStableBuild. */
+  public UnaryCallSettings<FindMostStableBuildRequest, FindMostStableBuildResponse>
+      findMostStableBuildSettings() {
+    return ((BuildServiceStubSettings) getStubSettings()).findMostStableBuildSettings();
+  }
+
   public static final BuildServiceSettings create(BuildServiceStubSettings stub)
       throws IOException {
     return new BuildServiceSettings.Builder(stub.toBuilder()).build();
@@ -230,6 +236,12 @@ public class BuildServiceSettings extends ClientSettings<BuildServiceSettings> {
     public OperationCallSettings.Builder<StageBuildRequest, StageBuildResponse, StageBuildMetadata>
         stageBuildOperationSettings() {
       return getStubSettingsBuilder().stageBuildOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to findMostStableBuild. */
+    public UnaryCallSettings.Builder<FindMostStableBuildRequest, FindMostStableBuildResponse>
+        findMostStableBuildSettings() {
+      return getStubSettingsBuilder().findMostStableBuildSettings();
     }
 
     @Override

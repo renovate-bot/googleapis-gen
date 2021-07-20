@@ -35,6 +35,18 @@ class ::Google::Chromeos::Moblab::V1beta1::BuildService::ClientPathsTest < Minit
     end
   end
 
+  def test_build_target_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Chromeos::Moblab::V1beta1::BuildService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.build_target_path build_target: "value0"
+      assert_equal "buildTargets/value0", path
+    end
+  end
+
   def test_model_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do

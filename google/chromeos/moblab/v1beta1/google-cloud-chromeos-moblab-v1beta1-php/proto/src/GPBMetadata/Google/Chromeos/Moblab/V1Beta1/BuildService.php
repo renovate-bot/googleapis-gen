@@ -24,8 +24,13 @@ class BuildService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Û
-2google/chromeos/moblab/v1beta1/build_service.protogoogle.chromeos.moblab.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/chromeos/moblab/v1beta1/resources.proto#google/longrunning/operations.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"J
+û
+2google/chromeos/moblab/v1beta1/build_service.protogoogle.chromeos.moblab.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/chromeos/moblab/v1beta1/resources.proto#google/longrunning/operations.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"e
+FindMostStableBuildRequestG
+build_target (	B1àAúA+
+)chromeosmoblab.googleapis.com/BuildTarget"S
+FindMostStableBuildResponse4
+build (2%.google.chromeos.moblab.v1beta1.Build"J
 ListBuildTargetsRequest
 	page_size (BàA
 
@@ -67,7 +72,7 @@ total_size ("v
 progress_percent (.
 
 start_time (2.google.protobuf.Timestamp,
-end_time (2.google.protobuf.Timestamp2ˆ
+end_time (2.google.protobuf.Timestamp2ì
 BuildService¤
 ListBuildTargets7.google.chromeos.moblab.v1beta1.ListBuildTargetsRequest8.google.chromeos.moblab.v1beta1.ListBuildTargetsResponse"‚Óä“/v1beta1/buildTargets¶
 
@@ -75,7 +80,8 @@ ListBuilds1.google.chromeos.moblab.v1beta1.ListBuildsRequest2.google.chromeos.
 CheckBuildStageStatus<.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest=.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse"Q‚Óä“DB/v1beta1/{name=buildTargets/*/models/*/builds/*/artifacts/*}:checkÚAnameß
 
 StageBuild1.google.chromeos.moblab.v1beta1.StageBuildRequest.google.longrunning.Operation"‚Óä“G"B/v1beta1/{name=buildTargets/*/models/*/builds/*/artifacts/*}:stage:*ÚAnameÊA(
-StageBuildResponseStageBuildMetadataLÊAchromeosmoblab.googleapis.comÒA)https://www.googleapis.com/auth/moblabapiB
+StageBuildResponseStageBuildMetadataá
+FindMostStableBuild:.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest;.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse"Q‚Óä“<:/v1beta1/{build_target=buildTargets/*}:findMostStableBuildÚAbuild_targetLÊAchromeosmoblab.googleapis.comÒA)https://www.googleapis.com/auth/moblabapiB
 "com.google.chromeos.moblab.v1beta1BBuildServiceProtoHPZDgoogle.golang.org/genproto/googleapis/chromeos/moblab/v1beta1;moblabbproto3'
         , true);
 

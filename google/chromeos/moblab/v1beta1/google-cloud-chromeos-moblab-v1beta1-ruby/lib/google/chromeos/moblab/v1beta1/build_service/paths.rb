@@ -46,6 +46,20 @@ module Google
             end
 
             ##
+            # Create a fully-qualified BuildTarget resource string.
+            #
+            # The resource will be in the following format:
+            #
+            # `buildTargets/{build_target}`
+            #
+            # @param build_target [String]
+            #
+            # @return [::String]
+            def build_target_path build_target:
+              "buildTargets/#{build_target}"
+            end
+
+            ##
             # Create a fully-qualified Model resource string.
             #
             # The resource will be in the following format:

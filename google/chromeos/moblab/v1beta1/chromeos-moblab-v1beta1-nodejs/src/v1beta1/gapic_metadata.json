@@ -15,6 +15,11 @@
                 "checkBuildStageStatus"
               ]
             },
+            "FindMostStableBuild": {
+              "methods": [
+                "findMostStableBuild"
+              ]
+            },
             "StageBuild": {
               "methods": [
                 "stageBuild"
@@ -42,6 +47,11 @@
             "CheckBuildStageStatus": {
               "methods": [
                 "checkBuildStageStatus"
+              ]
+            },
+            "FindMostStableBuild": {
+              "methods": [
+                "findMostStableBuild"
               ]
             },
             "StageBuild": {

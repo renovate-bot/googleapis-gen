@@ -21,6 +21,26 @@ module Google
   module Chromeos
     module Moblab
       module V1beta1
+        # Request message for finding the most stable build.
+        # @!attribute [rw] build_target
+        #   @return [::String]
+        #     Required. The full resource name of the build target.
+        #     For example,
+        #     'buildTargets/octopus'.
+        class FindMostStableBuildRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for finding the most stable build.
+        # @!attribute [rw] build
+        #   @return [::Google::Chromeos::Moblab::V1beta1::Build]
+        #     The most stable build.
+        class FindMostStableBuildResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Request message for listing build targets.
         # @!attribute [rw] page_size
         #   @return [::Integer]

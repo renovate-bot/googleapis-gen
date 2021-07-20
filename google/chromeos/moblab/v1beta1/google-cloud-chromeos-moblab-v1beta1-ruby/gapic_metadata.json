@@ -29,6 +29,11 @@
               "methods": [
                 "stage_build"
               ]
+            },
+            "FindMostStableBuild": {
+              "methods": [
+                "find_most_stable_build"
+              ]
             }
           }
         }

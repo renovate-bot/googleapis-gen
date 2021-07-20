@@ -166,5 +166,113 @@ namespace Google.Chromeos.Moblab.V1Beta1.Tests
             xunit::Assert.Same(expectedResponse, responseCancellationToken);
             mockGrpcClient.VerifyAll();
         }
+
+        [xunit::FactAttribute]
+        public void FindMostStableBuildRequestObject()
+        {
+            moq::Mock<BuildService.BuildServiceClient> mockGrpcClient = new moq::Mock<BuildService.BuildServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FindMostStableBuildRequest request = new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            FindMostStableBuildResponse expectedResponse = new FindMostStableBuildResponse { Build = new Build(), };
+            mockGrpcClient.Setup(x => x.FindMostStableBuild(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            BuildServiceClient client = new BuildServiceClientImpl(mockGrpcClient.Object, null);
+            FindMostStableBuildResponse response = client.FindMostStableBuild(request);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task FindMostStableBuildRequestObjectAsync()
+        {
+            moq::Mock<BuildService.BuildServiceClient> mockGrpcClient = new moq::Mock<BuildService.BuildServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FindMostStableBuildRequest request = new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            FindMostStableBuildResponse expectedResponse = new FindMostStableBuildResponse { Build = new Build(), };
+            mockGrpcClient.Setup(x => x.FindMostStableBuildAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<FindMostStableBuildResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            BuildServiceClient client = new BuildServiceClientImpl(mockGrpcClient.Object, null);
+            FindMostStableBuildResponse responseCallSettings = await client.FindMostStableBuildAsync(request, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            FindMostStableBuildResponse responseCancellationToken = await client.FindMostStableBuildAsync(request, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void FindMostStableBuild()
+        {
+            moq::Mock<BuildService.BuildServiceClient> mockGrpcClient = new moq::Mock<BuildService.BuildServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FindMostStableBuildRequest request = new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            FindMostStableBuildResponse expectedResponse = new FindMostStableBuildResponse { Build = new Build(), };
+            mockGrpcClient.Setup(x => x.FindMostStableBuild(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            BuildServiceClient client = new BuildServiceClientImpl(mockGrpcClient.Object, null);
+            FindMostStableBuildResponse response = client.FindMostStableBuild(request.BuildTarget);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task FindMostStableBuildAsync()
+        {
+            moq::Mock<BuildService.BuildServiceClient> mockGrpcClient = new moq::Mock<BuildService.BuildServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FindMostStableBuildRequest request = new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            FindMostStableBuildResponse expectedResponse = new FindMostStableBuildResponse { Build = new Build(), };
+            mockGrpcClient.Setup(x => x.FindMostStableBuildAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<FindMostStableBuildResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            BuildServiceClient client = new BuildServiceClientImpl(mockGrpcClient.Object, null);
+            FindMostStableBuildResponse responseCallSettings = await client.FindMostStableBuildAsync(request.BuildTarget, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            FindMostStableBuildResponse responseCancellationToken = await client.FindMostStableBuildAsync(request.BuildTarget, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public void FindMostStableBuildResourceNames()
+        {
+            moq::Mock<BuildService.BuildServiceClient> mockGrpcClient = new moq::Mock<BuildService.BuildServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FindMostStableBuildRequest request = new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            FindMostStableBuildResponse expectedResponse = new FindMostStableBuildResponse { Build = new Build(), };
+            mockGrpcClient.Setup(x => x.FindMostStableBuild(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
+            BuildServiceClient client = new BuildServiceClientImpl(mockGrpcClient.Object, null);
+            FindMostStableBuildResponse response = client.FindMostStableBuild(request.BuildTargetAsBuildTargetName);
+            xunit::Assert.Same(expectedResponse, response);
+            mockGrpcClient.VerifyAll();
+        }
+
+        [xunit::FactAttribute]
+        public async stt::Task FindMostStableBuildResourceNamesAsync()
+        {
+            moq::Mock<BuildService.BuildServiceClient> mockGrpcClient = new moq::Mock<BuildService.BuildServiceClient>(moq::MockBehavior.Strict);
+            mockGrpcClient.Setup(x => x.CreateOperationsClient()).Returns(new moq::Mock<lro::Operations.OperationsClient>().Object);
+            FindMostStableBuildRequest request = new FindMostStableBuildRequest
+            {
+                BuildTargetAsBuildTargetName = BuildTargetName.FromBuildTarget("[BUILD_TARGET]"),
+            };
+            FindMostStableBuildResponse expectedResponse = new FindMostStableBuildResponse { Build = new Build(), };
+            mockGrpcClient.Setup(x => x.FindMostStableBuildAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<FindMostStableBuildResponse>(stt::Task.FromResult(expectedResponse), null, null, null, null));
+            BuildServiceClient client = new BuildServiceClientImpl(mockGrpcClient.Object, null);
+            FindMostStableBuildResponse responseCallSettings = await client.FindMostStableBuildAsync(request.BuildTargetAsBuildTargetName, gaxgrpc::CallSettings.FromCancellationToken(st::CancellationToken.None));
+            xunit::Assert.Same(expectedResponse, responseCallSettings);
+            FindMostStableBuildResponse responseCancellationToken = await client.FindMostStableBuildAsync(request.BuildTargetAsBuildTargetName, st::CancellationToken.None);
+            xunit::Assert.Same(expectedResponse, responseCancellationToken);
+            mockGrpcClient.VerifyAll();
+        }
     }
 }

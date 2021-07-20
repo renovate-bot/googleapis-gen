@@ -14,6 +14,17 @@ return [
                     ],
                 ],
             ],
+            'FindMostStableBuild' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{build_target=buildTargets/*}:findMostStableBuild',
+                'placeholders' => [
+                    'build_target' => [
+                        'getters' => [
+                            'getBuildTarget',
+                        ],
+                    ],
+                ],
+            ],
             'ListBuildTargets' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/buildTargets',

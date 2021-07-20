@@ -22,6 +22,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :status, :enum, 4, "google.chromeos.moblab.v1beta1.Build.BuildStatus"
       optional :type, :enum, 5, "google.chromeos.moblab.v1beta1.Build.BuildType"
       optional :branch, :string, 6
+      optional :rw_firmware_version, :string, 7
     end
     add_enum "google.chromeos.moblab.v1beta1.Build.BuildStatus" do
       value :BUILD_STATUS_UNSPECIFIED, 0

@@ -55,6 +55,13 @@ class Build extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string branch = 6;</code>
      */
     protected $branch = '';
+    /**
+     * The read write firmware version of the software that is flashed to the chip
+     * on the Chrome OS device.
+     *
+     * Generated from protobuf field <code>string rw_firmware_version = 7;</code>
+     */
+    protected $rw_firmware_version = '';
 
     /**
      * Constructor.
@@ -77,6 +84,9 @@ class Build extends \Google\Protobuf\Internal\Message
      *           The type of the build.
      *     @type string $branch
      *           The branch of the build.
+     *     @type string $rw_firmware_version
+     *           The read write firmware version of the software that is flashed to the chip
+     *           on the Chrome OS device.
      * }
      */
     public function __construct($data = NULL) {
@@ -242,6 +252,34 @@ class Build extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->branch = $var;
+
+        return $this;
+    }
+
+    /**
+     * The read write firmware version of the software that is flashed to the chip
+     * on the Chrome OS device.
+     *
+     * Generated from protobuf field <code>string rw_firmware_version = 7;</code>
+     * @return string
+     */
+    public function getRwFirmwareVersion()
+    {
+        return $this->rw_firmware_version;
+    }
+
+    /**
+     * The read write firmware version of the software that is flashed to the chip
+     * on the Chrome OS device.
+     *
+     * Generated from protobuf field <code>string rw_firmware_version = 7;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRwFirmwareVersion($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->rw_firmware_version = $var;
 
         return $this;
     }

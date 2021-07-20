@@ -75,6 +75,10 @@ module Google
         # @!attribute [rw] branch
         #   @return [::String]
         #     The branch of the build.
+        # @!attribute [rw] rw_firmware_version
+        #   @return [::String]
+        #     The read write firmware version of the software that is flashed to the chip
+        #     on the Chrome OS device.
         class Build
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

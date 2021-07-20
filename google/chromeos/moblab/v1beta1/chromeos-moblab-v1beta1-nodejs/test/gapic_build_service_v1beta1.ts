@@ -265,6 +265,90 @@ describe('v1beta1.BuildServiceClient', () => {
         });
     });
 
+    describe('findMostStableBuild', () => {
+        it('invokes findMostStableBuild without error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest());
+            request.buildTarget = '';
+            const expectedHeaderRequestParams = "build_target=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse());
+            client.innerApiCalls.findMostStableBuild = stubSimpleCall(expectedResponse);
+            const [response] = await client.findMostStableBuild(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.findMostStableBuild as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes findMostStableBuild without error using callback', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest());
+            request.buildTarget = '';
+            const expectedHeaderRequestParams = "build_target=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.FindMostStableBuildResponse());
+            client.innerApiCalls.findMostStableBuild = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.findMostStableBuild(
+                    request,
+                    (err?: Error|null, result?: protos.google.chromeos.moblab.v1beta1.IFindMostStableBuildResponse|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.findMostStableBuild as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes findMostStableBuild with error', async () => {
+            const client = new buildserviceModule.v1beta1.BuildServiceClient({
+              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.chromeos.moblab.v1beta1.FindMostStableBuildRequest());
+            request.buildTarget = '';
+            const expectedHeaderRequestParams = "build_target=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.findMostStableBuild = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.findMostStableBuild(request), expectedError);
+            assert((client.innerApiCalls.findMostStableBuild as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
     describe('stageBuild', () => {
         it('invokes stageBuild without error', async () => {
             const client = new buildserviceModule.v1beta1.BuildServiceClient({

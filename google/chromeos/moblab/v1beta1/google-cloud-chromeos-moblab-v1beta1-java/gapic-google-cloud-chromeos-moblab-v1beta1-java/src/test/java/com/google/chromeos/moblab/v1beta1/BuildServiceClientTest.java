@@ -401,4 +401,76 @@ public class BuildServiceClientTest {
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
+
+  @Test
+  public void findMostStableBuildTest() throws Exception {
+    FindMostStableBuildResponse expectedResponse =
+        FindMostStableBuildResponse.newBuilder().setBuild(Build.newBuilder().build()).build();
+    mockBuildService.addResponse(expectedResponse);
+
+    BuildTargetName buildTarget = BuildTargetName.of("[BUILD_TARGET]");
+
+    FindMostStableBuildResponse actualResponse = client.findMostStableBuild(buildTarget);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBuildService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FindMostStableBuildRequest actualRequest = ((FindMostStableBuildRequest) actualRequests.get(0));
+
+    Assert.assertEquals(buildTarget.toString(), actualRequest.getBuildTarget());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void findMostStableBuildExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBuildService.addException(exception);
+
+    try {
+      BuildTargetName buildTarget = BuildTargetName.of("[BUILD_TARGET]");
+      client.findMostStableBuild(buildTarget);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void findMostStableBuildTest2() throws Exception {
+    FindMostStableBuildResponse expectedResponse =
+        FindMostStableBuildResponse.newBuilder().setBuild(Build.newBuilder().build()).build();
+    mockBuildService.addResponse(expectedResponse);
+
+    String buildTarget = "buildTarget-2030036577";
+
+    FindMostStableBuildResponse actualResponse = client.findMostStableBuild(buildTarget);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockBuildService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FindMostStableBuildRequest actualRequest = ((FindMostStableBuildRequest) actualRequests.get(0));
+
+    Assert.assertEquals(buildTarget, actualRequest.getBuildTarget());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void findMostStableBuildExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockBuildService.addException(exception);
+
+    try {
+      String buildTarget = "buildTarget-2030036577";
+      client.findMostStableBuild(buildTarget);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
 }

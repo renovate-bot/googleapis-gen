@@ -19,6 +19,8 @@ from google.chromeos.moblab_v1beta1.services.build_service.async_client import B
 
 from google.chromeos.moblab_v1beta1.types.build_service import CheckBuildStageStatusRequest
 from google.chromeos.moblab_v1beta1.types.build_service import CheckBuildStageStatusResponse
+from google.chromeos.moblab_v1beta1.types.build_service import FindMostStableBuildRequest
+from google.chromeos.moblab_v1beta1.types.build_service import FindMostStableBuildResponse
 from google.chromeos.moblab_v1beta1.types.build_service import ListBuildsRequest
 from google.chromeos.moblab_v1beta1.types.build_service import ListBuildsResponse
 from google.chromeos.moblab_v1beta1.types.build_service import ListBuildTargetsRequest
@@ -36,6 +38,8 @@ __all__ = ('BuildServiceClient',
     'BuildServiceAsyncClient',
     'CheckBuildStageStatusRequest',
     'CheckBuildStageStatusResponse',
+    'FindMostStableBuildRequest',
+    'FindMostStableBuildResponse',
     'ListBuildsRequest',
     'ListBuildsResponse',
     'ListBuildTargetsRequest',

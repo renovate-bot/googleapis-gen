@@ -352,6 +352,45 @@ class BuildServiceGrpcTransport(BuildServiceTransport):
             )
         return self._stubs['stage_build']
 
+    @property
+    def find_most_stable_build(self) -> Callable[
+            [build_service.FindMostStableBuildRequest],
+            build_service.FindMostStableBuildResponse]:
+        r"""Return a callable for the find most stable build method over gRPC.
+
+        Finds the most stable build for the given build
+        target. The definition of the most stable build is
+        determined by evaluating the following rules in order
+        until one is true. If none are true, then there is no
+        stable build and it will return an empty response.
+
+        Evaluation rules:
+          1. Stable channel build with label “Live”
+          2. Beta channel build with label “Live”
+          3. Dev channel build with label “Live”
+          4. Most recent stable channel build with build status
+        Pass   5. Most recent beta channel build with build
+        status Pass   6. Most recent dev channel build with
+        build status Pass
+
+        Returns:
+            Callable[[~.FindMostStableBuildRequest],
+                    ~.FindMostStableBuildResponse]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'find_most_stable_build' not in self._stubs:
+            self._stubs['find_most_stable_build'] = self.grpc_channel.unary_unary(
+                '/google.chromeos.moblab.v1beta1.BuildService/FindMostStableBuild',
+                request_serializer=build_service.FindMostStableBuildRequest.serialize,
+                response_deserializer=build_service.FindMostStableBuildResponse.deserialize,
+            )
+        return self._stubs['find_most_stable_build']
+
 
 __all__ = (
     'BuildServiceGrpcTransport',

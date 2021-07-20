@@ -488,6 +488,95 @@ initial=1.0,maximum=10.0,multiplier=1.3,                predicate=retries.if_exc
         # Done; return the response.
         return response
 
+    async def find_most_stable_build(self,
+            request: build_service.FindMostStableBuildRequest = None,
+            *,
+            build_target: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> build_service.FindMostStableBuildResponse:
+        r"""Finds the most stable build for the given build
+        target. The definition of the most stable build is
+        determined by evaluating the following rules in order
+        until one is true. If none are true, then there is no
+        stable build and it will return an empty response.
+
+        Evaluation rules:
+          1. Stable channel build with label “Live”
+          2. Beta channel build with label “Live”
+          3. Dev channel build with label “Live”
+          4. Most recent stable channel build with build status
+        Pass   5. Most recent beta channel build with build
+        status Pass   6. Most recent dev channel build with
+        build status Pass
+
+        Args:
+            request (:class:`google.chromeos.moblab_v1beta1.types.FindMostStableBuildRequest`):
+                The request object. Request message for finding the most
+                stable build.
+            build_target (:class:`str`):
+                Required. The full resource name of
+                the build target. For example,
+                'buildTargets/octopus'.
+
+                This corresponds to the ``build_target`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.chromeos.moblab_v1beta1.types.FindMostStableBuildResponse:
+                Response message for finding the most
+                stable build.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([build_target])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
+        request = build_service.FindMostStableBuildRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if build_target is not None:
+            request.build_target = build_target
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.find_most_stable_build,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("build_target", request.build_target),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
 
 
 

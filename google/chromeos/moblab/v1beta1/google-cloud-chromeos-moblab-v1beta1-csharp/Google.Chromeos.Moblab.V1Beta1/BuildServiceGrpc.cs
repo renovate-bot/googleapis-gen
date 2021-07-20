@@ -68,6 +68,8 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
     static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusResponse> __Marshaller_google_chromeos_moblab_v1beta1_CheckBuildStageStatusResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest> __Marshaller_google_chromeos_moblab_v1beta1_StageBuildRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest.Parser));
     static readonly grpc::Marshaller<global::Google.LongRunning.Operation> __Marshaller_google_longrunning_Operation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.LongRunning.Operation.Parser));
+    static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest> __Marshaller_google_chromeos_moblab_v1beta1_FindMostStableBuildRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse> __Marshaller_google_chromeos_moblab_v1beta1_FindMostStableBuildResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse.Parser));
 
     static readonly grpc::Method<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse> __Method_ListBuildTargets = new grpc::Method<global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildTargetsResponse>(
         grpc::MethodType.Unary,
@@ -96,6 +98,13 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
         "StageBuild",
         __Marshaller_google_chromeos_moblab_v1beta1_StageBuildRequest,
         __Marshaller_google_longrunning_Operation);
+
+    static readonly grpc::Method<global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest, global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse> __Method_FindMostStableBuild = new grpc::Method<global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest, global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "FindMostStableBuild",
+        __Marshaller_google_chromeos_moblab_v1beta1_FindMostStableBuildRequest,
+        __Marshaller_google_chromeos_moblab_v1beta1_FindMostStableBuildResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -153,6 +162,28 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> StageBuild(global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Finds the most stable build for the given build target. The definition of
+      /// the most stable build is determined by evaluating the following rules in
+      /// order until one is true. If none are true, then there is no stable build
+      /// and it will return an empty response.
+      ///
+      /// Evaluation rules:
+      ///   1. Stable channel build with label “Live”
+      ///   2. Beta channel build with label “Live”
+      ///   3. Dev channel build with label “Live”
+      ///   4. Most recent stable channel build with build status Pass
+      ///   5. Most recent beta channel build with build status Pass
+      ///   6. Most recent dev channel build with build status Pass
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse> FindMostStableBuild(global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -382,6 +413,94 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       {
         return CallInvoker.AsyncUnaryCall(__Method_StageBuild, null, options, request);
       }
+      /// <summary>
+      /// Finds the most stable build for the given build target. The definition of
+      /// the most stable build is determined by evaluating the following rules in
+      /// order until one is true. If none are true, then there is no stable build
+      /// and it will return an empty response.
+      ///
+      /// Evaluation rules:
+      ///   1. Stable channel build with label “Live”
+      ///   2. Beta channel build with label “Live”
+      ///   3. Dev channel build with label “Live”
+      ///   4. Most recent stable channel build with build status Pass
+      ///   5. Most recent beta channel build with build status Pass
+      ///   6. Most recent dev channel build with build status Pass
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse FindMostStableBuild(global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return FindMostStableBuild(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Finds the most stable build for the given build target. The definition of
+      /// the most stable build is determined by evaluating the following rules in
+      /// order until one is true. If none are true, then there is no stable build
+      /// and it will return an empty response.
+      ///
+      /// Evaluation rules:
+      ///   1. Stable channel build with label “Live”
+      ///   2. Beta channel build with label “Live”
+      ///   3. Dev channel build with label “Live”
+      ///   4. Most recent stable channel build with build status Pass
+      ///   5. Most recent beta channel build with build status Pass
+      ///   6. Most recent dev channel build with build status Pass
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse FindMostStableBuild(global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_FindMostStableBuild, null, options, request);
+      }
+      /// <summary>
+      /// Finds the most stable build for the given build target. The definition of
+      /// the most stable build is determined by evaluating the following rules in
+      /// order until one is true. If none are true, then there is no stable build
+      /// and it will return an empty response.
+      ///
+      /// Evaluation rules:
+      ///   1. Stable channel build with label “Live”
+      ///   2. Beta channel build with label “Live”
+      ///   3. Dev channel build with label “Live”
+      ///   4. Most recent stable channel build with build status Pass
+      ///   5. Most recent beta channel build with build status Pass
+      ///   6. Most recent dev channel build with build status Pass
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse> FindMostStableBuildAsync(global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return FindMostStableBuildAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Finds the most stable build for the given build target. The definition of
+      /// the most stable build is determined by evaluating the following rules in
+      /// order until one is true. If none are true, then there is no stable build
+      /// and it will return an empty response.
+      ///
+      /// Evaluation rules:
+      ///   1. Stable channel build with label “Live”
+      ///   2. Beta channel build with label “Live”
+      ///   3. Dev channel build with label “Live”
+      ///   4. Most recent stable channel build with build status Pass
+      ///   5. Most recent beta channel build with build status Pass
+      ///   6. Most recent dev channel build with build status Pass
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse> FindMostStableBuildAsync(global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_FindMostStableBuild, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override BuildServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -397,7 +516,8 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
           .AddMethod(__Method_ListBuildTargets, serviceImpl.ListBuildTargets)
           .AddMethod(__Method_ListBuilds, serviceImpl.ListBuilds)
           .AddMethod(__Method_CheckBuildStageStatus, serviceImpl.CheckBuildStageStatus)
-          .AddMethod(__Method_StageBuild, serviceImpl.StageBuild).Build();
+          .AddMethod(__Method_StageBuild, serviceImpl.StageBuild)
+          .AddMethod(__Method_FindMostStableBuild, serviceImpl.FindMostStableBuild).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -410,6 +530,7 @@ namespace Google.Chromeos.Moblab.V1Beta1 {
       serviceBinder.AddMethod(__Method_ListBuilds, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Chromeos.Moblab.V1Beta1.ListBuildsRequest, global::Google.Chromeos.Moblab.V1Beta1.ListBuildsResponse>(serviceImpl.ListBuilds));
       serviceBinder.AddMethod(__Method_CheckBuildStageStatus, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusRequest, global::Google.Chromeos.Moblab.V1Beta1.CheckBuildStageStatusResponse>(serviceImpl.CheckBuildStageStatus));
       serviceBinder.AddMethod(__Method_StageBuild, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Chromeos.Moblab.V1Beta1.StageBuildRequest, global::Google.LongRunning.Operation>(serviceImpl.StageBuild));
+      serviceBinder.AddMethod(__Method_FindMostStableBuild, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildRequest, global::Google.Chromeos.Moblab.V1Beta1.FindMostStableBuildResponse>(serviceImpl.FindMostStableBuild));
     }
 
   }

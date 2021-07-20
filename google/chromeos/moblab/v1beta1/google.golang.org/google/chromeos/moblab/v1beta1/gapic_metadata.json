@@ -15,6 +15,11 @@
                 "CheckBuildStageStatus"
               ]
             },
+            "FindMostStableBuild":  {
+              "methods":  [
+                "FindMostStableBuild"
+              ]
+            },
             "ListBuildTargets":  {
               "methods":  [
                 "ListBuildTargets"

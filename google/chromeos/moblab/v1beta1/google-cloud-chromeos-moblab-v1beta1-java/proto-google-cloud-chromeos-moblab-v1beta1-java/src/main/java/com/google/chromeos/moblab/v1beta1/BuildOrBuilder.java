@@ -130,4 +130,26 @@ public interface BuildOrBuilder extends
    */
   com.google.protobuf.ByteString
       getBranchBytes();
+
+  /**
+   * <pre>
+   * The read write firmware version of the software that is flashed to the chip
+   * on the Chrome OS device.
+   * </pre>
+   *
+   * <code>string rw_firmware_version = 7;</code>
+   * @return The rwFirmwareVersion.
+   */
+  java.lang.String getRwFirmwareVersion();
+  /**
+   * <pre>
+   * The read write firmware version of the software that is flashed to the chip
+   * on the Chrome OS device.
+   * </pre>
+   *
+   * <code>string rw_firmware_version = 7;</code>
+   * @return The bytes for rwFirmwareVersion.
+   */
+  com.google.protobuf.ByteString
+      getRwFirmwareVersionBytes();
 }
