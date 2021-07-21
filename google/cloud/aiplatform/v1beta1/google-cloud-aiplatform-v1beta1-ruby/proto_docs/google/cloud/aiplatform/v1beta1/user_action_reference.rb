@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # References an API call. It contains more information about long running
         # operation and Jobs that are triggered by the API call.

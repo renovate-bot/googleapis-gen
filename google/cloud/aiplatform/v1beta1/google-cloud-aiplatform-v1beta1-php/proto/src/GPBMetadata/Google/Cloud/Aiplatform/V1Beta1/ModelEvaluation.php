@@ -22,7 +22,7 @@ class ModelEvaluation
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-°
+™	
 6google/cloud/aiplatform/v1beta1/model_evaluation.protogoogle.cloud.aiplatform.v1beta1google/api/resource.proto1google/cloud/aiplatform/v1beta1/explanation.protogoogle/protobuf/struct.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"–
 ModelEvaluation
 name (	BàA
@@ -35,8 +35,8 @@ class ModelEvaluation
 ModelEvaluationExplanationSpec
 explanation_type (	J
 explanation_spec (20.google.cloud.aiplatform.v1beta1.ExplanationSpec:êA|
-)aiplatform.googleapis.com/ModelEvaluationOprojects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}Bˆ
-#com.google.cloud.aiplatform.v1beta1BModelEvaluationProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+)aiplatform.googleapis.com/ModelEvaluationOprojects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}Bñ
+#com.google.cloud.aiplatform.v1beta1BModelEvaluationProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

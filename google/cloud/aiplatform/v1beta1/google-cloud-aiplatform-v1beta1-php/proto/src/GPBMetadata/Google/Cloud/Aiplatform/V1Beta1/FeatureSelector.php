@@ -18,14 +18,14 @@ class FeatureSelector
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Å
+Í
 6google/cloud/aiplatform/v1beta1/feature_selector.protogoogle.cloud.aiplatform.v1beta1google/api/annotations.proto"
 	IdMatcher
 ids (	B‡A"V
 FeatureSelectorC
 
-id_matcher (2*.google.cloud.aiplatform.v1beta1.IdMatcherB‡ABà
-#com.google.cloud.aiplatform.v1beta1BFeatureSelectorProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+id_matcher (2*.google.cloud.aiplatform.v1beta1.IdMatcherB‡ABÒ
+#com.google.cloud.aiplatform.v1beta1BFeatureSelectorProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatform™Google.Cloud.AIPlatform.V1Beta1 Google\\Cloud\\AIPlatform\\V1beta1Í"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

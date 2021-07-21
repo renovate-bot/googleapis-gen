@@ -8,7 +8,6 @@ require 'google/api/resource_pb'
 require 'google/protobuf/duration_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
-require 'google/protobuf/wrappers_pb'
 require 'google/api/annotations_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/aiplatform/v1beta1/study.proto", :syntax => :proto3) do
@@ -38,6 +37,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :client_id, :string, 9
       optional :infeasible_reason, :string, 10
       optional :custom_job, :string, 11
+      map :web_access_uris, :string, :string, 12
     end
     add_message "google.cloud.aiplatform.v1beta1.Trial.Parameter" do
       optional :parameter_id, :string, 1
@@ -86,16 +86,20 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DoubleValueSpec" do
       optional :min_value, :double, 1
       optional :max_value, :double, 2
+      proto3_optional :default_value, :double, 4
     end
     add_message "google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.IntegerValueSpec" do
       optional :min_value, :int64, 1
       optional :max_value, :int64, 2
+      proto3_optional :default_value, :int64, 4
     end
     add_message "google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.CategoricalValueSpec" do
       repeated :values, :string, 1
+      proto3_optional :default_value, :string, 3
     end
     add_message "google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.DiscreteValueSpec" do
       repeated :values, :double, 1
+      proto3_optional :default_value, :double, 3
     end
     add_message "google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec.ConditionalParameterSpec" do
       optional :parameter_spec, :message, 1, "google.cloud.aiplatform.v1beta1.StudySpec.ParameterSpec"
@@ -162,7 +166,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         Study = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.Study").msgclass
         Study::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.Study.State").enummodule

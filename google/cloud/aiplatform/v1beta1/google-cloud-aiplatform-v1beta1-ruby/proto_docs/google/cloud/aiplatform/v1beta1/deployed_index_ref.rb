@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Points to a DeployedIndex.
         # @!attribute [rw] index_endpoint

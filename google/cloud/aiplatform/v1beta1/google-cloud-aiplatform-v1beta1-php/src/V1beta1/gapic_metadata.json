@@ -3,7 +3,7 @@
     "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
     "language": "php",
     "protoPackage": "google.cloud.aiplatform.v1beta1",
-    "libraryPackage": "Google\\Cloud\\Aiplatform\\V1beta1",
+    "libraryPackage": "Google\\Cloud\\AIPlatform\\V1beta1",
     "services": {
         "DatasetService": {
             "clients": {
@@ -508,9 +508,19 @@
                                 "createMetadataStore"
                             ]
                         },
+                        "DeleteArtifact": {
+                            "methods": [
+                                "deleteArtifact"
+                            ]
+                        },
                         "DeleteContext": {
                             "methods": [
                                 "deleteContext"
+                            ]
+                        },
+                        "DeleteExecution": {
+                            "methods": [
+                                "deleteExecution"
                             ]
                         },
                         "DeleteMetadataStore": {
@@ -566,6 +576,21 @@
                         "ListMetadataStores": {
                             "methods": [
                                 "listMetadataStores"
+                            ]
+                        },
+                        "PurgeArtifacts": {
+                            "methods": [
+                                "purgeArtifacts"
+                            ]
+                        },
+                        "PurgeContexts": {
+                            "methods": [
+                                "purgeContexts"
+                            ]
+                        },
+                        "PurgeExecutions": {
+                            "methods": [
+                                "purgeExecutions"
                             ]
                         },
                         "QueryArtifactLineageSubgraph": {

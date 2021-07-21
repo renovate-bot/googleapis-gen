@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -39,10 +39,10 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\BatchMigrateResourcesRequest;
-use Google\Cloud\Aiplatform\V1beta1\MigrateResourceRequest;
-use Google\Cloud\Aiplatform\V1beta1\SearchMigratableResourcesRequest;
-use Google\Cloud\Aiplatform\V1beta1\SearchMigratableResourcesResponse;
+use Google\Cloud\AIPlatform\V1beta1\BatchMigrateResourcesRequest;
+use Google\Cloud\AIPlatform\V1beta1\MigrateResourceRequest;
+use Google\Cloud\AIPlatform\V1beta1\SearchMigratableResourcesRequest;
+use Google\Cloud\AIPlatform\V1beta1\SearchMigratableResourcesResponse;
 use Google\LongRunning\Operation;
 
 /**

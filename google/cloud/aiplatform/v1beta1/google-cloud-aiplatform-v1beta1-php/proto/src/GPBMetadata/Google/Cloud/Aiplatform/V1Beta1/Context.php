@@ -22,7 +22,7 @@ class Context
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Û
+Ä
 -google/cloud/aiplatform/v1beta1/context.protogoogle.cloud.aiplatform.v1beta1google/api/resource.proto+google/cloud/aiplatform/v1beta1/value.protogoogle/protobuf/struct.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"Ø
 Context
 name (	BàA
@@ -41,8 +41,8 @@ class Context
 LabelsEntry
 key (	
 value (	:8:‚êA
-!aiplatform.googleapis.com/ContextZprojects/{project}/locations/{location}/metadataStores/{metadata_store}/contexts/{context}B€
-#com.google.cloud.aiplatform.v1beta1BContextProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+!aiplatform.googleapis.com/ContextZprojects/{project}/locations/{location}/metadataStores/{metadata_store}/contexts/{context}Bé
+#com.google.cloud.aiplatform.v1beta1BContextProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

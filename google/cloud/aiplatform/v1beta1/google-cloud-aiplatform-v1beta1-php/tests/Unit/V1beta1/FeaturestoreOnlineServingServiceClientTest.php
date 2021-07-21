@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1beta1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,10 +29,10 @@ use Google\ApiCore\ServerStream;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1beta1\FeatureSelector;
-use Google\Cloud\Aiplatform\V1beta1\FeaturestoreOnlineServingServiceClient;
-use Google\Cloud\Aiplatform\V1beta1\IdMatcher;
-use Google\Cloud\Aiplatform\V1beta1\ReadFeatureValuesResponse;
+use Google\Cloud\AIPlatform\V1beta1\FeatureSelector;
+use Google\Cloud\AIPlatform\V1beta1\FeaturestoreOnlineServingServiceClient;
+use Google\Cloud\AIPlatform\V1beta1\IdMatcher;
+use Google\Cloud\AIPlatform\V1beta1\ReadFeatureValuesResponse;
 use Google\Rpc\Code;
 use stdClass;
 

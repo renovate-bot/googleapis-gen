@@ -25,7 +25,7 @@ class PipelineService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ÿ!
+è"
 6google/cloud/aiplatform/v1beta1/pipeline_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto2google/cloud/aiplatform/v1beta1/pipeline_job.proto7google/cloud/aiplatform/v1beta1/training_pipeline.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"­
 CreateTrainingPipelineRequest9
 parent (	B)àAúA#
@@ -87,8 +87,8 @@ page_token (	"x
 ListPipelineJobs8.google.cloud.aiplatform.v1beta1.ListPipelineJobsRequest9.google.cloud.aiplatform.v1beta1.ListPipelineJobsResponse"F‚Óä“75/v1beta1/{parent=projects/*/locations/*}/pipelineJobsÚAparentæ
 DeletePipelineJob9.google.cloud.aiplatform.v1beta1.DeletePipelineJobRequest.google.longrunning.Operation"w‚Óä“7*5/v1beta1/{name=projects/*/locations/*/pipelineJobs/*}ÚAnameÊA0
 google.protobuf.EmptyDeleteOperationMetadata¶
-CancelPipelineJob9.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest.google.protobuf.Empty"N‚Óä“A"</v1beta1/{name=projects/*/locations/*/pipelineJobs/*}:cancel:*ÚAnameMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBˆ
-#com.google.cloud.aiplatform.v1beta1BPipelineServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+CancelPipelineJob9.google.cloud.aiplatform.v1beta1.CancelPipelineJobRequest.google.protobuf.Empty"N‚Óä“A"</v1beta1/{name=projects/*/locations/*/pipelineJobs/*}:cancel:*ÚAnameMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBñ
+#com.google.cloud.aiplatform.v1beta1BPipelineServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

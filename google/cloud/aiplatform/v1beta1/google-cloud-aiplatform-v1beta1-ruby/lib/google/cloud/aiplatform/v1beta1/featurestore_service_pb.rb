@@ -75,10 +75,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest" do
       optional :featurestore, :string, 1
       optional :destination, :message, 4, "google.cloud.aiplatform.v1beta1.FeatureValueDestination"
+      repeated :pass_through_fields, :message, 8, "google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField"
       repeated :entity_type_specs, :message, 7, "google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec"
       oneof :read_option do
         optional :csv_read_instances, :message, 3, "google.cloud.aiplatform.v1beta1.CsvSource"
+        optional :bigquery_read_instances, :message, 5, "google.cloud.aiplatform.v1beta1.BigQuerySource"
       end
+    end
+    add_message "google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField" do
+      optional :field_name, :string, 1
     end
     add_message "google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec" do
       optional :entity_type_id, :string, 1
@@ -217,7 +222,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         CreateFeaturestoreRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreateFeaturestoreRequest").msgclass
         GetFeaturestoreRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.GetFeaturestoreRequest").msgclass
@@ -229,6 +234,7 @@ module Google
         ImportFeatureValuesRequest::FeatureSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ImportFeatureValuesRequest.FeatureSpec").msgclass
         ImportFeatureValuesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ImportFeatureValuesResponse").msgclass
         BatchReadFeatureValuesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest").msgclass
+        BatchReadFeatureValuesRequest::PassThroughField = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.PassThroughField").msgclass
         BatchReadFeatureValuesRequest::EntityTypeSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec").msgclass
         ExportFeatureValuesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest").msgclass
         ExportFeatureValuesRequest::SnapshotExport = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport").msgclass

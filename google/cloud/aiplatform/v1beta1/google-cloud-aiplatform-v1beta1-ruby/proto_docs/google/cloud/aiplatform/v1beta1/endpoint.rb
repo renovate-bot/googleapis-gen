@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Models are deployed into it, and afterwards Endpoint is called to obtain
         # predictions and explanations.
@@ -35,10 +35,10 @@ module Google
         #   @return [::String]
         #     The description of the Endpoint.
         # @!attribute [r] deployed_models
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::DeployedModel>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::DeployedModel>]
         #     Output only. The models deployed in this Endpoint.
-        #     To add or remove DeployedModels use {::Google::Cloud::Aiplatform::V1beta1::EndpointService::Client#deploy_model EndpointService.DeployModel} and
-        #     {::Google::Cloud::Aiplatform::V1beta1::EndpointService::Client#undeploy_model EndpointService.UndeployModel} respectively.
+        #     To add or remove DeployedModels use {::Google::Cloud::AIPlatform::V1beta1::EndpointService::Client#deploy_model EndpointService.DeployModel} and
+        #     {::Google::Cloud::AIPlatform::V1beta1::EndpointService::Client#undeploy_model EndpointService.UndeployModel} respectively.
         # @!attribute [rw] traffic_split
         #   @return [::Google::Protobuf::Map{::String => ::Integer}]
         #     A map from a DeployedModel's ID to the percentage of this Endpoint's
@@ -69,10 +69,23 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this Endpoint was last updated.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
         #     Customer-managed encryption key spec for an Endpoint. If set, this
         #     Endpoint and all sub-resources of this Endpoint will be secured by
         #     this key.
+        # @!attribute [rw] network
+        #   @return [::String]
+        #     The full name of the Google Compute Engine
+        #     [network](/compute/docs/networks-and-firewalls#networks) to which the
+        #     Endpoint should be peered.
+        #
+        #     Private services access must already be configured for the network. If left
+        #     unspecified, the Endpoint is not peered with any network.
+        #
+        #     [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
+        #     projects/\\{project}/global/networks/\\{network}.
+        #     Where \\{project} is a project number, as in '12345', and \\{network} is
+        #     network name.
         class Endpoint
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -98,11 +111,11 @@ module Google
 
         # A deployment of a Model. Endpoints contain one or more DeployedModels.
         # @!attribute [rw] dedicated_resources
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::DedicatedResources]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::DedicatedResources]
         #     A description of resources that are dedicated to the DeployedModel, and
         #     that need a higher degree of manual configuration.
         # @!attribute [rw] automatic_resources
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::AutomaticResources]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::AutomaticResources]
         #     A description of resources that to large degree are decided by AI
         #     Platform, and require only a modest additional configuration.
         # @!attribute [r] id
@@ -120,16 +133,16 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when the DeployedModel was created.
         # @!attribute [rw] explanation_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationSpec]
         #     Explanation configuration for this DeployedModel.
         #
-        #     When deploying a Model using {::Google::Cloud::Aiplatform::V1beta1::EndpointService::Client#deploy_model EndpointService.DeployModel}, this value
-        #     overrides the value of {::Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model.explanation_spec}. All fields of
-        #     {::Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} are optional in the request. If a field of
-        #     {::Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} is not populated, the value of the same field of
-        #     {::Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model.explanation_spec} is inherited. If the corresponding
-        #     {::Google::Cloud::Aiplatform::V1beta1::Model#explanation_spec Model.explanation_spec} is not populated, all fields of the
-        #     {::Google::Cloud::Aiplatform::V1beta1::DeployedModel#explanation_spec explanation_spec} will be used for the explanation configuration.
+        #     When deploying a Model using {::Google::Cloud::AIPlatform::V1beta1::EndpointService::Client#deploy_model EndpointService.DeployModel}, this value
+        #     overrides the value of {::Google::Cloud::AIPlatform::V1beta1::Model#explanation_spec Model.explanation_spec}. All fields of
+        #     {::Google::Cloud::AIPlatform::V1beta1::DeployedModel#explanation_spec explanation_spec} are optional in the request. If a field of
+        #     {::Google::Cloud::AIPlatform::V1beta1::DeployedModel#explanation_spec explanation_spec} is not populated, the value of the same field of
+        #     {::Google::Cloud::AIPlatform::V1beta1::Model#explanation_spec Model.explanation_spec} is inherited. If the corresponding
+        #     {::Google::Cloud::AIPlatform::V1beta1::Model#explanation_spec Model.explanation_spec} is not populated, all fields of the
+        #     {::Google::Cloud::AIPlatform::V1beta1::DeployedModel#explanation_spec explanation_spec} will be used for the explanation configuration.
         # @!attribute [rw] service_account
         #   @return [::String]
         #     The service account that the DeployedModel's container runs as. Specify the
@@ -153,7 +166,28 @@ module Google
         #     Note that Stackdriver logs may incur a cost, especially if your project
         #     receives prediction requests at a high queries per second rate (QPS).
         #     Estimate your costs before enabling this option.
+        # @!attribute [r] private_endpoints
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PrivateEndpoints]
+        #     Output only. Provide paths for users to send predict/explain/health requests directly to
+        #     the deployed model services running on Cloud via private services access.
+        #     This field is populated if {::Google::Cloud::AIPlatform::V1beta1::Endpoint#network network} is configured.
         class DeployedModel
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # PrivateEndpoints is used to provide paths for users to send
+        # requests via private services access.
+        # @!attribute [r] predict_http_uri
+        #   @return [::String]
+        #     Output only. Http(s) path to send prediction requests.
+        # @!attribute [r] explain_http_uri
+        #   @return [::String]
+        #     Output only. Http(s) path to send explain requests.
+        # @!attribute [r] health_http_uri
+        #   @return [::String]
+        #     Output only. Http(s) path to send health check requests.
+        class PrivateEndpoints
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -42,42 +42,43 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\AvroSource;
-use Google\Cloud\Aiplatform\V1beta1\BatchCreateFeaturesRequest;
-use Google\Cloud\Aiplatform\V1beta1\BatchReadFeatureValuesRequest;
-use Google\Cloud\Aiplatform\V1beta1\BatchReadFeatureValuesRequest\EntityTypeSpec;
-use Google\Cloud\Aiplatform\V1beta1\BigQuerySource;
-use Google\Cloud\Aiplatform\V1beta1\CreateEntityTypeRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateFeatureRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateFeaturestoreRequest;
-use Google\Cloud\Aiplatform\V1beta1\CsvSource;
-use Google\Cloud\Aiplatform\V1beta1\DeleteEntityTypeRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteFeatureRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteFeaturestoreRequest;
-use Google\Cloud\Aiplatform\V1beta1\DestinationFeatureSetting;
-use Google\Cloud\Aiplatform\V1beta1\EntityType;
-use Google\Cloud\Aiplatform\V1beta1\ExportFeatureValuesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ExportFeatureValuesRequest\SnapshotExport;
-use Google\Cloud\Aiplatform\V1beta1\Feature;
-use Google\Cloud\Aiplatform\V1beta1\FeatureSelector;
-use Google\Cloud\Aiplatform\V1beta1\Featurestore;
-use Google\Cloud\Aiplatform\V1beta1\FeatureValueDestination;
-use Google\Cloud\Aiplatform\V1beta1\GetEntityTypeRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetFeatureRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetFeaturestoreRequest;
-use Google\Cloud\Aiplatform\V1beta1\ImportFeatureValuesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ImportFeatureValuesRequest\FeatureSpec;
-use Google\Cloud\Aiplatform\V1beta1\ListEntityTypesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListEntityTypesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListFeaturesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListFeaturesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListFeaturestoresRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListFeaturestoresResponse;
-use Google\Cloud\Aiplatform\V1beta1\SearchFeaturesRequest;
-use Google\Cloud\Aiplatform\V1beta1\SearchFeaturesResponse;
-use Google\Cloud\Aiplatform\V1beta1\UpdateEntityTypeRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateFeatureRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateFeaturestoreRequest;
+use Google\Cloud\AIPlatform\V1beta1\AvroSource;
+use Google\Cloud\AIPlatform\V1beta1\BatchCreateFeaturesRequest;
+use Google\Cloud\AIPlatform\V1beta1\BatchReadFeatureValuesRequest;
+use Google\Cloud\AIPlatform\V1beta1\BatchReadFeatureValuesRequest\EntityTypeSpec;
+use Google\Cloud\AIPlatform\V1beta1\BatchReadFeatureValuesRequest\PassThroughField;
+use Google\Cloud\AIPlatform\V1beta1\BigQuerySource;
+use Google\Cloud\AIPlatform\V1beta1\CreateEntityTypeRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateFeatureRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateFeaturestoreRequest;
+use Google\Cloud\AIPlatform\V1beta1\CsvSource;
+use Google\Cloud\AIPlatform\V1beta1\DeleteEntityTypeRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteFeatureRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteFeaturestoreRequest;
+use Google\Cloud\AIPlatform\V1beta1\DestinationFeatureSetting;
+use Google\Cloud\AIPlatform\V1beta1\EntityType;
+use Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\SnapshotExport;
+use Google\Cloud\AIPlatform\V1beta1\Feature;
+use Google\Cloud\AIPlatform\V1beta1\FeatureSelector;
+use Google\Cloud\AIPlatform\V1beta1\Featurestore;
+use Google\Cloud\AIPlatform\V1beta1\FeatureValueDestination;
+use Google\Cloud\AIPlatform\V1beta1\GetEntityTypeRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetFeatureRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetFeaturestoreRequest;
+use Google\Cloud\AIPlatform\V1beta1\ImportFeatureValuesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ImportFeatureValuesRequest\FeatureSpec;
+use Google\Cloud\AIPlatform\V1beta1\ListEntityTypesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListEntityTypesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListFeaturesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListFeaturesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListFeaturestoresRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListFeaturestoresResponse;
+use Google\Cloud\AIPlatform\V1beta1\SearchFeaturesRequest;
+use Google\Cloud\AIPlatform\V1beta1\SearchFeaturesResponse;
+use Google\Cloud\AIPlatform\V1beta1\UpdateEntityTypeRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateFeatureRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateFeaturestoreRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\Timestamp;
@@ -628,6 +629,16 @@ class FeaturestoreServiceGapicClient
      *
      *           Values in the timestamp column must use the RFC 3339 format, e.g.
      *           `2012-07-30T10:43:17.123Z`.
+     *     @type BigQuerySource $bigqueryReadInstances
+     *           Similar to csv_read_instances, but from BigQuery source.
+     *     @type PassThroughField[] $passThroughFields
+     *           When not empty, the specified fields in the *_read_instances source will be
+     *           joined as-is in the output, in addition to those fields from the
+     *           Featurestore Entity.
+     *
+     *           For BigQuery source, the type of the pass-through values will be
+     *           automatically inferred. For CSV source, the pass-through values will be
+     *           passed as opaque bytes.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -651,6 +662,14 @@ class FeaturestoreServiceGapicClient
         $requestParamHeaders['featurestore'] = $featurestore;
         if (isset($optionalArgs['csvReadInstances'])) {
             $request->setCsvReadInstances($optionalArgs['csvReadInstances']);
+        }
+
+        if (isset($optionalArgs['bigqueryReadInstances'])) {
+            $request->setBigqueryReadInstances($optionalArgs['bigqueryReadInstances']);
+        }
+
+        if (isset($optionalArgs['passThroughFields'])) {
+            $request->setPassThroughFields($optionalArgs['passThroughFields']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
@@ -1237,7 +1256,7 @@ class FeaturestoreServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\EntityType
+     * @return \Google\Cloud\AIPlatform\V1beta1\EntityType
      *
      * @throws ApiException if the remote call fails
      *
@@ -1281,7 +1300,7 @@ class FeaturestoreServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Feature
+     * @return \Google\Cloud\AIPlatform\V1beta1\Feature
      *
      * @throws ApiException if the remote call fails
      *
@@ -1323,7 +1342,7 @@ class FeaturestoreServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Featurestore
+     * @return \Google\Cloud\AIPlatform\V1beta1\Featurestore
      *
      * @throws ApiException if the remote call fails
      *
@@ -2024,7 +2043,7 @@ class FeaturestoreServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\EntityType
+     * @return \Google\Cloud\AIPlatform\V1beta1\EntityType
      *
      * @throws ApiException if the remote call fails
      *
@@ -2088,7 +2107,7 @@ class FeaturestoreServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Feature
+     * @return \Google\Cloud\AIPlatform\V1beta1\Feature
      *
      * @throws ApiException if the remote call fails
      *

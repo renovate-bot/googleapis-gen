@@ -19,21 +19,21 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Represents one resource that exists in automl.googleapis.com,
         # datalabeling.googleapis.com or ml.googleapis.com.
         # @!attribute [r] ml_engine_model_version
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::MigratableResource::MlEngineModelVersion]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::MigratableResource::MlEngineModelVersion]
         #     Output only. Represents one Version in ml.googleapis.com.
         # @!attribute [r] automl_model
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::MigratableResource::AutomlModel]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::MigratableResource::AutomlModel]
         #     Output only. Represents one Model in automl.googleapis.com.
         # @!attribute [r] automl_dataset
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::MigratableResource::AutomlDataset]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::MigratableResource::AutomlDataset]
         #     Output only. Represents one Dataset in automl.googleapis.com.
         # @!attribute [r] data_labeling_dataset
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::MigratableResource::DataLabelingDataset]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::MigratableResource::DataLabelingDataset]
         #     Output only. Represents one Dataset in datalabeling.googleapis.com.
         # @!attribute [r] last_migrate_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -105,7 +105,7 @@ module Google
           #   @return [::String]
           #     The Dataset's display name in datalabeling.googleapis.com.
           # @!attribute [rw] data_labeling_annotated_datasets
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::MigratableResource::DataLabelingDataset::DataLabelingAnnotatedDataset>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::MigratableResource::DataLabelingDataset::DataLabelingAnnotatedDataset>]
           #     The migratable AnnotatedDataset in datalabeling.googleapis.com belongs to
           #     the data labeling Dataset.
           class DataLabelingDataset

@@ -19,19 +19,22 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Next ID: 6
         # @!attribute [rw] training_dataset
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelMonitoringObjectiveConfig::TrainingDataset]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringObjectiveConfig::TrainingDataset]
         #     Training dataset for models. This field has to be set only if
         #     TrainingPredictionSkewDetectionConfig is specified.
         # @!attribute [rw] training_prediction_skew_detection_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelMonitoringObjectiveConfig::TrainingPredictionSkewDetectionConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringObjectiveConfig::TrainingPredictionSkewDetectionConfig]
         #     The config for skew between training data and prediction data.
         # @!attribute [rw] prediction_drift_detection_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelMonitoringObjectiveConfig::PredictionDriftDetectionConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringObjectiveConfig::PredictionDriftDetectionConfig]
         #     The config for drift of prediction data.
+        # @!attribute [rw] explanation_config
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringObjectiveConfig::ExplanationConfig]
+        #     The config for integrated with Explainable AI.
         class ModelMonitoringObjectiveConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -41,11 +44,11 @@ module Google
           #   @return [::String]
           #     The resource name of the Dataset used to train this Model.
           # @!attribute [rw] gcs_source
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsSource]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsSource]
           #     The Google Cloud Storage uri of the unmanaged Dataset used to train
           #     this Model.
           # @!attribute [rw] bigquery_source
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::BigQuerySource]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::BigQuerySource]
           #     The BigQuery table of the unmanaged Dataset used to train this
           #     Model.
           # @!attribute [rw] data_format
@@ -65,7 +68,7 @@ module Google
           #     This field will be excluded when doing Predict and (or) Explain for the
           #     training data.
           # @!attribute [rw] logging_sampling_strategy
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::SamplingStrategy]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::SamplingStrategy]
           #     Strategy to sample data from Training Dataset.
           #     If not set, we process the whole dataset.
           class TrainingDataset
@@ -76,11 +79,16 @@ module Google
           # The config for Training & Prediction data skew detection. It specifies the
           # training dataset sources and the skew detection parameters.
           # @!attribute [rw] skew_thresholds
-          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Aiplatform::V1beta1::ThresholdConfig}]
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig}]
           #     Key is the feature name and value is the threshold. If a feature needs to
           #     be monitored for skew, a value threshold must be configed for that
           #     feature. The threshold here is against feature distribution distance
           #     between the training and prediction feature.
+          # @!attribute [rw] attribution_score_skew_thresholds
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig}]
+          #     Key is the feature name and value is the threshold. The threshold here is
+          #     against attribution score distance between the training and prediction
+          #     feature.
           class TrainingPredictionSkewDetectionConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -88,8 +96,17 @@ module Google
             # @!attribute [rw] key
             #   @return [::String]
             # @!attribute [rw] value
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::ThresholdConfig]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig]
             class SkewThresholdsEntry
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # @!attribute [rw] key
+            #   @return [::String]
+            # @!attribute [rw] value
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig]
+            class AttributionScoreSkewThresholdsEntry
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -97,11 +114,15 @@ module Google
 
           # The config for Prediction data drift detection.
           # @!attribute [rw] drift_thresholds
-          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Aiplatform::V1beta1::ThresholdConfig}]
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig}]
           #     Key is the feature name and value is the threshold. If a feature needs to
           #     be monitored for drift, a value threshold must be configed for that
           #     feature. The threshold here is against feature distribution distance
           #     between different time windws.
+          # @!attribute [rw] attribution_score_drift_thresholds
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig}]
+          #     Key is the feature name and value is the threshold. The threshold here is
+          #     against attribution score distance between different time windows.
           class PredictionDriftDetectionConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -109,17 +130,70 @@ module Google
             # @!attribute [rw] key
             #   @return [::String]
             # @!attribute [rw] value
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::ThresholdConfig]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig]
             class DriftThresholdsEntry
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # @!attribute [rw] key
+            #   @return [::String]
+            # @!attribute [rw] value
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig]
+            class AttributionScoreDriftThresholdsEntry
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+          end
+
+          # The config for integrated with Explainable AI. Only applicable if the Model
+          # has explanation_spec populated.
+          # @!attribute [rw] enable_feature_attributes
+          #   @return [::Boolean]
+          #     If want to analyze the Explainable AI feature attribute scores or not.
+          #     If set to true, Vertex AI will log the feature attributions from
+          #     explain response and do the skew/drift detection for them.
+          # @!attribute [rw] explanation_baseline
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringObjectiveConfig::ExplanationConfig::ExplanationBaseline]
+          #     Predictions generated by the BatchPredictionJob using baseline dataset.
+          class ExplanationConfig
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+
+            # Output from {::Google::Cloud::AIPlatform::V1beta1::BatchPredictionJob BatchPredictionJob} for Model Monitoring baseline dataset,
+            # which can be used to generate baseline attribution scores.
+            # @!attribute [rw] gcs
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsDestination]
+            #     Cloud Storage location for BatchExplain output.
+            # @!attribute [rw] bigquery
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::BigQueryDestination]
+            #     BigQuery location for BatchExplain output.
+            # @!attribute [rw] prediction_format
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringObjectiveConfig::ExplanationConfig::ExplanationBaseline::PredictionFormat]
+            #     The storage format of the predictions generated BatchPrediction job.
+            class ExplanationBaseline
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+
+              # The storage format of the predictions generated BatchPrediction job.
+              module PredictionFormat
+                # Should not be set.
+                PREDICTION_FORMAT_UNSPECIFIED = 0
+
+                # Predictions are in JSONL files, consistent from the definition here
+                # (http://shortn/_4bS0hL7ofb).
+                JSONL = 2
+
+                # Predictions are in BigQuery.
+                BIGQUERY = 3
+              end
             end
           end
         end
 
         # Next ID: 2
         # @!attribute [rw] email_alert_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelMonitoringAlertConfig::EmailAlertConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringAlertConfig::EmailAlertConfig]
         #     Email alert config.
         class ModelMonitoringAlertConfig
           include ::Google::Protobuf::MessageExts
@@ -156,7 +230,7 @@ module Google
         # dataset.
         # Next ID: 2
         # @!attribute [rw] random_sample_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::SamplingStrategy::RandomSampleConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::SamplingStrategy::RandomSampleConfig]
         #     Random sample config. Will support more sampling strategies later.
         class SamplingStrategy
           include ::Google::Protobuf::MessageExts

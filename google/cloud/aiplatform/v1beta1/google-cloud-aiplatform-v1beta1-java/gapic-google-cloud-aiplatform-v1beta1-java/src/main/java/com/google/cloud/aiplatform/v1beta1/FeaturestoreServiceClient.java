@@ -2484,6 +2484,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .setFeaturestore(
    *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
    *           .setDestination(FeatureValueDestination.newBuilder().build())
+   *           .addAllPassThroughFields(
+   *               new ArrayList<BatchReadFeatureValuesRequest.PassThroughField>())
    *           .addAllEntityTypeSpecs(new ArrayList<BatchReadFeatureValuesRequest.EntityTypeSpec>())
    *           .build();
    *   BatchReadFeatureValuesResponse response =
@@ -2517,6 +2519,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .setFeaturestore(
    *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
    *           .setDestination(FeatureValueDestination.newBuilder().build())
+   *           .addAllPassThroughFields(
+   *               new ArrayList<BatchReadFeatureValuesRequest.PassThroughField>())
    *           .addAllEntityTypeSpecs(new ArrayList<BatchReadFeatureValuesRequest.EntityTypeSpec>())
    *           .build();
    *   OperationFuture<BatchReadFeatureValuesResponse, BatchReadFeatureValuesOperationMetadata>
@@ -2553,6 +2557,8 @@ public class FeaturestoreServiceClient implements BackgroundResource {
    *           .setFeaturestore(
    *               FeaturestoreName.of("[PROJECT]", "[LOCATION]", "[FEATURESTORE]").toString())
    *           .setDestination(FeatureValueDestination.newBuilder().build())
+   *           .addAllPassThroughFields(
+   *               new ArrayList<BatchReadFeatureValuesRequest.PassThroughField>())
    *           .addAllEntityTypeSpecs(new ArrayList<BatchReadFeatureValuesRequest.EntityTypeSpec>())
    *           .build();
    *   ApiFuture<Operation> future =

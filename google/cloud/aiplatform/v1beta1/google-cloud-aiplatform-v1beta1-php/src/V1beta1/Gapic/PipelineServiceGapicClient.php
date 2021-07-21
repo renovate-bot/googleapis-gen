@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -39,20 +39,20 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\CancelPipelineJobRequest;
-use Google\Cloud\Aiplatform\V1beta1\CancelTrainingPipelineRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreatePipelineJobRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateTrainingPipelineRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeletePipelineJobRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteTrainingPipelineRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetPipelineJobRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetTrainingPipelineRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListPipelineJobsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListPipelineJobsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTrainingPipelinesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListTrainingPipelinesResponse;
-use Google\Cloud\Aiplatform\V1beta1\PipelineJob;
-use Google\Cloud\Aiplatform\V1beta1\TrainingPipeline;
+use Google\Cloud\AIPlatform\V1beta1\CancelPipelineJobRequest;
+use Google\Cloud\AIPlatform\V1beta1\CancelTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreatePipelineJobRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeletePipelineJobRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetPipelineJobRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetTrainingPipelineRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListPipelineJobsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListPipelineJobsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTrainingPipelinesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListTrainingPipelinesResponse;
+use Google\Cloud\AIPlatform\V1beta1\PipelineJob;
+use Google\Cloud\AIPlatform\V1beta1\TrainingPipeline;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
@@ -550,7 +550,7 @@ class PipelineServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\PipelineJob
+     * @return \Google\Cloud\AIPlatform\V1beta1\PipelineJob
      *
      * @throws ApiException if the remote call fails
      *
@@ -601,7 +601,7 @@ class PipelineServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TrainingPipeline
+     * @return \Google\Cloud\AIPlatform\V1beta1\TrainingPipeline
      *
      * @throws ApiException if the remote call fails
      *
@@ -780,7 +780,7 @@ class PipelineServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\PipelineJob
+     * @return \Google\Cloud\AIPlatform\V1beta1\PipelineJob
      *
      * @throws ApiException if the remote call fails
      *
@@ -824,7 +824,7 @@ class PipelineServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TrainingPipeline
+     * @return \Google\Cloud\AIPlatform\V1beta1\TrainingPipeline
      *
      * @throws ApiException if the remote call fails
      *
@@ -962,22 +962,32 @@ class PipelineServiceGapicClient
      *     Optional.
      *
      *     @type string $filter
-     *           The standard list filter.
-     *           Supported fields:
+     *           Lists the PipelineJobs that match the filter expression. The following
+     *           fields are supported:
      *
-     *           * `display_name` supports = and !=.
+     *           * `pipeline_name`: Supports `=` and `!=` comparisons.
+     *           * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     *           Values must be in RFC 3339 format.
+     *           * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     *           Values must be in RFC 3339 format.
+     *           * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+     *           Values must be in RFC 3339 format.
+     *           * `labels`: Supports key-value equality and key presence.
      *
-     *           * `state` supports = and !=.
+     *           Filter expressions can be combined together using logical operators
+     *           (`AND` & `OR`).
+     *           For example: `pipeline_name="test" AND create_time>"2020-05-18T13:30:00Z"`.
      *
-     *           Some examples of using the filter are:
+     *           The syntax to define filter expression is based on
+     *           https://google.aip.dev/160.
      *
-     *           * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+     *           Examples:
      *
-     *           * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-     *
-     *           * `NOT display_name="my_pipeline"`
-     *
-     *           * `state="PIPELINE_STATE_FAILED"`
+     *           * `create_time>"2021-05-18T00:00:00Z" OR
+     *           update_time>"2020-05-18T00:00:00Z"` PipelineJobs created or updated
+     *           after 2020-05-18 00:00:00 UTC.
+     *           * `labels.env = "prod"`
+     *           PipelineJobs with label "env" set to "prod".
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if

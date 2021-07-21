@@ -30,13 +30,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :RUNNING, 2
       value :COMPLETE, 3
       value :FAILED, 4
+      value :CACHED, 5
+      value :CANCELLED, 6
     end
   end
 end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         Execution = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.Execution").msgclass
         Execution::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.Execution.State").enummodule

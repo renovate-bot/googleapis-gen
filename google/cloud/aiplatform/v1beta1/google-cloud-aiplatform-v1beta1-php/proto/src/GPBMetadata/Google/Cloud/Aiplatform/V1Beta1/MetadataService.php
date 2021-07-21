@@ -30,7 +30,7 @@ class MetadataService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-˜[
+∞p
 6google/cloud/aiplatform/v1beta1/metadata_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/cloud/aiplatform/v1beta1/artifact.proto-google/cloud/aiplatform/v1beta1/context.proto+google/cloud/aiplatform/v1beta1/event.proto/google/cloud/aiplatform/v1beta1/execution.proto6google/cloud/aiplatform/v1beta1/lineage_subgraph.proto5google/cloud/aiplatform/v1beta1/metadata_schema.proto4google/cloud/aiplatform/v1beta1/metadata_store.proto/google/cloud/aiplatform/v1beta1/operation.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"ø
 CreateMetadataStoreRequest9
 parent (	B)‡A˙A#
@@ -77,7 +77,21 @@ page_token (	
 UpdateArtifactRequest@
 artifact (2).google.cloud.aiplatform.v1beta1.ArtifactB‡A4
 update_mask (2.google.protobuf.FieldMaskB‡A
-allow_missing ("´
+allow_missing ("d
+DeleteArtifactRequest8
+name (	B*‡A˙A$
+"aiplatform.googleapis.com/Artifact
+etag (	B‡A"|
+PurgeArtifactsRequest:
+parent (	B*‡A˙A$"aiplatform.googleapis.com/Artifact
+filter (	B‡A
+force (B‡A"l
+PurgeArtifactsResponse
+purge_count (=
+purge_sample (	B\'˙A$
+"aiplatform.googleapis.com/Artifact"m
+PurgeArtifactsMetadataS
+generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata"´
 CreateContextRequest?
 parent (	B/‡A˙A)
 \'aiplatform.googleapis.com/MetadataStore>
@@ -99,11 +113,22 @@ page_token (	
 UpdateContextRequest>
 context (2(.google.cloud.aiplatform.v1beta1.ContextB‡A4
 update_mask (2.google.protobuf.FieldMaskB‡A
-allow_missing ("^
+allow_missing ("q
 DeleteContextRequest7
 name (	B)‡A˙A#
 !aiplatform.googleapis.com/Context
-force ("ﬂ
+force (
+etag (	B‡A"z
+PurgeContextsRequest9
+parent (	B)‡A˙A#!aiplatform.googleapis.com/Context
+filter (	B‡A
+force (B‡A"j
+PurgeContextsResponse
+purge_count (<
+purge_sample (	B&˙A#
+!aiplatform.googleapis.com/Context"l
+PurgeContextsMetadataS
+generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata"ﬂ
 \'AddContextArtifactsAndExecutionsRequest:
 context (	B)‡A˙A#
 !aiplatform.googleapis.com/Context:
@@ -143,7 +168,21 @@ executions (2*.google.cloud.aiplatform.v1beta1.Execution
 UpdateExecutionRequestB
 	execution (2*.google.cloud.aiplatform.v1beta1.ExecutionB‡A4
 update_mask (2.google.protobuf.FieldMaskB‡A
-allow_missing ("ì
+allow_missing ("f
+DeleteExecutionRequest9
+name (	B+‡A˙A%
+#aiplatform.googleapis.com/Execution
+etag (	B‡A"~
+PurgeExecutionsRequest;
+parent (	B+‡A˙A%#aiplatform.googleapis.com/Execution
+filter (	B‡A
+force (B‡A"n
+PurgeExecutionsResponse
+purge_count (>
+purge_sample (	B(˙A%
+#aiplatform.googleapis.com/Execution"n
+PurgeExecutionsMetadataS
+generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata"ì
 AddExecutionEventsRequest>
 	execution (	B+‡A˙A%
 #aiplatform.googleapis.com/Execution6
@@ -173,7 +212,7 @@ page_token (	
 artifact (	B*‡A˙A$
 "aiplatform.googleapis.com/Artifact
 max_hops (
-filter (	2Ú1
+filter (	2–;
 MetadataService•
 CreateMetadataStore;.google.cloud.aiplatform.v1beta1.CreateMetadataStoreRequest.google.longrunning.Operation"±Ç”‰ìI"7/v1beta1/{parent=projects/*/locations/*}/metadataStores:metadata_store⁄A\'parent,metadata_store,metadata_store_id A5
 MetadataStore$CreateMetadataStoreOperationMetadataƒ
@@ -184,28 +223,38 @@ page_token (	
 CreateArtifact6.google.cloud.aiplatform.v1beta1.CreateArtifactRequest).google.cloud.aiplatform.v1beta1.Artifact"sÇ”‰ìO"C/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/artifacts:artifact⁄Aparent,artifact,artifact_id¡
 GetArtifact3.google.cloud.aiplatform.v1beta1.GetArtifactRequest).google.cloud.aiplatform.v1beta1.Artifact"RÇ”‰ìEC/v1beta1/{name=projects/*/locations/*/metadataStores/*/artifacts/*}⁄Aname‘
 ListArtifacts5.google.cloud.aiplatform.v1beta1.ListArtifactsRequest6.google.cloud.aiplatform.v1beta1.ListArtifactsResponse"TÇ”‰ìEC/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/artifacts⁄AparentÍ
-UpdateArtifact6.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest).google.cloud.aiplatform.v1beta1.Artifact"uÇ”‰ìX2L/v1beta1/{artifact.name=projects/*/locations/*/metadataStores/*/artifacts/*}:artifact⁄Aartifact,update_mask·
+UpdateArtifact6.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest).google.cloud.aiplatform.v1beta1.Artifact"uÇ”‰ìX2L/v1beta1/{artifact.name=projects/*/locations/*/metadataStores/*/artifacts/*}:artifact⁄Aartifact,update_maskÔ
+DeleteArtifact6.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest.google.longrunning.Operation"ÖÇ”‰ìE*C/v1beta1/{name=projects/*/locations/*/metadataStores/*/artifacts/*}⁄Aname A0
+google.protobuf.EmptyDeleteOperationMetadata˙
+PurgeArtifacts6.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest.google.longrunning.Operation"êÇ”‰ìN"I/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/artifacts:purge:*⁄Aparent A0
+PurgeArtifactsResponsePurgeArtifactsMetadata·
 CreateContext5.google.cloud.aiplatform.v1beta1.CreateContextRequest(.google.cloud.aiplatform.v1beta1.Context"oÇ”‰ìM"B/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/contexts:context⁄Aparent,context,context_idΩ
 
 GetContext2.google.cloud.aiplatform.v1beta1.GetContextRequest(.google.cloud.aiplatform.v1beta1.Context"QÇ”‰ìDB/v1beta1/{name=projects/*/locations/*/metadataStores/*/contexts/*}⁄Aname–
 ListContexts4.google.cloud.aiplatform.v1beta1.ListContextsRequest5.google.cloud.aiplatform.v1beta1.ListContextsResponse"SÇ”‰ìDB/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/contexts⁄Aparent„
 UpdateContext5.google.cloud.aiplatform.v1beta1.UpdateContextRequest(.google.cloud.aiplatform.v1beta1.Context"qÇ”‰ìU2J/v1beta1/{context.name=projects/*/locations/*/metadataStores/*/contexts/*}:context⁄Acontext,update_maskÏ
 DeleteContext5.google.cloud.aiplatform.v1beta1.DeleteContextRequest.google.longrunning.Operation"ÑÇ”‰ìD*B/v1beta1/{name=projects/*/locations/*/metadataStores/*/contexts/*}⁄Aname A0
-google.protobuf.EmptyDeleteOperationMetadata 
+google.protobuf.EmptyDeleteOperationMetadataı
+PurgeContexts5.google.cloud.aiplatform.v1beta1.PurgeContextsRequest.google.longrunning.Operation"çÇ”‰ìM"H/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/contexts:purge:*⁄Aparent A.
+PurgeContextsResponsePurgeContextsMetadata 
  AddContextArtifactsAndExecutionsH.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequestI.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsResponse"êÇ”‰ìk"f/v1beta1/{context=projects/*/locations/*/metadataStores/*/contexts/*}:addContextArtifactsAndExecutions:*⁄Acontext,artifacts,executionsã
 AddContextChildren:.google.cloud.aiplatform.v1beta1.AddContextChildrenRequest;.google.cloud.aiplatform.v1beta1.AddContextChildrenResponse"|Ç”‰ì]"X/v1beta1/{context=projects/*/locations/*/metadataStores/*/contexts/*}:addContextChildren:*⁄Acontext,child_contextsâ
 QueryContextLineageSubgraphC.google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest0.google.cloud.aiplatform.v1beta1.LineageSubgraph"sÇ”‰ìca/v1beta1/{context=projects/*/locations/*/metadataStores/*/contexts/*}:queryContextLineageSubgraph⁄AcontextÔ
 CreateExecution7.google.cloud.aiplatform.v1beta1.CreateExecutionRequest*.google.cloud.aiplatform.v1beta1.Execution"wÇ”‰ìQ"D/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/executions:	execution⁄Aparent,execution,execution_id≈
 GetExecution4.google.cloud.aiplatform.v1beta1.GetExecutionRequest*.google.cloud.aiplatform.v1beta1.Execution"SÇ”‰ìFD/v1beta1/{name=projects/*/locations/*/metadataStores/*/executions/*}⁄Anameÿ
 ListExecutions6.google.cloud.aiplatform.v1beta1.ListExecutionsRequest7.google.cloud.aiplatform.v1beta1.ListExecutionsResponse"UÇ”‰ìFD/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/executions⁄AparentÒ
-UpdateExecution7.google.cloud.aiplatform.v1beta1.UpdateExecutionRequest*.google.cloud.aiplatform.v1beta1.Execution"yÇ”‰ì[2N/v1beta1/{execution.name=projects/*/locations/*/metadataStores/*/executions/*}:	execution⁄Aexecution,update_maskâ
+UpdateExecution7.google.cloud.aiplatform.v1beta1.UpdateExecutionRequest*.google.cloud.aiplatform.v1beta1.Execution"yÇ”‰ì[2N/v1beta1/{execution.name=projects/*/locations/*/metadataStores/*/executions/*}:	execution⁄Aexecution,update_maskÚ
+DeleteExecution7.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest.google.longrunning.Operation"ÜÇ”‰ìF*D/v1beta1/{name=projects/*/locations/*/metadataStores/*/executions/*}⁄Aname A0
+google.protobuf.EmptyDeleteOperationMetadataˇ
+PurgeExecutions7.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest.google.longrunning.Operation"ìÇ”‰ìO"J/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/executions:purge:*⁄Aparent A2
+PurgeExecutionsResponsePurgeExecutionsMetadataâ
 AddExecutionEvents:.google.cloud.aiplatform.v1beta1.AddExecutionEventsRequest;.google.cloud.aiplatform.v1beta1.AddExecutionEventsResponse"zÇ”‰ìa"\\/v1beta1/{execution=projects/*/locations/*/metadataStores/*/executions/*}:addExecutionEvents:*⁄Aexecution,eventsò
 QueryExecutionInputsAndOutputsF.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest0.google.cloud.aiplatform.v1beta1.LineageSubgraph"|Ç”‰ìjh/v1beta1/{execution=projects/*/locations/*/metadataStores/*/executions/*}:queryExecutionInputsAndOutputs⁄A	executionñ
 CreateMetadataSchema<.google.cloud.aiplatform.v1beta1.CreateMetadataSchemaRequest/.google.cloud.aiplatform.v1beta1.MetadataSchema"éÇ”‰ì\\"I/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/metadataSchemas:metadata_schema⁄A)parent,metadata_schema,metadata_schema_idŸ
 GetMetadataSchema9.google.cloud.aiplatform.v1beta1.GetMetadataSchemaRequest/.google.cloud.aiplatform.v1beta1.MetadataSchema"XÇ”‰ìKI/v1beta1/{name=projects/*/locations/*/metadataStores/*/metadataSchemas/*}⁄AnameÏ
 ListMetadataSchemas;.google.cloud.aiplatform.v1beta1.ListMetadataSchemasRequest<.google.cloud.aiplatform.v1beta1.ListMetadataSchemasResponse"ZÇ”‰ìKI/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/metadataSchemas⁄Aparentè
-QueryArtifactLineageSubgraphD.google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest0.google.cloud.aiplatform.v1beta1.LineageSubgraph"wÇ”‰ìfd/v1beta1/{artifact=projects/*/locations/*/metadataStores/*/artifacts/*}:queryArtifactLineageSubgraph⁄AartifactM Aaiplatform.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformBà
-#com.google.cloud.aiplatform.v1beta1BMetadataServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+QueryArtifactLineageSubgraphD.google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest0.google.cloud.aiplatform.v1beta1.LineageSubgraph"wÇ”‰ìfd/v1beta1/{artifact=projects/*/locations/*/metadataStores/*/artifacts/*}:queryArtifactLineageSubgraph⁄AartifactM Aaiplatform.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformBÒ
+#com.google.cloud.aiplatform.v1beta1BMetadataServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatform™Google.Cloud.AIPlatform.V1Beta1 Google\\Cloud\\AIPlatform\\V1beta1Í"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

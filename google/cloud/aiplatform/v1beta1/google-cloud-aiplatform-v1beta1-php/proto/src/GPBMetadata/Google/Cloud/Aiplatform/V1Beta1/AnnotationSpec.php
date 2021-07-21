@@ -20,7 +20,7 @@ class AnnotationSpec
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-“
+ü
 5google/cloud/aiplatform/v1beta1/annotation_spec.protogoogle.cloud.aiplatform.v1beta1google/api/resource.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"Ì
 AnnotationSpec
 name (	BàA
@@ -28,8 +28,8 @@ class AnnotationSpec
 create_time (2.google.protobuf.TimestampBàA4
 update_time (2.google.protobuf.TimestampBàA
 etag (	BàA:ŒêAˆ
-(aiplatform.googleapis.com/AnnotationSpec\\projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}B‡
-#com.google.cloud.aiplatform.v1beta1BAnnotationSpecProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+(aiplatform.googleapis.com/AnnotationSpec\\projects/{project}/locations/{location}/datasets/{dataset}/annotationSpecs/{annotation_spec}Bð
+#com.google.cloud.aiplatform.v1beta1BAnnotationSpecProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

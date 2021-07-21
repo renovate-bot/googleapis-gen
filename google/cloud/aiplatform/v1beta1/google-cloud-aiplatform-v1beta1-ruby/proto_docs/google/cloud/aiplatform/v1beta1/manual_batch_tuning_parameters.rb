@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Manual batch tuning parameters.
         # @!attribute [rw] batch_size

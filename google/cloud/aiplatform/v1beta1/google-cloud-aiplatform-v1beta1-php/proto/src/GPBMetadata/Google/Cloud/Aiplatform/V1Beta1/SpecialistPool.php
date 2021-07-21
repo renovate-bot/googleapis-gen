@@ -19,7 +19,7 @@ class SpecialistPool
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ò
+»
 5google/cloud/aiplatform/v1beta1/specialist_pool.protogoogle.cloud.aiplatform.v1beta1google/api/resource.protogoogle/api/annotations.proto"¬
 SpecialistPool
 name (	BàA
@@ -27,8 +27,8 @@ class SpecialistPool
 specialist_managers_count (BàA!
 specialist_manager_emails (	\'
 pending_data_labeling_jobs (	BàA:xêAu
-(aiplatform.googleapis.com/SpecialistPoolIprojects/{project}/locations/{location}/specialistPools/{specialist_pool}B‡
-#com.google.cloud.aiplatform.v1beta1BSpecialistPoolProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+(aiplatform.googleapis.com/SpecialistPoolIprojects/{project}/locations/{location}/specialistPools/{specialist_pool}Bð
+#com.google.cloud.aiplatform.v1beta1BSpecialistPoolProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

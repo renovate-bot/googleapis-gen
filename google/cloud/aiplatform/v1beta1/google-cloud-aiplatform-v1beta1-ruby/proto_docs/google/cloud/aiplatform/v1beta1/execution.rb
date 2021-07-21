@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Instance of a general execution.
         # @!attribute [r] name
@@ -30,7 +30,7 @@ module Google
         #     User provided display name of the Execution.
         #     May be up to 128 Unicode characters.
         # @!attribute [rw] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Execution::State]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Execution::State]
         #     The state of this Execution. This is a property of the Execution, and does
         #     not imply or capture any ongoing process. This property is managed by
         #     clients (such as Vertex Pipelines) and the system does not prescribe
@@ -103,6 +103,12 @@ module Google
 
             # The Execution has failed
             FAILED = 4
+
+            # The Execution completed through Cache hit.
+            CACHED = 5
+
+            # The Execution was cancelled.
+            CANCELLED = 6
           end
         end
       end

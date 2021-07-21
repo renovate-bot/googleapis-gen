@@ -26,6 +26,7 @@ __protobuf__ = proto.module(
     manifest={
         'Endpoint',
         'DeployedModel',
+        'PrivateEndpoints',
     },
 )
 
@@ -86,6 +87,19 @@ class Endpoint(proto.Message):
             Endpoint. If set, this Endpoint and all sub-
             resources of this Endpoint will be secured by
             this key.
+        network (str):
+            The full name of the Google Compute Engine
+            `network </compute/docs/networks-and-firewalls#networks>`__
+            to which the Endpoint should be peered.
+
+            Private services access must already be configured for the
+            network. If left unspecified, the Endpoint is not peered
+            with any network.
+
+            `Format <https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert>`__:
+            projects/{project}/global/networks/{network}. Where
+            {project} is a project number, as in '12345', and {network}
+            is network name.
     """
 
     name = proto.Field(
@@ -133,6 +147,10 @@ class Endpoint(proto.Message):
         proto.MESSAGE,
         number=10,
         message=gca_encryption_spec.EncryptionSpec,
+    )
+    network = proto.Field(
+        proto.STRING,
+        number=13,
     )
 
 
@@ -206,6 +224,13 @@ class DeployedModel(proto.Message):
             requests at a high queries per second rate
             (QPS). Estimate your costs before enabling this
             option.
+        private_endpoints (google.cloud.aiplatform_v1beta1.types.PrivateEndpoints):
+            Output only. Provide paths for users to send
+            predict/explain/health requests directly to the deployed
+            model services running on Cloud via private services access.
+            This field is populated if
+            [network][google.cloud.aiplatform.v1beta1.Endpoint.network]
+            is configured.
     """
 
     dedicated_resources = proto.Field(
@@ -253,6 +278,41 @@ class DeployedModel(proto.Message):
     enable_access_logging = proto.Field(
         proto.BOOL,
         number=13,
+    )
+    private_endpoints = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        message='PrivateEndpoints',
+    )
+
+
+class PrivateEndpoints(proto.Message):
+    r"""PrivateEndpoints is used to provide paths for users to send
+    requests via private services access.
+
+    Attributes:
+        predict_http_uri (str):
+            Output only. Http(s) path to send prediction
+            requests.
+        explain_http_uri (str):
+            Output only. Http(s) path to send explain
+            requests.
+        health_http_uri (str):
+            Output only. Http(s) path to send health
+            check requests.
+    """
+
+    predict_http_uri = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    explain_http_uri = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    health_http_uri = proto.Field(
+        proto.STRING,
+        number=3,
     )
 
 

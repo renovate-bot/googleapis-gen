@@ -28,7 +28,7 @@ class DatasetService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ì)
+µ*
 5google/cloud/aiplatform/v1beta1/dataset_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto0google/cloud/aiplatform/v1beta1/annotation.proto5google/cloud/aiplatform/v1beta1/annotation_spec.proto/google/cloud/aiplatform/v1beta1/data_item.proto-google/cloud/aiplatform/v1beta1/dataset.proto/google/cloud/aiplatform/v1beta1/operation.proto7google/cloud/aiplatform/v1beta1/training_pipeline.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"‘
 CreateDatasetRequest9
 parent (	B)àAúA#
@@ -120,8 +120,8 @@ ExportData2.google.cloud.aiplatform.v1beta1.ExportDataRequest.google.longrunn
 ExportDataResponseExportDataOperationMetadataÎ
 ListDataItems5.google.cloud.aiplatform.v1beta1.ListDataItemsRequest6.google.cloud.aiplatform.v1beta1.ListDataItemsResponse"N‚Óä“?=/v1beta1/{parent=projects/*/locations/*/datasets/*}/dataItemsÚAparentÓ
 GetAnnotationSpec9.google.cloud.aiplatform.v1beta1.GetAnnotationSpecRequest/.google.cloud.aiplatform.v1beta1.AnnotationSpec"R‚Óä“EC/v1beta1/{name=projects/*/locations/*/datasets/*/annotationSpecs/*}ÚAnameâ
-ListAnnotations7.google.cloud.aiplatform.v1beta1.ListAnnotationsRequest8.google.cloud.aiplatform.v1beta1.ListAnnotationsResponse"\\‚Óä“MK/v1beta1/{parent=projects/*/locations/*/datasets/*/dataItems/*}/annotationsÚAparentMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB‡
-#com.google.cloud.aiplatform.v1beta1BDatasetServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+ListAnnotations7.google.cloud.aiplatform.v1beta1.ListAnnotationsRequest8.google.cloud.aiplatform.v1beta1.ListAnnotationsResponse"\\‚Óä“MK/v1beta1/{parent=projects/*/locations/*/datasets/*/dataItems/*}/annotationsÚAparentMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBð
+#com.google.cloud.aiplatform.v1beta1BDatasetServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # TensorboardTimeSeries maps to times series produced in training runs
         # @!attribute [r] name
@@ -34,7 +34,7 @@ module Google
         #   @return [::String]
         #     Description of this TensorboardTimeSeries.
         # @!attribute [rw] value_type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardTimeSeries::ValueType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries::ValueType]
         #     Required. Immutable. Type of TensorboardTimeSeries value.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -54,7 +54,7 @@ module Google
         #   @return [::String]
         #     Data of the current plugin, with the size limited to 65KB.
         # @!attribute [r] metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardTimeSeries::Metadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries::Metadata]
         #     Output only. Scalar, Tensor, or Blob metadata for this TensorboardTimeSeries.
         class TensorboardTimeSeries
           include ::Google::Protobuf::MessageExts

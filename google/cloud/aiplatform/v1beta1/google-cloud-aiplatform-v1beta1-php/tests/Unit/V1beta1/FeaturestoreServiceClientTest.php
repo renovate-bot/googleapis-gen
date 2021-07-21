@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1beta1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,24 +29,24 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1beta1\BatchCreateFeaturesResponse;
-use Google\Cloud\Aiplatform\V1beta1\BatchReadFeatureValuesResponse;
+use Google\Cloud\AIPlatform\V1beta1\BatchCreateFeaturesResponse;
+use Google\Cloud\AIPlatform\V1beta1\BatchReadFeatureValuesResponse;
 
-use Google\Cloud\Aiplatform\V1beta1\EntityType;
-use Google\Cloud\Aiplatform\V1beta1\ExportFeatureValuesResponse;
-use Google\Cloud\Aiplatform\V1beta1\Feature;
-use Google\Cloud\Aiplatform\V1beta1\Feature\ValueType;
-use Google\Cloud\Aiplatform\V1beta1\FeatureSelector;
-use Google\Cloud\Aiplatform\V1beta1\Featurestore;
-use Google\Cloud\Aiplatform\V1beta1\Featurestore\OnlineServingConfig;
-use Google\Cloud\Aiplatform\V1beta1\FeaturestoreServiceClient;
-use Google\Cloud\Aiplatform\V1beta1\FeatureValueDestination;
-use Google\Cloud\Aiplatform\V1beta1\IdMatcher;
-use Google\Cloud\Aiplatform\V1beta1\ImportFeatureValuesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListEntityTypesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListFeaturesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListFeaturestoresResponse;
-use Google\Cloud\Aiplatform\V1beta1\SearchFeaturesResponse;
+use Google\Cloud\AIPlatform\V1beta1\EntityType;
+use Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesResponse;
+use Google\Cloud\AIPlatform\V1beta1\Feature;
+use Google\Cloud\AIPlatform\V1beta1\Feature\ValueType;
+use Google\Cloud\AIPlatform\V1beta1\FeatureSelector;
+use Google\Cloud\AIPlatform\V1beta1\Featurestore;
+use Google\Cloud\AIPlatform\V1beta1\Featurestore\OnlineServingConfig;
+use Google\Cloud\AIPlatform\V1beta1\FeaturestoreServiceClient;
+use Google\Cloud\AIPlatform\V1beta1\FeatureValueDestination;
+use Google\Cloud\AIPlatform\V1beta1\IdMatcher;
+use Google\Cloud\AIPlatform\V1beta1\ImportFeatureValuesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListEntityTypesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListFeaturesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListFeaturestoresResponse;
+use Google\Cloud\AIPlatform\V1beta1\SearchFeaturesResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

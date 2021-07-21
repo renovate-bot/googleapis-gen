@@ -30,7 +30,7 @@ class JobService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ži
+‡j
 1google/cloud/aiplatform/v1beta1/job_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto:google/cloud/aiplatform/v1beta1/batch_prediction_job.proto0google/cloud/aiplatform/v1beta1/custom_job.proto7google/cloud/aiplatform/v1beta1/data_labeling_job.proto?google/cloud/aiplatform/v1beta1/hyperparameter_tuning_job.protoEgoogle/cloud/aiplatform/v1beta1/model_deployment_monitoring_job.proto/google/cloud/aiplatform/v1beta1/operation.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto"˜
 CreateCustomJobRequest9
 parent (	B)àAúA#
@@ -217,8 +217,8 @@ custom_jobÚAparent,custom_job´
 "DeleteModelDeploymentMonitoringJobJ.google.cloud.aiplatform.v1beta1.DeleteModelDeploymentMonitoringJobRequest.google.longrunning.Operation"ˆ‚Óä“H*F/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}ÚAnameÊA0
 google.protobuf.EmptyDeleteOperationMetadataæ
 !PauseModelDeploymentMonitoringJobI.google.cloud.aiplatform.v1beta1.PauseModelDeploymentMonitoringJobRequest.google.protobuf.Empty"^‚Óä“Q"L/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}:pause:*ÚAnameé
-"ResumeModelDeploymentMonitoringJobJ.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest.google.protobuf.Empty"_‚Óä“R"M/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}:resume:*ÚAnameMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBƒ
-#com.google.cloud.aiplatform.v1beta1BJobServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+"ResumeModelDeploymentMonitoringJobJ.google.cloud.aiplatform.v1beta1.ResumeModelDeploymentMonitoringJobRequest.google.protobuf.Empty"_‚Óä“R"M/v1beta1/{name=projects/*/locations/*/modelDeploymentMonitoringJobs/*}:resume:*ÚAnameMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBì
+#com.google.cloud.aiplatform.v1beta1BJobServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

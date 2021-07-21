@@ -19,16 +19,16 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#create_featurestore FeaturestoreService.CreateFeaturestore}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#create_featurestore FeaturestoreService.CreateFeaturestore}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to create Featurestores.
         #     Format:
         #     `projects/{project}/locations/{location}'`
         # @!attribute [rw] featurestore
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Featurestore]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Featurestore]
         #     Required. The Featurestore to create.
         # @!attribute [rw] featurestore_id
         #   @return [::String]
@@ -44,7 +44,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#get_featurestore FeaturestoreService.GetFeaturestore}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#get_featurestore FeaturestoreService.GetFeaturestore}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Featurestore resource.
@@ -53,7 +53,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_featurestores FeaturestoreService.ListFeaturestores}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_featurestores FeaturestoreService.ListFeaturestores}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to list Featurestores.
@@ -89,11 +89,11 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     A page token, received from a previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_featurestores FeaturestoreService.ListFeaturestores} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_featurestores FeaturestoreService.ListFeaturestores} call.
         #     Provide this to retrieve the subsequent page.
         #
         #     When paginating, all other parameters provided to
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_featurestores FeaturestoreService.ListFeaturestores} must
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_featurestores FeaturestoreService.ListFeaturestores} must
         #     match the call that provided the page token.
         # @!attribute [rw] order_by
         #   @return [::String]
@@ -112,13 +112,13 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_featurestores FeaturestoreService.ListFeaturestores}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_featurestores FeaturestoreService.ListFeaturestores}.
         # @!attribute [rw] featurestores
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Featurestore>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Featurestore>]
         #     The Featurestores matching the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
-        #     A token, which can be sent as {::Google::Cloud::Aiplatform::V1beta1::ListFeaturestoresRequest#page_token ListFeaturestoresRequest.page_token} to
+        #     A token, which can be sent as {::Google::Cloud::AIPlatform::V1beta1::ListFeaturestoresRequest#page_token ListFeaturestoresRequest.page_token} to
         #     retrieve the next page.
         #     If this field is omitted, there are no subsequent pages.
         class ListFeaturestoresResponse
@@ -126,9 +126,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#update_featurestore FeaturestoreService.UpdateFeaturestore}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#update_featurestore FeaturestoreService.UpdateFeaturestore}.
         # @!attribute [rw] featurestore
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Featurestore]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Featurestore]
         #     Required. The Featurestore's `name` field is used to identify the Featurestore to be
         #     updated.
         #     Format:
@@ -152,7 +152,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#delete_featurestore FeaturestoreService.DeleteFeaturestore}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#delete_featurestore FeaturestoreService.DeleteFeaturestore}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Featurestore to be deleted.
@@ -168,13 +168,13 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#import_feature_values FeaturestoreService.ImportFeatureValues}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#import_feature_values FeaturestoreService.ImportFeatureValues}.
         # @!attribute [rw] avro_source
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::AvroSource]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::AvroSource]
         # @!attribute [rw] bigquery_source
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::BigQuerySource]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::BigQuerySource]
         # @!attribute [rw] csv_source
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::CsvSource]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::CsvSource]
         # @!attribute [rw] feature_time_field
         #   @return [::String]
         #     Source column that holds the Feature timestamp for all Feature
@@ -193,7 +193,7 @@ module Google
         #     Source column that holds entity IDs. If not provided, entity IDs are
         #     extracted from the column named `entity_id`.
         # @!attribute [rw] feature_specs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::ImportFeatureValuesRequest::FeatureSpec>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ImportFeatureValuesRequest::FeatureSpec>]
         #     Required. Specifications defining which Feature values to import from the entity. The
         #     request fails if no feature_specs are provided, and having multiple
         #     feature_specs for one Feature is not allowed.
@@ -229,7 +229,7 @@ module Google
           end
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#import_feature_values FeaturestoreService.ImportFeatureValues}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#import_feature_values FeaturestoreService.ImportFeatureValues}.
         # @!attribute [rw] imported_entity_count
         #   @return [::Integer]
         #     Number of entities that have been imported by the operation.
@@ -248,10 +248,10 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#batch_read_feature_values FeaturestoreService.BatchReadFeatureValues}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#batch_read_feature_values FeaturestoreService.BatchReadFeatureValues}.
         # (- Next Id: 6 -)
         # @!attribute [rw] csv_read_instances
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::CsvSource]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::CsvSource]
         #     Each read instance consists of exactly one read timestamp and one or more
         #     entity IDs identifying entities of the corresponding EntityTypes whose
         #     Features are requested.
@@ -276,16 +276,28 @@ module Google
         #
         #     Values in the timestamp column must use the RFC 3339 format, e.g.
         #     `2012-07-30T10:43:17.123Z`.
+        # @!attribute [rw] bigquery_read_instances
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::BigQuerySource]
+        #     Similar to csv_read_instances, but from BigQuery source.
         # @!attribute [rw] featurestore
         #   @return [::String]
         #     Required. The resource name of the Featurestore from which to query Feature values.
         #     Format:
         #     `projects/{project}/locations/{location}/featurestores/{featurestore}`
         # @!attribute [rw] destination
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureValueDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureValueDestination]
         #     Required. Specifies output location and format.
+        # @!attribute [rw] pass_through_fields
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::BatchReadFeatureValuesRequest::PassThroughField>]
+        #     When not empty, the specified fields in the *_read_instances source will be
+        #     joined as-is in the output, in addition to those fields from the
+        #     Featurestore Entity.
+        #
+        #     For BigQuery source, the type of the pass-through values will be
+        #     automatically inferred. For CSV source, the pass-through values will be
+        #     passed as opaque bytes.
         # @!attribute [rw] entity_type_specs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::BatchReadFeatureValuesRequest::EntityTypeSpec>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::BatchReadFeatureValuesRequest::EntityTypeSpec>]
         #     Required. Specifies EntityType grouping Features to read values of and settings.
         #     Each EntityType referenced in
         #     [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
@@ -295,18 +307,28 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
 
+          # Describe pass-through fields in read_instance source.
+          # @!attribute [rw] field_name
+          #   @return [::String]
+          #     Required. The name of the field in the CSV header or the name of the column in
+          #     BigQuery table. The naming restriction is the same as {::Google::Cloud::AIPlatform::V1beta1::Feature#name Feature.name}.
+          class PassThroughField
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
           # Selects Features of an EntityType to read values of and specifies read
           # settings.
           # @!attribute [rw] entity_type_id
           #   @return [::String]
           #     Required. ID of the EntityType to select Features. The EntityType id is the
-          #     {::Google::Cloud::Aiplatform::V1beta1::CreateEntityTypeRequest#entity_type_id entity_type_id} specified
+          #     {::Google::Cloud::AIPlatform::V1beta1::CreateEntityTypeRequest#entity_type_id entity_type_id} specified
           #     during EntityType creation.
           # @!attribute [rw] feature_selector
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureSelector]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureSelector]
           #     Required. Selectors choosing which Feature values to read from the EntityType.
           # @!attribute [rw] settings
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::DestinationFeatureSetting>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::DestinationFeatureSetting>]
           #     Per-Feature settings for the batch read.
           class EntityTypeSpec
             include ::Google::Protobuf::MessageExts
@@ -314,9 +336,9 @@ module Google
           end
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#export_feature_values FeaturestoreService.ExportFeatureValues}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#export_feature_values FeaturestoreService.ExportFeatureValues}.
         # @!attribute [rw] snapshot_export
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ExportFeatureValuesRequest::SnapshotExport]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ExportFeatureValuesRequest::SnapshotExport]
         #     Exports Feature values of all entities of the EntityType as of a snapshot
         #     time.
         # @!attribute [rw] entity_type
@@ -325,13 +347,13 @@ module Google
         #     Format:
         #     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
         # @!attribute [rw] destination
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureValueDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureValueDestination]
         #     Required. Specifies destination location and format.
         # @!attribute [rw] feature_selector
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureSelector]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureSelector]
         #     Required. Selects Features to export values of.
         # @!attribute [rw] settings
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::DestinationFeatureSetting>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::DestinationFeatureSetting>]
         #     Per-Feature export settings.
         class ExportFeatureValuesRequest
           include ::Google::Protobuf::MessageExts
@@ -363,12 +385,12 @@ module Google
 
         # A destination location for Feature values and format.
         # @!attribute [rw] bigquery_destination
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::BigQueryDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::BigQueryDestination]
         #     Output in BigQuery format.
-        #     {::Google::Cloud::Aiplatform::V1beta1::BigQueryDestination#output_uri BigQueryDestination.output_uri} in
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeatureValueDestination#bigquery_destination FeatureValueDestination.bigquery_destination} must refer to a table.
+        #     {::Google::Cloud::AIPlatform::V1beta1::BigQueryDestination#output_uri BigQueryDestination.output_uri} in
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeatureValueDestination#bigquery_destination FeatureValueDestination.bigquery_destination} must refer to a table.
         # @!attribute [rw] tfrecord_destination
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TFRecordDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TFRecordDestination]
         #     Output in TFRecord format.
         #
         #     Below are the mapping from Feature value type
@@ -381,7 +403,7 @@ module Google
         #         true -> byte_string("true"), false -> byte_string("false")
         #         BOOL, BOOL_ARRAY (true, false)             | BYTES_LIST
         # @!attribute [rw] csv_destination
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::CsvDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::CsvDestination]
         #     Output in CSV format. Array Feature value types are not allowed in CSV
         #     format.
         class FeatureValueDestination
@@ -389,26 +411,26 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#export_feature_values FeaturestoreService.ExportFeatureValues}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#export_feature_values FeaturestoreService.ExportFeatureValues}.
         class ExportFeatureValuesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#batch_read_feature_values FeaturestoreService.BatchReadFeatureValues}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#batch_read_feature_values FeaturestoreService.BatchReadFeatureValues}.
         class BatchReadFeatureValuesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#create_entity_type FeaturestoreService.CreateEntityType}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#create_entity_type FeaturestoreService.CreateEntityType}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Featurestore to create EntityTypes.
         #     Format:
         #     `projects/{project}/locations/{location}/featurestores/{featurestore}`
         # @!attribute [rw] entity_type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EntityType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EntityType]
         #     The EntityType to create.
         # @!attribute [rw] entity_type_id
         #   @return [::String]
@@ -424,7 +446,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#get_entity_type FeaturestoreService.GetEntityType}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#get_entity_type FeaturestoreService.GetEntityType}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the EntityType resource.
@@ -435,7 +457,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_entity_types FeaturestoreService.ListEntityTypes}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_entity_types FeaturestoreService.ListEntityTypes}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Featurestore to list EntityTypes.
@@ -470,11 +492,11 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     A page token, received from a previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_entity_types FeaturestoreService.ListEntityTypes} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_entity_types FeaturestoreService.ListEntityTypes} call.
         #     Provide this to retrieve the subsequent page.
         #
         #     When paginating, all other parameters provided to
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_entity_types FeaturestoreService.ListEntityTypes} must
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_entity_types FeaturestoreService.ListEntityTypes} must
         #     match the call that provided the page token.
         # @!attribute [rw] order_by
         #   @return [::String]
@@ -494,13 +516,13 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_entity_types FeaturestoreService.ListEntityTypes}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_entity_types FeaturestoreService.ListEntityTypes}.
         # @!attribute [rw] entity_types
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::EntityType>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::EntityType>]
         #     The EntityTypes matching the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
-        #     A token, which can be sent as {::Google::Cloud::Aiplatform::V1beta1::ListEntityTypesRequest#page_token ListEntityTypesRequest.page_token} to
+        #     A token, which can be sent as {::Google::Cloud::AIPlatform::V1beta1::ListEntityTypesRequest#page_token ListEntityTypesRequest.page_token} to
         #     retrieve the next page.
         #     If this field is omitted, there are no subsequent pages.
         class ListEntityTypesResponse
@@ -508,9 +530,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#update_entity_type FeaturestoreService.UpdateEntityType}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#update_entity_type FeaturestoreService.UpdateEntityType}.
         # @!attribute [rw] entity_type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EntityType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EntityType]
         #     Required. The EntityType's `name` field is used to identify the EntityType to be
         #     updated.
         #     Format:
@@ -551,14 +573,14 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#create_feature FeaturestoreService.CreateFeature}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#create_feature FeaturestoreService.CreateFeature}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the EntityType to create a Feature.
         #     Format:
         #     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
         # @!attribute [rw] feature
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Feature]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Feature]
         #     Required. The Feature to create.
         # @!attribute [rw] feature_id
         #   @return [::String]
@@ -574,14 +596,14 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#batch_create_features FeaturestoreService.BatchCreateFeatures}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#batch_create_features FeaturestoreService.BatchCreateFeatures}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the EntityType to create the batch of Features under.
         #     Format:
         #     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
         # @!attribute [rw] requests
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::CreateFeatureRequest>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::CreateFeatureRequest>]
         #     Required. The request message specifying the Features to create. All Features must be
         #     created under the same parent EntityType. The `parent` field in each child
         #     request message can be omitted. If `parent` is set in a child request, then
@@ -591,16 +613,16 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#batch_create_features FeaturestoreService.BatchCreateFeatures}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#batch_create_features FeaturestoreService.BatchCreateFeatures}.
         # @!attribute [rw] features
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Feature>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Feature>]
         #     The Features created.
         class BatchCreateFeaturesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#get_feature FeaturestoreService.GetFeature}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#get_feature FeaturestoreService.GetFeature}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Feature resource.
@@ -611,7 +633,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_features FeaturestoreService.ListFeatures}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_features FeaturestoreService.ListFeatures}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to list Features.
@@ -648,11 +670,11 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     A page token, received from a previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_features FeaturestoreService.ListFeatures} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_features FeaturestoreService.ListFeatures} call.
         #     Provide this to retrieve the subsequent page.
         #
         #     When paginating, all other parameters provided to
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_features FeaturestoreService.ListFeatures} must
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_features FeaturestoreService.ListFeatures} must
         #     match the call that provided the page token.
         # @!attribute [rw] order_by
         #   @return [::String]
@@ -669,22 +691,22 @@ module Google
         #     Mask specifying which fields to read.
         # @!attribute [rw] latest_stats_count
         #   @return [::Integer]
-        #     If set, return the most recent {::Google::Cloud::Aiplatform::V1beta1::ListFeaturesRequest#latest_stats_count ListFeaturesRequest.latest_stats_count}
+        #     If set, return the most recent {::Google::Cloud::AIPlatform::V1beta1::ListFeaturesRequest#latest_stats_count ListFeaturesRequest.latest_stats_count}
         #     of stats for each Feature in response. Valid value is [0, 10]. If number of
-        #     stats exists < {::Google::Cloud::Aiplatform::V1beta1::ListFeaturesRequest#latest_stats_count ListFeaturesRequest.latest_stats_count}, return all
+        #     stats exists < {::Google::Cloud::AIPlatform::V1beta1::ListFeaturesRequest#latest_stats_count ListFeaturesRequest.latest_stats_count}, return all
         #     existing stats.
         class ListFeaturesRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#list_features FeaturestoreService.ListFeatures}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#list_features FeaturestoreService.ListFeatures}.
         # @!attribute [rw] features
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Feature>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Feature>]
         #     The Features matching the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
-        #     A token, which can be sent as {::Google::Cloud::Aiplatform::V1beta1::ListFeaturesRequest#page_token ListFeaturesRequest.page_token} to
+        #     A token, which can be sent as {::Google::Cloud::AIPlatform::V1beta1::ListFeaturesRequest#page_token ListFeaturesRequest.page_token} to
         #     retrieve the next page.
         #     If this field is omitted, there are no subsequent pages.
         class ListFeaturesResponse
@@ -692,7 +714,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#search_features FeaturestoreService.SearchFeatures}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#search_features FeaturestoreService.SearchFeatures}.
         # @!attribute [rw] location
         #   @return [::String]
         #     Required. The resource name of the Location to search Features.
@@ -768,20 +790,20 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     A page token, received from a previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#search_features FeaturestoreService.SearchFeatures} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#search_features FeaturestoreService.SearchFeatures} call.
         #     Provide this to retrieve the subsequent page.
         #
         #     When paginating, all other parameters provided to
-        #     {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#search_features FeaturestoreService.SearchFeatures}, except `page_size`, must
+        #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#search_features FeaturestoreService.SearchFeatures}, except `page_size`, must
         #     match the call that provided the page token.
         class SearchFeaturesRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#search_features FeaturestoreService.SearchFeatures}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#search_features FeaturestoreService.SearchFeatures}.
         # @!attribute [rw] features
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Feature>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Feature>]
         #     The Features matching the request.
         #
         #     Fields returned:
@@ -793,7 +815,7 @@ module Google
         #      * `update_time`
         # @!attribute [rw] next_page_token
         #   @return [::String]
-        #     A token, which can be sent as {::Google::Cloud::Aiplatform::V1beta1::SearchFeaturesRequest#page_token SearchFeaturesRequest.page_token} to
+        #     A token, which can be sent as {::Google::Cloud::AIPlatform::V1beta1::SearchFeaturesRequest#page_token SearchFeaturesRequest.page_token} to
         #     retrieve the next page.
         #     If this field is omitted, there are no subsequent pages.
         class SearchFeaturesResponse
@@ -801,9 +823,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#update_feature FeaturestoreService.UpdateFeature}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#update_feature FeaturestoreService.UpdateFeature}.
         # @!attribute [rw] feature
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Feature]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Feature]
         #     Required. The Feature's `name` field is used to identify the Feature to be
         #     updated.
         #     Format:
@@ -829,7 +851,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client#delete_feature FeaturestoreService.DeleteFeature}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client#delete_feature FeaturestoreService.DeleteFeature}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Features to be deleted.
@@ -842,7 +864,7 @@ module Google
 
         # Details of operations that perform create Featurestore.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Featurestore.
         class CreateFeaturestoreOperationMetadata
           include ::Google::Protobuf::MessageExts
@@ -851,7 +873,7 @@ module Google
 
         # Details of operations that perform update Featurestore.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Featurestore.
         class UpdateFeaturestoreOperationMetadata
           include ::Google::Protobuf::MessageExts
@@ -860,7 +882,7 @@ module Google
 
         # Details of operations that perform import feature values.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Featurestore import feature values.
         # @!attribute [rw] imported_entity_count
         #   @return [::Integer]
@@ -882,7 +904,7 @@ module Google
 
         # Details of operations that exports Features values.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Featurestore export Feature values.
         class ExportFeatureValuesOperationMetadata
           include ::Google::Protobuf::MessageExts
@@ -891,7 +913,7 @@ module Google
 
         # Details of operations that batch reads Feature values.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Featurestore batch read Features values.
         class BatchReadFeatureValuesOperationMetadata
           include ::Google::Protobuf::MessageExts
@@ -900,7 +922,7 @@ module Google
 
         # Details of operations that perform create EntityType.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for EntityType.
         class CreateEntityTypeOperationMetadata
           include ::Google::Protobuf::MessageExts
@@ -909,7 +931,7 @@ module Google
 
         # Details of operations that perform create Feature.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Feature.
         class CreateFeatureOperationMetadata
           include ::Google::Protobuf::MessageExts
@@ -918,7 +940,7 @@ module Google
 
         # Details of operations that perform batch create Features.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Feature.
         class BatchCreateFeaturesOperationMetadata
           include ::Google::Protobuf::MessageExts

@@ -17,7 +17,7 @@ class Types
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ï
+¹
 +google/cloud/aiplatform/v1beta1/types.protogoogle.cloud.aiplatform.v1beta1"
 	BoolArray
 values ("
@@ -27,9 +27,9 @@ class Types
 Int64Array
 values ("
 StringArray
-values (	B~
+values (	Bç
 #com.google.cloud.aiplatform.v1beta1B
-TypesProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+TypesProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

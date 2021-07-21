@@ -187,6 +187,17 @@ class EndpointServiceClient(metaclass=EndpointServiceClientMeta):
         return m.groupdict() if m else {}
 
     @staticmethod
+    def network_path(project: str,network: str,) -> str:
+        """Returns a fully-qualified network string."""
+        return "projects/{project}/global/networks/{network}".format(project=project, network=network, )
+
+    @staticmethod
+    def parse_network_path(path: str) -> Dict[str,str]:
+        """Parses a network path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/global/networks/(?P<network>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
         """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )

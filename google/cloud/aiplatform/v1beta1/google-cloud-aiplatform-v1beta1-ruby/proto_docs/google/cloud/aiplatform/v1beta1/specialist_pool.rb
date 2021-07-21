@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # SpecialistPool represents customers' own workforce to work on their data
         # labeling jobs. It includes a group of specialist managers who are responsible

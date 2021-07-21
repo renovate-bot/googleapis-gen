@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1beta1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,17 +29,17 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1beta1\CheckTrialEarlyStoppingStateResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListOptimalTrialsResponse;
+use Google\Cloud\AIPlatform\V1beta1\CheckTrialEarlyStoppingStateResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListOptimalTrialsResponse;
 
-use Google\Cloud\Aiplatform\V1beta1\ListStudiesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTrialsResponse;
-use Google\Cloud\Aiplatform\V1beta1\Measurement;
-use Google\Cloud\Aiplatform\V1beta1\Study;
-use Google\Cloud\Aiplatform\V1beta1\StudySpec;
-use Google\Cloud\Aiplatform\V1beta1\SuggestTrialsResponse;
-use Google\Cloud\Aiplatform\V1beta1\Trial;
-use Google\Cloud\Aiplatform\V1beta1\VizierServiceClient;
+use Google\Cloud\AIPlatform\V1beta1\ListStudiesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTrialsResponse;
+use Google\Cloud\AIPlatform\V1beta1\Measurement;
+use Google\Cloud\AIPlatform\V1beta1\Study;
+use Google\Cloud\AIPlatform\V1beta1\StudySpec;
+use Google\Cloud\AIPlatform\V1beta1\SuggestTrialsResponse;
+use Google\Cloud\AIPlatform\V1beta1\Trial;
+use Google\Cloud\AIPlatform\V1beta1\VizierServiceClient;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

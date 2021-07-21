@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1beta1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,13 +29,13 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1beta1\DeployedIndex;
-use Google\Cloud\Aiplatform\V1beta1\DeployIndexResponse;
+use Google\Cloud\AIPlatform\V1beta1\DeployedIndex;
+use Google\Cloud\AIPlatform\V1beta1\DeployIndexResponse;
 
-use Google\Cloud\Aiplatform\V1beta1\IndexEndpoint;
-use Google\Cloud\Aiplatform\V1beta1\IndexEndpointServiceClient;
-use Google\Cloud\Aiplatform\V1beta1\ListIndexEndpointsResponse;
-use Google\Cloud\Aiplatform\V1beta1\UndeployIndexResponse;
+use Google\Cloud\AIPlatform\V1beta1\IndexEndpoint;
+use Google\Cloud\AIPlatform\V1beta1\IndexEndpointServiceClient;
+use Google\Cloud\AIPlatform\V1beta1\ListIndexEndpointsResponse;
+use Google\Cloud\AIPlatform\V1beta1\UndeployIndexResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

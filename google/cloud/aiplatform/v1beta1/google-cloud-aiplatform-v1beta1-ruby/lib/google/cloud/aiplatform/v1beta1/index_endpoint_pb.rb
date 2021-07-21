@@ -32,6 +32,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :automatic_resources, :message, 7, "google.cloud.aiplatform.v1beta1.AutomaticResources"
       optional :enable_access_logging, :bool, 8
       optional :deployed_index_auth_config, :message, 9, "google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig"
+      repeated :reserved_ip_ranges, :string, 10
     end
     add_message "google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig" do
       optional :auth_provider, :message, 1, "google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider"
@@ -48,7 +49,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         IndexEndpoint = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.IndexEndpoint").msgclass
         DeployedIndex = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeployedIndex").msgclass

@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -39,23 +39,23 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\DeleteModelRequest;
-use Google\Cloud\Aiplatform\V1beta1\ExportModelRequest;
-use Google\Cloud\Aiplatform\V1beta1\ExportModelRequest\OutputConfig;
-use Google\Cloud\Aiplatform\V1beta1\GetModelEvaluationRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetModelEvaluationSliceRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetModelRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListModelEvaluationSlicesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListModelEvaluationSlicesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListModelEvaluationsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListModelEvaluationsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListModelsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListModelsResponse;
-use Google\Cloud\Aiplatform\V1beta1\Model;
-use Google\Cloud\Aiplatform\V1beta1\ModelEvaluation;
-use Google\Cloud\Aiplatform\V1beta1\ModelEvaluationSlice;
-use Google\Cloud\Aiplatform\V1beta1\UpdateModelRequest;
-use Google\Cloud\Aiplatform\V1beta1\UploadModelRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteModelRequest;
+use Google\Cloud\AIPlatform\V1beta1\ExportModelRequest;
+use Google\Cloud\AIPlatform\V1beta1\ExportModelRequest\OutputConfig;
+use Google\Cloud\AIPlatform\V1beta1\GetModelEvaluationRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetModelEvaluationSliceRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetModelRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListModelEvaluationSlicesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListModelEvaluationSlicesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListModelEvaluationsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListModelEvaluationsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListModelsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListModelsResponse;
+use Google\Cloud\AIPlatform\V1beta1\Model;
+use Google\Cloud\AIPlatform\V1beta1\ModelEvaluation;
+use Google\Cloud\AIPlatform\V1beta1\ModelEvaluationSlice;
+use Google\Cloud\AIPlatform\V1beta1\UpdateModelRequest;
+use Google\Cloud\AIPlatform\V1beta1\UploadModelRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -645,7 +645,7 @@ class ModelServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Model
+     * @return \Google\Cloud\AIPlatform\V1beta1\Model
      *
      * @throws ApiException if the remote call fails
      *
@@ -689,7 +689,7 @@ class ModelServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\ModelEvaluation
+     * @return \Google\Cloud\AIPlatform\V1beta1\ModelEvaluation
      *
      * @throws ApiException if the remote call fails
      *
@@ -733,7 +733,7 @@ class ModelServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\ModelEvaluationSlice
+     * @return \Google\Cloud\AIPlatform\V1beta1\ModelEvaluationSlice
      *
      * @throws ApiException if the remote call fails
      *
@@ -1047,7 +1047,7 @@ class ModelServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Model
+     * @return \Google\Cloud\AIPlatform\V1beta1\Model
      *
      * @throws ApiException if the remote call fails
      *

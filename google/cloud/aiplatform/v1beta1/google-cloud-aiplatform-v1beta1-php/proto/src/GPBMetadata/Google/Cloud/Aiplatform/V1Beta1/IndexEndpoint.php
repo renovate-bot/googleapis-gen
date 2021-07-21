@@ -22,7 +22,7 @@ class IndexEndpoint
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ã
+÷
 4google/cloud/aiplatform/v1beta1/index_endpoint.protogoogle.cloud.aiplatform.v1beta1google/api/field_behavior.protogoogle/api/resource.proto7google/cloud/aiplatform/v1beta1/machine_resources.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"¶
 IndexEndpoint
 name (	B‡A
@@ -37,7 +37,7 @@ class IndexEndpoint
 LabelsEntry
 key (	
 value (	:8:uÍAr
-\'aiplatform.googleapis.com/IndexEndpointGprojects/{project}/locations/{location}/indexEndpoints/{index_endpoint}"î
+\'aiplatform.googleapis.com/IndexEndpointGprojects/{project}/locations/{location}/indexEndpoints/{index_endpoint}"µ
 DeployedIndex
 id (	B‡A6
 index (	B\'‡A˙A!
@@ -48,15 +48,17 @@ class IndexEndpoint
 index_sync_time (2.google.protobuf.TimestampB‡AU
 automatic_resources (23.google.cloud.aiplatform.v1beta1.AutomaticResourcesB‡A"
 enable_access_logging (B‡Aa
-deployed_index_auth_config	 (28.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfigB‡A"≥
+deployed_index_auth_config	 (28.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfigB‡A
+reserved_ip_ranges
+ (	B‡A"≥
 DeployedIndexAuthConfig\\
 auth_provider (2E.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig.AuthProvider:
 AuthProvider
 	audiences (	
 allowed_issuers (	"8
 IndexPrivateEndpoints
-match_grpc_address (	B‡ABÜ
-#com.google.cloud.aiplatform.v1beta1BIndexEndpointProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+match_grpc_address (	B‡ABÔ
+#com.google.cloud.aiplatform.v1beta1BIndexEndpointProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatform™Google.Cloud.AIPlatform.V1Beta1 Google\\Cloud\\AIPlatform\\V1beta1Í"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

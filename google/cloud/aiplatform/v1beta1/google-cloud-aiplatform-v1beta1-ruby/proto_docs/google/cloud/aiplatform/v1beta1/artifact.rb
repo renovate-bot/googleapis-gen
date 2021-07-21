@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Instance of a general artifact.
         # @!attribute [r] name
@@ -53,7 +53,7 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this Artifact was last updated.
         # @!attribute [rw] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Artifact::State]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Artifact::State]
         #     The state of this Artifact. This is a property of the Artifact, and does
         #     not imply or capture any ongoing process. This property is managed by
         #     clients (such as Vertex Pipelines), and the system does not prescribe

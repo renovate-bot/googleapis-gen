@@ -66,10 +66,20 @@
                     "retry_codes_name": "no_retry_7_codes",
                     "retry_params_name": "no_retry_7_params"
                 },
+                "DeleteArtifact": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
                 "DeleteContext": {
                     "timeout_millis": 5000,
                     "retry_codes_name": "no_retry_7_codes",
                     "retry_params_name": "no_retry_7_params"
+                },
+                "DeleteExecution": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 },
                 "DeleteMetadataStore": {
                     "timeout_millis": 5000,
@@ -125,6 +135,21 @@
                     "timeout_millis": 5000,
                     "retry_codes_name": "no_retry_7_codes",
                     "retry_params_name": "no_retry_7_params"
+                },
+                "PurgeArtifacts": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
+                "PurgeContexts": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
+                "PurgeExecutions": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
                 },
                 "QueryArtifactLineageSubgraph": {
                     "timeout_millis": 60000,

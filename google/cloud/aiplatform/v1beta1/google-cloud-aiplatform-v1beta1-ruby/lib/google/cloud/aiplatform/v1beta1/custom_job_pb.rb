@@ -28,6 +28,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :error, :message, 10, "google.rpc.Status"
       map :labels, :string, :string, 11
       optional :encryption_spec, :message, 12, "google.cloud.aiplatform.v1beta1.EncryptionSpec"
+      map :web_access_uris, :string, :string, 16
     end
     add_message "google.cloud.aiplatform.v1beta1.CustomJobSpec" do
       repeated :worker_pool_specs, :message, 1, "google.cloud.aiplatform.v1beta1.WorkerPoolSpec"
@@ -36,6 +37,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :network, :string, 5
       optional :base_output_directory, :message, 6, "google.cloud.aiplatform.v1beta1.GcsDestination"
       optional :tensorboard, :string, 7
+      optional :enable_web_access, :bool, 10
     end
     add_message "google.cloud.aiplatform.v1beta1.WorkerPoolSpec" do
       optional :machine_spec, :message, 1, "google.cloud.aiplatform.v1beta1.MachineSpec"
@@ -66,7 +68,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         CustomJob = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CustomJob").msgclass
         CustomJobSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CustomJobSpec").msgclass

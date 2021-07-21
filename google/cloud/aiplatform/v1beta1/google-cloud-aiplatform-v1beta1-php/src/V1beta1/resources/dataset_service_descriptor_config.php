@@ -5,8 +5,8 @@ return [
         'google.cloud.aiplatform.v1beta1.DatasetService' => [
             'CreateDataset' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Dataset',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateDatasetOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Dataset',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateDatasetOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +16,7 @@ return [
             'DeleteDataset' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -25,8 +25,8 @@ return [
             ],
             'ExportData' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ExportDataResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ExportDataOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\ExportDataResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\ExportDataOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -35,8 +35,8 @@ return [
             ],
             'ImportData' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ImportDataResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ImportDataOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\ImportDataResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\ImportDataOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

@@ -5,8 +5,18 @@ return [
         'google.cloud.aiplatform.v1beta1.MetadataService' => [
             'CreateMetadataStore' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\MetadataStore',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateMetadataStoreOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\MetadataStore',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateMetadataStoreOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'DeleteArtifact' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +26,17 @@ return [
             'DeleteContext' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'DeleteExecution' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Protobuf\GPBEmpty',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -26,7 +46,37 @@ return [
             'DeleteMetadataStore' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteMetadataStoreOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteMetadataStoreOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'PurgeArtifacts' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\PurgeArtifactsResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\PurgeArtifactsMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'PurgeContexts' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\PurgeContextsResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\PurgeContextsMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
+            'PurgeExecutions' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\PurgeExecutionsResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\PurgeExecutionsMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

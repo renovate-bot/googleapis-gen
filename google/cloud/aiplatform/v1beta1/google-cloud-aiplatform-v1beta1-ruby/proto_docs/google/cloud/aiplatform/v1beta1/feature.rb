@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Feature Metadata information that describes an attribute of an entity type.
         # For example, apple is an entity type, and color is a feature that describes
@@ -38,7 +38,7 @@ module Google
         #   @return [::String]
         #     Description of the Feature.
         # @!attribute [rw] value_type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Feature::ValueType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Feature::ValueType]
         #     Required. Immutable. Type of Feature value.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -64,7 +64,7 @@ module Google
         #     Used to perform a consistent read-modify-write updates. If not set, a blind
         #     "overwrite" update happens.
         # @!attribute [rw] monitoring_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeaturestoreMonitoringConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeaturestoreMonitoringConfig]
         #     Optional. The custom monitoring configuration for this Feature, if not set, use the
         #     monitoring_config defined for the EntityType this Feature belongs to.
         #
@@ -75,10 +75,10 @@ module Google
         #     analysis monitoring is enabled. Otherwise, snapshot analysis monitoring
         #     config is same as the EntityType's this Feature belongs to.
         # @!attribute [r] monitoring_stats
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::FeatureStatsAnomaly>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::FeatureStatsAnomaly>]
         #     Output only. A list of historical [Snapshot
         #     Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
-        #     stats requested by user, sorted by {::Google::Cloud::Aiplatform::V1beta1::FeatureStatsAnomaly#start_time FeatureStatsAnomaly.start_time}
+        #     stats requested by user, sorted by {::Google::Cloud::AIPlatform::V1beta1::FeatureStatsAnomaly#start_time FeatureStatsAnomaly.start_time}
         #     descending.
         class Feature
           include ::Google::Protobuf::MessageExts

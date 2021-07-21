@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Generic Metadata shared by all operations.
         # @!attribute [r] partial_failures
@@ -43,7 +43,7 @@ module Google
 
         # Details of operations that perform deletes of any entities.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     The common part of the operation metadata.
         class DeleteOperationMetadata
           include ::Google::Protobuf::MessageExts

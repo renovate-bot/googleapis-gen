@@ -25,7 +25,7 @@ class VizierService
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-á0
+Ê1
 4google/cloud/aiplatform/v1beta1/vizier_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto/google/cloud/aiplatform/v1beta1/operation.proto+google/cloud/aiplatform/v1beta1/study.proto#google/longrunning/operations.protogoogle/protobuf/empty.protogoogle/protobuf/timestamp.proto"H
 GetStudyRequest5
 name (	B\'àAúA!
@@ -130,8 +130,8 @@ ListTrials2.google.cloud.aiplatform.v1beta1.ListTrialsRequest3.google.cloud.ai
 CheckTrialEarlyStoppingStateD.google.cloud.aiplatform.v1beta1.CheckTrialEarlyStoppingStateRequest.google.longrunning.Operation"·‚Óä“a"\\/v1beta1/{trial_name=projects/*/locations/*/studies/*/trials/*}:checkTrialEarlyStoppingState:*ÊAM
 $CheckTrialEarlyStoppingStateResponse%CheckTrialEarlyStoppingStateMetatdata±
 	StopTrial1.google.cloud.aiplatform.v1beta1.StopTrialRequest&.google.cloud.aiplatform.v1beta1.Trial"I‚Óä“C">/v1beta1/{name=projects/*/locations/*/studies/*/trials/*}:stop:*ë
-ListOptimalTrials9.google.cloud.aiplatform.v1beta1.ListOptimalTrialsRequest:.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse"_‚Óä“P"K/v1beta1/{parent=projects/*/locations/*/studies/*}/trials:listOptimalTrials:*ÚAparentMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB†
-#com.google.cloud.aiplatform.v1beta1BVizierServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+ListOptimalTrials9.google.cloud.aiplatform.v1beta1.ListOptimalTrialsRequest:.google.cloud.aiplatform.v1beta1.ListOptimalTrialsResponse"_‚Óä“P"K/v1beta1/{parent=projects/*/locations/*/studies/*}/trials:listOptimalTrials:*ÚAparentMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBï
+#com.google.cloud.aiplatform.v1beta1BVizierServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

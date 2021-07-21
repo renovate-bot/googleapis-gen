@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # All the data stored in a TensorboardTimeSeries.
         # @!attribute [rw] tensorboard_time_series_id
@@ -27,11 +27,11 @@ module Google
         #     Required. The ID of the TensorboardTimeSeries, which will become the final component
         #     of the TensorboardTimeSeries' resource name
         # @!attribute [rw] value_type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardTimeSeries::ValueType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries::ValueType]
         #     Required. Immutable. The value type of this time series. All the values in this time series data
         #     must match this value type.
         # @!attribute [rw] values
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TimeSeriesDataPoint>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TimeSeriesDataPoint>]
         #     Required. Data points in this time series.
         class TimeSeriesData
           include ::Google::Protobuf::MessageExts
@@ -40,13 +40,13 @@ module Google
 
         # A TensorboardTimeSeries data point.
         # @!attribute [rw] scalar
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Scalar]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Scalar]
         #     A scalar value.
         # @!attribute [rw] tensor
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardTensor]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTensor]
         #     A tensor value.
         # @!attribute [rw] blobs
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardBlobSequence]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardBlobSequence]
         #     A blob sequence value.
         # @!attribute [rw] wall_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -75,7 +75,7 @@ module Google
         #     https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/tensor.proto
         # @!attribute [rw] version_number
         #   @return [::Integer]
-        #     Optional. Version number of TensorProto used to serialize {::Google::Cloud::Aiplatform::V1beta1::TensorboardTensor#value value}.
+        #     Optional. Version number of TensorProto used to serialize {::Google::Cloud::AIPlatform::V1beta1::TensorboardTensor#value value}.
         class TensorboardTensor
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -84,7 +84,7 @@ module Google
         # One point viewable on a blob metric plot, but mostly just a wrapper message
         # to work around repeated fields can't be used directly within `oneof` fields.
         # @!attribute [rw] values
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TensorboardBlob>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TensorboardBlob>]
         #     List of blobs contained within the sequence.
         class TensorboardBlobSequence
           include ::Google::Protobuf::MessageExts

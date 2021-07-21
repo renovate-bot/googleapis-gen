@@ -49,11 +49,14 @@ type MetadataCallOptions struct {
 	GetArtifact                      []gax.CallOption
 	ListArtifacts                    []gax.CallOption
 	UpdateArtifact                   []gax.CallOption
+	DeleteArtifact                   []gax.CallOption
+	PurgeArtifacts                   []gax.CallOption
 	CreateContext                    []gax.CallOption
 	GetContext                       []gax.CallOption
 	ListContexts                     []gax.CallOption
 	UpdateContext                    []gax.CallOption
 	DeleteContext                    []gax.CallOption
+	PurgeContexts                    []gax.CallOption
 	AddContextArtifactsAndExecutions []gax.CallOption
 	AddContextChildren               []gax.CallOption
 	QueryContextLineageSubgraph      []gax.CallOption
@@ -61,6 +64,8 @@ type MetadataCallOptions struct {
 	GetExecution                     []gax.CallOption
 	ListExecutions                   []gax.CallOption
 	UpdateExecution                  []gax.CallOption
+	DeleteExecution                  []gax.CallOption
+	PurgeExecutions                  []gax.CallOption
 	AddExecutionEvents               []gax.CallOption
 	QueryExecutionInputsAndOutputs   []gax.CallOption
 	CreateMetadataSchema             []gax.CallOption
@@ -92,11 +97,14 @@ func defaultMetadataCallOptions() *MetadataCallOptions {
 		GetArtifact:                      []gax.CallOption{},
 		ListArtifacts:                    []gax.CallOption{},
 		UpdateArtifact:                   []gax.CallOption{},
+		DeleteArtifact:                   []gax.CallOption{},
+		PurgeArtifacts:                   []gax.CallOption{},
 		CreateContext:                    []gax.CallOption{},
 		GetContext:                       []gax.CallOption{},
 		ListContexts:                     []gax.CallOption{},
 		UpdateContext:                    []gax.CallOption{},
 		DeleteContext:                    []gax.CallOption{},
+		PurgeContexts:                    []gax.CallOption{},
 		AddContextArtifactsAndExecutions: []gax.CallOption{},
 		AddContextChildren:               []gax.CallOption{},
 		QueryContextLineageSubgraph:      []gax.CallOption{},
@@ -104,6 +112,8 @@ func defaultMetadataCallOptions() *MetadataCallOptions {
 		GetExecution:                     []gax.CallOption{},
 		ListExecutions:                   []gax.CallOption{},
 		UpdateExecution:                  []gax.CallOption{},
+		DeleteExecution:                  []gax.CallOption{},
+		PurgeExecutions:                  []gax.CallOption{},
 		AddExecutionEvents:               []gax.CallOption{},
 		QueryExecutionInputsAndOutputs:   []gax.CallOption{},
 		CreateMetadataSchema:             []gax.CallOption{},
@@ -128,12 +138,18 @@ type internalMetadataClient interface {
 	GetArtifact(context.Context, *aiplatformpb.GetArtifactRequest, ...gax.CallOption) (*aiplatformpb.Artifact, error)
 	ListArtifacts(context.Context, *aiplatformpb.ListArtifactsRequest, ...gax.CallOption) *ArtifactIterator
 	UpdateArtifact(context.Context, *aiplatformpb.UpdateArtifactRequest, ...gax.CallOption) (*aiplatformpb.Artifact, error)
+	DeleteArtifact(context.Context, *aiplatformpb.DeleteArtifactRequest, ...gax.CallOption) (*DeleteArtifactOperation, error)
+	DeleteArtifactOperation(name string) *DeleteArtifactOperation
+	PurgeArtifacts(context.Context, *aiplatformpb.PurgeArtifactsRequest, ...gax.CallOption) (*PurgeArtifactsOperation, error)
+	PurgeArtifactsOperation(name string) *PurgeArtifactsOperation
 	CreateContext(context.Context, *aiplatformpb.CreateContextRequest, ...gax.CallOption) (*aiplatformpb.Context, error)
 	GetContext(context.Context, *aiplatformpb.GetContextRequest, ...gax.CallOption) (*aiplatformpb.Context, error)
 	ListContexts(context.Context, *aiplatformpb.ListContextsRequest, ...gax.CallOption) *ContextIterator
 	UpdateContext(context.Context, *aiplatformpb.UpdateContextRequest, ...gax.CallOption) (*aiplatformpb.Context, error)
 	DeleteContext(context.Context, *aiplatformpb.DeleteContextRequest, ...gax.CallOption) (*DeleteContextOperation, error)
 	DeleteContextOperation(name string) *DeleteContextOperation
+	PurgeContexts(context.Context, *aiplatformpb.PurgeContextsRequest, ...gax.CallOption) (*PurgeContextsOperation, error)
+	PurgeContextsOperation(name string) *PurgeContextsOperation
 	AddContextArtifactsAndExecutions(context.Context, *aiplatformpb.AddContextArtifactsAndExecutionsRequest, ...gax.CallOption) (*aiplatformpb.AddContextArtifactsAndExecutionsResponse, error)
 	AddContextChildren(context.Context, *aiplatformpb.AddContextChildrenRequest, ...gax.CallOption) (*aiplatformpb.AddContextChildrenResponse, error)
 	QueryContextLineageSubgraph(context.Context, *aiplatformpb.QueryContextLineageSubgraphRequest, ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error)
@@ -141,6 +157,10 @@ type internalMetadataClient interface {
 	GetExecution(context.Context, *aiplatformpb.GetExecutionRequest, ...gax.CallOption) (*aiplatformpb.Execution, error)
 	ListExecutions(context.Context, *aiplatformpb.ListExecutionsRequest, ...gax.CallOption) *ExecutionIterator
 	UpdateExecution(context.Context, *aiplatformpb.UpdateExecutionRequest, ...gax.CallOption) (*aiplatformpb.Execution, error)
+	DeleteExecution(context.Context, *aiplatformpb.DeleteExecutionRequest, ...gax.CallOption) (*DeleteExecutionOperation, error)
+	DeleteExecutionOperation(name string) *DeleteExecutionOperation
+	PurgeExecutions(context.Context, *aiplatformpb.PurgeExecutionsRequest, ...gax.CallOption) (*PurgeExecutionsOperation, error)
+	PurgeExecutionsOperation(name string) *PurgeExecutionsOperation
 	AddExecutionEvents(context.Context, *aiplatformpb.AddExecutionEventsRequest, ...gax.CallOption) (*aiplatformpb.AddExecutionEventsResponse, error)
 	QueryExecutionInputsAndOutputs(context.Context, *aiplatformpb.QueryExecutionInputsAndOutputsRequest, ...gax.CallOption) (*aiplatformpb.LineageSubgraph, error)
 	CreateMetadataSchema(context.Context, *aiplatformpb.CreateMetadataSchemaRequest, ...gax.CallOption) (*aiplatformpb.MetadataSchema, error)
@@ -240,6 +260,28 @@ func (c *MetadataClient) UpdateArtifact(ctx context.Context, req *aiplatformpb.U
 	return c.internalClient.UpdateArtifact(ctx, req, opts...)
 }
 
+// DeleteArtifact deletes an Artifact.
+func (c *MetadataClient) DeleteArtifact(ctx context.Context, req *aiplatformpb.DeleteArtifactRequest, opts ...gax.CallOption) (*DeleteArtifactOperation, error) {
+	return c.internalClient.DeleteArtifact(ctx, req, opts...)
+}
+
+// DeleteArtifactOperation returns a new DeleteArtifactOperation from a given name.
+// The name must be that of a previously created DeleteArtifactOperation, possibly from a different process.
+func (c *MetadataClient) DeleteArtifactOperation(name string) *DeleteArtifactOperation {
+	return c.internalClient.DeleteArtifactOperation(name)
+}
+
+// PurgeArtifacts purges Artifacts.
+func (c *MetadataClient) PurgeArtifacts(ctx context.Context, req *aiplatformpb.PurgeArtifactsRequest, opts ...gax.CallOption) (*PurgeArtifactsOperation, error) {
+	return c.internalClient.PurgeArtifacts(ctx, req, opts...)
+}
+
+// PurgeArtifactsOperation returns a new PurgeArtifactsOperation from a given name.
+// The name must be that of a previously created PurgeArtifactsOperation, possibly from a different process.
+func (c *MetadataClient) PurgeArtifactsOperation(name string) *PurgeArtifactsOperation {
+	return c.internalClient.PurgeArtifactsOperation(name)
+}
+
 // CreateContext creates a Context associated with a MetadataStore.
 func (c *MetadataClient) CreateContext(ctx context.Context, req *aiplatformpb.CreateContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
 	return c.internalClient.CreateContext(ctx, req, opts...)
@@ -269,6 +311,17 @@ func (c *MetadataClient) DeleteContext(ctx context.Context, req *aiplatformpb.De
 // The name must be that of a previously created DeleteContextOperation, possibly from a different process.
 func (c *MetadataClient) DeleteContextOperation(name string) *DeleteContextOperation {
 	return c.internalClient.DeleteContextOperation(name)
+}
+
+// PurgeContexts purges Contexts.
+func (c *MetadataClient) PurgeContexts(ctx context.Context, req *aiplatformpb.PurgeContextsRequest, opts ...gax.CallOption) (*PurgeContextsOperation, error) {
+	return c.internalClient.PurgeContexts(ctx, req, opts...)
+}
+
+// PurgeContextsOperation returns a new PurgeContextsOperation from a given name.
+// The name must be that of a previously created PurgeContextsOperation, possibly from a different process.
+func (c *MetadataClient) PurgeContextsOperation(name string) *PurgeContextsOperation {
+	return c.internalClient.PurgeContextsOperation(name)
 }
 
 // AddContextArtifactsAndExecutions adds a set of Artifacts and Executions to a Context. If any of the
@@ -311,6 +364,28 @@ func (c *MetadataClient) ListExecutions(ctx context.Context, req *aiplatformpb.L
 // UpdateExecution updates a stored Execution.
 func (c *MetadataClient) UpdateExecution(ctx context.Context, req *aiplatformpb.UpdateExecutionRequest, opts ...gax.CallOption) (*aiplatformpb.Execution, error) {
 	return c.internalClient.UpdateExecution(ctx, req, opts...)
+}
+
+// DeleteExecution deletes an Execution.
+func (c *MetadataClient) DeleteExecution(ctx context.Context, req *aiplatformpb.DeleteExecutionRequest, opts ...gax.CallOption) (*DeleteExecutionOperation, error) {
+	return c.internalClient.DeleteExecution(ctx, req, opts...)
+}
+
+// DeleteExecutionOperation returns a new DeleteExecutionOperation from a given name.
+// The name must be that of a previously created DeleteExecutionOperation, possibly from a different process.
+func (c *MetadataClient) DeleteExecutionOperation(name string) *DeleteExecutionOperation {
+	return c.internalClient.DeleteExecutionOperation(name)
+}
+
+// PurgeExecutions purges Executions.
+func (c *MetadataClient) PurgeExecutions(ctx context.Context, req *aiplatformpb.PurgeExecutionsRequest, opts ...gax.CallOption) (*PurgeExecutionsOperation, error) {
+	return c.internalClient.PurgeExecutions(ctx, req, opts...)
+}
+
+// PurgeExecutionsOperation returns a new PurgeExecutionsOperation from a given name.
+// The name must be that of a previously created PurgeExecutionsOperation, possibly from a different process.
+func (c *MetadataClient) PurgeExecutionsOperation(name string) *PurgeExecutionsOperation {
+	return c.internalClient.PurgeExecutionsOperation(name)
 }
 
 // AddExecutionEvents adds Events to the specified Execution. An Event indicates whether an
@@ -655,6 +730,42 @@ func (c *metadataGRPCClient) UpdateArtifact(ctx context.Context, req *aiplatform
 	return resp, nil
 }
 
+func (c *metadataGRPCClient) DeleteArtifact(ctx context.Context, req *aiplatformpb.DeleteArtifactRequest, opts ...gax.CallOption) (*DeleteArtifactOperation, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).DeleteArtifact[0:len((*c.CallOptions).DeleteArtifact):len((*c.CallOptions).DeleteArtifact)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.metadataClient.DeleteArtifact(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &DeleteArtifactOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
+func (c *metadataGRPCClient) PurgeArtifacts(ctx context.Context, req *aiplatformpb.PurgeArtifactsRequest, opts ...gax.CallOption) (*PurgeArtifactsOperation, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).PurgeArtifacts[0:len((*c.CallOptions).PurgeArtifacts):len((*c.CallOptions).PurgeArtifacts)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.metadataClient.PurgeArtifacts(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &PurgeArtifactsOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
 func (c *metadataGRPCClient) CreateContext(ctx context.Context, req *aiplatformpb.CreateContextRequest, opts ...gax.CallOption) (*aiplatformpb.Context, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 5000*time.Millisecond)
@@ -777,6 +888,24 @@ func (c *metadataGRPCClient) DeleteContext(ctx context.Context, req *aiplatformp
 		return nil, err
 	}
 	return &DeleteContextOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
+func (c *metadataGRPCClient) PurgeContexts(ctx context.Context, req *aiplatformpb.PurgeContextsRequest, opts ...gax.CallOption) (*PurgeContextsOperation, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).PurgeContexts[0:len((*c.CallOptions).PurgeContexts):len((*c.CallOptions).PurgeContexts)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.metadataClient.PurgeContexts(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &PurgeContextsOperation{
 		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
 	}, nil
 }
@@ -945,6 +1074,42 @@ func (c *metadataGRPCClient) UpdateExecution(ctx context.Context, req *aiplatfor
 		return nil, err
 	}
 	return resp, nil
+}
+
+func (c *metadataGRPCClient) DeleteExecution(ctx context.Context, req *aiplatformpb.DeleteExecutionRequest, opts ...gax.CallOption) (*DeleteExecutionOperation, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).DeleteExecution[0:len((*c.CallOptions).DeleteExecution):len((*c.CallOptions).DeleteExecution)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.metadataClient.DeleteExecution(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &DeleteExecutionOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
+func (c *metadataGRPCClient) PurgeExecutions(ctx context.Context, req *aiplatformpb.PurgeExecutionsRequest, opts ...gax.CallOption) (*PurgeExecutionsOperation, error) {
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).PurgeExecutions[0:len((*c.CallOptions).PurgeExecutions):len((*c.CallOptions).PurgeExecutions)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.metadataClient.PurgeExecutions(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &PurgeExecutionsOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
 }
 
 func (c *metadataGRPCClient) AddExecutionEvents(ctx context.Context, req *aiplatformpb.AddExecutionEventsRequest, opts ...gax.CallOption) (*aiplatformpb.AddExecutionEventsResponse, error) {
@@ -1156,6 +1321,64 @@ func (op *CreateMetadataStoreOperation) Name() string {
 	return op.lro.Name()
 }
 
+// DeleteArtifactOperation manages a long-running operation from DeleteArtifact.
+type DeleteArtifactOperation struct {
+	lro *longrunning.Operation
+}
+
+// DeleteArtifactOperation returns a new DeleteArtifactOperation from a given name.
+// The name must be that of a previously created DeleteArtifactOperation, possibly from a different process.
+func (c *metadataGRPCClient) DeleteArtifactOperation(name string) *DeleteArtifactOperation {
+	return &DeleteArtifactOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *DeleteArtifactOperation) Wait(ctx context.Context, opts ...gax.CallOption) error {
+	return op.lro.WaitWithInterval(ctx, nil, time.Minute, opts...)
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *DeleteArtifactOperation) Poll(ctx context.Context, opts ...gax.CallOption) error {
+	return op.lro.Poll(ctx, nil, opts...)
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *DeleteArtifactOperation) Metadata() (*aiplatformpb.DeleteOperationMetadata, error) {
+	var meta aiplatformpb.DeleteOperationMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *DeleteArtifactOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *DeleteArtifactOperation) Name() string {
+	return op.lro.Name()
+}
+
 // DeleteContextOperation manages a long-running operation from DeleteContext.
 type DeleteContextOperation struct {
 	lro *longrunning.Operation
@@ -1214,6 +1437,64 @@ func (op *DeleteContextOperation) Name() string {
 	return op.lro.Name()
 }
 
+// DeleteExecutionOperation manages a long-running operation from DeleteExecution.
+type DeleteExecutionOperation struct {
+	lro *longrunning.Operation
+}
+
+// DeleteExecutionOperation returns a new DeleteExecutionOperation from a given name.
+// The name must be that of a previously created DeleteExecutionOperation, possibly from a different process.
+func (c *metadataGRPCClient) DeleteExecutionOperation(name string) *DeleteExecutionOperation {
+	return &DeleteExecutionOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *DeleteExecutionOperation) Wait(ctx context.Context, opts ...gax.CallOption) error {
+	return op.lro.WaitWithInterval(ctx, nil, time.Minute, opts...)
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *DeleteExecutionOperation) Poll(ctx context.Context, opts ...gax.CallOption) error {
+	return op.lro.Poll(ctx, nil, opts...)
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *DeleteExecutionOperation) Metadata() (*aiplatformpb.DeleteOperationMetadata, error) {
+	var meta aiplatformpb.DeleteOperationMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *DeleteExecutionOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *DeleteExecutionOperation) Name() string {
+	return op.lro.Name()
+}
+
 // DeleteMetadataStoreOperation manages a long-running operation from DeleteMetadataStore.
 type DeleteMetadataStoreOperation struct {
 	lro *longrunning.Operation
@@ -1269,6 +1550,213 @@ func (op *DeleteMetadataStoreOperation) Done() bool {
 // Name returns the name of the long-running operation.
 // The name is assigned by the server and is unique within the service from which the operation is created.
 func (op *DeleteMetadataStoreOperation) Name() string {
+	return op.lro.Name()
+}
+
+// PurgeArtifactsOperation manages a long-running operation from PurgeArtifacts.
+type PurgeArtifactsOperation struct {
+	lro *longrunning.Operation
+}
+
+// PurgeArtifactsOperation returns a new PurgeArtifactsOperation from a given name.
+// The name must be that of a previously created PurgeArtifactsOperation, possibly from a different process.
+func (c *metadataGRPCClient) PurgeArtifactsOperation(name string) *PurgeArtifactsOperation {
+	return &PurgeArtifactsOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *PurgeArtifactsOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*aiplatformpb.PurgeArtifactsResponse, error) {
+	var resp aiplatformpb.PurgeArtifactsResponse
+	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
+		return nil, err
+	}
+	return &resp, nil
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *PurgeArtifactsOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*aiplatformpb.PurgeArtifactsResponse, error) {
+	var resp aiplatformpb.PurgeArtifactsResponse
+	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
+		return nil, err
+	}
+	if !op.Done() {
+		return nil, nil
+	}
+	return &resp, nil
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *PurgeArtifactsOperation) Metadata() (*aiplatformpb.PurgeArtifactsMetadata, error) {
+	var meta aiplatformpb.PurgeArtifactsMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *PurgeArtifactsOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *PurgeArtifactsOperation) Name() string {
+	return op.lro.Name()
+}
+
+// PurgeContextsOperation manages a long-running operation from PurgeContexts.
+type PurgeContextsOperation struct {
+	lro *longrunning.Operation
+}
+
+// PurgeContextsOperation returns a new PurgeContextsOperation from a given name.
+// The name must be that of a previously created PurgeContextsOperation, possibly from a different process.
+func (c *metadataGRPCClient) PurgeContextsOperation(name string) *PurgeContextsOperation {
+	return &PurgeContextsOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *PurgeContextsOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*aiplatformpb.PurgeContextsResponse, error) {
+	var resp aiplatformpb.PurgeContextsResponse
+	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
+		return nil, err
+	}
+	return &resp, nil
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *PurgeContextsOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*aiplatformpb.PurgeContextsResponse, error) {
+	var resp aiplatformpb.PurgeContextsResponse
+	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
+		return nil, err
+	}
+	if !op.Done() {
+		return nil, nil
+	}
+	return &resp, nil
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *PurgeContextsOperation) Metadata() (*aiplatformpb.PurgeContextsMetadata, error) {
+	var meta aiplatformpb.PurgeContextsMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *PurgeContextsOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *PurgeContextsOperation) Name() string {
+	return op.lro.Name()
+}
+
+// PurgeExecutionsOperation manages a long-running operation from PurgeExecutions.
+type PurgeExecutionsOperation struct {
+	lro *longrunning.Operation
+}
+
+// PurgeExecutionsOperation returns a new PurgeExecutionsOperation from a given name.
+// The name must be that of a previously created PurgeExecutionsOperation, possibly from a different process.
+func (c *metadataGRPCClient) PurgeExecutionsOperation(name string) *PurgeExecutionsOperation {
+	return &PurgeExecutionsOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *PurgeExecutionsOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*aiplatformpb.PurgeExecutionsResponse, error) {
+	var resp aiplatformpb.PurgeExecutionsResponse
+	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
+		return nil, err
+	}
+	return &resp, nil
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *PurgeExecutionsOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*aiplatformpb.PurgeExecutionsResponse, error) {
+	var resp aiplatformpb.PurgeExecutionsResponse
+	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
+		return nil, err
+	}
+	if !op.Done() {
+		return nil, nil
+	}
+	return &resp, nil
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *PurgeExecutionsOperation) Metadata() (*aiplatformpb.PurgeExecutionsMetadata, error) {
+	var meta aiplatformpb.PurgeExecutionsMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *PurgeExecutionsOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *PurgeExecutionsOperation) Name() string {
 	return op.lro.Name()
 }
 

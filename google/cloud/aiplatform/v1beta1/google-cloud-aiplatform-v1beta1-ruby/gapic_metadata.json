@@ -3,12 +3,12 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "ruby",
   "protoPackage": "google.cloud.aiplatform.v1beta1",
-  "libraryPackage": "::Google::Cloud::Aiplatform::V1beta1",
+  "libraryPackage": "::Google::Cloud::AIPlatform::V1beta1",
   "services": {
     "DatasetService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::DatasetService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::DatasetService::Client",
           "rpcs": {
             "CreateDataset": {
               "methods": [
@@ -67,7 +67,7 @@
     "EndpointService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::EndpointService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::EndpointService::Client",
           "rpcs": {
             "CreateEndpoint": {
               "methods": [
@@ -111,7 +111,7 @@
     "FeaturestoreOnlineServingService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::FeaturestoreOnlineServingService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::FeaturestoreOnlineServingService::Client",
           "rpcs": {
             "ReadFeatureValues": {
               "methods": [
@@ -130,7 +130,7 @@
     "FeaturestoreService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::FeaturestoreService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client",
           "rpcs": {
             "CreateFeaturestore": {
               "methods": [
@@ -239,7 +239,7 @@
     "IndexEndpointService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client",
           "rpcs": {
             "CreateIndexEndpoint": {
               "methods": [
@@ -283,7 +283,7 @@
     "IndexService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::IndexService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::IndexService::Client",
           "rpcs": {
             "CreateIndex": {
               "methods": [
@@ -317,7 +317,7 @@
     "JobService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::JobService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::JobService::Client",
           "rpcs": {
             "CreateCustomJob": {
               "methods": [
@@ -466,7 +466,7 @@
     "MetadataService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::MetadataService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client",
           "rpcs": {
             "CreateMetadataStore": {
               "methods": [
@@ -508,6 +508,16 @@
                 "update_artifact"
               ]
             },
+            "DeleteArtifact": {
+              "methods": [
+                "delete_artifact"
+              ]
+            },
+            "PurgeArtifacts": {
+              "methods": [
+                "purge_artifacts"
+              ]
+            },
             "CreateContext": {
               "methods": [
                 "create_context"
@@ -531,6 +541,11 @@
             "DeleteContext": {
               "methods": [
                 "delete_context"
+              ]
+            },
+            "PurgeContexts": {
+              "methods": [
+                "purge_contexts"
               ]
             },
             "AddContextArtifactsAndExecutions": {
@@ -566,6 +581,16 @@
             "UpdateExecution": {
               "methods": [
                 "update_execution"
+              ]
+            },
+            "DeleteExecution": {
+              "methods": [
+                "delete_execution"
+              ]
+            },
+            "PurgeExecutions": {
+              "methods": [
+                "purge_executions"
               ]
             },
             "AddExecutionEvents": {
@@ -605,7 +630,7 @@
     "MigrationService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::MigrationService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::MigrationService::Client",
           "rpcs": {
             "SearchMigratableResources": {
               "methods": [
@@ -624,7 +649,7 @@
     "ModelService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::ModelService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::ModelService::Client",
           "rpcs": {
             "UploadModel": {
               "methods": [
@@ -683,7 +708,7 @@
     "PipelineService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client",
           "rpcs": {
             "CreateTrainingPipeline": {
               "methods": [
@@ -742,7 +767,7 @@
     "PredictionService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::PredictionService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::PredictionService::Client",
           "rpcs": {
             "Predict": {
               "methods": [
@@ -761,7 +786,7 @@
     "SpecialistPoolService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::SpecialistPoolService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::SpecialistPoolService::Client",
           "rpcs": {
             "CreateSpecialistPool": {
               "methods": [
@@ -795,7 +820,7 @@
     "TensorboardService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client",
           "rpcs": {
             "CreateTensorboard": {
               "methods": [
@@ -924,7 +949,7 @@
     "VizierService": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::Aiplatform::V1beta1::VizierService::Client",
+          "libraryClient": "::Google::Cloud::AIPlatform::V1beta1::VizierService::Client",
           "rpcs": {
             "CreateStudy": {
               "methods": [

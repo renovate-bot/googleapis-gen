@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Call;
@@ -40,43 +40,43 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\CreateTensorboardExperimentRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateTensorboardRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateTensorboardRunRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateTensorboardTimeSeriesRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteTensorboardExperimentRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteTensorboardRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteTensorboardRunRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteTensorboardTimeSeriesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ExportTensorboardTimeSeriesDataRequest;
-use Google\Cloud\Aiplatform\V1beta1\ExportTensorboardTimeSeriesDataResponse;
-use Google\Cloud\Aiplatform\V1beta1\GetTensorboardExperimentRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetTensorboardRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetTensorboardRunRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetTensorboardTimeSeriesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardExperimentsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardExperimentsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardRunsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardRunsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardTimeSeriesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardTimeSeriesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ReadTensorboardBlobDataRequest;
-use Google\Cloud\Aiplatform\V1beta1\ReadTensorboardBlobDataResponse;
-use Google\Cloud\Aiplatform\V1beta1\ReadTensorboardTimeSeriesDataRequest;
-use Google\Cloud\Aiplatform\V1beta1\ReadTensorboardTimeSeriesDataResponse;
-use Google\Cloud\Aiplatform\V1beta1\Tensorboard;
-use Google\Cloud\Aiplatform\V1beta1\TensorboardExperiment;
-use Google\Cloud\Aiplatform\V1beta1\TensorboardRun;
-use Google\Cloud\Aiplatform\V1beta1\TensorboardTimeSeries;
-use Google\Cloud\Aiplatform\V1beta1\TimeSeriesData;
-use Google\Cloud\Aiplatform\V1beta1\UpdateTensorboardExperimentRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateTensorboardRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateTensorboardRunRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateTensorboardTimeSeriesRequest;
-use Google\Cloud\Aiplatform\V1beta1\WriteTensorboardRunDataRequest;
-use Google\Cloud\Aiplatform\V1beta1\WriteTensorboardRunDataResponse;
+use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardExperimentRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardRunRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateTensorboardTimeSeriesRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteTensorboardExperimentRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteTensorboardRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteTensorboardRunRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteTensorboardTimeSeriesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ExportTensorboardTimeSeriesDataRequest;
+use Google\Cloud\AIPlatform\V1beta1\ExportTensorboardTimeSeriesDataResponse;
+use Google\Cloud\AIPlatform\V1beta1\GetTensorboardExperimentRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetTensorboardRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetTensorboardRunRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetTensorboardTimeSeriesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardExperimentsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardExperimentsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardRunsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardRunsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardTimeSeriesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardTimeSeriesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ReadTensorboardBlobDataRequest;
+use Google\Cloud\AIPlatform\V1beta1\ReadTensorboardBlobDataResponse;
+use Google\Cloud\AIPlatform\V1beta1\ReadTensorboardTimeSeriesDataRequest;
+use Google\Cloud\AIPlatform\V1beta1\ReadTensorboardTimeSeriesDataResponse;
+use Google\Cloud\AIPlatform\V1beta1\Tensorboard;
+use Google\Cloud\AIPlatform\V1beta1\TensorboardExperiment;
+use Google\Cloud\AIPlatform\V1beta1\TensorboardRun;
+use Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries;
+use Google\Cloud\AIPlatform\V1beta1\TimeSeriesData;
+use Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardExperimentRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardRunRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardTimeSeriesRequest;
+use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardRunDataRequest;
+use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardRunDataResponse;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -614,7 +614,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardExperiment
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardExperiment
      *
      * @throws ApiException if the remote call fails
      *
@@ -671,7 +671,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardRun
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardRun
      *
      * @throws ApiException if the remote call fails
      *
@@ -726,7 +726,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardTimeSeries
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries
      *
      * @throws ApiException if the remote call fails
      *
@@ -1131,7 +1131,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Tensorboard
+     * @return \Google\Cloud\AIPlatform\V1beta1\Tensorboard
      *
      * @throws ApiException if the remote call fails
      *
@@ -1175,7 +1175,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardExperiment
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardExperiment
      *
      * @throws ApiException if the remote call fails
      *
@@ -1219,7 +1219,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardRun
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardRun
      *
      * @throws ApiException if the remote call fails
      *
@@ -1263,7 +1263,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardTimeSeries
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries
      *
      * @throws ApiException if the remote call fails
      *
@@ -1736,7 +1736,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\ReadTensorboardTimeSeriesDataResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\ReadTensorboardTimeSeriesDataResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -1872,7 +1872,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardExperiment
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardExperiment
      *
      * @throws ApiException if the remote call fails
      *
@@ -1924,7 +1924,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardRun
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardRun
      *
      * @throws ApiException if the remote call fails
      *
@@ -1977,7 +1977,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\TensorboardTimeSeries
+     * @return \Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries
      *
      * @throws ApiException if the remote call fails
      *
@@ -2030,7 +2030,7 @@ class TensorboardServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\WriteTensorboardRunDataResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\WriteTensorboardRunDataResponse
      *
      * @throws ApiException if the remote call fails
      *

@@ -24,9 +24,9 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1;
+namespace Google\Cloud\AIPlatform\V1beta1;
 
-use Google\Cloud\Aiplatform\V1beta1\Gapic\TensorboardServiceGapicClient;
+use Google\Cloud\AIPlatform\V1beta1\Gapic\TensorboardServiceGapicClient;
 
 /** {@inheritdoc} */
 class TensorboardServiceClient extends TensorboardServiceGapicClient

@@ -19,9 +19,9 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreOnlineServingService::Client#read_feature_values FeaturestoreOnlineServingService.ReadFeatureValues}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreOnlineServingService::Client#read_feature_values FeaturestoreOnlineServingService.ReadFeatureValues}.
         # @!attribute [rw] entity_type
         #   @return [::String]
         #     Required. The resource name of the EntityType for the entity being read.
@@ -35,19 +35,19 @@ module Google
         #     for a machine learning model predicting user clicks on a website, an entity
         #     ID could be "user_123".
         # @!attribute [rw] feature_selector
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureSelector]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureSelector]
         #     Required. Selector choosing Features of the target EntityType.
         class ReadFeatureValuesRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::FeaturestoreOnlineServingService::Client#read_feature_values FeaturestoreOnlineServingService.ReadFeatureValues}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreOnlineServingService::Client#read_feature_values FeaturestoreOnlineServingService.ReadFeatureValues}.
         # @!attribute [rw] header
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ReadFeatureValuesResponse::Header]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse::Header]
         #     Response header.
         # @!attribute [rw] entity_view
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ReadFeatureValuesResponse::EntityView]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse::EntityView]
         #     Entity view with Feature values. This may be the entity in the
         #     Featurestore if values for all Features were requested, or a projection
         #     of the entity in the Featurestore if values for only some Features were
@@ -66,15 +66,15 @@ module Google
           end
 
           # Response header with metadata for the requested
-          # {::Google::Cloud::Aiplatform::V1beta1::ReadFeatureValuesRequest#entity_type ReadFeatureValuesRequest.entity_type} and Features.
+          # {::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesRequest#entity_type ReadFeatureValuesRequest.entity_type} and Features.
           # @!attribute [rw] entity_type
           #   @return [::String]
           #     The resource name of the EntityType from the
-          #     {::Google::Cloud::Aiplatform::V1beta1::ReadFeatureValuesRequest ReadFeatureValuesRequest}. Value format:
+          #     {::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesRequest ReadFeatureValuesRequest}. Value format:
           #     `projects/{project}/locations/{location}/featurestores/
           #     \\{featurestore}/entityTypes/\\{entityType}`.
           # @!attribute [rw] feature_descriptors
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::ReadFeatureValuesResponse::FeatureDescriptor>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse::FeatureDescriptor>]
           #     List of Feature metadata corresponding to each piece of
           #     [ReadFeatureValuesResponse.data][].
           class Header
@@ -87,12 +87,12 @@ module Google
           #   @return [::String]
           #     ID of the requested entity.
           # @!attribute [rw] data
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::ReadFeatureValuesResponse::EntityView::Data>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse::EntityView::Data>]
           #     Each piece of data holds the k
           #     requested values for one requested Feature. If no values
           #     for the requested Feature exist, the corresponding cell will be empty.
           #     This has the same size and is in the same order as the features from the
-          #     header {::Google::Cloud::Aiplatform::V1beta1::ReadFeatureValuesResponse#header ReadFeatureValuesResponse.header}.
+          #     header {::Google::Cloud::AIPlatform::V1beta1::ReadFeatureValuesResponse#header ReadFeatureValuesResponse.header}.
           class EntityView
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -100,10 +100,10 @@ module Google
             # Container to hold value(s), successive in time, for one Feature from the
             # request.
             # @!attribute [rw] value
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureValue]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureValue]
             #     Feature value if a single value is requested.
             # @!attribute [rw] values
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureValueList]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureValueList]
             #     Feature values list if values, successive in time, are requested.
             #     If the requested number of values is greater than the number of
             #     existing Feature values, nonexistent values are omitted instead of
@@ -126,12 +126,13 @@ module Google
         #     EntityType ID could be "user".
         # @!attribute [rw] entity_ids
         #   @return [::Array<::String>]
-        #     Required. IDs of entities to read Feature values of. For example,
-        #     for a machine learning model predicting user clicks on a website, an
-        #     entity ID could be "user_123".
+        #     Required. IDs of entities to read Feature values of. The maximum number of IDs is
+        #     100. For example, for a machine learning model predicting user clicks on a
+        #     website, an entity ID could be "user_123".
         # @!attribute [rw] feature_selector
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureSelector]
-        #     Required. Selector choosing Features of the target EntityType.
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureSelector]
+        #     Required. Selector choosing Features of the target EntityType. Feature IDs will be
+        #     deduplicated.
         class StreamingReadFeatureValuesRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -152,23 +153,23 @@ module Google
         #   @return [::String]
         #     String feature value.
         # @!attribute [rw] bool_array_value
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::BoolArray]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::BoolArray]
         #     A list of bool type feature value.
         # @!attribute [rw] double_array_value
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::DoubleArray]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::DoubleArray]
         #     A list of double type feature value.
         # @!attribute [rw] int64_array_value
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Int64Array]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Int64Array]
         #     A list of int64 type feature value.
         # @!attribute [rw] string_array_value
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StringArray]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StringArray]
         #     A list of string type feature value.
         # @!attribute [rw] bytes_value
         #   @return [::String]
         #     Bytes feature value.
-        # @!attribute [r] metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureValue::Metadata]
-        #     Output only. Metadata of feature value.
+        # @!attribute [rw] metadata
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureValue::Metadata]
+        #     Metadata of feature value.
         class FeatureValue
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -188,7 +189,7 @@ module Google
 
         # Container for list of values.
         # @!attribute [rw] values
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::FeatureValue>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::FeatureValue>]
         #     A list of feature values. All of them should be the same data type.
         class FeatureValueList
           include ::Google::Protobuf::MessageExts

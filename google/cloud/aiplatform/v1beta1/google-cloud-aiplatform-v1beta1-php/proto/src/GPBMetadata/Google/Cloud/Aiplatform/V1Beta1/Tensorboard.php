@@ -21,7 +21,7 @@ class Tensorboard
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-³
+œ
 1google/cloud/aiplatform/v1beta1/tensorboard.protogoogle.cloud.aiplatform.v1beta1google/api/resource.proto5google/cloud/aiplatform/v1beta1/encryption_spec.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"¼
 Tensorboard
 name (	BàA
@@ -38,8 +38,8 @@ class Tensorboard
 LabelsEntry
 key (	
 value (	:8:nêAk
-%aiplatform.googleapis.com/TensorboardBprojects/{project}/locations/{location}/tensorboards/{tensorboard}B„
-#com.google.cloud.aiplatform.v1beta1BTensorboardProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+%aiplatform.googleapis.com/TensorboardBprojects/{project}/locations/{location}/tensorboards/{tensorboard}Bí
+#com.google.cloud.aiplatform.v1beta1BTensorboardProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

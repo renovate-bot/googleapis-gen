@@ -5,8 +5,8 @@ return [
         'google.cloud.aiplatform.v1beta1.FeaturestoreService' => [
             'BatchCreateFeatures' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\BatchCreateFeaturesResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\BatchCreateFeaturesOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\BatchCreateFeaturesResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\BatchCreateFeaturesOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -15,8 +15,8 @@ return [
             ],
             'BatchReadFeatureValues' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\BatchReadFeatureValuesResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\BatchReadFeatureValuesOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\BatchReadFeatureValuesResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\BatchReadFeatureValuesOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -25,8 +25,8 @@ return [
             ],
             'CreateEntityType' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\EntityType',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateEntityTypeOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\EntityType',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateEntityTypeOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -35,8 +35,8 @@ return [
             ],
             'CreateFeature' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Feature',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateFeatureOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Feature',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateFeatureOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -45,8 +45,8 @@ return [
             ],
             'CreateFeaturestore' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Featurestore',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateFeaturestoreOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Featurestore',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateFeaturestoreOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -56,7 +56,7 @@ return [
             'DeleteEntityType' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -66,7 +66,7 @@ return [
             'DeleteFeature' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -76,7 +76,7 @@ return [
             'DeleteFeaturestore' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -85,8 +85,8 @@ return [
             ],
             'ExportFeatureValues' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ExportFeatureValuesResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ExportFeatureValuesOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -95,8 +95,8 @@ return [
             ],
             'ImportFeatureValues' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ImportFeatureValuesResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\ImportFeatureValuesOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\ImportFeatureValuesResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\ImportFeatureValuesOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -105,8 +105,8 @@ return [
             ],
             'UpdateFeaturestore' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Featurestore',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\UpdateFeaturestoreOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Featurestore',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\UpdateFeaturestoreOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

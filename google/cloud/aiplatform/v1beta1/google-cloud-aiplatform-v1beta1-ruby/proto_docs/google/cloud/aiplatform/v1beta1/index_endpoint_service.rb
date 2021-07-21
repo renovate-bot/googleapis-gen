@@ -19,15 +19,15 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#create_index_endpoint IndexEndpointService.CreateIndexEndpoint}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#create_index_endpoint IndexEndpointService.CreateIndexEndpoint}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to create the IndexEndpoint in.
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] index_endpoint
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::IndexEndpoint]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint]
         #     Required. The IndexEndpoint to create.
         class CreateIndexEndpointRequest
           include ::Google::Protobuf::MessageExts
@@ -35,16 +35,16 @@ module Google
         end
 
         # Runtime operation information for
-        # {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#create_index_endpoint IndexEndpointService.CreateIndexEndpoint}.
+        # {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#create_index_endpoint IndexEndpointService.CreateIndexEndpoint}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     The operation generic information.
         class CreateIndexEndpointOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#get_index_endpoint IndexEndpointService.GetIndexEndpoint}
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#get_index_endpoint IndexEndpointService.GetIndexEndpoint}
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the IndexEndpoint resource.
@@ -55,7 +55,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#list_index_endpoints IndexEndpointService.ListIndexEndpoints}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#list_index_endpoints IndexEndpointService.ListIndexEndpoints}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location from which to list the IndexEndpoints.
@@ -67,7 +67,7 @@ module Google
         #
         #       * `index_endpoint` supports = and !=. `index_endpoint` represents the
         #          IndexEndpoint ID, ie. the last segment of the IndexEndpoint's
-        #          {::Google::Cloud::Aiplatform::V1beta1::IndexEndpoint#name resourcename}.
+        #          {::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint#name resourcename}.
         #       * `display_name` supports =, != and regex()
         #                 (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax)
         #       * `labels` supports general map functions that is:
@@ -87,8 +87,8 @@ module Google
         #   @return [::String]
         #     Optional. The standard list page token.
         #     Typically obtained via
-        #     {::Google::Cloud::Aiplatform::V1beta1::ListIndexEndpointsResponse#next_page_token ListIndexEndpointsResponse.next_page_token} of the previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#list_index_endpoints IndexEndpointService.ListIndexEndpoints} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ListIndexEndpointsResponse#next_page_token ListIndexEndpointsResponse.next_page_token} of the previous
+        #     {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#list_index_endpoints IndexEndpointService.ListIndexEndpoints} call.
         # @!attribute [rw] read_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Optional. Mask specifying which fields to read.
@@ -97,22 +97,22 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#list_index_endpoints IndexEndpointService.ListIndexEndpoints}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#list_index_endpoints IndexEndpointService.ListIndexEndpoints}.
         # @!attribute [rw] index_endpoints
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::IndexEndpoint>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint>]
         #     List of IndexEndpoints in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [::String]
         #     A token to retrieve next page of results.
-        #     Pass to {::Google::Cloud::Aiplatform::V1beta1::ListIndexEndpointsRequest#page_token ListIndexEndpointsRequest.page_token} to obtain that page.
+        #     Pass to {::Google::Cloud::AIPlatform::V1beta1::ListIndexEndpointsRequest#page_token ListIndexEndpointsRequest.page_token} to obtain that page.
         class ListIndexEndpointsResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#update_index_endpoint IndexEndpointService.UpdateIndexEndpoint}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#update_index_endpoint IndexEndpointService.UpdateIndexEndpoint}.
         # @!attribute [rw] index_endpoint
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::IndexEndpoint]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint]
         #     Required. The IndexEndpoint which replaces the resource on the server.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
@@ -122,7 +122,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#delete_index_endpoint IndexEndpointService.DeleteIndexEndpoint}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#delete_index_endpoint IndexEndpointService.DeleteIndexEndpoint}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the IndexEndpoint resource to be deleted.
@@ -133,39 +133,42 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#deploy_index IndexEndpointService.DeployIndex}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#deploy_index IndexEndpointService.DeployIndex}.
         # @!attribute [rw] index_endpoint
         #   @return [::String]
         #     Required. The name of the IndexEndpoint resource into which to deploy an Index.
         #     Format:
         #     `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
         # @!attribute [rw] deployed_index
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::DeployedIndex]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::DeployedIndex]
         #     Required. The DeployedIndex to be created within the IndexEndpoint.
         class DeployIndexRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#deploy_index IndexEndpointService.DeployIndex}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#deploy_index IndexEndpointService.DeployIndex}.
         # @!attribute [rw] deployed_index
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::DeployedIndex]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::DeployedIndex]
         #     The DeployedIndex that had been deployed in the IndexEndpoint.
         class DeployIndexResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Runtime operation information for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#deploy_index IndexEndpointService.DeployIndex}.
+        # Runtime operation information for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#deploy_index IndexEndpointService.DeployIndex}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     The operation generic information.
+        # @!attribute [rw] deployed_index_id
+        #   @return [::String]
+        #     The unique index id specified by user
         class DeployIndexOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#undeploy_index IndexEndpointService.UndeployIndex}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#undeploy_index IndexEndpointService.UndeployIndex}.
         # @!attribute [rw] index_endpoint
         #   @return [::String]
         #     Required. The name of the IndexEndpoint resource from which to undeploy an Index.
@@ -179,15 +182,15 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#undeploy_index IndexEndpointService.UndeployIndex}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#undeploy_index IndexEndpointService.UndeployIndex}.
         class UndeployIndexResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Runtime operation information for {::Google::Cloud::Aiplatform::V1beta1::IndexEndpointService::Client#undeploy_index IndexEndpointService.UndeployIndex}.
+        # Runtime operation information for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#undeploy_index IndexEndpointService.UndeployIndex}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     The operation generic information.
         class UndeployIndexOperationMetadata
           include ::Google::Protobuf::MessageExts

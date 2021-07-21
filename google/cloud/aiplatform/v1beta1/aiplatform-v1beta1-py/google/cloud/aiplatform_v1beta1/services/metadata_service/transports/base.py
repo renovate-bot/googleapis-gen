@@ -198,6 +198,16 @@ class MetadataServiceTransport(abc.ABC):
                 default_timeout=5.0,
                 client_info=client_info,
             ),
+            self.delete_artifact: gapic_v1.method.wrap_method(
+                self.delete_artifact,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.purge_artifacts: gapic_v1.method.wrap_method(
+                self.purge_artifacts,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.create_context: gapic_v1.method.wrap_method(
                 self.create_context,
                 default_timeout=5.0,
@@ -221,6 +231,11 @@ class MetadataServiceTransport(abc.ABC):
             self.delete_context: gapic_v1.method.wrap_method(
                 self.delete_context,
                 default_timeout=5.0,
+                client_info=client_info,
+            ),
+            self.purge_contexts: gapic_v1.method.wrap_method(
+                self.purge_contexts,
+                default_timeout=None,
                 client_info=client_info,
             ),
             self.add_context_artifacts_and_executions: gapic_v1.method.wrap_method(
@@ -256,6 +271,16 @@ class MetadataServiceTransport(abc.ABC):
             self.update_execution: gapic_v1.method.wrap_method(
                 self.update_execution,
                 default_timeout=5.0,
+                client_info=client_info,
+            ),
+            self.delete_execution: gapic_v1.method.wrap_method(
+                self.delete_execution,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.purge_executions: gapic_v1.method.wrap_method(
+                self.purge_executions,
+                default_timeout=None,
                 client_info=client_info,
             ),
             self.add_execution_events: gapic_v1.method.wrap_method(
@@ -368,6 +393,24 @@ class MetadataServiceTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
+    def delete_artifact(self) -> Callable[
+            [metadata_service.DeleteArtifactRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def purge_artifacts(self) -> Callable[
+            [metadata_service.PurgeArtifactsRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def create_context(self) -> Callable[
             [metadata_service.CreateContextRequest],
             Union[
@@ -406,6 +449,15 @@ class MetadataServiceTransport(abc.ABC):
     @property
     def delete_context(self) -> Callable[
             [metadata_service.DeleteContextRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def purge_contexts(self) -> Callable[
+            [metadata_service.PurgeContextsRequest],
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]
@@ -472,6 +524,24 @@ class MetadataServiceTransport(abc.ABC):
             Union[
                 gca_execution.Execution,
                 Awaitable[gca_execution.Execution]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def delete_execution(self) -> Callable[
+            [metadata_service.DeleteExecutionRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def purge_executions(self) -> Callable[
+            [metadata_service.PurgeExecutionsRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
             ]]:
         raise NotImplementedError()
 

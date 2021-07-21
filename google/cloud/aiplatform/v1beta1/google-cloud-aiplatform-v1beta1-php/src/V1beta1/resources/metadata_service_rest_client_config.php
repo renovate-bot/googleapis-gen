@@ -99,9 +99,31 @@ return [
                     ],
                 ],
             ],
+            'DeleteArtifact' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/metadataStores/*/artifacts/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'DeleteContext' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/metadataStores/*/contexts/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteExecution' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1beta1/{name=projects/*/locations/*/metadataStores/*/executions/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -223,6 +245,42 @@ return [
             'ListMetadataStores' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*}/metadataStores',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'PurgeArtifacts' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/artifacts:purge',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'PurgeContexts' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/contexts:purge',
+                'body' => '*',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'PurgeExecutions' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{parent=projects/*/locations/*/metadataStores/*}/executions:purge',
+                'body' => '*',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [

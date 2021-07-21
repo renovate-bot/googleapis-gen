@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -39,16 +39,16 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\CreateIndexEndpointRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteIndexEndpointRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeployedIndex;
-use Google\Cloud\Aiplatform\V1beta1\DeployIndexRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetIndexEndpointRequest;
-use Google\Cloud\Aiplatform\V1beta1\IndexEndpoint;
-use Google\Cloud\Aiplatform\V1beta1\ListIndexEndpointsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListIndexEndpointsResponse;
-use Google\Cloud\Aiplatform\V1beta1\UndeployIndexRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateIndexEndpointRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateIndexEndpointRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteIndexEndpointRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeployedIndex;
+use Google\Cloud\AIPlatform\V1beta1\DeployIndexRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetIndexEndpointRequest;
+use Google\Cloud\AIPlatform\V1beta1\IndexEndpoint;
+use Google\Cloud\AIPlatform\V1beta1\ListIndexEndpointsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListIndexEndpointsResponse;
+use Google\Cloud\AIPlatform\V1beta1\UndeployIndexRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateIndexEndpointRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -639,7 +639,7 @@ class IndexEndpointServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\IndexEndpoint
+     * @return \Google\Cloud\AIPlatform\V1beta1\IndexEndpoint
      *
      * @throws ApiException if the remote call fails
      *
@@ -857,7 +857,7 @@ class IndexEndpointServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\IndexEndpoint
+     * @return \Google\Cloud\AIPlatform\V1beta1\IndexEndpoint
      *
      * @throws ApiException if the remote call fails
      *

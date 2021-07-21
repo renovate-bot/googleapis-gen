@@ -5,8 +5,8 @@ return [
         'google.cloud.aiplatform.v1beta1.SpecialistPoolService' => [
             'CreateSpecialistPool' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\SpecialistPool',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateSpecialistPoolOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\SpecialistPool',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateSpecialistPoolOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +16,7 @@ return [
             'DeleteSpecialistPool' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -25,8 +25,8 @@ return [
             ],
             'UpdateSpecialistPool' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\SpecialistPool',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\UpdateSpecialistPoolOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\SpecialistPool',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\UpdateSpecialistPoolOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

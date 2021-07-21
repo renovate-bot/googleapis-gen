@@ -91,6 +91,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 42: {
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder subBuilder = null;
+            if (explanationConfig_ != null) {
+              subBuilder = explanationConfig_.toBuilder();
+            }
+            explanationConfig_ = input.readMessage(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(explanationConfig_);
+              explanationConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -2267,6 +2280,70 @@ private static final long serialVersionUID = 0L;
 
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getSkewThresholdsOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+    int getAttributionScoreSkewThresholdsCount();
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+    boolean containsAttributionScoreSkewThresholds(
+        java.lang.String key);
+    /**
+     * Use {@link #getAttributionScoreSkewThresholdsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+    getAttributionScoreSkewThresholds();
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+    getAttributionScoreSkewThresholdsMap();
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+
+    com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreSkewThresholdsOrDefault(
+        java.lang.String key,
+        com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+
+    com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreSkewThresholdsOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -2332,6 +2409,19 @@ private static final long serialVersionUID = 0L;
                   skewThresholds__.getKey(), skewThresholds__.getValue());
               break;
             }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                attributionScoreSkewThresholds_ = com.google.protobuf.MapField.newMapField(
+                    AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+              attributionScoreSkewThresholds__ = input.readMessage(
+                  AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              attributionScoreSkewThresholds_.getMutableMap().put(
+                  attributionScoreSkewThresholds__.getKey(), attributionScoreSkewThresholds__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -2363,6 +2453,8 @@ private static final long serialVersionUID = 0L;
       switch (number) {
         case 1:
           return internalGetSkewThresholds();
+        case 2:
+          return internalGetAttributionScoreSkewThresholds();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -2485,6 +2577,111 @@ private static final long serialVersionUID = 0L;
       return map.get(key);
     }
 
+    public static final int ATTRIBUTION_SCORE_SKEW_THRESHOLDS_FIELD_NUMBER = 2;
+    private static final class AttributionScoreSkewThresholdsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>newDefaultInstance(
+                  com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_TrainingPredictionSkewDetectionConfig_AttributionScoreSkewThresholdsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> attributionScoreSkewThresholds_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+    internalGetAttributionScoreSkewThresholds() {
+      if (attributionScoreSkewThresholds_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry);
+      }
+      return attributionScoreSkewThresholds_;
+    }
+
+    public int getAttributionScoreSkewThresholdsCount() {
+      return internalGetAttributionScoreSkewThresholds().getMap().size();
+    }
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsAttributionScoreSkewThresholds(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetAttributionScoreSkewThresholds().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getAttributionScoreSkewThresholdsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> getAttributionScoreSkewThresholds() {
+      return getAttributionScoreSkewThresholdsMap();
+    }
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> getAttributionScoreSkewThresholdsMap() {
+      return internalGetAttributionScoreSkewThresholds().getMap();
+    }
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+    @java.lang.Override
+
+    public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreSkewThresholdsOrDefault(
+        java.lang.String key,
+        com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
+          internalGetAttributionScoreSkewThresholds().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between the training and prediction
+     * feature.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+     */
+    @java.lang.Override
+
+    public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreSkewThresholdsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
+          internalGetAttributionScoreSkewThresholds().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2505,6 +2702,12 @@ private static final long serialVersionUID = 0L;
           internalGetSkewThresholds(),
           SkewThresholdsDefaultEntryHolder.defaultEntry,
           1);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetAttributionScoreSkewThresholds(),
+          AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry,
+          2);
       unknownFields.writeTo(output);
     }
 
@@ -2524,6 +2727,16 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, skewThresholds__);
       }
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> entry
+           : internalGetAttributionScoreSkewThresholds().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+        attributionScoreSkewThresholds__ = AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, attributionScoreSkewThresholds__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2541,6 +2754,8 @@ private static final long serialVersionUID = 0L;
 
       if (!internalGetSkewThresholds().equals(
           other.internalGetSkewThresholds())) return false;
+      if (!internalGetAttributionScoreSkewThresholds().equals(
+          other.internalGetAttributionScoreSkewThresholds())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2555,6 +2770,10 @@ private static final long serialVersionUID = 0L;
       if (!internalGetSkewThresholds().getMap().isEmpty()) {
         hash = (37 * hash) + SKEW_THRESHOLDS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSkewThresholds().hashCode();
+      }
+      if (!internalGetAttributionScoreSkewThresholds().getMap().isEmpty()) {
+        hash = (37 * hash) + ATTRIBUTION_SCORE_SKEW_THRESHOLDS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetAttributionScoreSkewThresholds().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2674,6 +2893,8 @@ private static final long serialVersionUID = 0L;
         switch (number) {
           case 1:
             return internalGetSkewThresholds();
+          case 2:
+            return internalGetAttributionScoreSkewThresholds();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -2685,6 +2906,8 @@ private static final long serialVersionUID = 0L;
         switch (number) {
           case 1:
             return internalGetMutableSkewThresholds();
+          case 2:
+            return internalGetMutableAttributionScoreSkewThresholds();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -2717,6 +2940,7 @@ private static final long serialVersionUID = 0L;
       public Builder clear() {
         super.clear();
         internalGetMutableSkewThresholds().clear();
+        internalGetMutableAttributionScoreSkewThresholds().clear();
         return this;
       }
 
@@ -2746,6 +2970,8 @@ private static final long serialVersionUID = 0L;
         int from_bitField0_ = bitField0_;
         result.skewThresholds_ = internalGetSkewThresholds();
         result.skewThresholds_.makeImmutable();
+        result.attributionScoreSkewThresholds_ = internalGetAttributionScoreSkewThresholds();
+        result.attributionScoreSkewThresholds_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -2796,6 +3022,8 @@ private static final long serialVersionUID = 0L;
         if (other == com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.TrainingPredictionSkewDetectionConfig.getDefaultInstance()) return this;
         internalGetMutableSkewThresholds().mergeFrom(
             other.internalGetSkewThresholds());
+        internalGetMutableAttributionScoreSkewThresholds().mergeFrom(
+            other.internalGetAttributionScoreSkewThresholds());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3002,6 +3230,176 @@ private static final long serialVersionUID = 0L;
             .putAll(values);
         return this;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> attributionScoreSkewThresholds_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+      internalGetAttributionScoreSkewThresholds() {
+        if (attributionScoreSkewThresholds_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry);
+        }
+        return attributionScoreSkewThresholds_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+      internalGetMutableAttributionScoreSkewThresholds() {
+        onChanged();;
+        if (attributionScoreSkewThresholds_ == null) {
+          attributionScoreSkewThresholds_ = com.google.protobuf.MapField.newMapField(
+              AttributionScoreSkewThresholdsDefaultEntryHolder.defaultEntry);
+        }
+        if (!attributionScoreSkewThresholds_.isMutable()) {
+          attributionScoreSkewThresholds_ = attributionScoreSkewThresholds_.copy();
+        }
+        return attributionScoreSkewThresholds_;
+      }
+
+      public int getAttributionScoreSkewThresholdsCount() {
+        return internalGetAttributionScoreSkewThresholds().getMap().size();
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between the training and prediction
+       * feature.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsAttributionScoreSkewThresholds(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetAttributionScoreSkewThresholds().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getAttributionScoreSkewThresholdsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> getAttributionScoreSkewThresholds() {
+        return getAttributionScoreSkewThresholdsMap();
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between the training and prediction
+       * feature.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> getAttributionScoreSkewThresholdsMap() {
+        return internalGetAttributionScoreSkewThresholds().getMap();
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between the training and prediction
+       * feature.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+       */
+      @java.lang.Override
+
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreSkewThresholdsOrDefault(
+          java.lang.String key,
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
+            internalGetAttributionScoreSkewThresholds().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between the training and prediction
+       * feature.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+       */
+      @java.lang.Override
+
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreSkewThresholdsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
+            internalGetAttributionScoreSkewThresholds().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearAttributionScoreSkewThresholds() {
+        internalGetMutableAttributionScoreSkewThresholds().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between the training and prediction
+       * feature.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+       */
+
+      public Builder removeAttributionScoreSkewThresholds(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableAttributionScoreSkewThresholds().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+      getMutableAttributionScoreSkewThresholds() {
+        return internalGetMutableAttributionScoreSkewThresholds().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between the training and prediction
+       * feature.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+       */
+      public Builder putAttributionScoreSkewThresholds(
+          java.lang.String key,
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableAttributionScoreSkewThresholds().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between the training and prediction
+       * feature.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_skew_thresholds = 2;</code>
+       */
+
+      public Builder putAllAttributionScoreSkewThresholds(
+          java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> values) {
+        internalGetMutableAttributionScoreSkewThresholds().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3127,6 +3525,65 @@ private static final long serialVersionUID = 0L;
 
     com.google.cloud.aiplatform.v1beta1.ThresholdConfig getDriftThresholdsOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+    int getAttributionScoreDriftThresholdsCount();
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+    boolean containsAttributionScoreDriftThresholds(
+        java.lang.String key);
+    /**
+     * Use {@link #getAttributionScoreDriftThresholdsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+    getAttributionScoreDriftThresholds();
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+    java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+    getAttributionScoreDriftThresholdsMap();
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+
+    com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreDriftThresholdsOrDefault(
+        java.lang.String key,
+        com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue);
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+
+    com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreDriftThresholdsOrThrow(
+        java.lang.String key);
   }
   /**
    * <pre>
@@ -3191,6 +3648,19 @@ private static final long serialVersionUID = 0L;
                   driftThresholds__.getKey(), driftThresholds__.getValue());
               break;
             }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                attributionScoreDriftThresholds_ = com.google.protobuf.MapField.newMapField(
+                    AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+              attributionScoreDriftThresholds__ = input.readMessage(
+                  AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              attributionScoreDriftThresholds_.getMutableMap().put(
+                  attributionScoreDriftThresholds__.getKey(), attributionScoreDriftThresholds__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -3222,6 +3692,8 @@ private static final long serialVersionUID = 0L;
       switch (number) {
         case 1:
           return internalGetDriftThresholds();
+        case 2:
+          return internalGetAttributionScoreDriftThresholds();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -3344,6 +3816,107 @@ private static final long serialVersionUID = 0L;
       return map.get(key);
     }
 
+    public static final int ATTRIBUTION_SCORE_DRIFT_THRESHOLDS_FIELD_NUMBER = 2;
+    private static final class AttributionScoreDriftThresholdsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>newDefaultInstance(
+                  com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  com.google.cloud.aiplatform.v1beta1.ThresholdConfig.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> attributionScoreDriftThresholds_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+    internalGetAttributionScoreDriftThresholds() {
+      if (attributionScoreDriftThresholds_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry);
+      }
+      return attributionScoreDriftThresholds_;
+    }
+
+    public int getAttributionScoreDriftThresholdsCount() {
+      return internalGetAttributionScoreDriftThresholds().getMap().size();
+    }
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsAttributionScoreDriftThresholds(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetAttributionScoreDriftThresholds().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getAttributionScoreDriftThresholdsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> getAttributionScoreDriftThresholds() {
+      return getAttributionScoreDriftThresholdsMap();
+    }
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> getAttributionScoreDriftThresholdsMap() {
+      return internalGetAttributionScoreDriftThresholds().getMap();
+    }
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+    @java.lang.Override
+
+    public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreDriftThresholdsOrDefault(
+        java.lang.String key,
+        com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
+          internalGetAttributionScoreDriftThresholds().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Key is the feature name and value is the threshold. The threshold here is
+     * against attribution score distance between different time windows.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+     */
+    @java.lang.Override
+
+    public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreDriftThresholdsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
+          internalGetAttributionScoreDriftThresholds().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3364,6 +3937,12 @@ private static final long serialVersionUID = 0L;
           internalGetDriftThresholds(),
           DriftThresholdsDefaultEntryHolder.defaultEntry,
           1);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetAttributionScoreDriftThresholds(),
+          AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry,
+          2);
       unknownFields.writeTo(output);
     }
 
@@ -3383,6 +3962,16 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(1, driftThresholds__);
       }
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> entry
+           : internalGetAttributionScoreDriftThresholds().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+        attributionScoreDriftThresholds__ = AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, attributionScoreDriftThresholds__);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3400,6 +3989,8 @@ private static final long serialVersionUID = 0L;
 
       if (!internalGetDriftThresholds().equals(
           other.internalGetDriftThresholds())) return false;
+      if (!internalGetAttributionScoreDriftThresholds().equals(
+          other.internalGetAttributionScoreDriftThresholds())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3414,6 +4005,10 @@ private static final long serialVersionUID = 0L;
       if (!internalGetDriftThresholds().getMap().isEmpty()) {
         hash = (37 * hash) + DRIFT_THRESHOLDS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetDriftThresholds().hashCode();
+      }
+      if (!internalGetAttributionScoreDriftThresholds().getMap().isEmpty()) {
+        hash = (37 * hash) + ATTRIBUTION_SCORE_DRIFT_THRESHOLDS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetAttributionScoreDriftThresholds().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3532,6 +4127,8 @@ private static final long serialVersionUID = 0L;
         switch (number) {
           case 1:
             return internalGetDriftThresholds();
+          case 2:
+            return internalGetAttributionScoreDriftThresholds();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -3543,6 +4140,8 @@ private static final long serialVersionUID = 0L;
         switch (number) {
           case 1:
             return internalGetMutableDriftThresholds();
+          case 2:
+            return internalGetMutableAttributionScoreDriftThresholds();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -3575,6 +4174,7 @@ private static final long serialVersionUID = 0L;
       public Builder clear() {
         super.clear();
         internalGetMutableDriftThresholds().clear();
+        internalGetMutableAttributionScoreDriftThresholds().clear();
         return this;
       }
 
@@ -3604,6 +4204,8 @@ private static final long serialVersionUID = 0L;
         int from_bitField0_ = bitField0_;
         result.driftThresholds_ = internalGetDriftThresholds();
         result.driftThresholds_.makeImmutable();
+        result.attributionScoreDriftThresholds_ = internalGetAttributionScoreDriftThresholds();
+        result.attributionScoreDriftThresholds_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -3654,6 +4256,8 @@ private static final long serialVersionUID = 0L;
         if (other == com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.PredictionDriftDetectionConfig.getDefaultInstance()) return this;
         internalGetMutableDriftThresholds().mergeFrom(
             other.internalGetDriftThresholds());
+        internalGetMutableAttributionScoreDriftThresholds().mergeFrom(
+            other.internalGetAttributionScoreDriftThresholds());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -3860,6 +4464,169 @@ private static final long serialVersionUID = 0L;
             .putAll(values);
         return this;
       }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> attributionScoreDriftThresholds_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+      internalGetAttributionScoreDriftThresholds() {
+        if (attributionScoreDriftThresholds_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry);
+        }
+        return attributionScoreDriftThresholds_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+      internalGetMutableAttributionScoreDriftThresholds() {
+        onChanged();;
+        if (attributionScoreDriftThresholds_ == null) {
+          attributionScoreDriftThresholds_ = com.google.protobuf.MapField.newMapField(
+              AttributionScoreDriftThresholdsDefaultEntryHolder.defaultEntry);
+        }
+        if (!attributionScoreDriftThresholds_.isMutable()) {
+          attributionScoreDriftThresholds_ = attributionScoreDriftThresholds_.copy();
+        }
+        return attributionScoreDriftThresholds_;
+      }
+
+      public int getAttributionScoreDriftThresholdsCount() {
+        return internalGetAttributionScoreDriftThresholds().getMap().size();
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between different time windows.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+       */
+
+      @java.lang.Override
+      public boolean containsAttributionScoreDriftThresholds(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetAttributionScoreDriftThresholds().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getAttributionScoreDriftThresholdsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> getAttributionScoreDriftThresholds() {
+        return getAttributionScoreDriftThresholdsMap();
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between different time windows.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> getAttributionScoreDriftThresholdsMap() {
+        return internalGetAttributionScoreDriftThresholds().getMap();
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between different time windows.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+       */
+      @java.lang.Override
+
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreDriftThresholdsOrDefault(
+          java.lang.String key,
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
+            internalGetAttributionScoreDriftThresholds().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between different time windows.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+       */
+      @java.lang.Override
+
+      public com.google.cloud.aiplatform.v1beta1.ThresholdConfig getAttributionScoreDriftThresholdsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> map =
+            internalGetAttributionScoreDriftThresholds().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearAttributionScoreDriftThresholds() {
+        internalGetMutableAttributionScoreDriftThresholds().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between different time windows.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+       */
+
+      public Builder removeAttributionScoreDriftThresholds(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableAttributionScoreDriftThresholds().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig>
+      getMutableAttributionScoreDriftThresholds() {
+        return internalGetMutableAttributionScoreDriftThresholds().getMutableMap();
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between different time windows.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+       */
+      public Builder putAttributionScoreDriftThresholds(
+          java.lang.String key,
+          com.google.cloud.aiplatform.v1beta1.ThresholdConfig value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableAttributionScoreDriftThresholds().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * Key is the feature name and value is the threshold. The threshold here is
+       * against attribution score distance between different time windows.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.aiplatform.v1beta1.ThresholdConfig&gt; attribution_score_drift_thresholds = 2;</code>
+       */
+
+      public Builder putAllAttributionScoreDriftThresholds(
+          java.util.Map<java.lang.String, com.google.cloud.aiplatform.v1beta1.ThresholdConfig> values) {
+        internalGetMutableAttributionScoreDriftThresholds().getMutableMap()
+            .putAll(values);
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3908,6 +4675,2165 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.PredictionDriftDetectionConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ExplanationConfigOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * If want to analyze the Explainable AI feature attribute scores or not.
+     * If set to true, Vertex AI will log the feature attributions from
+     * explain response and do the skew/drift detection for them.
+     * </pre>
+     *
+     * <code>bool enable_feature_attributes = 1;</code>
+     * @return The enableFeatureAttributes.
+     */
+    boolean getEnableFeatureAttributes();
+
+    /**
+     * <pre>
+     * Predictions generated by the BatchPredictionJob using baseline dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+     * @return Whether the explanationBaseline field is set.
+     */
+    boolean hasExplanationBaseline();
+    /**
+     * <pre>
+     * Predictions generated by the BatchPredictionJob using baseline dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+     * @return The explanationBaseline.
+     */
+    com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline getExplanationBaseline();
+    /**
+     * <pre>
+     * Predictions generated by the BatchPredictionJob using baseline dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+     */
+    com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaselineOrBuilder getExplanationBaselineOrBuilder();
+  }
+  /**
+   * <pre>
+   * The config for integrated with Explainable AI. Only applicable if the Model
+   * has explanation_spec populated.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig}
+   */
+  public static final class ExplanationConfig extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig)
+      ExplanationConfigOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ExplanationConfig.newBuilder() to construct.
+    private ExplanationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ExplanationConfig() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ExplanationConfig();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ExplanationConfig(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              enableFeatureAttributes_ = input.readBool();
+              break;
+            }
+            case 18: {
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.Builder subBuilder = null;
+              if (explanationBaseline_ != null) {
+                subBuilder = explanationBaseline_.toBuilder();
+              }
+              explanationBaseline_ = input.readMessage(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(explanationBaseline_);
+                explanationBaseline_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.class, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder.class);
+    }
+
+    public interface ExplanationBaselineOrBuilder extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       * <pre>
+       * Cloud Storage location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+       * @return Whether the gcs field is set.
+       */
+      boolean hasGcs();
+      /**
+       * <pre>
+       * Cloud Storage location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+       * @return The gcs.
+       */
+      com.google.cloud.aiplatform.v1beta1.GcsDestination getGcs();
+      /**
+       * <pre>
+       * Cloud Storage location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+       */
+      com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder getGcsOrBuilder();
+
+      /**
+       * <pre>
+       * BigQuery location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+       * @return Whether the bigquery field is set.
+       */
+      boolean hasBigquery();
+      /**
+       * <pre>
+       * BigQuery location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+       * @return The bigquery.
+       */
+      com.google.cloud.aiplatform.v1beta1.BigQueryDestination getBigquery();
+      /**
+       * <pre>
+       * BigQuery location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+       */
+      com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder getBigqueryOrBuilder();
+
+      /**
+       * <pre>
+       * The storage format of the predictions generated BatchPrediction job.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+       * @return The enum numeric value on the wire for predictionFormat.
+       */
+      int getPredictionFormatValue();
+      /**
+       * <pre>
+       * The storage format of the predictions generated BatchPrediction job.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+       * @return The predictionFormat.
+       */
+      com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat getPredictionFormat();
+
+      public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.DestinationCase getDestinationCase();
+    }
+    /**
+     * <pre>
+     * Output from [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] for Model Monitoring baseline dataset,
+     * which can be used to generate baseline attribution scores.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline}
+     */
+    public static final class ExplanationBaseline extends
+        com.google.protobuf.GeneratedMessageV3 implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline)
+        ExplanationBaselineOrBuilder {
+    private static final long serialVersionUID = 0L;
+      // Use ExplanationBaseline.newBuilder() to construct.
+      private ExplanationBaseline(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+      private ExplanationBaseline() {
+        predictionFormat_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(
+          UnusedPrivateParameter unused) {
+        return new ExplanationBaseline();
+      }
+
+      @java.lang.Override
+      public final com.google.protobuf.UnknownFieldSet
+      getUnknownFields() {
+        return this.unknownFields;
+      }
+      private ExplanationBaseline(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+            com.google.protobuf.UnknownFieldSet.newBuilder();
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int rawValue = input.readEnum();
+
+                predictionFormat_ = rawValue;
+                break;
+              }
+              case 18: {
+                com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder subBuilder = null;
+                if (destinationCase_ == 2) {
+                  subBuilder = ((com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_).toBuilder();
+                }
+                destination_ =
+                    input.readMessage(com.google.cloud.aiplatform.v1beta1.GcsDestination.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_);
+                  destination_ = subBuilder.buildPartial();
+                }
+                destinationCase_ = 2;
+                break;
+              }
+              case 26: {
+                com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder subBuilder = null;
+                if (destinationCase_ == 3) {
+                  subBuilder = ((com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_).toBuilder();
+                }
+                destination_ =
+                    input.readMessage(com.google.cloud.aiplatform.v1beta1.BigQueryDestination.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
+                  destination_ = subBuilder.buildPartial();
+                }
+                destinationCase_ = 3;
+                break;
+              }
+              default: {
+                if (!parseUnknownField(
+                    input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+            }
+          }
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(this);
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(
+              e).setUnfinishedMessage(this);
+        } finally {
+          this.unknownFields = unknownFields.build();
+          makeExtensionsImmutable();
+        }
+      }
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_ExplanationBaseline_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_ExplanationBaseline_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.class, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.Builder.class);
+      }
+
+      /**
+       * <pre>
+       * The storage format of the predictions generated BatchPrediction job.
+       * </pre>
+       *
+       * Protobuf enum {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat}
+       */
+      public enum PredictionFormat
+          implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         * <pre>
+         * Should not be set.
+         * </pre>
+         *
+         * <code>PREDICTION_FORMAT_UNSPECIFIED = 0;</code>
+         */
+        PREDICTION_FORMAT_UNSPECIFIED(0),
+        /**
+         * <pre>
+         * Predictions are in JSONL files, consistent from the definition here
+         * (http://shortn/_4bS0hL7ofb).
+         * </pre>
+         *
+         * <code>JSONL = 2;</code>
+         */
+        JSONL(2),
+        /**
+         * <pre>
+         * Predictions are in BigQuery.
+         * </pre>
+         *
+         * <code>BIGQUERY = 3;</code>
+         */
+        BIGQUERY(3),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         * <pre>
+         * Should not be set.
+         * </pre>
+         *
+         * <code>PREDICTION_FORMAT_UNSPECIFIED = 0;</code>
+         */
+        public static final int PREDICTION_FORMAT_UNSPECIFIED_VALUE = 0;
+        /**
+         * <pre>
+         * Predictions are in JSONL files, consistent from the definition here
+         * (http://shortn/_4bS0hL7ofb).
+         * </pre>
+         *
+         * <code>JSONL = 2;</code>
+         */
+        public static final int JSONL_VALUE = 2;
+        /**
+         * <pre>
+         * Predictions are in BigQuery.
+         * </pre>
+         *
+         * <code>BIGQUERY = 3;</code>
+         */
+        public static final int BIGQUERY_VALUE = 3;
+
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static PredictionFormat valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static PredictionFormat forNumber(int value) {
+          switch (value) {
+            case 0: return PREDICTION_FORMAT_UNSPECIFIED;
+            case 2: return JSONL;
+            case 3: return BIGQUERY;
+            default: return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<PredictionFormat>
+            internalGetValueMap() {
+          return internalValueMap;
+        }
+        private static final com.google.protobuf.Internal.EnumLiteMap<
+            PredictionFormat> internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<PredictionFormat>() {
+                public PredictionFormat findValueByNumber(int number) {
+                  return PredictionFormat.forNumber(number);
+                }
+              };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor
+            getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+        public final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptorForType() {
+          return getDescriptor();
+        }
+        public static final com.google.protobuf.Descriptors.EnumDescriptor
+            getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.getDescriptor().getEnumTypes().get(0);
+        }
+
+        private static final PredictionFormat[] VALUES = values();
+
+        public static PredictionFormat valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+              "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private PredictionFormat(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat)
+      }
+
+      private int destinationCase_ = 0;
+      private java.lang.Object destination_;
+      public enum DestinationCase
+          implements com.google.protobuf.Internal.EnumLite,
+              com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+        GCS(2),
+        BIGQUERY(3),
+        DESTINATION_NOT_SET(0);
+        private final int value;
+        private DestinationCase(int value) {
+          this.value = value;
+        }
+        /**
+         * @param value The number of the enum to look for.
+         * @return The enum associated with the given number.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static DestinationCase valueOf(int value) {
+          return forNumber(value);
+        }
+
+        public static DestinationCase forNumber(int value) {
+          switch (value) {
+            case 2: return GCS;
+            case 3: return BIGQUERY;
+            case 0: return DESTINATION_NOT_SET;
+            default: return null;
+          }
+        }
+        public int getNumber() {
+          return this.value;
+        }
+      };
+
+      public DestinationCase
+      getDestinationCase() {
+        return DestinationCase.forNumber(
+            destinationCase_);
+      }
+
+      public static final int GCS_FIELD_NUMBER = 2;
+      /**
+       * <pre>
+       * Cloud Storage location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+       * @return Whether the gcs field is set.
+       */
+      @java.lang.Override
+      public boolean hasGcs() {
+        return destinationCase_ == 2;
+      }
+      /**
+       * <pre>
+       * Cloud Storage location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+       * @return The gcs.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GcsDestination getGcs() {
+        if (destinationCase_ == 2) {
+           return (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+      }
+      /**
+       * <pre>
+       * Cloud Storage location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder getGcsOrBuilder() {
+        if (destinationCase_ == 2) {
+           return (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+      }
+
+      public static final int BIGQUERY_FIELD_NUMBER = 3;
+      /**
+       * <pre>
+       * BigQuery location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+       * @return Whether the bigquery field is set.
+       */
+      @java.lang.Override
+      public boolean hasBigquery() {
+        return destinationCase_ == 3;
+      }
+      /**
+       * <pre>
+       * BigQuery location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+       * @return The bigquery.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.BigQueryDestination getBigquery() {
+        if (destinationCase_ == 3) {
+           return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+      }
+      /**
+       * <pre>
+       * BigQuery location for BatchExplain output.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder getBigqueryOrBuilder() {
+        if (destinationCase_ == 3) {
+           return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+      }
+
+      public static final int PREDICTION_FORMAT_FIELD_NUMBER = 1;
+      private int predictionFormat_;
+      /**
+       * <pre>
+       * The storage format of the predictions generated BatchPrediction job.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+       * @return The enum numeric value on the wire for predictionFormat.
+       */
+      @java.lang.Override public int getPredictionFormatValue() {
+        return predictionFormat_;
+      }
+      /**
+       * <pre>
+       * The storage format of the predictions generated BatchPrediction job.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+       * @return The predictionFormat.
+       */
+      @java.lang.Override public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat getPredictionFormat() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat result = com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat.valueOf(predictionFormat_);
+        return result == null ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat.UNRECOGNIZED : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output)
+                          throws java.io.IOException {
+        if (predictionFormat_ != com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat.PREDICTION_FORMAT_UNSPECIFIED.getNumber()) {
+          output.writeEnum(1, predictionFormat_);
+        }
+        if (destinationCase_ == 2) {
+          output.writeMessage(2, (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_);
+        }
+        if (destinationCase_ == 3) {
+          output.writeMessage(3, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
+        }
+        unknownFields.writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (predictionFormat_ != com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat.PREDICTION_FORMAT_UNSPECIFIED.getNumber()) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeEnumSize(1, predictionFormat_);
+        }
+        if (destinationCase_ == 2) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_);
+        }
+        if (destinationCase_ == 3) {
+          size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(3, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
+        }
+        size += unknownFields.getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+         return true;
+        }
+        if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline other = (com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline) obj;
+
+        if (predictionFormat_ != other.predictionFormat_) return false;
+        if (!getDestinationCase().equals(other.getDestinationCase())) return false;
+        switch (destinationCase_) {
+          case 2:
+            if (!getGcs()
+                .equals(other.getGcs())) return false;
+            break;
+          case 3:
+            if (!getBigquery()
+                .equals(other.getBigquery())) return false;
+            break;
+          case 0:
+          default:
+        }
+        if (!unknownFields.equals(other.unknownFields)) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + PREDICTION_FORMAT_FIELD_NUMBER;
+        hash = (53 * hash) + predictionFormat_;
+        switch (destinationCase_) {
+          case 2:
+            hash = (37 * hash) + GCS_FIELD_NUMBER;
+            hash = (53 * hash) + getGcs().hashCode();
+            break;
+          case 3:
+            hash = (37 * hash) + BIGQUERY_FIELD_NUMBER;
+            hash = (53 * hash) + getBigquery().hashCode();
+            break;
+          case 0:
+          default:
+        }
+        hash = (29 * hash) + unknownFields.hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(
+          java.nio.ByteBuffer data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(
+          java.nio.ByteBuffer data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(byte[] data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(
+          byte[] data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseDelimitedFrom(java.io.InputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseDelimitedFrom(
+          java.io.InputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(
+          com.google.protobuf.CodedInputStream input)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input);
+      }
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3
+            .parseWithIOException(PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() { return newBuilder(); }
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+      public static Builder newBuilder(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE
+            ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       * <pre>
+       * Output from [BatchPredictionJob][google.cloud.aiplatform.v1beta1.BatchPredictionJob] for Model Monitoring baseline dataset,
+       * which can be used to generate baseline attribution scores.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline}
+       */
+      public static final class Builder extends
+          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline)
+          com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaselineOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor
+            getDescriptor() {
+          return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_ExplanationBaseline_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_ExplanationBaseline_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.class, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.Builder.class);
+        }
+
+        // Construct using com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3
+                  .alwaysUseFieldBuilders) {
+          }
+        }
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          predictionFormat_ = 0;
+
+          destinationCase_ = 0;
+          destination_ = null;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor
+            getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_ExplanationBaseline_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline build() {
+          com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline buildPartial() {
+          com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline result = new com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline(this);
+          if (destinationCase_ == 2) {
+            if (gcsBuilder_ == null) {
+              result.destination_ = destination_;
+            } else {
+              result.destination_ = gcsBuilder_.build();
+            }
+          }
+          if (destinationCase_ == 3) {
+            if (bigqueryBuilder_ == null) {
+              result.destination_ = destination_;
+            } else {
+              result.destination_ = bigqueryBuilder_.build();
+            }
+          }
+          result.predictionFormat_ = predictionFormat_;
+          result.destinationCase_ = destinationCase_;
+          onBuilt();
+          return result;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.setField(field, value);
+        }
+        @java.lang.Override
+        public Builder clearField(
+            com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+        @java.lang.Override
+        public Builder clearOneof(
+            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index, java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other instanceof com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline) {
+            return mergeFrom((com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline)other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline other) {
+          if (other == com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.getDefaultInstance()) return this;
+          if (other.predictionFormat_ != 0) {
+            setPredictionFormatValue(other.getPredictionFormatValue());
+          }
+          switch (other.getDestinationCase()) {
+            case GCS: {
+              mergeGcs(other.getGcs());
+              break;
+            }
+            case BIGQUERY: {
+              mergeBigquery(other.getBigquery());
+              break;
+            }
+            case DESTINATION_NOT_SET: {
+              break;
+            }
+          }
+          this.mergeUnknownFields(other.unknownFields);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline parsedMessage = null;
+          try {
+            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            parsedMessage = (com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline) e.getUnfinishedMessage();
+            throw e.unwrapIOException();
+          } finally {
+            if (parsedMessage != null) {
+              mergeFrom(parsedMessage);
+            }
+          }
+          return this;
+        }
+        private int destinationCase_ = 0;
+        private java.lang.Object destination_;
+        public DestinationCase
+            getDestinationCase() {
+          return DestinationCase.forNumber(
+              destinationCase_);
+        }
+
+        public Builder clearDestination() {
+          destinationCase_ = 0;
+          destination_ = null;
+          onChanged();
+          return this;
+        }
+
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GcsDestination, com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder, com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder> gcsBuilder_;
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         * @return Whether the gcs field is set.
+         */
+        @java.lang.Override
+        public boolean hasGcs() {
+          return destinationCase_ == 2;
+        }
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         * @return The gcs.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.GcsDestination getGcs() {
+          if (gcsBuilder_ == null) {
+            if (destinationCase_ == 2) {
+              return (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+          } else {
+            if (destinationCase_ == 2) {
+              return gcsBuilder_.getMessage();
+            }
+            return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         */
+        public Builder setGcs(com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
+          if (gcsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            destination_ = value;
+            onChanged();
+          } else {
+            gcsBuilder_.setMessage(value);
+          }
+          destinationCase_ = 2;
+          return this;
+        }
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         */
+        public Builder setGcs(
+            com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder builderForValue) {
+          if (gcsBuilder_ == null) {
+            destination_ = builderForValue.build();
+            onChanged();
+          } else {
+            gcsBuilder_.setMessage(builderForValue.build());
+          }
+          destinationCase_ = 2;
+          return this;
+        }
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         */
+        public Builder mergeGcs(com.google.cloud.aiplatform.v1beta1.GcsDestination value) {
+          if (gcsBuilder_ == null) {
+            if (destinationCase_ == 2 &&
+                destination_ != com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance()) {
+              destination_ = com.google.cloud.aiplatform.v1beta1.GcsDestination.newBuilder((com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_)
+                  .mergeFrom(value).buildPartial();
+            } else {
+              destination_ = value;
+            }
+            onChanged();
+          } else {
+            if (destinationCase_ == 2) {
+              gcsBuilder_.mergeFrom(value);
+            }
+            gcsBuilder_.setMessage(value);
+          }
+          destinationCase_ = 2;
+          return this;
+        }
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         */
+        public Builder clearGcs() {
+          if (gcsBuilder_ == null) {
+            if (destinationCase_ == 2) {
+              destinationCase_ = 0;
+              destination_ = null;
+              onChanged();
+            }
+          } else {
+            if (destinationCase_ == 2) {
+              destinationCase_ = 0;
+              destination_ = null;
+            }
+            gcsBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder getGcsBuilder() {
+          return getGcsFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder getGcsOrBuilder() {
+          if ((destinationCase_ == 2) && (gcsBuilder_ != null)) {
+            return gcsBuilder_.getMessageOrBuilder();
+          } else {
+            if (destinationCase_ == 2) {
+              return (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * Cloud Storage location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.GcsDestination gcs = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.GcsDestination, com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder, com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder> 
+            getGcsFieldBuilder() {
+          if (gcsBuilder_ == null) {
+            if (!(destinationCase_ == 2)) {
+              destination_ = com.google.cloud.aiplatform.v1beta1.GcsDestination.getDefaultInstance();
+            }
+            gcsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.GcsDestination, com.google.cloud.aiplatform.v1beta1.GcsDestination.Builder, com.google.cloud.aiplatform.v1beta1.GcsDestinationOrBuilder>(
+                    (com.google.cloud.aiplatform.v1beta1.GcsDestination) destination_,
+                    getParentForChildren(),
+                    isClean());
+            destination_ = null;
+          }
+          destinationCase_ = 2;
+          onChanged();;
+          return gcsBuilder_;
+        }
+
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination, com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder, com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder> bigqueryBuilder_;
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         * @return Whether the bigquery field is set.
+         */
+        @java.lang.Override
+        public boolean hasBigquery() {
+          return destinationCase_ == 3;
+        }
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         * @return The bigquery.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.BigQueryDestination getBigquery() {
+          if (bigqueryBuilder_ == null) {
+            if (destinationCase_ == 3) {
+              return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+          } else {
+            if (destinationCase_ == 3) {
+              return bigqueryBuilder_.getMessage();
+            }
+            return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         */
+        public Builder setBigquery(com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
+          if (bigqueryBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            destination_ = value;
+            onChanged();
+          } else {
+            bigqueryBuilder_.setMessage(value);
+          }
+          destinationCase_ = 3;
+          return this;
+        }
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         */
+        public Builder setBigquery(
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder builderForValue) {
+          if (bigqueryBuilder_ == null) {
+            destination_ = builderForValue.build();
+            onChanged();
+          } else {
+            bigqueryBuilder_.setMessage(builderForValue.build());
+          }
+          destinationCase_ = 3;
+          return this;
+        }
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         */
+        public Builder mergeBigquery(com.google.cloud.aiplatform.v1beta1.BigQueryDestination value) {
+          if (bigqueryBuilder_ == null) {
+            if (destinationCase_ == 3 &&
+                destination_ != com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance()) {
+              destination_ = com.google.cloud.aiplatform.v1beta1.BigQueryDestination.newBuilder((com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_)
+                  .mergeFrom(value).buildPartial();
+            } else {
+              destination_ = value;
+            }
+            onChanged();
+          } else {
+            if (destinationCase_ == 3) {
+              bigqueryBuilder_.mergeFrom(value);
+            }
+            bigqueryBuilder_.setMessage(value);
+          }
+          destinationCase_ = 3;
+          return this;
+        }
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         */
+        public Builder clearBigquery() {
+          if (bigqueryBuilder_ == null) {
+            if (destinationCase_ == 3) {
+              destinationCase_ = 0;
+              destination_ = null;
+              onChanged();
+            }
+          } else {
+            if (destinationCase_ == 3) {
+              destinationCase_ = 0;
+              destination_ = null;
+            }
+            bigqueryBuilder_.clear();
+          }
+          return this;
+        }
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         */
+        public com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder getBigqueryBuilder() {
+          return getBigqueryFieldBuilder().getBuilder();
+        }
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder getBigqueryOrBuilder() {
+          if ((destinationCase_ == 3) && (bigqueryBuilder_ != null)) {
+            return bigqueryBuilder_.getMessageOrBuilder();
+          } else {
+            if (destinationCase_ == 3) {
+              return (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_;
+            }
+            return com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+          }
+        }
+        /**
+         * <pre>
+         * BigQuery location for BatchExplain output.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.BigQueryDestination bigquery = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.BigQueryDestination, com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder, com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder> 
+            getBigqueryFieldBuilder() {
+          if (bigqueryBuilder_ == null) {
+            if (!(destinationCase_ == 3)) {
+              destination_ = com.google.cloud.aiplatform.v1beta1.BigQueryDestination.getDefaultInstance();
+            }
+            bigqueryBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.BigQueryDestination, com.google.cloud.aiplatform.v1beta1.BigQueryDestination.Builder, com.google.cloud.aiplatform.v1beta1.BigQueryDestinationOrBuilder>(
+                    (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_,
+                    getParentForChildren(),
+                    isClean());
+            destination_ = null;
+          }
+          destinationCase_ = 3;
+          onChanged();;
+          return bigqueryBuilder_;
+        }
+
+        private int predictionFormat_ = 0;
+        /**
+         * <pre>
+         * The storage format of the predictions generated BatchPrediction job.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+         * @return The enum numeric value on the wire for predictionFormat.
+         */
+        @java.lang.Override public int getPredictionFormatValue() {
+          return predictionFormat_;
+        }
+        /**
+         * <pre>
+         * The storage format of the predictions generated BatchPrediction job.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+         * @param value The enum numeric value on the wire for predictionFormat to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPredictionFormatValue(int value) {
+          
+          predictionFormat_ = value;
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The storage format of the predictions generated BatchPrediction job.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+         * @return The predictionFormat.
+         */
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat getPredictionFormat() {
+          @SuppressWarnings("deprecation")
+          com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat result = com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat.valueOf(predictionFormat_);
+          return result == null ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat.UNRECOGNIZED : result;
+        }
+        /**
+         * <pre>
+         * The storage format of the predictions generated BatchPrediction job.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+         * @param value The predictionFormat to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPredictionFormat(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          
+          predictionFormat_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         * <pre>
+         * The storage format of the predictions generated BatchPrediction job.
+         * </pre>
+         *
+         * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.PredictionFormat prediction_format = 1;</code>
+         * @return This builder for chaining.
+         */
+        public Builder clearPredictionFormat() {
+          
+          predictionFormat_ = 0;
+          onChanged();
+          return this;
+        }
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline)
+      private static final com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline DEFAULT_INSTANCE;
+      static {
+        DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline();
+      }
+
+      public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<ExplanationBaseline>
+          PARSER = new com.google.protobuf.AbstractParser<ExplanationBaseline>() {
+        @java.lang.Override
+        public ExplanationBaseline parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ExplanationBaseline(input, extensionRegistry);
+        }
+      };
+
+      public static com.google.protobuf.Parser<ExplanationBaseline> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<ExplanationBaseline> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+
+    }
+
+    public static final int ENABLE_FEATURE_ATTRIBUTES_FIELD_NUMBER = 1;
+    private boolean enableFeatureAttributes_;
+    /**
+     * <pre>
+     * If want to analyze the Explainable AI feature attribute scores or not.
+     * If set to true, Vertex AI will log the feature attributions from
+     * explain response and do the skew/drift detection for them.
+     * </pre>
+     *
+     * <code>bool enable_feature_attributes = 1;</code>
+     * @return The enableFeatureAttributes.
+     */
+    @java.lang.Override
+    public boolean getEnableFeatureAttributes() {
+      return enableFeatureAttributes_;
+    }
+
+    public static final int EXPLANATION_BASELINE_FIELD_NUMBER = 2;
+    private com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanationBaseline_;
+    /**
+     * <pre>
+     * Predictions generated by the BatchPredictionJob using baseline dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+     * @return Whether the explanationBaseline field is set.
+     */
+    @java.lang.Override
+    public boolean hasExplanationBaseline() {
+      return explanationBaseline_ != null;
+    }
+    /**
+     * <pre>
+     * Predictions generated by the BatchPredictionJob using baseline dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+     * @return The explanationBaseline.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline getExplanationBaseline() {
+      return explanationBaseline_ == null ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.getDefaultInstance() : explanationBaseline_;
+    }
+    /**
+     * <pre>
+     * Predictions generated by the BatchPredictionJob using baseline dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaselineOrBuilder getExplanationBaselineOrBuilder() {
+      return getExplanationBaseline();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (enableFeatureAttributes_ != false) {
+        output.writeBool(1, enableFeatureAttributes_);
+      }
+      if (explanationBaseline_ != null) {
+        output.writeMessage(2, getExplanationBaseline());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enableFeatureAttributes_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, enableFeatureAttributes_);
+      }
+      if (explanationBaseline_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getExplanationBaseline());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig other = (com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig) obj;
+
+      if (getEnableFeatureAttributes()
+          != other.getEnableFeatureAttributes()) return false;
+      if (hasExplanationBaseline() != other.hasExplanationBaseline()) return false;
+      if (hasExplanationBaseline()) {
+        if (!getExplanationBaseline()
+            .equals(other.getExplanationBaseline())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLE_FEATURE_ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getEnableFeatureAttributes());
+      if (hasExplanationBaseline()) {
+        hash = (37 * hash) + EXPLANATION_BASELINE_FIELD_NUMBER;
+        hash = (53 * hash) + getExplanationBaseline().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI. Only applicable if the Model
+     * has explanation_spec populated.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig)
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.class, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        enableFeatureAttributes_ = false;
+
+        if (explanationBaselineBuilder_ == null) {
+          explanationBaseline_ = null;
+        } else {
+          explanationBaseline_ = null;
+          explanationBaselineBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelMonitoringProto.internal_static_google_cloud_aiplatform_v1beta1_ModelMonitoringObjectiveConfig_ExplanationConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig build() {
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig result = new com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig(this);
+        result.enableFeatureAttributes_ = enableFeatureAttributes_;
+        if (explanationBaselineBuilder_ == null) {
+          result.explanationBaseline_ = explanationBaseline_;
+        } else {
+          result.explanationBaseline_ = explanationBaselineBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig other) {
+        if (other == com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.getDefaultInstance()) return this;
+        if (other.getEnableFeatureAttributes() != false) {
+          setEnableFeatureAttributes(other.getEnableFeatureAttributes());
+        }
+        if (other.hasExplanationBaseline()) {
+          mergeExplanationBaseline(other.getExplanationBaseline());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean enableFeatureAttributes_ ;
+      /**
+       * <pre>
+       * If want to analyze the Explainable AI feature attribute scores or not.
+       * If set to true, Vertex AI will log the feature attributions from
+       * explain response and do the skew/drift detection for them.
+       * </pre>
+       *
+       * <code>bool enable_feature_attributes = 1;</code>
+       * @return The enableFeatureAttributes.
+       */
+      @java.lang.Override
+      public boolean getEnableFeatureAttributes() {
+        return enableFeatureAttributes_;
+      }
+      /**
+       * <pre>
+       * If want to analyze the Explainable AI feature attribute scores or not.
+       * If set to true, Vertex AI will log the feature attributions from
+       * explain response and do the skew/drift detection for them.
+       * </pre>
+       *
+       * <code>bool enable_feature_attributes = 1;</code>
+       * @param value The enableFeatureAttributes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableFeatureAttributes(boolean value) {
+        
+        enableFeatureAttributes_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * If want to analyze the Explainable AI feature attribute scores or not.
+       * If set to true, Vertex AI will log the feature attributions from
+       * explain response and do the skew/drift detection for them.
+       * </pre>
+       *
+       * <code>bool enable_feature_attributes = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableFeatureAttributes() {
+        
+        enableFeatureAttributes_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanationBaseline_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.Builder, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaselineOrBuilder> explanationBaselineBuilder_;
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       * @return Whether the explanationBaseline field is set.
+       */
+      public boolean hasExplanationBaseline() {
+        return explanationBaselineBuilder_ != null || explanationBaseline_ != null;
+      }
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       * @return The explanationBaseline.
+       */
+      public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline getExplanationBaseline() {
+        if (explanationBaselineBuilder_ == null) {
+          return explanationBaseline_ == null ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.getDefaultInstance() : explanationBaseline_;
+        } else {
+          return explanationBaselineBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       */
+      public Builder setExplanationBaseline(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline value) {
+        if (explanationBaselineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          explanationBaseline_ = value;
+          onChanged();
+        } else {
+          explanationBaselineBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       */
+      public Builder setExplanationBaseline(
+          com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.Builder builderForValue) {
+        if (explanationBaselineBuilder_ == null) {
+          explanationBaseline_ = builderForValue.build();
+          onChanged();
+        } else {
+          explanationBaselineBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       */
+      public Builder mergeExplanationBaseline(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline value) {
+        if (explanationBaselineBuilder_ == null) {
+          if (explanationBaseline_ != null) {
+            explanationBaseline_ =
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.newBuilder(explanationBaseline_).mergeFrom(value).buildPartial();
+          } else {
+            explanationBaseline_ = value;
+          }
+          onChanged();
+        } else {
+          explanationBaselineBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       */
+      public Builder clearExplanationBaseline() {
+        if (explanationBaselineBuilder_ == null) {
+          explanationBaseline_ = null;
+          onChanged();
+        } else {
+          explanationBaseline_ = null;
+          explanationBaselineBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.Builder getExplanationBaselineBuilder() {
+        
+        onChanged();
+        return getExplanationBaselineFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaselineOrBuilder getExplanationBaselineOrBuilder() {
+        if (explanationBaselineBuilder_ != null) {
+          return explanationBaselineBuilder_.getMessageOrBuilder();
+        } else {
+          return explanationBaseline_ == null ?
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.getDefaultInstance() : explanationBaseline_;
+        }
+      }
+      /**
+       * <pre>
+       * Predictions generated by the BatchPredictionJob using baseline dataset.
+       * </pre>
+       *
+       * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline explanation_baseline = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.Builder, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaselineOrBuilder> 
+          getExplanationBaselineFieldBuilder() {
+        if (explanationBaselineBuilder_ == null) {
+          explanationBaselineBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaseline.Builder, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.ExplanationBaselineOrBuilder>(
+                  getExplanationBaseline(),
+                  getParentForChildren(),
+                  isClean());
+          explanationBaseline_ = null;
+        }
+        return explanationBaselineBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig)
+    private static final com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ExplanationConfig>
+        PARSER = new com.google.protobuf.AbstractParser<ExplanationConfig>() {
+      @java.lang.Override
+      public ExplanationConfig parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ExplanationConfig(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ExplanationConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ExplanationConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4030,6 +6956,44 @@ private static final long serialVersionUID = 0L;
     return getPredictionDriftDetectionConfig();
   }
 
+  public static final int EXPLANATION_CONFIG_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanationConfig_;
+  /**
+   * <pre>
+   * The config for integrated with Explainable AI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+   * @return Whether the explanationConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasExplanationConfig() {
+    return explanationConfig_ != null;
+  }
+  /**
+   * <pre>
+   * The config for integrated with Explainable AI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+   * @return The explanationConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig getExplanationConfig() {
+    return explanationConfig_ == null ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.getDefaultInstance() : explanationConfig_;
+  }
+  /**
+   * <pre>
+   * The config for integrated with Explainable AI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder getExplanationConfigOrBuilder() {
+    return getExplanationConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -4053,6 +7017,9 @@ private static final long serialVersionUID = 0L;
     if (predictionDriftDetectionConfig_ != null) {
       output.writeMessage(3, getPredictionDriftDetectionConfig());
     }
+    if (explanationConfig_ != null) {
+      output.writeMessage(5, getExplanationConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -4073,6 +7040,10 @@ private static final long serialVersionUID = 0L;
     if (predictionDriftDetectionConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, getPredictionDriftDetectionConfig());
+    }
+    if (explanationConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, getExplanationConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -4104,6 +7075,11 @@ private static final long serialVersionUID = 0L;
       if (!getPredictionDriftDetectionConfig()
           .equals(other.getPredictionDriftDetectionConfig())) return false;
     }
+    if (hasExplanationConfig() != other.hasExplanationConfig()) return false;
+    if (hasExplanationConfig()) {
+      if (!getExplanationConfig()
+          .equals(other.getExplanationConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -4126,6 +7102,10 @@ private static final long serialVersionUID = 0L;
     if (hasPredictionDriftDetectionConfig()) {
       hash = (37 * hash) + PREDICTION_DRIFT_DETECTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPredictionDriftDetectionConfig().hashCode();
+    }
+    if (hasExplanationConfig()) {
+      hash = (37 * hash) + EXPLANATION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getExplanationConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -4282,6 +7262,12 @@ private static final long serialVersionUID = 0L;
         predictionDriftDetectionConfig_ = null;
         predictionDriftDetectionConfigBuilder_ = null;
       }
+      if (explanationConfigBuilder_ == null) {
+        explanationConfig_ = null;
+      } else {
+        explanationConfig_ = null;
+        explanationConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -4322,6 +7308,11 @@ private static final long serialVersionUID = 0L;
         result.predictionDriftDetectionConfig_ = predictionDriftDetectionConfig_;
       } else {
         result.predictionDriftDetectionConfig_ = predictionDriftDetectionConfigBuilder_.build();
+      }
+      if (explanationConfigBuilder_ == null) {
+        result.explanationConfig_ = explanationConfig_;
+      } else {
+        result.explanationConfig_ = explanationConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -4379,6 +7370,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasPredictionDriftDetectionConfig()) {
         mergePredictionDriftDetectionConfig(other.getPredictionDriftDetectionConfig());
+      }
+      if (other.hasExplanationConfig()) {
+        mergeExplanationConfig(other.getExplanationConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4881,6 +7875,161 @@ private static final long serialVersionUID = 0L;
         predictionDriftDetectionConfig_ = null;
       }
       return predictionDriftDetectionConfigBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanationConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder> explanationConfigBuilder_;
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     * @return Whether the explanationConfig field is set.
+     */
+    public boolean hasExplanationConfig() {
+      return explanationConfigBuilder_ != null || explanationConfig_ != null;
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     * @return The explanationConfig.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig getExplanationConfig() {
+      if (explanationConfigBuilder_ == null) {
+        return explanationConfig_ == null ? com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.getDefaultInstance() : explanationConfig_;
+      } else {
+        return explanationConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     */
+    public Builder setExplanationConfig(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig value) {
+      if (explanationConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        explanationConfig_ = value;
+        onChanged();
+      } else {
+        explanationConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     */
+    public Builder setExplanationConfig(
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder builderForValue) {
+      if (explanationConfigBuilder_ == null) {
+        explanationConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        explanationConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     */
+    public Builder mergeExplanationConfig(com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig value) {
+      if (explanationConfigBuilder_ == null) {
+        if (explanationConfig_ != null) {
+          explanationConfig_ =
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.newBuilder(explanationConfig_).mergeFrom(value).buildPartial();
+        } else {
+          explanationConfig_ = value;
+        }
+        onChanged();
+      } else {
+        explanationConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     */
+    public Builder clearExplanationConfig() {
+      if (explanationConfigBuilder_ == null) {
+        explanationConfig_ = null;
+        onChanged();
+      } else {
+        explanationConfig_ = null;
+        explanationConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder getExplanationConfigBuilder() {
+      
+      onChanged();
+      return getExplanationConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder getExplanationConfigOrBuilder() {
+      if (explanationConfigBuilder_ != null) {
+        return explanationConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return explanationConfig_ == null ?
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.getDefaultInstance() : explanationConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * The config for integrated with Explainable AI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder> 
+        getExplanationConfigFieldBuilder() {
+      if (explanationConfigBuilder_ == null) {
+        explanationConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder>(
+                getExplanationConfig(),
+                getParentForChildren(),
+                isClean());
+        explanationConfig_ = null;
+      }
+      return explanationConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

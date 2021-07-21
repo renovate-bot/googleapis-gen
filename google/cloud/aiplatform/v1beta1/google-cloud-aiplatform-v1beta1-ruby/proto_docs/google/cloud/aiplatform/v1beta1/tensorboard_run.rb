@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # TensorboardRun maps to a specific execution of a training job with a given
         # set of hyperparameter values, model definition, dataset, etc

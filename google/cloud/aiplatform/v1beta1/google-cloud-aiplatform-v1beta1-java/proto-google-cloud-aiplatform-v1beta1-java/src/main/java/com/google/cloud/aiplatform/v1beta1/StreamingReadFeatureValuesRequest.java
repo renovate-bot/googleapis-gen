@@ -177,9 +177,9 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList entityIds_;
   /**
    * <pre>
-   * Required. IDs of entities to read Feature values of. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * entity ID could be "user_123".
+   * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+   * 100. For example, for a machine learning model predicting user clicks on a
+   * website, an entity ID could be "user_123".
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -191,9 +191,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. IDs of entities to read Feature values of. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * entity ID could be "user_123".
+   * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+   * 100. For example, for a machine learning model predicting user clicks on a
+   * website, an entity ID could be "user_123".
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -204,9 +204,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. IDs of entities to read Feature values of. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * entity ID could be "user_123".
+   * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+   * 100. For example, for a machine learning model predicting user clicks on a
+   * website, an entity ID could be "user_123".
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -218,9 +218,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. IDs of entities to read Feature values of. For example,
-   * for a machine learning model predicting user clicks on a website, an
-   * entity ID could be "user_123".
+   * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+   * 100. For example, for a machine learning model predicting user clicks on a
+   * website, an entity ID could be "user_123".
    * </pre>
    *
    * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -236,7 +236,8 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1beta1.FeatureSelector featureSelector_;
   /**
    * <pre>
-   * Required. Selector choosing Features of the target EntityType.
+   * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+   * deduplicated.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -248,7 +249,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Selector choosing Features of the target EntityType.
+   * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+   * deduplicated.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -260,7 +262,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Selector choosing Features of the target EntityType.
+   * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+   * deduplicated.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -768,9 +771,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -782,9 +785,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -795,9 +798,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -809,9 +812,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -824,9 +827,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -846,9 +849,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -867,9 +870,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -886,9 +889,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -902,9 +905,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. IDs of entities to read Feature values of. For example,
-     * for a machine learning model predicting user clicks on a website, an
-     * entity ID could be "user_123".
+     * Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     * 100. For example, for a machine learning model predicting user clicks on a
+     * website, an entity ID could be "user_123".
      * </pre>
      *
      * <code>repeated string entity_ids = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -928,7 +931,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.FeatureSelector, com.google.cloud.aiplatform.v1beta1.FeatureSelector.Builder, com.google.cloud.aiplatform.v1beta1.FeatureSelectorOrBuilder> featureSelectorBuilder_;
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -939,7 +943,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -954,7 +959,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -974,7 +980,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -992,7 +999,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1014,7 +1022,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1032,7 +1041,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1044,7 +1054,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1059,7 +1070,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Selector choosing Features of the target EntityType.
+     * Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     * deduplicated.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.FeatureSelector feature_selector = 3 [(.google.api.field_behavior) = REQUIRED];</code>

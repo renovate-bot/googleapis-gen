@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # An entity type is a type of object in a system that needs to be modeled and
         # have stored information about. For example, driver is an entity type, and
@@ -61,7 +61,7 @@ module Google
         #     Optional. Used to perform a consistent read-modify-write updates. If not set, a blind
         #     "overwrite" update happens.
         # @!attribute [rw] monitoring_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeaturestoreMonitoringConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeaturestoreMonitoringConfig]
         #     Optional. The default monitoring configuration for all Features under this
         #     EntityType.
         #

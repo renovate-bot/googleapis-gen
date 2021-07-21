@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Success and error statistics of processing multiple entities
         # (for example, DataItems or structured data rows) in batch.

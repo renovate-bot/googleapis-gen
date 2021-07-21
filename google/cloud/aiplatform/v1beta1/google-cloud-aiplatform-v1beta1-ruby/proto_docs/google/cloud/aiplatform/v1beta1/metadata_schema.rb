@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Instance of a general MetadataSchema.
         # @!attribute [r] name
@@ -40,7 +40,7 @@ module Google
         #     [MetadataSchema
         #     Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
         # @!attribute [rw] schema_type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::MetadataSchema::MetadataSchemaType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::MetadataSchema::MetadataSchemaType]
         #     The type of the MetadataSchema. This is a property that identifies which
         #     metadata types will use the MetadataSchema.
         # @!attribute [r] create_time

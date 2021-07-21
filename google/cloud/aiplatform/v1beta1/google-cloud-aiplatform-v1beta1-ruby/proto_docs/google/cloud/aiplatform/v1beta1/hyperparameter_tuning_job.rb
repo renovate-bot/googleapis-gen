@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Represents a HyperparameterTuningJob. A HyperparameterTuningJob
         # has a Study specification and multiple CustomJobs with identical
@@ -33,7 +33,7 @@ module Google
         #     The name can be up to 128 characters long and can be consist of any UTF-8
         #     characters.
         # @!attribute [rw] study_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec]
         #     Required. Study configuration of the HyperparameterTuningJob.
         # @!attribute [rw] max_trial_count
         #   @return [::Integer]
@@ -49,14 +49,14 @@ module Google
         #     If set to 0, Vertex AI decides how many Trials must fail
         #     before the whole job fails.
         # @!attribute [rw] trial_job_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::CustomJobSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::CustomJobSpec]
         #     Required. The spec of a trial job. The same spec applies to the CustomJobs created
         #     in all the trials.
         # @!attribute [r] trials
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Trial>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Trial>]
         #     Output only. Trials of the HyperparameterTuningJob.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::JobState]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::JobState]
         #     Output only. The detailed state of the job.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -86,7 +86,7 @@ module Google
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
         #     Customer-managed encryption key options for a HyperparameterTuningJob.
         #     If this is set, then all resources created by the HyperparameterTuningJob
         #     will be encrypted with the provided encryption key.

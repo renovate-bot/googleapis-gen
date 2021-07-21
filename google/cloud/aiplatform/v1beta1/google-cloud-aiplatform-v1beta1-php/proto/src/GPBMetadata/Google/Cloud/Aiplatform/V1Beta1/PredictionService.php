@@ -17,13 +17,14 @@ class PredictionService
         \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\Client::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
+        \GPBMetadata\Google\Api\Httpbody::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\Explanation::initOnce();
         \GPBMetadata\Google\Protobuf\Struct::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ž
-8google/cloud/aiplatform/v1beta1/prediction_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto1google/cloud/aiplatform/v1beta1/explanation.protogoogle/protobuf/struct.proto"ª
+’
+8google/cloud/aiplatform/v1beta1/prediction_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/httpbody.protogoogle/api/resource.proto1google/cloud/aiplatform/v1beta1/explanation.protogoogle/protobuf/struct.proto"ª
 PredictRequest<
 endpoint (	B*àAúA$
 "aiplatform.googleapis.com/Endpoint.
@@ -47,8 +48,8 @@ parameters (2.google.protobuf.Value[
 predictions (2.google.protobuf.Value2¨
 PredictionService×
 Predict/.google.cloud.aiplatform.v1beta1.PredictRequest0.google.cloud.aiplatform.v1beta1.PredictResponse"i‚Óä“C">/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:predict:*ÚAendpoint,instances,parametersé
-Explain/.google.cloud.aiplatform.v1beta1.ExplainRequest0.google.cloud.aiplatform.v1beta1.ExplainResponse"{‚Óä“C">/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:explain:*ÚA/endpoint,instances,parameters,deployed_model_idMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBŠ
-#com.google.cloud.aiplatform.v1beta1BPredictionServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+Explain/.google.cloud.aiplatform.v1beta1.ExplainRequest0.google.cloud.aiplatform.v1beta1.ExplainResponse"{‚Óä“C">/v1beta1/{endpoint=projects/*/locations/*/endpoints/*}:explain:*ÚA/endpoint,instances,parameters,deployed_model_idMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBó
+#com.google.cloud.aiplatform.v1beta1BPredictionServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

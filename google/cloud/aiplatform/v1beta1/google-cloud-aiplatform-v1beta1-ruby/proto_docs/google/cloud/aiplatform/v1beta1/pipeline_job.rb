@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # An instance of a machine learning PipelineJob.
         # @!attribute [r] name
@@ -46,10 +46,10 @@ module Google
         #   @return [::Google::Protobuf::Struct]
         #     Required. The spec of the pipeline.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineState]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineState]
         #     Output only. The detailed state of the job.
         # @!attribute [r] job_detail
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineJobDetail]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineJobDetail]
         #     Output only. The details of pipeline run. Not available in the list view.
         # @!attribute [r] error
         #   @return [::Google::Rpc::Status]
@@ -65,10 +65,10 @@ module Google
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
         # @!attribute [rw] runtime_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineJob::RuntimeConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineJob::RuntimeConfig]
         #     Runtime config of the pipeline.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
         #     Customer-managed encryption key spec for a pipelineJob. If set, this
         #     PipelineJob and all of its sub-resources will be secured by this key.
         # @!attribute [rw] service_account
@@ -103,9 +103,9 @@ module Google
 
           # The runtime config of a PipelineJob.
           # @!attribute [rw] parameters
-          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Aiplatform::V1beta1::Value}]
+          #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::Value}]
           #     The runtime parameters of the PipelineJob. The parameters will be
-          #     passed into {::Google::Cloud::Aiplatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} to replace the placeholders
+          #     passed into {::Google::Cloud::AIPlatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} to replace the placeholders
           #     at runtime.
           # @!attribute [rw] gcs_output_directory
           #   @return [::String]
@@ -123,7 +123,7 @@ module Google
             # @!attribute [rw] key
             #   @return [::String]
             # @!attribute [rw] value
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::Value]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::Value]
             class ParametersEntry
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -142,13 +142,13 @@ module Google
 
         # The runtime detail of PipelineJob.
         # @!attribute [r] pipeline_context
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Context]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Context]
         #     Output only. The context of the pipeline.
         # @!attribute [r] pipeline_run_context
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Context]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Context]
         #     Output only. The context of the current pipeline run.
         # @!attribute [r] task_details
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::PipelineTaskDetail>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::PipelineTaskDetail>]
         #     Output only. The runtime details of the tasks under the pipeline.
         class PipelineJobDetail
           include ::Google::Protobuf::MessageExts
@@ -177,23 +177,23 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Task end time.
         # @!attribute [r] executor_detail
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineTaskExecutorDetail]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineTaskExecutorDetail]
         #     Output only. The detailed execution info.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineTaskDetail::State]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineTaskDetail::State]
         #     Output only. State of the task.
         # @!attribute [r] execution
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Execution]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Execution]
         #     Output only. The execution metadata of the task.
         # @!attribute [r] error
         #   @return [::Google::Rpc::Status]
         #     Output only. The error that occurred during task execution.
         #     Only populated when the task's state is FAILED or CANCELLED.
         # @!attribute [r] inputs
-        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Aiplatform::V1beta1::PipelineTaskDetail::ArtifactList}]
+        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::PipelineTaskDetail::ArtifactList}]
         #     Output only. The runtime input artifacts of the task.
         # @!attribute [r] outputs
-        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Aiplatform::V1beta1::PipelineTaskDetail::ArtifactList}]
+        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::PipelineTaskDetail::ArtifactList}]
         #     Output only. The runtime output artifacts of the task.
         class PipelineTaskDetail
           include ::Google::Protobuf::MessageExts
@@ -201,7 +201,7 @@ module Google
 
           # A list of artifact metadata.
           # @!attribute [r] artifacts
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Artifact>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Artifact>]
           #     Output only. A list of artifact metadata.
           class ArtifactList
             include ::Google::Protobuf::MessageExts
@@ -211,7 +211,7 @@ module Google
           # @!attribute [rw] key
           #   @return [::String]
           # @!attribute [rw] value
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineTaskDetail::ArtifactList]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineTaskDetail::ArtifactList]
           class InputsEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -220,7 +220,7 @@ module Google
           # @!attribute [rw] key
           #   @return [::String]
           # @!attribute [rw] value
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineTaskDetail::ArtifactList]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineTaskDetail::ArtifactList]
           class OutputsEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -257,17 +257,17 @@ module Google
 
             # Specifies that the task was not triggered because the task's trigger
             # policy is not satisfied. The trigger policy is specified in the
-            # `condition` field of {::Google::Cloud::Aiplatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec}.
+            # `condition` field of {::Google::Cloud::AIPlatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec}.
             NOT_TRIGGERED = 9
           end
         end
 
         # The runtime detail of a pipeline executor.
         # @!attribute [r] container_detail
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineTaskExecutorDetail::ContainerDetail]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineTaskExecutorDetail::ContainerDetail]
         #     Output only. The detailed info for a container executor.
         # @!attribute [r] custom_job_detail
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineTaskExecutorDetail::CustomJobDetail]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineTaskExecutorDetail::CustomJobDetail]
         #     Output only. The detailed info for a custom job executor.
         class PipelineTaskExecutorDetail
           include ::Google::Protobuf::MessageExts
@@ -277,12 +277,12 @@ module Google
           # lifecycle of a container execution.
           # @!attribute [r] main_job
           #   @return [::String]
-          #     Output only. The name of the {::Google::Cloud::Aiplatform::V1beta1::CustomJob CustomJob} for the main container execution.
+          #     Output only. The name of the {::Google::Cloud::AIPlatform::V1beta1::CustomJob CustomJob} for the main container execution.
           # @!attribute [r] pre_caching_check_job
           #   @return [::String]
-          #     Output only. The name of the {::Google::Cloud::Aiplatform::V1beta1::CustomJob CustomJob} for the pre-caching-check container
+          #     Output only. The name of the {::Google::Cloud::AIPlatform::V1beta1::CustomJob CustomJob} for the pre-caching-check container
           #     execution. This job will be available if the
-          #     {::Google::Cloud::Aiplatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} specifies the `pre_caching_check` hook in
+          #     {::Google::Cloud::AIPlatform::V1beta1::PipelineJob#pipeline_spec PipelineJob.pipeline_spec} specifies the `pre_caching_check` hook in
           #     the lifecycle events.
           class ContainerDetail
             include ::Google::Protobuf::MessageExts
@@ -292,7 +292,7 @@ module Google
           # The detailed info for a custom job executor.
           # @!attribute [r] job
           #   @return [::String]
-          #     Output only. The name of the {::Google::Cloud::Aiplatform::V1beta1::CustomJob CustomJob}.
+          #     Output only. The name of the {::Google::Cloud::AIPlatform::V1beta1::CustomJob CustomJob}.
           class CustomJobDetail
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -19,22 +19,22 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#create_training_pipeline PipelineService.CreateTrainingPipeline}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#create_training_pipeline PipelineService.CreateTrainingPipeline}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to create the TrainingPipeline in.
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] training_pipeline
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline]
         #     Required. The TrainingPipeline to create.
         class CreateTrainingPipelineRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#get_training_pipeline PipelineService.GetTrainingPipeline}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#get_training_pipeline PipelineService.GetTrainingPipeline}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TrainingPipeline resource.
@@ -45,29 +45,39 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to list the TrainingPipelines from.
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] filter
         #   @return [::String]
-        #     The standard list filter.
-        #     Supported fields:
+        #     Lists the PipelineJobs that match the filter expression. The following
+        #     fields are supported:
         #
-        #       * `display_name` supports = and !=.
+        #     * `pipeline_name`: Supports `=` and `!=` comparisons.
+        #     * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+        #       Values must be in RFC 3339 format.
+        #     * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+        #       Values must be in RFC 3339 format.
+        #     * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
+        #       Values must be in RFC 3339 format.
+        #     * `labels`: Supports key-value equality and key presence.
         #
-        #       * `state` supports = and !=.
+        #     Filter expressions can be combined together using logical operators
+        #     (`AND` & `OR`).
+        #     For example: `pipeline_name="test" AND create_time>"2020-05-18T13:30:00Z"`.
         #
-        #     Some examples of using the filter are:
+        #     The syntax to define filter expression is based on
+        #     https://google.aip.dev/160.
         #
-        #      * `state="PIPELINE_STATE_SUCCEEDED" AND display_name="my_pipeline"`
+        #     Examples:
         #
-        #      * `state="PIPELINE_STATE_RUNNING" OR display_name="my_pipeline"`
-        #
-        #      * `NOT display_name="my_pipeline"`
-        #
-        #      * `state="PIPELINE_STATE_FAILED"`
+        #     * `create_time>"2021-05-18T00:00:00Z" OR
+        #       update_time>"2020-05-18T00:00:00Z"` PipelineJobs created or updated
+        #       after 2020-05-18 00:00:00 UTC.
+        #     * `labels.env = "prod"`
+        #       PipelineJobs with label "env" set to "prod".
         # @!attribute [rw] page_size
         #   @return [::Integer]
         #     The standard list page size.
@@ -75,8 +85,8 @@ module Google
         #   @return [::String]
         #     The standard list page token.
         #     Typically obtained via
-        #     {::Google::Cloud::Aiplatform::V1beta1::ListTrainingPipelinesResponse#next_page_token ListTrainingPipelinesResponse.next_page_token} of the previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ListTrainingPipelinesResponse#next_page_token ListTrainingPipelinesResponse.next_page_token} of the previous
+        #     {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines} call.
         # @!attribute [rw] read_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Mask specifying which fields to read.
@@ -85,20 +95,20 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines}
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#list_training_pipelines PipelineService.ListTrainingPipelines}
         # @!attribute [rw] training_pipelines
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline>]
         #     List of TrainingPipelines in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [::String]
         #     A token to retrieve the next page of results.
-        #     Pass to {::Google::Cloud::Aiplatform::V1beta1::ListTrainingPipelinesRequest#page_token ListTrainingPipelinesRequest.page_token} to obtain that page.
+        #     Pass to {::Google::Cloud::AIPlatform::V1beta1::ListTrainingPipelinesRequest#page_token ListTrainingPipelinesRequest.page_token} to obtain that page.
         class ListTrainingPipelinesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#delete_training_pipeline PipelineService.DeleteTrainingPipeline}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#delete_training_pipeline PipelineService.DeleteTrainingPipeline}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TrainingPipeline resource to be deleted.
@@ -109,7 +119,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#cancel_training_pipeline PipelineService.CancelTrainingPipeline}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#cancel_training_pipeline PipelineService.CancelTrainingPipeline}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TrainingPipeline to cancel.
@@ -120,13 +130,13 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#create_pipeline_job PipelineService.CreatePipelineJob}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#create_pipeline_job PipelineService.CreatePipelineJob}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to create the PipelineJob in.
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] pipeline_job
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineJob]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineJob]
         #     Required. The PipelineJob to create.
         # @!attribute [rw] pipeline_job_id
         #   @return [::String]
@@ -141,7 +151,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#get_pipeline_job PipelineService.GetPipelineJob}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#get_pipeline_job PipelineService.GetPipelineJob}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the PipelineJob resource.
@@ -152,7 +162,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#list_pipeline_jobs PipelineService.ListPipelineJobs}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#list_pipeline_jobs PipelineService.ListPipelineJobs}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to list the PipelineJobs from.
@@ -178,27 +188,27 @@ module Google
         #   @return [::String]
         #     The standard list page token.
         #     Typically obtained via
-        #     {::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsResponse#next_page_token ListPipelineJobsResponse.next_page_token} of the previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#list_pipeline_jobs PipelineService.ListPipelineJobs} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ListPipelineJobsResponse#next_page_token ListPipelineJobsResponse.next_page_token} of the previous
+        #     {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#list_pipeline_jobs PipelineService.ListPipelineJobs} call.
         class ListPipelineJobsRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#list_pipeline_jobs PipelineService.ListPipelineJobs}
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#list_pipeline_jobs PipelineService.ListPipelineJobs}
         # @!attribute [rw] pipeline_jobs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::PipelineJob>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::PipelineJob>]
         #     List of PipelineJobs in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [::String]
         #     A token to retrieve the next page of results.
-        #     Pass to {::Google::Cloud::Aiplatform::V1beta1::ListPipelineJobsRequest#page_token ListPipelineJobsRequest.page_token} to obtain that page.
+        #     Pass to {::Google::Cloud::AIPlatform::V1beta1::ListPipelineJobsRequest#page_token ListPipelineJobsRequest.page_token} to obtain that page.
         class ListPipelineJobsResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#delete_pipeline_job PipelineService.DeletePipelineJob}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#delete_pipeline_job PipelineService.DeletePipelineJob}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the PipelineJob resource to be deleted.
@@ -209,7 +219,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::PipelineService::Client#cancel_pipeline_job PipelineService.CancelPipelineJob}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::PipelineService::Client#cancel_pipeline_job PipelineService.CancelPipelineJob}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the PipelineJob to cancel.

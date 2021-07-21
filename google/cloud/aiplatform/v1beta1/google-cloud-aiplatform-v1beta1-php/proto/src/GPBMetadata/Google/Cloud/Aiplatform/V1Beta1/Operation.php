@@ -20,15 +20,15 @@ class Operation
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-„
+Ã
 /google/cloud/aiplatform/v1beta1/operation.protogoogle.cloud.aiplatform.v1beta1google/protobuf/timestamp.protogoogle/rpc/status.protogoogle/api/annotations.proto"π
 GenericOperationMetadata1
 partial_failures (2.google.rpc.StatusB‡A4
 create_time (2.google.protobuf.TimestampB‡A4
 update_time (2.google.protobuf.TimestampB‡A"n
 DeleteOperationMetadataS
-generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadataBÇ
-#com.google.cloud.aiplatform.v1beta1BOperationProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadataBÎ
+#com.google.cloud.aiplatform.v1beta1BOperationProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatform™Google.Cloud.AIPlatform.V1Beta1 Google\\Cloud\\AIPlatform\\V1beta1Í"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

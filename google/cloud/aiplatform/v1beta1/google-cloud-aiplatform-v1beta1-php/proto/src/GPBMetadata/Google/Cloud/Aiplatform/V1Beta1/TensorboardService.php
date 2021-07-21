@@ -28,7 +28,7 @@ class TensorboardService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ßb
+êc
 9google/cloud/aiplatform/v1beta1/tensorboard_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto/google/cloud/aiplatform/v1beta1/operation.proto1google/cloud/aiplatform/v1beta1/tensorboard.proto6google/cloud/aiplatform/v1beta1/tensorboard_data.proto<google/cloud/aiplatform/v1beta1/tensorboard_experiment.proto5google/cloud/aiplatform/v1beta1/tensorboard_run.proto=google/cloud/aiplatform/v1beta1/tensorboard_time_series.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"°
 CreateTensorboardRequest=
 parent (	B-‡A˙A\'
@@ -192,8 +192,8 @@ page_token (	
 ReadTensorboardTimeSeriesDataE.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequestF.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse"ëÇ”‰ìqo/v1beta1/{tensorboard_time_series=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:read⁄Atensorboard_time_series¢
 ReadTensorboardBlobData?.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest@.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataResponse"ÅÇ”‰ìmk/v1beta1/{time_series=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:readBlobData⁄Atime_series0®
 WriteTensorboardRunData?.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest@.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataResponse"âÇ”‰ì`"[/v1beta1/{tensorboard_run=projects/*/locations/*/tensorboards/*/experiments/*/runs/*}:write:*⁄A tensorboard_run,time_series_data‰
-ExportTensorboardTimeSeriesDataG.google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataRequestH.google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataResponse"≠Ç”‰ìå"Ü/v1beta1/{tensorboard_time_series=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:exportTensorboardTimeSeries:*⁄Atensorboard_time_seriesM Aaiplatform.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformBã
-#com.google.cloud.aiplatform.v1beta1BTensorboardServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+ExportTensorboardTimeSeriesDataG.google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataRequestH.google.cloud.aiplatform.v1beta1.ExportTensorboardTimeSeriesDataResponse"≠Ç”‰ìå"Ü/v1beta1/{tensorboard_time_series=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:exportTensorboardTimeSeries:*⁄Atensorboard_time_seriesM Aaiplatform.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformBÙ
+#com.google.cloud.aiplatform.v1beta1BTensorboardServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatform™Google.Cloud.AIPlatform.V1Beta1 Google\\Cloud\\AIPlatform\\V1beta1Í"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

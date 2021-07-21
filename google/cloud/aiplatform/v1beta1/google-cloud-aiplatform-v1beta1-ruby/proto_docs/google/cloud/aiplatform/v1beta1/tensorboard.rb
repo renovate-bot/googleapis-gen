@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Tensorboard is a physical database that stores users' training metrics.
         # A default Tensorboard is provided in each region of a GCP project.
@@ -36,7 +36,7 @@ module Google
         #   @return [::String]
         #     Description of this Tensorboard.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
         #     Customer-managed encryption key spec for a Tensorboard. If set, this
         #     Tensorboard and all sub-resources of this Tensorboard will be secured by
         #     this key.

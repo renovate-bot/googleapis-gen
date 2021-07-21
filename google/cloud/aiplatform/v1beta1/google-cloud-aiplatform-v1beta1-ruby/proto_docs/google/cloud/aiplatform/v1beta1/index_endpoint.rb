@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Indexes are deployed into it. An IndexEndpoint can have multiple
         # DeployedIndexes.
@@ -35,7 +35,7 @@ module Google
         #   @return [::String]
         #     The description of the IndexEndpoint.
         # @!attribute [r] deployed_indexes
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::DeployedIndex>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::DeployedIndex>]
         #     Output only. The indexes deployed in this endpoint.
         # @!attribute [rw] etag
         #   @return [::String]
@@ -105,17 +105,17 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when the DeployedIndex was created.
         # @!attribute [r] private_endpoints
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::IndexPrivateEndpoints]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::IndexPrivateEndpoints]
         #     Output only. Provides paths for users to send requests directly to the deployed index
         #     services running on Cloud via private services access. This field is
-        #     populated if {::Google::Cloud::Aiplatform::V1beta1::IndexEndpoint#network network} is configured.
+        #     populated if {::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint#network network} is configured.
         # @!attribute [r] index_sync_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The DeployedIndex may depend on various data on its original Index.
         #     Additionally when certain changes to the original Index are being done
         #     (e.g. when what the Index contains is being changed) the DeployedIndex may
         #     be asynchronously updated in the background to reflect this changes.
-        #     If this timestamp's value is at least the {::Google::Cloud::Aiplatform::V1beta1::Index#update_time Index.update_time} of the
+        #     If this timestamp's value is at least the {::Google::Cloud::AIPlatform::V1beta1::Index#update_time Index.update_time} of the
         #     original Index, it means that this DeployedIndex and the original Index are
         #     in sync. If this timestamp is older, then to see which updates this
         #     DeployedIndex already contains (and which not), one must
@@ -126,7 +126,7 @@ module Google
         #     [google.cloud.aiplatform.v1beta1.GenericOperationMetadata.update_time]
         #     equal or before this sync time are contained in this DeployedIndex.
         # @!attribute [rw] automatic_resources
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::AutomaticResources]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::AutomaticResources]
         #     Optional. A description of resources that the DeployedIndex uses, which to large
         #     degree are decided by Vertex AI, and optionally allows only a modest
         #     additional configuration.
@@ -147,8 +147,20 @@ module Google
         #     index receives a high queries per second rate (QPS).
         #     Estimate your costs before enabling this option.
         # @!attribute [rw] deployed_index_auth_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::DeployedIndexAuthConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::DeployedIndexAuthConfig]
         #     Optional. If set, the authentication is enabled for the private endpoint.
+        # @!attribute [rw] reserved_ip_ranges
+        #   @return [::Array<::String>]
+        #     Optional. A list of reserved ip ranges under the VPC network that can be
+        #     used for this DeployedIndex.
+        #
+        #     If set, we will deploy the index within the provided ip ranges. Otherwise,
+        #     the index might be deployed to any ip ranges under the provided VPC
+        #     network.
+        #
+        #     The value sohuld be the name of the address
+        #     (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
+        #     Example: 'vertex-ai-ip-range'.
         class DeployedIndex
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -156,7 +168,7 @@ module Google
 
         # Used to set up the auth on the DeployedIndex's private endpoint.
         # @!attribute [rw] auth_provider
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::DeployedIndexAuthConfig::AuthProvider]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::DeployedIndexAuthConfig::AuthProvider]
         #     Defines the authentication provider that the DeployedIndex uses.
         class DeployedIndexAuthConfig
           include ::Google::Protobuf::MessageExts

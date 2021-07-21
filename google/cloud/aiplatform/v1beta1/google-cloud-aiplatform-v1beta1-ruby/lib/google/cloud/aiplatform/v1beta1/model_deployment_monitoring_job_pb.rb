@@ -5,6 +5,7 @@ require 'google/protobuf'
 
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/aiplatform/v1beta1/encryption_spec_pb'
 require 'google/cloud/aiplatform/v1beta1/feature_monitoring_stats_pb'
 require 'google/cloud/aiplatform/v1beta1/io_pb'
 require 'google/cloud/aiplatform/v1beta1/job_state_pb'
@@ -88,7 +89,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         ModelDeploymentMonitoringJob = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob").msgclass
         ModelDeploymentMonitoringJob::MonitoringScheduleState = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.MonitoringScheduleState").enummodule

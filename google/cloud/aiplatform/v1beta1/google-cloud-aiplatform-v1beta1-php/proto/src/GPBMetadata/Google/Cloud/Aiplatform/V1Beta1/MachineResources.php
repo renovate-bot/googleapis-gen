@@ -19,7 +19,7 @@ class MachineResources
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-–	
+ÿ	
 7google/cloud/aiplatform/v1beta1/machine_resources.protogoogle.cloud.aiplatform.v1beta16google/cloud/aiplatform/v1beta1/accelerator_type.protogoogle/api/annotations.proto"”
 MachineSpec
 machine_type (	BàAO
@@ -44,8 +44,8 @@ class MachineResources
 boot_disk_size_gb ("A
 AutoscalingMetricSpec
 metric_name (	BàA
-target (B‰
-#com.google.cloud.aiplatform.v1beta1BMachineResourcesProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+target (Bò
+#com.google.cloud.aiplatform.v1beta1BMachineResourcesProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

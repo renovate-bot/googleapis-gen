@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1beta1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,26 +29,26 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob;
-use Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob\InputConfig;
+use Google\Cloud\AIPlatform\V1beta1\BatchPredictionJob;
+use Google\Cloud\AIPlatform\V1beta1\BatchPredictionJob\InputConfig;
 
-use Google\Cloud\Aiplatform\V1beta1\BatchPredictionJob\OutputConfig;
-use Google\Cloud\Aiplatform\V1beta1\CustomJob;
-use Google\Cloud\Aiplatform\V1beta1\CustomJobSpec;
-use Google\Cloud\Aiplatform\V1beta1\DataLabelingJob;
-use Google\Cloud\Aiplatform\V1beta1\HyperparameterTuningJob;
-use Google\Cloud\Aiplatform\V1beta1\JobServiceClient;
-use Google\Cloud\Aiplatform\V1beta1\ListBatchPredictionJobsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListCustomJobsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListDataLabelingJobsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListHyperparameterTuningJobsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListModelDeploymentMonitoringJobsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringJob;
-use Google\Cloud\Aiplatform\V1beta1\ModelDeploymentMonitoringScheduleConfig;
-use Google\Cloud\Aiplatform\V1beta1\ModelMonitoringStatsAnomalies;
-use Google\Cloud\Aiplatform\V1beta1\SamplingStrategy;
-use Google\Cloud\Aiplatform\V1beta1\SearchModelDeploymentMonitoringStatsAnomaliesResponse;
-use Google\Cloud\Aiplatform\V1beta1\StudySpec;
+use Google\Cloud\AIPlatform\V1beta1\BatchPredictionJob\OutputConfig;
+use Google\Cloud\AIPlatform\V1beta1\CustomJob;
+use Google\Cloud\AIPlatform\V1beta1\CustomJobSpec;
+use Google\Cloud\AIPlatform\V1beta1\DataLabelingJob;
+use Google\Cloud\AIPlatform\V1beta1\HyperparameterTuningJob;
+use Google\Cloud\AIPlatform\V1beta1\JobServiceClient;
+use Google\Cloud\AIPlatform\V1beta1\ListBatchPredictionJobsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListCustomJobsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListDataLabelingJobsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListHyperparameterTuningJobsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListModelDeploymentMonitoringJobsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ModelDeploymentMonitoringJob;
+use Google\Cloud\AIPlatform\V1beta1\ModelDeploymentMonitoringScheduleConfig;
+use Google\Cloud\AIPlatform\V1beta1\ModelMonitoringStatsAnomalies;
+use Google\Cloud\AIPlatform\V1beta1\SamplingStrategy;
+use Google\Cloud\AIPlatform\V1beta1\SearchModelDeploymentMonitoringStatsAnomaliesResponse;
+use Google\Cloud\AIPlatform\V1beta1\StudySpec;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

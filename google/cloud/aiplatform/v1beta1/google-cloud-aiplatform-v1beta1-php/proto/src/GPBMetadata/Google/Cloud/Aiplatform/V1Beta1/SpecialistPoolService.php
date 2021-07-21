@@ -24,7 +24,7 @@ class SpecialistPoolService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-å
+Î
 =google/cloud/aiplatform/v1beta1/specialist_pool_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto/google/cloud/aiplatform/v1beta1/operation.proto5google/cloud/aiplatform/v1beta1/specialist_pool.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"§
 CreateSpecialistPoolRequest9
 parent (	B)àAúA#
@@ -65,8 +65,8 @@ page_token (	-
 DeleteSpecialistPool<.google.cloud.aiplatform.v1beta1.DeleteSpecialistPoolRequest.google.longrunning.Operation"z‚Óä“:*8/v1beta1/{name=projects/*/locations/*/specialistPools/*}ÚAnameÊA0
 google.protobuf.EmptyDeleteOperationMetadata¯
 UpdateSpecialistPool<.google.cloud.aiplatform.v1beta1.UpdateSpecialistPoolRequest.google.longrunning.Operation"¹‚Óä“[2H/v1beta1/{specialist_pool.name=projects/*/locations/*/specialistPools/*}:specialist_poolÚAspecialist_pool,update_maskÊA7
-SpecialistPool%UpdateSpecialistPoolOperationMetadataMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBŽ
-#com.google.cloud.aiplatform.v1beta1BSpecialistPoolServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+SpecialistPool%UpdateSpecialistPoolOperationMetadataMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB÷
+#com.google.cloud.aiplatform.v1beta1BSpecialistPoolServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

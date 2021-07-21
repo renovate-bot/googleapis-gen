@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -40,16 +40,16 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\CreateEndpointRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteEndpointRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeployedModel;
-use Google\Cloud\Aiplatform\V1beta1\DeployModelRequest;
-use Google\Cloud\Aiplatform\V1beta1\Endpoint;
-use Google\Cloud\Aiplatform\V1beta1\GetEndpointRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListEndpointsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListEndpointsResponse;
-use Google\Cloud\Aiplatform\V1beta1\UndeployModelRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateEndpointRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateEndpointRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteEndpointRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeployedModel;
+use Google\Cloud\AIPlatform\V1beta1\DeployModelRequest;
+use Google\Cloud\AIPlatform\V1beta1\Endpoint;
+use Google\Cloud\AIPlatform\V1beta1\GetEndpointRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListEndpointsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListEndpointsResponse;
+use Google\Cloud\AIPlatform\V1beta1\UndeployModelRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateEndpointRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -139,6 +139,8 @@ class EndpointServiceGapicClient
 
     private static $modelNameTemplate;
 
+    private static $networkNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -189,6 +191,15 @@ class EndpointServiceGapicClient
         return self::$modelNameTemplate;
     }
 
+    private static function getNetworkNameTemplate()
+    {
+        if (self::$networkNameTemplate == null) {
+            self::$networkNameTemplate = new PathTemplate('projects/{project}/global/networks/{network}');
+        }
+
+        return self::$networkNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
@@ -196,6 +207,7 @@ class EndpointServiceGapicClient
                 'endpoint' => self::getEndpointNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
                 'model' => self::getModelNameTemplate(),
+                'network' => self::getNetworkNameTemplate(),
             ];
         }
 
@@ -264,12 +276,32 @@ class EndpointServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a network
+     * resource.
+     *
+     * @param string $project
+     * @param string $network
+     *
+     * @return string The formatted network resource.
+     *
+     * @experimental
+     */
+    public static function networkName($project, $network)
+    {
+        return self::getNetworkNameTemplate()->render([
+            'project' => $project,
+            'network' => $network,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
      * - endpoint: projects/{project}/locations/{location}/endpoints/{endpoint}
      * - location: projects/{project}/locations/{location}
      * - model: projects/{project}/locations/{location}/models/{model}
+     * - network: projects/{project}/global/networks/{network}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
@@ -657,7 +689,7 @@ class EndpointServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Endpoint
+     * @return \Google\Cloud\AIPlatform\V1beta1\Endpoint
      *
      * @throws ApiException if the remote call fails
      *
@@ -884,7 +916,7 @@ class EndpointServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Endpoint
+     * @return \Google\Cloud\AIPlatform\V1beta1\Endpoint
      *
      * @throws ApiException if the remote call fails
      *

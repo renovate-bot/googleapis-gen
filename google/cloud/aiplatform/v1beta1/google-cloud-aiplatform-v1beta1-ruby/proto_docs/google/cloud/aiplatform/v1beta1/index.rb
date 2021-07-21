@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # A representation of a collection of database items organized in a way that
         # allows for approximate nearest neighbor (a.k.a ANN) algorithms search.
@@ -47,9 +47,9 @@ module Google
         # @!attribute [rw] metadata
         #   @return [::Google::Protobuf::Value]
         #     An additional information about the Index; the schema of the metadata can
-        #     be found in {::Google::Cloud::Aiplatform::V1beta1::Index#metadata_schema_uri metadata_schema}.
+        #     be found in {::Google::Cloud::AIPlatform::V1beta1::Index#metadata_schema_uri metadata_schema}.
         # @!attribute [r] deployed_indexes
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::DeployedIndexRef>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::DeployedIndexRef>]
         #     Output only. The pointers to DeployedIndexes created from this Index.
         #     An Index can be only deleted if all its DeployedIndexes had been undeployed
         #     first.

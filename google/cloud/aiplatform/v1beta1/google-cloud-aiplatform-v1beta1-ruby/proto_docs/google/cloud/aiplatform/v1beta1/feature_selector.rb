@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Matcher for Features of an EntityType by Feature ID.
         # @!attribute [rw] ids
@@ -37,7 +37,7 @@ module Google
 
         # Selector for Features of an EntityType.
         # @!attribute [rw] id_matcher
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::IdMatcher]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::IdMatcher]
         #     Required. Matches Features based on ID.
         class FeatureSelector
           include ::Google::Protobuf::MessageExts

@@ -6,6 +6,7 @@ require 'google/protobuf'
 require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
+require 'google/api/httpbody_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/aiplatform/v1beta1/explanation_pb'
 require 'google/protobuf/struct_pb'
@@ -37,7 +38,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         PredictRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PredictRequest").msgclass
         PredictResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PredictResponse").msgclass

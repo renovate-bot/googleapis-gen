@@ -24,7 +24,7 @@ class IndexEndpointService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-£
+¨ 
 <google/cloud/aiplatform/v1beta1/index_endpoint_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto4google/cloud/aiplatform/v1beta1/index_endpoint.proto/google/cloud/aiplatform/v1beta1/operation.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"¤
 CreateIndexEndpointRequest9
 parent (	B)àAúA#
@@ -57,9 +57,10 @@ page_token (	BàA2
 \'aiplatform.googleapis.com/IndexEndpointK
 deployed_index (2..google.cloud.aiplatform.v1beta1.DeployedIndexBàA"]
 DeployIndexResponseF
-deployed_index (2..google.cloud.aiplatform.v1beta1.DeployedIndex"s
+deployed_index (2..google.cloud.aiplatform.v1beta1.DeployedIndex"Ž
 DeployIndexOperationMetadataS
-generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata"
+generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata
+deployed_index_id (	"
 UndeployIndexRequestG
 index_endpoint (	B/àAúA)
 \'aiplatform.googleapis.com/IndexEndpoint
@@ -78,8 +79,8 @@ page_token (	BàA2
 DeployIndex3.google.cloud.aiplatform.v1beta1.DeployIndexRequest.google.longrunning.Operation"®‚Óä“R"M/v1beta1/{index_endpoint=projects/*/locations/*/indexEndpoints/*}:deployIndex:*ÚAindex_endpoint,deployed_indexÊA3
 DeployIndexResponseDeployIndexOperationMetadataŸ
 UndeployIndex5.google.cloud.aiplatform.v1beta1.UndeployIndexRequest.google.longrunning.Operation"·‚Óä“T"O/v1beta1/{index_endpoint=projects/*/locations/*/indexEndpoints/*}:undeployIndex:*ÚA index_endpoint,deployed_index_idÊA7
-UndeployIndexResponseUndeployIndexOperationMetadataMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformB
-#com.google.cloud.aiplatform.v1beta1BIndexEndpointServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+UndeployIndexResponseUndeployIndexOperationMetadataMÊAaiplatform.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBö
+#com.google.cloud.aiplatform.v1beta1BIndexEndpointServiceProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -39,13 +39,13 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\CreateIndexRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteIndexRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetIndexRequest;
-use Google\Cloud\Aiplatform\V1beta1\Index;
-use Google\Cloud\Aiplatform\V1beta1\ListIndexesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListIndexesResponse;
-use Google\Cloud\Aiplatform\V1beta1\UpdateIndexRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateIndexRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteIndexRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetIndexRequest;
+use Google\Cloud\AIPlatform\V1beta1\Index;
+use Google\Cloud\AIPlatform\V1beta1\ListIndexesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListIndexesResponse;
+use Google\Cloud\AIPlatform\V1beta1\UpdateIndexRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -530,7 +530,7 @@ class IndexServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Index
+     * @return \Google\Cloud\AIPlatform\V1beta1\Index
      *
      * @throws ApiException if the remote call fails
      *

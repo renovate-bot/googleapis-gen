@@ -222,28 +222,28 @@ public interface FeatureValueOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Metadata of feature value.
+   * Metadata of feature value.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
    * <pre>
-   * Output only. Metadata of feature value.
+   * Metadata of feature value.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
    * @return The metadata.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata getMetadata();
   /**
    * <pre>
-   * Output only. Metadata of feature value.
+   * Metadata of feature value.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.cloud.aiplatform.v1beta1.FeatureValue.Metadata metadata = 14;</code>
    */
   com.google.cloud.aiplatform.v1beta1.FeatureValue.MetadataOrBuilder getMetadataOrBuilder();
 

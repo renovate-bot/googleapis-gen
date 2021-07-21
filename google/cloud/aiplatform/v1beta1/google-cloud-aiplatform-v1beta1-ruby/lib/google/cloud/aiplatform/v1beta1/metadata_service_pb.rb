@@ -69,6 +69,22 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :update_mask, :message, 2, "google.protobuf.FieldMask"
       optional :allow_missing, :bool, 3
     end
+    add_message "google.cloud.aiplatform.v1beta1.DeleteArtifactRequest" do
+      optional :name, :string, 1
+      optional :etag, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest" do
+      optional :parent, :string, 1
+      optional :filter, :string, 2
+      optional :force, :bool, 3
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeArtifactsResponse" do
+      optional :purge_count, :int64, 1
+      repeated :purge_sample, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata" do
+      optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1beta1.GenericOperationMetadata"
+    end
     add_message "google.cloud.aiplatform.v1beta1.CreateContextRequest" do
       optional :parent, :string, 1
       optional :context, :message, 2, "google.cloud.aiplatform.v1beta1.Context"
@@ -95,6 +111,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.DeleteContextRequest" do
       optional :name, :string, 1
       optional :force, :bool, 2
+      optional :etag, :string, 3
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeContextsRequest" do
+      optional :parent, :string, 1
+      optional :filter, :string, 2
+      optional :force, :bool, 3
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeContextsResponse" do
+      optional :purge_count, :int64, 1
+      repeated :purge_sample, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeContextsMetadata" do
+      optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1beta1.GenericOperationMetadata"
     end
     add_message "google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest" do
       optional :context, :string, 1
@@ -135,6 +164,22 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :update_mask, :message, 2, "google.protobuf.FieldMask"
       optional :allow_missing, :bool, 3
     end
+    add_message "google.cloud.aiplatform.v1beta1.DeleteExecutionRequest" do
+      optional :name, :string, 1
+      optional :etag, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest" do
+      optional :parent, :string, 1
+      optional :filter, :string, 2
+      optional :force, :bool, 3
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeExecutionsResponse" do
+      optional :purge_count, :int64, 1
+      repeated :purge_sample, :string, 2
+    end
+    add_message "google.cloud.aiplatform.v1beta1.PurgeExecutionsMetadata" do
+      optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1beta1.GenericOperationMetadata"
+    end
     add_message "google.cloud.aiplatform.v1beta1.AddExecutionEventsRequest" do
       optional :execution, :string, 1
       repeated :events, :message, 2, "google.cloud.aiplatform.v1beta1.Event"
@@ -172,7 +217,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         CreateMetadataStoreRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreateMetadataStoreRequest").msgclass
         CreateMetadataStoreOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreateMetadataStoreOperationMetadata").msgclass
@@ -186,12 +231,19 @@ module Google
         ListArtifactsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListArtifactsRequest").msgclass
         ListArtifactsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListArtifactsResponse").msgclass
         UpdateArtifactRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.UpdateArtifactRequest").msgclass
+        DeleteArtifactRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeleteArtifactRequest").msgclass
+        PurgeArtifactsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest").msgclass
+        PurgeArtifactsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeArtifactsResponse").msgclass
+        PurgeArtifactsMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata").msgclass
         CreateContextRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreateContextRequest").msgclass
         GetContextRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.GetContextRequest").msgclass
         ListContextsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListContextsRequest").msgclass
         ListContextsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListContextsResponse").msgclass
         UpdateContextRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.UpdateContextRequest").msgclass
         DeleteContextRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeleteContextRequest").msgclass
+        PurgeContextsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeContextsRequest").msgclass
+        PurgeContextsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeContextsResponse").msgclass
+        PurgeContextsMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeContextsMetadata").msgclass
         AddContextArtifactsAndExecutionsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest").msgclass
         AddContextArtifactsAndExecutionsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsResponse").msgclass
         AddContextChildrenRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.AddContextChildrenRequest").msgclass
@@ -202,6 +254,10 @@ module Google
         ListExecutionsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListExecutionsRequest").msgclass
         ListExecutionsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.ListExecutionsResponse").msgclass
         UpdateExecutionRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.UpdateExecutionRequest").msgclass
+        DeleteExecutionRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.DeleteExecutionRequest").msgclass
+        PurgeExecutionsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest").msgclass
+        PurgeExecutionsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeExecutionsResponse").msgclass
+        PurgeExecutionsMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PurgeExecutionsMetadata").msgclass
         AddExecutionEventsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.AddExecutionEventsRequest").msgclass
         AddExecutionEventsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.AddExecutionEventsResponse").msgclass
         QueryExecutionInputsAndOutputsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest").msgclass

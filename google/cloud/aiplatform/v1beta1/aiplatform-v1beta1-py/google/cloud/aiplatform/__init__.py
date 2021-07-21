@@ -89,6 +89,7 @@ from google.cloud.aiplatform_v1beta1.types.deployed_model_ref import DeployedMod
 from google.cloud.aiplatform_v1beta1.types.encryption_spec import EncryptionSpec
 from google.cloud.aiplatform_v1beta1.types.endpoint import DeployedModel
 from google.cloud.aiplatform_v1beta1.types.endpoint import Endpoint
+from google.cloud.aiplatform_v1beta1.types.endpoint import PrivateEndpoints
 from google.cloud.aiplatform_v1beta1.types.endpoint_service import CreateEndpointOperationMetadata
 from google.cloud.aiplatform_v1beta1.types.endpoint_service import CreateEndpointRequest
 from google.cloud.aiplatform_v1beta1.types.endpoint_service import DeleteEndpointRequest
@@ -263,7 +264,9 @@ from google.cloud.aiplatform_v1beta1.types.metadata_service import CreateExecuti
 from google.cloud.aiplatform_v1beta1.types.metadata_service import CreateMetadataSchemaRequest
 from google.cloud.aiplatform_v1beta1.types.metadata_service import CreateMetadataStoreOperationMetadata
 from google.cloud.aiplatform_v1beta1.types.metadata_service import CreateMetadataStoreRequest
+from google.cloud.aiplatform_v1beta1.types.metadata_service import DeleteArtifactRequest
 from google.cloud.aiplatform_v1beta1.types.metadata_service import DeleteContextRequest
+from google.cloud.aiplatform_v1beta1.types.metadata_service import DeleteExecutionRequest
 from google.cloud.aiplatform_v1beta1.types.metadata_service import DeleteMetadataStoreOperationMetadata
 from google.cloud.aiplatform_v1beta1.types.metadata_service import DeleteMetadataStoreRequest
 from google.cloud.aiplatform_v1beta1.types.metadata_service import GetArtifactRequest
@@ -281,6 +284,15 @@ from google.cloud.aiplatform_v1beta1.types.metadata_service import ListMetadataS
 from google.cloud.aiplatform_v1beta1.types.metadata_service import ListMetadataSchemasResponse
 from google.cloud.aiplatform_v1beta1.types.metadata_service import ListMetadataStoresRequest
 from google.cloud.aiplatform_v1beta1.types.metadata_service import ListMetadataStoresResponse
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeArtifactsMetadata
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeArtifactsRequest
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeArtifactsResponse
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeContextsMetadata
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeContextsRequest
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeContextsResponse
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeExecutionsMetadata
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeExecutionsRequest
+from google.cloud.aiplatform_v1beta1.types.metadata_service import PurgeExecutionsResponse
 from google.cloud.aiplatform_v1beta1.types.metadata_service import QueryArtifactLineageSubgraphRequest
 from google.cloud.aiplatform_v1beta1.types.metadata_service import QueryContextLineageSubgraphRequest
 from google.cloud.aiplatform_v1beta1.types.metadata_service import QueryExecutionInputsAndOutputsRequest
@@ -518,6 +530,7 @@ __all__ = ('DatasetServiceClient',
     'EncryptionSpec',
     'DeployedModel',
     'Endpoint',
+    'PrivateEndpoints',
     'CreateEndpointOperationMetadata',
     'CreateEndpointRequest',
     'DeleteEndpointRequest',
@@ -692,7 +705,9 @@ __all__ = ('DatasetServiceClient',
     'CreateMetadataSchemaRequest',
     'CreateMetadataStoreOperationMetadata',
     'CreateMetadataStoreRequest',
+    'DeleteArtifactRequest',
     'DeleteContextRequest',
+    'DeleteExecutionRequest',
     'DeleteMetadataStoreOperationMetadata',
     'DeleteMetadataStoreRequest',
     'GetArtifactRequest',
@@ -710,6 +725,15 @@ __all__ = ('DatasetServiceClient',
     'ListMetadataSchemasResponse',
     'ListMetadataStoresRequest',
     'ListMetadataStoresResponse',
+    'PurgeArtifactsMetadata',
+    'PurgeArtifactsRequest',
+    'PurgeArtifactsResponse',
+    'PurgeContextsMetadata',
+    'PurgeContextsRequest',
+    'PurgeContextsResponse',
+    'PurgeExecutionsMetadata',
+    'PurgeExecutionsRequest',
+    'PurgeExecutionsResponse',
     'QueryArtifactLineageSubgraphRequest',
     'QueryContextLineageSubgraphRequest',
     'QueryExecutionInputsAndOutputsRequest',

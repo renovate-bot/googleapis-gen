@@ -50,6 +50,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.aiplatform.v1beta1.DeployIndexOperationMetadata" do
       optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1beta1.GenericOperationMetadata"
+      optional :deployed_index_id, :string, 2
     end
     add_message "google.cloud.aiplatform.v1beta1.UndeployIndexRequest" do
       optional :index_endpoint, :string, 1
@@ -65,7 +66,7 @@ end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         CreateIndexEndpointRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreateIndexEndpointRequest").msgclass
         CreateIndexEndpointOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.CreateIndexEndpointOperationMetadata").msgclass

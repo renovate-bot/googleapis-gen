@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -39,47 +39,52 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\AddContextArtifactsAndExecutionsRequest;
-use Google\Cloud\Aiplatform\V1beta1\AddContextArtifactsAndExecutionsResponse;
-use Google\Cloud\Aiplatform\V1beta1\AddContextChildrenRequest;
-use Google\Cloud\Aiplatform\V1beta1\AddContextChildrenResponse;
-use Google\Cloud\Aiplatform\V1beta1\AddExecutionEventsRequest;
-use Google\Cloud\Aiplatform\V1beta1\AddExecutionEventsResponse;
-use Google\Cloud\Aiplatform\V1beta1\Artifact;
-use Google\Cloud\Aiplatform\V1beta1\Context;
-use Google\Cloud\Aiplatform\V1beta1\CreateArtifactRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateContextRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateExecutionRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateMetadataSchemaRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateMetadataStoreRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteContextRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteMetadataStoreRequest;
-use Google\Cloud\Aiplatform\V1beta1\Event;
-use Google\Cloud\Aiplatform\V1beta1\Execution;
-use Google\Cloud\Aiplatform\V1beta1\GetArtifactRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetContextRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetExecutionRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetMetadataSchemaRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetMetadataStoreRequest;
-use Google\Cloud\Aiplatform\V1beta1\LineageSubgraph;
-use Google\Cloud\Aiplatform\V1beta1\ListArtifactsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListArtifactsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListContextsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListContextsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListExecutionsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListExecutionsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListMetadataSchemasRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListMetadataSchemasResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListMetadataStoresRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListMetadataStoresResponse;
-use Google\Cloud\Aiplatform\V1beta1\MetadataSchema;
-use Google\Cloud\Aiplatform\V1beta1\MetadataStore;
-use Google\Cloud\Aiplatform\V1beta1\QueryArtifactLineageSubgraphRequest;
-use Google\Cloud\Aiplatform\V1beta1\QueryContextLineageSubgraphRequest;
-use Google\Cloud\Aiplatform\V1beta1\QueryExecutionInputsAndOutputsRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateArtifactRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateContextRequest;
-use Google\Cloud\Aiplatform\V1beta1\UpdateExecutionRequest;
+use Google\Cloud\AIPlatform\V1beta1\AddContextArtifactsAndExecutionsRequest;
+use Google\Cloud\AIPlatform\V1beta1\AddContextArtifactsAndExecutionsResponse;
+use Google\Cloud\AIPlatform\V1beta1\AddContextChildrenRequest;
+use Google\Cloud\AIPlatform\V1beta1\AddContextChildrenResponse;
+use Google\Cloud\AIPlatform\V1beta1\AddExecutionEventsRequest;
+use Google\Cloud\AIPlatform\V1beta1\AddExecutionEventsResponse;
+use Google\Cloud\AIPlatform\V1beta1\Artifact;
+use Google\Cloud\AIPlatform\V1beta1\Context;
+use Google\Cloud\AIPlatform\V1beta1\CreateArtifactRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateContextRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateExecutionRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateMetadataSchemaRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateMetadataStoreRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteArtifactRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteContextRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteExecutionRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteMetadataStoreRequest;
+use Google\Cloud\AIPlatform\V1beta1\Event;
+use Google\Cloud\AIPlatform\V1beta1\Execution;
+use Google\Cloud\AIPlatform\V1beta1\GetArtifactRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetContextRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetExecutionRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetMetadataSchemaRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetMetadataStoreRequest;
+use Google\Cloud\AIPlatform\V1beta1\LineageSubgraph;
+use Google\Cloud\AIPlatform\V1beta1\ListArtifactsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListArtifactsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListContextsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListContextsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListExecutionsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListExecutionsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListMetadataSchemasRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListMetadataSchemasResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListMetadataStoresRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListMetadataStoresResponse;
+use Google\Cloud\AIPlatform\V1beta1\MetadataSchema;
+use Google\Cloud\AIPlatform\V1beta1\MetadataStore;
+use Google\Cloud\AIPlatform\V1beta1\PurgeArtifactsRequest;
+use Google\Cloud\AIPlatform\V1beta1\PurgeContextsRequest;
+use Google\Cloud\AIPlatform\V1beta1\PurgeExecutionsRequest;
+use Google\Cloud\AIPlatform\V1beta1\QueryArtifactLineageSubgraphRequest;
+use Google\Cloud\AIPlatform\V1beta1\QueryContextLineageSubgraphRequest;
+use Google\Cloud\AIPlatform\V1beta1\QueryExecutionInputsAndOutputsRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateArtifactRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateContextRequest;
+use Google\Cloud\AIPlatform\V1beta1\UpdateExecutionRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -556,7 +561,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\AddContextArtifactsAndExecutionsResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\AddContextArtifactsAndExecutionsResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -615,7 +620,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\AddContextChildrenResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\AddContextChildrenResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -669,7 +674,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\AddExecutionEventsResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\AddExecutionEventsResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -728,7 +733,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Artifact
+     * @return \Google\Cloud\AIPlatform\V1beta1\Artifact
      *
      * @throws ApiException if the remote call fails
      *
@@ -788,7 +793,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Context
+     * @return \Google\Cloud\AIPlatform\V1beta1\Context
      *
      * @throws ApiException if the remote call fails
      *
@@ -849,7 +854,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Execution
+     * @return \Google\Cloud\AIPlatform\V1beta1\Execution
      *
      * @throws ApiException if the remote call fails
      *
@@ -910,7 +915,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\MetadataSchema
+     * @return \Google\Cloud\AIPlatform\V1beta1\MetadataSchema
      *
      * @throws ApiException if the remote call fails
      *
@@ -1018,6 +1023,81 @@ class MetadataServiceGapicClient
     }
 
     /**
+     * Deletes an Artifact.
+     *
+     * Sample code:
+     * ```
+     * $metadataServiceClient = new MetadataServiceClient();
+     * try {
+     *     $formattedName = $metadataServiceClient->artifactName('[PROJECT]', '[LOCATION]', '[METADATA_STORE]', '[ARTIFACT]');
+     *     $operationResponse = $metadataServiceClient->deleteArtifact($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $metadataServiceClient->deleteArtifact($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $metadataServiceClient->resumeOperation($operationName, 'deleteArtifact');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $metadataServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of the Artifact to delete.
+     *                             Format:
+     *                             projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $etag
+     *           Optional. The etag of the Artifact to delete.
+     *           If this is provided, it must match the server's etag. Otherwise, the
+     *           request will fail with a FAILED_PRECONDITION.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function deleteArtifact($name, array $optionalArgs = [])
+    {
+        $request = new DeleteArtifactRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['etag'])) {
+            $request->setEtag($optionalArgs['etag']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteArtifact', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Deletes a stored Context.
      *
      * Sample code:
@@ -1054,17 +1134,19 @@ class MetadataServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The resource name of the Context to retrieve.
+     * @param string $name         Required. The resource name of the Context to delete.
      *                             Format:
      *                             projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
      * @param array  $optionalArgs {
      *     Optional.
      *
      *     @type bool $force
-     *           If set to true, any child resources of this Context will be deleted.
-     *           (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     *           Context has any child resources, such as another Context, Artifact, or
-     *           Execution).
+     *           The force deletion semantics is still undefined.
+     *           Users should not use this field.
+     *     @type string $etag
+     *           Optional. The etag of the Context to delete.
+     *           If this is provided, it must match the server's etag. Otherwise, the
+     *           request will fail with a FAILED_PRECONDITION.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1088,9 +1170,88 @@ class MetadataServiceGapicClient
             $request->setForce($optionalArgs['force']);
         }
 
+        if (isset($optionalArgs['etag'])) {
+            $request->setEtag($optionalArgs['etag']);
+        }
+
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('DeleteContext', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Deletes an Execution.
+     *
+     * Sample code:
+     * ```
+     * $metadataServiceClient = new MetadataServiceClient();
+     * try {
+     *     $formattedName = $metadataServiceClient->executionName('[PROJECT]', '[LOCATION]', '[METADATA_STORE]', '[EXECUTION]');
+     *     $operationResponse = $metadataServiceClient->deleteExecution($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $metadataServiceClient->deleteExecution($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $metadataServiceClient->resumeOperation($operationName, 'deleteExecution');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $metadataServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of the Execution to delete.
+     *                             Format:
+     *                             projects/{project}/locations/{location}/metadataStores/{metadatastore}/executions/{execution}
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $etag
+     *           Optional. The etag of the Execution to delete.
+     *           If this is provided, it must match the server's etag. Otherwise, the
+     *           request will fail with a FAILED_PRECONDITION.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function deleteExecution($name, array $optionalArgs = [])
+    {
+        $request = new DeleteExecutionRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['etag'])) {
+            $request->setEtag($optionalArgs['etag']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteExecution', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -1195,7 +1356,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Artifact
+     * @return \Google\Cloud\AIPlatform\V1beta1\Artifact
      *
      * @throws ApiException if the remote call fails
      *
@@ -1239,7 +1400,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Context
+     * @return \Google\Cloud\AIPlatform\V1beta1\Context
      *
      * @throws ApiException if the remote call fails
      *
@@ -1283,7 +1444,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Execution
+     * @return \Google\Cloud\AIPlatform\V1beta1\Execution
      *
      * @throws ApiException if the remote call fails
      *
@@ -1327,7 +1488,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\MetadataSchema
+     * @return \Google\Cloud\AIPlatform\V1beta1\MetadataSchema
      *
      * @throws ApiException if the remote call fails
      *
@@ -1371,7 +1532,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\MetadataStore
+     * @return \Google\Cloud\AIPlatform\V1beta1\MetadataStore
      *
      * @throws ApiException if the remote call fails
      *
@@ -1859,6 +2020,249 @@ class MetadataServiceGapicClient
     }
 
     /**
+     * Purges Artifacts.
+     *
+     * Sample code:
+     * ```
+     * $metadataServiceClient = new MetadataServiceClient();
+     * try {
+     *     $formattedParent = $metadataServiceClient->metadataStoreName('[PROJECT]', '[LOCATION]', '[METADATA_STORE]');
+     *     $filter = 'filter';
+     *     $operationResponse = $metadataServiceClient->purgeArtifacts($formattedParent, $filter);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $metadataServiceClient->purgeArtifacts($formattedParent, $filter);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $metadataServiceClient->resumeOperation($operationName, 'purgeArtifacts');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $metadataServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The metadata store to purge Artifacts from.
+     *                             Format:
+     *                             projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * @param string $filter       Required. A required filter matching the Artifacts to be purged.
+     *                             E.g., update_time <= 2020-11-19T11:30:00-04:00.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type bool $force
+     *           Optional. Flag to indicate to actually perform the purge.
+     *           If `force` is set to false, the method will return a sample of
+     *           Artifact names that would be deleted.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function purgeArtifacts($parent, $filter, array $optionalArgs = [])
+    {
+        $request = new PurgeArtifactsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setFilter($filter);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['force'])) {
+            $request->setForce($optionalArgs['force']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('PurgeArtifacts', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Purges Contexts.
+     *
+     * Sample code:
+     * ```
+     * $metadataServiceClient = new MetadataServiceClient();
+     * try {
+     *     $formattedParent = $metadataServiceClient->metadataStoreName('[PROJECT]', '[LOCATION]', '[METADATA_STORE]');
+     *     $filter = 'filter';
+     *     $operationResponse = $metadataServiceClient->purgeContexts($formattedParent, $filter);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $metadataServiceClient->purgeContexts($formattedParent, $filter);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $metadataServiceClient->resumeOperation($operationName, 'purgeContexts');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $metadataServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The metadata store to purge Contexts from.
+     *                             Format:
+     *                             projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * @param string $filter       Required. A required filter matching the Contexts to be purged.
+     *                             E.g., update_time <= 2020-11-19T11:30:00-04:00.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type bool $force
+     *           Optional. Flag to indicate to actually perform the purge.
+     *           If `force` is set to false, the method will return a sample of
+     *           Context names that would be deleted.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function purgeContexts($parent, $filter, array $optionalArgs = [])
+    {
+        $request = new PurgeContextsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setFilter($filter);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['force'])) {
+            $request->setForce($optionalArgs['force']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('PurgeContexts', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Purges Executions.
+     *
+     * Sample code:
+     * ```
+     * $metadataServiceClient = new MetadataServiceClient();
+     * try {
+     *     $formattedParent = $metadataServiceClient->metadataStoreName('[PROJECT]', '[LOCATION]', '[METADATA_STORE]');
+     *     $filter = 'filter';
+     *     $operationResponse = $metadataServiceClient->purgeExecutions($formattedParent, $filter);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $metadataServiceClient->purgeExecutions($formattedParent, $filter);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $metadataServiceClient->resumeOperation($operationName, 'purgeExecutions');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $metadataServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. The metadata store to purge Executions from.
+     *                             Format:
+     *                             projects/{project}/locations/{location}/metadataStores/{metadatastore}
+     * @param string $filter       Required. A required filter matching the Executions to be purged.
+     *                             E.g., update_time <= 2020-11-19T11:30:00-04:00.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type bool $force
+     *           Optional. Flag to indicate to actually perform the purge.
+     *           If `force` is set to false, the method will return a sample of
+     *           Execution names that would be deleted.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function purgeExecutions($parent, $filter, array $optionalArgs = [])
+    {
+        $request = new PurgeExecutionsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setFilter($filter);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['force'])) {
+            $request->setForce($optionalArgs['force']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('PurgeExecutions', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Retrieves lineage of an Artifact represented through Artifacts and
      * Executions connected by Event edges and returned as a LineageSubgraph.
      *
@@ -1919,7 +2323,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\LineageSubgraph
+     * @return \Google\Cloud\AIPlatform\V1beta1\LineageSubgraph
      *
      * @throws ApiException if the remote call fails
      *
@@ -1977,7 +2381,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\LineageSubgraph
+     * @return \Google\Cloud\AIPlatform\V1beta1\LineageSubgraph
      *
      * @throws ApiException if the remote call fails
      *
@@ -2024,7 +2428,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\LineageSubgraph
+     * @return \Google\Cloud\AIPlatform\V1beta1\LineageSubgraph
      *
      * @throws ApiException if the remote call fails
      *
@@ -2075,7 +2479,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Artifact
+     * @return \Google\Cloud\AIPlatform\V1beta1\Artifact
      *
      * @throws ApiException if the remote call fails
      *
@@ -2131,7 +2535,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Context
+     * @return \Google\Cloud\AIPlatform\V1beta1\Context
      *
      * @throws ApiException if the remote call fails
      *
@@ -2187,7 +2591,7 @@ class MetadataServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Execution
+     * @return \Google\Cloud\AIPlatform\V1beta1\Execution
      *
      * @throws ApiException if the remote call fails
      *

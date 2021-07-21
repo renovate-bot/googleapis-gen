@@ -19,18 +19,18 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # A subgraph of the overall lineage graph. Event edges connect Artifact and
         # Execution nodes.
         # @!attribute [rw] artifacts
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Artifact>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Artifact>]
         #     The Artifact nodes in the subgraph.
         # @!attribute [rw] executions
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Execution>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Execution>]
         #     The Execution nodes in the subgraph.
         # @!attribute [rw] events
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Event>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Event>]
         #     The Event edges between Artifacts and Executions in the subgraph.
         class LineageSubgraph
           include ::Google::Protobuf::MessageExts

@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # An edge describing the relationship between an Artifact and an Execution in
         # a lineage graph.
@@ -33,7 +33,7 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Time the Event occurred.
         # @!attribute [rw] type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Event::Type]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Event::Type]
         #     Required. The type of the Event.
         # @!attribute [rw] labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]

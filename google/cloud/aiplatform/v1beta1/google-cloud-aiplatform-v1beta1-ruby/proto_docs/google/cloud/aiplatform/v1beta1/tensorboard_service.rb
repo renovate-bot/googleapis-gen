@@ -19,22 +19,22 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#create_tensorboard TensorboardService.CreateTensorboard}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#create_tensorboard TensorboardService.CreateTensorboard}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to create the Tensorboard in.
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] tensorboard
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Tensorboard]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Tensorboard]
         #     Required. The Tensorboard to create.
         class CreateTensorboardRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#get_tensorboard TensorboardService.GetTensorboard}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#get_tensorboard TensorboardService.GetTensorboard}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Tensorboard resource.
@@ -45,7 +45,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboards TensorboardService.ListTensorboards}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboards TensorboardService.ListTensorboards}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to list Tensorboards.
@@ -63,11 +63,11 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     A page token, received from a previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboards TensorboardService.ListTensorboards} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboards TensorboardService.ListTensorboards} call.
         #     Provide this to retrieve the subsequent page.
         #
         #     When paginating, all other parameters provided to
-        #     {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboards TensorboardService.ListTensorboards} must
+        #     {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboards TensorboardService.ListTensorboards} must
         #     match the call that provided the page token.
         # @!attribute [rw] order_by
         #   @return [::String]
@@ -80,13 +80,13 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboards TensorboardService.ListTensorboards}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboards TensorboardService.ListTensorboards}.
         # @!attribute [rw] tensorboards
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Tensorboard>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Tensorboard>]
         #     The Tensorboards mathching the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
-        #     A token, which can be sent as {::Google::Cloud::Aiplatform::V1beta1::ListTensorboardsRequest#page_token ListTensorboardsRequest.page_token}
+        #     A token, which can be sent as {::Google::Cloud::AIPlatform::V1beta1::ListTensorboardsRequest#page_token ListTensorboardsRequest.page_token}
         #     to retrieve the next page. If this field is omitted, there are no
         #     subsequent pages.
         class ListTensorboardsResponse
@@ -94,7 +94,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#update_tensorboard TensorboardService.UpdateTensorboard}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#update_tensorboard TensorboardService.UpdateTensorboard}.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. Field mask is used to specify the fields to be overwritten in the
@@ -104,7 +104,7 @@ module Google
         #     user does not provide a mask then all fields will be overwritten if new
         #     values are specified.
         # @!attribute [rw] tensorboard
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Tensorboard]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Tensorboard]
         #     Required. The Tensorboard's `name` field is used to identify the
         #     Tensorboard to be updated. Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
@@ -113,7 +113,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#delete_tensorboard TensorboardService.DeleteTensorboard}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#delete_tensorboard TensorboardService.DeleteTensorboard}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Tensorboard to be deleted.
@@ -124,14 +124,14 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#create_tensorboard_experiment TensorboardService.CreateTensorboardExperiment}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#create_tensorboard_experiment TensorboardService.CreateTensorboardExperiment}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Tensorboard to create the TensorboardExperiment
         #     in. Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
         # @!attribute [rw] tensorboard_experiment
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardExperiment]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment]
         #     The TensorboardExperiment to create.
         # @!attribute [rw] tensorboard_experiment_id
         #   @return [::String]
@@ -145,7 +145,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#get_tensorboard_experiment TensorboardService.GetTensorboardExperiment}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#get_tensorboard_experiment TensorboardService.GetTensorboardExperiment}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TensorboardExperiment resource.
@@ -156,7 +156,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_experiments TensorboardService.ListTensorboardExperiments}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_experiments TensorboardService.ListTensorboardExperiments}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Tensorboard to list TensorboardExperiments.
@@ -174,11 +174,11 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     A page token, received from a previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_experiments TensorboardService.ListTensorboardExperiments} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_experiments TensorboardService.ListTensorboardExperiments} call.
         #     Provide this to retrieve the subsequent page.
         #
         #     When paginating, all other parameters provided to
-        #     {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_experiments TensorboardService.ListTensorboardExperiments} must
+        #     {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_experiments TensorboardService.ListTensorboardExperiments} must
         #     match the call that provided the page token.
         # @!attribute [rw] order_by
         #   @return [::String]
@@ -191,21 +191,21 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_experiments TensorboardService.ListTensorboardExperiments}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_experiments TensorboardService.ListTensorboardExperiments}.
         # @!attribute [rw] tensorboard_experiments
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TensorboardExperiment>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment>]
         #     The TensorboardExperiments mathching the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
         #     A token, which can be sent as
-        #     {::Google::Cloud::Aiplatform::V1beta1::ListTensorboardExperimentsRequest#page_token ListTensorboardExperimentsRequest.page_token} to retrieve the next page.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ListTensorboardExperimentsRequest#page_token ListTensorboardExperimentsRequest.page_token} to retrieve the next page.
         #     If this field is omitted, there are no subsequent pages.
         class ListTensorboardExperimentsResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#update_tensorboard_experiment TensorboardService.UpdateTensorboardExperiment}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#update_tensorboard_experiment TensorboardService.UpdateTensorboardExperiment}.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. Field mask is used to specify the fields to be overwritten in the
@@ -215,7 +215,7 @@ module Google
         #     user does not provide a mask then all fields will be overwritten if new
         #     values are specified.
         # @!attribute [rw] tensorboard_experiment
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardExperiment]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardExperiment]
         #     Required. The TensorboardExperiment's `name` field is used to identify the
         #     TensorboardExperiment to be updated. Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
@@ -224,7 +224,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#delete_tensorboard_experiment TensorboardService.DeleteTensorboardExperiment}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#delete_tensorboard_experiment TensorboardService.DeleteTensorboardExperiment}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TensorboardExperiment to be deleted.
@@ -235,14 +235,14 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#create_tensorboard_run TensorboardService.CreateTensorboardRun}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#create_tensorboard_run TensorboardService.CreateTensorboardRun}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Tensorboard to create the TensorboardRun in.
         #     Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
         # @!attribute [rw] tensorboard_run
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardRun]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardRun]
         #     Required. The TensorboardRun to create.
         # @!attribute [rw] tensorboard_run_id
         #   @return [::String]
@@ -256,7 +256,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#get_tensorboard_run TensorboardService.GetTensorboardRun}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#get_tensorboard_run TensorboardService.GetTensorboardRun}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TensorboardRun resource.
@@ -267,7 +267,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#read_tensorboard_blob_data TensorboardService.ReadTensorboardBlobData}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#read_tensorboard_blob_data TensorboardService.ReadTensorboardBlobData}.
         # @!attribute [rw] time_series
         #   @return [::String]
         #     Required. The resource name of the TensorboardTimeSeries to list Blobs.
@@ -281,16 +281,16 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#read_tensorboard_blob_data TensorboardService.ReadTensorboardBlobData}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#read_tensorboard_blob_data TensorboardService.ReadTensorboardBlobData}.
         # @!attribute [rw] blobs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TensorboardBlob>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TensorboardBlob>]
         #     Blob messages containing blob bytes.
         class ReadTensorboardBlobDataResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Tensorboard to list TensorboardRuns.
@@ -308,11 +308,11 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     A page token, received from a previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns} call.
         #     Provide this to retrieve the subsequent page.
         #
         #     When paginating, all other parameters provided to
-        #     {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns} must
+        #     {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns} must
         #     match the call that provided the page token.
         # @!attribute [rw] order_by
         #   @return [::String]
@@ -325,13 +325,13 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_runs TensorboardService.ListTensorboardRuns}.
         # @!attribute [rw] tensorboard_runs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TensorboardRun>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TensorboardRun>]
         #     The TensorboardRuns mathching the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
-        #     A token, which can be sent as {::Google::Cloud::Aiplatform::V1beta1::ListTensorboardRunsRequest#page_token ListTensorboardRunsRequest.page_token} to
+        #     A token, which can be sent as {::Google::Cloud::AIPlatform::V1beta1::ListTensorboardRunsRequest#page_token ListTensorboardRunsRequest.page_token} to
         #     retrieve the next page.
         #     If this field is omitted, there are no subsequent pages.
         class ListTensorboardRunsResponse
@@ -339,7 +339,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#update_tensorboard_run TensorboardService.UpdateTensorboardRun}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#update_tensorboard_run TensorboardService.UpdateTensorboardRun}.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. Field mask is used to specify the fields to be overwritten in the
@@ -349,7 +349,7 @@ module Google
         #     user does not provide a mask then all fields will be overwritten if new
         #     values are specified.
         # @!attribute [rw] tensorboard_run
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardRun]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardRun]
         #     Required. The TensorboardRun's `name` field is used to identify the TensorboardRun to
         #     be updated. Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
@@ -358,7 +358,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#delete_tensorboard_run TensorboardService.DeleteTensorboardRun}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#delete_tensorboard_run TensorboardService.DeleteTensorboardRun}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TensorboardRun to be deleted.
@@ -369,7 +369,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#create_tensorboard_time_series TensorboardService.CreateTensorboardTimeSeries}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#create_tensorboard_time_series TensorboardService.CreateTensorboardTimeSeries}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the TensorboardRun to create the
@@ -384,14 +384,14 @@ module Google
         #
         #     This value should match "[a-z0-9][a-z0-9-]\\{0, 127}"
         # @!attribute [rw] tensorboard_time_series
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardTimeSeries]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries]
         #     Required. The TensorboardTimeSeries to create.
         class CreateTensorboardTimeSeriesRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#get_tensorboard_time_series TensorboardService.GetTensorboardTimeSeries}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#get_tensorboard_time_series TensorboardService.GetTensorboardTimeSeries}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TensorboardTimeSeries resource.
@@ -402,7 +402,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_time_series TensorboardService.ListTensorboardTimeSeries}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_time_series TensorboardService.ListTensorboardTimeSeries}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the TensorboardRun to list TensorboardTimeSeries.
@@ -420,11 +420,11 @@ module Google
         # @!attribute [rw] page_token
         #   @return [::String]
         #     A page token, received from a previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_time_series TensorboardService.ListTensorboardTimeSeries} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_time_series TensorboardService.ListTensorboardTimeSeries} call.
         #     Provide this to retrieve the subsequent page.
         #
         #     When paginating, all other parameters provided to
-        #     {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_time_series TensorboardService.ListTensorboardTimeSeries} must
+        #     {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_time_series TensorboardService.ListTensorboardTimeSeries} must
         #     match the call that provided the page token.
         # @!attribute [rw] order_by
         #   @return [::String]
@@ -437,21 +437,21 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#list_tensorboard_time_series TensorboardService.ListTensorboardTimeSeries}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#list_tensorboard_time_series TensorboardService.ListTensorboardTimeSeries}.
         # @!attribute [rw] tensorboard_time_series
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TensorboardTimeSeries>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries>]
         #     The TensorboardTimeSeries mathching the request.
         # @!attribute [rw] next_page_token
         #   @return [::String]
         #     A token, which can be sent as
-        #     {::Google::Cloud::Aiplatform::V1beta1::ListTensorboardTimeSeriesRequest#page_token ListTensorboardTimeSeriesRequest.page_token} to retrieve the next page.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ListTensorboardTimeSeriesRequest#page_token ListTensorboardTimeSeriesRequest.page_token} to retrieve the next page.
         #     If this field is omitted, there are no subsequent pages.
         class ListTensorboardTimeSeriesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#update_tensorboard_time_series TensorboardService.UpdateTensorboardTimeSeries}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#update_tensorboard_time_series TensorboardService.UpdateTensorboardTimeSeries}.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. Field mask is used to specify the fields to be overwritten in the
@@ -461,7 +461,7 @@ module Google
         #     user does not provide a mask then all fields will be overwritten if new
         #     values are specified.
         # @!attribute [rw] tensorboard_time_series
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TensorboardTimeSeries]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TensorboardTimeSeries]
         #     Required. The TensorboardTimeSeries' `name` field is used to identify the
         #     TensorboardTimeSeries to be updated.
         #     Format:
@@ -471,7 +471,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#delete_tensorboard_time_series TensorboardService.DeleteTensorboardTimeSeries}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#delete_tensorboard_time_series TensorboardService.DeleteTensorboardTimeSeries}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the TensorboardTimeSeries to be deleted.
@@ -482,7 +482,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#read_tensorboard_time_series_data TensorboardService.ReadTensorboardTimeSeriesData}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#read_tensorboard_time_series_data TensorboardService.ReadTensorboardTimeSeriesData}.
         # @!attribute [rw] tensorboard_time_series
         #   @return [::String]
         #     Required. The resource name of the TensorboardTimeSeries to read data from.
@@ -502,23 +502,23 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#read_tensorboard_time_series_data TensorboardService.ReadTensorboardTimeSeriesData}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#read_tensorboard_time_series_data TensorboardService.ReadTensorboardTimeSeriesData}.
         # @!attribute [rw] time_series_data
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TimeSeriesData]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TimeSeriesData]
         #     The returned time series data.
         class ReadTensorboardTimeSeriesDataResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#write_tensorboard_run_data TensorboardService.WriteTensorboardRunData}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#write_tensorboard_run_data TensorboardService.WriteTensorboardRunData}.
         # @!attribute [rw] tensorboard_run
         #   @return [::String]
         #     Required. The resource name of the TensorboardRun to write data to.
         #     Format:
         #     `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}`
         # @!attribute [rw] time_series_data
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TimeSeriesData>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TimeSeriesData>]
         #     Required. The TensorboardTimeSeries data to write.
         #     Values with in a time series are indexed by their step value.
         #     Repeated writes to the same step will overwrite the existing value for that
@@ -529,13 +529,13 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#write_tensorboard_run_data TensorboardService.WriteTensorboardRunData}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#write_tensorboard_run_data TensorboardService.WriteTensorboardRunData}.
         class WriteTensorboardRunDataResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#export_tensorboard_time_series_data TensorboardService.ExportTensorboardTimeSeriesData}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#export_tensorboard_time_series_data TensorboardService.ExportTensorboardTimeSeriesData}.
         # @!attribute [rw] tensorboard_time_series
         #   @return [::String]
         #     Required. The resource name of the TensorboardTimeSeries to export data from.
@@ -568,9 +568,9 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::TensorboardService::Client#export_tensorboard_time_series_data TensorboardService.ExportTensorboardTimeSeriesData}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::TensorboardService::Client#export_tensorboard_time_series_data TensorboardService.ExportTensorboardTimeSeriesData}.
         # @!attribute [rw] time_series_data_points
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::TimeSeriesDataPoint>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::TimeSeriesDataPoint>]
         #     The returned time series data points.
         # @!attribute [rw] next_page_token
         #   @return [::String]
@@ -584,7 +584,7 @@ module Google
 
         # Details of operations that perform create Tensorboard.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Tensorboard.
         class CreateTensorboardOperationMetadata
           include ::Google::Protobuf::MessageExts
@@ -593,7 +593,7 @@ module Google
 
         # Details of operations that perform update Tensorboard.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     Operation metadata for Tensorboard.
         class UpdateTensorboardOperationMetadata
           include ::Google::Protobuf::MessageExts

@@ -5,8 +5,8 @@ return [
         'google.cloud.aiplatform.v1beta1.TensorboardService' => [
             'CreateTensorboard' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Tensorboard',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateTensorboardOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Tensorboard',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateTensorboardOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +16,7 @@ return [
             'DeleteTensorboard' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -26,7 +26,7 @@ return [
             'DeleteTensorboardExperiment' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -36,7 +36,7 @@ return [
             'DeleteTensorboardRun' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -46,7 +46,7 @@ return [
             'DeleteTensorboardTimeSeries' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -55,8 +55,8 @@ return [
             ],
             'UpdateTensorboard' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Tensorboard',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\UpdateTensorboardOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Tensorboard',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\UpdateTensorboardOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

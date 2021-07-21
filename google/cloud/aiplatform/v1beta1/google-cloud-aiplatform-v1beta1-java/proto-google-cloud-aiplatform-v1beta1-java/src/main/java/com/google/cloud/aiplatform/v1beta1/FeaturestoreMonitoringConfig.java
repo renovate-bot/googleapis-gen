@@ -150,6 +150,23 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration monitoring_interval = 2;</code>
      */
     com.google.protobuf.DurationOrBuilder getMonitoringIntervalOrBuilder();
+
+    /**
+     * <pre>
+     * Configuration of the snapshot analysis based monitoring pipeline
+     * running interval. The value indicates number of days.
+     * If both
+     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+     * are set when creating/updating EntityTypes/Features,
+     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * will be used.
+     * </pre>
+     *
+     * <code>int32 monitoring_interval_days = 3;</code>
+     * @return The monitoringIntervalDays.
+     */
+    int getMonitoringIntervalDays();
   }
   /**
    * <pre>
@@ -219,6 +236,11 @@ private static final long serialVersionUID = 0L;
                 monitoringInterval_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 24: {
+
+              monitoringIntervalDays_ = input.readInt32();
               break;
             }
             default: {
@@ -319,6 +341,28 @@ private static final long serialVersionUID = 0L;
       return getMonitoringInterval();
     }
 
+    public static final int MONITORING_INTERVAL_DAYS_FIELD_NUMBER = 3;
+    private int monitoringIntervalDays_;
+    /**
+     * <pre>
+     * Configuration of the snapshot analysis based monitoring pipeline
+     * running interval. The value indicates number of days.
+     * If both
+     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+     * are set when creating/updating EntityTypes/Features,
+     * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+     * will be used.
+     * </pre>
+     *
+     * <code>int32 monitoring_interval_days = 3;</code>
+     * @return The monitoringIntervalDays.
+     */
+    @java.lang.Override
+    public int getMonitoringIntervalDays() {
+      return monitoringIntervalDays_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -339,6 +383,9 @@ private static final long serialVersionUID = 0L;
       if (monitoringInterval_ != null) {
         output.writeMessage(2, getMonitoringInterval());
       }
+      if (monitoringIntervalDays_ != 0) {
+        output.writeInt32(3, monitoringIntervalDays_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -355,6 +402,10 @@ private static final long serialVersionUID = 0L;
       if (monitoringInterval_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getMonitoringInterval());
+      }
+      if (monitoringIntervalDays_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, monitoringIntervalDays_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -378,6 +429,8 @@ private static final long serialVersionUID = 0L;
         if (!getMonitoringInterval()
             .equals(other.getMonitoringInterval())) return false;
       }
+      if (getMonitoringIntervalDays()
+          != other.getMonitoringIntervalDays()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -396,6 +449,8 @@ private static final long serialVersionUID = 0L;
         hash = (37 * hash) + MONITORING_INTERVAL_FIELD_NUMBER;
         hash = (53 * hash) + getMonitoringInterval().hashCode();
       }
+      hash = (37 * hash) + MONITORING_INTERVAL_DAYS_FIELD_NUMBER;
+      hash = (53 * hash) + getMonitoringIntervalDays();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -544,6 +599,8 @@ private static final long serialVersionUID = 0L;
           monitoringInterval_ = null;
           monitoringIntervalBuilder_ = null;
         }
+        monitoringIntervalDays_ = 0;
+
         return this;
       }
 
@@ -576,6 +633,7 @@ private static final long serialVersionUID = 0L;
         } else {
           result.monitoringInterval_ = monitoringIntervalBuilder_.build();
         }
+        result.monitoringIntervalDays_ = monitoringIntervalDays_;
         onBuilt();
         return result;
       }
@@ -629,6 +687,9 @@ private static final long serialVersionUID = 0L;
         }
         if (other.hasMonitoringInterval()) {
           mergeMonitoringInterval(other.getMonitoringInterval());
+        }
+        if (other.getMonitoringIntervalDays() != 0) {
+          setMonitoringIntervalDays(other.getMonitoringIntervalDays());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -894,6 +955,70 @@ private static final long serialVersionUID = 0L;
           monitoringInterval_ = null;
         }
         return monitoringIntervalBuilder_;
+      }
+
+      private int monitoringIntervalDays_ ;
+      /**
+       * <pre>
+       * Configuration of the snapshot analysis based monitoring pipeline
+       * running interval. The value indicates number of days.
+       * If both
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+       * are set when creating/updating EntityTypes/Features,
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
+       * </pre>
+       *
+       * <code>int32 monitoring_interval_days = 3;</code>
+       * @return The monitoringIntervalDays.
+       */
+      @java.lang.Override
+      public int getMonitoringIntervalDays() {
+        return monitoringIntervalDays_;
+      }
+      /**
+       * <pre>
+       * Configuration of the snapshot analysis based monitoring pipeline
+       * running interval. The value indicates number of days.
+       * If both
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+       * are set when creating/updating EntityTypes/Features,
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
+       * </pre>
+       *
+       * <code>int32 monitoring_interval_days = 3;</code>
+       * @param value The monitoringIntervalDays to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMonitoringIntervalDays(int value) {
+        
+        monitoringIntervalDays_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Configuration of the snapshot analysis based monitoring pipeline
+       * running interval. The value indicates number of days.
+       * If both
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * and [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+       * are set when creating/updating EntityTypes/Features,
+       * [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+       * will be used.
+       * </pre>
+       *
+       * <code>int32 monitoring_interval_days = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMonitoringIntervalDays() {
+        
+        monitoringIntervalDays_ = 0;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(

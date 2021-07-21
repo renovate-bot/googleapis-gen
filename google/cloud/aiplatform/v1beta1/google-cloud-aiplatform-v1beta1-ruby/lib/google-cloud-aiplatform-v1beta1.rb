@@ -18,4 +18,4 @@
 
 # This gem does not autoload during Bundler.require. To load this gem,
 # issue explicit require statements for the packages desired, e.g.:
-# require "google/cloud/aiplatform/v1beta1"
+# require "google/cloud/ai_platform/v1beta1"

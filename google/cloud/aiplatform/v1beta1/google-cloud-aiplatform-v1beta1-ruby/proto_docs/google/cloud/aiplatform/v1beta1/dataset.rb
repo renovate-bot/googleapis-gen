@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # A collection of DataItems and Annotations on them.
         # @!attribute [r] name
@@ -67,7 +67,7 @@ module Google
         #     * "aiplatform.googleapis.com/dataset_metadata_schema": output only, its
         #       value is the [metadata_schema's][google.cloud.aiplatform.v1beta1.Dataset.metadata_schema_uri] title.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
         #     Customer-managed encryption key spec for a Dataset. If set, this Dataset
         #     and all sub-resources of this Dataset will be secured by this key.
         class Dataset
@@ -87,7 +87,7 @@ module Google
         # Describes the location from where we import data into a Dataset, together
         # with the labels that will be applied to the DataItems and the Annotations.
         # @!attribute [rw] gcs_source
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsSource]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsSource]
         #     The Google Cloud Storage location for the input content.
         # @!attribute [rw] data_item_labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]
@@ -101,7 +101,7 @@ module Google
         #     considered identical if their content bytes are identical (e.g. image bytes
         #     or pdf bytes).
         #     These labels will be overridden by Annotation labels specified inside index
-        #     file referenced by {::Google::Cloud::Aiplatform::V1beta1::ImportDataConfig#import_schema_uri import_schema_uri}, e.g. jsonl file.
+        #     file referenced by {::Google::Cloud::AIPlatform::V1beta1::ImportDataConfig#import_schema_uri import_schema_uri}, e.g. jsonl file.
         # @!attribute [rw] import_schema_uri
         #   @return [::String]
         #     Required. Points to a YAML file stored on Google Cloud Storage describing the import
@@ -125,7 +125,7 @@ module Google
         # Describes what part of the Dataset is to be exported, the destination of
         # the export and how to export.
         # @!attribute [rw] gcs_destination
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsDestination]
         #     The Google Cloud Storage location where the output is to be written to.
         #     In the given directory a new directory will be created with name:
         #     `export-data-<dataset-display-name>-<timestamp-of-export-call>` where
@@ -140,7 +140,7 @@ module Google
         #     A filter on Annotations of the Dataset. Only Annotations on to-be-exported
         #     DataItems(specified by [data_items_filter][]) that match this filter will
         #     be exported. The filter syntax is the same as in
-        #     {::Google::Cloud::Aiplatform::V1beta1::DatasetService::Client#list_annotations ListAnnotations}.
+        #     {::Google::Cloud::AIPlatform::V1beta1::DatasetService::Client#list_annotations ListAnnotations}.
         class ExportDataConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

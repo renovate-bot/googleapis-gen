@@ -19,12 +19,12 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # The TrainingPipeline orchestrates tasks associated with training a Model. It
         # always executes the training task, and optionally may also
         # export data from Vertex AI's Dataset which becomes the training input,
-        # {::Google::Cloud::Aiplatform::V1beta1::ModelService::Client#upload_model upload} the Model to Vertex AI, and evaluate the
+        # {::Google::Cloud::AIPlatform::V1beta1::ModelService::Client#upload_model upload} the Model to Vertex AI, and evaluate the
         # Model.
         # @!attribute [r] name
         #   @return [::String]
@@ -33,12 +33,12 @@ module Google
         #   @return [::String]
         #     Required. The user-defined name of this TrainingPipeline.
         # @!attribute [rw] input_data_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::InputDataConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::InputDataConfig]
         #     Specifies Vertex AI owned input data that may be used for training the
-        #     Model. The TrainingPipeline's {::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition} should make
+        #     Model. The TrainingPipeline's {::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition} should make
         #     clear whether this config is used and if there are any special requirements
         #     on how it should be filled. If nothing about this config is mentioned in
-        #     the {::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition}, then it should be assumed that the
+        #     the {::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition}, then it should be assumed that the
         #     TrainingPipeline does not depend on this configuration.
         # @!attribute [rw] training_task_definition
         #   @return [::String]
@@ -53,32 +53,32 @@ module Google
         # @!attribute [rw] training_task_inputs
         #   @return [::Google::Protobuf::Value]
         #     Required. The training task's parameter(s), as specified in the
-        #     {::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition}'s `inputs`.
+        #     {::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition}'s `inputs`.
         # @!attribute [r] training_task_metadata
         #   @return [::Google::Protobuf::Value]
-        #     Output only. The metadata information as specified in the {::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition}'s
+        #     Output only. The metadata information as specified in the {::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition}'s
         #     `metadata`. This metadata is an auxiliary runtime and final information
         #     about the training task. While the pipeline is running this information is
         #     populated only at a best effort basis. Only present if the
-        #     pipeline's {::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition} contains `metadata` object.
+        #     pipeline's {::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition} contains `metadata` object.
         # @!attribute [rw] model_to_upload
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Model]
-        #     Describes the Model that may be uploaded (via {::Google::Cloud::Aiplatform::V1beta1::ModelService::Client#upload_model ModelService.UploadModel})
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Model]
+        #     Describes the Model that may be uploaded (via {::Google::Cloud::AIPlatform::V1beta1::ModelService::Client#upload_model ModelService.UploadModel})
         #     by this TrainingPipeline. The TrainingPipeline's
-        #     {::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition} should make clear whether this Model
+        #     {::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition} should make clear whether this Model
         #     description should be populated, and if there are any special requirements
         #     regarding how it should be filled. If nothing is mentioned in the
-        #     {::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition}, then it should be assumed that this field
+        #     {::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline#training_task_definition training_task_definition}, then it should be assumed that this field
         #     should not be filled and the training task either uploads the Model without
         #     a need of this information, or that training task does not support
         #     uploading a Model as part of the pipeline.
         #     When the Pipeline's state becomes `PIPELINE_STATE_SUCCEEDED` and
         #     the trained Model had been uploaded into Vertex AI, then the
-        #     model_to_upload's resource {::Google::Cloud::Aiplatform::V1beta1::Model#name name} is populated. The Model
+        #     model_to_upload's resource {::Google::Cloud::AIPlatform::V1beta1::Model#name name} is populated. The Model
         #     is always uploaded into the Project and Location in which this pipeline
         #     is.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PipelineState]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PipelineState]
         #     Output only. The detailed state of the pipeline.
         # @!attribute [r] error
         #   @return [::Google::Rpc::Status]
@@ -109,12 +109,12 @@ module Google
         #
         #     See https://goo.gl/xmQnxf for more information and examples of labels.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
         #     Customer-managed encryption key spec for a TrainingPipeline. If set, this
         #     TrainingPipeline will be secured by this key.
         #
         #     Note: Model trained by this TrainingPipeline is also secured by this key if
-        #     {::Google::Cloud::Aiplatform::V1beta1::TrainingPipeline#encryption_spec model_to_upload} is not set separately.
+        #     {::Google::Cloud::AIPlatform::V1beta1::TrainingPipeline#encryption_spec model_to_upload} is not set separately.
         class TrainingPipeline
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -132,23 +132,23 @@ module Google
         # Specifies Vertex AI owned input data to be used for training, and
         # possibly evaluating, the Model.
         # @!attribute [rw] fraction_split
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FractionSplit]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FractionSplit]
         #     Split based on fractions defining the size of each set.
         # @!attribute [rw] filter_split
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FilterSplit]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FilterSplit]
         #     Split based on the provided filters for each set.
         # @!attribute [rw] predefined_split
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::PredefinedSplit]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::PredefinedSplit]
         #     Supported only for tabular Datasets.
         #
         #     Split based on a predefined key.
         # @!attribute [rw] timestamp_split
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::TimestampSplit]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::TimestampSplit]
         #     Supported only for tabular Datasets.
         #
         #     Split based on the timestamp of the input data pieces.
         # @!attribute [rw] gcs_destination
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsDestination]
         #     The Cloud Storage location where the training data is to be
         #     written to. In the given directory a new directory is created with
         #     name:
@@ -170,7 +170,7 @@ module Google
         #     * AIP_TEST_DATA_URI =
         #     "gcs_destination/dataset-<dataset-id>-<annotation-type>-<time>/test-*.$\\{AIP_DATA_FORMAT}"
         # @!attribute [rw] bigquery_destination
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::BigQueryDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::BigQueryDestination]
         #     Only applicable to custom training with tabular Dataset with BigQuery
         #     source.
         #
@@ -208,7 +208,7 @@ module Google
         #     are used in respectively training, validation or test role, depending on
         #     the role of the DataItem they are on (for the auto-assigned that role is
         #     decided by Vertex AI). A filter with same syntax as the one used in
-        #     {::Google::Cloud::Aiplatform::V1beta1::DatasetService::Client#list_annotations ListAnnotations} may be used, but note
+        #     {::Google::Cloud::AIPlatform::V1beta1::DatasetService::Client#list_annotations ListAnnotations} may be used, but note
         #     here it filters across all Annotations of the Dataset, and not just within
         #     a single DataItem.
         # @!attribute [rw] annotation_schema_uri
@@ -222,16 +222,16 @@ module Google
         #     The schema files that can be used here are found in
         #     gs://google-cloud-aiplatform/schema/dataset/annotation/ , note that the
         #     chosen schema must be consistent with
-        #     {::Google::Cloud::Aiplatform::V1beta1::Dataset#metadata_schema_uri metadata} of the Dataset specified by
-        #     {::Google::Cloud::Aiplatform::V1beta1::InputDataConfig#dataset_id dataset_id}.
+        #     {::Google::Cloud::AIPlatform::V1beta1::Dataset#metadata_schema_uri metadata} of the Dataset specified by
+        #     {::Google::Cloud::AIPlatform::V1beta1::InputDataConfig#dataset_id dataset_id}.
         #
         #     Only Annotations that both match this schema and belong to DataItems not
         #     ignored by the split method are used in respectively training, validation
         #     or test role, depending on the role of the DataItem they are on.
         #
-        #     When used in conjunction with {::Google::Cloud::Aiplatform::V1beta1::InputDataConfig#annotations_filter annotations_filter}, the Annotations used
-        #     for training are filtered by both {::Google::Cloud::Aiplatform::V1beta1::InputDataConfig#annotations_filter annotations_filter} and
-        #     {::Google::Cloud::Aiplatform::V1beta1::InputDataConfig#annotation_schema_uri annotation_schema_uri}.
+        #     When used in conjunction with {::Google::Cloud::AIPlatform::V1beta1::InputDataConfig#annotations_filter annotations_filter}, the Annotations used
+        #     for training are filtered by both {::Google::Cloud::AIPlatform::V1beta1::InputDataConfig#annotations_filter annotations_filter} and
+        #     {::Google::Cloud::AIPlatform::V1beta1::InputDataConfig#annotation_schema_uri annotation_schema_uri}.
         class InputDataConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -268,7 +268,7 @@ module Google
         #   @return [::String]
         #     Required. A filter on DataItems of the Dataset. DataItems that match
         #     this filter are used to train the Model. A filter with same syntax
-        #     as the one used in {::Google::Cloud::Aiplatform::V1beta1::DatasetService::Client#list_data_items DatasetService.ListDataItems} may be used. If a
+        #     as the one used in {::Google::Cloud::AIPlatform::V1beta1::DatasetService::Client#list_data_items DatasetService.ListDataItems} may be used. If a
         #     single DataItem is matched by more than one of the FilterSplit filters,
         #     then it is assigned to the first set that applies to it in the
         #     training, validation, test order.
@@ -276,7 +276,7 @@ module Google
         #   @return [::String]
         #     Required. A filter on DataItems of the Dataset. DataItems that match
         #     this filter are used to validate the Model. A filter with same syntax
-        #     as the one used in {::Google::Cloud::Aiplatform::V1beta1::DatasetService::Client#list_data_items DatasetService.ListDataItems} may be used. If a
+        #     as the one used in {::Google::Cloud::AIPlatform::V1beta1::DatasetService::Client#list_data_items DatasetService.ListDataItems} may be used. If a
         #     single DataItem is matched by more than one of the FilterSplit filters,
         #     then it is assigned to the first set that applies to it in the
         #     training, validation, test order.
@@ -284,7 +284,7 @@ module Google
         #   @return [::String]
         #     Required. A filter on DataItems of the Dataset. DataItems that match
         #     this filter are used to test the Model. A filter with same syntax
-        #     as the one used in {::Google::Cloud::Aiplatform::V1beta1::DatasetService::Client#list_data_items DatasetService.ListDataItems} may be used. If a
+        #     as the one used in {::Google::Cloud::AIPlatform::V1beta1::DatasetService::Client#list_data_items DatasetService.ListDataItems} may be used. If a
         #     single DataItem is matched by more than one of the FilterSplit filters,
         #     then it is assigned to the first set that applies to it in the
         #     training, validation, test order.

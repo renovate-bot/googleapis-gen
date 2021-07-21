@@ -5,8 +5,8 @@ return [
         'google.cloud.aiplatform.v1beta1.EndpointService' => [
             'CreateEndpoint' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Endpoint',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateEndpointOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Endpoint',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateEndpointOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +16,7 @@ return [
             'DeleteEndpoint' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -25,8 +25,8 @@ return [
             ],
             'DeployModel' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeployModelResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeployModelOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeployModelResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeployModelOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -35,8 +35,8 @@ return [
             ],
             'UndeployModel' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\UndeployModelResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\UndeployModelOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\UndeployModelResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\UndeployModelOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

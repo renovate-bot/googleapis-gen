@@ -19,11 +19,11 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Configuration of how features in Featurestore are monitored.
         # @!attribute [rw] snapshot_analysis
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::FeaturestoreMonitoringConfig::SnapshotAnalysis]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::FeaturestoreMonitoringConfig::SnapshotAnalysis]
         #     The config for Snapshot Analysis Based Feature Monitoring.
         class FeaturestoreMonitoringConfig
           include ::Google::Protobuf::MessageExts
@@ -50,6 +50,16 @@ module Google
           #   @return [::Google::Protobuf::Duration]
           #     Configuration of the snapshot analysis based monitoring pipeline
           #     running interval. The value is rolled up to full day.
+          # @!attribute [rw] monitoring_interval_days
+          #   @return [::Integer]
+          #     Configuration of the snapshot analysis based monitoring pipeline
+          #     running interval. The value indicates number of days.
+          #     If both
+          #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreMonitoringConfig::SnapshotAnalysis#monitoring_interval_days FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days}
+          #     and {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreMonitoringConfig::SnapshotAnalysis#monitoring_interval FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval}
+          #     are set when creating/updating EntityTypes/Features,
+          #     {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreMonitoringConfig::SnapshotAnalysis#monitoring_interval_days FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days}
+          #     will be used.
           class SnapshotAnalysis
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

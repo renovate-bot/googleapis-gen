@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -39,23 +39,23 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\AnnotationSpec;
-use Google\Cloud\Aiplatform\V1beta1\CreateDatasetRequest;
-use Google\Cloud\Aiplatform\V1beta1\Dataset;
-use Google\Cloud\Aiplatform\V1beta1\DeleteDatasetRequest;
-use Google\Cloud\Aiplatform\V1beta1\ExportDataConfig;
-use Google\Cloud\Aiplatform\V1beta1\ExportDataRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetAnnotationSpecRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetDatasetRequest;
-use Google\Cloud\Aiplatform\V1beta1\ImportDataConfig;
-use Google\Cloud\Aiplatform\V1beta1\ImportDataRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListAnnotationsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListAnnotationsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListDataItemsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListDataItemsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListDatasetsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListDatasetsResponse;
-use Google\Cloud\Aiplatform\V1beta1\UpdateDatasetRequest;
+use Google\Cloud\AIPlatform\V1beta1\AnnotationSpec;
+use Google\Cloud\AIPlatform\V1beta1\CreateDatasetRequest;
+use Google\Cloud\AIPlatform\V1beta1\Dataset;
+use Google\Cloud\AIPlatform\V1beta1\DeleteDatasetRequest;
+use Google\Cloud\AIPlatform\V1beta1\ExportDataConfig;
+use Google\Cloud\AIPlatform\V1beta1\ExportDataRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetAnnotationSpecRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetDatasetRequest;
+use Google\Cloud\AIPlatform\V1beta1\ImportDataConfig;
+use Google\Cloud\AIPlatform\V1beta1\ImportDataRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListAnnotationsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListAnnotationsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListDataItemsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListDataItemsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListDatasetsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListDatasetsResponse;
+use Google\Cloud\AIPlatform\V1beta1\UpdateDatasetRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 
@@ -684,7 +684,7 @@ class DatasetServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\AnnotationSpec
+     * @return \Google\Cloud\AIPlatform\V1beta1\AnnotationSpec
      *
      * @throws ApiException if the remote call fails
      *
@@ -732,7 +732,7 @@ class DatasetServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Dataset
+     * @return \Google\Cloud\AIPlatform\V1beta1\Dataset
      *
      * @throws ApiException if the remote call fails
      *
@@ -1150,7 +1150,7 @@ class DatasetServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Dataset
+     * @return \Google\Cloud\AIPlatform\V1beta1\Dataset
      *
      * @throws ApiException if the remote call fails
      *

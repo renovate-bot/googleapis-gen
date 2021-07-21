@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1beta1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -29,22 +29,22 @@ use Google\ApiCore\ServerStream;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1beta1\ExportTensorboardTimeSeriesDataResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardExperimentsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ExportTensorboardTimeSeriesDataResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardExperimentsResponse;
 
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardRunsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTensorboardTimeSeriesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ReadTensorboardBlobDataResponse;
-use Google\Cloud\Aiplatform\V1beta1\ReadTensorboardTimeSeriesDataResponse;
-use Google\Cloud\Aiplatform\V1beta1\Tensorboard;
-use Google\Cloud\Aiplatform\V1beta1\TensorboardExperiment;
-use Google\Cloud\Aiplatform\V1beta1\TensorboardRun;
-use Google\Cloud\Aiplatform\V1beta1\TensorboardServiceClient;
-use Google\Cloud\Aiplatform\V1beta1\TensorboardTimeSeries;
-use Google\Cloud\Aiplatform\V1beta1\TensorboardTimeSeries\ValueType;
-use Google\Cloud\Aiplatform\V1beta1\TimeSeriesDataPoint;
-use Google\Cloud\Aiplatform\V1beta1\WriteTensorboardRunDataResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardRunsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTensorboardTimeSeriesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ReadTensorboardBlobDataResponse;
+use Google\Cloud\AIPlatform\V1beta1\ReadTensorboardTimeSeriesDataResponse;
+use Google\Cloud\AIPlatform\V1beta1\Tensorboard;
+use Google\Cloud\AIPlatform\V1beta1\TensorboardExperiment;
+use Google\Cloud\AIPlatform\V1beta1\TensorboardRun;
+use Google\Cloud\AIPlatform\V1beta1\TensorboardServiceClient;
+use Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries;
+use Google\Cloud\AIPlatform\V1beta1\TensorboardTimeSeries\ValueType;
+use Google\Cloud\AIPlatform\V1beta1\TimeSeriesDataPoint;
+use Google\Cloud\AIPlatform\V1beta1\WriteTensorboardRunDataResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;

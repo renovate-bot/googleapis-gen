@@ -292,4 +292,73 @@ public interface DeployedIndexOrBuilder extends
    * <code>.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfig deployed_index_auth_config = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   com.google.cloud.aiplatform.v1beta1.DeployedIndexAuthConfigOrBuilder getDeployedIndexAuthConfigOrBuilder();
+
+  /**
+   * <pre>
+   * Optional. A list of reserved ip ranges under the VPC network that can be
+   * used for this DeployedIndex.
+   * If set, we will deploy the index within the provided ip ranges. Otherwise,
+   * the index might be deployed to any ip ranges under the provided VPC
+   * network.
+   * The value sohuld be the name of the address
+   * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
+   * Example: 'vertex-ai-ip-range'.
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return A list containing the reservedIpRanges.
+   */
+  java.util.List<java.lang.String>
+      getReservedIpRangesList();
+  /**
+   * <pre>
+   * Optional. A list of reserved ip ranges under the VPC network that can be
+   * used for this DeployedIndex.
+   * If set, we will deploy the index within the provided ip ranges. Otherwise,
+   * the index might be deployed to any ip ranges under the provided VPC
+   * network.
+   * The value sohuld be the name of the address
+   * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
+   * Example: 'vertex-ai-ip-range'.
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The count of reservedIpRanges.
+   */
+  int getReservedIpRangesCount();
+  /**
+   * <pre>
+   * Optional. A list of reserved ip ranges under the VPC network that can be
+   * used for this DeployedIndex.
+   * If set, we will deploy the index within the provided ip ranges. Otherwise,
+   * the index might be deployed to any ip ranges under the provided VPC
+   * network.
+   * The value sohuld be the name of the address
+   * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
+   * Example: 'vertex-ai-ip-range'.
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the element to return.
+   * @return The reservedIpRanges at the given index.
+   */
+  java.lang.String getReservedIpRanges(int index);
+  /**
+   * <pre>
+   * Optional. A list of reserved ip ranges under the VPC network that can be
+   * used for this DeployedIndex.
+   * If set, we will deploy the index within the provided ip ranges. Otherwise,
+   * the index might be deployed to any ip ranges under the provided VPC
+   * network.
+   * The value sohuld be the name of the address
+   * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
+   * Example: 'vertex-ai-ip-range'.
+   * </pre>
+   *
+   * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the reservedIpRanges at the given index.
+   */
+  com.google.protobuf.ByteString
+      getReservedIpRangesBytes(int index);
 }

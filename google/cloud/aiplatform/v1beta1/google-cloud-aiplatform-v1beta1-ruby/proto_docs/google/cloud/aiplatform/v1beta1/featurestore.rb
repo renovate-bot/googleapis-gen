@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Featurestore configuration information on how the Featurestore is configured.
         # @!attribute [r] name
@@ -50,10 +50,10 @@ module Google
         #     System reserved label keys are prefixed with "aiplatform.googleapis.com/"
         #     and are immutable.
         # @!attribute [rw] online_serving_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Featurestore::OnlineServingConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Featurestore::OnlineServingConfig]
         #     Required. Config for online serving resources.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Featurestore::State]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Featurestore::State]
         #     Output only. State of the featurestore.
         class Featurestore
           include ::Google::Protobuf::MessageExts

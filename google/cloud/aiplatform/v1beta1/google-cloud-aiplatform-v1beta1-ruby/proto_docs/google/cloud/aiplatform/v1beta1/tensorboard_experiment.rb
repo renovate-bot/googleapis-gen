@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # A TensorboardExperiment is a group of TensorboardRuns, that are typically the
         # results of a training job run, in a Tensorboard.

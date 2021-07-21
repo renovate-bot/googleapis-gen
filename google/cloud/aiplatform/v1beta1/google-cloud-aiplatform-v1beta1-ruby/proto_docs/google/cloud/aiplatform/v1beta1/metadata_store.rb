@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Instance of a metadata store. Contains a set of metadata that can be
         # queried.
@@ -33,7 +33,7 @@ module Google
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this MetadataStore was last updated.
         # @!attribute [rw] encryption_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::EncryptionSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::EncryptionSpec]
         #     Customer-managed encryption key spec for a Metadata Store. If set, this
         #     Metadata Store and all sub-resources of this Metadata Store are secured
         #     using this key.
@@ -41,7 +41,7 @@ module Google
         #   @return [::String]
         #     Description of the MetadataStore.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::MetadataStore::MetadataStoreState]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::MetadataStore::MetadataStoreState]
         #     Output only. State information of the MetadataStore.
         class MetadataStore
           include ::Google::Protobuf::MessageExts

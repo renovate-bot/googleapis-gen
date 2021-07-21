@@ -265,6 +265,68 @@ public final class MetadataServiceGrpc {
     return getUpdateArtifactMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest,
+      com.google.longrunning.Operation> getDeleteArtifactMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteArtifact",
+      requestType = com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest,
+      com.google.longrunning.Operation> getDeleteArtifactMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest, com.google.longrunning.Operation> getDeleteArtifactMethod;
+    if ((getDeleteArtifactMethod = MetadataServiceGrpc.getDeleteArtifactMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getDeleteArtifactMethod = MetadataServiceGrpc.getDeleteArtifactMethod) == null) {
+          MetadataServiceGrpc.getDeleteArtifactMethod = getDeleteArtifactMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteArtifact"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new MetadataServiceMethodDescriptorSupplier("DeleteArtifact"))
+              .build();
+        }
+      }
+    }
+    return getDeleteArtifactMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest,
+      com.google.longrunning.Operation> getPurgeArtifactsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PurgeArtifacts",
+      requestType = com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest,
+      com.google.longrunning.Operation> getPurgeArtifactsMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest, com.google.longrunning.Operation> getPurgeArtifactsMethod;
+    if ((getPurgeArtifactsMethod = MetadataServiceGrpc.getPurgeArtifactsMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getPurgeArtifactsMethod = MetadataServiceGrpc.getPurgeArtifactsMethod) == null) {
+          MetadataServiceGrpc.getPurgeArtifactsMethod = getPurgeArtifactsMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PurgeArtifacts"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new MetadataServiceMethodDescriptorSupplier("PurgeArtifacts"))
+              .build();
+        }
+      }
+    }
+    return getPurgeArtifactsMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.CreateContextRequest,
       com.google.cloud.aiplatform.v1beta1.Context> getCreateContextMethod;
 
@@ -418,6 +480,37 @@ public final class MetadataServiceGrpc {
       }
     }
     return getDeleteContextMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest,
+      com.google.longrunning.Operation> getPurgeContextsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PurgeContexts",
+      requestType = com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest,
+      com.google.longrunning.Operation> getPurgeContextsMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest, com.google.longrunning.Operation> getPurgeContextsMethod;
+    if ((getPurgeContextsMethod = MetadataServiceGrpc.getPurgeContextsMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getPurgeContextsMethod = MetadataServiceGrpc.getPurgeContextsMethod) == null) {
+          MetadataServiceGrpc.getPurgeContextsMethod = getPurgeContextsMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PurgeContexts"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new MetadataServiceMethodDescriptorSupplier("PurgeContexts"))
+              .build();
+        }
+      }
+    }
+    return getPurgeContextsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.AddContextArtifactsAndExecutionsRequest,
@@ -635,6 +728,68 @@ public final class MetadataServiceGrpc {
       }
     }
     return getUpdateExecutionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest,
+      com.google.longrunning.Operation> getDeleteExecutionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteExecution",
+      requestType = com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest,
+      com.google.longrunning.Operation> getDeleteExecutionMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest, com.google.longrunning.Operation> getDeleteExecutionMethod;
+    if ((getDeleteExecutionMethod = MetadataServiceGrpc.getDeleteExecutionMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getDeleteExecutionMethod = MetadataServiceGrpc.getDeleteExecutionMethod) == null) {
+          MetadataServiceGrpc.getDeleteExecutionMethod = getDeleteExecutionMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteExecution"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new MetadataServiceMethodDescriptorSupplier("DeleteExecution"))
+              .build();
+        }
+      }
+    }
+    return getDeleteExecutionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest,
+      com.google.longrunning.Operation> getPurgeExecutionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "PurgeExecutions",
+      requestType = com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest,
+      com.google.longrunning.Operation> getPurgeExecutionsMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest, com.google.longrunning.Operation> getPurgeExecutionsMethod;
+    if ((getPurgeExecutionsMethod = MetadataServiceGrpc.getPurgeExecutionsMethod) == null) {
+      synchronized (MetadataServiceGrpc.class) {
+        if ((getPurgeExecutionsMethod = MetadataServiceGrpc.getPurgeExecutionsMethod) == null) {
+          MetadataServiceGrpc.getPurgeExecutionsMethod = getPurgeExecutionsMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "PurgeExecutions"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new MetadataServiceMethodDescriptorSupplier("PurgeExecutions"))
+              .build();
+        }
+      }
+    }
+    return getPurgeExecutionsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.aiplatform.v1beta1.AddExecutionEventsRequest,
@@ -956,6 +1111,26 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
+     * Deletes an Artifact.
+     * </pre>
+     */
+    public void deleteArtifact(com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteArtifactMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Purges Artifacts.
+     * </pre>
+     */
+    public void purgeArtifacts(com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPurgeArtifactsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Creates a Context associated with a MetadataStore.
      * </pre>
      */
@@ -1002,6 +1177,16 @@ public final class MetadataServiceGrpc {
     public void deleteContext(com.google.cloud.aiplatform.v1beta1.DeleteContextRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteContextMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Purges Contexts.
+     * </pre>
+     */
+    public void purgeContexts(com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPurgeContextsMethod(), responseObserver);
     }
 
     /**
@@ -1079,6 +1264,26 @@ public final class MetadataServiceGrpc {
     public void updateExecution(com.google.cloud.aiplatform.v1beta1.UpdateExecutionRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Execution> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateExecutionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes an Execution.
+     * </pre>
+     */
+    public void deleteExecution(com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteExecutionMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Purges Executions.
+     * </pre>
+     */
+    public void purgeExecutions(com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getPurgeExecutionsMethod(), responseObserver);
     }
 
     /**
@@ -1206,6 +1411,20 @@ public final class MetadataServiceGrpc {
                 com.google.cloud.aiplatform.v1beta1.Artifact>(
                   this, METHODID_UPDATE_ARTIFACT)))
           .addMethod(
+            getDeleteArtifactMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_DELETE_ARTIFACT)))
+          .addMethod(
+            getPurgeArtifactsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_PURGE_ARTIFACTS)))
+          .addMethod(
             getCreateContextMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -1240,6 +1459,13 @@ public final class MetadataServiceGrpc {
                 com.google.cloud.aiplatform.v1beta1.DeleteContextRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_DELETE_CONTEXT)))
+          .addMethod(
+            getPurgeContextsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_PURGE_CONTEXTS)))
           .addMethod(
             getAddContextArtifactsAndExecutionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1289,6 +1515,20 @@ public final class MetadataServiceGrpc {
                 com.google.cloud.aiplatform.v1beta1.UpdateExecutionRequest,
                 com.google.cloud.aiplatform.v1beta1.Execution>(
                   this, METHODID_UPDATE_EXECUTION)))
+          .addMethod(
+            getDeleteExecutionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_DELETE_EXECUTION)))
+          .addMethod(
+            getPurgeExecutionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_PURGE_EXECUTIONS)))
           .addMethod(
             getAddExecutionEventsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1442,6 +1682,28 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
+     * Deletes an Artifact.
+     * </pre>
+     */
+    public void deleteArtifact(com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteArtifactMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Purges Artifacts.
+     * </pre>
+     */
+    public void purgeArtifacts(com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPurgeArtifactsMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Creates a Context associated with a MetadataStore.
      * </pre>
      */
@@ -1493,6 +1755,17 @@ public final class MetadataServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteContextMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Purges Contexts.
+     * </pre>
+     */
+    public void purgeContexts(com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPurgeContextsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1577,6 +1850,28 @@ public final class MetadataServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Execution> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateExecutionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deletes an Execution.
+     * </pre>
+     */
+    public void deleteExecution(com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteExecutionMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Purges Executions.
+     * </pre>
+     */
+    public void purgeExecutions(com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getPurgeExecutionsMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1751,6 +2046,26 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
+     * Deletes an Artifact.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteArtifact(com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteArtifactMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Purges Artifacts.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeArtifacts(com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeArtifactsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Creates a Context associated with a MetadataStore.
      * </pre>
      */
@@ -1797,6 +2112,16 @@ public final class MetadataServiceGrpc {
     public com.google.longrunning.Operation deleteContext(com.google.cloud.aiplatform.v1beta1.DeleteContextRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteContextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Purges Contexts.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeContexts(com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeContextsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1874,6 +2199,26 @@ public final class MetadataServiceGrpc {
     public com.google.cloud.aiplatform.v1beta1.Execution updateExecution(com.google.cloud.aiplatform.v1beta1.UpdateExecutionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Deletes an Execution.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteExecution(com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteExecutionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Purges Executions.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeExecutions(com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeExecutionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2050,6 +2395,28 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
+     * Deletes an Artifact.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteArtifact(
+        com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteArtifactMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Purges Artifacts.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> purgeArtifacts(
+        com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPurgeArtifactsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Creates a Context associated with a MetadataStore.
      * </pre>
      */
@@ -2101,6 +2468,17 @@ public final class MetadataServiceGrpc {
         com.google.cloud.aiplatform.v1beta1.DeleteContextRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteContextMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Purges Contexts.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> purgeContexts(
+        com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPurgeContextsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2189,6 +2567,28 @@ public final class MetadataServiceGrpc {
 
     /**
      * <pre>
+     * Deletes an Execution.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteExecution(
+        com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteExecutionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Purges Executions.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> purgeExecutions(
+        com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getPurgeExecutionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Adds Events to the specified Execution. An Event indicates whether an
      * Artifact was used as an input or output for an Execution. If an Event
      * already exists between the Execution and the Artifact, the Event is
@@ -2268,24 +2668,29 @@ public final class MetadataServiceGrpc {
   private static final int METHODID_GET_ARTIFACT = 5;
   private static final int METHODID_LIST_ARTIFACTS = 6;
   private static final int METHODID_UPDATE_ARTIFACT = 7;
-  private static final int METHODID_CREATE_CONTEXT = 8;
-  private static final int METHODID_GET_CONTEXT = 9;
-  private static final int METHODID_LIST_CONTEXTS = 10;
-  private static final int METHODID_UPDATE_CONTEXT = 11;
-  private static final int METHODID_DELETE_CONTEXT = 12;
-  private static final int METHODID_ADD_CONTEXT_ARTIFACTS_AND_EXECUTIONS = 13;
-  private static final int METHODID_ADD_CONTEXT_CHILDREN = 14;
-  private static final int METHODID_QUERY_CONTEXT_LINEAGE_SUBGRAPH = 15;
-  private static final int METHODID_CREATE_EXECUTION = 16;
-  private static final int METHODID_GET_EXECUTION = 17;
-  private static final int METHODID_LIST_EXECUTIONS = 18;
-  private static final int METHODID_UPDATE_EXECUTION = 19;
-  private static final int METHODID_ADD_EXECUTION_EVENTS = 20;
-  private static final int METHODID_QUERY_EXECUTION_INPUTS_AND_OUTPUTS = 21;
-  private static final int METHODID_CREATE_METADATA_SCHEMA = 22;
-  private static final int METHODID_GET_METADATA_SCHEMA = 23;
-  private static final int METHODID_LIST_METADATA_SCHEMAS = 24;
-  private static final int METHODID_QUERY_ARTIFACT_LINEAGE_SUBGRAPH = 25;
+  private static final int METHODID_DELETE_ARTIFACT = 8;
+  private static final int METHODID_PURGE_ARTIFACTS = 9;
+  private static final int METHODID_CREATE_CONTEXT = 10;
+  private static final int METHODID_GET_CONTEXT = 11;
+  private static final int METHODID_LIST_CONTEXTS = 12;
+  private static final int METHODID_UPDATE_CONTEXT = 13;
+  private static final int METHODID_DELETE_CONTEXT = 14;
+  private static final int METHODID_PURGE_CONTEXTS = 15;
+  private static final int METHODID_ADD_CONTEXT_ARTIFACTS_AND_EXECUTIONS = 16;
+  private static final int METHODID_ADD_CONTEXT_CHILDREN = 17;
+  private static final int METHODID_QUERY_CONTEXT_LINEAGE_SUBGRAPH = 18;
+  private static final int METHODID_CREATE_EXECUTION = 19;
+  private static final int METHODID_GET_EXECUTION = 20;
+  private static final int METHODID_LIST_EXECUTIONS = 21;
+  private static final int METHODID_UPDATE_EXECUTION = 22;
+  private static final int METHODID_DELETE_EXECUTION = 23;
+  private static final int METHODID_PURGE_EXECUTIONS = 24;
+  private static final int METHODID_ADD_EXECUTION_EVENTS = 25;
+  private static final int METHODID_QUERY_EXECUTION_INPUTS_AND_OUTPUTS = 26;
+  private static final int METHODID_CREATE_METADATA_SCHEMA = 27;
+  private static final int METHODID_GET_METADATA_SCHEMA = 28;
+  private static final int METHODID_LIST_METADATA_SCHEMAS = 29;
+  private static final int METHODID_QUERY_ARTIFACT_LINEAGE_SUBGRAPH = 30;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2336,6 +2741,14 @@ public final class MetadataServiceGrpc {
           serviceImpl.updateArtifact((com.google.cloud.aiplatform.v1beta1.UpdateArtifactRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Artifact>) responseObserver);
           break;
+        case METHODID_DELETE_ARTIFACT:
+          serviceImpl.deleteArtifact((com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PURGE_ARTIFACTS:
+          serviceImpl.purgeArtifacts((com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_CREATE_CONTEXT:
           serviceImpl.createContext((com.google.cloud.aiplatform.v1beta1.CreateContextRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Context>) responseObserver);
@@ -2354,6 +2767,10 @@ public final class MetadataServiceGrpc {
           break;
         case METHODID_DELETE_CONTEXT:
           serviceImpl.deleteContext((com.google.cloud.aiplatform.v1beta1.DeleteContextRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PURGE_CONTEXTS:
+          serviceImpl.purgeContexts((com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_ADD_CONTEXT_ARTIFACTS_AND_EXECUTIONS:
@@ -2383,6 +2800,14 @@ public final class MetadataServiceGrpc {
         case METHODID_UPDATE_EXECUTION:
           serviceImpl.updateExecution((com.google.cloud.aiplatform.v1beta1.UpdateExecutionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1beta1.Execution>) responseObserver);
+          break;
+        case METHODID_DELETE_EXECUTION:
+          serviceImpl.deleteExecution((com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_PURGE_EXECUTIONS:
+          serviceImpl.purgeExecutions((com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_ADD_EXECUTION_EVENTS:
           serviceImpl.addExecutionEvents((com.google.cloud.aiplatform.v1beta1.AddExecutionEventsRequest) request,
@@ -2477,11 +2902,14 @@ public final class MetadataServiceGrpc {
               .addMethod(getGetArtifactMethod())
               .addMethod(getListArtifactsMethod())
               .addMethod(getUpdateArtifactMethod())
+              .addMethod(getDeleteArtifactMethod())
+              .addMethod(getPurgeArtifactsMethod())
               .addMethod(getCreateContextMethod())
               .addMethod(getGetContextMethod())
               .addMethod(getListContextsMethod())
               .addMethod(getUpdateContextMethod())
               .addMethod(getDeleteContextMethod())
+              .addMethod(getPurgeContextsMethod())
               .addMethod(getAddContextArtifactsAndExecutionsMethod())
               .addMethod(getAddContextChildrenMethod())
               .addMethod(getQueryContextLineageSubgraphMethod())
@@ -2489,6 +2917,8 @@ public final class MetadataServiceGrpc {
               .addMethod(getGetExecutionMethod())
               .addMethod(getListExecutionsMethod())
               .addMethod(getUpdateExecutionMethod())
+              .addMethod(getDeleteExecutionMethod())
+              .addMethod(getPurgeExecutionsMethod())
               .addMethod(getAddExecutionEventsMethod())
               .addMethod(getQueryExecutionInputsAndOutputsMethod())
               .addMethod(getCreateMetadataSchemaMethod())

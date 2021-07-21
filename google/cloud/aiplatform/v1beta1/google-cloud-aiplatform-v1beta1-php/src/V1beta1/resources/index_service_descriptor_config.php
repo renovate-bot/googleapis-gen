@@ -5,8 +5,8 @@ return [
         'google.cloud.aiplatform.v1beta1.IndexService' => [
             'CreateIndex' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Index',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CreateIndexOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Index',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CreateIndexOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -16,7 +16,7 @@ return [
             'DeleteIndex' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Protobuf\GPBEmpty',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\DeleteOperationMetadata',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\DeleteOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -25,8 +25,8 @@ return [
             ],
             'UpdateIndex' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\Index',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\UpdateIndexOperationMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\Index',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\UpdateIndexOperationMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

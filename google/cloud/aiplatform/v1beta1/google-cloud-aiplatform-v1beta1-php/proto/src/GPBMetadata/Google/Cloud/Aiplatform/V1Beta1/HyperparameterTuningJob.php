@@ -25,7 +25,7 @@ class HyperparameterTuningJob
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-”
+º
 ?google/cloud/aiplatform/v1beta1/hyperparameter_tuning_job.protogoogle.cloud.aiplatform.v1beta1google/api/resource.proto0google/cloud/aiplatform/v1beta1/custom_job.proto5google/cloud/aiplatform/v1beta1/encryption_spec.proto/google/cloud/aiplatform/v1beta1/job_state.proto+google/cloud/aiplatform/v1beta1/study.protogoogle/protobuf/timestamp.protogoogle/rpc/status.protogoogle/api/annotations.proto"ô
 HyperparameterTuningJob
 name (	B‡A
@@ -50,8 +50,8 @@ start_time (2.google.protobuf.TimestampB‡A1
 LabelsEntry
 key (	
 value (	:8:ïÍAë
-1aiplatform.googleapis.com/HyperparameterTuningJob\\projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}Bê
-#com.google.cloud.aiplatform.v1beta1BHyperparameterTuningJobProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+1aiplatform.googleapis.com/HyperparameterTuningJob\\projects/{project}/locations/{location}/hyperparameterTuningJobs/{hyperparameter_tuning_job}B˘
+#com.google.cloud.aiplatform.v1beta1BHyperparameterTuningJobProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatform™Google.Cloud.AIPlatform.V1Beta1 Google\\Cloud\\AIPlatform\\V1beta1Í"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

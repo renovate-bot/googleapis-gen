@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # A message representing a Study.
         # @!attribute [r] name
@@ -30,10 +30,10 @@ module Google
         #   @return [::String]
         #     Required. Describes the Study, default value is empty string.
         # @!attribute [rw] study_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec]
         #     Required. Configuration of the Study.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Study::State]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Study::State]
         #     Output only. The detailed state of a Study.
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
@@ -73,16 +73,16 @@ module Google
         #   @return [::String]
         #     Output only. The identifier of the Trial assigned by the service.
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Trial::State]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Trial::State]
         #     Output only. The detailed state of the Trial.
         # @!attribute [r] parameters
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Trial::Parameter>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Trial::Parameter>]
         #     Output only. The parameters of the Trial.
         # @!attribute [r] final_measurement
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Measurement]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Measurement]
         #     Output only. The final measurement containing the objective value.
         # @!attribute [r] measurements
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Measurement>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Measurement>]
         #     Output only. A list of measurements that are strictly lexicographically
         #     ordered by their induced tuples (steps, elapsed_duration).
         #     These are used for early stopping computations.
@@ -110,6 +110,11 @@ module Google
         #   @return [::String]
         #     Output only. The CustomJob name linked to the Trial.
         #     It's set for a HyperparameterTuningJob's Trial.
+        # @!attribute [r] web_access_uris
+        #   @return [::Google::Protobuf::Map{::String => ::String}]
+        #     Output only. The web access URIs for the training job.
+        #     The keys are the node names in the training jobs, e.g. workerpool0-0.
+        #     The values are the URIs for each node's web portal in the job.
         class Trial
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -127,6 +132,15 @@ module Google
           #     `string_value` will be set if a parameter defined in StudySpec is
           #     in type 'CATEGORICAL'.
           class Parameter
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # @!attribute [rw] key
+          #   @return [::String]
+          # @!attribute [rw] value
+          #   @return [::String]
+          class WebAccessUrisEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
@@ -158,30 +172,30 @@ module Google
 
         # Represents specification of a Study.
         # @!attribute [rw] decay_curve_stopping_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::DecayCurveAutomatedStoppingSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::DecayCurveAutomatedStoppingSpec]
         #     The automated early stopping spec using decay curve rule.
         # @!attribute [rw] median_automated_stopping_spec
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::MedianAutomatedStoppingSpec]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::MedianAutomatedStoppingSpec]
         #     The automated early stopping spec using median rule.
         # @!attribute [rw] convex_stop_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ConvexStopConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ConvexStopConfig]
         #     The automated early stopping using convex stopping rule.
         # @!attribute [rw] metrics
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::StudySpec::MetricSpec>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::StudySpec::MetricSpec>]
         #     Required. Metric specs for the Study.
         # @!attribute [rw] parameters
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec>]
         #     Required. The set of parameters to tune.
         # @!attribute [rw] algorithm
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::Algorithm]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::Algorithm]
         #     The search algorithm specified for the Study.
         # @!attribute [rw] observation_noise
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ObservationNoise]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ObservationNoise]
         #     The observation noise level of the study.
         #     Currently only supported by the Vizier service. Not supported by
         #     HyperparamterTuningJob or TrainingPipeline.
         # @!attribute [rw] measurement_selection_type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::MeasurementSelectionType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::MeasurementSelectionType]
         #     Describe which measurement selection type will be used
         class StudySpec
           include ::Google::Protobuf::MessageExts
@@ -193,7 +207,7 @@ module Google
           #     Required. The ID of the metric. Must not contain whitespaces and must be unique
           #     amongst all MetricSpecs.
           # @!attribute [rw] goal
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::MetricSpec::GoalType]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::MetricSpec::GoalType]
           #     Required. The optimization goal of the metric.
           class MetricSpec
             include ::Google::Protobuf::MessageExts
@@ -214,27 +228,27 @@ module Google
 
           # Represents a single parameter to optimize.
           # @!attribute [rw] double_value_spec
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::DoubleValueSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::DoubleValueSpec]
           #     The value spec for a 'DOUBLE' parameter.
           # @!attribute [rw] integer_value_spec
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::IntegerValueSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::IntegerValueSpec]
           #     The value spec for an 'INTEGER' parameter.
           # @!attribute [rw] categorical_value_spec
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::CategoricalValueSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::CategoricalValueSpec]
           #     The value spec for a 'CATEGORICAL' parameter.
           # @!attribute [rw] discrete_value_spec
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::DiscreteValueSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::DiscreteValueSpec]
           #     The value spec for a 'DISCRETE' parameter.
           # @!attribute [rw] parameter_id
           #   @return [::String]
           #     Required. The ID of the parameter. Must not contain whitespaces and must be unique
           #     amongst all ParameterSpecs.
           # @!attribute [rw] scale_type
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::ScaleType]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::ScaleType]
           #     How the parameter should be scaled.
           #     Leave unset for `CATEGORICAL` parameters.
           # @!attribute [rw] conditional_parameter_specs
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::ConditionalParameterSpec>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::ConditionalParameterSpec>]
           #     A conditional parameter node is active if the parameter's value matches
           #     the conditional node's parent_value_condition.
           #
@@ -251,6 +265,14 @@ module Google
             # @!attribute [rw] max_value
             #   @return [::Float]
             #     Required. Inclusive maximum value of the parameter.
+            # @!attribute [rw] default_value
+            #   @return [::Float]
+            #     A default value for a `DOUBLE` parameter that is assumed to be a
+            #     relatively good starting point.  Unset value signals that there is no
+            #     offered starting point.
+            #
+            #     Currently only supported by the Vizier service. Not supported by
+            #     HyperparamterTuningJob or TrainingPipeline.
             class DoubleValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -263,6 +285,14 @@ module Google
             # @!attribute [rw] max_value
             #   @return [::Integer]
             #     Required. Inclusive maximum value of the parameter.
+            # @!attribute [rw] default_value
+            #   @return [::Integer]
+            #     A default value for an `INTEGER` parameter that is assumed to be a
+            #     relatively good starting point.  Unset value signals that there is no
+            #     offered starting point.
+            #
+            #     Currently only supported by the Vizier service. Not supported by
+            #     HyperparamterTuningJob or TrainingPipeline.
             class IntegerValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -272,6 +302,14 @@ module Google
             # @!attribute [rw] values
             #   @return [::Array<::String>]
             #     Required. The list of possible categories.
+            # @!attribute [rw] default_value
+            #   @return [::String]
+            #     A default value for a `CATEGORICAL` parameter that is assumed to be a
+            #     relatively good starting point.  Unset value signals that there is no
+            #     offered starting point.
+            #
+            #     Currently only supported by the Vizier service. Not supported by
+            #     HyperparamterTuningJob or TrainingPipeline.
             class CategoricalValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -284,6 +322,15 @@ module Google
             #     The list should be in increasing order and at least 1e-10 apart.
             #     For instance, this parameter might have possible settings of 1.5, 2.5,
             #     and 4.0. This list should not contain more than 1,000 values.
+            # @!attribute [rw] default_value
+            #   @return [::Float]
+            #     A default value for a `DISCRETE` parameter that is assumed to be a
+            #     relatively good starting point.  Unset value signals that there is no
+            #     offered starting point.  It automatically rounds to the
+            #     nearest feasible discrete point.
+            #
+            #     Currently only supported by the Vizier service. Not supported by
+            #     HyperparamterTuningJob or TrainingPipeline.
             class DiscreteValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -291,19 +338,19 @@ module Google
 
             # Represents a parameter spec with condition from its parent parameter.
             # @!attribute [rw] parent_discrete_values
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::ConditionalParameterSpec::DiscreteValueCondition]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::ConditionalParameterSpec::DiscreteValueCondition]
             #     The spec for matching values from a parent parameter of
             #     `DISCRETE` type.
             # @!attribute [rw] parent_int_values
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::ConditionalParameterSpec::IntValueCondition]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::ConditionalParameterSpec::IntValueCondition]
             #     The spec for matching values from a parent parameter of `INTEGER`
             #     type.
             # @!attribute [rw] parent_categorical_values
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec::ConditionalParameterSpec::CategoricalValueCondition]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec::ConditionalParameterSpec::CategoricalValueCondition]
             #     The spec for matching values from a parent parameter of
             #     `CATEGORICAL` type.
             # @!attribute [rw] parameter_spec
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::StudySpec::ParameterSpec]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::StudySpec::ParameterSpec]
             #     Required. The spec for a conditional parameter.
             class ConditionalParameterSpec
               include ::Google::Protobuf::MessageExts
@@ -370,8 +417,8 @@ module Google
           # low probability to exceed the optimal value found so far.
           # @!attribute [rw] use_elapsed_duration
           #   @return [::Boolean]
-          #     True if {::Google::Cloud::Aiplatform::V1beta1::Measurement#elapsed_duration Measurement.elapsed_duration} is used as the x-axis of each
-          #     Trials Decay Curve. Otherwise, {::Google::Cloud::Aiplatform::V1beta1::Measurement#step_count Measurement.step_count} will be used
+          #     True if {::Google::Cloud::AIPlatform::V1beta1::Measurement#elapsed_duration Measurement.elapsed_duration} is used as the x-axis of each
+          #     Trials Decay Curve. Otherwise, {::Google::Cloud::AIPlatform::V1beta1::Measurement#step_count Measurement.step_count} will be used
           #     as the x-axis.
           class DecayCurveAutomatedStoppingSpec
             include ::Google::Protobuf::MessageExts
@@ -386,7 +433,7 @@ module Google
           # @!attribute [rw] use_elapsed_duration
           #   @return [::Boolean]
           #     True if median automated stopping rule applies on
-          #     {::Google::Cloud::Aiplatform::V1beta1::Measurement#elapsed_duration Measurement.elapsed_duration}. It means that elapsed_duration
+          #     {::Google::Cloud::AIPlatform::V1beta1::Measurement#elapsed_duration Measurement.elapsed_duration}. It means that elapsed_duration
           #     field of latest measurement of current Trial is used to compute median
           #     objective value for each completed Trials.
           class MedianAutomatedStoppingSpec
@@ -503,7 +550,7 @@ module Google
         #     Output only. The number of steps the machine learning model has been trained for.
         #     Must be non-negative.
         # @!attribute [r] metrics
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Measurement::Metric>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Measurement::Metric>]
         #     Output only. A list of metrics got by evaluating the objective functions using suggested
         #     Parameter values.
         class Measurement

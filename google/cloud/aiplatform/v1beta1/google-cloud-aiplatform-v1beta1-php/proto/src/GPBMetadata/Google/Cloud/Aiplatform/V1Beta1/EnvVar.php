@@ -18,12 +18,12 @@ class EnvVar
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-®
+í
 -google/cloud/aiplatform/v1beta1/env_var.protogoogle.cloud.aiplatform.v1beta1google/api/annotations.proto"/
 EnvVar
 name (	B‡A
-value (	B‡AB
-#com.google.cloud.aiplatform.v1beta1BEnvVarProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+value (	B‡ABË
+#com.google.cloud.aiplatform.v1beta1BEnvVarProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatform™Google.Cloud.AIPlatform.V1Beta1 Google\\Cloud\\AIPlatform\\V1beta1Í"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

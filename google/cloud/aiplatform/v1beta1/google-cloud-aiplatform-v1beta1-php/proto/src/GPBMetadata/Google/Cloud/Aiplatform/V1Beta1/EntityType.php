@@ -22,7 +22,7 @@ class EntityType
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Î
+·
 1google/cloud/aiplatform/v1beta1/entity_type.protogoogle.cloud.aiplatform.v1beta1google/api/resource.proto-google/cloud/aiplatform/v1beta1/feature.proto=google/cloud/aiplatform/v1beta1/featurestore_monitoring.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"¡
 
 EntityType
@@ -36,8 +36,8 @@ EntityType
 LabelsEntry
 key (	
 value (	:8:ŠêA†
-$aiplatform.googleapis.com/EntityType^projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}Bƒ
-#com.google.cloud.aiplatform.v1beta1BEntityTypeProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+$aiplatform.googleapis.com/EntityType^projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}Bì
+#com.google.cloud.aiplatform.v1beta1BEntityTypeProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

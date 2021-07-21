@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Represents an environment variable present in a Container or Python Module.
         # @!attribute [rw] name

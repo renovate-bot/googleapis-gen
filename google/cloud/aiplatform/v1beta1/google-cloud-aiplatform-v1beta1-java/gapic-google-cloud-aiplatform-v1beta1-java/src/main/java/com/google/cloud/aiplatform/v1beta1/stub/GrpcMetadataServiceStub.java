@@ -45,7 +45,9 @@ import com.google.cloud.aiplatform.v1beta1.CreateExecutionRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataSchemaRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataStoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateMetadataStoreRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteArtifactRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteContextRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteExecutionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeleteMetadataStoreRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
@@ -68,6 +70,15 @@ import com.google.cloud.aiplatform.v1beta1.ListMetadataStoresRequest;
 import com.google.cloud.aiplatform.v1beta1.ListMetadataStoresResponse;
 import com.google.cloud.aiplatform.v1beta1.MetadataSchema;
 import com.google.cloud.aiplatform.v1beta1.MetadataStore;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeArtifactsResponse;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeContextsResponse;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsMetadata;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsRequest;
+import com.google.cloud.aiplatform.v1beta1.PurgeExecutionsResponse;
 import com.google.cloud.aiplatform.v1beta1.QueryArtifactLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryContextLineageSubgraphRequest;
 import com.google.cloud.aiplatform.v1beta1.QueryExecutionInputsAndOutputsRequest;
@@ -177,6 +188,26 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Artifact.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<DeleteArtifactRequest, Operation>
+      deleteArtifactMethodDescriptor =
+          MethodDescriptor.<DeleteArtifactRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/DeleteArtifact")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteArtifactRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PurgeArtifactsRequest, Operation>
+      purgeArtifactsMethodDescriptor =
+          MethodDescriptor.<PurgeArtifactsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/PurgeArtifacts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeArtifactsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateContextRequest, Context>
       createContextMethodDescriptor =
           MethodDescriptor.<CreateContextRequest, Context>newBuilder()
@@ -222,6 +253,16 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/DeleteContext")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteContextRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PurgeContextsRequest, Operation>
+      purgeContextsMethodDescriptor =
+          MethodDescriptor.<PurgeContextsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/PurgeContexts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeContextsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -303,6 +344,26 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExecutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Execution.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteExecutionRequest, Operation>
+      deleteExecutionMethodDescriptor =
+          MethodDescriptor.<DeleteExecutionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/DeleteExecution")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteExecutionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<PurgeExecutionsRequest, Operation>
+      purgeExecutionsMethodDescriptor =
+          MethodDescriptor.<PurgeExecutionsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.MetadataService/PurgeExecutions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(PurgeExecutionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<AddExecutionEventsRequest, AddExecutionEventsResponse>
@@ -392,6 +453,13 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   private final UnaryCallable<ListArtifactsRequest, ListArtifactsPagedResponse>
       listArtifactsPagedCallable;
   private final UnaryCallable<UpdateArtifactRequest, Artifact> updateArtifactCallable;
+  private final UnaryCallable<DeleteArtifactRequest, Operation> deleteArtifactCallable;
+  private final OperationCallable<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationCallable;
+  private final UnaryCallable<PurgeArtifactsRequest, Operation> purgeArtifactsCallable;
+  private final OperationCallable<
+          PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationCallable;
   private final UnaryCallable<CreateContextRequest, Context> createContextCallable;
   private final UnaryCallable<GetContextRequest, Context> getContextCallable;
   private final UnaryCallable<ListContextsRequest, ListContextsResponse> listContextsCallable;
@@ -401,6 +469,10 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   private final UnaryCallable<DeleteContextRequest, Operation> deleteContextCallable;
   private final OperationCallable<DeleteContextRequest, Empty, DeleteOperationMetadata>
       deleteContextOperationCallable;
+  private final UnaryCallable<PurgeContextsRequest, Operation> purgeContextsCallable;
+  private final OperationCallable<
+          PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationCallable;
   private final UnaryCallable<
           AddContextArtifactsAndExecutionsRequest, AddContextArtifactsAndExecutionsResponse>
       addContextArtifactsAndExecutionsCallable;
@@ -414,6 +486,13 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   private final UnaryCallable<ListExecutionsRequest, ListExecutionsPagedResponse>
       listExecutionsPagedCallable;
   private final UnaryCallable<UpdateExecutionRequest, Execution> updateExecutionCallable;
+  private final UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable;
+  private final OperationCallable<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationCallable;
+  private final UnaryCallable<PurgeExecutionsRequest, Operation> purgeExecutionsCallable;
+  private final OperationCallable<
+          PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationCallable;
   private final UnaryCallable<AddExecutionEventsRequest, AddExecutionEventsResponse>
       addExecutionEventsCallable;
   private final UnaryCallable<QueryExecutionInputsAndOutputsRequest, LineageSubgraph>
@@ -577,6 +656,32 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<DeleteArtifactRequest, Operation> deleteArtifactTransportSettings =
+        GrpcCallSettings.<DeleteArtifactRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteArtifactMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteArtifactRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteArtifactRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<PurgeArtifactsRequest, Operation> purgeArtifactsTransportSettings =
+        GrpcCallSettings.<PurgeArtifactsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeArtifactsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PurgeArtifactsRequest>() {
+                  @Override
+                  public Map<String, String> extract(PurgeArtifactsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<CreateContextRequest, Context> createContextTransportSettings =
         GrpcCallSettings.<CreateContextRequest, Context>newBuilder()
             .setMethodDescriptor(createContextMethodDescriptor)
@@ -638,6 +743,19 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   public Map<String, String> extract(DeleteContextRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<PurgeContextsRequest, Operation> purgeContextsTransportSettings =
+        GrpcCallSettings.<PurgeContextsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeContextsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PurgeContextsRequest>() {
+                  @Override
+                  public Map<String, String> extract(PurgeContextsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
                   }
                 })
@@ -738,6 +856,32 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   public Map<String, String> extract(UpdateExecutionRequest request) {
                     ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
                     params.put("execution.name", String.valueOf(request.getExecution().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<DeleteExecutionRequest, Operation> deleteExecutionTransportSettings =
+        GrpcCallSettings.<DeleteExecutionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteExecutionMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<DeleteExecutionRequest>() {
+                  @Override
+                  public Map<String, String> extract(DeleteExecutionRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("name", String.valueOf(request.getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<PurgeExecutionsRequest, Operation> purgeExecutionsTransportSettings =
+        GrpcCallSettings.<PurgeExecutionsRequest, Operation>newBuilder()
+            .setMethodDescriptor(purgeExecutionsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<PurgeExecutionsRequest>() {
+                  @Override
+                  public Map<String, String> extract(PurgeExecutionsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
                     return params.build();
                   }
                 })
@@ -878,6 +1022,24 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
     this.updateArtifactCallable =
         callableFactory.createUnaryCallable(
             updateArtifactTransportSettings, settings.updateArtifactSettings(), clientContext);
+    this.deleteArtifactCallable =
+        callableFactory.createUnaryCallable(
+            deleteArtifactTransportSettings, settings.deleteArtifactSettings(), clientContext);
+    this.deleteArtifactOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteArtifactTransportSettings,
+            settings.deleteArtifactOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeArtifactsCallable =
+        callableFactory.createUnaryCallable(
+            purgeArtifactsTransportSettings, settings.purgeArtifactsSettings(), clientContext);
+    this.purgeArtifactsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeArtifactsTransportSettings,
+            settings.purgeArtifactsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createContextCallable =
         callableFactory.createUnaryCallable(
             createContextTransportSettings, settings.createContextSettings(), clientContext);
@@ -900,6 +1062,15 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
         callableFactory.createOperationCallable(
             deleteContextTransportSettings,
             settings.deleteContextOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeContextsCallable =
+        callableFactory.createUnaryCallable(
+            purgeContextsTransportSettings, settings.purgeContextsSettings(), clientContext);
+    this.purgeContextsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeContextsTransportSettings,
+            settings.purgeContextsOperationSettings(),
             clientContext,
             operationsStub);
     this.addContextArtifactsAndExecutionsCallable =
@@ -932,6 +1103,24 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
     this.updateExecutionCallable =
         callableFactory.createUnaryCallable(
             updateExecutionTransportSettings, settings.updateExecutionSettings(), clientContext);
+    this.deleteExecutionCallable =
+        callableFactory.createUnaryCallable(
+            deleteExecutionTransportSettings, settings.deleteExecutionSettings(), clientContext);
+    this.deleteExecutionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteExecutionTransportSettings,
+            settings.deleteExecutionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.purgeExecutionsCallable =
+        callableFactory.createUnaryCallable(
+            purgeExecutionsTransportSettings, settings.purgeExecutionsSettings(), clientContext);
+    this.purgeExecutionsOperationCallable =
+        callableFactory.createOperationCallable(
+            purgeExecutionsTransportSettings,
+            settings.purgeExecutionsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.addExecutionEventsCallable =
         callableFactory.createUnaryCallable(
             addExecutionEventsTransportSettings,
@@ -1043,6 +1232,28 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   }
 
   @Override
+  public UnaryCallable<DeleteArtifactRequest, Operation> deleteArtifactCallable() {
+    return deleteArtifactCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteArtifactRequest, Empty, DeleteOperationMetadata>
+      deleteArtifactOperationCallable() {
+    return deleteArtifactOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeArtifactsRequest, Operation> purgeArtifactsCallable() {
+    return purgeArtifactsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeArtifactsRequest, PurgeArtifactsResponse, PurgeArtifactsMetadata>
+      purgeArtifactsOperationCallable() {
+    return purgeArtifactsOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateContextRequest, Context> createContextCallable() {
     return createContextCallable;
   }
@@ -1076,6 +1287,17 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   public OperationCallable<DeleteContextRequest, Empty, DeleteOperationMetadata>
       deleteContextOperationCallable() {
     return deleteContextOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeContextsRequest, Operation> purgeContextsCallable() {
+    return purgeContextsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeContextsRequest, PurgeContextsResponse, PurgeContextsMetadata>
+      purgeContextsOperationCallable() {
+    return purgeContextsOperationCallable;
   }
 
   @Override
@@ -1121,6 +1343,28 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
   @Override
   public UnaryCallable<UpdateExecutionRequest, Execution> updateExecutionCallable() {
     return updateExecutionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteExecutionRequest, Operation> deleteExecutionCallable() {
+    return deleteExecutionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteExecutionRequest, Empty, DeleteOperationMetadata>
+      deleteExecutionOperationCallable() {
+    return deleteExecutionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PurgeExecutionsRequest, Operation> purgeExecutionsCallable() {
+    return purgeExecutionsCallable;
+  }
+
+  @Override
+  public OperationCallable<PurgeExecutionsRequest, PurgeExecutionsResponse, PurgeExecutionsMetadata>
+      purgeExecutionsOperationCallable() {
+    return purgeExecutionsOperationCallable;
   }
 
   @Override

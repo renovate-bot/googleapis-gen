@@ -20,7 +20,7 @@
  * This file was automatically generated - do not edit!
  */
 
-namespace Google\Cloud\Aiplatform\Tests\Unit\V1beta1;
+namespace Google\Cloud\AIPlatform\Tests\Unit\V1beta1;
 
 use Google\ApiCore\ApiException;
 
@@ -29,13 +29,13 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\Testing\GeneratedTest;
 
 use Google\ApiCore\Testing\MockTransport;
-use Google\Cloud\Aiplatform\V1beta1\DeployedModel;
-use Google\Cloud\Aiplatform\V1beta1\DeployModelResponse;
+use Google\Cloud\AIPlatform\V1beta1\DeployedModel;
+use Google\Cloud\AIPlatform\V1beta1\DeployModelResponse;
 
-use Google\Cloud\Aiplatform\V1beta1\Endpoint;
-use Google\Cloud\Aiplatform\V1beta1\EndpointServiceClient;
-use Google\Cloud\Aiplatform\V1beta1\ListEndpointsResponse;
-use Google\Cloud\Aiplatform\V1beta1\UndeployModelResponse;
+use Google\Cloud\AIPlatform\V1beta1\Endpoint;
+use Google\Cloud\AIPlatform\V1beta1\EndpointServiceClient;
+use Google\Cloud\AIPlatform\V1beta1\ListEndpointsResponse;
+use Google\Cloud\AIPlatform\V1beta1\UndeployModelResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\Any;
@@ -105,11 +105,13 @@ class EndpointServiceClientTest extends GeneratedTest
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
         $etag = 'etag3123477';
+        $network = 'network1843485230';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setNetwork($network);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -480,11 +482,13 @@ class EndpointServiceClientTest extends GeneratedTest
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
         $etag = 'etag3123477';
+        $network = 'network1843485230';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setNetwork($network);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->endpointName('[PROJECT]', '[LOCATION]', '[ENDPOINT]');
@@ -747,11 +751,13 @@ class EndpointServiceClientTest extends GeneratedTest
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
         $etag = 'etag3123477';
+        $network = 'network1843485230';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
+        $expectedResponse->setNetwork($network);
         $transport->addResponse($expectedResponse);
         // Mock request
         $endpoint = new Endpoint();

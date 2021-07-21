@@ -13,13 +13,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis" do
       optional :disabled, :bool, 1
       optional :monitoring_interval, :message, 2, "google.protobuf.Duration"
+      optional :monitoring_interval_days, :int32, 3
     end
   end
 end
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         FeaturestoreMonitoringConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig").msgclass
         FeaturestoreMonitoringConfig::SnapshotAnalysis = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis").msgclass

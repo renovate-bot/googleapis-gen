@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # A collection of metrics calculated by comparing Model's predictions on all of
         # the test data against annotations from the test data.
@@ -29,13 +29,13 @@ module Google
         # @!attribute [r] metrics_schema_uri
         #   @return [::String]
         #     Output only. Points to a YAML file stored on Google Cloud Storage describing the
-        #     {::Google::Cloud::Aiplatform::V1beta1::ModelEvaluation#metrics metrics} of this ModelEvaluation. The schema is
+        #     {::Google::Cloud::AIPlatform::V1beta1::ModelEvaluation#metrics metrics} of this ModelEvaluation. The schema is
         #     defined as an OpenAPI 3.0.2 [Schema
         #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
         # @!attribute [r] metrics
         #   @return [::Google::Protobuf::Value]
         #     Output only. Evaluation metrics of the Model. The schema of the metrics is stored in
-        #     {::Google::Cloud::Aiplatform::V1beta1::ModelEvaluation#metrics_schema_uri metrics_schema_uri}
+        #     {::Google::Cloud::AIPlatform::V1beta1::ModelEvaluation#metrics_schema_uri metrics_schema_uri}
         # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. Timestamp when this ModelEvaluation was created.
@@ -43,16 +43,16 @@ module Google
         #   @return [::Array<::String>]
         #     Output only. All possible [dimensions][ModelEvaluationSlice.slice.dimension] of
         #     ModelEvaluationSlices. The dimensions can be used as the filter of the
-        #     {::Google::Cloud::Aiplatform::V1beta1::ModelService::Client#list_model_evaluation_slices ModelService.ListModelEvaluationSlices} request, in the form of
+        #     {::Google::Cloud::AIPlatform::V1beta1::ModelService::Client#list_model_evaluation_slices ModelService.ListModelEvaluationSlices} request, in the form of
         #     `slice.dimension = <dimension>`.
         # @!attribute [r] model_explanation
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelExplanation]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelExplanation]
         #     Output only. Aggregated explanation metrics for the Model's prediction output over the
         #     data this ModelEvaluation uses. This field is populated only if the Model
         #     is evaluated with explanations, and only for AutoML tabular Models.
         # @!attribute [r] explanation_specs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::ModelEvaluation::ModelEvaluationExplanationSpec>]
-        #     Output only. Describes the values of {::Google::Cloud::Aiplatform::V1beta1::ExplanationSpec ExplanationSpec} that are used for explaining
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ModelEvaluation::ModelEvaluationExplanationSpec>]
+        #     Output only. Describes the values of {::Google::Cloud::AIPlatform::V1beta1::ExplanationSpec ExplanationSpec} that are used for explaining
         #     the predicted values on the evaluated data.
         class ModelEvaluation
           include ::Google::Protobuf::MessageExts
@@ -67,7 +67,7 @@ module Google
           #       * `image-integrated-gradients`
           #       * `image-xrai`
           # @!attribute [rw] explanation_spec
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationSpec]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationSpec]
           #     Explanation spec details.
           class ModelEvaluationExplanationSpec
             include ::Google::Protobuf::MessageExts

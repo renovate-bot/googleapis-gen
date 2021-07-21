@@ -208,6 +208,52 @@ func ExampleMetadataClient_UpdateArtifact() {
 	_ = resp
 }
 
+func ExampleMetadataClient_DeleteArtifact() {
+	ctx := context.Background()
+	c, err := aiplatform.NewMetadataClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.DeleteArtifactRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.DeleteArtifact(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	err = op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
+func ExampleMetadataClient_PurgeArtifacts() {
+	ctx := context.Background()
+	c, err := aiplatform.NewMetadataClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.PurgeArtifactsRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.PurgeArtifacts(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleMetadataClient_CreateContext() {
 	ctx := context.Background()
 	c, err := aiplatform.NewMetadataClient(ctx)
@@ -310,6 +356,30 @@ func ExampleMetadataClient_DeleteContext() {
 	if err != nil {
 		// TODO: Handle error.
 	}
+}
+
+func ExampleMetadataClient_PurgeContexts() {
+	ctx := context.Background()
+	c, err := aiplatform.NewMetadataClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.PurgeContextsRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.PurgeContexts(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
 }
 
 func ExampleMetadataClient_AddContextArtifactsAndExecutions() {
@@ -444,6 +514,52 @@ func ExampleMetadataClient_UpdateExecution() {
 		// TODO: Fill request struct fields.
 	}
 	resp, err := c.UpdateExecution(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleMetadataClient_DeleteExecution() {
+	ctx := context.Background()
+	c, err := aiplatform.NewMetadataClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.DeleteExecutionRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.DeleteExecution(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	err = op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
+func ExampleMetadataClient_PurgeExecutions() {
+	ctx := context.Background()
+	c, err := aiplatform.NewMetadataClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &aiplatformpb.PurgeExecutionsRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.PurgeExecutions(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
 	if err != nil {
 		// TODO: Handle error.
 	}

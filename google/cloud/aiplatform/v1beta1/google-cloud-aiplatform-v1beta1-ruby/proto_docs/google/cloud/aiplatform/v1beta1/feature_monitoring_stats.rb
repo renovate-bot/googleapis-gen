@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Stats and Anomaly generated at specific timestamp for specific Feature.
         # The start_time and end_time are used to define the time range of the dataset
@@ -35,8 +35,8 @@ module Google
         #     Feature importance score, only populated when cross-feature monitoring is
         #     enabled. For now only used to represent feature attribution score within
         #     range [0, 1] for
-        #     {::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringObjectiveType::FEATURE_ATTRIBUTION_SKEW ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_SKEW} and
-        #     {::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringObjectiveType::FEATURE_ATTRIBUTION_DRIFT ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_DRIFT}.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringObjectiveType::FEATURE_ATTRIBUTION_SKEW ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_SKEW} and
+        #     {::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringObjectiveType::FEATURE_ATTRIBUTION_DRIFT ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_DRIFT}.
         # @!attribute [rw] stats_uri
         #   @return [::String]
         #     Path of the stats file for current feature values in Cloud Storage bucket.
@@ -65,7 +65,7 @@ module Google
         #   @return [::Float]
         #     This is the threshold used when detecting anomalies.
         #     The threshold can be changed by user, so this one might be different from
-        #     {::Google::Cloud::Aiplatform::V1beta1::ThresholdConfig#value ThresholdConfig.value}.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig#value ThresholdConfig.value}.
         # @!attribute [rw] start_time
         #   @return [::Google::Protobuf::Timestamp]
         #     The start timestamp of window where stats were generated.

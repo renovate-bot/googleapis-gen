@@ -19,34 +19,34 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#create_index IndexService.CreateIndex}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#create_index IndexService.CreateIndex}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location to create the Index in.
         #     Format: `projects/{project}/locations/{location}`
         # @!attribute [rw] index
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Index]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Index]
         #     Required. The Index to create.
         class CreateIndexRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Runtime operation information for {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#create_index IndexService.CreateIndex}.
+        # Runtime operation information for {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#create_index IndexService.CreateIndex}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     The operation generic information.
         # @!attribute [rw] nearest_neighbor_search_operation_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::NearestNeighborSearchOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::NearestNeighborSearchOperationMetadata]
         #     The operation metadata with regard to Matching Engine Index operation.
         class CreateIndexOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#get_index IndexService.GetIndex}
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#get_index IndexService.GetIndex}
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Index resource.
@@ -57,7 +57,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#list_indexes IndexService.ListIndexes}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#list_indexes IndexService.ListIndexes}.
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The resource name of the Location from which to list the Indexes.
@@ -72,8 +72,8 @@ module Google
         #   @return [::String]
         #     The standard list page token.
         #     Typically obtained via
-        #     {::Google::Cloud::Aiplatform::V1beta1::ListIndexesResponse#next_page_token ListIndexesResponse.next_page_token} of the previous
-        #     {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#list_indexes IndexService.ListIndexes} call.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ListIndexesResponse#next_page_token ListIndexesResponse.next_page_token} of the previous
+        #     {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#list_indexes IndexService.ListIndexes} call.
         # @!attribute [rw] read_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Mask specifying which fields to read.
@@ -82,22 +82,22 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Response message for {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#list_indexes IndexService.ListIndexes}.
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#list_indexes IndexService.ListIndexes}.
         # @!attribute [rw] indexes
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::Index>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::Index>]
         #     List of indexes in the requested page.
         # @!attribute [rw] next_page_token
         #   @return [::String]
         #     A token to retrieve next page of results.
-        #     Pass to {::Google::Cloud::Aiplatform::V1beta1::ListIndexesRequest#page_token ListIndexesRequest.page_token} to obtain that page.
+        #     Pass to {::Google::Cloud::AIPlatform::V1beta1::ListIndexesRequest#page_token ListIndexesRequest.page_token} to obtain that page.
         class ListIndexesResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#update_index IndexService.UpdateIndex}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#update_index IndexService.UpdateIndex}.
         # @!attribute [rw] index
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::Index]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::Index]
         #     Required. The Index which updates the resource on the server.
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
@@ -108,19 +108,19 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Runtime operation information for {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#update_index IndexService.UpdateIndex}.
+        # Runtime operation information for {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#update_index IndexService.UpdateIndex}.
         # @!attribute [rw] generic_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GenericOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
         #     The operation generic information.
         # @!attribute [rw] nearest_neighbor_search_operation_metadata
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::NearestNeighborSearchOperationMetadata]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::NearestNeighborSearchOperationMetadata]
         #     The operation metadata with regard to Matching Engine Index operation.
         class UpdateIndexOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Request message for {::Google::Cloud::Aiplatform::V1beta1::IndexService::Client#delete_index IndexService.DeleteIndex}.
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexService::Client#delete_index IndexService.DeleteIndex}.
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The name of the Index resource to be deleted.
@@ -133,10 +133,10 @@ module Google
 
         # Runtime operation metadata with regard to Matching Engine Index.
         # @!attribute [rw] content_validation_stats
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::NearestNeighborSearchOperationMetadata::ContentValidationStats>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::NearestNeighborSearchOperationMetadata::ContentValidationStats>]
         #     The validation stats of the content (per file) to be inserted or
         #     updated on the Matching Engine Index resource. Populated if
-        #     contentsDeltaUri is provided as part of {::Google::Cloud::Aiplatform::V1beta1::Index#metadata Index.metadata}. Please note
+        #     contentsDeltaUri is provided as part of {::Google::Cloud::AIPlatform::V1beta1::Index#metadata Index.metadata}. Please note
         #     that, currently for those files that are broken or has unsupported file
         #     format, we will not have the stats for those files.
         class NearestNeighborSearchOperationMetadata
@@ -144,7 +144,7 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
 
           # @!attribute [rw] error_type
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::NearestNeighborSearchOperationMetadata::RecordError::RecordErrorType]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::NearestNeighborSearchOperationMetadata::RecordError::RecordErrorType]
           #     The error type of this record.
           # @!attribute [rw] error_message
           #   @return [::String]
@@ -202,7 +202,7 @@ module Google
           #   @return [::Integer]
           #     Number of records in this file we skipped due to validate errors.
           # @!attribute [rw] partial_errors
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::NearestNeighborSearchOperationMetadata::RecordError>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::NearestNeighborSearchOperationMetadata::RecordError>]
           #     The detail information of the partial failures encountered for those
           #     invalid records that couldn't be parsed.
           #     Up to 50 partial errors will be reported.

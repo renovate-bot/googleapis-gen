@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -40,29 +40,29 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\AddTrialMeasurementRequest;
-use Google\Cloud\Aiplatform\V1beta1\CheckTrialEarlyStoppingStateRequest;
-use Google\Cloud\Aiplatform\V1beta1\CheckTrialEarlyStoppingStateResponse;
-use Google\Cloud\Aiplatform\V1beta1\CompleteTrialRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateStudyRequest;
-use Google\Cloud\Aiplatform\V1beta1\CreateTrialRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteStudyRequest;
-use Google\Cloud\Aiplatform\V1beta1\DeleteTrialRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetStudyRequest;
-use Google\Cloud\Aiplatform\V1beta1\GetTrialRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListOptimalTrialsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListOptimalTrialsResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListStudiesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListStudiesResponse;
-use Google\Cloud\Aiplatform\V1beta1\ListTrialsRequest;
-use Google\Cloud\Aiplatform\V1beta1\ListTrialsResponse;
-use Google\Cloud\Aiplatform\V1beta1\LookupStudyRequest;
-use Google\Cloud\Aiplatform\V1beta1\Measurement;
-use Google\Cloud\Aiplatform\V1beta1\StopTrialRequest;
-use Google\Cloud\Aiplatform\V1beta1\Study;
-use Google\Cloud\Aiplatform\V1beta1\SuggestTrialsRequest;
-use Google\Cloud\Aiplatform\V1beta1\SuggestTrialsResponse;
-use Google\Cloud\Aiplatform\V1beta1\Trial;
+use Google\Cloud\AIPlatform\V1beta1\AddTrialMeasurementRequest;
+use Google\Cloud\AIPlatform\V1beta1\CheckTrialEarlyStoppingStateRequest;
+use Google\Cloud\AIPlatform\V1beta1\CheckTrialEarlyStoppingStateResponse;
+use Google\Cloud\AIPlatform\V1beta1\CompleteTrialRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateStudyRequest;
+use Google\Cloud\AIPlatform\V1beta1\CreateTrialRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteStudyRequest;
+use Google\Cloud\AIPlatform\V1beta1\DeleteTrialRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetStudyRequest;
+use Google\Cloud\AIPlatform\V1beta1\GetTrialRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListOptimalTrialsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListOptimalTrialsResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListStudiesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListStudiesResponse;
+use Google\Cloud\AIPlatform\V1beta1\ListTrialsRequest;
+use Google\Cloud\AIPlatform\V1beta1\ListTrialsResponse;
+use Google\Cloud\AIPlatform\V1beta1\LookupStudyRequest;
+use Google\Cloud\AIPlatform\V1beta1\Measurement;
+use Google\Cloud\AIPlatform\V1beta1\StopTrialRequest;
+use Google\Cloud\AIPlatform\V1beta1\Study;
+use Google\Cloud\AIPlatform\V1beta1\SuggestTrialsRequest;
+use Google\Cloud\AIPlatform\V1beta1\SuggestTrialsResponse;
+use Google\Cloud\AIPlatform\V1beta1\Trial;
 use Google\LongRunning\Operation;
 use Google\Protobuf\GPBEmpty;
 
@@ -459,7 +459,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Trial
+     * @return \Google\Cloud\AIPlatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
      *
@@ -586,7 +586,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Trial
+     * @return \Google\Cloud\AIPlatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
      *
@@ -644,7 +644,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Study
+     * @return \Google\Cloud\AIPlatform\V1beta1\Study
      *
      * @throws ApiException if the remote call fails
      *
@@ -690,7 +690,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Trial
+     * @return \Google\Cloud\AIPlatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
      *
@@ -817,7 +817,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Study
+     * @return \Google\Cloud\AIPlatform\V1beta1\Study
      *
      * @throws ApiException if the remote call fails
      *
@@ -861,7 +861,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Trial
+     * @return \Google\Cloud\AIPlatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
      *
@@ -906,7 +906,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\ListOptimalTrialsResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\ListOptimalTrialsResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -1096,7 +1096,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Study
+     * @return \Google\Cloud\AIPlatform\V1beta1\Study
      *
      * @throws ApiException if the remote call fails
      *
@@ -1141,7 +1141,7 @@ class VizierServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\Trial
+     * @return \Google\Cloud\AIPlatform\V1beta1\Trial
      *
      * @throws ApiException if the remote call fails
      *

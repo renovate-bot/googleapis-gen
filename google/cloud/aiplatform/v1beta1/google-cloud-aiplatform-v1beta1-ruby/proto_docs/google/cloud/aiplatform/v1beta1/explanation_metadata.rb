@@ -19,27 +19,27 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Metadata describing the Model's input and output for explanation.
         # @!attribute [rw] inputs
-        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata}]
+        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata}]
         #     Required. Map from feature names to feature input metadata. Keys are the name of the
         #     features. Values are the specification of the feature.
         #
         #     An empty InputMetadata is valid. It describes a text feature which has the
-        #     name specified as the key in {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata#inputs ExplanationMetadata.inputs}. The baseline
+        #     name specified as the key in {::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata#inputs ExplanationMetadata.inputs}. The baseline
         #     of the empty feature is chosen by Vertex AI.
         #
         #     For Vertex AI-provided Tensorflow images, the key can be any friendly
         #     name of the feature. Once specified,
-        #     {::Google::Cloud::Aiplatform::V1beta1::Attribution#feature_attributions featureAttributions} are keyed by
+        #     {::Google::Cloud::AIPlatform::V1beta1::Attribution#feature_attributions featureAttributions} are keyed by
         #     this key (if not grouped with another feature).
         #
         #     For custom images, the key must match with the key in
-        #     {::Google::Cloud::Aiplatform::V1beta1::ExplainRequest#instances instance}.
+        #     {::Google::Cloud::AIPlatform::V1beta1::ExplainRequest#instances instance}.
         # @!attribute [rw] outputs
-        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::OutputMetadata}]
+        #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::OutputMetadata}]
         #     Required. Map from output names to output metadata.
         #
         #     For Vertex AI-provided Tensorflow images, keys can be any user defined
@@ -52,7 +52,7 @@ module Google
         # @!attribute [rw] feature_attributions_schema_uri
         #   @return [::String]
         #     Points to a YAML file stored on Google Cloud Storage describing the format
-        #     of the {::Google::Cloud::Aiplatform::V1beta1::Attribution#feature_attributions feature attributions}.
+        #     of the {::Google::Cloud::AIPlatform::V1beta1::Attribution#feature_attributions feature attributions}.
         #     The schema is defined as an OpenAPI 3.0.2 [Schema
         #     Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject).
         #     AutoML tabular Models always have this field populated by Vertex AI.
@@ -65,7 +65,7 @@ module Google
 
           # Metadata of the input of a feature.
           #
-          # Fields other than {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata#input_baselines InputMetadata.input_baselines} are applicable only
+          # Fields other than {::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata#input_baselines InputMetadata.input_baselines} are applicable only
           # for Models that are using Vertex AI-provided images for Tensorflow.
           # @!attribute [rw] input_baselines
           #   @return [::Array<::Google::Protobuf::Value>]
@@ -82,17 +82,17 @@ module Google
           #
           #     For custom images, the element of the baselines must be in the same
           #     format as the feature's input in the
-          #     {::Google::Cloud::Aiplatform::V1beta1::ExplainRequest#instances instance}[]. The schema of any single instance
+          #     {::Google::Cloud::AIPlatform::V1beta1::ExplainRequest#instances instance}[]. The schema of any single instance
           #     may be specified via Endpoint's DeployedModels'
           #     [Model's][google.cloud.aiplatform.v1beta1.DeployedModel.model]
           #     [PredictSchemata's][google.cloud.aiplatform.v1beta1.Model.predict_schemata]
-          #     {::Google::Cloud::Aiplatform::V1beta1::PredictSchemata#instance_schema_uri instance_schema_uri}.
+          #     {::Google::Cloud::AIPlatform::V1beta1::PredictSchemata#instance_schema_uri instance_schema_uri}.
           # @!attribute [rw] input_tensor_name
           #   @return [::String]
           #     Name of the input tensor for this feature. Required and is only
           #     applicable to Vertex AI-provided images for Tensorflow.
           # @!attribute [rw] encoding
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Encoding]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata::Encoding]
           #     Defines how the feature is encoded into the input tensor. Defaults to
           #     IDENTITY.
           # @!attribute [rw] modality
@@ -100,7 +100,7 @@ module Google
           #     Modality of the feature. Valid values are: numeric, image. Defaults to
           #     numeric.
           # @!attribute [rw] feature_value_domain
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::FeatureValueDomain]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata::FeatureValueDomain]
           #     The domain details of the input feature value. Like min/max, original
           #     mean or standard deviation if normalized.
           # @!attribute [rw] indices_tensor_name
@@ -117,14 +117,14 @@ module Google
           # @!attribute [rw] index_feature_mapping
           #   @return [::Array<::String>]
           #     A list of feature names for each index in the input tensor.
-          #     Required when the input {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata#encoding InputMetadata.encoding} is BAG_OF_FEATURES,
+          #     Required when the input {::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata#encoding InputMetadata.encoding} is BAG_OF_FEATURES,
           #     BAG_OF_FEATURES_SPARSE, INDICATOR.
           # @!attribute [rw] encoded_tensor_name
           #   @return [::String]
           #     Encoded tensor is a transformation of the input tensor. Must be provided
           #     if choosing [Integrated Gradients
           #     attribution][ExplanationParameters.integrated_gradients_attribution] or
-          #     {::Google::Cloud::Aiplatform::V1beta1::ExplanationParameters#xrai_attribution XRAI attribution}
+          #     {::Google::Cloud::AIPlatform::V1beta1::ExplanationParameters#xrai_attribution XRAI attribution}
           #     and the input tensor is not differentiable.
           #
           #     An encoded tensor is generated if the input tensor is encoded by a lookup
@@ -137,7 +137,7 @@ module Google
           #     If a scalar is provided, Vertex AI broadcasts to the same shape as the
           #     encoded tensor.
           # @!attribute [rw] visualization
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization]
           #     Visualization configurations for image explanation.
           # @!attribute [rw] group_name
           #   @return [::String]
@@ -182,18 +182,18 @@ module Google
 
             # Visualization configurations for image explanation.
             # @!attribute [rw] type
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::Type]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::Type]
             #     Type of the image visualization. Only applicable to [Integrated
             #     Gradients attribution]
             #     [ExplanationParameters.integrated_gradients_attribution]. OUTLINES
             #     shows regions of attribution, while PIXELS shows per-pixel attribution.
             #     Defaults to OUTLINES.
             # @!attribute [rw] polarity
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::Polarity]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::Polarity]
             #     Whether to only highlight pixels with positive contributions, negative
             #     or both. Defaults to POSITIVE.
             # @!attribute [rw] color_map
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::ColorMap]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::ColorMap]
             #     The color scheme used for the highlighted areas.
             #
             #     Defaults to PINK_GREEN for [Integrated Gradients
@@ -201,7 +201,7 @@ module Google
             #     which shows positive attributions in green and negative in pink.
             #
             #     Defaults to VIRIDIS for
-            #     {::Google::Cloud::Aiplatform::V1beta1::ExplanationParameters#xrai_attribution XRAI attribution}, which
+            #     {::Google::Cloud::AIPlatform::V1beta1::ExplanationParameters#xrai_attribution XRAI attribution}, which
             #     highlights the most influential regions in yellow and the least
             #     influential in blue.
             # @!attribute [rw] clip_percent_upperbound
@@ -216,7 +216,7 @@ module Google
             #     Excludes attributions below the specified percentile, from the
             #     highlighted areas. Defaults to 62.
             # @!attribute [rw] overlay_type
-            #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::OverlayType]
+            #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata::Visualization::OverlayType]
             #     How the original image is displayed in the visualization.
             #     Adjusting the overlay can help increase visual clarity if the original
             #     image makes it difficult to view the visualization. Defaults to NONE.
@@ -314,7 +314,7 @@ module Google
               IDENTITY = 1
 
               # The tensor represents a bag of features where each index maps to
-              # a feature. {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata#index_feature_mapping InputMetadata.index_feature_mapping} must be provided for
+              # a feature. {::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata#index_feature_mapping InputMetadata.index_feature_mapping} must be provided for
               # this encoding. For example:
               # ```
               # input = [27, 6.0, 150]
@@ -324,7 +324,7 @@ module Google
 
               # The tensor represents a bag of features where each index maps to a
               # feature. Zero values in the tensor indicates feature being
-              # non-existent. {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata#index_feature_mapping InputMetadata.index_feature_mapping} must be provided
+              # non-existent. {::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata#index_feature_mapping InputMetadata.index_feature_mapping} must be provided
               # for this encoding. For example:
               # ```
               # input = [2, 0, 5, 0, 1]
@@ -333,7 +333,7 @@ module Google
               BAG_OF_FEATURES_SPARSE = 3
 
               # The tensor is a list of binaries representing whether a feature exists
-              # or not (1 indicates existence). {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata#index_feature_mapping InputMetadata.index_feature_mapping}
+              # or not (1 indicates existence). {::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata#index_feature_mapping InputMetadata.index_feature_mapping}
               # must be provided for this encoding. For example:
               # ```
               # input = [1, 0, 1, 0, 1]
@@ -342,7 +342,7 @@ module Google
               INDICATOR = 4
 
               # The tensor is encoded into a 1-dimensional array represented by an
-              # encoded tensor. {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata#encoded_tensor_name InputMetadata.encoded_tensor_name} must be provided
+              # encoded tensor. {::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata#encoded_tensor_name InputMetadata.encoded_tensor_name} must be provided
               # for this encoding. For example:
               # ```
               # input = ["This", "is", "a", "test", "."]
@@ -352,7 +352,7 @@ module Google
 
               # Select this encoding when the input tensor is encoded into a
               # 2-dimensional array represented by an encoded tensor.
-              # {::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata#encoded_tensor_name InputMetadata.encoded_tensor_name} must be provided for this
+              # {::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata#encoded_tensor_name InputMetadata.encoded_tensor_name} must be provided for this
               # encoding. The first dimension of the encoded tensor's shape is the same
               # as the input tensor's shape. For example:
               # ```
@@ -380,8 +380,8 @@ module Google
           #
           #     The shape of the value must be an n-dimensional array of strings. The
           #     number of dimensions must match that of the outputs to be explained.
-          #     The {::Google::Cloud::Aiplatform::V1beta1::Attribution#output_display_name Attribution.output_display_name} is populated by locating in the
-          #     mapping with {::Google::Cloud::Aiplatform::V1beta1::Attribution#output_index Attribution.output_index}.
+          #     The {::Google::Cloud::AIPlatform::V1beta1::Attribution#output_display_name Attribution.output_display_name} is populated by locating in the
+          #     mapping with {::Google::Cloud::AIPlatform::V1beta1::Attribution#output_index Attribution.output_index}.
           # @!attribute [rw] display_name_mapping_key
           #   @return [::String]
           #     Specify a field name in the prediction to look for the display name.
@@ -389,7 +389,7 @@ module Google
           #     Use this if the prediction contains the display names for the outputs.
           #
           #     The display names in the prediction must have the same shape of the
-          #     outputs, so that it can be located by {::Google::Cloud::Aiplatform::V1beta1::Attribution#output_index Attribution.output_index} for
+          #     outputs, so that it can be located by {::Google::Cloud::AIPlatform::V1beta1::Attribution#output_index Attribution.output_index} for
           #     a specific output.
           # @!attribute [rw] output_tensor_name
           #   @return [::String]
@@ -403,7 +403,7 @@ module Google
           # @!attribute [rw] key
           #   @return [::String]
           # @!attribute [rw] value
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::InputMetadata]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::InputMetadata]
           class InputsEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -412,7 +412,7 @@ module Google
           # @!attribute [rw] key
           #   @return [::String]
           # @!attribute [rw] value
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::ExplanationMetadata::OutputMetadata]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::ExplanationMetadata::OutputMetadata]
           class OutputsEntry
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

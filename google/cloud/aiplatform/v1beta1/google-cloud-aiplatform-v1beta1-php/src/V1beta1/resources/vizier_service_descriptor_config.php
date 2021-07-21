@@ -5,8 +5,8 @@ return [
         'google.cloud.aiplatform.v1beta1.VizierService' => [
             'CheckTrialEarlyStoppingState' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CheckTrialEarlyStoppingStateResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\CheckTrialEarlyStoppingStateMetatdata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CheckTrialEarlyStoppingStateResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\CheckTrialEarlyStoppingStateMetatdata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',
@@ -15,8 +15,8 @@ return [
             ],
             'SuggestTrials' => [
                 'longRunning' => [
-                    'operationReturnType' => '\Google\Cloud\Aiplatform\V1beta1\SuggestTrialsResponse',
-                    'metadataReturnType' => '\Google\Cloud\Aiplatform\V1beta1\SuggestTrialsMetadata',
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1beta1\SuggestTrialsResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1beta1\SuggestTrialsMetadata',
                     'initialPollDelayMillis' => '500',
                     'pollDelayMultiplier' => '1.5',
                     'maxPollDelayMillis' => '5000',

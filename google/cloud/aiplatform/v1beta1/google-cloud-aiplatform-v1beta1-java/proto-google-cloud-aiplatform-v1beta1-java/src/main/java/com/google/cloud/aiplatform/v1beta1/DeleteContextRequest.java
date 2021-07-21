@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private DeleteContextRequest() {
     name_ = "";
+    etag_ = "";
   }
 
   @java.lang.Override
@@ -64,6 +65,12 @@ private static final long serialVersionUID = 0L;
             force_ = input.readBool();
             break;
           }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            etag_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -100,7 +107,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The resource name of the Context to retrieve.
+   * Required. The resource name of the Context to delete.
    * Format:
    * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
    * </pre>
@@ -123,7 +130,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the Context to retrieve.
+   * Required. The resource name of the Context to delete.
    * Format:
    * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
    * </pre>
@@ -150,10 +157,8 @@ private static final long serialVersionUID = 0L;
   private boolean force_;
   /**
    * <pre>
-   * If set to true, any child resources of this Context will be deleted.
-   * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-   * Context has any child resources, such as another Context, Artifact, or
-   * Execution).
+   * The force deletion semantics is still undefined.
+   * Users should not use this field.
    * </pre>
    *
    * <code>bool force = 2;</code>
@@ -162,6 +167,56 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getForce() {
     return force_;
+  }
+
+  public static final int ETAG_FIELD_NUMBER = 3;
+  private volatile java.lang.Object etag_;
+  /**
+   * <pre>
+   * Optional. The etag of the Context to delete.
+   * If this is provided, it must match the server's etag. Otherwise, the
+   * request will fail with a FAILED_PRECONDITION.
+   * </pre>
+   *
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The etag.
+   */
+  @java.lang.Override
+  public java.lang.String getEtag() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      etag_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Optional. The etag of the Context to delete.
+   * If this is provided, it must match the server's etag. Otherwise, the
+   * request will fail with a FAILED_PRECONDITION.
+   * </pre>
+   *
+   * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The bytes for etag.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEtagBytes() {
+    java.lang.Object ref = etag_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      etag_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -184,6 +239,9 @@ private static final long serialVersionUID = 0L;
     if (force_ != false) {
       output.writeBool(2, force_);
     }
+    if (!getEtagBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, etag_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -199,6 +257,9 @@ private static final long serialVersionUID = 0L;
     if (force_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(2, force_);
+    }
+    if (!getEtagBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, etag_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,6 +280,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (getForce()
         != other.getForce()) return false;
+    if (!getEtag()
+        .equals(other.getEtag())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -235,6 +298,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FORCE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getForce());
+    hash = (37 * hash) + ETAG_FIELD_NUMBER;
+    hash = (53 * hash) + getEtag().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -376,6 +441,8 @@ private static final long serialVersionUID = 0L;
 
       force_ = false;
 
+      etag_ = "";
+
       return this;
     }
 
@@ -404,6 +471,7 @@ private static final long serialVersionUID = 0L;
       com.google.cloud.aiplatform.v1beta1.DeleteContextRequest result = new com.google.cloud.aiplatform.v1beta1.DeleteContextRequest(this);
       result.name_ = name_;
       result.force_ = force_;
+      result.etag_ = etag_;
       onBuilt();
       return result;
     }
@@ -459,6 +527,10 @@ private static final long serialVersionUID = 0L;
       if (other.getForce() != false) {
         setForce(other.getForce());
       }
+      if (!other.getEtag().isEmpty()) {
+        etag_ = other.etag_;
+        onChanged();
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -491,7 +563,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The resource name of the Context to retrieve.
+     * Required. The resource name of the Context to delete.
      * Format:
      * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
      * </pre>
@@ -513,7 +585,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Context to retrieve.
+     * Required. The resource name of the Context to delete.
      * Format:
      * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
      * </pre>
@@ -536,7 +608,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Context to retrieve.
+     * Required. The resource name of the Context to delete.
      * Format:
      * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
      * </pre>
@@ -557,7 +629,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Context to retrieve.
+     * Required. The resource name of the Context to delete.
      * Format:
      * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
      * </pre>
@@ -573,7 +645,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the Context to retrieve.
+     * Required. The resource name of the Context to delete.
      * Format:
      * projects/{project}/locations/{location}/metadataStores/{metadatastore}/contexts/{context}
      * </pre>
@@ -597,10 +669,8 @@ private static final long serialVersionUID = 0L;
     private boolean force_ ;
     /**
      * <pre>
-     * If set to true, any child resources of this Context will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * Context has any child resources, such as another Context, Artifact, or
-     * Execution).
+     * The force deletion semantics is still undefined.
+     * Users should not use this field.
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -612,10 +682,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set to true, any child resources of this Context will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * Context has any child resources, such as another Context, Artifact, or
-     * Execution).
+     * The force deletion semantics is still undefined.
+     * Users should not use this field.
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -630,10 +698,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * If set to true, any child resources of this Context will be deleted.
-     * (Otherwise, the request will fail with a FAILED_PRECONDITION error if the
-     * Context has any child resources, such as another Context, Artifact, or
-     * Execution).
+     * The force deletion semantics is still undefined.
+     * Users should not use this field.
      * </pre>
      *
      * <code>bool force = 2;</code>
@@ -642,6 +708,112 @@ private static final long serialVersionUID = 0L;
     public Builder clearForce() {
       
       force_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object etag_ = "";
+    /**
+     * <pre>
+     * Optional. The etag of the Context to delete.
+     * If this is provided, it must match the server's etag. Otherwise, the
+     * request will fail with a FAILED_PRECONDITION.
+     * </pre>
+     *
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The etag.
+     */
+    public java.lang.String getEtag() {
+      java.lang.Object ref = etag_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        etag_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The etag of the Context to delete.
+     * If this is provided, it must match the server's etag. Otherwise, the
+     * request will fail with a FAILED_PRECONDITION.
+     * </pre>
+     *
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The bytes for etag.
+     */
+    public com.google.protobuf.ByteString
+        getEtagBytes() {
+      java.lang.Object ref = etag_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        etag_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. The etag of the Context to delete.
+     * If this is provided, it must match the server's etag. Otherwise, the
+     * request will fail with a FAILED_PRECONDITION.
+     * </pre>
+     *
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtag(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      etag_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The etag of the Context to delete.
+     * If this is provided, it must match the server's etag. Otherwise, the
+     * request will fail with a FAILED_PRECONDITION.
+     * </pre>
+     *
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEtag() {
+      
+      etag_ = getDefaultInstance().getEtag();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. The etag of the Context to delete.
+     * If this is provided, it must match the server's etag. Otherwise, the
+     * request will fail with a FAILED_PRECONDITION.
+     * </pre>
+     *
+     * <code>string etag = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The bytes for etag to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEtagBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      etag_ = value;
       onChanged();
       return this;
     }

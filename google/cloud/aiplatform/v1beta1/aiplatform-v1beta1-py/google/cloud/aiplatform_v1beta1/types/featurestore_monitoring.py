@@ -57,6 +57,16 @@ class FeaturestoreMonitoringConfig(proto.Message):
                 Configuration of the snapshot analysis based
                 monitoring pipeline running interval. The value
                 is rolled up to full day.
+            monitoring_interval_days (int):
+                Configuration of the snapshot analysis based monitoring
+                pipeline running interval. The value indicates number of
+                days. If both
+                [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+                and
+                [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval]
+                are set when creating/updating EntityTypes/Features,
+                [FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days][google.cloud.aiplatform.v1beta1.FeaturestoreMonitoringConfig.SnapshotAnalysis.monitoring_interval_days]
+                will be used.
         """
 
         disabled = proto.Field(
@@ -67,6 +77,10 @@ class FeaturestoreMonitoringConfig(proto.Message):
             proto.MESSAGE,
             number=2,
             message=duration_pb2.Duration,
+        )
+        monitoring_interval_days = proto.Field(
+            proto.INT32,
+            number=3,
         )
 
     snapshot_analysis = proto.Field(

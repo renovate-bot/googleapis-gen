@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
@@ -36,11 +36,11 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\ExplainRequest;
-use Google\Cloud\Aiplatform\V1beta1\ExplainResponse;
-use Google\Cloud\Aiplatform\V1beta1\ExplanationSpecOverride;
-use Google\Cloud\Aiplatform\V1beta1\PredictRequest;
-use Google\Cloud\Aiplatform\V1beta1\PredictResponse;
+use Google\Cloud\AIPlatform\V1beta1\ExplainRequest;
+use Google\Cloud\AIPlatform\V1beta1\ExplainResponse;
+use Google\Cloud\AIPlatform\V1beta1\ExplanationSpecOverride;
+use Google\Cloud\AIPlatform\V1beta1\PredictRequest;
+use Google\Cloud\AIPlatform\V1beta1\PredictResponse;
 use Google\Protobuf\Value;
 
 /**
@@ -327,7 +327,7 @@ class PredictionServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\ExplainResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\ExplainResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -399,7 +399,7 @@ class PredictionServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\PredictResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\PredictResponse
      *
      * @throws ApiException if the remote call fails
      *

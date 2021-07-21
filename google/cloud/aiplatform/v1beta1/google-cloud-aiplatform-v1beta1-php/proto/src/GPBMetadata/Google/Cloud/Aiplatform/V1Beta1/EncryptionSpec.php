@@ -18,11 +18,11 @@ class EncryptionSpec
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-µ
+ž
 5google/cloud/aiplatform/v1beta1/encryption_spec.protogoogle.cloud.aiplatform.v1beta1google/api/annotations.proto"+
 EncryptionSpec
-kms_key_name (	BàAB‡
-#com.google.cloud.aiplatform.v1beta1BEncryptionSpecProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformbproto3'
+kms_key_name (	BàABð
+#com.google.cloud.aiplatform.v1beta1BEncryptionSpecProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);
 
         static::$is_initialized = true;

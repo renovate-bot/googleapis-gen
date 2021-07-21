@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Aiplatform
+    module AIPlatform
       module V1beta1
         # Represents a job that runs periodically to monitor the deployed models in an
         # endpoint. It will analyze the logged training & prediction data to detect any
@@ -38,27 +38,27 @@ module Google
         #     Required. Endpoint resource name.
         #     Format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
         # @!attribute [r] state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::JobState]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::JobState]
         #     Output only. The detailed state of the monitoring job.
         #     When the job is still creating, the state will be 'PENDING'.
         #     Once the job is successfully created, the state will be 'RUNNING'.
         #     Pause the job, the state will be 'PAUSED'.
         #     Resume the job, the state will return to 'RUNNING'.
         # @!attribute [r] schedule_state
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringJob::MonitoringScheduleState]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob::MonitoringScheduleState]
         #     Output only. Schedule state when the monitoring job is in Running state.
         # @!attribute [rw] model_deployment_monitoring_objective_configs
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringObjectiveConfig>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringObjectiveConfig>]
         #     Required. The config for monitoring objectives. This is a per DeployedModel config.
         #     Each DeployedModel needs to be configed separately.
         # @!attribute [rw] model_deployment_monitoring_schedule_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringScheduleConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringScheduleConfig]
         #     Required. Schedule config for running the monitoring job.
         # @!attribute [rw] logging_sampling_strategy
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::SamplingStrategy]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::SamplingStrategy]
         #     Required. Sample Strategy for logging.
         # @!attribute [rw] model_monitoring_alert_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelMonitoringAlertConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringAlertConfig]
         #     Alert config for model monitoring.
         # @!attribute [rw] predict_instance_schema_uri
         #   @return [::String]
@@ -68,9 +68,9 @@ module Google
         #     requests.
         # @!attribute [rw] sample_predict_instance
         #   @return [::Google::Protobuf::Value]
-        #     Sample Predict instance, same format as {::Google::Cloud::Aiplatform::V1beta1::PredictRequest#instances PredictRequest.instances},
+        #     Sample Predict instance, same format as {::Google::Cloud::AIPlatform::V1beta1::PredictRequest#instances PredictRequest.instances},
         #     this can be set as a replacement of
-        #     {::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringJob#predict_instance_schema_uri ModelDeploymentMonitoringJob.predict_instance_schema_uri}. If not set,
+        #     {::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob#predict_instance_schema_uri ModelDeploymentMonitoringJob.predict_instance_schema_uri}. If not set,
         #     we will generate predict schema from collected predict requests.
         # @!attribute [rw] analysis_instance_schema_uri
         #   @return [::String]
@@ -78,7 +78,7 @@ module Google
         #     want Tensorflow Data Validation (TFDV) to analyze.
         #
         #     If this field is empty, all the feature data types are inferred from
-        #     {::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringJob#predict_instance_schema_uri predict_instance_schema_uri},
+        #     {::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringJob#predict_instance_schema_uri predict_instance_schema_uri},
         #     meaning that TFDV will use the data in the exact format(data type) as
         #     prediction request/response.
         #     If there are any data type differences between predict instance and TFDV
@@ -86,7 +86,7 @@ module Google
         #     For models trained with Vertex AI, this field must be set as all the
         #     fields in predict instance formatted as string.
         # @!attribute [r] bigquery_tables
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringBigQueryTable>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringBigQueryTable>]
         #     Output only. The created bigquery tables for the job under customer project. Customer
         #     could do their own query & analysis. There could be 4 log tables in
         #     maximum:
@@ -118,7 +118,7 @@ module Google
         #     Output only. Timestamp when this monitoring pipeline will be scheduled to run for the
         #     next round.
         # @!attribute [rw] stats_anomalies_base_directory
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::GcsDestination]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsDestination]
         #     Stats anomalies base folder path.
         class ModelDeploymentMonitoringJob
           include ::Google::Protobuf::MessageExts
@@ -152,10 +152,10 @@ module Google
         # ModelDeploymentMonitoringBigQueryTable specifies the BigQuery table name
         # as well as some information of the logs stored in this table.
         # @!attribute [rw] log_source
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringBigQueryTable::LogSource]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringBigQueryTable::LogSource]
         #     The source of log.
         # @!attribute [rw] log_type
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringBigQueryTable::LogType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringBigQueryTable::LogType]
         #     The type of log.
         # @!attribute [rw] bigquery_table_path
         #   @return [::String]
@@ -197,7 +197,7 @@ module Google
         #   @return [::String]
         #     The DeployedModel ID of the objective config.
         # @!attribute [rw] objective_config
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelMonitoringObjectiveConfig]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringObjectiveConfig]
         #     The objective config of for the modelmonitoring job of this deployed model.
         class ModelDeploymentMonitoringObjectiveConfig
           include ::Google::Protobuf::MessageExts
@@ -216,7 +216,7 @@ module Google
 
         # Statistics and anomalies generated by Model Monitoring.
         # @!attribute [rw] objective
-        #   @return [::Google::Cloud::Aiplatform::V1beta1::ModelDeploymentMonitoringObjectiveType]
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringObjectiveType]
         #     Model Monitoring Objective those stats and anomalies belonging to.
         # @!attribute [rw] deployed_model_id
         #   @return [::String]
@@ -225,7 +225,7 @@ module Google
         #   @return [::Integer]
         #     Number of anomalies within all stats.
         # @!attribute [rw] feature_stats
-        #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::ModelMonitoringStatsAnomalies::FeatureHistoricStatsAnomalies>]
+        #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ModelMonitoringStatsAnomalies::FeatureHistoricStatsAnomalies>]
         #     A list of historical Stats and Anomalies generated for all Features.
         class ModelMonitoringStatsAnomalies
           include ::Google::Protobuf::MessageExts
@@ -236,13 +236,13 @@ module Google
           #   @return [::String]
           #     Display Name of the Feature.
           # @!attribute [rw] threshold
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::ThresholdConfig]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig]
           #     Threshold for anomaly detection.
           # @!attribute [rw] training_stats
-          #   @return [::Google::Cloud::Aiplatform::V1beta1::FeatureStatsAnomaly]
+          #   @return [::Google::Cloud::AIPlatform::V1beta1::FeatureStatsAnomaly]
           #     Stats calculated for the Training Dataset.
           # @!attribute [rw] prediction_stats
-          #   @return [::Array<::Google::Cloud::Aiplatform::V1beta1::FeatureStatsAnomaly>]
+          #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::FeatureStatsAnomaly>]
           #     A list of historical stats generated by different time window's
           #     Prediction Dataset.
           class FeatureHistoricStatsAnomalies

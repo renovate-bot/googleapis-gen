@@ -24,7 +24,7 @@
  * @experimental
  */
 
-namespace Google\Cloud\Aiplatform\V1beta1\Gapic;
+namespace Google\Cloud\AIPlatform\V1beta1\Gapic;
 
 use Google\ApiCore\ApiException;
 use Google\ApiCore\Call;
@@ -37,10 +37,10 @@ use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
-use Google\Cloud\Aiplatform\V1beta1\FeatureSelector;
-use Google\Cloud\Aiplatform\V1beta1\ReadFeatureValuesRequest;
-use Google\Cloud\Aiplatform\V1beta1\ReadFeatureValuesResponse;
-use Google\Cloud\Aiplatform\V1beta1\StreamingReadFeatureValuesRequest;
+use Google\Cloud\AIPlatform\V1beta1\FeatureSelector;
+use Google\Cloud\AIPlatform\V1beta1\ReadFeatureValuesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ReadFeatureValuesResponse;
+use Google\Cloud\AIPlatform\V1beta1\StreamingReadFeatureValuesRequest;
 
 /**
  * Service Description: A service for serving online feature values.
@@ -303,7 +303,7 @@ class FeaturestoreOnlineServingServiceGapicClient
      *           {@see Google\ApiCore\RetrySettings} for example usage.
      * }
      *
-     * @return \Google\Cloud\Aiplatform\V1beta1\ReadFeatureValuesResponse
+     * @return \Google\Cloud\AIPlatform\V1beta1\ReadFeatureValuesResponse
      *
      * @throws ApiException if the remote call fails
      *
@@ -349,10 +349,11 @@ class FeaturestoreOnlineServingServiceGapicClient
      *                                         {featurestore}/entityTypes/{entityType}`. For example,
      *                                         for a machine learning model predicting user clicks on a website, an
      *                                         EntityType ID could be "user".
-     * @param string[]        $entityIds       Required. IDs of entities to read Feature values of. For example,
-     *                                         for a machine learning model predicting user clicks on a website, an
-     *                                         entity ID could be "user_123".
-     * @param FeatureSelector $featureSelector Required. Selector choosing Features of the target EntityType.
+     * @param string[]        $entityIds       Required. IDs of entities to read Feature values of. The maximum number of IDs is
+     *                                         100. For example, for a machine learning model predicting user clicks on a
+     *                                         website, an entity ID could be "user_123".
+     * @param FeatureSelector $featureSelector Required. Selector choosing Features of the target EntityType. Feature IDs will be
+     *                                         deduplicated.
      * @param array           $optionalArgs    {
      *     Optional.
      *

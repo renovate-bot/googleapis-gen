@@ -20,6 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DeployIndexOperationMetadata() {
+    deployedIndexId_ = "";
   }
 
   @java.lang.Override
@@ -63,6 +64,12 @@ private static final long serialVersionUID = 0L;
               genericMetadata_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deployedIndexId_ = s;
             break;
           }
           default: {
@@ -135,6 +142,52 @@ private static final long serialVersionUID = 0L;
     return getGenericMetadata();
   }
 
+  public static final int DEPLOYED_INDEX_ID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object deployedIndexId_;
+  /**
+   * <pre>
+   * The unique index id specified by user
+   * </pre>
+   *
+   * <code>string deployed_index_id = 2;</code>
+   * @return The deployedIndexId.
+   */
+  @java.lang.Override
+  public java.lang.String getDeployedIndexId() {
+    java.lang.Object ref = deployedIndexId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deployedIndexId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The unique index id specified by user
+   * </pre>
+   *
+   * <code>string deployed_index_id = 2;</code>
+   * @return The bytes for deployedIndexId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeployedIndexIdBytes() {
+    java.lang.Object ref = deployedIndexId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deployedIndexId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -152,6 +205,9 @@ private static final long serialVersionUID = 0L;
     if (genericMetadata_ != null) {
       output.writeMessage(1, getGenericMetadata());
     }
+    if (!getDeployedIndexIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, deployedIndexId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -164,6 +220,9 @@ private static final long serialVersionUID = 0L;
     if (genericMetadata_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getGenericMetadata());
+    }
+    if (!getDeployedIndexIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, deployedIndexId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -185,6 +244,8 @@ private static final long serialVersionUID = 0L;
       if (!getGenericMetadata()
           .equals(other.getGenericMetadata())) return false;
     }
+    if (!getDeployedIndexId()
+        .equals(other.getDeployedIndexId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -200,6 +261,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + GENERIC_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getGenericMetadata().hashCode();
     }
+    hash = (37 * hash) + DEPLOYED_INDEX_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getDeployedIndexId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -343,6 +406,8 @@ private static final long serialVersionUID = 0L;
         genericMetadata_ = null;
         genericMetadataBuilder_ = null;
       }
+      deployedIndexId_ = "";
+
       return this;
     }
 
@@ -374,6 +439,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.genericMetadata_ = genericMetadataBuilder_.build();
       }
+      result.deployedIndexId_ = deployedIndexId_;
       onBuilt();
       return result;
     }
@@ -424,6 +490,10 @@ private static final long serialVersionUID = 0L;
       if (other == com.google.cloud.aiplatform.v1beta1.DeployIndexOperationMetadata.getDefaultInstance()) return this;
       if (other.hasGenericMetadata()) {
         mergeGenericMetadata(other.getGenericMetadata());
+      }
+      if (!other.getDeployedIndexId().isEmpty()) {
+        deployedIndexId_ = other.deployedIndexId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -607,6 +677,102 @@ private static final long serialVersionUID = 0L;
         genericMetadata_ = null;
       }
       return genericMetadataBuilder_;
+    }
+
+    private java.lang.Object deployedIndexId_ = "";
+    /**
+     * <pre>
+     * The unique index id specified by user
+     * </pre>
+     *
+     * <code>string deployed_index_id = 2;</code>
+     * @return The deployedIndexId.
+     */
+    public java.lang.String getDeployedIndexId() {
+      java.lang.Object ref = deployedIndexId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deployedIndexId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The unique index id specified by user
+     * </pre>
+     *
+     * <code>string deployed_index_id = 2;</code>
+     * @return The bytes for deployedIndexId.
+     */
+    public com.google.protobuf.ByteString
+        getDeployedIndexIdBytes() {
+      java.lang.Object ref = deployedIndexId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deployedIndexId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The unique index id specified by user
+     * </pre>
+     *
+     * <code>string deployed_index_id = 2;</code>
+     * @param value The deployedIndexId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployedIndexId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deployedIndexId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The unique index id specified by user
+     * </pre>
+     *
+     * <code>string deployed_index_id = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeployedIndexId() {
+      
+      deployedIndexId_ = getDefaultInstance().getDeployedIndexId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The unique index id specified by user
+     * </pre>
+     *
+     * <code>string deployed_index_id = 2;</code>
+     * @param value The bytes for deployedIndexId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeployedIndexIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deployedIndexId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

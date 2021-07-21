@@ -90,4 +90,31 @@ public interface ModelMonitoringObjectiveConfigOrBuilder extends
    * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.PredictionDriftDetectionConfig prediction_drift_detection_config = 3;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.PredictionDriftDetectionConfigOrBuilder getPredictionDriftDetectionConfigOrBuilder();
+
+  /**
+   * <pre>
+   * The config for integrated with Explainable AI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+   * @return Whether the explanationConfig field is set.
+   */
+  boolean hasExplanationConfig();
+  /**
+   * <pre>
+   * The config for integrated with Explainable AI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+   * @return The explanationConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig getExplanationConfig();
+  /**
+   * <pre>
+   * The config for integrated with Explainable AI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder getExplanationConfigOrBuilder();
 }
