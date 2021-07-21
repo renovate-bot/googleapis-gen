@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/resourcesettings",
+  "name": "@google-cloud/resource-settings",
   "version": "0.1.0",
   "description": "Resourcesettings client for Node.js",
   "repository": "googleapis/nodejs-resourcesettings",
