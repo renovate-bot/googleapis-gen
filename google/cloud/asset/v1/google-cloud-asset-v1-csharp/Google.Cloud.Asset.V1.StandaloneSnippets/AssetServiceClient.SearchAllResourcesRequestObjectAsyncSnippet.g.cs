@@ -18,6 +18,7 @@ namespace Google.Cloud.Asset.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Asset.V1;
+    using Google.Protobuf.WellKnownTypes;
     using System;
     using System.Linq;
     using System.Threading.Tasks;
@@ -40,6 +41,7 @@ namespace Google.Cloud.Asset.V1.Snippets
                 Query = "",
                 AssetTypes = { "", },
                 OrderBy = "",
+                ReadMask = new FieldMask(),
             };
             // Make the request
             PagedAsyncEnumerable<SearchAllResourcesResponse, ResourceSearchResult> response = assetServiceClient.SearchAllResourcesAsync(request);

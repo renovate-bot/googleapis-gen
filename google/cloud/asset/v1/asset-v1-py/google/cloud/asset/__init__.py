@@ -17,10 +17,13 @@
 from google.cloud.asset_v1.services.asset_service.client import AssetServiceClient
 from google.cloud.asset_v1.services.asset_service.async_client import AssetServiceAsyncClient
 
+from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyLongrunningMetadata
 from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyLongrunningRequest
 from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyLongrunningResponse
 from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyRequest
 from google.cloud.asset_v1.types.asset_service import AnalyzeIamPolicyResponse
+from google.cloud.asset_v1.types.asset_service import AnalyzeMoveRequest
+from google.cloud.asset_v1.types.asset_service import AnalyzeMoveResponse
 from google.cloud.asset_v1.types.asset_service import BatchGetAssetsHistoryRequest
 from google.cloud.asset_v1.types.asset_service import BatchGetAssetsHistoryResponse
 from google.cloud.asset_v1.types.asset_service import BigQueryDestination
@@ -39,6 +42,9 @@ from google.cloud.asset_v1.types.asset_service import ListAssetsRequest
 from google.cloud.asset_v1.types.asset_service import ListAssetsResponse
 from google.cloud.asset_v1.types.asset_service import ListFeedsRequest
 from google.cloud.asset_v1.types.asset_service import ListFeedsResponse
+from google.cloud.asset_v1.types.asset_service import MoveAnalysis
+from google.cloud.asset_v1.types.asset_service import MoveAnalysisResult
+from google.cloud.asset_v1.types.asset_service import MoveImpact
 from google.cloud.asset_v1.types.asset_service import OutputConfig
 from google.cloud.asset_v1.types.asset_service import OutputResult
 from google.cloud.asset_v1.types.asset_service import PartitionSpec
@@ -50,6 +56,7 @@ from google.cloud.asset_v1.types.asset_service import SearchAllResourcesResponse
 from google.cloud.asset_v1.types.asset_service import UpdateFeedRequest
 from google.cloud.asset_v1.types.asset_service import ContentType
 from google.cloud.asset_v1.types.assets import Asset
+from google.cloud.asset_v1.types.assets import AttachedResource
 from google.cloud.asset_v1.types.assets import ConditionEvaluation
 from google.cloud.asset_v1.types.assets import IamPolicyAnalysisResult
 from google.cloud.asset_v1.types.assets import IamPolicyAnalysisState
@@ -58,13 +65,17 @@ from google.cloud.asset_v1.types.assets import Resource
 from google.cloud.asset_v1.types.assets import ResourceSearchResult
 from google.cloud.asset_v1.types.assets import TemporalAsset
 from google.cloud.asset_v1.types.assets import TimeWindow
+from google.cloud.asset_v1.types.assets import VersionedResource
 
 __all__ = ('AssetServiceClient',
     'AssetServiceAsyncClient',
+    'AnalyzeIamPolicyLongrunningMetadata',
     'AnalyzeIamPolicyLongrunningRequest',
     'AnalyzeIamPolicyLongrunningResponse',
     'AnalyzeIamPolicyRequest',
     'AnalyzeIamPolicyResponse',
+    'AnalyzeMoveRequest',
+    'AnalyzeMoveResponse',
     'BatchGetAssetsHistoryRequest',
     'BatchGetAssetsHistoryResponse',
     'BigQueryDestination',
@@ -83,6 +94,9 @@ __all__ = ('AssetServiceClient',
     'ListAssetsResponse',
     'ListFeedsRequest',
     'ListFeedsResponse',
+    'MoveAnalysis',
+    'MoveAnalysisResult',
+    'MoveImpact',
     'OutputConfig',
     'OutputResult',
     'PartitionSpec',
@@ -94,6 +108,7 @@ __all__ = ('AssetServiceClient',
     'UpdateFeedRequest',
     'ContentType',
     'Asset',
+    'AttachedResource',
     'ConditionEvaluation',
     'IamPolicyAnalysisResult',
     'IamPolicyAnalysisState',
@@ -102,4 +117,5 @@ __all__ = ('AssetServiceClient',
     'ResourceSearchResult',
     'TemporalAsset',
     'TimeWindow',
+    'VersionedResource',
 )

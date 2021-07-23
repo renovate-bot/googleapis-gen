@@ -18,6 +18,7 @@ namespace Google.Cloud.Asset.V1.Snippets
 {
     using Google.Api.Gax;
     using Google.Cloud.Asset.V1;
+    using Google.Protobuf.WellKnownTypes;
     using System;
 
     public sealed partial class GeneratedAssetServiceClientStandaloneSnippets
@@ -38,6 +39,7 @@ namespace Google.Cloud.Asset.V1.Snippets
                 Query = "",
                 AssetTypes = { "", },
                 OrderBy = "",
+                ReadMask = new FieldMask(),
             };
             // Make the request
             PagedEnumerable<SearchAllResourcesResponse, ResourceSearchResult> response = assetServiceClient.SearchAllResources(request);

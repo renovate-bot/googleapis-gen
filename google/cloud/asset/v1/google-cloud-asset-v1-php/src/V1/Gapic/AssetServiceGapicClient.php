@@ -31,7 +31,6 @@ use Google\ApiCore\GapicClientTrait;
 use Google\ApiCore\LongRunning\OperationsClient;
 
 use Google\ApiCore\OperationResponse;
-
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -41,6 +40,8 @@ use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Asset\V1\AnalyzeIamPolicyLongrunningRequest;
 use Google\Cloud\Asset\V1\AnalyzeIamPolicyRequest;
 use Google\Cloud\Asset\V1\AnalyzeIamPolicyResponse;
+use Google\Cloud\Asset\V1\AnalyzeMoveRequest;
+use Google\Cloud\Asset\V1\AnalyzeMoveResponse;
 use Google\Cloud\Asset\V1\BatchGetAssetsHistoryRequest;
 use Google\Cloud\Asset\V1\BatchGetAssetsHistoryResponse;
 use Google\Cloud\Asset\V1\CreateFeedRequest;
@@ -55,6 +56,7 @@ use Google\Cloud\Asset\V1\ListAssetsResponse;
 use Google\Cloud\Asset\V1\ListFeedsRequest;
 use Google\Cloud\Asset\V1\ListFeedsResponse;
 use Google\Cloud\Asset\V1\OutputConfig;
+
 use Google\Cloud\Asset\V1\SearchAllIamPoliciesRequest;
 
 use Google\Cloud\Asset\V1\SearchAllIamPoliciesResponse;
@@ -465,7 +467,7 @@ class AssetServiceGapicClient
      * [google.longrunning.Operation][google.longrunning.Operation], which allows you to track the operation
      * status. We recommend intervals of at least 2 seconds with exponential
      * backoff retry to poll the operation result. The metadata contains the
-     * request to help callers to map responses to requests.
+     * metadata for the long-running operation.
      *
      * Sample code:
      * ```
@@ -530,6 +532,68 @@ class AssetServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('AnalyzeIamPolicyLongrunning', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Analyze moving a resource to a specified destination without kicking off
+     * the actual move. The analysis is best effort depending on the user's
+     * permissions of viewing different hierarchical policies and configurations.
+     * The policies and configuration are subject to change before the actual
+     * resource migration takes place.
+     *
+     * Sample code:
+     * ```
+     * $assetServiceClient = new AssetServiceClient();
+     * try {
+     *     $resource = 'resource';
+     *     $destinationParent = 'destination_parent';
+     *     $response = $assetServiceClient->analyzeMove($resource, $destinationParent);
+     * } finally {
+     *     $assetServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $resource          Required. Name of the resource to perform the analysis against.
+     *                                  Only GCP Project are supported as of today. Hence, this can only be Project
+     *                                  ID (such as "projects/my-project-id") or a Project Number (such as
+     *                                  "projects/12345").
+     * @param string $destinationParent Required. Name of the GCP Folder or Organization to reparent the target
+     *                                  resource. The analysis will be performed against hypothetically moving the
+     *                                  resource to this specified desitination parent. This can only be a Folder
+     *                                  number (such as "folders/123") or an Organization number (such as
+     *                                  "organizations/123").
+     * @param array  $optionalArgs      {
+     *     Optional.
+     *
+     *     @type int $view
+     *           Analysis view indicating what information should be included in the
+     *           analysis response. If unspecified, the default view is FULL.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Asset\V1\AnalyzeMoveRequest\AnalysisView}
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Asset\V1\AnalyzeMoveResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function analyzeMove($resource, $destinationParent, array $optionalArgs = [])
+    {
+        $request = new AnalyzeMoveRequest();
+        $requestParamHeaders = [];
+        $request->setResource($resource);
+        $request->setDestinationParent($destinationParent);
+        $requestParamHeaders['resource'] = $resource;
+        if (isset($optionalArgs['view'])) {
+            $request->setView($optionalArgs['view']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('AnalyzeMove', AnalyzeMoveResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1262,8 +1326,8 @@ class AssetServiceGapicClient
      *           encryption key whose name contains the word "key".
      *           * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
      *           word.
-     *           * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
-     *           doesn't contain "ACTIVE" as a word.
+     *           * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+     *           "ACTIVE" as a word.
      *           * `createTime<1609459200` to find Cloud resources that were created before
      *           "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
      *           "2021-01-01 00:00:00 UTC" in seconds.
@@ -1308,6 +1372,7 @@ class AssetServiceGapicClient
      *           to indicate descending order. Redundant space characters are ignored.
      *           Example: "location DESC, name".
      *           Only singular primitive fields in the response are sortable:
+     *
      *           * name
      *           * assetType
      *           * project
@@ -1320,9 +1385,39 @@ class AssetServiceGapicClient
      *           * state
      *           * parentFullResourceName
      *           * parentAssetType
+     *
      *           All the other fields such as repeated fields (e.g., `networkTags`), map
      *           fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
      *           are not supported.
+     *     @type FieldMask $readMask
+     *           Optional. A comma-separated list of fields specifying which fields to be returned in
+     *           ResourceSearchResult. Only '*' or combination of top level fields can be
+     *           specified. Field names of both snake_case and camelCase are supported.
+     *           Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+     *
+     *           The read_mask paths must be valid field paths listed but not limited to
+     *           (both snake_case and camelCase are supported):
+     *
+     *           * name
+     *           * assetType
+     *           * project
+     *           * displayName
+     *           * description
+     *           * location
+     *           * labels
+     *           * networkTags
+     *           * kmsKey
+     *           * createTime
+     *           * updateTime
+     *           * state
+     *           * additionalAttributes
+     *           * versionedResources
+     *
+     *           If read_mask is not specified, all fields except versionedResources will
+     *           be returned.
+     *           If only '*' is specified, all fields including versionedResources will be
+     *           returned.
+     *           Any invalid field path will trigger INVALID_ARGUMENT error.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1358,6 +1453,10 @@ class AssetServiceGapicClient
 
         if (isset($optionalArgs['orderBy'])) {
             $request->setOrderBy($optionalArgs['orderBy']);
+        }
+
+        if (isset($optionalArgs['readMask'])) {
+            $request->setReadMask($optionalArgs['readMask']);
         }
 
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);

@@ -262,6 +262,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.analyze_move: gapic_v1.method.wrap_method(
+                self.analyze_move,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     @property
@@ -374,6 +379,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def analyze_move(self) -> Callable[
+            [asset_service.AnalyzeMoveRequest],
+            Union[
+                asset_service.AnalyzeMoveResponse,
+                Awaitable[asset_service.AnalyzeMoveResponse]
             ]]:
         raise NotImplementedError()
 

@@ -190,7 +190,7 @@ export class AssetServiceClient {
     const analyzeIamPolicyLongrunningResponse = protoFilesRoot.lookup(
       '.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse') as gax.protobuf.Type;
     const analyzeIamPolicyLongrunningMetadata = protoFilesRoot.lookup(
-      '.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest') as gax.protobuf.Type;
+      '.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata') as gax.protobuf.Type;
 
     this.descriptors.longrunning = {
       exportAssets: new this._gaxModule.LongrunningDescriptor(
@@ -246,7 +246,7 @@ export class AssetServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const assetServiceStubMethods =
-        ['exportAssets', 'listAssets', 'batchGetAssetsHistory', 'createFeed', 'getFeed', 'listFeeds', 'updateFeed', 'deleteFeed', 'searchAllResources', 'searchAllIamPolicies', 'analyzeIamPolicy', 'analyzeIamPolicyLongrunning'];
+        ['exportAssets', 'listAssets', 'batchGetAssetsHistory', 'createFeed', 'getFeed', 'listFeeds', 'updateFeed', 'deleteFeed', 'searchAllResources', 'searchAllIamPolicies', 'analyzeIamPolicy', 'analyzeIamPolicyLongrunning', 'analyzeMove'];
     for (const methodName of assetServiceStubMethods) {
       const callPromise = this.assetServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -895,6 +895,93 @@ export class AssetServiceClient {
     this.initialize();
     return this.innerApiCalls.analyzeIamPolicy(request, options, callback);
   }
+  analyzeMove(
+      request?: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+        protos.google.cloud.asset.v1.IAnalyzeMoveRequest|undefined, {}|undefined
+      ]>;
+  analyzeMove(
+      request: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+          protos.google.cloud.asset.v1.IAnalyzeMoveRequest|null|undefined,
+          {}|null|undefined>): void;
+  analyzeMove(
+      request: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
+      callback: Callback<
+          protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+          protos.google.cloud.asset.v1.IAnalyzeMoveRequest|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Analyze moving a resource to a specified destination without kicking off
+ * the actual move. The analysis is best effort depending on the user's
+ * permissions of viewing different hierarchical policies and configurations.
+ * The policies and configuration are subject to change before the actual
+ * resource migration takes place.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.resource
+ *   Required. Name of the resource to perform the analysis against.
+ *   Only GCP Project are supported as of today. Hence, this can only be Project
+ *   ID (such as "projects/my-project-id") or a Project Number (such as
+ *   "projects/12345").
+ * @param {string} request.destinationParent
+ *   Required. Name of the GCP Folder or Organization to reparent the target
+ *   resource. The analysis will be performed against hypothetically moving the
+ *   resource to this specified desitination parent. This can only be a Folder
+ *   number (such as "folders/123") or an Organization number (such as
+ *   "organizations/123").
+ * @param {google.cloud.asset.v1.AnalyzeMoveRequest.AnalysisView} request.view
+ *   Analysis view indicating what information should be included in the
+ *   analysis response. If unspecified, the default view is FULL.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [AnalyzeMoveResponse]{@link google.cloud.asset.v1.AnalyzeMoveResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example
+ * const [response] = await client.analyzeMove(request);
+ */
+  analyzeMove(
+      request?: protos.google.cloud.asset.v1.IAnalyzeMoveRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+          protos.google.cloud.asset.v1.IAnalyzeMoveRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+          protos.google.cloud.asset.v1.IAnalyzeMoveRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.cloud.asset.v1.IAnalyzeMoveResponse,
+        protos.google.cloud.asset.v1.IAnalyzeMoveRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'resource': request.resource || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.analyzeMove(request, options, callback);
+  }
 
   exportAssets(
       request?: protos.google.cloud.asset.v1.IExportAssetsRequest,
@@ -1037,20 +1124,20 @@ export class AssetServiceClient {
       request?: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
       options?: CallOptions):
       Promise<[
-        LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest>,
+        LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
         protos.google.longrunning.IOperation|undefined, {}|undefined
       ]>;
   analyzeIamPolicyLongrunning(
       request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
       options: CallOptions,
       callback: Callback<
-          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest>,
+          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
   analyzeIamPolicyLongrunning(
       request: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
       callback: Callback<
-          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest>,
+          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>): void;
 /**
@@ -1062,7 +1149,7 @@ export class AssetServiceClient {
  * {@link google.longrunning.Operation|google.longrunning.Operation}, which allows you to track the operation
  * status. We recommend intervals of at least 2 seconds with exponential
  * backoff retry to poll the operation result. The metadata contains the
- * request to help callers to map responses to requests.
+ * metadata for the long-running operation.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -1086,15 +1173,15 @@ export class AssetServiceClient {
   analyzeIamPolicyLongrunning(
       request?: protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest,
       optionsOrCallback?: CallOptions|Callback<
-          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest>,
+          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>,
       callback?: Callback<
-          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest>,
+          LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
           protos.google.longrunning.IOperation|null|undefined,
           {}|null|undefined>):
       Promise<[
-        LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningRequest>,
+        LROperation<protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.IAnalyzeIamPolicyLongrunningMetadata>,
         protos.google.longrunning.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
@@ -1132,11 +1219,11 @@ export class AssetServiceClient {
  * console.log(decodedOperation.done);
  * console.log(decodedOperation.metadata);
  */
-  async checkAnalyzeIamPolicyLongrunningProgress(name: string): Promise<LROperation<protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest>>{
+  async checkAnalyzeIamPolicyLongrunningProgress(name: string): Promise<LROperation<protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata>>{
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.analyzeIamPolicyLongrunning, gax.createDefaultBackoffSettings());
-    return decodeOperation as LROperation<protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningRequest>;
+    return decodeOperation as LROperation<protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningResponse, protos.google.cloud.asset.v1.AnalyzeIamPolicyLongrunningMetadata>;
   }
   listAssets(
       request?: protos.google.cloud.asset.v1.IListAssetsRequest,
@@ -1482,8 +1569,8 @@ export class AssetServiceClient {
  *     encryption key whose name contains the word "key".
  *   * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
  *     word.
- *   * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
- *     doesn't contain "ACTIVE" as a word.
+ *   * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+ *     "ACTIVE" as a word.
  *   * `createTime<1609459200` to find Cloud resources that were created before
  *     "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
  *     "2021-01-01 00:00:00 UTC" in seconds.
@@ -1529,6 +1616,7 @@ export class AssetServiceClient {
  *   to indicate descending order. Redundant space characters are ignored.
  *   Example: "location DESC, name".
  *   Only singular primitive fields in the response are sortable:
+ *
  *     * name
  *     * assetType
  *     * project
@@ -1541,9 +1629,39 @@ export class AssetServiceClient {
  *     * state
  *     * parentFullResourceName
  *     * parentAssetType
+ *
  *   All the other fields such as repeated fields (e.g., `networkTags`), map
  *   fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
  *   are not supported.
+ * @param {google.protobuf.FieldMask} [request.readMask]
+ *   Optional. A comma-separated list of fields specifying which fields to be returned in
+ *   ResourceSearchResult. Only '*' or combination of top level fields can be
+ *   specified. Field names of both snake_case and camelCase are supported.
+ *   Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+ *
+ *   The read_mask paths must be valid field paths listed but not limited to
+ *   (both snake_case and camelCase are supported):
+ *
+ *     * name
+ *     * assetType
+ *     * project
+ *     * displayName
+ *     * description
+ *     * location
+ *     * labels
+ *     * networkTags
+ *     * kmsKey
+ *     * createTime
+ *     * updateTime
+ *     * state
+ *     * additionalAttributes
+ *     * versionedResources
+ *
+ *   If read_mask is not specified, all fields except versionedResources will
+ *   be returned.
+ *   If only '*' is specified, all fields including versionedResources will be
+ *   returned.
+ *   Any invalid field path will trigger INVALID_ARGUMENT error.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1634,8 +1752,8 @@ export class AssetServiceClient {
  *     encryption key whose name contains the word "key".
  *   * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
  *     word.
- *   * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
- *     doesn't contain "ACTIVE" as a word.
+ *   * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+ *     "ACTIVE" as a word.
  *   * `createTime<1609459200` to find Cloud resources that were created before
  *     "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
  *     "2021-01-01 00:00:00 UTC" in seconds.
@@ -1681,6 +1799,7 @@ export class AssetServiceClient {
  *   to indicate descending order. Redundant space characters are ignored.
  *   Example: "location DESC, name".
  *   Only singular primitive fields in the response are sortable:
+ *
  *     * name
  *     * assetType
  *     * project
@@ -1693,9 +1812,39 @@ export class AssetServiceClient {
  *     * state
  *     * parentFullResourceName
  *     * parentAssetType
+ *
  *   All the other fields such as repeated fields (e.g., `networkTags`), map
  *   fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
  *   are not supported.
+ * @param {google.protobuf.FieldMask} [request.readMask]
+ *   Optional. A comma-separated list of fields specifying which fields to be returned in
+ *   ResourceSearchResult. Only '*' or combination of top level fields can be
+ *   specified. Field names of both snake_case and camelCase are supported.
+ *   Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+ *
+ *   The read_mask paths must be valid field paths listed but not limited to
+ *   (both snake_case and camelCase are supported):
+ *
+ *     * name
+ *     * assetType
+ *     * project
+ *     * displayName
+ *     * description
+ *     * location
+ *     * labels
+ *     * networkTags
+ *     * kmsKey
+ *     * createTime
+ *     * updateTime
+ *     * state
+ *     * additionalAttributes
+ *     * versionedResources
+ *
+ *   If read_mask is not specified, all fields except versionedResources will
+ *   be returned.
+ *   If only '*' is specified, all fields including versionedResources will be
+ *   returned.
+ *   Any invalid field path will trigger INVALID_ARGUMENT error.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Stream}
@@ -1773,8 +1922,8 @@ export class AssetServiceClient {
  *     encryption key whose name contains the word "key".
  *   * `state:ACTIVE` to find Cloud resources whose state contains "ACTIVE" as a
  *     word.
- *   * `NOT state:ACTIVE` to find {{gcp_name}} resources whose state
- *     doesn't contain "ACTIVE" as a word.
+ *   * `NOT state:ACTIVE` to find Cloud resources whose state doesn't contain
+ *     "ACTIVE" as a word.
  *   * `createTime<1609459200` to find Cloud resources that were created before
  *     "2021-01-01 00:00:00 UTC". 1609459200 is the epoch timestamp of
  *     "2021-01-01 00:00:00 UTC" in seconds.
@@ -1820,6 +1969,7 @@ export class AssetServiceClient {
  *   to indicate descending order. Redundant space characters are ignored.
  *   Example: "location DESC, name".
  *   Only singular primitive fields in the response are sortable:
+ *
  *     * name
  *     * assetType
  *     * project
@@ -1832,9 +1982,39 @@ export class AssetServiceClient {
  *     * state
  *     * parentFullResourceName
  *     * parentAssetType
+ *
  *   All the other fields such as repeated fields (e.g., `networkTags`), map
  *   fields (e.g., `labels`) and struct fields (e.g., `additionalAttributes`)
  *   are not supported.
+ * @param {google.protobuf.FieldMask} [request.readMask]
+ *   Optional. A comma-separated list of fields specifying which fields to be returned in
+ *   ResourceSearchResult. Only '*' or combination of top level fields can be
+ *   specified. Field names of both snake_case and camelCase are supported.
+ *   Examples: `"*"`, `"name,location"`, `"name,versionedResources"`.
+ *
+ *   The read_mask paths must be valid field paths listed but not limited to
+ *   (both snake_case and camelCase are supported):
+ *
+ *     * name
+ *     * assetType
+ *     * project
+ *     * displayName
+ *     * description
+ *     * location
+ *     * labels
+ *     * networkTags
+ *     * kmsKey
+ *     * createTime
+ *     * updateTime
+ *     * state
+ *     * additionalAttributes
+ *     * versionedResources
+ *
+ *   If read_mask is not specified, all fields except versionedResources will
+ *   be returned.
+ *   If only '*' is specified, all fields including versionedResources will be
+ *   returned.
+ *   Any invalid field path will trigger INVALID_ARGUMENT error.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Object}

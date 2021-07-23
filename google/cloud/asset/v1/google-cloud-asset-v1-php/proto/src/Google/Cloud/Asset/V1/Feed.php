@@ -79,7 +79,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 6;</code>
@@ -132,7 +132,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      *           == true") will only publish Asset deletions. Other fields of `Expr` are
      *           optional.
      *           See our [user
-     *           guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     *           guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      *           for detailed instructions.
      * }
      */
@@ -331,7 +331,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 6;</code>
@@ -362,7 +362,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      * == true") will only publish Asset deletions. Other fields of `Expr` are
      * optional.
      * See our [user
-     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes#feed_with_condition)
+     * guide](https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition)
      * for detailed instructions.
      *
      * Generated from protobuf field <code>.google.type.Expr condition = 6;</code>

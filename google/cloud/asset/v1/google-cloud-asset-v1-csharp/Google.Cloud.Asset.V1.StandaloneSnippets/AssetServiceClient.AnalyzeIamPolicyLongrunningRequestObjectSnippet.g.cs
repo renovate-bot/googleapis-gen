@@ -37,17 +37,17 @@ namespace Google.Cloud.Asset.V1.Snippets
                 OutputConfig = new IamPolicyAnalysisOutputConfig(),
             };
             // Make the request
-            Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest> response = assetServiceClient.AnalyzeIamPolicyLongrunning(request);
+            Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningMetadata> response = assetServiceClient.AnalyzeIamPolicyLongrunning(request);
 
             // Poll until the returned long-running operation is complete
-            Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest> completedResponse = response.PollUntilCompleted();
+            Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningMetadata> completedResponse = response.PollUntilCompleted();
             // Retrieve the operation result
             AnalyzeIamPolicyLongrunningResponse result = completedResponse.Result;
 
             // Or get the name of the operation
             string operationName = response.Name;
             // This name can be stored, then the long-running operation retrieved later by name
-            Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningRequest> retrievedResponse = assetServiceClient.PollOnceAnalyzeIamPolicyLongrunning(operationName);
+            Operation<AnalyzeIamPolicyLongrunningResponse, AnalyzeIamPolicyLongrunningMetadata> retrievedResponse = assetServiceClient.PollOnceAnalyzeIamPolicyLongrunning(operationName);
             // Check if the retrieved long-running operation has completed
             if (retrievedResponse.IsCompleted)
             {
