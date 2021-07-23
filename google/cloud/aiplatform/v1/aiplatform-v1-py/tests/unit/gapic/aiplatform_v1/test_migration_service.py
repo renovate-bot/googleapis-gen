@@ -101,26 +101,20 @@ def test_migration_service_client_from_service_account_info(client_class):
         assert client.transport._host == 'aiplatform.googleapis.com:443'
 
 
-@pytest.mark.parametrize("client_class", [
-    MigrationServiceClient,
-    MigrationServiceAsyncClient,
-])
-def test_migration_service_client_service_account_always_use_jwt(client_class):
-    with mock.patch.object(service_account.Credentials, 'with_always_use_jwt_access', create=True) as use_jwt:
-        creds = service_account.Credentials(None, None, None)
-        client = client_class(credentials=creds)
-        use_jwt.assert_not_called()
-
-
 @pytest.mark.parametrize("transport_class,transport_name", [
     (transports.MigrationServiceGrpcTransport, "grpc"),
     (transports.MigrationServiceGrpcAsyncIOTransport, "grpc_asyncio"),
 ])
-def test_migration_service_client_service_account_always_use_jwt_true(transport_class, transport_name):
+def test_migration_service_client_service_account_always_use_jwt(transport_class, transport_name):
     with mock.patch.object(service_account.Credentials, 'with_always_use_jwt_access', create=True) as use_jwt:
         creds = service_account.Credentials(None, None, None)
         transport = transport_class(credentials=creds, always_use_jwt_access=True)
         use_jwt.assert_called_once_with(True)
+
+    with mock.patch.object(service_account.Credentials, 'with_always_use_jwt_access', create=True) as use_jwt:
+        creds = service_account.Credentials(None, None, None)
+        transport = transport_class(credentials=creds, always_use_jwt_access=False)
+        use_jwt.assert_not_called()
 
 
 @pytest.mark.parametrize("client_class", [
@@ -186,6 +180,7 @@ def test_migration_service_client_client_options(client_class, transport_class, 
             client_cert_source_for_mtls=None,
             quota_project_id=None,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
         )
 
     # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS_ENDPOINT is
@@ -202,6 +197,7 @@ def test_migration_service_client_client_options(client_class, transport_class, 
                 client_cert_source_for_mtls=None,
                 quota_project_id=None,
                 client_info=transports.base.DEFAULT_CLIENT_INFO,
+                always_use_jwt_access=True,
             )
 
     # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS_ENDPOINT is
@@ -218,6 +214,7 @@ def test_migration_service_client_client_options(client_class, transport_class, 
                 client_cert_source_for_mtls=None,
                 quota_project_id=None,
                 client_info=transports.base.DEFAULT_CLIENT_INFO,
+                always_use_jwt_access=True,
             )
 
     # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS_ENDPOINT has
@@ -244,6 +241,7 @@ def test_migration_service_client_client_options(client_class, transport_class, 
             client_cert_source_for_mtls=None,
             quota_project_id="octopus",
             client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
@@ -282,6 +280,7 @@ def test_migration_service_client_mtls_env_auto(client_class, transport_class, t
                 client_cert_source_for_mtls=expected_client_cert_source,
                 quota_project_id=None,
                 client_info=transports.base.DEFAULT_CLIENT_INFO,
+                always_use_jwt_access=True,
             )
 
     # Check the case ADC client cert is provided. Whether client cert is used depends on
@@ -307,6 +306,7 @@ def test_migration_service_client_mtls_env_auto(client_class, transport_class, t
                         client_cert_source_for_mtls=expected_client_cert_source,
                         quota_project_id=None,
                         client_info=transports.base.DEFAULT_CLIENT_INFO,
+                        always_use_jwt_access=True,
                     )
 
     # Check the case client_cert_source and ADC client cert are not provided.
@@ -323,6 +323,7 @@ def test_migration_service_client_mtls_env_auto(client_class, transport_class, t
                     client_cert_source_for_mtls=None,
                     quota_project_id=None,
                     client_info=transports.base.DEFAULT_CLIENT_INFO,
+                    always_use_jwt_access=True,
                 )
 
 
@@ -346,6 +347,7 @@ def test_migration_service_client_client_options_scopes(client_class, transport_
             client_cert_source_for_mtls=None,
             quota_project_id=None,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
         )
 
 @pytest.mark.parametrize("client_class,transport_class,transport_name", [
@@ -368,6 +370,7 @@ def test_migration_service_client_client_options_credentials_file(client_class, 
             client_cert_source_for_mtls=None,
             quota_project_id=None,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
         )
 
 
@@ -385,6 +388,7 @@ def test_migration_service_client_client_options_from_dict():
             client_cert_source_for_mtls=None,
             quota_project_id=None,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
         )
 
 
@@ -1524,16 +1528,18 @@ def test_parse_annotated_dataset_path():
 
 def test_dataset_path():
     project = "cuttlefish"
-    dataset = "mussel"
-    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, dataset)
+    location = "mussel"
+    dataset = "winkle"
+    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, location, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "winkle",
-        "dataset": "nautilus",
+        "project": "nautilus",
+        "location": "scallop",
+        "dataset": "abalone",
     }
     path = MigrationServiceClient.dataset_path(**expected)
 
@@ -1542,18 +1548,16 @@ def test_parse_dataset_path():
     assert expected == actual
 
 def test_dataset_path():
-    project = "scallop"
-    location = "abalone"
-    dataset = "squid"
-    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, location, dataset)
+    project = "squid"
+    dataset = "clam"
+    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "clam",
-        "location": "whelk",
+        "project": "whelk",
         "dataset": "octopus",
     }
     path = MigrationServiceClient.dataset_path(**expected)
