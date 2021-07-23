@@ -2215,7 +2215,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -2226,7 +2226,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -2244,7 +2244,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -2256,7 +2256,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -2270,7 +2270,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -2497,7 +2497,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -2522,7 +2522,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -2537,7 +2537,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -2557,7 +2557,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      * </pre>
@@ -3083,7 +3083,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for skew, a value threshold must be configed for that
+       * be monitored for skew, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between the training and prediction feature.
        * </pre>
@@ -3108,7 +3108,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for skew, a value threshold must be configed for that
+       * be monitored for skew, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between the training and prediction feature.
        * </pre>
@@ -3123,7 +3123,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for skew, a value threshold must be configed for that
+       * be monitored for skew, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between the training and prediction feature.
        * </pre>
@@ -3143,7 +3143,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for skew, a value threshold must be configed for that
+       * be monitored for skew, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between the training and prediction feature.
        * </pre>
@@ -3171,7 +3171,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for skew, a value threshold must be configed for that
+       * be monitored for skew, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between the training and prediction feature.
        * </pre>
@@ -3197,7 +3197,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for skew, a value threshold must be configed for that
+       * be monitored for skew, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between the training and prediction feature.
        * </pre>
@@ -3216,7 +3216,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for skew, a value threshold must be configed for that
+       * be monitored for skew, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between the training and prediction feature.
        * </pre>
@@ -3460,7 +3460,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -3471,7 +3471,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -3489,7 +3489,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -3501,7 +3501,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -3515,7 +3515,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -3736,7 +3736,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -3761,7 +3761,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -3776,7 +3776,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -3796,7 +3796,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      * </pre>
@@ -4317,7 +4317,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for drift, a value threshold must be configed for that
+       * be monitored for drift, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between different time windws.
        * </pre>
@@ -4342,7 +4342,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for drift, a value threshold must be configed for that
+       * be monitored for drift, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between different time windws.
        * </pre>
@@ -4357,7 +4357,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for drift, a value threshold must be configed for that
+       * be monitored for drift, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between different time windws.
        * </pre>
@@ -4377,7 +4377,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for drift, a value threshold must be configed for that
+       * be monitored for drift, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between different time windws.
        * </pre>
@@ -4405,7 +4405,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for drift, a value threshold must be configed for that
+       * be monitored for drift, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between different time windws.
        * </pre>
@@ -4431,7 +4431,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for drift, a value threshold must be configed for that
+       * be monitored for drift, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between different time windws.
        * </pre>
@@ -4450,7 +4450,7 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Key is the feature name and value is the threshold. If a feature needs to
-       * be monitored for drift, a value threshold must be configed for that
+       * be monitored for drift, a value threshold must be configured for that
        * feature. The threshold here is against feature distribution distance
        * between different time windws.
        * </pre>

@@ -124,7 +124,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder extends
   /**
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig model_deployment_monitoring_objective_configs = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -134,7 +134,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder extends
   /**
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig model_deployment_monitoring_objective_configs = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -143,7 +143,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder extends
   /**
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig model_deployment_monitoring_objective_configs = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,7 +152,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder extends
   /**
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig model_deployment_monitoring_objective_configs = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -162,7 +162,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder extends
   /**
    * <pre>
    * Required. The config for monitoring objectives. This is a per DeployedModel config.
-   * Each DeployedModel needs to be configed separately.
+   * Each DeployedModel needs to be configured separately.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig model_deployment_monitoring_objective_configs = 6 [(.google.api.field_behavior) = REQUIRED];</code>

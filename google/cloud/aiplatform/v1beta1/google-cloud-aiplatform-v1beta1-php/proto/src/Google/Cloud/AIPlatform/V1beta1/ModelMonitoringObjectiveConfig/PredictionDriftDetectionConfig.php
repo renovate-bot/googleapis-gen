@@ -17,7 +17,7 @@ class PredictionDriftDetectionConfig extends \Google\Protobuf\Internal\Message
 {
     /**
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      *
@@ -40,7 +40,7 @@ class PredictionDriftDetectionConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type array|\Google\Protobuf\Internal\MapField $drift_thresholds
      *           Key is the feature name and value is the threshold. If a feature needs to
-     *           be monitored for drift, a value threshold must be configed for that
+     *           be monitored for drift, a value threshold must be configured for that
      *           feature. The threshold here is against feature distribution distance
      *           between different time windws.
      *     @type array|\Google\Protobuf\Internal\MapField $attribution_score_drift_thresholds
@@ -55,7 +55,7 @@ class PredictionDriftDetectionConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      *
@@ -69,7 +69,7 @@ class PredictionDriftDetectionConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for drift, a value threshold must be configed for that
+     * be monitored for drift, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between different time windws.
      *

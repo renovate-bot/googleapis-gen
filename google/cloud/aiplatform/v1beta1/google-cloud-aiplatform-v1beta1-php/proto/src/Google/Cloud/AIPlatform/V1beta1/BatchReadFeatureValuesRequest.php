@@ -45,7 +45,7 @@ class BatchReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec entity_type_specs = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -96,7 +96,7 @@ class BatchReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      *           Required. Specifies EntityType grouping Features to read values of and settings.
      *           Each EntityType referenced in
      *           [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     *           specifying entity IDs in tha EntityType in
+     *           specifying entity IDs in the EntityType in
      *           [BatchReadFeatureValuesRequest.request][] .
      * }
      */
@@ -305,7 +305,7 @@ class BatchReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec entity_type_specs = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -320,7 +320,7 @@ class BatchReadFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      * Required. Specifies EntityType grouping Features to read values of and settings.
      * Each EntityType referenced in
      * [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-     * specifying entity IDs in tha EntityType in
+     * specifying entity IDs in the EntityType in
      * [BatchReadFeatureValuesRequest.request][] .
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.BatchReadFeatureValuesRequest.EntityTypeSpec entity_type_specs = 7 [(.google.api.field_behavior) = REQUIRED];</code>

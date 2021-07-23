@@ -81,7 +81,7 @@ module Google
           # @!attribute [rw] skew_thresholds
           #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig}]
           #     Key is the feature name and value is the threshold. If a feature needs to
-          #     be monitored for skew, a value threshold must be configed for that
+          #     be monitored for skew, a value threshold must be configured for that
           #     feature. The threshold here is against feature distribution distance
           #     between the training and prediction feature.
           # @!attribute [rw] attribution_score_skew_thresholds
@@ -116,7 +116,7 @@ module Google
           # @!attribute [rw] drift_thresholds
           #   @return [::Google::Protobuf::Map{::String => ::Google::Cloud::AIPlatform::V1beta1::ThresholdConfig}]
           #     Key is the feature name and value is the threshold. If a feature needs to
-          #     be monitored for drift, a value threshold must be configed for that
+          #     be monitored for drift, a value threshold must be configured for that
           #     feature. The threshold here is against feature distribution distance
           #     between different time windws.
           # @!attribute [rw] attribution_score_drift_thresholds

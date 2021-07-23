@@ -18,7 +18,7 @@ class TrainingPredictionSkewDetectionConfig extends \Google\Protobuf\Internal\Me
 {
     /**
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      *
@@ -42,7 +42,7 @@ class TrainingPredictionSkewDetectionConfig extends \Google\Protobuf\Internal\Me
      *
      *     @type array|\Google\Protobuf\Internal\MapField $skew_thresholds
      *           Key is the feature name and value is the threshold. If a feature needs to
-     *           be monitored for skew, a value threshold must be configed for that
+     *           be monitored for skew, a value threshold must be configured for that
      *           feature. The threshold here is against feature distribution distance
      *           between the training and prediction feature.
      *     @type array|\Google\Protobuf\Internal\MapField $attribution_score_skew_thresholds
@@ -58,7 +58,7 @@ class TrainingPredictionSkewDetectionConfig extends \Google\Protobuf\Internal\Me
 
     /**
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      *
@@ -72,7 +72,7 @@ class TrainingPredictionSkewDetectionConfig extends \Google\Protobuf\Internal\Me
 
     /**
      * Key is the feature name and value is the threshold. If a feature needs to
-     * be monitored for skew, a value threshold must be configed for that
+     * be monitored for skew, a value threshold must be configured for that
      * feature. The threshold here is against feature distribution distance
      * between the training and prediction feature.
      *

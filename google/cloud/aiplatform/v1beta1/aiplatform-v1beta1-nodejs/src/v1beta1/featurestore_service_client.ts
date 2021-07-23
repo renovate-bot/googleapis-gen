@@ -1945,7 +1945,7 @@ export class FeaturestoreServiceClient {
  *   Required. Specifies EntityType grouping Features to read values of and settings.
  *   Each EntityType referenced in
  *   [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
- *   specifying entity IDs in tha EntityType in
+ *   specifying entity IDs in the EntityType in
  *   {@link |BatchReadFeatureValuesRequest.request} .
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.

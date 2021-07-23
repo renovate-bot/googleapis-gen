@@ -301,7 +301,7 @@ module Google
         #     Required. Specifies EntityType grouping Features to read values of and settings.
         #     Each EntityType referenced in
         #     [BatchReadFeatureValuesRequest.entity_type_specs] must have a column
-        #     specifying entity IDs in tha EntityType in
+        #     specifying entity IDs in the EntityType in
         #     [BatchReadFeatureValuesRequest.request][] .
         class BatchReadFeatureValuesRequest
           include ::Google::Protobuf::MessageExts

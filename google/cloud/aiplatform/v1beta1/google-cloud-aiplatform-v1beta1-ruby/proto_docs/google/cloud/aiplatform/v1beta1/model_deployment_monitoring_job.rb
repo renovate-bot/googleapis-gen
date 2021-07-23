@@ -50,7 +50,7 @@ module Google
         # @!attribute [rw] model_deployment_monitoring_objective_configs
         #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringObjectiveConfig>]
         #     Required. The config for monitoring objectives. This is a per DeployedModel config.
-        #     Each DeployedModel needs to be configed separately.
+        #     Each DeployedModel needs to be configured separately.
         # @!attribute [rw] model_deployment_monitoring_schedule_config
         #   @return [::Google::Cloud::AIPlatform::V1beta1::ModelDeploymentMonitoringScheduleConfig]
         #     Required. Schedule config for running the monitoring job.

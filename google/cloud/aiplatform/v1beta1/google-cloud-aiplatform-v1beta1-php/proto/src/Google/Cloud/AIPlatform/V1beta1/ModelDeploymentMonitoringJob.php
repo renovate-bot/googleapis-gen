@@ -57,7 +57,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
     protected $schedule_state = 0;
     /**
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig model_deployment_monitoring_objective_configs = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -194,7 +194,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      *           Output only. Schedule state when the monitoring job is in Running state.
      *     @type \Google\Cloud\AIPlatform\V1beta1\ModelDeploymentMonitoringObjectiveConfig[]|\Google\Protobuf\Internal\RepeatedField $model_deployment_monitoring_objective_configs
      *           Required. The config for monitoring objectives. This is a per DeployedModel config.
-     *           Each DeployedModel needs to be configed separately.
+     *           Each DeployedModel needs to be configured separately.
      *     @type \Google\Cloud\AIPlatform\V1beta1\ModelDeploymentMonitoringScheduleConfig $model_deployment_monitoring_schedule_config
      *           Required. Schedule config for running the monitoring job.
      *     @type \Google\Cloud\AIPlatform\V1beta1\SamplingStrategy $logging_sampling_strategy
@@ -403,7 +403,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig model_deployment_monitoring_objective_configs = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -415,7 +415,7 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The config for monitoring objectives. This is a per DeployedModel config.
-     * Each DeployedModel needs to be configed separately.
+     * Each DeployedModel needs to be configured separately.
      *
      * Generated from protobuf field <code>repeated .google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig model_deployment_monitoring_objective_configs = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\AIPlatform\V1beta1\ModelDeploymentMonitoringObjectiveConfig[]|\Google\Protobuf\Internal\RepeatedField $var
