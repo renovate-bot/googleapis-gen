@@ -30,10 +30,6 @@ class AnnotationBoundary extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Google\Protobuf\Duration $time_offset
-     *           Deprecated: Use `word_index` for the detailed boundary.
-     *           The time offset of this boundary with respect to the start time of the
-     *           first word in the transcript piece.
      *     @type int $word_index
      *           The word index of this boundary with respect to the first word in the
      *           transcript piece. This index starts at zero.
@@ -45,46 +41,6 @@ class AnnotationBoundary extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Contactcenterinsights\V1\Resources::initOnce();
         parent::__construct($data);
-    }
-
-    /**
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     * @return \Google\Protobuf\Duration|null
-     * @deprecated
-     */
-    public function getTimeOffset()
-    {
-        @trigger_error('time_offset is deprecated.', E_USER_DEPRECATED);
-        return $this->readOneof(2);
-    }
-
-    public function hasTimeOffset()
-    {
-        @trigger_error('time_offset is deprecated.', E_USER_DEPRECATED);
-        return $this->hasOneof(2);
-    }
-
-    /**
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     *
-     * Generated from protobuf field <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     * @param \Google\Protobuf\Duration $var
-     * @return $this
-     * @deprecated
-     */
-    public function setTimeOffset($var)
-    {
-        @trigger_error('time_offset is deprecated.', E_USER_DEPRECATED);
-        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
-        $this->writeOneof(2, $var);
-
-        return $this;
     }
 
     /**

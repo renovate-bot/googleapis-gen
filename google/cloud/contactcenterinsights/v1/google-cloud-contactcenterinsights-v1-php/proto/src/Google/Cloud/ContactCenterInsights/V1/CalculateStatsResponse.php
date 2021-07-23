@@ -57,6 +57,13 @@ class CalculateStatsResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, int32> issue_matches = 6;</code>
      */
     private $issue_matches;
+    /**
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;</code>
+     */
+    protected $conversation_count_time_series = null;
 
     /**
      * Constructor.
@@ -82,6 +89,9 @@ class CalculateStatsResponse extends \Google\Protobuf\Internal\Message
      *           matches in the set of conversations. Key has the format:
      *           `projects/<Project ID>/locations/<Location ID>/issueModels/<Issue Model
      *           ID>/issues/<Issue ID>`
+     *     @type \Google\Cloud\ContactCenterInsights\V1\CalculateStatsResponse\TimeSeries $conversation_count_time_series
+     *           A time series representing the count of conversations created over time
+     *           that match that requested filter criteria.
      * }
      */
     public function __construct($data = NULL) {
@@ -263,6 +273,44 @@ class CalculateStatsResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::INT32);
         $this->issue_matches = $arr;
+
+        return $this;
+    }
+
+    /**
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;</code>
+     * @return \Google\Cloud\ContactCenterInsights\V1\CalculateStatsResponse\TimeSeries|null
+     */
+    public function getConversationCountTimeSeries()
+    {
+        return isset($this->conversation_count_time_series) ? $this->conversation_count_time_series : null;
+    }
+
+    public function hasConversationCountTimeSeries()
+    {
+        return isset($this->conversation_count_time_series);
+    }
+
+    public function clearConversationCountTimeSeries()
+    {
+        unset($this->conversation_count_time_series);
+    }
+
+    /**
+     * A time series representing the count of conversations created over time
+     * that match that requested filter criteria.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries conversation_count_time_series = 7;</code>
+     * @param \Google\Cloud\ContactCenterInsights\V1\CalculateStatsResponse\TimeSeries $var
+     * @return $this
+     */
+    public function setConversationCountTimeSeries($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\ContactCenterInsights\V1\CalculateStatsResponse\TimeSeries::class);
+        $this->conversation_count_time_series = $var;
 
         return $this;
     }

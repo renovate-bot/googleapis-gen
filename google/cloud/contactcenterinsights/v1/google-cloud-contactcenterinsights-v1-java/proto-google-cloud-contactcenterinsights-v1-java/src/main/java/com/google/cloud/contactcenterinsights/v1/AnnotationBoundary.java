@@ -57,20 +57,6 @@ private static final long serialVersionUID = 0L;
             transcriptIndex_ = input.readInt32();
             break;
           }
-          case 18: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (detailedBoundaryCase_ == 2) {
-              subBuilder = ((com.google.protobuf.Duration) detailedBoundary_).toBuilder();
-            }
-            detailedBoundary_ =
-                input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.Duration) detailedBoundary_);
-              detailedBoundary_ = subBuilder.buildPartial();
-            }
-            detailedBoundaryCase_ = 2;
-            break;
-          }
           case 24: {
             detailedBoundaryCase_ = 3;
             detailedBoundary_ = input.readInt32();
@@ -113,7 +99,6 @@ private static final long serialVersionUID = 0L;
   public enum DetailedBoundaryCase
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    @java.lang.Deprecated TIME_OFFSET(2),
     WORD_INDEX(3),
     DETAILEDBOUNDARY_NOT_SET(0);
     private final int value;
@@ -132,7 +117,6 @@ private static final long serialVersionUID = 0L;
 
     public static DetailedBoundaryCase forNumber(int value) {
       switch (value) {
-        case 2: return TIME_OFFSET;
         case 3: return WORD_INDEX;
         case 0: return DETAILEDBOUNDARY_NOT_SET;
         default: return null;
@@ -147,55 +131,6 @@ private static final long serialVersionUID = 0L;
   getDetailedBoundaryCase() {
     return DetailedBoundaryCase.forNumber(
         detailedBoundaryCase_);
-  }
-
-  public static final int TIME_OFFSET_FIELD_NUMBER = 2;
-  /**
-   * <pre>
-   * Deprecated: Use `word_index` for the detailed boundary.
-   * The time offset of this boundary with respect to the start time of the
-   * first word in the transcript piece.
-   * </pre>
-   *
-   * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-   * @return Whether the timeOffset field is set.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public boolean hasTimeOffset() {
-    return detailedBoundaryCase_ == 2;
-  }
-  /**
-   * <pre>
-   * Deprecated: Use `word_index` for the detailed boundary.
-   * The time offset of this boundary with respect to the start time of the
-   * first word in the transcript piece.
-   * </pre>
-   *
-   * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-   * @return The timeOffset.
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.Duration getTimeOffset() {
-    if (detailedBoundaryCase_ == 2) {
-       return (com.google.protobuf.Duration) detailedBoundary_;
-    }
-    return com.google.protobuf.Duration.getDefaultInstance();
-  }
-  /**
-   * <pre>
-   * Deprecated: Use `word_index` for the detailed boundary.
-   * The time offset of this boundary with respect to the start time of the
-   * first word in the transcript piece.
-   * </pre>
-   *
-   * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
-    if (detailedBoundaryCase_ == 2) {
-       return (com.google.protobuf.Duration) detailedBoundary_;
-    }
-    return com.google.protobuf.Duration.getDefaultInstance();
   }
 
   public static final int WORD_INDEX_FIELD_NUMBER = 3;
@@ -262,9 +197,6 @@ private static final long serialVersionUID = 0L;
     if (transcriptIndex_ != 0) {
       output.writeInt32(1, transcriptIndex_);
     }
-    if (detailedBoundaryCase_ == 2) {
-      output.writeMessage(2, (com.google.protobuf.Duration) detailedBoundary_);
-    }
     if (detailedBoundaryCase_ == 3) {
       output.writeInt32(
           3, (int)((java.lang.Integer) detailedBoundary_));
@@ -281,10 +213,6 @@ private static final long serialVersionUID = 0L;
     if (transcriptIndex_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(1, transcriptIndex_);
-    }
-    if (detailedBoundaryCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.protobuf.Duration) detailedBoundary_);
     }
     if (detailedBoundaryCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
@@ -310,10 +238,6 @@ private static final long serialVersionUID = 0L;
         != other.getTranscriptIndex()) return false;
     if (!getDetailedBoundaryCase().equals(other.getDetailedBoundaryCase())) return false;
     switch (detailedBoundaryCase_) {
-      case 2:
-        if (!getTimeOffset()
-            .equals(other.getTimeOffset())) return false;
-        break;
       case 3:
         if (getWordIndex()
             != other.getWordIndex()) return false;
@@ -335,10 +259,6 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRANSCRIPT_INDEX_FIELD_NUMBER;
     hash = (53 * hash) + getTranscriptIndex();
     switch (detailedBoundaryCase_) {
-      case 2:
-        hash = (37 * hash) + TIME_OFFSET_FIELD_NUMBER;
-        hash = (53 * hash) + getTimeOffset().hashCode();
-        break;
       case 3:
         hash = (37 * hash) + WORD_INDEX_FIELD_NUMBER;
         hash = (53 * hash) + getWordIndex();
@@ -513,13 +433,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.AnnotationBoundary buildPartial() {
       com.google.cloud.contactcenterinsights.v1.AnnotationBoundary result = new com.google.cloud.contactcenterinsights.v1.AnnotationBoundary(this);
-      if (detailedBoundaryCase_ == 2) {
-        if (timeOffsetBuilder_ == null) {
-          result.detailedBoundary_ = detailedBoundary_;
-        } else {
-          result.detailedBoundary_ = timeOffsetBuilder_.build();
-        }
-      }
       if (detailedBoundaryCase_ == 3) {
         result.detailedBoundary_ = detailedBoundary_;
       }
@@ -577,10 +490,6 @@ private static final long serialVersionUID = 0L;
         setTranscriptIndex(other.getTranscriptIndex());
       }
       switch (other.getDetailedBoundaryCase()) {
-        case TIME_OFFSET: {
-          mergeTimeOffset(other.getTimeOffset());
-          break;
-        }
         case WORD_INDEX: {
           setWordIndex(other.getWordIndex());
           break;
@@ -632,201 +541,6 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> timeOffsetBuilder_;
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     * @return Whether the timeOffset field is set.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public boolean hasTimeOffset() {
-      return detailedBoundaryCase_ == 2;
-    }
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     * @return The timeOffset.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.protobuf.Duration getTimeOffset() {
-      if (timeOffsetBuilder_ == null) {
-        if (detailedBoundaryCase_ == 2) {
-          return (com.google.protobuf.Duration) detailedBoundary_;
-        }
-        return com.google.protobuf.Duration.getDefaultInstance();
-      } else {
-        if (detailedBoundaryCase_ == 2) {
-          return timeOffsetBuilder_.getMessage();
-        }
-        return com.google.protobuf.Duration.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setTimeOffset(com.google.protobuf.Duration value) {
-      if (timeOffsetBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        detailedBoundary_ = value;
-        onChanged();
-      } else {
-        timeOffsetBuilder_.setMessage(value);
-      }
-      detailedBoundaryCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder setTimeOffset(
-        com.google.protobuf.Duration.Builder builderForValue) {
-      if (timeOffsetBuilder_ == null) {
-        detailedBoundary_ = builderForValue.build();
-        onChanged();
-      } else {
-        timeOffsetBuilder_.setMessage(builderForValue.build());
-      }
-      detailedBoundaryCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder mergeTimeOffset(com.google.protobuf.Duration value) {
-      if (timeOffsetBuilder_ == null) {
-        if (detailedBoundaryCase_ == 2 &&
-            detailedBoundary_ != com.google.protobuf.Duration.getDefaultInstance()) {
-          detailedBoundary_ = com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) detailedBoundary_)
-              .mergeFrom(value).buildPartial();
-        } else {
-          detailedBoundary_ = value;
-        }
-        onChanged();
-      } else {
-        if (detailedBoundaryCase_ == 2) {
-          timeOffsetBuilder_.mergeFrom(value);
-        }
-        timeOffsetBuilder_.setMessage(value);
-      }
-      detailedBoundaryCase_ = 2;
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public Builder clearTimeOffset() {
-      if (timeOffsetBuilder_ == null) {
-        if (detailedBoundaryCase_ == 2) {
-          detailedBoundaryCase_ = 0;
-          detailedBoundary_ = null;
-          onChanged();
-        }
-      } else {
-        if (detailedBoundaryCase_ == 2) {
-          detailedBoundaryCase_ = 0;
-          detailedBoundary_ = null;
-        }
-        timeOffsetBuilder_.clear();
-      }
-      return this;
-    }
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     */
-    @java.lang.Deprecated public com.google.protobuf.Duration.Builder getTimeOffsetBuilder() {
-      return getTimeOffsetFieldBuilder().getBuilder();
-    }
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder() {
-      if ((detailedBoundaryCase_ == 2) && (timeOffsetBuilder_ != null)) {
-        return timeOffsetBuilder_.getMessageOrBuilder();
-      } else {
-        if (detailedBoundaryCase_ == 2) {
-          return (com.google.protobuf.Duration) detailedBoundary_;
-        }
-        return com.google.protobuf.Duration.getDefaultInstance();
-      }
-    }
-    /**
-     * <pre>
-     * Deprecated: Use `word_index` for the detailed boundary.
-     * The time offset of this boundary with respect to the start time of the
-     * first word in the transcript piece.
-     * </pre>
-     *
-     * <code>.google.protobuf.Duration time_offset = 2 [deprecated = true];</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
-        getTimeOffsetFieldBuilder() {
-      if (timeOffsetBuilder_ == null) {
-        if (!(detailedBoundaryCase_ == 2)) {
-          detailedBoundary_ = com.google.protobuf.Duration.getDefaultInstance();
-        }
-        timeOffsetBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                (com.google.protobuf.Duration) detailedBoundary_,
-                getParentForChildren(),
-                isClean());
-        detailedBoundary_ = null;
-      }
-      detailedBoundaryCase_ = 2;
-      onChanged();;
-      return timeOffsetBuilder_;
-    }
 
     /**
      * <pre>

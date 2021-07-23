@@ -4312,6 +4312,7 @@ def test_create_phrase_matcher(transport: str = 'grpc', request_type=contact_cen
             display_name='display_name_value',
             type_=resources.PhraseMatcher.PhraseMatcherType.ALL_OF,
             active=True,
+            role_match=resources.ConversationParticipant.Role.HUMAN_AGENT,
         )
         response = client.create_phrase_matcher(request)
 
@@ -4328,6 +4329,7 @@ def test_create_phrase_matcher(transport: str = 'grpc', request_type=contact_cen
     assert response.display_name == 'display_name_value'
     assert response.type_ == resources.PhraseMatcher.PhraseMatcherType.ALL_OF
     assert response.active is True
+    assert response.role_match == resources.ConversationParticipant.Role.HUMAN_AGENT
 
 
 def test_create_phrase_matcher_from_dict():
@@ -4375,6 +4377,7 @@ async def test_create_phrase_matcher_async(transport: str = 'grpc_asyncio', requ
             display_name='display_name_value',
             type_=resources.PhraseMatcher.PhraseMatcherType.ALL_OF,
             active=True,
+            role_match=resources.ConversationParticipant.Role.HUMAN_AGENT,
         ))
         response = await client.create_phrase_matcher(request)
 
@@ -4391,6 +4394,7 @@ async def test_create_phrase_matcher_async(transport: str = 'grpc_asyncio', requ
     assert response.display_name == 'display_name_value'
     assert response.type_ == resources.PhraseMatcher.PhraseMatcherType.ALL_OF
     assert response.active is True
+    assert response.role_match == resources.ConversationParticipant.Role.HUMAN_AGENT
 
 
 @pytest.mark.asyncio
@@ -4569,6 +4573,7 @@ def test_get_phrase_matcher(transport: str = 'grpc', request_type=contact_center
             display_name='display_name_value',
             type_=resources.PhraseMatcher.PhraseMatcherType.ALL_OF,
             active=True,
+            role_match=resources.ConversationParticipant.Role.HUMAN_AGENT,
         )
         response = client.get_phrase_matcher(request)
 
@@ -4585,6 +4590,7 @@ def test_get_phrase_matcher(transport: str = 'grpc', request_type=contact_center
     assert response.display_name == 'display_name_value'
     assert response.type_ == resources.PhraseMatcher.PhraseMatcherType.ALL_OF
     assert response.active is True
+    assert response.role_match == resources.ConversationParticipant.Role.HUMAN_AGENT
 
 
 def test_get_phrase_matcher_from_dict():
@@ -4632,6 +4638,7 @@ async def test_get_phrase_matcher_async(transport: str = 'grpc_asyncio', request
             display_name='display_name_value',
             type_=resources.PhraseMatcher.PhraseMatcherType.ALL_OF,
             active=True,
+            role_match=resources.ConversationParticipant.Role.HUMAN_AGENT,
         ))
         response = await client.get_phrase_matcher(request)
 
@@ -4648,6 +4655,7 @@ async def test_get_phrase_matcher_async(transport: str = 'grpc_asyncio', request
     assert response.display_name == 'display_name_value'
     assert response.type_ == resources.PhraseMatcher.PhraseMatcherType.ALL_OF
     assert response.active is True
+    assert response.role_match == resources.ConversationParticipant.Role.HUMAN_AGENT
 
 
 @pytest.mark.asyncio

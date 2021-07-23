@@ -47,23 +47,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :words, :message, 3, "google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.WordInfo"
       optional :language_code, :string, 4
       optional :channel_tag, :int32, 5
-      optional :participant, :message, 8, "google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant"
+      optional :segment_participant, :message, 9, "google.cloud.contactcenterinsights.v1.ConversationParticipant"
     end
     add_message "google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.WordInfo" do
       optional :start_offset, :message, 1, "google.protobuf.Duration"
       optional :end_offset, :message, 2, "google.protobuf.Duration"
       optional :word, :string, 3
       optional :confidence, :float, 4
-    end
-    add_message "google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant" do
-      optional :dialogflow_participant, :string, 1
-      optional :role, :enum, 2, "google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role"
-    end
-    add_enum "google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role" do
-      value :ROLE_UNSPECIFIED, 0
-      value :HUMAN_AGENT, 1
-      value :AUTOMATED_AGENT, 2
-      value :END_USER, 3
     end
     add_enum "google.cloud.contactcenterinsights.v1.Conversation.Medium" do
       value :MEDIUM_UNSPECIFIED, 0
@@ -133,7 +123,6 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.contactcenterinsights.v1.AnnotationBoundary" do
       optional :transcript_index, :int32, 1
       oneof :detailed_boundary do
-        optional :time_offset, :message, 2, "google.protobuf.Duration"
         optional :word_index, :int32, 3
       end
     end
@@ -234,6 +223,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :active, :bool, 7
       repeated :phrase_match_rule_groups, :message, 8, "google.cloud.contactcenterinsights.v1.PhraseMatchRuleGroup"
       optional :activation_update_time, :message, 9, "google.protobuf.Timestamp"
+      optional :role_match, :enum, 10, "google.cloud.contactcenterinsights.v1.ConversationParticipant.Role"
     end
     add_enum "google.cloud.contactcenterinsights.v1.PhraseMatcher.PhraseMatcherType" do
       value :PHRASE_MATCHER_TYPE_UNSPECIFIED, 0
@@ -331,6 +321,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :dialogflow_intent_id, :string, 1
       optional :confidence, :float, 2
     end
+    add_message "google.cloud.contactcenterinsights.v1.ConversationParticipant" do
+      optional :dialogflow_participant, :string, 1
+      optional :role, :enum, 2, "google.cloud.contactcenterinsights.v1.ConversationParticipant.Role"
+    end
+    add_enum "google.cloud.contactcenterinsights.v1.ConversationParticipant.Role" do
+      value :ROLE_UNSPECIFIED, 0
+      value :HUMAN_AGENT, 1
+      value :AUTOMATED_AGENT, 2
+      value :END_USER, 3
+      value :ANY_AGENT, 4
+    end
   end
 end
 
@@ -343,8 +344,6 @@ module Google
         Conversation::Transcript = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Conversation.Transcript").msgclass
         Conversation::Transcript::TranscriptSegment = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment").msgclass
         Conversation::Transcript::TranscriptSegment::WordInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.WordInfo").msgclass
-        Conversation::Transcript::TranscriptSegment::Participant = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant").msgclass
-        Conversation::Transcript::TranscriptSegment::Participant::Role = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant.Role").enummodule
         Conversation::Medium = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Conversation.Medium").enummodule
         Analysis = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Analysis").msgclass
         ConversationDataSource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ConversationDataSource").msgclass
@@ -391,6 +390,8 @@ module Google
         SmartReplyData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.SmartReplyData").msgclass
         SmartComposeSuggestionData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.SmartComposeSuggestionData").msgclass
         DialogflowInteractionData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.DialogflowInteractionData").msgclass
+        ConversationParticipant = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ConversationParticipant").msgclass
+        ConversationParticipant::Role = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ConversationParticipant.Role").enummodule
       end
     end
   end

@@ -59,6 +59,7 @@ from google.cloud.contact_center_insights_v1.types.resources import CallAnnotati
 from google.cloud.contact_center_insights_v1.types.resources import Conversation
 from google.cloud.contact_center_insights_v1.types.resources import ConversationDataSource
 from google.cloud.contact_center_insights_v1.types.resources import ConversationLevelSentiment
+from google.cloud.contact_center_insights_v1.types.resources import ConversationParticipant
 from google.cloud.contact_center_insights_v1.types.resources import DialogflowIntent
 from google.cloud.contact_center_insights_v1.types.resources import DialogflowInteractionData
 from google.cloud.contact_center_insights_v1.types.resources import DialogflowSource
@@ -132,6 +133,7 @@ __all__ = ('ContactCenterInsightsClient',
     'Conversation',
     'ConversationDataSource',
     'ConversationLevelSentiment',
+    'ConversationParticipant',
     'DialogflowIntent',
     'DialogflowInteractionData',
     'DialogflowSource',

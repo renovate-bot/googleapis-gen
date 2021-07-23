@@ -76,6 +76,14 @@ class PhraseMatcher extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp activation_update_time = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $activation_update_time = null;
+    /**
+     * The role whose utterances the phrase matcher should be matched
+     * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     * utterances in the transcript.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+     */
+    protected $role_match = 0;
 
     /**
      * Constructor.
@@ -108,6 +116,10 @@ class PhraseMatcher extends \Google\Protobuf\Internal\Message
      *           A list of phase match rule groups that are included in this matcher.
      *     @type \Google\Protobuf\Timestamp $activation_update_time
      *           Output only. The most recent time at which the activation status was updated.
+     *     @type int $role_match
+     *           The role whose utterances the phrase matcher should be matched
+     *           against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     *           utterances in the transcript.
      * }
      */
     public function __construct($data = NULL) {
@@ -379,6 +391,36 @@ class PhraseMatcher extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->activation_update_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The role whose utterances the phrase matcher should be matched
+     * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     * utterances in the transcript.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+     * @return int
+     */
+    public function getRoleMatch()
+    {
+        return $this->role_match;
+    }
+
+    /**
+     * The role whose utterances the phrase matcher should be matched
+     * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     * utterances in the transcript.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRoleMatch($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\ContactCenterInsights\V1\ConversationParticipant\Role::class);
+        $this->role_match = $var;
 
         return $this;
     }

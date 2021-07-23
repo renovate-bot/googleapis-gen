@@ -131,8 +131,8 @@ module Google
             #     number corresponding to the audio from that channel. For
             #     audioChannelCount = N, its output values can range from '1' to 'N'. A
             #     channel tag of 0 indicates that the audio is mono.
-            # @!attribute [rw] participant
-            #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation::Transcript::TranscriptSegment::Participant]
+            # @!attribute [rw] segment_participant
+            #   @return [::Google::Cloud::ContactCenterInsights::V1::ConversationParticipant]
             #     The participant of this segment.
             class TranscriptSegment
               include ::Google::Protobuf::MessageExts
@@ -157,34 +157,6 @@ module Google
               class WordInfo
                 include ::Google::Protobuf::MessageExts
                 extend ::Google::Protobuf::MessageExts::ClassMethods
-              end
-
-              # The participant of the transcript segment.
-              # @!attribute [rw] dialogflow_participant
-              #   @return [::String]
-              #     The name of the Dialogflow participant. Format:
-              #     projects/\\{project}/locations/\\{location}/conversations/\\{conversation}/participants/\\{participant}
-              # @!attribute [rw] role
-              #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation::Transcript::TranscriptSegment::Participant::Role]
-              #     The role of the participant.
-              class Participant
-                include ::Google::Protobuf::MessageExts
-                extend ::Google::Protobuf::MessageExts::ClassMethods
-
-                # The role of the participant.
-                module Role
-                  # Participant's role is not set.
-                  ROLE_UNSPECIFIED = 0
-
-                  # Participant is a human agent.
-                  HUMAN_AGENT = 1
-
-                  # Participant is an automated agent.
-                  AUTOMATED_AGENT = 2
-
-                  # Participant is an end user who conversed with the contact center.
-                  END_USER = 3
-                end
               end
             end
           end
@@ -421,11 +393,6 @@ module Google
         end
 
         # A point in a conversation that marks the start or the end of an annotation.
-        # @!attribute [rw] time_offset
-        #   @return [::Google::Protobuf::Duration]
-        #     Deprecated: Use `word_index` for the detailed boundary.
-        #     The time offset of this boundary with respect to the start time of the
-        #     first word in the transcript piece.
         # @!attribute [rw] word_index
         #   @return [::Integer]
         #     The word index of this boundary with respect to the first word in the
@@ -810,6 +777,11 @@ module Google
         # @!attribute [r] activation_update_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The most recent time at which the activation status was updated.
+        # @!attribute [rw] role_match
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ConversationParticipant::Role]
+        #     The role whose utterances the phrase matcher should be matched
+        #     against. If the role is ROLE_UNSPECIFIED it will be matched against any
+        #     utterances in the transcript.
         class PhraseMatcher
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1179,6 +1151,37 @@ module Google
         class DialogflowInteractionData
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The call participant speaking for a given utterance.
+        # @!attribute [rw] dialogflow_participant
+        #   @return [::String]
+        #     The name of the Dialogflow participant. Format:
+        #     projects/\\{project}/locations/\\{location}/conversations/\\{conversation}/participants/\\{participant}
+        # @!attribute [rw] role
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::ConversationParticipant::Role]
+        #     The role of the participant.
+        class ConversationParticipant
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # The role of the participant.
+          module Role
+            # Participant's role is not set.
+            ROLE_UNSPECIFIED = 0
+
+            # Participant is a human agent.
+            HUMAN_AGENT = 1
+
+            # Participant is an automated agent.
+            AUTOMATED_AGENT = 2
+
+            # Participant is an end user who conversed with the contact center.
+            END_USER = 3
+
+            # Participant is either a human or automated agent.
+            ANY_AGENT = 4
+          end
         end
       end
     end

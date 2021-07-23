@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     displayName_ = "";
     type_ = 0;
     phraseMatchRuleGroups_ = java.util.Collections.emptyList();
+    roleMatch_ = 0;
   }
 
   @java.lang.Override
@@ -127,6 +128,12 @@ private static final long serialVersionUID = 0L;
               activationUpdateTime_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 80: {
+            int rawValue = input.readEnum();
+
+            roleMatch_ = rawValue;
             break;
           }
           default: {
@@ -687,6 +694,37 @@ private static final long serialVersionUID = 0L;
     return getActivationUpdateTime();
   }
 
+  public static final int ROLE_MATCH_FIELD_NUMBER = 10;
+  private int roleMatch_;
+  /**
+   * <pre>
+   * The role whose utterances the phrase matcher should be matched
+   * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+   * utterances in the transcript.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+   * @return The enum numeric value on the wire for roleMatch.
+   */
+  @java.lang.Override public int getRoleMatchValue() {
+    return roleMatch_;
+  }
+  /**
+   * <pre>
+   * The role whose utterances the phrase matcher should be matched
+   * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+   * utterances in the transcript.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+   * @return The roleMatch.
+   */
+  @java.lang.Override public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRoleMatch() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role result = com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.valueOf(roleMatch_);
+    return result == null ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -727,6 +765,9 @@ private static final long serialVersionUID = 0L;
     }
     if (activationUpdateTime_ != null) {
       output.writeMessage(9, getActivationUpdateTime());
+    }
+    if (roleMatch_ != com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.ROLE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(10, roleMatch_);
     }
     unknownFields.writeTo(output);
   }
@@ -769,6 +810,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, getActivationUpdateTime());
     }
+    if (roleMatch_ != com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.ROLE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(10, roleMatch_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -807,6 +852,7 @@ private static final long serialVersionUID = 0L;
       if (!getActivationUpdateTime()
           .equals(other.getActivationUpdateTime())) return false;
     }
+    if (roleMatch_ != other.roleMatch_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -843,6 +889,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ACTIVATION_UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getActivationUpdateTime().hashCode();
     }
+    hash = (37 * hash) + ROLE_MATCH_FIELD_NUMBER;
+    hash = (53 * hash) + roleMatch_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1011,6 +1059,8 @@ private static final long serialVersionUID = 0L;
         activationUpdateTime_ = null;
         activationUpdateTimeBuilder_ = null;
       }
+      roleMatch_ = 0;
+
       return this;
     }
 
@@ -1063,6 +1113,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.activationUpdateTime_ = activationUpdateTimeBuilder_.build();
       }
+      result.roleMatch_ = roleMatch_;
       onBuilt();
       return result;
     }
@@ -1164,6 +1215,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasActivationUpdateTime()) {
         mergeActivationUpdateTime(other.getActivationUpdateTime());
+      }
+      if (other.roleMatch_ != 0) {
+        setRoleMatchValue(other.getRoleMatchValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2355,6 +2409,90 @@ private static final long serialVersionUID = 0L;
         activationUpdateTime_ = null;
       }
       return activationUpdateTimeBuilder_;
+    }
+
+    private int roleMatch_ = 0;
+    /**
+     * <pre>
+     * The role whose utterances the phrase matcher should be matched
+     * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     * utterances in the transcript.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+     * @return The enum numeric value on the wire for roleMatch.
+     */
+    @java.lang.Override public int getRoleMatchValue() {
+      return roleMatch_;
+    }
+    /**
+     * <pre>
+     * The role whose utterances the phrase matcher should be matched
+     * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     * utterances in the transcript.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+     * @param value The enum numeric value on the wire for roleMatch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleMatchValue(int value) {
+      
+      roleMatch_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The role whose utterances the phrase matcher should be matched
+     * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     * utterances in the transcript.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+     * @return The roleMatch.
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRoleMatch() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role result = com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.valueOf(roleMatch_);
+      return result == null ? com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The role whose utterances the phrase matcher should be matched
+     * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     * utterances in the transcript.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+     * @param value The roleMatch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleMatch(com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      roleMatch_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The role whose utterances the phrase matcher should be matched
+     * against. If the role is ROLE_UNSPECIFIED it will be matched against any
+     * utterances in the transcript.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role_match = 10;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoleMatch() {
+      
+      roleMatch_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

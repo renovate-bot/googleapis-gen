@@ -27,6 +27,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       map :smart_highlighter_matches, :string, :int32, 4
       map :custom_highlighter_matches, :string, :int32, 5
       map :issue_matches, :string, :int32, 6
+      optional :conversation_count_time_series, :message, 7, "google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries"
+    end
+    add_message "google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries" do
+      optional :interval_duration, :message, 1, "google.protobuf.Duration"
+      repeated :points, :message, 2, "google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval"
+    end
+    add_message "google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval" do
+      optional :start_time, :message, 1, "google.protobuf.Timestamp"
+      optional :conversation_count, :int32, 2
     end
     add_message "google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata" do
       optional :create_time, :message, 1, "google.protobuf.Timestamp"
@@ -90,6 +99,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       end
     end
     add_message "google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination" do
+      optional :project_id, :string, 3
       optional :dataset, :string, 1
       optional :table, :string, 2
     end
@@ -166,6 +176,8 @@ module Google
       module V1
         CalculateStatsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CalculateStatsRequest").msgclass
         CalculateStatsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CalculateStatsResponse").msgclass
+        CalculateStatsResponse::TimeSeries = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries").msgclass
+        CalculateStatsResponse::TimeSeries::Interval = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CalculateStatsResponse.TimeSeries.Interval").msgclass
         CreateAnalysisOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CreateAnalysisOperationMetadata").msgclass
         CreateConversationRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CreateConversationRequest").msgclass
         ListConversationsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ListConversationsRequest").msgclass

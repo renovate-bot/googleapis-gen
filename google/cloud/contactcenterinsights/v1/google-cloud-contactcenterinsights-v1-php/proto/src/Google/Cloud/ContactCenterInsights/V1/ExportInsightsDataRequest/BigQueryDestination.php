@@ -16,6 +16,14 @@ use Google\Protobuf\Internal\GPBUtil;
 class BigQueryDestination extends \Google\Protobuf\Internal\Message
 {
     /**
+     * A project ID or number. If specified, then export will attempt to
+     * write data to this project instead of the resource project. Otherwise,
+     * the resource project will be used.
+     *
+     * Generated from protobuf field <code>string project_id = 3;</code>
+     */
+    protected $project_id = '';
+    /**
      * Required. The name of the BigQuery dataset that the snapshot result should be
      * exported to. If this dataset does not exist, the export call returns an
      * INVALID_ARGUMENT error.
@@ -38,6 +46,10 @@ class BigQueryDestination extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $project_id
+     *           A project ID or number. If specified, then export will attempt to
+     *           write data to this project instead of the resource project. Otherwise,
+     *           the resource project will be used.
      *     @type string $dataset
      *           Required. The name of the BigQuery dataset that the snapshot result should be
      *           exported to. If this dataset does not exist, the export call returns an
@@ -51,6 +63,36 @@ class BigQueryDestination extends \Google\Protobuf\Internal\Message
     public function __construct($data = NULL) {
         \GPBMetadata\Google\Cloud\Contactcenterinsights\V1\ContactCenterInsights::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * A project ID or number. If specified, then export will attempt to
+     * write data to this project instead of the resource project. Otherwise,
+     * the resource project will be used.
+     *
+     * Generated from protobuf field <code>string project_id = 3;</code>
+     * @return string
+     */
+    public function getProjectId()
+    {
+        return $this->project_id;
+    }
+
+    /**
+     * A project ID or number. If specified, then export will attempt to
+     * write data to this project instead of the resource project. Otherwise,
+     * the resource project will be used.
+     *
+     * Generated from protobuf field <code>string project_id = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setProjectId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->project_id = $var;
+
+        return $this;
     }
 
     /**

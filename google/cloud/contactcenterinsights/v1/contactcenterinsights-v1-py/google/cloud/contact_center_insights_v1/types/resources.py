@@ -59,6 +59,7 @@ __protobuf__ = proto.module(
         'SmartReplyData',
         'SmartComposeSuggestionData',
         'DialogflowInteractionData',
+        'ConversationParticipant',
     },
 )
 
@@ -180,7 +181,7 @@ class Conversation(proto.Message):
                     audioChannelCount = N, its output values can
                     range from '1' to 'N'. A channel tag of 0
                     indicates that the audio is mono.
-                participant (google.cloud.contact_center_insights_v1.types.Conversation.Transcript.TranscriptSegment.Participant):
+                segment_participant (google.cloud.contact_center_insights_v1.types.ConversationParticipant):
                     The participant of this segment.
             """
 
@@ -222,33 +223,6 @@ class Conversation(proto.Message):
                     number=4,
                 )
 
-            class Participant(proto.Message):
-                r"""The participant of the transcript segment.
-                Attributes:
-                    dialogflow_participant (str):
-                        The name of the Dialogflow participant.
-                        Format:
-                        projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
-                    role (google.cloud.contact_center_insights_v1.types.Conversation.Transcript.TranscriptSegment.Participant.Role):
-                        The role of the participant.
-                """
-                class Role(proto.Enum):
-                    r"""The role of the participant."""
-                    ROLE_UNSPECIFIED = 0
-                    HUMAN_AGENT = 1
-                    AUTOMATED_AGENT = 2
-                    END_USER = 3
-
-                dialogflow_participant = proto.Field(
-                    proto.STRING,
-                    number=1,
-                )
-                role = proto.Field(
-                    proto.ENUM,
-                    number=2,
-                    enum='Conversation.Transcript.TranscriptSegment.Participant.Role',
-                )
-
             text = proto.Field(
                 proto.STRING,
                 number=1,
@@ -270,10 +244,10 @@ class Conversation(proto.Message):
                 proto.INT32,
                 number=5,
             )
-            participant = proto.Field(
+            segment_participant = proto.Field(
                 proto.MESSAGE,
-                number=8,
-                message='Conversation.Transcript.TranscriptSegment.Participant',
+                number=9,
+                message='ConversationParticipant',
             )
 
         transcript_segments = proto.RepeatedField(
@@ -715,10 +689,6 @@ class AnnotationBoundary(proto.Message):
     an annotation.
 
     Attributes:
-        time_offset (google.protobuf.duration_pb2.Duration):
-            Deprecated: Use ``word_index`` for the detailed boundary.
-            The time offset of this boundary with respect to the start
-            time of the first word in the transcript piece.
         word_index (int):
             The word index of this boundary with respect
             to the first word in the transcript piece. This
@@ -729,12 +699,6 @@ class AnnotationBoundary(proto.Message):
             located. This index starts at zero.
     """
 
-    time_offset = proto.Field(
-        proto.MESSAGE,
-        number=2,
-        oneof='detailed_boundary',
-        message=duration_pb2.Duration,
-    )
     word_index = proto.Field(
         proto.INT32,
         number=3,
@@ -1150,6 +1114,10 @@ class PhraseMatcher(proto.Message):
         activation_update_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The most recent time at which
             the activation status was updated.
+        role_match (google.cloud.contact_center_insights_v1.types.ConversationParticipant.Role):
+            The role whose utterances the phrase matcher should be
+            matched against. If the role is ROLE_UNSPECIFIED it will be
+            matched against any utterances in the transcript.
     """
     class PhraseMatcherType(proto.Enum):
         r"""Specifies how to combine each phrase match rule group to
@@ -1198,6 +1166,11 @@ class PhraseMatcher(proto.Message):
         proto.MESSAGE,
         number=9,
         message=timestamp_pb2.Timestamp,
+    )
+    role_match = proto.Field(
+        proto.ENUM,
+        number=10,
+        enum='ConversationParticipant.Role',
     )
 
 
@@ -1709,6 +1682,35 @@ class DialogflowInteractionData(proto.Message):
     confidence = proto.Field(
         proto.FLOAT,
         number=2,
+    )
+
+
+class ConversationParticipant(proto.Message):
+    r"""The call participant speaking for a given utterance.
+    Attributes:
+        dialogflow_participant (str):
+            The name of the Dialogflow participant.
+            Format:
+            projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+        role (google.cloud.contact_center_insights_v1.types.ConversationParticipant.Role):
+            The role of the participant.
+    """
+    class Role(proto.Enum):
+        r"""The role of the participant."""
+        ROLE_UNSPECIFIED = 0
+        HUMAN_AGENT = 1
+        AUTOMATED_AGENT = 2
+        END_USER = 3
+        ANY_AGENT = 4
+
+    dialogflow_participant = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    role = proto.Field(
+        proto.ENUM,
+        number=2,
+        enum=Role,
     )
 
 

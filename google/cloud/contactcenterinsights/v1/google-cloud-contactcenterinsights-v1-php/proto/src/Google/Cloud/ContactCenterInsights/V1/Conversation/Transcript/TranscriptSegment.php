@@ -54,9 +54,9 @@ class TranscriptSegment extends \Google\Protobuf\Internal\Message
     /**
      * The participant of this segment.
      *
-     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;</code>
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;</code>
      */
-    protected $participant = null;
+    protected $segment_participant = null;
 
     /**
      * Constructor.
@@ -80,7 +80,7 @@ class TranscriptSegment extends \Google\Protobuf\Internal\Message
      *           number corresponding to the audio from that channel. For
      *           audioChannelCount = N, its output values can range from '1' to 'N'. A
      *           channel tag of 0 indicates that the audio is mono.
-     *     @type \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript\TranscriptSegment\Participant $participant
+     *     @type \Google\Cloud\ContactCenterInsights\V1\ConversationParticipant $segment_participant
      *           The participant of this segment.
      * }
      */
@@ -234,35 +234,35 @@ class TranscriptSegment extends \Google\Protobuf\Internal\Message
     /**
      * The participant of this segment.
      *
-     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;</code>
-     * @return \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript\TranscriptSegment\Participant|null
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;</code>
+     * @return \Google\Cloud\ContactCenterInsights\V1\ConversationParticipant|null
      */
-    public function getParticipant()
+    public function getSegmentParticipant()
     {
-        return isset($this->participant) ? $this->participant : null;
+        return isset($this->segment_participant) ? $this->segment_participant : null;
     }
 
-    public function hasParticipant()
+    public function hasSegmentParticipant()
     {
-        return isset($this->participant);
+        return isset($this->segment_participant);
     }
 
-    public function clearParticipant()
+    public function clearSegmentParticipant()
     {
-        unset($this->participant);
+        unset($this->segment_participant);
     }
 
     /**
      * The participant of this segment.
      *
-     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.Conversation.Transcript.TranscriptSegment.Participant participant = 8;</code>
-     * @param \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript\TranscriptSegment\Participant $var
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant segment_participant = 9;</code>
+     * @param \Google\Cloud\ContactCenterInsights\V1\ConversationParticipant $var
      * @return $this
      */
-    public function setParticipant($var)
+    public function setSegmentParticipant($var)
     {
-        GPBUtil::checkMessage($var, \Google\Cloud\ContactCenterInsights\V1\Conversation\Transcript\TranscriptSegment\Participant::class);
-        $this->participant = $var;
+        GPBUtil::checkMessage($var, \Google\Cloud\ContactCenterInsights\V1\ConversationParticipant::class);
+        $this->segment_participant = $var;
 
         return $this;
     }

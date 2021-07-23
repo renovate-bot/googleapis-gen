@@ -125,6 +125,30 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
+     * A project ID or number. If specified, then export will attempt to
+     * write data to this project instead of the resource project. Otherwise,
+     * the resource project will be used.
+     * </pre>
+     *
+     * <code>string project_id = 3;</code>
+     * @return The projectId.
+     */
+    java.lang.String getProjectId();
+    /**
+     * <pre>
+     * A project ID or number. If specified, then export will attempt to
+     * write data to this project instead of the resource project. Otherwise,
+     * the resource project will be used.
+     * </pre>
+     *
+     * <code>string project_id = 3;</code>
+     * @return The bytes for projectId.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdBytes();
+
+    /**
+     * <pre>
      * Required. The name of the BigQuery dataset that the snapshot result should be
      * exported to. If this dataset does not exist, the export call returns an
      * INVALID_ARGUMENT error.
@@ -188,6 +212,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private BigQueryDestination() {
+      projectId_ = "";
       dataset_ = "";
       table_ = "";
     }
@@ -234,6 +259,12 @@ private static final long serialVersionUID = 0L;
               table_ = s;
               break;
             }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -264,6 +295,56 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_ExportInsightsDataRequest_BigQueryDestination_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination.class, com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination.Builder.class);
+    }
+
+    public static final int PROJECT_ID_FIELD_NUMBER = 3;
+    private volatile java.lang.Object projectId_;
+    /**
+     * <pre>
+     * A project ID or number. If specified, then export will attempt to
+     * write data to this project instead of the resource project. Otherwise,
+     * the resource project will be used.
+     * </pre>
+     *
+     * <code>string project_id = 3;</code>
+     * @return The projectId.
+     */
+    @java.lang.Override
+    public java.lang.String getProjectId() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        projectId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A project ID or number. If specified, then export will attempt to
+     * write data to this project instead of the resource project. Otherwise,
+     * the resource project will be used.
+     * </pre>
+     *
+     * <code>string project_id = 3;</code>
+     * @return The bytes for projectId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProjectIdBytes() {
+      java.lang.Object ref = projectId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        projectId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int DATASET_FIELD_NUMBER = 1;
@@ -386,6 +467,9 @@ private static final long serialVersionUID = 0L;
       if (!getTableBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
       }
+      if (!getProjectIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, projectId_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -400,6 +484,9 @@ private static final long serialVersionUID = 0L;
       }
       if (!getTableBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
+      }
+      if (!getProjectIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, projectId_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -416,6 +503,8 @@ private static final long serialVersionUID = 0L;
       }
       com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination other = (com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination) obj;
 
+      if (!getProjectId()
+          .equals(other.getProjectId())) return false;
       if (!getDataset()
           .equals(other.getDataset())) return false;
       if (!getTable()
@@ -431,6 +520,8 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PROJECT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getProjectId().hashCode();
       hash = (37 * hash) + DATASET_FIELD_NUMBER;
       hash = (53 * hash) + getDataset().hashCode();
       hash = (37 * hash) + TABLE_FIELD_NUMBER;
@@ -572,6 +663,8 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        projectId_ = "";
+
         dataset_ = "";
 
         table_ = "";
@@ -602,6 +695,7 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination buildPartial() {
         com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination result = new com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination(this);
+        result.projectId_ = projectId_;
         result.dataset_ = dataset_;
         result.table_ = table_;
         onBuilt();
@@ -652,6 +746,10 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination other) {
         if (other == com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination.getDefaultInstance()) return this;
+        if (!other.getProjectId().isEmpty()) {
+          projectId_ = other.projectId_;
+          onChanged();
+        }
         if (!other.getDataset().isEmpty()) {
           dataset_ = other.dataset_;
           onChanged();
@@ -686,6 +784,112 @@ private static final long serialVersionUID = 0L;
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private java.lang.Object projectId_ = "";
+      /**
+       * <pre>
+       * A project ID or number. If specified, then export will attempt to
+       * write data to this project instead of the resource project. Otherwise,
+       * the resource project will be used.
+       * </pre>
+       *
+       * <code>string project_id = 3;</code>
+       * @return The projectId.
+       */
+      public java.lang.String getProjectId() {
+        java.lang.Object ref = projectId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          projectId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A project ID or number. If specified, then export will attempt to
+       * write data to this project instead of the resource project. Otherwise,
+       * the resource project will be used.
+       * </pre>
+       *
+       * <code>string project_id = 3;</code>
+       * @return The bytes for projectId.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdBytes() {
+        java.lang.Object ref = projectId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          projectId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A project ID or number. If specified, then export will attempt to
+       * write data to this project instead of the resource project. Otherwise,
+       * the resource project will be used.
+       * </pre>
+       *
+       * <code>string project_id = 3;</code>
+       * @param value The projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        projectId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A project ID or number. If specified, then export will attempt to
+       * write data to this project instead of the resource project. Otherwise,
+       * the resource project will be used.
+       * </pre>
+       *
+       * <code>string project_id = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectId() {
+        
+        projectId_ = getDefaultInstance().getProjectId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A project ID or number. If specified, then export will attempt to
+       * write data to this project instead of the resource project. Otherwise,
+       * the resource project will be used.
+       * </pre>
+       *
+       * <code>string project_id = 3;</code>
+       * @param value The bytes for projectId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        projectId_ = value;
+        onChanged();
         return this;
       }
 
