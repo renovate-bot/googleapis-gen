@@ -31,8 +31,8 @@ public interface CreateSourceRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,8 +41,8 @@ public interface CreateSourceRequestOrBuilder extends
   boolean hasSource();
   /**
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -51,8 +51,8 @@ public interface CreateSourceRequestOrBuilder extends
   com.google.cloud.securitycenter.v1.Source getSource();
   /**
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>

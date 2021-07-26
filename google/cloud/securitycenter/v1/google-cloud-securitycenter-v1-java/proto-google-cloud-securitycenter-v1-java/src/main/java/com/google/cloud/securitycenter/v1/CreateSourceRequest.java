@@ -156,8 +156,8 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.securitycenter.v1.Source source_;
   /**
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -169,8 +169,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -182,8 +182,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The Source being created, only the display_name and description
-   * will be used. All other fields will be ignored.
+   * Required. The Source being created, only the display_name and description will be
+   * used. All other fields will be ignored.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -635,8 +635,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.securitycenter.v1.Source, com.google.cloud.securitycenter.v1.Source.Builder, com.google.cloud.securitycenter.v1.SourceOrBuilder> sourceBuilder_;
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -647,8 +647,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -663,8 +663,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -684,8 +684,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -703,8 +703,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -726,8 +726,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -745,8 +745,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -758,8 +758,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -774,8 +774,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The Source being created, only the display_name and description
-     * will be used. All other fields will be ignored.
+     * Required. The Source being created, only the display_name and description will be
+     * used. All other fields will be ignored.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.Source source = 2 [(.google.api.field_behavior) = REQUIRED];</code>

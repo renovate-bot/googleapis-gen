@@ -115,8 +115,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. Resource name of the new notification config's parent. Its format
-   * is "organizations/[organization_id]".
+   * Required. Resource name of the new notification config's parent. Its format is
+   * "organizations/[organization_id]".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -137,8 +137,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of the new notification config's parent. Its format
-   * is "organizations/[organization_id]".
+   * Required. Resource name of the new notification config's parent. Its format is
+   * "organizations/[organization_id]".
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -215,9 +215,8 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.securitycenter.v1.NotificationConfig notificationConfig_;
   /**
    * <pre>
-   * Required. The notification config being created. The name and the service
-   * account will be ignored as they are both output only fields on this
-   * resource.
+   * Required. The notification config being created. The name and the service account
+   * will be ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -229,9 +228,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The notification config being created. The name and the service
-   * account will be ignored as they are both output only fields on this
-   * resource.
+   * Required. The notification config being created. The name and the service account
+   * will be ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -243,9 +241,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The notification config being created. The name and the service
-   * account will be ignored as they are both output only fields on this
-   * resource.
+   * Required. The notification config being created. The name and the service account
+   * will be ignored as they are both output only fields on this resource.
    * </pre>
    *
    * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -611,8 +608,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format is
+     * "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -632,8 +629,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format is
+     * "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -654,8 +651,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format is
+     * "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -674,8 +671,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format is
+     * "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -689,8 +686,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the new notification config's parent. Its format
-     * is "organizations/[organization_id]".
+     * Required. Resource name of the new notification config's parent. Its format is
+     * "organizations/[organization_id]".
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -825,9 +822,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.securitycenter.v1.NotificationConfig, com.google.cloud.securitycenter.v1.NotificationConfig.Builder, com.google.cloud.securitycenter.v1.NotificationConfigOrBuilder> notificationConfigBuilder_;
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -838,9 +834,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -855,9 +850,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -877,9 +871,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -897,9 +890,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -921,9 +913,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -941,9 +932,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -955,9 +945,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -972,9 +961,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The notification config being created. The name and the service
-     * account will be ignored as they are both output only fields on this
-     * resource.
+     * Required. The notification config being created. The name and the service account
+     * will be ignored as they are both output only fields on this resource.
      * </pre>
      *
      * <code>.google.cloud.securitycenter.v1.NotificationConfig notification_config = 3 [(.google.api.field_behavior) = REQUIRED];</code>

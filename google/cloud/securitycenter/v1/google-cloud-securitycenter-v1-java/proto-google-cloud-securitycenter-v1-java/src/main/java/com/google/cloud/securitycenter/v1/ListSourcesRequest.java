@@ -107,8 +107,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should
-   * be "organizations/[organization_id], folders/[folder_id], or
+   * Required. Resource name of the parent of sources to list. Its format should be
+   * "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
    *
@@ -130,8 +130,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of the parent of sources to list. Its format should
-   * be "organizations/[organization_id], folders/[folder_id], or
+   * Required. Resource name of the parent of sources to list. Its format should be
+   * "organizations/[organization_id], folders/[folder_id], or
    * projects/[project_id]".
    * </pre>
    *
@@ -562,8 +562,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should be
+     * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *
@@ -584,8 +584,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should be
+     * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *
@@ -607,8 +607,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should be
+     * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *
@@ -628,8 +628,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should be
+     * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *
@@ -644,8 +644,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the parent of sources to list. Its format should
-     * be "organizations/[organization_id], folders/[folder_id], or
+     * Required. Resource name of the parent of sources to list. Its format should be
+     * "organizations/[organization_id], folders/[folder_id], or
      * projects/[project_id]".
      * </pre>
      *

@@ -41,6 +41,7 @@ from google.cloud.securitycenter_v1.services.security_center import transports
 from google.cloud.securitycenter_v1.services.security_center.transports.base import _GOOGLE_AUTH_VERSION
 from google.cloud.securitycenter_v1.types import finding
 from google.cloud.securitycenter_v1.types import finding as gcs_finding
+from google.cloud.securitycenter_v1.types import indicator
 from google.cloud.securitycenter_v1.types import notification_config
 from google.cloud.securitycenter_v1.types import notification_config as gcs_notification_config
 from google.cloud.securitycenter_v1.types import organization_settings
@@ -683,6 +684,7 @@ def test_create_finding(transport: str = 'grpc', request_type=securitycenter_ser
             external_uri='external_uri_value',
             severity=gcs_finding.Finding.Severity.CRITICAL,
             canonical_name='canonical_name_value',
+            finding_class=gcs_finding.Finding.FindingClass.THREAT,
         )
         response = client.create_finding(request)
 
@@ -701,6 +703,7 @@ def test_create_finding(transport: str = 'grpc', request_type=securitycenter_ser
     assert response.external_uri == 'external_uri_value'
     assert response.severity == gcs_finding.Finding.Severity.CRITICAL
     assert response.canonical_name == 'canonical_name_value'
+    assert response.finding_class == gcs_finding.Finding.FindingClass.THREAT
 
 
 def test_create_finding_from_dict():
@@ -750,6 +753,7 @@ async def test_create_finding_async(transport: str = 'grpc_asyncio', request_typ
             external_uri='external_uri_value',
             severity=gcs_finding.Finding.Severity.CRITICAL,
             canonical_name='canonical_name_value',
+            finding_class=gcs_finding.Finding.FindingClass.THREAT,
         ))
         response = await client.create_finding(request)
 
@@ -768,6 +772,7 @@ async def test_create_finding_async(transport: str = 'grpc_asyncio', request_typ
     assert response.external_uri == 'external_uri_value'
     assert response.severity == gcs_finding.Finding.Severity.CRITICAL
     assert response.canonical_name == 'canonical_name_value'
+    assert response.finding_class == gcs_finding.Finding.FindingClass.THREAT
 
 
 @pytest.mark.asyncio
@@ -4922,6 +4927,7 @@ def test_set_finding_state(transport: str = 'grpc', request_type=securitycenter_
             external_uri='external_uri_value',
             severity=finding.Finding.Severity.CRITICAL,
             canonical_name='canonical_name_value',
+            finding_class=finding.Finding.FindingClass.THREAT,
         )
         response = client.set_finding_state(request)
 
@@ -4940,6 +4946,7 @@ def test_set_finding_state(transport: str = 'grpc', request_type=securitycenter_
     assert response.external_uri == 'external_uri_value'
     assert response.severity == finding.Finding.Severity.CRITICAL
     assert response.canonical_name == 'canonical_name_value'
+    assert response.finding_class == finding.Finding.FindingClass.THREAT
 
 
 def test_set_finding_state_from_dict():
@@ -4989,6 +4996,7 @@ async def test_set_finding_state_async(transport: str = 'grpc_asyncio', request_
             external_uri='external_uri_value',
             severity=finding.Finding.Severity.CRITICAL,
             canonical_name='canonical_name_value',
+            finding_class=finding.Finding.FindingClass.THREAT,
         ))
         response = await client.set_finding_state(request)
 
@@ -5007,6 +5015,7 @@ async def test_set_finding_state_async(transport: str = 'grpc_asyncio', request_
     assert response.external_uri == 'external_uri_value'
     assert response.severity == finding.Finding.Severity.CRITICAL
     assert response.canonical_name == 'canonical_name_value'
+    assert response.finding_class == finding.Finding.FindingClass.THREAT
 
 
 @pytest.mark.asyncio
@@ -5699,6 +5708,7 @@ def test_update_finding(transport: str = 'grpc', request_type=securitycenter_ser
             external_uri='external_uri_value',
             severity=gcs_finding.Finding.Severity.CRITICAL,
             canonical_name='canonical_name_value',
+            finding_class=gcs_finding.Finding.FindingClass.THREAT,
         )
         response = client.update_finding(request)
 
@@ -5717,6 +5727,7 @@ def test_update_finding(transport: str = 'grpc', request_type=securitycenter_ser
     assert response.external_uri == 'external_uri_value'
     assert response.severity == gcs_finding.Finding.Severity.CRITICAL
     assert response.canonical_name == 'canonical_name_value'
+    assert response.finding_class == gcs_finding.Finding.FindingClass.THREAT
 
 
 def test_update_finding_from_dict():
@@ -5766,6 +5777,7 @@ async def test_update_finding_async(transport: str = 'grpc_asyncio', request_typ
             external_uri='external_uri_value',
             severity=gcs_finding.Finding.Severity.CRITICAL,
             canonical_name='canonical_name_value',
+            finding_class=gcs_finding.Finding.FindingClass.THREAT,
         ))
         response = await client.update_finding(request)
 
@@ -5784,6 +5796,7 @@ async def test_update_finding_async(transport: str = 'grpc_asyncio', request_typ
     assert response.external_uri == 'external_uri_value'
     assert response.severity == gcs_finding.Finding.Severity.CRITICAL
     assert response.canonical_name == 'canonical_name_value'
+    assert response.finding_class == gcs_finding.Finding.FindingClass.THREAT
 
 
 @pytest.mark.asyncio

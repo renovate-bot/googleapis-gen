@@ -402,8 +402,8 @@ export class SecurityCenterClient {
  *   Required. Resource name of the new source's parent. Its format should be
  *   "organizations/[organization_id]".
  * @param {google.cloud.securitycenter.v1.Source} request.source
- *   Required. The Source being created, only the display_name and description
- *   will be used. All other fields will be ignored.
+ *   Required. The Source being created, only the display_name and description will be
+ *   used. All other fields will be ignored.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -482,8 +482,8 @@ export class SecurityCenterClient {
  *   It must be alphanumeric and less than or equal to 32 characters and
  *   greater than 0 characters in length.
  * @param {google.cloud.securitycenter.v1.Finding} request.finding
- *   Required. The Finding being created. The name and security_marks will be
- *   ignored as they are both output only fields on this resource.
+ *   Required. The Finding being created. The name and security_marks will be ignored as
+ *   they are both output only fields on this resource.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -554,17 +554,16 @@ export class SecurityCenterClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. Resource name of the new notification config's parent. Its format
- *   is "organizations/[organization_id]".
+ *   Required. Resource name of the new notification config's parent. Its format is
+ *   "organizations/[organization_id]".
  * @param {string} request.configId
  *   Required.
  *   Unique identifier provided by the client within the parent scope.
  *   It must be between 1 and 128 characters, and contains alphanumeric
  *   characters, underscores or hyphens only.
  * @param {google.cloud.securitycenter.v1.NotificationConfig} request.notificationConfig
- *   Required. The notification config being created. The name and the service
- *   account will be ignored as they are both output only fields on this
- *   resource.
+ *   Required. The notification config being created. The name and the service account
+ *   will be ignored as they are both output only fields on this resource.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -854,8 +853,8 @@ export class SecurityCenterClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
- *   Required. Name of the organization to get organization settings for. Its
- *   format is "organizations/[organization_id]/organizationSettings".
+ *   Required. Name of the organization to get organization settings for. Its format is
+ *   "organizations/[organization_id]/organizationSettings".
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1231,8 +1230,8 @@ export class SecurityCenterClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.securitycenter.v1.Finding} request.finding
- *   Required. The finding resource to update or create if it does not already
- *   exist. parent, security_marks, and update_time will be ignored.
+ *   Required. The finding resource to update or create if it does not already exist.
+ *   parent, security_marks, and update_time will be ignored.
  *
  *   In the case of creation, the finding id portion of the name must be
  *   alphanumeric and less than or equal to 32 characters and greater than 0
@@ -1629,8 +1628,8 @@ export class SecurityCenterClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. Name of the organization to run asset discovery for. Its format
- *   is "organizations/[organization_id]".
+ *   Required. Name of the organization to run asset discovery for. Its format is
+ *   "organizations/[organization_id]".
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1794,9 +1793,9 @@ export class SecurityCenterClient {
  *   Use a negated partial match on the empty string to filter based on a
  *   property not existing: `-resource_properties.my_property : ""`
  * @param {string} request.groupBy
- *   Required. Expression that defines what assets fields to use for grouping.
- *   The string value should follow SQL syntax: comma separated list of fields.
- *   For example:
+ *   Required. Expression that defines what assets fields to use for grouping. The string
+ *   value should follow SQL syntax: comma separated list of fields. For
+ *   example:
  *   "security_center_properties.resource_project,security_center_properties.project".
  *
  *   The following fields are supported when compare_duration is not set:
@@ -1973,9 +1972,9 @@ export class SecurityCenterClient {
  *   Use a negated partial match on the empty string to filter based on a
  *   property not existing: `-resource_properties.my_property : ""`
  * @param {string} request.groupBy
- *   Required. Expression that defines what assets fields to use for grouping.
- *   The string value should follow SQL syntax: comma separated list of fields.
- *   For example:
+ *   Required. Expression that defines what assets fields to use for grouping. The string
+ *   value should follow SQL syntax: comma separated list of fields. For
+ *   example:
  *   "security_center_properties.resource_project,security_center_properties.project".
  *
  *   The following fields are supported when compare_duration is not set:
@@ -2139,9 +2138,9 @@ export class SecurityCenterClient {
  *   Use a negated partial match on the empty string to filter based on a
  *   property not existing: `-resource_properties.my_property : ""`
  * @param {string} request.groupBy
- *   Required. Expression that defines what assets fields to use for grouping.
- *   The string value should follow SQL syntax: comma separated list of fields.
- *   For example:
+ *   Required. Expression that defines what assets fields to use for grouping. The string
+ *   value should follow SQL syntax: comma separated list of fields. For
+ *   example:
  *   "security_center_properties.resource_project,security_center_properties.project".
  *
  *   The following fields are supported when compare_duration is not set:
@@ -2336,9 +2335,9 @@ export class SecurityCenterClient {
  *     * resource.project_display_name: `=`, `:`
  *     * resource.type: `=`, `:`
  * @param {string} request.groupBy
- *   Required. Expression that defines what assets fields to use for grouping
- *   (including `state_change`). The string value should follow SQL syntax:
- *   comma separated list of fields. For example: "parent,resource_name".
+ *   Required. Expression that defines what assets fields to use for grouping (including
+ *   `state_change`). The string value should follow SQL syntax: comma separated
+ *   list of fields. For example: "parent,resource_name".
  *
  *   The following fields are supported:
  *
@@ -2518,9 +2517,9 @@ export class SecurityCenterClient {
  *     * resource.project_display_name: `=`, `:`
  *     * resource.type: `=`, `:`
  * @param {string} request.groupBy
- *   Required. Expression that defines what assets fields to use for grouping
- *   (including `state_change`). The string value should follow SQL syntax:
- *   comma separated list of fields. For example: "parent,resource_name".
+ *   Required. Expression that defines what assets fields to use for grouping (including
+ *   `state_change`). The string value should follow SQL syntax: comma separated
+ *   list of fields. For example: "parent,resource_name".
  *
  *   The following fields are supported:
  *
@@ -2687,9 +2686,9 @@ export class SecurityCenterClient {
  *     * resource.project_display_name: `=`, `:`
  *     * resource.type: `=`, `:`
  * @param {string} request.groupBy
- *   Required. Expression that defines what assets fields to use for grouping
- *   (including `state_change`). The string value should follow SQL syntax:
- *   comma separated list of fields. For example: "parent,resource_name".
+ *   Required. Expression that defines what assets fields to use for grouping (including
+ *   `state_change`). The string value should follow SQL syntax: comma separated
+ *   list of fields. For example: "parent,resource_name".
  *
  *   The following fields are supported:
  *
@@ -4108,8 +4107,8 @@ export class SecurityCenterClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. Resource name of the parent of sources to list. Its format should
- *   be "organizations/[organization_id], folders/[folder_id], or
+ *   Required. Resource name of the parent of sources to list. Its format should be
+ *   "organizations/[organization_id], folders/[folder_id], or
  *   projects/[project_id]".
  * @param {string} request.pageToken
  *   The value returned by the last `ListSourcesResponse`; indicates
@@ -4172,8 +4171,8 @@ export class SecurityCenterClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. Resource name of the parent of sources to list. Its format should
- *   be "organizations/[organization_id], folders/[folder_id], or
+ *   Required. Resource name of the parent of sources to list. Its format should be
+ *   "organizations/[organization_id], folders/[folder_id], or
  *   projects/[project_id]".
  * @param {string} request.pageToken
  *   The value returned by the last `ListSourcesResponse`; indicates
@@ -4223,8 +4222,8 @@ export class SecurityCenterClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
- *   Required. Resource name of the parent of sources to list. Its format should
- *   be "organizations/[organization_id], folders/[folder_id], or
+ *   Required. Resource name of the parent of sources to list. Its format should be
+ *   "organizations/[organization_id], folders/[folder_id], or
  *   projects/[project_id]".
  * @param {string} request.pageToken
  *   The value returned by the last `ListSourcesResponse`; indicates

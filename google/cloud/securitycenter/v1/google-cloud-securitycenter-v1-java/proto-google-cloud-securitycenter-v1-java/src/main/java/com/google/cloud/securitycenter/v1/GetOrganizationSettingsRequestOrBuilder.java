@@ -9,8 +9,8 @@ public interface GetOrganizationSettingsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its
-   * format is "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the organization to get organization settings for. Its format is
+   * "organizations/[organization_id]/organizationSettings".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +19,8 @@ public interface GetOrganizationSettingsRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. Name of the organization to get organization settings for. Its
-   * format is "organizations/[organization_id]/organizationSettings".
+   * Required. Name of the organization to get organization settings for. Its format is
+   * "organizations/[organization_id]/organizationSettings".
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
