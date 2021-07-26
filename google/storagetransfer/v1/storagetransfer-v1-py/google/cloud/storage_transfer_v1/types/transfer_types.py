@@ -322,7 +322,7 @@ class AwsS3Data(proto.Message):
         bucket_name (str):
             Required. S3 Bucket name (see `Creating a
             bucket <https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html>`__).
-        aws_access_key (google.storagetransfer_v1.types.AwsAccessKey):
+        aws_access_key (google.cloud.storage_transfer_v1.types.AwsAccessKey):
             Input only. AWS access key used to sign the API requests to
             the AWS S3 bucket. Permissions on the bucket must be granted
             to the access ID of the AWS access key. This field is
@@ -379,7 +379,7 @@ class AzureBlobStorageData(proto.Message):
         storage_account (str):
             Required. The name of the Azure Storage
             account.
-        azure_credentials (google.storagetransfer_v1.types.AzureCredentials):
+        azure_credentials (google.cloud.storage_transfer_v1.types.AzureCredentials):
             Required. Input only. Credentials used to authenticate API
             requests to Azure.
 
@@ -518,23 +518,23 @@ class TransferOptions(proto.Message):
 class TransferSpec(proto.Message):
     r"""Configuration for running a transfer.
     Attributes:
-        gcs_data_sink (google.storagetransfer_v1.types.GcsData):
+        gcs_data_sink (google.cloud.storage_transfer_v1.types.GcsData):
             A Cloud Storage data sink.
-        gcs_data_source (google.storagetransfer_v1.types.GcsData):
+        gcs_data_source (google.cloud.storage_transfer_v1.types.GcsData):
             A Cloud Storage data source.
-        aws_s3_data_source (google.storagetransfer_v1.types.AwsS3Data):
+        aws_s3_data_source (google.cloud.storage_transfer_v1.types.AwsS3Data):
             An AWS S3 data source.
-        http_data_source (google.storagetransfer_v1.types.HttpData):
+        http_data_source (google.cloud.storage_transfer_v1.types.HttpData):
             An HTTP URL data source.
-        azure_blob_storage_data_source (google.storagetransfer_v1.types.AzureBlobStorageData):
+        azure_blob_storage_data_source (google.cloud.storage_transfer_v1.types.AzureBlobStorageData):
             An Azure Blob Storage data source.
-        object_conditions (google.storagetransfer_v1.types.ObjectConditions):
+        object_conditions (google.cloud.storage_transfer_v1.types.ObjectConditions):
             Only objects that satisfy these object
             conditions are included in the set of data
             source and data sink objects.  Object conditions
             based on objects' "last modification time" do
             not exclude objects in a data sink.
-        transfer_options (google.storagetransfer_v1.types.TransferOptions):
+        transfer_options (google.cloud.storage_transfer_v1.types.TransferOptions):
             If the option
             [delete_objects_unique_in_sink][google.storagetransfer.v1.TransferOptions.delete_objects_unique_in_sink]
             is ``true`` and time-based object conditions such as 'last
@@ -723,17 +723,17 @@ class TransferJob(proto.Message):
         project_id (str):
             The ID of the Google Cloud Platform Project
             that owns the job.
-        transfer_spec (google.storagetransfer_v1.types.TransferSpec):
+        transfer_spec (google.cloud.storage_transfer_v1.types.TransferSpec):
             Transfer specification.
-        notification_config (google.storagetransfer_v1.types.NotificationConfig):
+        notification_config (google.cloud.storage_transfer_v1.types.NotificationConfig):
             Notification configuration.
-        schedule (google.storagetransfer_v1.types.Schedule):
+        schedule (google.cloud.storage_transfer_v1.types.Schedule):
             Specifies schedule for the transfer job.
             This is an optional field. When the field is not
             set, the job will never execute a transfer,
             unless you invoke RunTransferJob or update the
             job to have a non-empty schedule.
-        status (google.storagetransfer_v1.types.TransferJob.Status):
+        status (google.cloud.storage_transfer_v1.types.TransferJob.Status):
             Status of the job. This value MUST be specified for
             ``CreateTransferJobRequests``.
 
@@ -851,7 +851,7 @@ class ErrorSummary(proto.Message):
             Required.
         error_count (int):
             Required. Count of this type of error.
-        error_log_entries (Sequence[google.storagetransfer_v1.types.ErrorLogEntry]):
+        error_log_entries (Sequence[google.cloud.storage_transfer_v1.types.ErrorLogEntry]):
             Error samples.
             At most 5 error log entries will be recorded for
             a given error code for a single transfer
@@ -1030,11 +1030,11 @@ class NotificationConfig(proto.Message):
             ``projects/{project}/topics/{topic}``. Not matching this
             format will result in an
             [INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error.
-        event_types (Sequence[google.storagetransfer_v1.types.NotificationConfig.EventType]):
+        event_types (Sequence[google.cloud.storage_transfer_v1.types.NotificationConfig.EventType]):
             Event types for which a notification is
             desired. If empty, send notifications for all
             event types.
-        payload_format (google.storagetransfer_v1.types.NotificationConfig.PayloadFormat):
+        payload_format (google.cloud.storage_transfer_v1.types.NotificationConfig.PayloadFormat):
             Required. The desired format of the
             notification message payloads.
     """
@@ -1084,20 +1084,20 @@ class TransferOperation(proto.Message):
         project_id (str):
             The ID of the Google Cloud Platform Project
             that owns the operation.
-        transfer_spec (google.storagetransfer_v1.types.TransferSpec):
+        transfer_spec (google.cloud.storage_transfer_v1.types.TransferSpec):
             Transfer specification.
-        notification_config (google.storagetransfer_v1.types.NotificationConfig):
+        notification_config (google.cloud.storage_transfer_v1.types.NotificationConfig):
             Notification configuration.
         start_time (google.protobuf.timestamp_pb2.Timestamp):
             Start time of this transfer execution.
         end_time (google.protobuf.timestamp_pb2.Timestamp):
             End time of this transfer execution.
-        status (google.storagetransfer_v1.types.TransferOperation.Status):
+        status (google.cloud.storage_transfer_v1.types.TransferOperation.Status):
             Status of the transfer operation.
-        counters (google.storagetransfer_v1.types.TransferCounters):
+        counters (google.cloud.storage_transfer_v1.types.TransferCounters):
             Information about the progress of the
             transfer operation.
-        error_breakdowns (Sequence[google.storagetransfer_v1.types.ErrorSummary]):
+        error_breakdowns (Sequence[google.cloud.storage_transfer_v1.types.ErrorSummary]):
             Summarizes errors encountered with sample
             error log entries.
         transfer_job_name (str):

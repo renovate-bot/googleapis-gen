@@ -15,8 +15,8 @@
 #
 import proto  # type: ignore
 
+from google.cloud.storage_transfer_v1.types import transfer_types
 from google.protobuf import field_mask_pb2  # type: ignore
-from google.storagetransfer_v1.types import transfer_types
 
 
 __protobuf__ = proto.module(
@@ -53,7 +53,7 @@ class GetGoogleServiceAccountRequest(proto.Message):
 class CreateTransferJobRequest(proto.Message):
     r"""Request passed to CreateTransferJob.
     Attributes:
-        transfer_job (google.storagetransfer_v1.types.TransferJob):
+        transfer_job (google.cloud.storage_transfer_v1.types.TransferJob):
             Required. The job to create.
     """
 
@@ -72,7 +72,7 @@ class UpdateTransferJobRequest(proto.Message):
         project_id (str):
             Required. The ID of the Google Cloud Platform
             Console project that owns the job.
-        transfer_job (google.storagetransfer_v1.types.TransferJob):
+        transfer_job (google.cloud.storage_transfer_v1.types.TransferJob):
             Required. The job to update. ``transferJob`` is expected to
             specify only four fields:
             [description][google.storagetransfer.v1.TransferJob.description],
@@ -184,7 +184,7 @@ class ListTransferJobsRequest(proto.Message):
 class ListTransferJobsResponse(proto.Message):
     r"""Response from ListTransferJobs.
     Attributes:
-        transfer_jobs (Sequence[google.storagetransfer_v1.types.TransferJob]):
+        transfer_jobs (Sequence[google.cloud.storage_transfer_v1.types.TransferJob]):
             A list of transfer jobs.
         next_page_token (str):
             The list next page token.

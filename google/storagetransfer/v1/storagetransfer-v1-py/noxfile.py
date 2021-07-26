@@ -47,7 +47,7 @@ def unit(session):
     session.run(
         'py.test',
         '--quiet',
-        '--cov=google/storagetransfer_v1/',
+        '--cov=google/cloud/storage_transfer_v1/',
         '--cov-config=.coveragerc',
         '--cov-report=term',
         '--cov-report=html',

@@ -25,10 +25,10 @@ from google.auth.transport.grpc import SslCredentials  # type: ignore
 
 import grpc  # type: ignore
 
+from google.cloud.storage_transfer_v1.types import transfer
+from google.cloud.storage_transfer_v1.types import transfer_types
 from google.longrunning import operations_pb2  # type: ignore
 from google.protobuf import empty_pb2  # type: ignore
-from google.storagetransfer_v1.types import transfer
-from google.storagetransfer_v1.types import transfer_types
 from .base import StorageTransferServiceTransport, DEFAULT_CLIENT_INFO
 
 

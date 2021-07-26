@@ -26,11 +26,11 @@ with io.open(readme_filename, encoding='utf-8') as readme_file:
     readme = readme_file.read()
 
 setuptools.setup(
-    name='google-storagetransfer',
+    name='google-cloud-storage-transfer',
     version=version,
     long_description=readme,
     packages=setuptools.PEP420PackageFinder.find(),
-    namespace_packages=('google',),
+    namespace_packages=('google', 'google.cloud'),
     platforms='Posix; MacOS X; Windows',
     include_package_data=True,
     install_requires=(

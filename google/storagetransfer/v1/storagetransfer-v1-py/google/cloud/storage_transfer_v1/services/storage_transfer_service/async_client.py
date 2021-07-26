@@ -14,106 +14,51 @@
 # limitations under the License.
 #
 from collections import OrderedDict
-from distutils import util
-import os
+import functools
 import re
-from typing import Callable, Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Sequence, Tuple, Type, Union
 import pkg_resources
 
-from google.api_core import client_options as client_options_lib  # type: ignore
-from google.api_core import exceptions as core_exceptions         # type: ignore
-from google.api_core import gapic_v1                              # type: ignore
-from google.api_core import retry as retries                      # type: ignore
-from google.auth import credentials as ga_credentials             # type: ignore
-from google.auth.transport import mtls                            # type: ignore
-from google.auth.transport.grpc import SslCredentials             # type: ignore
-from google.auth.exceptions import MutualTLSChannelError          # type: ignore
-from google.oauth2 import service_account                         # type: ignore
+import google.api_core.client_options as ClientOptions # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
+from google.api_core import gapic_v1                   # type: ignore
+from google.api_core import retry as retries           # type: ignore
+from google.auth import credentials as ga_credentials   # type: ignore
+from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
+from google.cloud.storage_transfer_v1.services.storage_transfer_service import pagers
+from google.cloud.storage_transfer_v1.types import transfer
+from google.cloud.storage_transfer_v1.types import transfer_types
 from google.protobuf import empty_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
-from google.storagetransfer_v1.services.storage_transfer_service import pagers
-from google.storagetransfer_v1.types import transfer
-from google.storagetransfer_v1.types import transfer_types
 from .transports.base import StorageTransferServiceTransport, DEFAULT_CLIENT_INFO
-from .transports.grpc import StorageTransferServiceGrpcTransport
 from .transports.grpc_asyncio import StorageTransferServiceGrpcAsyncIOTransport
+from .client import StorageTransferServiceClient
 
 
-class StorageTransferServiceClientMeta(type):
-    """Metaclass for the StorageTransferService client.
-
-    This provides class-level methods for building and retrieving
-    support objects (e.g. transport) without polluting the client instance
-    objects.
-    """
-    _transport_registry = OrderedDict()  # type: Dict[str, Type[StorageTransferServiceTransport]]
-    _transport_registry["grpc"] = StorageTransferServiceGrpcTransport
-    _transport_registry["grpc_asyncio"] = StorageTransferServiceGrpcAsyncIOTransport
-
-    def get_transport_class(cls,
-            label: str = None,
-        ) -> Type[StorageTransferServiceTransport]:
-        """Returns an appropriate transport class.
-
-        Args:
-            label: The name of the desired transport. If none is
-                provided, then the first transport in the registry is used.
-
-        Returns:
-            The transport class to use.
-        """
-        # If a specific transport is requested, return that one.
-        if label:
-            return cls._transport_registry[label]
-
-        # No transport is requested; return the default (that is, the first one
-        # in the dictionary).
-        return next(iter(cls._transport_registry.values()))
-
-
-class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
+class StorageTransferServiceAsyncClient:
     """Storage Transfer Service and its protos.
     Transfers data between between Google Cloud Storage buckets or
     from a data source external to Google to a Cloud Storage bucket.
     """
 
-    @staticmethod
-    def _get_default_mtls_endpoint(api_endpoint):
-        """Converts api endpoint to mTLS endpoint.
+    _client: StorageTransferServiceClient
 
-        Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
-        "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
-        Args:
-            api_endpoint (Optional[str]): the api endpoint to convert.
-        Returns:
-            str: converted mTLS api endpoint.
-        """
-        if not api_endpoint:
-            return api_endpoint
+    DEFAULT_ENDPOINT = StorageTransferServiceClient.DEFAULT_ENDPOINT
+    DEFAULT_MTLS_ENDPOINT = StorageTransferServiceClient.DEFAULT_MTLS_ENDPOINT
 
-        mtls_endpoint_re = re.compile(
-            r"(?P<name>[^.]+)(?P<mtls>\.mtls)?(?P<sandbox>\.sandbox)?(?P<googledomain>\.googleapis\.com)?"
-        )
-
-        m = mtls_endpoint_re.match(api_endpoint)
-        name, mtls, sandbox, googledomain = m.groups()
-        if mtls or not googledomain:
-            return api_endpoint
-
-        if sandbox:
-            return api_endpoint.replace(
-                "sandbox.googleapis.com", "mtls.sandbox.googleapis.com"
-            )
-
-        return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
-
-    DEFAULT_ENDPOINT = "storagetransfer.googleapis.com"
-    DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
-        DEFAULT_ENDPOINT
-    )
+    common_billing_account_path = staticmethod(StorageTransferServiceClient.common_billing_account_path)
+    parse_common_billing_account_path = staticmethod(StorageTransferServiceClient.parse_common_billing_account_path)
+    common_folder_path = staticmethod(StorageTransferServiceClient.common_folder_path)
+    parse_common_folder_path = staticmethod(StorageTransferServiceClient.parse_common_folder_path)
+    common_organization_path = staticmethod(StorageTransferServiceClient.common_organization_path)
+    parse_common_organization_path = staticmethod(StorageTransferServiceClient.parse_common_organization_path)
+    common_project_path = staticmethod(StorageTransferServiceClient.common_project_path)
+    parse_common_project_path = staticmethod(StorageTransferServiceClient.parse_common_project_path)
+    common_location_path = staticmethod(StorageTransferServiceClient.common_location_path)
+    parse_common_location_path = staticmethod(StorageTransferServiceClient.parse_common_location_path)
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
@@ -126,11 +71,9 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            StorageTransferServiceClient: The constructed client.
+            StorageTransferServiceAsyncClient: The constructed client.
         """
-        credentials = service_account.Credentials.from_service_account_info(info)
-        kwargs["credentials"] = credentials
-        return cls(*args, **kwargs)
+        return StorageTransferServiceClient.from_service_account_info.__func__(StorageTransferServiceAsyncClient, info, *args, **kwargs)  # type: ignore
 
     @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
@@ -144,12 +87,9 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            StorageTransferServiceClient: The constructed client.
+            StorageTransferServiceAsyncClient: The constructed client.
         """
-        credentials = service_account.Credentials.from_service_account_file(
-            filename)
-        kwargs["credentials"] = credentials
-        return cls(*args, **kwargs)
+        return StorageTransferServiceClient.from_service_account_file.__func__(StorageTransferServiceAsyncClient, filename, *args, **kwargs)  # type: ignore
 
     from_service_account_json = from_service_account_file
 
@@ -158,70 +98,16 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         """Returns the transport used by the client instance.
 
         Returns:
-            StorageTransferServiceTransport: The transport used by the client
-                instance.
+            StorageTransferServiceTransport: The transport used by the client instance.
         """
-        return self._transport
+        return self._client.transport
 
-    @staticmethod
-    def common_billing_account_path(billing_account: str, ) -> str:
-        """Returns a fully-qualified billing_account string."""
-        return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
-
-    @staticmethod
-    def parse_common_billing_account_path(path: str) -> Dict[str,str]:
-        """Parse a billing_account path into its component segments."""
-        m = re.match(r"^billingAccounts/(?P<billing_account>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def common_folder_path(folder: str, ) -> str:
-        """Returns a fully-qualified folder string."""
-        return "folders/{folder}".format(folder=folder, )
-
-    @staticmethod
-    def parse_common_folder_path(path: str) -> Dict[str,str]:
-        """Parse a folder path into its component segments."""
-        m = re.match(r"^folders/(?P<folder>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def common_organization_path(organization: str, ) -> str:
-        """Returns a fully-qualified organization string."""
-        return "organizations/{organization}".format(organization=organization, )
-
-    @staticmethod
-    def parse_common_organization_path(path: str) -> Dict[str,str]:
-        """Parse a organization path into its component segments."""
-        m = re.match(r"^organizations/(?P<organization>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def common_project_path(project: str, ) -> str:
-        """Returns a fully-qualified project string."""
-        return "projects/{project}".format(project=project, )
-
-    @staticmethod
-    def parse_common_project_path(path: str) -> Dict[str,str]:
-        """Parse a project path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)$", path)
-        return m.groupdict() if m else {}
-
-    @staticmethod
-    def common_location_path(project: str, location: str, ) -> str:
-        """Returns a fully-qualified location string."""
-        return "projects/{project}/locations/{location}".format(project=project, location=location, )
-
-    @staticmethod
-    def parse_common_location_path(path: str) -> Dict[str,str]:
-        """Parse a location path into its component segments."""
-        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)$", path)
-        return m.groupdict() if m else {}
+    get_transport_class = functools.partial(type(StorageTransferServiceClient).get_transport_class, type(StorageTransferServiceClient))
 
     def __init__(self, *,
-            credentials: Optional[ga_credentials.Credentials] = None,
-            transport: Union[str, StorageTransferServiceTransport, None] = None,
-            client_options: Optional[client_options_lib.ClientOptions] = None,
+            credentials: ga_credentials.Credentials = None,
+            transport: Union[str, StorageTransferServiceTransport] = "grpc_asyncio",
+            client_options: ClientOptions = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
         """Instantiates the storage transfer service client.
@@ -232,11 +118,11 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, StorageTransferServiceTransport]): The
+            transport (Union[str, ~.StorageTransferServiceTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
-            client_options (google.api_core.client_options.ClientOptions): Custom options for the
-                client. It won't take effect if a ``transport`` instance is provided.
+            client_options (ClientOptions): Custom options for the client. It
+                won't take effect if a ``transport`` instance is provided.
                 (1) The ``api_endpoint`` property can be used to override the
                 default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
                 environment variable can also be used to override the endpoint:
@@ -251,88 +137,20 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 not provided, the default SSL client certificate will be used if
                 present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is "false" or not
                 set, no client certificate will be used.
-            client_info (google.api_core.gapic_v1.client_info.ClientInfo):
-                The client info used to send a user-agent string along with
-                API requests. If ``None``, then default info will be used.
-                Generally, you only need to set this if you're developing
-                your own client library.
 
         Raises:
-            google.auth.exceptions.MutualTLSChannelError: If mutual TLS transport
+            google.auth.exceptions.MutualTlsChannelError: If mutual TLS transport
                 creation failed for any reason.
         """
-        if isinstance(client_options, dict):
-            client_options = client_options_lib.from_dict(client_options)
-        if client_options is None:
-            client_options = client_options_lib.ClientOptions()
+        self._client = StorageTransferServiceClient(
+            credentials=credentials,
+            transport=transport,
+            client_options=client_options,
+            client_info=client_info,
 
-        # Create SSL credentials for mutual TLS if needed.
-        use_client_cert = bool(util.strtobool(os.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false")))
+        )
 
-        client_cert_source_func = None
-        is_mtls = False
-        if use_client_cert:
-            if client_options.client_cert_source:
-                is_mtls = True
-                client_cert_source_func = client_options.client_cert_source
-            else:
-                is_mtls = mtls.has_default_client_cert_source()
-                if is_mtls:
-                    client_cert_source_func = mtls.default_client_cert_source()
-                else:
-                    client_cert_source_func = None
-
-        # Figure out which api endpoint to use.
-        if client_options.api_endpoint is not None:
-            api_endpoint = client_options.api_endpoint
-        else:
-            use_mtls_env = os.getenv("GOOGLE_API_USE_MTLS_ENDPOINT", "auto")
-            if use_mtls_env == "never":
-                api_endpoint = self.DEFAULT_ENDPOINT
-            elif use_mtls_env == "always":
-                api_endpoint = self.DEFAULT_MTLS_ENDPOINT
-            elif use_mtls_env == "auto":
-                if is_mtls:
-                    api_endpoint = self.DEFAULT_MTLS_ENDPOINT
-                else:
-                    api_endpoint = self.DEFAULT_ENDPOINT
-            else:
-                raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
-                    "values: never, auto, always"
-                )
-
-        # Save or instantiate the transport.
-        # Ordinarily, we provide the transport, but allowing a custom transport
-        # instance provides an extensibility point for unusual situations.
-        if isinstance(transport, StorageTransferServiceTransport):
-            # transport is a StorageTransferServiceTransport instance.
-            if credentials or client_options.credentials_file:
-                raise ValueError("When providing a transport instance, "
-                                 "provide its credentials directly.")
-            if client_options.scopes:
-                raise ValueError(
-                    "When providing a transport instance, provide its scopes "
-                    "directly."
-                )
-            self._transport = transport
-        else:
-            Transport = type(self).get_transport_class(transport)
-            self._transport = Transport(
-                credentials=credentials,
-                credentials_file=client_options.credentials_file,
-                host=api_endpoint,
-                scopes=client_options.scopes,
-                client_cert_source_for_mtls=client_cert_source_func,
-                quota_project_id=client_options.quota_project_id,
-                client_info=client_info,
-                always_use_jwt_access=(
-                    Transport == type(self).get_transport_class("grpc")
-                    or Transport == type(self).get_transport_class("grpc_asyncio")
-                ),
-            )
-
-    def get_google_service_account(self,
+    async def get_google_service_account(self,
             request: transfer.GetGoogleServiceAccountRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -351,7 +169,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         Service.
 
         Args:
-            request (google.storagetransfer_v1.types.GetGoogleServiceAccountRequest):
+            request (:class:`google.cloud.storage_transfer_v1.types.GetGoogleServiceAccountRequest`):
                 The request object. Request passed to
                 GetGoogleServiceAccount.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -361,23 +179,22 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.storagetransfer_v1.types.GoogleServiceAccount:
+            google.cloud.storage_transfer_v1.types.GoogleServiceAccount:
                 Google service account
         """
         # Create or coerce a protobuf request object.
-        # Minor optimization to avoid making a copy if the user passes
-        # in a transfer.GetGoogleServiceAccountRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, transfer.GetGoogleServiceAccountRequest):
-            request = transfer.GetGoogleServiceAccountRequest(request)
+        request = transfer.GetGoogleServiceAccountRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.get_google_service_account]
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.get_google_service_account,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
 
         # Send the request.
-        response = rpc(
+        response = await rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -387,7 +204,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         # Done; return the response.
         return response
 
-    def create_transfer_job(self,
+    async def create_transfer_job(self,
             request: transfer.CreateTransferJobRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -397,7 +214,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         r"""Creates a transfer job that runs periodically.
 
         Args:
-            request (google.storagetransfer_v1.types.CreateTransferJobRequest):
+            request (:class:`google.cloud.storage_transfer_v1.types.CreateTransferJobRequest`):
                 The request object. Request passed to CreateTransferJob.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -406,26 +223,25 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.storagetransfer_v1.types.TransferJob:
+            google.cloud.storage_transfer_v1.types.TransferJob:
                 This resource represents the
                 configuration of a transfer job that
                 runs periodically.
 
         """
         # Create or coerce a protobuf request object.
-        # Minor optimization to avoid making a copy if the user passes
-        # in a transfer.CreateTransferJobRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, transfer.CreateTransferJobRequest):
-            request = transfer.CreateTransferJobRequest(request)
+        request = transfer.CreateTransferJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.create_transfer_job]
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.create_transfer_job,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
 
         # Send the request.
-        response = rpc(
+        response = await rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -435,7 +251,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         # Done; return the response.
         return response
 
-    def update_transfer_job(self,
+    async def update_transfer_job(self,
             request: transfer.UpdateTransferJobRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -455,7 +271,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         [ENABLED][google.storagetransfer.v1.TransferJob.Status.ENABLED]).
 
         Args:
-            request (google.storagetransfer_v1.types.UpdateTransferJobRequest):
+            request (:class:`google.cloud.storage_transfer_v1.types.UpdateTransferJobRequest`):
                 The request object. Request passed to UpdateTransferJob.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -464,23 +280,22 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.storagetransfer_v1.types.TransferJob:
+            google.cloud.storage_transfer_v1.types.TransferJob:
                 This resource represents the
                 configuration of a transfer job that
                 runs periodically.
 
         """
         # Create or coerce a protobuf request object.
-        # Minor optimization to avoid making a copy if the user passes
-        # in a transfer.UpdateTransferJobRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, transfer.UpdateTransferJobRequest):
-            request = transfer.UpdateTransferJobRequest(request)
+        request = transfer.UpdateTransferJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.update_transfer_job]
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.update_transfer_job,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -491,7 +306,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         )
 
         # Send the request.
-        response = rpc(
+        response = await rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -501,7 +316,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         # Done; return the response.
         return response
 
-    def get_transfer_job(self,
+    async def get_transfer_job(self,
             request: transfer.GetTransferJobRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -511,7 +326,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         r"""Gets a transfer job.
 
         Args:
-            request (google.storagetransfer_v1.types.GetTransferJobRequest):
+            request (:class:`google.cloud.storage_transfer_v1.types.GetTransferJobRequest`):
                 The request object. Request passed to GetTransferJob.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -520,23 +335,22 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.storagetransfer_v1.types.TransferJob:
+            google.cloud.storage_transfer_v1.types.TransferJob:
                 This resource represents the
                 configuration of a transfer job that
                 runs periodically.
 
         """
         # Create or coerce a protobuf request object.
-        # Minor optimization to avoid making a copy if the user passes
-        # in a transfer.GetTransferJobRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, transfer.GetTransferJobRequest):
-            request = transfer.GetTransferJobRequest(request)
+        request = transfer.GetTransferJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.get_transfer_job]
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.get_transfer_job,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -547,7 +361,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         )
 
         # Send the request.
-        response = rpc(
+        response = await rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -557,17 +371,17 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         # Done; return the response.
         return response
 
-    def list_transfer_jobs(self,
+    async def list_transfer_jobs(self,
             request: transfer.ListTransferJobsRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> pagers.ListTransferJobsPager:
+            ) -> pagers.ListTransferJobsAsyncPager:
         r"""Lists transfer jobs.
 
         Args:
-            request (google.storagetransfer_v1.types.ListTransferJobsRequest):
+            request (:class:`google.cloud.storage_transfer_v1.types.ListTransferJobsRequest`):
                 The request object. `projectId`, `jobNames`, and
                 `jobStatuses` are query parameters that can be specified
                 when listing transfer jobs.
@@ -578,7 +392,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.storagetransfer_v1.services.storage_transfer_service.pagers.ListTransferJobsPager:
+            google.cloud.storage_transfer_v1.services.storage_transfer_service.pagers.ListTransferJobsAsyncPager:
                 Response from ListTransferJobs.
                 Iterating over this object will yield
                 results and resolve additional pages
@@ -586,19 +400,18 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-        # Minor optimization to avoid making a copy if the user passes
-        # in a transfer.ListTransferJobsRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, transfer.ListTransferJobsRequest):
-            request = transfer.ListTransferJobsRequest(request)
+        request = transfer.ListTransferJobsRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.list_transfer_jobs]
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.list_transfer_jobs,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
 
         # Send the request.
-        response = rpc(
+        response = await rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -606,8 +419,8 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         )
 
         # This method is paged; wrap the response in a pager, which provides
-        # an `__iter__` convenience method.
-        response = pagers.ListTransferJobsPager(
+        # an `__aiter__` convenience method.
+        response = pagers.ListTransferJobsAsyncPager(
             method=rpc,
             request=request,
             response=response,
@@ -617,7 +430,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         # Done; return the response.
         return response
 
-    def pause_transfer_operation(self,
+    async def pause_transfer_operation(self,
             request: transfer.PauseTransferOperationRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -627,7 +440,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         r"""Pauses a transfer operation.
 
         Args:
-            request (google.storagetransfer_v1.types.PauseTransferOperationRequest):
+            request (:class:`google.cloud.storage_transfer_v1.types.PauseTransferOperationRequest`):
                 The request object. Request passed to
                 PauseTransferOperation.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -637,16 +450,15 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-        # Minor optimization to avoid making a copy if the user passes
-        # in a transfer.PauseTransferOperationRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, transfer.PauseTransferOperationRequest):
-            request = transfer.PauseTransferOperationRequest(request)
+        request = transfer.PauseTransferOperationRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.pause_transfer_operation]
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.pause_transfer_operation,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -657,14 +469,14 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         )
 
         # Send the request.
-        rpc(
+        await rpc(
             request,
             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
 
-    def resume_transfer_operation(self,
+    async def resume_transfer_operation(self,
             request: transfer.ResumeTransferOperationRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
@@ -674,7 +486,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         r"""Resumes a transfer operation that is paused.
 
         Args:
-            request (google.storagetransfer_v1.types.ResumeTransferOperationRequest):
+            request (:class:`google.cloud.storage_transfer_v1.types.ResumeTransferOperationRequest`):
                 The request object. Request passed to
                 ResumeTransferOperation.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -684,16 +496,15 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 sent along with the request as metadata.
         """
         # Create or coerce a protobuf request object.
-        # Minor optimization to avoid making a copy if the user passes
-        # in a transfer.ResumeTransferOperationRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, transfer.ResumeTransferOperationRequest):
-            request = transfer.ResumeTransferOperationRequest(request)
+        request = transfer.ResumeTransferOperationRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.resume_transfer_operation]
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.resume_transfer_operation,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -704,27 +515,27 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         )
 
         # Send the request.
-        rpc(
+        await rpc(
             request,
             retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
 
-    def run_transfer_job(self,
+    async def run_transfer_job(self,
             request: transfer.RunTransferJobRequest = None,
             *,
             retry: retries.Retry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
-            ) -> operation.Operation:
+            ) -> operation_async.AsyncOperation:
         r"""Attempts to start a new TransferOperation for the
         current TransferJob. A TransferJob has a maximum of one
         active TransferOperation. If this method is called while
         a TransferOperation is active, an error wil be returned.
 
         Args:
-            request (google.storagetransfer_v1.types.RunTransferJobRequest):
+            request (:class:`google.cloud.storage_transfer_v1.types.RunTransferJobRequest`):
                 The request object. Request passed to RunTransferJob.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -733,7 +544,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation.Operation:
+            google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be :class:`google.protobuf.empty_pb2.Empty` A generic empty message that you can re-use to avoid defining duplicated
@@ -752,16 +563,15 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
 
         """
         # Create or coerce a protobuf request object.
-        # Minor optimization to avoid making a copy if the user passes
-        # in a transfer.RunTransferJobRequest.
-        # There's no risk of modifying the input as we've already verified
-        # there are no flattened fields.
-        if not isinstance(request, transfer.RunTransferJobRequest):
-            request = transfer.RunTransferJobRequest(request)
+        request = transfer.RunTransferJobRequest(request)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
-        rpc = self._transport._wrapped_methods[self._transport.run_transfer_job]
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.run_transfer_job,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
 
         # Certain fields should be provided within the metadata header;
         # add these here.
@@ -772,7 +582,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         )
 
         # Send the request.
-        response = rpc(
+        response = await rpc(
             request,
             retry=retry,
             timeout=timeout,
@@ -780,9 +590,9 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
         )
 
         # Wrap the response in an operation future.
-        response = operation.from_gapic(
+        response = operation_async.from_gapic(
             response,
-            self._transport.operations_client,
+            self._client._transport.operations_client,
             empty_pb2.Empty,
             metadata_type=transfer_types.TransferOperation,
         )
@@ -797,7 +607,7 @@ class StorageTransferServiceClient(metaclass=StorageTransferServiceClientMeta):
 try:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution(
-            "google-storagetransfer",
+            "google-cloud-storage-transfer",
         ).version,
     )
 except pkg_resources.DistributionNotFound:
@@ -805,5 +615,5 @@ except pkg_resources.DistributionNotFound:
 
 
 __all__ = (
-    "StorageTransferServiceClient",
+    "StorageTransferServiceAsyncClient",
 )

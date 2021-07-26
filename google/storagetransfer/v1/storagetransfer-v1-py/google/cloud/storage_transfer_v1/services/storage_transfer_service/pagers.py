@@ -15,15 +15,15 @@
 #
 from typing import Any, AsyncIterable, Awaitable, Callable, Iterable, Sequence, Tuple, Optional
 
-from google.storagetransfer_v1.types import transfer
-from google.storagetransfer_v1.types import transfer_types
+from google.cloud.storage_transfer_v1.types import transfer
+from google.cloud.storage_transfer_v1.types import transfer_types
 
 
 class ListTransferJobsPager:
     """A pager for iterating through ``list_transfer_jobs`` requests.
 
     This class thinly wraps an initial
-    :class:`google.storagetransfer_v1.types.ListTransferJobsResponse` object, and
+    :class:`google.cloud.storage_transfer_v1.types.ListTransferJobsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``transfer_jobs`` field.
 
@@ -32,7 +32,7 @@ class ListTransferJobsPager:
     through the ``transfer_jobs`` field on the
     corresponding responses.
 
-    All the usual :class:`google.storagetransfer_v1.types.ListTransferJobsResponse`
+    All the usual :class:`google.cloud.storage_transfer_v1.types.ListTransferJobsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -47,9 +47,9 @@ class ListTransferJobsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.storagetransfer_v1.types.ListTransferJobsRequest):
+            request (google.cloud.storage_transfer_v1.types.ListTransferJobsRequest):
                 The initial request object.
-            response (google.storagetransfer_v1.types.ListTransferJobsResponse):
+            response (google.cloud.storage_transfer_v1.types.ListTransferJobsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -82,7 +82,7 @@ class ListTransferJobsAsyncPager:
     """A pager for iterating through ``list_transfer_jobs`` requests.
 
     This class thinly wraps an initial
-    :class:`google.storagetransfer_v1.types.ListTransferJobsResponse` object, and
+    :class:`google.cloud.storage_transfer_v1.types.ListTransferJobsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``transfer_jobs`` field.
 
@@ -91,7 +91,7 @@ class ListTransferJobsAsyncPager:
     through the ``transfer_jobs`` field on the
     corresponding responses.
 
-    All the usual :class:`google.storagetransfer_v1.types.ListTransferJobsResponse`
+    All the usual :class:`google.cloud.storage_transfer_v1.types.ListTransferJobsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -106,9 +106,9 @@ class ListTransferJobsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.storagetransfer_v1.types.ListTransferJobsRequest):
+            request (google.cloud.storage_transfer_v1.types.ListTransferJobsRequest):
                 The initial request object.
-            response (google.storagetransfer_v1.types.ListTransferJobsResponse):
+            response (google.cloud.storage_transfer_v1.types.ListTransferJobsResponse):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
