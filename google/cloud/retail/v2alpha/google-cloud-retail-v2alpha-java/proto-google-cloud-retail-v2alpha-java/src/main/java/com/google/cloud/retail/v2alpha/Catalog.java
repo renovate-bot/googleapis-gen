@@ -79,6 +79,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 50: {
+            com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.Builder subBuilder = null;
+            if (merchantCenterLinkingConfig_ != null) {
+              subBuilder = merchantCenterLinkingConfig_.toBuilder();
+            }
+            merchantCenterLinkingConfig_ = input.readMessage(com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(merchantCenterLinkingConfig_);
+              merchantCenterLinkingConfig_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -245,6 +258,53 @@ private static final long serialVersionUID = 0L;
     return getProductLevelConfig();
   }
 
+  public static final int MERCHANT_CENTER_LINKING_CONFIG_FIELD_NUMBER = 6;
+  private com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchantCenterLinkingConfig_;
+  /**
+   * <pre>
+   * The Merchant Center linking configuration.
+   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * will be enabled automatically. The requester must have access to the
+   * merchant center account in order to make changes to this field.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+   * @return Whether the merchantCenterLinkingConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasMerchantCenterLinkingConfig() {
+    return merchantCenterLinkingConfig_ != null;
+  }
+  /**
+   * <pre>
+   * The Merchant Center linking configuration.
+   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * will be enabled automatically. The requester must have access to the
+   * merchant center account in order to make changes to this field.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+   * @return The merchantCenterLinkingConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig getMerchantCenterLinkingConfig() {
+    return merchantCenterLinkingConfig_ == null ? com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.getDefaultInstance() : merchantCenterLinkingConfig_;
+  }
+  /**
+   * <pre>
+   * The Merchant Center linking configuration.
+   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * will be enabled automatically. The requester must have access to the
+   * merchant center account in order to make changes to this field.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfigOrBuilder getMerchantCenterLinkingConfigOrBuilder() {
+    return getMerchantCenterLinkingConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -268,6 +328,9 @@ private static final long serialVersionUID = 0L;
     if (productLevelConfig_ != null) {
       output.writeMessage(4, getProductLevelConfig());
     }
+    if (merchantCenterLinkingConfig_ != null) {
+      output.writeMessage(6, getMerchantCenterLinkingConfig());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -286,6 +349,10 @@ private static final long serialVersionUID = 0L;
     if (productLevelConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getProductLevelConfig());
+    }
+    if (merchantCenterLinkingConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, getMerchantCenterLinkingConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -311,6 +378,11 @@ private static final long serialVersionUID = 0L;
       if (!getProductLevelConfig()
           .equals(other.getProductLevelConfig())) return false;
     }
+    if (hasMerchantCenterLinkingConfig() != other.hasMerchantCenterLinkingConfig()) return false;
+    if (hasMerchantCenterLinkingConfig()) {
+      if (!getMerchantCenterLinkingConfig()
+          .equals(other.getMerchantCenterLinkingConfig())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -329,6 +401,10 @@ private static final long serialVersionUID = 0L;
     if (hasProductLevelConfig()) {
       hash = (37 * hash) + PRODUCT_LEVEL_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getProductLevelConfig().hashCode();
+    }
+    if (hasMerchantCenterLinkingConfig()) {
+      hash = (37 * hash) + MERCHANT_CENTER_LINKING_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getMerchantCenterLinkingConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -477,6 +553,12 @@ private static final long serialVersionUID = 0L;
         productLevelConfig_ = null;
         productLevelConfigBuilder_ = null;
       }
+      if (merchantCenterLinkingConfigBuilder_ == null) {
+        merchantCenterLinkingConfig_ = null;
+      } else {
+        merchantCenterLinkingConfig_ = null;
+        merchantCenterLinkingConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -509,6 +591,11 @@ private static final long serialVersionUID = 0L;
         result.productLevelConfig_ = productLevelConfig_;
       } else {
         result.productLevelConfig_ = productLevelConfigBuilder_.build();
+      }
+      if (merchantCenterLinkingConfigBuilder_ == null) {
+        result.merchantCenterLinkingConfig_ = merchantCenterLinkingConfig_;
+      } else {
+        result.merchantCenterLinkingConfig_ = merchantCenterLinkingConfigBuilder_.build();
       }
       onBuilt();
       return result;
@@ -568,6 +655,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasProductLevelConfig()) {
         mergeProductLevelConfig(other.getProductLevelConfig());
+      }
+      if (other.hasMerchantCenterLinkingConfig()) {
+        mergeMerchantCenterLinkingConfig(other.getMerchantCenterLinkingConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -953,6 +1043,188 @@ private static final long serialVersionUID = 0L;
         productLevelConfig_ = null;
       }
       return productLevelConfigBuilder_;
+    }
+
+    private com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchantCenterLinkingConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig, com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.Builder, com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfigOrBuilder> merchantCenterLinkingConfigBuilder_;
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     * @return Whether the merchantCenterLinkingConfig field is set.
+     */
+    public boolean hasMerchantCenterLinkingConfig() {
+      return merchantCenterLinkingConfigBuilder_ != null || merchantCenterLinkingConfig_ != null;
+    }
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     * @return The merchantCenterLinkingConfig.
+     */
+    public com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig getMerchantCenterLinkingConfig() {
+      if (merchantCenterLinkingConfigBuilder_ == null) {
+        return merchantCenterLinkingConfig_ == null ? com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.getDefaultInstance() : merchantCenterLinkingConfig_;
+      } else {
+        return merchantCenterLinkingConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     */
+    public Builder setMerchantCenterLinkingConfig(com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig value) {
+      if (merchantCenterLinkingConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        merchantCenterLinkingConfig_ = value;
+        onChanged();
+      } else {
+        merchantCenterLinkingConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     */
+    public Builder setMerchantCenterLinkingConfig(
+        com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.Builder builderForValue) {
+      if (merchantCenterLinkingConfigBuilder_ == null) {
+        merchantCenterLinkingConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        merchantCenterLinkingConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     */
+    public Builder mergeMerchantCenterLinkingConfig(com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig value) {
+      if (merchantCenterLinkingConfigBuilder_ == null) {
+        if (merchantCenterLinkingConfig_ != null) {
+          merchantCenterLinkingConfig_ =
+            com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.newBuilder(merchantCenterLinkingConfig_).mergeFrom(value).buildPartial();
+        } else {
+          merchantCenterLinkingConfig_ = value;
+        }
+        onChanged();
+      } else {
+        merchantCenterLinkingConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     */
+    public Builder clearMerchantCenterLinkingConfig() {
+      if (merchantCenterLinkingConfigBuilder_ == null) {
+        merchantCenterLinkingConfig_ = null;
+        onChanged();
+      } else {
+        merchantCenterLinkingConfig_ = null;
+        merchantCenterLinkingConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     */
+    public com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.Builder getMerchantCenterLinkingConfigBuilder() {
+      
+      onChanged();
+      return getMerchantCenterLinkingConfigFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     */
+    public com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfigOrBuilder getMerchantCenterLinkingConfigOrBuilder() {
+      if (merchantCenterLinkingConfigBuilder_ != null) {
+        return merchantCenterLinkingConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return merchantCenterLinkingConfig_ == null ?
+            com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.getDefaultInstance() : merchantCenterLinkingConfig_;
+      }
+    }
+    /**
+     * <pre>
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig, com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.Builder, com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfigOrBuilder> 
+        getMerchantCenterLinkingConfigFieldBuilder() {
+      if (merchantCenterLinkingConfigBuilder_ == null) {
+        merchantCenterLinkingConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig, com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig.Builder, com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfigOrBuilder>(
+                getMerchantCenterLinkingConfig(),
+                getParentForChildren(),
+                isClean());
+        merchantCenterLinkingConfig_ = null;
+      }
+      return merchantCenterLinkingConfigBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -87,6 +87,20 @@ private static final long serialVersionUID = 0L;
             projectId_ = s;
             break;
           }
+          case 50: {
+            com.google.type.Date.Builder subBuilder = null;
+            if (partitionCase_ == 6) {
+              subBuilder = ((com.google.type.Date) partition_).toBuilder();
+            }
+            partition_ =
+                input.readMessage(com.google.type.Date.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.type.Date) partition_);
+              partition_ = subBuilder.buildPartial();
+            }
+            partitionCase_ = 6;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,13 +133,104 @@ private static final long serialVersionUID = 0L;
             com.google.cloud.retail.v2alpha.BigQuerySource.class, com.google.cloud.retail.v2alpha.BigQuerySource.Builder.class);
   }
 
+  private int partitionCase_ = 0;
+  private java.lang.Object partition_;
+  public enum PartitionCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    PARTITION_DATE(6),
+    PARTITION_NOT_SET(0);
+    private final int value;
+    private PartitionCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static PartitionCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static PartitionCase forNumber(int value) {
+      switch (value) {
+        case 6: return PARTITION_DATE;
+        case 0: return PARTITION_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public PartitionCase
+  getPartitionCase() {
+    return PartitionCase.forNumber(
+        partitionCase_);
+  }
+
+  public static final int PARTITION_DATE_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>.google.type.Date partition_date = 6;</code>
+   * @return Whether the partitionDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasPartitionDate() {
+    return partitionCase_ == 6;
+  }
+  /**
+   * <pre>
+   * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>.google.type.Date partition_date = 6;</code>
+   * @return The partitionDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getPartitionDate() {
+    if (partitionCase_ == 6) {
+       return (com.google.type.Date) partition_;
+    }
+    return com.google.type.Date.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+   * Only supported when
+   * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+   * is set to `FULL`.
+   * </pre>
+   *
+   * <code>.google.type.Date partition_date = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getPartitionDateOrBuilder() {
+    if (partitionCase_ == 6) {
+       return (com.google.type.Date) partition_;
+    }
+    return com.google.type.Date.getDefaultInstance();
+  }
+
   public static final int PROJECT_ID_FIELD_NUMBER = 5;
   private volatile java.lang.Object projectId_;
   /**
    * <pre>
-   * The project id (can be project # or id) that the BigQuery source is in with
+   * The project ID (can be project # or ID) that the BigQuery source is in with
    * a length limit of 128 characters. If not specified, inherits the project
-   * id from the parent request.
+   * ID from the parent request.
    * </pre>
    *
    * <code>string project_id = 5;</code>
@@ -146,9 +251,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The project id (can be project # or id) that the BigQuery source is in with
+   * The project ID (can be project # or ID) that the BigQuery source is in with
    * a length limit of 128 characters. If not specified, inherits the project
-   * id from the parent request.
+   * ID from the parent request.
    * </pre>
    *
    * <code>string project_id = 5;</code>
@@ -325,12 +430,12 @@ private static final long serialVersionUID = 0L;
    * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
-   *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+   *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
    * Supported values for user events imports:
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
    * * `user_event_ga360`: Using
-   *   https://support.google.com/analytics/answer/3437719?hl=en.
+   *   https://support.google.com/analytics/answer/3437719.
    * </pre>
    *
    * <code>string data_schema = 4;</code>
@@ -357,12 +462,12 @@ private static final long serialVersionUID = 0L;
    * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
    *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
    * * `product_merchant_center`: See [Importing catalog data from Merchant
-   *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+   *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
    * Supported values for user events imports:
    * * `user_event` (default): One JSON
    * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
    * * `user_event_ga360`: Using
-   *   https://support.google.com/analytics/answer/3437719?hl=en.
+   *   https://support.google.com/analytics/answer/3437719.
    * </pre>
    *
    * <code>string data_schema = 4;</code>
@@ -412,6 +517,9 @@ private static final long serialVersionUID = 0L;
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, projectId_);
     }
+    if (partitionCase_ == 6) {
+      output.writeMessage(6, (com.google.type.Date) partition_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -435,6 +543,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getProjectIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, projectId_);
+    }
+    if (partitionCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.google.type.Date) partition_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -461,6 +573,15 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGcsStagingDir())) return false;
     if (!getDataSchema()
         .equals(other.getDataSchema())) return false;
+    if (!getPartitionCase().equals(other.getPartitionCase())) return false;
+    switch (partitionCase_) {
+      case 6:
+        if (!getPartitionDate()
+            .equals(other.getPartitionDate())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -482,6 +603,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getGcsStagingDir().hashCode();
     hash = (37 * hash) + DATA_SCHEMA_FIELD_NUMBER;
     hash = (53 * hash) + getDataSchema().hashCode();
+    switch (partitionCase_) {
+      case 6:
+        hash = (37 * hash) + PARTITION_DATE_FIELD_NUMBER;
+        hash = (53 * hash) + getPartitionDate().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -629,6 +758,8 @@ private static final long serialVersionUID = 0L;
 
       dataSchema_ = "";
 
+      partitionCase_ = 0;
+      partition_ = null;
       return this;
     }
 
@@ -655,11 +786,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.retail.v2alpha.BigQuerySource buildPartial() {
       com.google.cloud.retail.v2alpha.BigQuerySource result = new com.google.cloud.retail.v2alpha.BigQuerySource(this);
+      if (partitionCase_ == 6) {
+        if (partitionDateBuilder_ == null) {
+          result.partition_ = partition_;
+        } else {
+          result.partition_ = partitionDateBuilder_.build();
+        }
+      }
       result.projectId_ = projectId_;
       result.datasetId_ = datasetId_;
       result.tableId_ = tableId_;
       result.gcsStagingDir_ = gcsStagingDir_;
       result.dataSchema_ = dataSchema_;
+      result.partitionCase_ = partitionCase_;
       onBuilt();
       return result;
     }
@@ -728,6 +867,15 @@ private static final long serialVersionUID = 0L;
         dataSchema_ = other.dataSchema_;
         onChanged();
       }
+      switch (other.getPartitionCase()) {
+        case PARTITION_DATE: {
+          mergePartitionDate(other.getPartitionDate());
+          break;
+        }
+        case PARTITION_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -756,13 +904,232 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int partitionCase_ = 0;
+    private java.lang.Object partition_;
+    public PartitionCase
+        getPartitionCase() {
+      return PartitionCase.forNumber(
+          partitionCase_);
+    }
+
+    public Builder clearPartition() {
+      partitionCase_ = 0;
+      partition_ = null;
+      onChanged();
+      return this;
+    }
+
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> partitionDateBuilder_;
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     * @return Whether the partitionDate field is set.
+     */
+    @java.lang.Override
+    public boolean hasPartitionDate() {
+      return partitionCase_ == 6;
+    }
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     * @return The partitionDate.
+     */
+    @java.lang.Override
+    public com.google.type.Date getPartitionDate() {
+      if (partitionDateBuilder_ == null) {
+        if (partitionCase_ == 6) {
+          return (com.google.type.Date) partition_;
+        }
+        return com.google.type.Date.getDefaultInstance();
+      } else {
+        if (partitionCase_ == 6) {
+          return partitionDateBuilder_.getMessage();
+        }
+        return com.google.type.Date.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     */
+    public Builder setPartitionDate(com.google.type.Date value) {
+      if (partitionDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        partition_ = value;
+        onChanged();
+      } else {
+        partitionDateBuilder_.setMessage(value);
+      }
+      partitionCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     */
+    public Builder setPartitionDate(
+        com.google.type.Date.Builder builderForValue) {
+      if (partitionDateBuilder_ == null) {
+        partition_ = builderForValue.build();
+        onChanged();
+      } else {
+        partitionDateBuilder_.setMessage(builderForValue.build());
+      }
+      partitionCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     */
+    public Builder mergePartitionDate(com.google.type.Date value) {
+      if (partitionDateBuilder_ == null) {
+        if (partitionCase_ == 6 &&
+            partition_ != com.google.type.Date.getDefaultInstance()) {
+          partition_ = com.google.type.Date.newBuilder((com.google.type.Date) partition_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          partition_ = value;
+        }
+        onChanged();
+      } else {
+        if (partitionCase_ == 6) {
+          partitionDateBuilder_.mergeFrom(value);
+        }
+        partitionDateBuilder_.setMessage(value);
+      }
+      partitionCase_ = 6;
+      return this;
+    }
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     */
+    public Builder clearPartitionDate() {
+      if (partitionDateBuilder_ == null) {
+        if (partitionCase_ == 6) {
+          partitionCase_ = 0;
+          partition_ = null;
+          onChanged();
+        }
+      } else {
+        if (partitionCase_ == 6) {
+          partitionCase_ = 0;
+          partition_ = null;
+        }
+        partitionDateBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     */
+    public com.google.type.Date.Builder getPartitionDateBuilder() {
+      return getPartitionDateFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.type.DateOrBuilder getPartitionDateOrBuilder() {
+      if ((partitionCase_ == 6) && (partitionDateBuilder_ != null)) {
+        return partitionDateBuilder_.getMessageOrBuilder();
+      } else {
+        if (partitionCase_ == 6) {
+          return (com.google.type.Date) partition_;
+        }
+        return com.google.type.Date.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+     * Only supported when
+     * [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2alpha.ImportProductsRequest.reconciliation_mode]
+     * is set to `FULL`.
+     * </pre>
+     *
+     * <code>.google.type.Date partition_date = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> 
+        getPartitionDateFieldBuilder() {
+      if (partitionDateBuilder_ == null) {
+        if (!(partitionCase_ == 6)) {
+          partition_ = com.google.type.Date.getDefaultInstance();
+        }
+        partitionDateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                (com.google.type.Date) partition_,
+                getParentForChildren(),
+                isClean());
+        partition_ = null;
+      }
+      partitionCase_ = 6;
+      onChanged();;
+      return partitionDateBuilder_;
+    }
 
     private java.lang.Object projectId_ = "";
     /**
      * <pre>
-     * The project id (can be project # or id) that the BigQuery source is in with
+     * The project ID (can be project # or ID) that the BigQuery source is in with
      * a length limit of 128 characters. If not specified, inherits the project
-     * id from the parent request.
+     * ID from the parent request.
      * </pre>
      *
      * <code>string project_id = 5;</code>
@@ -782,9 +1149,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project id (can be project # or id) that the BigQuery source is in with
+     * The project ID (can be project # or ID) that the BigQuery source is in with
      * a length limit of 128 characters. If not specified, inherits the project
-     * id from the parent request.
+     * ID from the parent request.
      * </pre>
      *
      * <code>string project_id = 5;</code>
@@ -805,9 +1172,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project id (can be project # or id) that the BigQuery source is in with
+     * The project ID (can be project # or ID) that the BigQuery source is in with
      * a length limit of 128 characters. If not specified, inherits the project
-     * id from the parent request.
+     * ID from the parent request.
      * </pre>
      *
      * <code>string project_id = 5;</code>
@@ -826,9 +1193,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project id (can be project # or id) that the BigQuery source is in with
+     * The project ID (can be project # or ID) that the BigQuery source is in with
      * a length limit of 128 characters. If not specified, inherits the project
-     * id from the parent request.
+     * ID from the parent request.
      * </pre>
      *
      * <code>string project_id = 5;</code>
@@ -842,9 +1209,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The project id (can be project # or id) that the BigQuery source is in with
+     * The project ID (can be project # or ID) that the BigQuery source is in with
      * a length limit of 128 characters. If not specified, inherits the project
-     * id from the parent request.
+     * ID from the parent request.
      * </pre>
      *
      * <code>string project_id = 5;</code>
@@ -1180,12 +1547,12 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`: Using
-     *   https://support.google.com/analytics/answer/3437719?hl=en.
+     *   https://support.google.com/analytics/answer/3437719.
      * </pre>
      *
      * <code>string data_schema = 4;</code>
@@ -1211,12 +1578,12 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`: Using
-     *   https://support.google.com/analytics/answer/3437719?hl=en.
+     *   https://support.google.com/analytics/answer/3437719.
      * </pre>
      *
      * <code>string data_schema = 4;</code>
@@ -1243,12 +1610,12 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`: Using
-     *   https://support.google.com/analytics/answer/3437719?hl=en.
+     *   https://support.google.com/analytics/answer/3437719.
      * </pre>
      *
      * <code>string data_schema = 4;</code>
@@ -1273,12 +1640,12 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`: Using
-     *   https://support.google.com/analytics/answer/3437719?hl=en.
+     *   https://support.google.com/analytics/answer/3437719.
      * </pre>
      *
      * <code>string data_schema = 4;</code>
@@ -1298,12 +1665,12 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2alpha.Product] per line. Each product must
      *   have a valid [Product.id][google.cloud.retail.v2alpha.Product.id].
      * * `product_merchant_center`: See [Importing catalog data from Merchant
-     *   Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+     *   Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
      * Supported values for user events imports:
      * * `user_event` (default): One JSON
      * [UserEvent][google.cloud.retail.v2alpha.UserEvent] per line.
      * * `user_event_ga360`: Using
-     *   https://support.google.com/analytics/answer/3437719?hl=en.
+     *   https://support.google.com/analytics/answer/3437719.
      * </pre>
      *
      * <code>string data_schema = 4;</code>

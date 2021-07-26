@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class ImportUserEventsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $parent = '';
     /**
@@ -42,7 +42,7 @@ class ImportUserEventsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. "projects/1234/locations/global/catalogs/default_catalog"
+     *           Required. `projects/1234/locations/global/catalogs/default_catalog`
      *     @type \Google\Cloud\Retail\V2alpha\UserEventInputConfig $input_config
      *           Required. The desired input location of the data.
      *     @type \Google\Cloud\Retail\V2alpha\ImportErrorsConfig $errors_config
@@ -56,9 +56,9 @@ class ImportUserEventsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getParent()
@@ -67,9 +67,9 @@ class ImportUserEventsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. "projects/1234/locations/global/catalogs/default_catalog"
+     * Required. `projects/1234/locations/global/catalogs/default_catalog`
      *
-     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

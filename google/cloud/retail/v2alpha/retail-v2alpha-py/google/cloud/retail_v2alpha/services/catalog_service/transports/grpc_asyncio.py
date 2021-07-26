@@ -27,6 +27,7 @@ from grpc.experimental import aio  # type: ignore
 
 from google.cloud.retail_v2alpha.types import catalog as gcr_catalog
 from google.cloud.retail_v2alpha.types import catalog_service
+from google.protobuf import empty_pb2  # type: ignore
 from .base import CatalogServiceTransport, DEFAULT_CLIENT_INFO
 from .grpc import CatalogServiceGrpcTransport
 
@@ -277,6 +278,104 @@ class CatalogServiceGrpcAsyncIOTransport(CatalogServiceTransport):
                 response_deserializer=gcr_catalog.Catalog.deserialize,
             )
         return self._stubs['update_catalog']
+
+    @property
+    def set_default_branch(self) -> Callable[
+            [catalog_service.SetDefaultBranchRequest],
+            Awaitable[empty_pb2.Empty]]:
+        r"""Return a callable for the set default branch method over gRPC.
+
+        Set a specified branch id as default branch. API methods such as
+        [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+        [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+        [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+        will treat requests using "default_branch" to the actual branch
+        id set as default.
+
+        For example, if ``projects/*/locations/*/catalogs/*/branches/1``
+        is set as default, setting
+        [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
+        to ``projects/*/locations/*/catalogs/*/branches/default_branch``
+        is equivalent to setting
+        [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
+        to ``projects/*/locations/*/catalogs/*/branches/1``.
+
+        Using multiple branches can be useful when developers would like
+        to have a staging branch to test and verify for future usage.
+        When it becomes ready, developers switch on the staging branch
+        using this API while keeping using
+        ``projects/*/locations/*/catalogs/*/branches/default_branch`` as
+        [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
+        to route the traffic to this staging branch.
+
+        CAUTION: If you have live predict/search traffic, switching the
+        default branch could potentially cause outages if the ID space
+        of the new branch is very different from the old one.
+
+        More specifically:
+
+        -  PredictionService will only return product IDs from branch
+           {newBranch}.
+        -  SearchService will only return product IDs from branch
+           {newBranch} (if branch is not explicitly set).
+        -  UserEventService will only join events with products from
+           branch {newBranch}.
+
+        This feature is only available for users who have Retail Search
+        enabled. Contact Retail Support
+        (retail-search-support@google.com) if you are interested in
+        using Retail Search.
+
+        Returns:
+            Callable[[~.SetDefaultBranchRequest],
+                    Awaitable[~.Empty]]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'set_default_branch' not in self._stubs:
+            self._stubs['set_default_branch'] = self.grpc_channel.unary_unary(
+                '/google.cloud.retail.v2alpha.CatalogService/SetDefaultBranch',
+                request_serializer=catalog_service.SetDefaultBranchRequest.serialize,
+                response_deserializer=empty_pb2.Empty.FromString,
+            )
+        return self._stubs['set_default_branch']
+
+    @property
+    def get_default_branch(self) -> Callable[
+            [catalog_service.GetDefaultBranchRequest],
+            Awaitable[catalog_service.GetDefaultBranchResponse]]:
+        r"""Return a callable for the get default branch method over gRPC.
+
+        Get which branch is currently default branch set by
+        [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+        method under a specified parent catalog.
+
+        This feature is only available for users who have Retail Search
+        enabled. Contact Retail Support
+        (retail-search-support@google.com) if you are interested in
+        using Retail Search.
+
+        Returns:
+            Callable[[~.GetDefaultBranchRequest],
+                    Awaitable[~.GetDefaultBranchResponse]]:
+                A function that, when called, will call the underlying RPC
+                on the server.
+        """
+        # Generate a "stub function" on-the-fly which will actually make
+        # the request.
+        # gRPC handles serialization and deserialization, so we just need
+        # to pass in the functions for each.
+        if 'get_default_branch' not in self._stubs:
+            self._stubs['get_default_branch'] = self.grpc_channel.unary_unary(
+                '/google.cloud.retail.v2alpha.CatalogService/GetDefaultBranch',
+                request_serializer=catalog_service.GetDefaultBranchRequest.serialize,
+                response_deserializer=catalog_service.GetDefaultBranchResponse.deserialize,
+            )
+        return self._stubs['get_default_branch']
 
 
 __all__ = (

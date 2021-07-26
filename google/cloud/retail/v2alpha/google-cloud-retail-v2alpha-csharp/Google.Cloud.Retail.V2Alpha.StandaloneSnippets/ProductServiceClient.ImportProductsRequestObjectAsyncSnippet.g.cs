@@ -35,10 +35,13 @@ namespace Google.Cloud.Retail.V2Alpha.Snippets
             // Initialize request argument(s)
             ImportProductsRequest request = new ImportProductsRequest
             {
-                Parent = "",
+                ParentAsBranchName = BranchName.FromProjectLocationCatalogBranch("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]"),
                 InputConfig = new ProductInputConfig(),
                 ErrorsConfig = new ImportErrorsConfig(),
                 UpdateMask = new FieldMask(),
+                ReconciliationMode = ImportProductsRequest.Types.ReconciliationMode.Unspecified,
+                RequestId = "",
+                NotificationPubsubTopic = "",
             };
             // Make the request
             Operation<ImportProductsResponse, ImportMetadata> response = await productServiceClient.ImportProductsAsync(request);

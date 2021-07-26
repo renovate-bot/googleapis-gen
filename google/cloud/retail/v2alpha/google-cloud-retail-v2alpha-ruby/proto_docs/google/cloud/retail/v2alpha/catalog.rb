@@ -48,9 +48,9 @@ module Google
         #     {::Google::Cloud::Retail::V2alpha::ProductLevelConfig#merchant_center_product_id_field merchant_center_product_id_field}
         #     is `itemGroupId`, an INVALID_ARGUMENT error is returned.
         #
-        #     See [Using catalog
-        #     levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-        #     details.
+        #     See [Using product
+        #     levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+        #     for more details.
         # @!attribute [rw] merchant_center_product_id_field
         #   @return [::String]
         #     Which field of [Merchant Center
@@ -70,10 +70,51 @@ module Google
         #     {::Google::Cloud::Retail::V2alpha::ProductLevelConfig#ingestion_product_type ingestion_product_type}
         #     is `variant`, an INVALID_ARGUMENT error is returned.
         #
-        #     See [Using catalog
-        #     levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-        #     details.
+        #     See [Using product
+        #     levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+        #     for more details.
         class ProductLevelConfig
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Represents a link between a Merchant Center account and a branch.
+        # Once a link is established, products from the linked merchant center account
+        # will be streamed to the linked branch.
+        # @!attribute [rw] merchant_center_account_id
+        #   @return [::Integer]
+        #     Required. The linked [Merchant center account
+        #     id](https://developers.google.com/shopping-content/guides/accountstatuses).
+        #     The account must be a standalone account or a sub-account of a MCA.
+        # @!attribute [rw] branch_id
+        #   @return [::String]
+        #     The branch id (e.g. 0/1/2) within this catalog that products from
+        #     merchant_center_account_id are streamed to. When updating this field, an
+        #     empty value will use the currently configured default branch. However,
+        #     changing the default branch later on won't change the linked branch here.
+        #
+        #     A single branch id can only have one linked merchant center account id.
+        # @!attribute [rw] destinations
+        #   @return [::Array<::String>]
+        #     String representing the destination to import for, all if left empty.
+        #     List of possible values can be found here.
+        #     [https://support.google.com/merchants/answer/7501026?hl=en]
+        #     List of allowed string values:
+        #     "shopping-ads", "buy-on-google-listings", "display-ads", "local-inventory
+        #     -ads", "free-listings", "free-local-listings"
+        #     NOTE: The string values are case sensitive.
+        class MerchantCenterLink
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Configures Merchant Center linking.
+        # Links contained in the config will be used to sync data from a Merchant
+        # Center account to a Cloud Retail branch.
+        # @!attribute [rw] links
+        #   @return [::Array<::Google::Cloud::Retail::V2alpha::MerchantCenterLink>]
+        #     Links between Merchant Center accounts and branches.
+        class MerchantCenterLinkingConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
@@ -91,6 +132,12 @@ module Google
         # @!attribute [rw] product_level_config
         #   @return [::Google::Cloud::Retail::V2alpha::ProductLevelConfig]
         #     Required. The product level configuration.
+        # @!attribute [rw] merchant_center_linking_config
+        #   @return [::Google::Cloud::Retail::V2alpha::MerchantCenterLinkingConfig]
+        #     The Merchant Center linking configuration.
+        #     Once a link is added, the data stream from Merchant Center to Cloud Retail
+        #     will be enabled automatically. The requester must have access to the
+        #     merchant center account in order to make changes to this field.
         class Catalog
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

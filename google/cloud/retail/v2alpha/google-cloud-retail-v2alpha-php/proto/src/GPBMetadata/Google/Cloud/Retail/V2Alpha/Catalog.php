@@ -17,17 +17,26 @@ class Catalog
         \GPBMetadata\Google\Api\Annotations::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Cloud\Retail\V2Alpha\Common::initOnce();
+        \GPBMetadata\Google\Cloud\Retail\V2Alpha\ImportConfig::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ω
-)google/cloud/retail/v2alpha/catalog.protogoogle.cloud.retail.v2alphagoogle/api/field_behavior.protogoogle/api/resource.proto"^
+¡
+)google/cloud/retail/v2alpha/catalog.protogoogle.cloud.retail.v2alphagoogle/api/field_behavior.protogoogle/api/resource.proto(google/cloud/retail/v2alpha/common.proto/google/cloud/retail/v2alpha/import_config.proto"^
 ProductLevelConfig
 ingestion_product_type (	(
- merchant_center_product_id_field (	"Ò
+ merchant_center_product_id_field (	"f
+MerchantCenterLink\'
+merchant_center_account_id (B‡A
+	branch_id (	
+destinations (	"]
+MerchantCenterLinkingConfig>
+links (2/.google.cloud.retail.v2alpha.MerchantCenterLink"”
 Catalog
 name (	B‡A‡A
 display_name (	B‡A‡AR
-product_level_config (2/.google.cloud.retail.v2alpha.ProductLevelConfigB‡A:^ÍA[
+product_level_config (2/.google.cloud.retail.v2alpha.ProductLevelConfigB‡A`
+merchant_center_linking_config (28.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig:^ÍA[
 retail.googleapis.com/Catalog:projects/{project}/locations/{location}/catalogs/{catalog}B⁄
 com.google.cloud.retail.v2alphaBCatalogProtoPZAgoogle.golang.org/genproto/googleapis/cloud/retail/v2alpha;retail¢RETAIL™Google.Cloud.Retail.V2Alpha Google\\Cloud\\Retail\\V2alphaÍGoogle::Cloud::Retail::V2alphabproto3'
         , true);

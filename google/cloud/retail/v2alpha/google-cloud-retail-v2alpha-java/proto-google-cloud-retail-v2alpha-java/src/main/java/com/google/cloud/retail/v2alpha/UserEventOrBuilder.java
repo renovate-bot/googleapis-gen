@@ -13,8 +13,11 @@ public interface UserEventOrBuilder extends
    * * `add-to-cart`: Products being added to cart.
    * * `category-page-view`: Special pages such as sale or promotion pages
    *   viewed.
+   * * `completion`: Completion query result showed/clicked.
    * * `detail-page-view`: Products detail page viewed.
    * * `home-page-view`: Homepage viewed.
+   * * `promotion-offered`: Promotion is offered to a user.
+   * * `promotion-not-offered`: Promotion is not offered to a user.
    * * `purchase-complete`: User finishing a purchase.
    * * `search`: Product search.
    * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -30,8 +33,11 @@ public interface UserEventOrBuilder extends
    * * `add-to-cart`: Products being added to cart.
    * * `category-page-view`: Special pages such as sale or promotion pages
    *   viewed.
+   * * `completion`: Completion query result showed/clicked.
    * * `detail-page-view`: Products detail page viewed.
    * * `home-page-view`: Homepage viewed.
+   * * `promotion-offered`: Promotion is offered to a user.
+   * * `promotion-not-offered`: Promotion is not offered to a user.
    * * `purchase-complete`: User finishing a purchase.
    * * `search`: Product search.
    * * `shopping-cart-page-view`: User viewing a shopping cart.
@@ -51,6 +57,10 @@ public interface UserEventOrBuilder extends
    * identifier should not change if the visitor log in/out of the website.
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * The field should not contain PII or user-data. We recommend to use Google
+   * Analystics [Client
+   * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+   * for this field.
    * </pre>
    *
    * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -65,6 +75,10 @@ public interface UserEventOrBuilder extends
    * identifier should not change if the visitor log in/out of the website.
    * The field must be a UTF-8 encoded string with a length limit of 128
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * The field should not contain PII or user-data. We recommend to use Google
+   * Analystics [Client
+   * ID](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#clientId)
+   * for this field.
    * </pre>
    *
    * <code>string visitor_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,6 +86,38 @@ public interface UserEventOrBuilder extends
    */
   com.google.protobuf.ByteString
       getVisitorIdBytes();
+
+  /**
+   * <pre>
+   * A unique identifier for tracking a visitor session with a length limit of
+   * 128 bytes. A session is an aggregation of an end user behavior in a time
+   * span.
+   * A general guideline to populate the sesion_id:
+   * 1. If user has no activity for 30 min, a new session_id should be assigned.
+   * 2. The session_id should be unique across users, suggest use uuid or add
+   * visitor_id as prefix.
+   * </pre>
+   *
+   * <code>string session_id = 21;</code>
+   * @return The sessionId.
+   */
+  java.lang.String getSessionId();
+  /**
+   * <pre>
+   * A unique identifier for tracking a visitor session with a length limit of
+   * 128 bytes. A session is an aggregation of an end user behavior in a time
+   * span.
+   * A general guideline to populate the sesion_id:
+   * 1. If user has no activity for 30 min, a new session_id should be assigned.
+   * 2. The session_id should be unique across users, suggest use uuid or add
+   * visitor_id as prefix.
+   * </pre>
+   *
+   * <code>string session_id = 21;</code>
+   * @return The bytes for sessionId.
+   */
+  com.google.protobuf.ByteString
+      getSessionIdBytes();
 
   /**
    * <pre>
@@ -169,6 +215,10 @@ public interface UserEventOrBuilder extends
    * [PredictResponse.attribution_token][google.cloud.retail.v2alpha.PredictResponse.attribution_token]
    * for user events that are the result of
    * [PredictionService.Predict][google.cloud.retail.v2alpha.PredictionService.Predict].
+   * The value must be a valid
+   * [SearchResponse.attribution_token][google.cloud.retail.v2alpha.SearchResponse.attribution_token]
+   * for user events that are the result of
+   * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    * This token enables us to accurately attribute page view or purchase back to
    * the event and the particular predict response containing this
    * clicked/purchased product. If user clicks on product K in the
@@ -194,6 +244,10 @@ public interface UserEventOrBuilder extends
    * [PredictResponse.attribution_token][google.cloud.retail.v2alpha.PredictResponse.attribution_token]
    * for user events that are the result of
    * [PredictionService.Predict][google.cloud.retail.v2alpha.PredictionService.Predict].
+   * The value must be a valid
+   * [SearchResponse.attribution_token][google.cloud.retail.v2alpha.SearchResponse.attribution_token]
+   * for user events that are the result of
+   * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search].
    * This token enables us to accurately attribute page view or purchase back to
    * the event and the particular predict response containing this
    * clicked/purchased product. If user clicks on product K in the
@@ -309,6 +363,42 @@ public interface UserEventOrBuilder extends
    */
   com.google.cloud.retail.v2alpha.ProductDetailOrBuilder getProductDetailsOrBuilder(
       int index);
+
+  /**
+   * <pre>
+   * The main completion details related to the event.
+   * In a `completion` event, this field represents the completions returned to
+   * the end user and the clicked completion by the end user. In a `search`
+   * event, it represents the search event happens after clicking completion.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CompletionDetail completion_detail = 22;</code>
+   * @return Whether the completionDetail field is set.
+   */
+  boolean hasCompletionDetail();
+  /**
+   * <pre>
+   * The main completion details related to the event.
+   * In a `completion` event, this field represents the completions returned to
+   * the end user and the clicked completion by the end user. In a `search`
+   * event, it represents the search event happens after clicking completion.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CompletionDetail completion_detail = 22;</code>
+   * @return The completionDetail.
+   */
+  com.google.cloud.retail.v2alpha.CompletionDetail getCompletionDetail();
+  /**
+   * <pre>
+   * The main completion details related to the event.
+   * In a `completion` event, this field represents the completions returned to
+   * the end user and the clicked completion by the end user. In a `search`
+   * event, it represents the search event happens after clicking completion.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.CompletionDetail completion_detail = 22;</code>
+   */
+  com.google.cloud.retail.v2alpha.CompletionDetailOrBuilder getCompletionDetailOrBuilder();
 
   /**
    * <pre>
@@ -456,9 +546,14 @@ public interface UserEventOrBuilder extends
   /**
    * <pre>
    * The user's search query.
+   * See [SearchRequest.query][google.cloud.retail.v2alpha.SearchRequest.query]
+   * for definition.
    * The value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Required for `search` events. Other event types should not set this field.
+   * At least one of
+   * [search_query][google.cloud.retail.v2alpha.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
    * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -469,9 +564,14 @@ public interface UserEventOrBuilder extends
   /**
    * <pre>
    * The user's search query.
+   * See [SearchRequest.query][google.cloud.retail.v2alpha.SearchRequest.query]
+   * for definition.
    * The value must be a UTF-8 encoded string with a length limit of 5,000
    * characters. Otherwise, an INVALID_ARGUMENT error is returned.
-   * Required for `search` events. Other event types should not set this field.
+   * At least one of
+   * [search_query][google.cloud.retail.v2alpha.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
    * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
@@ -483,6 +583,89 @@ public interface UserEventOrBuilder extends
 
   /**
    * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the products being filtered.
+   * See
+   * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
+   * for definition and syntax.
+   * The value must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string filter = 16;</code>
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the products being filtered.
+   * See
+   * [SearchRequest.filter][google.cloud.retail.v2alpha.SearchRequest.filter]
+   * for definition and syntax.
+   * The value must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string filter = 16;</code>
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString
+      getFilterBytes();
+
+  /**
+   * <pre>
+   * The order in which products are returned.
+   * See
+   * [SearchRequest.order_by][google.cloud.retail.v2alpha.SearchRequest.order_by]
+   * for definition and syntax.
+   * The value must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * This can only be set for `search` events. Other event types should not set
+   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string order_by = 17;</code>
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   * <pre>
+   * The order in which products are returned.
+   * See
+   * [SearchRequest.order_by][google.cloud.retail.v2alpha.SearchRequest.order_by]
+   * for definition and syntax.
+   * The value must be a UTF-8 encoded string with a length limit of 1,000
+   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * This can only be set for `search` events. Other event types should not set
+   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>string order_by = 17;</code>
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString
+      getOrderByBytes();
+
+  /**
+   * <pre>
+   * An integer that specifies the current offset for pagination (the 0-indexed
+   * starting location, amongst the products deemed by the API as relevant).
+   * See
+   * [SearchRequest.offset][google.cloud.retail.v2alpha.SearchRequest.offset]
+   * for definition.
+   * If this field is negative, an INVALID_ARGUMENT is returned.
+   * This can only be set for `search` events. Other event types should not set
+   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * </pre>
+   *
+   * <code>int32 offset = 18;</code>
+   * @return The offset.
+   */
+  int getOffset();
+
+  /**
+   * <pre>
    * The categories associated with a category page.
    * To represent full path of category, use '&gt;' sign to separate different
    * hierarchies. If '&gt;' is part of the category name, please replace it with
@@ -490,8 +673,11 @@ public interface UserEventOrBuilder extends
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-   * Required for `category-page-view` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Required for `category-page-view` events. At least one of
+   * [search_query][google.cloud.retail.v2alpha.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
+   * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>repeated string page_categories = 11;</code>
@@ -508,8 +694,11 @@ public interface UserEventOrBuilder extends
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-   * Required for `category-page-view` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Required for `category-page-view` events. At least one of
+   * [search_query][google.cloud.retail.v2alpha.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
+   * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>repeated string page_categories = 11;</code>
@@ -525,8 +714,11 @@ public interface UserEventOrBuilder extends
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-   * Required for `category-page-view` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Required for `category-page-view` events. At least one of
+   * [search_query][google.cloud.retail.v2alpha.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
+   * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>repeated string page_categories = 11;</code>
@@ -543,8 +735,11 @@ public interface UserEventOrBuilder extends
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
    * "pageCategories" : ["Sales &gt; 2017 Black Friday Deals"].
-   * Required for `category-page-view` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * Required for `category-page-view` events. At least one of
+   * [search_query][google.cloud.retail.v2alpha.UserEvent.search_query] or
+   * [page_categories][google.cloud.retail.v2alpha.UserEvent.page_categories] is
+   * required for `search` events. Other event types should not set this field.
+   * Otherwise, an INVALID_ARGUMENT error is returned.
    * </pre>
    *
    * <code>repeated string page_categories = 11;</code>

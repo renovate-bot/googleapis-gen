@@ -79,6 +79,68 @@ public final class CatalogServiceGrpc {
     return getUpdateCatalogMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.retail.v2alpha.SetDefaultBranchRequest,
+      com.google.protobuf.Empty> getSetDefaultBranchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SetDefaultBranch",
+      requestType = com.google.cloud.retail.v2alpha.SetDefaultBranchRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.retail.v2alpha.SetDefaultBranchRequest,
+      com.google.protobuf.Empty> getSetDefaultBranchMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.retail.v2alpha.SetDefaultBranchRequest, com.google.protobuf.Empty> getSetDefaultBranchMethod;
+    if ((getSetDefaultBranchMethod = CatalogServiceGrpc.getSetDefaultBranchMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getSetDefaultBranchMethod = CatalogServiceGrpc.getSetDefaultBranchMethod) == null) {
+          CatalogServiceGrpc.getSetDefaultBranchMethod = getSetDefaultBranchMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.retail.v2alpha.SetDefaultBranchRequest, com.google.protobuf.Empty>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SetDefaultBranch"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.retail.v2alpha.SetDefaultBranchRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.protobuf.Empty.getDefaultInstance()))
+              .setSchemaDescriptor(new CatalogServiceMethodDescriptorSupplier("SetDefaultBranch"))
+              .build();
+        }
+      }
+    }
+    return getSetDefaultBranchMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.retail.v2alpha.GetDefaultBranchRequest,
+      com.google.cloud.retail.v2alpha.GetDefaultBranchResponse> getGetDefaultBranchMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDefaultBranch",
+      requestType = com.google.cloud.retail.v2alpha.GetDefaultBranchRequest.class,
+      responseType = com.google.cloud.retail.v2alpha.GetDefaultBranchResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.retail.v2alpha.GetDefaultBranchRequest,
+      com.google.cloud.retail.v2alpha.GetDefaultBranchResponse> getGetDefaultBranchMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.retail.v2alpha.GetDefaultBranchRequest, com.google.cloud.retail.v2alpha.GetDefaultBranchResponse> getGetDefaultBranchMethod;
+    if ((getGetDefaultBranchMethod = CatalogServiceGrpc.getGetDefaultBranchMethod) == null) {
+      synchronized (CatalogServiceGrpc.class) {
+        if ((getGetDefaultBranchMethod = CatalogServiceGrpc.getGetDefaultBranchMethod) == null) {
+          CatalogServiceGrpc.getGetDefaultBranchMethod = getGetDefaultBranchMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.retail.v2alpha.GetDefaultBranchRequest, com.google.cloud.retail.v2alpha.GetDefaultBranchResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDefaultBranch"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.retail.v2alpha.GetDefaultBranchRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.retail.v2alpha.GetDefaultBranchResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CatalogServiceMethodDescriptorSupplier("GetDefaultBranch"))
+              .build();
+        }
+      }
+    }
+    return getGetDefaultBranchMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -151,6 +213,61 @@ public final class CatalogServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateCatalogMethod(), responseObserver);
     }
 
+    /**
+     * <pre>
+     * Set a specified branch id as default branch. API methods such as
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API while
+     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
+     * as [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
+     * to route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch is
+     * very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void setDefaultBranch(com.google.cloud.retail.v2alpha.SetDefaultBranchRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getSetDefaultBranchMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get which branch is currently default branch set by
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void getDefaultBranch(com.google.cloud.retail.v2alpha.GetDefaultBranchRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.retail.v2alpha.GetDefaultBranchResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDefaultBranchMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -167,6 +284,20 @@ public final class CatalogServiceGrpc {
                 com.google.cloud.retail.v2alpha.UpdateCatalogRequest,
                 com.google.cloud.retail.v2alpha.Catalog>(
                   this, METHODID_UPDATE_CATALOG)))
+          .addMethod(
+            getSetDefaultBranchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.retail.v2alpha.SetDefaultBranchRequest,
+                com.google.protobuf.Empty>(
+                  this, METHODID_SET_DEFAULT_BRANCH)))
+          .addMethod(
+            getGetDefaultBranchMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.retail.v2alpha.GetDefaultBranchRequest,
+                com.google.cloud.retail.v2alpha.GetDefaultBranchResponse>(
+                  this, METHODID_GET_DEFAULT_BRANCH)))
           .build();
     }
   }
@@ -210,6 +341,63 @@ public final class CatalogServiceGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateCatalogMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Set a specified branch id as default branch. API methods such as
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API while
+     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
+     * as [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
+     * to route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch is
+     * very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void setDefaultBranch(com.google.cloud.retail.v2alpha.SetDefaultBranchRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSetDefaultBranchMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Get which branch is currently default branch set by
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public void getDefaultBranch(com.google.cloud.retail.v2alpha.GetDefaultBranchRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.retail.v2alpha.GetDefaultBranchResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDefaultBranchMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -248,6 +436,61 @@ public final class CatalogServiceGrpc {
     public com.google.cloud.retail.v2alpha.Catalog updateCatalog(com.google.cloud.retail.v2alpha.UpdateCatalogRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateCatalogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Set a specified branch id as default branch. API methods such as
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API while
+     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
+     * as [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
+     * to route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch is
+     * very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.protobuf.Empty setDefaultBranch(com.google.cloud.retail.v2alpha.SetDefaultBranchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetDefaultBranchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Get which branch is currently default branch set by
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2alpha.GetDefaultBranchResponse getDefaultBranch(com.google.cloud.retail.v2alpha.GetDefaultBranchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDefaultBranchMethod(), getCallOptions(), request);
     }
   }
 
@@ -290,10 +533,69 @@ public final class CatalogServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateCatalogMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Set a specified branch id as default branch. API methods such as
+     * [SearchService.Search][google.cloud.retail.v2alpha.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API while
+     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
+     * as [SearchRequest.branch][google.cloud.retail.v2alpha.SearchRequest.branch]
+     * to route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch is
+     * very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> setDefaultBranch(
+        com.google.cloud.retail.v2alpha.SetDefaultBranchRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSetDefaultBranchMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Get which branch is currently default branch set by
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2alpha.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
+     * This feature is only available for users who have Retail Search enabled.
+     * Contact Retail Support (retail-search-support&#64;google.com) if you are
+     * interested in using Retail Search.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.retail.v2alpha.GetDefaultBranchResponse> getDefaultBranch(
+        com.google.cloud.retail.v2alpha.GetDefaultBranchRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDefaultBranchMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CATALOGS = 0;
   private static final int METHODID_UPDATE_CATALOG = 1;
+  private static final int METHODID_SET_DEFAULT_BRANCH = 2;
+  private static final int METHODID_GET_DEFAULT_BRANCH = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -319,6 +621,14 @@ public final class CatalogServiceGrpc {
         case METHODID_UPDATE_CATALOG:
           serviceImpl.updateCatalog((com.google.cloud.retail.v2alpha.UpdateCatalogRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.retail.v2alpha.Catalog>) responseObserver);
+          break;
+        case METHODID_SET_DEFAULT_BRANCH:
+          serviceImpl.setDefaultBranch((com.google.cloud.retail.v2alpha.SetDefaultBranchRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_GET_DEFAULT_BRANCH:
+          serviceImpl.getDefaultBranch((com.google.cloud.retail.v2alpha.GetDefaultBranchRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.retail.v2alpha.GetDefaultBranchResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -383,6 +693,8 @@ public final class CatalogServiceGrpc {
               .setSchemaDescriptor(new CatalogServiceFileDescriptorSupplier())
               .addMethod(getListCatalogsMethod())
               .addMethod(getUpdateCatalogMethod())
+              .addMethod(getSetDefaultBranchMethod())
+              .addMethod(getGetDefaultBranchMethod())
               .build();
         }
       }

@@ -29,58 +29,60 @@ namespace Google.Cloud.Retail.V2Alpha {
             "ZS9hcGkvYW5ub3RhdGlvbnMucHJvdG8aF2dvb2dsZS9hcGkvY2xpZW50LnBy",
             "b3RvGh9nb29nbGUvYXBpL2ZpZWxkX2JlaGF2aW9yLnByb3RvGhlnb29nbGUv",
             "YXBpL2h0dHBib2R5LnByb3RvGi9nb29nbGUvY2xvdWQvcmV0YWlsL3YyYWxw",
-            "aGEvaW1wb3J0X2NvbmZpZy5wcm90bxouZ29vZ2xlL2Nsb3VkL3JldGFpbC92",
-            "MmFscGhhL3B1cmdlX2NvbmZpZy5wcm90bxosZ29vZ2xlL2Nsb3VkL3JldGFp",
-            "bC92MmFscGhhL3VzZXJfZXZlbnQucHJvdG8aI2dvb2dsZS9sb25ncnVubmlu",
-            "Zy9vcGVyYXRpb25zLnByb3RvIm0KFVdyaXRlVXNlckV2ZW50UmVxdWVzdBIT",
-            "CgZwYXJlbnQYASABKAlCA+BBAhI/Cgp1c2VyX2V2ZW50GAIgASgLMiYuZ29v",
-            "Z2xlLmNsb3VkLnJldGFpbC52MmFscGhhLlVzZXJFdmVudEID4EECImEKF0Nv",
-            "bGxlY3RVc2VyRXZlbnRSZXF1ZXN0EhMKBnBhcmVudBgBIAEoCUID4EECEhcK",
-            "CnVzZXJfZXZlbnQYAiABKAlCA+BBAhILCgN1cmkYAyABKAkSCwoDZXRzGAQg",
-            "ASgDIoMCChdSZWpvaW5Vc2VyRXZlbnRzUmVxdWVzdBITCgZwYXJlbnQYASAB",
-            "KAlCA+BBAhJqChd1c2VyX2V2ZW50X3Jlam9pbl9zY29wZRgCIAEoDjJJLmdv",
-            "b2dsZS5jbG91ZC5yZXRhaWwudjJhbHBoYS5SZWpvaW5Vc2VyRXZlbnRzUmVx",
-            "dWVzdC5Vc2VyRXZlbnRSZWpvaW5TY29wZSJnChRVc2VyRXZlbnRSZWpvaW5T",
-            "Y29wZRInCiNVU0VSX0VWRU5UX1JFSk9JTl9TQ09QRV9VTlNQRUNJRklFRBAA",
-            "EhEKDUpPSU5FRF9FVkVOVFMQARITCg9VTkpPSU5FRF9FVkVOVFMQAiI+ChhS",
-            "ZWpvaW5Vc2VyRXZlbnRzUmVzcG9uc2USIgoacmVqb2luZWRfdXNlcl9ldmVu",
-            "dHNfY291bnQYASABKAMiGgoYUmVqb2luVXNlckV2ZW50c01ldGFkYXRhMooK",
-            "ChBVc2VyRXZlbnRTZXJ2aWNlEsYBCg5Xcml0ZVVzZXJFdmVudBIyLmdvb2ds",
-            "ZS5jbG91ZC5yZXRhaWwudjJhbHBoYS5Xcml0ZVVzZXJFdmVudFJlcXVlc3Qa",
-            "Ji5nb29nbGUuY2xvdWQucmV0YWlsLnYyYWxwaGEuVXNlckV2ZW50IliC0+ST",
-            "AlIiRC92MmFscGhhL3twYXJlbnQ9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9j",
-            "YXRhbG9ncy8qfS91c2VyRXZlbnRzOndyaXRlOgp1c2VyX2V2ZW50Eq4BChBD",
-            "b2xsZWN0VXNlckV2ZW50EjQuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmFscGhh",
-            "LkNvbGxlY3RVc2VyRXZlbnRSZXF1ZXN0GhQuZ29vZ2xlLmFwaS5IdHRwQm9k",
-            "eSJOgtPkkwJIEkYvdjJhbHBoYS97cGFyZW50PXByb2plY3RzLyovbG9jYXRp",
-            "b25zLyovY2F0YWxvZ3MvKn0vdXNlckV2ZW50czpjb2xsZWN0EpoCCg9QdXJn",
-            "ZVVzZXJFdmVudHMSMy5nb29nbGUuY2xvdWQucmV0YWlsLnYyYWxwaGEuUHVy",
-            "Z2VVc2VyRXZlbnRzUmVxdWVzdBodLmdvb2dsZS5sb25ncnVubmluZy5PcGVy",
-            "YXRpb24isgGC0+STAkkiRC92MmFscGhhL3twYXJlbnQ9cHJvamVjdHMvKi9s",
-            "b2NhdGlvbnMvKi9jYXRhbG9ncy8qfS91c2VyRXZlbnRzOnB1cmdlOgEqykFg",
-            "CjNnb29nbGUuY2xvdWQucmV0YWlsLnYyYWxwaGEuUHVyZ2VVc2VyRXZlbnRz",
-            "UmVzcG9uc2USKWdvb2dsZS5jbG91ZC5yZXRhaWwudjJhbHBoYS5QdXJnZU1l",
-            "dGFkYXRhEp8CChBJbXBvcnRVc2VyRXZlbnRzEjQuZ29vZ2xlLmNsb3VkLnJl",
-            "dGFpbC52MmFscGhhLkltcG9ydFVzZXJFdmVudHNSZXF1ZXN0Gh0uZ29vZ2xl",
-            "LmxvbmdydW5uaW5nLk9wZXJhdGlvbiK1AYLT5JMCSiJFL3YyYWxwaGEve3Bh",
-            "cmVudD1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2NhdGFsb2dzLyp9L3VzZXJF",
-            "dmVudHM6aW1wb3J0OgEqykFiCjRnb29nbGUuY2xvdWQucmV0YWlsLnYyYWxw",
-            "aGEuSW1wb3J0VXNlckV2ZW50c1Jlc3BvbnNlEipnb29nbGUuY2xvdWQucmV0",
-            "YWlsLnYyYWxwaGEuSW1wb3J0TWV0YWRhdGES8QEKEFJlam9pblVzZXJFdmVu",
-            "dHMSNC5nb29nbGUuY2xvdWQucmV0YWlsLnYyYWxwaGEuUmVqb2luVXNlckV2",
-            "ZW50c1JlcXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcuT3BlcmF0aW9uIocB",
-            "gtPkkwJKIkUvdjJhbHBoYS97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25z",
-            "LyovY2F0YWxvZ3MvKn0vdXNlckV2ZW50czpyZWpvaW46ASrKQTQKGFJlam9p",
-            "blVzZXJFdmVudHNSZXNwb25zZRIYUmVqb2luVXNlckV2ZW50c01ldGFkYXRh",
-            "GknKQRVyZXRhaWwuZ29vZ2xlYXBpcy5jb23SQS5odHRwczovL3d3dy5nb29n",
-            "bGVhcGlzLmNvbS9hdXRoL2Nsb3VkLXBsYXRmb3JtQuMBCh9jb20uZ29vZ2xl",
-            "LmNsb3VkLnJldGFpbC52MmFscGhhQhVVc2VyRXZlbnRTZXJ2aWNlUHJvdG9Q",
-            "AVpBZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91",
-            "ZC9yZXRhaWwvdjJhbHBoYTtyZXRhaWyiAgZSRVRBSUyqAhtHb29nbGUuQ2xv",
-            "dWQuUmV0YWlsLlYyQWxwaGHKAhtHb29nbGVcQ2xvdWRcUmV0YWlsXFYyYWxw",
-            "aGHqAh5Hb29nbGU6OkNsb3VkOjpSZXRhaWw6OlYyYWxwaGFiBnByb3RvMw=="));
+            "aGEvZXhwb3J0X2NvbmZpZy5wcm90bxovZ29vZ2xlL2Nsb3VkL3JldGFpbC92",
+            "MmFscGhhL2ltcG9ydF9jb25maWcucHJvdG8aLmdvb2dsZS9jbG91ZC9yZXRh",
+            "aWwvdjJhbHBoYS9wdXJnZV9jb25maWcucHJvdG8aLGdvb2dsZS9jbG91ZC9y",
+            "ZXRhaWwvdjJhbHBoYS91c2VyX2V2ZW50LnByb3RvGiNnb29nbGUvbG9uZ3J1",
+            "bm5pbmcvb3BlcmF0aW9ucy5wcm90byJtChVXcml0ZVVzZXJFdmVudFJlcXVl",
+            "c3QSEwoGcGFyZW50GAEgASgJQgPgQQISPwoKdXNlcl9ldmVudBgCIAEoCzIm",
+            "Lmdvb2dsZS5jbG91ZC5yZXRhaWwudjJhbHBoYS5Vc2VyRXZlbnRCA+BBAiJh",
+            "ChdDb2xsZWN0VXNlckV2ZW50UmVxdWVzdBITCgZwYXJlbnQYASABKAlCA+BB",
+            "AhIXCgp1c2VyX2V2ZW50GAIgASgJQgPgQQISCwoDdXJpGAMgASgJEgsKA2V0",
+            "cxgEIAEoAyKDAgoXUmVqb2luVXNlckV2ZW50c1JlcXVlc3QSEwoGcGFyZW50",
+            "GAEgASgJQgPgQQISagoXdXNlcl9ldmVudF9yZWpvaW5fc2NvcGUYAiABKA4y",
+            "SS5nb29nbGUuY2xvdWQucmV0YWlsLnYyYWxwaGEuUmVqb2luVXNlckV2ZW50",
+            "c1JlcXVlc3QuVXNlckV2ZW50UmVqb2luU2NvcGUiZwoUVXNlckV2ZW50UmVq",
+            "b2luU2NvcGUSJwojVVNFUl9FVkVOVF9SRUpPSU5fU0NPUEVfVU5TUEVDSUZJ",
+            "RUQQABIRCg1KT0lORURfRVZFTlRTEAESEwoPVU5KT0lORURfRVZFTlRTEAIi",
+            "PgoYUmVqb2luVXNlckV2ZW50c1Jlc3BvbnNlEiIKGnJlam9pbmVkX3VzZXJf",
+            "ZXZlbnRzX2NvdW50GAEgASgDIhoKGFJlam9pblVzZXJFdmVudHNNZXRhZGF0",
+            "YTKKCgoQVXNlckV2ZW50U2VydmljZRLGAQoOV3JpdGVVc2VyRXZlbnQSMi5n",
+            "b29nbGUuY2xvdWQucmV0YWlsLnYyYWxwaGEuV3JpdGVVc2VyRXZlbnRSZXF1",
+            "ZXN0GiYuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmFscGhhLlVzZXJFdmVudCJY",
+            "gtPkkwJSIkQvdjJhbHBoYS97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25z",
+            "LyovY2F0YWxvZ3MvKn0vdXNlckV2ZW50czp3cml0ZToKdXNlcl9ldmVudBKu",
+            "AQoQQ29sbGVjdFVzZXJFdmVudBI0Lmdvb2dsZS5jbG91ZC5yZXRhaWwudjJh",
+            "bHBoYS5Db2xsZWN0VXNlckV2ZW50UmVxdWVzdBoULmdvb2dsZS5hcGkuSHR0",
+            "cEJvZHkiToLT5JMCSBJGL3YyYWxwaGEve3BhcmVudD1wcm9qZWN0cy8qL2xv",
+            "Y2F0aW9ucy8qL2NhdGFsb2dzLyp9L3VzZXJFdmVudHM6Y29sbGVjdBKaAgoP",
+            "UHVyZ2VVc2VyRXZlbnRzEjMuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmFscGhh",
+            "LlB1cmdlVXNlckV2ZW50c1JlcXVlc3QaHS5nb29nbGUubG9uZ3J1bm5pbmcu",
+            "T3BlcmF0aW9uIrIBgtPkkwJJIkQvdjJhbHBoYS97cGFyZW50PXByb2plY3Rz",
+            "LyovbG9jYXRpb25zLyovY2F0YWxvZ3MvKn0vdXNlckV2ZW50czpwdXJnZToB",
+            "KspBYAozZ29vZ2xlLmNsb3VkLnJldGFpbC52MmFscGhhLlB1cmdlVXNlckV2",
+            "ZW50c1Jlc3BvbnNlEilnb29nbGUuY2xvdWQucmV0YWlsLnYyYWxwaGEuUHVy",
+            "Z2VNZXRhZGF0YRKfAgoQSW1wb3J0VXNlckV2ZW50cxI0Lmdvb2dsZS5jbG91",
+            "ZC5yZXRhaWwudjJhbHBoYS5JbXBvcnRVc2VyRXZlbnRzUmVxdWVzdBodLmdv",
+            "b2dsZS5sb25ncnVubmluZy5PcGVyYXRpb24itQGC0+STAkoiRS92MmFscGhh",
+            "L3twYXJlbnQ9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9jYXRhbG9ncy8qfS91",
+            "c2VyRXZlbnRzOmltcG9ydDoBKspBYgo0Z29vZ2xlLmNsb3VkLnJldGFpbC52",
+            "MmFscGhhLkltcG9ydFVzZXJFdmVudHNSZXNwb25zZRIqZ29vZ2xlLmNsb3Vk",
+            "LnJldGFpbC52MmFscGhhLkltcG9ydE1ldGFkYXRhEvEBChBSZWpvaW5Vc2Vy",
+            "RXZlbnRzEjQuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmFscGhhLlJlam9pblVz",
+            "ZXJFdmVudHNSZXF1ZXN0Gh0uZ29vZ2xlLmxvbmdydW5uaW5nLk9wZXJhdGlv",
+            "biKHAYLT5JMCSiJFL3YyYWxwaGEve3BhcmVudD1wcm9qZWN0cy8qL2xvY2F0",
+            "aW9ucy8qL2NhdGFsb2dzLyp9L3VzZXJFdmVudHM6cmVqb2luOgEqykE0ChhS",
+            "ZWpvaW5Vc2VyRXZlbnRzUmVzcG9uc2USGFJlam9pblVzZXJFdmVudHNNZXRh",
+            "ZGF0YRpJykEVcmV0YWlsLmdvb2dsZWFwaXMuY29t0kEuaHR0cHM6Ly93d3cu",
+            "Z29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybULjAQofY29tLmdv",
+            "b2dsZS5jbG91ZC5yZXRhaWwudjJhbHBoYUIVVXNlckV2ZW50U2VydmljZVBy",
+            "b3RvUAFaQWdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMv",
+            "Y2xvdWQvcmV0YWlsL3YyYWxwaGE7cmV0YWlsogIGUkVUQUlMqgIbR29vZ2xl",
+            "LkNsb3VkLlJldGFpbC5WMkFscGhhygIbR29vZ2xlXENsb3VkXFJldGFpbFxW",
+            "MmFscGhh6gIeR29vZ2xlOjpDbG91ZDo6UmV0YWlsOjpWMmFscGhhYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.HttpbodyReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.ImportConfigReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.PurgeConfigReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.UserEventReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.HttpbodyReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.ExportConfigReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.ImportConfigReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.PurgeConfigReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.UserEventReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Alpha.WriteUserEventRequest), global::Google.Cloud.Retail.V2Alpha.WriteUserEventRequest.Parser, new[]{ "Parent", "UserEvent" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Alpha.CollectUserEventRequest), global::Google.Cloud.Retail.V2Alpha.CollectUserEventRequest.Parser, new[]{ "Parent", "UserEvent", "Uri", "Ets" }, null, null, null, null),
@@ -140,7 +142,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     private string parent_ = "";
     /// <summary>
     /// Required. The parent catalog resource name, such as
-    /// "projects/1234/locations/global/catalogs/default_catalog".
+    /// `projects/1234/locations/global/catalogs/default_catalog`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Parent {
@@ -369,7 +371,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     private string parent_ = "";
     /// <summary>
     /// Required. The parent catalog name, such as
-    /// "projects/1234/locations/global/catalogs/default_catalog".
+    /// `projects/1234/locations/global/catalogs/default_catalog`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Parent {
@@ -669,7 +671,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     private string parent_ = "";
     /// <summary>
     /// Required. The parent catalog resource name, such as
-    /// "projects/1234/locations/global/catalogs/default_catalog".
+    /// `projects/1234/locations/global/catalogs/default_catalog`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Parent {

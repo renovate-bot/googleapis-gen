@@ -77,4 +77,40 @@ public interface CatalogOrBuilder extends
    * <code>.google.cloud.retail.v2alpha.ProductLevelConfig product_level_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.retail.v2alpha.ProductLevelConfigOrBuilder getProductLevelConfigOrBuilder();
+
+  /**
+   * <pre>
+   * The Merchant Center linking configuration.
+   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * will be enabled automatically. The requester must have access to the
+   * merchant center account in order to make changes to this field.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+   * @return Whether the merchantCenterLinkingConfig field is set.
+   */
+  boolean hasMerchantCenterLinkingConfig();
+  /**
+   * <pre>
+   * The Merchant Center linking configuration.
+   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * will be enabled automatically. The requester must have access to the
+   * merchant center account in order to make changes to this field.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+   * @return The merchantCenterLinkingConfig.
+   */
+  com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig getMerchantCenterLinkingConfig();
+  /**
+   * <pre>
+   * The Merchant Center linking configuration.
+   * Once a link is added, the data stream from Merchant Center to Cloud Retail
+   * will be enabled automatically. The requester must have access to the
+   * merchant center account in order to make changes to this field.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+   */
+  com.google.cloud.retail.v2alpha.MerchantCenterLinkingConfigOrBuilder getMerchantCenterLinkingConfigOrBuilder();
 }

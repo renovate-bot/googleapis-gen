@@ -27,25 +27,35 @@ namespace Google.Cloud.Retail.V2Alpha {
             "Cilnb29nbGUvY2xvdWQvcmV0YWlsL3YyYWxwaGEvY2F0YWxvZy5wcm90bxIb",
             "Z29vZ2xlLmNsb3VkLnJldGFpbC52MmFscGhhGhxnb29nbGUvYXBpL2Fubm90",
             "YXRpb25zLnByb3RvGh9nb29nbGUvYXBpL2ZpZWxkX2JlaGF2aW9yLnByb3Rv",
-            "Ghlnb29nbGUvYXBpL3Jlc291cmNlLnByb3RvIl4KElByb2R1Y3RMZXZlbENv",
-            "bmZpZxIeChZpbmdlc3Rpb25fcHJvZHVjdF90eXBlGAEgASgJEigKIG1lcmNo",
-            "YW50X2NlbnRlcl9wcm9kdWN0X2lkX2ZpZWxkGAIgASgJIvEBCgdDYXRhbG9n",
-            "EhQKBG5hbWUYASABKAlCBuBBAuBBBRIcCgxkaXNwbGF5X25hbWUYAiABKAlC",
-            "BuBBAuBBBRJSChRwcm9kdWN0X2xldmVsX2NvbmZpZxgEIAEoCzIvLmdvb2ds",
-            "ZS5jbG91ZC5yZXRhaWwudjJhbHBoYS5Qcm9kdWN0TGV2ZWxDb25maWdCA+BB",
-            "Ajpe6kFbCh1yZXRhaWwuZ29vZ2xlYXBpcy5jb20vQ2F0YWxvZxI6cHJvamVj",
-            "dHMve3Byb2plY3R9L2xvY2F0aW9ucy97bG9jYXRpb259L2NhdGFsb2dzL3tj",
-            "YXRhbG9nfULaAQofY29tLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJhbHBoYUIM",
-            "Q2F0YWxvZ1Byb3RvUAFaQWdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dv",
-            "b2dsZWFwaXMvY2xvdWQvcmV0YWlsL3YyYWxwaGE7cmV0YWlsogIGUkVUQUlM",
-            "qgIbR29vZ2xlLkNsb3VkLlJldGFpbC5WMkFscGhhygIbR29vZ2xlXENsb3Vk",
-            "XFJldGFpbFxWMmFscGhh6gIeR29vZ2xlOjpDbG91ZDo6UmV0YWlsOjpWMmFs",
-            "cGhhYgZwcm90bzM="));
+            "Ghlnb29nbGUvYXBpL3Jlc291cmNlLnByb3RvGihnb29nbGUvY2xvdWQvcmV0",
+            "YWlsL3YyYWxwaGEvY29tbW9uLnByb3RvGi9nb29nbGUvY2xvdWQvcmV0YWls",
+            "L3YyYWxwaGEvaW1wb3J0X2NvbmZpZy5wcm90byJeChJQcm9kdWN0TGV2ZWxD",
+            "b25maWcSHgoWaW5nZXN0aW9uX3Byb2R1Y3RfdHlwZRgBIAEoCRIoCiBtZXJj",
+            "aGFudF9jZW50ZXJfcHJvZHVjdF9pZF9maWVsZBgCIAEoCSJmChJNZXJjaGFu",
+            "dENlbnRlckxpbmsSJwoabWVyY2hhbnRfY2VudGVyX2FjY291bnRfaWQYASAB",
+            "KANCA+BBAhIRCglicmFuY2hfaWQYAiABKAkSFAoMZGVzdGluYXRpb25zGAMg",
+            "AygJIl0KG01lcmNoYW50Q2VudGVyTGlua2luZ0NvbmZpZxI+CgVsaW5rcxgB",
+            "IAMoCzIvLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJhbHBoYS5NZXJjaGFudENl",
+            "bnRlckxpbmsi0wIKB0NhdGFsb2cSFAoEbmFtZRgBIAEoCUIG4EEC4EEFEhwK",
+            "DGRpc3BsYXlfbmFtZRgCIAEoCUIG4EEC4EEFElIKFHByb2R1Y3RfbGV2ZWxf",
+            "Y29uZmlnGAQgASgLMi8uZ29vZ2xlLmNsb3VkLnJldGFpbC52MmFscGhhLlBy",
+            "b2R1Y3RMZXZlbENvbmZpZ0ID4EECEmAKHm1lcmNoYW50X2NlbnRlcl9saW5r",
+            "aW5nX2NvbmZpZxgGIAEoCzI4Lmdvb2dsZS5jbG91ZC5yZXRhaWwudjJhbHBo",
+            "YS5NZXJjaGFudENlbnRlckxpbmtpbmdDb25maWc6XupBWwodcmV0YWlsLmdv",
+            "b2dsZWFwaXMuY29tL0NhdGFsb2cSOnByb2plY3RzL3twcm9qZWN0fS9sb2Nh",
+            "dGlvbnMve2xvY2F0aW9ufS9jYXRhbG9ncy97Y2F0YWxvZ31C2gEKH2NvbS5n",
+            "b29nbGUuY2xvdWQucmV0YWlsLnYyYWxwaGFCDENhdGFsb2dQcm90b1ABWkFn",
+            "b29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2Nsb3VkL3Jl",
+            "dGFpbC92MmFscGhhO3JldGFpbKICBlJFVEFJTKoCG0dvb2dsZS5DbG91ZC5S",
+            "ZXRhaWwuVjJBbHBoYcoCG0dvb2dsZVxDbG91ZFxSZXRhaWxcVjJhbHBoYeoC",
+            "Hkdvb2dsZTo6Q2xvdWQ6OlJldGFpbDo6VjJhbHBoYWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.CommonReflection.Descriptor, global::Google.Cloud.Retail.V2Alpha.ImportConfigReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Alpha.ProductLevelConfig), global::Google.Cloud.Retail.V2Alpha.ProductLevelConfig.Parser, new[]{ "IngestionProductType", "MerchantCenterProductIdField" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Alpha.Catalog), global::Google.Cloud.Retail.V2Alpha.Catalog.Parser, new[]{ "Name", "DisplayName", "ProductLevelConfig" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Alpha.MerchantCenterLink), global::Google.Cloud.Retail.V2Alpha.MerchantCenterLink.Parser, new[]{ "MerchantCenterAccountId", "BranchId", "Destinations" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Alpha.MerchantCenterLinkingConfig), global::Google.Cloud.Retail.V2Alpha.MerchantCenterLinkingConfig.Parser, new[]{ "Links" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Alpha.Catalog), global::Google.Cloud.Retail.V2Alpha.Catalog.Parser, new[]{ "Name", "DisplayName", "ProductLevelConfig", "MerchantCenterLinkingConfig" }, null, null, null, null)
           }));
     }
     #endregion
@@ -122,9 +132,9 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// [merchant_center_product_id_field][google.cloud.retail.v2alpha.ProductLevelConfig.merchant_center_product_id_field]
     /// is `itemGroupId`, an INVALID_ARGUMENT error is returned.
     ///
-    /// See [Using catalog
-    /// levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-    /// details.
+    /// See [Using product
+    /// levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+    /// for more details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string IngestionProductType {
@@ -155,9 +165,9 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// [ingestion_product_type][google.cloud.retail.v2alpha.ProductLevelConfig.ingestion_product_type]
     /// is `variant`, an INVALID_ARGUMENT error is returned.
     ///
-    /// See [Using catalog
-    /// levels](/retail/recommendations-ai/docs/catalog#catalog-levels) for more
-    /// details.
+    /// See [Using product
+    /// levels](https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels)
+    /// for more details.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string MerchantCenterProductIdField {
@@ -315,6 +325,435 @@ namespace Google.Cloud.Retail.V2Alpha {
   }
 
   /// <summary>
+  /// Represents a link between a Merchant Center account and a branch.
+  /// Once a link is established, products from the linked merchant center account
+  /// will be streamed to the linked branch.
+  /// </summary>
+  public sealed partial class MerchantCenterLink : pb::IMessage<MerchantCenterLink>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MerchantCenterLink> _parser = new pb::MessageParser<MerchantCenterLink>(() => new MerchantCenterLink());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<MerchantCenterLink> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Alpha.CatalogReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MerchantCenterLink() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MerchantCenterLink(MerchantCenterLink other) : this() {
+      merchantCenterAccountId_ = other.merchantCenterAccountId_;
+      branchId_ = other.branchId_;
+      destinations_ = other.destinations_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MerchantCenterLink Clone() {
+      return new MerchantCenterLink(this);
+    }
+
+    /// <summary>Field number for the "merchant_center_account_id" field.</summary>
+    public const int MerchantCenterAccountIdFieldNumber = 1;
+    private long merchantCenterAccountId_;
+    /// <summary>
+    /// Required. The linked [Merchant center account
+    /// id](https://developers.google.com/shopping-content/guides/accountstatuses).
+    /// The account must be a standalone account or a sub-account of a MCA.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long MerchantCenterAccountId {
+      get { return merchantCenterAccountId_; }
+      set {
+        merchantCenterAccountId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "branch_id" field.</summary>
+    public const int BranchIdFieldNumber = 2;
+    private string branchId_ = "";
+    /// <summary>
+    /// The branch id (e.g. 0/1/2) within this catalog that products from
+    /// merchant_center_account_id are streamed to. When updating this field, an
+    /// empty value will use the currently configured default branch. However,
+    /// changing the default branch later on won't change the linked branch here.
+    ///
+    /// A single branch id can only have one linked merchant center account id.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string BranchId {
+      get { return branchId_; }
+      set {
+        branchId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "destinations" field.</summary>
+    public const int DestinationsFieldNumber = 3;
+    private static readonly pb::FieldCodec<string> _repeated_destinations_codec
+        = pb::FieldCodec.ForString(26);
+    private readonly pbc::RepeatedField<string> destinations_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// String representing the destination to import for, all if left empty.
+    /// List of possible values can be found here.
+    /// [https://support.google.com/merchants/answer/7501026?hl=en]
+    /// List of allowed string values:
+    /// "shopping-ads", "buy-on-google-listings", "display-ads", "local-inventory
+    /// -ads", "free-listings", "free-local-listings"
+    /// NOTE: The string values are case sensitive.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Destinations {
+      get { return destinations_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as MerchantCenterLink);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(MerchantCenterLink other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MerchantCenterAccountId != other.MerchantCenterAccountId) return false;
+      if (BranchId != other.BranchId) return false;
+      if(!destinations_.Equals(other.destinations_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MerchantCenterAccountId != 0L) hash ^= MerchantCenterAccountId.GetHashCode();
+      if (BranchId.Length != 0) hash ^= BranchId.GetHashCode();
+      hash ^= destinations_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (MerchantCenterAccountId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(MerchantCenterAccountId);
+      }
+      if (BranchId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(BranchId);
+      }
+      destinations_.WriteTo(output, _repeated_destinations_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (MerchantCenterAccountId != 0L) {
+        output.WriteRawTag(8);
+        output.WriteInt64(MerchantCenterAccountId);
+      }
+      if (BranchId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(BranchId);
+      }
+      destinations_.WriteTo(ref output, _repeated_destinations_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (MerchantCenterAccountId != 0L) {
+        size += 1 + pb::CodedOutputStream.ComputeInt64Size(MerchantCenterAccountId);
+      }
+      if (BranchId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BranchId);
+      }
+      size += destinations_.CalculateSize(_repeated_destinations_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(MerchantCenterLink other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MerchantCenterAccountId != 0L) {
+        MerchantCenterAccountId = other.MerchantCenterAccountId;
+      }
+      if (other.BranchId.Length != 0) {
+        BranchId = other.BranchId;
+      }
+      destinations_.Add(other.destinations_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            MerchantCenterAccountId = input.ReadInt64();
+            break;
+          }
+          case 18: {
+            BranchId = input.ReadString();
+            break;
+          }
+          case 26: {
+            destinations_.AddEntriesFrom(input, _repeated_destinations_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            MerchantCenterAccountId = input.ReadInt64();
+            break;
+          }
+          case 18: {
+            BranchId = input.ReadString();
+            break;
+          }
+          case 26: {
+            destinations_.AddEntriesFrom(ref input, _repeated_destinations_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Configures Merchant Center linking.
+  /// Links contained in the config will be used to sync data from a Merchant
+  /// Center account to a Cloud Retail branch.
+  /// </summary>
+  public sealed partial class MerchantCenterLinkingConfig : pb::IMessage<MerchantCenterLinkingConfig>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<MerchantCenterLinkingConfig> _parser = new pb::MessageParser<MerchantCenterLinkingConfig>(() => new MerchantCenterLinkingConfig());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<MerchantCenterLinkingConfig> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Alpha.CatalogReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MerchantCenterLinkingConfig() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MerchantCenterLinkingConfig(MerchantCenterLinkingConfig other) : this() {
+      links_ = other.links_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MerchantCenterLinkingConfig Clone() {
+      return new MerchantCenterLinkingConfig(this);
+    }
+
+    /// <summary>Field number for the "links" field.</summary>
+    public const int LinksFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Google.Cloud.Retail.V2Alpha.MerchantCenterLink> _repeated_links_codec
+        = pb::FieldCodec.ForMessage(10, global::Google.Cloud.Retail.V2Alpha.MerchantCenterLink.Parser);
+    private readonly pbc::RepeatedField<global::Google.Cloud.Retail.V2Alpha.MerchantCenterLink> links_ = new pbc::RepeatedField<global::Google.Cloud.Retail.V2Alpha.MerchantCenterLink>();
+    /// <summary>
+    /// Links between Merchant Center accounts and branches.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Google.Cloud.Retail.V2Alpha.MerchantCenterLink> Links {
+      get { return links_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as MerchantCenterLinkingConfig);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(MerchantCenterLinkingConfig other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!links_.Equals(other.links_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= links_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      links_.WriteTo(output, _repeated_links_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      links_.WriteTo(ref output, _repeated_links_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += links_.CalculateSize(_repeated_links_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(MerchantCenterLinkingConfig other) {
+      if (other == null) {
+        return;
+      }
+      links_.Add(other.links_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            links_.AddEntriesFrom(input, _repeated_links_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            links_.AddEntriesFrom(ref input, _repeated_links_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// The catalog configuration.
   /// </summary>
   public sealed partial class Catalog : pb::IMessage<Catalog>
@@ -329,7 +768,7 @@ namespace Google.Cloud.Retail.V2Alpha {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.Retail.V2Alpha.CatalogReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Google.Cloud.Retail.V2Alpha.CatalogReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -349,6 +788,7 @@ namespace Google.Cloud.Retail.V2Alpha {
       name_ = other.name_;
       displayName_ = other.displayName_;
       productLevelConfig_ = other.productLevelConfig_ != null ? other.productLevelConfig_.Clone() : null;
+      merchantCenterLinkingConfig_ = other.merchantCenterLinkingConfig_ != null ? other.merchantCenterLinkingConfig_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -402,6 +842,23 @@ namespace Google.Cloud.Retail.V2Alpha {
       }
     }
 
+    /// <summary>Field number for the "merchant_center_linking_config" field.</summary>
+    public const int MerchantCenterLinkingConfigFieldNumber = 6;
+    private global::Google.Cloud.Retail.V2Alpha.MerchantCenterLinkingConfig merchantCenterLinkingConfig_;
+    /// <summary>
+    /// The Merchant Center linking configuration.
+    /// Once a link is added, the data stream from Merchant Center to Cloud Retail
+    /// will be enabled automatically. The requester must have access to the
+    /// merchant center account in order to make changes to this field.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.Retail.V2Alpha.MerchantCenterLinkingConfig MerchantCenterLinkingConfig {
+      get { return merchantCenterLinkingConfig_; }
+      set {
+        merchantCenterLinkingConfig_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Catalog);
@@ -418,6 +875,7 @@ namespace Google.Cloud.Retail.V2Alpha {
       if (Name != other.Name) return false;
       if (DisplayName != other.DisplayName) return false;
       if (!object.Equals(ProductLevelConfig, other.ProductLevelConfig)) return false;
+      if (!object.Equals(MerchantCenterLinkingConfig, other.MerchantCenterLinkingConfig)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -427,6 +885,7 @@ namespace Google.Cloud.Retail.V2Alpha {
       if (Name.Length != 0) hash ^= Name.GetHashCode();
       if (DisplayName.Length != 0) hash ^= DisplayName.GetHashCode();
       if (productLevelConfig_ != null) hash ^= ProductLevelConfig.GetHashCode();
+      if (merchantCenterLinkingConfig_ != null) hash ^= MerchantCenterLinkingConfig.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -455,6 +914,10 @@ namespace Google.Cloud.Retail.V2Alpha {
         output.WriteRawTag(34);
         output.WriteMessage(ProductLevelConfig);
       }
+      if (merchantCenterLinkingConfig_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(MerchantCenterLinkingConfig);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -476,6 +939,10 @@ namespace Google.Cloud.Retail.V2Alpha {
         output.WriteRawTag(34);
         output.WriteMessage(ProductLevelConfig);
       }
+      if (merchantCenterLinkingConfig_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(MerchantCenterLinkingConfig);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -493,6 +960,9 @@ namespace Google.Cloud.Retail.V2Alpha {
       }
       if (productLevelConfig_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ProductLevelConfig);
+      }
+      if (merchantCenterLinkingConfig_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(MerchantCenterLinkingConfig);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -516,6 +986,12 @@ namespace Google.Cloud.Retail.V2Alpha {
           ProductLevelConfig = new global::Google.Cloud.Retail.V2Alpha.ProductLevelConfig();
         }
         ProductLevelConfig.MergeFrom(other.ProductLevelConfig);
+      }
+      if (other.merchantCenterLinkingConfig_ != null) {
+        if (merchantCenterLinkingConfig_ == null) {
+          MerchantCenterLinkingConfig = new global::Google.Cloud.Retail.V2Alpha.MerchantCenterLinkingConfig();
+        }
+        MerchantCenterLinkingConfig.MergeFrom(other.MerchantCenterLinkingConfig);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -546,6 +1022,13 @@ namespace Google.Cloud.Retail.V2Alpha {
             input.ReadMessage(ProductLevelConfig);
             break;
           }
+          case 50: {
+            if (merchantCenterLinkingConfig_ == null) {
+              MerchantCenterLinkingConfig = new global::Google.Cloud.Retail.V2Alpha.MerchantCenterLinkingConfig();
+            }
+            input.ReadMessage(MerchantCenterLinkingConfig);
+            break;
+          }
         }
       }
     #endif
@@ -573,6 +1056,13 @@ namespace Google.Cloud.Retail.V2Alpha {
               ProductLevelConfig = new global::Google.Cloud.Retail.V2Alpha.ProductLevelConfig();
             }
             input.ReadMessage(ProductLevelConfig);
+            break;
+          }
+          case 50: {
+            if (merchantCenterLinkingConfig_ == null) {
+              MerchantCenterLinkingConfig = new global::Google.Cloud.Retail.V2Alpha.MerchantCenterLinkingConfig();
+            }
+            input.ReadMessage(MerchantCenterLinkingConfig);
             break;
           }
         }

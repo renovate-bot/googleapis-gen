@@ -11,7 +11,7 @@ public interface ProductInlineSourceOrBuilder extends
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2alpha.Product.id]. Recommended max
-   * of 10k items.
+   * of 100 items.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2alpha.Product products = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -22,7 +22,7 @@ public interface ProductInlineSourceOrBuilder extends
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2alpha.Product.id]. Recommended max
-   * of 10k items.
+   * of 100 items.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2alpha.Product products = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -32,7 +32,7 @@ public interface ProductInlineSourceOrBuilder extends
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2alpha.Product.id]. Recommended max
-   * of 10k items.
+   * of 100 items.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2alpha.Product products = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,7 +42,7 @@ public interface ProductInlineSourceOrBuilder extends
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2alpha.Product.id]. Recommended max
-   * of 10k items.
+   * of 100 items.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2alpha.Product products = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -53,7 +53,7 @@ public interface ProductInlineSourceOrBuilder extends
    * <pre>
    * Required. A list of products to update/create. Each product must have a
    * valid [Product.id][google.cloud.retail.v2alpha.Product.id]. Recommended max
-   * of 10k items.
+   * of 100 items.
    * </pre>
    *
    * <code>repeated .google.cloud.retail.v2alpha.Product products = 1 [(.google.api.field_behavior) = REQUIRED];</code>

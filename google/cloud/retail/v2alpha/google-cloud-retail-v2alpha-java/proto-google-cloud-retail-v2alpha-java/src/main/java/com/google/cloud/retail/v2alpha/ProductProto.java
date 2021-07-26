@@ -38,43 +38,62 @@ public final class ProductProto {
       "/api/annotations.proto\032\037google/api/field" +
       "_behavior.proto\032\031google/api/resource.pro" +
       "to\032(google/cloud/retail/v2alpha/common.p" +
-      "roto\032 google/protobuf/field_mask.proto\032\037" +
-      "google/protobuf/timestamp.proto\032\036google/" +
-      "protobuf/wrappers.proto\"\352\007\n\007Product\022\021\n\004n" +
-      "ame\030\001 \001(\tB\003\340A\005\022\017\n\002id\030\002 \001(\tB\003\340A\005\022<\n\004type\030" +
-      "\003 \001(\0162).google.cloud.retail.v2alpha.Prod" +
-      "uct.TypeB\003\340A\005\022\032\n\022primary_product_id\030\004 \001(" +
-      "\t\022\022\n\ncategories\030\007 \003(\t\022\022\n\005title\030\010 \001(\tB\003\340A" +
-      "\002\022\023\n\013description\030\n \001(\t\022H\n\nattributes\030\014 \003" +
-      "(\01324.google.cloud.retail.v2alpha.Product" +
-      ".AttributesEntry\022\014\n\004tags\030\r \003(\t\022:\n\nprice_" +
-      "info\030\016 \001(\0132&.google.cloud.retail.v2alpha" +
-      ".PriceInfo\0222\n\016available_time\030\022 \001(\0132\032.goo" +
-      "gle.protobuf.Timestamp\022G\n\014availability\030\023" +
-      " \001(\01621.google.cloud.retail.v2alpha.Produ" +
-      "ct.Availability\0227\n\022available_quantity\030\024 " +
-      "\001(\0132\033.google.protobuf.Int32Value\022\013\n\003uri\030" +
-      "\026 \001(\t\0222\n\006images\030\027 \003(\0132\".google.cloud.ret" +
-      "ail.v2alpha.Image\032_\n\017AttributesEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022;\n\005value\030\002 \001(\0132,.google.cloud." +
-      "retail.v2alpha.CustomAttribute:\0028\001\"F\n\004Ty" +
-      "pe\022\024\n\020TYPE_UNSPECIFIED\020\000\022\013\n\007PRIMARY\020\001\022\013\n" +
-      "\007VARIANT\020\002\022\016\n\nCOLLECTION\020\003\"i\n\014Availabili" +
-      "ty\022\034\n\030AVAILABILITY_UNSPECIFIED\020\000\022\014\n\010IN_S" +
-      "TOCK\020\001\022\020\n\014OUT_OF_STOCK\020\002\022\014\n\010PREORDER\020\003\022\r" +
-      "\n\tBACKORDER\020\004:\204\001\352A\200\001\n\035retail.googleapis." +
-      "com/Product\022_projects/{project}/location" +
+      "roto\032\036google/protobuf/duration.proto\032 go" +
+      "ogle/protobuf/field_mask.proto\032\037google/p" +
+      "rotobuf/timestamp.proto\032\036google/protobuf" +
+      "/wrappers.proto\"\313\r\n\007Product\0221\n\013expire_ti" +
+      "me\030\020 \001(\0132\032.google.protobuf.TimestampH\000\022-" +
+      "\n\003ttl\030\021 \001(\0132\031.google.protobuf.DurationB\003" +
+      "\340A\004H\000\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\017\n\002id\030\002 \001(\tB\003\340A" +
+      "\005\022<\n\004type\030\003 \001(\0162).google.cloud.retail.v2" +
+      "alpha.Product.TypeB\003\340A\005\022\032\n\022primary_produ" +
+      "ct_id\030\004 \001(\t\022\035\n\025collection_member_ids\030\005 \003" +
+      "(\t\022\014\n\004gtin\030\006 \001(\t\022\022\n\ncategories\030\007 \003(\t\022\022\n\005" +
+      "title\030\010 \001(\tB\003\340A\002\022\016\n\006brands\030\t \003(\t\022\023\n\013desc" +
+      "ription\030\n \001(\t\022\025\n\rlanguage_code\030\013 \001(\t\022H\n\n" +
+      "attributes\030\014 \003(\01324.google.cloud.retail.v" +
+      "2alpha.Product.AttributesEntry\022\014\n\004tags\030\r" +
+      " \003(\t\022:\n\nprice_info\030\016 \001(\0132&.google.cloud." +
+      "retail.v2alpha.PriceInfo\0223\n\006rating\030\017 \001(\013" +
+      "2#.google.cloud.retail.v2alpha.Rating\0222\n" +
+      "\016available_time\030\022 \001(\0132\032.google.protobuf." +
+      "Timestamp\022G\n\014availability\030\023 \001(\01621.google" +
+      ".cloud.retail.v2alpha.Product.Availabili" +
+      "ty\0227\n\022available_quantity\030\024 \001(\0132\033.google." +
+      "protobuf.Int32Value\022F\n\020fulfillment_info\030" +
+      "\025 \003(\0132,.google.cloud.retail.v2alpha.Fulf" +
+      "illmentInfo\022\013\n\003uri\030\026 \001(\t\0222\n\006images\030\027 \003(\013" +
+      "2\".google.cloud.retail.v2alpha.Image\0227\n\010" +
+      "audience\030\030 \001(\0132%.google.cloud.retail.v2a" +
+      "lpha.Audience\022:\n\ncolor_info\030\031 \001(\0132&.goog" +
+      "le.cloud.retail.v2alpha.ColorInfo\022\r\n\005siz" +
+      "es\030\032 \003(\t\022\021\n\tmaterials\030\033 \003(\t\022\020\n\010patterns\030" +
+      "\034 \003(\t\022\022\n\nconditions\030\035 \003(\t\022:\n\npromotions\030" +
+      "\" \003(\0132&.google.cloud.retail.v2alpha.Prom" +
+      "otion\0220\n\014publish_time\030! \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\0226\n\022retrievable_fields\030\036 " +
+      "\001(\0132\032.google.protobuf.FieldMask\022;\n\010varia" +
+      "nts\030\037 \003(\0132$.google.cloud.retail.v2alpha." +
+      "ProductB\003\340A\003\032_\n\017AttributesEntry\022\013\n\003key\030\001" +
+      " \001(\t\022;\n\005value\030\002 \001(\0132,.google.cloud.retai" +
+      "l.v2alpha.CustomAttribute:\0028\001\"F\n\004Type\022\024\n" +
+      "\020TYPE_UNSPECIFIED\020\000\022\013\n\007PRIMARY\020\001\022\013\n\007VARI" +
+      "ANT\020\002\022\016\n\nCOLLECTION\020\003\"i\n\014Availability\022\034\n" +
+      "\030AVAILABILITY_UNSPECIFIED\020\000\022\014\n\010IN_STOCK\020" +
+      "\001\022\020\n\014OUT_OF_STOCK\020\002\022\014\n\010PREORDER\020\003\022\r\n\tBAC" +
+      "KORDER\020\004:\204\001\352A\200\001\n\035retail.googleapis.com/P" +
+      "roduct\022_projects/{project}/locations/{lo" +
+      "cation}/catalogs/{catalog}/branches/{bra" +
+      "nch}/products/{product}B\014\n\nexpirationB\311\002" +
+      "\n\037com.google.cloud.retail.v2alphaB\014Produ" +
+      "ctProtoP\001ZAgoogle.golang.org/genproto/go" +
+      "ogleapis/cloud/retail/v2alpha;retail\242\002\006R" +
+      "ETAIL\252\002\033Google.Cloud.Retail.V2Alpha\312\002\033Go" +
+      "ogle\\Cloud\\Retail\\V2alpha\352\002\036Google::Clou" +
+      "d::Retail::V2alpha\352Al\n\034retail.googleapis" +
+      ".com/Branch\022Lprojects/{project}/location" +
       "s/{location}/catalogs/{catalog}/branches" +
-      "/{branch}/products/{product}B\311\002\n\037com.goo" +
-      "gle.cloud.retail.v2alphaB\014ProductProtoP\001" +
-      "ZAgoogle.golang.org/genproto/googleapis/" +
-      "cloud/retail/v2alpha;retail\242\002\006RETAIL\252\002\033G" +
-      "oogle.Cloud.Retail.V2Alpha\312\002\033Google\\Clou" +
-      "d\\Retail\\V2alpha\352\002\036Google::Cloud::Retail" +
-      "::V2alpha\352Al\n\034retail.googleapis.com/Bran" +
-      "ch\022Lprojects/{project}/locations/{locati" +
-      "on}/catalogs/{catalog}/branches/{branch}" +
-      "b\006proto3"
+      "/{branch}b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -83,6 +102,7 @@ public final class ProductProto {
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.retail.v2alpha.CommonProto.getDescriptor(),
+          com.google.protobuf.DurationProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.protobuf.WrappersProto.getDescriptor(),
@@ -92,7 +112,7 @@ public final class ProductProto {
     internal_static_google_cloud_retail_v2alpha_Product_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2alpha_Product_descriptor,
-        new java.lang.String[] { "Name", "Id", "Type", "PrimaryProductId", "Categories", "Title", "Description", "Attributes", "Tags", "PriceInfo", "AvailableTime", "Availability", "AvailableQuantity", "Uri", "Images", });
+        new java.lang.String[] { "ExpireTime", "Ttl", "Name", "Id", "Type", "PrimaryProductId", "CollectionMemberIds", "Gtin", "Categories", "Title", "Brands", "Description", "LanguageCode", "Attributes", "Tags", "PriceInfo", "Rating", "AvailableTime", "Availability", "AvailableQuantity", "FulfillmentInfo", "Uri", "Images", "Audience", "ColorInfo", "Sizes", "Materials", "Patterns", "Conditions", "Promotions", "PublishTime", "RetrievableFields", "Variants", "Expiration", });
     internal_static_google_cloud_retail_v2alpha_Product_AttributesEntry_descriptor =
       internal_static_google_cloud_retail_v2alpha_Product_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_retail_v2alpha_Product_AttributesEntry_fieldAccessorTable = new
@@ -110,6 +130,7 @@ public final class ProductProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.retail.v2alpha.CommonProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.WrappersProto.getDescriptor();

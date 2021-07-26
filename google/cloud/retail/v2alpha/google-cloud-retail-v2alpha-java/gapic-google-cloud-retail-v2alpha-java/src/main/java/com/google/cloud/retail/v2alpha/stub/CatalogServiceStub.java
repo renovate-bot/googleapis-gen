@@ -22,9 +22,13 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.Catalog;
+import com.google.cloud.retail.v2alpha.GetDefaultBranchRequest;
+import com.google.cloud.retail.v2alpha.GetDefaultBranchResponse;
 import com.google.cloud.retail.v2alpha.ListCatalogsRequest;
 import com.google.cloud.retail.v2alpha.ListCatalogsResponse;
+import com.google.cloud.retail.v2alpha.SetDefaultBranchRequest;
 import com.google.cloud.retail.v2alpha.UpdateCatalogRequest;
+import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -47,6 +51,15 @@ public abstract class CatalogServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateCatalogRequest, Catalog> updateCatalogCallable() {
     throw new UnsupportedOperationException("Not implemented: updateCatalogCallable()");
+  }
+
+  public UnaryCallable<SetDefaultBranchRequest, Empty> setDefaultBranchCallable() {
+    throw new UnsupportedOperationException("Not implemented: setDefaultBranchCallable()");
+  }
+
+  public UnaryCallable<GetDefaultBranchRequest, GetDefaultBranchResponse>
+      getDefaultBranchCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDefaultBranchCallable()");
   }
 
   @Override

@@ -70,7 +70,7 @@ func defaultPredictionCallOptions() *PredictionCallOptions {
 	}
 }
 
-// internalPredictionClient is an interface that defines the methods availaible from Cloud Retail.
+// internalPredictionClient is an interface that defines the methods availaible from Retail API.
 type internalPredictionClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -78,7 +78,7 @@ type internalPredictionClient interface {
 	Predict(context.Context, *retailpb.PredictRequest, ...gax.CallOption) (*retailpb.PredictResponse, error)
 }
 
-// PredictionClient is a client for interacting with Cloud Retail.
+// PredictionClient is a client for interacting with Retail API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Service for making recommendation prediction.
@@ -117,7 +117,7 @@ func (c *PredictionClient) Predict(ctx context.Context, req *retailpb.PredictReq
 	return c.internalClient.Predict(ctx, req, opts...)
 }
 
-// predictionGRPCClient is a client for interacting with Cloud Retail over gRPC transport.
+// predictionGRPCClient is a client for interacting with Retail API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type predictionGRPCClient struct {

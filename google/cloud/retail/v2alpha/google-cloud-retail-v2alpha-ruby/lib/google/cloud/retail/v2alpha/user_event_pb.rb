@@ -14,14 +14,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.retail.v2alpha.UserEvent" do
       optional :event_type, :string, 1
       optional :visitor_id, :string, 2
+      optional :session_id, :string, 21
       optional :event_time, :message, 3, "google.protobuf.Timestamp"
       repeated :experiment_ids, :string, 4
       optional :attribution_token, :string, 5
       repeated :product_details, :message, 6, "google.cloud.retail.v2alpha.ProductDetail"
+      optional :completion_detail, :message, 22, "google.cloud.retail.v2alpha.CompletionDetail"
       map :attributes, :string, :message, 7, "google.cloud.retail.v2alpha.CustomAttribute"
       optional :cart_id, :string, 8
       optional :purchase_transaction, :message, 9, "google.cloud.retail.v2alpha.PurchaseTransaction"
       optional :search_query, :string, 10
+      optional :filter, :string, 16
+      optional :order_by, :string, 17
+      optional :offset, :int32, 18
       repeated :page_categories, :string, 11
       optional :user_info, :message, 12, "google.cloud.retail.v2alpha.UserInfo"
       optional :uri, :string, 13
@@ -31,6 +36,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.retail.v2alpha.ProductDetail" do
       optional :product, :message, 1, "google.cloud.retail.v2alpha.Product"
       optional :quantity, :message, 2, "google.protobuf.Int32Value"
+    end
+    add_message "google.cloud.retail.v2alpha.CompletionDetail" do
+      optional :completion_attribution_token, :string, 1
+      optional :selected_suggestion, :string, 2
+      optional :selected_position, :int32, 3
     end
     add_message "google.cloud.retail.v2alpha.PurchaseTransaction" do
       optional :id, :string, 1
@@ -48,6 +58,7 @@ module Google
       module V2alpha
         UserEvent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.UserEvent").msgclass
         ProductDetail = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ProductDetail").msgclass
+        CompletionDetail = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.CompletionDetail").msgclass
         PurchaseTransaction = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.PurchaseTransaction").msgclass
       end
     end

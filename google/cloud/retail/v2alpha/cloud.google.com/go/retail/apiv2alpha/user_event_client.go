@@ -126,7 +126,7 @@ func defaultUserEventCallOptions() *UserEventCallOptions {
 	}
 }
 
-// internalUserEventClient is an interface that defines the methods availaible from Cloud Retail.
+// internalUserEventClient is an interface that defines the methods availaible from Retail API.
 type internalUserEventClient interface {
 	Close() error
 	setGoogleClientInfo(...string)
@@ -141,7 +141,7 @@ type internalUserEventClient interface {
 	RejoinUserEventsOperation(name string) *RejoinUserEventsOperation
 }
 
-// UserEventClient is a client for interacting with Cloud Retail.
+// UserEventClient is a client for interacting with Retail API.
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 //
 // Service for ingesting end user actions on the customer website.
@@ -242,7 +242,7 @@ func (c *UserEventClient) RejoinUserEventsOperation(name string) *RejoinUserEven
 	return c.internalClient.RejoinUserEventsOperation(name)
 }
 
-// userEventGRPCClient is a client for interacting with Cloud Retail over gRPC transport.
+// userEventGRPCClient is a client for interacting with Retail API over gRPC transport.
 //
 // Methods, except Close, may be called concurrently. However, fields must not be modified concurrently with method calls.
 type userEventGRPCClient struct {

@@ -20,6 +20,13 @@ class PriceInfo extends \Google\Protobuf\Internal\Message
      * 4217](https://www.iso.org/iso-4217-currency-codes.html).
      * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      * error is returned.
+     * The
+     * [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2alpha.Product]s with the same
+     * [Product.primary_product_id][google.cloud.retail.v2alpha.Product.primary_product_id]
+     * must share the same
+     * [currency_code][google.cloud.retail.v2alpha.PriceInfo.currency_code].
+     * Otherwise, a FAILED_PRECONDITION error is returned.
      *
      * Generated from protobuf field <code>string currency_code = 1;</code>
      */
@@ -51,6 +58,57 @@ class PriceInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>float cost = 4;</code>
      */
     protected $cost = 0.0;
+    /**
+     * The timestamp when the [price][google.cloud.retail.v2alpha.PriceInfo.price]
+     * starts to be effective. This can be set as a future timestamp, and the
+     * [price][google.cloud.retail.v2alpha.PriceInfo.price] is only used for
+     * search after
+     * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+     * If so, the
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] must
+     * be set and
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
+     * used before
+     * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+     * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
+     * always effective because it will cause additional latency during search.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp price_effective_time = 5;</code>
+     */
+    protected $price_effective_time = null;
+    /**
+     * The timestamp when the [price][google.cloud.retail.v2alpha.PriceInfo.price]
+     * stops to be effective. The
+     * [price][google.cloud.retail.v2alpha.PriceInfo.price] is used for search
+     * before
+     * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+     * If this field is set, the
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] must
+     * be set and
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
+     * used after
+     * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+     * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
+     * always effective because it will cause additional latency during search.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp price_expire_time = 6;</code>
+     */
+    protected $price_expire_time = null;
+    /**
+     * Output only. The price range of all the child
+     * [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2alpha.Product]s grouped together on the
+     * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2alpha.Product]. Only populated for
+     * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2alpha.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     *
+     * Generated from protobuf field <code>.google.cloud.retail.v2alpha.PriceInfo.PriceRange price_range = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $price_range = null;
 
     /**
      * Constructor.
@@ -63,6 +121,13 @@ class PriceInfo extends \Google\Protobuf\Internal\Message
      *           4217](https://www.iso.org/iso-4217-currency-codes.html).
      *           If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      *           error is returned.
+     *           The
+     *           [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
+     *           [Product][google.cloud.retail.v2alpha.Product]s with the same
+     *           [Product.primary_product_id][google.cloud.retail.v2alpha.Product.primary_product_id]
+     *           must share the same
+     *           [currency_code][google.cloud.retail.v2alpha.PriceInfo.currency_code].
+     *           Otherwise, a FAILED_PRECONDITION error is returned.
      *     @type float $price
      *           Price of the product.
      *           Google Merchant Center property
@@ -78,6 +143,45 @@ class PriceInfo extends \Google\Protobuf\Internal\Message
      *           [cost][google.cloud.retail.v2alpha.PriceInfo.cost]
      *           Google Merchant Center property
      *           [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895).
+     *     @type \Google\Protobuf\Timestamp $price_effective_time
+     *           The timestamp when the [price][google.cloud.retail.v2alpha.PriceInfo.price]
+     *           starts to be effective. This can be set as a future timestamp, and the
+     *           [price][google.cloud.retail.v2alpha.PriceInfo.price] is only used for
+     *           search after
+     *           [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+     *           If so, the
+     *           [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] must
+     *           be set and
+     *           [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
+     *           used before
+     *           [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+     *           Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
+     *           always effective because it will cause additional latency during search.
+     *     @type \Google\Protobuf\Timestamp $price_expire_time
+     *           The timestamp when the [price][google.cloud.retail.v2alpha.PriceInfo.price]
+     *           stops to be effective. The
+     *           [price][google.cloud.retail.v2alpha.PriceInfo.price] is used for search
+     *           before
+     *           [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+     *           If this field is set, the
+     *           [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] must
+     *           be set and
+     *           [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
+     *           used after
+     *           [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+     *           Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
+     *           always effective because it will cause additional latency during search.
+     *     @type \Google\Cloud\Retail\V2alpha\PriceInfo\PriceRange $price_range
+     *           Output only. The price range of all the child
+     *           [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
+     *           [Product][google.cloud.retail.v2alpha.Product]s grouped together on the
+     *           [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+     *           [Product][google.cloud.retail.v2alpha.Product]. Only populated for
+     *           [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+     *           [Product][google.cloud.retail.v2alpha.Product]s.
+     *           Note: This field is OUTPUT_ONLY for
+     *           [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct].
+     *           Do not set this field in API requests.
      * }
      */
     public function __construct($data = NULL) {
@@ -90,6 +194,13 @@ class PriceInfo extends \Google\Protobuf\Internal\Message
      * 4217](https://www.iso.org/iso-4217-currency-codes.html).
      * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      * error is returned.
+     * The
+     * [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2alpha.Product]s with the same
+     * [Product.primary_product_id][google.cloud.retail.v2alpha.Product.primary_product_id]
+     * must share the same
+     * [currency_code][google.cloud.retail.v2alpha.PriceInfo.currency_code].
+     * Otherwise, a FAILED_PRECONDITION error is returned.
      *
      * Generated from protobuf field <code>string currency_code = 1;</code>
      * @return string
@@ -104,6 +215,13 @@ class PriceInfo extends \Google\Protobuf\Internal\Message
      * 4217](https://www.iso.org/iso-4217-currency-codes.html).
      * If this field is an unrecognizable currency code, an INVALID_ARGUMENT
      * error is returned.
+     * The
+     * [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2alpha.Product]s with the same
+     * [Product.primary_product_id][google.cloud.retail.v2alpha.Product.primary_product_id]
+     * must share the same
+     * [currency_code][google.cloud.retail.v2alpha.PriceInfo.currency_code].
+     * Otherwise, a FAILED_PRECONDITION error is returned.
      *
      * Generated from protobuf field <code>string currency_code = 1;</code>
      * @param string $var
@@ -209,6 +327,180 @@ class PriceInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkFloat($var);
         $this->cost = $var;
+
+        return $this;
+    }
+
+    /**
+     * The timestamp when the [price][google.cloud.retail.v2alpha.PriceInfo.price]
+     * starts to be effective. This can be set as a future timestamp, and the
+     * [price][google.cloud.retail.v2alpha.PriceInfo.price] is only used for
+     * search after
+     * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+     * If so, the
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] must
+     * be set and
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
+     * used before
+     * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+     * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
+     * always effective because it will cause additional latency during search.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp price_effective_time = 5;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getPriceEffectiveTime()
+    {
+        return isset($this->price_effective_time) ? $this->price_effective_time : null;
+    }
+
+    public function hasPriceEffectiveTime()
+    {
+        return isset($this->price_effective_time);
+    }
+
+    public function clearPriceEffectiveTime()
+    {
+        unset($this->price_effective_time);
+    }
+
+    /**
+     * The timestamp when the [price][google.cloud.retail.v2alpha.PriceInfo.price]
+     * starts to be effective. This can be set as a future timestamp, and the
+     * [price][google.cloud.retail.v2alpha.PriceInfo.price] is only used for
+     * search after
+     * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+     * If so, the
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] must
+     * be set and
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
+     * used before
+     * [price_effective_time][google.cloud.retail.v2alpha.PriceInfo.price_effective_time].
+     * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
+     * always effective because it will cause additional latency during search.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp price_effective_time = 5;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setPriceEffectiveTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->price_effective_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * The timestamp when the [price][google.cloud.retail.v2alpha.PriceInfo.price]
+     * stops to be effective. The
+     * [price][google.cloud.retail.v2alpha.PriceInfo.price] is used for search
+     * before
+     * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+     * If this field is set, the
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] must
+     * be set and
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
+     * used after
+     * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+     * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
+     * always effective because it will cause additional latency during search.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp price_expire_time = 6;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getPriceExpireTime()
+    {
+        return isset($this->price_expire_time) ? $this->price_expire_time : null;
+    }
+
+    public function hasPriceExpireTime()
+    {
+        return isset($this->price_expire_time);
+    }
+
+    public function clearPriceExpireTime()
+    {
+        unset($this->price_expire_time);
+    }
+
+    /**
+     * The timestamp when the [price][google.cloud.retail.v2alpha.PriceInfo.price]
+     * stops to be effective. The
+     * [price][google.cloud.retail.v2alpha.PriceInfo.price] is used for search
+     * before
+     * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+     * If this field is set, the
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] must
+     * be set and
+     * [original_price][google.cloud.retail.v2alpha.PriceInfo.original_price] is
+     * used after
+     * [price_expire_time][google.cloud.retail.v2alpha.PriceInfo.price_expire_time].
+     * Do not set if [price][google.cloud.retail.v2alpha.PriceInfo.price] is
+     * always effective because it will cause additional latency during search.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp price_expire_time = 6;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setPriceExpireTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->price_expire_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The price range of all the child
+     * [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2alpha.Product]s grouped together on the
+     * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2alpha.Product]. Only populated for
+     * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2alpha.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     *
+     * Generated from protobuf field <code>.google.cloud.retail.v2alpha.PriceInfo.PriceRange price_range = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\Retail\V2alpha\PriceInfo\PriceRange|null
+     */
+    public function getPriceRange()
+    {
+        return isset($this->price_range) ? $this->price_range : null;
+    }
+
+    public function hasPriceRange()
+    {
+        return isset($this->price_range);
+    }
+
+    public function clearPriceRange()
+    {
+        unset($this->price_range);
+    }
+
+    /**
+     * Output only. The price range of all the child
+     * [Product.Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT]
+     * [Product][google.cloud.retail.v2alpha.Product]s grouped together on the
+     * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2alpha.Product]. Only populated for
+     * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+     * [Product][google.cloud.retail.v2alpha.Product]s.
+     * Note: This field is OUTPUT_ONLY for
+     * [ProductService.GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct].
+     * Do not set this field in API requests.
+     *
+     * Generated from protobuf field <code>.google.cloud.retail.v2alpha.PriceInfo.PriceRange price_range = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\Retail\V2alpha\PriceInfo\PriceRange $var
+     * @return $this
+     */
+    public function setPriceRange($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Retail\V2alpha\PriceInfo\PriceRange::class);
+        $this->price_range = $var;
 
         return $this;
     }

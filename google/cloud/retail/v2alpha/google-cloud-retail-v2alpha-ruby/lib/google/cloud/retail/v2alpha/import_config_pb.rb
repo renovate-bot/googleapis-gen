@@ -5,11 +5,13 @@ require 'google/protobuf'
 
 require 'google/api/annotations_pb'
 require 'google/api/field_behavior_pb'
+require 'google/api/resource_pb'
 require 'google/cloud/retail/v2alpha/product_pb'
 require 'google/cloud/retail/v2alpha/user_event_pb'
 require 'google/protobuf/field_mask_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/rpc/status_pb'
+require 'google/type/date_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/retail/v2alpha/import_config.proto", :syntax => :proto3) do
     add_message "google.cloud.retail.v2alpha.GcsSource" do
@@ -22,6 +24,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :table_id, :string, 2
       optional :gcs_staging_dir, :string, 3
       optional :data_schema, :string, 4
+      oneof :partition do
+        optional :partition_date, :message, 6, "google.type.Date"
+      end
     end
     add_message "google.cloud.retail.v2alpha.ProductInlineSource" do
       repeated :products, :message, 1, "google.cloud.retail.v2alpha.Product"
@@ -36,14 +41,27 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.retail.v2alpha.ImportProductsRequest" do
       optional :parent, :string, 1
+      optional :request_id, :string, 6
       optional :input_config, :message, 2, "google.cloud.retail.v2alpha.ProductInputConfig"
       optional :errors_config, :message, 3, "google.cloud.retail.v2alpha.ImportErrorsConfig"
       optional :update_mask, :message, 4, "google.protobuf.FieldMask"
+      optional :reconciliation_mode, :enum, 5, "google.cloud.retail.v2alpha.ImportProductsRequest.ReconciliationMode"
+      optional :notification_pubsub_topic, :string, 7
+    end
+    add_enum "google.cloud.retail.v2alpha.ImportProductsRequest.ReconciliationMode" do
+      value :RECONCILIATION_MODE_UNSPECIFIED, 0
+      value :INCREMENTAL, 1
+      value :FULL, 2
     end
     add_message "google.cloud.retail.v2alpha.ImportUserEventsRequest" do
       optional :parent, :string, 1
       optional :input_config, :message, 2, "google.cloud.retail.v2alpha.UserEventInputConfig"
       optional :errors_config, :message, 3, "google.cloud.retail.v2alpha.ImportErrorsConfig"
+    end
+    add_message "google.cloud.retail.v2alpha.ImportCompletionDataRequest" do
+      optional :parent, :string, 1
+      optional :input_config, :message, 2, "google.cloud.retail.v2alpha.CompletionDataInputConfig"
+      optional :notification_pubsub_topic, :string, 3
     end
     add_message "google.cloud.retail.v2alpha.ProductInputConfig" do
       oneof :source do
@@ -59,11 +77,18 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :big_query_source, :message, 3, "google.cloud.retail.v2alpha.BigQuerySource"
       end
     end
+    add_message "google.cloud.retail.v2alpha.CompletionDataInputConfig" do
+      oneof :source do
+        optional :big_query_source, :message, 1, "google.cloud.retail.v2alpha.BigQuerySource"
+      end
+    end
     add_message "google.cloud.retail.v2alpha.ImportMetadata" do
       optional :create_time, :message, 1, "google.protobuf.Timestamp"
       optional :update_time, :message, 2, "google.protobuf.Timestamp"
       optional :success_count, :int64, 3
       optional :failure_count, :int64, 4
+      optional :request_id, :string, 5
+      optional :notification_pubsub_topic, :string, 6
     end
     add_message "google.cloud.retail.v2alpha.ImportProductsResponse" do
       repeated :error_samples, :message, 1, "google.rpc.Status"
@@ -78,6 +103,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :joined_events_count, :int64, 1
       optional :unjoined_events_count, :int64, 2
     end
+    add_message "google.cloud.retail.v2alpha.ImportCompletionDataResponse" do
+      repeated :error_samples, :message, 1, "google.rpc.Status"
+    end
   end
 end
 
@@ -91,13 +119,17 @@ module Google
         UserEventInlineSource = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.UserEventInlineSource").msgclass
         ImportErrorsConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportErrorsConfig").msgclass
         ImportProductsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportProductsRequest").msgclass
+        ImportProductsRequest::ReconciliationMode = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportProductsRequest.ReconciliationMode").enummodule
         ImportUserEventsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportUserEventsRequest").msgclass
+        ImportCompletionDataRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportCompletionDataRequest").msgclass
         ProductInputConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ProductInputConfig").msgclass
         UserEventInputConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.UserEventInputConfig").msgclass
+        CompletionDataInputConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.CompletionDataInputConfig").msgclass
         ImportMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportMetadata").msgclass
         ImportProductsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportProductsResponse").msgclass
         ImportUserEventsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportUserEventsResponse").msgclass
         UserEventImportSummary = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.UserEventImportSummary").msgclass
+        ImportCompletionDataResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ImportCompletionDataResponse").msgclass
       end
     end
   end

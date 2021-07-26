@@ -3,7 +3,7 @@
 //     source: google/cloud/retail/v2alpha/product_service.proto
 // </auto-generated>
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -64,11 +64,16 @@ namespace Google.Cloud.Retail.V2Alpha {
     static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.CreateProductRequest> __Marshaller_google_cloud_retail_v2alpha_CreateProductRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.CreateProductRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.Product> __Marshaller_google_cloud_retail_v2alpha_Product = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.Product.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.GetProductRequest> __Marshaller_google_cloud_retail_v2alpha_GetProductRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.GetProductRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.ListProductsRequest> __Marshaller_google_cloud_retail_v2alpha_ListProductsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.ListProductsRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.ListProductsResponse> __Marshaller_google_cloud_retail_v2alpha_ListProductsResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.ListProductsResponse.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.UpdateProductRequest> __Marshaller_google_cloud_retail_v2alpha_UpdateProductRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.UpdateProductRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.DeleteProductRequest> __Marshaller_google_cloud_retail_v2alpha_DeleteProductRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.DeleteProductRequest.Parser));
     static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
     static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.ImportProductsRequest> __Marshaller_google_cloud_retail_v2alpha_ImportProductsRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.ImportProductsRequest.Parser));
     static readonly grpc::Marshaller<global::Google.LongRunning.Operation> __Marshaller_google_longrunning_Operation = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.LongRunning.Operation.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest> __Marshaller_google_cloud_retail_v2alpha_SetInventoryRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest> __Marshaller_google_cloud_retail_v2alpha_AddFulfillmentPlacesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest.Parser));
+    static readonly grpc::Marshaller<global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest> __Marshaller_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest.Parser));
 
     static readonly grpc::Method<global::Google.Cloud.Retail.V2Alpha.CreateProductRequest, global::Google.Cloud.Retail.V2Alpha.Product> __Method_CreateProduct = new grpc::Method<global::Google.Cloud.Retail.V2Alpha.CreateProductRequest, global::Google.Cloud.Retail.V2Alpha.Product>(
         grpc::MethodType.Unary,
@@ -83,6 +88,13 @@ namespace Google.Cloud.Retail.V2Alpha {
         "GetProduct",
         __Marshaller_google_cloud_retail_v2alpha_GetProductRequest,
         __Marshaller_google_cloud_retail_v2alpha_Product);
+
+    static readonly grpc::Method<global::Google.Cloud.Retail.V2Alpha.ListProductsRequest, global::Google.Cloud.Retail.V2Alpha.ListProductsResponse> __Method_ListProducts = new grpc::Method<global::Google.Cloud.Retail.V2Alpha.ListProductsRequest, global::Google.Cloud.Retail.V2Alpha.ListProductsResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "ListProducts",
+        __Marshaller_google_cloud_retail_v2alpha_ListProductsRequest,
+        __Marshaller_google_cloud_retail_v2alpha_ListProductsResponse);
 
     static readonly grpc::Method<global::Google.Cloud.Retail.V2Alpha.UpdateProductRequest, global::Google.Cloud.Retail.V2Alpha.Product> __Method_UpdateProduct = new grpc::Method<global::Google.Cloud.Retail.V2Alpha.UpdateProductRequest, global::Google.Cloud.Retail.V2Alpha.Product>(
         grpc::MethodType.Unary,
@@ -103,6 +115,27 @@ namespace Google.Cloud.Retail.V2Alpha {
         __ServiceName,
         "ImportProducts",
         __Marshaller_google_cloud_retail_v2alpha_ImportProductsRequest,
+        __Marshaller_google_longrunning_Operation);
+
+    static readonly grpc::Method<global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest, global::Google.LongRunning.Operation> __Method_SetInventory = new grpc::Method<global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest, global::Google.LongRunning.Operation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SetInventory",
+        __Marshaller_google_cloud_retail_v2alpha_SetInventoryRequest,
+        __Marshaller_google_longrunning_Operation);
+
+    static readonly grpc::Method<global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest, global::Google.LongRunning.Operation> __Method_AddFulfillmentPlaces = new grpc::Method<global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest, global::Google.LongRunning.Operation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "AddFulfillmentPlaces",
+        __Marshaller_google_cloud_retail_v2alpha_AddFulfillmentPlacesRequest,
+        __Marshaller_google_longrunning_Operation);
+
+    static readonly grpc::Method<global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest, global::Google.LongRunning.Operation> __Method_RemoveFulfillmentPlaces = new grpc::Method<global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest, global::Google.LongRunning.Operation>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "RemoveFulfillmentPlaces",
+        __Marshaller_google_cloud_retail_v2alpha_RemoveFulfillmentPlacesRequest,
         __Marshaller_google_longrunning_Operation);
 
     /// <summary>Service descriptor</summary>
@@ -133,6 +166,17 @@ namespace Google.Cloud.Retail.V2Alpha {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.Retail.V2Alpha.Product> GetProduct(global::Google.Cloud.Retail.V2Alpha.GetProductRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Gets a list of [Product][google.cloud.retail.v2alpha.Product]s.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.Cloud.Retail.V2Alpha.ListProductsResponse> ListProducts(global::Google.Cloud.Retail.V2Alpha.ListProductsRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -172,6 +216,108 @@ namespace Google.Cloud.Retail.V2Alpha {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> ImportProducts(global::Google.Cloud.Retail.V2Alpha.ImportProductsRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Updates inventory information for a
+      /// [Product][google.cloud.retail.v2alpha.Product] while respecting the last
+      /// update timestamps of each inventory field.
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, updates are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// When inventory is updated with
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// and
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
+      /// the specified inventory field value(s) will overwrite any existing value(s)
+      /// while ignoring the last update time for this field. Furthermore, the last
+      /// update time for the specified inventory fields will be overwritten to the
+      /// time of the
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// or
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+      /// request.
+      ///
+      /// If no inventory fields are set in
+      /// [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
+      /// then any pre-existing inventory information for this product will be used.
+      ///
+      /// If no inventory fields are set in [UpdateProductRequest.set_mask][],
+      /// then any existing inventory information will be preserved.
+      ///
+      /// Pre-existing inventory information can only be updated with
+      /// [SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
+      /// [AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
+      /// and
+      /// [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> SetInventory(global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Incrementally adds place IDs to
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the added place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> AddFulfillmentPlaces(global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// Incrementally removes place IDs from a
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the removed place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::Google.LongRunning.Operation> RemoveFulfillmentPlaces(global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -288,6 +434,50 @@ namespace Google.Cloud.Retail.V2Alpha {
       public virtual grpc::AsyncUnaryCall<global::Google.Cloud.Retail.V2Alpha.Product> GetProductAsync(global::Google.Cloud.Retail.V2Alpha.GetProductRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetProduct, null, options, request);
+      }
+      /// <summary>
+      /// Gets a list of [Product][google.cloud.retail.v2alpha.Product]s.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.Retail.V2Alpha.ListProductsResponse ListProducts(global::Google.Cloud.Retail.V2Alpha.ListProductsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListProducts(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Gets a list of [Product][google.cloud.retail.v2alpha.Product]s.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.Cloud.Retail.V2Alpha.ListProductsResponse ListProducts(global::Google.Cloud.Retail.V2Alpha.ListProductsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_ListProducts, null, options, request);
+      }
+      /// <summary>
+      /// Gets a list of [Product][google.cloud.retail.v2alpha.Product]s.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.Retail.V2Alpha.ListProductsResponse> ListProductsAsync(global::Google.Cloud.Retail.V2Alpha.ListProductsRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return ListProductsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Gets a list of [Product][google.cloud.retail.v2alpha.Product]s.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.Cloud.Retail.V2Alpha.ListProductsResponse> ListProductsAsync(global::Google.Cloud.Retail.V2Alpha.ListProductsRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_ListProducts, null, options, request);
       }
       /// <summary>
       /// Updates a [Product][google.cloud.retail.v2alpha.Product].
@@ -445,6 +635,414 @@ namespace Google.Cloud.Retail.V2Alpha {
       {
         return CallInvoker.AsyncUnaryCall(__Method_ImportProducts, null, options, request);
       }
+      /// <summary>
+      /// Updates inventory information for a
+      /// [Product][google.cloud.retail.v2alpha.Product] while respecting the last
+      /// update timestamps of each inventory field.
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, updates are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// When inventory is updated with
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// and
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
+      /// the specified inventory field value(s) will overwrite any existing value(s)
+      /// while ignoring the last update time for this field. Furthermore, the last
+      /// update time for the specified inventory fields will be overwritten to the
+      /// time of the
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// or
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+      /// request.
+      ///
+      /// If no inventory fields are set in
+      /// [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
+      /// then any pre-existing inventory information for this product will be used.
+      ///
+      /// If no inventory fields are set in [UpdateProductRequest.set_mask][],
+      /// then any existing inventory information will be preserved.
+      ///
+      /// Pre-existing inventory information can only be updated with
+      /// [SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
+      /// [AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
+      /// and
+      /// [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation SetInventory(global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetInventory(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Updates inventory information for a
+      /// [Product][google.cloud.retail.v2alpha.Product] while respecting the last
+      /// update timestamps of each inventory field.
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, updates are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// When inventory is updated with
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// and
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
+      /// the specified inventory field value(s) will overwrite any existing value(s)
+      /// while ignoring the last update time for this field. Furthermore, the last
+      /// update time for the specified inventory fields will be overwritten to the
+      /// time of the
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// or
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+      /// request.
+      ///
+      /// If no inventory fields are set in
+      /// [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
+      /// then any pre-existing inventory information for this product will be used.
+      ///
+      /// If no inventory fields are set in [UpdateProductRequest.set_mask][],
+      /// then any existing inventory information will be preserved.
+      ///
+      /// Pre-existing inventory information can only be updated with
+      /// [SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
+      /// [AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
+      /// and
+      /// [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation SetInventory(global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_SetInventory, null, options, request);
+      }
+      /// <summary>
+      /// Updates inventory information for a
+      /// [Product][google.cloud.retail.v2alpha.Product] while respecting the last
+      /// update timestamps of each inventory field.
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, updates are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// When inventory is updated with
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// and
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
+      /// the specified inventory field value(s) will overwrite any existing value(s)
+      /// while ignoring the last update time for this field. Furthermore, the last
+      /// update time for the specified inventory fields will be overwritten to the
+      /// time of the
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// or
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+      /// request.
+      ///
+      /// If no inventory fields are set in
+      /// [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
+      /// then any pre-existing inventory information for this product will be used.
+      ///
+      /// If no inventory fields are set in [UpdateProductRequest.set_mask][],
+      /// then any existing inventory information will be preserved.
+      ///
+      /// Pre-existing inventory information can only be updated with
+      /// [SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
+      /// [AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
+      /// and
+      /// [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> SetInventoryAsync(global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return SetInventoryAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Updates inventory information for a
+      /// [Product][google.cloud.retail.v2alpha.Product] while respecting the last
+      /// update timestamps of each inventory field.
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, updates are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// When inventory is updated with
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// and
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct],
+      /// the specified inventory field value(s) will overwrite any existing value(s)
+      /// while ignoring the last update time for this field. Furthermore, the last
+      /// update time for the specified inventory fields will be overwritten to the
+      /// time of the
+      /// [CreateProduct][google.cloud.retail.v2alpha.ProductService.CreateProduct]
+      /// or
+      /// [UpdateProduct][google.cloud.retail.v2alpha.ProductService.UpdateProduct]
+      /// request.
+      ///
+      /// If no inventory fields are set in
+      /// [CreateProductRequest.product][google.cloud.retail.v2alpha.CreateProductRequest.product],
+      /// then any pre-existing inventory information for this product will be used.
+      ///
+      /// If no inventory fields are set in [UpdateProductRequest.set_mask][],
+      /// then any existing inventory information will be preserved.
+      ///
+      /// Pre-existing inventory information can only be updated with
+      /// [SetInventory][google.cloud.retail.v2alpha.ProductService.SetInventory],
+      /// [AddFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.AddFulfillmentPlaces],
+      /// and
+      /// [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> SetInventoryAsync(global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_SetInventory, null, options, request);
+      }
+      /// <summary>
+      /// Incrementally adds place IDs to
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the added place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation AddFulfillmentPlaces(global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return AddFulfillmentPlaces(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Incrementally adds place IDs to
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the added place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation AddFulfillmentPlaces(global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_AddFulfillmentPlaces, null, options, request);
+      }
+      /// <summary>
+      /// Incrementally adds place IDs to
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the added place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> AddFulfillmentPlacesAsync(global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return AddFulfillmentPlacesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Incrementally adds place IDs to
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the added place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> AddFulfillmentPlacesAsync(global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_AddFulfillmentPlaces, null, options, request);
+      }
+      /// <summary>
+      /// Incrementally removes place IDs from a
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the removed place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation RemoveFulfillmentPlaces(global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RemoveFulfillmentPlaces(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Incrementally removes place IDs from a
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the removed place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::Google.LongRunning.Operation RemoveFulfillmentPlaces(global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_RemoveFulfillmentPlaces, null, options, request);
+      }
+      /// <summary>
+      /// Incrementally removes place IDs from a
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the removed place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> RemoveFulfillmentPlacesAsync(global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return RemoveFulfillmentPlacesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Incrementally removes place IDs from a
+      /// [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
+      ///
+      /// This process is asynchronous and does not require the
+      /// [Product][google.cloud.retail.v2alpha.Product] to exist before updating
+      /// fulfillment information. If the request is valid, the update will be
+      /// enqueued and processed downstream. As a consequence, when a response is
+      /// returned, the removed place IDs are not immediately manifested in the
+      /// [Product][google.cloud.retail.v2alpha.Product] queried by
+      /// [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
+      /// [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
+      ///
+      /// This feature is only available for users who have Retail Search enabled.
+      /// Contact Retail Support (retail-search-support@google.com) if you are
+      /// interested in using Retail Search.
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::Google.LongRunning.Operation> RemoveFulfillmentPlacesAsync(global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_RemoveFulfillmentPlaces, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override ProductServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -459,9 +1057,13 @@ namespace Google.Cloud.Retail.V2Alpha {
       return grpc::ServerServiceDefinition.CreateBuilder()
           .AddMethod(__Method_CreateProduct, serviceImpl.CreateProduct)
           .AddMethod(__Method_GetProduct, serviceImpl.GetProduct)
+          .AddMethod(__Method_ListProducts, serviceImpl.ListProducts)
           .AddMethod(__Method_UpdateProduct, serviceImpl.UpdateProduct)
           .AddMethod(__Method_DeleteProduct, serviceImpl.DeleteProduct)
-          .AddMethod(__Method_ImportProducts, serviceImpl.ImportProducts).Build();
+          .AddMethod(__Method_ImportProducts, serviceImpl.ImportProducts)
+          .AddMethod(__Method_SetInventory, serviceImpl.SetInventory)
+          .AddMethod(__Method_AddFulfillmentPlaces, serviceImpl.AddFulfillmentPlaces)
+          .AddMethod(__Method_RemoveFulfillmentPlaces, serviceImpl.RemoveFulfillmentPlaces).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -472,9 +1074,13 @@ namespace Google.Cloud.Retail.V2Alpha {
     {
       serviceBinder.AddMethod(__Method_CreateProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.CreateProductRequest, global::Google.Cloud.Retail.V2Alpha.Product>(serviceImpl.CreateProduct));
       serviceBinder.AddMethod(__Method_GetProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.GetProductRequest, global::Google.Cloud.Retail.V2Alpha.Product>(serviceImpl.GetProduct));
+      serviceBinder.AddMethod(__Method_ListProducts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.ListProductsRequest, global::Google.Cloud.Retail.V2Alpha.ListProductsResponse>(serviceImpl.ListProducts));
       serviceBinder.AddMethod(__Method_UpdateProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.UpdateProductRequest, global::Google.Cloud.Retail.V2Alpha.Product>(serviceImpl.UpdateProduct));
       serviceBinder.AddMethod(__Method_DeleteProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.DeleteProductRequest, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.DeleteProduct));
       serviceBinder.AddMethod(__Method_ImportProducts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.ImportProductsRequest, global::Google.LongRunning.Operation>(serviceImpl.ImportProducts));
+      serviceBinder.AddMethod(__Method_SetInventory, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.SetInventoryRequest, global::Google.LongRunning.Operation>(serviceImpl.SetInventory));
+      serviceBinder.AddMethod(__Method_AddFulfillmentPlaces, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.AddFulfillmentPlacesRequest, global::Google.LongRunning.Operation>(serviceImpl.AddFulfillmentPlaces));
+      serviceBinder.AddMethod(__Method_RemoveFulfillmentPlaces, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Google.Cloud.Retail.V2Alpha.RemoveFulfillmentPlacesRequest, global::Google.LongRunning.Operation>(serviceImpl.RemoveFulfillmentPlaces));
     }
 
   }

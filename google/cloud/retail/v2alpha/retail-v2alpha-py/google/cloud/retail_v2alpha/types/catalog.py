@@ -20,6 +20,8 @@ __protobuf__ = proto.module(
     package='google.cloud.retail.v2alpha',
     manifest={
         'ProductLevelConfig',
+        'MerchantCenterLink',
+        'MerchantCenterLinkingConfig',
         'Catalog',
     },
 )
@@ -57,8 +59,8 @@ class ProductLevelConfig(proto.Message):
             [merchant_center_product_id_field][google.cloud.retail.v2alpha.ProductLevelConfig.merchant_center_product_id_field]
             is ``itemGroupId``, an INVALID_ARGUMENT error is returned.
 
-            See `Using catalog
-            levels </retail/recommendations-ai/docs/catalog#catalog-levels>`__
+            See `Using product
+            levels <https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels>`__
             for more details.
         merchant_center_product_id_field (str):
             Which field of `Merchant Center
@@ -81,8 +83,8 @@ class ProductLevelConfig(proto.Message):
             [ingestion_product_type][google.cloud.retail.v2alpha.ProductLevelConfig.ingestion_product_type]
             is ``variant``, an INVALID_ARGUMENT error is returned.
 
-            See `Using catalog
-            levels </retail/recommendations-ai/docs/catalog#catalog-levels>`__
+            See `Using product
+            levels <https://cloud.google.com/retail/recommendations-ai/docs/catalog#product-levels>`__
             for more details.
     """
 
@@ -93,6 +95,68 @@ class ProductLevelConfig(proto.Message):
     merchant_center_product_id_field = proto.Field(
         proto.STRING,
         number=2,
+    )
+
+
+class MerchantCenterLink(proto.Message):
+    r"""Represents a link between a Merchant Center account and a
+    branch. Once a link is established, products from the linked
+    merchant center account will be streamed to the linked branch.
+
+    Attributes:
+        merchant_center_account_id (int):
+            Required. The linked `Merchant center account
+            id <https://developers.google.com/shopping-content/guides/accountstatuses>`__.
+            The account must be a standalone account or a sub-account of
+            a MCA.
+        branch_id (str):
+            The branch id (e.g. 0/1/2) within this catalog that products
+            from merchant_center_account_id are streamed to. When
+            updating this field, an empty value will use the currently
+            configured default branch. However, changing the default
+            branch later on won't change the linked branch here.
+
+            A single branch id can only have one linked merchant center
+            account id.
+        destinations (Sequence[str]):
+            String representing the destination to import for, all if
+            left empty. List of possible values can be found here.
+            [https://support.google.com/merchants/answer/7501026?hl=en]
+            List of allowed string values: "shopping-ads",
+            "buy-on-google-listings", "display-ads", "local-inventory
+            -ads", "free-listings", "free-local-listings" NOTE: The
+            string values are case sensitive.
+    """
+
+    merchant_center_account_id = proto.Field(
+        proto.INT64,
+        number=1,
+    )
+    branch_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    destinations = proto.RepeatedField(
+        proto.STRING,
+        number=3,
+    )
+
+
+class MerchantCenterLinkingConfig(proto.Message):
+    r"""Configures Merchant Center linking.
+    Links contained in the config will be used to sync data from a
+    Merchant Center account to a Cloud Retail branch.
+
+    Attributes:
+        links (Sequence[google.cloud.retail_v2alpha.types.MerchantCenterLink]):
+            Links between Merchant Center accounts and
+            branches.
+    """
+
+    links = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message='MerchantCenterLink',
     )
 
 
@@ -110,6 +174,13 @@ class Catalog(proto.Message):
             error is returned.
         product_level_config (google.cloud.retail_v2alpha.types.ProductLevelConfig):
             Required. The product level configuration.
+        merchant_center_linking_config (google.cloud.retail_v2alpha.types.MerchantCenterLinkingConfig):
+            The Merchant Center linking configuration.
+            Once a link is added, the data stream from
+            Merchant Center to Cloud Retail will be enabled
+            automatically. The requester must have access to
+            the merchant center account in order to make
+            changes to this field.
     """
 
     name = proto.Field(
@@ -124,6 +195,11 @@ class Catalog(proto.Message):
         proto.MESSAGE,
         number=4,
         message='ProductLevelConfig',
+    )
+    merchant_center_linking_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message='MerchantCenterLinkingConfig',
     )
 
 

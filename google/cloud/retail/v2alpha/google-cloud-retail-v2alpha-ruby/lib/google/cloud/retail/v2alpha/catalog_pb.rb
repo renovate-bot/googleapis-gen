@@ -6,16 +6,27 @@ require 'google/protobuf'
 require 'google/api/annotations_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/retail/v2alpha/common_pb'
+require 'google/cloud/retail/v2alpha/import_config_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/retail/v2alpha/catalog.proto", :syntax => :proto3) do
     add_message "google.cloud.retail.v2alpha.ProductLevelConfig" do
       optional :ingestion_product_type, :string, 1
       optional :merchant_center_product_id_field, :string, 2
     end
+    add_message "google.cloud.retail.v2alpha.MerchantCenterLink" do
+      optional :merchant_center_account_id, :int64, 1
+      optional :branch_id, :string, 2
+      repeated :destinations, :string, 3
+    end
+    add_message "google.cloud.retail.v2alpha.MerchantCenterLinkingConfig" do
+      repeated :links, :message, 1, "google.cloud.retail.v2alpha.MerchantCenterLink"
+    end
     add_message "google.cloud.retail.v2alpha.Catalog" do
       optional :name, :string, 1
       optional :display_name, :string, 2
       optional :product_level_config, :message, 4, "google.cloud.retail.v2alpha.ProductLevelConfig"
+      optional :merchant_center_linking_config, :message, 6, "google.cloud.retail.v2alpha.MerchantCenterLinkingConfig"
     end
   end
 end
@@ -25,6 +36,8 @@ module Google
     module Retail
       module V2alpha
         ProductLevelConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ProductLevelConfig").msgclass
+        MerchantCenterLink = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.MerchantCenterLink").msgclass
+        MerchantCenterLinkingConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.MerchantCenterLinkingConfig").msgclass
         Catalog = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.Catalog").msgclass
       end
     end

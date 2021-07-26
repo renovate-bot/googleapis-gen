@@ -23,6 +23,18 @@ require "gapic/grpc/service_stub"
 require "google/cloud/retail/v2alpha/user_event_service"
 
 class ::Google::Cloud::Retail::V2alpha::UserEventService::ClientPathsTest < Minitest::Test
+  def test_catalog_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Retail::V2alpha::UserEventService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.catalog_path project: "value0", location: "value1", catalog: "value2"
+      assert_equal "projects/value0/locations/value1/catalogs/value2", path
+    end
+  end
+
   def test_product_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do

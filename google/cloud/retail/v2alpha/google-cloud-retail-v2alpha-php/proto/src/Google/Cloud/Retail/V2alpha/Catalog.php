@@ -35,6 +35,15 @@ class Catalog extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.retail.v2alpha.ProductLevelConfig product_level_config = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $product_level_config = null;
+    /**
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     *
+     * Generated from protobuf field <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     */
+    protected $merchant_center_linking_config = null;
 
     /**
      * Constructor.
@@ -50,6 +59,11 @@ class Catalog extends \Google\Protobuf\Internal\Message
      *           characters. Otherwise, an INVALID_ARGUMENT error is returned.
      *     @type \Google\Cloud\Retail\V2alpha\ProductLevelConfig $product_level_config
      *           Required. The product level configuration.
+     *     @type \Google\Cloud\Retail\V2alpha\MerchantCenterLinkingConfig $merchant_center_linking_config
+     *           The Merchant Center linking configuration.
+     *           Once a link is added, the data stream from Merchant Center to Cloud Retail
+     *           will be enabled automatically. The requester must have access to the
+     *           merchant center account in order to make changes to this field.
      * }
      */
     public function __construct($data = NULL) {
@@ -145,6 +159,48 @@ class Catalog extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Retail\V2alpha\ProductLevelConfig::class);
         $this->product_level_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     *
+     * Generated from protobuf field <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     * @return \Google\Cloud\Retail\V2alpha\MerchantCenterLinkingConfig|null
+     */
+    public function getMerchantCenterLinkingConfig()
+    {
+        return isset($this->merchant_center_linking_config) ? $this->merchant_center_linking_config : null;
+    }
+
+    public function hasMerchantCenterLinkingConfig()
+    {
+        return isset($this->merchant_center_linking_config);
+    }
+
+    public function clearMerchantCenterLinkingConfig()
+    {
+        unset($this->merchant_center_linking_config);
+    }
+
+    /**
+     * The Merchant Center linking configuration.
+     * Once a link is added, the data stream from Merchant Center to Cloud Retail
+     * will be enabled automatically. The requester must have access to the
+     * merchant center account in order to make changes to this field.
+     *
+     * Generated from protobuf field <code>.google.cloud.retail.v2alpha.MerchantCenterLinkingConfig merchant_center_linking_config = 6;</code>
+     * @param \Google\Cloud\Retail\V2alpha\MerchantCenterLinkingConfig $var
+     * @return $this
+     */
+    public function setMerchantCenterLinkingConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Retail\V2alpha\MerchantCenterLinkingConfig::class);
+        $this->merchant_center_linking_config = $var;
 
         return $this;
     }

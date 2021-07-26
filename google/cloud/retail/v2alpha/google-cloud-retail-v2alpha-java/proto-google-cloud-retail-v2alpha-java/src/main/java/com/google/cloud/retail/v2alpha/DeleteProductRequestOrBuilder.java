@@ -11,12 +11,22 @@ public interface DeleteProductRequestOrBuilder extends
    * <pre>
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2alpha.Product], such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    * If the caller does not have permission to delete the
    * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
    * not it exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
    * exist, a NOT_FOUND error is returned.
+   * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
+   * a
+   * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
+   * [Product][google.cloud.retail.v2alpha.Product] member nor a
+   * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2alpha.Product] with more than one
+   * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * All inventory information for the named
+   * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -27,12 +37,22 @@ public interface DeleteProductRequestOrBuilder extends
    * <pre>
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2alpha.Product], such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    * If the caller does not have permission to delete the
    * [Product][google.cloud.retail.v2alpha.Product], regardless of whether or
    * not it exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2alpha.Product] to delete does not
    * exist, a NOT_FOUND error is returned.
+   * The [Product][google.cloud.retail.v2alpha.Product] to delete can neither be
+   * a
+   * [Product.Type.COLLECTION][google.cloud.retail.v2alpha.Product.Type.COLLECTION]
+   * [Product][google.cloud.retail.v2alpha.Product] member nor a
+   * [Product.Type.PRIMARY][google.cloud.retail.v2alpha.Product.Type.PRIMARY]
+   * [Product][google.cloud.retail.v2alpha.Product] with more than one
+   * [variants][google.cloud.retail.v2alpha.Product.Type.VARIANT]. Otherwise, an
+   * INVALID_ARGUMENT error is returned.
+   * All inventory information for the named
+   * [Product][google.cloud.retail.v2alpha.Product] will be deleted.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

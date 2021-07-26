@@ -9,19 +9,19 @@ public interface ImportUserEventsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. "projects/1234/locations/global/catalogs/default_catalog"
+   * Required. `projects/1234/locations/global/catalogs/default_catalog`
    * </pre>
    *
-   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString

@@ -187,7 +187,7 @@ module Google
             #
             #   @param parent [::String]
             #     Required. The parent catalog resource name, such as
-            #     "projects/1234/locations/global/catalogs/default_catalog".
+            #     `projects/1234/locations/global/catalogs/default_catalog`.
             #   @param user_event [::Google::Cloud::Retail::V2alpha::UserEvent, ::Hash]
             #     Required. User event to write.
             #
@@ -260,7 +260,7 @@ module Google
             #
             #   @param parent [::String]
             #     Required. The parent catalog name, such as
-            #     "projects/1234/locations/global/catalogs/default_catalog".
+            #     `projects/1234/locations/global/catalogs/default_catalog`.
             #   @param user_event [::String]
             #     Required. URL encoded UserEvent proto with a length limit of 2,000,000
             #     characters.
@@ -343,7 +343,7 @@ module Google
             #   @param parent [::String]
             #     Required. The resource name of the catalog under which the events are
             #     created. The format is
-            #     "projects/$\\{projectId}/locations/global/catalogs/$\\{catalogId}"
+            #     `projects/${projectId}/locations/global/catalogs/${catalogId}`
             #   @param filter [::String]
             #     Required. The filter string to specify the events to be deleted with a
             #     length limit of 5,000 characters. Empty string filter is not allowed. The
@@ -445,7 +445,7 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param parent [::String]
-            #     Required. "projects/1234/locations/global/catalogs/default_catalog"
+            #     Required. `projects/1234/locations/global/catalogs/default_catalog`
             #   @param input_config [::Google::Cloud::Retail::V2alpha::UserEventInputConfig, ::Hash]
             #     Required. The desired input location of the data.
             #   @param errors_config [::Google::Cloud::Retail::V2alpha::ImportErrorsConfig, ::Hash]
@@ -524,7 +524,7 @@ module Google
             #
             #   @param parent [::String]
             #     Required. The parent catalog resource name, such as
-            #     "projects/1234/locations/global/catalogs/default_catalog".
+            #     `projects/1234/locations/global/catalogs/default_catalog`.
             #   @param user_event_rejoin_scope [::Google::Cloud::Retail::V2alpha::RejoinUserEventsRequest::UserEventRejoinScope]
             #     The type of the user event rejoin to define the scope and range of the user
             #     events to be rejoined with the latest product catalog. Defaults to

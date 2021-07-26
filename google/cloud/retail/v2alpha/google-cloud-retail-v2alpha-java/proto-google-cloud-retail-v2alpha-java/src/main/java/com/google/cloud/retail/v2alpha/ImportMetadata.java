@@ -21,6 +21,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ImportMetadata() {
+    requestId_ = "";
+    notificationPubsubTopic_ = "";
   }
 
   @java.lang.Override
@@ -87,6 +89,18 @@ private static final long serialVersionUID = 0L;
           case 32: {
 
             failureCount_ = input.readInt64();
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            requestId_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            notificationPubsubTopic_ = s;
             break;
           }
           default: {
@@ -230,6 +244,108 @@ private static final long serialVersionUID = 0L;
     return failureCount_;
   }
 
+  public static final int REQUEST_ID_FIELD_NUMBER = 5;
+  private volatile java.lang.Object requestId_;
+  /**
+   * <pre>
+   * Id of the request / operation. This is parroting back the requestId
+   * that was passed in the request.
+   * </pre>
+   *
+   * <code>string request_id = 5;</code>
+   * @return The requestId.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestId() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Id of the request / operation. This is parroting back the requestId
+   * that was passed in the request.
+   * </pre>
+   *
+   * <code>string request_id = 5;</code>
+   * @return The bytes for requestId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRequestIdBytes() {
+    java.lang.Object ref = requestId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      requestId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER = 6;
+  private volatile java.lang.Object notificationPubsubTopic_;
+  /**
+   * <pre>
+   * Pub/Sub topic for receiving notification. If this field is set,
+   * when the import is finished, a notification will be sent to
+   * specified Pub/Sub topic. The message data will be JSON string of a
+   * [Operation][google.longrunning.Operation].
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 6;</code>
+   * @return The notificationPubsubTopic.
+   */
+  @java.lang.Override
+  public java.lang.String getNotificationPubsubTopic() {
+    java.lang.Object ref = notificationPubsubTopic_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notificationPubsubTopic_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Pub/Sub topic for receiving notification. If this field is set,
+   * when the import is finished, a notification will be sent to
+   * specified Pub/Sub topic. The message data will be JSON string of a
+   * [Operation][google.longrunning.Operation].
+   * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+   * </pre>
+   *
+   * <code>string notification_pubsub_topic = 6;</code>
+   * @return The bytes for notificationPubsubTopic.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNotificationPubsubTopicBytes() {
+    java.lang.Object ref = notificationPubsubTopic_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      notificationPubsubTopic_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -256,6 +372,12 @@ private static final long serialVersionUID = 0L;
     if (failureCount_ != 0L) {
       output.writeInt64(4, failureCount_);
     }
+    if (!getRequestIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, requestId_);
+    }
+    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, notificationPubsubTopic_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -280,6 +402,12 @@ private static final long serialVersionUID = 0L;
     if (failureCount_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(4, failureCount_);
+    }
+    if (!getRequestIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, requestId_);
+    }
+    if (!getNotificationPubsubTopicBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, notificationPubsubTopic_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -310,6 +438,10 @@ private static final long serialVersionUID = 0L;
         != other.getSuccessCount()) return false;
     if (getFailureCount()
         != other.getFailureCount()) return false;
+    if (!getRequestId()
+        .equals(other.getRequestId())) return false;
+    if (!getNotificationPubsubTopic()
+        .equals(other.getNotificationPubsubTopic())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -335,6 +467,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FAILURE_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getFailureCount());
+    hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + NOTIFICATION_PUBSUB_TOPIC_FIELD_NUMBER;
+    hash = (53 * hash) + getNotificationPubsubTopic().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -489,6 +625,10 @@ private static final long serialVersionUID = 0L;
 
       failureCount_ = 0L;
 
+      requestId_ = "";
+
+      notificationPubsubTopic_ = "";
+
       return this;
     }
 
@@ -527,6 +667,8 @@ private static final long serialVersionUID = 0L;
       }
       result.successCount_ = successCount_;
       result.failureCount_ = failureCount_;
+      result.requestId_ = requestId_;
+      result.notificationPubsubTopic_ = notificationPubsubTopic_;
       onBuilt();
       return result;
     }
@@ -586,6 +728,14 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getFailureCount() != 0L) {
         setFailureCount(other.getFailureCount());
+      }
+      if (!other.getRequestId().isEmpty()) {
+        requestId_ = other.requestId_;
+        onChanged();
+      }
+      if (!other.getNotificationPubsubTopic().isEmpty()) {
+        notificationPubsubTopic_ = other.notificationPubsubTopic_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1017,6 +1167,223 @@ private static final long serialVersionUID = 0L;
     public Builder clearFailureCount() {
       
       failureCount_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestId_ = "";
+    /**
+     * <pre>
+     * Id of the request / operation. This is parroting back the requestId
+     * that was passed in the request.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     * @return The requestId.
+     */
+    public java.lang.String getRequestId() {
+      java.lang.Object ref = requestId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Id of the request / operation. This is parroting back the requestId
+     * that was passed in the request.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     * @return The bytes for requestId.
+     */
+    public com.google.protobuf.ByteString
+        getRequestIdBytes() {
+      java.lang.Object ref = requestId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        requestId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Id of the request / operation. This is parroting back the requestId
+     * that was passed in the request.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     * @param value The requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Id of the request / operation. This is parroting back the requestId
+     * that was passed in the request.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestId() {
+      
+      requestId_ = getDefaultInstance().getRequestId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Id of the request / operation. This is parroting back the requestId
+     * that was passed in the request.
+     * </pre>
+     *
+     * <code>string request_id = 5;</code>
+     * @param value The bytes for requestId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      requestId_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object notificationPubsubTopic_ = "";
+    /**
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 6;</code>
+     * @return The notificationPubsubTopic.
+     */
+    public java.lang.String getNotificationPubsubTopic() {
+      java.lang.Object ref = notificationPubsubTopic_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notificationPubsubTopic_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 6;</code>
+     * @return The bytes for notificationPubsubTopic.
+     */
+    public com.google.protobuf.ByteString
+        getNotificationPubsubTopicBytes() {
+      java.lang.Object ref = notificationPubsubTopic_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        notificationPubsubTopic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 6;</code>
+     * @param value The notificationPubsubTopic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotificationPubsubTopic(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      notificationPubsubTopic_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearNotificationPubsubTopic() {
+      
+      notificationPubsubTopic_ = getDefaultInstance().getNotificationPubsubTopic();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Pub/Sub topic for receiving notification. If this field is set,
+     * when the import is finished, a notification will be sent to
+     * specified Pub/Sub topic. The message data will be JSON string of a
+     * [Operation][google.longrunning.Operation].
+     * Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+     * </pre>
+     *
+     * <code>string notification_pubsub_topic = 6;</code>
+     * @param value The bytes for notificationPubsubTopic to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotificationPubsubTopicBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      notificationPubsubTopic_ = value;
       onChanged();
       return this;
     }

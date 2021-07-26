@@ -7,12 +7,14 @@ require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/retail/v2alpha/export_config_pb'
 require 'google/cloud/retail/v2alpha/import_config_pb'
 require 'google/cloud/retail/v2alpha/product_pb'
 require 'google/cloud/retail/v2alpha/purge_config_pb'
 require 'google/longrunning/operations_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/field_mask_pb'
+require 'google/protobuf/timestamp_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/cloud/retail/v2alpha/product_service.proto", :syntax => :proto3) do
     add_message "google.cloud.retail.v2alpha.CreateProductRequest" do
@@ -26,9 +28,55 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.retail.v2alpha.UpdateProductRequest" do
       optional :product, :message, 1, "google.cloud.retail.v2alpha.Product"
       optional :update_mask, :message, 2, "google.protobuf.FieldMask"
+      optional :allow_missing, :bool, 3
     end
     add_message "google.cloud.retail.v2alpha.DeleteProductRequest" do
       optional :name, :string, 1
+    end
+    add_message "google.cloud.retail.v2alpha.ListProductsRequest" do
+      optional :parent, :string, 1
+      optional :page_size, :int32, 2
+      optional :page_token, :string, 3
+      optional :filter, :string, 4
+      optional :read_mask, :message, 5, "google.protobuf.FieldMask"
+      optional :require_total_size, :bool, 6
+    end
+    add_message "google.cloud.retail.v2alpha.ListProductsResponse" do
+      repeated :products, :message, 1, "google.cloud.retail.v2alpha.Product"
+      optional :next_page_token, :string, 2
+      optional :total_size, :int32, 3
+    end
+    add_message "google.cloud.retail.v2alpha.SetInventoryRequest" do
+      optional :inventory, :message, 1, "google.cloud.retail.v2alpha.Product"
+      optional :set_mask, :message, 2, "google.protobuf.FieldMask"
+      optional :set_time, :message, 3, "google.protobuf.Timestamp"
+      optional :allow_missing, :bool, 4
+    end
+    add_message "google.cloud.retail.v2alpha.SetInventoryMetadata" do
+    end
+    add_message "google.cloud.retail.v2alpha.SetInventoryResponse" do
+    end
+    add_message "google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest" do
+      optional :product, :string, 1
+      optional :type, :string, 2
+      repeated :place_ids, :string, 3
+      optional :add_time, :message, 4, "google.protobuf.Timestamp"
+      optional :allow_missing, :bool, 5
+    end
+    add_message "google.cloud.retail.v2alpha.AddFulfillmentPlacesMetadata" do
+    end
+    add_message "google.cloud.retail.v2alpha.AddFulfillmentPlacesResponse" do
+    end
+    add_message "google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest" do
+      optional :product, :string, 1
+      optional :type, :string, 2
+      repeated :place_ids, :string, 3
+      optional :remove_time, :message, 4, "google.protobuf.Timestamp"
+      optional :allow_missing, :bool, 5
+    end
+    add_message "google.cloud.retail.v2alpha.RemoveFulfillmentPlacesMetadata" do
+    end
+    add_message "google.cloud.retail.v2alpha.RemoveFulfillmentPlacesResponse" do
     end
   end
 end
@@ -41,6 +89,17 @@ module Google
         GetProductRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.GetProductRequest").msgclass
         UpdateProductRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.UpdateProductRequest").msgclass
         DeleteProductRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.DeleteProductRequest").msgclass
+        ListProductsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ListProductsRequest").msgclass
+        ListProductsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.ListProductsResponse").msgclass
+        SetInventoryRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SetInventoryRequest").msgclass
+        SetInventoryMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SetInventoryMetadata").msgclass
+        SetInventoryResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.SetInventoryResponse").msgclass
+        AddFulfillmentPlacesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest").msgclass
+        AddFulfillmentPlacesMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddFulfillmentPlacesMetadata").msgclass
+        AddFulfillmentPlacesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.AddFulfillmentPlacesResponse").msgclass
+        RemoveFulfillmentPlacesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest").msgclass
+        RemoveFulfillmentPlacesMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveFulfillmentPlacesMetadata").msgclass
+        RemoveFulfillmentPlacesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.retail.v2alpha.RemoveFulfillmentPlacesResponse").msgclass
       end
     end
   end
