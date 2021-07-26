@@ -1,0 +1,43 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "ruby",
+  "protoPackage": "google.cloud.networkservices.v1beta1",
+  "libraryPackage": "::Google::Cloud::NetworkServices::V1beta1",
+  "services": {
+    "NetworkServices": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::NetworkServices::V1beta1::NetworkServices::Client",
+          "rpcs": {
+            "ListEndpointPolicies": {
+              "methods": [
+                "list_endpoint_policies"
+              ]
+            },
+            "GetEndpointPolicy": {
+              "methods": [
+                "get_endpoint_policy"
+              ]
+            },
+            "CreateEndpointPolicy": {
+              "methods": [
+                "create_endpoint_policy"
+              ]
+            },
+            "UpdateEndpointPolicy": {
+              "methods": [
+                "update_endpoint_policy"
+              ]
+            },
+            "DeleteEndpointPolicy": {
+              "methods": [
+                "delete_endpoint_policy"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

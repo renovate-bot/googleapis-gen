@@ -1,0 +1,43 @@
+{
+  "schema":  "1.0",
+  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language":  "go",
+  "protoPackage":  "google.cloud.networkservices.v1beta1",
+  "libraryPackage":  "cloud.google.com/go/networkservices/apiv1beta1",
+  "services":  {
+    "NetworkServices":  {
+      "clients":  {
+        "grpc":  {
+          "libraryClient":  "Client",
+          "rpcs":  {
+            "CreateEndpointPolicy":  {
+              "methods":  [
+                "CreateEndpointPolicy"
+              ]
+            },
+            "DeleteEndpointPolicy":  {
+              "methods":  [
+                "DeleteEndpointPolicy"
+              ]
+            },
+            "GetEndpointPolicy":  {
+              "methods":  [
+                "GetEndpointPolicy"
+              ]
+            },
+            "ListEndpointPolicies":  {
+              "methods":  [
+                "ListEndpointPolicies"
+              ]
+            },
+            "UpdateEndpointPolicy":  {
+              "methods":  [
+                "UpdateEndpointPolicy"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
