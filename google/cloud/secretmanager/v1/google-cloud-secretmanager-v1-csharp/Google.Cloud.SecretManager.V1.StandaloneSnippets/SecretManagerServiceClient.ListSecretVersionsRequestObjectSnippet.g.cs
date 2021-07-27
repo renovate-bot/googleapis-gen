@@ -35,6 +35,7 @@ namespace Google.Cloud.SecretManager.V1.Snippets
             ListSecretVersionsRequest request = new ListSecretVersionsRequest
             {
                 ParentAsSecretName = SecretName.FromProjectSecret("[PROJECT]", "[SECRET]"),
+                Filter = "",
             };
             // Make the request
             PagedEnumerable<ListSecretVersionsResponse, SecretVersion> response = secretManagerServiceClient.ListSecretVersions(request);

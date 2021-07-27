@@ -36,6 +36,7 @@ namespace Google.Cloud.SecretManager.V1.Snippets
             ListSecretsRequest request = new ListSecretsRequest
             {
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
+                Filter = "",
             };
             // Make the request
             PagedEnumerable<ListSecretsResponse, Secret> response = secretManagerServiceClient.ListSecrets(request);

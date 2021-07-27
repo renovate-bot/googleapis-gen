@@ -59,6 +59,12 @@ class ListSecretsRequest(proto.Message):
         page_token (str):
             Optional. Pagination token, returned earlier via
             [ListSecretsResponse.next_page_token][google.cloud.secretmanager.v1.ListSecretsResponse.next_page_token].
+        filter (str):
+            Optional. Filter string, adhering to the rules in
+            `List-operation
+            filtering <https://cloud.google.com/secret-manager/docs/filtering>`__.
+            List only secrets matching the filter. If filter is empty,
+            all secrets are listed.
     """
 
     parent = proto.Field(
@@ -72,6 +78,10 @@ class ListSecretsRequest(proto.Message):
     page_token = proto.Field(
         proto.STRING,
         number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
     )
 
 
@@ -212,6 +222,12 @@ class ListSecretVersionsRequest(proto.Message):
         page_token (str):
             Optional. Pagination token, returned earlier via
             ListSecretVersionsResponse.next_page_token][].
+        filter (str):
+            Optional. Filter string, adhering to the rules in
+            `List-operation
+            filtering <https://cloud.google.com/secret-manager/docs/filtering>`__.
+            List only secret versions matching the filter. If filter is
+            empty, all secret versions are listed.
     """
 
     parent = proto.Field(
@@ -225,6 +241,10 @@ class ListSecretVersionsRequest(proto.Message):
     page_token = proto.Field(
         proto.STRING,
         number=3,
+    )
+    filter = proto.Field(
+        proto.STRING,
+        number=4,
     )
 
 
