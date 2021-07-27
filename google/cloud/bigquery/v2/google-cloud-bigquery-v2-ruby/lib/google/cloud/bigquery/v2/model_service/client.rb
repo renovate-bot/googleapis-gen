@@ -196,6 +196,14 @@ module Google
                 gapic_version: ::Google::Cloud::Bigquery::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
+              header_params = {
+                "project_id" => request.project_id,
+                "dataset_id" => request.dataset_id,
+                "model_id" => request.model_id
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
               options.apply_defaults timeout:      @config.rpcs.get_model.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_model.retry_policy
@@ -212,7 +220,8 @@ module Google
 
             ##
             # Lists all models in the specified dataset. Requires the READER dataset
-            # role.
+            # role. After retrieving the list of models, you can get information about a
+            # particular model by calling the models.get method.
             #
             # @overload list_models(request, options = nil)
             #   Pass arguments to `list_models` via a request object, either of type
@@ -264,6 +273,13 @@ module Google
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
                 gapic_version: ::Google::Cloud::Bigquery::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "project_id" => request.project_id,
+                "dataset_id" => request.dataset_id
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
 
               options.apply_defaults timeout:      @config.rpcs.list_models.timeout,
                                      metadata:     metadata,
@@ -333,6 +349,14 @@ module Google
                 gapic_version: ::Google::Cloud::Bigquery::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
+              header_params = {
+                "project_id" => request.project_id,
+                "dataset_id" => request.dataset_id,
+                "model_id" => request.model_id
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
               options.apply_defaults timeout:      @config.rpcs.patch_model.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.patch_model.retry_policy
@@ -396,6 +420,14 @@ module Google
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
                 gapic_version: ::Google::Cloud::Bigquery::V2::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "project_id" => request.project_id,
+                "dataset_id" => request.dataset_id,
+                "model_id" => request.model_id
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
 
               options.apply_defaults timeout:      @config.rpcs.delete_model.timeout,
                                      metadata:     metadata,

@@ -96,6 +96,8 @@ class Model(proto.Message):
             Output only. Label columns that were used to train this
             model. The output of the model will have a "predicted_"
             prefix to these columns.
+        best_trial_id (int):
+            The best trial_id across all training runs.
     """
     class ModelType(proto.Enum):
         r"""Indicates the type of the Model."""
@@ -112,6 +114,7 @@ class Model(proto.Message):
         ARIMA = 11
         AUTOML_REGRESSOR = 12
         AUTOML_CLASSIFIER = 13
+        ARIMA_PLUS = 19
 
     class LossType(proto.Enum):
         r"""Loss metric to evaluate model training performance."""
@@ -150,6 +153,7 @@ class Model(proto.Message):
         WEEKLY = 5
         DAILY = 6
         HOURLY = 7
+        PER_MINUTE = 8
 
     class HolidayRegion(proto.Enum):
         r"""Type of supported holiday regions for time series forecasting
@@ -282,7 +286,7 @@ class Model(proto.Message):
             median_absolute_error (google.protobuf.wrappers_pb2.DoubleValue):
                 Median absolute error.
             r_squared (google.protobuf.wrappers_pb2.DoubleValue):
-                R^2 score.
+                R^2 score. This corresponds to r2_score in ML.EVALUATE.
         """
 
         mean_absolute_error = proto.Field(
@@ -589,7 +593,7 @@ class Model(proto.Message):
                 Mean of squared distances between each sample
                 to its cluster centroid.
             clusters (Sequence[google.cloud.bigquery_v2.types.Model.ClusteringMetrics.Cluster]):
-                [Beta] Information for all clusters.
+                Information for all clusters.
         """
 
         class Cluster(proto.Message):
@@ -785,10 +789,29 @@ class Model(proto.Message):
                     Is arima model fitted with drift or not. It
                     is always false when d is not 1.
                 time_series_id (str):
-                    The id to indicate different time series.
+                    The time_series_id value for this time series. It will be
+                    one of the unique values from the time_series_id_column
+                    specified during ARIMA model training. Only present when
+                    time_series_id_column training option was used.
+                time_series_ids (Sequence[str]):
+                    The tuple of time_series_ids identifying this time series.
+                    It will be one of the unique tuples of values present in the
+                    time_series_id_columns specified during ARIMA model
+                    training. Only present when time_series_id_columns training
+                    option was used and the order of values here are same as the
+                    order of time_series_id_columns.
                 seasonal_periods (Sequence[google.cloud.bigquery_v2.types.Model.SeasonalPeriod.SeasonalPeriodType]):
                     Seasonal periods. Repeated because multiple
                     periods are supported for one time series.
+                has_holiday_effect (google.protobuf.wrappers_pb2.BoolValue):
+                    If true, holiday_effect is a part of time series
+                    decomposition result.
+                has_spikes_and_dips (google.protobuf.wrappers_pb2.BoolValue):
+                    If true, spikes_and_dips is a part of time series
+                    decomposition result.
+                has_step_changes (google.protobuf.wrappers_pb2.BoolValue):
+                    If true, step_changes is a part of time series decomposition
+                    result.
             """
 
             non_seasonal_order = proto.Field(
@@ -809,10 +832,29 @@ class Model(proto.Message):
                 proto.STRING,
                 number=4,
             )
+            time_series_ids = proto.RepeatedField(
+                proto.STRING,
+                number=9,
+            )
             seasonal_periods = proto.RepeatedField(
                 proto.ENUM,
                 number=5,
                 enum='Model.SeasonalPeriod.SeasonalPeriodType',
+            )
+            has_holiday_effect = proto.Field(
+                proto.MESSAGE,
+                number=6,
+                message=wrappers_pb2.BoolValue,
+            )
+            has_spikes_and_dips = proto.Field(
+                proto.MESSAGE,
+                number=7,
+                message=wrappers_pb2.BoolValue,
+            )
+            has_step_changes = proto.Field(
+                proto.MESSAGE,
+                number=8,
+                message=wrappers_pb2.BoolValue,
             )
 
         non_seasonal_order = proto.RepeatedField(
@@ -1054,7 +1096,7 @@ class Model(proto.Message):
         """
 
         class TrainingOptions(proto.Message):
-            r"""
+            r"""Options used in model training.
             Attributes:
                 max_iterations (int):
                     The maximum number of iterations in training.
@@ -1125,8 +1167,9 @@ class Model(proto.Message):
                 num_clusters (int):
                     Number of clusters for clustering models.
                 model_uri (str):
-                    [Beta] Google Cloud Storage URI from which the model was
-                    imported. Only applicable for imported models.
+                    Google Cloud Storage URI from which the model
+                    was imported. Only applicable for imported
+                    models.
                 optimization_strategy (google.cloud.bigquery_v2.types.Model.OptimizationStrategy):
                     Optimization strategy for training linear
                     regression models.
@@ -1183,8 +1226,11 @@ class Model(proto.Message):
                     If a valid value is specified, then holiday
                     effects modeling is enabled.
                 time_series_id_column (str):
-                    The id column that will be used to indicate
-                    different time series to forecast in parallel.
+                    The time series id column that was used
+                    during ARIMA model training.
+                time_series_id_columns (Sequence[str]):
+                    The time series id columns that were used
+                    during ARIMA model training.
                 horizon (int):
                     The number of periods ahead that need to be
                     forecasted.
@@ -1195,6 +1241,15 @@ class Model(proto.Message):
                     output feature name is A.b.
                 auto_arima_max_order (int):
                     The max value of non-seasonal p and q.
+                decompose_time_series (google.protobuf.wrappers_pb2.BoolValue):
+                    If true, perform decompose time series and
+                    save the results.
+                clean_spikes_and_dips (google.protobuf.wrappers_pb2.BoolValue):
+                    If true, clean spikes and dips in the input
+                    time series.
+                adjust_step_changes (google.protobuf.wrappers_pb2.BoolValue):
+                    If true, detect step changes and make data
+                    adjustment in the input time series.
             """
 
             max_iterations = proto.Field(
@@ -1376,6 +1431,10 @@ class Model(proto.Message):
                 proto.STRING,
                 number=43,
             )
+            time_series_id_columns = proto.RepeatedField(
+                proto.STRING,
+                number=51,
+            )
             horizon = proto.Field(
                 proto.INT64,
                 number=44,
@@ -1387,6 +1446,21 @@ class Model(proto.Message):
             auto_arima_max_order = proto.Field(
                 proto.INT64,
                 number=46,
+            )
+            decompose_time_series = proto.Field(
+                proto.MESSAGE,
+                number=50,
+                message=wrappers_pb2.BoolValue,
+            )
+            clean_spikes_and_dips = proto.Field(
+                proto.MESSAGE,
+                number=52,
+                message=wrappers_pb2.BoolValue,
+            )
+            adjust_step_changes = proto.Field(
+                proto.MESSAGE,
+                number=53,
+                message=wrappers_pb2.BoolValue,
             )
 
         class IterationResult(proto.Message):
@@ -1495,10 +1569,29 @@ class Model(proto.Message):
                             Whether Arima model fitted with drift or not.
                             It is always false when d is not 1.
                         time_series_id (str):
-                            The id to indicate different time series.
+                            The time_series_id value for this time series. It will be
+                            one of the unique values from the time_series_id_column
+                            specified during ARIMA model training. Only present when
+                            time_series_id_column training option was used.
+                        time_series_ids (Sequence[str]):
+                            The tuple of time_series_ids identifying this time series.
+                            It will be one of the unique tuples of values present in the
+                            time_series_id_columns specified during ARIMA model
+                            training. Only present when time_series_id_columns training
+                            option was used and the order of values here are same as the
+                            order of time_series_id_columns.
                         seasonal_periods (Sequence[google.cloud.bigquery_v2.types.Model.SeasonalPeriod.SeasonalPeriodType]):
                             Seasonal periods. Repeated because multiple
                             periods are supported for one time series.
+                        has_holiday_effect (google.protobuf.wrappers_pb2.BoolValue):
+                            If true, holiday_effect is a part of time series
+                            decomposition result.
+                        has_spikes_and_dips (google.protobuf.wrappers_pb2.BoolValue):
+                            If true, spikes_and_dips is a part of time series
+                            decomposition result.
+                        has_step_changes (google.protobuf.wrappers_pb2.BoolValue):
+                            If true, step_changes is a part of time series decomposition
+                            result.
                     """
 
                     non_seasonal_order = proto.Field(
@@ -1524,10 +1617,29 @@ class Model(proto.Message):
                         proto.STRING,
                         number=5,
                     )
+                    time_series_ids = proto.RepeatedField(
+                        proto.STRING,
+                        number=10,
+                    )
                     seasonal_periods = proto.RepeatedField(
                         proto.ENUM,
                         number=6,
                         enum='Model.SeasonalPeriod.SeasonalPeriodType',
+                    )
+                    has_holiday_effect = proto.Field(
+                        proto.MESSAGE,
+                        number=7,
+                        message=wrappers_pb2.BoolValue,
+                    )
+                    has_spikes_and_dips = proto.Field(
+                        proto.MESSAGE,
+                        number=8,
+                        message=wrappers_pb2.BoolValue,
+                    )
+                    has_step_changes = proto.Field(
+                        proto.MESSAGE,
+                        number=9,
+                        message=wrappers_pb2.BoolValue,
                     )
 
                 arima_model_info = proto.RepeatedField(
@@ -1669,6 +1781,10 @@ class Model(proto.Message):
         proto.MESSAGE,
         number=11,
         message=standard_sql.StandardSqlField,
+    )
+    best_trial_id = proto.Field(
+        proto.INT64,
+        number=19,
     )
 
 

@@ -34,6 +34,18 @@ module Google
         #     length is 1,024 characters.  Certain operations allow
         #     suffixing of the table ID with a partition decorator, such as
         #     `sample_table$20190123`.
+        # @!attribute [rw] project_id_alternative
+        #   @return [::Array<::String>]
+        #     The alternative field that will be used when ESF is not able to translate
+        #     the received data to the project_id field.
+        # @!attribute [rw] dataset_id_alternative
+        #   @return [::Array<::String>]
+        #     The alternative field that will be used when ESF is not able to translate
+        #     the received data to the project_id field.
+        # @!attribute [rw] table_id_alternative
+        #   @return [::Array<::String>]
+        #     The alternative field that will be used when ESF is not able to translate
+        #     the received data to the project_id field.
         class TableReference
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

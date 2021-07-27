@@ -30,6 +30,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :training_runs, :message, 9, "google.cloud.bigquery.v2.Model.TrainingRun"
       repeated :feature_columns, :message, 10, "google.cloud.bigquery.v2.StandardSqlField"
       repeated :label_columns, :message, 11, "google.cloud.bigquery.v2.StandardSqlField"
+      optional :best_trial_id, :int64, 19
     end
     add_message "google.cloud.bigquery.v2.Model.SeasonalPeriod" do
     end
@@ -142,7 +143,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :arima_fitting_metrics, :message, 2, "google.cloud.bigquery.v2.Model.ArimaFittingMetrics"
       optional :has_drift, :bool, 3
       optional :time_series_id, :string, 4
+      repeated :time_series_ids, :string, 9
       repeated :seasonal_periods, :enum, 5, "google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType"
+      optional :has_holiday_effect, :message, 6, "google.protobuf.BoolValue"
+      optional :has_spikes_and_dips, :message, 7, "google.protobuf.BoolValue"
+      optional :has_step_changes, :message, 8, "google.protobuf.BoolValue"
     end
     add_message "google.cloud.bigquery.v2.Model.EvaluationMetrics" do
       oneof :metrics do
@@ -225,9 +230,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :include_drift, :bool, 41
       optional :holiday_region, :enum, 42, "google.cloud.bigquery.v2.Model.HolidayRegion"
       optional :time_series_id_column, :string, 43
+      repeated :time_series_id_columns, :string, 51
       optional :horizon, :int64, 44
       optional :preserve_input_structs, :bool, 45
       optional :auto_arima_max_order, :int64, 46
+      optional :decompose_time_series, :message, 50, "google.protobuf.BoolValue"
+      optional :clean_spikes_and_dips, :message, 52, "google.protobuf.BoolValue"
+      optional :adjust_step_changes, :message, 53, "google.protobuf.BoolValue"
     end
     add_message "google.cloud.bigquery.v2.Model.TrainingRun.IterationResult" do
       optional :index, :message, 1, "google.protobuf.Int32Value"
@@ -258,7 +267,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :arima_fitting_metrics, :message, 3, "google.cloud.bigquery.v2.Model.ArimaFittingMetrics"
       optional :has_drift, :bool, 4
       optional :time_series_id, :string, 5
+      repeated :time_series_ids, :string, 10
       repeated :seasonal_periods, :enum, 6, "google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType"
+      optional :has_holiday_effect, :message, 7, "google.protobuf.BoolValue"
+      optional :has_spikes_and_dips, :message, 8, "google.protobuf.BoolValue"
+      optional :has_step_changes, :message, 9, "google.protobuf.BoolValue"
     end
     add_enum "google.cloud.bigquery.v2.Model.ModelType" do
       value :MODEL_TYPE_UNSPECIFIED, 0
@@ -274,6 +287,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :ARIMA, 11
       value :AUTOML_REGRESSOR, 12
       value :AUTOML_CLASSIFIER, 13
+      value :ARIMA_PLUS, 19
     end
     add_enum "google.cloud.bigquery.v2.Model.LossType" do
       value :LOSS_TYPE_UNSPECIFIED, 0
@@ -302,6 +316,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :WEEKLY, 5
       value :DAILY, 6
       value :HOURLY, 7
+      value :PER_MINUTE, 8
     end
     add_enum "google.cloud.bigquery.v2.Model.HolidayRegion" do
       value :HOLIDAY_REGION_UNSPECIFIED, 0

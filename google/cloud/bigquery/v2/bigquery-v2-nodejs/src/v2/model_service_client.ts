@@ -334,6 +334,13 @@ export class ModelServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project_id': request.projectId || '',
+    });
     this.initialize();
     return this.innerApiCalls.getModel(request, options, callback);
   }
@@ -359,7 +366,8 @@ export class ModelServiceClient {
           {}|null|undefined>): void;
 /**
  * Lists all models in the specified dataset. Requires the READER dataset
- * role.
+ * role. After retrieving the list of models, you can get information about a
+ * particular model by calling the models.get method.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -407,6 +415,13 @@ export class ModelServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project_id': request.projectId || '',
+    });
     this.initialize();
     return this.innerApiCalls.listModels(request, options, callback);
   }
@@ -479,6 +494,13 @@ export class ModelServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project_id': request.projectId || '',
+    });
     this.initialize();
     return this.innerApiCalls.patchModel(request, options, callback);
   }
@@ -547,6 +569,13 @@ export class ModelServiceClient {
       options = optionsOrCallback as CallOptions;
     }
     options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project_id': request.projectId || '',
+    });
     this.initialize();
     return this.innerApiCalls.deleteModel(request, options, callback);
   }

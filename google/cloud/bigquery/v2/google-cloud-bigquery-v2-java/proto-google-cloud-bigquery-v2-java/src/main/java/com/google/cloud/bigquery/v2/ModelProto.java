@@ -431,6 +431,16 @@ public final class ModelProto {
      */
     com.google.cloud.bigquery.v2.StandardSqlProto.StandardSqlFieldOrBuilder getLabelColumnsOrBuilder(
         int index);
+
+    /**
+     * <pre>
+     * The best trial_id across all training runs.
+     * </pre>
+     *
+     * <code>int64 best_trial_id = 19 [deprecated = true];</code>
+     * @return The bestTrialId.
+     */
+    @java.lang.Deprecated long getBestTrialId();
   }
   /**
    * Protobuf type {@code google.cloud.bigquery.v2.Model}
@@ -597,6 +607,11 @@ public final class ModelProto {
 
               break;
             }
+            case 152: {
+
+              bestTrialId_ = input.readInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -697,7 +712,7 @@ public final class ModelProto {
       MATRIX_FACTORIZATION(4),
       /**
        * <pre>
-       * [Beta] DNN classifier model.
+       * DNN classifier model.
        * </pre>
        *
        * <code>DNN_CLASSIFIER = 5;</code>
@@ -705,7 +720,7 @@ public final class ModelProto {
       DNN_CLASSIFIER(5),
       /**
        * <pre>
-       * [Beta] An imported TensorFlow model.
+       * An imported TensorFlow model.
        * </pre>
        *
        * <code>TENSORFLOW = 6;</code>
@@ -713,7 +728,7 @@ public final class ModelProto {
       TENSORFLOW(6),
       /**
        * <pre>
-       * [Beta] DNN regressor model.
+       * DNN regressor model.
        * </pre>
        *
        * <code>DNN_REGRESSOR = 7;</code>
@@ -721,7 +736,7 @@ public final class ModelProto {
       DNN_REGRESSOR(7),
       /**
        * <pre>
-       * [Beta] Boosted tree regressor model.
+       * Boosted tree regressor model.
        * </pre>
        *
        * <code>BOOSTED_TREE_REGRESSOR = 9;</code>
@@ -729,7 +744,7 @@ public final class ModelProto {
       BOOSTED_TREE_REGRESSOR(9),
       /**
        * <pre>
-       * [Beta] Boosted tree classifier model.
+       * Boosted tree classifier model.
        * </pre>
        *
        * <code>BOOSTED_TREE_CLASSIFIER = 10;</code>
@@ -737,7 +752,7 @@ public final class ModelProto {
       BOOSTED_TREE_CLASSIFIER(10),
       /**
        * <pre>
-       * [Beta] ARIMA model.
+       * ARIMA model.
        * </pre>
        *
        * <code>ARIMA = 11;</code>
@@ -759,6 +774,14 @@ public final class ModelProto {
        * <code>AUTOML_CLASSIFIER = 13;</code>
        */
       AUTOML_CLASSIFIER(13),
+      /**
+       * <pre>
+       * New name for the ARIMA model.
+       * </pre>
+       *
+       * <code>ARIMA_PLUS = 19;</code>
+       */
+      ARIMA_PLUS(19),
       UNRECOGNIZED(-1),
       ;
 
@@ -800,7 +823,7 @@ public final class ModelProto {
       public static final int MATRIX_FACTORIZATION_VALUE = 4;
       /**
        * <pre>
-       * [Beta] DNN classifier model.
+       * DNN classifier model.
        * </pre>
        *
        * <code>DNN_CLASSIFIER = 5;</code>
@@ -808,7 +831,7 @@ public final class ModelProto {
       public static final int DNN_CLASSIFIER_VALUE = 5;
       /**
        * <pre>
-       * [Beta] An imported TensorFlow model.
+       * An imported TensorFlow model.
        * </pre>
        *
        * <code>TENSORFLOW = 6;</code>
@@ -816,7 +839,7 @@ public final class ModelProto {
       public static final int TENSORFLOW_VALUE = 6;
       /**
        * <pre>
-       * [Beta] DNN regressor model.
+       * DNN regressor model.
        * </pre>
        *
        * <code>DNN_REGRESSOR = 7;</code>
@@ -824,7 +847,7 @@ public final class ModelProto {
       public static final int DNN_REGRESSOR_VALUE = 7;
       /**
        * <pre>
-       * [Beta] Boosted tree regressor model.
+       * Boosted tree regressor model.
        * </pre>
        *
        * <code>BOOSTED_TREE_REGRESSOR = 9;</code>
@@ -832,7 +855,7 @@ public final class ModelProto {
       public static final int BOOSTED_TREE_REGRESSOR_VALUE = 9;
       /**
        * <pre>
-       * [Beta] Boosted tree classifier model.
+       * Boosted tree classifier model.
        * </pre>
        *
        * <code>BOOSTED_TREE_CLASSIFIER = 10;</code>
@@ -840,7 +863,7 @@ public final class ModelProto {
       public static final int BOOSTED_TREE_CLASSIFIER_VALUE = 10;
       /**
        * <pre>
-       * [Beta] ARIMA model.
+       * ARIMA model.
        * </pre>
        *
        * <code>ARIMA = 11;</code>
@@ -862,6 +885,14 @@ public final class ModelProto {
        * <code>AUTOML_CLASSIFIER = 13;</code>
        */
       public static final int AUTOML_CLASSIFIER_VALUE = 13;
+      /**
+       * <pre>
+       * New name for the ARIMA model.
+       * </pre>
+       *
+       * <code>ARIMA_PLUS = 19;</code>
+       */
+      public static final int ARIMA_PLUS_VALUE = 19;
 
 
       public final int getNumber() {
@@ -901,6 +932,7 @@ public final class ModelProto {
           case 11: return ARIMA;
           case 12: return AUTOML_REGRESSOR;
           case 13: return AUTOML_CLASSIFIER;
+          case 19: return ARIMA_PLUS;
           default: return null;
         }
       }
@@ -1490,6 +1522,14 @@ public final class ModelProto {
        * <code>HOURLY = 7;</code>
        */
       HOURLY(7),
+      /**
+       * <pre>
+       * Per-minute data.
+       * </pre>
+       *
+       * <code>PER_MINUTE = 8;</code>
+       */
+      PER_MINUTE(8),
       UNRECOGNIZED(-1),
       ;
 
@@ -1553,6 +1593,14 @@ public final class ModelProto {
        * <code>HOURLY = 7;</code>
        */
       public static final int HOURLY_VALUE = 7;
+      /**
+       * <pre>
+       * Per-minute data.
+       * </pre>
+       *
+       * <code>PER_MINUTE = 8;</code>
+       */
+      public static final int PER_MINUTE_VALUE = 8;
 
 
       public final int getNumber() {
@@ -1587,6 +1635,7 @@ public final class ModelProto {
           case 5: return WEEKLY;
           case 6: return DAILY;
           case 7: return HOURLY;
+          case 8: return PER_MINUTE;
           default: return null;
         }
       }
@@ -4034,6 +4083,10 @@ public final class ModelProto {
       public enum KmeansInitializationMethod
           implements com.google.protobuf.ProtocolMessageEnum {
         /**
+         * <pre>
+         * Unspecified initialization method.
+         * </pre>
+         *
          * <code>KMEANS_INITIALIZATION_METHOD_UNSPECIFIED = 0;</code>
          */
         KMEANS_INITIALIZATION_METHOD_UNSPECIFIED(0),
@@ -4066,6 +4119,10 @@ public final class ModelProto {
         ;
 
         /**
+         * <pre>
+         * Unspecified initialization method.
+         * </pre>
+         *
          * <code>KMEANS_INITIALIZATION_METHOD_UNSPECIFIED = 0;</code>
          */
         public static final int KMEANS_INITIALIZATION_METHOD_UNSPECIFIED_VALUE = 0;
@@ -4631,7 +4688,7 @@ public final class ModelProto {
 
       /**
        * <pre>
-       * R^2 score.
+       * R^2 score. This corresponds to r2_score in ML.EVALUATE.
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -4640,7 +4697,7 @@ public final class ModelProto {
       boolean hasRSquared();
       /**
        * <pre>
-       * R^2 score.
+       * R^2 score. This corresponds to r2_score in ML.EVALUATE.
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -4649,7 +4706,7 @@ public final class ModelProto {
       com.google.protobuf.DoubleValue getRSquared();
       /**
        * <pre>
-       * R^2 score.
+       * R^2 score. This corresponds to r2_score in ML.EVALUATE.
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -4959,7 +5016,7 @@ public final class ModelProto {
       private com.google.protobuf.DoubleValue rSquared_;
       /**
        * <pre>
-       * R^2 score.
+       * R^2 score. This corresponds to r2_score in ML.EVALUATE.
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -4971,7 +5028,7 @@ public final class ModelProto {
       }
       /**
        * <pre>
-       * R^2 score.
+       * R^2 score. This corresponds to r2_score in ML.EVALUATE.
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -4983,7 +5040,7 @@ public final class ModelProto {
       }
       /**
        * <pre>
-       * R^2 score.
+       * R^2 score. This corresponds to r2_score in ML.EVALUATE.
        * </pre>
        *
        * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6058,7 +6115,7 @@ public final class ModelProto {
             com.google.protobuf.DoubleValue, com.google.protobuf.DoubleValue.Builder, com.google.protobuf.DoubleValueOrBuilder> rSquaredBuilder_;
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6069,7 +6126,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6084,7 +6141,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6104,7 +6161,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6122,7 +6179,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6144,7 +6201,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6162,7 +6219,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6174,7 +6231,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -6189,7 +6246,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * R^2 score.
+         * R^2 score. This corresponds to r2_score in ML.EVALUATE.
          * </pre>
          *
          * <code>.google.protobuf.DoubleValue r_squared = 5;</code>
@@ -17462,7 +17519,7 @@ public final class ModelProto {
 
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -17471,7 +17528,7 @@ public final class ModelProto {
           getClustersList();
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -17479,7 +17536,7 @@ public final class ModelProto {
       com.google.cloud.bigquery.v2.ModelProto.Model.ClusteringMetrics.Cluster getClusters(int index);
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -17487,7 +17544,7 @@ public final class ModelProto {
       int getClustersCount();
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -17496,7 +17553,7 @@ public final class ModelProto {
           getClustersOrBuilderList();
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22135,7 +22192,7 @@ public final class ModelProto {
       private java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ClusteringMetrics.Cluster> clusters_;
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22146,7 +22203,7 @@ public final class ModelProto {
       }
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22158,7 +22215,7 @@ public final class ModelProto {
       }
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22169,7 +22226,7 @@ public final class ModelProto {
       }
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22180,7 +22237,7 @@ public final class ModelProto {
       }
       /**
        * <pre>
-       * [Beta] Information for all clusters.
+       * Information for all clusters.
        * </pre>
        *
        * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22921,7 +22978,7 @@ public final class ModelProto {
 
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22935,7 +22992,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22949,7 +23006,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22963,7 +23020,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -22984,7 +23041,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23002,7 +23059,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23022,7 +23079,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23043,7 +23100,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23061,7 +23118,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23079,7 +23136,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23098,7 +23155,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23115,7 +23172,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23132,7 +23189,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23143,7 +23200,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23157,7 +23214,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23172,7 +23229,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23183,7 +23240,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -23195,7 +23252,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Information for all clusters.
+         * Information for all clusters.
          * </pre>
          *
          * <code>repeated .google.cloud.bigquery.v2.Model.ClusteringMetrics.Cluster clusters = 3;</code>
@@ -24865,43 +24922,43 @@ public final class ModelProto {
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
-      java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder> 
+      @java.lang.Deprecated java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder> 
           getNonSeasonalOrderList();
       /**
        * <pre>
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
-      com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder getNonSeasonalOrder(int index);
+      @java.lang.Deprecated com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder getNonSeasonalOrder(int index);
       /**
        * <pre>
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
-      int getNonSeasonalOrderCount();
+      @java.lang.Deprecated int getNonSeasonalOrderCount();
       /**
        * <pre>
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
-      java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder> 
+      @java.lang.Deprecated java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder> 
           getNonSeasonalOrderOrBuilderList();
       /**
        * <pre>
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
-      com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder getNonSeasonalOrderOrBuilder(
+      @java.lang.Deprecated com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder getNonSeasonalOrderOrBuilder(
           int index);
 
       /**
@@ -24909,43 +24966,43 @@ public final class ModelProto {
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
-      java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics> 
+      @java.lang.Deprecated java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics> 
           getArimaFittingMetricsList();
       /**
        * <pre>
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
-      com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics getArimaFittingMetrics(int index);
+      @java.lang.Deprecated com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics getArimaFittingMetrics(int index);
       /**
        * <pre>
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
-      int getArimaFittingMetricsCount();
+      @java.lang.Deprecated int getArimaFittingMetricsCount();
       /**
        * <pre>
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
-      java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder> 
+      @java.lang.Deprecated java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder> 
           getArimaFittingMetricsOrBuilderList();
       /**
        * <pre>
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
-      com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder getArimaFittingMetricsOrBuilder(
+      @java.lang.Deprecated com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder getArimaFittingMetricsOrBuilder(
           int index);
 
       /**
@@ -24954,41 +25011,41 @@ public final class ModelProto {
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @return A list containing the seasonalPeriods.
        */
-      java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType> getSeasonalPeriodsList();
+      @java.lang.Deprecated java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType> getSeasonalPeriodsList();
       /**
        * <pre>
        * Seasonal periods. Repeated because multiple periods are supported for one
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @return The count of seasonalPeriods.
        */
-      int getSeasonalPeriodsCount();
+      @java.lang.Deprecated int getSeasonalPeriodsCount();
       /**
        * <pre>
        * Seasonal periods. Repeated because multiple periods are supported for one
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @param index The index of the element to return.
        * @return The seasonalPeriods at the given index.
        */
-      com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType getSeasonalPeriods(int index);
+      @java.lang.Deprecated com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType getSeasonalPeriods(int index);
       /**
        * <pre>
        * Seasonal periods. Repeated because multiple periods are supported for one
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @return A list containing the enum numeric values on the wire for seasonalPeriods.
        */
-      java.util.List<java.lang.Integer>
+      @java.lang.Deprecated java.util.List<java.lang.Integer>
       getSeasonalPeriodsValueList();
       /**
        * <pre>
@@ -24996,11 +25053,11 @@ public final class ModelProto {
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @param index The index of the value to return.
        * @return The enum numeric value on the wire of seasonalPeriods at the given index.
        */
-      int getSeasonalPeriodsValue(int index);
+      @java.lang.Deprecated int getSeasonalPeriodsValue(int index);
 
       /**
        * <pre>
@@ -25008,71 +25065,71 @@ public final class ModelProto {
        * is not 1.
        * </pre>
        *
-       * <code>repeated bool has_drift = 4;</code>
+       * <code>repeated bool has_drift = 4 [deprecated = true];</code>
        * @return A list containing the hasDrift.
        */
-      java.util.List<java.lang.Boolean> getHasDriftList();
+      @java.lang.Deprecated java.util.List<java.lang.Boolean> getHasDriftList();
       /**
        * <pre>
        * Whether Arima model fitted with drift or not. It is always false when d
        * is not 1.
        * </pre>
        *
-       * <code>repeated bool has_drift = 4;</code>
+       * <code>repeated bool has_drift = 4 [deprecated = true];</code>
        * @return The count of hasDrift.
        */
-      int getHasDriftCount();
+      @java.lang.Deprecated int getHasDriftCount();
       /**
        * <pre>
        * Whether Arima model fitted with drift or not. It is always false when d
        * is not 1.
        * </pre>
        *
-       * <code>repeated bool has_drift = 4;</code>
+       * <code>repeated bool has_drift = 4 [deprecated = true];</code>
        * @param index The index of the element to return.
        * @return The hasDrift at the given index.
        */
-      boolean getHasDrift(int index);
+      @java.lang.Deprecated boolean getHasDrift(int index);
 
       /**
        * <pre>
        * Id to differentiate different time series for the large-scale case.
        * </pre>
        *
-       * <code>repeated string time_series_id = 5;</code>
+       * <code>repeated string time_series_id = 5 [deprecated = true];</code>
        * @return A list containing the timeSeriesId.
        */
-      java.util.List<java.lang.String>
+      @java.lang.Deprecated java.util.List<java.lang.String>
           getTimeSeriesIdList();
       /**
        * <pre>
        * Id to differentiate different time series for the large-scale case.
        * </pre>
        *
-       * <code>repeated string time_series_id = 5;</code>
+       * <code>repeated string time_series_id = 5 [deprecated = true];</code>
        * @return The count of timeSeriesId.
        */
-      int getTimeSeriesIdCount();
+      @java.lang.Deprecated int getTimeSeriesIdCount();
       /**
        * <pre>
        * Id to differentiate different time series for the large-scale case.
        * </pre>
        *
-       * <code>repeated string time_series_id = 5;</code>
+       * <code>repeated string time_series_id = 5 [deprecated = true];</code>
        * @param index The index of the element to return.
        * @return The timeSeriesId at the given index.
        */
-      java.lang.String getTimeSeriesId(int index);
+      @java.lang.Deprecated java.lang.String getTimeSeriesId(int index);
       /**
        * <pre>
        * Id to differentiate different time series for the large-scale case.
        * </pre>
        *
-       * <code>repeated string time_series_id = 5;</code>
+       * <code>repeated string time_series_id = 5 [deprecated = true];</code>
        * @param index The index of the value to return.
        * @return The bytes of the timeSeriesId at the given index.
        */
-      com.google.protobuf.ByteString
+      @java.lang.Deprecated com.google.protobuf.ByteString
           getTimeSeriesIdBytes(int index);
 
       /**
@@ -25381,7 +25438,10 @@ public final class ModelProto {
 
         /**
          * <pre>
-         * The id to indicate different time series.
+         * The time_series_id value for this time series. It will be one of
+         * the unique values from the time_series_id_column specified during
+         * ARIMA model training. Only present when time_series_id_column
+         * training option was used.
          * </pre>
          *
          * <code>string time_series_id = 4;</code>
@@ -25390,7 +25450,10 @@ public final class ModelProto {
         java.lang.String getTimeSeriesId();
         /**
          * <pre>
-         * The id to indicate different time series.
+         * The time_series_id value for this time series. It will be one of
+         * the unique values from the time_series_id_column specified during
+         * ARIMA model training. Only present when time_series_id_column
+         * training option was used.
          * </pre>
          *
          * <code>string time_series_id = 4;</code>
@@ -25398,6 +25461,67 @@ public final class ModelProto {
          */
         com.google.protobuf.ByteString
             getTimeSeriesIdBytes();
+
+        /**
+         * <pre>
+         * The tuple of time_series_ids identifying this time series. It will
+         * be one of the unique tuples of values present in the
+         * time_series_id_columns specified during ARIMA model training. Only
+         * present when time_series_id_columns training option was used and
+         * the order of values here are same as the order of
+         * time_series_id_columns.
+         * </pre>
+         *
+         * <code>repeated string time_series_ids = 9;</code>
+         * @return A list containing the timeSeriesIds.
+         */
+        java.util.List<java.lang.String>
+            getTimeSeriesIdsList();
+        /**
+         * <pre>
+         * The tuple of time_series_ids identifying this time series. It will
+         * be one of the unique tuples of values present in the
+         * time_series_id_columns specified during ARIMA model training. Only
+         * present when time_series_id_columns training option was used and
+         * the order of values here are same as the order of
+         * time_series_id_columns.
+         * </pre>
+         *
+         * <code>repeated string time_series_ids = 9;</code>
+         * @return The count of timeSeriesIds.
+         */
+        int getTimeSeriesIdsCount();
+        /**
+         * <pre>
+         * The tuple of time_series_ids identifying this time series. It will
+         * be one of the unique tuples of values present in the
+         * time_series_id_columns specified during ARIMA model training. Only
+         * present when time_series_id_columns training option was used and
+         * the order of values here are same as the order of
+         * time_series_id_columns.
+         * </pre>
+         *
+         * <code>repeated string time_series_ids = 9;</code>
+         * @param index The index of the element to return.
+         * @return The timeSeriesIds at the given index.
+         */
+        java.lang.String getTimeSeriesIds(int index);
+        /**
+         * <pre>
+         * The tuple of time_series_ids identifying this time series. It will
+         * be one of the unique tuples of values present in the
+         * time_series_id_columns specified during ARIMA model training. Only
+         * present when time_series_id_columns training option was used and
+         * the order of values here are same as the order of
+         * time_series_id_columns.
+         * </pre>
+         *
+         * <code>repeated string time_series_ids = 9;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the timeSeriesIds at the given index.
+         */
+        com.google.protobuf.ByteString
+            getTimeSeriesIdsBytes(int index);
 
         /**
          * <pre>
@@ -25452,6 +25576,87 @@ public final class ModelProto {
          * @return The enum numeric value on the wire of seasonalPeriods at the given index.
          */
         int getSeasonalPeriodsValue(int index);
+
+        /**
+         * <pre>
+         * If true, holiday_effect is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+         * @return Whether the hasHolidayEffect field is set.
+         */
+        boolean hasHasHolidayEffect();
+        /**
+         * <pre>
+         * If true, holiday_effect is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+         * @return The hasHolidayEffect.
+         */
+        com.google.protobuf.BoolValue getHasHolidayEffect();
+        /**
+         * <pre>
+         * If true, holiday_effect is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+         */
+        com.google.protobuf.BoolValueOrBuilder getHasHolidayEffectOrBuilder();
+
+        /**
+         * <pre>
+         * If true, spikes_and_dips is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+         * @return Whether the hasSpikesAndDips field is set.
+         */
+        boolean hasHasSpikesAndDips();
+        /**
+         * <pre>
+         * If true, spikes_and_dips is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+         * @return The hasSpikesAndDips.
+         */
+        com.google.protobuf.BoolValue getHasSpikesAndDips();
+        /**
+         * <pre>
+         * If true, spikes_and_dips is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+         */
+        com.google.protobuf.BoolValueOrBuilder getHasSpikesAndDipsOrBuilder();
+
+        /**
+         * <pre>
+         * If true, step_changes is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+         * @return Whether the hasStepChanges field is set.
+         */
+        boolean hasHasStepChanges();
+        /**
+         * <pre>
+         * If true, step_changes is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+         * @return The hasStepChanges.
+         */
+        com.google.protobuf.BoolValue getHasStepChanges();
+        /**
+         * <pre>
+         * If true, step_changes is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+         */
+        com.google.protobuf.BoolValueOrBuilder getHasStepChangesOrBuilder();
       }
       /**
        * <pre>
@@ -25471,6 +25676,7 @@ public final class ModelProto {
         }
         private ArimaSingleModelForecastingMetrics() {
           timeSeriesId_ = "";
+          timeSeriesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           seasonalPeriods_ = java.util.Collections.emptyList();
         }
 
@@ -25544,9 +25750,9 @@ public final class ModelProto {
                 }
                 case 40: {
                   int rawValue = input.readEnum();
-                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                     seasonalPeriods_ = new java.util.ArrayList<java.lang.Integer>();
-                    mutable_bitField0_ |= 0x00000001;
+                    mutable_bitField0_ |= 0x00000002;
                   }
                   seasonalPeriods_.add(rawValue);
                   break;
@@ -25556,13 +25762,61 @@ public final class ModelProto {
                   int oldLimit = input.pushLimit(length);
                   while(input.getBytesUntilLimit() > 0) {
                     int rawValue = input.readEnum();
-                    if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                    if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                       seasonalPeriods_ = new java.util.ArrayList<java.lang.Integer>();
-                      mutable_bitField0_ |= 0x00000001;
+                      mutable_bitField0_ |= 0x00000002;
                     }
                     seasonalPeriods_.add(rawValue);
                   }
                   input.popLimit(oldLimit);
+                  break;
+                }
+                case 50: {
+                  com.google.protobuf.BoolValue.Builder subBuilder = null;
+                  if (hasHolidayEffect_ != null) {
+                    subBuilder = hasHolidayEffect_.toBuilder();
+                  }
+                  hasHolidayEffect_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(hasHolidayEffect_);
+                    hasHolidayEffect_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 58: {
+                  com.google.protobuf.BoolValue.Builder subBuilder = null;
+                  if (hasSpikesAndDips_ != null) {
+                    subBuilder = hasSpikesAndDips_.toBuilder();
+                  }
+                  hasSpikesAndDips_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(hasSpikesAndDips_);
+                    hasSpikesAndDips_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 66: {
+                  com.google.protobuf.BoolValue.Builder subBuilder = null;
+                  if (hasStepChanges_ != null) {
+                    subBuilder = hasStepChanges_.toBuilder();
+                  }
+                  hasStepChanges_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(hasStepChanges_);
+                    hasStepChanges_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 74: {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                    timeSeriesIds_ = new com.google.protobuf.LazyStringArrayList();
+                    mutable_bitField0_ |= 0x00000001;
+                  }
+                  timeSeriesIds_.add(s);
                   break;
                 }
                 default: {
@@ -25580,8 +25834,11 @@ public final class ModelProto {
             throw new com.google.protobuf.InvalidProtocolBufferException(
                 e).setUnfinishedMessage(this);
           } finally {
-            if (((mutable_bitField0_ & 0x00000001) != 0)) {
+            if (((mutable_bitField0_ & 0x00000002) != 0)) {
               seasonalPeriods_ = java.util.Collections.unmodifiableList(seasonalPeriods_);
+            }
+            if (((mutable_bitField0_ & 0x00000001) != 0)) {
+              timeSeriesIds_ = timeSeriesIds_.getUnmodifiableView();
             }
             this.unknownFields = unknownFields.build();
             makeExtensionsImmutable();
@@ -25696,7 +25953,10 @@ public final class ModelProto {
         private volatile java.lang.Object timeSeriesId_;
         /**
          * <pre>
-         * The id to indicate different time series.
+         * The time_series_id value for this time series. It will be one of
+         * the unique values from the time_series_id_column specified during
+         * ARIMA model training. Only present when time_series_id_column
+         * training option was used.
          * </pre>
          *
          * <code>string time_series_id = 4;</code>
@@ -25717,7 +25977,10 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * The id to indicate different time series.
+         * The time_series_id value for this time series. It will be one of
+         * the unique values from the time_series_id_column specified during
+         * ARIMA model training. Only present when time_series_id_column
+         * training option was used.
          * </pre>
          *
          * <code>string time_series_id = 4;</code>
@@ -25736,6 +25999,77 @@ public final class ModelProto {
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
+        }
+
+        public static final int TIME_SERIES_IDS_FIELD_NUMBER = 9;
+        private com.google.protobuf.LazyStringList timeSeriesIds_;
+        /**
+         * <pre>
+         * The tuple of time_series_ids identifying this time series. It will
+         * be one of the unique tuples of values present in the
+         * time_series_id_columns specified during ARIMA model training. Only
+         * present when time_series_id_columns training option was used and
+         * the order of values here are same as the order of
+         * time_series_id_columns.
+         * </pre>
+         *
+         * <code>repeated string time_series_ids = 9;</code>
+         * @return A list containing the timeSeriesIds.
+         */
+        public com.google.protobuf.ProtocolStringList
+            getTimeSeriesIdsList() {
+          return timeSeriesIds_;
+        }
+        /**
+         * <pre>
+         * The tuple of time_series_ids identifying this time series. It will
+         * be one of the unique tuples of values present in the
+         * time_series_id_columns specified during ARIMA model training. Only
+         * present when time_series_id_columns training option was used and
+         * the order of values here are same as the order of
+         * time_series_id_columns.
+         * </pre>
+         *
+         * <code>repeated string time_series_ids = 9;</code>
+         * @return The count of timeSeriesIds.
+         */
+        public int getTimeSeriesIdsCount() {
+          return timeSeriesIds_.size();
+        }
+        /**
+         * <pre>
+         * The tuple of time_series_ids identifying this time series. It will
+         * be one of the unique tuples of values present in the
+         * time_series_id_columns specified during ARIMA model training. Only
+         * present when time_series_id_columns training option was used and
+         * the order of values here are same as the order of
+         * time_series_id_columns.
+         * </pre>
+         *
+         * <code>repeated string time_series_ids = 9;</code>
+         * @param index The index of the element to return.
+         * @return The timeSeriesIds at the given index.
+         */
+        public java.lang.String getTimeSeriesIds(int index) {
+          return timeSeriesIds_.get(index);
+        }
+        /**
+         * <pre>
+         * The tuple of time_series_ids identifying this time series. It will
+         * be one of the unique tuples of values present in the
+         * time_series_id_columns specified during ARIMA model training. Only
+         * present when time_series_id_columns training option was used and
+         * the order of values here are same as the order of
+         * time_series_id_columns.
+         * </pre>
+         *
+         * <code>repeated string time_series_ids = 9;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the timeSeriesIds at the given index.
+         */
+        public com.google.protobuf.ByteString
+            getTimeSeriesIdsBytes(int index) {
+          return timeSeriesIds_.getByteString(index);
         }
 
         public static final int SEASONAL_PERIODS_FIELD_NUMBER = 5;
@@ -25821,6 +26155,120 @@ public final class ModelProto {
         }
         private int seasonalPeriodsMemoizedSerializedSize;
 
+        public static final int HAS_HOLIDAY_EFFECT_FIELD_NUMBER = 6;
+        private com.google.protobuf.BoolValue hasHolidayEffect_;
+        /**
+         * <pre>
+         * If true, holiday_effect is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+         * @return Whether the hasHolidayEffect field is set.
+         */
+        @java.lang.Override
+        public boolean hasHasHolidayEffect() {
+          return hasHolidayEffect_ != null;
+        }
+        /**
+         * <pre>
+         * If true, holiday_effect is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+         * @return The hasHolidayEffect.
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValue getHasHolidayEffect() {
+          return hasHolidayEffect_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasHolidayEffect_;
+        }
+        /**
+         * <pre>
+         * If true, holiday_effect is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValueOrBuilder getHasHolidayEffectOrBuilder() {
+          return getHasHolidayEffect();
+        }
+
+        public static final int HAS_SPIKES_AND_DIPS_FIELD_NUMBER = 7;
+        private com.google.protobuf.BoolValue hasSpikesAndDips_;
+        /**
+         * <pre>
+         * If true, spikes_and_dips is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+         * @return Whether the hasSpikesAndDips field is set.
+         */
+        @java.lang.Override
+        public boolean hasHasSpikesAndDips() {
+          return hasSpikesAndDips_ != null;
+        }
+        /**
+         * <pre>
+         * If true, spikes_and_dips is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+         * @return The hasSpikesAndDips.
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValue getHasSpikesAndDips() {
+          return hasSpikesAndDips_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasSpikesAndDips_;
+        }
+        /**
+         * <pre>
+         * If true, spikes_and_dips is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValueOrBuilder getHasSpikesAndDipsOrBuilder() {
+          return getHasSpikesAndDips();
+        }
+
+        public static final int HAS_STEP_CHANGES_FIELD_NUMBER = 8;
+        private com.google.protobuf.BoolValue hasStepChanges_;
+        /**
+         * <pre>
+         * If true, step_changes is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+         * @return Whether the hasStepChanges field is set.
+         */
+        @java.lang.Override
+        public boolean hasHasStepChanges() {
+          return hasStepChanges_ != null;
+        }
+        /**
+         * <pre>
+         * If true, step_changes is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+         * @return The hasStepChanges.
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValue getHasStepChanges() {
+          return hasStepChanges_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasStepChanges_;
+        }
+        /**
+         * <pre>
+         * If true, step_changes is a part of time series decomposition result.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValueOrBuilder getHasStepChangesOrBuilder() {
+          return getHasStepChanges();
+        }
+
         private byte memoizedIsInitialized = -1;
         @java.lang.Override
         public final boolean isInitialized() {
@@ -25854,6 +26302,18 @@ public final class ModelProto {
           }
           for (int i = 0; i < seasonalPeriods_.size(); i++) {
             output.writeEnumNoTag(seasonalPeriods_.get(i));
+          }
+          if (hasHolidayEffect_ != null) {
+            output.writeMessage(6, getHasHolidayEffect());
+          }
+          if (hasSpikesAndDips_ != null) {
+            output.writeMessage(7, getHasSpikesAndDips());
+          }
+          if (hasStepChanges_ != null) {
+            output.writeMessage(8, getHasStepChanges());
+          }
+          for (int i = 0; i < timeSeriesIds_.size(); i++) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 9, timeSeriesIds_.getRaw(i));
           }
           unknownFields.writeTo(output);
         }
@@ -25891,6 +26351,26 @@ public final class ModelProto {
                 .computeUInt32SizeNoTag(dataSize);
             }seasonalPeriodsMemoizedSerializedSize = dataSize;
           }
+          if (hasHolidayEffect_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(6, getHasHolidayEffect());
+          }
+          if (hasSpikesAndDips_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(7, getHasSpikesAndDips());
+          }
+          if (hasStepChanges_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(8, getHasStepChanges());
+          }
+          {
+            int dataSize = 0;
+            for (int i = 0; i < timeSeriesIds_.size(); i++) {
+              dataSize += computeStringSizeNoTag(timeSeriesIds_.getRaw(i));
+            }
+            size += dataSize;
+            size += 1 * getTimeSeriesIdsList().size();
+          }
           size += unknownFields.getSerializedSize();
           memoizedSize = size;
           return size;
@@ -25920,7 +26400,24 @@ public final class ModelProto {
               != other.getHasDrift()) return false;
           if (!getTimeSeriesId()
               .equals(other.getTimeSeriesId())) return false;
+          if (!getTimeSeriesIdsList()
+              .equals(other.getTimeSeriesIdsList())) return false;
           if (!seasonalPeriods_.equals(other.seasonalPeriods_)) return false;
+          if (hasHasHolidayEffect() != other.hasHasHolidayEffect()) return false;
+          if (hasHasHolidayEffect()) {
+            if (!getHasHolidayEffect()
+                .equals(other.getHasHolidayEffect())) return false;
+          }
+          if (hasHasSpikesAndDips() != other.hasHasSpikesAndDips()) return false;
+          if (hasHasSpikesAndDips()) {
+            if (!getHasSpikesAndDips()
+                .equals(other.getHasSpikesAndDips())) return false;
+          }
+          if (hasHasStepChanges() != other.hasHasStepChanges()) return false;
+          if (hasHasStepChanges()) {
+            if (!getHasStepChanges()
+                .equals(other.getHasStepChanges())) return false;
+          }
           if (!unknownFields.equals(other.unknownFields)) return false;
           return true;
         }
@@ -25945,9 +26442,25 @@ public final class ModelProto {
               getHasDrift());
           hash = (37 * hash) + TIME_SERIES_ID_FIELD_NUMBER;
           hash = (53 * hash) + getTimeSeriesId().hashCode();
+          if (getTimeSeriesIdsCount() > 0) {
+            hash = (37 * hash) + TIME_SERIES_IDS_FIELD_NUMBER;
+            hash = (53 * hash) + getTimeSeriesIdsList().hashCode();
+          }
           if (getSeasonalPeriodsCount() > 0) {
             hash = (37 * hash) + SEASONAL_PERIODS_FIELD_NUMBER;
             hash = (53 * hash) + seasonalPeriods_.hashCode();
+          }
+          if (hasHasHolidayEffect()) {
+            hash = (37 * hash) + HAS_HOLIDAY_EFFECT_FIELD_NUMBER;
+            hash = (53 * hash) + getHasHolidayEffect().hashCode();
+          }
+          if (hasHasSpikesAndDips()) {
+            hash = (37 * hash) + HAS_SPIKES_AND_DIPS_FIELD_NUMBER;
+            hash = (53 * hash) + getHasSpikesAndDips().hashCode();
+          }
+          if (hasHasStepChanges()) {
+            hash = (37 * hash) + HAS_STEP_CHANGES_FIELD_NUMBER;
+            hash = (53 * hash) + getHasStepChanges().hashCode();
           }
           hash = (29 * hash) + unknownFields.hashCode();
           memoizedHashCode = hash;
@@ -26102,8 +26615,28 @@ public final class ModelProto {
 
             timeSeriesId_ = "";
 
-            seasonalPeriods_ = java.util.Collections.emptyList();
+            timeSeriesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
             bitField0_ = (bitField0_ & ~0x00000001);
+            seasonalPeriods_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            if (hasHolidayEffectBuilder_ == null) {
+              hasHolidayEffect_ = null;
+            } else {
+              hasHolidayEffect_ = null;
+              hasHolidayEffectBuilder_ = null;
+            }
+            if (hasSpikesAndDipsBuilder_ == null) {
+              hasSpikesAndDips_ = null;
+            } else {
+              hasSpikesAndDips_ = null;
+              hasSpikesAndDipsBuilder_ = null;
+            }
+            if (hasStepChangesBuilder_ == null) {
+              hasStepChanges_ = null;
+            } else {
+              hasStepChanges_ = null;
+              hasStepChangesBuilder_ = null;
+            }
             return this;
           }
 
@@ -26144,10 +26677,30 @@ public final class ModelProto {
             result.hasDrift_ = hasDrift_;
             result.timeSeriesId_ = timeSeriesId_;
             if (((bitField0_ & 0x00000001) != 0)) {
-              seasonalPeriods_ = java.util.Collections.unmodifiableList(seasonalPeriods_);
+              timeSeriesIds_ = timeSeriesIds_.getUnmodifiableView();
               bitField0_ = (bitField0_ & ~0x00000001);
             }
+            result.timeSeriesIds_ = timeSeriesIds_;
+            if (((bitField0_ & 0x00000002) != 0)) {
+              seasonalPeriods_ = java.util.Collections.unmodifiableList(seasonalPeriods_);
+              bitField0_ = (bitField0_ & ~0x00000002);
+            }
             result.seasonalPeriods_ = seasonalPeriods_;
+            if (hasHolidayEffectBuilder_ == null) {
+              result.hasHolidayEffect_ = hasHolidayEffect_;
+            } else {
+              result.hasHolidayEffect_ = hasHolidayEffectBuilder_.build();
+            }
+            if (hasSpikesAndDipsBuilder_ == null) {
+              result.hasSpikesAndDips_ = hasSpikesAndDips_;
+            } else {
+              result.hasSpikesAndDips_ = hasSpikesAndDipsBuilder_.build();
+            }
+            if (hasStepChangesBuilder_ == null) {
+              result.hasStepChanges_ = hasStepChanges_;
+            } else {
+              result.hasStepChanges_ = hasStepChangesBuilder_.build();
+            }
             onBuilt();
             return result;
           }
@@ -26209,15 +26762,34 @@ public final class ModelProto {
               timeSeriesId_ = other.timeSeriesId_;
               onChanged();
             }
+            if (!other.timeSeriesIds_.isEmpty()) {
+              if (timeSeriesIds_.isEmpty()) {
+                timeSeriesIds_ = other.timeSeriesIds_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureTimeSeriesIdsIsMutable();
+                timeSeriesIds_.addAll(other.timeSeriesIds_);
+              }
+              onChanged();
+            }
             if (!other.seasonalPeriods_.isEmpty()) {
               if (seasonalPeriods_.isEmpty()) {
                 seasonalPeriods_ = other.seasonalPeriods_;
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
               } else {
                 ensureSeasonalPeriodsIsMutable();
                 seasonalPeriods_.addAll(other.seasonalPeriods_);
               }
               onChanged();
+            }
+            if (other.hasHasHolidayEffect()) {
+              mergeHasHolidayEffect(other.getHasHolidayEffect());
+            }
+            if (other.hasHasSpikesAndDips()) {
+              mergeHasSpikesAndDips(other.getHasSpikesAndDips());
+            }
+            if (other.hasHasStepChanges()) {
+              mergeHasStepChanges(other.getHasStepChanges());
             }
             this.mergeUnknownFields(other.unknownFields);
             onChanged();
@@ -26608,7 +27180,10 @@ public final class ModelProto {
           private java.lang.Object timeSeriesId_ = "";
           /**
            * <pre>
-           * The id to indicate different time series.
+           * The time_series_id value for this time series. It will be one of
+           * the unique values from the time_series_id_column specified during
+           * ARIMA model training. Only present when time_series_id_column
+           * training option was used.
            * </pre>
            *
            * <code>string time_series_id = 4;</code>
@@ -26628,7 +27203,10 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * The id to indicate different time series.
+           * The time_series_id value for this time series. It will be one of
+           * the unique values from the time_series_id_column specified during
+           * ARIMA model training. Only present when time_series_id_column
+           * training option was used.
            * </pre>
            *
            * <code>string time_series_id = 4;</code>
@@ -26649,7 +27227,10 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * The id to indicate different time series.
+           * The time_series_id value for this time series. It will be one of
+           * the unique values from the time_series_id_column specified during
+           * ARIMA model training. Only present when time_series_id_column
+           * training option was used.
            * </pre>
            *
            * <code>string time_series_id = 4;</code>
@@ -26668,7 +27249,10 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * The id to indicate different time series.
+           * The time_series_id value for this time series. It will be one of
+           * the unique values from the time_series_id_column specified during
+           * ARIMA model training. Only present when time_series_id_column
+           * training option was used.
            * </pre>
            *
            * <code>string time_series_id = 4;</code>
@@ -26682,7 +27266,10 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * The id to indicate different time series.
+           * The time_series_id value for this time series. It will be one of
+           * the unique values from the time_series_id_column specified during
+           * ARIMA model training. Only present when time_series_id_column
+           * training option was used.
            * </pre>
            *
            * <code>string time_series_id = 4;</code>
@@ -26701,12 +27288,203 @@ public final class ModelProto {
             return this;
           }
 
+          private com.google.protobuf.LazyStringList timeSeriesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          private void ensureTimeSeriesIdsIsMutable() {
+            if (!((bitField0_ & 0x00000001) != 0)) {
+              timeSeriesIds_ = new com.google.protobuf.LazyStringArrayList(timeSeriesIds_);
+              bitField0_ |= 0x00000001;
+             }
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @return A list containing the timeSeriesIds.
+           */
+          public com.google.protobuf.ProtocolStringList
+              getTimeSeriesIdsList() {
+            return timeSeriesIds_.getUnmodifiableView();
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @return The count of timeSeriesIds.
+           */
+          public int getTimeSeriesIdsCount() {
+            return timeSeriesIds_.size();
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @param index The index of the element to return.
+           * @return The timeSeriesIds at the given index.
+           */
+          public java.lang.String getTimeSeriesIds(int index) {
+            return timeSeriesIds_.get(index);
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @param index The index of the value to return.
+           * @return The bytes of the timeSeriesIds at the given index.
+           */
+          public com.google.protobuf.ByteString
+              getTimeSeriesIdsBytes(int index) {
+            return timeSeriesIds_.getByteString(index);
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @param index The index to set the value at.
+           * @param value The timeSeriesIds to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTimeSeriesIds(
+              int index, java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTimeSeriesIdsIsMutable();
+            timeSeriesIds_.set(index, value);
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @param value The timeSeriesIds to add.
+           * @return This builder for chaining.
+           */
+          public Builder addTimeSeriesIds(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTimeSeriesIdsIsMutable();
+            timeSeriesIds_.add(value);
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @param values The timeSeriesIds to add.
+           * @return This builder for chaining.
+           */
+          public Builder addAllTimeSeriesIds(
+              java.lang.Iterable<java.lang.String> values) {
+            ensureTimeSeriesIdsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, timeSeriesIds_);
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearTimeSeriesIds() {
+            timeSeriesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * The tuple of time_series_ids identifying this time series. It will
+           * be one of the unique tuples of values present in the
+           * time_series_id_columns specified during ARIMA model training. Only
+           * present when time_series_id_columns training option was used and
+           * the order of values here are same as the order of
+           * time_series_id_columns.
+           * </pre>
+           *
+           * <code>repeated string time_series_ids = 9;</code>
+           * @param value The bytes of the timeSeriesIds to add.
+           * @return This builder for chaining.
+           */
+          public Builder addTimeSeriesIdsBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+            ensureTimeSeriesIdsIsMutable();
+            timeSeriesIds_.add(value);
+            onChanged();
+            return this;
+          }
+
           private java.util.List<java.lang.Integer> seasonalPeriods_ =
             java.util.Collections.emptyList();
           private void ensureSeasonalPeriodsIsMutable() {
-            if (!((bitField0_ & 0x00000001) != 0)) {
+            if (!((bitField0_ & 0x00000002) != 0)) {
               seasonalPeriods_ = new java.util.ArrayList<java.lang.Integer>(seasonalPeriods_);
-              bitField0_ |= 0x00000001;
+              bitField0_ |= 0x00000002;
             }
           }
           /**
@@ -26817,7 +27595,7 @@ public final class ModelProto {
            */
           public Builder clearSeasonalPeriods() {
             seasonalPeriods_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             onChanged();
             return this;
           }
@@ -26900,6 +27678,471 @@ public final class ModelProto {
             onChanged();
             return this;
           }
+
+          private com.google.protobuf.BoolValue hasHolidayEffect_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> hasHolidayEffectBuilder_;
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           * @return Whether the hasHolidayEffect field is set.
+           */
+          public boolean hasHasHolidayEffect() {
+            return hasHolidayEffectBuilder_ != null || hasHolidayEffect_ != null;
+          }
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           * @return The hasHolidayEffect.
+           */
+          public com.google.protobuf.BoolValue getHasHolidayEffect() {
+            if (hasHolidayEffectBuilder_ == null) {
+              return hasHolidayEffect_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasHolidayEffect_;
+            } else {
+              return hasHolidayEffectBuilder_.getMessage();
+            }
+          }
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           */
+          public Builder setHasHolidayEffect(com.google.protobuf.BoolValue value) {
+            if (hasHolidayEffectBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              hasHolidayEffect_ = value;
+              onChanged();
+            } else {
+              hasHolidayEffectBuilder_.setMessage(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           */
+          public Builder setHasHolidayEffect(
+              com.google.protobuf.BoolValue.Builder builderForValue) {
+            if (hasHolidayEffectBuilder_ == null) {
+              hasHolidayEffect_ = builderForValue.build();
+              onChanged();
+            } else {
+              hasHolidayEffectBuilder_.setMessage(builderForValue.build());
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           */
+          public Builder mergeHasHolidayEffect(com.google.protobuf.BoolValue value) {
+            if (hasHolidayEffectBuilder_ == null) {
+              if (hasHolidayEffect_ != null) {
+                hasHolidayEffect_ =
+                  com.google.protobuf.BoolValue.newBuilder(hasHolidayEffect_).mergeFrom(value).buildPartial();
+              } else {
+                hasHolidayEffect_ = value;
+              }
+              onChanged();
+            } else {
+              hasHolidayEffectBuilder_.mergeFrom(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           */
+          public Builder clearHasHolidayEffect() {
+            if (hasHolidayEffectBuilder_ == null) {
+              hasHolidayEffect_ = null;
+              onChanged();
+            } else {
+              hasHolidayEffect_ = null;
+              hasHolidayEffectBuilder_ = null;
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           */
+          public com.google.protobuf.BoolValue.Builder getHasHolidayEffectBuilder() {
+            
+            onChanged();
+            return getHasHolidayEffectFieldBuilder().getBuilder();
+          }
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           */
+          public com.google.protobuf.BoolValueOrBuilder getHasHolidayEffectOrBuilder() {
+            if (hasHolidayEffectBuilder_ != null) {
+              return hasHolidayEffectBuilder_.getMessageOrBuilder();
+            } else {
+              return hasHolidayEffect_ == null ?
+                  com.google.protobuf.BoolValue.getDefaultInstance() : hasHolidayEffect_;
+            }
+          }
+          /**
+           * <pre>
+           * If true, holiday_effect is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_holiday_effect = 6;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+              getHasHolidayEffectFieldBuilder() {
+            if (hasHolidayEffectBuilder_ == null) {
+              hasHolidayEffectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                      getHasHolidayEffect(),
+                      getParentForChildren(),
+                      isClean());
+              hasHolidayEffect_ = null;
+            }
+            return hasHolidayEffectBuilder_;
+          }
+
+          private com.google.protobuf.BoolValue hasSpikesAndDips_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> hasSpikesAndDipsBuilder_;
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           * @return Whether the hasSpikesAndDips field is set.
+           */
+          public boolean hasHasSpikesAndDips() {
+            return hasSpikesAndDipsBuilder_ != null || hasSpikesAndDips_ != null;
+          }
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           * @return The hasSpikesAndDips.
+           */
+          public com.google.protobuf.BoolValue getHasSpikesAndDips() {
+            if (hasSpikesAndDipsBuilder_ == null) {
+              return hasSpikesAndDips_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasSpikesAndDips_;
+            } else {
+              return hasSpikesAndDipsBuilder_.getMessage();
+            }
+          }
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           */
+          public Builder setHasSpikesAndDips(com.google.protobuf.BoolValue value) {
+            if (hasSpikesAndDipsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              hasSpikesAndDips_ = value;
+              onChanged();
+            } else {
+              hasSpikesAndDipsBuilder_.setMessage(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           */
+          public Builder setHasSpikesAndDips(
+              com.google.protobuf.BoolValue.Builder builderForValue) {
+            if (hasSpikesAndDipsBuilder_ == null) {
+              hasSpikesAndDips_ = builderForValue.build();
+              onChanged();
+            } else {
+              hasSpikesAndDipsBuilder_.setMessage(builderForValue.build());
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           */
+          public Builder mergeHasSpikesAndDips(com.google.protobuf.BoolValue value) {
+            if (hasSpikesAndDipsBuilder_ == null) {
+              if (hasSpikesAndDips_ != null) {
+                hasSpikesAndDips_ =
+                  com.google.protobuf.BoolValue.newBuilder(hasSpikesAndDips_).mergeFrom(value).buildPartial();
+              } else {
+                hasSpikesAndDips_ = value;
+              }
+              onChanged();
+            } else {
+              hasSpikesAndDipsBuilder_.mergeFrom(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           */
+          public Builder clearHasSpikesAndDips() {
+            if (hasSpikesAndDipsBuilder_ == null) {
+              hasSpikesAndDips_ = null;
+              onChanged();
+            } else {
+              hasSpikesAndDips_ = null;
+              hasSpikesAndDipsBuilder_ = null;
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           */
+          public com.google.protobuf.BoolValue.Builder getHasSpikesAndDipsBuilder() {
+            
+            onChanged();
+            return getHasSpikesAndDipsFieldBuilder().getBuilder();
+          }
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           */
+          public com.google.protobuf.BoolValueOrBuilder getHasSpikesAndDipsOrBuilder() {
+            if (hasSpikesAndDipsBuilder_ != null) {
+              return hasSpikesAndDipsBuilder_.getMessageOrBuilder();
+            } else {
+              return hasSpikesAndDips_ == null ?
+                  com.google.protobuf.BoolValue.getDefaultInstance() : hasSpikesAndDips_;
+            }
+          }
+          /**
+           * <pre>
+           * If true, spikes_and_dips is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_spikes_and_dips = 7;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+              getHasSpikesAndDipsFieldBuilder() {
+            if (hasSpikesAndDipsBuilder_ == null) {
+              hasSpikesAndDipsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                      getHasSpikesAndDips(),
+                      getParentForChildren(),
+                      isClean());
+              hasSpikesAndDips_ = null;
+            }
+            return hasSpikesAndDipsBuilder_;
+          }
+
+          private com.google.protobuf.BoolValue hasStepChanges_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> hasStepChangesBuilder_;
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           * @return Whether the hasStepChanges field is set.
+           */
+          public boolean hasHasStepChanges() {
+            return hasStepChangesBuilder_ != null || hasStepChanges_ != null;
+          }
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           * @return The hasStepChanges.
+           */
+          public com.google.protobuf.BoolValue getHasStepChanges() {
+            if (hasStepChangesBuilder_ == null) {
+              return hasStepChanges_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasStepChanges_;
+            } else {
+              return hasStepChangesBuilder_.getMessage();
+            }
+          }
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           */
+          public Builder setHasStepChanges(com.google.protobuf.BoolValue value) {
+            if (hasStepChangesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              hasStepChanges_ = value;
+              onChanged();
+            } else {
+              hasStepChangesBuilder_.setMessage(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           */
+          public Builder setHasStepChanges(
+              com.google.protobuf.BoolValue.Builder builderForValue) {
+            if (hasStepChangesBuilder_ == null) {
+              hasStepChanges_ = builderForValue.build();
+              onChanged();
+            } else {
+              hasStepChangesBuilder_.setMessage(builderForValue.build());
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           */
+          public Builder mergeHasStepChanges(com.google.protobuf.BoolValue value) {
+            if (hasStepChangesBuilder_ == null) {
+              if (hasStepChanges_ != null) {
+                hasStepChanges_ =
+                  com.google.protobuf.BoolValue.newBuilder(hasStepChanges_).mergeFrom(value).buildPartial();
+              } else {
+                hasStepChanges_ = value;
+              }
+              onChanged();
+            } else {
+              hasStepChangesBuilder_.mergeFrom(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           */
+          public Builder clearHasStepChanges() {
+            if (hasStepChangesBuilder_ == null) {
+              hasStepChanges_ = null;
+              onChanged();
+            } else {
+              hasStepChanges_ = null;
+              hasStepChangesBuilder_ = null;
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           */
+          public com.google.protobuf.BoolValue.Builder getHasStepChangesBuilder() {
+            
+            onChanged();
+            return getHasStepChangesFieldBuilder().getBuilder();
+          }
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           */
+          public com.google.protobuf.BoolValueOrBuilder getHasStepChangesOrBuilder() {
+            if (hasStepChangesBuilder_ != null) {
+              return hasStepChangesBuilder_.getMessageOrBuilder();
+            } else {
+              return hasStepChanges_ == null ?
+                  com.google.protobuf.BoolValue.getDefaultInstance() : hasStepChanges_;
+            }
+          }
+          /**
+           * <pre>
+           * If true, step_changes is a part of time series decomposition result.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue has_step_changes = 8;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+              getHasStepChangesFieldBuilder() {
+            if (hasStepChangesBuilder_ == null) {
+              hasStepChangesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                      getHasStepChanges(),
+                      getParentForChildren(),
+                      isClean());
+              hasStepChanges_ = null;
+            }
+            return hasStepChangesBuilder_;
+          }
           @java.lang.Override
           public final Builder setUnknownFields(
               final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -26960,10 +28203,10 @@ public final class ModelProto {
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
       @java.lang.Override
-      public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder> getNonSeasonalOrderList() {
+      @java.lang.Deprecated public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder> getNonSeasonalOrderList() {
         return nonSeasonalOrder_;
       }
       /**
@@ -26971,10 +28214,10 @@ public final class ModelProto {
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
       @java.lang.Override
-      public java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder> 
+      @java.lang.Deprecated public java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder> 
           getNonSeasonalOrderOrBuilderList() {
         return nonSeasonalOrder_;
       }
@@ -26983,10 +28226,10 @@ public final class ModelProto {
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
       @java.lang.Override
-      public int getNonSeasonalOrderCount() {
+      @java.lang.Deprecated public int getNonSeasonalOrderCount() {
         return nonSeasonalOrder_.size();
       }
       /**
@@ -26994,10 +28237,10 @@ public final class ModelProto {
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
       @java.lang.Override
-      public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder getNonSeasonalOrder(int index) {
+      @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder getNonSeasonalOrder(int index) {
         return nonSeasonalOrder_.get(index);
       }
       /**
@@ -27005,10 +28248,10 @@ public final class ModelProto {
        * Non-seasonal order.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
        */
       @java.lang.Override
-      public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder getNonSeasonalOrderOrBuilder(
+      @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder getNonSeasonalOrderOrBuilder(
           int index) {
         return nonSeasonalOrder_.get(index);
       }
@@ -27020,10 +28263,10 @@ public final class ModelProto {
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
       @java.lang.Override
-      public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics> getArimaFittingMetricsList() {
+      @java.lang.Deprecated public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics> getArimaFittingMetricsList() {
         return arimaFittingMetrics_;
       }
       /**
@@ -27031,10 +28274,10 @@ public final class ModelProto {
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
       @java.lang.Override
-      public java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder> 
+      @java.lang.Deprecated public java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder> 
           getArimaFittingMetricsOrBuilderList() {
         return arimaFittingMetrics_;
       }
@@ -27043,10 +28286,10 @@ public final class ModelProto {
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
       @java.lang.Override
-      public int getArimaFittingMetricsCount() {
+      @java.lang.Deprecated public int getArimaFittingMetricsCount() {
         return arimaFittingMetrics_.size();
       }
       /**
@@ -27054,10 +28297,10 @@ public final class ModelProto {
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
       @java.lang.Override
-      public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics getArimaFittingMetrics(int index) {
+      @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics getArimaFittingMetrics(int index) {
         return arimaFittingMetrics_.get(index);
       }
       /**
@@ -27065,10 +28308,10 @@ public final class ModelProto {
        * Arima model fitting metrics.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
        */
       @java.lang.Override
-      public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder getArimaFittingMetricsOrBuilder(
+      @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder getArimaFittingMetricsOrBuilder(
           int index) {
         return arimaFittingMetrics_.get(index);
       }
@@ -27091,11 +28334,11 @@ public final class ModelProto {
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @return A list containing the seasonalPeriods.
        */
       @java.lang.Override
-      public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType> getSeasonalPeriodsList() {
+      @java.lang.Deprecated public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType> getSeasonalPeriodsList() {
         return new com.google.protobuf.Internal.ListAdapter<
             java.lang.Integer, com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType>(seasonalPeriods_, seasonalPeriods_converter_);
       }
@@ -27105,11 +28348,11 @@ public final class ModelProto {
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @return The count of seasonalPeriods.
        */
       @java.lang.Override
-      public int getSeasonalPeriodsCount() {
+      @java.lang.Deprecated public int getSeasonalPeriodsCount() {
         return seasonalPeriods_.size();
       }
       /**
@@ -27118,12 +28361,12 @@ public final class ModelProto {
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @param index The index of the element to return.
        * @return The seasonalPeriods at the given index.
        */
       @java.lang.Override
-      public com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType getSeasonalPeriods(int index) {
+      @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType getSeasonalPeriods(int index) {
         return seasonalPeriods_converter_.convert(seasonalPeriods_.get(index));
       }
       /**
@@ -27132,11 +28375,11 @@ public final class ModelProto {
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @return A list containing the enum numeric values on the wire for seasonalPeriods.
        */
       @java.lang.Override
-      public java.util.List<java.lang.Integer>
+      @java.lang.Deprecated public java.util.List<java.lang.Integer>
       getSeasonalPeriodsValueList() {
         return seasonalPeriods_;
       }
@@ -27146,12 +28389,12 @@ public final class ModelProto {
        * time series.
        * </pre>
        *
-       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+       * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
        * @param index The index of the value to return.
        * @return The enum numeric value on the wire of seasonalPeriods at the given index.
        */
       @java.lang.Override
-      public int getSeasonalPeriodsValue(int index) {
+      @java.lang.Deprecated public int getSeasonalPeriodsValue(int index) {
         return seasonalPeriods_.get(index);
       }
       private int seasonalPeriodsMemoizedSerializedSize;
@@ -27164,11 +28407,11 @@ public final class ModelProto {
        * is not 1.
        * </pre>
        *
-       * <code>repeated bool has_drift = 4;</code>
+       * <code>repeated bool has_drift = 4 [deprecated = true];</code>
        * @return A list containing the hasDrift.
        */
       @java.lang.Override
-      public java.util.List<java.lang.Boolean>
+      @java.lang.Deprecated public java.util.List<java.lang.Boolean>
           getHasDriftList() {
         return hasDrift_;
       }
@@ -27178,10 +28421,10 @@ public final class ModelProto {
        * is not 1.
        * </pre>
        *
-       * <code>repeated bool has_drift = 4;</code>
+       * <code>repeated bool has_drift = 4 [deprecated = true];</code>
        * @return The count of hasDrift.
        */
-      public int getHasDriftCount() {
+      @java.lang.Deprecated public int getHasDriftCount() {
         return hasDrift_.size();
       }
       /**
@@ -27190,11 +28433,11 @@ public final class ModelProto {
        * is not 1.
        * </pre>
        *
-       * <code>repeated bool has_drift = 4;</code>
+       * <code>repeated bool has_drift = 4 [deprecated = true];</code>
        * @param index The index of the element to return.
        * @return The hasDrift at the given index.
        */
-      public boolean getHasDrift(int index) {
+      @java.lang.Deprecated public boolean getHasDrift(int index) {
         return hasDrift_.getBoolean(index);
       }
       private int hasDriftMemoizedSerializedSize = -1;
@@ -27206,10 +28449,10 @@ public final class ModelProto {
        * Id to differentiate different time series for the large-scale case.
        * </pre>
        *
-       * <code>repeated string time_series_id = 5;</code>
+       * <code>repeated string time_series_id = 5 [deprecated = true];</code>
        * @return A list containing the timeSeriesId.
        */
-      public com.google.protobuf.ProtocolStringList
+      @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
           getTimeSeriesIdList() {
         return timeSeriesId_;
       }
@@ -27218,10 +28461,10 @@ public final class ModelProto {
        * Id to differentiate different time series for the large-scale case.
        * </pre>
        *
-       * <code>repeated string time_series_id = 5;</code>
+       * <code>repeated string time_series_id = 5 [deprecated = true];</code>
        * @return The count of timeSeriesId.
        */
-      public int getTimeSeriesIdCount() {
+      @java.lang.Deprecated public int getTimeSeriesIdCount() {
         return timeSeriesId_.size();
       }
       /**
@@ -27229,11 +28472,11 @@ public final class ModelProto {
        * Id to differentiate different time series for the large-scale case.
        * </pre>
        *
-       * <code>repeated string time_series_id = 5;</code>
+       * <code>repeated string time_series_id = 5 [deprecated = true];</code>
        * @param index The index of the element to return.
        * @return The timeSeriesId at the given index.
        */
-      public java.lang.String getTimeSeriesId(int index) {
+      @java.lang.Deprecated public java.lang.String getTimeSeriesId(int index) {
         return timeSeriesId_.get(index);
       }
       /**
@@ -27241,11 +28484,11 @@ public final class ModelProto {
        * Id to differentiate different time series for the large-scale case.
        * </pre>
        *
-       * <code>repeated string time_series_id = 5;</code>
+       * <code>repeated string time_series_id = 5 [deprecated = true];</code>
        * @param index The index of the value to return.
        * @return The bytes of the timeSeriesId at the given index.
        */
-      public com.google.protobuf.ByteString
+      @java.lang.Deprecated public com.google.protobuf.ByteString
           getTimeSeriesIdBytes(int index) {
         return timeSeriesId_.getByteString(index);
       }
@@ -27905,9 +29148,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder> getNonSeasonalOrderList() {
+        @java.lang.Deprecated public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder> getNonSeasonalOrderList() {
           if (nonSeasonalOrderBuilder_ == null) {
             return java.util.Collections.unmodifiableList(nonSeasonalOrder_);
           } else {
@@ -27919,9 +29162,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public int getNonSeasonalOrderCount() {
+        @java.lang.Deprecated public int getNonSeasonalOrderCount() {
           if (nonSeasonalOrderBuilder_ == null) {
             return nonSeasonalOrder_.size();
           } else {
@@ -27933,9 +29176,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder getNonSeasonalOrder(int index) {
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder getNonSeasonalOrder(int index) {
           if (nonSeasonalOrderBuilder_ == null) {
             return nonSeasonalOrder_.get(index);
           } else {
@@ -27947,9 +29190,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder setNonSeasonalOrder(
+        @java.lang.Deprecated public Builder setNonSeasonalOrder(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder value) {
           if (nonSeasonalOrderBuilder_ == null) {
             if (value == null) {
@@ -27968,9 +29211,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder setNonSeasonalOrder(
+        @java.lang.Deprecated public Builder setNonSeasonalOrder(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder builderForValue) {
           if (nonSeasonalOrderBuilder_ == null) {
             ensureNonSeasonalOrderIsMutable();
@@ -27986,9 +29229,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder addNonSeasonalOrder(com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder value) {
+        @java.lang.Deprecated public Builder addNonSeasonalOrder(com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder value) {
           if (nonSeasonalOrderBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -28006,9 +29249,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder addNonSeasonalOrder(
+        @java.lang.Deprecated public Builder addNonSeasonalOrder(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder value) {
           if (nonSeasonalOrderBuilder_ == null) {
             if (value == null) {
@@ -28027,9 +29270,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder addNonSeasonalOrder(
+        @java.lang.Deprecated public Builder addNonSeasonalOrder(
             com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder builderForValue) {
           if (nonSeasonalOrderBuilder_ == null) {
             ensureNonSeasonalOrderIsMutable();
@@ -28045,9 +29288,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder addNonSeasonalOrder(
+        @java.lang.Deprecated public Builder addNonSeasonalOrder(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder builderForValue) {
           if (nonSeasonalOrderBuilder_ == null) {
             ensureNonSeasonalOrderIsMutable();
@@ -28063,9 +29306,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder addAllNonSeasonalOrder(
+        @java.lang.Deprecated public Builder addAllNonSeasonalOrder(
             java.lang.Iterable<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder> values) {
           if (nonSeasonalOrderBuilder_ == null) {
             ensureNonSeasonalOrderIsMutable();
@@ -28082,9 +29325,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder clearNonSeasonalOrder() {
+        @java.lang.Deprecated public Builder clearNonSeasonalOrder() {
           if (nonSeasonalOrderBuilder_ == null) {
             nonSeasonalOrder_ = java.util.Collections.emptyList();
             bitField0_ = (bitField0_ & ~0x00000001);
@@ -28099,9 +29342,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public Builder removeNonSeasonalOrder(int index) {
+        @java.lang.Deprecated public Builder removeNonSeasonalOrder(int index) {
           if (nonSeasonalOrderBuilder_ == null) {
             ensureNonSeasonalOrderIsMutable();
             nonSeasonalOrder_.remove(index);
@@ -28116,9 +29359,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder getNonSeasonalOrderBuilder(
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder getNonSeasonalOrderBuilder(
             int index) {
           return getNonSeasonalOrderFieldBuilder().getBuilder(index);
         }
@@ -28127,9 +29370,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder getNonSeasonalOrderOrBuilder(
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder getNonSeasonalOrderOrBuilder(
             int index) {
           if (nonSeasonalOrderBuilder_ == null) {
             return nonSeasonalOrder_.get(index);  } else {
@@ -28141,9 +29384,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder> 
+        @java.lang.Deprecated public java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrderOrBuilder> 
              getNonSeasonalOrderOrBuilderList() {
           if (nonSeasonalOrderBuilder_ != null) {
             return nonSeasonalOrderBuilder_.getMessageOrBuilderList();
@@ -28156,9 +29399,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder addNonSeasonalOrderBuilder() {
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder addNonSeasonalOrderBuilder() {
           return getNonSeasonalOrderFieldBuilder().addBuilder(
               com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.getDefaultInstance());
         }
@@ -28167,9 +29410,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder addNonSeasonalOrderBuilder(
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder addNonSeasonalOrderBuilder(
             int index) {
           return getNonSeasonalOrderFieldBuilder().addBuilder(
               index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.getDefaultInstance());
@@ -28179,9 +29422,9 @@ public final class ModelProto {
          * Non-seasonal order.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaOrder non_seasonal_order = 1 [deprecated = true];</code>
          */
-        public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder> 
+        @java.lang.Deprecated public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaOrder.Builder> 
              getNonSeasonalOrderBuilderList() {
           return getNonSeasonalOrderFieldBuilder().getBuilderList();
         }
@@ -28217,9 +29460,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics> getArimaFittingMetricsList() {
+        @java.lang.Deprecated public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics> getArimaFittingMetricsList() {
           if (arimaFittingMetricsBuilder_ == null) {
             return java.util.Collections.unmodifiableList(arimaFittingMetrics_);
           } else {
@@ -28231,9 +29474,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public int getArimaFittingMetricsCount() {
+        @java.lang.Deprecated public int getArimaFittingMetricsCount() {
           if (arimaFittingMetricsBuilder_ == null) {
             return arimaFittingMetrics_.size();
           } else {
@@ -28245,9 +29488,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics getArimaFittingMetrics(int index) {
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics getArimaFittingMetrics(int index) {
           if (arimaFittingMetricsBuilder_ == null) {
             return arimaFittingMetrics_.get(index);
           } else {
@@ -28259,9 +29502,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder setArimaFittingMetrics(
+        @java.lang.Deprecated public Builder setArimaFittingMetrics(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics value) {
           if (arimaFittingMetricsBuilder_ == null) {
             if (value == null) {
@@ -28280,9 +29523,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder setArimaFittingMetrics(
+        @java.lang.Deprecated public Builder setArimaFittingMetrics(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder builderForValue) {
           if (arimaFittingMetricsBuilder_ == null) {
             ensureArimaFittingMetricsIsMutable();
@@ -28298,9 +29541,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder addArimaFittingMetrics(com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics value) {
+        @java.lang.Deprecated public Builder addArimaFittingMetrics(com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics value) {
           if (arimaFittingMetricsBuilder_ == null) {
             if (value == null) {
               throw new NullPointerException();
@@ -28318,9 +29561,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder addArimaFittingMetrics(
+        @java.lang.Deprecated public Builder addArimaFittingMetrics(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics value) {
           if (arimaFittingMetricsBuilder_ == null) {
             if (value == null) {
@@ -28339,9 +29582,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder addArimaFittingMetrics(
+        @java.lang.Deprecated public Builder addArimaFittingMetrics(
             com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder builderForValue) {
           if (arimaFittingMetricsBuilder_ == null) {
             ensureArimaFittingMetricsIsMutable();
@@ -28357,9 +29600,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder addArimaFittingMetrics(
+        @java.lang.Deprecated public Builder addArimaFittingMetrics(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder builderForValue) {
           if (arimaFittingMetricsBuilder_ == null) {
             ensureArimaFittingMetricsIsMutable();
@@ -28375,9 +29618,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder addAllArimaFittingMetrics(
+        @java.lang.Deprecated public Builder addAllArimaFittingMetrics(
             java.lang.Iterable<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics> values) {
           if (arimaFittingMetricsBuilder_ == null) {
             ensureArimaFittingMetricsIsMutable();
@@ -28394,9 +29637,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder clearArimaFittingMetrics() {
+        @java.lang.Deprecated public Builder clearArimaFittingMetrics() {
           if (arimaFittingMetricsBuilder_ == null) {
             arimaFittingMetrics_ = java.util.Collections.emptyList();
             bitField0_ = (bitField0_ & ~0x00000002);
@@ -28411,9 +29654,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public Builder removeArimaFittingMetrics(int index) {
+        @java.lang.Deprecated public Builder removeArimaFittingMetrics(int index) {
           if (arimaFittingMetricsBuilder_ == null) {
             ensureArimaFittingMetricsIsMutable();
             arimaFittingMetrics_.remove(index);
@@ -28428,9 +29671,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder getArimaFittingMetricsBuilder(
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder getArimaFittingMetricsBuilder(
             int index) {
           return getArimaFittingMetricsFieldBuilder().getBuilder(index);
         }
@@ -28439,9 +29682,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder getArimaFittingMetricsOrBuilder(
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder getArimaFittingMetricsOrBuilder(
             int index) {
           if (arimaFittingMetricsBuilder_ == null) {
             return arimaFittingMetrics_.get(index);  } else {
@@ -28453,9 +29696,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder> 
+        @java.lang.Deprecated public java.util.List<? extends com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetricsOrBuilder> 
              getArimaFittingMetricsOrBuilderList() {
           if (arimaFittingMetricsBuilder_ != null) {
             return arimaFittingMetricsBuilder_.getMessageOrBuilderList();
@@ -28468,9 +29711,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder addArimaFittingMetricsBuilder() {
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder addArimaFittingMetricsBuilder() {
           return getArimaFittingMetricsFieldBuilder().addBuilder(
               com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.getDefaultInstance());
         }
@@ -28479,9 +29722,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder addArimaFittingMetricsBuilder(
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder addArimaFittingMetricsBuilder(
             int index) {
           return getArimaFittingMetricsFieldBuilder().addBuilder(
               index, com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.getDefaultInstance());
@@ -28491,9 +29734,9 @@ public final class ModelProto {
          * Arima model fitting metrics.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.ArimaFittingMetrics arima_fitting_metrics = 2 [deprecated = true];</code>
          */
-        public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder> 
+        @java.lang.Deprecated public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.ArimaFittingMetrics.Builder> 
              getArimaFittingMetricsBuilderList() {
           return getArimaFittingMetricsFieldBuilder().getBuilderList();
         }
@@ -28526,10 +29769,10 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @return A list containing the seasonalPeriods.
          */
-        public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType> getSeasonalPeriodsList() {
+        @java.lang.Deprecated public java.util.List<com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType> getSeasonalPeriodsList() {
           return new com.google.protobuf.Internal.ListAdapter<
               java.lang.Integer, com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType>(seasonalPeriods_, seasonalPeriods_converter_);
         }
@@ -28539,10 +29782,10 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @return The count of seasonalPeriods.
          */
-        public int getSeasonalPeriodsCount() {
+        @java.lang.Deprecated public int getSeasonalPeriodsCount() {
           return seasonalPeriods_.size();
         }
         /**
@@ -28551,11 +29794,11 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @param index The index of the element to return.
          * @return The seasonalPeriods at the given index.
          */
-        public com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType getSeasonalPeriods(int index) {
+        @java.lang.Deprecated public com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType getSeasonalPeriods(int index) {
           return seasonalPeriods_converter_.convert(seasonalPeriods_.get(index));
         }
         /**
@@ -28564,12 +29807,12 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @param index The index to set the value at.
          * @param value The seasonalPeriods to set.
          * @return This builder for chaining.
          */
-        public Builder setSeasonalPeriods(
+        @java.lang.Deprecated public Builder setSeasonalPeriods(
             int index, com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType value) {
           if (value == null) {
             throw new NullPointerException();
@@ -28585,11 +29828,11 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @param value The seasonalPeriods to add.
          * @return This builder for chaining.
          */
-        public Builder addSeasonalPeriods(com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType value) {
+        @java.lang.Deprecated public Builder addSeasonalPeriods(com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType value) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -28604,11 +29847,11 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @param values The seasonalPeriods to add.
          * @return This builder for chaining.
          */
-        public Builder addAllSeasonalPeriods(
+        @java.lang.Deprecated public Builder addAllSeasonalPeriods(
             java.lang.Iterable<? extends com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType> values) {
           ensureSeasonalPeriodsIsMutable();
           for (com.google.cloud.bigquery.v2.ModelProto.Model.SeasonalPeriod.SeasonalPeriodType value : values) {
@@ -28623,10 +29866,10 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @return This builder for chaining.
          */
-        public Builder clearSeasonalPeriods() {
+        @java.lang.Deprecated public Builder clearSeasonalPeriods() {
           seasonalPeriods_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
@@ -28638,10 +29881,10 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @return A list containing the enum numeric values on the wire for seasonalPeriods.
          */
-        public java.util.List<java.lang.Integer>
+        @java.lang.Deprecated public java.util.List<java.lang.Integer>
         getSeasonalPeriodsValueList() {
           return java.util.Collections.unmodifiableList(seasonalPeriods_);
         }
@@ -28651,11 +29894,11 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @param index The index of the value to return.
          * @return The enum numeric value on the wire of seasonalPeriods at the given index.
          */
-        public int getSeasonalPeriodsValue(int index) {
+        @java.lang.Deprecated public int getSeasonalPeriodsValue(int index) {
           return seasonalPeriods_.get(index);
         }
         /**
@@ -28664,12 +29907,12 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @param index The index of the value to return.
          * @return The enum numeric value on the wire of seasonalPeriods at the given index.
          * @return This builder for chaining.
          */
-        public Builder setSeasonalPeriodsValue(
+        @java.lang.Deprecated public Builder setSeasonalPeriodsValue(
             int index, int value) {
           ensureSeasonalPeriodsIsMutable();
           seasonalPeriods_.set(index, value);
@@ -28682,11 +29925,11 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @param value The enum numeric value on the wire for seasonalPeriods to add.
          * @return This builder for chaining.
          */
-        public Builder addSeasonalPeriodsValue(int value) {
+        @java.lang.Deprecated public Builder addSeasonalPeriodsValue(int value) {
           ensureSeasonalPeriodsIsMutable();
           seasonalPeriods_.add(value);
           onChanged();
@@ -28698,11 +29941,11 @@ public final class ModelProto {
          * time series.
          * </pre>
          *
-         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3;</code>
+         * <code>repeated .google.cloud.bigquery.v2.Model.SeasonalPeriod.SeasonalPeriodType seasonal_periods = 3 [deprecated = true];</code>
          * @param values The enum numeric values on the wire for seasonalPeriods to add.
          * @return This builder for chaining.
          */
-        public Builder addAllSeasonalPeriodsValue(
+        @java.lang.Deprecated public Builder addAllSeasonalPeriodsValue(
             java.lang.Iterable<java.lang.Integer> values) {
           ensureSeasonalPeriodsIsMutable();
           for (int value : values) {
@@ -28725,10 +29968,10 @@ public final class ModelProto {
          * is not 1.
          * </pre>
          *
-         * <code>repeated bool has_drift = 4;</code>
+         * <code>repeated bool has_drift = 4 [deprecated = true];</code>
          * @return A list containing the hasDrift.
          */
-        public java.util.List<java.lang.Boolean>
+        @java.lang.Deprecated public java.util.List<java.lang.Boolean>
             getHasDriftList() {
           return ((bitField0_ & 0x00000008) != 0) ?
                    java.util.Collections.unmodifiableList(hasDrift_) : hasDrift_;
@@ -28739,10 +29982,10 @@ public final class ModelProto {
          * is not 1.
          * </pre>
          *
-         * <code>repeated bool has_drift = 4;</code>
+         * <code>repeated bool has_drift = 4 [deprecated = true];</code>
          * @return The count of hasDrift.
          */
-        public int getHasDriftCount() {
+        @java.lang.Deprecated public int getHasDriftCount() {
           return hasDrift_.size();
         }
         /**
@@ -28751,11 +29994,11 @@ public final class ModelProto {
          * is not 1.
          * </pre>
          *
-         * <code>repeated bool has_drift = 4;</code>
+         * <code>repeated bool has_drift = 4 [deprecated = true];</code>
          * @param index The index of the element to return.
          * @return The hasDrift at the given index.
          */
-        public boolean getHasDrift(int index) {
+        @java.lang.Deprecated public boolean getHasDrift(int index) {
           return hasDrift_.getBoolean(index);
         }
         /**
@@ -28764,12 +30007,12 @@ public final class ModelProto {
          * is not 1.
          * </pre>
          *
-         * <code>repeated bool has_drift = 4;</code>
+         * <code>repeated bool has_drift = 4 [deprecated = true];</code>
          * @param index The index to set the value at.
          * @param value The hasDrift to set.
          * @return This builder for chaining.
          */
-        public Builder setHasDrift(
+        @java.lang.Deprecated public Builder setHasDrift(
             int index, boolean value) {
           ensureHasDriftIsMutable();
           hasDrift_.setBoolean(index, value);
@@ -28782,11 +30025,11 @@ public final class ModelProto {
          * is not 1.
          * </pre>
          *
-         * <code>repeated bool has_drift = 4;</code>
+         * <code>repeated bool has_drift = 4 [deprecated = true];</code>
          * @param value The hasDrift to add.
          * @return This builder for chaining.
          */
-        public Builder addHasDrift(boolean value) {
+        @java.lang.Deprecated public Builder addHasDrift(boolean value) {
           ensureHasDriftIsMutable();
           hasDrift_.addBoolean(value);
           onChanged();
@@ -28798,11 +30041,11 @@ public final class ModelProto {
          * is not 1.
          * </pre>
          *
-         * <code>repeated bool has_drift = 4;</code>
+         * <code>repeated bool has_drift = 4 [deprecated = true];</code>
          * @param values The hasDrift to add.
          * @return This builder for chaining.
          */
-        public Builder addAllHasDrift(
+        @java.lang.Deprecated public Builder addAllHasDrift(
             java.lang.Iterable<? extends java.lang.Boolean> values) {
           ensureHasDriftIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -28816,10 +30059,10 @@ public final class ModelProto {
          * is not 1.
          * </pre>
          *
-         * <code>repeated bool has_drift = 4;</code>
+         * <code>repeated bool has_drift = 4 [deprecated = true];</code>
          * @return This builder for chaining.
          */
-        public Builder clearHasDrift() {
+        @java.lang.Deprecated public Builder clearHasDrift() {
           hasDrift_ = emptyBooleanList();
           bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
@@ -28838,10 +30081,10 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @return A list containing the timeSeriesId.
          */
-        public com.google.protobuf.ProtocolStringList
+        @java.lang.Deprecated public com.google.protobuf.ProtocolStringList
             getTimeSeriesIdList() {
           return timeSeriesId_.getUnmodifiableView();
         }
@@ -28850,10 +30093,10 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @return The count of timeSeriesId.
          */
-        public int getTimeSeriesIdCount() {
+        @java.lang.Deprecated public int getTimeSeriesIdCount() {
           return timeSeriesId_.size();
         }
         /**
@@ -28861,11 +30104,11 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @param index The index of the element to return.
          * @return The timeSeriesId at the given index.
          */
-        public java.lang.String getTimeSeriesId(int index) {
+        @java.lang.Deprecated public java.lang.String getTimeSeriesId(int index) {
           return timeSeriesId_.get(index);
         }
         /**
@@ -28873,11 +30116,11 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @param index The index of the value to return.
          * @return The bytes of the timeSeriesId at the given index.
          */
-        public com.google.protobuf.ByteString
+        @java.lang.Deprecated public com.google.protobuf.ByteString
             getTimeSeriesIdBytes(int index) {
           return timeSeriesId_.getByteString(index);
         }
@@ -28886,12 +30129,12 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @param index The index to set the value at.
          * @param value The timeSeriesId to set.
          * @return This builder for chaining.
          */
-        public Builder setTimeSeriesId(
+        @java.lang.Deprecated public Builder setTimeSeriesId(
             int index, java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
@@ -28906,11 +30149,11 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @param value The timeSeriesId to add.
          * @return This builder for chaining.
          */
-        public Builder addTimeSeriesId(
+        @java.lang.Deprecated public Builder addTimeSeriesId(
             java.lang.String value) {
           if (value == null) {
     throw new NullPointerException();
@@ -28925,11 +30168,11 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @param values The timeSeriesId to add.
          * @return This builder for chaining.
          */
-        public Builder addAllTimeSeriesId(
+        @java.lang.Deprecated public Builder addAllTimeSeriesId(
             java.lang.Iterable<java.lang.String> values) {
           ensureTimeSeriesIdIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -28942,10 +30185,10 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @return This builder for chaining.
          */
-        public Builder clearTimeSeriesId() {
+        @java.lang.Deprecated public Builder clearTimeSeriesId() {
           timeSeriesId_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
@@ -28956,11 +30199,11 @@ public final class ModelProto {
          * Id to differentiate different time series for the large-scale case.
          * </pre>
          *
-         * <code>repeated string time_series_id = 5;</code>
+         * <code>repeated string time_series_id = 5 [deprecated = true];</code>
          * @param value The bytes of the timeSeriesId to add.
          * @return This builder for chaining.
          */
-        public Builder addTimeSeriesIdBytes(
+        @java.lang.Deprecated public Builder addTimeSeriesIdBytes(
             com.google.protobuf.ByteString value) {
           if (value == null) {
     throw new NullPointerException();
@@ -36840,7 +38083,7 @@ public final class ModelProto {
 
         /**
          * <pre>
-         * [Beta] Google Cloud Storage URI from which the model was imported. Only
+         * Google Cloud Storage URI from which the model was imported. Only
          * applicable for imported models.
          * </pre>
          *
@@ -36850,7 +38093,7 @@ public final class ModelProto {
         java.lang.String getModelUri();
         /**
          * <pre>
-         * [Beta] Google Cloud Storage URI from which the model was imported. Only
+         * Google Cloud Storage URI from which the model was imported. Only
          * applicable for imported models.
          * </pre>
          *
@@ -37232,8 +38475,7 @@ public final class ModelProto {
 
         /**
          * <pre>
-         * The id column that will be used to indicate different time series to
-         * forecast in parallel.
+         * The time series id column that was used during ARIMA model training.
          * </pre>
          *
          * <code>string time_series_id_column = 43;</code>
@@ -37242,8 +38484,7 @@ public final class ModelProto {
         java.lang.String getTimeSeriesIdColumn();
         /**
          * <pre>
-         * The id column that will be used to indicate different time series to
-         * forecast in parallel.
+         * The time series id column that was used during ARIMA model training.
          * </pre>
          *
          * <code>string time_series_id_column = 43;</code>
@@ -37251,6 +38492,47 @@ public final class ModelProto {
          */
         com.google.protobuf.ByteString
             getTimeSeriesIdColumnBytes();
+
+        /**
+         * <pre>
+         * The time series id columns that were used during ARIMA model training.
+         * </pre>
+         *
+         * <code>repeated string time_series_id_columns = 51;</code>
+         * @return A list containing the timeSeriesIdColumns.
+         */
+        java.util.List<java.lang.String>
+            getTimeSeriesIdColumnsList();
+        /**
+         * <pre>
+         * The time series id columns that were used during ARIMA model training.
+         * </pre>
+         *
+         * <code>repeated string time_series_id_columns = 51;</code>
+         * @return The count of timeSeriesIdColumns.
+         */
+        int getTimeSeriesIdColumnsCount();
+        /**
+         * <pre>
+         * The time series id columns that were used during ARIMA model training.
+         * </pre>
+         *
+         * <code>repeated string time_series_id_columns = 51;</code>
+         * @param index The index of the element to return.
+         * @return The timeSeriesIdColumns at the given index.
+         */
+        java.lang.String getTimeSeriesIdColumns(int index);
+        /**
+         * <pre>
+         * The time series id columns that were used during ARIMA model training.
+         * </pre>
+         *
+         * <code>repeated string time_series_id_columns = 51;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the timeSeriesIdColumns at the given index.
+         */
+        com.google.protobuf.ByteString
+            getTimeSeriesIdColumnsBytes(int index);
 
         /**
          * <pre>
@@ -37284,8 +38566,96 @@ public final class ModelProto {
          * @return The autoArimaMaxOrder.
          */
         long getAutoArimaMaxOrder();
+
+        /**
+         * <pre>
+         * If true, perform decompose time series and save the results.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+         * @return Whether the decomposeTimeSeries field is set.
+         */
+        boolean hasDecomposeTimeSeries();
+        /**
+         * <pre>
+         * If true, perform decompose time series and save the results.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+         * @return The decomposeTimeSeries.
+         */
+        com.google.protobuf.BoolValue getDecomposeTimeSeries();
+        /**
+         * <pre>
+         * If true, perform decompose time series and save the results.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+         */
+        com.google.protobuf.BoolValueOrBuilder getDecomposeTimeSeriesOrBuilder();
+
+        /**
+         * <pre>
+         * If true, clean spikes and dips in the input time series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+         * @return Whether the cleanSpikesAndDips field is set.
+         */
+        boolean hasCleanSpikesAndDips();
+        /**
+         * <pre>
+         * If true, clean spikes and dips in the input time series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+         * @return The cleanSpikesAndDips.
+         */
+        com.google.protobuf.BoolValue getCleanSpikesAndDips();
+        /**
+         * <pre>
+         * If true, clean spikes and dips in the input time series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+         */
+        com.google.protobuf.BoolValueOrBuilder getCleanSpikesAndDipsOrBuilder();
+
+        /**
+         * <pre>
+         * If true, detect step changes and make data adjustment in the input time
+         * series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+         * @return Whether the adjustStepChanges field is set.
+         */
+        boolean hasAdjustStepChanges();
+        /**
+         * <pre>
+         * If true, detect step changes and make data adjustment in the input time
+         * series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+         * @return The adjustStepChanges.
+         */
+        com.google.protobuf.BoolValue getAdjustStepChanges();
+        /**
+         * <pre>
+         * If true, detect step changes and make data adjustment in the input time
+         * series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+         */
+        com.google.protobuf.BoolValueOrBuilder getAdjustStepChangesOrBuilder();
       }
       /**
+       * <pre>
+       * Options used in model training.
+       * </pre>
+       *
        * Protobuf type {@code google.cloud.bigquery.v2.Model.TrainingRun.TrainingOptions}
        */
       public static final class TrainingOptions extends
@@ -37317,6 +38687,7 @@ public final class ModelProto {
           dataFrequency_ = 0;
           holidayRegion_ = 0;
           timeSeriesIdColumn_ = "";
+          timeSeriesIdColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         }
 
         @java.lang.Override
@@ -37682,6 +39053,54 @@ public final class ModelProto {
                   autoArimaMaxOrder_ = input.readInt64();
                   break;
                 }
+                case 402: {
+                  com.google.protobuf.BoolValue.Builder subBuilder = null;
+                  if (decomposeTimeSeries_ != null) {
+                    subBuilder = decomposeTimeSeries_.toBuilder();
+                  }
+                  decomposeTimeSeries_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(decomposeTimeSeries_);
+                    decomposeTimeSeries_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 410: {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
+                    timeSeriesIdColumns_ = new com.google.protobuf.LazyStringArrayList();
+                    mutable_bitField0_ |= 0x00000008;
+                  }
+                  timeSeriesIdColumns_.add(s);
+                  break;
+                }
+                case 418: {
+                  com.google.protobuf.BoolValue.Builder subBuilder = null;
+                  if (cleanSpikesAndDips_ != null) {
+                    subBuilder = cleanSpikesAndDips_.toBuilder();
+                  }
+                  cleanSpikesAndDips_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(cleanSpikesAndDips_);
+                    cleanSpikesAndDips_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
+                case 426: {
+                  com.google.protobuf.BoolValue.Builder subBuilder = null;
+                  if (adjustStepChanges_ != null) {
+                    subBuilder = adjustStepChanges_.toBuilder();
+                  }
+                  adjustStepChanges_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                  if (subBuilder != null) {
+                    subBuilder.mergeFrom(adjustStepChanges_);
+                    adjustStepChanges_ = subBuilder.buildPartial();
+                  }
+
+                  break;
+                }
                 default: {
                   if (!parseUnknownField(
                       input, unknownFields, extensionRegistry, tag)) {
@@ -37702,6 +39121,9 @@ public final class ModelProto {
             }
             if (((mutable_bitField0_ & 0x00000004) != 0)) {
               hiddenUnits_.makeImmutable(); // C
+            }
+            if (((mutable_bitField0_ & 0x00000008) != 0)) {
+              timeSeriesIdColumns_ = timeSeriesIdColumns_.getUnmodifiableView();
             }
             this.unknownFields = unknownFields.build();
             makeExtensionsImmutable();
@@ -38434,7 +39856,7 @@ public final class ModelProto {
         private volatile java.lang.Object modelUri_;
         /**
          * <pre>
-         * [Beta] Google Cloud Storage URI from which the model was imported. Only
+         * Google Cloud Storage URI from which the model was imported. Only
          * applicable for imported models.
          * </pre>
          *
@@ -38456,7 +39878,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * [Beta] Google Cloud Storage URI from which the model was imported. Only
+         * Google Cloud Storage URI from which the model was imported. Only
          * applicable for imported models.
          * </pre>
          *
@@ -39055,8 +40477,7 @@ public final class ModelProto {
         private volatile java.lang.Object timeSeriesIdColumn_;
         /**
          * <pre>
-         * The id column that will be used to indicate different time series to
-         * forecast in parallel.
+         * The time series id column that was used during ARIMA model training.
          * </pre>
          *
          * <code>string time_series_id_column = 43;</code>
@@ -39077,8 +40498,7 @@ public final class ModelProto {
         }
         /**
          * <pre>
-         * The id column that will be used to indicate different time series to
-         * forecast in parallel.
+         * The time series id column that was used during ARIMA model training.
          * </pre>
          *
          * <code>string time_series_id_column = 43;</code>
@@ -39097,6 +40517,57 @@ public final class ModelProto {
           } else {
             return (com.google.protobuf.ByteString) ref;
           }
+        }
+
+        public static final int TIME_SERIES_ID_COLUMNS_FIELD_NUMBER = 51;
+        private com.google.protobuf.LazyStringList timeSeriesIdColumns_;
+        /**
+         * <pre>
+         * The time series id columns that were used during ARIMA model training.
+         * </pre>
+         *
+         * <code>repeated string time_series_id_columns = 51;</code>
+         * @return A list containing the timeSeriesIdColumns.
+         */
+        public com.google.protobuf.ProtocolStringList
+            getTimeSeriesIdColumnsList() {
+          return timeSeriesIdColumns_;
+        }
+        /**
+         * <pre>
+         * The time series id columns that were used during ARIMA model training.
+         * </pre>
+         *
+         * <code>repeated string time_series_id_columns = 51;</code>
+         * @return The count of timeSeriesIdColumns.
+         */
+        public int getTimeSeriesIdColumnsCount() {
+          return timeSeriesIdColumns_.size();
+        }
+        /**
+         * <pre>
+         * The time series id columns that were used during ARIMA model training.
+         * </pre>
+         *
+         * <code>repeated string time_series_id_columns = 51;</code>
+         * @param index The index of the element to return.
+         * @return The timeSeriesIdColumns at the given index.
+         */
+        public java.lang.String getTimeSeriesIdColumns(int index) {
+          return timeSeriesIdColumns_.get(index);
+        }
+        /**
+         * <pre>
+         * The time series id columns that were used during ARIMA model training.
+         * </pre>
+         *
+         * <code>repeated string time_series_id_columns = 51;</code>
+         * @param index The index of the value to return.
+         * @return The bytes of the timeSeriesIdColumns at the given index.
+         */
+        public com.google.protobuf.ByteString
+            getTimeSeriesIdColumnsBytes(int index) {
+          return timeSeriesIdColumns_.getByteString(index);
         }
 
         public static final int HORIZON_FIELD_NUMBER = 44;
@@ -39145,6 +40616,123 @@ public final class ModelProto {
         @java.lang.Override
         public long getAutoArimaMaxOrder() {
           return autoArimaMaxOrder_;
+        }
+
+        public static final int DECOMPOSE_TIME_SERIES_FIELD_NUMBER = 50;
+        private com.google.protobuf.BoolValue decomposeTimeSeries_;
+        /**
+         * <pre>
+         * If true, perform decompose time series and save the results.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+         * @return Whether the decomposeTimeSeries field is set.
+         */
+        @java.lang.Override
+        public boolean hasDecomposeTimeSeries() {
+          return decomposeTimeSeries_ != null;
+        }
+        /**
+         * <pre>
+         * If true, perform decompose time series and save the results.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+         * @return The decomposeTimeSeries.
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValue getDecomposeTimeSeries() {
+          return decomposeTimeSeries_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : decomposeTimeSeries_;
+        }
+        /**
+         * <pre>
+         * If true, perform decompose time series and save the results.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValueOrBuilder getDecomposeTimeSeriesOrBuilder() {
+          return getDecomposeTimeSeries();
+        }
+
+        public static final int CLEAN_SPIKES_AND_DIPS_FIELD_NUMBER = 52;
+        private com.google.protobuf.BoolValue cleanSpikesAndDips_;
+        /**
+         * <pre>
+         * If true, clean spikes and dips in the input time series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+         * @return Whether the cleanSpikesAndDips field is set.
+         */
+        @java.lang.Override
+        public boolean hasCleanSpikesAndDips() {
+          return cleanSpikesAndDips_ != null;
+        }
+        /**
+         * <pre>
+         * If true, clean spikes and dips in the input time series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+         * @return The cleanSpikesAndDips.
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValue getCleanSpikesAndDips() {
+          return cleanSpikesAndDips_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : cleanSpikesAndDips_;
+        }
+        /**
+         * <pre>
+         * If true, clean spikes and dips in the input time series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValueOrBuilder getCleanSpikesAndDipsOrBuilder() {
+          return getCleanSpikesAndDips();
+        }
+
+        public static final int ADJUST_STEP_CHANGES_FIELD_NUMBER = 53;
+        private com.google.protobuf.BoolValue adjustStepChanges_;
+        /**
+         * <pre>
+         * If true, detect step changes and make data adjustment in the input time
+         * series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+         * @return Whether the adjustStepChanges field is set.
+         */
+        @java.lang.Override
+        public boolean hasAdjustStepChanges() {
+          return adjustStepChanges_ != null;
+        }
+        /**
+         * <pre>
+         * If true, detect step changes and make data adjustment in the input time
+         * series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+         * @return The adjustStepChanges.
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValue getAdjustStepChanges() {
+          return adjustStepChanges_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : adjustStepChanges_;
+        }
+        /**
+         * <pre>
+         * If true, detect step changes and make data adjustment in the input time
+         * series.
+         * </pre>
+         *
+         * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+         */
+        @java.lang.Override
+        public com.google.protobuf.BoolValueOrBuilder getAdjustStepChangesOrBuilder() {
+          return getAdjustStepChanges();
         }
 
         private byte memoizedIsInitialized = -1;
@@ -39297,6 +40885,18 @@ public final class ModelProto {
           }
           if (autoArimaMaxOrder_ != 0L) {
             output.writeInt64(46, autoArimaMaxOrder_);
+          }
+          if (decomposeTimeSeries_ != null) {
+            output.writeMessage(50, getDecomposeTimeSeries());
+          }
+          for (int i = 0; i < timeSeriesIdColumns_.size(); i++) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 51, timeSeriesIdColumns_.getRaw(i));
+          }
+          if (cleanSpikesAndDips_ != null) {
+            output.writeMessage(52, getCleanSpikesAndDips());
+          }
+          if (adjustStepChanges_ != null) {
+            output.writeMessage(53, getAdjustStepChanges());
           }
           unknownFields.writeTo(output);
         }
@@ -39491,6 +41091,26 @@ public final class ModelProto {
             size += com.google.protobuf.CodedOutputStream
               .computeInt64Size(46, autoArimaMaxOrder_);
           }
+          if (decomposeTimeSeries_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(50, getDecomposeTimeSeries());
+          }
+          {
+            int dataSize = 0;
+            for (int i = 0; i < timeSeriesIdColumns_.size(); i++) {
+              dataSize += computeStringSizeNoTag(timeSeriesIdColumns_.getRaw(i));
+            }
+            size += dataSize;
+            size += 2 * getTimeSeriesIdColumnsList().size();
+          }
+          if (cleanSpikesAndDips_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(52, getCleanSpikesAndDips());
+          }
+          if (adjustStepChanges_ != null) {
+            size += com.google.protobuf.CodedOutputStream
+              .computeMessageSize(53, getAdjustStepChanges());
+          }
           size += unknownFields.getSerializedSize();
           memoizedSize = size;
           return size;
@@ -39608,12 +41228,29 @@ public final class ModelProto {
           if (holidayRegion_ != other.holidayRegion_) return false;
           if (!getTimeSeriesIdColumn()
               .equals(other.getTimeSeriesIdColumn())) return false;
+          if (!getTimeSeriesIdColumnsList()
+              .equals(other.getTimeSeriesIdColumnsList())) return false;
           if (getHorizon()
               != other.getHorizon()) return false;
           if (getPreserveInputStructs()
               != other.getPreserveInputStructs()) return false;
           if (getAutoArimaMaxOrder()
               != other.getAutoArimaMaxOrder()) return false;
+          if (hasDecomposeTimeSeries() != other.hasDecomposeTimeSeries()) return false;
+          if (hasDecomposeTimeSeries()) {
+            if (!getDecomposeTimeSeries()
+                .equals(other.getDecomposeTimeSeries())) return false;
+          }
+          if (hasCleanSpikesAndDips() != other.hasCleanSpikesAndDips()) return false;
+          if (hasCleanSpikesAndDips()) {
+            if (!getCleanSpikesAndDips()
+                .equals(other.getCleanSpikesAndDips())) return false;
+          }
+          if (hasAdjustStepChanges() != other.hasAdjustStepChanges()) return false;
+          if (hasAdjustStepChanges()) {
+            if (!getAdjustStepChanges()
+                .equals(other.getAdjustStepChanges())) return false;
+          }
           if (!unknownFields.equals(other.unknownFields)) return false;
           return true;
         }
@@ -39740,6 +41377,10 @@ public final class ModelProto {
           hash = (53 * hash) + holidayRegion_;
           hash = (37 * hash) + TIME_SERIES_ID_COLUMN_FIELD_NUMBER;
           hash = (53 * hash) + getTimeSeriesIdColumn().hashCode();
+          if (getTimeSeriesIdColumnsCount() > 0) {
+            hash = (37 * hash) + TIME_SERIES_ID_COLUMNS_FIELD_NUMBER;
+            hash = (53 * hash) + getTimeSeriesIdColumnsList().hashCode();
+          }
           hash = (37 * hash) + HORIZON_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
               getHorizon());
@@ -39749,6 +41390,18 @@ public final class ModelProto {
           hash = (37 * hash) + AUTO_ARIMA_MAX_ORDER_FIELD_NUMBER;
           hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
               getAutoArimaMaxOrder());
+          if (hasDecomposeTimeSeries()) {
+            hash = (37 * hash) + DECOMPOSE_TIME_SERIES_FIELD_NUMBER;
+            hash = (53 * hash) + getDecomposeTimeSeries().hashCode();
+          }
+          if (hasCleanSpikesAndDips()) {
+            hash = (37 * hash) + CLEAN_SPIKES_AND_DIPS_FIELD_NUMBER;
+            hash = (53 * hash) + getCleanSpikesAndDips().hashCode();
+          }
+          if (hasAdjustStepChanges()) {
+            hash = (37 * hash) + ADJUST_STEP_CHANGES_FIELD_NUMBER;
+            hash = (53 * hash) + getAdjustStepChanges().hashCode();
+          }
           hash = (29 * hash) + unknownFields.hashCode();
           memoizedHashCode = hash;
           return hash;
@@ -39845,6 +41498,10 @@ public final class ModelProto {
           return builder;
         }
         /**
+         * <pre>
+         * Options used in model training.
+         * </pre>
+         *
          * Protobuf type {@code google.cloud.bigquery.v2.Model.TrainingRun.TrainingOptions}
          */
         public static final class Builder extends
@@ -40019,12 +41676,32 @@ public final class ModelProto {
 
             timeSeriesIdColumn_ = "";
 
+            timeSeriesIdColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000008);
             horizon_ = 0L;
 
             preserveInputStructs_ = false;
 
             autoArimaMaxOrder_ = 0L;
 
+            if (decomposeTimeSeriesBuilder_ == null) {
+              decomposeTimeSeries_ = null;
+            } else {
+              decomposeTimeSeries_ = null;
+              decomposeTimeSeriesBuilder_ = null;
+            }
+            if (cleanSpikesAndDipsBuilder_ == null) {
+              cleanSpikesAndDips_ = null;
+            } else {
+              cleanSpikesAndDips_ = null;
+              cleanSpikesAndDipsBuilder_ = null;
+            }
+            if (adjustStepChangesBuilder_ == null) {
+              adjustStepChanges_ = null;
+            } else {
+              adjustStepChanges_ = null;
+              adjustStepChangesBuilder_ = null;
+            }
             return this;
           }
 
@@ -40137,9 +41814,29 @@ public final class ModelProto {
             result.includeDrift_ = includeDrift_;
             result.holidayRegion_ = holidayRegion_;
             result.timeSeriesIdColumn_ = timeSeriesIdColumn_;
+            if (((bitField0_ & 0x00000008) != 0)) {
+              timeSeriesIdColumns_ = timeSeriesIdColumns_.getUnmodifiableView();
+              bitField0_ = (bitField0_ & ~0x00000008);
+            }
+            result.timeSeriesIdColumns_ = timeSeriesIdColumns_;
             result.horizon_ = horizon_;
             result.preserveInputStructs_ = preserveInputStructs_;
             result.autoArimaMaxOrder_ = autoArimaMaxOrder_;
+            if (decomposeTimeSeriesBuilder_ == null) {
+              result.decomposeTimeSeries_ = decomposeTimeSeries_;
+            } else {
+              result.decomposeTimeSeries_ = decomposeTimeSeriesBuilder_.build();
+            }
+            if (cleanSpikesAndDipsBuilder_ == null) {
+              result.cleanSpikesAndDips_ = cleanSpikesAndDips_;
+            } else {
+              result.cleanSpikesAndDips_ = cleanSpikesAndDipsBuilder_.build();
+            }
+            if (adjustStepChangesBuilder_ == null) {
+              result.adjustStepChanges_ = adjustStepChanges_;
+            } else {
+              result.adjustStepChanges_ = adjustStepChangesBuilder_.build();
+            }
             onBuilt();
             return result;
           }
@@ -40329,6 +42026,16 @@ public final class ModelProto {
               timeSeriesIdColumn_ = other.timeSeriesIdColumn_;
               onChanged();
             }
+            if (!other.timeSeriesIdColumns_.isEmpty()) {
+              if (timeSeriesIdColumns_.isEmpty()) {
+                timeSeriesIdColumns_ = other.timeSeriesIdColumns_;
+                bitField0_ = (bitField0_ & ~0x00000008);
+              } else {
+                ensureTimeSeriesIdColumnsIsMutable();
+                timeSeriesIdColumns_.addAll(other.timeSeriesIdColumns_);
+              }
+              onChanged();
+            }
             if (other.getHorizon() != 0L) {
               setHorizon(other.getHorizon());
             }
@@ -40337,6 +42044,15 @@ public final class ModelProto {
             }
             if (other.getAutoArimaMaxOrder() != 0L) {
               setAutoArimaMaxOrder(other.getAutoArimaMaxOrder());
+            }
+            if (other.hasDecomposeTimeSeries()) {
+              mergeDecomposeTimeSeries(other.getDecomposeTimeSeries());
+            }
+            if (other.hasCleanSpikesAndDips()) {
+              mergeCleanSpikesAndDips(other.getCleanSpikesAndDips());
+            }
+            if (other.hasAdjustStepChanges()) {
+              mergeAdjustStepChanges(other.getAdjustStepChanges());
             }
             this.mergeUnknownFields(other.unknownFields);
             onChanged();
@@ -42350,7 +44066,7 @@ public final class ModelProto {
           private java.lang.Object modelUri_ = "";
           /**
            * <pre>
-           * [Beta] Google Cloud Storage URI from which the model was imported. Only
+           * Google Cloud Storage URI from which the model was imported. Only
            * applicable for imported models.
            * </pre>
            *
@@ -42371,7 +44087,7 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * [Beta] Google Cloud Storage URI from which the model was imported. Only
+           * Google Cloud Storage URI from which the model was imported. Only
            * applicable for imported models.
            * </pre>
            *
@@ -42393,7 +44109,7 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * [Beta] Google Cloud Storage URI from which the model was imported. Only
+           * Google Cloud Storage URI from which the model was imported. Only
            * applicable for imported models.
            * </pre>
            *
@@ -42413,7 +44129,7 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * [Beta] Google Cloud Storage URI from which the model was imported. Only
+           * Google Cloud Storage URI from which the model was imported. Only
            * applicable for imported models.
            * </pre>
            *
@@ -42428,7 +44144,7 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * [Beta] Google Cloud Storage URI from which the model was imported. Only
+           * Google Cloud Storage URI from which the model was imported. Only
            * applicable for imported models.
            * </pre>
            *
@@ -44144,8 +45860,7 @@ public final class ModelProto {
           private java.lang.Object timeSeriesIdColumn_ = "";
           /**
            * <pre>
-           * The id column that will be used to indicate different time series to
-           * forecast in parallel.
+           * The time series id column that was used during ARIMA model training.
            * </pre>
            *
            * <code>string time_series_id_column = 43;</code>
@@ -44165,8 +45880,7 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * The id column that will be used to indicate different time series to
-           * forecast in parallel.
+           * The time series id column that was used during ARIMA model training.
            * </pre>
            *
            * <code>string time_series_id_column = 43;</code>
@@ -44187,8 +45901,7 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * The id column that will be used to indicate different time series to
-           * forecast in parallel.
+           * The time series id column that was used during ARIMA model training.
            * </pre>
            *
            * <code>string time_series_id_column = 43;</code>
@@ -44207,8 +45920,7 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * The id column that will be used to indicate different time series to
-           * forecast in parallel.
+           * The time series id column that was used during ARIMA model training.
            * </pre>
            *
            * <code>string time_series_id_column = 43;</code>
@@ -44222,8 +45934,7 @@ public final class ModelProto {
           }
           /**
            * <pre>
-           * The id column that will be used to indicate different time series to
-           * forecast in parallel.
+           * The time series id column that was used during ARIMA model training.
            * </pre>
            *
            * <code>string time_series_id_column = 43;</code>
@@ -44238,6 +45949,152 @@ public final class ModelProto {
   checkByteStringIsUtf8(value);
             
             timeSeriesIdColumn_ = value;
+            onChanged();
+            return this;
+          }
+
+          private com.google.protobuf.LazyStringList timeSeriesIdColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+          private void ensureTimeSeriesIdColumnsIsMutable() {
+            if (!((bitField0_ & 0x00000008) != 0)) {
+              timeSeriesIdColumns_ = new com.google.protobuf.LazyStringArrayList(timeSeriesIdColumns_);
+              bitField0_ |= 0x00000008;
+             }
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @return A list containing the timeSeriesIdColumns.
+           */
+          public com.google.protobuf.ProtocolStringList
+              getTimeSeriesIdColumnsList() {
+            return timeSeriesIdColumns_.getUnmodifiableView();
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @return The count of timeSeriesIdColumns.
+           */
+          public int getTimeSeriesIdColumnsCount() {
+            return timeSeriesIdColumns_.size();
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @param index The index of the element to return.
+           * @return The timeSeriesIdColumns at the given index.
+           */
+          public java.lang.String getTimeSeriesIdColumns(int index) {
+            return timeSeriesIdColumns_.get(index);
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @param index The index of the value to return.
+           * @return The bytes of the timeSeriesIdColumns at the given index.
+           */
+          public com.google.protobuf.ByteString
+              getTimeSeriesIdColumnsBytes(int index) {
+            return timeSeriesIdColumns_.getByteString(index);
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @param index The index to set the value at.
+           * @param value The timeSeriesIdColumns to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTimeSeriesIdColumns(
+              int index, java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTimeSeriesIdColumnsIsMutable();
+            timeSeriesIdColumns_.set(index, value);
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @param value The timeSeriesIdColumns to add.
+           * @return This builder for chaining.
+           */
+          public Builder addTimeSeriesIdColumns(
+              java.lang.String value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTimeSeriesIdColumnsIsMutable();
+            timeSeriesIdColumns_.add(value);
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @param values The timeSeriesIdColumns to add.
+           * @return This builder for chaining.
+           */
+          public Builder addAllTimeSeriesIdColumns(
+              java.lang.Iterable<java.lang.String> values) {
+            ensureTimeSeriesIdColumnsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                values, timeSeriesIdColumns_);
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @return This builder for chaining.
+           */
+          public Builder clearTimeSeriesIdColumns() {
+            timeSeriesIdColumns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            onChanged();
+            return this;
+          }
+          /**
+           * <pre>
+           * The time series id columns that were used during ARIMA model training.
+           * </pre>
+           *
+           * <code>repeated string time_series_id_columns = 51;</code>
+           * @param value The bytes of the timeSeriesIdColumns to add.
+           * @return This builder for chaining.
+           */
+          public Builder addTimeSeriesIdColumnsBytes(
+              com.google.protobuf.ByteString value) {
+            if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+            ensureTimeSeriesIdColumnsIsMutable();
+            timeSeriesIdColumns_.add(value);
             onChanged();
             return this;
           }
@@ -44378,6 +46235,480 @@ public final class ModelProto {
             autoArimaMaxOrder_ = 0L;
             onChanged();
             return this;
+          }
+
+          private com.google.protobuf.BoolValue decomposeTimeSeries_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> decomposeTimeSeriesBuilder_;
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           * @return Whether the decomposeTimeSeries field is set.
+           */
+          public boolean hasDecomposeTimeSeries() {
+            return decomposeTimeSeriesBuilder_ != null || decomposeTimeSeries_ != null;
+          }
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           * @return The decomposeTimeSeries.
+           */
+          public com.google.protobuf.BoolValue getDecomposeTimeSeries() {
+            if (decomposeTimeSeriesBuilder_ == null) {
+              return decomposeTimeSeries_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : decomposeTimeSeries_;
+            } else {
+              return decomposeTimeSeriesBuilder_.getMessage();
+            }
+          }
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           */
+          public Builder setDecomposeTimeSeries(com.google.protobuf.BoolValue value) {
+            if (decomposeTimeSeriesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              decomposeTimeSeries_ = value;
+              onChanged();
+            } else {
+              decomposeTimeSeriesBuilder_.setMessage(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           */
+          public Builder setDecomposeTimeSeries(
+              com.google.protobuf.BoolValue.Builder builderForValue) {
+            if (decomposeTimeSeriesBuilder_ == null) {
+              decomposeTimeSeries_ = builderForValue.build();
+              onChanged();
+            } else {
+              decomposeTimeSeriesBuilder_.setMessage(builderForValue.build());
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           */
+          public Builder mergeDecomposeTimeSeries(com.google.protobuf.BoolValue value) {
+            if (decomposeTimeSeriesBuilder_ == null) {
+              if (decomposeTimeSeries_ != null) {
+                decomposeTimeSeries_ =
+                  com.google.protobuf.BoolValue.newBuilder(decomposeTimeSeries_).mergeFrom(value).buildPartial();
+              } else {
+                decomposeTimeSeries_ = value;
+              }
+              onChanged();
+            } else {
+              decomposeTimeSeriesBuilder_.mergeFrom(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           */
+          public Builder clearDecomposeTimeSeries() {
+            if (decomposeTimeSeriesBuilder_ == null) {
+              decomposeTimeSeries_ = null;
+              onChanged();
+            } else {
+              decomposeTimeSeries_ = null;
+              decomposeTimeSeriesBuilder_ = null;
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           */
+          public com.google.protobuf.BoolValue.Builder getDecomposeTimeSeriesBuilder() {
+            
+            onChanged();
+            return getDecomposeTimeSeriesFieldBuilder().getBuilder();
+          }
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           */
+          public com.google.protobuf.BoolValueOrBuilder getDecomposeTimeSeriesOrBuilder() {
+            if (decomposeTimeSeriesBuilder_ != null) {
+              return decomposeTimeSeriesBuilder_.getMessageOrBuilder();
+            } else {
+              return decomposeTimeSeries_ == null ?
+                  com.google.protobuf.BoolValue.getDefaultInstance() : decomposeTimeSeries_;
+            }
+          }
+          /**
+           * <pre>
+           * If true, perform decompose time series and save the results.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue decompose_time_series = 50;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+              getDecomposeTimeSeriesFieldBuilder() {
+            if (decomposeTimeSeriesBuilder_ == null) {
+              decomposeTimeSeriesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                      getDecomposeTimeSeries(),
+                      getParentForChildren(),
+                      isClean());
+              decomposeTimeSeries_ = null;
+            }
+            return decomposeTimeSeriesBuilder_;
+          }
+
+          private com.google.protobuf.BoolValue cleanSpikesAndDips_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> cleanSpikesAndDipsBuilder_;
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           * @return Whether the cleanSpikesAndDips field is set.
+           */
+          public boolean hasCleanSpikesAndDips() {
+            return cleanSpikesAndDipsBuilder_ != null || cleanSpikesAndDips_ != null;
+          }
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           * @return The cleanSpikesAndDips.
+           */
+          public com.google.protobuf.BoolValue getCleanSpikesAndDips() {
+            if (cleanSpikesAndDipsBuilder_ == null) {
+              return cleanSpikesAndDips_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : cleanSpikesAndDips_;
+            } else {
+              return cleanSpikesAndDipsBuilder_.getMessage();
+            }
+          }
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           */
+          public Builder setCleanSpikesAndDips(com.google.protobuf.BoolValue value) {
+            if (cleanSpikesAndDipsBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              cleanSpikesAndDips_ = value;
+              onChanged();
+            } else {
+              cleanSpikesAndDipsBuilder_.setMessage(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           */
+          public Builder setCleanSpikesAndDips(
+              com.google.protobuf.BoolValue.Builder builderForValue) {
+            if (cleanSpikesAndDipsBuilder_ == null) {
+              cleanSpikesAndDips_ = builderForValue.build();
+              onChanged();
+            } else {
+              cleanSpikesAndDipsBuilder_.setMessage(builderForValue.build());
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           */
+          public Builder mergeCleanSpikesAndDips(com.google.protobuf.BoolValue value) {
+            if (cleanSpikesAndDipsBuilder_ == null) {
+              if (cleanSpikesAndDips_ != null) {
+                cleanSpikesAndDips_ =
+                  com.google.protobuf.BoolValue.newBuilder(cleanSpikesAndDips_).mergeFrom(value).buildPartial();
+              } else {
+                cleanSpikesAndDips_ = value;
+              }
+              onChanged();
+            } else {
+              cleanSpikesAndDipsBuilder_.mergeFrom(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           */
+          public Builder clearCleanSpikesAndDips() {
+            if (cleanSpikesAndDipsBuilder_ == null) {
+              cleanSpikesAndDips_ = null;
+              onChanged();
+            } else {
+              cleanSpikesAndDips_ = null;
+              cleanSpikesAndDipsBuilder_ = null;
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           */
+          public com.google.protobuf.BoolValue.Builder getCleanSpikesAndDipsBuilder() {
+            
+            onChanged();
+            return getCleanSpikesAndDipsFieldBuilder().getBuilder();
+          }
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           */
+          public com.google.protobuf.BoolValueOrBuilder getCleanSpikesAndDipsOrBuilder() {
+            if (cleanSpikesAndDipsBuilder_ != null) {
+              return cleanSpikesAndDipsBuilder_.getMessageOrBuilder();
+            } else {
+              return cleanSpikesAndDips_ == null ?
+                  com.google.protobuf.BoolValue.getDefaultInstance() : cleanSpikesAndDips_;
+            }
+          }
+          /**
+           * <pre>
+           * If true, clean spikes and dips in the input time series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue clean_spikes_and_dips = 52;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+              getCleanSpikesAndDipsFieldBuilder() {
+            if (cleanSpikesAndDipsBuilder_ == null) {
+              cleanSpikesAndDipsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                      getCleanSpikesAndDips(),
+                      getParentForChildren(),
+                      isClean());
+              cleanSpikesAndDips_ = null;
+            }
+            return cleanSpikesAndDipsBuilder_;
+          }
+
+          private com.google.protobuf.BoolValue adjustStepChanges_;
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> adjustStepChangesBuilder_;
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           * @return Whether the adjustStepChanges field is set.
+           */
+          public boolean hasAdjustStepChanges() {
+            return adjustStepChangesBuilder_ != null || adjustStepChanges_ != null;
+          }
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           * @return The adjustStepChanges.
+           */
+          public com.google.protobuf.BoolValue getAdjustStepChanges() {
+            if (adjustStepChangesBuilder_ == null) {
+              return adjustStepChanges_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : adjustStepChanges_;
+            } else {
+              return adjustStepChangesBuilder_.getMessage();
+            }
+          }
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           */
+          public Builder setAdjustStepChanges(com.google.protobuf.BoolValue value) {
+            if (adjustStepChangesBuilder_ == null) {
+              if (value == null) {
+                throw new NullPointerException();
+              }
+              adjustStepChanges_ = value;
+              onChanged();
+            } else {
+              adjustStepChangesBuilder_.setMessage(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           */
+          public Builder setAdjustStepChanges(
+              com.google.protobuf.BoolValue.Builder builderForValue) {
+            if (adjustStepChangesBuilder_ == null) {
+              adjustStepChanges_ = builderForValue.build();
+              onChanged();
+            } else {
+              adjustStepChangesBuilder_.setMessage(builderForValue.build());
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           */
+          public Builder mergeAdjustStepChanges(com.google.protobuf.BoolValue value) {
+            if (adjustStepChangesBuilder_ == null) {
+              if (adjustStepChanges_ != null) {
+                adjustStepChanges_ =
+                  com.google.protobuf.BoolValue.newBuilder(adjustStepChanges_).mergeFrom(value).buildPartial();
+              } else {
+                adjustStepChanges_ = value;
+              }
+              onChanged();
+            } else {
+              adjustStepChangesBuilder_.mergeFrom(value);
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           */
+          public Builder clearAdjustStepChanges() {
+            if (adjustStepChangesBuilder_ == null) {
+              adjustStepChanges_ = null;
+              onChanged();
+            } else {
+              adjustStepChanges_ = null;
+              adjustStepChangesBuilder_ = null;
+            }
+
+            return this;
+          }
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           */
+          public com.google.protobuf.BoolValue.Builder getAdjustStepChangesBuilder() {
+            
+            onChanged();
+            return getAdjustStepChangesFieldBuilder().getBuilder();
+          }
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           */
+          public com.google.protobuf.BoolValueOrBuilder getAdjustStepChangesOrBuilder() {
+            if (adjustStepChangesBuilder_ != null) {
+              return adjustStepChangesBuilder_.getMessageOrBuilder();
+            } else {
+              return adjustStepChanges_ == null ?
+                  com.google.protobuf.BoolValue.getDefaultInstance() : adjustStepChanges_;
+            }
+          }
+          /**
+           * <pre>
+           * If true, detect step changes and make data adjustment in the input time
+           * series.
+           * </pre>
+           *
+           * <code>.google.protobuf.BoolValue adjust_step_changes = 53;</code>
+           */
+          private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+              getAdjustStepChangesFieldBuilder() {
+            if (adjustStepChangesBuilder_ == null) {
+              adjustStepChangesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                      getAdjustStepChanges(),
+                      getParentForChildren(),
+                      isClean());
+              adjustStepChanges_ = null;
+            }
+            return adjustStepChangesBuilder_;
           }
           @java.lang.Override
           public final Builder setUnknownFields(
@@ -47170,7 +49501,10 @@ public final class ModelProto {
 
             /**
              * <pre>
-             * The id to indicate different time series.
+             * The time_series_id value for this time series. It will be one of
+             * the unique values from the time_series_id_column specified during
+             * ARIMA model training. Only present when time_series_id_column
+             * training option was used.
              * </pre>
              *
              * <code>string time_series_id = 5;</code>
@@ -47179,7 +49513,10 @@ public final class ModelProto {
             java.lang.String getTimeSeriesId();
             /**
              * <pre>
-             * The id to indicate different time series.
+             * The time_series_id value for this time series. It will be one of
+             * the unique values from the time_series_id_column specified during
+             * ARIMA model training. Only present when time_series_id_column
+             * training option was used.
              * </pre>
              *
              * <code>string time_series_id = 5;</code>
@@ -47187,6 +49524,67 @@ public final class ModelProto {
              */
             com.google.protobuf.ByteString
                 getTimeSeriesIdBytes();
+
+            /**
+             * <pre>
+             * The tuple of time_series_ids identifying this time series. It will
+             * be one of the unique tuples of values present in the
+             * time_series_id_columns specified during ARIMA model training. Only
+             * present when time_series_id_columns training option was used and
+             * the order of values here are same as the order of
+             * time_series_id_columns.
+             * </pre>
+             *
+             * <code>repeated string time_series_ids = 10;</code>
+             * @return A list containing the timeSeriesIds.
+             */
+            java.util.List<java.lang.String>
+                getTimeSeriesIdsList();
+            /**
+             * <pre>
+             * The tuple of time_series_ids identifying this time series. It will
+             * be one of the unique tuples of values present in the
+             * time_series_id_columns specified during ARIMA model training. Only
+             * present when time_series_id_columns training option was used and
+             * the order of values here are same as the order of
+             * time_series_id_columns.
+             * </pre>
+             *
+             * <code>repeated string time_series_ids = 10;</code>
+             * @return The count of timeSeriesIds.
+             */
+            int getTimeSeriesIdsCount();
+            /**
+             * <pre>
+             * The tuple of time_series_ids identifying this time series. It will
+             * be one of the unique tuples of values present in the
+             * time_series_id_columns specified during ARIMA model training. Only
+             * present when time_series_id_columns training option was used and
+             * the order of values here are same as the order of
+             * time_series_id_columns.
+             * </pre>
+             *
+             * <code>repeated string time_series_ids = 10;</code>
+             * @param index The index of the element to return.
+             * @return The timeSeriesIds at the given index.
+             */
+            java.lang.String getTimeSeriesIds(int index);
+            /**
+             * <pre>
+             * The tuple of time_series_ids identifying this time series. It will
+             * be one of the unique tuples of values present in the
+             * time_series_id_columns specified during ARIMA model training. Only
+             * present when time_series_id_columns training option was used and
+             * the order of values here are same as the order of
+             * time_series_id_columns.
+             * </pre>
+             *
+             * <code>repeated string time_series_ids = 10;</code>
+             * @param index The index of the value to return.
+             * @return The bytes of the timeSeriesIds at the given index.
+             */
+            com.google.protobuf.ByteString
+                getTimeSeriesIdsBytes(int index);
 
             /**
              * <pre>
@@ -47241,6 +49639,96 @@ public final class ModelProto {
              * @return The enum numeric value on the wire of seasonalPeriods at the given index.
              */
             int getSeasonalPeriodsValue(int index);
+
+            /**
+             * <pre>
+             * If true, holiday_effect is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+             * @return Whether the hasHolidayEffect field is set.
+             */
+            boolean hasHasHolidayEffect();
+            /**
+             * <pre>
+             * If true, holiday_effect is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+             * @return The hasHolidayEffect.
+             */
+            com.google.protobuf.BoolValue getHasHolidayEffect();
+            /**
+             * <pre>
+             * If true, holiday_effect is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+             */
+            com.google.protobuf.BoolValueOrBuilder getHasHolidayEffectOrBuilder();
+
+            /**
+             * <pre>
+             * If true, spikes_and_dips is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+             * @return Whether the hasSpikesAndDips field is set.
+             */
+            boolean hasHasSpikesAndDips();
+            /**
+             * <pre>
+             * If true, spikes_and_dips is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+             * @return The hasSpikesAndDips.
+             */
+            com.google.protobuf.BoolValue getHasSpikesAndDips();
+            /**
+             * <pre>
+             * If true, spikes_and_dips is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+             */
+            com.google.protobuf.BoolValueOrBuilder getHasSpikesAndDipsOrBuilder();
+
+            /**
+             * <pre>
+             * If true, step_changes is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+             * @return Whether the hasStepChanges field is set.
+             */
+            boolean hasHasStepChanges();
+            /**
+             * <pre>
+             * If true, step_changes is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+             * @return The hasStepChanges.
+             */
+            com.google.protobuf.BoolValue getHasStepChanges();
+            /**
+             * <pre>
+             * If true, step_changes is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+             */
+            com.google.protobuf.BoolValueOrBuilder getHasStepChangesOrBuilder();
           }
           /**
            * <pre>
@@ -47260,6 +49748,7 @@ public final class ModelProto {
             }
             private ArimaModelInfo() {
               timeSeriesId_ = "";
+              timeSeriesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
               seasonalPeriods_ = java.util.Collections.emptyList();
             }
 
@@ -47346,9 +49835,9 @@ public final class ModelProto {
                     }
                     case 48: {
                       int rawValue = input.readEnum();
-                      if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                      if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                         seasonalPeriods_ = new java.util.ArrayList<java.lang.Integer>();
-                        mutable_bitField0_ |= 0x00000001;
+                        mutable_bitField0_ |= 0x00000002;
                       }
                       seasonalPeriods_.add(rawValue);
                       break;
@@ -47358,13 +49847,61 @@ public final class ModelProto {
                       int oldLimit = input.pushLimit(length);
                       while(input.getBytesUntilLimit() > 0) {
                         int rawValue = input.readEnum();
-                        if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                        if (!((mutable_bitField0_ & 0x00000002) != 0)) {
                           seasonalPeriods_ = new java.util.ArrayList<java.lang.Integer>();
-                          mutable_bitField0_ |= 0x00000001;
+                          mutable_bitField0_ |= 0x00000002;
                         }
                         seasonalPeriods_.add(rawValue);
                       }
                       input.popLimit(oldLimit);
+                      break;
+                    }
+                    case 58: {
+                      com.google.protobuf.BoolValue.Builder subBuilder = null;
+                      if (hasHolidayEffect_ != null) {
+                        subBuilder = hasHolidayEffect_.toBuilder();
+                      }
+                      hasHolidayEffect_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                      if (subBuilder != null) {
+                        subBuilder.mergeFrom(hasHolidayEffect_);
+                        hasHolidayEffect_ = subBuilder.buildPartial();
+                      }
+
+                      break;
+                    }
+                    case 66: {
+                      com.google.protobuf.BoolValue.Builder subBuilder = null;
+                      if (hasSpikesAndDips_ != null) {
+                        subBuilder = hasSpikesAndDips_.toBuilder();
+                      }
+                      hasSpikesAndDips_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                      if (subBuilder != null) {
+                        subBuilder.mergeFrom(hasSpikesAndDips_);
+                        hasSpikesAndDips_ = subBuilder.buildPartial();
+                      }
+
+                      break;
+                    }
+                    case 74: {
+                      com.google.protobuf.BoolValue.Builder subBuilder = null;
+                      if (hasStepChanges_ != null) {
+                        subBuilder = hasStepChanges_.toBuilder();
+                      }
+                      hasStepChanges_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+                      if (subBuilder != null) {
+                        subBuilder.mergeFrom(hasStepChanges_);
+                        hasStepChanges_ = subBuilder.buildPartial();
+                      }
+
+                      break;
+                    }
+                    case 82: {
+                      java.lang.String s = input.readStringRequireUtf8();
+                      if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                        timeSeriesIds_ = new com.google.protobuf.LazyStringArrayList();
+                        mutable_bitField0_ |= 0x00000001;
+                      }
+                      timeSeriesIds_.add(s);
                       break;
                     }
                     default: {
@@ -47382,8 +49919,11 @@ public final class ModelProto {
                 throw new com.google.protobuf.InvalidProtocolBufferException(
                     e).setUnfinishedMessage(this);
               } finally {
-                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                if (((mutable_bitField0_ & 0x00000002) != 0)) {
                   seasonalPeriods_ = java.util.Collections.unmodifiableList(seasonalPeriods_);
+                }
+                if (((mutable_bitField0_ & 0x00000001) != 0)) {
+                  timeSeriesIds_ = timeSeriesIds_.getUnmodifiableView();
                 }
                 this.unknownFields = unknownFields.build();
                 makeExtensionsImmutable();
@@ -47536,7 +50076,10 @@ public final class ModelProto {
             private volatile java.lang.Object timeSeriesId_;
             /**
              * <pre>
-             * The id to indicate different time series.
+             * The time_series_id value for this time series. It will be one of
+             * the unique values from the time_series_id_column specified during
+             * ARIMA model training. Only present when time_series_id_column
+             * training option was used.
              * </pre>
              *
              * <code>string time_series_id = 5;</code>
@@ -47557,7 +50100,10 @@ public final class ModelProto {
             }
             /**
              * <pre>
-             * The id to indicate different time series.
+             * The time_series_id value for this time series. It will be one of
+             * the unique values from the time_series_id_column specified during
+             * ARIMA model training. Only present when time_series_id_column
+             * training option was used.
              * </pre>
              *
              * <code>string time_series_id = 5;</code>
@@ -47576,6 +50122,77 @@ public final class ModelProto {
               } else {
                 return (com.google.protobuf.ByteString) ref;
               }
+            }
+
+            public static final int TIME_SERIES_IDS_FIELD_NUMBER = 10;
+            private com.google.protobuf.LazyStringList timeSeriesIds_;
+            /**
+             * <pre>
+             * The tuple of time_series_ids identifying this time series. It will
+             * be one of the unique tuples of values present in the
+             * time_series_id_columns specified during ARIMA model training. Only
+             * present when time_series_id_columns training option was used and
+             * the order of values here are same as the order of
+             * time_series_id_columns.
+             * </pre>
+             *
+             * <code>repeated string time_series_ids = 10;</code>
+             * @return A list containing the timeSeriesIds.
+             */
+            public com.google.protobuf.ProtocolStringList
+                getTimeSeriesIdsList() {
+              return timeSeriesIds_;
+            }
+            /**
+             * <pre>
+             * The tuple of time_series_ids identifying this time series. It will
+             * be one of the unique tuples of values present in the
+             * time_series_id_columns specified during ARIMA model training. Only
+             * present when time_series_id_columns training option was used and
+             * the order of values here are same as the order of
+             * time_series_id_columns.
+             * </pre>
+             *
+             * <code>repeated string time_series_ids = 10;</code>
+             * @return The count of timeSeriesIds.
+             */
+            public int getTimeSeriesIdsCount() {
+              return timeSeriesIds_.size();
+            }
+            /**
+             * <pre>
+             * The tuple of time_series_ids identifying this time series. It will
+             * be one of the unique tuples of values present in the
+             * time_series_id_columns specified during ARIMA model training. Only
+             * present when time_series_id_columns training option was used and
+             * the order of values here are same as the order of
+             * time_series_id_columns.
+             * </pre>
+             *
+             * <code>repeated string time_series_ids = 10;</code>
+             * @param index The index of the element to return.
+             * @return The timeSeriesIds at the given index.
+             */
+            public java.lang.String getTimeSeriesIds(int index) {
+              return timeSeriesIds_.get(index);
+            }
+            /**
+             * <pre>
+             * The tuple of time_series_ids identifying this time series. It will
+             * be one of the unique tuples of values present in the
+             * time_series_id_columns specified during ARIMA model training. Only
+             * present when time_series_id_columns training option was used and
+             * the order of values here are same as the order of
+             * time_series_id_columns.
+             * </pre>
+             *
+             * <code>repeated string time_series_ids = 10;</code>
+             * @param index The index of the value to return.
+             * @return The bytes of the timeSeriesIds at the given index.
+             */
+            public com.google.protobuf.ByteString
+                getTimeSeriesIdsBytes(int index) {
+              return timeSeriesIds_.getByteString(index);
             }
 
             public static final int SEASONAL_PERIODS_FIELD_NUMBER = 6;
@@ -47661,6 +50278,129 @@ public final class ModelProto {
             }
             private int seasonalPeriodsMemoizedSerializedSize;
 
+            public static final int HAS_HOLIDAY_EFFECT_FIELD_NUMBER = 7;
+            private com.google.protobuf.BoolValue hasHolidayEffect_;
+            /**
+             * <pre>
+             * If true, holiday_effect is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+             * @return Whether the hasHolidayEffect field is set.
+             */
+            @java.lang.Override
+            public boolean hasHasHolidayEffect() {
+              return hasHolidayEffect_ != null;
+            }
+            /**
+             * <pre>
+             * If true, holiday_effect is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+             * @return The hasHolidayEffect.
+             */
+            @java.lang.Override
+            public com.google.protobuf.BoolValue getHasHolidayEffect() {
+              return hasHolidayEffect_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasHolidayEffect_;
+            }
+            /**
+             * <pre>
+             * If true, holiday_effect is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+             */
+            @java.lang.Override
+            public com.google.protobuf.BoolValueOrBuilder getHasHolidayEffectOrBuilder() {
+              return getHasHolidayEffect();
+            }
+
+            public static final int HAS_SPIKES_AND_DIPS_FIELD_NUMBER = 8;
+            private com.google.protobuf.BoolValue hasSpikesAndDips_;
+            /**
+             * <pre>
+             * If true, spikes_and_dips is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+             * @return Whether the hasSpikesAndDips field is set.
+             */
+            @java.lang.Override
+            public boolean hasHasSpikesAndDips() {
+              return hasSpikesAndDips_ != null;
+            }
+            /**
+             * <pre>
+             * If true, spikes_and_dips is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+             * @return The hasSpikesAndDips.
+             */
+            @java.lang.Override
+            public com.google.protobuf.BoolValue getHasSpikesAndDips() {
+              return hasSpikesAndDips_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasSpikesAndDips_;
+            }
+            /**
+             * <pre>
+             * If true, spikes_and_dips is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+             */
+            @java.lang.Override
+            public com.google.protobuf.BoolValueOrBuilder getHasSpikesAndDipsOrBuilder() {
+              return getHasSpikesAndDips();
+            }
+
+            public static final int HAS_STEP_CHANGES_FIELD_NUMBER = 9;
+            private com.google.protobuf.BoolValue hasStepChanges_;
+            /**
+             * <pre>
+             * If true, step_changes is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+             * @return Whether the hasStepChanges field is set.
+             */
+            @java.lang.Override
+            public boolean hasHasStepChanges() {
+              return hasStepChanges_ != null;
+            }
+            /**
+             * <pre>
+             * If true, step_changes is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+             * @return The hasStepChanges.
+             */
+            @java.lang.Override
+            public com.google.protobuf.BoolValue getHasStepChanges() {
+              return hasStepChanges_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasStepChanges_;
+            }
+            /**
+             * <pre>
+             * If true, step_changes is a part of time series decomposition
+             * result.
+             * </pre>
+             *
+             * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+             */
+            @java.lang.Override
+            public com.google.protobuf.BoolValueOrBuilder getHasStepChangesOrBuilder() {
+              return getHasStepChanges();
+            }
+
             private byte memoizedIsInitialized = -1;
             @java.lang.Override
             public final boolean isInitialized() {
@@ -47697,6 +50437,18 @@ public final class ModelProto {
               }
               for (int i = 0; i < seasonalPeriods_.size(); i++) {
                 output.writeEnumNoTag(seasonalPeriods_.get(i));
+              }
+              if (hasHolidayEffect_ != null) {
+                output.writeMessage(7, getHasHolidayEffect());
+              }
+              if (hasSpikesAndDips_ != null) {
+                output.writeMessage(8, getHasSpikesAndDips());
+              }
+              if (hasStepChanges_ != null) {
+                output.writeMessage(9, getHasStepChanges());
+              }
+              for (int i = 0; i < timeSeriesIds_.size(); i++) {
+                com.google.protobuf.GeneratedMessageV3.writeString(output, 10, timeSeriesIds_.getRaw(i));
               }
               unknownFields.writeTo(output);
             }
@@ -47738,6 +50490,26 @@ public final class ModelProto {
                     .computeUInt32SizeNoTag(dataSize);
                 }seasonalPeriodsMemoizedSerializedSize = dataSize;
               }
+              if (hasHolidayEffect_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                  .computeMessageSize(7, getHasHolidayEffect());
+              }
+              if (hasSpikesAndDips_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                  .computeMessageSize(8, getHasSpikesAndDips());
+              }
+              if (hasStepChanges_ != null) {
+                size += com.google.protobuf.CodedOutputStream
+                  .computeMessageSize(9, getHasStepChanges());
+              }
+              {
+                int dataSize = 0;
+                for (int i = 0; i < timeSeriesIds_.size(); i++) {
+                  dataSize += computeStringSizeNoTag(timeSeriesIds_.getRaw(i));
+                }
+                size += dataSize;
+                size += 1 * getTimeSeriesIdsList().size();
+              }
               size += unknownFields.getSerializedSize();
               memoizedSize = size;
               return size;
@@ -47772,7 +50544,24 @@ public final class ModelProto {
                   != other.getHasDrift()) return false;
               if (!getTimeSeriesId()
                   .equals(other.getTimeSeriesId())) return false;
+              if (!getTimeSeriesIdsList()
+                  .equals(other.getTimeSeriesIdsList())) return false;
               if (!seasonalPeriods_.equals(other.seasonalPeriods_)) return false;
+              if (hasHasHolidayEffect() != other.hasHasHolidayEffect()) return false;
+              if (hasHasHolidayEffect()) {
+                if (!getHasHolidayEffect()
+                    .equals(other.getHasHolidayEffect())) return false;
+              }
+              if (hasHasSpikesAndDips() != other.hasHasSpikesAndDips()) return false;
+              if (hasHasSpikesAndDips()) {
+                if (!getHasSpikesAndDips()
+                    .equals(other.getHasSpikesAndDips())) return false;
+              }
+              if (hasHasStepChanges() != other.hasHasStepChanges()) return false;
+              if (hasHasStepChanges()) {
+                if (!getHasStepChanges()
+                    .equals(other.getHasStepChanges())) return false;
+              }
               if (!unknownFields.equals(other.unknownFields)) return false;
               return true;
             }
@@ -47801,9 +50590,25 @@ public final class ModelProto {
                   getHasDrift());
               hash = (37 * hash) + TIME_SERIES_ID_FIELD_NUMBER;
               hash = (53 * hash) + getTimeSeriesId().hashCode();
+              if (getTimeSeriesIdsCount() > 0) {
+                hash = (37 * hash) + TIME_SERIES_IDS_FIELD_NUMBER;
+                hash = (53 * hash) + getTimeSeriesIdsList().hashCode();
+              }
               if (getSeasonalPeriodsCount() > 0) {
                 hash = (37 * hash) + SEASONAL_PERIODS_FIELD_NUMBER;
                 hash = (53 * hash) + seasonalPeriods_.hashCode();
+              }
+              if (hasHasHolidayEffect()) {
+                hash = (37 * hash) + HAS_HOLIDAY_EFFECT_FIELD_NUMBER;
+                hash = (53 * hash) + getHasHolidayEffect().hashCode();
+              }
+              if (hasHasSpikesAndDips()) {
+                hash = (37 * hash) + HAS_SPIKES_AND_DIPS_FIELD_NUMBER;
+                hash = (53 * hash) + getHasSpikesAndDips().hashCode();
+              }
+              if (hasHasStepChanges()) {
+                hash = (37 * hash) + HAS_STEP_CHANGES_FIELD_NUMBER;
+                hash = (53 * hash) + getHasStepChanges().hashCode();
               }
               hash = (29 * hash) + unknownFields.hashCode();
               memoizedHashCode = hash;
@@ -47964,8 +50769,28 @@ public final class ModelProto {
 
                 timeSeriesId_ = "";
 
-                seasonalPeriods_ = java.util.Collections.emptyList();
+                timeSeriesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
                 bitField0_ = (bitField0_ & ~0x00000001);
+                seasonalPeriods_ = java.util.Collections.emptyList();
+                bitField0_ = (bitField0_ & ~0x00000002);
+                if (hasHolidayEffectBuilder_ == null) {
+                  hasHolidayEffect_ = null;
+                } else {
+                  hasHolidayEffect_ = null;
+                  hasHolidayEffectBuilder_ = null;
+                }
+                if (hasSpikesAndDipsBuilder_ == null) {
+                  hasSpikesAndDips_ = null;
+                } else {
+                  hasSpikesAndDips_ = null;
+                  hasSpikesAndDipsBuilder_ = null;
+                }
+                if (hasStepChangesBuilder_ == null) {
+                  hasStepChanges_ = null;
+                } else {
+                  hasStepChanges_ = null;
+                  hasStepChangesBuilder_ = null;
+                }
                 return this;
               }
 
@@ -48011,10 +50836,30 @@ public final class ModelProto {
                 result.hasDrift_ = hasDrift_;
                 result.timeSeriesId_ = timeSeriesId_;
                 if (((bitField0_ & 0x00000001) != 0)) {
-                  seasonalPeriods_ = java.util.Collections.unmodifiableList(seasonalPeriods_);
+                  timeSeriesIds_ = timeSeriesIds_.getUnmodifiableView();
                   bitField0_ = (bitField0_ & ~0x00000001);
                 }
+                result.timeSeriesIds_ = timeSeriesIds_;
+                if (((bitField0_ & 0x00000002) != 0)) {
+                  seasonalPeriods_ = java.util.Collections.unmodifiableList(seasonalPeriods_);
+                  bitField0_ = (bitField0_ & ~0x00000002);
+                }
                 result.seasonalPeriods_ = seasonalPeriods_;
+                if (hasHolidayEffectBuilder_ == null) {
+                  result.hasHolidayEffect_ = hasHolidayEffect_;
+                } else {
+                  result.hasHolidayEffect_ = hasHolidayEffectBuilder_.build();
+                }
+                if (hasSpikesAndDipsBuilder_ == null) {
+                  result.hasSpikesAndDips_ = hasSpikesAndDips_;
+                } else {
+                  result.hasSpikesAndDips_ = hasSpikesAndDipsBuilder_.build();
+                }
+                if (hasStepChangesBuilder_ == null) {
+                  result.hasStepChanges_ = hasStepChanges_;
+                } else {
+                  result.hasStepChanges_ = hasStepChangesBuilder_.build();
+                }
                 onBuilt();
                 return result;
               }
@@ -48079,15 +50924,34 @@ public final class ModelProto {
                   timeSeriesId_ = other.timeSeriesId_;
                   onChanged();
                 }
+                if (!other.timeSeriesIds_.isEmpty()) {
+                  if (timeSeriesIds_.isEmpty()) {
+                    timeSeriesIds_ = other.timeSeriesIds_;
+                    bitField0_ = (bitField0_ & ~0x00000001);
+                  } else {
+                    ensureTimeSeriesIdsIsMutable();
+                    timeSeriesIds_.addAll(other.timeSeriesIds_);
+                  }
+                  onChanged();
+                }
                 if (!other.seasonalPeriods_.isEmpty()) {
                   if (seasonalPeriods_.isEmpty()) {
                     seasonalPeriods_ = other.seasonalPeriods_;
-                    bitField0_ = (bitField0_ & ~0x00000001);
+                    bitField0_ = (bitField0_ & ~0x00000002);
                   } else {
                     ensureSeasonalPeriodsIsMutable();
                     seasonalPeriods_.addAll(other.seasonalPeriods_);
                   }
                   onChanged();
+                }
+                if (other.hasHasHolidayEffect()) {
+                  mergeHasHolidayEffect(other.getHasHolidayEffect());
+                }
+                if (other.hasHasSpikesAndDips()) {
+                  mergeHasSpikesAndDips(other.getHasSpikesAndDips());
+                }
+                if (other.hasHasStepChanges()) {
+                  mergeHasStepChanges(other.getHasStepChanges());
                 }
                 this.mergeUnknownFields(other.unknownFields);
                 onChanged();
@@ -48633,7 +51497,10 @@ public final class ModelProto {
               private java.lang.Object timeSeriesId_ = "";
               /**
                * <pre>
-               * The id to indicate different time series.
+               * The time_series_id value for this time series. It will be one of
+               * the unique values from the time_series_id_column specified during
+               * ARIMA model training. Only present when time_series_id_column
+               * training option was used.
                * </pre>
                *
                * <code>string time_series_id = 5;</code>
@@ -48653,7 +51520,10 @@ public final class ModelProto {
               }
               /**
                * <pre>
-               * The id to indicate different time series.
+               * The time_series_id value for this time series. It will be one of
+               * the unique values from the time_series_id_column specified during
+               * ARIMA model training. Only present when time_series_id_column
+               * training option was used.
                * </pre>
                *
                * <code>string time_series_id = 5;</code>
@@ -48674,7 +51544,10 @@ public final class ModelProto {
               }
               /**
                * <pre>
-               * The id to indicate different time series.
+               * The time_series_id value for this time series. It will be one of
+               * the unique values from the time_series_id_column specified during
+               * ARIMA model training. Only present when time_series_id_column
+               * training option was used.
                * </pre>
                *
                * <code>string time_series_id = 5;</code>
@@ -48693,7 +51566,10 @@ public final class ModelProto {
               }
               /**
                * <pre>
-               * The id to indicate different time series.
+               * The time_series_id value for this time series. It will be one of
+               * the unique values from the time_series_id_column specified during
+               * ARIMA model training. Only present when time_series_id_column
+               * training option was used.
                * </pre>
                *
                * <code>string time_series_id = 5;</code>
@@ -48707,7 +51583,10 @@ public final class ModelProto {
               }
               /**
                * <pre>
-               * The id to indicate different time series.
+               * The time_series_id value for this time series. It will be one of
+               * the unique values from the time_series_id_column specified during
+               * ARIMA model training. Only present when time_series_id_column
+               * training option was used.
                * </pre>
                *
                * <code>string time_series_id = 5;</code>
@@ -48726,12 +51605,203 @@ public final class ModelProto {
                 return this;
               }
 
+              private com.google.protobuf.LazyStringList timeSeriesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+              private void ensureTimeSeriesIdsIsMutable() {
+                if (!((bitField0_ & 0x00000001) != 0)) {
+                  timeSeriesIds_ = new com.google.protobuf.LazyStringArrayList(timeSeriesIds_);
+                  bitField0_ |= 0x00000001;
+                 }
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @return A list containing the timeSeriesIds.
+               */
+              public com.google.protobuf.ProtocolStringList
+                  getTimeSeriesIdsList() {
+                return timeSeriesIds_.getUnmodifiableView();
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @return The count of timeSeriesIds.
+               */
+              public int getTimeSeriesIdsCount() {
+                return timeSeriesIds_.size();
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @param index The index of the element to return.
+               * @return The timeSeriesIds at the given index.
+               */
+              public java.lang.String getTimeSeriesIds(int index) {
+                return timeSeriesIds_.get(index);
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @param index The index of the value to return.
+               * @return The bytes of the timeSeriesIds at the given index.
+               */
+              public com.google.protobuf.ByteString
+                  getTimeSeriesIdsBytes(int index) {
+                return timeSeriesIds_.getByteString(index);
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @param index The index to set the value at.
+               * @param value The timeSeriesIds to set.
+               * @return This builder for chaining.
+               */
+              public Builder setTimeSeriesIds(
+                  int index, java.lang.String value) {
+                if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTimeSeriesIdsIsMutable();
+                timeSeriesIds_.set(index, value);
+                onChanged();
+                return this;
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @param value The timeSeriesIds to add.
+               * @return This builder for chaining.
+               */
+              public Builder addTimeSeriesIds(
+                  java.lang.String value) {
+                if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTimeSeriesIdsIsMutable();
+                timeSeriesIds_.add(value);
+                onChanged();
+                return this;
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @param values The timeSeriesIds to add.
+               * @return This builder for chaining.
+               */
+              public Builder addAllTimeSeriesIds(
+                  java.lang.Iterable<java.lang.String> values) {
+                ensureTimeSeriesIdsIsMutable();
+                com.google.protobuf.AbstractMessageLite.Builder.addAll(
+                    values, timeSeriesIds_);
+                onChanged();
+                return this;
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @return This builder for chaining.
+               */
+              public Builder clearTimeSeriesIds() {
+                timeSeriesIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                onChanged();
+                return this;
+              }
+              /**
+               * <pre>
+               * The tuple of time_series_ids identifying this time series. It will
+               * be one of the unique tuples of values present in the
+               * time_series_id_columns specified during ARIMA model training. Only
+               * present when time_series_id_columns training option was used and
+               * the order of values here are same as the order of
+               * time_series_id_columns.
+               * </pre>
+               *
+               * <code>repeated string time_series_ids = 10;</code>
+               * @param value The bytes of the timeSeriesIds to add.
+               * @return This builder for chaining.
+               */
+              public Builder addTimeSeriesIdsBytes(
+                  com.google.protobuf.ByteString value) {
+                if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+                ensureTimeSeriesIdsIsMutable();
+                timeSeriesIds_.add(value);
+                onChanged();
+                return this;
+              }
+
               private java.util.List<java.lang.Integer> seasonalPeriods_ =
                 java.util.Collections.emptyList();
               private void ensureSeasonalPeriodsIsMutable() {
-                if (!((bitField0_ & 0x00000001) != 0)) {
+                if (!((bitField0_ & 0x00000002) != 0)) {
                   seasonalPeriods_ = new java.util.ArrayList<java.lang.Integer>(seasonalPeriods_);
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                 }
               }
               /**
@@ -48842,7 +51912,7 @@ public final class ModelProto {
                */
               public Builder clearSeasonalPeriods() {
                 seasonalPeriods_ = java.util.Collections.emptyList();
-                bitField0_ = (bitField0_ & ~0x00000001);
+                bitField0_ = (bitField0_ & ~0x00000002);
                 onChanged();
                 return this;
               }
@@ -48924,6 +51994,498 @@ public final class ModelProto {
                 }
                 onChanged();
                 return this;
+              }
+
+              private com.google.protobuf.BoolValue hasHolidayEffect_;
+              private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> hasHolidayEffectBuilder_;
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               * @return Whether the hasHolidayEffect field is set.
+               */
+              public boolean hasHasHolidayEffect() {
+                return hasHolidayEffectBuilder_ != null || hasHolidayEffect_ != null;
+              }
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               * @return The hasHolidayEffect.
+               */
+              public com.google.protobuf.BoolValue getHasHolidayEffect() {
+                if (hasHolidayEffectBuilder_ == null) {
+                  return hasHolidayEffect_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasHolidayEffect_;
+                } else {
+                  return hasHolidayEffectBuilder_.getMessage();
+                }
+              }
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               */
+              public Builder setHasHolidayEffect(com.google.protobuf.BoolValue value) {
+                if (hasHolidayEffectBuilder_ == null) {
+                  if (value == null) {
+                    throw new NullPointerException();
+                  }
+                  hasHolidayEffect_ = value;
+                  onChanged();
+                } else {
+                  hasHolidayEffectBuilder_.setMessage(value);
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               */
+              public Builder setHasHolidayEffect(
+                  com.google.protobuf.BoolValue.Builder builderForValue) {
+                if (hasHolidayEffectBuilder_ == null) {
+                  hasHolidayEffect_ = builderForValue.build();
+                  onChanged();
+                } else {
+                  hasHolidayEffectBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               */
+              public Builder mergeHasHolidayEffect(com.google.protobuf.BoolValue value) {
+                if (hasHolidayEffectBuilder_ == null) {
+                  if (hasHolidayEffect_ != null) {
+                    hasHolidayEffect_ =
+                      com.google.protobuf.BoolValue.newBuilder(hasHolidayEffect_).mergeFrom(value).buildPartial();
+                  } else {
+                    hasHolidayEffect_ = value;
+                  }
+                  onChanged();
+                } else {
+                  hasHolidayEffectBuilder_.mergeFrom(value);
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               */
+              public Builder clearHasHolidayEffect() {
+                if (hasHolidayEffectBuilder_ == null) {
+                  hasHolidayEffect_ = null;
+                  onChanged();
+                } else {
+                  hasHolidayEffect_ = null;
+                  hasHolidayEffectBuilder_ = null;
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               */
+              public com.google.protobuf.BoolValue.Builder getHasHolidayEffectBuilder() {
+                
+                onChanged();
+                return getHasHolidayEffectFieldBuilder().getBuilder();
+              }
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               */
+              public com.google.protobuf.BoolValueOrBuilder getHasHolidayEffectOrBuilder() {
+                if (hasHolidayEffectBuilder_ != null) {
+                  return hasHolidayEffectBuilder_.getMessageOrBuilder();
+                } else {
+                  return hasHolidayEffect_ == null ?
+                      com.google.protobuf.BoolValue.getDefaultInstance() : hasHolidayEffect_;
+                }
+              }
+              /**
+               * <pre>
+               * If true, holiday_effect is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_holiday_effect = 7;</code>
+               */
+              private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+                  getHasHolidayEffectFieldBuilder() {
+                if (hasHolidayEffectBuilder_ == null) {
+                  hasHolidayEffectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                          getHasHolidayEffect(),
+                          getParentForChildren(),
+                          isClean());
+                  hasHolidayEffect_ = null;
+                }
+                return hasHolidayEffectBuilder_;
+              }
+
+              private com.google.protobuf.BoolValue hasSpikesAndDips_;
+              private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> hasSpikesAndDipsBuilder_;
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               * @return Whether the hasSpikesAndDips field is set.
+               */
+              public boolean hasHasSpikesAndDips() {
+                return hasSpikesAndDipsBuilder_ != null || hasSpikesAndDips_ != null;
+              }
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               * @return The hasSpikesAndDips.
+               */
+              public com.google.protobuf.BoolValue getHasSpikesAndDips() {
+                if (hasSpikesAndDipsBuilder_ == null) {
+                  return hasSpikesAndDips_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasSpikesAndDips_;
+                } else {
+                  return hasSpikesAndDipsBuilder_.getMessage();
+                }
+              }
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               */
+              public Builder setHasSpikesAndDips(com.google.protobuf.BoolValue value) {
+                if (hasSpikesAndDipsBuilder_ == null) {
+                  if (value == null) {
+                    throw new NullPointerException();
+                  }
+                  hasSpikesAndDips_ = value;
+                  onChanged();
+                } else {
+                  hasSpikesAndDipsBuilder_.setMessage(value);
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               */
+              public Builder setHasSpikesAndDips(
+                  com.google.protobuf.BoolValue.Builder builderForValue) {
+                if (hasSpikesAndDipsBuilder_ == null) {
+                  hasSpikesAndDips_ = builderForValue.build();
+                  onChanged();
+                } else {
+                  hasSpikesAndDipsBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               */
+              public Builder mergeHasSpikesAndDips(com.google.protobuf.BoolValue value) {
+                if (hasSpikesAndDipsBuilder_ == null) {
+                  if (hasSpikesAndDips_ != null) {
+                    hasSpikesAndDips_ =
+                      com.google.protobuf.BoolValue.newBuilder(hasSpikesAndDips_).mergeFrom(value).buildPartial();
+                  } else {
+                    hasSpikesAndDips_ = value;
+                  }
+                  onChanged();
+                } else {
+                  hasSpikesAndDipsBuilder_.mergeFrom(value);
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               */
+              public Builder clearHasSpikesAndDips() {
+                if (hasSpikesAndDipsBuilder_ == null) {
+                  hasSpikesAndDips_ = null;
+                  onChanged();
+                } else {
+                  hasSpikesAndDips_ = null;
+                  hasSpikesAndDipsBuilder_ = null;
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               */
+              public com.google.protobuf.BoolValue.Builder getHasSpikesAndDipsBuilder() {
+                
+                onChanged();
+                return getHasSpikesAndDipsFieldBuilder().getBuilder();
+              }
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               */
+              public com.google.protobuf.BoolValueOrBuilder getHasSpikesAndDipsOrBuilder() {
+                if (hasSpikesAndDipsBuilder_ != null) {
+                  return hasSpikesAndDipsBuilder_.getMessageOrBuilder();
+                } else {
+                  return hasSpikesAndDips_ == null ?
+                      com.google.protobuf.BoolValue.getDefaultInstance() : hasSpikesAndDips_;
+                }
+              }
+              /**
+               * <pre>
+               * If true, spikes_and_dips is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_spikes_and_dips = 8;</code>
+               */
+              private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+                  getHasSpikesAndDipsFieldBuilder() {
+                if (hasSpikesAndDipsBuilder_ == null) {
+                  hasSpikesAndDipsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                          getHasSpikesAndDips(),
+                          getParentForChildren(),
+                          isClean());
+                  hasSpikesAndDips_ = null;
+                }
+                return hasSpikesAndDipsBuilder_;
+              }
+
+              private com.google.protobuf.BoolValue hasStepChanges_;
+              private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> hasStepChangesBuilder_;
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               * @return Whether the hasStepChanges field is set.
+               */
+              public boolean hasHasStepChanges() {
+                return hasStepChangesBuilder_ != null || hasStepChanges_ != null;
+              }
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               * @return The hasStepChanges.
+               */
+              public com.google.protobuf.BoolValue getHasStepChanges() {
+                if (hasStepChangesBuilder_ == null) {
+                  return hasStepChanges_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : hasStepChanges_;
+                } else {
+                  return hasStepChangesBuilder_.getMessage();
+                }
+              }
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               */
+              public Builder setHasStepChanges(com.google.protobuf.BoolValue value) {
+                if (hasStepChangesBuilder_ == null) {
+                  if (value == null) {
+                    throw new NullPointerException();
+                  }
+                  hasStepChanges_ = value;
+                  onChanged();
+                } else {
+                  hasStepChangesBuilder_.setMessage(value);
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               */
+              public Builder setHasStepChanges(
+                  com.google.protobuf.BoolValue.Builder builderForValue) {
+                if (hasStepChangesBuilder_ == null) {
+                  hasStepChanges_ = builderForValue.build();
+                  onChanged();
+                } else {
+                  hasStepChangesBuilder_.setMessage(builderForValue.build());
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               */
+              public Builder mergeHasStepChanges(com.google.protobuf.BoolValue value) {
+                if (hasStepChangesBuilder_ == null) {
+                  if (hasStepChanges_ != null) {
+                    hasStepChanges_ =
+                      com.google.protobuf.BoolValue.newBuilder(hasStepChanges_).mergeFrom(value).buildPartial();
+                  } else {
+                    hasStepChanges_ = value;
+                  }
+                  onChanged();
+                } else {
+                  hasStepChangesBuilder_.mergeFrom(value);
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               */
+              public Builder clearHasStepChanges() {
+                if (hasStepChangesBuilder_ == null) {
+                  hasStepChanges_ = null;
+                  onChanged();
+                } else {
+                  hasStepChanges_ = null;
+                  hasStepChangesBuilder_ = null;
+                }
+
+                return this;
+              }
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               */
+              public com.google.protobuf.BoolValue.Builder getHasStepChangesBuilder() {
+                
+                onChanged();
+                return getHasStepChangesFieldBuilder().getBuilder();
+              }
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               */
+              public com.google.protobuf.BoolValueOrBuilder getHasStepChangesOrBuilder() {
+                if (hasStepChangesBuilder_ != null) {
+                  return hasStepChangesBuilder_.getMessageOrBuilder();
+                } else {
+                  return hasStepChanges_ == null ?
+                      com.google.protobuf.BoolValue.getDefaultInstance() : hasStepChanges_;
+                }
+              }
+              /**
+               * <pre>
+               * If true, step_changes is a part of time series decomposition
+               * result.
+               * </pre>
+               *
+               * <code>.google.protobuf.BoolValue has_step_changes = 9;</code>
+               */
+              private com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+                  getHasStepChangesFieldBuilder() {
+                if (hasStepChangesBuilder_ == null) {
+                  hasStepChangesBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                      com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                          getHasStepChanges(),
+                          getParentForChildren(),
+                          isClean());
+                  hasStepChanges_ = null;
+                }
+                return hasStepChangesBuilder_;
               }
               @java.lang.Override
               public final Builder setUnknownFields(
@@ -54831,6 +58393,21 @@ public final class ModelProto {
       return labelColumns_.get(index);
     }
 
+    public static final int BEST_TRIAL_ID_FIELD_NUMBER = 19;
+    private long bestTrialId_;
+    /**
+     * <pre>
+     * The best trial_id across all training runs.
+     * </pre>
+     *
+     * <code>int64 best_trial_id = 19 [deprecated = true];</code>
+     * @return The bestTrialId.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated public long getBestTrialId() {
+      return bestTrialId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -54889,6 +58466,9 @@ public final class ModelProto {
       }
       if (encryptionConfiguration_ != null) {
         output.writeMessage(17, getEncryptionConfiguration());
+      }
+      if (bestTrialId_ != 0L) {
+        output.writeInt64(19, bestTrialId_);
       }
       unknownFields.writeTo(output);
     }
@@ -54957,6 +58537,10 @@ public final class ModelProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(17, getEncryptionConfiguration());
       }
+      if (bestTrialId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(19, bestTrialId_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -55005,6 +58589,8 @@ public final class ModelProto {
           .equals(other.getFeatureColumnsList())) return false;
       if (!getLabelColumnsList()
           .equals(other.getLabelColumnsList())) return false;
+      if (getBestTrialId()
+          != other.getBestTrialId()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -55059,6 +58645,9 @@ public final class ModelProto {
         hash = (37 * hash) + LABEL_COLUMNS_FIELD_NUMBER;
         hash = (53 * hash) + getLabelColumnsList().hashCode();
       }
+      hash = (37 * hash) + BEST_TRIAL_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBestTrialId());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -55264,6 +58853,8 @@ public final class ModelProto {
         } else {
           labelColumnsBuilder_.clear();
         }
+        bestTrialId_ = 0L;
+
         return this;
       }
 
@@ -55338,6 +58929,7 @@ public final class ModelProto {
         } else {
           result.labelColumns_ = labelColumnsBuilder_.build();
         }
+        result.bestTrialId_ = bestTrialId_;
         onBuilt();
         return result;
       }
@@ -55499,6 +59091,9 @@ public final class ModelProto {
               labelColumnsBuilder_.addAllMessages(other.labelColumns_);
             }
           }
+        }
+        if (other.getBestTrialId() != 0L) {
+          setBestTrialId(other.getBestTrialId());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -57614,6 +61209,49 @@ public final class ModelProto {
           labelColumns_ = null;
         }
         return labelColumnsBuilder_;
+      }
+
+      private long bestTrialId_ ;
+      /**
+       * <pre>
+       * The best trial_id across all training runs.
+       * </pre>
+       *
+       * <code>int64 best_trial_id = 19 [deprecated = true];</code>
+       * @return The bestTrialId.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated public long getBestTrialId() {
+        return bestTrialId_;
+      }
+      /**
+       * <pre>
+       * The best trial_id across all training runs.
+       * </pre>
+       *
+       * <code>int64 best_trial_id = 19 [deprecated = true];</code>
+       * @param value The bestTrialId to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated public Builder setBestTrialId(long value) {
+        
+        bestTrialId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The best trial_id across all training runs.
+       * </pre>
+       *
+       * <code>int64 best_trial_id = 19 [deprecated = true];</code>
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated public Builder clearBestTrialId() {
+        
+        bestTrialId_ = 0L;
+        onChanged();
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -63513,7 +67151,7 @@ public final class ModelProto {
       "bigquery/v2/table_reference.proto\032\033googl" +
       "e/protobuf/empty.proto\032\037google/protobuf/" +
       "timestamp.proto\032\036google/protobuf/wrapper" +
-      "s.proto\032\034google/api/annotations.proto\"\251Z" +
+      "s.proto\032\034google/api/annotations.proto\"\307_" +
       "\n\005Model\022\021\n\004etag\030\001 \001(\tB\003\340A\003\022F\n\017model_refe" +
       "rence\030\002 \001(\0132(.google.cloud.bigquery.v2.M" +
       "odelReferenceB\003\340A\002\022\032\n\rcreation_time\030\005 \001(" +
@@ -63531,315 +67169,340 @@ public final class ModelProto {
       "ture_columns\030\n \003(\0132*.google.cloud.bigque" +
       "ry.v2.StandardSqlFieldB\003\340A\003\022F\n\rlabel_col" +
       "umns\030\013 \003(\0132*.google.cloud.bigquery.v2.St" +
-      "andardSqlFieldB\003\340A\003\032\240\001\n\016SeasonalPeriod\"\215" +
-      "\001\n\022SeasonalPeriodType\022$\n SEASONAL_PERIOD" +
-      "_TYPE_UNSPECIFIED\020\000\022\022\n\016NO_SEASONALITY\020\001\022" +
-      "\t\n\005DAILY\020\002\022\n\n\006WEEKLY\020\003\022\013\n\007MONTHLY\020\004\022\r\n\tQ" +
-      "UARTERLY\020\005\022\n\n\006YEARLY\020\006\032\207\001\n\013KmeansEnums\"x" +
-      "\n\032KmeansInitializationMethod\022,\n(KMEANS_I" +
-      "NITIALIZATION_METHOD_UNSPECIFIED\020\000\022\n\n\006RA" +
-      "NDOM\020\001\022\n\n\006CUSTOM\020\002\022\024\n\020KMEANS_PLUS_PLUS\020\003" +
-      "\032\264\002\n\021RegressionMetrics\0229\n\023mean_absolute_" +
-      "error\030\001 \001(\0132\034.google.protobuf.DoubleValu" +
-      "e\0228\n\022mean_squared_error\030\002 \001(\0132\034.google.p" +
-      "rotobuf.DoubleValue\022<\n\026mean_squared_log_" +
-      "error\030\003 \001(\0132\034.google.protobuf.DoubleValu" +
-      "e\022;\n\025median_absolute_error\030\004 \001(\0132\034.googl" +
-      "e.protobuf.DoubleValue\022/\n\tr_squared\030\005 \001(" +
-      "\0132\034.google.protobuf.DoubleValue\032\357\002\n\036Aggr" +
-      "egateClassificationMetrics\022/\n\tprecision\030" +
-      "\001 \001(\0132\034.google.protobuf.DoubleValue\022,\n\006r" +
-      "ecall\030\002 \001(\0132\034.google.protobuf.DoubleValu" +
-      "e\022.\n\010accuracy\030\003 \001(\0132\034.google.protobuf.Do" +
-      "ubleValue\022/\n\tthreshold\030\004 \001(\0132\034.google.pr" +
-      "otobuf.DoubleValue\022.\n\010f1_score\030\005 \001(\0132\034.g" +
-      "oogle.protobuf.DoubleValue\022.\n\010log_loss\030\006" +
-      " \001(\0132\034.google.protobuf.DoubleValue\022-\n\007ro" +
-      "c_auc\030\007 \001(\0132\034.google.protobuf.DoubleValu" +
-      "e\032\237\006\n\033BinaryClassificationMetrics\022h\n agg" +
-      "regate_classification_metrics\030\001 \001(\0132>.go" +
-      "ogle.cloud.bigquery.v2.Model.AggregateCl" +
-      "assificationMetrics\022w\n\034binary_confusion_" +
-      "matrix_list\030\002 \003(\0132Q.google.cloud.bigquer" +
-      "y.v2.Model.BinaryClassificationMetrics.B" +
-      "inaryConfusionMatrix\022\026\n\016positive_label\030\003" +
-      " \001(\t\022\026\n\016negative_label\030\004 \001(\t\032\354\003\n\025BinaryC" +
-      "onfusionMatrix\022>\n\030positive_class_thresho" +
-      "ld\030\001 \001(\0132\034.google.protobuf.DoubleValue\0223" +
-      "\n\016true_positives\030\002 \001(\0132\033.google.protobuf" +
-      ".Int64Value\0224\n\017false_positives\030\003 \001(\0132\033.g" +
-      "oogle.protobuf.Int64Value\0223\n\016true_negati" +
-      "ves\030\004 \001(\0132\033.google.protobuf.Int64Value\0224" +
-      "\n\017false_negatives\030\005 \001(\0132\033.google.protobu" +
-      "f.Int64Value\022/\n\tprecision\030\006 \001(\0132\034.google" +
-      ".protobuf.DoubleValue\022,\n\006recall\030\007 \001(\0132\034." +
-      "google.protobuf.DoubleValue\022.\n\010f1_score\030" +
-      "\010 \001(\0132\034.google.protobuf.DoubleValue\022.\n\010a" +
-      "ccuracy\030\t \001(\0132\034.google.protobuf.DoubleVa" +
-      "lue\032\207\005\n\037MultiClassClassificationMetrics\022" +
-      "h\n aggregate_classification_metrics\030\001 \001(" +
-      "\0132>.google.cloud.bigquery.v2.Model.Aggre" +
-      "gateClassificationMetrics\022n\n\025confusion_m" +
-      "atrix_list\030\002 \003(\0132O.google.cloud.bigquery" +
-      ".v2.Model.MultiClassClassificationMetric" +
-      "s.ConfusionMatrix\032\211\003\n\017ConfusionMatrix\022:\n" +
-      "\024confidence_threshold\030\001 \001(\0132\034.google.pro" +
-      "tobuf.DoubleValue\022a\n\004rows\030\002 \003(\0132S.google" +
-      ".cloud.bigquery.v2.Model.MultiClassClass" +
-      "ificationMetrics.ConfusionMatrix.Row\032Q\n\005" +
-      "Entry\022\027\n\017predicted_label\030\001 \001(\t\022/\n\nitem_c" +
-      "ount\030\002 \001(\0132\033.google.protobuf.Int64Value\032" +
-      "\203\001\n\003Row\022\024\n\014actual_label\030\001 \001(\t\022f\n\007entries" +
-      "\030\002 \003(\0132U.google.cloud.bigquery.v2.Model." +
-      "MultiClassClassificationMetrics.Confusio" +
-      "nMatrix.Entry\032\313\006\n\021ClusteringMetrics\022:\n\024d" +
-      "avies_bouldin_index\030\001 \001(\0132\034.google.proto" +
-      "buf.DoubleValue\022;\n\025mean_squared_distance" +
-      "\030\002 \001(\0132\034.google.protobuf.DoubleValue\022K\n\010" +
-      "clusters\030\003 \003(\01329.google.cloud.bigquery.v" +
-      "2.Model.ClusteringMetrics.Cluster\032\357\004\n\007Cl" +
-      "uster\022\023\n\013centroid_id\030\001 \001(\003\022^\n\016feature_va" +
-      "lues\030\002 \003(\0132F.google.cloud.bigquery.v2.Mo" +
-      "del.ClusteringMetrics.Cluster.FeatureVal" +
-      "ue\022*\n\005count\030\003 \001(\0132\033.google.protobuf.Int6" +
-      "4Value\032\302\003\n\014FeatureValue\022\026\n\016feature_colum" +
-      "n\030\001 \001(\t\0227\n\017numerical_value\030\002 \001(\0132\034.googl" +
-      "e.protobuf.DoubleValueH\000\022t\n\021categorical_" +
-      "value\030\003 \001(\0132W.google.cloud.bigquery.v2.M" +
-      "odel.ClusteringMetrics.Cluster.FeatureVa" +
-      "lue.CategoricalValueH\000\032\341\001\n\020CategoricalVa" +
-      "lue\022~\n\017category_counts\030\001 \003(\0132e.google.cl" +
-      "oud.bigquery.v2.Model.ClusteringMetrics." +
-      "Cluster.FeatureValue.CategoricalValue.Ca" +
-      "tegoryCount\032M\n\rCategoryCount\022\020\n\010category" +
-      "\030\001 \001(\t\022*\n\005count\030\002 \001(\0132\033.google.protobuf." +
-      "Int64ValueB\007\n\005value\032\211\002\n\016RankingMetrics\022<" +
-      "\n\026mean_average_precision\030\001 \001(\0132\034.google." +
-      "protobuf.DoubleValue\0228\n\022mean_squared_err" +
-      "or\030\002 \001(\0132\034.google.protobuf.DoubleValue\022K" +
-      "\n%normalized_discounted_cumulative_gain\030" +
-      "\003 \001(\0132\034.google.protobuf.DoubleValue\0222\n\014a" +
-      "verage_rank\030\004 \001(\0132\034.google.protobuf.Doub" +
-      "leValue\032\225\006\n\027ArimaForecastingMetrics\022F\n\022n" +
-      "on_seasonal_order\030\001 \003(\0132*.google.cloud.b" +
-      "igquery.v2.Model.ArimaOrder\022R\n\025arima_fit" +
-      "ting_metrics\030\002 \003(\01323.google.cloud.bigque" +
-      "ry.v2.Model.ArimaFittingMetrics\022[\n\020seaso" +
-      "nal_periods\030\003 \003(\0162A.google.cloud.bigquer" +
-      "y.v2.Model.SeasonalPeriod.SeasonalPeriod" +
-      "Type\022\021\n\thas_drift\030\004 \003(\010\022\026\n\016time_series_i" +
-      "d\030\005 \003(\t\022\212\001\n&arima_single_model_forecasti" +
-      "ng_metrics\030\006 \003(\0132Z.google.cloud.bigquery" +
-      ".v2.Model.ArimaForecastingMetrics.ArimaS" +
-      "ingleModelForecastingMetrics\032\310\002\n\"ArimaSi" +
-      "ngleModelForecastingMetrics\022F\n\022non_seaso" +
-      "nal_order\030\001 \001(\0132*.google.cloud.bigquery." +
-      "v2.Model.ArimaOrder\022R\n\025arima_fitting_met" +
-      "rics\030\002 \001(\01323.google.cloud.bigquery.v2.Mo" +
-      "del.ArimaFittingMetrics\022\021\n\thas_drift\030\003 \001" +
-      "(\010\022\026\n\016time_series_id\030\004 \001(\t\022[\n\020seasonal_p" +
-      "eriods\030\005 \003(\0162A.google.cloud.bigquery.v2." +
-      "Model.SeasonalPeriod.SeasonalPeriodType\032" +
-      "\276\004\n\021EvaluationMetrics\022O\n\022regression_metr" +
-      "ics\030\001 \001(\01321.google.cloud.bigquery.v2.Mod" +
-      "el.RegressionMetricsH\000\022d\n\035binary_classif" +
-      "ication_metrics\030\002 \001(\0132;.google.cloud.big" +
-      "query.v2.Model.BinaryClassificationMetri" +
-      "csH\000\022m\n\"multi_class_classification_metri" +
-      "cs\030\003 \001(\0132?.google.cloud.bigquery.v2.Mode" +
-      "l.MultiClassClassificationMetricsH\000\022O\n\022c" +
-      "lustering_metrics\030\004 \001(\01321.google.cloud.b" +
-      "igquery.v2.Model.ClusteringMetricsH\000\022I\n\017" +
-      "ranking_metrics\030\005 \001(\0132..google.cloud.big" +
-      "query.v2.Model.RankingMetricsH\000\022\\\n\031arima" +
-      "_forecasting_metrics\030\006 \001(\01327.google.clou" +
-      "d.bigquery.v2.Model.ArimaForecastingMetr" +
-      "icsH\000B\t\n\007metrics\032\227\001\n\017DataSplitResult\022@\n\016" +
-      "training_table\030\001 \001(\0132(.google.cloud.bigq" +
-      "uery.v2.TableReference\022B\n\020evaluation_tab" +
-      "le\030\002 \001(\0132(.google.cloud.bigquery.v2.Tabl" +
-      "eReference\032-\n\nArimaOrder\022\t\n\001p\030\001 \001(\003\022\t\n\001d" +
-      "\030\002 \001(\003\022\t\n\001q\030\003 \001(\003\032L\n\023ArimaFittingMetrics" +
-      "\022\026\n\016log_likelihood\030\001 \001(\001\022\013\n\003aic\030\002 \001(\001\022\020\n" +
-      "\010variance\030\003 \001(\001\032\325\001\n\021GlobalExplanation\022S\n" +
-      "\014explanations\030\001 \003(\0132=.google.cloud.bigqu" +
-      "ery.v2.Model.GlobalExplanation.Explanati" +
-      "on\022\023\n\013class_label\030\002 \001(\t\032V\n\013Explanation\022\024" +
-      "\n\014feature_name\030\001 \001(\t\0221\n\013attribution\030\002 \001(" +
-      "\0132\034.google.protobuf.DoubleValue\032\330\035\n\013Trai" +
-      "ningRun\022U\n\020training_options\030\001 \001(\0132;.goog" +
+      "andardSqlFieldB\003\340A\003\022\031\n\rbest_trial_id\030\023 \001" +
+      "(\003B\002\030\001\032\240\001\n\016SeasonalPeriod\"\215\001\n\022SeasonalPe" +
+      "riodType\022$\n SEASONAL_PERIOD_TYPE_UNSPECI" +
+      "FIED\020\000\022\022\n\016NO_SEASONALITY\020\001\022\t\n\005DAILY\020\002\022\n\n" +
+      "\006WEEKLY\020\003\022\013\n\007MONTHLY\020\004\022\r\n\tQUARTERLY\020\005\022\n\n" +
+      "\006YEARLY\020\006\032\207\001\n\013KmeansEnums\"x\n\032KmeansIniti" +
+      "alizationMethod\022,\n(KMEANS_INITIALIZATION" +
+      "_METHOD_UNSPECIFIED\020\000\022\n\n\006RANDOM\020\001\022\n\n\006CUS" +
+      "TOM\020\002\022\024\n\020KMEANS_PLUS_PLUS\020\003\032\264\002\n\021Regressi" +
+      "onMetrics\0229\n\023mean_absolute_error\030\001 \001(\0132\034" +
+      ".google.protobuf.DoubleValue\0228\n\022mean_squ" +
+      "ared_error\030\002 \001(\0132\034.google.protobuf.Doubl" +
+      "eValue\022<\n\026mean_squared_log_error\030\003 \001(\0132\034" +
+      ".google.protobuf.DoubleValue\022;\n\025median_a" +
+      "bsolute_error\030\004 \001(\0132\034.google.protobuf.Do" +
+      "ubleValue\022/\n\tr_squared\030\005 \001(\0132\034.google.pr" +
+      "otobuf.DoubleValue\032\357\002\n\036AggregateClassifi" +
+      "cationMetrics\022/\n\tprecision\030\001 \001(\0132\034.googl" +
+      "e.protobuf.DoubleValue\022,\n\006recall\030\002 \001(\0132\034" +
+      ".google.protobuf.DoubleValue\022.\n\010accuracy" +
+      "\030\003 \001(\0132\034.google.protobuf.DoubleValue\022/\n\t" +
+      "threshold\030\004 \001(\0132\034.google.protobuf.Double" +
+      "Value\022.\n\010f1_score\030\005 \001(\0132\034.google.protobu" +
+      "f.DoubleValue\022.\n\010log_loss\030\006 \001(\0132\034.google" +
+      ".protobuf.DoubleValue\022-\n\007roc_auc\030\007 \001(\0132\034" +
+      ".google.protobuf.DoubleValue\032\237\006\n\033BinaryC" +
+      "lassificationMetrics\022h\n aggregate_classi" +
+      "fication_metrics\030\001 \001(\0132>.google.cloud.bi" +
+      "gquery.v2.Model.AggregateClassificationM" +
+      "etrics\022w\n\034binary_confusion_matrix_list\030\002" +
+      " \003(\0132Q.google.cloud.bigquery.v2.Model.Bi" +
+      "naryClassificationMetrics.BinaryConfusio" +
+      "nMatrix\022\026\n\016positive_label\030\003 \001(\t\022\026\n\016negat" +
+      "ive_label\030\004 \001(\t\032\354\003\n\025BinaryConfusionMatri" +
+      "x\022>\n\030positive_class_threshold\030\001 \001(\0132\034.go" +
+      "ogle.protobuf.DoubleValue\0223\n\016true_positi" +
+      "ves\030\002 \001(\0132\033.google.protobuf.Int64Value\0224" +
+      "\n\017false_positives\030\003 \001(\0132\033.google.protobu" +
+      "f.Int64Value\0223\n\016true_negatives\030\004 \001(\0132\033.g" +
+      "oogle.protobuf.Int64Value\0224\n\017false_negat" +
+      "ives\030\005 \001(\0132\033.google.protobuf.Int64Value\022" +
+      "/\n\tprecision\030\006 \001(\0132\034.google.protobuf.Dou" +
+      "bleValue\022,\n\006recall\030\007 \001(\0132\034.google.protob" +
+      "uf.DoubleValue\022.\n\010f1_score\030\010 \001(\0132\034.googl" +
+      "e.protobuf.DoubleValue\022.\n\010accuracy\030\t \001(\013" +
+      "2\034.google.protobuf.DoubleValue\032\207\005\n\037Multi" +
+      "ClassClassificationMetrics\022h\n aggregate_" +
+      "classification_metrics\030\001 \001(\0132>.google.cl" +
+      "oud.bigquery.v2.Model.AggregateClassific" +
+      "ationMetrics\022n\n\025confusion_matrix_list\030\002 " +
+      "\003(\0132O.google.cloud.bigquery.v2.Model.Mul" +
+      "tiClassClassificationMetrics.ConfusionMa" +
+      "trix\032\211\003\n\017ConfusionMatrix\022:\n\024confidence_t" +
+      "hreshold\030\001 \001(\0132\034.google.protobuf.DoubleV" +
+      "alue\022a\n\004rows\030\002 \003(\0132S.google.cloud.bigque" +
+      "ry.v2.Model.MultiClassClassificationMetr" +
+      "ics.ConfusionMatrix.Row\032Q\n\005Entry\022\027\n\017pred" +
+      "icted_label\030\001 \001(\t\022/\n\nitem_count\030\002 \001(\0132\033." +
+      "google.protobuf.Int64Value\032\203\001\n\003Row\022\024\n\014ac" +
+      "tual_label\030\001 \001(\t\022f\n\007entries\030\002 \003(\0132U.goog" +
+      "le.cloud.bigquery.v2.Model.MultiClassCla" +
+      "ssificationMetrics.ConfusionMatrix.Entry" +
+      "\032\313\006\n\021ClusteringMetrics\022:\n\024davies_bouldin" +
+      "_index\030\001 \001(\0132\034.google.protobuf.DoubleVal" +
+      "ue\022;\n\025mean_squared_distance\030\002 \001(\0132\034.goog" +
+      "le.protobuf.DoubleValue\022K\n\010clusters\030\003 \003(" +
+      "\01329.google.cloud.bigquery.v2.Model.Clust" +
+      "eringMetrics.Cluster\032\357\004\n\007Cluster\022\023\n\013cent" +
+      "roid_id\030\001 \001(\003\022^\n\016feature_values\030\002 \003(\0132F." +
+      "google.cloud.bigquery.v2.Model.Clusterin" +
+      "gMetrics.Cluster.FeatureValue\022*\n\005count\030\003" +
+      " \001(\0132\033.google.protobuf.Int64Value\032\302\003\n\014Fe" +
+      "atureValue\022\026\n\016feature_column\030\001 \001(\t\0227\n\017nu" +
+      "merical_value\030\002 \001(\0132\034.google.protobuf.Do" +
+      "ubleValueH\000\022t\n\021categorical_value\030\003 \001(\0132W" +
+      ".google.cloud.bigquery.v2.Model.Clusteri" +
+      "ngMetrics.Cluster.FeatureValue.Categoric" +
+      "alValueH\000\032\341\001\n\020CategoricalValue\022~\n\017catego" +
+      "ry_counts\030\001 \003(\0132e.google.cloud.bigquery." +
+      "v2.Model.ClusteringMetrics.Cluster.Featu" +
+      "reValue.CategoricalValue.CategoryCount\032M" +
+      "\n\rCategoryCount\022\020\n\010category\030\001 \001(\t\022*\n\005cou" +
+      "nt\030\002 \001(\0132\033.google.protobuf.Int64ValueB\007\n" +
+      "\005value\032\211\002\n\016RankingMetrics\022<\n\026mean_averag" +
+      "e_precision\030\001 \001(\0132\034.google.protobuf.Doub" +
+      "leValue\0228\n\022mean_squared_error\030\002 \001(\0132\034.go" +
+      "ogle.protobuf.DoubleValue\022K\n%normalized_" +
+      "discounted_cumulative_gain\030\003 \001(\0132\034.googl" +
+      "e.protobuf.DoubleValue\0222\n\014average_rank\030\004" +
+      " \001(\0132\034.google.protobuf.DoubleValue\032\351\007\n\027A" +
+      "rimaForecastingMetrics\022J\n\022non_seasonal_o" +
+      "rder\030\001 \003(\0132*.google.cloud.bigquery.v2.Mo" +
+      "del.ArimaOrderB\002\030\001\022V\n\025arima_fitting_metr" +
+      "ics\030\002 \003(\01323.google.cloud.bigquery.v2.Mod" +
+      "el.ArimaFittingMetricsB\002\030\001\022_\n\020seasonal_p" +
+      "eriods\030\003 \003(\0162A.google.cloud.bigquery.v2." +
+      "Model.SeasonalPeriod.SeasonalPeriodTypeB" +
+      "\002\030\001\022\025\n\thas_drift\030\004 \003(\010B\002\030\001\022\032\n\016time_serie" +
+      "s_id\030\005 \003(\tB\002\030\001\022\212\001\n&arima_single_model_fo" +
+      "recasting_metrics\030\006 \003(\0132Z.google.cloud.b" +
+      "igquery.v2.Model.ArimaForecastingMetrics" +
+      ".ArimaSingleModelForecastingMetrics\032\210\004\n\"" +
+      "ArimaSingleModelForecastingMetrics\022F\n\022no" +
+      "n_seasonal_order\030\001 \001(\0132*.google.cloud.bi" +
+      "gquery.v2.Model.ArimaOrder\022R\n\025arima_fitt" +
+      "ing_metrics\030\002 \001(\01323.google.cloud.bigquer" +
+      "y.v2.Model.ArimaFittingMetrics\022\021\n\thas_dr" +
+      "ift\030\003 \001(\010\022\026\n\016time_series_id\030\004 \001(\t\022\027\n\017tim" +
+      "e_series_ids\030\t \003(\t\022[\n\020seasonal_periods\030\005" +
+      " \003(\0162A.google.cloud.bigquery.v2.Model.Se" +
+      "asonalPeriod.SeasonalPeriodType\0226\n\022has_h" +
+      "oliday_effect\030\006 \001(\0132\032.google.protobuf.Bo" +
+      "olValue\0227\n\023has_spikes_and_dips\030\007 \001(\0132\032.g" +
+      "oogle.protobuf.BoolValue\0224\n\020has_step_cha" +
+      "nges\030\010 \001(\0132\032.google.protobuf.BoolValue\032\276" +
+      "\004\n\021EvaluationMetrics\022O\n\022regression_metri" +
+      "cs\030\001 \001(\01321.google.cloud.bigquery.v2.Mode" +
+      "l.RegressionMetricsH\000\022d\n\035binary_classifi" +
+      "cation_metrics\030\002 \001(\0132;.google.cloud.bigq" +
+      "uery.v2.Model.BinaryClassificationMetric" +
+      "sH\000\022m\n\"multi_class_classification_metric" +
+      "s\030\003 \001(\0132?.google.cloud.bigquery.v2.Model" +
+      ".MultiClassClassificationMetricsH\000\022O\n\022cl" +
+      "ustering_metrics\030\004 \001(\01321.google.cloud.bi" +
+      "gquery.v2.Model.ClusteringMetricsH\000\022I\n\017r" +
+      "anking_metrics\030\005 \001(\0132..google.cloud.bigq" +
+      "uery.v2.Model.RankingMetricsH\000\022\\\n\031arima_" +
+      "forecasting_metrics\030\006 \001(\01327.google.cloud" +
+      ".bigquery.v2.Model.ArimaForecastingMetri" +
+      "csH\000B\t\n\007metrics\032\227\001\n\017DataSplitResult\022@\n\016t" +
+      "raining_table\030\001 \001(\0132(.google.cloud.bigqu" +
+      "ery.v2.TableReference\022B\n\020evaluation_tabl" +
+      "e\030\002 \001(\0132(.google.cloud.bigquery.v2.Table" +
+      "Reference\032-\n\nArimaOrder\022\t\n\001p\030\001 \001(\003\022\t\n\001d\030" +
+      "\002 \001(\003\022\t\n\001q\030\003 \001(\003\032L\n\023ArimaFittingMetrics\022" +
+      "\026\n\016log_likelihood\030\001 \001(\001\022\013\n\003aic\030\002 \001(\001\022\020\n\010" +
+      "variance\030\003 \001(\001\032\325\001\n\021GlobalExplanation\022S\n\014" +
+      "explanations\030\001 \003(\0132=.google.cloud.bigque" +
+      "ry.v2.Model.GlobalExplanation.Explanatio" +
+      "n\022\023\n\013class_label\030\002 \001(\t\032V\n\013Explanation\022\024\n" +
+      "\014feature_name\030\001 \001(\t\0221\n\013attribution\030\002 \001(\013" +
+      "2\034.google.protobuf.DoubleValue\032\347 \n\013Train" +
+      "ingRun\022U\n\020training_options\030\001 \001(\0132;.googl" +
+      "e.cloud.bigquery.v2.Model.TrainingRun.Tr" +
+      "ainingOptions\022.\n\nstart_time\030\010 \001(\0132\032.goog" +
+      "le.protobuf.Timestamp\022L\n\007results\030\006 \003(\0132;" +
+      ".google.cloud.bigquery.v2.Model.Training" +
+      "Run.IterationResult\022M\n\022evaluation_metric" +
+      "s\030\007 \001(\01321.google.cloud.bigquery.v2.Model" +
+      ".EvaluationMetrics\022J\n\021data_split_result\030" +
+      "\t \001(\0132/.google.cloud.bigquery.v2.Model.D" +
+      "ataSplitResult\022N\n\023global_explanations\030\n " +
+      "\003(\01321.google.cloud.bigquery.v2.Model.Glo" +
+      "balExplanation\032\222\021\n\017TrainingOptions\022\026\n\016ma" +
+      "x_iterations\030\001 \001(\003\022;\n\tloss_type\030\002 \001(\0162(." +
+      "google.cloud.bigquery.v2.Model.LossType\022" +
+      "\022\n\nlearn_rate\030\003 \001(\001\0227\n\021l1_regularization" +
+      "\030\004 \001(\0132\034.google.protobuf.DoubleValue\0227\n\021" +
+      "l2_regularization\030\005 \001(\0132\034.google.protobu" +
+      "f.DoubleValue\022;\n\025min_relative_progress\030\006" +
+      " \001(\0132\034.google.protobuf.DoubleValue\022.\n\nwa" +
+      "rm_start\030\007 \001(\0132\032.google.protobuf.BoolVal" +
+      "ue\022.\n\nearly_stop\030\010 \001(\0132\032.google.protobuf" +
+      ".BoolValue\022\033\n\023input_label_columns\030\t \003(\t\022" +
+      "J\n\021data_split_method\030\n \001(\0162/.google.clou" +
+      "d.bigquery.v2.Model.DataSplitMethod\022 \n\030d" +
+      "ata_split_eval_fraction\030\013 \001(\001\022\031\n\021data_sp" +
+      "lit_column\030\014 \001(\t\022N\n\023learn_rate_strategy\030" +
+      "\r \001(\01621.google.cloud.bigquery.v2.Model.L" +
+      "earnRateStrategy\022\032\n\022initial_learn_rate\030\020" +
+      " \001(\001\022o\n\023label_class_weights\030\021 \003(\0132R.goog" +
       "le.cloud.bigquery.v2.Model.TrainingRun.T" +
-      "rainingOptions\022.\n\nstart_time\030\010 \001(\0132\032.goo" +
-      "gle.protobuf.Timestamp\022L\n\007results\030\006 \003(\0132" +
-      ";.google.cloud.bigquery.v2.Model.Trainin" +
-      "gRun.IterationResult\022M\n\022evaluation_metri" +
-      "cs\030\007 \001(\01321.google.cloud.bigquery.v2.Mode" +
-      "l.EvaluationMetrics\022J\n\021data_split_result" +
-      "\030\t \001(\0132/.google.cloud.bigquery.v2.Model." +
-      "DataSplitResult\022N\n\023global_explanations\030\n" +
-      " \003(\01321.google.cloud.bigquery.v2.Model.Gl" +
-      "obalExplanation\032\303\017\n\017TrainingOptions\022\026\n\016m" +
-      "ax_iterations\030\001 \001(\003\022;\n\tloss_type\030\002 \001(\0162(" +
-      ".google.cloud.bigquery.v2.Model.LossType" +
-      "\022\022\n\nlearn_rate\030\003 \001(\001\0227\n\021l1_regularizatio" +
-      "n\030\004 \001(\0132\034.google.protobuf.DoubleValue\0227\n" +
-      "\021l2_regularization\030\005 \001(\0132\034.google.protob" +
-      "uf.DoubleValue\022;\n\025min_relative_progress\030" +
-      "\006 \001(\0132\034.google.protobuf.DoubleValue\022.\n\nw" +
-      "arm_start\030\007 \001(\0132\032.google.protobuf.BoolVa" +
-      "lue\022.\n\nearly_stop\030\010 \001(\0132\032.google.protobu" +
-      "f.BoolValue\022\033\n\023input_label_columns\030\t \003(\t" +
-      "\022J\n\021data_split_method\030\n \001(\0162/.google.clo" +
-      "ud.bigquery.v2.Model.DataSplitMethod\022 \n\030" +
-      "data_split_eval_fraction\030\013 \001(\001\022\031\n\021data_s" +
-      "plit_column\030\014 \001(\t\022N\n\023learn_rate_strategy" +
-      "\030\r \001(\01621.google.cloud.bigquery.v2.Model." +
-      "LearnRateStrategy\022\032\n\022initial_learn_rate\030" +
-      "\020 \001(\001\022o\n\023label_class_weights\030\021 \003(\0132R.goo" +
-      "gle.cloud.bigquery.v2.Model.TrainingRun." +
-      "TrainingOptions.LabelClassWeightsEntry\022\023" +
-      "\n\013user_column\030\022 \001(\t\022\023\n\013item_column\030\023 \001(\t" +
-      "\022C\n\rdistance_type\030\024 \001(\0162,.google.cloud.b" +
-      "igquery.v2.Model.DistanceType\022\024\n\014num_clu" +
-      "sters\030\025 \001(\003\022\021\n\tmodel_uri\030\026 \001(\t\022S\n\025optimi" +
-      "zation_strategy\030\027 \001(\01624.google.cloud.big" +
-      "query.v2.Model.OptimizationStrategy\022\024\n\014h" +
-      "idden_units\030\030 \003(\003\022\022\n\nbatch_size\030\031 \001(\003\022-\n" +
-      "\007dropout\030\032 \001(\0132\034.google.protobuf.DoubleV" +
-      "alue\022\026\n\016max_tree_depth\030\033 \001(\003\022\021\n\tsubsampl" +
-      "e\030\034 \001(\001\0224\n\016min_split_loss\030\035 \001(\0132\034.google" +
-      ".protobuf.DoubleValue\022\023\n\013num_factors\030\036 \001" +
-      "(\003\022C\n\rfeedback_type\030\037 \001(\0162,.google.cloud" +
-      ".bigquery.v2.Model.FeedbackType\0220\n\nwals_" +
-      "alpha\030  \001(\0132\034.google.protobuf.DoubleValu" +
-      "e\022l\n\034kmeans_initialization_method\030! \001(\0162" +
-      "F.google.cloud.bigquery.v2.Model.KmeansE" +
-      "nums.KmeansInitializationMethod\022$\n\034kmean" +
-      "s_initialization_column\030\" \001(\t\022$\n\034time_se" +
-      "ries_timestamp_column\030# \001(\t\022\037\n\027time_seri" +
-      "es_data_column\030$ \001(\t\022\022\n\nauto_arima\030% \001(\010" +
-      "\022F\n\022non_seasonal_order\030& \001(\0132*.google.cl" +
-      "oud.bigquery.v2.Model.ArimaOrder\022E\n\016data" +
-      "_frequency\030\' \001(\0162-.google.cloud.bigquery" +
-      ".v2.Model.DataFrequency\022\025\n\rinclude_drift" +
-      "\030) \001(\010\022E\n\016holiday_region\030* \001(\0162-.google." +
-      "cloud.bigquery.v2.Model.HolidayRegion\022\035\n" +
-      "\025time_series_id_column\030+ \001(\t\022\017\n\007horizon\030" +
-      ", \001(\003\022\036\n\026preserve_input_structs\030- \001(\010\022\034\n" +
-      "\024auto_arima_max_order\030. \001(\003\0328\n\026LabelClas" +
-      "sWeightsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(" +
-      "\001:\0028\001\032\302\n\n\017IterationResult\022*\n\005index\030\001 \001(\013" +
-      "2\033.google.protobuf.Int32Value\0220\n\013duratio" +
-      "n_ms\030\004 \001(\0132\033.google.protobuf.Int64Value\022" +
-      "3\n\rtraining_loss\030\005 \001(\0132\034.google.protobuf" +
-      ".DoubleValue\022/\n\teval_loss\030\006 \001(\0132\034.google" +
-      ".protobuf.DoubleValue\022\022\n\nlearn_rate\030\007 \001(" +
-      "\001\022^\n\rcluster_infos\030\010 \003(\0132G.google.cloud." +
-      "bigquery.v2.Model.TrainingRun.IterationR" +
-      "esult.ClusterInfo\022]\n\014arima_result\030\t \001(\0132" +
-      "G.google.cloud.bigquery.v2.Model.Trainin" +
-      "gRun.IterationResult.ArimaResult\032\213\001\n\013Clu" +
-      "sterInfo\022\023\n\013centroid_id\030\001 \001(\003\0224\n\016cluster" +
-      "_radius\030\002 \001(\0132\034.google.protobuf.DoubleVa" +
-      "lue\0221\n\014cluster_size\030\003 \001(\0132\033.google.proto" +
-      "buf.Int64Value\032\211\006\n\013ArimaResult\022p\n\020arima_" +
-      "model_info\030\001 \003(\0132V.google.cloud.bigquery" +
-      ".v2.Model.TrainingRun.IterationResult.Ar" +
-      "imaResult.ArimaModelInfo\022[\n\020seasonal_per" +
-      "iods\030\002 \003(\0162A.google.cloud.bigquery.v2.Mo" +
-      "del.SeasonalPeriod.SeasonalPeriodType\032}\n" +
-      "\021ArimaCoefficients\022$\n\034auto_regressive_co" +
-      "efficients\030\001 \003(\001\022#\n\033moving_average_coeff" +
-      "icients\030\002 \003(\001\022\035\n\025intercept_coefficient\030\003" +
-      " \001(\001\032\253\003\n\016ArimaModelInfo\022F\n\022non_seasonal_" +
-      "order\030\001 \001(\0132*.google.cloud.bigquery.v2.M" +
-      "odel.ArimaOrder\022u\n\022arima_coefficients\030\002 " +
-      "\001(\0132Y.google.cloud.bigquery.v2.Model.Tra" +
-      "iningRun.IterationResult.ArimaResult.Ari" +
-      "maCoefficients\022R\n\025arima_fitting_metrics\030" +
-      "\003 \001(\01323.google.cloud.bigquery.v2.Model.A" +
-      "rimaFittingMetrics\022\021\n\thas_drift\030\004 \001(\010\022\026\n" +
-      "\016time_series_id\030\005 \001(\t\022[\n\020seasonal_period" +
-      "s\030\006 \003(\0162A.google.cloud.bigquery.v2.Model" +
-      ".SeasonalPeriod.SeasonalPeriodType\032-\n\013La" +
-      "belsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028" +
-      "\001\"\245\002\n\tModelType\022\032\n\026MODEL_TYPE_UNSPECIFIE" +
-      "D\020\000\022\025\n\021LINEAR_REGRESSION\020\001\022\027\n\023LOGISTIC_R" +
-      "EGRESSION\020\002\022\n\n\006KMEANS\020\003\022\030\n\024MATRIX_FACTOR" +
-      "IZATION\020\004\022\022\n\016DNN_CLASSIFIER\020\005\022\016\n\nTENSORF" +
-      "LOW\020\006\022\021\n\rDNN_REGRESSOR\020\007\022\032\n\026BOOSTED_TREE" +
-      "_REGRESSOR\020\t\022\033\n\027BOOSTED_TREE_CLASSIFIER\020" +
-      "\n\022\t\n\005ARIMA\020\013\022\024\n\020AUTOML_REGRESSOR\020\014\022\025\n\021AU" +
-      "TOML_CLASSIFIER\020\r\"O\n\010LossType\022\031\n\025LOSS_TY" +
-      "PE_UNSPECIFIED\020\000\022\025\n\021MEAN_SQUARED_LOSS\020\001\022" +
-      "\021\n\rMEAN_LOG_LOSS\020\002\"H\n\014DistanceType\022\035\n\031DI" +
-      "STANCE_TYPE_UNSPECIFIED\020\000\022\r\n\tEUCLIDEAN\020\001" +
-      "\022\n\n\006COSINE\020\002\"z\n\017DataSplitMethod\022!\n\035DATA_" +
-      "SPLIT_METHOD_UNSPECIFIED\020\000\022\n\n\006RANDOM\020\001\022\n" +
-      "\n\006CUSTOM\020\002\022\016\n\nSEQUENTIAL\020\003\022\014\n\010NO_SPLIT\020\004" +
-      "\022\016\n\nAUTO_SPLIT\020\005\"\216\001\n\rDataFrequency\022\036\n\032DA" +
-      "TA_FREQUENCY_UNSPECIFIED\020\000\022\022\n\016AUTO_FREQU" +
-      "ENCY\020\001\022\n\n\006YEARLY\020\002\022\r\n\tQUARTERLY\020\003\022\013\n\007MON" +
-      "THLY\020\004\022\n\n\006WEEKLY\020\005\022\t\n\005DAILY\020\006\022\n\n\006HOURLY\020" +
-      "\007\"\331\004\n\rHolidayRegion\022\036\n\032HOLIDAY_REGION_UN" +
-      "SPECIFIED\020\000\022\n\n\006GLOBAL\020\001\022\006\n\002NA\020\002\022\t\n\005JAPAC" +
-      "\020\003\022\010\n\004EMEA\020\004\022\007\n\003LAC\020\005\022\006\n\002AE\020\006\022\006\n\002AR\020\007\022\006\n" +
-      "\002AT\020\010\022\006\n\002AU\020\t\022\006\n\002BE\020\n\022\006\n\002BR\020\013\022\006\n\002CA\020\014\022\006\n" +
-      "\002CH\020\r\022\006\n\002CL\020\016\022\006\n\002CN\020\017\022\006\n\002CO\020\020\022\006\n\002CS\020\021\022\006\n" +
-      "\002CZ\020\022\022\006\n\002DE\020\023\022\006\n\002DK\020\024\022\006\n\002DZ\020\025\022\006\n\002EC\020\026\022\006\n" +
-      "\002EE\020\027\022\006\n\002EG\020\030\022\006\n\002ES\020\031\022\006\n\002FI\020\032\022\006\n\002FR\020\033\022\006\n" +
-      "\002GB\020\034\022\006\n\002GR\020\035\022\006\n\002HK\020\036\022\006\n\002HU\020\037\022\006\n\002ID\020 \022\006\n" +
-      "\002IE\020!\022\006\n\002IL\020\"\022\006\n\002IN\020#\022\006\n\002IR\020$\022\006\n\002IT\020%\022\006\n" +
-      "\002JP\020&\022\006\n\002KR\020\'\022\006\n\002LV\020(\022\006\n\002MA\020)\022\006\n\002MX\020*\022\006\n" +
-      "\002MY\020+\022\006\n\002NG\020,\022\006\n\002NL\020-\022\006\n\002NO\020.\022\006\n\002NZ\020/\022\006\n" +
-      "\002PE\0200\022\006\n\002PH\0201\022\006\n\002PK\0202\022\006\n\002PL\0203\022\006\n\002PT\0204\022\006\n" +
-      "\002RO\0205\022\006\n\002RS\0206\022\006\n\002RU\0207\022\006\n\002SA\0208\022\006\n\002SE\0209\022\006\n" +
-      "\002SG\020:\022\006\n\002SI\020;\022\006\n\002SK\020<\022\006\n\002TH\020=\022\006\n\002TR\020>\022\006\n" +
-      "\002TW\020?\022\006\n\002UA\020@\022\006\n\002US\020A\022\006\n\002VE\020B\022\006\n\002VN\020C\022\006\n" +
-      "\002ZA\020D\"W\n\021LearnRateStrategy\022#\n\037LEARN_RATE" +
-      "_STRATEGY_UNSPECIFIED\020\000\022\017\n\013LINE_SEARCH\020\001" +
-      "\022\014\n\010CONSTANT\020\002\"n\n\024OptimizationStrategy\022%" +
-      "\n!OPTIMIZATION_STRATEGY_UNSPECIFIED\020\000\022\032\n" +
-      "\026BATCH_GRADIENT_DESCENT\020\001\022\023\n\017NORMAL_EQUA" +
-      "TION\020\002\"I\n\014FeedbackType\022\035\n\031FEEDBACK_TYPE_" +
-      "UNSPECIFIED\020\000\022\014\n\010IMPLICIT\020\001\022\014\n\010EXPLICIT\020" +
-      "\002\"Z\n\017GetModelRequest\022\027\n\nproject_id\030\001 \001(\t" +
-      "B\003\340A\002\022\027\n\ndataset_id\030\002 \001(\tB\003\340A\002\022\025\n\010model_" +
-      "id\030\003 \001(\tB\003\340A\002\"\221\001\n\021PatchModelRequest\022\027\n\np" +
-      "roject_id\030\001 \001(\tB\003\340A\002\022\027\n\ndataset_id\030\002 \001(\t" +
-      "B\003\340A\002\022\025\n\010model_id\030\003 \001(\tB\003\340A\002\0223\n\005model\030\004 " +
-      "\001(\0132\037.google.cloud.bigquery.v2.ModelB\003\340A" +
-      "\002\"]\n\022DeleteModelRequest\022\027\n\nproject_id\030\001 " +
-      "\001(\tB\003\340A\002\022\027\n\ndataset_id\030\002 \001(\tB\003\340A\002\022\025\n\010mod" +
-      "el_id\030\003 \001(\tB\003\340A\002\"\214\001\n\021ListModelsRequest\022\027" +
-      "\n\nproject_id\030\001 \001(\tB\003\340A\002\022\027\n\ndataset_id\030\002 " +
-      "\001(\tB\003\340A\002\0221\n\013max_results\030\003 \001(\0132\034.google.p" +
-      "rotobuf.UInt32Value\022\022\n\npage_token\030\004 \001(\t\"" +
-      "^\n\022ListModelsResponse\022/\n\006models\030\001 \003(\0132\037." +
-      "google.cloud.bigquery.v2.Model\022\027\n\017next_p" +
-      "age_token\030\002 \001(\t2\372\005\n\014ModelService\022y\n\010GetM" +
-      "odel\022).google.cloud.bigquery.v2.GetModel" +
-      "Request\032\037.google.cloud.bigquery.v2.Model" +
-      "\"!\332A\036project_id,dataset_id,model_id\022\215\001\n\n" +
-      "ListModels\022+.google.cloud.bigquery.v2.Li" +
-      "stModelsRequest\032,.google.cloud.bigquery." +
-      "v2.ListModelsResponse\"$\332A!project_id,dat" +
-      "aset_id,max_results\022\203\001\n\nPatchModel\022+.goo" +
-      "gle.cloud.bigquery.v2.PatchModelRequest\032" +
-      "\037.google.cloud.bigquery.v2.Model\"\'\332A$pro" +
-      "ject_id,dataset_id,model_id,model\022v\n\013Del" +
-      "eteModel\022,.google.cloud.bigquery.v2.Dele" +
-      "teModelRequest\032\026.google.protobuf.Empty\"!" +
-      "\332A\036project_id,dataset_id,model_id\032\340\001\312A\027b" +
-      "igquery.googleapis.com\322A\302\001https://www.go" +
-      "ogleapis.com/auth/bigquery,https://www.g" +
-      "oogleapis.com/auth/bigquery.readonly,htt" +
-      "ps://www.googleapis.com/auth/cloud-platf" +
-      "orm,https://www.googleapis.com/auth/clou" +
-      "d-platform.read-onlyBl\n\034com.google.cloud" +
-      ".bigquery.v2B\nModelProtoZ@google.golang." +
-      "org/genproto/googleapis/cloud/bigquery/v" +
-      "2;bigqueryb\006proto3"
+      "rainingOptions.LabelClassWeightsEntry\022\023\n" +
+      "\013user_column\030\022 \001(\t\022\023\n\013item_column\030\023 \001(\t\022" +
+      "C\n\rdistance_type\030\024 \001(\0162,.google.cloud.bi" +
+      "gquery.v2.Model.DistanceType\022\024\n\014num_clus" +
+      "ters\030\025 \001(\003\022\021\n\tmodel_uri\030\026 \001(\t\022S\n\025optimiz" +
+      "ation_strategy\030\027 \001(\01624.google.cloud.bigq" +
+      "uery.v2.Model.OptimizationStrategy\022\024\n\014hi" +
+      "dden_units\030\030 \003(\003\022\022\n\nbatch_size\030\031 \001(\003\022-\n\007" +
+      "dropout\030\032 \001(\0132\034.google.protobuf.DoubleVa" +
+      "lue\022\026\n\016max_tree_depth\030\033 \001(\003\022\021\n\tsubsample" +
+      "\030\034 \001(\001\0224\n\016min_split_loss\030\035 \001(\0132\034.google." +
+      "protobuf.DoubleValue\022\023\n\013num_factors\030\036 \001(" +
+      "\003\022C\n\rfeedback_type\030\037 \001(\0162,.google.cloud." +
+      "bigquery.v2.Model.FeedbackType\0220\n\nwals_a" +
+      "lpha\030  \001(\0132\034.google.protobuf.DoubleValue" +
+      "\022l\n\034kmeans_initialization_method\030! \001(\0162F" +
+      ".google.cloud.bigquery.v2.Model.KmeansEn" +
+      "ums.KmeansInitializationMethod\022$\n\034kmeans" +
+      "_initialization_column\030\" \001(\t\022$\n\034time_ser" +
+      "ies_timestamp_column\030# \001(\t\022\037\n\027time_serie" +
+      "s_data_column\030$ \001(\t\022\022\n\nauto_arima\030% \001(\010\022" +
+      "F\n\022non_seasonal_order\030& \001(\0132*.google.clo" +
+      "ud.bigquery.v2.Model.ArimaOrder\022E\n\016data_" +
+      "frequency\030\' \001(\0162-.google.cloud.bigquery." +
+      "v2.Model.DataFrequency\022\025\n\rinclude_drift\030" +
+      ") \001(\010\022E\n\016holiday_region\030* \001(\0162-.google.c" +
+      "loud.bigquery.v2.Model.HolidayRegion\022\035\n\025" +
+      "time_series_id_column\030+ \001(\t\022\036\n\026time_seri" +
+      "es_id_columns\0303 \003(\t\022\017\n\007horizon\030, \001(\003\022\036\n\026" +
+      "preserve_input_structs\030- \001(\010\022\034\n\024auto_ari" +
+      "ma_max_order\030. \001(\003\0229\n\025decompose_time_ser" +
+      "ies\0302 \001(\0132\032.google.protobuf.BoolValue\0229\n" +
+      "\025clean_spikes_and_dips\0304 \001(\0132\032.google.pr" +
+      "otobuf.BoolValue\0227\n\023adjust_step_changes\030" +
+      "5 \001(\0132\032.google.protobuf.BoolValue\0328\n\026Lab" +
+      "elClassWeightsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
+      "e\030\002 \001(\001:\0028\001\032\202\014\n\017IterationResult\022*\n\005index" +
+      "\030\001 \001(\0132\033.google.protobuf.Int32Value\0220\n\013d" +
+      "uration_ms\030\004 \001(\0132\033.google.protobuf.Int64" +
+      "Value\0223\n\rtraining_loss\030\005 \001(\0132\034.google.pr" +
+      "otobuf.DoubleValue\022/\n\teval_loss\030\006 \001(\0132\034." +
+      "google.protobuf.DoubleValue\022\022\n\nlearn_rat" +
+      "e\030\007 \001(\001\022^\n\rcluster_infos\030\010 \003(\0132G.google." +
+      "cloud.bigquery.v2.Model.TrainingRun.Iter" +
+      "ationResult.ClusterInfo\022]\n\014arima_result\030" +
+      "\t \001(\0132G.google.cloud.bigquery.v2.Model.T" +
+      "rainingRun.IterationResult.ArimaResult\032\213" +
+      "\001\n\013ClusterInfo\022\023\n\013centroid_id\030\001 \001(\003\0224\n\016c" +
+      "luster_radius\030\002 \001(\0132\034.google.protobuf.Do" +
+      "ubleValue\0221\n\014cluster_size\030\003 \001(\0132\033.google" +
+      ".protobuf.Int64Value\032\311\007\n\013ArimaResult\022p\n\020" +
+      "arima_model_info\030\001 \003(\0132V.google.cloud.bi" +
+      "gquery.v2.Model.TrainingRun.IterationRes" +
+      "ult.ArimaResult.ArimaModelInfo\022[\n\020season" +
+      "al_periods\030\002 \003(\0162A.google.cloud.bigquery" +
+      ".v2.Model.SeasonalPeriod.SeasonalPeriodT" +
+      "ype\032}\n\021ArimaCoefficients\022$\n\034auto_regress" +
+      "ive_coefficients\030\001 \003(\001\022#\n\033moving_average" +
+      "_coefficients\030\002 \003(\001\022\035\n\025intercept_coeffic" +
+      "ient\030\003 \001(\001\032\353\004\n\016ArimaModelInfo\022F\n\022non_sea" +
+      "sonal_order\030\001 \001(\0132*.google.cloud.bigquer" +
+      "y.v2.Model.ArimaOrder\022u\n\022arima_coefficie" +
+      "nts\030\002 \001(\0132Y.google.cloud.bigquery.v2.Mod" +
+      "el.TrainingRun.IterationResult.ArimaResu" +
+      "lt.ArimaCoefficients\022R\n\025arima_fitting_me" +
+      "trics\030\003 \001(\01323.google.cloud.bigquery.v2.M" +
+      "odel.ArimaFittingMetrics\022\021\n\thas_drift\030\004 " +
+      "\001(\010\022\026\n\016time_series_id\030\005 \001(\t\022\027\n\017time_seri" +
+      "es_ids\030\n \003(\t\022[\n\020seasonal_periods\030\006 \003(\0162A" +
+      ".google.cloud.bigquery.v2.Model.Seasonal" +
+      "Period.SeasonalPeriodType\0226\n\022has_holiday" +
+      "_effect\030\007 \001(\0132\032.google.protobuf.BoolValu" +
+      "e\0227\n\023has_spikes_and_dips\030\010 \001(\0132\032.google." +
+      "protobuf.BoolValue\0224\n\020has_step_changes\030\t" +
+      " \001(\0132\032.google.protobuf.BoolValue\032-\n\013Labe" +
+      "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
+      "\265\002\n\tModelType\022\032\n\026MODEL_TYPE_UNSPECIFIED\020" +
+      "\000\022\025\n\021LINEAR_REGRESSION\020\001\022\027\n\023LOGISTIC_REG" +
+      "RESSION\020\002\022\n\n\006KMEANS\020\003\022\030\n\024MATRIX_FACTORIZ" +
+      "ATION\020\004\022\022\n\016DNN_CLASSIFIER\020\005\022\016\n\nTENSORFLO" +
+      "W\020\006\022\021\n\rDNN_REGRESSOR\020\007\022\032\n\026BOOSTED_TREE_R" +
+      "EGRESSOR\020\t\022\033\n\027BOOSTED_TREE_CLASSIFIER\020\n\022" +
+      "\t\n\005ARIMA\020\013\022\024\n\020AUTOML_REGRESSOR\020\014\022\025\n\021AUTO" +
+      "ML_CLASSIFIER\020\r\022\016\n\nARIMA_PLUS\020\023\"O\n\010LossT" +
+      "ype\022\031\n\025LOSS_TYPE_UNSPECIFIED\020\000\022\025\n\021MEAN_S" +
+      "QUARED_LOSS\020\001\022\021\n\rMEAN_LOG_LOSS\020\002\"H\n\014Dist" +
+      "anceType\022\035\n\031DISTANCE_TYPE_UNSPECIFIED\020\000\022" +
+      "\r\n\tEUCLIDEAN\020\001\022\n\n\006COSINE\020\002\"z\n\017DataSplitM" +
+      "ethod\022!\n\035DATA_SPLIT_METHOD_UNSPECIFIED\020\000" +
+      "\022\n\n\006RANDOM\020\001\022\n\n\006CUSTOM\020\002\022\016\n\nSEQUENTIAL\020\003" +
+      "\022\014\n\010NO_SPLIT\020\004\022\016\n\nAUTO_SPLIT\020\005\"\236\001\n\rDataF" +
+      "requency\022\036\n\032DATA_FREQUENCY_UNSPECIFIED\020\000" +
+      "\022\022\n\016AUTO_FREQUENCY\020\001\022\n\n\006YEARLY\020\002\022\r\n\tQUAR" +
+      "TERLY\020\003\022\013\n\007MONTHLY\020\004\022\n\n\006WEEKLY\020\005\022\t\n\005DAIL" +
+      "Y\020\006\022\n\n\006HOURLY\020\007\022\016\n\nPER_MINUTE\020\010\"\331\004\n\rHoli" +
+      "dayRegion\022\036\n\032HOLIDAY_REGION_UNSPECIFIED\020" +
+      "\000\022\n\n\006GLOBAL\020\001\022\006\n\002NA\020\002\022\t\n\005JAPAC\020\003\022\010\n\004EMEA" +
+      "\020\004\022\007\n\003LAC\020\005\022\006\n\002AE\020\006\022\006\n\002AR\020\007\022\006\n\002AT\020\010\022\006\n\002A" +
+      "U\020\t\022\006\n\002BE\020\n\022\006\n\002BR\020\013\022\006\n\002CA\020\014\022\006\n\002CH\020\r\022\006\n\002C" +
+      "L\020\016\022\006\n\002CN\020\017\022\006\n\002CO\020\020\022\006\n\002CS\020\021\022\006\n\002CZ\020\022\022\006\n\002D" +
+      "E\020\023\022\006\n\002DK\020\024\022\006\n\002DZ\020\025\022\006\n\002EC\020\026\022\006\n\002EE\020\027\022\006\n\002E" +
+      "G\020\030\022\006\n\002ES\020\031\022\006\n\002FI\020\032\022\006\n\002FR\020\033\022\006\n\002GB\020\034\022\006\n\002G" +
+      "R\020\035\022\006\n\002HK\020\036\022\006\n\002HU\020\037\022\006\n\002ID\020 \022\006\n\002IE\020!\022\006\n\002I" +
+      "L\020\"\022\006\n\002IN\020#\022\006\n\002IR\020$\022\006\n\002IT\020%\022\006\n\002JP\020&\022\006\n\002K" +
+      "R\020\'\022\006\n\002LV\020(\022\006\n\002MA\020)\022\006\n\002MX\020*\022\006\n\002MY\020+\022\006\n\002N" +
+      "G\020,\022\006\n\002NL\020-\022\006\n\002NO\020.\022\006\n\002NZ\020/\022\006\n\002PE\0200\022\006\n\002P" +
+      "H\0201\022\006\n\002PK\0202\022\006\n\002PL\0203\022\006\n\002PT\0204\022\006\n\002RO\0205\022\006\n\002R" +
+      "S\0206\022\006\n\002RU\0207\022\006\n\002SA\0208\022\006\n\002SE\0209\022\006\n\002SG\020:\022\006\n\002S" +
+      "I\020;\022\006\n\002SK\020<\022\006\n\002TH\020=\022\006\n\002TR\020>\022\006\n\002TW\020?\022\006\n\002U" +
+      "A\020@\022\006\n\002US\020A\022\006\n\002VE\020B\022\006\n\002VN\020C\022\006\n\002ZA\020D\"W\n\021L" +
+      "earnRateStrategy\022#\n\037LEARN_RATE_STRATEGY_" +
+      "UNSPECIFIED\020\000\022\017\n\013LINE_SEARCH\020\001\022\014\n\010CONSTA" +
+      "NT\020\002\"n\n\024OptimizationStrategy\022%\n!OPTIMIZA" +
+      "TION_STRATEGY_UNSPECIFIED\020\000\022\032\n\026BATCH_GRA" +
+      "DIENT_DESCENT\020\001\022\023\n\017NORMAL_EQUATION\020\002\"I\n\014" +
+      "FeedbackType\022\035\n\031FEEDBACK_TYPE_UNSPECIFIE" +
+      "D\020\000\022\014\n\010IMPLICIT\020\001\022\014\n\010EXPLICIT\020\002\"Z\n\017GetMo" +
+      "delRequest\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\027\n\nd" +
+      "ataset_id\030\002 \001(\tB\003\340A\002\022\025\n\010model_id\030\003 \001(\tB\003" +
+      "\340A\002\"\221\001\n\021PatchModelRequest\022\027\n\nproject_id\030" +
+      "\001 \001(\tB\003\340A\002\022\027\n\ndataset_id\030\002 \001(\tB\003\340A\002\022\025\n\010m" +
+      "odel_id\030\003 \001(\tB\003\340A\002\0223\n\005model\030\004 \001(\0132\037.goog" +
+      "le.cloud.bigquery.v2.ModelB\003\340A\002\"]\n\022Delet" +
+      "eModelRequest\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022\027" +
+      "\n\ndataset_id\030\002 \001(\tB\003\340A\002\022\025\n\010model_id\030\003 \001(" +
+      "\tB\003\340A\002\"\214\001\n\021ListModelsRequest\022\027\n\nproject_" +
+      "id\030\001 \001(\tB\003\340A\002\022\027\n\ndataset_id\030\002 \001(\tB\003\340A\002\0221" +
+      "\n\013max_results\030\003 \001(\0132\034.google.protobuf.UI" +
+      "nt32Value\022\022\n\npage_token\030\004 \001(\t\"^\n\022ListMod" +
+      "elsResponse\022/\n\006models\030\001 \003(\0132\037.google.clo" +
+      "ud.bigquery.v2.Model\022\027\n\017next_page_token\030" +
+      "\002 \001(\t2\327\010\n\014ModelService\022\321\001\n\010GetModel\022).go" +
+      "ogle.cloud.bigquery.v2.GetModelRequest\032\037" +
+      ".google.cloud.bigquery.v2.Model\"y\202\323\344\223\002R\022" +
+      "P/bigquery/v2/projects/{project_id=*}/da" +
+      "tasets/{dataset_id=*}/models/{model_id=*" +
+      "}\332A\036project_id,dataset_id,model_id\022\330\001\n\nL" +
+      "istModels\022+.google.cloud.bigquery.v2.Lis" +
+      "tModelsRequest\032,.google.cloud.bigquery.v" +
+      "2.ListModelsResponse\"o\202\323\344\223\002E\022C/bigquery/" +
+      "v2/projects/{project_id=*}/datasets/{dat" +
+      "aset_id=*}/models\332A!project_id,dataset_i" +
+      "d,max_results\022\343\001\n\nPatchModel\022+.google.cl" +
+      "oud.bigquery.v2.PatchModelRequest\032\037.goog" +
+      "le.cloud.bigquery.v2.Model\"\206\001\202\323\344\223\002Y2P/bi" +
+      "gquery/v2/projects/{project_id=*}/datase" +
+      "ts/{dataset_id=*}/models/{model_id=*}:\005m" +
+      "odel\332A$project_id,dataset_id,model_id,mo" +
+      "del\022\316\001\n\013DeleteModel\022,.google.cloud.bigqu" +
+      "ery.v2.DeleteModelRequest\032\026.google.proto" +
+      "buf.Empty\"y\202\323\344\223\002R*P/bigquery/v2/projects" +
+      "/{project_id=*}/datasets/{dataset_id=*}/" +
+      "models/{model_id=*}\332A\036project_id,dataset" +
+      "_id,model_id\032\340\001\312A\027bigquery.googleapis.co" +
+      "m\322A\302\001https://www.googleapis.com/auth/big" +
+      "query,https://www.googleapis.com/auth/bi" +
+      "gquery.readonly,https://www.googleapis.c" +
+      "om/auth/cloud-platform,https://www.googl" +
+      "eapis.com/auth/cloud-platform.read-onlyB" +
+      "l\n\034com.google.cloud.bigquery.v2B\nModelPr" +
+      "otoZ@google.golang.org/genproto/googleap" +
+      "is/cloud/bigquery/v2;bigqueryb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -63860,7 +67523,7 @@ public final class ModelProto {
     internal_static_google_cloud_bigquery_v2_Model_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_bigquery_v2_Model_descriptor,
-        new java.lang.String[] { "Etag", "ModelReference", "CreationTime", "LastModifiedTime", "Description", "FriendlyName", "Labels", "ExpirationTime", "Location", "EncryptionConfiguration", "ModelType", "TrainingRuns", "FeatureColumns", "LabelColumns", });
+        new java.lang.String[] { "Etag", "ModelReference", "CreationTime", "LastModifiedTime", "Description", "FriendlyName", "Labels", "ExpirationTime", "Location", "EncryptionConfiguration", "ModelType", "TrainingRuns", "FeatureColumns", "LabelColumns", "BestTrialId", });
     internal_static_google_cloud_bigquery_v2_Model_SeasonalPeriod_descriptor =
       internal_static_google_cloud_bigquery_v2_Model_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_bigquery_v2_Model_SeasonalPeriod_fieldAccessorTable = new
@@ -63968,7 +67631,7 @@ public final class ModelProto {
     internal_static_google_cloud_bigquery_v2_Model_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_bigquery_v2_Model_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_descriptor,
-        new java.lang.String[] { "NonSeasonalOrder", "ArimaFittingMetrics", "HasDrift", "TimeSeriesId", "SeasonalPeriods", });
+        new java.lang.String[] { "NonSeasonalOrder", "ArimaFittingMetrics", "HasDrift", "TimeSeriesId", "TimeSeriesIds", "SeasonalPeriods", "HasHolidayEffect", "HasSpikesAndDips", "HasStepChanges", });
     internal_static_google_cloud_bigquery_v2_Model_EvaluationMetrics_descriptor =
       internal_static_google_cloud_bigquery_v2_Model_descriptor.getNestedTypes().get(9);
     internal_static_google_cloud_bigquery_v2_Model_EvaluationMetrics_fieldAccessorTable = new
@@ -64016,7 +67679,7 @@ public final class ModelProto {
     internal_static_google_cloud_bigquery_v2_Model_TrainingRun_TrainingOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_bigquery_v2_Model_TrainingRun_TrainingOptions_descriptor,
-        new java.lang.String[] { "MaxIterations", "LossType", "LearnRate", "L1Regularization", "L2Regularization", "MinRelativeProgress", "WarmStart", "EarlyStop", "InputLabelColumns", "DataSplitMethod", "DataSplitEvalFraction", "DataSplitColumn", "LearnRateStrategy", "InitialLearnRate", "LabelClassWeights", "UserColumn", "ItemColumn", "DistanceType", "NumClusters", "ModelUri", "OptimizationStrategy", "HiddenUnits", "BatchSize", "Dropout", "MaxTreeDepth", "Subsample", "MinSplitLoss", "NumFactors", "FeedbackType", "WalsAlpha", "KmeansInitializationMethod", "KmeansInitializationColumn", "TimeSeriesTimestampColumn", "TimeSeriesDataColumn", "AutoArima", "NonSeasonalOrder", "DataFrequency", "IncludeDrift", "HolidayRegion", "TimeSeriesIdColumn", "Horizon", "PreserveInputStructs", "AutoArimaMaxOrder", });
+        new java.lang.String[] { "MaxIterations", "LossType", "LearnRate", "L1Regularization", "L2Regularization", "MinRelativeProgress", "WarmStart", "EarlyStop", "InputLabelColumns", "DataSplitMethod", "DataSplitEvalFraction", "DataSplitColumn", "LearnRateStrategy", "InitialLearnRate", "LabelClassWeights", "UserColumn", "ItemColumn", "DistanceType", "NumClusters", "ModelUri", "OptimizationStrategy", "HiddenUnits", "BatchSize", "Dropout", "MaxTreeDepth", "Subsample", "MinSplitLoss", "NumFactors", "FeedbackType", "WalsAlpha", "KmeansInitializationMethod", "KmeansInitializationColumn", "TimeSeriesTimestampColumn", "TimeSeriesDataColumn", "AutoArima", "NonSeasonalOrder", "DataFrequency", "IncludeDrift", "HolidayRegion", "TimeSeriesIdColumn", "TimeSeriesIdColumns", "Horizon", "PreserveInputStructs", "AutoArimaMaxOrder", "DecomposeTimeSeries", "CleanSpikesAndDips", "AdjustStepChanges", });
     internal_static_google_cloud_bigquery_v2_Model_TrainingRun_TrainingOptions_LabelClassWeightsEntry_descriptor =
       internal_static_google_cloud_bigquery_v2_Model_TrainingRun_TrainingOptions_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_bigquery_v2_Model_TrainingRun_TrainingOptions_LabelClassWeightsEntry_fieldAccessorTable = new
@@ -64052,7 +67715,7 @@ public final class ModelProto {
     internal_static_google_cloud_bigquery_v2_Model_TrainingRun_IterationResult_ArimaResult_ArimaModelInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_bigquery_v2_Model_TrainingRun_IterationResult_ArimaResult_ArimaModelInfo_descriptor,
-        new java.lang.String[] { "NonSeasonalOrder", "ArimaCoefficients", "ArimaFittingMetrics", "HasDrift", "TimeSeriesId", "SeasonalPeriods", });
+        new java.lang.String[] { "NonSeasonalOrder", "ArimaCoefficients", "ArimaFittingMetrics", "HasDrift", "TimeSeriesId", "TimeSeriesIds", "SeasonalPeriods", "HasHolidayEffect", "HasSpikesAndDips", "HasStepChanges", });
     internal_static_google_cloud_bigquery_v2_Model_LabelsEntry_descriptor =
       internal_static_google_cloud_bigquery_v2_Model_descriptor.getNestedTypes().get(15);
     internal_static_google_cloud_bigquery_v2_Model_LabelsEntry_fieldAccessorTable = new
@@ -64093,6 +67756,7 @@ public final class ModelProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
     com.google.protobuf.Descriptors.FileDescriptor

@@ -199,7 +199,8 @@ public final class ModelServiceGrpc {
     /**
      * <pre>
      * Lists all models in the specified dataset. Requires the READER dataset
-     * role.
+     * role. After retrieving the list of models, you can get information about a
+     * particular model by calling the models.get method.
      * </pre>
      */
     public void listModels(com.google.cloud.bigquery.v2.ModelProto.ListModelsRequest request,
@@ -289,7 +290,8 @@ public final class ModelServiceGrpc {
     /**
      * <pre>
      * Lists all models in the specified dataset. Requires the READER dataset
-     * role.
+     * role. After retrieving the list of models, you can get information about a
+     * particular model by calling the models.get method.
      * </pre>
      */
     public void listModels(com.google.cloud.bigquery.v2.ModelProto.ListModelsRequest request,
@@ -348,7 +350,8 @@ public final class ModelServiceGrpc {
     /**
      * <pre>
      * Lists all models in the specified dataset. Requires the READER dataset
-     * role.
+     * role. After retrieving the list of models, you can get information about a
+     * particular model by calling the models.get method.
      * </pre>
      */
     public com.google.cloud.bigquery.v2.ModelProto.ListModelsResponse listModels(com.google.cloud.bigquery.v2.ModelProto.ListModelsRequest request) {
@@ -405,7 +408,8 @@ public final class ModelServiceGrpc {
     /**
      * <pre>
      * Lists all models in the specified dataset. Requires the READER dataset
-     * role.
+     * role. After retrieving the list of models, you can get information about a
+     * particular model by calling the models.get method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.v2.ModelProto.ListModelsResponse> listModels(

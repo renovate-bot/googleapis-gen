@@ -417,6 +417,7 @@ def test_get_model(transport: str = 'grpc', request_type=model.GetModelRequest):
             expiration_time=1617,
             location='location_value',
             model_type=model.Model.ModelType.LINEAR_REGRESSION,
+            best_trial_id=1365,
         )
         response = client.get_model(request)
 
@@ -435,6 +436,7 @@ def test_get_model(transport: str = 'grpc', request_type=model.GetModelRequest):
     assert response.expiration_time == 1617
     assert response.location == 'location_value'
     assert response.model_type == model.Model.ModelType.LINEAR_REGRESSION
+    assert response.best_trial_id == 1365
 
 
 def test_get_model_from_dict():
@@ -484,6 +486,7 @@ async def test_get_model_async(transport: str = 'grpc_asyncio', request_type=mod
             expiration_time=1617,
             location='location_value',
             model_type=model.Model.ModelType.LINEAR_REGRESSION,
+            best_trial_id=1365,
         ))
         response = await client.get_model(request)
 
@@ -502,11 +505,79 @@ async def test_get_model_async(transport: str = 'grpc_asyncio', request_type=mod
     assert response.expiration_time == 1617
     assert response.location == 'location_value'
     assert response.model_type == model.Model.ModelType.LINEAR_REGRESSION
+    assert response.best_trial_id == 1365
 
 
 @pytest.mark.asyncio
 async def test_get_model_async_from_dict():
     await test_get_model_async(request_type=dict)
+
+
+def test_get_model_field_headers():
+    client = ModelServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = model.GetModelRequest()
+
+    request.project_id = 'project_id/value'
+    request.dataset_id = 'dataset_id/value'
+    request.model_id = 'model_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_model),
+            '__call__') as call:
+        call.return_value = model.Model()
+        client.get_model(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'project_id=project_id/value&dataset_id=dataset_id/value&model_id=model_id/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_get_model_field_headers_async():
+    client = ModelServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = model.GetModelRequest()
+
+    request.project_id = 'project_id/value'
+    request.dataset_id = 'dataset_id/value'
+    request.model_id = 'model_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_model),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(model.Model())
+        await client.get_model(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'project_id=project_id/value&dataset_id=dataset_id/value&model_id=model_id/value',
+    ) in kw['metadata']
 
 
 def test_get_model_flattened():
@@ -690,6 +761,71 @@ async def test_list_models_async_from_dict():
     await test_list_models_async(request_type=dict)
 
 
+def test_list_models_field_headers():
+    client = ModelServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = model.ListModelsRequest()
+
+    request.project_id = 'project_id/value'
+    request.dataset_id = 'dataset_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        call.return_value = model.ListModelsResponse()
+        client.list_models(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'project_id=project_id/value&dataset_id=dataset_id/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_list_models_field_headers_async():
+    client = ModelServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = model.ListModelsRequest()
+
+    request.project_id = 'project_id/value'
+    request.dataset_id = 'dataset_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_models),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(model.ListModelsResponse())
+        await client.list_models(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'project_id=project_id/value&dataset_id=dataset_id/value',
+    ) in kw['metadata']
+
+
 def test_list_models_flattened():
     client = ModelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -806,6 +942,7 @@ def test_patch_model(transport: str = 'grpc', request_type=gcb_model.PatchModelR
             expiration_time=1617,
             location='location_value',
             model_type=gcb_model.Model.ModelType.LINEAR_REGRESSION,
+            best_trial_id=1365,
         )
         response = client.patch_model(request)
 
@@ -824,6 +961,7 @@ def test_patch_model(transport: str = 'grpc', request_type=gcb_model.PatchModelR
     assert response.expiration_time == 1617
     assert response.location == 'location_value'
     assert response.model_type == gcb_model.Model.ModelType.LINEAR_REGRESSION
+    assert response.best_trial_id == 1365
 
 
 def test_patch_model_from_dict():
@@ -873,6 +1011,7 @@ async def test_patch_model_async(transport: str = 'grpc_asyncio', request_type=g
             expiration_time=1617,
             location='location_value',
             model_type=gcb_model.Model.ModelType.LINEAR_REGRESSION,
+            best_trial_id=1365,
         ))
         response = await client.patch_model(request)
 
@@ -891,11 +1030,79 @@ async def test_patch_model_async(transport: str = 'grpc_asyncio', request_type=g
     assert response.expiration_time == 1617
     assert response.location == 'location_value'
     assert response.model_type == gcb_model.Model.ModelType.LINEAR_REGRESSION
+    assert response.best_trial_id == 1365
 
 
 @pytest.mark.asyncio
 async def test_patch_model_async_from_dict():
     await test_patch_model_async(request_type=dict)
+
+
+def test_patch_model_field_headers():
+    client = ModelServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = gcb_model.PatchModelRequest()
+
+    request.project_id = 'project_id/value'
+    request.dataset_id = 'dataset_id/value'
+    request.model_id = 'model_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_model),
+            '__call__') as call:
+        call.return_value = gcb_model.Model()
+        client.patch_model(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'project_id=project_id/value&dataset_id=dataset_id/value&model_id=model_id/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_patch_model_field_headers_async():
+    client = ModelServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = gcb_model.PatchModelRequest()
+
+    request.project_id = 'project_id/value'
+    request.dataset_id = 'dataset_id/value'
+    request.model_id = 'model_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.patch_model),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(gcb_model.Model())
+        await client.patch_model(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'project_id=project_id/value&dataset_id=dataset_id/value&model_id=model_id/value',
+    ) in kw['metadata']
 
 
 def test_patch_model_flattened():
@@ -1076,6 +1283,73 @@ async def test_delete_model_async(transport: str = 'grpc_asyncio', request_type=
 @pytest.mark.asyncio
 async def test_delete_model_async_from_dict():
     await test_delete_model_async(request_type=dict)
+
+
+def test_delete_model_field_headers():
+    client = ModelServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = model.DeleteModelRequest()
+
+    request.project_id = 'project_id/value'
+    request.dataset_id = 'dataset_id/value'
+    request.model_id = 'model_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_model),
+            '__call__') as call:
+        call.return_value = None
+        client.delete_model(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'project_id=project_id/value&dataset_id=dataset_id/value&model_id=model_id/value',
+    ) in kw['metadata']
+
+
+@pytest.mark.asyncio
+async def test_delete_model_field_headers_async():
+    client = ModelServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = model.DeleteModelRequest()
+
+    request.project_id = 'project_id/value'
+    request.dataset_id = 'dataset_id/value'
+    request.model_id = 'model_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_model),
+            '__call__') as call:
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(None)
+        await client.delete_model(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'project_id=project_id/value&dataset_id=dataset_id/value&model_id=model_id/value',
+    ) in kw['metadata']
 
 
 def test_delete_model_flattened():

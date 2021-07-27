@@ -401,6 +401,16 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # and friendly error handling.
         rpc = self._transport._wrapped_methods[self._transport.get_model]
 
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("project_id", request.project_id),
+                ("dataset_id", request.dataset_id),
+                ("model_id", request.model_id),
+            )),
+        )
+
         # Send the request.
         response = rpc(
             request,
@@ -423,7 +433,9 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> model.ListModelsResponse:
         r"""Lists all models in the specified dataset. Requires
-        the READER dataset role.
+        the READER dataset role. After retrieving the list of
+        models, you can get information about a particular model
+        by calling the models.get method.
 
         Args:
             request (google.cloud.bigquery_v2.types.ListModelsRequest):
@@ -487,6 +499,15 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = self._transport._wrapped_methods[self._transport.list_models]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("project_id", request.project_id),
+                ("dataset_id", request.dataset_id),
+            )),
+        )
 
         # Send the request.
         response = rpc(
@@ -584,6 +605,16 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # and friendly error handling.
         rpc = self._transport._wrapped_methods[self._transport.patch_model]
 
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("project_id", request.project_id),
+                ("dataset_id", request.dataset_id),
+                ("model_id", request.model_id),
+            )),
+        )
+
         # Send the request.
         response = rpc(
             request,
@@ -664,6 +695,16 @@ class ModelServiceClient(metaclass=ModelServiceClientMeta):
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
         rpc = self._transport._wrapped_methods[self._transport.delete_model]
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("project_id", request.project_id),
+                ("dataset_id", request.dataset_id),
+                ("model_id", request.model_id),
+            )),
+        )
 
         # Send the request.
         rpc(

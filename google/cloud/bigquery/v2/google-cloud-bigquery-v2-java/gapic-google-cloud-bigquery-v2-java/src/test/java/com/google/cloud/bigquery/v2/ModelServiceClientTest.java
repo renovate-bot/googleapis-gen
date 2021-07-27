@@ -97,6 +97,7 @@ public class ModelServiceClientTest {
             .addAllTrainingRuns(new ArrayList<ModelProto.Model.TrainingRun>())
             .addAllFeatureColumns(new ArrayList<StandardSqlProto.StandardSqlField>())
             .addAllLabelColumns(new ArrayList<StandardSqlProto.StandardSqlField>())
+            .setBestTrialId(1240235743)
             .build();
     mockModelService.addResponse(expectedResponse);
 
@@ -201,6 +202,7 @@ public class ModelServiceClientTest {
             .addAllTrainingRuns(new ArrayList<ModelProto.Model.TrainingRun>())
             .addAllFeatureColumns(new ArrayList<StandardSqlProto.StandardSqlField>())
             .addAllLabelColumns(new ArrayList<StandardSqlProto.StandardSqlField>())
+            .setBestTrialId(1240235743)
             .build();
     mockModelService.addResponse(expectedResponse);
 

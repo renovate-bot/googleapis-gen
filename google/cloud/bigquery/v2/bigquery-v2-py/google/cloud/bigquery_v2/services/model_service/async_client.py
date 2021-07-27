@@ -219,6 +219,16 @@ class ModelServiceAsyncClient:
             client_info=DEFAULT_CLIENT_INFO,
         )
 
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("project_id", request.project_id),
+                ("dataset_id", request.dataset_id),
+                ("model_id", request.model_id),
+            )),
+        )
+
         # Send the request.
         response = await rpc(
             request,
@@ -241,7 +251,9 @@ class ModelServiceAsyncClient:
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> model.ListModelsResponse:
         r"""Lists all models in the specified dataset. Requires
-        the READER dataset role.
+        the READER dataset role. After retrieving the list of
+        models, you can get information about a particular model
+        by calling the models.get method.
 
         Args:
             request (:class:`google.cloud.bigquery_v2.types.ListModelsRequest`):
@@ -304,6 +316,15 @@ class ModelServiceAsyncClient:
             self._client._transport.list_models,
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("project_id", request.project_id),
+                ("dataset_id", request.dataset_id),
+            )),
         )
 
         # Send the request.
@@ -402,6 +423,16 @@ class ModelServiceAsyncClient:
             client_info=DEFAULT_CLIENT_INFO,
         )
 
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("project_id", request.project_id),
+                ("dataset_id", request.dataset_id),
+                ("model_id", request.model_id),
+            )),
+        )
+
         # Send the request.
         response = await rpc(
             request,
@@ -481,6 +512,16 @@ class ModelServiceAsyncClient:
             self._client._transport.delete_model,
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("project_id", request.project_id),
+                ("dataset_id", request.dataset_id),
+                ("model_id", request.model_id),
+            )),
         )
 
         # Send the request.

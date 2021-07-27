@@ -43,7 +43,7 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 ModelReference = new ModelReference(),
                 CreationTime = -5025413042314785256L,
                 LastModifiedTime = 1315234198627015670L,
-                ModelType = Model.Types.ModelType.BoostedTreeClassifier,
+                ModelType = Model.Types.ModelType.LogisticRegression,
                 TrainingRuns =
                 {
                     new Model.Types.TrainingRun(),
@@ -68,6 +68,9 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 },
                 ExpirationTime = -3281957478759130153L,
                 EncryptionConfiguration = new EncryptionConfiguration(),
+#pragma warning disable CS0612
+                BestTrialId = 2282073587253719259L,
+#pragma warning restore CS0612
             };
             mockGrpcClient.Setup(x => x.GetModel(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ModelServiceClient client = new ModelServiceClientImpl(mockGrpcClient.Object, null);
@@ -92,7 +95,7 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 ModelReference = new ModelReference(),
                 CreationTime = -5025413042314785256L,
                 LastModifiedTime = 1315234198627015670L,
-                ModelType = Model.Types.ModelType.BoostedTreeClassifier,
+                ModelType = Model.Types.ModelType.LogisticRegression,
                 TrainingRuns =
                 {
                     new Model.Types.TrainingRun(),
@@ -117,6 +120,9 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 },
                 ExpirationTime = -3281957478759130153L,
                 EncryptionConfiguration = new EncryptionConfiguration(),
+#pragma warning disable CS0612
+                BestTrialId = 2282073587253719259L,
+#pragma warning restore CS0612
             };
             mockGrpcClient.Setup(x => x.GetModelAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Model>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ModelServiceClient client = new ModelServiceClientImpl(mockGrpcClient.Object, null);
@@ -143,7 +149,7 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 ModelReference = new ModelReference(),
                 CreationTime = -5025413042314785256L,
                 LastModifiedTime = 1315234198627015670L,
-                ModelType = Model.Types.ModelType.BoostedTreeClassifier,
+                ModelType = Model.Types.ModelType.LogisticRegression,
                 TrainingRuns =
                 {
                     new Model.Types.TrainingRun(),
@@ -168,6 +174,9 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 },
                 ExpirationTime = -3281957478759130153L,
                 EncryptionConfiguration = new EncryptionConfiguration(),
+#pragma warning disable CS0612
+                BestTrialId = 2282073587253719259L,
+#pragma warning restore CS0612
             };
             mockGrpcClient.Setup(x => x.GetModel(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ModelServiceClient client = new ModelServiceClientImpl(mockGrpcClient.Object, null);
@@ -192,7 +201,7 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 ModelReference = new ModelReference(),
                 CreationTime = -5025413042314785256L,
                 LastModifiedTime = 1315234198627015670L,
-                ModelType = Model.Types.ModelType.BoostedTreeClassifier,
+                ModelType = Model.Types.ModelType.LogisticRegression,
                 TrainingRuns =
                 {
                     new Model.Types.TrainingRun(),
@@ -217,6 +226,9 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 },
                 ExpirationTime = -3281957478759130153L,
                 EncryptionConfiguration = new EncryptionConfiguration(),
+#pragma warning disable CS0612
+                BestTrialId = 2282073587253719259L,
+#pragma warning restore CS0612
             };
             mockGrpcClient.Setup(x => x.GetModelAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Model>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ModelServiceClient client = new ModelServiceClientImpl(mockGrpcClient.Object, null);
@@ -338,7 +350,7 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 ModelReference = new ModelReference(),
                 CreationTime = -5025413042314785256L,
                 LastModifiedTime = 1315234198627015670L,
-                ModelType = Model.Types.ModelType.BoostedTreeClassifier,
+                ModelType = Model.Types.ModelType.LogisticRegression,
                 TrainingRuns =
                 {
                     new Model.Types.TrainingRun(),
@@ -363,6 +375,9 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 },
                 ExpirationTime = -3281957478759130153L,
                 EncryptionConfiguration = new EncryptionConfiguration(),
+#pragma warning disable CS0612
+                BestTrialId = 2282073587253719259L,
+#pragma warning restore CS0612
             };
             mockGrpcClient.Setup(x => x.PatchModel(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ModelServiceClient client = new ModelServiceClientImpl(mockGrpcClient.Object, null);
@@ -388,7 +403,7 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 ModelReference = new ModelReference(),
                 CreationTime = -5025413042314785256L,
                 LastModifiedTime = 1315234198627015670L,
-                ModelType = Model.Types.ModelType.BoostedTreeClassifier,
+                ModelType = Model.Types.ModelType.LogisticRegression,
                 TrainingRuns =
                 {
                     new Model.Types.TrainingRun(),
@@ -413,6 +428,9 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 },
                 ExpirationTime = -3281957478759130153L,
                 EncryptionConfiguration = new EncryptionConfiguration(),
+#pragma warning disable CS0612
+                BestTrialId = 2282073587253719259L,
+#pragma warning restore CS0612
             };
             mockGrpcClient.Setup(x => x.PatchModelAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Model>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ModelServiceClient client = new ModelServiceClientImpl(mockGrpcClient.Object, null);
@@ -440,7 +458,7 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 ModelReference = new ModelReference(),
                 CreationTime = -5025413042314785256L,
                 LastModifiedTime = 1315234198627015670L,
-                ModelType = Model.Types.ModelType.BoostedTreeClassifier,
+                ModelType = Model.Types.ModelType.LogisticRegression,
                 TrainingRuns =
                 {
                     new Model.Types.TrainingRun(),
@@ -465,6 +483,9 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 },
                 ExpirationTime = -3281957478759130153L,
                 EncryptionConfiguration = new EncryptionConfiguration(),
+#pragma warning disable CS0612
+                BestTrialId = 2282073587253719259L,
+#pragma warning restore CS0612
             };
             mockGrpcClient.Setup(x => x.PatchModel(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             ModelServiceClient client = new ModelServiceClientImpl(mockGrpcClient.Object, null);
@@ -490,7 +511,7 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 ModelReference = new ModelReference(),
                 CreationTime = -5025413042314785256L,
                 LastModifiedTime = 1315234198627015670L,
-                ModelType = Model.Types.ModelType.BoostedTreeClassifier,
+                ModelType = Model.Types.ModelType.LogisticRegression,
                 TrainingRuns =
                 {
                     new Model.Types.TrainingRun(),
@@ -515,6 +536,9 @@ namespace Google.Cloud.Bigquery.V2.Tests
                 },
                 ExpirationTime = -3281957478759130153L,
                 EncryptionConfiguration = new EncryptionConfiguration(),
+#pragma warning disable CS0612
+                BestTrialId = 2282073587253719259L,
+#pragma warning restore CS0612
             };
             mockGrpcClient.Setup(x => x.PatchModelAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Model>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             ModelServiceClient client = new ModelServiceClientImpl(mockGrpcClient.Object, null);

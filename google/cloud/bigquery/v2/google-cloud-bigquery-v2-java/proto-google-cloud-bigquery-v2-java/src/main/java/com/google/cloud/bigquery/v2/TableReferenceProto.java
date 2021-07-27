@@ -85,6 +85,141 @@ public final class TableReferenceProto {
      */
     com.google.protobuf.ByteString
         getTableIdBytes();
+
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string project_id_alternative = 4;</code>
+     * @return A list containing the projectIdAlternative.
+     */
+    java.util.List<java.lang.String>
+        getProjectIdAlternativeList();
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string project_id_alternative = 4;</code>
+     * @return The count of projectIdAlternative.
+     */
+    int getProjectIdAlternativeCount();
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string project_id_alternative = 4;</code>
+     * @param index The index of the element to return.
+     * @return The projectIdAlternative at the given index.
+     */
+    java.lang.String getProjectIdAlternative(int index);
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string project_id_alternative = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the projectIdAlternative at the given index.
+     */
+    com.google.protobuf.ByteString
+        getProjectIdAlternativeBytes(int index);
+
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string dataset_id_alternative = 5;</code>
+     * @return A list containing the datasetIdAlternative.
+     */
+    java.util.List<java.lang.String>
+        getDatasetIdAlternativeList();
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string dataset_id_alternative = 5;</code>
+     * @return The count of datasetIdAlternative.
+     */
+    int getDatasetIdAlternativeCount();
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string dataset_id_alternative = 5;</code>
+     * @param index The index of the element to return.
+     * @return The datasetIdAlternative at the given index.
+     */
+    java.lang.String getDatasetIdAlternative(int index);
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string dataset_id_alternative = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the datasetIdAlternative at the given index.
+     */
+    com.google.protobuf.ByteString
+        getDatasetIdAlternativeBytes(int index);
+
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string table_id_alternative = 6;</code>
+     * @return A list containing the tableIdAlternative.
+     */
+    java.util.List<java.lang.String>
+        getTableIdAlternativeList();
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string table_id_alternative = 6;</code>
+     * @return The count of tableIdAlternative.
+     */
+    int getTableIdAlternativeCount();
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string table_id_alternative = 6;</code>
+     * @param index The index of the element to return.
+     * @return The tableIdAlternative at the given index.
+     */
+    java.lang.String getTableIdAlternative(int index);
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string table_id_alternative = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tableIdAlternative at the given index.
+     */
+    com.google.protobuf.ByteString
+        getTableIdAlternativeBytes(int index);
   }
   /**
    * Protobuf type {@code google.cloud.bigquery.v2.TableReference}
@@ -102,6 +237,9 @@ public final class TableReferenceProto {
       projectId_ = "";
       datasetId_ = "";
       tableId_ = "";
+      projectIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      datasetIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      tableIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -124,6 +262,7 @@ public final class TableReferenceProto {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -152,6 +291,33 @@ public final class TableReferenceProto {
               tableId_ = s;
               break;
             }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                projectIdAlternative_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              projectIdAlternative_.add(s);
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                datasetIdAlternative_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              datasetIdAlternative_.add(s);
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
+                tableIdAlternative_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              tableIdAlternative_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -167,6 +333,15 @@ public final class TableReferenceProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          projectIdAlternative_ = projectIdAlternative_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000002) != 0)) {
+          datasetIdAlternative_ = datasetIdAlternative_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) != 0)) {
+          tableIdAlternative_ = tableIdAlternative_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -330,6 +505,171 @@ public final class TableReferenceProto {
       }
     }
 
+    public static final int PROJECT_ID_ALTERNATIVE_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList projectIdAlternative_;
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string project_id_alternative = 4;</code>
+     * @return A list containing the projectIdAlternative.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getProjectIdAlternativeList() {
+      return projectIdAlternative_;
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string project_id_alternative = 4;</code>
+     * @return The count of projectIdAlternative.
+     */
+    public int getProjectIdAlternativeCount() {
+      return projectIdAlternative_.size();
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string project_id_alternative = 4;</code>
+     * @param index The index of the element to return.
+     * @return The projectIdAlternative at the given index.
+     */
+    public java.lang.String getProjectIdAlternative(int index) {
+      return projectIdAlternative_.get(index);
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string project_id_alternative = 4;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the projectIdAlternative at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getProjectIdAlternativeBytes(int index) {
+      return projectIdAlternative_.getByteString(index);
+    }
+
+    public static final int DATASET_ID_ALTERNATIVE_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList datasetIdAlternative_;
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string dataset_id_alternative = 5;</code>
+     * @return A list containing the datasetIdAlternative.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDatasetIdAlternativeList() {
+      return datasetIdAlternative_;
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string dataset_id_alternative = 5;</code>
+     * @return The count of datasetIdAlternative.
+     */
+    public int getDatasetIdAlternativeCount() {
+      return datasetIdAlternative_.size();
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string dataset_id_alternative = 5;</code>
+     * @param index The index of the element to return.
+     * @return The datasetIdAlternative at the given index.
+     */
+    public java.lang.String getDatasetIdAlternative(int index) {
+      return datasetIdAlternative_.get(index);
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string dataset_id_alternative = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the datasetIdAlternative at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getDatasetIdAlternativeBytes(int index) {
+      return datasetIdAlternative_.getByteString(index);
+    }
+
+    public static final int TABLE_ID_ALTERNATIVE_FIELD_NUMBER = 6;
+    private com.google.protobuf.LazyStringList tableIdAlternative_;
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string table_id_alternative = 6;</code>
+     * @return A list containing the tableIdAlternative.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTableIdAlternativeList() {
+      return tableIdAlternative_;
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string table_id_alternative = 6;</code>
+     * @return The count of tableIdAlternative.
+     */
+    public int getTableIdAlternativeCount() {
+      return tableIdAlternative_.size();
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string table_id_alternative = 6;</code>
+     * @param index The index of the element to return.
+     * @return The tableIdAlternative at the given index.
+     */
+    public java.lang.String getTableIdAlternative(int index) {
+      return tableIdAlternative_.get(index);
+    }
+    /**
+     * <pre>
+     * The alternative field that will be used when ESF is not able to translate
+     * the received data to the project_id field.
+     * </pre>
+     *
+     * <code>repeated string table_id_alternative = 6;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the tableIdAlternative at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getTableIdAlternativeBytes(int index) {
+      return tableIdAlternative_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -353,6 +693,15 @@ public final class TableReferenceProto {
       if (!getTableIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tableId_);
       }
+      for (int i = 0; i < projectIdAlternative_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, projectIdAlternative_.getRaw(i));
+      }
+      for (int i = 0; i < datasetIdAlternative_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, datasetIdAlternative_.getRaw(i));
+      }
+      for (int i = 0; i < tableIdAlternative_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, tableIdAlternative_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -370,6 +719,30 @@ public final class TableReferenceProto {
       }
       if (!getTableIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tableId_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < projectIdAlternative_.size(); i++) {
+          dataSize += computeStringSizeNoTag(projectIdAlternative_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getProjectIdAlternativeList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < datasetIdAlternative_.size(); i++) {
+          dataSize += computeStringSizeNoTag(datasetIdAlternative_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDatasetIdAlternativeList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tableIdAlternative_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tableIdAlternative_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTableIdAlternativeList().size();
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -392,6 +765,12 @@ public final class TableReferenceProto {
           .equals(other.getDatasetId())) return false;
       if (!getTableId()
           .equals(other.getTableId())) return false;
+      if (!getProjectIdAlternativeList()
+          .equals(other.getProjectIdAlternativeList())) return false;
+      if (!getDatasetIdAlternativeList()
+          .equals(other.getDatasetIdAlternativeList())) return false;
+      if (!getTableIdAlternativeList()
+          .equals(other.getTableIdAlternativeList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -409,6 +788,18 @@ public final class TableReferenceProto {
       hash = (53 * hash) + getDatasetId().hashCode();
       hash = (37 * hash) + TABLE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTableId().hashCode();
+      if (getProjectIdAlternativeCount() > 0) {
+        hash = (37 * hash) + PROJECT_ID_ALTERNATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getProjectIdAlternativeList().hashCode();
+      }
+      if (getDatasetIdAlternativeCount() > 0) {
+        hash = (37 * hash) + DATASET_ID_ALTERNATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getDatasetIdAlternativeList().hashCode();
+      }
+      if (getTableIdAlternativeCount() > 0) {
+        hash = (37 * hash) + TABLE_ID_ALTERNATIVE_FIELD_NUMBER;
+        hash = (53 * hash) + getTableIdAlternativeList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -548,6 +939,12 @@ public final class TableReferenceProto {
 
         tableId_ = "";
 
+        projectIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        datasetIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        tableIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -574,9 +971,25 @@ public final class TableReferenceProto {
       @java.lang.Override
       public com.google.cloud.bigquery.v2.TableReferenceProto.TableReference buildPartial() {
         com.google.cloud.bigquery.v2.TableReferenceProto.TableReference result = new com.google.cloud.bigquery.v2.TableReferenceProto.TableReference(this);
+        int from_bitField0_ = bitField0_;
         result.projectId_ = projectId_;
         result.datasetId_ = datasetId_;
         result.tableId_ = tableId_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          projectIdAlternative_ = projectIdAlternative_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.projectIdAlternative_ = projectIdAlternative_;
+        if (((bitField0_ & 0x00000002) != 0)) {
+          datasetIdAlternative_ = datasetIdAlternative_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.datasetIdAlternative_ = datasetIdAlternative_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          tableIdAlternative_ = tableIdAlternative_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.tableIdAlternative_ = tableIdAlternative_;
         onBuilt();
         return result;
       }
@@ -637,6 +1050,36 @@ public final class TableReferenceProto {
           tableId_ = other.tableId_;
           onChanged();
         }
+        if (!other.projectIdAlternative_.isEmpty()) {
+          if (projectIdAlternative_.isEmpty()) {
+            projectIdAlternative_ = other.projectIdAlternative_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureProjectIdAlternativeIsMutable();
+            projectIdAlternative_.addAll(other.projectIdAlternative_);
+          }
+          onChanged();
+        }
+        if (!other.datasetIdAlternative_.isEmpty()) {
+          if (datasetIdAlternative_.isEmpty()) {
+            datasetIdAlternative_ = other.datasetIdAlternative_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureDatasetIdAlternativeIsMutable();
+            datasetIdAlternative_.addAll(other.datasetIdAlternative_);
+          }
+          onChanged();
+        }
+        if (!other.tableIdAlternative_.isEmpty()) {
+          if (tableIdAlternative_.isEmpty()) {
+            tableIdAlternative_ = other.tableIdAlternative_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureTableIdAlternativeIsMutable();
+            tableIdAlternative_.addAll(other.tableIdAlternative_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -665,6 +1108,7 @@ public final class TableReferenceProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object projectId_ = "";
       /**
@@ -973,6 +1417,471 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.LazyStringList projectIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureProjectIdAlternativeIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          projectIdAlternative_ = new com.google.protobuf.LazyStringArrayList(projectIdAlternative_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @return A list containing the projectIdAlternative.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getProjectIdAlternativeList() {
+        return projectIdAlternative_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @return The count of projectIdAlternative.
+       */
+      public int getProjectIdAlternativeCount() {
+        return projectIdAlternative_.size();
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @param index The index of the element to return.
+       * @return The projectIdAlternative at the given index.
+       */
+      public java.lang.String getProjectIdAlternative(int index) {
+        return projectIdAlternative_.get(index);
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the projectIdAlternative at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getProjectIdAlternativeBytes(int index) {
+        return projectIdAlternative_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @param index The index to set the value at.
+       * @param value The projectIdAlternative to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProjectIdAlternative(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProjectIdAlternativeIsMutable();
+        projectIdAlternative_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @param value The projectIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addProjectIdAlternative(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureProjectIdAlternativeIsMutable();
+        projectIdAlternative_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @param values The projectIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllProjectIdAlternative(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureProjectIdAlternativeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, projectIdAlternative_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProjectIdAlternative() {
+        projectIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string project_id_alternative = 4;</code>
+       * @param value The bytes of the projectIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addProjectIdAlternativeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureProjectIdAlternativeIsMutable();
+        projectIdAlternative_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList datasetIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureDatasetIdAlternativeIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          datasetIdAlternative_ = new com.google.protobuf.LazyStringArrayList(datasetIdAlternative_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @return A list containing the datasetIdAlternative.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getDatasetIdAlternativeList() {
+        return datasetIdAlternative_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @return The count of datasetIdAlternative.
+       */
+      public int getDatasetIdAlternativeCount() {
+        return datasetIdAlternative_.size();
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @param index The index of the element to return.
+       * @return The datasetIdAlternative at the given index.
+       */
+      public java.lang.String getDatasetIdAlternative(int index) {
+        return datasetIdAlternative_.get(index);
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the datasetIdAlternative at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getDatasetIdAlternativeBytes(int index) {
+        return datasetIdAlternative_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @param index The index to set the value at.
+       * @param value The datasetIdAlternative to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDatasetIdAlternative(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDatasetIdAlternativeIsMutable();
+        datasetIdAlternative_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @param value The datasetIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDatasetIdAlternative(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDatasetIdAlternativeIsMutable();
+        datasetIdAlternative_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @param values The datasetIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllDatasetIdAlternative(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureDatasetIdAlternativeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, datasetIdAlternative_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDatasetIdAlternative() {
+        datasetIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string dataset_id_alternative = 5;</code>
+       * @param value The bytes of the datasetIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addDatasetIdAlternativeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureDatasetIdAlternativeIsMutable();
+        datasetIdAlternative_.add(value);
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList tableIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTableIdAlternativeIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          tableIdAlternative_ = new com.google.protobuf.LazyStringArrayList(tableIdAlternative_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @return A list containing the tableIdAlternative.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTableIdAlternativeList() {
+        return tableIdAlternative_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @return The count of tableIdAlternative.
+       */
+      public int getTableIdAlternativeCount() {
+        return tableIdAlternative_.size();
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @param index The index of the element to return.
+       * @return The tableIdAlternative at the given index.
+       */
+      public java.lang.String getTableIdAlternative(int index) {
+        return tableIdAlternative_.get(index);
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the tableIdAlternative at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getTableIdAlternativeBytes(int index) {
+        return tableIdAlternative_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @param index The index to set the value at.
+       * @param value The tableIdAlternative to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTableIdAlternative(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTableIdAlternativeIsMutable();
+        tableIdAlternative_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @param value The tableIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTableIdAlternative(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTableIdAlternativeIsMutable();
+        tableIdAlternative_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @param values The tableIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTableIdAlternative(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTableIdAlternativeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tableIdAlternative_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTableIdAlternative() {
+        tableIdAlternative_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The alternative field that will be used when ESF is not able to translate
+       * the received data to the project_id field.
+       * </pre>
+       *
+       * <code>repeated string table_id_alternative = 6;</code>
+       * @param value The bytes of the tableIdAlternative to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTableIdAlternativeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTableIdAlternativeIsMutable();
+        tableIdAlternative_.add(value);
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1043,12 +1952,15 @@ public final class TableReferenceProto {
       "\n.google/cloud/bigquery/v2/table_referen" +
       "ce.proto\022\030google.cloud.bigquery.v2\032\037goog" +
       "le/api/field_behavior.proto\032\034google/api/" +
-      "annotations.proto\"Y\n\016TableReference\022\027\n\np" +
-      "roject_id\030\001 \001(\tB\003\340A\002\022\027\n\ndataset_id\030\002 \001(\t" +
-      "B\003\340A\002\022\025\n\010table_id\030\003 \001(\tB\003\340A\002Bu\n\034com.goog" +
-      "le.cloud.bigquery.v2B\023TableReferenceProt" +
-      "oZ@google.golang.org/genproto/googleapis" +
-      "/cloud/bigquery/v2;bigqueryb\006proto3"
+      "annotations.proto\"\267\001\n\016TableReference\022\027\n\n" +
+      "project_id\030\001 \001(\tB\003\340A\002\022\027\n\ndataset_id\030\002 \001(" +
+      "\tB\003\340A\002\022\025\n\010table_id\030\003 \001(\tB\003\340A\002\022\036\n\026project" +
+      "_id_alternative\030\004 \003(\t\022\036\n\026dataset_id_alte" +
+      "rnative\030\005 \003(\t\022\034\n\024table_id_alternative\030\006 " +
+      "\003(\tBu\n\034com.google.cloud.bigquery.v2B\023Tab" +
+      "leReferenceProtoZ@google.golang.org/genp" +
+      "roto/googleapis/cloud/bigquery/v2;bigque" +
+      "ryb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1061,7 +1973,7 @@ public final class TableReferenceProto {
     internal_static_google_cloud_bigquery_v2_TableReference_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_bigquery_v2_TableReference_descriptor,
-        new java.lang.String[] { "ProjectId", "DatasetId", "TableId", });
+        new java.lang.String[] { "ProjectId", "DatasetId", "TableId", "ProjectIdAlternative", "DatasetIdAlternative", "TableIdAlternative", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

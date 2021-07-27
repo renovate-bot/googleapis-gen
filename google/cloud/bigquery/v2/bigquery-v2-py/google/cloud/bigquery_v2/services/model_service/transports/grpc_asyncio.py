@@ -257,7 +257,9 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
         r"""Return a callable for the list models method over gRPC.
 
         Lists all models in the specified dataset. Requires
-        the READER dataset role.
+        the READER dataset role. After retrieving the list of
+        models, you can get information about a particular model
+        by calling the models.get method.
 
         Returns:
             Callable[[~.ListModelsRequest],

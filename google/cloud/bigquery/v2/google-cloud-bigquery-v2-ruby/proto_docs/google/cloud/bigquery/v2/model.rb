@@ -77,6 +77,9 @@ module Google
         #   @return [::Array<::Google::Cloud::Bigquery::V2::StandardSqlField>]
         #     Output only. Label columns that were used to train this model.
         #     The output of the model will have a "predicted_" prefix to these columns.
+        # @!attribute [rw] best_trial_id
+        #   @return [::Integer]
+        #     The best trial_id across all training runs.
         class Model
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -115,6 +118,7 @@ module Google
             # Indicates the method used to initialize the centroids for KMeans
             # clustering algorithm.
             module KmeansInitializationMethod
+              # Unspecified initialization method.
               KMEANS_INITIALIZATION_METHOD_UNSPECIFIED = 0
 
               # Initializes the centroids randomly.
@@ -145,7 +149,7 @@ module Google
           #     Median absolute error.
           # @!attribute [rw] r_squared
           #   @return [::Google::Protobuf::DoubleValue]
-          #     R^2 score.
+          #     R^2 score. This corresponds to r2_score in ML.EVALUATE.
           class RegressionMetrics
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -305,7 +309,7 @@ module Google
           #     Mean of squared distances between each sample to its cluster centroid.
           # @!attribute [rw] clusters
           #   @return [::Array<::Google::Cloud::Bigquery::V2::Model::ClusteringMetrics::Cluster>]
-          #     [Beta] Information for all clusters.
+          #     Information for all clusters.
           class ClusteringMetrics
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -432,11 +436,31 @@ module Google
             #     is not 1.
             # @!attribute [rw] time_series_id
             #   @return [::String]
-            #     The id to indicate different time series.
+            #     The time_series_id value for this time series. It will be one of
+            #     the unique values from the time_series_id_column specified during
+            #     ARIMA model training. Only present when time_series_id_column
+            #     training option was used.
+            # @!attribute [rw] time_series_ids
+            #   @return [::Array<::String>]
+            #     The tuple of time_series_ids identifying this time series. It will
+            #     be one of the unique tuples of values present in the
+            #     time_series_id_columns specified during ARIMA model training. Only
+            #     present when time_series_id_columns training option was used and
+            #     the order of values here are same as the order of
+            #     time_series_id_columns.
             # @!attribute [rw] seasonal_periods
             #   @return [::Array<::Google::Cloud::Bigquery::V2::Model::SeasonalPeriod::SeasonalPeriodType>]
             #     Seasonal periods. Repeated because multiple periods are supported
             #     for one time series.
+            # @!attribute [rw] has_holiday_effect
+            #   @return [::Google::Protobuf::BoolValue]
+            #     If true, holiday_effect is a part of time series decomposition result.
+            # @!attribute [rw] has_spikes_and_dips
+            #   @return [::Google::Protobuf::BoolValue]
+            #     If true, spikes_and_dips is a part of time series decomposition result.
+            # @!attribute [rw] has_step_changes
+            #   @return [::Google::Protobuf::BoolValue]
+            #     If true, step_changes is a part of time series decomposition result.
             class ArimaSingleModelForecastingMetrics
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -571,6 +595,7 @@ module Google
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
 
+            # Options used in model training.
             # @!attribute [rw] max_iterations
             #   @return [::Integer]
             #     The maximum number of iterations in training. Used only for iterative
@@ -649,7 +674,7 @@ module Google
             #     Number of clusters for clustering models.
             # @!attribute [rw] model_uri
             #   @return [::String]
-            #     [Beta] Google Cloud Storage URI from which the model was imported. Only
+            #     Google Cloud Storage URI from which the model was imported. Only
             #     applicable for imported models.
             # @!attribute [rw] optimization_strategy
             #   @return [::Google::Cloud::Bigquery::V2::Model::OptimizationStrategy]
@@ -718,8 +743,10 @@ module Google
             #     effects modeling is enabled.
             # @!attribute [rw] time_series_id_column
             #   @return [::String]
-            #     The id column that will be used to indicate different time series to
-            #     forecast in parallel.
+            #     The time series id column that was used during ARIMA model training.
+            # @!attribute [rw] time_series_id_columns
+            #   @return [::Array<::String>]
+            #     The time series id columns that were used during ARIMA model training.
             # @!attribute [rw] horizon
             #   @return [::Integer]
             #     The number of periods ahead that need to be forecasted.
@@ -732,6 +759,16 @@ module Google
             # @!attribute [rw] auto_arima_max_order
             #   @return [::Integer]
             #     The max value of non-seasonal p and q.
+            # @!attribute [rw] decompose_time_series
+            #   @return [::Google::Protobuf::BoolValue]
+            #     If true, perform decompose time series and save the results.
+            # @!attribute [rw] clean_spikes_and_dips
+            #   @return [::Google::Protobuf::BoolValue]
+            #     If true, clean spikes and dips in the input time series.
+            # @!attribute [rw] adjust_step_changes
+            #   @return [::Google::Protobuf::BoolValue]
+            #     If true, detect step changes and make data adjustment in the input time
+            #     series.
             class TrainingOptions
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -832,11 +869,34 @@ module Google
                 #     when d is not 1.
                 # @!attribute [rw] time_series_id
                 #   @return [::String]
-                #     The id to indicate different time series.
+                #     The time_series_id value for this time series. It will be one of
+                #     the unique values from the time_series_id_column specified during
+                #     ARIMA model training. Only present when time_series_id_column
+                #     training option was used.
+                # @!attribute [rw] time_series_ids
+                #   @return [::Array<::String>]
+                #     The tuple of time_series_ids identifying this time series. It will
+                #     be one of the unique tuples of values present in the
+                #     time_series_id_columns specified during ARIMA model training. Only
+                #     present when time_series_id_columns training option was used and
+                #     the order of values here are same as the order of
+                #     time_series_id_columns.
                 # @!attribute [rw] seasonal_periods
                 #   @return [::Array<::Google::Cloud::Bigquery::V2::Model::SeasonalPeriod::SeasonalPeriodType>]
                 #     Seasonal periods. Repeated because multiple periods are supported
                 #     for one time series.
+                # @!attribute [rw] has_holiday_effect
+                #   @return [::Google::Protobuf::BoolValue]
+                #     If true, holiday_effect is a part of time series decomposition
+                #     result.
+                # @!attribute [rw] has_spikes_and_dips
+                #   @return [::Google::Protobuf::BoolValue]
+                #     If true, spikes_and_dips is a part of time series decomposition
+                #     result.
+                # @!attribute [rw] has_step_changes
+                #   @return [::Google::Protobuf::BoolValue]
+                #     If true, step_changes is a part of time series decomposition
+                #     result.
                 class ArimaModelInfo
                   include ::Google::Protobuf::MessageExts
                   extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -870,22 +930,22 @@ module Google
             # Matrix factorization model.
             MATRIX_FACTORIZATION = 4
 
-            # [Beta] DNN classifier model.
+            # DNN classifier model.
             DNN_CLASSIFIER = 5
 
-            # [Beta] An imported TensorFlow model.
+            # An imported TensorFlow model.
             TENSORFLOW = 6
 
-            # [Beta] DNN regressor model.
+            # DNN regressor model.
             DNN_REGRESSOR = 7
 
-            # [Beta] Boosted tree regressor model.
+            # Boosted tree regressor model.
             BOOSTED_TREE_REGRESSOR = 9
 
-            # [Beta] Boosted tree classifier model.
+            # Boosted tree classifier model.
             BOOSTED_TREE_CLASSIFIER = 10
 
-            # [Beta] ARIMA model.
+            # ARIMA model.
             ARIMA = 11
 
             # [Beta] AutoML Tables regression model.
@@ -893,6 +953,9 @@ module Google
 
             # [Beta] AutoML Tables classification model.
             AUTOML_CLASSIFIER = 13
+
+            # New name for the ARIMA model.
+            ARIMA_PLUS = 19
           end
 
           # Loss metric to evaluate model training performance.
@@ -962,6 +1025,9 @@ module Google
 
             # Hourly data.
             HOURLY = 7
+
+            # Per-minute data.
+            PER_MINUTE = 8
           end
 
           # Type of supported holiday regions for time series forecasting models.

@@ -11,6 +11,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :project_id, :string, 1
       optional :dataset_id, :string, 2
       optional :table_id, :string, 3
+      repeated :project_id_alternative, :string, 4
+      repeated :dataset_id_alternative, :string, 5
+      repeated :table_id_alternative, :string, 6
     end
   end
 end

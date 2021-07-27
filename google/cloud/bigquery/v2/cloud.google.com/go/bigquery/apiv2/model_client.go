@@ -18,7 +18,9 @@ package bigquery
 
 import (
 	"context"
+	"fmt"
 	"math"
+	"net/url"
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
@@ -111,7 +113,8 @@ func (c *ModelClient) GetModel(ctx context.Context, req *bigquerypb.GetModelRequ
 }
 
 // ListModels lists all models in the specified dataset. Requires the READER dataset
-// role.
+// role. After retrieving the list of models, you can get information about a
+// particular model by calling the models.get method.
 func (c *ModelClient) ListModels(ctx context.Context, req *bigquerypb.ListModelsRequest, opts ...gax.CallOption) (*bigquerypb.ListModelsResponse, error) {
 	return c.internalClient.ListModels(ctx, req, opts...)
 }
@@ -210,7 +213,8 @@ func (c *modelGRPCClient) GetModel(ctx context.Context, req *bigquerypb.GetModel
 		defer cancel()
 		ctx = cctx
 	}
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v&%s=%v&%s=%v", "project_id", url.QueryEscape(req.GetProjectId()), "dataset_id", url.QueryEscape(req.GetDatasetId()), "model_id", url.QueryEscape(req.GetModelId())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).GetModel[0:len((*c.CallOptions).GetModel):len((*c.CallOptions).GetModel)], opts...)
 	var resp *bigquerypb.Model
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -230,7 +234,8 @@ func (c *modelGRPCClient) ListModels(ctx context.Context, req *bigquerypb.ListMo
 		defer cancel()
 		ctx = cctx
 	}
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v&%s=%v", "project_id", url.QueryEscape(req.GetProjectId()), "dataset_id", url.QueryEscape(req.GetDatasetId())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).ListModels[0:len((*c.CallOptions).ListModels):len((*c.CallOptions).ListModels)], opts...)
 	var resp *bigquerypb.ListModelsResponse
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -250,7 +255,8 @@ func (c *modelGRPCClient) PatchModel(ctx context.Context, req *bigquerypb.PatchM
 		defer cancel()
 		ctx = cctx
 	}
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v&%s=%v&%s=%v", "project_id", url.QueryEscape(req.GetProjectId()), "dataset_id", url.QueryEscape(req.GetDatasetId()), "model_id", url.QueryEscape(req.GetModelId())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).PatchModel[0:len((*c.CallOptions).PatchModel):len((*c.CallOptions).PatchModel)], opts...)
 	var resp *bigquerypb.Model
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -270,7 +276,8 @@ func (c *modelGRPCClient) DeleteModel(ctx context.Context, req *bigquerypb.Delet
 		defer cancel()
 		ctx = cctx
 	}
-	ctx = insertMetadata(ctx, c.xGoogMetadata)
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v&%s=%v&%s=%v", "project_id", url.QueryEscape(req.GetProjectId()), "dataset_id", url.QueryEscape(req.GetDatasetId()), "model_id", url.QueryEscape(req.GetModelId())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
 	opts = append((*c.CallOptions).DeleteModel[0:len((*c.CallOptions).DeleteModel):len((*c.CallOptions).DeleteModel)], opts...)
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error

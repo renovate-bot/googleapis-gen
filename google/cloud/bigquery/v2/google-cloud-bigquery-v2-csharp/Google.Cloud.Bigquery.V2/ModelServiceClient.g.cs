@@ -338,7 +338,8 @@ namespace Google.Cloud.Bigquery.V2
 
         /// <summary>
         /// Lists all models in the specified dataset. Requires the READER dataset
-        /// role.
+        /// role. After retrieving the list of models, you can get information about a
+        /// particular model by calling the models.get method.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -348,7 +349,8 @@ namespace Google.Cloud.Bigquery.V2
 
         /// <summary>
         /// Lists all models in the specified dataset. Requires the READER dataset
-        /// role.
+        /// role. After retrieving the list of models, you can get information about a
+        /// particular model by calling the models.get method.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -358,7 +360,8 @@ namespace Google.Cloud.Bigquery.V2
 
         /// <summary>
         /// Lists all models in the specified dataset. Requires the READER dataset
-        /// role.
+        /// role. After retrieving the list of models, you can get information about a
+        /// particular model by calling the models.get method.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -368,7 +371,8 @@ namespace Google.Cloud.Bigquery.V2
 
         /// <summary>
         /// Lists all models in the specified dataset. Requires the READER dataset
-        /// role.
+        /// role. After retrieving the list of models, you can get information about a
+        /// particular model by calling the models.get method.
         /// </summary>
         /// <param name="projectId">
         /// Required. Project ID of the models to list.
@@ -392,7 +396,8 @@ namespace Google.Cloud.Bigquery.V2
 
         /// <summary>
         /// Lists all models in the specified dataset. Requires the READER dataset
-        /// role.
+        /// role. After retrieving the list of models, you can get information about a
+        /// particular model by calling the models.get method.
         /// </summary>
         /// <param name="projectId">
         /// Required. Project ID of the models to list.
@@ -416,7 +421,8 @@ namespace Google.Cloud.Bigquery.V2
 
         /// <summary>
         /// Lists all models in the specified dataset. Requires the READER dataset
-        /// role.
+        /// role. After retrieving the list of models, you can get information about a
+        /// particular model by calling the models.get method.
         /// </summary>
         /// <param name="projectId">
         /// Required. Project ID of the models to list.
@@ -650,16 +656,16 @@ namespace Google.Cloud.Bigquery.V2
             GrpcClient = grpcClient;
             ModelServiceSettings effectiveSettings = settings ?? ModelServiceSettings.GetDefault();
             gaxgrpc::ClientHelper clientHelper = new gaxgrpc::ClientHelper(effectiveSettings);
-            _callGetModel = clientHelper.BuildApiCall<GetModelRequest, Model>(grpcClient.GetModelAsync, grpcClient.GetModel, effectiveSettings.GetModelSettings);
+            _callGetModel = clientHelper.BuildApiCall<GetModelRequest, Model>(grpcClient.GetModelAsync, grpcClient.GetModel, effectiveSettings.GetModelSettings).WithGoogleRequestParam("project_id", request => request.ProjectId).WithGoogleRequestParam("dataset_id", request => request.DatasetId).WithGoogleRequestParam("model_id", request => request.ModelId);
             Modify_ApiCall(ref _callGetModel);
             Modify_GetModelApiCall(ref _callGetModel);
-            _callListModels = clientHelper.BuildApiCall<ListModelsRequest, ListModelsResponse>(grpcClient.ListModelsAsync, grpcClient.ListModels, effectiveSettings.ListModelsSettings);
+            _callListModels = clientHelper.BuildApiCall<ListModelsRequest, ListModelsResponse>(grpcClient.ListModelsAsync, grpcClient.ListModels, effectiveSettings.ListModelsSettings).WithGoogleRequestParam("project_id", request => request.ProjectId).WithGoogleRequestParam("dataset_id", request => request.DatasetId);
             Modify_ApiCall(ref _callListModels);
             Modify_ListModelsApiCall(ref _callListModels);
-            _callPatchModel = clientHelper.BuildApiCall<PatchModelRequest, Model>(grpcClient.PatchModelAsync, grpcClient.PatchModel, effectiveSettings.PatchModelSettings);
+            _callPatchModel = clientHelper.BuildApiCall<PatchModelRequest, Model>(grpcClient.PatchModelAsync, grpcClient.PatchModel, effectiveSettings.PatchModelSettings).WithGoogleRequestParam("project_id", request => request.ProjectId).WithGoogleRequestParam("dataset_id", request => request.DatasetId).WithGoogleRequestParam("model_id", request => request.ModelId);
             Modify_ApiCall(ref _callPatchModel);
             Modify_PatchModelApiCall(ref _callPatchModel);
-            _callDeleteModel = clientHelper.BuildApiCall<DeleteModelRequest, wkt::Empty>(grpcClient.DeleteModelAsync, grpcClient.DeleteModel, effectiveSettings.DeleteModelSettings);
+            _callDeleteModel = clientHelper.BuildApiCall<DeleteModelRequest, wkt::Empty>(grpcClient.DeleteModelAsync, grpcClient.DeleteModel, effectiveSettings.DeleteModelSettings).WithGoogleRequestParam("project_id", request => request.ProjectId).WithGoogleRequestParam("dataset_id", request => request.DatasetId).WithGoogleRequestParam("model_id", request => request.ModelId);
             Modify_ApiCall(ref _callDeleteModel);
             Modify_DeleteModelApiCall(ref _callDeleteModel);
             OnConstruction(grpcClient, effectiveSettings, clientHelper);
@@ -714,7 +720,8 @@ namespace Google.Cloud.Bigquery.V2
 
         /// <summary>
         /// Lists all models in the specified dataset. Requires the READER dataset
-        /// role.
+        /// role. After retrieving the list of models, you can get information about a
+        /// particular model by calling the models.get method.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -727,7 +734,8 @@ namespace Google.Cloud.Bigquery.V2
 
         /// <summary>
         /// Lists all models in the specified dataset. Requires the READER dataset
-        /// role.
+        /// role. After retrieving the list of models, you can get information about a
+        /// particular model by calling the models.get method.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>

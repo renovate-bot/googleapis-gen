@@ -27,15 +27,17 @@ namespace Google.Cloud.Bigquery.V2 {
             "Ci5nb29nbGUvY2xvdWQvYmlncXVlcnkvdjIvdGFibGVfcmVmZXJlbmNlLnBy",
             "b3RvEhhnb29nbGUuY2xvdWQuYmlncXVlcnkudjIaH2dvb2dsZS9hcGkvZmll",
             "bGRfYmVoYXZpb3IucHJvdG8aHGdvb2dsZS9hcGkvYW5ub3RhdGlvbnMucHJv",
-            "dG8iWQoOVGFibGVSZWZlcmVuY2USFwoKcHJvamVjdF9pZBgBIAEoCUID4EEC",
-            "EhcKCmRhdGFzZXRfaWQYAiABKAlCA+BBAhIVCgh0YWJsZV9pZBgDIAEoCUID",
-            "4EECQnUKHGNvbS5nb29nbGUuY2xvdWQuYmlncXVlcnkudjJCE1RhYmxlUmVm",
-            "ZXJlbmNlUHJvdG9aQGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2ds",
-            "ZWFwaXMvY2xvdWQvYmlncXVlcnkvdjI7YmlncXVlcnliBnByb3RvMw=="));
+            "dG8itwEKDlRhYmxlUmVmZXJlbmNlEhcKCnByb2plY3RfaWQYASABKAlCA+BB",
+            "AhIXCgpkYXRhc2V0X2lkGAIgASgJQgPgQQISFQoIdGFibGVfaWQYAyABKAlC",
+            "A+BBAhIeChZwcm9qZWN0X2lkX2FsdGVybmF0aXZlGAQgAygJEh4KFmRhdGFz",
+            "ZXRfaWRfYWx0ZXJuYXRpdmUYBSADKAkSHAoUdGFibGVfaWRfYWx0ZXJuYXRp",
+            "dmUYBiADKAlCdQocY29tLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52MkITVGFi",
+            "bGVSZWZlcmVuY2VQcm90b1pAZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8v",
+            "Z29vZ2xlYXBpcy9jbG91ZC9iaWdxdWVyeS92MjtiaWdxdWVyeWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.TableReference), global::Google.Cloud.Bigquery.V2.TableReference.Parser, new[]{ "ProjectId", "DatasetId", "TableId" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.TableReference), global::Google.Cloud.Bigquery.V2.TableReference.Parser, new[]{ "ProjectId", "DatasetId", "TableId", "ProjectIdAlternative", "DatasetIdAlternative", "TableIdAlternative" }, null, null, null, null)
           }));
     }
     #endregion
@@ -74,6 +76,9 @@ namespace Google.Cloud.Bigquery.V2 {
       projectId_ = other.projectId_;
       datasetId_ = other.datasetId_;
       tableId_ = other.tableId_;
+      projectIdAlternative_ = other.projectIdAlternative_.Clone();
+      datasetIdAlternative_ = other.datasetIdAlternative_.Clone();
+      tableIdAlternative_ = other.tableIdAlternative_.Clone();
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -128,6 +133,48 @@ namespace Google.Cloud.Bigquery.V2 {
       }
     }
 
+    /// <summary>Field number for the "project_id_alternative" field.</summary>
+    public const int ProjectIdAlternativeFieldNumber = 4;
+    private static readonly pb::FieldCodec<string> _repeated_projectIdAlternative_codec
+        = pb::FieldCodec.ForString(34);
+    private readonly pbc::RepeatedField<string> projectIdAlternative_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The alternative field that will be used when ESF is not able to translate
+    /// the received data to the project_id field.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> ProjectIdAlternative {
+      get { return projectIdAlternative_; }
+    }
+
+    /// <summary>Field number for the "dataset_id_alternative" field.</summary>
+    public const int DatasetIdAlternativeFieldNumber = 5;
+    private static readonly pb::FieldCodec<string> _repeated_datasetIdAlternative_codec
+        = pb::FieldCodec.ForString(42);
+    private readonly pbc::RepeatedField<string> datasetIdAlternative_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The alternative field that will be used when ESF is not able to translate
+    /// the received data to the project_id field.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> DatasetIdAlternative {
+      get { return datasetIdAlternative_; }
+    }
+
+    /// <summary>Field number for the "table_id_alternative" field.</summary>
+    public const int TableIdAlternativeFieldNumber = 6;
+    private static readonly pb::FieldCodec<string> _repeated_tableIdAlternative_codec
+        = pb::FieldCodec.ForString(50);
+    private readonly pbc::RepeatedField<string> tableIdAlternative_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The alternative field that will be used when ESF is not able to translate
+    /// the received data to the project_id field.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> TableIdAlternative {
+      get { return tableIdAlternative_; }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as TableReference);
@@ -144,6 +191,9 @@ namespace Google.Cloud.Bigquery.V2 {
       if (ProjectId != other.ProjectId) return false;
       if (DatasetId != other.DatasetId) return false;
       if (TableId != other.TableId) return false;
+      if(!projectIdAlternative_.Equals(other.projectIdAlternative_)) return false;
+      if(!datasetIdAlternative_.Equals(other.datasetIdAlternative_)) return false;
+      if(!tableIdAlternative_.Equals(other.tableIdAlternative_)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -153,6 +203,9 @@ namespace Google.Cloud.Bigquery.V2 {
       if (ProjectId.Length != 0) hash ^= ProjectId.GetHashCode();
       if (DatasetId.Length != 0) hash ^= DatasetId.GetHashCode();
       if (TableId.Length != 0) hash ^= TableId.GetHashCode();
+      hash ^= projectIdAlternative_.GetHashCode();
+      hash ^= datasetIdAlternative_.GetHashCode();
+      hash ^= tableIdAlternative_.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -181,6 +234,9 @@ namespace Google.Cloud.Bigquery.V2 {
         output.WriteRawTag(26);
         output.WriteString(TableId);
       }
+      projectIdAlternative_.WriteTo(output, _repeated_projectIdAlternative_codec);
+      datasetIdAlternative_.WriteTo(output, _repeated_datasetIdAlternative_codec);
+      tableIdAlternative_.WriteTo(output, _repeated_tableIdAlternative_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -202,6 +258,9 @@ namespace Google.Cloud.Bigquery.V2 {
         output.WriteRawTag(26);
         output.WriteString(TableId);
       }
+      projectIdAlternative_.WriteTo(ref output, _repeated_projectIdAlternative_codec);
+      datasetIdAlternative_.WriteTo(ref output, _repeated_datasetIdAlternative_codec);
+      tableIdAlternative_.WriteTo(ref output, _repeated_tableIdAlternative_codec);
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -220,6 +279,9 @@ namespace Google.Cloud.Bigquery.V2 {
       if (TableId.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(TableId);
       }
+      size += projectIdAlternative_.CalculateSize(_repeated_projectIdAlternative_codec);
+      size += datasetIdAlternative_.CalculateSize(_repeated_datasetIdAlternative_codec);
+      size += tableIdAlternative_.CalculateSize(_repeated_tableIdAlternative_codec);
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -240,6 +302,9 @@ namespace Google.Cloud.Bigquery.V2 {
       if (other.TableId.Length != 0) {
         TableId = other.TableId;
       }
+      projectIdAlternative_.Add(other.projectIdAlternative_);
+      datasetIdAlternative_.Add(other.datasetIdAlternative_);
+      tableIdAlternative_.Add(other.tableIdAlternative_);
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -266,6 +331,18 @@ namespace Google.Cloud.Bigquery.V2 {
             TableId = input.ReadString();
             break;
           }
+          case 34: {
+            projectIdAlternative_.AddEntriesFrom(input, _repeated_projectIdAlternative_codec);
+            break;
+          }
+          case 42: {
+            datasetIdAlternative_.AddEntriesFrom(input, _repeated_datasetIdAlternative_codec);
+            break;
+          }
+          case 50: {
+            tableIdAlternative_.AddEntriesFrom(input, _repeated_tableIdAlternative_codec);
+            break;
+          }
         }
       }
     #endif
@@ -290,6 +367,18 @@ namespace Google.Cloud.Bigquery.V2 {
           }
           case 26: {
             TableId = input.ReadString();
+            break;
+          }
+          case 34: {
+            projectIdAlternative_.AddEntriesFrom(ref input, _repeated_projectIdAlternative_codec);
+            break;
+          }
+          case 42: {
+            datasetIdAlternative_.AddEntriesFrom(ref input, _repeated_datasetIdAlternative_codec);
+            break;
+          }
+          case 50: {
+            tableIdAlternative_.AddEntriesFrom(ref input, _repeated_tableIdAlternative_codec);
             break;
           }
         }

@@ -33,7 +33,7 @@ namespace Google.Cloud.Bigquery.V2 {
             "Z2xlL2Nsb3VkL2JpZ3F1ZXJ5L3YyL3RhYmxlX3JlZmVyZW5jZS5wcm90bxob",
             "Z29vZ2xlL3Byb3RvYnVmL2VtcHR5LnByb3RvGh9nb29nbGUvcHJvdG9idWYv",
             "dGltZXN0YW1wLnByb3RvGh5nb29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJv",
-            "dG8aHGdvb2dsZS9hcGkvYW5ub3RhdGlvbnMucHJvdG8iqVoKBU1vZGVsEhEK",
+            "dG8aHGdvb2dsZS9hcGkvYW5ub3RhdGlvbnMucHJvdG8ix18KBU1vZGVsEhEK",
             "BGV0YWcYASABKAlCA+BBAxJGCg9tb2RlbF9yZWZlcmVuY2UYAiABKAsyKC5n",
             "b29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWxSZWZlcmVuY2VCA+BBAhIa",
             "Cg1jcmVhdGlvbl90aW1lGAUgASgDQgPgQQMSHwoSbGFzdF9tb2RpZmllZF90",
@@ -49,285 +49,307 @@ namespace Google.Cloud.Bigquery.V2 {
             "4EEDEkgKD2ZlYXR1cmVfY29sdW1ucxgKIAMoCzIqLmdvb2dsZS5jbG91ZC5i",
             "aWdxdWVyeS52Mi5TdGFuZGFyZFNxbEZpZWxkQgPgQQMSRgoNbGFiZWxfY29s",
             "dW1ucxgLIAMoCzIqLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5TdGFuZGFy",
-            "ZFNxbEZpZWxkQgPgQQMaoAEKDlNlYXNvbmFsUGVyaW9kIo0BChJTZWFzb25h",
-            "bFBlcmlvZFR5cGUSJAogU0VBU09OQUxfUEVSSU9EX1RZUEVfVU5TUEVDSUZJ",
-            "RUQQABISCg5OT19TRUFTT05BTElUWRABEgkKBURBSUxZEAISCgoGV0VFS0xZ",
-            "EAMSCwoHTU9OVEhMWRAEEg0KCVFVQVJURVJMWRAFEgoKBllFQVJMWRAGGocB",
-            "CgtLbWVhbnNFbnVtcyJ4ChpLbWVhbnNJbml0aWFsaXphdGlvbk1ldGhvZBIs",
-            "CihLTUVBTlNfSU5JVElBTElaQVRJT05fTUVUSE9EX1VOU1BFQ0lGSUVEEAAS",
-            "CgoGUkFORE9NEAESCgoGQ1VTVE9NEAISFAoQS01FQU5TX1BMVVNfUExVUxAD",
-            "GrQCChFSZWdyZXNzaW9uTWV0cmljcxI5ChNtZWFuX2Fic29sdXRlX2Vycm9y",
-            "GAEgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEjgKEm1lYW5f",
-            "c3F1YXJlZF9lcnJvchgCIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVW",
-            "YWx1ZRI8ChZtZWFuX3NxdWFyZWRfbG9nX2Vycm9yGAMgASgLMhwuZ29vZ2xl",
-            "LnByb3RvYnVmLkRvdWJsZVZhbHVlEjsKFW1lZGlhbl9hYnNvbHV0ZV9lcnJv",
-            "chgEIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIvCglyX3Nx",
-            "dWFyZWQYBSABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUa7wIK",
-            "HkFnZ3JlZ2F0ZUNsYXNzaWZpY2F0aW9uTWV0cmljcxIvCglwcmVjaXNpb24Y",
-            "ASABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSLAoGcmVjYWxs",
-            "GAIgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEi4KCGFjY3Vy",
-            "YWN5GAMgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEi8KCXRo",
-            "cmVzaG9sZBgEIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIu",
-            "CghmMV9zY29yZRgFIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1",
-            "ZRIuCghsb2dfbG9zcxgGIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVW",
-            "YWx1ZRItCgdyb2NfYXVjGAcgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJs",
-            "ZVZhbHVlGp8GChtCaW5hcnlDbGFzc2lmaWNhdGlvbk1ldHJpY3MSaAogYWdn",
-            "cmVnYXRlX2NsYXNzaWZpY2F0aW9uX21ldHJpY3MYASABKAsyPi5nb29nbGUu",
-            "Y2xvdWQuYmlncXVlcnkudjIuTW9kZWwuQWdncmVnYXRlQ2xhc3NpZmljYXRp",
-            "b25NZXRyaWNzEncKHGJpbmFyeV9jb25mdXNpb25fbWF0cml4X2xpc3QYAiAD",
-            "KAsyUS5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuQmluYXJ5Q2xh",
-            "c3NpZmljYXRpb25NZXRyaWNzLkJpbmFyeUNvbmZ1c2lvbk1hdHJpeBIWCg5w",
-            "b3NpdGl2ZV9sYWJlbBgDIAEoCRIWCg5uZWdhdGl2ZV9sYWJlbBgEIAEoCRrs",
-            "AwoVQmluYXJ5Q29uZnVzaW9uTWF0cml4Ej4KGHBvc2l0aXZlX2NsYXNzX3Ro",
-            "cmVzaG9sZBgBIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIz",
-            "Cg50cnVlX3Bvc2l0aXZlcxgCIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQ2",
-            "NFZhbHVlEjQKD2ZhbHNlX3Bvc2l0aXZlcxgDIAEoCzIbLmdvb2dsZS5wcm90",
-            "b2J1Zi5JbnQ2NFZhbHVlEjMKDnRydWVfbmVnYXRpdmVzGAQgASgLMhsuZ29v",
-            "Z2xlLnByb3RvYnVmLkludDY0VmFsdWUSNAoPZmFsc2VfbmVnYXRpdmVzGAUg",
-            "ASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDY0VmFsdWUSLwoJcHJlY2lzaW9u",
-            "GAYgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEiwKBnJlY2Fs",
-            "bBgHIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIuCghmMV9z",
-            "Y29yZRgIIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIuCghh",
-            "Y2N1cmFjeRgJIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRqH",
-            "BQofTXVsdGlDbGFzc0NsYXNzaWZpY2F0aW9uTWV0cmljcxJoCiBhZ2dyZWdh",
-            "dGVfY2xhc3NpZmljYXRpb25fbWV0cmljcxgBIAEoCzI+Lmdvb2dsZS5jbG91",
-            "ZC5iaWdxdWVyeS52Mi5Nb2RlbC5BZ2dyZWdhdGVDbGFzc2lmaWNhdGlvbk1l",
-            "dHJpY3MSbgoVY29uZnVzaW9uX21hdHJpeF9saXN0GAIgAygLMk8uZ29vZ2xl",
-            "LmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLk11bHRpQ2xhc3NDbGFzc2lmaWNh",
-            "dGlvbk1ldHJpY3MuQ29uZnVzaW9uTWF0cml4GokDCg9Db25mdXNpb25NYXRy",
-            "aXgSOgoUY29uZmlkZW5jZV90aHJlc2hvbGQYASABKAsyHC5nb29nbGUucHJv",
-            "dG9idWYuRG91YmxlVmFsdWUSYQoEcm93cxgCIAMoCzJTLmdvb2dsZS5jbG91",
-            "ZC5iaWdxdWVyeS52Mi5Nb2RlbC5NdWx0aUNsYXNzQ2xhc3NpZmljYXRpb25N",
-            "ZXRyaWNzLkNvbmZ1c2lvbk1hdHJpeC5Sb3caUQoFRW50cnkSFwoPcHJlZGlj",
-            "dGVkX2xhYmVsGAEgASgJEi8KCml0ZW1fY291bnQYAiABKAsyGy5nb29nbGUu",
-            "cHJvdG9idWYuSW50NjRWYWx1ZRqDAQoDUm93EhQKDGFjdHVhbF9sYWJlbBgB",
-            "IAEoCRJmCgdlbnRyaWVzGAIgAygLMlUuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5",
-            "LnYyLk1vZGVsLk11bHRpQ2xhc3NDbGFzc2lmaWNhdGlvbk1ldHJpY3MuQ29u",
-            "ZnVzaW9uTWF0cml4LkVudHJ5GssGChFDbHVzdGVyaW5nTWV0cmljcxI6ChRk",
-            "YXZpZXNfYm91bGRpbl9pbmRleBgBIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5E",
-            "b3VibGVWYWx1ZRI7ChVtZWFuX3NxdWFyZWRfZGlzdGFuY2UYAiABKAsyHC5n",
-            "b29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSSwoIY2x1c3RlcnMYAyADKAsy",
-            "OS5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuQ2x1c3RlcmluZ01l",
-            "dHJpY3MuQ2x1c3RlchrvBAoHQ2x1c3RlchITCgtjZW50cm9pZF9pZBgBIAEo",
-            "AxJeCg5mZWF0dXJlX3ZhbHVlcxgCIAMoCzJGLmdvb2dsZS5jbG91ZC5iaWdx",
+            "ZFNxbEZpZWxkQgPgQQMSGQoNYmVzdF90cmlhbF9pZBgTIAEoA0ICGAEaoAEK",
+            "DlNlYXNvbmFsUGVyaW9kIo0BChJTZWFzb25hbFBlcmlvZFR5cGUSJAogU0VB",
+            "U09OQUxfUEVSSU9EX1RZUEVfVU5TUEVDSUZJRUQQABISCg5OT19TRUFTT05B",
+            "TElUWRABEgkKBURBSUxZEAISCgoGV0VFS0xZEAMSCwoHTU9OVEhMWRAEEg0K",
+            "CVFVQVJURVJMWRAFEgoKBllFQVJMWRAGGocBCgtLbWVhbnNFbnVtcyJ4ChpL",
+            "bWVhbnNJbml0aWFsaXphdGlvbk1ldGhvZBIsCihLTUVBTlNfSU5JVElBTEla",
+            "QVRJT05fTUVUSE9EX1VOU1BFQ0lGSUVEEAASCgoGUkFORE9NEAESCgoGQ1VT",
+            "VE9NEAISFAoQS01FQU5TX1BMVVNfUExVUxADGrQCChFSZWdyZXNzaW9uTWV0",
+            "cmljcxI5ChNtZWFuX2Fic29sdXRlX2Vycm9yGAEgASgLMhwuZ29vZ2xlLnBy",
+            "b3RvYnVmLkRvdWJsZVZhbHVlEjgKEm1lYW5fc3F1YXJlZF9lcnJvchgCIAEo",
+            "CzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRI8ChZtZWFuX3NxdWFy",
+            "ZWRfbG9nX2Vycm9yGAMgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZh",
+            "bHVlEjsKFW1lZGlhbl9hYnNvbHV0ZV9lcnJvchgEIAEoCzIcLmdvb2dsZS5w",
+            "cm90b2J1Zi5Eb3VibGVWYWx1ZRIvCglyX3NxdWFyZWQYBSABKAsyHC5nb29n",
+            "bGUucHJvdG9idWYuRG91YmxlVmFsdWUa7wIKHkFnZ3JlZ2F0ZUNsYXNzaWZp",
+            "Y2F0aW9uTWV0cmljcxIvCglwcmVjaXNpb24YASABKAsyHC5nb29nbGUucHJv",
+            "dG9idWYuRG91YmxlVmFsdWUSLAoGcmVjYWxsGAIgASgLMhwuZ29vZ2xlLnBy",
+            "b3RvYnVmLkRvdWJsZVZhbHVlEi4KCGFjY3VyYWN5GAMgASgLMhwuZ29vZ2xl",
+            "LnByb3RvYnVmLkRvdWJsZVZhbHVlEi8KCXRocmVzaG9sZBgEIAEoCzIcLmdv",
+            "b2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIuCghmMV9zY29yZRgFIAEoCzIc",
+            "Lmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIuCghsb2dfbG9zcxgGIAEo",
+            "CzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRItCgdyb2NfYXVjGAcg",
+            "ASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlGp8GChtCaW5hcnlD",
+            "bGFzc2lmaWNhdGlvbk1ldHJpY3MSaAogYWdncmVnYXRlX2NsYXNzaWZpY2F0",
+            "aW9uX21ldHJpY3MYASABKAsyPi5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIu",
+            "TW9kZWwuQWdncmVnYXRlQ2xhc3NpZmljYXRpb25NZXRyaWNzEncKHGJpbmFy",
+            "eV9jb25mdXNpb25fbWF0cml4X2xpc3QYAiADKAsyUS5nb29nbGUuY2xvdWQu",
+            "YmlncXVlcnkudjIuTW9kZWwuQmluYXJ5Q2xhc3NpZmljYXRpb25NZXRyaWNz",
+            "LkJpbmFyeUNvbmZ1c2lvbk1hdHJpeBIWCg5wb3NpdGl2ZV9sYWJlbBgDIAEo",
+            "CRIWCg5uZWdhdGl2ZV9sYWJlbBgEIAEoCRrsAwoVQmluYXJ5Q29uZnVzaW9u",
+            "TWF0cml4Ej4KGHBvc2l0aXZlX2NsYXNzX3RocmVzaG9sZBgBIAEoCzIcLmdv",
+            "b2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIzCg50cnVlX3Bvc2l0aXZlcxgC",
+            "IAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQ2NFZhbHVlEjQKD2ZhbHNlX3Bv",
+            "c2l0aXZlcxgDIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQ2NFZhbHVlEjMK",
+            "DnRydWVfbmVnYXRpdmVzGAQgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDY0",
+            "VmFsdWUSNAoPZmFsc2VfbmVnYXRpdmVzGAUgASgLMhsuZ29vZ2xlLnByb3Rv",
+            "YnVmLkludDY0VmFsdWUSLwoJcHJlY2lzaW9uGAYgASgLMhwuZ29vZ2xlLnBy",
+            "b3RvYnVmLkRvdWJsZVZhbHVlEiwKBnJlY2FsbBgHIAEoCzIcLmdvb2dsZS5w",
+            "cm90b2J1Zi5Eb3VibGVWYWx1ZRIuCghmMV9zY29yZRgIIAEoCzIcLmdvb2ds",
+            "ZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIuCghhY2N1cmFjeRgJIAEoCzIcLmdv",
+            "b2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRqHBQofTXVsdGlDbGFzc0NsYXNz",
+            "aWZpY2F0aW9uTWV0cmljcxJoCiBhZ2dyZWdhdGVfY2xhc3NpZmljYXRpb25f",
+            "bWV0cmljcxgBIAEoCzI+Lmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2Rl",
+            "bC5BZ2dyZWdhdGVDbGFzc2lmaWNhdGlvbk1ldHJpY3MSbgoVY29uZnVzaW9u",
+            "X21hdHJpeF9saXN0GAIgAygLMk8uZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYy",
+            "Lk1vZGVsLk11bHRpQ2xhc3NDbGFzc2lmaWNhdGlvbk1ldHJpY3MuQ29uZnVz",
+            "aW9uTWF0cml4GokDCg9Db25mdXNpb25NYXRyaXgSOgoUY29uZmlkZW5jZV90",
+            "aHJlc2hvbGQYASABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUS",
+            "YQoEcm93cxgCIAMoCzJTLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2Rl",
+            "bC5NdWx0aUNsYXNzQ2xhc3NpZmljYXRpb25NZXRyaWNzLkNvbmZ1c2lvbk1h",
+            "dHJpeC5Sb3caUQoFRW50cnkSFwoPcHJlZGljdGVkX2xhYmVsGAEgASgJEi8K",
+            "Cml0ZW1fY291bnQYAiABKAsyGy5nb29nbGUucHJvdG9idWYuSW50NjRWYWx1",
+            "ZRqDAQoDUm93EhQKDGFjdHVhbF9sYWJlbBgBIAEoCRJmCgdlbnRyaWVzGAIg",
+            "AygLMlUuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLk11bHRpQ2xh",
+            "c3NDbGFzc2lmaWNhdGlvbk1ldHJpY3MuQ29uZnVzaW9uTWF0cml4LkVudHJ5",
+            "GssGChFDbHVzdGVyaW5nTWV0cmljcxI6ChRkYXZpZXNfYm91bGRpbl9pbmRl",
+            "eBgBIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRI7ChVtZWFu",
+            "X3NxdWFyZWRfZGlzdGFuY2UYAiABKAsyHC5nb29nbGUucHJvdG9idWYuRG91",
+            "YmxlVmFsdWUSSwoIY2x1c3RlcnMYAyADKAsyOS5nb29nbGUuY2xvdWQuYmln",
+            "cXVlcnkudjIuTW9kZWwuQ2x1c3RlcmluZ01ldHJpY3MuQ2x1c3RlchrvBAoH",
+            "Q2x1c3RlchITCgtjZW50cm9pZF9pZBgBIAEoAxJeCg5mZWF0dXJlX3ZhbHVl",
+            "cxgCIAMoCzJGLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5DbHVz",
+            "dGVyaW5nTWV0cmljcy5DbHVzdGVyLkZlYXR1cmVWYWx1ZRIqCgVjb3VudBgD",
+            "IAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQ2NFZhbHVlGsIDCgxGZWF0dXJl",
+            "VmFsdWUSFgoOZmVhdHVyZV9jb2x1bW4YASABKAkSNwoPbnVtZXJpY2FsX3Zh",
+            "bHVlGAIgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlSAASdAoR",
+            "Y2F0ZWdvcmljYWxfdmFsdWUYAyABKAsyVy5nb29nbGUuY2xvdWQuYmlncXVl",
+            "cnkudjIuTW9kZWwuQ2x1c3RlcmluZ01ldHJpY3MuQ2x1c3Rlci5GZWF0dXJl",
+            "VmFsdWUuQ2F0ZWdvcmljYWxWYWx1ZUgAGuEBChBDYXRlZ29yaWNhbFZhbHVl",
+            "En4KD2NhdGVnb3J5X2NvdW50cxgBIAMoCzJlLmdvb2dsZS5jbG91ZC5iaWdx",
             "dWVyeS52Mi5Nb2RlbC5DbHVzdGVyaW5nTWV0cmljcy5DbHVzdGVyLkZlYXR1",
-            "cmVWYWx1ZRIqCgVjb3VudBgDIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQ2",
-            "NFZhbHVlGsIDCgxGZWF0dXJlVmFsdWUSFgoOZmVhdHVyZV9jb2x1bW4YASAB",
-            "KAkSNwoPbnVtZXJpY2FsX3ZhbHVlGAIgASgLMhwuZ29vZ2xlLnByb3RvYnVm",
-            "LkRvdWJsZVZhbHVlSAASdAoRY2F0ZWdvcmljYWxfdmFsdWUYAyABKAsyVy5n",
-            "b29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuQ2x1c3RlcmluZ01ldHJp",
-            "Y3MuQ2x1c3Rlci5GZWF0dXJlVmFsdWUuQ2F0ZWdvcmljYWxWYWx1ZUgAGuEB",
-            "ChBDYXRlZ29yaWNhbFZhbHVlEn4KD2NhdGVnb3J5X2NvdW50cxgBIAMoCzJl",
-            "Lmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5DbHVzdGVyaW5nTWV0",
-            "cmljcy5DbHVzdGVyLkZlYXR1cmVWYWx1ZS5DYXRlZ29yaWNhbFZhbHVlLkNh",
-            "dGVnb3J5Q291bnQaTQoNQ2F0ZWdvcnlDb3VudBIQCghjYXRlZ29yeRgBIAEo",
-            "CRIqCgVjb3VudBgCIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQ2NFZhbHVl",
-            "QgcKBXZhbHVlGokCCg5SYW5raW5nTWV0cmljcxI8ChZtZWFuX2F2ZXJhZ2Vf",
-            "cHJlY2lzaW9uGAEgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVl",
-            "EjgKEm1lYW5fc3F1YXJlZF9lcnJvchgCIAEoCzIcLmdvb2dsZS5wcm90b2J1",
-            "Zi5Eb3VibGVWYWx1ZRJLCiVub3JtYWxpemVkX2Rpc2NvdW50ZWRfY3VtdWxh",
-            "dGl2ZV9nYWluGAMgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVl",
-            "EjIKDGF2ZXJhZ2VfcmFuaxgEIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3Vi",
-            "bGVWYWx1ZRqVBgoXQXJpbWFGb3JlY2FzdGluZ01ldHJpY3MSRgoSbm9uX3Nl",
-            "YXNvbmFsX29yZGVyGAEgAygLMiouZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYy",
-            "Lk1vZGVsLkFyaW1hT3JkZXISUgoVYXJpbWFfZml0dGluZ19tZXRyaWNzGAIg",
-            "AygLMjMuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkFyaW1hRml0",
-            "dGluZ01ldHJpY3MSWwoQc2Vhc29uYWxfcGVyaW9kcxgDIAMoDjJBLmdvb2ds",
-            "ZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5TZWFzb25hbFBlcmlvZC5TZWFz",
-            "b25hbFBlcmlvZFR5cGUSEQoJaGFzX2RyaWZ0GAQgAygIEhYKDnRpbWVfc2Vy",
-            "aWVzX2lkGAUgAygJEooBCiZhcmltYV9zaW5nbGVfbW9kZWxfZm9yZWNhc3Rp",
-            "bmdfbWV0cmljcxgGIAMoCzJaLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5N",
-            "b2RlbC5BcmltYUZvcmVjYXN0aW5nTWV0cmljcy5BcmltYVNpbmdsZU1vZGVs",
-            "Rm9yZWNhc3RpbmdNZXRyaWNzGsgCCiJBcmltYVNpbmdsZU1vZGVsRm9yZWNh",
-            "c3RpbmdNZXRyaWNzEkYKEm5vbl9zZWFzb25hbF9vcmRlchgBIAEoCzIqLmdv",
-            "b2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5BcmltYU9yZGVyElIKFWFy",
-            "aW1hX2ZpdHRpbmdfbWV0cmljcxgCIAEoCzIzLmdvb2dsZS5jbG91ZC5iaWdx",
-            "dWVyeS52Mi5Nb2RlbC5BcmltYUZpdHRpbmdNZXRyaWNzEhEKCWhhc19kcmlm",
-            "dBgDIAEoCBIWCg50aW1lX3Nlcmllc19pZBgEIAEoCRJbChBzZWFzb25hbF9w",
-            "ZXJpb2RzGAUgAygOMkEuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVs",
-            "LlNlYXNvbmFsUGVyaW9kLlNlYXNvbmFsUGVyaW9kVHlwZRq+BAoRRXZhbHVh",
-            "dGlvbk1ldHJpY3MSTwoScmVncmVzc2lvbl9tZXRyaWNzGAEgASgLMjEuZ29v",
-            "Z2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLlJlZ3Jlc3Npb25NZXRyaWNz",
-            "SAASZAodYmluYXJ5X2NsYXNzaWZpY2F0aW9uX21ldHJpY3MYAiABKAsyOy5n",
-            "b29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuQmluYXJ5Q2xhc3NpZmlj",
-            "YXRpb25NZXRyaWNzSAASbQoibXVsdGlfY2xhc3NfY2xhc3NpZmljYXRpb25f",
-            "bWV0cmljcxgDIAEoCzI/Lmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2Rl",
-            "bC5NdWx0aUNsYXNzQ2xhc3NpZmljYXRpb25NZXRyaWNzSAASTwoSY2x1c3Rl",
-            "cmluZ19tZXRyaWNzGAQgASgLMjEuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYy",
-            "Lk1vZGVsLkNsdXN0ZXJpbmdNZXRyaWNzSAASSQoPcmFua2luZ19tZXRyaWNz",
-            "GAUgASgLMi4uZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLlJhbmtp",
-            "bmdNZXRyaWNzSAASXAoZYXJpbWFfZm9yZWNhc3RpbmdfbWV0cmljcxgGIAEo",
-            "CzI3Lmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5BcmltYUZvcmVj",
-            "YXN0aW5nTWV0cmljc0gAQgkKB21ldHJpY3MalwEKD0RhdGFTcGxpdFJlc3Vs",
-            "dBJACg50cmFpbmluZ190YWJsZRgBIAEoCzIoLmdvb2dsZS5jbG91ZC5iaWdx",
-            "dWVyeS52Mi5UYWJsZVJlZmVyZW5jZRJCChBldmFsdWF0aW9uX3RhYmxlGAIg",
-            "ASgLMiguZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLlRhYmxlUmVmZXJlbmNl",
-            "Gi0KCkFyaW1hT3JkZXISCQoBcBgBIAEoAxIJCgFkGAIgASgDEgkKAXEYAyAB",
-            "KAMaTAoTQXJpbWFGaXR0aW5nTWV0cmljcxIWCg5sb2dfbGlrZWxpaG9vZBgB",
-            "IAEoARILCgNhaWMYAiABKAESEAoIdmFyaWFuY2UYAyABKAEa1QEKEUdsb2Jh",
-            "bEV4cGxhbmF0aW9uElMKDGV4cGxhbmF0aW9ucxgBIAMoCzI9Lmdvb2dsZS5j",
-            "bG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5HbG9iYWxFeHBsYW5hdGlvbi5FeHBs",
-            "YW5hdGlvbhITCgtjbGFzc19sYWJlbBgCIAEoCRpWCgtFeHBsYW5hdGlvbhIU",
-            "CgxmZWF0dXJlX25hbWUYASABKAkSMQoLYXR0cmlidXRpb24YAiABKAsyHC5n",
-            "b29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUa2B0KC1RyYWluaW5nUnVuElUK",
-            "EHRyYWluaW5nX29wdGlvbnMYASABKAsyOy5nb29nbGUuY2xvdWQuYmlncXVl",
-            "cnkudjIuTW9kZWwuVHJhaW5pbmdSdW4uVHJhaW5pbmdPcHRpb25zEi4KCnN0",
-            "YXJ0X3RpbWUYCCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEkwK",
-            "B3Jlc3VsdHMYBiADKAsyOy5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9k",
-            "ZWwuVHJhaW5pbmdSdW4uSXRlcmF0aW9uUmVzdWx0Ek0KEmV2YWx1YXRpb25f",
-            "bWV0cmljcxgHIAEoCzIxLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2Rl",
-            "bC5FdmFsdWF0aW9uTWV0cmljcxJKChFkYXRhX3NwbGl0X3Jlc3VsdBgJIAEo",
-            "CzIvLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5EYXRhU3BsaXRS",
-            "ZXN1bHQSTgoTZ2xvYmFsX2V4cGxhbmF0aW9ucxgKIAMoCzIxLmdvb2dsZS5j",
-            "bG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5HbG9iYWxFeHBsYW5hdGlvbhrDDwoP",
-            "VHJhaW5pbmdPcHRpb25zEhYKDm1heF9pdGVyYXRpb25zGAEgASgDEjsKCWxv",
-            "c3NfdHlwZRgCIAEoDjIoLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2Rl",
-            "bC5Mb3NzVHlwZRISCgpsZWFybl9yYXRlGAMgASgBEjcKEWwxX3JlZ3VsYXJp",
-            "emF0aW9uGAQgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEjcK",
-            "EWwyX3JlZ3VsYXJpemF0aW9uGAUgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRv",
-            "dWJsZVZhbHVlEjsKFW1pbl9yZWxhdGl2ZV9wcm9ncmVzcxgGIAEoCzIcLmdv",
-            "b2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIuCgp3YXJtX3N0YXJ0GAcgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1ZRIuCgplYXJseV9zdG9wGAgg",
-            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1ZRIbChNpbnB1dF9sYWJl",
-            "bF9jb2x1bW5zGAkgAygJEkoKEWRhdGFfc3BsaXRfbWV0aG9kGAogASgOMi8u",
-            "Z29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkRhdGFTcGxpdE1ldGhv",
-            "ZBIgChhkYXRhX3NwbGl0X2V2YWxfZnJhY3Rpb24YCyABKAESGQoRZGF0YV9z",
-            "cGxpdF9jb2x1bW4YDCABKAkSTgoTbGVhcm5fcmF0ZV9zdHJhdGVneRgNIAEo",
-            "DjIxLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5MZWFyblJhdGVT",
-            "dHJhdGVneRIaChJpbml0aWFsX2xlYXJuX3JhdGUYECABKAESbwoTbGFiZWxf",
-            "Y2xhc3Nfd2VpZ2h0cxgRIAMoCzJSLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52",
-            "Mi5Nb2RlbC5UcmFpbmluZ1J1bi5UcmFpbmluZ09wdGlvbnMuTGFiZWxDbGFz",
-            "c1dlaWdodHNFbnRyeRITCgt1c2VyX2NvbHVtbhgSIAEoCRITCgtpdGVtX2Nv",
-            "bHVtbhgTIAEoCRJDCg1kaXN0YW5jZV90eXBlGBQgASgOMiwuZ29vZ2xlLmNs",
-            "b3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkRpc3RhbmNlVHlwZRIUCgxudW1fY2x1",
-            "c3RlcnMYFSABKAMSEQoJbW9kZWxfdXJpGBYgASgJElMKFW9wdGltaXphdGlv",
-            "bl9zdHJhdGVneRgXIAEoDjI0Lmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5N",
-            "b2RlbC5PcHRpbWl6YXRpb25TdHJhdGVneRIUCgxoaWRkZW5fdW5pdHMYGCAD",
-            "KAMSEgoKYmF0Y2hfc2l6ZRgZIAEoAxItCgdkcm9wb3V0GBogASgLMhwuZ29v",
-            "Z2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEhYKDm1heF90cmVlX2RlcHRoGBsg",
-            "ASgDEhEKCXN1YnNhbXBsZRgcIAEoARI0Cg5taW5fc3BsaXRfbG9zcxgdIAEo",
-            "CzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRITCgtudW1fZmFjdG9y",
-            "cxgeIAEoAxJDCg1mZWVkYmFja190eXBlGB8gASgOMiwuZ29vZ2xlLmNsb3Vk",
-            "LmJpZ3F1ZXJ5LnYyLk1vZGVsLkZlZWRiYWNrVHlwZRIwCgp3YWxzX2FscGhh",
-            "GCAgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEmwKHGttZWFu",
-            "c19pbml0aWFsaXphdGlvbl9tZXRob2QYISABKA4yRi5nb29nbGUuY2xvdWQu",
-            "YmlncXVlcnkudjIuTW9kZWwuS21lYW5zRW51bXMuS21lYW5zSW5pdGlhbGl6",
-            "YXRpb25NZXRob2QSJAoca21lYW5zX2luaXRpYWxpemF0aW9uX2NvbHVtbhgi",
-            "IAEoCRIkChx0aW1lX3Nlcmllc190aW1lc3RhbXBfY29sdW1uGCMgASgJEh8K",
-            "F3RpbWVfc2VyaWVzX2RhdGFfY29sdW1uGCQgASgJEhIKCmF1dG9fYXJpbWEY",
-            "JSABKAgSRgoSbm9uX3NlYXNvbmFsX29yZGVyGCYgASgLMiouZ29vZ2xlLmNs",
-            "b3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkFyaW1hT3JkZXISRQoOZGF0YV9mcmVx",
-            "dWVuY3kYJyABKA4yLS5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwu",
-            "RGF0YUZyZXF1ZW5jeRIVCg1pbmNsdWRlX2RyaWZ0GCkgASgIEkUKDmhvbGlk",
-            "YXlfcmVnaW9uGCogASgOMi0uZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1v",
-            "ZGVsLkhvbGlkYXlSZWdpb24SHQoVdGltZV9zZXJpZXNfaWRfY29sdW1uGCsg",
-            "ASgJEg8KB2hvcml6b24YLCABKAMSHgoWcHJlc2VydmVfaW5wdXRfc3RydWN0",
-            "cxgtIAEoCBIcChRhdXRvX2FyaW1hX21heF9vcmRlchguIAEoAxo4ChZMYWJl",
-            "bENsYXNzV2VpZ2h0c0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEo",
-            "AToCOAEawgoKD0l0ZXJhdGlvblJlc3VsdBIqCgVpbmRleBgBIAEoCzIbLmdv",
-            "b2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlEjAKC2R1cmF0aW9uX21zGAQgASgL",
-            "MhsuZ29vZ2xlLnByb3RvYnVmLkludDY0VmFsdWUSMwoNdHJhaW5pbmdfbG9z",
-            "cxgFIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIvCglldmFs",
-            "X2xvc3MYBiABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSEgoK",
-            "bGVhcm5fcmF0ZRgHIAEoARJeCg1jbHVzdGVyX2luZm9zGAggAygLMkcuZ29v",
-            "Z2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLlRyYWluaW5nUnVuLkl0ZXJh",
-            "dGlvblJlc3VsdC5DbHVzdGVySW5mbxJdCgxhcmltYV9yZXN1bHQYCSABKAsy",
-            "Ry5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuVHJhaW5pbmdSdW4u",
-            "SXRlcmF0aW9uUmVzdWx0LkFyaW1hUmVzdWx0GosBCgtDbHVzdGVySW5mbxIT",
-            "CgtjZW50cm9pZF9pZBgBIAEoAxI0Cg5jbHVzdGVyX3JhZGl1cxgCIAEoCzIc",
-            "Lmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIxCgxjbHVzdGVyX3NpemUY",
-            "AyABKAsyGy5nb29nbGUucHJvdG9idWYuSW50NjRWYWx1ZRqJBgoLQXJpbWFS",
-            "ZXN1bHQScAoQYXJpbWFfbW9kZWxfaW5mbxgBIAMoCzJWLmdvb2dsZS5jbG91",
-            "ZC5iaWdxdWVyeS52Mi5Nb2RlbC5UcmFpbmluZ1J1bi5JdGVyYXRpb25SZXN1",
-            "bHQuQXJpbWFSZXN1bHQuQXJpbWFNb2RlbEluZm8SWwoQc2Vhc29uYWxfcGVy",
-            "aW9kcxgCIAMoDjJBLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5T",
-            "ZWFzb25hbFBlcmlvZC5TZWFzb25hbFBlcmlvZFR5cGUafQoRQXJpbWFDb2Vm",
-            "ZmljaWVudHMSJAocYXV0b19yZWdyZXNzaXZlX2NvZWZmaWNpZW50cxgBIAMo",
-            "ARIjChttb3ZpbmdfYXZlcmFnZV9jb2VmZmljaWVudHMYAiADKAESHQoVaW50",
-            "ZXJjZXB0X2NvZWZmaWNpZW50GAMgASgBGqsDCg5BcmltYU1vZGVsSW5mbxJG",
-            "ChJub25fc2Vhc29uYWxfb3JkZXIYASABKAsyKi5nb29nbGUuY2xvdWQuYmln",
-            "cXVlcnkudjIuTW9kZWwuQXJpbWFPcmRlchJ1ChJhcmltYV9jb2VmZmljaWVu",
-            "dHMYAiABKAsyWS5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuVHJh",
-            "aW5pbmdSdW4uSXRlcmF0aW9uUmVzdWx0LkFyaW1hUmVzdWx0LkFyaW1hQ29l",
-            "ZmZpY2llbnRzElIKFWFyaW1hX2ZpdHRpbmdfbWV0cmljcxgDIAEoCzIzLmdv",
-            "b2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5BcmltYUZpdHRpbmdNZXRy",
-            "aWNzEhEKCWhhc19kcmlmdBgEIAEoCBIWCg50aW1lX3Nlcmllc19pZBgFIAEo",
-            "CRJbChBzZWFzb25hbF9wZXJpb2RzGAYgAygOMkEuZ29vZ2xlLmNsb3VkLmJp",
+            "cmVWYWx1ZS5DYXRlZ29yaWNhbFZhbHVlLkNhdGVnb3J5Q291bnQaTQoNQ2F0",
+            "ZWdvcnlDb3VudBIQCghjYXRlZ29yeRgBIAEoCRIqCgVjb3VudBgCIAEoCzIb",
+            "Lmdvb2dsZS5wcm90b2J1Zi5JbnQ2NFZhbHVlQgcKBXZhbHVlGokCCg5SYW5r",
+            "aW5nTWV0cmljcxI8ChZtZWFuX2F2ZXJhZ2VfcHJlY2lzaW9uGAEgASgLMhwu",
+            "Z29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEjgKEm1lYW5fc3F1YXJlZF9l",
+            "cnJvchgCIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRJLCiVu",
+            "b3JtYWxpemVkX2Rpc2NvdW50ZWRfY3VtdWxhdGl2ZV9nYWluGAMgASgLMhwu",
+            "Z29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEjIKDGF2ZXJhZ2VfcmFuaxgE",
+            "IAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRrpBwoXQXJpbWFG",
+            "b3JlY2FzdGluZ01ldHJpY3MSSgoSbm9uX3NlYXNvbmFsX29yZGVyGAEgAygL",
+            "MiouZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkFyaW1hT3JkZXJC",
+            "AhgBElYKFWFyaW1hX2ZpdHRpbmdfbWV0cmljcxgCIAMoCzIzLmdvb2dsZS5j",
+            "bG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5BcmltYUZpdHRpbmdNZXRyaWNzQgIY",
+            "ARJfChBzZWFzb25hbF9wZXJpb2RzGAMgAygOMkEuZ29vZ2xlLmNsb3VkLmJp",
             "Z3F1ZXJ5LnYyLk1vZGVsLlNlYXNvbmFsUGVyaW9kLlNlYXNvbmFsUGVyaW9k",
-            "VHlwZRotCgtMYWJlbHNFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiAB",
-            "KAk6AjgBIqUCCglNb2RlbFR5cGUSGgoWTU9ERUxfVFlQRV9VTlNQRUNJRklF",
-            "RBAAEhUKEUxJTkVBUl9SRUdSRVNTSU9OEAESFwoTTE9HSVNUSUNfUkVHUkVT",
-            "U0lPThACEgoKBktNRUFOUxADEhgKFE1BVFJJWF9GQUNUT1JJWkFUSU9OEAQS",
-            "EgoORE5OX0NMQVNTSUZJRVIQBRIOCgpURU5TT1JGTE9XEAYSEQoNRE5OX1JF",
-            "R1JFU1NPUhAHEhoKFkJPT1NURURfVFJFRV9SRUdSRVNTT1IQCRIbChdCT09T",
-            "VEVEX1RSRUVfQ0xBU1NJRklFUhAKEgkKBUFSSU1BEAsSFAoQQVVUT01MX1JF",
-            "R1JFU1NPUhAMEhUKEUFVVE9NTF9DTEFTU0lGSUVSEA0iTwoITG9zc1R5cGUS",
-            "GQoVTE9TU19UWVBFX1VOU1BFQ0lGSUVEEAASFQoRTUVBTl9TUVVBUkVEX0xP",
-            "U1MQARIRCg1NRUFOX0xPR19MT1NTEAIiSAoMRGlzdGFuY2VUeXBlEh0KGURJ",
-            "U1RBTkNFX1RZUEVfVU5TUEVDSUZJRUQQABINCglFVUNMSURFQU4QARIKCgZD",
-            "T1NJTkUQAiJ6Cg9EYXRhU3BsaXRNZXRob2QSIQodREFUQV9TUExJVF9NRVRI",
-            "T0RfVU5TUEVDSUZJRUQQABIKCgZSQU5ET00QARIKCgZDVVNUT00QAhIOCgpT",
-            "RVFVRU5USUFMEAMSDAoITk9fU1BMSVQQBBIOCgpBVVRPX1NQTElUEAUijgEK",
-            "DURhdGFGcmVxdWVuY3kSHgoaREFUQV9GUkVRVUVOQ1lfVU5TUEVDSUZJRUQQ",
-            "ABISCg5BVVRPX0ZSRVFVRU5DWRABEgoKBllFQVJMWRACEg0KCVFVQVJURVJM",
-            "WRADEgsKB01PTlRITFkQBBIKCgZXRUVLTFkQBRIJCgVEQUlMWRAGEgoKBkhP",
-            "VVJMWRAHItkECg1Ib2xpZGF5UmVnaW9uEh4KGkhPTElEQVlfUkVHSU9OX1VO",
-            "U1BFQ0lGSUVEEAASCgoGR0xPQkFMEAESBgoCTkEQAhIJCgVKQVBBQxADEggK",
-            "BEVNRUEQBBIHCgNMQUMQBRIGCgJBRRAGEgYKAkFSEAcSBgoCQVQQCBIGCgJB",
-            "VRAJEgYKAkJFEAoSBgoCQlIQCxIGCgJDQRAMEgYKAkNIEA0SBgoCQ0wQDhIG",
-            "CgJDThAPEgYKAkNPEBASBgoCQ1MQERIGCgJDWhASEgYKAkRFEBMSBgoCREsQ",
-            "FBIGCgJEWhAVEgYKAkVDEBYSBgoCRUUQFxIGCgJFRxAYEgYKAkVTEBkSBgoC",
-            "RkkQGhIGCgJGUhAbEgYKAkdCEBwSBgoCR1IQHRIGCgJISxAeEgYKAkhVEB8S",
-            "BgoCSUQQIBIGCgJJRRAhEgYKAklMECISBgoCSU4QIxIGCgJJUhAkEgYKAklU",
-            "ECUSBgoCSlAQJhIGCgJLUhAnEgYKAkxWECgSBgoCTUEQKRIGCgJNWBAqEgYK",
-            "Ak1ZECsSBgoCTkcQLBIGCgJOTBAtEgYKAk5PEC4SBgoCTloQLxIGCgJQRRAw",
-            "EgYKAlBIEDESBgoCUEsQMhIGCgJQTBAzEgYKAlBUEDQSBgoCUk8QNRIGCgJS",
-            "UxA2EgYKAlJVEDcSBgoCU0EQOBIGCgJTRRA5EgYKAlNHEDoSBgoCU0kQOxIG",
-            "CgJTSxA8EgYKAlRIED0SBgoCVFIQPhIGCgJUVxA/EgYKAlVBEEASBgoCVVMQ",
-            "QRIGCgJWRRBCEgYKAlZOEEMSBgoCWkEQRCJXChFMZWFyblJhdGVTdHJhdGVn",
-            "eRIjCh9MRUFSTl9SQVRFX1NUUkFURUdZX1VOU1BFQ0lGSUVEEAASDwoLTElO",
-            "RV9TRUFSQ0gQARIMCghDT05TVEFOVBACIm4KFE9wdGltaXphdGlvblN0cmF0",
-            "ZWd5EiUKIU9QVElNSVpBVElPTl9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEhoK",
-            "FkJBVENIX0dSQURJRU5UX0RFU0NFTlQQARITCg9OT1JNQUxfRVFVQVRJT04Q",
-            "AiJJCgxGZWVkYmFja1R5cGUSHQoZRkVFREJBQ0tfVFlQRV9VTlNQRUNJRklF",
-            "RBAAEgwKCElNUExJQ0lUEAESDAoIRVhQTElDSVQQAiJaCg9HZXRNb2RlbFJl",
+            "VHlwZUICGAESFQoJaGFzX2RyaWZ0GAQgAygIQgIYARIaCg50aW1lX3Nlcmll",
+            "c19pZBgFIAMoCUICGAESigEKJmFyaW1hX3NpbmdsZV9tb2RlbF9mb3JlY2Fz",
+            "dGluZ19tZXRyaWNzGAYgAygLMlouZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYy",
+            "Lk1vZGVsLkFyaW1hRm9yZWNhc3RpbmdNZXRyaWNzLkFyaW1hU2luZ2xlTW9k",
+            "ZWxGb3JlY2FzdGluZ01ldHJpY3MaiAQKIkFyaW1hU2luZ2xlTW9kZWxGb3Jl",
+            "Y2FzdGluZ01ldHJpY3MSRgoSbm9uX3NlYXNvbmFsX29yZGVyGAEgASgLMiou",
+            "Z29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkFyaW1hT3JkZXISUgoV",
+            "YXJpbWFfZml0dGluZ19tZXRyaWNzGAIgASgLMjMuZ29vZ2xlLmNsb3VkLmJp",
+            "Z3F1ZXJ5LnYyLk1vZGVsLkFyaW1hRml0dGluZ01ldHJpY3MSEQoJaGFzX2Ry",
+            "aWZ0GAMgASgIEhYKDnRpbWVfc2VyaWVzX2lkGAQgASgJEhcKD3RpbWVfc2Vy",
+            "aWVzX2lkcxgJIAMoCRJbChBzZWFzb25hbF9wZXJpb2RzGAUgAygOMkEuZ29v",
+            "Z2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLlNlYXNvbmFsUGVyaW9kLlNl",
+            "YXNvbmFsUGVyaW9kVHlwZRI2ChJoYXNfaG9saWRheV9lZmZlY3QYBiABKAsy",
+            "Gi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlEjcKE2hhc19zcGlrZXNfYW5k",
+            "X2RpcHMYByABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlEjQKEGhh",
+            "c19zdGVwX2NoYW5nZXMYCCABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZh",
+            "bHVlGr4EChFFdmFsdWF0aW9uTWV0cmljcxJPChJyZWdyZXNzaW9uX21ldHJp",
+            "Y3MYASABKAsyMS5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuUmVn",
+            "cmVzc2lvbk1ldHJpY3NIABJkCh1iaW5hcnlfY2xhc3NpZmljYXRpb25fbWV0",
+            "cmljcxgCIAEoCzI7Lmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5C",
+            "aW5hcnlDbGFzc2lmaWNhdGlvbk1ldHJpY3NIABJtCiJtdWx0aV9jbGFzc19j",
+            "bGFzc2lmaWNhdGlvbl9tZXRyaWNzGAMgASgLMj8uZ29vZ2xlLmNsb3VkLmJp",
+            "Z3F1ZXJ5LnYyLk1vZGVsLk11bHRpQ2xhc3NDbGFzc2lmaWNhdGlvbk1ldHJp",
+            "Y3NIABJPChJjbHVzdGVyaW5nX21ldHJpY3MYBCABKAsyMS5nb29nbGUuY2xv",
+            "dWQuYmlncXVlcnkudjIuTW9kZWwuQ2x1c3RlcmluZ01ldHJpY3NIABJJCg9y",
+            "YW5raW5nX21ldHJpY3MYBSABKAsyLi5nb29nbGUuY2xvdWQuYmlncXVlcnku",
+            "djIuTW9kZWwuUmFua2luZ01ldHJpY3NIABJcChlhcmltYV9mb3JlY2FzdGlu",
+            "Z19tZXRyaWNzGAYgASgLMjcuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1v",
+            "ZGVsLkFyaW1hRm9yZWNhc3RpbmdNZXRyaWNzSABCCQoHbWV0cmljcxqXAQoP",
+            "RGF0YVNwbGl0UmVzdWx0EkAKDnRyYWluaW5nX3RhYmxlGAEgASgLMiguZ29v",
+            "Z2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLlRhYmxlUmVmZXJlbmNlEkIKEGV2YWx1",
+            "YXRpb25fdGFibGUYAiABKAsyKC5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIu",
+            "VGFibGVSZWZlcmVuY2UaLQoKQXJpbWFPcmRlchIJCgFwGAEgASgDEgkKAWQY",
+            "AiABKAMSCQoBcRgDIAEoAxpMChNBcmltYUZpdHRpbmdNZXRyaWNzEhYKDmxv",
+            "Z19saWtlbGlob29kGAEgASgBEgsKA2FpYxgCIAEoARIQCgh2YXJpYW5jZRgD",
+            "IAEoARrVAQoRR2xvYmFsRXhwbGFuYXRpb24SUwoMZXhwbGFuYXRpb25zGAEg",
+            "AygLMj0uZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkdsb2JhbEV4",
+            "cGxhbmF0aW9uLkV4cGxhbmF0aW9uEhMKC2NsYXNzX2xhYmVsGAIgASgJGlYK",
+            "C0V4cGxhbmF0aW9uEhQKDGZlYXR1cmVfbmFtZRgBIAEoCRIxCgthdHRyaWJ1",
+            "dGlvbhgCIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRrnIAoL",
+            "VHJhaW5pbmdSdW4SVQoQdHJhaW5pbmdfb3B0aW9ucxgBIAEoCzI7Lmdvb2ds",
+            "ZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5UcmFpbmluZ1J1bi5UcmFpbmlu",
+            "Z09wdGlvbnMSLgoKc3RhcnRfdGltZRgIIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5UaW1lc3RhbXASTAoHcmVzdWx0cxgGIAMoCzI7Lmdvb2dsZS5jbG91ZC5i",
+            "aWdxdWVyeS52Mi5Nb2RlbC5UcmFpbmluZ1J1bi5JdGVyYXRpb25SZXN1bHQS",
+            "TQoSZXZhbHVhdGlvbl9tZXRyaWNzGAcgASgLMjEuZ29vZ2xlLmNsb3VkLmJp",
+            "Z3F1ZXJ5LnYyLk1vZGVsLkV2YWx1YXRpb25NZXRyaWNzEkoKEWRhdGFfc3Bs",
+            "aXRfcmVzdWx0GAkgASgLMi8uZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1v",
+            "ZGVsLkRhdGFTcGxpdFJlc3VsdBJOChNnbG9iYWxfZXhwbGFuYXRpb25zGAog",
+            "AygLMjEuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkdsb2JhbEV4",
+            "cGxhbmF0aW9uGpIRCg9UcmFpbmluZ09wdGlvbnMSFgoObWF4X2l0ZXJhdGlv",
+            "bnMYASABKAMSOwoJbG9zc190eXBlGAIgASgOMiguZ29vZ2xlLmNsb3VkLmJp",
+            "Z3F1ZXJ5LnYyLk1vZGVsLkxvc3NUeXBlEhIKCmxlYXJuX3JhdGUYAyABKAES",
+            "NwoRbDFfcmVndWxhcml6YXRpb24YBCABKAsyHC5nb29nbGUucHJvdG9idWYu",
+            "RG91YmxlVmFsdWUSNwoRbDJfcmVndWxhcml6YXRpb24YBSABKAsyHC5nb29n",
+            "bGUucHJvdG9idWYuRG91YmxlVmFsdWUSOwoVbWluX3JlbGF0aXZlX3Byb2dy",
+            "ZXNzGAYgASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEi4KCndh",
+            "cm1fc3RhcnQYByABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlEi4K",
+            "CmVhcmx5X3N0b3AYCCABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVl",
+            "EhsKE2lucHV0X2xhYmVsX2NvbHVtbnMYCSADKAkSSgoRZGF0YV9zcGxpdF9t",
+            "ZXRob2QYCiABKA4yLy5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwu",
+            "RGF0YVNwbGl0TWV0aG9kEiAKGGRhdGFfc3BsaXRfZXZhbF9mcmFjdGlvbhgL",
+            "IAEoARIZChFkYXRhX3NwbGl0X2NvbHVtbhgMIAEoCRJOChNsZWFybl9yYXRl",
+            "X3N0cmF0ZWd5GA0gASgOMjEuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1v",
+            "ZGVsLkxlYXJuUmF0ZVN0cmF0ZWd5EhoKEmluaXRpYWxfbGVhcm5fcmF0ZRgQ",
+            "IAEoARJvChNsYWJlbF9jbGFzc193ZWlnaHRzGBEgAygLMlIuZ29vZ2xlLmNs",
+            "b3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLlRyYWluaW5nUnVuLlRyYWluaW5nT3B0",
+            "aW9ucy5MYWJlbENsYXNzV2VpZ2h0c0VudHJ5EhMKC3VzZXJfY29sdW1uGBIg",
+            "ASgJEhMKC2l0ZW1fY29sdW1uGBMgASgJEkMKDWRpc3RhbmNlX3R5cGUYFCAB",
+            "KA4yLC5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuRGlzdGFuY2VU",
+            "eXBlEhQKDG51bV9jbHVzdGVycxgVIAEoAxIRCgltb2RlbF91cmkYFiABKAkS",
+            "UwoVb3B0aW1pemF0aW9uX3N0cmF0ZWd5GBcgASgOMjQuZ29vZ2xlLmNsb3Vk",
+            "LmJpZ3F1ZXJ5LnYyLk1vZGVsLk9wdGltaXphdGlvblN0cmF0ZWd5EhQKDGhp",
+            "ZGRlbl91bml0cxgYIAMoAxISCgpiYXRjaF9zaXplGBkgASgDEi0KB2Ryb3Bv",
+            "dXQYGiABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSFgoObWF4",
+            "X3RyZWVfZGVwdGgYGyABKAMSEQoJc3Vic2FtcGxlGBwgASgBEjQKDm1pbl9z",
+            "cGxpdF9sb3NzGB0gASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVl",
+            "EhMKC251bV9mYWN0b3JzGB4gASgDEkMKDWZlZWRiYWNrX3R5cGUYHyABKA4y",
+            "LC5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuRmVlZGJhY2tUeXBl",
+            "EjAKCndhbHNfYWxwaGEYICABKAsyHC5nb29nbGUucHJvdG9idWYuRG91Ymxl",
+            "VmFsdWUSbAoca21lYW5zX2luaXRpYWxpemF0aW9uX21ldGhvZBghIAEoDjJG",
+            "Lmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5LbWVhbnNFbnVtcy5L",
+            "bWVhbnNJbml0aWFsaXphdGlvbk1ldGhvZBIkChxrbWVhbnNfaW5pdGlhbGl6",
+            "YXRpb25fY29sdW1uGCIgASgJEiQKHHRpbWVfc2VyaWVzX3RpbWVzdGFtcF9j",
+            "b2x1bW4YIyABKAkSHwoXdGltZV9zZXJpZXNfZGF0YV9jb2x1bW4YJCABKAkS",
+            "EgoKYXV0b19hcmltYRglIAEoCBJGChJub25fc2Vhc29uYWxfb3JkZXIYJiAB",
+            "KAsyKi5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwuQXJpbWFPcmRl",
+            "chJFCg5kYXRhX2ZyZXF1ZW5jeRgnIAEoDjItLmdvb2dsZS5jbG91ZC5iaWdx",
+            "dWVyeS52Mi5Nb2RlbC5EYXRhRnJlcXVlbmN5EhUKDWluY2x1ZGVfZHJpZnQY",
+            "KSABKAgSRQoOaG9saWRheV9yZWdpb24YKiABKA4yLS5nb29nbGUuY2xvdWQu",
+            "YmlncXVlcnkudjIuTW9kZWwuSG9saWRheVJlZ2lvbhIdChV0aW1lX3Nlcmll",
+            "c19pZF9jb2x1bW4YKyABKAkSHgoWdGltZV9zZXJpZXNfaWRfY29sdW1ucxgz",
+            "IAMoCRIPCgdob3Jpem9uGCwgASgDEh4KFnByZXNlcnZlX2lucHV0X3N0cnVj",
+            "dHMYLSABKAgSHAoUYXV0b19hcmltYV9tYXhfb3JkZXIYLiABKAMSOQoVZGVj",
+            "b21wb3NlX3RpbWVfc2VyaWVzGDIgASgLMhouZ29vZ2xlLnByb3RvYnVmLkJv",
+            "b2xWYWx1ZRI5ChVjbGVhbl9zcGlrZXNfYW5kX2RpcHMYNCABKAsyGi5nb29n",
+            "bGUucHJvdG9idWYuQm9vbFZhbHVlEjcKE2FkanVzdF9zdGVwX2NoYW5nZXMY",
+            "NSABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlGjgKFkxhYmVsQ2xh",
+            "c3NXZWlnaHRzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgBOgI4",
+            "ARqCDAoPSXRlcmF0aW9uUmVzdWx0EioKBWluZGV4GAEgASgLMhsuZ29vZ2xl",
+            "LnByb3RvYnVmLkludDMyVmFsdWUSMAoLZHVyYXRpb25fbXMYBCABKAsyGy5n",
+            "b29nbGUucHJvdG9idWYuSW50NjRWYWx1ZRIzCg10cmFpbmluZ19sb3NzGAUg",
+            "ASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEi8KCWV2YWxfbG9z",
+            "cxgGIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRISCgpsZWFy",
+            "bl9yYXRlGAcgASgBEl4KDWNsdXN0ZXJfaW5mb3MYCCADKAsyRy5nb29nbGUu",
+            "Y2xvdWQuYmlncXVlcnkudjIuTW9kZWwuVHJhaW5pbmdSdW4uSXRlcmF0aW9u",
+            "UmVzdWx0LkNsdXN0ZXJJbmZvEl0KDGFyaW1hX3Jlc3VsdBgJIAEoCzJHLmdv",
+            "b2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5UcmFpbmluZ1J1bi5JdGVy",
+            "YXRpb25SZXN1bHQuQXJpbWFSZXN1bHQaiwEKC0NsdXN0ZXJJbmZvEhMKC2Nl",
+            "bnRyb2lkX2lkGAEgASgDEjQKDmNsdXN0ZXJfcmFkaXVzGAIgASgLMhwuZ29v",
+            "Z2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlEjEKDGNsdXN0ZXJfc2l6ZRgDIAEo",
+            "CzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQ2NFZhbHVlGskHCgtBcmltYVJlc3Vs",
+            "dBJwChBhcmltYV9tb2RlbF9pbmZvGAEgAygLMlYuZ29vZ2xlLmNsb3VkLmJp",
+            "Z3F1ZXJ5LnYyLk1vZGVsLlRyYWluaW5nUnVuLkl0ZXJhdGlvblJlc3VsdC5B",
+            "cmltYVJlc3VsdC5BcmltYU1vZGVsSW5mbxJbChBzZWFzb25hbF9wZXJpb2Rz",
+            "GAIgAygOMkEuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLlNlYXNv",
+            "bmFsUGVyaW9kLlNlYXNvbmFsUGVyaW9kVHlwZRp9ChFBcmltYUNvZWZmaWNp",
+            "ZW50cxIkChxhdXRvX3JlZ3Jlc3NpdmVfY29lZmZpY2llbnRzGAEgAygBEiMK",
+            "G21vdmluZ19hdmVyYWdlX2NvZWZmaWNpZW50cxgCIAMoARIdChVpbnRlcmNl",
+            "cHRfY29lZmZpY2llbnQYAyABKAEa6wQKDkFyaW1hTW9kZWxJbmZvEkYKEm5v",
+            "bl9zZWFzb25hbF9vcmRlchgBIAEoCzIqLmdvb2dsZS5jbG91ZC5iaWdxdWVy",
+            "eS52Mi5Nb2RlbC5BcmltYU9yZGVyEnUKEmFyaW1hX2NvZWZmaWNpZW50cxgC",
+            "IAEoCzJZLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbC5UcmFpbmlu",
+            "Z1J1bi5JdGVyYXRpb25SZXN1bHQuQXJpbWFSZXN1bHQuQXJpbWFDb2VmZmlj",
+            "aWVudHMSUgoVYXJpbWFfZml0dGluZ19tZXRyaWNzGAMgASgLMjMuZ29vZ2xl",
+            "LmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLkFyaW1hRml0dGluZ01ldHJpY3MS",
+            "EQoJaGFzX2RyaWZ0GAQgASgIEhYKDnRpbWVfc2VyaWVzX2lkGAUgASgJEhcK",
+            "D3RpbWVfc2VyaWVzX2lkcxgKIAMoCRJbChBzZWFzb25hbF9wZXJpb2RzGAYg",
+            "AygOMkEuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsLlNlYXNvbmFs",
+            "UGVyaW9kLlNlYXNvbmFsUGVyaW9kVHlwZRI2ChJoYXNfaG9saWRheV9lZmZl",
+            "Y3QYByABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlEjcKE2hhc19z",
+            "cGlrZXNfYW5kX2RpcHMYCCABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZh",
+            "bHVlEjQKEGhhc19zdGVwX2NoYW5nZXMYCSABKAsyGi5nb29nbGUucHJvdG9i",
+            "dWYuQm9vbFZhbHVlGi0KC0xhYmVsc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2",
+            "YWx1ZRgCIAEoCToCOAEitQIKCU1vZGVsVHlwZRIaChZNT0RFTF9UWVBFX1VO",
+            "U1BFQ0lGSUVEEAASFQoRTElORUFSX1JFR1JFU1NJT04QARIXChNMT0dJU1RJ",
+            "Q19SRUdSRVNTSU9OEAISCgoGS01FQU5TEAMSGAoUTUFUUklYX0ZBQ1RPUkla",
+            "QVRJT04QBBISCg5ETk5fQ0xBU1NJRklFUhAFEg4KClRFTlNPUkZMT1cQBhIR",
+            "Cg1ETk5fUkVHUkVTU09SEAcSGgoWQk9PU1RFRF9UUkVFX1JFR1JFU1NPUhAJ",
+            "EhsKF0JPT1NURURfVFJFRV9DTEFTU0lGSUVSEAoSCQoFQVJJTUEQCxIUChBB",
+            "VVRPTUxfUkVHUkVTU09SEAwSFQoRQVVUT01MX0NMQVNTSUZJRVIQDRIOCgpB",
+            "UklNQV9QTFVTEBMiTwoITG9zc1R5cGUSGQoVTE9TU19UWVBFX1VOU1BFQ0lG",
+            "SUVEEAASFQoRTUVBTl9TUVVBUkVEX0xPU1MQARIRCg1NRUFOX0xPR19MT1NT",
+            "EAIiSAoMRGlzdGFuY2VUeXBlEh0KGURJU1RBTkNFX1RZUEVfVU5TUEVDSUZJ",
+            "RUQQABINCglFVUNMSURFQU4QARIKCgZDT1NJTkUQAiJ6Cg9EYXRhU3BsaXRN",
+            "ZXRob2QSIQodREFUQV9TUExJVF9NRVRIT0RfVU5TUEVDSUZJRUQQABIKCgZS",
+            "QU5ET00QARIKCgZDVVNUT00QAhIOCgpTRVFVRU5USUFMEAMSDAoITk9fU1BM",
+            "SVQQBBIOCgpBVVRPX1NQTElUEAUingEKDURhdGFGcmVxdWVuY3kSHgoaREFU",
+            "QV9GUkVRVUVOQ1lfVU5TUEVDSUZJRUQQABISCg5BVVRPX0ZSRVFVRU5DWRAB",
+            "EgoKBllFQVJMWRACEg0KCVFVQVJURVJMWRADEgsKB01PTlRITFkQBBIKCgZX",
+            "RUVLTFkQBRIJCgVEQUlMWRAGEgoKBkhPVVJMWRAHEg4KClBFUl9NSU5VVEUQ",
+            "CCLZBAoNSG9saWRheVJlZ2lvbhIeChpIT0xJREFZX1JFR0lPTl9VTlNQRUNJ",
+            "RklFRBAAEgoKBkdMT0JBTBABEgYKAk5BEAISCQoFSkFQQUMQAxIICgRFTUVB",
+            "EAQSBwoDTEFDEAUSBgoCQUUQBhIGCgJBUhAHEgYKAkFUEAgSBgoCQVUQCRIG",
+            "CgJCRRAKEgYKAkJSEAsSBgoCQ0EQDBIGCgJDSBANEgYKAkNMEA4SBgoCQ04Q",
+            "DxIGCgJDTxAQEgYKAkNTEBESBgoCQ1oQEhIGCgJERRATEgYKAkRLEBQSBgoC",
+            "RFoQFRIGCgJFQxAWEgYKAkVFEBcSBgoCRUcQGBIGCgJFUxAZEgYKAkZJEBoS",
+            "BgoCRlIQGxIGCgJHQhAcEgYKAkdSEB0SBgoCSEsQHhIGCgJIVRAfEgYKAklE",
+            "ECASBgoCSUUQIRIGCgJJTBAiEgYKAklOECMSBgoCSVIQJBIGCgJJVBAlEgYK",
+            "AkpQECYSBgoCS1IQJxIGCgJMVhAoEgYKAk1BECkSBgoCTVgQKhIGCgJNWRAr",
+            "EgYKAk5HECwSBgoCTkwQLRIGCgJOTxAuEgYKAk5aEC8SBgoCUEUQMBIGCgJQ",
+            "SBAxEgYKAlBLEDISBgoCUEwQMxIGCgJQVBA0EgYKAlJPEDUSBgoCUlMQNhIG",
+            "CgJSVRA3EgYKAlNBEDgSBgoCU0UQORIGCgJTRxA6EgYKAlNJEDsSBgoCU0sQ",
+            "PBIGCgJUSBA9EgYKAlRSED4SBgoCVFcQPxIGCgJVQRBAEgYKAlVTEEESBgoC",
+            "VkUQQhIGCgJWThBDEgYKAlpBEEQiVwoRTGVhcm5SYXRlU3RyYXRlZ3kSIwof",
+            "TEVBUk5fUkFURV9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEg8KC0xJTkVfU0VB",
+            "UkNIEAESDAoIQ09OU1RBTlQQAiJuChRPcHRpbWl6YXRpb25TdHJhdGVneRIl",
+            "CiFPUFRJTUlaQVRJT05fU1RSQVRFR1lfVU5TUEVDSUZJRUQQABIaChZCQVRD",
+            "SF9HUkFESUVOVF9ERVNDRU5UEAESEwoPTk9STUFMX0VRVUFUSU9OEAIiSQoM",
+            "RmVlZGJhY2tUeXBlEh0KGUZFRURCQUNLX1RZUEVfVU5TUEVDSUZJRUQQABIM",
+            "CghJTVBMSUNJVBABEgwKCEVYUExJQ0lUEAIiWgoPR2V0TW9kZWxSZXF1ZXN0",
+            "EhcKCnByb2plY3RfaWQYASABKAlCA+BBAhIXCgpkYXRhc2V0X2lkGAIgASgJ",
+            "QgPgQQISFQoIbW9kZWxfaWQYAyABKAlCA+BBAiKRAQoRUGF0Y2hNb2RlbFJl",
             "cXVlc3QSFwoKcHJvamVjdF9pZBgBIAEoCUID4EECEhcKCmRhdGFzZXRfaWQY",
-            "AiABKAlCA+BBAhIVCghtb2RlbF9pZBgDIAEoCUID4EECIpEBChFQYXRjaE1v",
-            "ZGVsUmVxdWVzdBIXCgpwcm9qZWN0X2lkGAEgASgJQgPgQQISFwoKZGF0YXNl",
-            "dF9pZBgCIAEoCUID4EECEhUKCG1vZGVsX2lkGAMgASgJQgPgQQISMwoFbW9k",
-            "ZWwYBCABKAsyHy5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWxCA+BB",
-            "AiJdChJEZWxldGVNb2RlbFJlcXVlc3QSFwoKcHJvamVjdF9pZBgBIAEoCUID",
-            "4EECEhcKCmRhdGFzZXRfaWQYAiABKAlCA+BBAhIVCghtb2RlbF9pZBgDIAEo",
-            "CUID4EECIowBChFMaXN0TW9kZWxzUmVxdWVzdBIXCgpwcm9qZWN0X2lkGAEg",
-            "ASgJQgPgQQISFwoKZGF0YXNldF9pZBgCIAEoCUID4EECEjEKC21heF9yZXN1",
-            "bHRzGAMgASgLMhwuZ29vZ2xlLnByb3RvYnVmLlVJbnQzMlZhbHVlEhIKCnBh",
-            "Z2VfdG9rZW4YBCABKAkiXgoSTGlzdE1vZGVsc1Jlc3BvbnNlEi8KBm1vZGVs",
-            "cxgBIAMoCzIfLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbBIXCg9u",
-            "ZXh0X3BhZ2VfdG9rZW4YAiABKAky+gUKDE1vZGVsU2VydmljZRJ5CghHZXRN",
-            "b2RlbBIpLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5HZXRNb2RlbFJlcXVl",
-            "c3QaHy5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwiIdpBHnByb2pl",
-            "Y3RfaWQsZGF0YXNldF9pZCxtb2RlbF9pZBKNAQoKTGlzdE1vZGVscxIrLmdv",
-            "b2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5MaXN0TW9kZWxzUmVxdWVzdBosLmdv",
-            "b2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5MaXN0TW9kZWxzUmVzcG9uc2UiJNpB",
-            "IXByb2plY3RfaWQsZGF0YXNldF9pZCxtYXhfcmVzdWx0cxKDAQoKUGF0Y2hN",
-            "b2RlbBIrLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5QYXRjaE1vZGVsUmVx",
-            "dWVzdBofLmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbCIn2kEkcHJv",
-            "amVjdF9pZCxkYXRhc2V0X2lkLG1vZGVsX2lkLG1vZGVsEnYKC0RlbGV0ZU1v",
-            "ZGVsEiwuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLkRlbGV0ZU1vZGVsUmVx",
-            "dWVzdBoWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eSIh2kEecHJvamVjdF9pZCxk",
-            "YXRhc2V0X2lkLG1vZGVsX2lkGuABykEXYmlncXVlcnkuZ29vZ2xlYXBpcy5j",
-            "b23SQcIBaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9iaWdxdWVy",
-            "eSxodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2JpZ3F1ZXJ5LnJl",
-            "YWRvbmx5LGh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xvdWQt",
-            "cGxhdGZvcm0saHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91",
-            "ZC1wbGF0Zm9ybS5yZWFkLW9ubHlCbAocY29tLmdvb2dsZS5jbG91ZC5iaWdx",
-            "dWVyeS52MkIKTW9kZWxQcm90b1pAZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJv",
-            "dG8vZ29vZ2xlYXBpcy9jbG91ZC9iaWdxdWVyeS92MjtiaWdxdWVyeWIGcHJv",
-            "dG8z"));
+            "AiABKAlCA+BBAhIVCghtb2RlbF9pZBgDIAEoCUID4EECEjMKBW1vZGVsGAQg",
+            "ASgLMh8uZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLk1vZGVsQgPgQQIiXQoS",
+            "RGVsZXRlTW9kZWxSZXF1ZXN0EhcKCnByb2plY3RfaWQYASABKAlCA+BBAhIX",
+            "CgpkYXRhc2V0X2lkGAIgASgJQgPgQQISFQoIbW9kZWxfaWQYAyABKAlCA+BB",
+            "AiKMAQoRTGlzdE1vZGVsc1JlcXVlc3QSFwoKcHJvamVjdF9pZBgBIAEoCUID",
+            "4EECEhcKCmRhdGFzZXRfaWQYAiABKAlCA+BBAhIxCgttYXhfcmVzdWx0cxgD",
+            "IAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5VSW50MzJWYWx1ZRISCgpwYWdlX3Rv",
+            "a2VuGAQgASgJIl4KEkxpc3RNb2RlbHNSZXNwb25zZRIvCgZtb2RlbHMYASAD",
+            "KAsyHy5nb29nbGUuY2xvdWQuYmlncXVlcnkudjIuTW9kZWwSFwoPbmV4dF9w",
+            "YWdlX3Rva2VuGAIgASgJMtcICgxNb2RlbFNlcnZpY2US0QEKCEdldE1vZGVs",
+            "EikuZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyLkdldE1vZGVsUmVxdWVzdBof",
+            "Lmdvb2dsZS5jbG91ZC5iaWdxdWVyeS52Mi5Nb2RlbCJ5gtPkkwJSElAvYmln",
+            "cXVlcnkvdjIvcHJvamVjdHMve3Byb2plY3RfaWQ9Kn0vZGF0YXNldHMve2Rh",
+            "dGFzZXRfaWQ9Kn0vbW9kZWxzL3ttb2RlbF9pZD0qfdpBHnByb2plY3RfaWQs",
+            "ZGF0YXNldF9pZCxtb2RlbF9pZBLYAQoKTGlzdE1vZGVscxIrLmdvb2dsZS5j",
+            "bG91ZC5iaWdxdWVyeS52Mi5MaXN0TW9kZWxzUmVxdWVzdBosLmdvb2dsZS5j",
+            "bG91ZC5iaWdxdWVyeS52Mi5MaXN0TW9kZWxzUmVzcG9uc2Uib4LT5JMCRRJD",
+            "L2JpZ3F1ZXJ5L3YyL3Byb2plY3RzL3twcm9qZWN0X2lkPSp9L2RhdGFzZXRz",
+            "L3tkYXRhc2V0X2lkPSp9L21vZGVsc9pBIXByb2plY3RfaWQsZGF0YXNldF9p",
+            "ZCxtYXhfcmVzdWx0cxLjAQoKUGF0Y2hNb2RlbBIrLmdvb2dsZS5jbG91ZC5i",
+            "aWdxdWVyeS52Mi5QYXRjaE1vZGVsUmVxdWVzdBofLmdvb2dsZS5jbG91ZC5i",
+            "aWdxdWVyeS52Mi5Nb2RlbCKGAYLT5JMCWTJQL2JpZ3F1ZXJ5L3YyL3Byb2pl",
+            "Y3RzL3twcm9qZWN0X2lkPSp9L2RhdGFzZXRzL3tkYXRhc2V0X2lkPSp9L21v",
+            "ZGVscy97bW9kZWxfaWQ9Kn06BW1vZGVs2kEkcHJvamVjdF9pZCxkYXRhc2V0",
+            "X2lkLG1vZGVsX2lkLG1vZGVsEs4BCgtEZWxldGVNb2RlbBIsLmdvb2dsZS5j",
+            "bG91ZC5iaWdxdWVyeS52Mi5EZWxldGVNb2RlbFJlcXVlc3QaFi5nb29nbGUu",
+            "cHJvdG9idWYuRW1wdHkieYLT5JMCUipQL2JpZ3F1ZXJ5L3YyL3Byb2plY3Rz",
+            "L3twcm9qZWN0X2lkPSp9L2RhdGFzZXRzL3tkYXRhc2V0X2lkPSp9L21vZGVs",
+            "cy97bW9kZWxfaWQ9Kn3aQR5wcm9qZWN0X2lkLGRhdGFzZXRfaWQsbW9kZWxf",
+            "aWQa4AHKQRdiaWdxdWVyeS5nb29nbGVhcGlzLmNvbdJBwgFodHRwczovL3d3",
+            "dy5nb29nbGVhcGlzLmNvbS9hdXRoL2JpZ3F1ZXJ5LGh0dHBzOi8vd3d3Lmdv",
+            "b2dsZWFwaXMuY29tL2F1dGgvYmlncXVlcnkucmVhZG9ubHksaHR0cHM6Ly93",
+            "d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybSxodHRwczov",
+            "L3d3dy5nb29nbGVhcGlzLmNvbS9hdXRoL2Nsb3VkLXBsYXRmb3JtLnJlYWQt",
+            "b25seUJsChxjb20uZ29vZ2xlLmNsb3VkLmJpZ3F1ZXJ5LnYyQgpNb2RlbFBy",
+            "b3RvWkBnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2Ns",
+            "b3VkL2JpZ3F1ZXJ5L3YyO2JpZ3F1ZXJ5YgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Cloud.Bigquery.V2.EncryptionConfigReflection.Descriptor, global::Google.Cloud.Bigquery.V2.ModelReferenceReflection.Descriptor, global::Google.Cloud.Bigquery.V2.StandardSqlReflection.Descriptor, global::Google.Cloud.Bigquery.V2.TableReferenceReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model), global::Google.Cloud.Bigquery.V2.Model.Parser, new[]{ "Etag", "ModelReference", "CreationTime", "LastModifiedTime", "Description", "FriendlyName", "Labels", "ExpirationTime", "Location", "EncryptionConfiguration", "ModelType", "TrainingRuns", "FeatureColumns", "LabelColumns" }, null, new[]{ typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ModelType), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.LossType), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.DistanceType), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.DataSplitMethod), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.DataFrequency), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.HolidayRegion), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.LearnRateStrategy), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.OptimizationStrategy), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.FeedbackType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod), global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Parser, null, null, new[]{ typeof(global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model), global::Google.Cloud.Bigquery.V2.Model.Parser, new[]{ "Etag", "ModelReference", "CreationTime", "LastModifiedTime", "Description", "FriendlyName", "Labels", "ExpirationTime", "Location", "EncryptionConfiguration", "ModelType", "TrainingRuns", "FeatureColumns", "LabelColumns", "BestTrialId" }, null, new[]{ typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ModelType), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.LossType), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.DistanceType), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.DataSplitMethod), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.DataFrequency), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.HolidayRegion), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.LearnRateStrategy), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.OptimizationStrategy), typeof(global::Google.Cloud.Bigquery.V2.Model.Types.FeedbackType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod), global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Parser, null, null, new[]{ typeof(global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.KmeansEnums), global::Google.Cloud.Bigquery.V2.Model.Types.KmeansEnums.Parser, null, null, new[]{ typeof(global::Google.Cloud.Bigquery.V2.Model.Types.KmeansEnums.Types.KmeansInitializationMethod) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.RegressionMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.RegressionMetrics.Parser, new[]{ "MeanAbsoluteError", "MeanSquaredError", "MeanSquaredLogError", "MedianAbsoluteError", "RSquared" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.AggregateClassificationMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.AggregateClassificationMetrics.Parser, new[]{ "Precision", "Recall", "Accuracy", "Threshold", "F1Score", "LogLoss", "RocAuc" }, null, null, null, null),
@@ -336,16 +358,16 @@ namespace Google.Cloud.Bigquery.V2 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics.Types.ConfusionMatrix.Types.Row), global::Google.Cloud.Bigquery.V2.Model.Types.MultiClassClassificationMetrics.Types.ConfusionMatrix.Types.Row.Parser, new[]{ "ActualLabel", "Entries" }, null, null, null, null)})}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Parser, new[]{ "DaviesBouldinIndex", "MeanSquaredDistance", "Clusters" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster), global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Parser, new[]{ "CentroidId", "FeatureValues", "Count" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue), global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Parser, new[]{ "FeatureColumn", "NumericalValue", "CategoricalValue" }, new[]{ "Value" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Types.CategoricalValue), global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Types.CategoricalValue.Parser, new[]{ "CategoryCounts" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Types.CategoricalValue.Types.CategoryCount), global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Types.FeatureValue.Types.CategoricalValue.Types.CategoryCount.Parser, new[]{ "Category", "Count" }, null, null, null, null)})})})}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.RankingMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.RankingMetrics.Parser, new[]{ "MeanAveragePrecision", "MeanSquaredError", "NormalizedDiscountedCumulativeGain", "AverageRank" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics.Parser, new[]{ "NonSeasonalOrder", "ArimaFittingMetrics", "SeasonalPeriods", "HasDrift", "TimeSeriesId", "ArimaSingleModelForecastingMetrics" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics.Types.ArimaSingleModelForecastingMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics.Types.ArimaSingleModelForecastingMetrics.Parser, new[]{ "NonSeasonalOrder", "ArimaFittingMetrics", "HasDrift", "TimeSeriesId", "SeasonalPeriods" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics.Parser, new[]{ "NonSeasonalOrder", "ArimaFittingMetrics", "SeasonalPeriods", "HasDrift", "TimeSeriesId", "ArimaSingleModelForecastingMetrics" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics.Types.ArimaSingleModelForecastingMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.ArimaForecastingMetrics.Types.ArimaSingleModelForecastingMetrics.Parser, new[]{ "NonSeasonalOrder", "ArimaFittingMetrics", "HasDrift", "TimeSeriesId", "TimeSeriesIds", "SeasonalPeriods", "HasHolidayEffect", "HasSpikesAndDips", "HasStepChanges" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.EvaluationMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.EvaluationMetrics.Parser, new[]{ "RegressionMetrics", "BinaryClassificationMetrics", "MultiClassClassificationMetrics", "ClusteringMetrics", "RankingMetrics", "ArimaForecastingMetrics" }, new[]{ "Metrics" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.DataSplitResult), global::Google.Cloud.Bigquery.V2.Model.Types.DataSplitResult.Parser, new[]{ "TrainingTable", "EvaluationTable" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ArimaOrder), global::Google.Cloud.Bigquery.V2.Model.Types.ArimaOrder.Parser, new[]{ "P", "D", "Q" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.ArimaFittingMetrics), global::Google.Cloud.Bigquery.V2.Model.Types.ArimaFittingMetrics.Parser, new[]{ "LogLikelihood", "Aic", "Variance" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.GlobalExplanation), global::Google.Cloud.Bigquery.V2.Model.Types.GlobalExplanation.Parser, new[]{ "Explanations", "ClassLabel" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.GlobalExplanation.Types.Explanation), global::Google.Cloud.Bigquery.V2.Model.Types.GlobalExplanation.Types.Explanation.Parser, new[]{ "FeatureName", "Attribution" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Parser, new[]{ "TrainingOptions", "StartTime", "Results", "EvaluationMetrics", "DataSplitResult", "GlobalExplanations" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.TrainingOptions), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.TrainingOptions.Parser, new[]{ "MaxIterations", "LossType", "LearnRate", "L1Regularization", "L2Regularization", "MinRelativeProgress", "WarmStart", "EarlyStop", "InputLabelColumns", "DataSplitMethod", "DataSplitEvalFraction", "DataSplitColumn", "LearnRateStrategy", "InitialLearnRate", "LabelClassWeights", "UserColumn", "ItemColumn", "DistanceType", "NumClusters", "ModelUri", "OptimizationStrategy", "HiddenUnits", "BatchSize", "Dropout", "MaxTreeDepth", "Subsample", "MinSplitLoss", "NumFactors", "FeedbackType", "WalsAlpha", "KmeansInitializationMethod", "KmeansInitializationColumn", "TimeSeriesTimestampColumn", "TimeSeriesDataColumn", "AutoArima", "NonSeasonalOrder", "DataFrequency", "IncludeDrift", "HolidayRegion", "TimeSeriesIdColumn", "Horizon", "PreserveInputStructs", "AutoArimaMaxOrder" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Parser, new[]{ "TrainingOptions", "StartTime", "Results", "EvaluationMetrics", "DataSplitResult", "GlobalExplanations" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.TrainingOptions), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.TrainingOptions.Parser, new[]{ "MaxIterations", "LossType", "LearnRate", "L1Regularization", "L2Regularization", "MinRelativeProgress", "WarmStart", "EarlyStop", "InputLabelColumns", "DataSplitMethod", "DataSplitEvalFraction", "DataSplitColumn", "LearnRateStrategy", "InitialLearnRate", "LabelClassWeights", "UserColumn", "ItemColumn", "DistanceType", "NumClusters", "ModelUri", "OptimizationStrategy", "HiddenUnits", "BatchSize", "Dropout", "MaxTreeDepth", "Subsample", "MinSplitLoss", "NumFactors", "FeedbackType", "WalsAlpha", "KmeansInitializationMethod", "KmeansInitializationColumn", "TimeSeriesTimestampColumn", "TimeSeriesDataColumn", "AutoArima", "NonSeasonalOrder", "DataFrequency", "IncludeDrift", "HolidayRegion", "TimeSeriesIdColumn", "TimeSeriesIdColumns", "Horizon", "PreserveInputStructs", "AutoArimaMaxOrder", "DecomposeTimeSeries", "CleanSpikesAndDips", "AdjustStepChanges" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Parser, new[]{ "Index", "DurationMs", "TrainingLoss", "EvalLoss", "LearnRate", "ClusterInfos", "ArimaResult" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ClusterInfo), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ClusterInfo.Parser, new[]{ "CentroidId", "ClusterRadius", "ClusterSize" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Parser, new[]{ "ArimaModelInfo", "SeasonalPeriods" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Types.ArimaCoefficients), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Types.ArimaCoefficients.Parser, new[]{ "AutoRegressiveCoefficients", "MovingAverageCoefficients", "InterceptCoefficient" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Types.ArimaModelInfo), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Types.ArimaModelInfo.Parser, new[]{ "NonSeasonalOrder", "ArimaCoefficients", "ArimaFittingMetrics", "HasDrift", "TimeSeriesId", "SeasonalPeriods" }, null, null, null, null)})})}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Types.ArimaModelInfo), global::Google.Cloud.Bigquery.V2.Model.Types.TrainingRun.Types.IterationResult.Types.ArimaResult.Types.ArimaModelInfo.Parser, new[]{ "NonSeasonalOrder", "ArimaCoefficients", "ArimaFittingMetrics", "HasDrift", "TimeSeriesId", "TimeSeriesIds", "SeasonalPeriods", "HasHolidayEffect", "HasSpikesAndDips", "HasStepChanges" }, null, null, null, null)})})}),
             null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.GetModelRequest), global::Google.Cloud.Bigquery.V2.GetModelRequest.Parser, new[]{ "ProjectId", "DatasetId", "ModelId" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Bigquery.V2.PatchModelRequest), global::Google.Cloud.Bigquery.V2.PatchModelRequest.Parser, new[]{ "ProjectId", "DatasetId", "ModelId", "Model" }, null, null, null, null),
@@ -401,6 +423,7 @@ namespace Google.Cloud.Bigquery.V2 {
       trainingRuns_ = other.trainingRuns_.Clone();
       featureColumns_ = other.featureColumns_.Clone();
       labelColumns_ = other.labelColumns_.Clone();
+      bestTrialId_ = other.bestTrialId_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -615,6 +638,21 @@ namespace Google.Cloud.Bigquery.V2 {
       get { return labelColumns_; }
     }
 
+    /// <summary>Field number for the "best_trial_id" field.</summary>
+    public const int BestTrialIdFieldNumber = 19;
+    private long bestTrialId_;
+    /// <summary>
+    /// The best trial_id across all training runs.
+    /// </summary>
+    [global::System.ObsoleteAttribute]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long BestTrialId {
+      get { return bestTrialId_; }
+      set {
+        bestTrialId_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as Model);
@@ -642,6 +680,7 @@ namespace Google.Cloud.Bigquery.V2 {
       if(!trainingRuns_.Equals(other.trainingRuns_)) return false;
       if(!featureColumns_.Equals(other.featureColumns_)) return false;
       if(!labelColumns_.Equals(other.labelColumns_)) return false;
+      if (BestTrialId != other.BestTrialId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -662,6 +701,7 @@ namespace Google.Cloud.Bigquery.V2 {
       hash ^= trainingRuns_.GetHashCode();
       hash ^= featureColumns_.GetHashCode();
       hash ^= labelColumns_.GetHashCode();
+      if (BestTrialId != 0L) hash ^= BestTrialId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -722,6 +762,10 @@ namespace Google.Cloud.Bigquery.V2 {
         output.WriteRawTag(138, 1);
         output.WriteMessage(EncryptionConfiguration);
       }
+      if (BestTrialId != 0L) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt64(BestTrialId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -775,6 +819,10 @@ namespace Google.Cloud.Bigquery.V2 {
         output.WriteRawTag(138, 1);
         output.WriteMessage(EncryptionConfiguration);
       }
+      if (BestTrialId != 0L) {
+        output.WriteRawTag(152, 1);
+        output.WriteInt64(BestTrialId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -818,6 +866,9 @@ namespace Google.Cloud.Bigquery.V2 {
       size += trainingRuns_.CalculateSize(_repeated_trainingRuns_codec);
       size += featureColumns_.CalculateSize(_repeated_featureColumns_codec);
       size += labelColumns_.CalculateSize(_repeated_labelColumns_codec);
+      if (BestTrialId != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeInt64Size(BestTrialId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -869,6 +920,9 @@ namespace Google.Cloud.Bigquery.V2 {
       trainingRuns_.Add(other.trainingRuns_);
       featureColumns_.Add(other.featureColumns_);
       labelColumns_.Add(other.labelColumns_);
+      if (other.BestTrialId != 0L) {
+        BestTrialId = other.BestTrialId;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -943,6 +997,10 @@ namespace Google.Cloud.Bigquery.V2 {
               EncryptionConfiguration = new global::Google.Cloud.Bigquery.V2.EncryptionConfiguration();
             }
             input.ReadMessage(EncryptionConfiguration);
+            break;
+          }
+          case 152: {
+            BestTrialId = input.ReadInt64();
             break;
           }
         }
@@ -1021,6 +1079,10 @@ namespace Google.Cloud.Bigquery.V2 {
             input.ReadMessage(EncryptionConfiguration);
             break;
           }
+          case 152: {
+            BestTrialId = input.ReadInt64();
+            break;
+          }
         }
       }
     }
@@ -1052,27 +1114,27 @@ namespace Google.Cloud.Bigquery.V2 {
         /// </summary>
         [pbr::OriginalName("MATRIX_FACTORIZATION")] MatrixFactorization = 4,
         /// <summary>
-        /// [Beta] DNN classifier model.
+        /// DNN classifier model.
         /// </summary>
         [pbr::OriginalName("DNN_CLASSIFIER")] DnnClassifier = 5,
         /// <summary>
-        /// [Beta] An imported TensorFlow model.
+        /// An imported TensorFlow model.
         /// </summary>
         [pbr::OriginalName("TENSORFLOW")] Tensorflow = 6,
         /// <summary>
-        /// [Beta] DNN regressor model.
+        /// DNN regressor model.
         /// </summary>
         [pbr::OriginalName("DNN_REGRESSOR")] DnnRegressor = 7,
         /// <summary>
-        /// [Beta] Boosted tree regressor model.
+        /// Boosted tree regressor model.
         /// </summary>
         [pbr::OriginalName("BOOSTED_TREE_REGRESSOR")] BoostedTreeRegressor = 9,
         /// <summary>
-        /// [Beta] Boosted tree classifier model.
+        /// Boosted tree classifier model.
         /// </summary>
         [pbr::OriginalName("BOOSTED_TREE_CLASSIFIER")] BoostedTreeClassifier = 10,
         /// <summary>
-        /// [Beta] ARIMA model.
+        /// ARIMA model.
         /// </summary>
         [pbr::OriginalName("ARIMA")] Arima = 11,
         /// <summary>
@@ -1083,6 +1145,10 @@ namespace Google.Cloud.Bigquery.V2 {
         /// [Beta] AutoML Tables classification model.
         /// </summary>
         [pbr::OriginalName("AUTOML_CLASSIFIER")] AutomlClassifier = 13,
+        /// <summary>
+        /// New name for the ARIMA model.
+        /// </summary>
+        [pbr::OriginalName("ARIMA_PLUS")] ArimaPlus = 19,
       }
 
       /// <summary>
@@ -1176,6 +1242,10 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Hourly data.
         /// </summary>
         [pbr::OriginalName("HOURLY")] Hourly = 7,
+        /// <summary>
+        /// Per-minute data.
+        /// </summary>
+        [pbr::OriginalName("PER_MINUTE")] PerMinute = 8,
       }
 
       /// <summary>
@@ -1820,6 +1890,9 @@ namespace Google.Cloud.Bigquery.V2 {
           /// clustering algorithm.
           /// </summary>
           public enum KmeansInitializationMethod {
+            /// <summary>
+            /// Unspecified initialization method.
+            /// </summary>
             [pbr::OriginalName("KMEANS_INITIALIZATION_METHOD_UNSPECIFIED")] Unspecified = 0,
             /// <summary>
             /// Initializes the centroids randomly.
@@ -1956,7 +2029,7 @@ namespace Google.Cloud.Bigquery.V2 {
         private static readonly pb::FieldCodec<double?> _single_rSquared_codec = pb::FieldCodec.ForStructWrapper<double>(42);
         private double? rSquared_;
         /// <summary>
-        /// R^2 score.
+        /// R^2 score. This corresponds to r2_score in ML.EVALUATE.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public double? RSquared {
@@ -4520,7 +4593,7 @@ namespace Google.Cloud.Bigquery.V2 {
             = pb::FieldCodec.ForMessage(26, global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster.Parser);
         private readonly pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster> clusters_ = new pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster>();
         /// <summary>
-        /// [Beta] Information for all clusters.
+        /// Information for all clusters.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ClusteringMetrics.Types.Cluster> Clusters {
@@ -6066,6 +6139,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// <summary>
         /// Non-seasonal order.
         /// </summary>
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ArimaOrder> NonSeasonalOrder {
           get { return nonSeasonalOrder_; }
@@ -6079,6 +6153,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// <summary>
         /// Arima model fitting metrics.
         /// </summary>
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.ArimaFittingMetrics> ArimaFittingMetrics {
           get { return arimaFittingMetrics_; }
@@ -6093,6 +6168,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Seasonal periods. Repeated because multiple periods are supported for one
         /// time series.
         /// </summary>
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType> SeasonalPeriods {
           get { return seasonalPeriods_; }
@@ -6107,6 +6183,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// Whether Arima model fitted with drift or not. It is always false when d
         /// is not 1.
         /// </summary>
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<bool> HasDrift {
           get { return hasDrift_; }
@@ -6120,6 +6197,7 @@ namespace Google.Cloud.Bigquery.V2 {
         /// <summary>
         /// Id to differentiate different time series for the large-scale case.
         /// </summary>
+        [global::System.ObsoleteAttribute]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<string> TimeSeriesId {
           get { return timeSeriesId_; }
@@ -6364,7 +6442,11 @@ namespace Google.Cloud.Bigquery.V2 {
               arimaFittingMetrics_ = other.arimaFittingMetrics_ != null ? other.arimaFittingMetrics_.Clone() : null;
               hasDrift_ = other.hasDrift_;
               timeSeriesId_ = other.timeSeriesId_;
+              timeSeriesIds_ = other.timeSeriesIds_.Clone();
               seasonalPeriods_ = other.seasonalPeriods_.Clone();
+              HasHolidayEffect = other.HasHolidayEffect;
+              HasSpikesAndDips = other.HasSpikesAndDips;
+              HasStepChanges = other.HasStepChanges;
               _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
             }
 
@@ -6420,7 +6502,10 @@ namespace Google.Cloud.Bigquery.V2 {
             public const int TimeSeriesIdFieldNumber = 4;
             private string timeSeriesId_ = "";
             /// <summary>
-            /// The id to indicate different time series.
+            /// The time_series_id value for this time series. It will be one of
+            /// the unique values from the time_series_id_column specified during
+            /// ARIMA model training. Only present when time_series_id_column
+            /// training option was used.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public string TimeSeriesId {
@@ -6428,6 +6513,24 @@ namespace Google.Cloud.Bigquery.V2 {
               set {
                 timeSeriesId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
               }
+            }
+
+            /// <summary>Field number for the "time_series_ids" field.</summary>
+            public const int TimeSeriesIdsFieldNumber = 9;
+            private static readonly pb::FieldCodec<string> _repeated_timeSeriesIds_codec
+                = pb::FieldCodec.ForString(74);
+            private readonly pbc::RepeatedField<string> timeSeriesIds_ = new pbc::RepeatedField<string>();
+            /// <summary>
+            /// The tuple of time_series_ids identifying this time series. It will
+            /// be one of the unique tuples of values present in the
+            /// time_series_id_columns specified during ARIMA model training. Only
+            /// present when time_series_id_columns training option was used and
+            /// the order of values here are same as the order of
+            /// time_series_id_columns.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public pbc::RepeatedField<string> TimeSeriesIds {
+              get { return timeSeriesIds_; }
             }
 
             /// <summary>Field number for the "seasonal_periods" field.</summary>
@@ -6443,6 +6546,54 @@ namespace Google.Cloud.Bigquery.V2 {
             public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType> SeasonalPeriods {
               get { return seasonalPeriods_; }
             }
+
+            /// <summary>Field number for the "has_holiday_effect" field.</summary>
+            public const int HasHolidayEffectFieldNumber = 6;
+            private static readonly pb::FieldCodec<bool?> _single_hasHolidayEffect_codec = pb::FieldCodec.ForStructWrapper<bool>(50);
+            private bool? hasHolidayEffect_;
+            /// <summary>
+            /// If true, holiday_effect is a part of time series decomposition result.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool? HasHolidayEffect {
+              get { return hasHolidayEffect_; }
+              set {
+                hasHolidayEffect_ = value;
+              }
+            }
+
+
+            /// <summary>Field number for the "has_spikes_and_dips" field.</summary>
+            public const int HasSpikesAndDipsFieldNumber = 7;
+            private static readonly pb::FieldCodec<bool?> _single_hasSpikesAndDips_codec = pb::FieldCodec.ForStructWrapper<bool>(58);
+            private bool? hasSpikesAndDips_;
+            /// <summary>
+            /// If true, spikes_and_dips is a part of time series decomposition result.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool? HasSpikesAndDips {
+              get { return hasSpikesAndDips_; }
+              set {
+                hasSpikesAndDips_ = value;
+              }
+            }
+
+
+            /// <summary>Field number for the "has_step_changes" field.</summary>
+            public const int HasStepChangesFieldNumber = 8;
+            private static readonly pb::FieldCodec<bool?> _single_hasStepChanges_codec = pb::FieldCodec.ForStructWrapper<bool>(66);
+            private bool? hasStepChanges_;
+            /// <summary>
+            /// If true, step_changes is a part of time series decomposition result.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool? HasStepChanges {
+              get { return hasStepChanges_; }
+              set {
+                hasStepChanges_ = value;
+              }
+            }
+
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public override bool Equals(object other) {
@@ -6461,7 +6612,11 @@ namespace Google.Cloud.Bigquery.V2 {
               if (!object.Equals(ArimaFittingMetrics, other.ArimaFittingMetrics)) return false;
               if (HasDrift != other.HasDrift) return false;
               if (TimeSeriesId != other.TimeSeriesId) return false;
+              if(!timeSeriesIds_.Equals(other.timeSeriesIds_)) return false;
               if(!seasonalPeriods_.Equals(other.seasonalPeriods_)) return false;
+              if (HasHolidayEffect != other.HasHolidayEffect) return false;
+              if (HasSpikesAndDips != other.HasSpikesAndDips) return false;
+              if (HasStepChanges != other.HasStepChanges) return false;
               return Equals(_unknownFields, other._unknownFields);
             }
 
@@ -6472,7 +6627,11 @@ namespace Google.Cloud.Bigquery.V2 {
               if (arimaFittingMetrics_ != null) hash ^= ArimaFittingMetrics.GetHashCode();
               if (HasDrift != false) hash ^= HasDrift.GetHashCode();
               if (TimeSeriesId.Length != 0) hash ^= TimeSeriesId.GetHashCode();
+              hash ^= timeSeriesIds_.GetHashCode();
               hash ^= seasonalPeriods_.GetHashCode();
+              if (hasHolidayEffect_ != null) hash ^= HasHolidayEffect.GetHashCode();
+              if (hasSpikesAndDips_ != null) hash ^= HasSpikesAndDips.GetHashCode();
+              if (hasStepChanges_ != null) hash ^= HasStepChanges.GetHashCode();
               if (_unknownFields != null) {
                 hash ^= _unknownFields.GetHashCode();
               }
@@ -6506,6 +6665,16 @@ namespace Google.Cloud.Bigquery.V2 {
                 output.WriteString(TimeSeriesId);
               }
               seasonalPeriods_.WriteTo(output, _repeated_seasonalPeriods_codec);
+              if (hasHolidayEffect_ != null) {
+                _single_hasHolidayEffect_codec.WriteTagAndValue(output, HasHolidayEffect);
+              }
+              if (hasSpikesAndDips_ != null) {
+                _single_hasSpikesAndDips_codec.WriteTagAndValue(output, HasSpikesAndDips);
+              }
+              if (hasStepChanges_ != null) {
+                _single_hasStepChanges_codec.WriteTagAndValue(output, HasStepChanges);
+              }
+              timeSeriesIds_.WriteTo(output, _repeated_timeSeriesIds_codec);
               if (_unknownFields != null) {
                 _unknownFields.WriteTo(output);
               }
@@ -6532,6 +6701,16 @@ namespace Google.Cloud.Bigquery.V2 {
                 output.WriteString(TimeSeriesId);
               }
               seasonalPeriods_.WriteTo(ref output, _repeated_seasonalPeriods_codec);
+              if (hasHolidayEffect_ != null) {
+                _single_hasHolidayEffect_codec.WriteTagAndValue(ref output, HasHolidayEffect);
+              }
+              if (hasSpikesAndDips_ != null) {
+                _single_hasSpikesAndDips_codec.WriteTagAndValue(ref output, HasSpikesAndDips);
+              }
+              if (hasStepChanges_ != null) {
+                _single_hasStepChanges_codec.WriteTagAndValue(ref output, HasStepChanges);
+              }
+              timeSeriesIds_.WriteTo(ref output, _repeated_timeSeriesIds_codec);
               if (_unknownFields != null) {
                 _unknownFields.WriteTo(ref output);
               }
@@ -6553,7 +6732,17 @@ namespace Google.Cloud.Bigquery.V2 {
               if (TimeSeriesId.Length != 0) {
                 size += 1 + pb::CodedOutputStream.ComputeStringSize(TimeSeriesId);
               }
+              size += timeSeriesIds_.CalculateSize(_repeated_timeSeriesIds_codec);
               size += seasonalPeriods_.CalculateSize(_repeated_seasonalPeriods_codec);
+              if (hasHolidayEffect_ != null) {
+                size += _single_hasHolidayEffect_codec.CalculateSizeWithTag(HasHolidayEffect);
+              }
+              if (hasSpikesAndDips_ != null) {
+                size += _single_hasSpikesAndDips_codec.CalculateSizeWithTag(HasSpikesAndDips);
+              }
+              if (hasStepChanges_ != null) {
+                size += _single_hasStepChanges_codec.CalculateSizeWithTag(HasStepChanges);
+              }
               if (_unknownFields != null) {
                 size += _unknownFields.CalculateSize();
               }
@@ -6583,7 +6772,23 @@ namespace Google.Cloud.Bigquery.V2 {
               if (other.TimeSeriesId.Length != 0) {
                 TimeSeriesId = other.TimeSeriesId;
               }
+              timeSeriesIds_.Add(other.timeSeriesIds_);
               seasonalPeriods_.Add(other.seasonalPeriods_);
+              if (other.hasHolidayEffect_ != null) {
+                if (hasHolidayEffect_ == null || other.HasHolidayEffect != false) {
+                  HasHolidayEffect = other.HasHolidayEffect;
+                }
+              }
+              if (other.hasSpikesAndDips_ != null) {
+                if (hasSpikesAndDips_ == null || other.HasSpikesAndDips != false) {
+                  HasSpikesAndDips = other.HasSpikesAndDips;
+                }
+              }
+              if (other.hasStepChanges_ != null) {
+                if (hasStepChanges_ == null || other.HasStepChanges != false) {
+                  HasStepChanges = other.HasStepChanges;
+                }
+              }
               _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
             }
 
@@ -6625,6 +6830,31 @@ namespace Google.Cloud.Bigquery.V2 {
                     seasonalPeriods_.AddEntriesFrom(input, _repeated_seasonalPeriods_codec);
                     break;
                   }
+                  case 50: {
+                    bool? value = _single_hasHolidayEffect_codec.Read(input);
+                    if (hasHolidayEffect_ == null || value != false) {
+                      HasHolidayEffect = value;
+                    }
+                    break;
+                  }
+                  case 58: {
+                    bool? value = _single_hasSpikesAndDips_codec.Read(input);
+                    if (hasSpikesAndDips_ == null || value != false) {
+                      HasSpikesAndDips = value;
+                    }
+                    break;
+                  }
+                  case 66: {
+                    bool? value = _single_hasStepChanges_codec.Read(input);
+                    if (hasStepChanges_ == null || value != false) {
+                      HasStepChanges = value;
+                    }
+                    break;
+                  }
+                  case 74: {
+                    timeSeriesIds_.AddEntriesFrom(input, _repeated_timeSeriesIds_codec);
+                    break;
+                  }
                 }
               }
             #endif
@@ -6664,6 +6894,31 @@ namespace Google.Cloud.Bigquery.V2 {
                   case 42:
                   case 40: {
                     seasonalPeriods_.AddEntriesFrom(ref input, _repeated_seasonalPeriods_codec);
+                    break;
+                  }
+                  case 50: {
+                    bool? value = _single_hasHolidayEffect_codec.Read(ref input);
+                    if (hasHolidayEffect_ == null || value != false) {
+                      HasHolidayEffect = value;
+                    }
+                    break;
+                  }
+                  case 58: {
+                    bool? value = _single_hasSpikesAndDips_codec.Read(ref input);
+                    if (hasSpikesAndDips_ == null || value != false) {
+                      HasSpikesAndDips = value;
+                    }
+                    break;
+                  }
+                  case 66: {
+                    bool? value = _single_hasStepChanges_codec.Read(ref input);
+                    if (hasStepChanges_ == null || value != false) {
+                      HasStepChanges = value;
+                    }
+                    break;
+                  }
+                  case 74: {
+                    timeSeriesIds_.AddEntriesFrom(ref input, _repeated_timeSeriesIds_codec);
                     break;
                   }
                 }
@@ -8761,6 +9016,9 @@ namespace Google.Cloud.Bigquery.V2 {
         /// <summary>Container for nested types declared in the TrainingRun message type.</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public static partial class Types {
+          /// <summary>
+          /// Options used in model training.
+          /// </summary>
           public sealed partial class TrainingOptions : pb::IMessage<TrainingOptions>
           #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               , pb::IBufferMessage
@@ -8830,9 +9088,13 @@ namespace Google.Cloud.Bigquery.V2 {
               includeDrift_ = other.includeDrift_;
               holidayRegion_ = other.holidayRegion_;
               timeSeriesIdColumn_ = other.timeSeriesIdColumn_;
+              timeSeriesIdColumns_ = other.timeSeriesIdColumns_.Clone();
               horizon_ = other.horizon_;
               preserveInputStructs_ = other.preserveInputStructs_;
               autoArimaMaxOrder_ = other.autoArimaMaxOrder_;
+              DecomposeTimeSeries = other.DecomposeTimeSeries;
+              CleanSpikesAndDips = other.CleanSpikesAndDips;
+              AdjustStepChanges = other.AdjustStepChanges;
               _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
             }
 
@@ -9138,7 +9400,7 @@ namespace Google.Cloud.Bigquery.V2 {
             public const int ModelUriFieldNumber = 22;
             private string modelUri_ = "";
             /// <summary>
-            /// [Beta] Google Cloud Storage URI from which the model was imported. Only
+            /// Google Cloud Storage URI from which the model was imported. Only
             /// applicable for imported models.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -9432,8 +9694,7 @@ namespace Google.Cloud.Bigquery.V2 {
             public const int TimeSeriesIdColumnFieldNumber = 43;
             private string timeSeriesIdColumn_ = "";
             /// <summary>
-            /// The id column that will be used to indicate different time series to
-            /// forecast in parallel.
+            /// The time series id column that was used during ARIMA model training.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public string TimeSeriesIdColumn {
@@ -9441,6 +9702,19 @@ namespace Google.Cloud.Bigquery.V2 {
               set {
                 timeSeriesIdColumn_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
               }
+            }
+
+            /// <summary>Field number for the "time_series_id_columns" field.</summary>
+            public const int TimeSeriesIdColumnsFieldNumber = 51;
+            private static readonly pb::FieldCodec<string> _repeated_timeSeriesIdColumns_codec
+                = pb::FieldCodec.ForString(410);
+            private readonly pbc::RepeatedField<string> timeSeriesIdColumns_ = new pbc::RepeatedField<string>();
+            /// <summary>
+            /// The time series id columns that were used during ARIMA model training.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public pbc::RepeatedField<string> TimeSeriesIdColumns {
+              get { return timeSeriesIdColumns_; }
             }
 
             /// <summary>Field number for the "horizon" field.</summary>
@@ -9487,6 +9761,55 @@ namespace Google.Cloud.Bigquery.V2 {
                 autoArimaMaxOrder_ = value;
               }
             }
+
+            /// <summary>Field number for the "decompose_time_series" field.</summary>
+            public const int DecomposeTimeSeriesFieldNumber = 50;
+            private static readonly pb::FieldCodec<bool?> _single_decomposeTimeSeries_codec = pb::FieldCodec.ForStructWrapper<bool>(402);
+            private bool? decomposeTimeSeries_;
+            /// <summary>
+            /// If true, perform decompose time series and save the results.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool? DecomposeTimeSeries {
+              get { return decomposeTimeSeries_; }
+              set {
+                decomposeTimeSeries_ = value;
+              }
+            }
+
+
+            /// <summary>Field number for the "clean_spikes_and_dips" field.</summary>
+            public const int CleanSpikesAndDipsFieldNumber = 52;
+            private static readonly pb::FieldCodec<bool?> _single_cleanSpikesAndDips_codec = pb::FieldCodec.ForStructWrapper<bool>(418);
+            private bool? cleanSpikesAndDips_;
+            /// <summary>
+            /// If true, clean spikes and dips in the input time series.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool? CleanSpikesAndDips {
+              get { return cleanSpikesAndDips_; }
+              set {
+                cleanSpikesAndDips_ = value;
+              }
+            }
+
+
+            /// <summary>Field number for the "adjust_step_changes" field.</summary>
+            public const int AdjustStepChangesFieldNumber = 53;
+            private static readonly pb::FieldCodec<bool?> _single_adjustStepChanges_codec = pb::FieldCodec.ForStructWrapper<bool>(426);
+            private bool? adjustStepChanges_;
+            /// <summary>
+            /// If true, detect step changes and make data adjustment in the input time
+            /// series.
+            /// </summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            public bool? AdjustStepChanges {
+              get { return adjustStepChanges_; }
+              set {
+                adjustStepChanges_ = value;
+              }
+            }
+
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public override bool Equals(object other) {
@@ -9541,9 +9864,13 @@ namespace Google.Cloud.Bigquery.V2 {
               if (IncludeDrift != other.IncludeDrift) return false;
               if (HolidayRegion != other.HolidayRegion) return false;
               if (TimeSeriesIdColumn != other.TimeSeriesIdColumn) return false;
+              if(!timeSeriesIdColumns_.Equals(other.timeSeriesIdColumns_)) return false;
               if (Horizon != other.Horizon) return false;
               if (PreserveInputStructs != other.PreserveInputStructs) return false;
               if (AutoArimaMaxOrder != other.AutoArimaMaxOrder) return false;
+              if (DecomposeTimeSeries != other.DecomposeTimeSeries) return false;
+              if (CleanSpikesAndDips != other.CleanSpikesAndDips) return false;
+              if (AdjustStepChanges != other.AdjustStepChanges) return false;
               return Equals(_unknownFields, other._unknownFields);
             }
 
@@ -9590,9 +9917,13 @@ namespace Google.Cloud.Bigquery.V2 {
               if (IncludeDrift != false) hash ^= IncludeDrift.GetHashCode();
               if (HolidayRegion != global::Google.Cloud.Bigquery.V2.Model.Types.HolidayRegion.Unspecified) hash ^= HolidayRegion.GetHashCode();
               if (TimeSeriesIdColumn.Length != 0) hash ^= TimeSeriesIdColumn.GetHashCode();
+              hash ^= timeSeriesIdColumns_.GetHashCode();
               if (Horizon != 0L) hash ^= Horizon.GetHashCode();
               if (PreserveInputStructs != false) hash ^= PreserveInputStructs.GetHashCode();
               if (AutoArimaMaxOrder != 0L) hash ^= AutoArimaMaxOrder.GetHashCode();
+              if (decomposeTimeSeries_ != null) hash ^= DecomposeTimeSeries.GetHashCode();
+              if (cleanSpikesAndDips_ != null) hash ^= CleanSpikesAndDips.GetHashCode();
+              if (adjustStepChanges_ != null) hash ^= AdjustStepChanges.GetHashCode();
               if (_unknownFields != null) {
                 hash ^= _unknownFields.GetHashCode();
               }
@@ -9764,6 +10095,16 @@ namespace Google.Cloud.Bigquery.V2 {
                 output.WriteRawTag(240, 2);
                 output.WriteInt64(AutoArimaMaxOrder);
               }
+              if (decomposeTimeSeries_ != null) {
+                _single_decomposeTimeSeries_codec.WriteTagAndValue(output, DecomposeTimeSeries);
+              }
+              timeSeriesIdColumns_.WriteTo(output, _repeated_timeSeriesIdColumns_codec);
+              if (cleanSpikesAndDips_ != null) {
+                _single_cleanSpikesAndDips_codec.WriteTagAndValue(output, CleanSpikesAndDips);
+              }
+              if (adjustStepChanges_ != null) {
+                _single_adjustStepChanges_codec.WriteTagAndValue(output, AdjustStepChanges);
+              }
               if (_unknownFields != null) {
                 _unknownFields.WriteTo(output);
               }
@@ -9928,6 +10269,16 @@ namespace Google.Cloud.Bigquery.V2 {
                 output.WriteRawTag(240, 2);
                 output.WriteInt64(AutoArimaMaxOrder);
               }
+              if (decomposeTimeSeries_ != null) {
+                _single_decomposeTimeSeries_codec.WriteTagAndValue(ref output, DecomposeTimeSeries);
+              }
+              timeSeriesIdColumns_.WriteTo(ref output, _repeated_timeSeriesIdColumns_codec);
+              if (cleanSpikesAndDips_ != null) {
+                _single_cleanSpikesAndDips_codec.WriteTagAndValue(ref output, CleanSpikesAndDips);
+              }
+              if (adjustStepChanges_ != null) {
+                _single_adjustStepChanges_codec.WriteTagAndValue(ref output, AdjustStepChanges);
+              }
               if (_unknownFields != null) {
                 _unknownFields.WriteTo(ref output);
               }
@@ -10051,6 +10402,7 @@ namespace Google.Cloud.Bigquery.V2 {
               if (TimeSeriesIdColumn.Length != 0) {
                 size += 2 + pb::CodedOutputStream.ComputeStringSize(TimeSeriesIdColumn);
               }
+              size += timeSeriesIdColumns_.CalculateSize(_repeated_timeSeriesIdColumns_codec);
               if (Horizon != 0L) {
                 size += 2 + pb::CodedOutputStream.ComputeInt64Size(Horizon);
               }
@@ -10059,6 +10411,15 @@ namespace Google.Cloud.Bigquery.V2 {
               }
               if (AutoArimaMaxOrder != 0L) {
                 size += 2 + pb::CodedOutputStream.ComputeInt64Size(AutoArimaMaxOrder);
+              }
+              if (decomposeTimeSeries_ != null) {
+                size += _single_decomposeTimeSeries_codec.CalculateSizeWithTag(DecomposeTimeSeries);
+              }
+              if (cleanSpikesAndDips_ != null) {
+                size += _single_cleanSpikesAndDips_codec.CalculateSizeWithTag(CleanSpikesAndDips);
+              }
+              if (adjustStepChanges_ != null) {
+                size += _single_adjustStepChanges_codec.CalculateSizeWithTag(AdjustStepChanges);
               }
               if (_unknownFields != null) {
                 size += _unknownFields.CalculateSize();
@@ -10204,6 +10565,7 @@ namespace Google.Cloud.Bigquery.V2 {
               if (other.TimeSeriesIdColumn.Length != 0) {
                 TimeSeriesIdColumn = other.TimeSeriesIdColumn;
               }
+              timeSeriesIdColumns_.Add(other.timeSeriesIdColumns_);
               if (other.Horizon != 0L) {
                 Horizon = other.Horizon;
               }
@@ -10212,6 +10574,21 @@ namespace Google.Cloud.Bigquery.V2 {
               }
               if (other.AutoArimaMaxOrder != 0L) {
                 AutoArimaMaxOrder = other.AutoArimaMaxOrder;
+              }
+              if (other.decomposeTimeSeries_ != null) {
+                if (decomposeTimeSeries_ == null || other.DecomposeTimeSeries != false) {
+                  DecomposeTimeSeries = other.DecomposeTimeSeries;
+                }
+              }
+              if (other.cleanSpikesAndDips_ != null) {
+                if (cleanSpikesAndDips_ == null || other.CleanSpikesAndDips != false) {
+                  CleanSpikesAndDips = other.CleanSpikesAndDips;
+                }
+              }
+              if (other.adjustStepChanges_ != null) {
+                if (adjustStepChanges_ == null || other.AdjustStepChanges != false) {
+                  AdjustStepChanges = other.AdjustStepChanges;
+                }
               }
               _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
             }
@@ -10427,6 +10804,31 @@ namespace Google.Cloud.Bigquery.V2 {
                     AutoArimaMaxOrder = input.ReadInt64();
                     break;
                   }
+                  case 402: {
+                    bool? value = _single_decomposeTimeSeries_codec.Read(input);
+                    if (decomposeTimeSeries_ == null || value != false) {
+                      DecomposeTimeSeries = value;
+                    }
+                    break;
+                  }
+                  case 410: {
+                    timeSeriesIdColumns_.AddEntriesFrom(input, _repeated_timeSeriesIdColumns_codec);
+                    break;
+                  }
+                  case 418: {
+                    bool? value = _single_cleanSpikesAndDips_codec.Read(input);
+                    if (cleanSpikesAndDips_ == null || value != false) {
+                      CleanSpikesAndDips = value;
+                    }
+                    break;
+                  }
+                  case 426: {
+                    bool? value = _single_adjustStepChanges_codec.Read(input);
+                    if (adjustStepChanges_ == null || value != false) {
+                      AdjustStepChanges = value;
+                    }
+                    break;
+                  }
                 }
               }
             #endif
@@ -10639,6 +11041,31 @@ namespace Google.Cloud.Bigquery.V2 {
                   }
                   case 368: {
                     AutoArimaMaxOrder = input.ReadInt64();
+                    break;
+                  }
+                  case 402: {
+                    bool? value = _single_decomposeTimeSeries_codec.Read(ref input);
+                    if (decomposeTimeSeries_ == null || value != false) {
+                      DecomposeTimeSeries = value;
+                    }
+                    break;
+                  }
+                  case 410: {
+                    timeSeriesIdColumns_.AddEntriesFrom(ref input, _repeated_timeSeriesIdColumns_codec);
+                    break;
+                  }
+                  case 418: {
+                    bool? value = _single_cleanSpikesAndDips_codec.Read(ref input);
+                    if (cleanSpikesAndDips_ == null || value != false) {
+                      CleanSpikesAndDips = value;
+                    }
+                    break;
+                  }
+                  case 426: {
+                    bool? value = _single_adjustStepChanges_codec.Read(ref input);
+                    if (adjustStepChanges_ == null || value != false) {
+                      AdjustStepChanges = value;
+                    }
                     break;
                   }
                 }
@@ -11839,7 +12266,11 @@ namespace Google.Cloud.Bigquery.V2 {
                       arimaFittingMetrics_ = other.arimaFittingMetrics_ != null ? other.arimaFittingMetrics_.Clone() : null;
                       hasDrift_ = other.hasDrift_;
                       timeSeriesId_ = other.timeSeriesId_;
+                      timeSeriesIds_ = other.timeSeriesIds_.Clone();
                       seasonalPeriods_ = other.seasonalPeriods_.Clone();
+                      HasHolidayEffect = other.HasHolidayEffect;
+                      HasSpikesAndDips = other.HasSpikesAndDips;
+                      HasStepChanges = other.HasStepChanges;
                       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
                     }
 
@@ -11909,7 +12340,10 @@ namespace Google.Cloud.Bigquery.V2 {
                     public const int TimeSeriesIdFieldNumber = 5;
                     private string timeSeriesId_ = "";
                     /// <summary>
-                    /// The id to indicate different time series.
+                    /// The time_series_id value for this time series. It will be one of
+                    /// the unique values from the time_series_id_column specified during
+                    /// ARIMA model training. Only present when time_series_id_column
+                    /// training option was used.
                     /// </summary>
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
                     public string TimeSeriesId {
@@ -11917,6 +12351,24 @@ namespace Google.Cloud.Bigquery.V2 {
                       set {
                         timeSeriesId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
                       }
+                    }
+
+                    /// <summary>Field number for the "time_series_ids" field.</summary>
+                    public const int TimeSeriesIdsFieldNumber = 10;
+                    private static readonly pb::FieldCodec<string> _repeated_timeSeriesIds_codec
+                        = pb::FieldCodec.ForString(82);
+                    private readonly pbc::RepeatedField<string> timeSeriesIds_ = new pbc::RepeatedField<string>();
+                    /// <summary>
+                    /// The tuple of time_series_ids identifying this time series. It will
+                    /// be one of the unique tuples of values present in the
+                    /// time_series_id_columns specified during ARIMA model training. Only
+                    /// present when time_series_id_columns training option was used and
+                    /// the order of values here are same as the order of
+                    /// time_series_id_columns.
+                    /// </summary>
+                    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    public pbc::RepeatedField<string> TimeSeriesIds {
+                      get { return timeSeriesIds_; }
                     }
 
                     /// <summary>Field number for the "seasonal_periods" field.</summary>
@@ -11932,6 +12384,57 @@ namespace Google.Cloud.Bigquery.V2 {
                     public pbc::RepeatedField<global::Google.Cloud.Bigquery.V2.Model.Types.SeasonalPeriod.Types.SeasonalPeriodType> SeasonalPeriods {
                       get { return seasonalPeriods_; }
                     }
+
+                    /// <summary>Field number for the "has_holiday_effect" field.</summary>
+                    public const int HasHolidayEffectFieldNumber = 7;
+                    private static readonly pb::FieldCodec<bool?> _single_hasHolidayEffect_codec = pb::FieldCodec.ForStructWrapper<bool>(58);
+                    private bool? hasHolidayEffect_;
+                    /// <summary>
+                    /// If true, holiday_effect is a part of time series decomposition
+                    /// result.
+                    /// </summary>
+                    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    public bool? HasHolidayEffect {
+                      get { return hasHolidayEffect_; }
+                      set {
+                        hasHolidayEffect_ = value;
+                      }
+                    }
+
+
+                    /// <summary>Field number for the "has_spikes_and_dips" field.</summary>
+                    public const int HasSpikesAndDipsFieldNumber = 8;
+                    private static readonly pb::FieldCodec<bool?> _single_hasSpikesAndDips_codec = pb::FieldCodec.ForStructWrapper<bool>(66);
+                    private bool? hasSpikesAndDips_;
+                    /// <summary>
+                    /// If true, spikes_and_dips is a part of time series decomposition
+                    /// result.
+                    /// </summary>
+                    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    public bool? HasSpikesAndDips {
+                      get { return hasSpikesAndDips_; }
+                      set {
+                        hasSpikesAndDips_ = value;
+                      }
+                    }
+
+
+                    /// <summary>Field number for the "has_step_changes" field.</summary>
+                    public const int HasStepChangesFieldNumber = 9;
+                    private static readonly pb::FieldCodec<bool?> _single_hasStepChanges_codec = pb::FieldCodec.ForStructWrapper<bool>(74);
+                    private bool? hasStepChanges_;
+                    /// <summary>
+                    /// If true, step_changes is a part of time series decomposition
+                    /// result.
+                    /// </summary>
+                    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+                    public bool? HasStepChanges {
+                      get { return hasStepChanges_; }
+                      set {
+                        hasStepChanges_ = value;
+                      }
+                    }
+
 
                     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
                     public override bool Equals(object other) {
@@ -11951,7 +12454,11 @@ namespace Google.Cloud.Bigquery.V2 {
                       if (!object.Equals(ArimaFittingMetrics, other.ArimaFittingMetrics)) return false;
                       if (HasDrift != other.HasDrift) return false;
                       if (TimeSeriesId != other.TimeSeriesId) return false;
+                      if(!timeSeriesIds_.Equals(other.timeSeriesIds_)) return false;
                       if(!seasonalPeriods_.Equals(other.seasonalPeriods_)) return false;
+                      if (HasHolidayEffect != other.HasHolidayEffect) return false;
+                      if (HasSpikesAndDips != other.HasSpikesAndDips) return false;
+                      if (HasStepChanges != other.HasStepChanges) return false;
                       return Equals(_unknownFields, other._unknownFields);
                     }
 
@@ -11963,7 +12470,11 @@ namespace Google.Cloud.Bigquery.V2 {
                       if (arimaFittingMetrics_ != null) hash ^= ArimaFittingMetrics.GetHashCode();
                       if (HasDrift != false) hash ^= HasDrift.GetHashCode();
                       if (TimeSeriesId.Length != 0) hash ^= TimeSeriesId.GetHashCode();
+                      hash ^= timeSeriesIds_.GetHashCode();
                       hash ^= seasonalPeriods_.GetHashCode();
+                      if (hasHolidayEffect_ != null) hash ^= HasHolidayEffect.GetHashCode();
+                      if (hasSpikesAndDips_ != null) hash ^= HasSpikesAndDips.GetHashCode();
+                      if (hasStepChanges_ != null) hash ^= HasStepChanges.GetHashCode();
                       if (_unknownFields != null) {
                         hash ^= _unknownFields.GetHashCode();
                       }
@@ -12001,6 +12512,16 @@ namespace Google.Cloud.Bigquery.V2 {
                         output.WriteString(TimeSeriesId);
                       }
                       seasonalPeriods_.WriteTo(output, _repeated_seasonalPeriods_codec);
+                      if (hasHolidayEffect_ != null) {
+                        _single_hasHolidayEffect_codec.WriteTagAndValue(output, HasHolidayEffect);
+                      }
+                      if (hasSpikesAndDips_ != null) {
+                        _single_hasSpikesAndDips_codec.WriteTagAndValue(output, HasSpikesAndDips);
+                      }
+                      if (hasStepChanges_ != null) {
+                        _single_hasStepChanges_codec.WriteTagAndValue(output, HasStepChanges);
+                      }
+                      timeSeriesIds_.WriteTo(output, _repeated_timeSeriesIds_codec);
                       if (_unknownFields != null) {
                         _unknownFields.WriteTo(output);
                       }
@@ -12031,6 +12552,16 @@ namespace Google.Cloud.Bigquery.V2 {
                         output.WriteString(TimeSeriesId);
                       }
                       seasonalPeriods_.WriteTo(ref output, _repeated_seasonalPeriods_codec);
+                      if (hasHolidayEffect_ != null) {
+                        _single_hasHolidayEffect_codec.WriteTagAndValue(ref output, HasHolidayEffect);
+                      }
+                      if (hasSpikesAndDips_ != null) {
+                        _single_hasSpikesAndDips_codec.WriteTagAndValue(ref output, HasSpikesAndDips);
+                      }
+                      if (hasStepChanges_ != null) {
+                        _single_hasStepChanges_codec.WriteTagAndValue(ref output, HasStepChanges);
+                      }
+                      timeSeriesIds_.WriteTo(ref output, _repeated_timeSeriesIds_codec);
                       if (_unknownFields != null) {
                         _unknownFields.WriteTo(ref output);
                       }
@@ -12055,7 +12586,17 @@ namespace Google.Cloud.Bigquery.V2 {
                       if (TimeSeriesId.Length != 0) {
                         size += 1 + pb::CodedOutputStream.ComputeStringSize(TimeSeriesId);
                       }
+                      size += timeSeriesIds_.CalculateSize(_repeated_timeSeriesIds_codec);
                       size += seasonalPeriods_.CalculateSize(_repeated_seasonalPeriods_codec);
+                      if (hasHolidayEffect_ != null) {
+                        size += _single_hasHolidayEffect_codec.CalculateSizeWithTag(HasHolidayEffect);
+                      }
+                      if (hasSpikesAndDips_ != null) {
+                        size += _single_hasSpikesAndDips_codec.CalculateSizeWithTag(HasSpikesAndDips);
+                      }
+                      if (hasStepChanges_ != null) {
+                        size += _single_hasStepChanges_codec.CalculateSizeWithTag(HasStepChanges);
+                      }
                       if (_unknownFields != null) {
                         size += _unknownFields.CalculateSize();
                       }
@@ -12091,7 +12632,23 @@ namespace Google.Cloud.Bigquery.V2 {
                       if (other.TimeSeriesId.Length != 0) {
                         TimeSeriesId = other.TimeSeriesId;
                       }
+                      timeSeriesIds_.Add(other.timeSeriesIds_);
                       seasonalPeriods_.Add(other.seasonalPeriods_);
+                      if (other.hasHolidayEffect_ != null) {
+                        if (hasHolidayEffect_ == null || other.HasHolidayEffect != false) {
+                          HasHolidayEffect = other.HasHolidayEffect;
+                        }
+                      }
+                      if (other.hasSpikesAndDips_ != null) {
+                        if (hasSpikesAndDips_ == null || other.HasSpikesAndDips != false) {
+                          HasSpikesAndDips = other.HasSpikesAndDips;
+                        }
+                      }
+                      if (other.hasStepChanges_ != null) {
+                        if (hasStepChanges_ == null || other.HasStepChanges != false) {
+                          HasStepChanges = other.HasStepChanges;
+                        }
+                      }
                       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
                     }
 
@@ -12140,6 +12697,31 @@ namespace Google.Cloud.Bigquery.V2 {
                             seasonalPeriods_.AddEntriesFrom(input, _repeated_seasonalPeriods_codec);
                             break;
                           }
+                          case 58: {
+                            bool? value = _single_hasHolidayEffect_codec.Read(input);
+                            if (hasHolidayEffect_ == null || value != false) {
+                              HasHolidayEffect = value;
+                            }
+                            break;
+                          }
+                          case 66: {
+                            bool? value = _single_hasSpikesAndDips_codec.Read(input);
+                            if (hasSpikesAndDips_ == null || value != false) {
+                              HasSpikesAndDips = value;
+                            }
+                            break;
+                          }
+                          case 74: {
+                            bool? value = _single_hasStepChanges_codec.Read(input);
+                            if (hasStepChanges_ == null || value != false) {
+                              HasStepChanges = value;
+                            }
+                            break;
+                          }
+                          case 82: {
+                            timeSeriesIds_.AddEntriesFrom(input, _repeated_timeSeriesIds_codec);
+                            break;
+                          }
                         }
                       }
                     #endif
@@ -12186,6 +12768,31 @@ namespace Google.Cloud.Bigquery.V2 {
                           case 50:
                           case 48: {
                             seasonalPeriods_.AddEntriesFrom(ref input, _repeated_seasonalPeriods_codec);
+                            break;
+                          }
+                          case 58: {
+                            bool? value = _single_hasHolidayEffect_codec.Read(ref input);
+                            if (hasHolidayEffect_ == null || value != false) {
+                              HasHolidayEffect = value;
+                            }
+                            break;
+                          }
+                          case 66: {
+                            bool? value = _single_hasSpikesAndDips_codec.Read(ref input);
+                            if (hasSpikesAndDips_ == null || value != false) {
+                              HasSpikesAndDips = value;
+                            }
+                            break;
+                          }
+                          case 74: {
+                            bool? value = _single_hasStepChanges_codec.Read(ref input);
+                            if (hasStepChanges_ == null || value != false) {
+                              HasStepChanges = value;
+                            }
+                            break;
+                          }
+                          case 82: {
+                            timeSeriesIds_.AddEntriesFrom(ref input, _repeated_timeSeriesIds_codec);
                             break;
                           }
                         }

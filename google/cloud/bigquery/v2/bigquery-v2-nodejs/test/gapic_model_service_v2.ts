@@ -126,7 +126,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.GetModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.cloud.bigquery.v2.Model());
             client.innerApiCalls.getModel = stubSimpleCall(expectedResponse);
             const [response] = await client.getModel(request);
@@ -142,7 +150,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.GetModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.cloud.bigquery.v2.Model());
             client.innerApiCalls.getModel = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -169,7 +185,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.GetModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedError = new Error('expected');
             client.innerApiCalls.getModel = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.getModel(request), expectedError);
@@ -186,7 +210,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.ListModelsRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.cloud.bigquery.v2.ListModelsResponse());
             client.innerApiCalls.listModels = stubSimpleCall(expectedResponse);
             const [response] = await client.listModels(request);
@@ -202,7 +234,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.ListModelsRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.cloud.bigquery.v2.ListModelsResponse());
             client.innerApiCalls.listModels = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -229,7 +269,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.ListModelsRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedError = new Error('expected');
             client.innerApiCalls.listModels = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.listModels(request), expectedError);
@@ -246,7 +294,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.PatchModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.cloud.bigquery.v2.Model());
             client.innerApiCalls.patchModel = stubSimpleCall(expectedResponse);
             const [response] = await client.patchModel(request);
@@ -262,7 +318,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.PatchModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.cloud.bigquery.v2.Model());
             client.innerApiCalls.patchModel = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -289,7 +353,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.PatchModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedError = new Error('expected');
             client.innerApiCalls.patchModel = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.patchModel(request), expectedError);
@@ -306,7 +378,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.DeleteModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteModel = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteModel(request);
@@ -322,7 +402,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.DeleteModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedResponse = generateSampleMessage(new protos.google.protobuf.Empty());
             client.innerApiCalls.deleteModel = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
@@ -349,7 +437,15 @@ describe('v2.ModelServiceClient', () => {
         });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.bigquery.v2.DeleteModelRequest());
-            const expectedOptions = {};
+            request.projectId = '';
+            const expectedHeaderRequestParams = "project_id=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
             const expectedError = new Error('expected');
             client.innerApiCalls.deleteModel = stubSimpleCall(undefined, expectedError);
             await assert.rejects(client.deleteModel(request), expectedError);
