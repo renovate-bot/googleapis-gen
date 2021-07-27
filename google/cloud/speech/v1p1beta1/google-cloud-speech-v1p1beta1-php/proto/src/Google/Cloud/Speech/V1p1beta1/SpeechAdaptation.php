@@ -26,7 +26,7 @@ class SpeechAdaptation extends \Google\Protobuf\Internal\Message
     /**
      * A collection of phrase set resource names to use.
      *
-     * Generated from protobuf field <code>repeated string phrase_set_references = 2;</code>
+     * Generated from protobuf field <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = {</code>
      */
     private $phrase_set_references;
     /**
@@ -96,7 +96,7 @@ class SpeechAdaptation extends \Google\Protobuf\Internal\Message
     /**
      * A collection of phrase set resource names to use.
      *
-     * Generated from protobuf field <code>repeated string phrase_set_references = 2;</code>
+     * Generated from protobuf field <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getPhraseSetReferences()
@@ -107,7 +107,7 @@ class SpeechAdaptation extends \Google\Protobuf\Internal\Message
     /**
      * A collection of phrase set resource names to use.
      *
-     * Generated from protobuf field <code>repeated string phrase_set_references = 2;</code>
+     * Generated from protobuf field <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = {</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

@@ -23,11 +23,11 @@ class CloudSpeechAdaptation
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-π
-;google/cloud/speech/v1p1beta1/cloud_speech_adaptation.protogoogle.cloud.speech.v1p1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto,google/cloud/speech/v1p1beta1/resource.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"´
+√
+;google/cloud/speech/v1p1beta1/cloud_speech_adaptation.protogoogle.cloud.speech.v1p1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto,google/cloud/speech/v1p1beta1/resource.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto"∞
 CreatePhraseSetRequest7
-parent (	B\'‡A˙A!speech.googleapis.com/PhraseSet
-phrase_set_id (	A
+parent (	B\'‡A˙A!speech.googleapis.com/PhraseSet
+phrase_set_id (	B‡AA
 
 phrase_set (2(.google.cloud.speech.v1p1beta1.PhraseSetB‡A"å
 UpdatePhraseSetRequestA
@@ -47,10 +47,10 @@ page_token (	"o
 next_page_token (	"O
 DeletePhraseSetRequest5
 name (	B\'‡A˙A!
-speech.googleapis.com/PhraseSet"µ
+speech.googleapis.com/PhraseSet"∫
 CreateCustomClassRequest9
-parent (	B)‡A˙A#!speech.googleapis.com/CustomClass
-custom_class_id (	E
+parent (	B)‡A˙A#!speech.googleapis.com/CustomClass
+custom_class_id (	B‡AE
 custom_class (2*.google.cloud.speech.v1p1beta1.CustomClassB‡A"í
 UpdateCustomClassRequestE
 custom_class (2*.google.cloud.speech.v1p1beta1.CustomClassB‡A/

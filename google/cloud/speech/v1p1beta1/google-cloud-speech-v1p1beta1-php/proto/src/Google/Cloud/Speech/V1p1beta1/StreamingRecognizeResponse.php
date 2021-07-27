@@ -72,6 +72,13 @@ class StreamingRecognizeResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.speech.v1p1beta1.StreamingRecognizeResponse.SpeechEventType speech_event_type = 4;</code>
      */
     protected $speech_event_type = 0;
+    /**
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     */
+    protected $total_billed_time = null;
 
     /**
      * Constructor.
@@ -89,6 +96,9 @@ class StreamingRecognizeResponse extends \Google\Protobuf\Internal\Message
      *           followed by zero or more `is_final=false` results (the interim results).
      *     @type int $speech_event_type
      *           Indicates the type of speech event.
+     *     @type \Google\Protobuf\Duration $total_billed_time
+     *           When available, billed audio seconds for the stream.
+     *           Set only if this is the last response in the stream.
      * }
      */
     public function __construct($data = NULL) {
@@ -188,6 +198,44 @@ class StreamingRecognizeResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\Speech\V1p1beta1\StreamingRecognizeResponse\SpeechEventType::class);
         $this->speech_event_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getTotalBilledTime()
+    {
+        return isset($this->total_billed_time) ? $this->total_billed_time : null;
+    }
+
+    public function hasTotalBilledTime()
+    {
+        return isset($this->total_billed_time);
+    }
+
+    public function clearTotalBilledTime()
+    {
+        unset($this->total_billed_time);
+    }
+
+    /**
+     * When available, billed audio seconds for the stream.
+     * Set only if this is the last response in the stream.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_billed_time = 5;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setTotalBilledTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->total_billed_time = $var;
 
         return $this;
     }

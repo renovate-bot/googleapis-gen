@@ -798,12 +798,20 @@ class RecognizeResponse(proto.Message):
         results (Sequence[google.cloud.speech_v1p1beta1.types.SpeechRecognitionResult]):
             Sequential list of transcription results
             corresponding to sequential portions of audio.
+        total_billed_time (google.protobuf.duration_pb2.Duration):
+            When available, billed audio seconds for the
+            corresponding request.
     """
 
     results = proto.RepeatedField(
         proto.MESSAGE,
         number=2,
         message='SpeechRecognitionResult',
+    )
+    total_billed_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=duration_pb2.Duration,
     )
 
 
@@ -819,6 +827,9 @@ class LongRunningRecognizeResponse(proto.Message):
         results (Sequence[google.cloud.speech_v1p1beta1.types.SpeechRecognitionResult]):
             Sequential list of transcription results
             corresponding to sequential portions of audio.
+        total_billed_time (google.protobuf.duration_pb2.Duration):
+            When available, billed audio seconds for the
+            corresponding request.
         output_config (google.cloud.speech_v1p1beta1.types.TranscriptOutputConfig):
             Original output config if present in the
             request.
@@ -831,6 +842,11 @@ class LongRunningRecognizeResponse(proto.Message):
         proto.MESSAGE,
         number=2,
         message='SpeechRecognitionResult',
+    )
+    total_billed_time = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=duration_pb2.Duration,
     )
     output_config = proto.Field(
         proto.MESSAGE,
@@ -960,6 +976,10 @@ class StreamingRecognizeResponse(proto.Message):
             ``is_final=false`` results (the interim results).
         speech_event_type (google.cloud.speech_v1p1beta1.types.StreamingRecognizeResponse.SpeechEventType):
             Indicates the type of speech event.
+        total_billed_time (google.protobuf.duration_pb2.Duration):
+            When available, billed audio seconds for the
+            stream. Set only if this is the last response in
+            the stream.
     """
     class SpeechEventType(proto.Enum):
         r"""Indicates the type of speech event."""
@@ -980,6 +1000,11 @@ class StreamingRecognizeResponse(proto.Message):
         proto.ENUM,
         number=4,
         enum=SpeechEventType,
+    )
+    total_billed_time = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=duration_pb2.Duration,
     )
 
 

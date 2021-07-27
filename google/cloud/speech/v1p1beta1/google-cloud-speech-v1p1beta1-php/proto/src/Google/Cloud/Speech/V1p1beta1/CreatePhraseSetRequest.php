@@ -24,12 +24,12 @@ class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * The ID to use for the phrase set, which will become the final
+     * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      *
-     * Generated from protobuf field <code>string phrase_set_id = 2;</code>
+     * Generated from protobuf field <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $phrase_set_id = '';
     /**
@@ -50,7 +50,7 @@ class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
      *           Format:
      *           {api_version}/projects/{project}/locations/{location}/phraseSets
      *     @type string $phrase_set_id
-     *           The ID to use for the phrase set, which will become the final
+     *           Required. The ID to use for the phrase set, which will become the final
      *           component of the phrase set's resource name.
      *           This value should be 4-63 characters, and valid characters
      *           are /[a-z][0-9]-/.
@@ -94,12 +94,12 @@ class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID to use for the phrase set, which will become the final
+     * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      *
-     * Generated from protobuf field <code>string phrase_set_id = 2;</code>
+     * Generated from protobuf field <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
      */
     public function getPhraseSetId()
@@ -108,12 +108,12 @@ class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID to use for the phrase set, which will become the final
+     * Required. The ID to use for the phrase set, which will become the final
      * component of the phrase set's resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      *
-     * Generated from protobuf field <code>string phrase_set_id = 2;</code>
+     * Generated from protobuf field <code>string phrase_set_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
      * @return $this
      */

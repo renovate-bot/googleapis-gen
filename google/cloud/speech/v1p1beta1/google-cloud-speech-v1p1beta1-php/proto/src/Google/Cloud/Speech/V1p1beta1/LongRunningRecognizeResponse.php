@@ -27,6 +27,12 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
      */
     private $results;
     /**
+     * When available, billed audio seconds for the corresponding request.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_billed_time = 3;</code>
+     */
+    protected $total_billed_time = null;
+    /**
      * Original output config if present in the request.
      *
      * Generated from protobuf field <code>.google.cloud.speech.v1p1beta1.TranscriptOutputConfig output_config = 6;</code>
@@ -48,6 +54,8 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Speech\V1p1beta1\SpeechRecognitionResult[]|\Google\Protobuf\Internal\RepeatedField $results
      *           Sequential list of transcription results corresponding to
      *           sequential portions of audio.
+     *     @type \Google\Protobuf\Duration $total_billed_time
+     *           When available, billed audio seconds for the corresponding request.
      *     @type \Google\Cloud\Speech\V1p1beta1\TranscriptOutputConfig $output_config
      *           Original output config if present in the request.
      *     @type \Google\Rpc\Status $output_error
@@ -83,6 +91,42 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Google\Cloud\Speech\V1p1beta1\SpeechRecognitionResult::class);
         $this->results = $arr;
+
+        return $this;
+    }
+
+    /**
+     * When available, billed audio seconds for the corresponding request.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_billed_time = 3;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getTotalBilledTime()
+    {
+        return isset($this->total_billed_time) ? $this->total_billed_time : null;
+    }
+
+    public function hasTotalBilledTime()
+    {
+        return isset($this->total_billed_time);
+    }
+
+    public function clearTotalBilledTime()
+    {
+        unset($this->total_billed_time);
+    }
+
+    /**
+     * When available, billed audio seconds for the corresponding request.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration total_billed_time = 3;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setTotalBilledTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
+        $this->total_billed_time = $var;
 
         return $this;
     }

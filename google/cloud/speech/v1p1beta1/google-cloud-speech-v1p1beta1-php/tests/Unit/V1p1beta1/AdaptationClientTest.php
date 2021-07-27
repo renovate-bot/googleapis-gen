@@ -90,8 +90,9 @@ class AdaptationClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
+        $customClassId = 'customClassId1554754128';
         $customClass = new CustomClass();
-        $response = $client->createCustomClass($formattedParent, $customClass);
+        $response = $client->createCustomClass($formattedParent, $customClassId, $customClass);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -100,6 +101,8 @@ class AdaptationClientTest extends GeneratedTest
         $this->assertSame('/google.cloud.speech.v1p1beta1.Adaptation/CreateCustomClass', $actualFuncCall);
         $actualValue = $actualRequestObject->getParent();
         $this->assertProtobufEquals($formattedParent, $actualValue);
+        $actualValue = $actualRequestObject->getCustomClassId();
+        $this->assertProtobufEquals($customClassId, $actualValue);
         $actualValue = $actualRequestObject->getCustomClass();
         $this->assertProtobufEquals($customClass, $actualValue);
         $this->assertTrue($transport->isExhausted());
@@ -127,9 +130,10 @@ class AdaptationClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
+        $customClassId = 'customClassId1554754128';
         $customClass = new CustomClass();
         try {
-            $client->createCustomClass($formattedParent, $customClass);
+            $client->createCustomClass($formattedParent, $customClassId, $customClass);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {
@@ -160,8 +164,9 @@ class AdaptationClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
+        $phraseSetId = 'phraseSetId1496370782';
         $phraseSet = new PhraseSet();
-        $response = $client->createPhraseSet($formattedParent, $phraseSet);
+        $response = $client->createPhraseSet($formattedParent, $phraseSetId, $phraseSet);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -170,6 +175,8 @@ class AdaptationClientTest extends GeneratedTest
         $this->assertSame('/google.cloud.speech.v1p1beta1.Adaptation/CreatePhraseSet', $actualFuncCall);
         $actualValue = $actualRequestObject->getParent();
         $this->assertProtobufEquals($formattedParent, $actualValue);
+        $actualValue = $actualRequestObject->getPhraseSetId();
+        $this->assertProtobufEquals($phraseSetId, $actualValue);
         $actualValue = $actualRequestObject->getPhraseSet();
         $this->assertProtobufEquals($phraseSet, $actualValue);
         $this->assertTrue($transport->isExhausted());
@@ -197,9 +204,10 @@ class AdaptationClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
+        $phraseSetId = 'phraseSetId1496370782';
         $phraseSet = new PhraseSet();
         try {
-            $client->createPhraseSet($formattedParent, $phraseSet);
+            $client->createPhraseSet($formattedParent, $phraseSetId, $phraseSet);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

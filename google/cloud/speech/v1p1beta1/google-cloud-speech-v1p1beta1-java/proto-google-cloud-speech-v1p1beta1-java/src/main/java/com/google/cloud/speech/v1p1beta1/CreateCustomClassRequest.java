@@ -165,13 +165,13 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object customClassId_;
   /**
    * <pre>
-   * The ID to use for the custom class, which will become the final
+   * Required. The ID to use for the custom class, which will become the final
    * component of the custom class' resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
    *
-   * <code>string custom_class_id = 2;</code>
+   * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The customClassId.
    */
   @java.lang.Override
@@ -189,13 +189,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The ID to use for the custom class, which will become the final
+   * Required. The ID to use for the custom class, which will become the final
    * component of the custom class' resource name.
    * This value should be 4-63 characters, and valid characters
    * are /[a-z][0-9]-/.
    * </pre>
    *
-   * <code>string custom_class_id = 2;</code>
+   * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for customClassId.
    */
   @java.lang.Override
@@ -713,13 +713,13 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object customClassId_ = "";
     /**
      * <pre>
-     * The ID to use for the custom class, which will become the final
+     * Required. The ID to use for the custom class, which will become the final
      * component of the custom class' resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string custom_class_id = 2;</code>
+     * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The customClassId.
      */
     public java.lang.String getCustomClassId() {
@@ -736,13 +736,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID to use for the custom class, which will become the final
+     * Required. The ID to use for the custom class, which will become the final
      * component of the custom class' resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string custom_class_id = 2;</code>
+     * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for customClassId.
      */
     public com.google.protobuf.ByteString
@@ -760,13 +760,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID to use for the custom class, which will become the final
+     * Required. The ID to use for the custom class, which will become the final
      * component of the custom class' resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string custom_class_id = 2;</code>
+     * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The customClassId to set.
      * @return This builder for chaining.
      */
@@ -782,13 +782,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID to use for the custom class, which will become the final
+     * Required. The ID to use for the custom class, which will become the final
      * component of the custom class' resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string custom_class_id = 2;</code>
+     * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearCustomClassId() {
@@ -799,13 +799,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID to use for the custom class, which will become the final
+     * Required. The ID to use for the custom class, which will become the final
      * component of the custom class' resource name.
      * This value should be 4-63 characters, and valid characters
      * are /[a-z][0-9]-/.
      * </pre>
      *
-     * <code>string custom_class_id = 2;</code>
+     * <code>string custom_class_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for customClassId to set.
      * @return This builder for chaining.
      */

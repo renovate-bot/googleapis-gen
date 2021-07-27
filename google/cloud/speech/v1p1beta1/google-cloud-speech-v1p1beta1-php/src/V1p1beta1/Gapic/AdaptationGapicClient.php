@@ -63,8 +63,9 @@ use Google\Protobuf\GPBEmpty;
  * $adaptationClient = new AdaptationClient();
  * try {
  *     $formattedParent = $adaptationClient->locationName('[PROJECT]', '[LOCATION]');
+ *     $customClassId = 'custom_class_id';
  *     $customClass = new CustomClass();
- *     $response = $adaptationClient->createCustomClass($formattedParent, $customClass);
+ *     $response = $adaptationClient->createCustomClass($formattedParent, $customClassId, $customClass);
  * } finally {
  *     $adaptationClient->close();
  * }
@@ -348,26 +349,26 @@ class AdaptationGapicClient
      * $adaptationClient = new AdaptationClient();
      * try {
      *     $formattedParent = $adaptationClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $customClassId = 'custom_class_id';
      *     $customClass = new CustomClass();
-     *     $response = $adaptationClient->createCustomClass($formattedParent, $customClass);
+     *     $response = $adaptationClient->createCustomClass($formattedParent, $customClassId, $customClass);
      * } finally {
      *     $adaptationClient->close();
      * }
      * ```
      *
-     * @param string      $parent       Required. The parent resource where this custom class will be created.
-     *                                  Format:
-     *                                  {api_version}/projects/{project}/locations/{location}/customClasses
-     * @param CustomClass $customClass  Required. The custom class to create.
-     * @param array       $optionalArgs {
+     * @param string      $parent        Required. The parent resource where this custom class will be created.
+     *                                   Format:
+     *                                   {api_version}/projects/{project}/locations/{location}/customClasses
+     * @param string      $customClassId Required. The ID to use for the custom class, which will become the final
+     *                                   component of the custom class' resource name.
+     *
+     *                                   This value should be 4-63 characters, and valid characters
+     *                                   are /[a-z][0-9]-/.
+     * @param CustomClass $customClass   Required. The custom class to create.
+     * @param array       $optionalArgs  {
      *     Optional.
      *
-     *     @type string $customClassId
-     *           The ID to use for the custom class, which will become the final
-     *           component of the custom class' resource name.
-     *
-     *           This value should be 4-63 characters, and valid characters
-     *           are /[a-z][0-9]-/.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -381,17 +382,14 @@ class AdaptationGapicClient
      *
      * @experimental
      */
-    public function createCustomClass($parent, $customClass, array $optionalArgs = [])
+    public function createCustomClass($parent, $customClassId, $customClass, array $optionalArgs = [])
     {
         $request = new CreateCustomClassRequest();
         $requestParamHeaders = [];
         $request->setParent($parent);
+        $request->setCustomClassId($customClassId);
         $request->setCustomClass($customClass);
         $requestParamHeaders['parent'] = $parent;
-        if (isset($optionalArgs['customClassId'])) {
-            $request->setCustomClassId($optionalArgs['customClassId']);
-        }
-
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('CreateCustomClass', CustomClass::class, $optionalArgs, $request)->wait();
@@ -407,8 +405,9 @@ class AdaptationGapicClient
      * $adaptationClient = new AdaptationClient();
      * try {
      *     $formattedParent = $adaptationClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $phraseSetId = 'phrase_set_id';
      *     $phraseSet = new PhraseSet();
-     *     $response = $adaptationClient->createPhraseSet($formattedParent, $phraseSet);
+     *     $response = $adaptationClient->createPhraseSet($formattedParent, $phraseSetId, $phraseSet);
      * } finally {
      *     $adaptationClient->close();
      * }
@@ -417,16 +416,15 @@ class AdaptationGapicClient
      * @param string    $parent       Required. The parent resource where this phrase set will be created.
      *                                Format:
      *                                {api_version}/projects/{project}/locations/{location}/phraseSets
+     * @param string    $phraseSetId  Required. The ID to use for the phrase set, which will become the final
+     *                                component of the phrase set's resource name.
+     *
+     *                                This value should be 4-63 characters, and valid characters
+     *                                are /[a-z][0-9]-/.
      * @param PhraseSet $phraseSet    Required. The phrase set to create.
      * @param array     $optionalArgs {
      *     Optional.
      *
-     *     @type string $phraseSetId
-     *           The ID to use for the phrase set, which will become the final
-     *           component of the phrase set's resource name.
-     *
-     *           This value should be 4-63 characters, and valid characters
-     *           are /[a-z][0-9]-/.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -440,17 +438,14 @@ class AdaptationGapicClient
      *
      * @experimental
      */
-    public function createPhraseSet($parent, $phraseSet, array $optionalArgs = [])
+    public function createPhraseSet($parent, $phraseSetId, $phraseSet, array $optionalArgs = [])
     {
         $request = new CreatePhraseSetRequest();
         $requestParamHeaders = [];
         $request->setParent($parent);
+        $request->setPhraseSetId($phraseSetId);
         $request->setPhraseSet($phraseSet);
         $requestParamHeaders['parent'] = $parent;
-        if (isset($optionalArgs['phraseSetId'])) {
-            $request->setPhraseSetId($optionalArgs['phraseSetId']);
-        }
-
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('CreatePhraseSet', PhraseSet::class, $optionalArgs, $request)->wait();

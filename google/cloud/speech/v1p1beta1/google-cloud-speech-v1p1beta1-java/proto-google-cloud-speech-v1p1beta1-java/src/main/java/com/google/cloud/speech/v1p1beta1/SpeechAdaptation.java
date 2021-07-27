@@ -201,7 +201,7 @@ private static final long serialVersionUID = 0L;
    * A collection of phrase set resource names to use.
    * </pre>
    *
-   * <code>repeated string phrase_set_references = 2;</code>
+   * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return A list containing the phraseSetReferences.
    */
   public com.google.protobuf.ProtocolStringList
@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
    * A collection of phrase set resource names to use.
    * </pre>
    *
-   * <code>repeated string phrase_set_references = 2;</code>
+   * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
    * @return The count of phraseSetReferences.
    */
   public int getPhraseSetReferencesCount() {
@@ -224,7 +224,7 @@ private static final long serialVersionUID = 0L;
    * A collection of phrase set resource names to use.
    * </pre>
    *
-   * <code>repeated string phrase_set_references = 2;</code>
+   * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
    * @param index The index of the element to return.
    * @return The phraseSetReferences at the given index.
    */
@@ -236,7 +236,7 @@ private static final long serialVersionUID = 0L;
    * A collection of phrase set resource names to use.
    * </pre>
    *
-   * <code>repeated string phrase_set_references = 2;</code>
+   * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
    * @param index The index of the value to return.
    * @return The bytes of the phraseSetReferences at the given index.
    */
@@ -1115,7 +1115,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return A list containing the phraseSetReferences.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1127,7 +1127,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return The count of phraseSetReferences.
      */
     public int getPhraseSetReferencesCount() {
@@ -1138,7 +1138,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param index The index of the element to return.
      * @return The phraseSetReferences at the given index.
      */
@@ -1150,7 +1150,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param index The index of the value to return.
      * @return The bytes of the phraseSetReferences at the given index.
      */
@@ -1163,7 +1163,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param index The index to set the value at.
      * @param value The phraseSetReferences to set.
      * @return This builder for chaining.
@@ -1183,7 +1183,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param value The phraseSetReferences to add.
      * @return This builder for chaining.
      */
@@ -1202,7 +1202,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param values The phraseSetReferences to add.
      * @return This builder for chaining.
      */
@@ -1219,7 +1219,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearPhraseSetReferences() {
@@ -1233,7 +1233,7 @@ private static final long serialVersionUID = 0L;
      * A collection of phrase set resource names to use.
      * </pre>
      *
-     * <code>repeated string phrase_set_references = 2;</code>
+     * <code>repeated string phrase_set_references = 2 [(.google.api.resource_reference) = { ... }</code>
      * @param value The bytes of the phraseSetReferences to add.
      * @return This builder for chaining.
      */
