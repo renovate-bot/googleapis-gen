@@ -17,7 +17,7 @@ class GetBackupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The backup resource name, in the format
-     * projects/{project_id}/locations/{location}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -31,7 +31,7 @@ class GetBackupRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Required. The backup resource name, in the format
-     *           projects/{project_id}/locations/{location}/backups/{backup_id}.
+     *           `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      * }
      */
     public function __construct($data = NULL) {
@@ -41,7 +41,7 @@ class GetBackupRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The backup resource name, in the format
-     * projects/{project_id}/locations/{location}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -53,7 +53,7 @@ class GetBackupRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The backup resource name, in the format
-     * projects/{project_id}/locations/{location}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

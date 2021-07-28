@@ -50,7 +50,7 @@ class FileShareConfig extends \Google\Protobuf\Internal\Message
      *           Cloud Filestore defines 1 GB as 1024^3 bytes.
      *     @type string $source_backup
      *           The resource name of the backup, in the format
-     *           projects/{project_number}/locations/{location_id}/backups/{backup_id},
+     *           `projects/{project_number}/locations/{location_id}/backups/{backup_id}`,
      *           that this file share has been restored from.
      *     @type \Google\Cloud\Filestore\V1\NfsExportOptions[]|\Google\Protobuf\Internal\RepeatedField $nfs_export_options
      *           Nfs Export Options.
@@ -118,7 +118,7 @@ class FileShareConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the backup, in the format
-     * projects/{project_number}/locations/{location_id}/backups/{backup_id},
+     * `projects/{project_number}/locations/{location_id}/backups/{backup_id}`,
      * that this file share has been restored from.
      *
      * Generated from protobuf field <code>string source_backup = 8 [(.google.api.resource_reference) = {</code>
@@ -136,7 +136,7 @@ class FileShareConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the backup, in the format
-     * projects/{project_number}/locations/{location_id}/backups/{backup_id},
+     * `projects/{project_number}/locations/{location_id}/backups/{backup_id}`,
      * that this file share has been restored from.
      *
      * Generated from protobuf field <code>string source_backup = 8 [(.google.api.resource_reference) = {</code>

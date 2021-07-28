@@ -16,8 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateBackupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1beta1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -37,8 +36,7 @@ class UpdateBackupRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Filestore\V1beta1\Backup $backup
-     *           Required. A [backup resource]
-     *           (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+     *           Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Required. Mask of fields to update.  At least one path must be supplied in this
      *           field.
@@ -50,8 +48,7 @@ class UpdateBackupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1beta1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Filestore\V1beta1\Backup|null
@@ -72,8 +69,7 @@ class UpdateBackupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1beta1.Backup backup = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Filestore\V1beta1\Backup $var

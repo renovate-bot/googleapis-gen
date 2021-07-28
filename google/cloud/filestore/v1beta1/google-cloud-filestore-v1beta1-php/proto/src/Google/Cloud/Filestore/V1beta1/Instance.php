@@ -17,7 +17,7 @@ class Instance extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -94,7 +94,7 @@ class Instance extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Output only. The resource name of the instance, in the format
-     *           projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     *           `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      *     @type string $description
      *           The description of the instance (2048 characters or less).
      *     @type int $state
@@ -127,7 +127,7 @@ class Instance extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -139,7 +139,7 @@ class Instance extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

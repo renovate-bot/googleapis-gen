@@ -25,7 +25,7 @@ module Google
         # @!attribute [rw] network
         #   @return [::String]
         #     The name of the Google Compute Engine
-        #     [VPC network](/compute/docs/networks-and-firewalls#networks) to which the
+        #     [VPC network](https://cloud.google.com/vpc/docs/vpc) to which the
         #     instance is connected.
         # @!attribute [rw] modes
         #   @return [::Array<::Google::Cloud::Filestore::V1beta1::NetworkConfig::AddressMode>]
@@ -35,17 +35,16 @@ module Google
         #   @return [::String]
         #     A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
         #     [internal IP address
-        #     ranges](https://www.arin.net/knowledge/address_filters.html) that
-        #     identifies the range of IP addresses reserved for this instance. For
+        #     ranges](https://www.arin.net/reference/research/statistics/address_filters/)
+        #     that identifies the range of IP addresses reserved for this instance. For
         #     example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
         #     with either existing subnets or assigned IP address ranges for other Cloud
         #     Filestore instances in the selected VPC network.
         # @!attribute [r] ip_addresses
         #   @return [::Array<::String>]
         #     Output only. IPv4 addresses in the format
-        #     \\{octet 1}.\\{octet 2}.\\{octet 3}.\\{octet 4} or IPv6 addresses in the format
-        #     \\{block 1}:\\{block 2}:\\{block 3}:\\{block 4}:\\{block 5}:\\{block 6}:{block
-        #     7}:\\{block 8}.
+        #     `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+        #     `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
         class NetworkConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -71,7 +70,7 @@ module Google
         # @!attribute [rw] source_backup
         #   @return [::String]
         #     The resource name of the backup, in the format
-        #     projects/\\{project_id}/locations/\\{location_id}/backups/\\{backup_id}, that
+        #     `projects/{project_id}/locations/{location_id}/backups/{backup_id}`, that
         #     this file share has been restored from.
         # @!attribute [rw] nfs_export_options
         #   @return [::Array<::Google::Cloud::Filestore::V1beta1::NfsExportOptions>]
@@ -86,8 +85,8 @@ module Google
         # @!attribute [rw] ip_ranges
         #   @return [::Array<::String>]
         #     List of either an IPv4 addresses in the format
-        #     \\{octet 1}.\\{octet 2}.\\{octet 3}.\\{octet 4} or CIDR ranges in the format
-        #     \\{octet 1}.\\{octet 2}.\\{octet 3}.\\{octet 4}/\\{mask size} which may mount the
+        #     `{octet1}.{octet2}.{octet3}.{octet4}` or CIDR ranges in the format
+        #     `{octet1}.{octet2}.{octet3}.{octet4}/{mask size}` which may mount the
         #     file share.
         #     Overlapping IP ranges are not allowed, both within and across
         #     NfsExportOptions. An error will be returned.
@@ -148,7 +147,7 @@ module Google
         # @!attribute [r] name
         #   @return [::String]
         #     Output only. The resource name of the instance, in the format
-        #     projects/\\{project_id}/locations/\\{location_id}/instances/\\{instance_id}.
+        #     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
         # @!attribute [rw] description
         #   @return [::String]
         #     The description of the instance (2048 characters or less).
@@ -254,7 +253,7 @@ module Google
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The instance's project and location, in the format
-        #     projects/\\{project_id}/locations/\\{location}. In Cloud Filestore,
+        #     `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         #     locations map to GCP zones, for example **us-west1-b**.
         # @!attribute [rw] instance_id
         #   @return [::String]
@@ -265,8 +264,7 @@ module Google
         #     lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
         # @!attribute [rw] instance
         #   @return [::Google::Cloud::Filestore::V1beta1::Instance]
-        #     Required. A [instance resource]
-        #     (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+        #     Required. An {::Google::Cloud::Filestore::V1beta1::Instance instance resource}
         class CreateInstanceRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -276,7 +274,7 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The instance resource name, in the format
-        #     projects/\\{project_id}/locations/\\{location}/instances/\\{instance_id}.
+        #     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
         class GetInstanceRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -305,7 +303,7 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The resource name of the instance, in the format
-        #     projects/\\{project_id}/locations/\\{location_id}/instances/\\{instance_id}.
+        #     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
         # @!attribute [rw] file_share
         #   @return [::String]
         #     Required. Name of the file share in the Cloud Filestore instance that the snapshot
@@ -313,11 +311,11 @@ module Google
         # @!attribute [rw] source_snapshot
         #   @return [::String]
         #     The resource name of the snapshot, in the format
-        #     projects/\\{project_id}/locations/\\{location_id}/snapshots/\\{snapshot_id}.
+        #     `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
         # @!attribute [rw] source_backup
         #   @return [::String]
         #     The resource name of the backup, in the format
-        #     projects/\\{project_id}/locations/\\{location_id}/backups/\\{backup_id}.
+        #     `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
         class RestoreInstanceRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -327,7 +325,7 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The instance resource name, in the format
-        #     projects/\\{project_id}/locations/\\{location}/instances/\\{instance_id}
+        #     `projects/{project_id}/locations/{location}/instances/{instance_id}`
         class DeleteInstanceRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -337,10 +335,10 @@ module Google
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The project and location for which to retrieve instance information,
-        #     in the format projects/\\{project_id}/locations/\\{location}. In Cloud
+        #     in the format `projects/{project_id}/locations/{location}`. In Cloud
         #     Filestore, locations map to GCP zones, for example **us-west1-b**. To
-        #     retrieve instance information for all locations, use "-" for the \\{location}
-        #     value.
+        #     retrieve instance information for all locations, use "-" for the
+        #     `{location}` value.
         # @!attribute [rw] page_size
         #   @return [::Integer]
         #     The maximum number of items to return.
@@ -364,8 +362,8 @@ module Google
         #   @return [::Array<::Google::Cloud::Filestore::V1beta1::Instance>]
         #     A list of instances in the project for the specified location.
         #
-        #     If the \\{location} value in the request is "-", the response contains a list
-        #     of instances from all locations. If any location is unreachable, the
+        #     If the `{location}` value in the request is "-", the response contains a
+        #     list of instances from all locations. If any location is unreachable, the
         #     response will only return instances in reachable locations and the
         #     "unreachable" field will be populated with a list of unreachable locations.
         # @!attribute [rw] next_page_token
@@ -384,7 +382,7 @@ module Google
         # @!attribute [r] name
         #   @return [::String]
         #     Output only. The resource name of the backup, in the format
-        #     projects/\\{project_id}/locations/\\{location_id}/backups/\\{backup_id}.
+        #     `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
         # @!attribute [rw] description
         #   @return [::String]
         #     A description of the backup with 2048 characters or less.
@@ -408,7 +406,7 @@ module Google
         # @!attribute [rw] source_instance
         #   @return [::String]
         #     The resource name of the source Cloud Filestore instance, in the format
-        #     projects/\\{project_id}/locations/\\{location_id}/instances/\\{instance_id},
+        #     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`,
         #     used to create this backup.
         # @!attribute [rw] source_file_share
         #   @return [::String]
@@ -461,12 +459,11 @@ module Google
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The backup's project and location, in the format
-        #     projects/\\{project_id}/locations/\\{location}. In Cloud Filestore,
+        #     `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         #     backup locations map to GCP regions, for example **us-west1**.
         # @!attribute [rw] backup
         #   @return [::Google::Cloud::Filestore::V1beta1::Backup]
-        #     Required. A [backup resource]
-        #     (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        #     Required. A {::Google::Cloud::Filestore::V1beta1::Backup backup resource}
         # @!attribute [rw] backup_id
         #   @return [::String]
         #     Required. The ID to use for the backup.
@@ -483,7 +480,7 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The backup resource name, in the format
-        #     projects/\\{project_id}/locations/\\{location}/backups/\\{backup_id}
+        #     `projects/{project_id}/locations/{location}/backups/{backup_id}`
         class DeleteBackupRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -492,8 +489,7 @@ module Google
         # UpdateBackupRequest updates description and/or labels for a backup.
         # @!attribute [rw] backup
         #   @return [::Google::Cloud::Filestore::V1beta1::Backup]
-        #     Required. A [backup resource]
-        #     (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        #     Required. A {::Google::Cloud::Filestore::V1beta1::Backup backup resource}
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
         #     Required. Mask of fields to update.  At least one path must be supplied in this
@@ -507,7 +503,7 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     Required. The backup resource name, in the format
-        #     projects/\\{project_id}/locations/\\{location}/backups/\\{backup_id}.
+        #     `projects/{project_id}/locations/{location}/backups/{backup_id}`.
         class GetBackupRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -517,11 +513,11 @@ module Google
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required. The project and location for which to retrieve backup information,
-        #     in the format projects/\\{project_id}/locations/\\{location}.
+        #     in the format `projects/{project_id}/locations/{location}`.
         #     In Cloud Filestore, backup locations map to GCP regions,
         #     for example **us-west1**.
         #     To retrieve backup information for all locations, use "-" for the
-        #     \\{location} value.
+        #     `{location}` value.
         # @!attribute [rw] page_size
         #   @return [::Integer]
         #     The maximum number of items to return.
@@ -545,8 +541,8 @@ module Google
         #   @return [::Array<::Google::Cloud::Filestore::V1beta1::Backup>]
         #     A list of backups in the project for the specified location.
         #
-        #     If the \\{location} value in the request is "-", the response contains a list
-        #     of backups from all locations. If any location is unreachable, the
+        #     If the `{location}` value in the request is "-", the response contains a
+        #     list of backups from all locations. If any location is unreachable, the
         #     response will only return backups in reachable locations and the
         #     "unreachable" field will be populated with a list of unreachable
         #     locations.

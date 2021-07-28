@@ -18,7 +18,7 @@ class RestoreInstanceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -40,16 +40,16 @@ class RestoreInstanceRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Required. The resource name of the instance, in the format
-     *           projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     *           `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      *     @type string $file_share
      *           Required. Name of the file share in the Cloud Filestore instance that the snapshot
      *           is being restored to.
      *     @type string $source_snapshot
      *           The resource name of the snapshot, in the format
-     *           projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}.
+     *           `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      *     @type string $source_backup
      *           The resource name of the backup, in the format
-     *           projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     *           `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,7 +59,7 @@ class RestoreInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -71,7 +71,7 @@ class RestoreInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -115,7 +115,7 @@ class RestoreInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the snapshot, in the format
-     * projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}.
+     * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      *
      * Generated from protobuf field <code>string source_snapshot = 3 [(.google.api.resource_reference) = {</code>
      * @return string
@@ -132,7 +132,7 @@ class RestoreInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the snapshot, in the format
-     * projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}.
+     * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      *
      * Generated from protobuf field <code>string source_snapshot = 3 [(.google.api.resource_reference) = {</code>
      * @param string $var
@@ -148,7 +148,7 @@ class RestoreInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the backup, in the format
-     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
      *
      * Generated from protobuf field <code>string source_backup = 4 [(.google.api.resource_reference) = {</code>
      * @return string
@@ -165,7 +165,7 @@ class RestoreInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the backup, in the format
-     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
      *
      * Generated from protobuf field <code>string source_backup = 4 [(.google.api.resource_reference) = {</code>
      * @param string $var

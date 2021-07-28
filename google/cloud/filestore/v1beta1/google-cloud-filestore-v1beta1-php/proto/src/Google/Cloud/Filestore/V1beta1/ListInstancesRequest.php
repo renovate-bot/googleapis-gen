@@ -17,10 +17,10 @@ class ListInstancesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The project and location for which to retrieve instance information,
-     * in the format projects/{project_id}/locations/{location}. In Cloud
+     * in the format `projects/{project_id}/locations/{location}`. In Cloud
      * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the {location}
-     * value.
+     * retrieve instance information for all locations, use "-" for the
+     * `{location}` value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -59,10 +59,10 @@ class ListInstancesRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The project and location for which to retrieve instance information,
-     *           in the format projects/{project_id}/locations/{location}. In Cloud
+     *           in the format `projects/{project_id}/locations/{location}`. In Cloud
      *           Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     *           retrieve instance information for all locations, use "-" for the {location}
-     *           value.
+     *           retrieve instance information for all locations, use "-" for the
+     *           `{location}` value.
      *     @type int $page_size
      *           The maximum number of items to return.
      *     @type string $page_token
@@ -81,10 +81,10 @@ class ListInstancesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The project and location for which to retrieve instance information,
-     * in the format projects/{project_id}/locations/{location}. In Cloud
+     * in the format `projects/{project_id}/locations/{location}`. In Cloud
      * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the {location}
-     * value.
+     * retrieve instance information for all locations, use "-" for the
+     * `{location}` value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -96,10 +96,10 @@ class ListInstancesRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The project and location for which to retrieve instance information,
-     * in the format projects/{project_id}/locations/{location}. In Cloud
+     * in the format `projects/{project_id}/locations/{location}`. In Cloud
      * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the {location}
-     * value.
+     * retrieve instance information for all locations, use "-" for the
+     * `{location}` value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

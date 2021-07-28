@@ -10,7 +10,7 @@ public interface DeleteInstanceRequestOrBuilder extends
   /**
    * <pre>
    * Required. The instance resource name, in the format
-   * projects/{project_id}/locations/{location}/instances/{instance_id}
+   * `projects/{project_id}/locations/{location}/instances/{instance_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface DeleteInstanceRequestOrBuilder extends
   /**
    * <pre>
    * Required. The instance resource name, in the format
-   * projects/{project_id}/locations/{location}/instances/{instance_id}
+   * `projects/{project_id}/locations/{location}/instances/{instance_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

@@ -636,7 +636,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The resource name of the instance, in the format
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The resource name of the instance, in the format
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1790,7 +1790,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1811,7 +1811,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1833,7 +1833,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1853,7 +1853,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1868,7 +1868,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

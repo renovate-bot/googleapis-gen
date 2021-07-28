@@ -540,10 +540,10 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The project and location for which to retrieve instance information,
-        /// in the format projects/{project_id}/locations/{location}. In Cloud
+        /// in the format `projects/{project_id}/locations/{location}`. In Cloud
         /// Filestore, locations map to GCP zones, for example **us-west1-b**. To
-        /// retrieve instance information for all locations, use "-" for the {location}
-        /// value.
+        /// retrieve instance information for all locations, use "-" for the
+        /// `{location}` value.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -569,10 +569,10 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The project and location for which to retrieve instance information,
-        /// in the format projects/{project_id}/locations/{location}. In Cloud
+        /// in the format `projects/{project_id}/locations/{location}`. In Cloud
         /// Filestore, locations map to GCP zones, for example **us-west1-b**. To
-        /// retrieve instance information for all locations, use "-" for the {location}
-        /// value.
+        /// retrieve instance information for all locations, use "-" for the
+        /// `{location}` value.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -598,10 +598,10 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The project and location for which to retrieve instance information,
-        /// in the format projects/{project_id}/locations/{location}. In Cloud
+        /// in the format `projects/{project_id}/locations/{location}`. In Cloud
         /// Filestore, locations map to GCP zones, for example **us-west1-b**. To
-        /// retrieve instance information for all locations, use "-" for the {location}
-        /// value.
+        /// retrieve instance information for all locations, use "-" for the
+        /// `{location}` value.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -627,10 +627,10 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The project and location for which to retrieve instance information,
-        /// in the format projects/{project_id}/locations/{location}. In Cloud
+        /// in the format `projects/{project_id}/locations/{location}`. In Cloud
         /// Filestore, locations map to GCP zones, for example **us-west1-b**. To
-        /// retrieve instance information for all locations, use "-" for the {location}
-        /// value.
+        /// retrieve instance information for all locations, use "-" for the
+        /// `{location}` value.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -682,7 +682,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}.
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -697,7 +697,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}.
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -712,7 +712,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}.
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -724,7 +724,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}.
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -739,7 +739,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}.
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -754,7 +754,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}.
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -831,12 +831,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The instance's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// locations map to GCP zones, for example **us-west1-b**.
         /// </param>
         /// <param name="instance">
-        /// Required. A [instance resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+        /// Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
         /// </param>
         /// <param name="instanceId">
         /// Required. The ID of the instance to create.
@@ -863,12 +862,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The instance's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// locations map to GCP zones, for example **us-west1-b**.
         /// </param>
         /// <param name="instance">
-        /// Required. A [instance resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+        /// Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
         /// </param>
         /// <param name="instanceId">
         /// Required. The ID of the instance to create.
@@ -895,12 +893,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The instance's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// locations map to GCP zones, for example **us-west1-b**.
         /// </param>
         /// <param name="instance">
-        /// Required. A [instance resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+        /// Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
         /// </param>
         /// <param name="instanceId">
         /// Required. The ID of the instance to create.
@@ -922,12 +919,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The instance's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// locations map to GCP zones, for example **us-west1-b**.
         /// </param>
         /// <param name="instance">
-        /// Required. A [instance resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+        /// Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
         /// </param>
         /// <param name="instanceId">
         /// Required. The ID of the instance to create.
@@ -954,12 +950,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The instance's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// locations map to GCP zones, for example **us-west1-b**.
         /// </param>
         /// <param name="instance">
-        /// Required. A [instance resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+        /// Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
         /// </param>
         /// <param name="instanceId">
         /// Required. The ID of the instance to create.
@@ -986,12 +981,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The instance's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// locations map to GCP zones, for example **us-west1-b**.
         /// </param>
         /// <param name="instance">
-        /// Required. A [instance resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+        /// Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
         /// </param>
         /// <param name="instanceId">
         /// Required. The ID of the instance to create.
@@ -1249,7 +1243,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -1264,7 +1258,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1279,7 +1273,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1291,7 +1285,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -1306,7 +1300,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1321,7 +1315,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The instance resource name, in the format
-        /// projects/{project_id}/locations/{location}/instances/{instance_id}
+        /// `projects/{project_id}/locations/{location}/instances/{instance_id}`
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1354,11 +1348,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The project and location for which to retrieve backup information,
-        /// in the format projects/{project_id}/locations/{location}.
+        /// in the format `projects/{project_id}/locations/{location}`.
         /// In Cloud Filestore, backup locations map to GCP regions,
         /// for example **us-west1**.
         /// To retrieve backup information for all locations, use "-" for the
-        /// {location} value.
+        /// `{location}` value.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -1384,11 +1378,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The project and location for which to retrieve backup information,
-        /// in the format projects/{project_id}/locations/{location}.
+        /// in the format `projects/{project_id}/locations/{location}`.
         /// In Cloud Filestore, backup locations map to GCP regions,
         /// for example **us-west1**.
         /// To retrieve backup information for all locations, use "-" for the
-        /// {location} value.
+        /// `{location}` value.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -1414,11 +1408,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The project and location for which to retrieve backup information,
-        /// in the format projects/{project_id}/locations/{location}.
+        /// in the format `projects/{project_id}/locations/{location}`.
         /// In Cloud Filestore, backup locations map to GCP regions,
         /// for example **us-west1**.
         /// To retrieve backup information for all locations, use "-" for the
-        /// {location} value.
+        /// `{location}` value.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -1444,11 +1438,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The project and location for which to retrieve backup information,
-        /// in the format projects/{project_id}/locations/{location}.
+        /// in the format `projects/{project_id}/locations/{location}`.
         /// In Cloud Filestore, backup locations map to GCP regions,
         /// for example **us-west1**.
         /// To retrieve backup information for all locations, use "-" for the
-        /// {location} value.
+        /// `{location}` value.
         /// </param>
         /// <param name="pageToken">
         /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
@@ -1500,7 +1494,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}.
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -1515,7 +1509,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}.
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1530,7 +1524,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}.
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1542,7 +1536,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}.
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -1557,7 +1551,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}.
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`.
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1572,7 +1566,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}.
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`.
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1637,12 +1631,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The backup's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// backup locations map to GCP regions, for example **us-west1**.
         /// </param>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="backupId">
         /// Required. The ID to use for the backup.
@@ -1666,12 +1659,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The backup's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// backup locations map to GCP regions, for example **us-west1**.
         /// </param>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="backupId">
         /// Required. The ID to use for the backup.
@@ -1695,12 +1687,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The backup's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// backup locations map to GCP regions, for example **us-west1**.
         /// </param>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="backupId">
         /// Required. The ID to use for the backup.
@@ -1719,12 +1710,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The backup's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// backup locations map to GCP regions, for example **us-west1**.
         /// </param>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="backupId">
         /// Required. The ID to use for the backup.
@@ -1748,12 +1738,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The backup's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// backup locations map to GCP regions, for example **us-west1**.
         /// </param>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="backupId">
         /// Required. The ID to use for the backup.
@@ -1777,12 +1766,11 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="parent">
         /// Required. The backup's project and location, in the format
-        /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+        /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
         /// backup locations map to GCP regions, for example **us-west1**.
         /// </param>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="backupId">
         /// Required. The ID to use for the backup.
@@ -1854,7 +1842,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -1869,7 +1857,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1884,7 +1872,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1896,7 +1884,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -1911,7 +1899,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1926,7 +1914,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// </summary>
         /// <param name="name">
         /// Required. The backup resource name, in the format
-        /// projects/{project_id}/locations/{location}/backups/{backup_id}
+        /// `projects/{project_id}/locations/{location}/backups/{backup_id}`
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -1990,8 +1978,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// Updates the settings of a specific backup.
         /// </summary>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="updateMask">
         /// Required. Mask of fields to update.  At least one path must be supplied in this
@@ -2010,8 +1997,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// Updates the settings of a specific backup.
         /// </summary>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="updateMask">
         /// Required. Mask of fields to update.  At least one path must be supplied in this
@@ -2030,8 +2016,7 @@ namespace Google.Cloud.Filestore.V1Beta1
         /// Updates the settings of a specific backup.
         /// </summary>
         /// <param name="backup">
-        /// Required. A [backup resource]
-        /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+        /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
         /// </param>
         /// <param name="updateMask">
         /// Required. Mask of fields to update.  At least one path must be supplied in this

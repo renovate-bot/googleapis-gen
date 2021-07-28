@@ -122,10 +122,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The project and location for which to retrieve instance information,
-   * in the format projects/{project_id}/locations/{location}. In Cloud
+   * in the format `projects/{project_id}/locations/{location}`. In Cloud
    * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-   * retrieve instance information for all locations, use "-" for the {location}
-   * value.
+   * retrieve instance information for all locations, use "-" for the
+   * `{location}` value.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -147,10 +147,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The project and location for which to retrieve instance information,
-   * in the format projects/{project_id}/locations/{location}. In Cloud
+   * in the format `projects/{project_id}/locations/{location}`. In Cloud
    * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-   * retrieve instance information for all locations, use "-" for the {location}
-   * value.
+   * retrieve instance information for all locations, use "-" for the
+   * `{location}` value.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -704,10 +704,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve instance information,
-     * in the format projects/{project_id}/locations/{location}. In Cloud
+     * in the format `projects/{project_id}/locations/{location}`. In Cloud
      * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the {location}
-     * value.
+     * retrieve instance information for all locations, use "-" for the
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -728,10 +728,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve instance information,
-     * in the format projects/{project_id}/locations/{location}. In Cloud
+     * in the format `projects/{project_id}/locations/{location}`. In Cloud
      * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the {location}
-     * value.
+     * retrieve instance information for all locations, use "-" for the
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -753,10 +753,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve instance information,
-     * in the format projects/{project_id}/locations/{location}. In Cloud
+     * in the format `projects/{project_id}/locations/{location}`. In Cloud
      * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the {location}
-     * value.
+     * retrieve instance information for all locations, use "-" for the
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -776,10 +776,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve instance information,
-     * in the format projects/{project_id}/locations/{location}. In Cloud
+     * in the format `projects/{project_id}/locations/{location}`. In Cloud
      * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the {location}
-     * value.
+     * retrieve instance information for all locations, use "-" for the
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -794,10 +794,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve instance information,
-     * in the format projects/{project_id}/locations/{location}. In Cloud
+     * in the format `projects/{project_id}/locations/{location}`. In Cloud
      * Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     * retrieve instance information for all locations, use "-" for the {location}
-     * value.
+     * retrieve instance information for all locations, use "-" for the
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

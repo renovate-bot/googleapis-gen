@@ -10,7 +10,7 @@ public interface DeleteBackupRequestOrBuilder extends
   /**
    * <pre>
    * Required. The backup resource name, in the format
-   * projects/{project_id}/locations/{location}/backups/{backup_id}
+   * `projects/{project_id}/locations/{location}/backups/{backup_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface DeleteBackupRequestOrBuilder extends
   /**
    * <pre>
    * Required. The backup resource name, in the format
-   * projects/{project_id}/locations/{location}/backups/{backup_id}
+   * `projects/{project_id}/locations/{location}/backups/{backup_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

@@ -265,7 +265,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string network_ = "";
     /// <summary>
     /// The name of the Google Compute Engine
-    /// [VPC network](/compute/docs/networks-and-firewalls#networks) to which the
+    /// [VPC network](https://cloud.google.com/vpc/docs/vpc) to which the
     /// instance is connected.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -296,8 +296,8 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     /// <summary>
     /// A /29 CIDR block for Basic or a /23 CIDR block for High Scale in one of the
     /// [internal IP address
-    /// ranges](https://www.arin.net/knowledge/address_filters.html) that
-    /// identifies the range of IP addresses reserved for this instance. For
+    /// ranges](https://www.arin.net/reference/research/statistics/address_filters/)
+    /// that identifies the range of IP addresses reserved for this instance. For
     /// example, 10.0.0.0/29 or 192.168.0.0/23. The range you specify can't overlap
     /// with either existing subnets or assigned IP address ranges for other Cloud
     /// Filestore instances in the selected VPC network.
@@ -317,9 +317,8 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private readonly pbc::RepeatedField<string> ipAddresses_ = new pbc::RepeatedField<string>();
     /// <summary>
     /// Output only. IPv4 addresses in the format
-    /// {octet 1}.{octet 2}.{octet 3}.{octet 4} or IPv6 addresses in the format
-    /// {block 1}:{block 2}:{block 3}:{block 4}:{block 5}:{block 6}:{block
-    /// 7}:{block 8}.
+    /// `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
+    /// `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public pbc::RepeatedField<string> IpAddresses {
@@ -606,7 +605,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     public const int SourceBackupFieldNumber = 9;
     /// <summary>
     /// The resource name of the backup, in the format
-    /// projects/{project_id}/locations/{location_id}/backups/{backup_id}, that
+    /// `projects/{project_id}/locations/{location_id}/backups/{backup_id}`, that
     /// this file share has been restored from.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -892,8 +891,8 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private readonly pbc::RepeatedField<string> ipRanges_ = new pbc::RepeatedField<string>();
     /// <summary>
     /// List of either an IPv4 addresses in the format
-    /// {octet 1}.{octet 2}.{octet 3}.{octet 4} or CIDR ranges in the format
-    /// {octet 1}.{octet 2}.{octet 3}.{octet 4}/{mask size} which may mount the
+    /// `{octet1}.{octet2}.{octet3}.{octet4}` or CIDR ranges in the format
+    /// `{octet1}.{octet2}.{octet3}.{octet4}/{mask size}` which may mount the
     /// file share.
     /// Overlapping IP ranges are not allowed, both within and across
     /// NfsExportOptions. An error will be returned.
@@ -1279,7 +1278,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string name_ = "";
     /// <summary>
     /// Output only. The resource name of the instance, in the format
-    /// projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+    /// `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -1907,7 +1906,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string parent_ = "";
     /// <summary>
     /// Required. The instance's project and location, in the format
-    /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+    /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
     /// locations map to GCP zones, for example **us-west1-b**.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1940,8 +1939,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     public const int InstanceFieldNumber = 3;
     private global::Google.Cloud.Filestore.V1Beta1.Instance instance_;
     /// <summary>
-    /// Required. A [instance resource]
-    /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+    /// Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Filestore.V1Beta1.Instance Instance {
@@ -2177,7 +2175,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string name_ = "";
     /// <summary>
     /// Required. The instance resource name, in the format
-    /// projects/{project_id}/locations/{location}/instances/{instance_id}.
+    /// `projects/{project_id}/locations/{location}/instances/{instance_id}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -2608,7 +2606,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string name_ = "";
     /// <summary>
     /// Required. The resource name of the instance, in the format
-    /// projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+    /// `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -2637,7 +2635,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     public const int SourceSnapshotFieldNumber = 3;
     /// <summary>
     /// The resource name of the snapshot, in the format
-    /// projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}.
+    /// `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SourceSnapshot {
@@ -2652,7 +2650,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     public const int SourceBackupFieldNumber = 4;
     /// <summary>
     /// The resource name of the backup, in the format
-    /// projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+    /// `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string SourceBackup {
@@ -2928,7 +2926,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string name_ = "";
     /// <summary>
     /// Required. The instance resource name, in the format
-    /// projects/{project_id}/locations/{location}/instances/{instance_id}
+    /// `projects/{project_id}/locations/{location}/instances/{instance_id}`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -3111,10 +3109,10 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string parent_ = "";
     /// <summary>
     /// Required. The project and location for which to retrieve instance information,
-    /// in the format projects/{project_id}/locations/{location}. In Cloud
+    /// in the format `projects/{project_id}/locations/{location}`. In Cloud
     /// Filestore, locations map to GCP zones, for example **us-west1-b**. To
-    /// retrieve instance information for all locations, use "-" for the {location}
-    /// value.
+    /// retrieve instance information for all locations, use "-" for the
+    /// `{location}` value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Parent {
@@ -3451,8 +3449,8 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     /// <summary>
     /// A list of instances in the project for the specified location.
     ///
-    /// If the {location} value in the request is "-", the response contains a list
-    /// of instances from all locations. If any location is unreachable, the
+    /// If the `{location}` value in the request is "-", the response contains a
+    /// list of instances from all locations. If any location is unreachable, the
     /// response will only return instances in reachable locations and the
     /// "unreachable" field will be populated with a list of unreachable locations.
     /// </summary>
@@ -3697,7 +3695,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string name_ = "";
     /// <summary>
     /// Output only. The resource name of the backup, in the format
-    /// projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+    /// `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -3797,7 +3795,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string sourceInstance_ = "";
     /// <summary>
     /// The resource name of the source Cloud Filestore instance, in the format
-    /// projects/{project_id}/locations/{location_id}/instances/{instance_id},
+    /// `projects/{project_id}/locations/{location_id}/instances/{instance_id}`,
     /// used to create this backup.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4342,7 +4340,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string parent_ = "";
     /// <summary>
     /// Required. The backup's project and location, in the format
-    /// projects/{project_id}/locations/{location}. In Cloud Filestore,
+    /// `projects/{project_id}/locations/{location}`. In Cloud Filestore,
     /// backup locations map to GCP regions, for example **us-west1**.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4357,8 +4355,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     public const int BackupFieldNumber = 2;
     private global::Google.Cloud.Filestore.V1Beta1.Backup backup_;
     /// <summary>
-    /// Required. A [backup resource]
-    /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+    /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Filestore.V1Beta1.Backup Backup {
@@ -4612,7 +4609,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string name_ = "";
     /// <summary>
     /// Required. The backup resource name, in the format
-    /// projects/{project_id}/locations/{location}/backups/{backup_id}
+    /// `projects/{project_id}/locations/{location}/backups/{backup_id}`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -4791,8 +4788,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     public const int BackupFieldNumber = 1;
     private global::Google.Cloud.Filestore.V1Beta1.Backup backup_;
     /// <summary>
-    /// Required. A [backup resource]
-    /// (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+    /// Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Filestore.V1Beta1.Backup Backup {
@@ -5028,7 +5024,7 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string name_ = "";
     /// <summary>
     /// Required. The backup resource name, in the format
-    /// projects/{project_id}/locations/{location}/backups/{backup_id}.
+    /// `projects/{project_id}/locations/{location}/backups/{backup_id}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -5211,11 +5207,11 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     private string parent_ = "";
     /// <summary>
     /// Required. The project and location for which to retrieve backup information,
-    /// in the format projects/{project_id}/locations/{location}.
+    /// in the format `projects/{project_id}/locations/{location}`.
     /// In Cloud Filestore, backup locations map to GCP regions,
     /// for example **us-west1**.
     /// To retrieve backup information for all locations, use "-" for the
-    /// {location} value.
+    /// `{location}` value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Parent {
@@ -5552,8 +5548,8 @@ namespace Google.Cloud.Filestore.V1Beta1 {
     /// <summary>
     /// A list of backups in the project for the specified location.
     ///
-    /// If the {location} value in the request is "-", the response contains a list
-    /// of backups from all locations. If any location is unreachable, the
+    /// If the `{location}` value in the request is "-", the response contains a
+    /// list of backups from all locations. If any location is unreachable, the
     /// response will only return backups in reachable locations and the
     /// "unreachable" field will be populated with a list of unreachable
     /// locations.

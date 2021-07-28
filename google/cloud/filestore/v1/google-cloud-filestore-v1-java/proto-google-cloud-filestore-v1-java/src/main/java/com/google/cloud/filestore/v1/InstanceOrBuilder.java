@@ -10,7 +10,7 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * Output only. The resource name of the instance, in the format
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -20,7 +20,7 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * Output only. The resource name of the instance, in the format
-   * projects/{project}/locations/{location}/instances/{instance}.
+   * `projects/{project}/locations/{location}/instances/{instance}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

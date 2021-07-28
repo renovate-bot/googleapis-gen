@@ -17,7 +17,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The instance's project and location, in the format
-     * projects/{project_id}/locations/{location}. In Cloud Filestore,
+     * `projects/{project_id}/locations/{location}`. In Cloud Filestore,
      * locations map to GCP zones, for example **us-west1-b**.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -33,8 +33,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
      */
     protected $instance_id = '';
     /**
-     * Required. A [instance resource]
-     * (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+     * Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1beta1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -48,7 +47,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The instance's project and location, in the format
-     *           projects/{project_id}/locations/{location}. In Cloud Filestore,
+     *           `projects/{project_id}/locations/{location}`. In Cloud Filestore,
      *           locations map to GCP zones, for example **us-west1-b**.
      *     @type string $instance_id
      *           Required. The ID of the instance to create.
@@ -56,8 +55,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
      *           This value must start with a lowercase letter followed by up to 62
      *           lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
      *     @type \Google\Cloud\Filestore\V1beta1\Instance $instance
-     *           Required. A [instance resource]
-     *           (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+     *           Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
      * }
      */
     public function __construct($data = NULL) {
@@ -67,7 +65,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The instance's project and location, in the format
-     * projects/{project_id}/locations/{location}. In Cloud Filestore,
+     * `projects/{project_id}/locations/{location}`. In Cloud Filestore,
      * locations map to GCP zones, for example **us-west1-b**.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -80,7 +78,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The instance's project and location, in the format
-     * projects/{project_id}/locations/{location}. In Cloud Filestore,
+     * `projects/{project_id}/locations/{location}`. In Cloud Filestore,
      * locations map to GCP zones, for example **us-west1-b**.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -128,8 +126,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A [instance resource]
-     * (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+     * Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1beta1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Filestore\V1beta1\Instance|null
@@ -150,8 +147,7 @@ class CreateInstanceRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A [instance resource]
-     * (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+     * Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1beta1.Instance instance = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Filestore\V1beta1\Instance $var

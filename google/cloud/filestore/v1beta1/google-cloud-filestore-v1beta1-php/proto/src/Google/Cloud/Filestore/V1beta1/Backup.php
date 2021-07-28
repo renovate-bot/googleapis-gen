@@ -17,7 +17,7 @@ class Backup extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The resource name of the backup, in the format
-     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -62,7 +62,7 @@ class Backup extends \Google\Protobuf\Internal\Message
     protected $storage_bytes = 0;
     /**
      * The resource name of the source Cloud Filestore instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id},
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`,
      * used to create this backup.
      *
      * Generated from protobuf field <code>string source_instance = 8 [(.google.api.resource_reference) = {</code>
@@ -103,7 +103,7 @@ class Backup extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Output only. The resource name of the backup, in the format
-     *           projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     *           `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
      *     @type string $description
      *           A description of the backup with 2048 characters or less.
      *           Requests with longer descriptions will be rejected.
@@ -120,7 +120,7 @@ class Backup extends \Google\Protobuf\Internal\Message
      *           this number is expected to change with backup creation/deletion.
      *     @type string $source_instance
      *           The resource name of the source Cloud Filestore instance, in the format
-     *           projects/{project_id}/locations/{location_id}/instances/{instance_id},
+     *           `projects/{project_id}/locations/{location_id}/instances/{instance_id}`,
      *           used to create this backup.
      *     @type string $source_file_share
      *           Name of the file share in the source Cloud Filestore instance that the
@@ -141,7 +141,7 @@ class Backup extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the backup, in the format
-     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -153,7 +153,7 @@ class Backup extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the backup, in the format
-     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
@@ -339,7 +339,7 @@ class Backup extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the source Cloud Filestore instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id},
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`,
      * used to create this backup.
      *
      * Generated from protobuf field <code>string source_instance = 8 [(.google.api.resource_reference) = {</code>
@@ -352,7 +352,7 @@ class Backup extends \Google\Protobuf\Internal\Message
 
     /**
      * The resource name of the source Cloud Filestore instance, in the format
-     * projects/{project_id}/locations/{location_id}/instances/{instance_id},
+     * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`,
      * used to create this backup.
      *
      * Generated from protobuf field <code>string source_instance = 8 [(.google.api.resource_reference) = {</code>

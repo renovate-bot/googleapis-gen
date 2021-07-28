@@ -10,7 +10,7 @@ public interface RestoreInstanceRequestOrBuilder extends
   /**
    * <pre>
    * Required. The resource name of the instance, in the format
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface RestoreInstanceRequestOrBuilder extends
   /**
    * <pre>
    * Required. The resource name of the instance, in the format
-   * projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+   * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -54,7 +54,7 @@ public interface RestoreInstanceRequestOrBuilder extends
   /**
    * <pre>
    * The resource name of the snapshot, in the format
-   * projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}.
+   * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
    * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -64,7 +64,7 @@ public interface RestoreInstanceRequestOrBuilder extends
   /**
    * <pre>
    * The resource name of the snapshot, in the format
-   * projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}.
+   * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
    * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -74,7 +74,7 @@ public interface RestoreInstanceRequestOrBuilder extends
   /**
    * <pre>
    * The resource name of the snapshot, in the format
-   * projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}.
+   * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
    * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
@@ -86,7 +86,7 @@ public interface RestoreInstanceRequestOrBuilder extends
   /**
    * <pre>
    * The resource name of the backup, in the format
-   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
    * </pre>
    *
    * <code>string source_backup = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -96,7 +96,7 @@ public interface RestoreInstanceRequestOrBuilder extends
   /**
    * <pre>
    * The resource name of the backup, in the format
-   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
    * </pre>
    *
    * <code>string source_backup = 4 [(.google.api.resource_reference) = { ... }</code>
@@ -106,7 +106,7 @@ public interface RestoreInstanceRequestOrBuilder extends
   /**
    * <pre>
    * The resource name of the backup, in the format
-   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
    * </pre>
    *
    * <code>string source_backup = 4 [(.google.api.resource_reference) = { ... }</code>

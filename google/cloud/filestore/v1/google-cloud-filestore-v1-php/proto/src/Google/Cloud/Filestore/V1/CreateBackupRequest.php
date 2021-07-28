@@ -17,15 +17,14 @@ class CreateBackupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The backup's project and location, in the format
-     * projects/{project_number}/locations/{location}. In Cloud Filestore,
+     * `projects/{project_number}/locations/{location}`. In Cloud Filestore,
      * backup locations map to GCP regions, for example **us-west1**.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
     protected $parent = '';
     /**
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1.Backup backup = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -50,11 +49,10 @@ class CreateBackupRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The backup's project and location, in the format
-     *           projects/{project_number}/locations/{location}. In Cloud Filestore,
+     *           `projects/{project_number}/locations/{location}`. In Cloud Filestore,
      *           backup locations map to GCP regions, for example **us-west1**.
      *     @type \Google\Cloud\Filestore\V1\Backup $backup
-     *           Required. A [backup resource]
-     *           (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     *           Required. A [backup resource][google.cloud.filestore.v1.Backup]
      *     @type string $backup_id
      *           Required. The ID to use for the backup.
      *           The ID must be unique within the specified project and location.
@@ -71,7 +69,7 @@ class CreateBackupRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The backup's project and location, in the format
-     * projects/{project_number}/locations/{location}. In Cloud Filestore,
+     * `projects/{project_number}/locations/{location}`. In Cloud Filestore,
      * backup locations map to GCP regions, for example **us-west1**.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -84,7 +82,7 @@ class CreateBackupRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The backup's project and location, in the format
-     * projects/{project_number}/locations/{location}. In Cloud Filestore,
+     * `projects/{project_number}/locations/{location}`. In Cloud Filestore,
      * backup locations map to GCP regions, for example **us-west1**.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
@@ -100,8 +98,7 @@ class CreateBackupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1.Backup backup = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Filestore\V1\Backup|null
@@ -122,8 +119,7 @@ class CreateBackupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A [backup resource]
-     * (/cloud-filestore/reference/rest/v1/projects.locations.backups)
+     * Required. A [backup resource][google.cloud.filestore.v1.Backup]
      *
      * Generated from protobuf field <code>.google.cloud.filestore.v1.Backup backup = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Filestore\V1\Backup $var

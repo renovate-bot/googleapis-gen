@@ -504,10 +504,9 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string $parent       Required. The backup's project and location, in the format
-     *                             projects/{project_id}/locations/{location}. In Cloud Filestore,
+     *                             `projects/{project_id}/locations/{location}`. In Cloud Filestore,
      *                             backup locations map to GCP regions, for example **us-west1**.
-     * @param Backup $backup       Required. A [backup resource]
-     *                             (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+     * @param Backup $backup       Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
      * @param string $backupId     Required. The ID to use for the backup.
      *                             The ID must be unique within the specified project and location.
      *
@@ -587,15 +586,14 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string   $parent       Required. The instance's project and location, in the format
-     *                               projects/{project_id}/locations/{location}. In Cloud Filestore,
+     *                               `projects/{project_id}/locations/{location}`. In Cloud Filestore,
      *                               locations map to GCP zones, for example **us-west1-b**.
      * @param string   $instanceId   Required. The ID of the instance to create.
      *                               The ID must be unique within the specified project and location.
      *
      *                               This value must start with a lowercase letter followed by up to 62
      *                               lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
-     * @param Instance $instance     Required. A [instance resource]
-     *                               (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+     * @param Instance $instance     Required. An [instance resource][google.cloud.filestore.v1beta1.Instance]
      * @param array    $optionalArgs {
      *     Optional.
      *
@@ -663,7 +661,7 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string $name         Required. The backup resource name, in the format
-     *                             projects/{project_id}/locations/{location}/backups/{backup_id}
+     *                             `projects/{project_id}/locations/{location}/backups/{backup_id}`
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -729,7 +727,7 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string $name         Required. The instance resource name, in the format
-     *                             projects/{project_id}/locations/{location}/instances/{instance_id}
+     *                             `projects/{project_id}/locations/{location}/instances/{instance_id}`
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -772,7 +770,7 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string $name         Required. The backup resource name, in the format
-     *                             projects/{project_id}/locations/{location}/backups/{backup_id}.
+     *                             `projects/{project_id}/locations/{location}/backups/{backup_id}`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -815,7 +813,7 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string $name         Required. The instance resource name, in the format
-     *                             projects/{project_id}/locations/{location}/instances/{instance_id}.
+     *                             `projects/{project_id}/locations/{location}/instances/{instance_id}`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -871,11 +869,11 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string $parent       Required. The project and location for which to retrieve backup information,
-     *                             in the format projects/{project_id}/locations/{location}.
+     *                             in the format `projects/{project_id}/locations/{location}`.
      *                             In Cloud Filestore, backup locations map to GCP regions,
      *                             for example **us-west1**.
      *                             To retrieve backup information for all locations, use "-" for the
-     *                             {location} value.
+     *                             `{location}` value.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -960,10 +958,10 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string $parent       Required. The project and location for which to retrieve instance information,
-     *                             in the format projects/{project_id}/locations/{location}. In Cloud
+     *                             in the format `projects/{project_id}/locations/{location}`. In Cloud
      *                             Filestore, locations map to GCP zones, for example **us-west1-b**. To
-     *                             retrieve instance information for all locations, use "-" for the {location}
-     *                             value.
+     *                             retrieve instance information for all locations, use "-" for the
+     *                             `{location}` value.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -1065,7 +1063,7 @@ class CloudFilestoreManagerGapicClient
      * ```
      *
      * @param string $name         Required. The resource name of the instance, in the format
-     *                             projects/{project_id}/locations/{location_id}/instances/{instance_id}.
+     *                             `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
      * @param string $fileShare    Required. Name of the file share in the Cloud Filestore instance that the snapshot
      *                             is being restored to.
      * @param array  $optionalArgs {
@@ -1073,10 +1071,10 @@ class CloudFilestoreManagerGapicClient
      *
      *     @type string $sourceSnapshot
      *           The resource name of the snapshot, in the format
-     *           projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}.
+     *           `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
      *     @type string $sourceBackup
      *           The resource name of the backup, in the format
-     *           projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     *           `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1150,8 +1148,7 @@ class CloudFilestoreManagerGapicClient
      * }
      * ```
      *
-     * @param Backup    $backup       Required. A [backup resource]
-     *                                (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+     * @param Backup    $backup       Required. A [backup resource][google.cloud.filestore.v1beta1.Backup]
      * @param FieldMask $updateMask   Required. Mask of fields to update.  At least one path must be supplied in this
      *                                field.
      * @param array     $optionalArgs {

@@ -238,10 +238,10 @@ module Google
             #
             #   @param parent [::String]
             #     Required. The project and location for which to retrieve instance information,
-            #     in the format projects/\\{project_id}/locations/\\{location}. In Cloud
+            #     in the format `projects/{project_id}/locations/{location}`. In Cloud
             #     Filestore, locations map to GCP zones, for example **us-west1-b**. To
-            #     retrieve instance information for all locations, use "-" for the \\{location}
-            #     value.
+            #     retrieve instance information for all locations, use "-" for the
+            #     `{location}` value.
             #   @param page_size [::Integer]
             #     The maximum number of items to return.
             #   @param page_token [::String]
@@ -318,7 +318,7 @@ module Google
             #
             #   @param name [::String]
             #     Required. The instance resource name, in the format
-            #     projects/\\{project_id}/locations/\\{location}/instances/\\{instance_id}.
+            #     `projects/{project_id}/locations/{location}/instances/{instance_id}`.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::Filestore::V1beta1::Instance]
@@ -388,7 +388,7 @@ module Google
             #
             #   @param parent [::String]
             #     Required. The instance's project and location, in the format
-            #     projects/\\{project_id}/locations/\\{location}. In Cloud Filestore,
+            #     `projects/{project_id}/locations/{location}`. In Cloud Filestore,
             #     locations map to GCP zones, for example **us-west1-b**.
             #   @param instance_id [::String]
             #     Required. The ID of the instance to create.
@@ -397,8 +397,7 @@ module Google
             #     This value must start with a lowercase letter followed by up to 62
             #     lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
             #   @param instance [::Google::Cloud::Filestore::V1beta1::Instance, ::Hash]
-            #     Required. A [instance resource]
-            #     (/cloud-filestore/reference/rest/v1beta1/projects.locations.instances)
+            #     Required. An {::Google::Cloud::Filestore::V1beta1::Instance instance resource}
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -545,16 +544,16 @@ module Google
             #
             #   @param name [::String]
             #     Required. The resource name of the instance, in the format
-            #     projects/\\{project_id}/locations/\\{location_id}/instances/\\{instance_id}.
+            #     `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
             #   @param file_share [::String]
             #     Required. Name of the file share in the Cloud Filestore instance that the snapshot
             #     is being restored to.
             #   @param source_snapshot [::String]
             #     The resource name of the snapshot, in the format
-            #     projects/\\{project_id}/locations/\\{location_id}/snapshots/\\{snapshot_id}.
+            #     `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
             #   @param source_backup [::String]
             #     The resource name of the backup, in the format
-            #     projects/\\{project_id}/locations/\\{location_id}/backups/\\{backup_id}.
+            #     `projects/{project_id}/locations/{location_id}/backups/{backup_id}`.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -622,7 +621,7 @@ module Google
             #
             #   @param name [::String]
             #     Required. The instance resource name, in the format
-            #     projects/\\{project_id}/locations/\\{location}/instances/\\{instance_id}
+            #     `projects/{project_id}/locations/{location}/instances/{instance_id}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -691,11 +690,11 @@ module Google
             #
             #   @param parent [::String]
             #     Required. The project and location for which to retrieve backup information,
-            #     in the format projects/\\{project_id}/locations/\\{location}.
+            #     in the format `projects/{project_id}/locations/{location}`.
             #     In Cloud Filestore, backup locations map to GCP regions,
             #     for example **us-west1**.
             #     To retrieve backup information for all locations, use "-" for the
-            #     \\{location} value.
+            #     `{location}` value.
             #   @param page_size [::Integer]
             #     The maximum number of items to return.
             #   @param page_token [::String]
@@ -772,7 +771,7 @@ module Google
             #
             #   @param name [::String]
             #     Required. The backup resource name, in the format
-            #     projects/\\{project_id}/locations/\\{location}/backups/\\{backup_id}.
+            #     `projects/{project_id}/locations/{location}/backups/{backup_id}`.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::Filestore::V1beta1::Backup]
@@ -839,11 +838,10 @@ module Google
             #
             #   @param parent [::String]
             #     Required. The backup's project and location, in the format
-            #     projects/\\{project_id}/locations/\\{location}. In Cloud Filestore,
+            #     `projects/{project_id}/locations/{location}`. In Cloud Filestore,
             #     backup locations map to GCP regions, for example **us-west1**.
             #   @param backup [::Google::Cloud::Filestore::V1beta1::Backup, ::Hash]
-            #     Required. A [backup resource]
-            #     (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+            #     Required. A {::Google::Cloud::Filestore::V1beta1::Backup backup resource}
             #   @param backup_id [::String]
             #     Required. The ID to use for the backup.
             #     The ID must be unique within the specified project and location.
@@ -917,7 +915,7 @@ module Google
             #
             #   @param name [::String]
             #     Required. The backup resource name, in the format
-            #     projects/\\{project_id}/locations/\\{location}/backups/\\{backup_id}
+            #     `projects/{project_id}/locations/{location}/backups/{backup_id}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -984,8 +982,7 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param backup [::Google::Cloud::Filestore::V1beta1::Backup, ::Hash]
-            #     Required. A [backup resource]
-            #     (/cloud-filestore/reference/rest/v1beta1/projects.locations.backups)
+            #     Required. A {::Google::Cloud::Filestore::V1beta1::Backup backup resource}
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
             #     Required. Mask of fields to update.  At least one path must be supplied in this
             #     field.

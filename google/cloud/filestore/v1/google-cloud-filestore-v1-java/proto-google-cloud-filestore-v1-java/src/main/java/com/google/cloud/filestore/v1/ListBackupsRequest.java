@@ -122,11 +122,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The project and location for which to retrieve backup information,
-   * in the format projects/{project_number}/locations/{location}.
+   * in the format `projects/{project_number}/locations/{location}`.
    * In Cloud Filestore, backup locations map to GCP regions,
    * for example **us-west1**.
    * To retrieve backup information for all locations, use "-" for the
-   * {location} value.
+   * `{location}` value.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -148,11 +148,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The project and location for which to retrieve backup information,
-   * in the format projects/{project_number}/locations/{location}.
+   * in the format `projects/{project_number}/locations/{location}`.
    * In Cloud Filestore, backup locations map to GCP regions,
    * for example **us-west1**.
    * To retrieve backup information for all locations, use "-" for the
-   * {location} value.
+   * `{location}` value.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -706,11 +706,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve backup information,
-     * in the format projects/{project_number}/locations/{location}.
+     * in the format `projects/{project_number}/locations/{location}`.
      * In Cloud Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
-     * {location} value.
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -731,11 +731,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve backup information,
-     * in the format projects/{project_number}/locations/{location}.
+     * in the format `projects/{project_number}/locations/{location}`.
      * In Cloud Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
-     * {location} value.
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -757,11 +757,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve backup information,
-     * in the format projects/{project_number}/locations/{location}.
+     * in the format `projects/{project_number}/locations/{location}`.
      * In Cloud Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
-     * {location} value.
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -781,11 +781,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve backup information,
-     * in the format projects/{project_number}/locations/{location}.
+     * in the format `projects/{project_number}/locations/{location}`.
      * In Cloud Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
-     * {location} value.
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -800,11 +800,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The project and location for which to retrieve backup information,
-     * in the format projects/{project_number}/locations/{location}.
+     * in the format `projects/{project_number}/locations/{location}`.
      * In Cloud Filestore, backup locations map to GCP regions,
      * for example **us-west1**.
      * To retrieve backup information for all locations, use "-" for the
-     * {location} value.
+     * `{location}` value.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
