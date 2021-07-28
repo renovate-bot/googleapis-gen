@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.cloud.retail.v2beta.ProductService' => [
+            'AddFulfillmentPlaces' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2beta/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:addFulfillmentPlaces',
+                'body' => '*',
+                'placeholders' => [
+                    'product' => [
+                        'getters' => [
+                            'getProduct',
+                        ],
+                    ],
+                ],
+            ],
             'CreateProduct' => [
                 'method' => 'post',
                 'uriTemplate' => '/v2beta/{parent=projects/*/locations/*/catalogs/*/branches/*}/products',
@@ -49,6 +61,42 @@ return [
                     ],
                 ],
             ],
+            'ListProducts' => [
+                'method' => 'get',
+                'uriTemplate' => '/v2beta/{parent=projects/*/locations/*/catalogs/*/branches/*}/products',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'RemoveFulfillmentPlaces' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2beta/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:removeFulfillmentPlaces',
+                'body' => '*',
+                'placeholders' => [
+                    'product' => [
+                        'getters' => [
+                            'getProduct',
+                        ],
+                    ],
+                ],
+            ],
+            'SetInventory' => [
+                'method' => 'post',
+                'uriTemplate' => '/v2beta/{inventory.name=projects/*/locations/*/catalogs/*/branches/*/products/**}:setInventory',
+                'body' => '*',
+                'placeholders' => [
+                    'inventory.name' => [
+                        'getters' => [
+                            'getInventory',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'UpdateProduct' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v2beta/{product.name=projects/*/locations/*/catalogs/*/branches/*/products/**}',
@@ -66,7 +114,17 @@ return [
         'google.longrunning.Operations' => [
             'GetOperation' => [
                 'method' => 'get',
-                'uriTemplate' => '/v2beta/{name=projects/*/locations/*/catalogs/*/branches/*/operations/*}',
+                'uriTemplate' => '/v2beta/{name=projects/*/locations/*/operations/*}',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v2beta/{name=projects/*/locations/*/catalogs/*/operations/*}',
+                    ],
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v2beta/{name=projects/*/locations/*/catalogs/*/branches/*/operations/*}',
+                    ],
+                ],
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -77,7 +135,13 @@ return [
             ],
             'ListOperations' => [
                 'method' => 'get',
-                'uriTemplate' => '/v2beta/{name=projects/*/locations/*/catalogs/*/branches/*}/operations',
+                'uriTemplate' => '/v2beta/{name=projects/*/locations/*}/operations',
+                'additionalBindings' => [
+                    [
+                        'method' => 'get',
+                        'uriTemplate' => '/v2beta/{name=projects/*/locations/*/catalogs/*}/operations',
+                    ],
+                ],
                 'placeholders' => [
                     'name' => [
                         'getters' => [

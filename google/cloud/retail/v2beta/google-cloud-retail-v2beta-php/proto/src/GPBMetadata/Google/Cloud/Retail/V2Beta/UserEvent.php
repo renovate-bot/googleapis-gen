@@ -22,25 +22,30 @@ class UserEvent
         \GPBMetadata\Google\Protobuf\Wrappers::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ﬁ
-
-+google/cloud/retail/v2beta/user_event.protogoogle.cloud.retail.v2betagoogle/api/field_behavior.proto\'google/cloud/retail/v2beta/common.proto(google/cloud/retail/v2beta/product.protogoogle/protobuf/timestamp.protogoogle/protobuf/wrappers.proto"ê
+ﬂ
++google/cloud/retail/v2beta/user_event.protogoogle.cloud.retail.v2betagoogle/api/field_behavior.proto\'google/cloud/retail/v2beta/common.proto(google/cloud/retail/v2beta/product.protogoogle/protobuf/timestamp.protogoogle/protobuf/wrappers.proto"ü
 	UserEvent
 
 event_type (	B‡A
 
-visitor_id (	B‡A.
+visitor_id (	B‡A
+
+session_id (	.
 
 event_time (2.google.protobuf.Timestamp
 experiment_ids (	
 attribution_token (	B
-product_details (2).google.cloud.retail.v2beta.ProductDetailI
+product_details (2).google.cloud.retail.v2beta.ProductDetailG
+completion_detail (2,.google.cloud.retail.v2beta.CompletionDetailI
 
 attributes (25.google.cloud.retail.v2beta.UserEvent.AttributesEntry
 cart_id (	M
 purchase_transaction	 (2/.google.cloud.retail.v2beta.PurchaseTransaction
 search_query
- (	
+ (	
+filter (	
+order_by (	
+offset (
 page_categories (	7
 	user_info (2$.google.cloud.retail.v2beta.UserInfo
 uri (	
@@ -51,7 +56,11 @@ attributes (25.google.cloud.retail.v2beta.UserEvent.AttributesEntry
 value (2+.google.cloud.retail.v2beta.CustomAttribute:8"y
 ProductDetail9
 product (2#.google.cloud.retail.v2beta.ProductB‡A-
-quantity (2.google.protobuf.Int32Value"n
+quantity (2.google.protobuf.Int32Value"p
+CompletionDetail$
+completion_attribution_token (	
+selected_suggestion (	
+selected_position ("n
 PurchaseTransaction
 
 id (	

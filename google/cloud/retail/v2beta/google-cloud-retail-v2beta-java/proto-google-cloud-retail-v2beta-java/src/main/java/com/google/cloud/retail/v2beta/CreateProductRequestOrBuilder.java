@@ -10,7 +10,7 @@ public interface CreateProductRequestOrBuilder extends
   /**
    * <pre>
    * Required. The parent catalog resource name, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,7 +20,7 @@ public interface CreateProductRequestOrBuilder extends
   /**
    * <pre>
    * Required. The parent catalog resource name, such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

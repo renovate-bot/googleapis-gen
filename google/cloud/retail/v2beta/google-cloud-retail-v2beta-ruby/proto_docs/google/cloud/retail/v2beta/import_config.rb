@@ -27,10 +27,11 @@ module Google
         #   @return [::Array<::String>]
         #     Required. Google Cloud Storage URIs to input files. URI can be up to
         #     2000 characters long. URIs can match the full object path (for example,
-        #     gs://bucket/directory/object.json) or a pattern matching one or more
-        #     files, such as gs://bucket/directory/*.json. A request can
+        #     `gs://bucket/directory/object.json`) or a pattern matching one or more
+        #     files, such as `gs://bucket/directory/*.json`. A request can
         #     contain at most 100 files, and each file can be up to 2 GB. See
-        #     [Importing product information](/recommendations-ai/docs/upload-catalog)
+        #     [Importing product
+        #     information](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog)
         #     for the expected file format and setup instructions.
         # @!attribute [rw] data_schema
         #   @return [::String]
@@ -42,25 +43,32 @@ module Google
         #     {::Google::Cloud::Retail::V2beta::Product Product} per line. Each product must
         #       have a valid {::Google::Cloud::Retail::V2beta::Product#id Product.id}.
         #     * `product_merchant_center`: See [Importing catalog data from Merchant
-        #       Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+        #       Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
         #
         #     Supported values for user events imports:
         #
         #     * `user_event` (default): One JSON
         #     {::Google::Cloud::Retail::V2beta::UserEvent UserEvent} per line.
         #     * `user_event_ga360`: Using
-        #       https://support.google.com/analytics/answer/3437719?hl=en.
+        #       https://support.google.com/analytics/answer/3437719.
         class GcsSource
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
         # BigQuery source import data from.
+        # @!attribute [rw] partition_date
+        #   @return [::Google::Type::Date]
+        #     BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
+        #
+        #     Only supported when
+        #     {::Google::Cloud::Retail::V2beta::ImportProductsRequest#reconciliation_mode ImportProductsRequest.reconciliation_mode}
+        #     is set to `FULL`.
         # @!attribute [rw] project_id
         #   @return [::String]
-        #     The project id (can be project # or id) that the BigQuery source is in with
+        #     The project ID (can be project # or ID) that the BigQuery source is in with
         #     a length limit of 128 characters. If not specified, inherits the project
-        #     id from the parent request.
+        #     ID from the parent request.
         # @!attribute [rw] dataset_id
         #   @return [::String]
         #     Required. The BigQuery data set to copy the data from with a length limit
@@ -84,14 +92,14 @@ module Google
         #     {::Google::Cloud::Retail::V2beta::Product Product} per line. Each product must
         #       have a valid {::Google::Cloud::Retail::V2beta::Product#id Product.id}.
         #     * `product_merchant_center`: See [Importing catalog data from Merchant
-        #       Center](/retail/recommendations-ai/docs/upload-catalog#mc).
+        #       Center](https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc).
         #
         #     Supported values for user events imports:
         #
         #     * `user_event` (default): One JSON
         #     {::Google::Cloud::Retail::V2beta::UserEvent UserEvent} per line.
         #     * `user_event_ga360`: Using
-        #       https://support.google.com/analytics/answer/3437719?hl=en.
+        #       https://support.google.com/analytics/answer/3437719.
         class BigQuerySource
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -102,7 +110,7 @@ module Google
         #   @return [::Array<::Google::Cloud::Retail::V2beta::Product>]
         #     Required. A list of products to update/create. Each product must have a
         #     valid {::Google::Cloud::Retail::V2beta::Product#id Product.id}. Recommended max
-        #     of 10k items.
+        #     of 100 items.
         class ProductInlineSource
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -133,10 +141,21 @@ module Google
         # @!attribute [rw] parent
         #   @return [::String]
         #     Required.
-        #     "projects/1234/locations/global/catalogs/default_catalog/branches/default_branch"
+        #     `projects/1234/locations/global/catalogs/default_catalog/branches/default_branch`
         #
         #     If no updateMask is specified, requires products.create permission.
         #     If updateMask is specified, requires products.update permission.
+        # @!attribute [rw] request_id
+        #   @return [::String]
+        #     Unique identifier provided by client, within the ancestor
+        #     dataset scope. Ensures idempotency and used for request deduplication.
+        #     Server-generated if unspecified. Up to 128 characters long and must match
+        #     the pattern: "[a-zA-Z0-9_]+". This is returned as [Operation.name][] in
+        #     {::Google::Cloud::Retail::V2beta::ImportMetadata ImportMetadata}.
+        #
+        #     Only supported when
+        #     {::Google::Cloud::Retail::V2beta::ImportProductsRequest#reconciliation_mode ImportProductsRequest.reconciliation_mode}
+        #     is set to `FULL`.
         # @!attribute [rw] input_config
         #   @return [::Google::Cloud::Retail::V2beta::ProductInputConfig]
         #     Required. The desired input location of the data.
@@ -147,15 +166,56 @@ module Google
         #   @return [::Google::Protobuf::FieldMask]
         #     Indicates which fields in the provided imported 'products' to update. If
         #     not set, will by default update all fields.
+        # @!attribute [rw] reconciliation_mode
+        #   @return [::Google::Cloud::Retail::V2beta::ImportProductsRequest::ReconciliationMode]
+        #     The mode of reconciliation between existing products and the products to be
+        #     imported. Defaults to
+        #     {::Google::Cloud::Retail::V2beta::ImportProductsRequest::ReconciliationMode::INCREMENTAL ReconciliationMode.INCREMENTAL}.
+        # @!attribute [rw] notification_pubsub_topic
+        #   @return [::String]
+        #     Pub/Sub topic for receiving notification. If this field is set,
+        #     when the import is finished, a notification will be sent to
+        #     specified Pub/Sub topic. The message data will be JSON string of a
+        #     {::Google::Longrunning::Operation Operation}.
+        #     Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+        #
+        #     Only supported when
+        #     {::Google::Cloud::Retail::V2beta::ImportProductsRequest#reconciliation_mode ImportProductsRequest.reconciliation_mode}
+        #     is set to `FULL`.
         class ImportProductsRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # Indicates how imported products are reconciled with the existing products
+          # created or imported before.
+          module ReconciliationMode
+            # Defaults to INCREMENTAL.
+            RECONCILIATION_MODE_UNSPECIFIED = 0
+
+            # Inserts new products or updates existing products.
+            INCREMENTAL = 1
+
+            # Calculates diff and replaces the entire product dataset. Existing
+            # products may be deleted if they are not present in the source location.
+            #
+            # Can only be while using
+            # {::Google::Cloud::Retail::V2beta::BigQuerySource BigQuerySource}.
+            #
+            # Add the IAM permission “BigQuery Data Viewer” for
+            # cloud-retail-customer-data-access@system.gserviceaccount.com before
+            # using this feature otherwise an error is thrown.
+            #
+            # This feature is only available for users who have Retail Search enabled.
+            # Contact Retail Support (retail-search-support@google.com) if you are
+            # interested in using Retail Search.
+            FULL = 2
+          end
         end
 
         # Request message for the ImportUserEvents request.
         # @!attribute [rw] parent
         #   @return [::String]
-        #     Required. "projects/1234/locations/global/catalogs/default_catalog"
+        #     Required. `projects/1234/locations/global/catalogs/default_catalog`
         # @!attribute [rw] input_config
         #   @return [::Google::Cloud::Retail::V2beta::UserEventInputConfig]
         #     Required. The desired input location of the data.
@@ -164,6 +224,27 @@ module Google
         #     The desired location of errors incurred during the Import. Cannot be set
         #     for inline user event imports.
         class ImportUserEventsRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Request message for ImportCompletionData methods.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The catalog which the suggestions dataset belongs to.
+        #
+        #     Format: `projects/1234/locations/global/catalogs/default_catalog`.
+        # @!attribute [rw] input_config
+        #   @return [::Google::Cloud::Retail::V2beta::CompletionDataInputConfig]
+        #     Required. The desired input location of the data.
+        # @!attribute [rw] notification_pubsub_topic
+        #   @return [::String]
+        #     Pub/Sub topic for receiving notification. If this field is set,
+        #     when the import is finished, a notification will be sent to
+        #     specified Pub/Sub topic. The message data will be JSON string of a
+        #     {::Google::Longrunning::Operation Operation}.
+        #     Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
+        class ImportCompletionDataRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
@@ -198,6 +279,19 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # The input config source for completion data.
+        # @!attribute [rw] big_query_source
+        #   @return [::Google::Cloud::Retail::V2beta::BigQuerySource]
+        #     Required. BigQuery input source.
+        #
+        #     Add the IAM permission “BigQuery Data Viewer” for
+        #     cloud-retail-customer-data-access@system.gserviceaccount.com before
+        #     using this feature otherwise an error is thrown.
+        class CompletionDataInputConfig
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Metadata related to the progress of the Import operation. This will be
         # returned by the google.longrunning.Operation.metadata field.
         # @!attribute [rw] create_time
@@ -213,6 +307,17 @@ module Google
         # @!attribute [rw] failure_count
         #   @return [::Integer]
         #     Count of entries that encountered errors while processing.
+        # @!attribute [rw] request_id
+        #   @return [::String]
+        #     Id of the request / operation. This is parroting back the requestId
+        #     that was passed in the request.
+        # @!attribute [rw] notification_pubsub_topic
+        #   @return [::String]
+        #     Pub/Sub topic for receiving notification. If this field is set,
+        #     when the import is finished, a notification will be sent to
+        #     specified Pub/Sub topic. The message data will be JSON string of a
+        #     {::Google::Longrunning::Operation Operation}.
+        #     Format of the Pub/Sub topic is `projects/{project}/topics/{topic}`.
         class ImportMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -261,6 +366,18 @@ module Google
         #     Count of user events imported, but with catalog information not found
         #     in the imported catalog.
         class UserEventImportSummary
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response of the
+        # {::Google::Cloud::Retail::V2beta::ImportCompletionDataRequest ImportCompletionDataRequest}.
+        # If the long running operation is done, this message is returned by the
+        # google.longrunning.Operations.response field if the operation is successful.
+        # @!attribute [rw] error_samples
+        #   @return [::Array<::Google::Rpc::Status>]
+        #     A sample of errors encountered while processing the request.
+        class ImportCompletionDataResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

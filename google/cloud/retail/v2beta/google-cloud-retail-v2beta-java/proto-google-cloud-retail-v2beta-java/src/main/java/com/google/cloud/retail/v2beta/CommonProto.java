@@ -15,25 +15,60 @@ public final class CommonProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_Audience_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Audience_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_ColorInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_ColorInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_retail_v2beta_CustomAttribute_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_CustomAttribute_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_FulfillmentInfo_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_FulfillmentInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_retail_v2beta_Image_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_Image_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_Interval_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Interval_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_retail_v2beta_PriceInfo_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_PriceInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_PriceInfo_PriceRange_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_PriceInfo_PriceRange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_Rating_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Rating_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_retail_v2beta_UserInfo_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_UserInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_Promotion_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_Promotion_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -47,20 +82,39 @@ public final class CommonProto {
       "o\022\032google.cloud.retail.v2beta\032\034google/ap" +
       "i/annotations.proto\032\037google/api/field_be" +
       "havior.proto\032\037google/protobuf/timestamp." +
-      "proto\"0\n\017CustomAttribute\022\014\n\004text\030\001 \003(\t\022\017" +
-      "\n\007numbers\030\002 \003(\001\"8\n\005Image\022\020\n\003uri\030\001 \001(\tB\003\340" +
-      "A\002\022\016\n\006height\030\002 \001(\005\022\r\n\005width\030\003 \001(\005\"W\n\tPri" +
-      "ceInfo\022\025\n\rcurrency_code\030\001 \001(\t\022\r\n\005price\030\002" +
-      " \001(\002\022\026\n\016original_price\030\003 \001(\002\022\014\n\004cost\030\004 \001" +
-      "(\002\"`\n\010UserInfo\022\017\n\007user_id\030\001 \001(\t\022\022\n\nip_ad" +
-      "dress\030\002 \001(\t\022\022\n\nuser_agent\030\003 \001(\t\022\033\n\023direc" +
-      "t_user_request\030\004 \001(\010B\324\001\n\036com.google.clou" +
-      "d.retail.v2betaB\013CommonProtoP\001Z@google.g" +
-      "olang.org/genproto/googleapis/cloud/reta" +
-      "il/v2beta;retail\242\002\006RETAIL\252\002\032Google.Cloud" +
-      ".Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2b" +
-      "eta\352\002\035Google::Cloud::Retail::V2betab\006pro" +
-      "to3"
+      "proto\"/\n\010Audience\022\017\n\007genders\030\001 \003(\t\022\022\n\nag" +
+      "e_groups\030\002 \003(\t\"3\n\tColorInfo\022\026\n\016color_fam" +
+      "ilies\030\001 \003(\t\022\016\n\006colors\030\002 \003(\t\"~\n\017CustomAtt" +
+      "ribute\022\014\n\004text\030\001 \003(\t\022\017\n\007numbers\030\002 \003(\001\022\027\n" +
+      "\nsearchable\030\003 \001(\010H\000\210\001\001\022\026\n\tindexable\030\004 \001(" +
+      "\010H\001\210\001\001B\r\n\013_searchableB\014\n\n_indexable\"2\n\017F" +
+      "ulfillmentInfo\022\014\n\004type\030\001 \001(\t\022\021\n\tplace_id" +
+      "s\030\002 \003(\t\"8\n\005Image\022\020\n\003uri\030\001 \001(\tB\003\340A\002\022\016\n\006he" +
+      "ight\030\002 \001(\005\022\r\n\005width\030\003 \001(\005\"x\n\010Interval\022\021\n" +
+      "\007minimum\030\001 \001(\001H\000\022\033\n\021exclusive_minimum\030\002 " +
+      "\001(\001H\000\022\021\n\007maximum\030\003 \001(\001H\001\022\033\n\021exclusive_ma" +
+      "ximum\030\004 \001(\001H\001B\005\n\003minB\005\n\003max\"\225\003\n\tPriceInf" +
+      "o\022\025\n\rcurrency_code\030\001 \001(\t\022\r\n\005price\030\002 \001(\002\022" +
+      "\026\n\016original_price\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\0228\n" +
+      "\024price_effective_time\030\005 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\0225\n\021price_expire_time\030\006 \001" +
+      "(\0132\032.google.protobuf.Timestamp\022J\n\013price_" +
+      "range\030\007 \001(\01320.google.cloud.retail.v2beta" +
+      ".PriceInfo.PriceRangeB\003\340A\003\032\177\n\nPriceRange" +
+      "\0223\n\005price\030\001 \001(\0132$.google.cloud.retail.v2" +
+      "beta.Interval\022<\n\016original_price\030\002 \001(\0132$." +
+      "google.cloud.retail.v2beta.Interval\"P\n\006R" +
+      "ating\022\024\n\014rating_count\030\001 \001(\005\022\026\n\016average_r" +
+      "ating\030\002 \001(\002\022\030\n\020rating_histogram\030\003 \003(\005\"`\n" +
+      "\010UserInfo\022\017\n\007user_id\030\001 \001(\t\022\022\n\nip_address" +
+      "\030\002 \001(\t\022\022\n\nuser_agent\030\003 \001(\t\022\033\n\023direct_use" +
+      "r_request\030\004 \001(\010\"!\n\tPromotion\022\024\n\014promotio" +
+      "n_id\030\001 \001(\tB\324\001\n\036com.google.cloud.retail.v" +
+      "2betaB\013CommonProtoP\001Z@google.golang.org/" +
+      "genproto/googleapis/cloud/retail/v2beta;" +
+      "retail\242\002\006RETAIL\252\002\032Google.Cloud.Retail.V2" +
+      "Beta\312\002\032Google\\Cloud\\Retail\\V2beta\352\002\035Goog" +
+      "le::Cloud::Retail::V2betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -69,30 +123,72 @@ public final class CommonProto {
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
         });
-    internal_static_google_cloud_retail_v2beta_CustomAttribute_descriptor =
+    internal_static_google_cloud_retail_v2beta_Audience_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_retail_v2beta_Audience_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_Audience_descriptor,
+        new java.lang.String[] { "Genders", "AgeGroups", });
+    internal_static_google_cloud_retail_v2beta_ColorInfo_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_retail_v2beta_ColorInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_ColorInfo_descriptor,
+        new java.lang.String[] { "ColorFamilies", "Colors", });
+    internal_static_google_cloud_retail_v2beta_CustomAttribute_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_retail_v2beta_CustomAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_CustomAttribute_descriptor,
-        new java.lang.String[] { "Text", "Numbers", });
+        new java.lang.String[] { "Text", "Numbers", "Searchable", "Indexable", "Searchable", "Indexable", });
+    internal_static_google_cloud_retail_v2beta_FulfillmentInfo_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_retail_v2beta_FulfillmentInfo_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_FulfillmentInfo_descriptor,
+        new java.lang.String[] { "Type", "PlaceIds", });
     internal_static_google_cloud_retail_v2beta_Image_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_retail_v2beta_Image_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_Image_descriptor,
         new java.lang.String[] { "Uri", "Height", "Width", });
+    internal_static_google_cloud_retail_v2beta_Interval_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_retail_v2beta_Interval_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_Interval_descriptor,
+        new java.lang.String[] { "Minimum", "ExclusiveMinimum", "Maximum", "ExclusiveMaximum", "Min", "Max", });
     internal_static_google_cloud_retail_v2beta_PriceInfo_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_retail_v2beta_PriceInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_PriceInfo_descriptor,
-        new java.lang.String[] { "CurrencyCode", "Price", "OriginalPrice", "Cost", });
+        new java.lang.String[] { "CurrencyCode", "Price", "OriginalPrice", "Cost", "PriceEffectiveTime", "PriceExpireTime", "PriceRange", });
+    internal_static_google_cloud_retail_v2beta_PriceInfo_PriceRange_descriptor =
+      internal_static_google_cloud_retail_v2beta_PriceInfo_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_retail_v2beta_PriceInfo_PriceRange_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_PriceInfo_PriceRange_descriptor,
+        new java.lang.String[] { "Price", "OriginalPrice", });
+    internal_static_google_cloud_retail_v2beta_Rating_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_retail_v2beta_Rating_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_Rating_descriptor,
+        new java.lang.String[] { "RatingCount", "AverageRating", "RatingHistogram", });
     internal_static_google_cloud_retail_v2beta_UserInfo_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_retail_v2beta_UserInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_UserInfo_descriptor,
         new java.lang.String[] { "UserId", "IpAddress", "UserAgent", "DirectUserRequest", });
+    internal_static_google_cloud_retail_v2beta_Promotion_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_retail_v2beta_Promotion_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_Promotion_descriptor,
+        new java.lang.String[] { "PromotionId", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);

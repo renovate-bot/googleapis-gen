@@ -11,7 +11,7 @@ public interface GetProductRequestOrBuilder extends
    * <pre>
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2beta.Product], such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
@@ -27,7 +27,7 @@ public interface GetProductRequestOrBuilder extends
    * <pre>
    * Required. Full resource name of
    * [Product][google.cloud.retail.v2beta.Product], such as
-   * "projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+   * `projects/&#42;&#47;locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id`.
    * If the caller does not have permission to access the
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.

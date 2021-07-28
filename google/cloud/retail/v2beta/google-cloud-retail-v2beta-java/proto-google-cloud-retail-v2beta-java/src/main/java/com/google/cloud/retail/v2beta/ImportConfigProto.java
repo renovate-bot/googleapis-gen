@@ -50,6 +50,11 @@ public final class ImportConfigProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_ImportUserEventsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_ImportCompletionDataRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_ImportCompletionDataRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_retail_v2beta_ProductInputConfig_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -59,6 +64,11 @@ public final class ImportConfigProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_UserEventInputConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_CompletionDataInputConfig_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_CompletionDataInputConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_retail_v2beta_ImportMetadata_descriptor;
   static final 
@@ -79,6 +89,11 @@ public final class ImportConfigProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_UserEventImportSummary_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_ImportCompletionDataResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_ImportCompletionDataResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -91,78 +106,102 @@ public final class ImportConfigProto {
       "\n.google/cloud/retail/v2beta/import_conf" +
       "ig.proto\022\032google.cloud.retail.v2beta\032\034go" +
       "ogle/api/annotations.proto\032\037google/api/f" +
-      "ield_behavior.proto\032(google/cloud/retail" +
-      "/v2beta/product.proto\032+google/cloud/reta" +
-      "il/v2beta/user_event.proto\032 google/proto" +
-      "buf/field_mask.proto\032\037google/protobuf/ti" +
-      "mestamp.proto\032\027google/rpc/status.proto\"9" +
-      "\n\tGcsSource\022\027\n\ninput_uris\030\001 \003(\tB\003\340A\002\022\023\n\013" +
-      "data_schema\030\002 \001(\t\"\202\001\n\016BigQuerySource\022\022\n\n" +
-      "project_id\030\005 \001(\t\022\027\n\ndataset_id\030\001 \001(\tB\003\340A" +
-      "\002\022\025\n\010table_id\030\002 \001(\tB\003\340A\002\022\027\n\017gcs_staging_" +
-      "dir\030\003 \001(\t\022\023\n\013data_schema\030\004 \001(\t\"Q\n\023Produc" +
-      "tInlineSource\022:\n\010products\030\001 \003(\0132#.google" +
-      ".cloud.retail.v2beta.ProductB\003\340A\002\"X\n\025Use" +
-      "rEventInlineSource\022?\n\013user_events\030\001 \003(\0132" +
-      "%.google.cloud.retail.v2beta.UserEventB\003" +
-      "\340A\002\"9\n\022ImportErrorsConfig\022\024\n\ngcs_prefix\030" +
-      "\001 \001(\tH\000B\r\n\013destination\"\357\001\n\025ImportProduct" +
-      "sRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022I\n\014input_c" +
-      "onfig\030\002 \001(\0132..google.cloud.retail.v2beta" +
-      ".ProductInputConfigB\003\340A\002\022E\n\rerrors_confi" +
-      "g\030\003 \001(\0132..google.cloud.retail.v2beta.Imp" +
-      "ortErrorsConfig\022/\n\013update_mask\030\004 \001(\0132\032.g" +
-      "oogle.protobuf.FieldMask\"\302\001\n\027ImportUserE" +
-      "ventsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022K\n\014inp" +
-      "ut_config\030\002 \001(\01320.google.cloud.retail.v2" +
-      "beta.UserEventInputConfigB\003\340A\002\022E\n\rerrors" +
-      "_config\030\003 \001(\0132..google.cloud.retail.v2be" +
-      "ta.ImportErrorsConfig\"\365\001\n\022ProductInputCo" +
-      "nfig\022P\n\025product_inline_source\030\001 \001(\0132/.go" +
-      "ogle.cloud.retail.v2beta.ProductInlineSo" +
-      "urceH\000\022;\n\ngcs_source\030\002 \001(\0132%.google.clou" +
-      "d.retail.v2beta.GcsSourceH\000\022F\n\020big_query" +
-      "_source\030\003 \001(\0132*.google.cloud.retail.v2be" +
-      "ta.BigQuerySourceH\000B\010\n\006source\"\213\002\n\024UserEv" +
-      "entInputConfig\022Z\n\030user_event_inline_sour" +
-      "ce\030\001 \001(\01321.google.cloud.retail.v2beta.Us" +
-      "erEventInlineSourceB\003\340A\002H\000\022@\n\ngcs_source" +
+      "ield_behavior.proto\032\031google/api/resource" +
+      ".proto\032(google/cloud/retail/v2beta/produ" +
+      "ct.proto\032+google/cloud/retail/v2beta/use" +
+      "r_event.proto\032 google/protobuf/field_mas" +
+      "k.proto\032\037google/protobuf/timestamp.proto" +
+      "\032\027google/rpc/status.proto\032\026google/type/d" +
+      "ate.proto\"9\n\tGcsSource\022\027\n\ninput_uris\030\001 \003" +
+      "(\tB\003\340A\002\022\023\n\013data_schema\030\002 \001(\t\"\274\001\n\016BigQuer" +
+      "ySource\022+\n\016partition_date\030\006 \001(\0132\021.google" +
+      ".type.DateH\000\022\022\n\nproject_id\030\005 \001(\t\022\027\n\ndata" +
+      "set_id\030\001 \001(\tB\003\340A\002\022\025\n\010table_id\030\002 \001(\tB\003\340A\002" +
+      "\022\027\n\017gcs_staging_dir\030\003 \001(\t\022\023\n\013data_schema" +
+      "\030\004 \001(\tB\013\n\tpartition\"Q\n\023ProductInlineSour" +
+      "ce\022:\n\010products\030\001 \003(\0132#.google.cloud.reta" +
+      "il.v2beta.ProductB\003\340A\002\"X\n\025UserEventInlin" +
+      "eSource\022?\n\013user_events\030\001 \003(\0132%.google.cl" +
+      "oud.retail.v2beta.UserEventB\003\340A\002\"9\n\022Impo" +
+      "rtErrorsConfig\022\024\n\ngcs_prefix\030\001 \001(\tH\000B\r\n\013" +
+      "destination\"\200\004\n\025ImportProductsRequest\0224\n" +
+      "\006parent\030\001 \001(\tB$\340A\002\372A\036\n\034retail.googleapis" +
+      ".com/Branch\022\022\n\nrequest_id\030\006 \001(\t\022I\n\014input" +
+      "_config\030\002 \001(\0132..google.cloud.retail.v2be" +
+      "ta.ProductInputConfigB\003\340A\002\022E\n\rerrors_con" +
+      "fig\030\003 \001(\0132..google.cloud.retail.v2beta.I" +
+      "mportErrorsConfig\022/\n\013update_mask\030\004 \001(\0132\032" +
+      ".google.protobuf.FieldMask\022a\n\023reconcilia" +
+      "tion_mode\030\005 \001(\0162D.google.cloud.retail.v2" +
+      "beta.ImportProductsRequest.Reconciliatio" +
+      "nMode\022!\n\031notification_pubsub_topic\030\007 \001(\t" +
+      "\"T\n\022ReconciliationMode\022#\n\037RECONCILIATION" +
+      "_MODE_UNSPECIFIED\020\000\022\017\n\013INCREMENTAL\020\001\022\010\n\004" +
+      "FULL\020\002\"\344\001\n\027ImportUserEventsRequest\0225\n\006pa" +
+      "rent\030\001 \001(\tB%\340A\002\372A\037\n\035retail.googleapis.co" +
+      "m/Catalog\022K\n\014input_config\030\002 \001(\01320.google" +
+      ".cloud.retail.v2beta.UserEventInputConfi" +
+      "gB\003\340A\002\022E\n\rerrors_config\030\003 \001(\0132..google.c" +
+      "loud.retail.v2beta.ImportErrorsConfig\"\311\001" +
+      "\n\033ImportCompletionDataRequest\0225\n\006parent\030" +
+      "\001 \001(\tB%\340A\002\372A\037\n\035retail.googleapis.com/Cat" +
+      "alog\022P\n\014input_config\030\002 \001(\01325.google.clou" +
+      "d.retail.v2beta.CompletionDataInputConfi" +
+      "gB\003\340A\002\022!\n\031notification_pubsub_topic\030\003 \001(" +
+      "\t\"\365\001\n\022ProductInputConfig\022P\n\025product_inli" +
+      "ne_source\030\001 \001(\0132/.google.cloud.retail.v2" +
+      "beta.ProductInlineSourceH\000\022;\n\ngcs_source" +
       "\030\002 \001(\0132%.google.cloud.retail.v2beta.GcsS" +
-      "ourceB\003\340A\002H\000\022K\n\020big_query_source\030\003 \001(\0132*" +
-      ".google.cloud.retail.v2beta.BigQuerySour" +
-      "ceB\003\340A\002H\000B\010\n\006source\"\240\001\n\016ImportMetadata\022/" +
-      "\n\013create_time\030\001 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\022/\n\013update_time\030\002 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022\025\n\rsuccess_count\030\003 \001(\003\022" +
-      "\025\n\rfailure_count\030\004 \001(\003\"\212\001\n\026ImportProduct" +
-      "sResponse\022)\n\rerror_samples\030\001 \003(\0132\022.googl" +
-      "e.rpc.Status\022E\n\rerrors_config\030\002 \001(\0132..go" +
-      "ogle.cloud.retail.v2beta.ImportErrorsCon" +
-      "fig\"\330\001\n\030ImportUserEventsResponse\022)\n\rerro" +
-      "r_samples\030\001 \003(\0132\022.google.rpc.Status\022E\n\re" +
-      "rrors_config\030\002 \001(\0132..google.cloud.retail" +
-      ".v2beta.ImportErrorsConfig\022J\n\016import_sum" +
-      "mary\030\003 \001(\01322.google.cloud.retail.v2beta." +
-      "UserEventImportSummary\"T\n\026UserEventImpor" +
-      "tSummary\022\033\n\023joined_events_count\030\001 \001(\003\022\035\n" +
-      "\025unjoined_events_count\030\002 \001(\003B\332\001\n\036com.goo" +
-      "gle.cloud.retail.v2betaB\021ImportConfigPro" +
-      "toP\001Z@google.golang.org/genproto/googlea" +
-      "pis/cloud/retail/v2beta;retail\242\002\006RETAIL\252" +
-      "\002\032Google.Cloud.Retail.V2Beta\312\002\032Google\\Cl" +
-      "oud\\Retail\\V2beta\352\002\035Google::Cloud::Retai" +
-      "l::V2betab\006proto3"
+      "ourceH\000\022F\n\020big_query_source\030\003 \001(\0132*.goog" +
+      "le.cloud.retail.v2beta.BigQuerySourceH\000B" +
+      "\010\n\006source\"\213\002\n\024UserEventInputConfig\022Z\n\030us" +
+      "er_event_inline_source\030\001 \001(\01321.google.cl" +
+      "oud.retail.v2beta.UserEventInlineSourceB" +
+      "\003\340A\002H\000\022@\n\ngcs_source\030\002 \001(\0132%.google.clou" +
+      "d.retail.v2beta.GcsSourceB\003\340A\002H\000\022K\n\020big_" +
+      "query_source\030\003 \001(\0132*.google.cloud.retail" +
+      ".v2beta.BigQuerySourceB\003\340A\002H\000B\010\n\006source\"" +
+      "r\n\031CompletionDataInputConfig\022K\n\020big_quer" +
+      "y_source\030\001 \001(\0132*.google.cloud.retail.v2b" +
+      "eta.BigQuerySourceB\003\340A\002H\000B\010\n\006source\"\327\001\n\016" +
+      "ImportMetadata\022/\n\013create_time\030\001 \001(\0132\032.go" +
+      "ogle.protobuf.Timestamp\022/\n\013update_time\030\002" +
+      " \001(\0132\032.google.protobuf.Timestamp\022\025\n\rsucc" +
+      "ess_count\030\003 \001(\003\022\025\n\rfailure_count\030\004 \001(\003\022\022" +
+      "\n\nrequest_id\030\005 \001(\t\022!\n\031notification_pubsu" +
+      "b_topic\030\006 \001(\t\"\212\001\n\026ImportProductsResponse" +
+      "\022)\n\rerror_samples\030\001 \003(\0132\022.google.rpc.Sta" +
+      "tus\022E\n\rerrors_config\030\002 \001(\0132..google.clou" +
+      "d.retail.v2beta.ImportErrorsConfig\"\330\001\n\030I" +
+      "mportUserEventsResponse\022)\n\rerror_samples" +
+      "\030\001 \003(\0132\022.google.rpc.Status\022E\n\rerrors_con" +
+      "fig\030\002 \001(\0132..google.cloud.retail.v2beta.I" +
+      "mportErrorsConfig\022J\n\016import_summary\030\003 \001(" +
+      "\01322.google.cloud.retail.v2beta.UserEvent" +
+      "ImportSummary\"T\n\026UserEventImportSummary\022" +
+      "\033\n\023joined_events_count\030\001 \001(\003\022\035\n\025unjoined" +
+      "_events_count\030\002 \001(\003\"I\n\034ImportCompletionD" +
+      "ataResponse\022)\n\rerror_samples\030\001 \003(\0132\022.goo" +
+      "gle.rpc.StatusB\332\001\n\036com.google.cloud.reta" +
+      "il.v2betaB\021ImportConfigProtoP\001Z@google.g" +
+      "olang.org/genproto/googleapis/cloud/reta" +
+      "il/v2beta;retail\242\002\006RETAIL\252\002\032Google.Cloud" +
+      ".Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2b" +
+      "eta\352\002\035Google::Cloud::Retail::V2betab\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.retail.v2beta.ProductProto.getDescriptor(),
           com.google.cloud.retail.v2beta.UserEventProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.rpc.StatusProto.getDescriptor(),
+          com.google.type.DateProto.getDescriptor(),
         });
     internal_static_google_cloud_retail_v2beta_GcsSource_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -175,7 +214,7 @@ public final class ImportConfigProto {
     internal_static_google_cloud_retail_v2beta_BigQuerySource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_BigQuerySource_descriptor,
-        new java.lang.String[] { "ProjectId", "DatasetId", "TableId", "GcsStagingDir", "DataSchema", });
+        new java.lang.String[] { "PartitionDate", "ProjectId", "DatasetId", "TableId", "GcsStagingDir", "DataSchema", "Partition", });
     internal_static_google_cloud_retail_v2beta_ProductInlineSource_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_retail_v2beta_ProductInlineSource_fieldAccessorTable = new
@@ -199,61 +238,82 @@ public final class ImportConfigProto {
     internal_static_google_cloud_retail_v2beta_ImportProductsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_ImportProductsRequest_descriptor,
-        new java.lang.String[] { "Parent", "InputConfig", "ErrorsConfig", "UpdateMask", });
+        new java.lang.String[] { "Parent", "RequestId", "InputConfig", "ErrorsConfig", "UpdateMask", "ReconciliationMode", "NotificationPubsubTopic", });
     internal_static_google_cloud_retail_v2beta_ImportUserEventsRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_retail_v2beta_ImportUserEventsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_ImportUserEventsRequest_descriptor,
         new java.lang.String[] { "Parent", "InputConfig", "ErrorsConfig", });
-    internal_static_google_cloud_retail_v2beta_ProductInputConfig_descriptor =
+    internal_static_google_cloud_retail_v2beta_ImportCompletionDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_retail_v2beta_ImportCompletionDataRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_ImportCompletionDataRequest_descriptor,
+        new java.lang.String[] { "Parent", "InputConfig", "NotificationPubsubTopic", });
+    internal_static_google_cloud_retail_v2beta_ProductInputConfig_descriptor =
+      getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_retail_v2beta_ProductInputConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_ProductInputConfig_descriptor,
         new java.lang.String[] { "ProductInlineSource", "GcsSource", "BigQuerySource", "Source", });
     internal_static_google_cloud_retail_v2beta_UserEventInputConfig_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_retail_v2beta_UserEventInputConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_UserEventInputConfig_descriptor,
         new java.lang.String[] { "UserEventInlineSource", "GcsSource", "BigQuerySource", "Source", });
+    internal_static_google_cloud_retail_v2beta_CompletionDataInputConfig_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_retail_v2beta_CompletionDataInputConfig_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_CompletionDataInputConfig_descriptor,
+        new java.lang.String[] { "BigQuerySource", "Source", });
     internal_static_google_cloud_retail_v2beta_ImportMetadata_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_retail_v2beta_ImportMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_ImportMetadata_descriptor,
-        new java.lang.String[] { "CreateTime", "UpdateTime", "SuccessCount", "FailureCount", });
+        new java.lang.String[] { "CreateTime", "UpdateTime", "SuccessCount", "FailureCount", "RequestId", "NotificationPubsubTopic", });
     internal_static_google_cloud_retail_v2beta_ImportProductsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_retail_v2beta_ImportProductsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_ImportProductsResponse_descriptor,
         new java.lang.String[] { "ErrorSamples", "ErrorsConfig", });
     internal_static_google_cloud_retail_v2beta_ImportUserEventsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_retail_v2beta_ImportUserEventsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_ImportUserEventsResponse_descriptor,
         new java.lang.String[] { "ErrorSamples", "ErrorsConfig", "ImportSummary", });
     internal_static_google_cloud_retail_v2beta_UserEventImportSummary_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_retail_v2beta_UserEventImportSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_UserEventImportSummary_descriptor,
         new java.lang.String[] { "JoinedEventsCount", "UnjoinedEventsCount", });
+    internal_static_google_cloud_retail_v2beta_ImportCompletionDataResponse_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_retail_v2beta_ImportCompletionDataResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_ImportCompletionDataResponse_descriptor,
+        new java.lang.String[] { "ErrorSamples", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.retail.v2beta.ProductProto.getDescriptor();
     com.google.cloud.retail.v2beta.UserEventProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
+    com.google.type.DateProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

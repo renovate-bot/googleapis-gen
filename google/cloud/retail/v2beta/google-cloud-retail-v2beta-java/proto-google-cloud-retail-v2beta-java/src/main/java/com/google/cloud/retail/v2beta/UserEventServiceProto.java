@@ -53,63 +53,64 @@ public final class UserEventServiceProto {
       "a\032\034google/api/annotations.proto\032\027google/" +
       "api/client.proto\032\037google/api/field_behav" +
       "ior.proto\032\031google/api/httpbody.proto\032.go" +
-      "ogle/cloud/retail/v2beta/import_config.p" +
-      "roto\032-google/cloud/retail/v2beta/purge_c" +
-      "onfig.proto\032+google/cloud/retail/v2beta/" +
-      "user_event.proto\032#google/longrunning/ope" +
-      "rations.proto\"l\n\025WriteUserEventRequest\022\023" +
-      "\n\006parent\030\001 \001(\tB\003\340A\002\022>\n\nuser_event\030\002 \001(\0132" +
-      "%.google.cloud.retail.v2beta.UserEventB\003" +
-      "\340A\002\"a\n\027CollectUserEventRequest\022\023\n\006parent" +
-      "\030\001 \001(\tB\003\340A\002\022\027\n\nuser_event\030\002 \001(\tB\003\340A\002\022\013\n\003" +
-      "uri\030\003 \001(\t\022\013\n\003ets\030\004 \001(\003\"\202\002\n\027RejoinUserEve" +
-      "ntsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022i\n\027user_" +
-      "event_rejoin_scope\030\002 \001(\0162H.google.cloud." +
-      "retail.v2beta.RejoinUserEventsRequest.Us" +
-      "erEventRejoinScope\"g\n\024UserEventRejoinSco" +
-      "pe\022\'\n#USER_EVENT_REJOIN_SCOPE_UNSPECIFIE" +
-      "D\020\000\022\021\n\rJOINED_EVENTS\020\001\022\023\n\017UNJOINED_EVENT" +
-      "S\020\002\">\n\030RejoinUserEventsResponse\022\"\n\032rejoi" +
-      "ned_user_events_count\030\001 \001(\003\"\032\n\030RejoinUse" +
-      "rEventsMetadata2\373\t\n\020UserEventService\022\303\001\n" +
-      "\016WriteUserEvent\0221.google.cloud.retail.v2" +
-      "beta.WriteUserEventRequest\032%.google.clou" +
-      "d.retail.v2beta.UserEvent\"W\202\323\344\223\002Q\"C/v2be" +
-      "ta/{parent=projects/*/locations/*/catalo" +
-      "gs/*}/userEvents:write:\nuser_event\022\254\001\n\020C" +
-      "ollectUserEvent\0223.google.cloud.retail.v2" +
-      "beta.CollectUserEventRequest\032\024.google.ap" +
-      "i.HttpBody\"M\202\323\344\223\002G\022E/v2beta/{parent=proj" +
+      "ogle/cloud/retail/v2beta/export_config.p" +
+      "roto\032.google/cloud/retail/v2beta/import_" +
+      "config.proto\032-google/cloud/retail/v2beta" +
+      "/purge_config.proto\032+google/cloud/retail" +
+      "/v2beta/user_event.proto\032#google/longrun" +
+      "ning/operations.proto\"l\n\025WriteUserEventR" +
+      "equest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022>\n\nuser_even" +
+      "t\030\002 \001(\0132%.google.cloud.retail.v2beta.Use" +
+      "rEventB\003\340A\002\"a\n\027CollectUserEventRequest\022\023" +
+      "\n\006parent\030\001 \001(\tB\003\340A\002\022\027\n\nuser_event\030\002 \001(\tB" +
+      "\003\340A\002\022\013\n\003uri\030\003 \001(\t\022\013\n\003ets\030\004 \001(\003\"\202\002\n\027Rejoi" +
+      "nUserEventsRequest\022\023\n\006parent\030\001 \001(\tB\003\340A\002\022" +
+      "i\n\027user_event_rejoin_scope\030\002 \001(\0162H.googl" +
+      "e.cloud.retail.v2beta.RejoinUserEventsRe" +
+      "quest.UserEventRejoinScope\"g\n\024UserEventR" +
+      "ejoinScope\022\'\n#USER_EVENT_REJOIN_SCOPE_UN" +
+      "SPECIFIED\020\000\022\021\n\rJOINED_EVENTS\020\001\022\023\n\017UNJOIN" +
+      "ED_EVENTS\020\002\">\n\030RejoinUserEventsResponse\022" +
+      "\"\n\032rejoined_user_events_count\030\001 \001(\003\"\032\n\030R" +
+      "ejoinUserEventsMetadata2\373\t\n\020UserEventSer" +
+      "vice\022\303\001\n\016WriteUserEvent\0221.google.cloud.r" +
+      "etail.v2beta.WriteUserEventRequest\032%.goo" +
+      "gle.cloud.retail.v2beta.UserEvent\"W\202\323\344\223\002" +
+      "Q\"C/v2beta/{parent=projects/*/locations/" +
+      "*/catalogs/*}/userEvents:write:\nuser_eve" +
+      "nt\022\254\001\n\020CollectUserEvent\0223.google.cloud.r" +
+      "etail.v2beta.CollectUserEventRequest\032\024.g" +
+      "oogle.api.HttpBody\"M\202\323\344\223\002G\022E/v2beta/{par" +
+      "ent=projects/*/locations/*/catalogs/*}/u" +
+      "serEvents:collect\022\226\002\n\017PurgeUserEvents\0222." +
+      "google.cloud.retail.v2beta.PurgeUserEven" +
+      "tsRequest\032\035.google.longrunning.Operation" +
+      "\"\257\001\202\323\344\223\002H\"C/v2beta/{parent=projects/*/lo" +
+      "cations/*/catalogs/*}/userEvents:purge:\001" +
+      "*\312A^\n2google.cloud.retail.v2beta.PurgeUs" +
+      "erEventsResponse\022(google.cloud.retail.v2" +
+      "beta.PurgeMetadata\022\233\002\n\020ImportUserEvents\022" +
+      "3.google.cloud.retail.v2beta.ImportUserE" +
+      "ventsRequest\032\035.google.longrunning.Operat" +
+      "ion\"\262\001\202\323\344\223\002I\"D/v2beta/{parent=projects/*" +
+      "/locations/*/catalogs/*}/userEvents:impo" +
+      "rt:\001*\312A`\n3google.cloud.retail.v2beta.Imp" +
+      "ortUserEventsResponse\022)google.cloud.reta" +
+      "il.v2beta.ImportMetadata\022\357\001\n\020RejoinUserE" +
+      "vents\0223.google.cloud.retail.v2beta.Rejoi" +
+      "nUserEventsRequest\032\035.google.longrunning." +
+      "Operation\"\206\001\202\323\344\223\002I\"D/v2beta/{parent=proj" +
       "ects/*/locations/*/catalogs/*}/userEvent" +
-      "s:collect\022\226\002\n\017PurgeUserEvents\0222.google.c" +
-      "loud.retail.v2beta.PurgeUserEventsReques" +
-      "t\032\035.google.longrunning.Operation\"\257\001\202\323\344\223\002" +
-      "H\"C/v2beta/{parent=projects/*/locations/" +
-      "*/catalogs/*}/userEvents:purge:\001*\312A^\n2go" +
-      "ogle.cloud.retail.v2beta.PurgeUserEvents" +
-      "Response\022(google.cloud.retail.v2beta.Pur" +
-      "geMetadata\022\233\002\n\020ImportUserEvents\0223.google" +
-      ".cloud.retail.v2beta.ImportUserEventsReq" +
-      "uest\032\035.google.longrunning.Operation\"\262\001\202\323" +
-      "\344\223\002I\"D/v2beta/{parent=projects/*/locatio" +
-      "ns/*/catalogs/*}/userEvents:import:\001*\312A`" +
-      "\n3google.cloud.retail.v2beta.ImportUserE" +
-      "ventsResponse\022)google.cloud.retail.v2bet" +
-      "a.ImportMetadata\022\357\001\n\020RejoinUserEvents\0223." +
-      "google.cloud.retail.v2beta.RejoinUserEve" +
-      "ntsRequest\032\035.google.longrunning.Operatio" +
-      "n\"\206\001\202\323\344\223\002I\"D/v2beta/{parent=projects/*/l" +
-      "ocations/*/catalogs/*}/userEvents:rejoin" +
-      ":\001*\312A4\n\030RejoinUserEventsResponse\022\030Rejoin" +
-      "UserEventsMetadata\032I\312A\025retail.googleapis" +
-      ".com\322A.https://www.googleapis.com/auth/c" +
-      "loud-platformB\336\001\n\036com.google.cloud.retai" +
-      "l.v2betaB\025UserEventServiceProtoP\001Z@googl" +
-      "e.golang.org/genproto/googleapis/cloud/r" +
-      "etail/v2beta;retail\242\002\006RETAIL\252\002\032Google.Cl" +
-      "oud.Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\" +
-      "V2beta\352\002\035Google::Cloud::Retail::V2betab\006" +
-      "proto3"
+      "s:rejoin:\001*\312A4\n\030RejoinUserEventsResponse" +
+      "\022\030RejoinUserEventsMetadata\032I\312A\025retail.go" +
+      "ogleapis.com\322A.https://www.googleapis.co" +
+      "m/auth/cloud-platformB\336\001\n\036com.google.clo" +
+      "ud.retail.v2betaB\025UserEventServiceProtoP" +
+      "\001Z@google.golang.org/genproto/googleapis" +
+      "/cloud/retail/v2beta;retail\242\002\006RETAIL\252\002\032G" +
+      "oogle.Cloud.Retail.V2Beta\312\002\032Google\\Cloud" +
+      "\\Retail\\V2beta\352\002\035Google::Cloud::Retail::" +
+      "V2betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -118,6 +119,7 @@ public final class UserEventServiceProto {
           com.google.api.ClientProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.HttpBodyProto.getDescriptor(),
+          com.google.cloud.retail.v2beta.ExportConfigProto.getDescriptor(),
           com.google.cloud.retail.v2beta.ImportConfigProto.getDescriptor(),
           com.google.cloud.retail.v2beta.PurgeConfigProto.getDescriptor(),
           com.google.cloud.retail.v2beta.UserEventProto.getDescriptor(),
@@ -166,6 +168,7 @@ public final class UserEventServiceProto {
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.HttpBodyProto.getDescriptor();
+    com.google.cloud.retail.v2beta.ExportConfigProto.getDescriptor();
     com.google.cloud.retail.v2beta.ImportConfigProto.getDescriptor();
     com.google.cloud.retail.v2beta.PurgeConfigProto.getDescriptor();
     com.google.cloud.retail.v2beta.UserEventProto.getDescriptor();

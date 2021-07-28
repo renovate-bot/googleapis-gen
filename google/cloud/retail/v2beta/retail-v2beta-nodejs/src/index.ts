@@ -19,13 +19,17 @@
 import * as v2beta from './v2beta';
 const CatalogServiceClient = v2beta.CatalogServiceClient;
 type CatalogServiceClient = v2beta.CatalogServiceClient;
+const CompletionServiceClient = v2beta.CompletionServiceClient;
+type CompletionServiceClient = v2beta.CompletionServiceClient;
 const PredictionServiceClient = v2beta.PredictionServiceClient;
 type PredictionServiceClient = v2beta.PredictionServiceClient;
 const ProductServiceClient = v2beta.ProductServiceClient;
 type ProductServiceClient = v2beta.ProductServiceClient;
+const SearchServiceClient = v2beta.SearchServiceClient;
+type SearchServiceClient = v2beta.SearchServiceClient;
 const UserEventServiceClient = v2beta.UserEventServiceClient;
 type UserEventServiceClient = v2beta.UserEventServiceClient;
-export {v2beta, CatalogServiceClient, PredictionServiceClient, ProductServiceClient, UserEventServiceClient};
-export default {v2beta, CatalogServiceClient, PredictionServiceClient, ProductServiceClient, UserEventServiceClient};
+export {v2beta, CatalogServiceClient, CompletionServiceClient, PredictionServiceClient, ProductServiceClient, SearchServiceClient, UserEventServiceClient};
+export default {v2beta, CatalogServiceClient, CompletionServiceClient, PredictionServiceClient, ProductServiceClient, SearchServiceClient, UserEventServiceClient};
 import * as protos from '../protos/protos';
 export {protos}

@@ -16,24 +16,46 @@
 
 from google.cloud.retail_v2beta.services.catalog_service.client import CatalogServiceClient
 from google.cloud.retail_v2beta.services.catalog_service.async_client import CatalogServiceAsyncClient
+from google.cloud.retail_v2beta.services.completion_service.client import CompletionServiceClient
+from google.cloud.retail_v2beta.services.completion_service.async_client import CompletionServiceAsyncClient
 from google.cloud.retail_v2beta.services.prediction_service.client import PredictionServiceClient
 from google.cloud.retail_v2beta.services.prediction_service.async_client import PredictionServiceAsyncClient
 from google.cloud.retail_v2beta.services.product_service.client import ProductServiceClient
 from google.cloud.retail_v2beta.services.product_service.async_client import ProductServiceAsyncClient
+from google.cloud.retail_v2beta.services.search_service.client import SearchServiceClient
+from google.cloud.retail_v2beta.services.search_service.async_client import SearchServiceAsyncClient
 from google.cloud.retail_v2beta.services.user_event_service.client import UserEventServiceClient
 from google.cloud.retail_v2beta.services.user_event_service.async_client import UserEventServiceAsyncClient
 
 from google.cloud.retail_v2beta.types.catalog import Catalog
 from google.cloud.retail_v2beta.types.catalog import ProductLevelConfig
+from google.cloud.retail_v2beta.types.catalog_service import GetDefaultBranchRequest
+from google.cloud.retail_v2beta.types.catalog_service import GetDefaultBranchResponse
 from google.cloud.retail_v2beta.types.catalog_service import ListCatalogsRequest
 from google.cloud.retail_v2beta.types.catalog_service import ListCatalogsResponse
+from google.cloud.retail_v2beta.types.catalog_service import SetDefaultBranchRequest
 from google.cloud.retail_v2beta.types.catalog_service import UpdateCatalogRequest
+from google.cloud.retail_v2beta.types.common import Audience
+from google.cloud.retail_v2beta.types.common import ColorInfo
 from google.cloud.retail_v2beta.types.common import CustomAttribute
+from google.cloud.retail_v2beta.types.common import FulfillmentInfo
 from google.cloud.retail_v2beta.types.common import Image
+from google.cloud.retail_v2beta.types.common import Interval
 from google.cloud.retail_v2beta.types.common import PriceInfo
+from google.cloud.retail_v2beta.types.common import Promotion
+from google.cloud.retail_v2beta.types.common import Rating
 from google.cloud.retail_v2beta.types.common import UserInfo
+from google.cloud.retail_v2beta.types.completion_service import CompleteQueryRequest
+from google.cloud.retail_v2beta.types.completion_service import CompleteQueryResponse
+from google.cloud.retail_v2beta.types.export_config import ExportErrorsConfig
+from google.cloud.retail_v2beta.types.export_config import ExportMetadata
+from google.cloud.retail_v2beta.types.export_config import ExportProductsResponse
+from google.cloud.retail_v2beta.types.export_config import ExportUserEventsResponse
 from google.cloud.retail_v2beta.types.import_config import BigQuerySource
+from google.cloud.retail_v2beta.types.import_config import CompletionDataInputConfig
 from google.cloud.retail_v2beta.types.import_config import GcsSource
+from google.cloud.retail_v2beta.types.import_config import ImportCompletionDataRequest
+from google.cloud.retail_v2beta.types.import_config import ImportCompletionDataResponse
 from google.cloud.retail_v2beta.types.import_config import ImportErrorsConfig
 from google.cloud.retail_v2beta.types.import_config import ImportMetadata
 from google.cloud.retail_v2beta.types.import_config import ImportProductsRequest
@@ -48,13 +70,27 @@ from google.cloud.retail_v2beta.types.import_config import UserEventInputConfig
 from google.cloud.retail_v2beta.types.prediction_service import PredictRequest
 from google.cloud.retail_v2beta.types.prediction_service import PredictResponse
 from google.cloud.retail_v2beta.types.product import Product
+from google.cloud.retail_v2beta.types.product_service import AddFulfillmentPlacesMetadata
+from google.cloud.retail_v2beta.types.product_service import AddFulfillmentPlacesRequest
+from google.cloud.retail_v2beta.types.product_service import AddFulfillmentPlacesResponse
 from google.cloud.retail_v2beta.types.product_service import CreateProductRequest
 from google.cloud.retail_v2beta.types.product_service import DeleteProductRequest
 from google.cloud.retail_v2beta.types.product_service import GetProductRequest
+from google.cloud.retail_v2beta.types.product_service import ListProductsRequest
+from google.cloud.retail_v2beta.types.product_service import ListProductsResponse
+from google.cloud.retail_v2beta.types.product_service import RemoveFulfillmentPlacesMetadata
+from google.cloud.retail_v2beta.types.product_service import RemoveFulfillmentPlacesRequest
+from google.cloud.retail_v2beta.types.product_service import RemoveFulfillmentPlacesResponse
+from google.cloud.retail_v2beta.types.product_service import SetInventoryMetadata
+from google.cloud.retail_v2beta.types.product_service import SetInventoryRequest
+from google.cloud.retail_v2beta.types.product_service import SetInventoryResponse
 from google.cloud.retail_v2beta.types.product_service import UpdateProductRequest
 from google.cloud.retail_v2beta.types.purge_config import PurgeMetadata
 from google.cloud.retail_v2beta.types.purge_config import PurgeUserEventsRequest
 from google.cloud.retail_v2beta.types.purge_config import PurgeUserEventsResponse
+from google.cloud.retail_v2beta.types.search_service import SearchRequest
+from google.cloud.retail_v2beta.types.search_service import SearchResponse
+from google.cloud.retail_v2beta.types.user_event import CompletionDetail
 from google.cloud.retail_v2beta.types.user_event import ProductDetail
 from google.cloud.retail_v2beta.types.user_event import PurchaseTransaction
 from google.cloud.retail_v2beta.types.user_event import UserEvent
@@ -66,23 +102,45 @@ from google.cloud.retail_v2beta.types.user_event_service import WriteUserEventRe
 
 __all__ = ('CatalogServiceClient',
     'CatalogServiceAsyncClient',
+    'CompletionServiceClient',
+    'CompletionServiceAsyncClient',
     'PredictionServiceClient',
     'PredictionServiceAsyncClient',
     'ProductServiceClient',
     'ProductServiceAsyncClient',
+    'SearchServiceClient',
+    'SearchServiceAsyncClient',
     'UserEventServiceClient',
     'UserEventServiceAsyncClient',
     'Catalog',
     'ProductLevelConfig',
+    'GetDefaultBranchRequest',
+    'GetDefaultBranchResponse',
     'ListCatalogsRequest',
     'ListCatalogsResponse',
+    'SetDefaultBranchRequest',
     'UpdateCatalogRequest',
+    'Audience',
+    'ColorInfo',
     'CustomAttribute',
+    'FulfillmentInfo',
     'Image',
+    'Interval',
     'PriceInfo',
+    'Promotion',
+    'Rating',
     'UserInfo',
+    'CompleteQueryRequest',
+    'CompleteQueryResponse',
+    'ExportErrorsConfig',
+    'ExportMetadata',
+    'ExportProductsResponse',
+    'ExportUserEventsResponse',
     'BigQuerySource',
+    'CompletionDataInputConfig',
     'GcsSource',
+    'ImportCompletionDataRequest',
+    'ImportCompletionDataResponse',
     'ImportErrorsConfig',
     'ImportMetadata',
     'ImportProductsRequest',
@@ -97,13 +155,27 @@ __all__ = ('CatalogServiceClient',
     'PredictRequest',
     'PredictResponse',
     'Product',
+    'AddFulfillmentPlacesMetadata',
+    'AddFulfillmentPlacesRequest',
+    'AddFulfillmentPlacesResponse',
     'CreateProductRequest',
     'DeleteProductRequest',
     'GetProductRequest',
+    'ListProductsRequest',
+    'ListProductsResponse',
+    'RemoveFulfillmentPlacesMetadata',
+    'RemoveFulfillmentPlacesRequest',
+    'RemoveFulfillmentPlacesResponse',
+    'SetInventoryMetadata',
+    'SetInventoryRequest',
+    'SetInventoryResponse',
     'UpdateProductRequest',
     'PurgeMetadata',
     'PurgeUserEventsRequest',
     'PurgeUserEventsResponse',
+    'SearchRequest',
+    'SearchResponse',
+    'CompletionDetail',
     'ProductDetail',
     'PurchaseTransaction',
     'UserEvent',

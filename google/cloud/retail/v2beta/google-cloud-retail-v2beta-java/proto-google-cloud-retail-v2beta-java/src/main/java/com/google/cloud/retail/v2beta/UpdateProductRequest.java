@@ -78,6 +78,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 24: {
+
+            allowMissing_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -119,7 +124,9 @@ private static final long serialVersionUID = 0L;
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-   * exist, a NOT_FOUND error is returned.
+   * exist and
+   * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -136,7 +143,9 @@ private static final long serialVersionUID = 0L;
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-   * exist, a NOT_FOUND error is returned.
+   * exist and
+   * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -153,7 +162,9 @@ private static final long serialVersionUID = 0L;
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-   * exist, a NOT_FOUND error is returned.
+   * exist and
+   * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -216,6 +227,23 @@ private static final long serialVersionUID = 0L;
     return getUpdateMask();
   }
 
+  public static final int ALLOW_MISSING_FIELD_NUMBER = 3;
+  private boolean allowMissing_;
+  /**
+   * <pre>
+   * If set to true, and the [Product][google.cloud.retail.v2beta.Product] is
+   * not found, a new [Product][google.cloud.retail.v2beta.Product] will be
+   * created. In this situation, `update_mask` is ignored.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   * @return The allowMissing.
+   */
+  @java.lang.Override
+  public boolean getAllowMissing() {
+    return allowMissing_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -236,6 +264,9 @@ private static final long serialVersionUID = 0L;
     if (updateMask_ != null) {
       output.writeMessage(2, getUpdateMask());
     }
+    if (allowMissing_ != false) {
+      output.writeBool(3, allowMissing_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -252,6 +283,10 @@ private static final long serialVersionUID = 0L;
     if (updateMask_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getUpdateMask());
+    }
+    if (allowMissing_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, allowMissing_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -278,6 +313,8 @@ private static final long serialVersionUID = 0L;
       if (!getUpdateMask()
           .equals(other.getUpdateMask())) return false;
     }
+    if (getAllowMissing()
+        != other.getAllowMissing()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -297,6 +334,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + UPDATE_MASK_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateMask().hashCode();
     }
+    hash = (37 * hash) + ALLOW_MISSING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAllowMissing());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -446,6 +486,8 @@ private static final long serialVersionUID = 0L;
         updateMask_ = null;
         updateMaskBuilder_ = null;
       }
+      allowMissing_ = false;
+
       return this;
     }
 
@@ -482,6 +524,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.updateMask_ = updateMaskBuilder_.build();
       }
+      result.allowMissing_ = allowMissing_;
       onBuilt();
       return result;
     }
@@ -536,6 +579,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasUpdateMask()) {
         mergeUpdateMask(other.getUpdateMask());
       }
+      if (other.getAllowMissing() != false) {
+        setAllowMissing(other.getAllowMissing());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -575,7 +621,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -591,7 +639,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -611,7 +661,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -636,7 +688,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -659,7 +713,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -686,7 +742,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -709,7 +767,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -726,7 +786,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -746,7 +808,9 @@ private static final long serialVersionUID = 0L;
      * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
      * it exists, a PERMISSION_DENIED error is returned.
      * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-     * exist, a NOT_FOUND error is returned.
+     * exist and
+     * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+     * is not set, a NOT_FOUND error is returned.
      * </pre>
      *
      * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -963,6 +1027,55 @@ private static final long serialVersionUID = 0L;
         updateMask_ = null;
       }
       return updateMaskBuilder_;
+    }
+
+    private boolean allowMissing_ ;
+    /**
+     * <pre>
+     * If set to true, and the [Product][google.cloud.retail.v2beta.Product] is
+     * not found, a new [Product][google.cloud.retail.v2beta.Product] will be
+     * created. In this situation, `update_mask` is ignored.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @return The allowMissing.
+     */
+    @java.lang.Override
+    public boolean getAllowMissing() {
+      return allowMissing_;
+    }
+    /**
+     * <pre>
+     * If set to true, and the [Product][google.cloud.retail.v2beta.Product] is
+     * not found, a new [Product][google.cloud.retail.v2beta.Product] will be
+     * created. In this situation, `update_mask` is ignored.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @param value The allowMissing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAllowMissing(boolean value) {
+      
+      allowMissing_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If set to true, and the [Product][google.cloud.retail.v2beta.Product] is
+     * not found, a new [Product][google.cloud.retail.v2beta.Product] will be
+     * created. In this situation, `update_mask` is ignored.
+     * </pre>
+     *
+     * <code>bool allow_missing = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAllowMissing() {
+      
+      allowMissing_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

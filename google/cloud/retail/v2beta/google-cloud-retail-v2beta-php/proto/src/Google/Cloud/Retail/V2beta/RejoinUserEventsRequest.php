@@ -17,7 +17,7 @@ class RejoinUserEventsRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -40,7 +40,7 @@ class RejoinUserEventsRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The parent catalog resource name, such as
-     *           "projects/1234/locations/global/catalogs/default_catalog".
+     *           `projects/1234/locations/global/catalogs/default_catalog`.
      *     @type int $user_event_rejoin_scope
      *           The type of the user event rejoin to define the scope and range of the user
      *           events to be rejoined with the latest product catalog. Defaults to
@@ -55,7 +55,7 @@ class RejoinUserEventsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -67,7 +67,7 @@ class RejoinUserEventsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

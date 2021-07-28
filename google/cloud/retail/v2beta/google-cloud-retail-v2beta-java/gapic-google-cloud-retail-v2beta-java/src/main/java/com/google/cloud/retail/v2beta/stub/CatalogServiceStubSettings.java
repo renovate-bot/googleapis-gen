@@ -41,13 +41,17 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2beta.Catalog;
+import com.google.cloud.retail.v2beta.GetDefaultBranchRequest;
+import com.google.cloud.retail.v2beta.GetDefaultBranchResponse;
 import com.google.cloud.retail.v2beta.ListCatalogsRequest;
 import com.google.cloud.retail.v2beta.ListCatalogsResponse;
+import com.google.cloud.retail.v2beta.SetDefaultBranchRequest;
 import com.google.cloud.retail.v2beta.UpdateCatalogRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -96,6 +100,9 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
           ListCatalogsRequest, ListCatalogsResponse, ListCatalogsPagedResponse>
       listCatalogsSettings;
   private final UnaryCallSettings<UpdateCatalogRequest, Catalog> updateCatalogSettings;
+  private final UnaryCallSettings<SetDefaultBranchRequest, Empty> setDefaultBranchSettings;
+  private final UnaryCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
+      getDefaultBranchSettings;
 
   private static final PagedListDescriptor<ListCatalogsRequest, ListCatalogsResponse, Catalog>
       LIST_CATALOGS_PAGE_STR_DESC =
@@ -159,6 +166,17 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
   /** Returns the object with the settings used for calls to updateCatalog. */
   public UnaryCallSettings<UpdateCatalogRequest, Catalog> updateCatalogSettings() {
     return updateCatalogSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setDefaultBranch. */
+  public UnaryCallSettings<SetDefaultBranchRequest, Empty> setDefaultBranchSettings() {
+    return setDefaultBranchSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDefaultBranch. */
+  public UnaryCallSettings<GetDefaultBranchRequest, GetDefaultBranchResponse>
+      getDefaultBranchSettings() {
+    return getDefaultBranchSettings;
   }
 
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
@@ -237,6 +255,8 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
     listCatalogsSettings = settingsBuilder.listCatalogsSettings().build();
     updateCatalogSettings = settingsBuilder.updateCatalogSettings().build();
+    setDefaultBranchSettings = settingsBuilder.setDefaultBranchSettings().build();
+    getDefaultBranchSettings = settingsBuilder.getDefaultBranchSettings().build();
   }
 
   /** Builder for CatalogServiceStubSettings. */
@@ -246,6 +266,10 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
             ListCatalogsRequest, ListCatalogsResponse, ListCatalogsPagedResponse>
         listCatalogsSettings;
     private final UnaryCallSettings.Builder<UpdateCatalogRequest, Catalog> updateCatalogSettings;
+    private final UnaryCallSettings.Builder<SetDefaultBranchRequest, Empty>
+        setDefaultBranchSettings;
+    private final UnaryCallSettings.Builder<GetDefaultBranchRequest, GetDefaultBranchResponse>
+        getDefaultBranchSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -288,10 +312,15 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       listCatalogsSettings = PagedCallSettings.newBuilder(LIST_CATALOGS_PAGE_STR_FACT);
       updateCatalogSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setDefaultBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getDefaultBranchSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listCatalogsSettings, updateCatalogSettings);
+              listCatalogsSettings,
+              updateCatalogSettings,
+              setDefaultBranchSettings,
+              getDefaultBranchSettings);
       initDefaults(this);
     }
 
@@ -300,10 +329,15 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       listCatalogsSettings = settings.listCatalogsSettings.toBuilder();
       updateCatalogSettings = settings.updateCatalogSettings.toBuilder();
+      setDefaultBranchSettings = settings.setDefaultBranchSettings.toBuilder();
+      getDefaultBranchSettings = settings.getDefaultBranchSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listCatalogsSettings, updateCatalogSettings);
+              listCatalogsSettings,
+              updateCatalogSettings,
+              setDefaultBranchSettings,
+              getDefaultBranchSettings);
     }
 
     private static Builder createDefault() {
@@ -327,6 +361,16 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
 
       builder
           .updateCatalogSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .setDefaultBranchSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getDefaultBranchSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -359,6 +403,17 @@ public class CatalogServiceStubSettings extends StubSettings<CatalogServiceStubS
     /** Returns the builder for the settings used for calls to updateCatalog. */
     public UnaryCallSettings.Builder<UpdateCatalogRequest, Catalog> updateCatalogSettings() {
       return updateCatalogSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setDefaultBranch. */
+    public UnaryCallSettings.Builder<SetDefaultBranchRequest, Empty> setDefaultBranchSettings() {
+      return setDefaultBranchSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDefaultBranch. */
+    public UnaryCallSettings.Builder<GetDefaultBranchRequest, GetDefaultBranchResponse>
+        getDefaultBranchSettings() {
+      return getDefaultBranchSettings;
     }
 
     @Override

@@ -39,29 +39,49 @@ namespace Google.Cloud.Retail.V2Beta {
             "cGFnZV90b2tlbhgCIAEoCSKCAQoUVXBkYXRlQ2F0YWxvZ1JlcXVlc3QSOQoH",
             "Y2F0YWxvZxgBIAEoCzIjLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLkNh",
             "dGFsb2dCA+BBAhIvCgt1cGRhdGVfbWFzaxgCIAEoCzIaLmdvb2dsZS5wcm90",
-            "b2J1Zi5GaWVsZE1hc2sy3AMKDkNhdGFsb2dTZXJ2aWNlErQBCgxMaXN0Q2F0",
-            "YWxvZ3MSLy5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5MaXN0Q2F0YWxv",
-            "Z3NSZXF1ZXN0GjAuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEuTGlzdENh",
-            "dGFsb2dzUmVzcG9uc2UiQYLT5JMCMhIwL3YyYmV0YS97cGFyZW50PXByb2pl",
-            "Y3RzLyovbG9jYXRpb25zLyp9L2NhdGFsb2dz2kEGcGFyZW50EscBCg1VcGRh",
-            "dGVDYXRhbG9nEjAuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEuVXBkYXRl",
-            "Q2F0YWxvZ1JlcXVlc3QaIy5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5D",
-            "YXRhbG9nIl+C0+STAkMyOC92MmJldGEve2NhdGFsb2cubmFtZT1wcm9qZWN0",
-            "cy8qL2xvY2F0aW9ucy8qL2NhdGFsb2dzLyp9OgdjYXRhbG9n2kETY2F0YWxv",
-            "Zyx1cGRhdGVfbWFzaxpJykEVcmV0YWlsLmdvb2dsZWFwaXMuY29t0kEuaHR0",
-            "cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybULc",
-            "AQoeY29tLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhQhNDYXRhbG9nU2Vy",
-            "dmljZVByb3RvUAFaQGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2ds",
-            "ZWFwaXMvY2xvdWQvcmV0YWlsL3YyYmV0YTtyZXRhaWyiAgZSRVRBSUyqAhpH",
-            "b29nbGUuQ2xvdWQuUmV0YWlsLlYyQmV0YcoCGkdvb2dsZVxDbG91ZFxSZXRh",
-            "aWxcVjJiZXRh6gIdR29vZ2xlOjpDbG91ZDo6UmV0YWlsOjpWMmJldGFiBnBy",
-            "b3RvMw=="));
+            "b2J1Zi5GaWVsZE1hc2sikgEKF1NldERlZmF1bHRCcmFuY2hSZXF1ZXN0EjMK",
+            "B2NhdGFsb2cYASABKAlCIvpBHwodcmV0YWlsLmdvb2dsZWFwaXMuY29tL0Nh",
+            "dGFsb2cSNAoJYnJhbmNoX2lkGAIgASgJQiH6QR4KHHJldGFpbC5nb29nbGVh",
+            "cGlzLmNvbS9CcmFuY2gSDAoEbm90ZRgDIAEoCSJOChdHZXREZWZhdWx0QnJh",
+            "bmNoUmVxdWVzdBIzCgdjYXRhbG9nGAEgASgJQiL6QR8KHXJldGFpbC5nb29n",
+            "bGVhcGlzLmNvbS9DYXRhbG9nIokBChhHZXREZWZhdWx0QnJhbmNoUmVzcG9u",
+            "c2USMQoGYnJhbmNoGAEgASgJQiH6QR4KHHJldGFpbC5nb29nbGVhcGlzLmNv",
+            "bS9CcmFuY2gSLAoIc2V0X3RpbWUYAiABKAsyGi5nb29nbGUucHJvdG9idWYu",
+            "VGltZXN0YW1wEgwKBG5vdGUYAyABKAky8QYKDkNhdGFsb2dTZXJ2aWNlErQB",
+            "CgxMaXN0Q2F0YWxvZ3MSLy5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5M",
+            "aXN0Q2F0YWxvZ3NSZXF1ZXN0GjAuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJl",
+            "dGEuTGlzdENhdGFsb2dzUmVzcG9uc2UiQYLT5JMCMhIwL3YyYmV0YS97cGFy",
+            "ZW50PXByb2plY3RzLyovbG9jYXRpb25zLyp9L2NhdGFsb2dz2kEGcGFyZW50",
+            "EscBCg1VcGRhdGVDYXRhbG9nEjAuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJl",
+            "dGEuVXBkYXRlQ2F0YWxvZ1JlcXVlc3QaIy5nb29nbGUuY2xvdWQucmV0YWls",
+            "LnYyYmV0YS5DYXRhbG9nIl+C0+STAkMyOC92MmJldGEve2NhdGFsb2cubmFt",
+            "ZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2NhdGFsb2dzLyp9OgdjYXRhbG9n",
+            "2kETY2F0YWxvZyx1cGRhdGVfbWFzaxK6AQoQU2V0RGVmYXVsdEJyYW5jaBIz",
+            "Lmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLlNldERlZmF1bHRCcmFuY2hS",
+            "ZXF1ZXN0GhYuZ29vZ2xlLnByb3RvYnVmLkVtcHR5IlmC0+STAkkiRC92MmJl",
+            "dGEve2NhdGFsb2c9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9jYXRhbG9ncy8q",
+            "fTpzZXREZWZhdWx0QnJhbmNoOgEq2kEHY2F0YWxvZxLVAQoQR2V0RGVmYXVs",
+            "dEJyYW5jaBIzLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLkdldERlZmF1",
+            "bHRCcmFuY2hSZXF1ZXN0GjQuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEu",
+            "R2V0RGVmYXVsdEJyYW5jaFJlc3BvbnNlIlaC0+STAkYSRC92MmJldGEve2Nh",
+            "dGFsb2c9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9jYXRhbG9ncy8qfTpnZXRE",
+            "ZWZhdWx0QnJhbmNo2kEHY2F0YWxvZxpJykEVcmV0YWlsLmdvb2dsZWFwaXMu",
+            "Y29t0kEuaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1w",
+            "bGF0Zm9ybULcAQoeY29tLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhQhND",
+            "YXRhbG9nU2VydmljZVByb3RvUAFaQGdvb2dsZS5nb2xhbmcub3JnL2dlbnBy",
+            "b3RvL2dvb2dsZWFwaXMvY2xvdWQvcmV0YWlsL3YyYmV0YTtyZXRhaWyiAgZS",
+            "RVRBSUyqAhpHb29nbGUuQ2xvdWQuUmV0YWlsLlYyQmV0YcoCGkdvb2dsZVxD",
+            "bG91ZFxSZXRhaWxcVjJiZXRh6gIdR29vZ2xlOjpDbG91ZDo6UmV0YWlsOjpW",
+            "MmJldGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Retail.V2Beta.CatalogReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.ListCatalogsRequest), global::Google.Cloud.Retail.V2Beta.ListCatalogsRequest.Parser, new[]{ "Parent", "PageSize", "PageToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.ListCatalogsResponse), global::Google.Cloud.Retail.V2Beta.ListCatalogsResponse.Parser, new[]{ "Catalogs", "NextPageToken" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.UpdateCatalogRequest), global::Google.Cloud.Retail.V2Beta.UpdateCatalogRequest.Parser, new[]{ "Catalog", "UpdateMask" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.UpdateCatalogRequest), global::Google.Cloud.Retail.V2Beta.UpdateCatalogRequest.Parser, new[]{ "Catalog", "UpdateMask" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SetDefaultBranchRequest), global::Google.Cloud.Retail.V2Beta.SetDefaultBranchRequest.Parser, new[]{ "Catalog", "BranchId", "Note" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.GetDefaultBranchRequest), global::Google.Cloud.Retail.V2Beta.GetDefaultBranchRequest.Parser, new[]{ "Catalog" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.GetDefaultBranchResponse), global::Google.Cloud.Retail.V2Beta.GetDefaultBranchResponse.Parser, new[]{ "Branch", "SetTime", "Note" }, null, null, null, null)
           }));
     }
     #endregion
@@ -625,10 +645,7 @@ namespace Google.Cloud.Retail.V2Beta {
     private global::Google.Protobuf.WellKnownTypes.FieldMask updateMask_;
     /// <summary>
     /// Indicates which fields in the provided
-    /// [Catalog][google.cloud.retail.v2beta.Catalog] to update. If not set, will
-    /// only update the
-    /// [Catalog.product_level_config][google.cloud.retail.v2beta.Catalog.product_level_config]
-    /// field, which is also the only currently supported field to update.
+    /// [Catalog][google.cloud.retail.v2beta.Catalog] to update.
     ///
     /// If an unsupported or unknown field is provided, an INVALID_ARGUMENT error
     /// is returned.
@@ -797,6 +814,718 @@ namespace Google.Cloud.Retail.V2Beta {
               UpdateMask = new global::Google.Protobuf.WellKnownTypes.FieldMask();
             }
             input.ReadMessage(UpdateMask);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Request message to set a specified branch as new default_branch.
+  /// </summary>
+  public sealed partial class SetDefaultBranchRequest : pb::IMessage<SetDefaultBranchRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<SetDefaultBranchRequest> _parser = new pb::MessageParser<SetDefaultBranchRequest>(() => new SetDefaultBranchRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<SetDefaultBranchRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CatalogServiceReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetDefaultBranchRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetDefaultBranchRequest(SetDefaultBranchRequest other) : this() {
+      catalog_ = other.catalog_;
+      branchId_ = other.branchId_;
+      note_ = other.note_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public SetDefaultBranchRequest Clone() {
+      return new SetDefaultBranchRequest(this);
+    }
+
+    /// <summary>Field number for the "catalog" field.</summary>
+    public const int CatalogFieldNumber = 1;
+    private string catalog_ = "";
+    /// <summary>
+    /// Full resource name of the catalog, such as
+    /// `projects/*/locations/global/catalogs/default_catalog`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Catalog {
+      get { return catalog_; }
+      set {
+        catalog_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "branch_id" field.</summary>
+    public const int BranchIdFieldNumber = 2;
+    private string branchId_ = "";
+    /// <summary>
+    /// The final component of the resource name of a branch.
+    ///
+    /// This field must be one of "0", "1" or "2". Otherwise, an INVALID_ARGUMENT
+    /// error is returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string BranchId {
+      get { return branchId_; }
+      set {
+        branchId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "note" field.</summary>
+    public const int NoteFieldNumber = 3;
+    private string note_ = "";
+    /// <summary>
+    /// Some note on this request, this can be retrieved by
+    /// [CatalogService.GetDefaultBranch][google.cloud.retail.v2beta.CatalogService.GetDefaultBranch]
+    /// before next valid default branch set occurs.
+    ///
+    /// This field must be a UTF-8 encoded string with a length limit of 1,000
+    /// characters. Otherwise, an INVALID_ARGUMENT error is returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Note {
+      get { return note_; }
+      set {
+        note_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as SetDefaultBranchRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(SetDefaultBranchRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Catalog != other.Catalog) return false;
+      if (BranchId != other.BranchId) return false;
+      if (Note != other.Note) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Catalog.Length != 0) hash ^= Catalog.GetHashCode();
+      if (BranchId.Length != 0) hash ^= BranchId.GetHashCode();
+      if (Note.Length != 0) hash ^= Note.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Catalog.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Catalog);
+      }
+      if (BranchId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(BranchId);
+      }
+      if (Note.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Note);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Catalog.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Catalog);
+      }
+      if (BranchId.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(BranchId);
+      }
+      if (Note.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Note);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Catalog.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Catalog);
+      }
+      if (BranchId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(BranchId);
+      }
+      if (Note.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Note);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(SetDefaultBranchRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Catalog.Length != 0) {
+        Catalog = other.Catalog;
+      }
+      if (other.BranchId.Length != 0) {
+        BranchId = other.BranchId;
+      }
+      if (other.Note.Length != 0) {
+        Note = other.Note;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Catalog = input.ReadString();
+            break;
+          }
+          case 18: {
+            BranchId = input.ReadString();
+            break;
+          }
+          case 26: {
+            Note = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Catalog = input.ReadString();
+            break;
+          }
+          case 18: {
+            BranchId = input.ReadString();
+            break;
+          }
+          case 26: {
+            Note = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Request message to show which branch is currently the default branch.
+  /// </summary>
+  public sealed partial class GetDefaultBranchRequest : pb::IMessage<GetDefaultBranchRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetDefaultBranchRequest> _parser = new pb::MessageParser<GetDefaultBranchRequest>(() => new GetDefaultBranchRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GetDefaultBranchRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CatalogServiceReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDefaultBranchRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDefaultBranchRequest(GetDefaultBranchRequest other) : this() {
+      catalog_ = other.catalog_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDefaultBranchRequest Clone() {
+      return new GetDefaultBranchRequest(this);
+    }
+
+    /// <summary>Field number for the "catalog" field.</summary>
+    public const int CatalogFieldNumber = 1;
+    private string catalog_ = "";
+    /// <summary>
+    /// The parent catalog resource name, such as
+    /// `projects/*/locations/global/catalogs/default_catalog`.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Catalog {
+      get { return catalog_; }
+      set {
+        catalog_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GetDefaultBranchRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GetDefaultBranchRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Catalog != other.Catalog) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Catalog.Length != 0) hash ^= Catalog.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Catalog.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Catalog);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Catalog.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Catalog);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Catalog.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Catalog);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GetDefaultBranchRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Catalog.Length != 0) {
+        Catalog = other.Catalog;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Catalog = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Catalog = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Response message of
+  /// [CatalogService.GetDefaultBranch][google.cloud.retail.v2beta.CatalogService.GetDefaultBranch].
+  /// </summary>
+  public sealed partial class GetDefaultBranchResponse : pb::IMessage<GetDefaultBranchResponse>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GetDefaultBranchResponse> _parser = new pb::MessageParser<GetDefaultBranchResponse>(() => new GetDefaultBranchResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GetDefaultBranchResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CatalogServiceReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDefaultBranchResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDefaultBranchResponse(GetDefaultBranchResponse other) : this() {
+      branch_ = other.branch_;
+      setTime_ = other.setTime_ != null ? other.setTime_.Clone() : null;
+      note_ = other.note_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GetDefaultBranchResponse Clone() {
+      return new GetDefaultBranchResponse(this);
+    }
+
+    /// <summary>Field number for the "branch" field.</summary>
+    public const int BranchFieldNumber = 1;
+    private string branch_ = "";
+    /// <summary>
+    /// Full resource name of the branch id currently set as default branch.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Branch {
+      get { return branch_; }
+      set {
+        branch_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "set_time" field.</summary>
+    public const int SetTimeFieldNumber = 2;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp setTime_;
+    /// <summary>
+    /// The time when this branch is set to default.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp SetTime {
+      get { return setTime_; }
+      set {
+        setTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "note" field.</summary>
+    public const int NoteFieldNumber = 3;
+    private string note_ = "";
+    /// <summary>
+    /// This corresponds to
+    /// [SetDefaultBranchRequest.note][google.cloud.retail.v2beta.SetDefaultBranchRequest.note]
+    /// field, when this branch was set as default.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Note {
+      get { return note_; }
+      set {
+        note_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GetDefaultBranchResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GetDefaultBranchResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Branch != other.Branch) return false;
+      if (!object.Equals(SetTime, other.SetTime)) return false;
+      if (Note != other.Note) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Branch.Length != 0) hash ^= Branch.GetHashCode();
+      if (setTime_ != null) hash ^= SetTime.GetHashCode();
+      if (Note.Length != 0) hash ^= Note.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Branch.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Branch);
+      }
+      if (setTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SetTime);
+      }
+      if (Note.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Note);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Branch.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Branch);
+      }
+      if (setTime_ != null) {
+        output.WriteRawTag(18);
+        output.WriteMessage(SetTime);
+      }
+      if (Note.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Note);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Branch.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Branch);
+      }
+      if (setTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(SetTime);
+      }
+      if (Note.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Note);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GetDefaultBranchResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Branch.Length != 0) {
+        Branch = other.Branch;
+      }
+      if (other.setTime_ != null) {
+        if (setTime_ == null) {
+          SetTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        SetTime.MergeFrom(other.SetTime);
+      }
+      if (other.Note.Length != 0) {
+        Note = other.Note;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Branch = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (setTime_ == null) {
+              SetTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(SetTime);
+            break;
+          }
+          case 26: {
+            Note = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Branch = input.ReadString();
+            break;
+          }
+          case 18: {
+            if (setTime_ == null) {
+              SetTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(SetTime);
+            break;
+          }
+          case 26: {
+            Note = input.ReadString();
             break;
           }
         }

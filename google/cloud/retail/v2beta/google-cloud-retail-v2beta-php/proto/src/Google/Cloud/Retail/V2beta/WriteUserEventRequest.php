@@ -17,7 +17,7 @@ class WriteUserEventRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -37,7 +37,7 @@ class WriteUserEventRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The parent catalog resource name, such as
-     *           "projects/1234/locations/global/catalogs/default_catalog".
+     *           `projects/1234/locations/global/catalogs/default_catalog`.
      *     @type \Google\Cloud\Retail\V2beta\UserEvent $user_event
      *           Required. User event to write.
      * }
@@ -49,7 +49,7 @@ class WriteUserEventRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -61,7 +61,7 @@ class WriteUserEventRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog resource name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

@@ -14,7 +14,9 @@ public interface UpdateProductRequestOrBuilder extends
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-   * exist, a NOT_FOUND error is returned.
+   * exist and
+   * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -28,7 +30,9 @@ public interface UpdateProductRequestOrBuilder extends
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-   * exist, a NOT_FOUND error is returned.
+   * exist and
+   * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,7 +46,9 @@ public interface UpdateProductRequestOrBuilder extends
    * [Product][google.cloud.retail.v2beta.Product], regardless of whether or not
    * it exists, a PERMISSION_DENIED error is returned.
    * If the [Product][google.cloud.retail.v2beta.Product] to update does not
-   * exist, a NOT_FOUND error is returned.
+   * exist and
+   * [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+   * is not set, a NOT_FOUND error is returned.
    * </pre>
    *
    * <code>.google.cloud.retail.v2beta.Product product = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -90,4 +96,16 @@ public interface UpdateProductRequestOrBuilder extends
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
+
+  /**
+   * <pre>
+   * If set to true, and the [Product][google.cloud.retail.v2beta.Product] is
+   * not found, a new [Product][google.cloud.retail.v2beta.Product] will be
+   * created. In this situation, `update_mask` is ignored.
+   * </pre>
+   *
+   * <code>bool allow_missing = 3;</code>
+   * @return The allowMissing.
+   */
+  boolean getAllowMissing();
 }

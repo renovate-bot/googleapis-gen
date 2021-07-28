@@ -20,6 +20,7 @@ from google.cloud.retail_v2beta.types import user_event
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.rpc import status_pb2  # type: ignore
+from google.type import date_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -32,12 +33,15 @@ __protobuf__ = proto.module(
         'ImportErrorsConfig',
         'ImportProductsRequest',
         'ImportUserEventsRequest',
+        'ImportCompletionDataRequest',
         'ProductInputConfig',
         'UserEventInputConfig',
+        'CompletionDataInputConfig',
         'ImportMetadata',
         'ImportProductsResponse',
         'ImportUserEventsResponse',
         'UserEventImportSummary',
+        'ImportCompletionDataResponse',
     },
 )
 
@@ -50,13 +54,13 @@ class GcsSource(proto.Message):
         input_uris (Sequence[str]):
             Required. Google Cloud Storage URIs to input files. URI can
             be up to 2000 characters long. URIs can match the full
-            object path (for example, gs://bucket/directory/object.json)
-            or a pattern matching one or more files, such as
-            gs://bucket/directory/*.json. A request can contain at most
-            100 files, and each file can be up to 2 GB. See `Importing
-            product
-            information </recommendations-ai/docs/upload-catalog>`__ for
-            the expected file format and setup instructions.
+            object path (for example,
+            ``gs://bucket/directory/object.json``) or a pattern matching
+            one or more files, such as ``gs://bucket/directory/*.json``.
+            A request can contain at most 100 files, and each file can
+            be up to 2 GB. See `Importing product
+            information <https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog>`__
+            for the expected file format and setup instructions.
         data_schema (str):
             The schema to use when parsing the data from the source.
 
@@ -68,7 +72,7 @@ class GcsSource(proto.Message):
                [Product.id][google.cloud.retail.v2beta.Product.id].
             -  ``product_merchant_center``: See `Importing catalog data
                from Merchant
-               Center </retail/recommendations-ai/docs/upload-catalog#mc>`__.
+               Center <https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc>`__.
 
             Supported values for user events imports:
 
@@ -76,7 +80,7 @@ class GcsSource(proto.Message):
                [UserEvent][google.cloud.retail.v2beta.UserEvent] per
                line.
             -  ``user_event_ga360``: Using
-               https://support.google.com/analytics/answer/3437719?hl=en.
+               https://support.google.com/analytics/answer/3437719.
     """
 
     input_uris = proto.RepeatedField(
@@ -92,11 +96,18 @@ class GcsSource(proto.Message):
 class BigQuerySource(proto.Message):
     r"""BigQuery source import data from.
     Attributes:
+        partition_date (google.type.date_pb2.Date):
+            BigQuery time partitioned table's \_PARTITIONDATE in
+            YYYY-MM-DD format.
+
+            Only supported when
+            [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+            is set to ``FULL``.
         project_id (str):
-            The project id (can be project # or id) that
+            The project ID (can be project # or ID) that
             the BigQuery source is in with a length limit of
             128 characters. If not specified, inherits the
-            project id from the parent request.
+            project ID from the parent request.
         dataset_id (str):
             Required. The BigQuery data set to copy the
             data from with a length limit of 1,024
@@ -121,7 +132,7 @@ class BigQuerySource(proto.Message):
                [Product.id][google.cloud.retail.v2beta.Product.id].
             -  ``product_merchant_center``: See `Importing catalog data
                from Merchant
-               Center </retail/recommendations-ai/docs/upload-catalog#mc>`__.
+               Center <https://cloud.google.com/retail/recommendations-ai/docs/upload-catalog#mc>`__.
 
             Supported values for user events imports:
 
@@ -129,9 +140,15 @@ class BigQuerySource(proto.Message):
                [UserEvent][google.cloud.retail.v2beta.UserEvent] per
                line.
             -  ``user_event_ga360``: Using
-               https://support.google.com/analytics/answer/3437719?hl=en.
+               https://support.google.com/analytics/answer/3437719.
     """
 
+    partition_date = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='partition',
+        message=date_pb2.Date,
+    )
     project_id = proto.Field(
         proto.STRING,
         number=5,
@@ -163,7 +180,7 @@ class ProductInlineSource(proto.Message):
             Required. A list of products to update/create. Each product
             must have a valid
             [Product.id][google.cloud.retail.v2beta.Product.id].
-            Recommended max of 10k items.
+            Recommended max of 100 items.
     """
 
     products = proto.RepeatedField(
@@ -212,11 +229,22 @@ class ImportProductsRequest(proto.Message):
     Attributes:
         parent (str):
             Required.
-            "projects/1234/locations/global/catalogs/default_catalog/branches/default_branch"
+            ``projects/1234/locations/global/catalogs/default_catalog/branches/default_branch``
 
             If no updateMask is specified, requires products.create
             permission. If updateMask is specified, requires
             products.update permission.
+        request_id (str):
+            Unique identifier provided by client, within the ancestor
+            dataset scope. Ensures idempotency and used for request
+            deduplication. Server-generated if unspecified. Up to 128
+            characters long and must match the pattern: "[a-zA-Z0-9_]+".
+            This is returned as [Operation.name][] in
+            [ImportMetadata][google.cloud.retail.v2beta.ImportMetadata].
+
+            Only supported when
+            [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+            is set to ``FULL``.
         input_config (google.cloud.retail_v2beta.types.ProductInputConfig):
             Required. The desired input location of the
             data.
@@ -227,11 +255,37 @@ class ImportProductsRequest(proto.Message):
             Indicates which fields in the provided
             imported 'products' to update. If not set, will
             by default update all fields.
+        reconciliation_mode (google.cloud.retail_v2beta.types.ImportProductsRequest.ReconciliationMode):
+            The mode of reconciliation between existing products and the
+            products to be imported. Defaults to
+            [ReconciliationMode.INCREMENTAL][google.cloud.retail.v2beta.ImportProductsRequest.ReconciliationMode.INCREMENTAL].
+        notification_pubsub_topic (str):
+            Pub/Sub topic for receiving notification. If this field is
+            set, when the import is finished, a notification will be
+            sent to specified Pub/Sub topic. The message data will be
+            JSON string of a [Operation][google.longrunning.Operation].
+            Format of the Pub/Sub topic is
+            ``projects/{project}/topics/{topic}``.
+
+            Only supported when
+            [ImportProductsRequest.reconciliation_mode][google.cloud.retail.v2beta.ImportProductsRequest.reconciliation_mode]
+            is set to ``FULL``.
     """
+    class ReconciliationMode(proto.Enum):
+        r"""Indicates how imported products are reconciled with the
+        existing products created or imported before.
+        """
+        RECONCILIATION_MODE_UNSPECIFIED = 0
+        INCREMENTAL = 1
+        FULL = 2
 
     parent = proto.Field(
         proto.STRING,
         number=1,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=6,
     )
     input_config = proto.Field(
         proto.MESSAGE,
@@ -248,6 +302,15 @@ class ImportProductsRequest(proto.Message):
         number=4,
         message=field_mask_pb2.FieldMask,
     )
+    reconciliation_mode = proto.Field(
+        proto.ENUM,
+        number=5,
+        enum=ReconciliationMode,
+    )
+    notification_pubsub_topic = proto.Field(
+        proto.STRING,
+        number=7,
+    )
 
 
 class ImportUserEventsRequest(proto.Message):
@@ -255,7 +318,7 @@ class ImportUserEventsRequest(proto.Message):
     Attributes:
         parent (str):
             Required.
-            "projects/1234/locations/global/catalogs/default_catalog".
+            ``projects/1234/locations/global/catalogs/default_catalog``
         input_config (google.cloud.retail_v2beta.types.UserEventInputConfig):
             Required. The desired input location of the
             data.
@@ -278,6 +341,42 @@ class ImportUserEventsRequest(proto.Message):
         proto.MESSAGE,
         number=3,
         message='ImportErrorsConfig',
+    )
+
+
+class ImportCompletionDataRequest(proto.Message):
+    r"""Request message for ImportCompletionData methods.
+    Attributes:
+        parent (str):
+            Required. The catalog which the suggestions dataset belongs
+            to.
+
+            Format:
+            ``projects/1234/locations/global/catalogs/default_catalog``.
+        input_config (google.cloud.retail_v2beta.types.CompletionDataInputConfig):
+            Required. The desired input location of the
+            data.
+        notification_pubsub_topic (str):
+            Pub/Sub topic for receiving notification. If this field is
+            set, when the import is finished, a notification will be
+            sent to specified Pub/Sub topic. The message data will be
+            JSON string of a [Operation][google.longrunning.Operation].
+            Format of the Pub/Sub topic is
+            ``projects/{project}/topics/{topic}``.
+    """
+
+    parent = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    input_config = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message='CompletionDataInputConfig',
+    )
+    notification_pubsub_topic = proto.Field(
+        proto.STRING,
+        number=3,
     )
 
 
@@ -347,6 +446,25 @@ class UserEventInputConfig(proto.Message):
     )
 
 
+class CompletionDataInputConfig(proto.Message):
+    r"""The input config source for completion data.
+    Attributes:
+        big_query_source (google.cloud.retail_v2beta.types.BigQuerySource):
+            Required. BigQuery input source.
+            Add the IAM permission “BigQuery Data Viewer”
+            for cloud-retail-customer-data-
+            access@system.gserviceaccount.com before using
+            this feature otherwise an error is thrown.
+    """
+
+    big_query_source = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        oneof='source',
+        message='BigQuerySource',
+    )
+
+
 class ImportMetadata(proto.Message):
     r"""Metadata related to the progress of the Import operation.
     This will be returned by the
@@ -364,6 +482,17 @@ class ImportMetadata(proto.Message):
         failure_count (int):
             Count of entries that encountered errors
             while processing.
+        request_id (str):
+            Id of the request / operation. This is
+            parroting back the requestId that was passed in
+            the request.
+        notification_pubsub_topic (str):
+            Pub/Sub topic for receiving notification. If this field is
+            set, when the import is finished, a notification will be
+            sent to specified Pub/Sub topic. The message data will be
+            JSON string of a [Operation][google.longrunning.Operation].
+            Format of the Pub/Sub topic is
+            ``projects/{project}/topics/{topic}``.
     """
 
     create_time = proto.Field(
@@ -383,6 +512,14 @@ class ImportMetadata(proto.Message):
     failure_count = proto.Field(
         proto.INT64,
         number=4,
+    )
+    request_id = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    notification_pubsub_topic = proto.Field(
+        proto.STRING,
+        number=6,
     )
 
 
@@ -470,6 +607,26 @@ class UserEventImportSummary(proto.Message):
     unjoined_events_count = proto.Field(
         proto.INT64,
         number=2,
+    )
+
+
+class ImportCompletionDataResponse(proto.Message):
+    r"""Response of the
+    [ImportCompletionDataRequest][google.cloud.retail.v2beta.ImportCompletionDataRequest].
+    If the long running operation is done, this message is returned by
+    the google.longrunning.Operations.response field if the operation is
+    successful.
+
+    Attributes:
+        error_samples (Sequence[google.rpc.status_pb2.Status]):
+            A sample of errors encountered while
+            processing the request.
+    """
+
+    error_samples = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=status_pb2.Status,
     )
 
 

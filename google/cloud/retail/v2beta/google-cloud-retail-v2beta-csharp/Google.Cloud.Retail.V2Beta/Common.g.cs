@@ -27,26 +27,49 @@ namespace Google.Cloud.Retail.V2Beta {
             "Cidnb29nbGUvY2xvdWQvcmV0YWlsL3YyYmV0YS9jb21tb24ucHJvdG8SGmdv",
             "b2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhGhxnb29nbGUvYXBpL2Fubm90YXRp",
             "b25zLnByb3RvGh9nb29nbGUvYXBpL2ZpZWxkX2JlaGF2aW9yLnByb3RvGh9n",
-            "b29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvIjAKD0N1c3RvbUF0dHJp",
-            "YnV0ZRIMCgR0ZXh0GAEgAygJEg8KB251bWJlcnMYAiADKAEiOAoFSW1hZ2US",
-            "EAoDdXJpGAEgASgJQgPgQQISDgoGaGVpZ2h0GAIgASgFEg0KBXdpZHRoGAMg",
-            "ASgFIlcKCVByaWNlSW5mbxIVCg1jdXJyZW5jeV9jb2RlGAEgASgJEg0KBXBy",
-            "aWNlGAIgASgCEhYKDm9yaWdpbmFsX3ByaWNlGAMgASgCEgwKBGNvc3QYBCAB",
-            "KAIiYAoIVXNlckluZm8SDwoHdXNlcl9pZBgBIAEoCRISCgppcF9hZGRyZXNz",
-            "GAIgASgJEhIKCnVzZXJfYWdlbnQYAyABKAkSGwoTZGlyZWN0X3VzZXJfcmVx",
-            "dWVzdBgEIAEoCELUAQoeY29tLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRh",
-            "QgtDb21tb25Qcm90b1ABWkBnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90by9n",
-            "b29nbGVhcGlzL2Nsb3VkL3JldGFpbC92MmJldGE7cmV0YWlsogIGUkVUQUlM",
-            "qgIaR29vZ2xlLkNsb3VkLlJldGFpbC5WMkJldGHKAhpHb29nbGVcQ2xvdWRc",
-            "UmV0YWlsXFYyYmV0YeoCHUdvb2dsZTo6Q2xvdWQ6OlJldGFpbDo6VjJiZXRh",
-            "YgZwcm90bzM="));
+            "b29nbGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvIi8KCEF1ZGllbmNlEg8K",
+            "B2dlbmRlcnMYASADKAkSEgoKYWdlX2dyb3VwcxgCIAMoCSIzCglDb2xvcklu",
+            "Zm8SFgoOY29sb3JfZmFtaWxpZXMYASADKAkSDgoGY29sb3JzGAIgAygJIn4K",
+            "D0N1c3RvbUF0dHJpYnV0ZRIMCgR0ZXh0GAEgAygJEg8KB251bWJlcnMYAiAD",
+            "KAESFwoKc2VhcmNoYWJsZRgDIAEoCEgAiAEBEhYKCWluZGV4YWJsZRgEIAEo",
+            "CEgBiAEBQg0KC19zZWFyY2hhYmxlQgwKCl9pbmRleGFibGUiMgoPRnVsZmls",
+            "bG1lbnRJbmZvEgwKBHR5cGUYASABKAkSEQoJcGxhY2VfaWRzGAIgAygJIjgK",
+            "BUltYWdlEhAKA3VyaRgBIAEoCUID4EECEg4KBmhlaWdodBgCIAEoBRINCgV3",
+            "aWR0aBgDIAEoBSJ4CghJbnRlcnZhbBIRCgdtaW5pbXVtGAEgASgBSAASGwoR",
+            "ZXhjbHVzaXZlX21pbmltdW0YAiABKAFIABIRCgdtYXhpbXVtGAMgASgBSAES",
+            "GwoRZXhjbHVzaXZlX21heGltdW0YBCABKAFIAUIFCgNtaW5CBQoDbWF4IpUD",
+            "CglQcmljZUluZm8SFQoNY3VycmVuY3lfY29kZRgBIAEoCRINCgVwcmljZRgC",
+            "IAEoAhIWCg5vcmlnaW5hbF9wcmljZRgDIAEoAhIMCgRjb3N0GAQgASgCEjgK",
+            "FHByaWNlX2VmZmVjdGl2ZV90aW1lGAUgASgLMhouZ29vZ2xlLnByb3RvYnVm",
+            "LlRpbWVzdGFtcBI1ChFwcmljZV9leHBpcmVfdGltZRgGIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXASSgoLcHJpY2VfcmFuZ2UYByABKAsyMC5n",
+            "b29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5QcmljZUluZm8uUHJpY2VSYW5n",
+            "ZUID4EEDGn8KClByaWNlUmFuZ2USMwoFcHJpY2UYASABKAsyJC5nb29nbGUu",
+            "Y2xvdWQucmV0YWlsLnYyYmV0YS5JbnRlcnZhbBI8Cg5vcmlnaW5hbF9wcmlj",
+            "ZRgCIAEoCzIkLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLkludGVydmFs",
+            "IlAKBlJhdGluZxIUCgxyYXRpbmdfY291bnQYASABKAUSFgoOYXZlcmFnZV9y",
+            "YXRpbmcYAiABKAISGAoQcmF0aW5nX2hpc3RvZ3JhbRgDIAMoBSJgCghVc2Vy",
+            "SW5mbxIPCgd1c2VyX2lkGAEgASgJEhIKCmlwX2FkZHJlc3MYAiABKAkSEgoK",
+            "dXNlcl9hZ2VudBgDIAEoCRIbChNkaXJlY3RfdXNlcl9yZXF1ZXN0GAQgASgI",
+            "IiEKCVByb21vdGlvbhIUCgxwcm9tb3Rpb25faWQYASABKAlC1AEKHmNvbS5n",
+            "b29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YUILQ29tbW9uUHJvdG9QAVpAZ29v",
+            "Z2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9jbG91ZC9yZXRh",
+            "aWwvdjJiZXRhO3JldGFpbKICBlJFVEFJTKoCGkdvb2dsZS5DbG91ZC5SZXRh",
+            "aWwuVjJCZXRhygIaR29vZ2xlXENsb3VkXFJldGFpbFxWMmJldGHqAh1Hb29n",
+            "bGU6OkNsb3VkOjpSZXRhaWw6OlYyYmV0YWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.CustomAttribute), global::Google.Cloud.Retail.V2Beta.CustomAttribute.Parser, new[]{ "Text", "Numbers" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.Audience), global::Google.Cloud.Retail.V2Beta.Audience.Parser, new[]{ "Genders", "AgeGroups" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.ColorInfo), global::Google.Cloud.Retail.V2Beta.ColorInfo.Parser, new[]{ "ColorFamilies", "Colors" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.CustomAttribute), global::Google.Cloud.Retail.V2Beta.CustomAttribute.Parser, new[]{ "Text", "Numbers", "Searchable", "Indexable" }, new[]{ "Searchable", "Indexable" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.FulfillmentInfo), global::Google.Cloud.Retail.V2Beta.FulfillmentInfo.Parser, new[]{ "Type", "PlaceIds" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.Image), global::Google.Cloud.Retail.V2Beta.Image.Parser, new[]{ "Uri", "Height", "Width" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.PriceInfo), global::Google.Cloud.Retail.V2Beta.PriceInfo.Parser, new[]{ "CurrencyCode", "Price", "OriginalPrice", "Cost" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.UserInfo), global::Google.Cloud.Retail.V2Beta.UserInfo.Parser, new[]{ "UserId", "IpAddress", "UserAgent", "DirectUserRequest" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.Interval), global::Google.Cloud.Retail.V2Beta.Interval.Parser, new[]{ "Minimum", "ExclusiveMinimum", "Maximum", "ExclusiveMaximum" }, new[]{ "Min", "Max" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.PriceInfo), global::Google.Cloud.Retail.V2Beta.PriceInfo.Parser, new[]{ "CurrencyCode", "Price", "OriginalPrice", "Cost", "PriceEffectiveTime", "PriceExpireTime", "PriceRange" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.PriceInfo.Types.PriceRange), global::Google.Cloud.Retail.V2Beta.PriceInfo.Types.PriceRange.Parser, new[]{ "Price", "OriginalPrice" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.Rating), global::Google.Cloud.Retail.V2Beta.Rating.Parser, new[]{ "RatingCount", "AverageRating", "RatingHistogram" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.UserInfo), global::Google.Cloud.Retail.V2Beta.UserInfo.Parser, new[]{ "UserId", "IpAddress", "UserAgent", "DirectUserRequest" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.Promotion), global::Google.Cloud.Retail.V2Beta.Promotion.Parser, new[]{ "PromotionId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -54,8 +77,445 @@ namespace Google.Cloud.Retail.V2Beta {
   }
   #region Messages
   /// <summary>
+  /// An intended audience of the [Product][google.cloud.retail.v2beta.Product] for
+  /// whom it's sold.
+  /// </summary>
+  public sealed partial class Audience : pb::IMessage<Audience>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Audience> _parser = new pb::MessageParser<Audience>(() => new Audience());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Audience> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[0]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Audience() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Audience(Audience other) : this() {
+      genders_ = other.genders_.Clone();
+      ageGroups_ = other.ageGroups_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Audience Clone() {
+      return new Audience(this);
+    }
+
+    /// <summary>Field number for the "genders" field.</summary>
+    public const int GendersFieldNumber = 1;
+    private static readonly pb::FieldCodec<string> _repeated_genders_codec
+        = pb::FieldCodec.ForString(10);
+    private readonly pbc::RepeatedField<string> genders_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The genders of the audience. Strongly encouraged to use the standard
+    /// values: "male", "female", "unisex".
+    ///
+    /// At most 5 values are allowed. Each value must be a UTF-8 encoded string
+    /// with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
+    /// is returned.
+    ///
+    /// Google Merchant Center property
+    /// [gender](https://support.google.com/merchants/answer/6324479). Schema.org
+    /// property
+    /// [Product.audience.suggestedGender](https://schema.org/suggestedGender).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Genders {
+      get { return genders_; }
+    }
+
+    /// <summary>Field number for the "age_groups" field.</summary>
+    public const int AgeGroupsFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_ageGroups_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> ageGroups_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The age groups of the audience. Strongly encouraged to use the standard
+    /// values: "newborn" (up to 3 months old), "infant" (3–12 months old),
+    /// "toddler" (1–5 years old), "kids" (5–13 years old), "adult" (typically
+    /// teens or older).
+    ///
+    /// At most 5 values are allowed. Each value must be a UTF-8 encoded string
+    /// with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error
+    /// is returned.
+    ///
+    /// Google Merchant Center property
+    /// [age_group](https://support.google.com/merchants/answer/6324463).
+    /// Schema.org property
+    /// [Product.audience.suggestedMinAge](https://schema.org/suggestedMinAge) and
+    /// [Product.audience.suggestedMaxAge](https://schema.org/suggestedMaxAge).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> AgeGroups {
+      get { return ageGroups_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Audience);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Audience other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!genders_.Equals(other.genders_)) return false;
+      if(!ageGroups_.Equals(other.ageGroups_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= genders_.GetHashCode();
+      hash ^= ageGroups_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      genders_.WriteTo(output, _repeated_genders_codec);
+      ageGroups_.WriteTo(output, _repeated_ageGroups_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      genders_.WriteTo(ref output, _repeated_genders_codec);
+      ageGroups_.WriteTo(ref output, _repeated_ageGroups_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += genders_.CalculateSize(_repeated_genders_codec);
+      size += ageGroups_.CalculateSize(_repeated_ageGroups_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Audience other) {
+      if (other == null) {
+        return;
+      }
+      genders_.Add(other.genders_);
+      ageGroups_.Add(other.ageGroups_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            genders_.AddEntriesFrom(input, _repeated_genders_codec);
+            break;
+          }
+          case 18: {
+            ageGroups_.AddEntriesFrom(input, _repeated_ageGroups_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            genders_.AddEntriesFrom(ref input, _repeated_genders_codec);
+            break;
+          }
+          case 18: {
+            ageGroups_.AddEntriesFrom(ref input, _repeated_ageGroups_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// The color information of a [Product][google.cloud.retail.v2beta.Product].
+  /// </summary>
+  public sealed partial class ColorInfo : pb::IMessage<ColorInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<ColorInfo> _parser = new pb::MessageParser<ColorInfo>(() => new ColorInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<ColorInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[1]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ColorInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ColorInfo(ColorInfo other) : this() {
+      colorFamilies_ = other.colorFamilies_.Clone();
+      colors_ = other.colors_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public ColorInfo Clone() {
+      return new ColorInfo(this);
+    }
+
+    /// <summary>Field number for the "color_families" field.</summary>
+    public const int ColorFamiliesFieldNumber = 1;
+    private static readonly pb::FieldCodec<string> _repeated_colorFamilies_codec
+        = pb::FieldCodec.ForString(10);
+    private readonly pbc::RepeatedField<string> colorFamilies_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The standard color families. Strongly recommended to use the following
+    /// standard color groups: "Red", "Pink", "Orange", "Yellow", "Purple",
+    /// "Green", "Cyan", "Blue", "Brown", "White", "Gray", "Black" and
+    /// "Mixed". Normally it is expected to have only 1 color family. May consider
+    /// using single "Mixed" instead of multiple values.
+    ///
+    /// A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+    /// string with a length limit of 128 characters. Otherwise, an
+    /// INVALID_ARGUMENT error is returned.
+    ///
+    /// Google Merchant Center property
+    /// [color](https://support.google.com/merchants/answer/6324487). Schema.org
+    /// property [Product.color](https://schema.org/color).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> ColorFamilies {
+      get { return colorFamilies_; }
+    }
+
+    /// <summary>Field number for the "colors" field.</summary>
+    public const int ColorsFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_colors_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> colors_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The color display names, which may be different from standard color family
+    /// names, such as the color aliases used in the website frontend. Normally
+    /// it is expected to have only 1 color. May consider using single "Mixed"
+    /// instead of multiple values.
+    ///
+    /// A maximum of 5 colors are allowed. Each value must be a UTF-8 encoded
+    /// string with a length limit of 128 characters. Otherwise, an
+    /// INVALID_ARGUMENT error is returned.
+    ///
+    /// Google Merchant Center property
+    /// [color](https://support.google.com/merchants/answer/6324487). Schema.org
+    /// property [Product.color](https://schema.org/color).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> Colors {
+      get { return colors_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as ColorInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(ColorInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!colorFamilies_.Equals(other.colorFamilies_)) return false;
+      if(!colors_.Equals(other.colors_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= colorFamilies_.GetHashCode();
+      hash ^= colors_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      colorFamilies_.WriteTo(output, _repeated_colorFamilies_codec);
+      colors_.WriteTo(output, _repeated_colors_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      colorFamilies_.WriteTo(ref output, _repeated_colorFamilies_codec);
+      colors_.WriteTo(ref output, _repeated_colors_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += colorFamilies_.CalculateSize(_repeated_colorFamilies_codec);
+      size += colors_.CalculateSize(_repeated_colors_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(ColorInfo other) {
+      if (other == null) {
+        return;
+      }
+      colorFamilies_.Add(other.colorFamilies_);
+      colors_.Add(other.colors_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            colorFamilies_.AddEntriesFrom(input, _repeated_colorFamilies_codec);
+            break;
+          }
+          case 18: {
+            colors_.AddEntriesFrom(input, _repeated_colors_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            colorFamilies_.AddEntriesFrom(ref input, _repeated_colorFamilies_codec);
+            break;
+          }
+          case 18: {
+            colors_.AddEntriesFrom(ref input, _repeated_colors_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// A custom attribute that is not explicitly modeled in
-  /// [Product][google.cloud.retail.v2beta.Product]].
+  /// [Product][google.cloud.retail.v2beta.Product].
   /// </summary>
   public sealed partial class CustomAttribute : pb::IMessage<CustomAttribute>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -64,12 +524,13 @@ namespace Google.Cloud.Retail.V2Beta {
   {
     private static readonly pb::MessageParser<CustomAttribute> _parser = new pb::MessageParser<CustomAttribute>(() => new CustomAttribute());
     private pb::UnknownFieldSet _unknownFields;
+    private int _hasBits0;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pb::MessageParser<CustomAttribute> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -86,8 +547,11 @@ namespace Google.Cloud.Retail.V2Beta {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public CustomAttribute(CustomAttribute other) : this() {
+      _hasBits0 = other._hasBits0;
       text_ = other.text_.Clone();
       numbers_ = other.numbers_.Clone();
+      searchable_ = other.searchable_;
+      indexable_ = other.indexable_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -139,6 +603,75 @@ namespace Google.Cloud.Retail.V2Beta {
       get { return numbers_; }
     }
 
+    /// <summary>Field number for the "searchable" field.</summary>
+    public const int SearchableFieldNumber = 3;
+    private bool searchable_;
+    /// <summary>
+    /// If true, custom attribute values are searchable by text queries in
+    /// [SearchService.Search][google.cloud.retail.v2beta.SearchService.Search].
+    ///
+    /// This field is ignored in a
+    /// [UserEvent][google.cloud.retail.v2beta.UserEvent].
+    ///
+    /// Only set if type [text][google.cloud.retail.v2beta.CustomAttribute.text] is
+    /// set. Otherwise, a INVALID_ARGUMENT error is returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Searchable {
+      get { if ((_hasBits0 & 1) != 0) { return searchable_; } else { return false; } }
+      set {
+        _hasBits0 |= 1;
+        searchable_ = value;
+      }
+    }
+    /// <summary>Gets whether the "searchable" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasSearchable {
+      get { return (_hasBits0 & 1) != 0; }
+    }
+    /// <summary>Clears the value of the "searchable" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearSearchable() {
+      _hasBits0 &= ~1;
+    }
+
+    /// <summary>Field number for the "indexable" field.</summary>
+    public const int IndexableFieldNumber = 4;
+    private bool indexable_;
+    /// <summary>
+    /// If true, custom attribute values are indexed, so that it can be filtered,
+    /// faceted or boosted in
+    /// [SearchService.Search][google.cloud.retail.v2beta.SearchService.Search].
+    ///
+    /// This field is ignored in a
+    /// [UserEvent][google.cloud.retail.v2beta.UserEvent].
+    ///
+    /// See
+    /// [SearchRequest.filter][google.cloud.retail.v2beta.SearchRequest.filter],
+    /// [SearchRequest.facet_specs][google.cloud.retail.v2beta.SearchRequest.facet_specs]
+    /// and
+    /// [SearchRequest.boost_spec][google.cloud.retail.v2beta.SearchRequest.boost_spec]
+    /// for more details.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Indexable {
+      get { if ((_hasBits0 & 2) != 0) { return indexable_; } else { return false; } }
+      set {
+        _hasBits0 |= 2;
+        indexable_ = value;
+      }
+    }
+    /// <summary>Gets whether the "indexable" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool HasIndexable {
+      get { return (_hasBits0 & 2) != 0; }
+    }
+    /// <summary>Clears the value of the "indexable" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearIndexable() {
+      _hasBits0 &= ~2;
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as CustomAttribute);
@@ -154,6 +687,8 @@ namespace Google.Cloud.Retail.V2Beta {
       }
       if(!text_.Equals(other.text_)) return false;
       if(!numbers_.Equals(other.numbers_)) return false;
+      if (Searchable != other.Searchable) return false;
+      if (Indexable != other.Indexable) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -162,6 +697,8 @@ namespace Google.Cloud.Retail.V2Beta {
       int hash = 1;
       hash ^= text_.GetHashCode();
       hash ^= numbers_.GetHashCode();
+      if (HasSearchable) hash ^= Searchable.GetHashCode();
+      if (HasIndexable) hash ^= Indexable.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -180,6 +717,14 @@ namespace Google.Cloud.Retail.V2Beta {
     #else
       text_.WriteTo(output, _repeated_text_codec);
       numbers_.WriteTo(output, _repeated_numbers_codec);
+      if (HasSearchable) {
+        output.WriteRawTag(24);
+        output.WriteBool(Searchable);
+      }
+      if (HasIndexable) {
+        output.WriteRawTag(32);
+        output.WriteBool(Indexable);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -191,6 +736,14 @@ namespace Google.Cloud.Retail.V2Beta {
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
       text_.WriteTo(ref output, _repeated_text_codec);
       numbers_.WriteTo(ref output, _repeated_numbers_codec);
+      if (HasSearchable) {
+        output.WriteRawTag(24);
+        output.WriteBool(Searchable);
+      }
+      if (HasIndexable) {
+        output.WriteRawTag(32);
+        output.WriteBool(Indexable);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -202,6 +755,12 @@ namespace Google.Cloud.Retail.V2Beta {
       int size = 0;
       size += text_.CalculateSize(_repeated_text_codec);
       size += numbers_.CalculateSize(_repeated_numbers_codec);
+      if (HasSearchable) {
+        size += 1 + 1;
+      }
+      if (HasIndexable) {
+        size += 1 + 1;
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -215,6 +774,12 @@ namespace Google.Cloud.Retail.V2Beta {
       }
       text_.Add(other.text_);
       numbers_.Add(other.numbers_);
+      if (other.HasSearchable) {
+        Searchable = other.Searchable;
+      }
+      if (other.HasIndexable) {
+        Indexable = other.Indexable;
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -236,6 +801,14 @@ namespace Google.Cloud.Retail.V2Beta {
           case 18:
           case 17: {
             numbers_.AddEntriesFrom(input, _repeated_numbers_codec);
+            break;
+          }
+          case 24: {
+            Searchable = input.ReadBool();
+            break;
+          }
+          case 32: {
+            Indexable = input.ReadBool();
             break;
           }
         }
@@ -261,6 +834,246 @@ namespace Google.Cloud.Retail.V2Beta {
             numbers_.AddEntriesFrom(ref input, _repeated_numbers_codec);
             break;
           }
+          case 24: {
+            Searchable = input.ReadBool();
+            break;
+          }
+          case 32: {
+            Indexable = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Fulfillment information, such as the store IDs for in-store pickup or region
+  /// IDs for different shipping methods.
+  /// </summary>
+  public sealed partial class FulfillmentInfo : pb::IMessage<FulfillmentInfo>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<FulfillmentInfo> _parser = new pb::MessageParser<FulfillmentInfo>(() => new FulfillmentInfo());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<FulfillmentInfo> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public FulfillmentInfo() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public FulfillmentInfo(FulfillmentInfo other) : this() {
+      type_ = other.type_;
+      placeIds_ = other.placeIds_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public FulfillmentInfo Clone() {
+      return new FulfillmentInfo(this);
+    }
+
+    /// <summary>Field number for the "type" field.</summary>
+    public const int TypeFieldNumber = 1;
+    private string type_ = "";
+    /// <summary>
+    /// The fulfillment type, including commonly used types (such as pickup in
+    /// store and same day delivery), and custom types. Customers have to map
+    /// custom types to their display names before rendering UI.
+    ///
+    /// Supported values:
+    ///
+    /// * "pickup-in-store"
+    /// * "ship-to-store"
+    /// * "same-day-delivery"
+    /// * "next-day-delivery"
+    /// * "custom-type-1"
+    /// * "custom-type-2"
+    /// * "custom-type-3"
+    /// * "custom-type-4"
+    /// * "custom-type-5"
+    ///
+    /// If this field is set to an invalid value other than these, an
+    /// INVALID_ARGUMENT error is returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Type {
+      get { return type_; }
+      set {
+        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "place_ids" field.</summary>
+    public const int PlaceIdsFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_placeIds_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> placeIds_ = new pbc::RepeatedField<string>();
+    /// <summary>
+    /// The IDs for this [type][google.cloud.retail.v2beta.FulfillmentInfo.type],
+    /// such as the store IDs for
+    /// [FulfillmentInfo.type.pickup-in-store][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    /// or the region IDs for
+    /// [FulfillmentInfo.type.same-day-delivery][google.cloud.retail.v2beta.FulfillmentInfo.type].
+    ///
+    /// A maximum of 2000 values are allowed. Each value must be a string with a
+    /// length limit of 10 characters, matching the pattern [a-zA-Z0-9_-]+, such as
+    /// "store1" or "REGION-2". Otherwise, an INVALID_ARGUMENT error is returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<string> PlaceIds {
+      get { return placeIds_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as FulfillmentInfo);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(FulfillmentInfo other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Type != other.Type) return false;
+      if(!placeIds_.Equals(other.placeIds_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Type.Length != 0) hash ^= Type.GetHashCode();
+      hash ^= placeIds_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Type.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Type);
+      }
+      placeIds_.WriteTo(output, _repeated_placeIds_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Type.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Type);
+      }
+      placeIds_.WriteTo(ref output, _repeated_placeIds_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Type.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
+      }
+      size += placeIds_.CalculateSize(_repeated_placeIds_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(FulfillmentInfo other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Type.Length != 0) {
+        Type = other.Type;
+      }
+      placeIds_.Add(other.placeIds_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Type = input.ReadString();
+            break;
+          }
+          case 18: {
+            placeIds_.AddEntriesFrom(input, _repeated_placeIds_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Type = input.ReadString();
+            break;
+          }
+          case 18: {
+            placeIds_.AddEntriesFrom(ref input, _repeated_placeIds_codec);
+            break;
+          }
         }
       }
     }
@@ -283,7 +1096,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -538,6 +1351,363 @@ namespace Google.Cloud.Retail.V2Beta {
   }
 
   /// <summary>
+  /// A floating point interval.
+  /// </summary>
+  public sealed partial class Interval : pb::IMessage<Interval>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Interval> _parser = new pb::MessageParser<Interval>(() => new Interval());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Interval> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Interval() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Interval(Interval other) : this() {
+      switch (other.MinCase) {
+        case MinOneofCase.Minimum:
+          Minimum = other.Minimum;
+          break;
+        case MinOneofCase.ExclusiveMinimum:
+          ExclusiveMinimum = other.ExclusiveMinimum;
+          break;
+      }
+
+      switch (other.MaxCase) {
+        case MaxOneofCase.Maximum:
+          Maximum = other.Maximum;
+          break;
+        case MaxOneofCase.ExclusiveMaximum:
+          ExclusiveMaximum = other.ExclusiveMaximum;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Interval Clone() {
+      return new Interval(this);
+    }
+
+    /// <summary>Field number for the "minimum" field.</summary>
+    public const int MinimumFieldNumber = 1;
+    /// <summary>
+    /// Inclusive lower bound.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Minimum {
+      get { return minCase_ == MinOneofCase.Minimum ? (double) min_ : 0D; }
+      set {
+        min_ = value;
+        minCase_ = MinOneofCase.Minimum;
+      }
+    }
+
+    /// <summary>Field number for the "exclusive_minimum" field.</summary>
+    public const int ExclusiveMinimumFieldNumber = 2;
+    /// <summary>
+    /// Exclusive lower bound.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double ExclusiveMinimum {
+      get { return minCase_ == MinOneofCase.ExclusiveMinimum ? (double) min_ : 0D; }
+      set {
+        min_ = value;
+        minCase_ = MinOneofCase.ExclusiveMinimum;
+      }
+    }
+
+    /// <summary>Field number for the "maximum" field.</summary>
+    public const int MaximumFieldNumber = 3;
+    /// <summary>
+    /// Inclusive upper bound.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Maximum {
+      get { return maxCase_ == MaxOneofCase.Maximum ? (double) max_ : 0D; }
+      set {
+        max_ = value;
+        maxCase_ = MaxOneofCase.Maximum;
+      }
+    }
+
+    /// <summary>Field number for the "exclusive_maximum" field.</summary>
+    public const int ExclusiveMaximumFieldNumber = 4;
+    /// <summary>
+    /// Exclusive upper bound.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double ExclusiveMaximum {
+      get { return maxCase_ == MaxOneofCase.ExclusiveMaximum ? (double) max_ : 0D; }
+      set {
+        max_ = value;
+        maxCase_ = MaxOneofCase.ExclusiveMaximum;
+      }
+    }
+
+    private object min_;
+    /// <summary>Enum of possible cases for the "min" oneof.</summary>
+    public enum MinOneofCase {
+      None = 0,
+      Minimum = 1,
+      ExclusiveMinimum = 2,
+    }
+    private MinOneofCase minCase_ = MinOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MinOneofCase MinCase {
+      get { return minCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearMin() {
+      minCase_ = MinOneofCase.None;
+      min_ = null;
+    }
+
+    private object max_;
+    /// <summary>Enum of possible cases for the "max" oneof.</summary>
+    public enum MaxOneofCase {
+      None = 0,
+      Maximum = 3,
+      ExclusiveMaximum = 4,
+    }
+    private MaxOneofCase maxCase_ = MaxOneofCase.None;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public MaxOneofCase MaxCase {
+      get { return maxCase_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void ClearMax() {
+      maxCase_ = MaxOneofCase.None;
+      max_ = null;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Interval);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Interval other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Minimum, other.Minimum)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(ExclusiveMinimum, other.ExclusiveMinimum)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Maximum, other.Maximum)) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(ExclusiveMaximum, other.ExclusiveMaximum)) return false;
+      if (MinCase != other.MinCase) return false;
+      if (MaxCase != other.MaxCase) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (minCase_ == MinOneofCase.Minimum) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Minimum);
+      if (minCase_ == MinOneofCase.ExclusiveMinimum) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(ExclusiveMinimum);
+      if (maxCase_ == MaxOneofCase.Maximum) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Maximum);
+      if (maxCase_ == MaxOneofCase.ExclusiveMaximum) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(ExclusiveMaximum);
+      hash ^= (int) minCase_;
+      hash ^= (int) maxCase_;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (minCase_ == MinOneofCase.Minimum) {
+        output.WriteRawTag(9);
+        output.WriteDouble(Minimum);
+      }
+      if (minCase_ == MinOneofCase.ExclusiveMinimum) {
+        output.WriteRawTag(17);
+        output.WriteDouble(ExclusiveMinimum);
+      }
+      if (maxCase_ == MaxOneofCase.Maximum) {
+        output.WriteRawTag(25);
+        output.WriteDouble(Maximum);
+      }
+      if (maxCase_ == MaxOneofCase.ExclusiveMaximum) {
+        output.WriteRawTag(33);
+        output.WriteDouble(ExclusiveMaximum);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (minCase_ == MinOneofCase.Minimum) {
+        output.WriteRawTag(9);
+        output.WriteDouble(Minimum);
+      }
+      if (minCase_ == MinOneofCase.ExclusiveMinimum) {
+        output.WriteRawTag(17);
+        output.WriteDouble(ExclusiveMinimum);
+      }
+      if (maxCase_ == MaxOneofCase.Maximum) {
+        output.WriteRawTag(25);
+        output.WriteDouble(Maximum);
+      }
+      if (maxCase_ == MaxOneofCase.ExclusiveMaximum) {
+        output.WriteRawTag(33);
+        output.WriteDouble(ExclusiveMaximum);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (minCase_ == MinOneofCase.Minimum) {
+        size += 1 + 8;
+      }
+      if (minCase_ == MinOneofCase.ExclusiveMinimum) {
+        size += 1 + 8;
+      }
+      if (maxCase_ == MaxOneofCase.Maximum) {
+        size += 1 + 8;
+      }
+      if (maxCase_ == MaxOneofCase.ExclusiveMaximum) {
+        size += 1 + 8;
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Interval other) {
+      if (other == null) {
+        return;
+      }
+      switch (other.MinCase) {
+        case MinOneofCase.Minimum:
+          Minimum = other.Minimum;
+          break;
+        case MinOneofCase.ExclusiveMinimum:
+          ExclusiveMinimum = other.ExclusiveMinimum;
+          break;
+      }
+
+      switch (other.MaxCase) {
+        case MaxOneofCase.Maximum:
+          Maximum = other.Maximum;
+          break;
+        case MaxOneofCase.ExclusiveMaximum:
+          ExclusiveMaximum = other.ExclusiveMaximum;
+          break;
+      }
+
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 9: {
+            Minimum = input.ReadDouble();
+            break;
+          }
+          case 17: {
+            ExclusiveMinimum = input.ReadDouble();
+            break;
+          }
+          case 25: {
+            Maximum = input.ReadDouble();
+            break;
+          }
+          case 33: {
+            ExclusiveMaximum = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 9: {
+            Minimum = input.ReadDouble();
+            break;
+          }
+          case 17: {
+            ExclusiveMinimum = input.ReadDouble();
+            break;
+          }
+          case 25: {
+            Maximum = input.ReadDouble();
+            break;
+          }
+          case 33: {
+            ExclusiveMaximum = input.ReadDouble();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
   /// The price information of a [Product][google.cloud.retail.v2beta.Product].
   /// </summary>
   public sealed partial class PriceInfo : pb::IMessage<PriceInfo>
@@ -552,7 +1722,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[6]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -573,6 +1743,9 @@ namespace Google.Cloud.Retail.V2Beta {
       price_ = other.price_;
       originalPrice_ = other.originalPrice_;
       cost_ = other.cost_;
+      priceEffectiveTime_ = other.priceEffectiveTime_ != null ? other.priceEffectiveTime_.Clone() : null;
+      priceExpireTime_ = other.priceExpireTime_ != null ? other.priceExpireTime_.Clone() : null;
+      priceRange_ = other.priceRange_ != null ? other.priceRange_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -590,6 +1763,13 @@ namespace Google.Cloud.Retail.V2Beta {
     ///
     /// If this field is an unrecognizable currency code, an INVALID_ARGUMENT
     /// error is returned.
+    ///
+    /// The [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
+    /// [Product][google.cloud.retail.v2beta.Product]s with the same
+    /// [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
+    /// must share the same
+    /// [currency_code][google.cloud.retail.v2beta.PriceInfo.currency_code].
+    /// Otherwise, a FAILED_PRECONDITION error is returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string CurrencyCode {
@@ -653,6 +1833,84 @@ namespace Google.Cloud.Retail.V2Beta {
       }
     }
 
+    /// <summary>Field number for the "price_effective_time" field.</summary>
+    public const int PriceEffectiveTimeFieldNumber = 5;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp priceEffectiveTime_;
+    /// <summary>
+    /// The timestamp when the [price][google.cloud.retail.v2beta.PriceInfo.price]
+    /// starts to be effective. This can be set as a future timestamp, and the
+    /// [price][google.cloud.retail.v2beta.PriceInfo.price] is only used for search
+    /// after
+    /// [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+    /// If so, the
+    /// [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] must
+    /// be set and
+    /// [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
+    /// used before
+    /// [price_effective_time][google.cloud.retail.v2beta.PriceInfo.price_effective_time].
+    ///
+    /// Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
+    /// effective because it will cause additional latency during search.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp PriceEffectiveTime {
+      get { return priceEffectiveTime_; }
+      set {
+        priceEffectiveTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "price_expire_time" field.</summary>
+    public const int PriceExpireTimeFieldNumber = 6;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp priceExpireTime_;
+    /// <summary>
+    /// The timestamp when the [price][google.cloud.retail.v2beta.PriceInfo.price]
+    /// stops to be effective. The
+    /// [price][google.cloud.retail.v2beta.PriceInfo.price] is used for search
+    /// before
+    /// [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+    /// If this field is set, the
+    /// [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] must
+    /// be set and
+    /// [original_price][google.cloud.retail.v2beta.PriceInfo.original_price] is
+    /// used after
+    /// [price_expire_time][google.cloud.retail.v2beta.PriceInfo.price_expire_time].
+    ///
+    /// Do not set if [price][google.cloud.retail.v2beta.PriceInfo.price] is always
+    /// effective because it will cause additional latency during search.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp PriceExpireTime {
+      get { return priceExpireTime_; }
+      set {
+        priceExpireTime_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "price_range" field.</summary>
+    public const int PriceRangeFieldNumber = 7;
+    private global::Google.Cloud.Retail.V2Beta.PriceInfo.Types.PriceRange priceRange_;
+    /// <summary>
+    /// Output only. The price range of all the child
+    /// [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
+    /// [Product][google.cloud.retail.v2beta.Product]s grouped together on the
+    /// [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+    /// [Product][google.cloud.retail.v2beta.Product]. Only populated for
+    /// [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+    /// [Product][google.cloud.retail.v2beta.Product]s.
+    ///
+    /// Note: This field is OUTPUT_ONLY for
+    /// [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct].
+    /// Do not set this field in API requests.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.Retail.V2Beta.PriceInfo.Types.PriceRange PriceRange {
+      get { return priceRange_; }
+      set {
+        priceRange_ = value;
+      }
+    }
+
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
       return Equals(other as PriceInfo);
@@ -670,6 +1928,9 @@ namespace Google.Cloud.Retail.V2Beta {
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Price, other.Price)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(OriginalPrice, other.OriginalPrice)) return false;
       if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(Cost, other.Cost)) return false;
+      if (!object.Equals(PriceEffectiveTime, other.PriceEffectiveTime)) return false;
+      if (!object.Equals(PriceExpireTime, other.PriceExpireTime)) return false;
+      if (!object.Equals(PriceRange, other.PriceRange)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -680,6 +1941,9 @@ namespace Google.Cloud.Retail.V2Beta {
       if (Price != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Price);
       if (OriginalPrice != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(OriginalPrice);
       if (Cost != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(Cost);
+      if (priceEffectiveTime_ != null) hash ^= PriceEffectiveTime.GetHashCode();
+      if (priceExpireTime_ != null) hash ^= PriceExpireTime.GetHashCode();
+      if (priceRange_ != null) hash ^= PriceRange.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -712,6 +1976,18 @@ namespace Google.Cloud.Retail.V2Beta {
         output.WriteRawTag(37);
         output.WriteFloat(Cost);
       }
+      if (priceEffectiveTime_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(PriceEffectiveTime);
+      }
+      if (priceExpireTime_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(PriceExpireTime);
+      }
+      if (priceRange_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(PriceRange);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -737,6 +2013,18 @@ namespace Google.Cloud.Retail.V2Beta {
         output.WriteRawTag(37);
         output.WriteFloat(Cost);
       }
+      if (priceEffectiveTime_ != null) {
+        output.WriteRawTag(42);
+        output.WriteMessage(PriceEffectiveTime);
+      }
+      if (priceExpireTime_ != null) {
+        output.WriteRawTag(50);
+        output.WriteMessage(PriceExpireTime);
+      }
+      if (priceRange_ != null) {
+        output.WriteRawTag(58);
+        output.WriteMessage(PriceRange);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -757,6 +2045,15 @@ namespace Google.Cloud.Retail.V2Beta {
       }
       if (Cost != 0F) {
         size += 1 + 4;
+      }
+      if (priceEffectiveTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PriceEffectiveTime);
+      }
+      if (priceExpireTime_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PriceExpireTime);
+      }
+      if (priceRange_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(PriceRange);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -780,6 +2077,24 @@ namespace Google.Cloud.Retail.V2Beta {
       }
       if (other.Cost != 0F) {
         Cost = other.Cost;
+      }
+      if (other.priceEffectiveTime_ != null) {
+        if (priceEffectiveTime_ == null) {
+          PriceEffectiveTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        PriceEffectiveTime.MergeFrom(other.PriceEffectiveTime);
+      }
+      if (other.priceExpireTime_ != null) {
+        if (priceExpireTime_ == null) {
+          PriceExpireTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        PriceExpireTime.MergeFrom(other.PriceExpireTime);
+      }
+      if (other.priceRange_ != null) {
+        if (priceRange_ == null) {
+          PriceRange = new global::Google.Cloud.Retail.V2Beta.PriceInfo.Types.PriceRange();
+        }
+        PriceRange.MergeFrom(other.PriceRange);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -809,6 +2124,27 @@ namespace Google.Cloud.Retail.V2Beta {
           }
           case 37: {
             Cost = input.ReadFloat();
+            break;
+          }
+          case 42: {
+            if (priceEffectiveTime_ == null) {
+              PriceEffectiveTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(PriceEffectiveTime);
+            break;
+          }
+          case 50: {
+            if (priceExpireTime_ == null) {
+              PriceExpireTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(PriceExpireTime);
+            break;
+          }
+          case 58: {
+            if (priceRange_ == null) {
+              PriceRange = new global::Google.Cloud.Retail.V2Beta.PriceInfo.Types.PriceRange();
+            }
+            input.ReadMessage(PriceRange);
             break;
           }
         }
@@ -841,6 +2177,542 @@ namespace Google.Cloud.Retail.V2Beta {
             Cost = input.ReadFloat();
             break;
           }
+          case 42: {
+            if (priceEffectiveTime_ == null) {
+              PriceEffectiveTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(PriceEffectiveTime);
+            break;
+          }
+          case 50: {
+            if (priceExpireTime_ == null) {
+              PriceExpireTime = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(PriceExpireTime);
+            break;
+          }
+          case 58: {
+            if (priceRange_ == null) {
+              PriceRange = new global::Google.Cloud.Retail.V2Beta.PriceInfo.Types.PriceRange();
+            }
+            input.ReadMessage(PriceRange);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the PriceInfo message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static partial class Types {
+      /// <summary>
+      /// The price range of all
+      /// [variant][google.cloud.retail.v2beta.Product.Type.VARIANT]
+      /// [Product][google.cloud.retail.v2beta.Product] having the same
+      /// [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id].
+      /// </summary>
+      public sealed partial class PriceRange : pb::IMessage<PriceRange>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<PriceRange> _parser = new pb::MessageParser<PriceRange>(() => new PriceRange());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<PriceRange> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Cloud.Retail.V2Beta.PriceInfo.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public PriceRange() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public PriceRange(PriceRange other) : this() {
+          price_ = other.price_ != null ? other.price_.Clone() : null;
+          originalPrice_ = other.originalPrice_ != null ? other.originalPrice_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public PriceRange Clone() {
+          return new PriceRange(this);
+        }
+
+        /// <summary>Field number for the "price" field.</summary>
+        public const int PriceFieldNumber = 1;
+        private global::Google.Cloud.Retail.V2Beta.Interval price_;
+        /// <summary>
+        /// The inclusive
+        /// [Product.pricing_info.price][google.cloud.retail.v2beta.PriceInfo.price]
+        /// interval of all
+        /// [variant][google.cloud.retail.v2beta.Product.Type.VARIANT]
+        /// [Product][google.cloud.retail.v2beta.Product] having the same
+        /// [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id].
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Google.Cloud.Retail.V2Beta.Interval Price {
+          get { return price_; }
+          set {
+            price_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "original_price" field.</summary>
+        public const int OriginalPriceFieldNumber = 2;
+        private global::Google.Cloud.Retail.V2Beta.Interval originalPrice_;
+        /// <summary>
+        /// The inclusive
+        /// [Product.pricing_info.original_price][google.cloud.retail.v2beta.PriceInfo.original_price]
+        /// internal of all
+        /// [variant][google.cloud.retail.v2beta.Product.Type.VARIANT]
+        /// [Product][google.cloud.retail.v2beta.Product] having the same
+        /// [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id].
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public global::Google.Cloud.Retail.V2Beta.Interval OriginalPrice {
+          get { return originalPrice_; }
+          set {
+            originalPrice_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as PriceRange);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(PriceRange other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (!object.Equals(Price, other.Price)) return false;
+          if (!object.Equals(OriginalPrice, other.OriginalPrice)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (price_ != null) hash ^= Price.GetHashCode();
+          if (originalPrice_ != null) hash ^= OriginalPrice.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (price_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(Price);
+          }
+          if (originalPrice_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(OriginalPrice);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (price_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(Price);
+          }
+          if (originalPrice_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(OriginalPrice);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (price_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Price);
+          }
+          if (originalPrice_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(OriginalPrice);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(PriceRange other) {
+          if (other == null) {
+            return;
+          }
+          if (other.price_ != null) {
+            if (price_ == null) {
+              Price = new global::Google.Cloud.Retail.V2Beta.Interval();
+            }
+            Price.MergeFrom(other.Price);
+          }
+          if (other.originalPrice_ != null) {
+            if (originalPrice_ == null) {
+              OriginalPrice = new global::Google.Cloud.Retail.V2Beta.Interval();
+            }
+            OriginalPrice.MergeFrom(other.OriginalPrice);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 10: {
+                if (price_ == null) {
+                  Price = new global::Google.Cloud.Retail.V2Beta.Interval();
+                }
+                input.ReadMessage(Price);
+                break;
+              }
+              case 18: {
+                if (originalPrice_ == null) {
+                  OriginalPrice = new global::Google.Cloud.Retail.V2Beta.Interval();
+                }
+                input.ReadMessage(OriginalPrice);
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 10: {
+                if (price_ == null) {
+                  Price = new global::Google.Cloud.Retail.V2Beta.Interval();
+                }
+                input.ReadMessage(Price);
+                break;
+              }
+              case 18: {
+                if (originalPrice_ == null) {
+                  OriginalPrice = new global::Google.Cloud.Retail.V2Beta.Interval();
+                }
+                input.ReadMessage(OriginalPrice);
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// The rating of a [Product][google.cloud.retail.v2beta.Product].
+  /// </summary>
+  public sealed partial class Rating : pb::IMessage<Rating>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Rating> _parser = new pb::MessageParser<Rating>(() => new Rating());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Rating> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Rating() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Rating(Rating other) : this() {
+      ratingCount_ = other.ratingCount_;
+      averageRating_ = other.averageRating_;
+      ratingHistogram_ = other.ratingHistogram_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Rating Clone() {
+      return new Rating(this);
+    }
+
+    /// <summary>Field number for the "rating_count" field.</summary>
+    public const int RatingCountFieldNumber = 1;
+    private int ratingCount_;
+    /// <summary>
+    /// The total number of ratings. This value is independent of the value of
+    /// [rating_histogram][google.cloud.retail.v2beta.Rating.rating_histogram].
+    ///
+    /// This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is
+    /// returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int RatingCount {
+      get { return ratingCount_; }
+      set {
+        ratingCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "average_rating" field.</summary>
+    public const int AverageRatingFieldNumber = 2;
+    private float averageRating_;
+    /// <summary>
+    /// The average rating of the [Product][google.cloud.retail.v2beta.Product].
+    ///
+    /// The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is
+    /// returned.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public float AverageRating {
+      get { return averageRating_; }
+      set {
+        averageRating_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "rating_histogram" field.</summary>
+    public const int RatingHistogramFieldNumber = 3;
+    private static readonly pb::FieldCodec<int> _repeated_ratingHistogram_codec
+        = pb::FieldCodec.ForInt32(26);
+    private readonly pbc::RepeatedField<int> ratingHistogram_ = new pbc::RepeatedField<int>();
+    /// <summary>
+    /// List of rating counts per rating value (index = rating - 1). The list is
+    /// empty if there is no rating. If the list is non-empty, its size is
+    /// always 5. Otherwise, an INVALID_ARGUMENT error is returned.
+    ///
+    /// For example, [41, 14, 13, 47, 303]. It means that the
+    /// [Product][google.cloud.retail.v2beta.Product] got 41 ratings with 1 star,
+    /// 14 ratings with 2 star, and so on.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<int> RatingHistogram {
+      get { return ratingHistogram_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Rating);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Rating other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (RatingCount != other.RatingCount) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(AverageRating, other.AverageRating)) return false;
+      if(!ratingHistogram_.Equals(other.ratingHistogram_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (RatingCount != 0) hash ^= RatingCount.GetHashCode();
+      if (AverageRating != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(AverageRating);
+      hash ^= ratingHistogram_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (RatingCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(RatingCount);
+      }
+      if (AverageRating != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(AverageRating);
+      }
+      ratingHistogram_.WriteTo(output, _repeated_ratingHistogram_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (RatingCount != 0) {
+        output.WriteRawTag(8);
+        output.WriteInt32(RatingCount);
+      }
+      if (AverageRating != 0F) {
+        output.WriteRawTag(21);
+        output.WriteFloat(AverageRating);
+      }
+      ratingHistogram_.WriteTo(ref output, _repeated_ratingHistogram_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (RatingCount != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(RatingCount);
+      }
+      if (AverageRating != 0F) {
+        size += 1 + 4;
+      }
+      size += ratingHistogram_.CalculateSize(_repeated_ratingHistogram_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Rating other) {
+      if (other == null) {
+        return;
+      }
+      if (other.RatingCount != 0) {
+        RatingCount = other.RatingCount;
+      }
+      if (other.AverageRating != 0F) {
+        AverageRating = other.AverageRating;
+      }
+      ratingHistogram_.Add(other.ratingHistogram_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            RatingCount = input.ReadInt32();
+            break;
+          }
+          case 21: {
+            AverageRating = input.ReadFloat();
+            break;
+          }
+          case 26:
+          case 24: {
+            ratingHistogram_.AddEntriesFrom(input, _repeated_ratingHistogram_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            RatingCount = input.ReadInt32();
+            break;
+          }
+          case 21: {
+            AverageRating = input.ReadFloat();
+            break;
+          }
+          case 26:
+          case 24: {
+            ratingHistogram_.AddEntriesFrom(ref input, _repeated_ratingHistogram_codec);
+            break;
+          }
         }
       }
     }
@@ -863,7 +2735,7 @@ namespace Google.Cloud.Retail.V2Beta {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[3]; }
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[8]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -914,8 +2786,9 @@ namespace Google.Cloud.Retail.V2Beta {
     public const int IpAddressFieldNumber = 2;
     private string ipAddress_ = "";
     /// <summary>
-    /// The end user's IP address. This field is used to extract location
-    /// information for personalization.
+    /// The end user's IP address. Required for getting
+    /// [SearchResponse.sponsored_results][google.cloud.retail.v2beta.SearchResponse.sponsored_results].
+    /// This field is used to extract location information for personalization.
     ///
     /// This field must be either an IPv4 address (e.g. "104.133.9.80") or an IPv6
     /// address (e.g. "2001:0db8:85a3:0000:0000:8a2e:0370:7334"). Otherwise, an
@@ -939,7 +2812,8 @@ namespace Google.Cloud.Retail.V2Beta {
     public const int UserAgentFieldNumber = 3;
     private string userAgent_ = "";
     /// <summary>
-    /// User agent as included in the HTTP header.
+    /// User agent as included in the HTTP header. Required for getting
+    /// [SearchResponse.sponsored_results][google.cloud.retail.v2beta.SearchResponse.sponsored_results].
     ///
     /// The field must be a UTF-8 encoded string with a length limit of 1,000
     /// characters. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -1167,6 +3041,192 @@ namespace Google.Cloud.Retail.V2Beta {
           }
           case 32: {
             DirectUserRequest = input.ReadBool();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Promotion information.
+  /// </summary>
+  public sealed partial class Promotion : pb::IMessage<Promotion>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Promotion> _parser = new pb::MessageParser<Promotion>(() => new Promotion());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Promotion> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Promotion() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Promotion(Promotion other) : this() {
+      promotionId_ = other.promotionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Promotion Clone() {
+      return new Promotion(this);
+    }
+
+    /// <summary>Field number for the "promotion_id" field.</summary>
+    public const int PromotionIdFieldNumber = 1;
+    private string promotionId_ = "";
+    /// <summary>
+    /// ID of the promotion. For example, "free gift".
+    ///
+    /// The value value must be a UTF-8 encoded string with a length limit of 128
+    /// characters, and match the pattern: [a-zA-Z][a-zA-Z0-9_]*. For example,
+    /// id0LikeThis or ID_1_LIKE_THIS. Otherwise, an INVALID_ARGUMENT error is
+    /// returned.
+    ///
+    /// Google Merchant Center property
+    /// [promotion](https://support.google.com/merchants/answer/7050148).
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PromotionId {
+      get { return promotionId_; }
+      set {
+        promotionId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Promotion);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Promotion other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (PromotionId != other.PromotionId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (PromotionId.Length != 0) hash ^= PromotionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (PromotionId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PromotionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (PromotionId.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(PromotionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (PromotionId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PromotionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Promotion other) {
+      if (other == null) {
+        return;
+      }
+      if (other.PromotionId.Length != 0) {
+        PromotionId = other.PromotionId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            PromotionId = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            PromotionId = input.ReadString();
             break;
           }
         }

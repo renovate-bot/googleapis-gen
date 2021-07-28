@@ -37,21 +37,23 @@ public final class CatalogProto {
       "to\022\032google.cloud.retail.v2beta\032\034google/a" +
       "pi/annotations.proto\032\037google/api/field_b" +
       "ehavior.proto\032\031google/api/resource.proto" +
-      "\"^\n\022ProductLevelConfig\022\036\n\026ingestion_prod" +
-      "uct_type\030\001 \001(\t\022(\n merchant_center_produc" +
-      "t_id_field\030\002 \001(\t\"\360\001\n\007Catalog\022\024\n\004name\030\001 \001" +
-      "(\tB\006\340A\002\340A\005\022\034\n\014display_name\030\002 \001(\tB\006\340A\002\340A\005" +
-      "\022Q\n\024product_level_config\030\004 \001(\0132..google." +
-      "cloud.retail.v2beta.ProductLevelConfigB\003" +
-      "\340A\002:^\352A[\n\035retail.googleapis.com/Catalog\022" +
-      ":projects/{project}/locations/{location}" +
-      "/catalogs/{catalog}B\325\001\n\036com.google.cloud" +
-      ".retail.v2betaB\014CatalogProtoP\001Z@google.g" +
-      "olang.org/genproto/googleapis/cloud/reta" +
-      "il/v2beta;retail\242\002\006RETAIL\252\002\032Google.Cloud" +
-      ".Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2b" +
-      "eta\352\002\035Google::Cloud::Retail::V2betab\006pro" +
-      "to3"
+      "\032\'google/cloud/retail/v2beta/common.prot" +
+      "o\032.google/cloud/retail/v2beta/import_con" +
+      "fig.proto\"^\n\022ProductLevelConfig\022\036\n\026inges" +
+      "tion_product_type\030\001 \001(\t\022(\n merchant_cent" +
+      "er_product_id_field\030\002 \001(\t\"\360\001\n\007Catalog\022\024\n" +
+      "\004name\030\001 \001(\tB\006\340A\002\340A\005\022\034\n\014display_name\030\002 \001(" +
+      "\tB\006\340A\002\340A\005\022Q\n\024product_level_config\030\004 \001(\0132" +
+      "..google.cloud.retail.v2beta.ProductLeve" +
+      "lConfigB\003\340A\002:^\352A[\n\035retail.googleapis.com" +
+      "/Catalog\022:projects/{project}/locations/{" +
+      "location}/catalogs/{catalog}B\325\001\n\036com.goo" +
+      "gle.cloud.retail.v2betaB\014CatalogProtoP\001Z" +
+      "@google.golang.org/genproto/googleapis/c" +
+      "loud/retail/v2beta;retail\242\002\006RETAIL\252\002\032Goo" +
+      "gle.Cloud.Retail.V2Beta\312\002\032Google\\Cloud\\R" +
+      "etail\\V2beta\352\002\035Google::Cloud::Retail::V2" +
+      "betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -59,6 +61,8 @@ public final class CatalogProto {
           com.google.api.AnnotationsProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
           com.google.api.ResourceProto.getDescriptor(),
+          com.google.cloud.retail.v2beta.CommonProto.getDescriptor(),
+          com.google.cloud.retail.v2beta.ImportConfigProto.getDescriptor(),
         });
     internal_static_google_cloud_retail_v2beta_ProductLevelConfig_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -81,6 +85,8 @@ public final class CatalogProto {
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.retail.v2beta.CommonProto.getDescriptor();
+    com.google.cloud.retail.v2beta.ImportConfigProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

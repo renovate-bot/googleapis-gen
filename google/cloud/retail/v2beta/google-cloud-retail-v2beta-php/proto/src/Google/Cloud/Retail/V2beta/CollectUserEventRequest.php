@@ -17,7 +17,7 @@ class CollectUserEventRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. The parent catalog name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -55,7 +55,7 @@ class CollectUserEventRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $parent
      *           Required. The parent catalog name, such as
-     *           "projects/1234/locations/global/catalogs/default_catalog".
+     *           `projects/1234/locations/global/catalogs/default_catalog`.
      *     @type string $user_event
      *           Required. URL encoded UserEvent proto with a length limit of 2,000,000
      *           characters.
@@ -77,7 +77,7 @@ class CollectUserEventRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -89,7 +89,7 @@ class CollectUserEventRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The parent catalog name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

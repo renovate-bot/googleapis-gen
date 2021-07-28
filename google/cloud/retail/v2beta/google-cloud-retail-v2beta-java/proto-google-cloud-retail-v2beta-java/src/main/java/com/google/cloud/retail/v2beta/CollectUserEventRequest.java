@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The parent catalog name, such as
-   * "projects/1234/locations/global/catalogs/default_catalog".
+   * `projects/1234/locations/global/catalogs/default_catalog`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -137,7 +137,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The parent catalog name, such as
-   * "projects/1234/locations/global/catalogs/default_catalog".
+   * `projects/1234/locations/global/catalogs/default_catalog`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -637,7 +637,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The parent catalog name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The parent catalog name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -680,7 +680,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The parent catalog name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The parent catalog name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -715,7 +715,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The parent catalog name, such as
-     * "projects/1234/locations/global/catalogs/default_catalog".
+     * `projects/1234/locations/global/catalogs/default_catalog`.
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

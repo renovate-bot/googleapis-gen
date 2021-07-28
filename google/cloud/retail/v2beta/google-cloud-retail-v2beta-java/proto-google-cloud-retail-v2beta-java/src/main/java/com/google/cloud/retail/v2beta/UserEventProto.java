@@ -30,6 +30,11 @@ public final class UserEventProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2beta_ProductDetail_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_retail_v2beta_CompletionDetail_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2beta_CompletionDetail_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_google_cloud_retail_v2beta_PurchaseTransaction_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -50,35 +55,41 @@ public final class UserEventProto {
       "beta/common.proto\032(google/cloud/retail/v" +
       "2beta/product.proto\032\037google/protobuf/tim" +
       "estamp.proto\032\036google/protobuf/wrappers.p" +
-      "roto\"\220\005\n\tUserEvent\022\027\n\nevent_type\030\001 \001(\tB\003" +
-      "\340A\002\022\027\n\nvisitor_id\030\002 \001(\tB\003\340A\002\022.\n\nevent_ti" +
-      "me\030\003 \001(\0132\032.google.protobuf.Timestamp\022\026\n\016" +
-      "experiment_ids\030\004 \003(\t\022\031\n\021attribution_toke" +
-      "n\030\005 \001(\t\022B\n\017product_details\030\006 \003(\0132).googl" +
-      "e.cloud.retail.v2beta.ProductDetail\022I\n\na" +
-      "ttributes\030\007 \003(\01325.google.cloud.retail.v2" +
-      "beta.UserEvent.AttributesEntry\022\017\n\007cart_i" +
-      "d\030\010 \001(\t\022M\n\024purchase_transaction\030\t \001(\0132/." +
-      "google.cloud.retail.v2beta.PurchaseTrans" +
-      "action\022\024\n\014search_query\030\n \001(\t\022\027\n\017page_cat" +
-      "egories\030\013 \003(\t\0227\n\tuser_info\030\014 \001(\0132$.googl" +
-      "e.cloud.retail.v2beta.UserInfo\022\013\n\003uri\030\r " +
-      "\001(\t\022\024\n\014referrer_uri\030\016 \001(\t\022\024\n\014page_view_i" +
-      "d\030\017 \001(\t\032^\n\017AttributesEntry\022\013\n\003key\030\001 \001(\t\022" +
-      ":\n\005value\030\002 \001(\0132+.google.cloud.retail.v2b" +
-      "eta.CustomAttribute:\0028\001\"y\n\rProductDetail" +
-      "\0229\n\007product\030\001 \001(\0132#.google.cloud.retail." +
-      "v2beta.ProductB\003\340A\002\022-\n\010quantity\030\002 \001(\0132\033." +
-      "google.protobuf.Int32Value\"n\n\023PurchaseTr" +
-      "ansaction\022\n\n\002id\030\001 \001(\t\022\024\n\007revenue\030\002 \001(\002B\003" +
-      "\340A\002\022\013\n\003tax\030\003 \001(\002\022\014\n\004cost\030\004 \001(\002\022\032\n\rcurren" +
-      "cy_code\030\005 \001(\tB\003\340A\002B\327\001\n\036com.google.cloud." +
-      "retail.v2betaB\016UserEventProtoP\001Z@google." +
-      "golang.org/genproto/googleapis/cloud/ret" +
-      "ail/v2beta;retail\242\002\006RETAIL\252\002\032Google.Clou" +
-      "d.Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V2" +
-      "beta\352\002\035Google::Cloud::Retail::V2betab\006pr" +
-      "oto3"
+      "roto\"\237\006\n\tUserEvent\022\027\n\nevent_type\030\001 \001(\tB\003" +
+      "\340A\002\022\027\n\nvisitor_id\030\002 \001(\tB\003\340A\002\022\022\n\nsession_" +
+      "id\030\025 \001(\t\022.\n\nevent_time\030\003 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\022\026\n\016experiment_ids\030\004 \003(\t" +
+      "\022\031\n\021attribution_token\030\005 \001(\t\022B\n\017product_d" +
+      "etails\030\006 \003(\0132).google.cloud.retail.v2bet" +
+      "a.ProductDetail\022G\n\021completion_detail\030\026 \001" +
+      "(\0132,.google.cloud.retail.v2beta.Completi" +
+      "onDetail\022I\n\nattributes\030\007 \003(\01325.google.cl" +
+      "oud.retail.v2beta.UserEvent.AttributesEn" +
+      "try\022\017\n\007cart_id\030\010 \001(\t\022M\n\024purchase_transac" +
+      "tion\030\t \001(\0132/.google.cloud.retail.v2beta." +
+      "PurchaseTransaction\022\024\n\014search_query\030\n \001(" +
+      "\t\022\016\n\006filter\030\020 \001(\t\022\020\n\010order_by\030\021 \001(\t\022\016\n\006o" +
+      "ffset\030\022 \001(\005\022\027\n\017page_categories\030\013 \003(\t\0227\n\t" +
+      "user_info\030\014 \001(\0132$.google.cloud.retail.v2" +
+      "beta.UserInfo\022\013\n\003uri\030\r \001(\t\022\024\n\014referrer_u" +
+      "ri\030\016 \001(\t\022\024\n\014page_view_id\030\017 \001(\t\032^\n\017Attrib" +
+      "utesEntry\022\013\n\003key\030\001 \001(\t\022:\n\005value\030\002 \001(\0132+." +
+      "google.cloud.retail.v2beta.CustomAttribu" +
+      "te:\0028\001\"y\n\rProductDetail\0229\n\007product\030\001 \001(\013" +
+      "2#.google.cloud.retail.v2beta.ProductB\003\340" +
+      "A\002\022-\n\010quantity\030\002 \001(\0132\033.google.protobuf.I" +
+      "nt32Value\"p\n\020CompletionDetail\022$\n\034complet" +
+      "ion_attribution_token\030\001 \001(\t\022\033\n\023selected_" +
+      "suggestion\030\002 \001(\t\022\031\n\021selected_position\030\003 " +
+      "\001(\005\"n\n\023PurchaseTransaction\022\n\n\002id\030\001 \001(\t\022\024" +
+      "\n\007revenue\030\002 \001(\002B\003\340A\002\022\013\n\003tax\030\003 \001(\002\022\014\n\004cos" +
+      "t\030\004 \001(\002\022\032\n\rcurrency_code\030\005 \001(\tB\003\340A\002B\327\001\n\036" +
+      "com.google.cloud.retail.v2betaB\016UserEven" +
+      "tProtoP\001Z@google.golang.org/genproto/goo" +
+      "gleapis/cloud/retail/v2beta;retail\242\002\006RET" +
+      "AIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032Googl" +
+      "e\\Cloud\\Retail\\V2beta\352\002\035Google::Cloud::R" +
+      "etail::V2betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -95,7 +106,7 @@ public final class UserEventProto {
     internal_static_google_cloud_retail_v2beta_UserEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_UserEvent_descriptor,
-        new java.lang.String[] { "EventType", "VisitorId", "EventTime", "ExperimentIds", "AttributionToken", "ProductDetails", "Attributes", "CartId", "PurchaseTransaction", "SearchQuery", "PageCategories", "UserInfo", "Uri", "ReferrerUri", "PageViewId", });
+        new java.lang.String[] { "EventType", "VisitorId", "SessionId", "EventTime", "ExperimentIds", "AttributionToken", "ProductDetails", "CompletionDetail", "Attributes", "CartId", "PurchaseTransaction", "SearchQuery", "Filter", "OrderBy", "Offset", "PageCategories", "UserInfo", "Uri", "ReferrerUri", "PageViewId", });
     internal_static_google_cloud_retail_v2beta_UserEvent_AttributesEntry_descriptor =
       internal_static_google_cloud_retail_v2beta_UserEvent_descriptor.getNestedTypes().get(0);
     internal_static_google_cloud_retail_v2beta_UserEvent_AttributesEntry_fieldAccessorTable = new
@@ -108,8 +119,14 @@ public final class UserEventProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_ProductDetail_descriptor,
         new java.lang.String[] { "Product", "Quantity", });
-    internal_static_google_cloud_retail_v2beta_PurchaseTransaction_descriptor =
+    internal_static_google_cloud_retail_v2beta_CompletionDetail_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_google_cloud_retail_v2beta_CompletionDetail_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_retail_v2beta_CompletionDetail_descriptor,
+        new java.lang.String[] { "CompletionAttributionToken", "SelectedSuggestion", "SelectedPosition", });
+    internal_static_google_cloud_retail_v2beta_PurchaseTransaction_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_retail_v2beta_PurchaseTransaction_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_PurchaseTransaction_descriptor,

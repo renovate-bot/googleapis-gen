@@ -36,6 +36,7 @@ namespace Google.Cloud.Retail.V2Beta.Snippets
             {
                 Product = new Product(),
                 UpdateMask = new FieldMask(),
+                AllowMissing = false,
             };
             // Make the request
             Product response = await productServiceClient.UpdateProductAsync(request);

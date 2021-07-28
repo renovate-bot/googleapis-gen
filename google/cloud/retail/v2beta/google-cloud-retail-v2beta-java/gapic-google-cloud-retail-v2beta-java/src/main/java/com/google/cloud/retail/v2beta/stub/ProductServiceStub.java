@@ -16,17 +16,30 @@
 
 package com.google.cloud.retail.v2beta.stub;
 
+import static com.google.cloud.retail.v2beta.ProductServiceClient.ListProductsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.retail.v2beta.AddFulfillmentPlacesMetadata;
+import com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest;
+import com.google.cloud.retail.v2beta.AddFulfillmentPlacesResponse;
 import com.google.cloud.retail.v2beta.CreateProductRequest;
 import com.google.cloud.retail.v2beta.DeleteProductRequest;
 import com.google.cloud.retail.v2beta.GetProductRequest;
 import com.google.cloud.retail.v2beta.ImportMetadata;
 import com.google.cloud.retail.v2beta.ImportProductsRequest;
 import com.google.cloud.retail.v2beta.ImportProductsResponse;
+import com.google.cloud.retail.v2beta.ListProductsRequest;
+import com.google.cloud.retail.v2beta.ListProductsResponse;
 import com.google.cloud.retail.v2beta.Product;
+import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata;
+import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest;
+import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2beta.SetInventoryMetadata;
+import com.google.cloud.retail.v2beta.SetInventoryRequest;
+import com.google.cloud.retail.v2beta.SetInventoryResponse;
 import com.google.cloud.retail.v2beta.UpdateProductRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
@@ -55,6 +68,14 @@ public abstract class ProductServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getProductCallable()");
   }
 
+  public UnaryCallable<ListProductsRequest, ListProductsPagedResponse> listProductsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProductsPagedCallable()");
+  }
+
+  public UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listProductsCallable()");
+  }
+
   public UnaryCallable<UpdateProductRequest, Product> updateProductCallable() {
     throw new UnsupportedOperationException("Not implemented: updateProductCallable()");
   }
@@ -70,6 +91,39 @@ public abstract class ProductServiceStub implements BackgroundResource {
 
   public UnaryCallable<ImportProductsRequest, Operation> importProductsCallable() {
     throw new UnsupportedOperationException("Not implemented: importProductsCallable()");
+  }
+
+  public OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
+      setInventoryOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: setInventoryOperationCallable()");
+  }
+
+  public UnaryCallable<SetInventoryRequest, Operation> setInventoryCallable() {
+    throw new UnsupportedOperationException("Not implemented: setInventoryCallable()");
+  }
+
+  public OperationCallable<
+          AddFulfillmentPlacesRequest, AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: addFulfillmentPlacesOperationCallable()");
+  }
+
+  public UnaryCallable<AddFulfillmentPlacesRequest, Operation> addFulfillmentPlacesCallable() {
+    throw new UnsupportedOperationException("Not implemented: addFulfillmentPlacesCallable()");
+  }
+
+  public OperationCallable<
+          RemoveFulfillmentPlacesRequest, RemoveFulfillmentPlacesResponse,
+          RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: removeFulfillmentPlacesOperationCallable()");
+  }
+
+  public UnaryCallable<RemoveFulfillmentPlacesRequest, Operation>
+      removeFulfillmentPlacesCallable() {
+    throw new UnsupportedOperationException("Not implemented: removeFulfillmentPlacesCallable()");
   }
 
   @Override

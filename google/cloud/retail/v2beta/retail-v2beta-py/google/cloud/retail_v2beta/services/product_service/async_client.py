@@ -28,11 +28,13 @@ from google.oauth2 import service_account              # type: ignore
 
 from google.api_core import operation  # type: ignore
 from google.api_core import operation_async  # type: ignore
+from google.cloud.retail_v2beta.services.product_service import pagers
 from google.cloud.retail_v2beta.types import common
 from google.cloud.retail_v2beta.types import import_config
 from google.cloud.retail_v2beta.types import product
 from google.cloud.retail_v2beta.types import product as gcr_product
 from google.cloud.retail_v2beta.types import product_service
+from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
@@ -174,7 +176,7 @@ class ProductServiceAsyncClient:
                 [CreateProduct][] method.
             parent (:class:`str`):
                 Required. The parent catalog resource name, such as
-                "projects/*/locations/global/catalogs/default_catalog/branches/default_branch".
+                ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -286,7 +288,7 @@ class ProductServiceAsyncClient:
             name (:class:`str`):
                 Required. Full resource name of
                 [Product][google.cloud.retail.v2beta.Product], such as
-                "projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+                ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id``.
 
                 If the caller does not have permission to access the
                 [Product][google.cloud.retail.v2beta.Product],
@@ -355,6 +357,102 @@ class ProductServiceAsyncClient:
         # Done; return the response.
         return response
 
+    async def list_products(self,
+            request: product_service.ListProductsRequest = None,
+            *,
+            parent: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> pagers.ListProductsAsyncPager:
+        r"""Gets a list of [Product][google.cloud.retail.v2beta.Product]s.
+
+        Args:
+            request (:class:`google.cloud.retail_v2beta.types.ListProductsRequest`):
+                The request object. Request message for
+                [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
+                method.
+            parent (:class:`str`):
+                Required. The parent branch resource name, such as
+                ``projects/*/locations/global/catalogs/default_catalog/branches/0``.
+                Use ``default_branch`` as the branch ID, to list
+                products under the default branch.
+
+                If the caller does not have permission to list
+                [Product][google.cloud.retail.v2beta.Product]s under
+                this branch, regardless of whether or not this branch
+                exists, a PERMISSION_DENIED error is returned.
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.cloud.retail_v2beta.services.product_service.pagers.ListProductsAsyncPager:
+                Response message for
+                   [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
+                   method.
+
+                Iterating over this object will yield results and
+                resolve additional pages automatically.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
+        request = product_service.ListProductsRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if parent is not None:
+            request.parent = parent
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.list_products,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("parent", request.parent),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # This method is paged; wrap the response in a pager, which provides
+        # an `__aiter__` convenience method.
+        response = pagers.ListProductsAsyncPager(
+            method=rpc,
+            request=request,
+            response=response,
+            metadata=metadata,
+        )
+
+        # Done; return the response.
+        return response
+
     async def update_product(self,
             request: product_service.UpdateProductRequest = None,
             *,
@@ -379,7 +477,9 @@ class ProductServiceAsyncClient:
                 PERMISSION_DENIED error is returned.
 
                 If the [Product][google.cloud.retail.v2beta.Product] to
-                update does not exist, a NOT_FOUND error is returned.
+                update does not exist and
+                [allow_missing][google.cloud.retail.v2beta.UpdateProductRequest.allow_missing]
+                is not set, a NOT_FOUND error is returned.
 
                 This corresponds to the ``product`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -471,7 +571,7 @@ class ProductServiceAsyncClient:
             name (:class:`str`):
                 Required. Full resource name of
                 [Product][google.cloud.retail.v2beta.Product], such as
-                "projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id".
+                ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id``.
 
                 If the caller does not have permission to delete the
                 [Product][google.cloud.retail.v2beta.Product],
@@ -480,6 +580,21 @@ class ProductServiceAsyncClient:
 
                 If the [Product][google.cloud.retail.v2beta.Product] to
                 delete does not exist, a NOT_FOUND error is returned.
+
+                The [Product][google.cloud.retail.v2beta.Product] to
+                delete can neither be a
+                [Product.Type.COLLECTION][google.cloud.retail.v2beta.Product.Type.COLLECTION]
+                [Product][google.cloud.retail.v2beta.Product] member nor
+                a
+                [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+                [Product][google.cloud.retail.v2beta.Product] with more
+                than one
+                [variants][google.cloud.retail.v2beta.Product.Type.VARIANT].
+                Otherwise, an INVALID_ARGUMENT error is returned.
+
+                All inventory information for the named
+                [Product][google.cloud.retail.v2beta.Product] will be
+                deleted.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -600,6 +715,411 @@ class ProductServiceAsyncClient:
             self._client._transport.operations_client,
             import_config.ImportProductsResponse,
             metadata_type=import_config.ImportMetadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    async def set_inventory(self,
+            request: product_service.SetInventoryRequest = None,
+            *,
+            inventory: product.Product = None,
+            set_mask: field_mask_pb2.FieldMask = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation_async.AsyncOperation:
+        r"""Updates inventory information for a
+        [Product][google.cloud.retail.v2beta.Product] while respecting
+        the last update timestamps of each inventory field.
+
+        This process is asynchronous and does not require the
+        [Product][google.cloud.retail.v2beta.Product] to exist before
+        updating fulfillment information. If the request is valid, the
+        update will be enqueued and processed downstream. As a
+        consequence, when a response is returned, updates are not
+        immediately manifested in the
+        [Product][google.cloud.retail.v2beta.Product] queried by
+        [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct]
+        or
+        [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
+
+        When inventory is updated with
+        [CreateProduct][google.cloud.retail.v2beta.ProductService.CreateProduct]
+        and
+        [UpdateProduct][google.cloud.retail.v2beta.ProductService.UpdateProduct],
+        the specified inventory field value(s) will overwrite any
+        existing value(s) while ignoring the last update time for this
+        field. Furthermore, the last update time for the specified
+        inventory fields will be overwritten to the time of the
+        [CreateProduct][google.cloud.retail.v2beta.ProductService.CreateProduct]
+        or
+        [UpdateProduct][google.cloud.retail.v2beta.ProductService.UpdateProduct]
+        request.
+
+        If no inventory fields are set in
+        [CreateProductRequest.product][google.cloud.retail.v2beta.CreateProductRequest.product],
+        then any pre-existing inventory information for this product
+        will be used.
+
+        If no inventory fields are set in
+        [UpdateProductRequest.set_mask][], then any existing inventory
+        information will be preserved.
+
+        Pre-existing inventory information can only be updated with
+        [SetInventory][google.cloud.retail.v2beta.ProductService.SetInventory],
+        [AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces],
+        and
+        [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
+
+        This feature is only available for users who have Retail Search
+        enabled. Contact Retail Support
+        (retail-search-support@google.com) if you are interested in
+        using Retail Search.
+
+        Args:
+            request (:class:`google.cloud.retail_v2beta.types.SetInventoryRequest`):
+                The request object. Request message for [SetInventory][]
+                method.
+            inventory (:class:`google.cloud.retail_v2beta.types.Product`):
+                Required. The inventory information to update. The
+                allowable fields to update are:
+
+                -  [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
+                -  [Product.availability][google.cloud.retail.v2beta.Product.availability]
+                -  [Product.available_quantity][google.cloud.retail.v2beta.Product.available_quantity]
+                -  [Product.fulfillment_info][google.cloud.retail.v2beta.Product.fulfillment_info]
+                   The updated inventory fields must be specified in
+                   [SetInventoryRequest.set_mask][google.cloud.retail.v2beta.SetInventoryRequest.set_mask].
+
+                If [SetInventoryRequest.inventory.name][] is empty or
+                invalid, an INVALID_ARGUMENT error is returned.
+
+                If the caller does not have permission to update the
+                [Product][google.cloud.retail.v2beta.Product] named in
+                [Product.name][google.cloud.retail.v2beta.Product.name],
+                regardless of whether or not it exists, a
+                PERMISSION_DENIED error is returned.
+
+                If the [Product][google.cloud.retail.v2beta.Product] to
+                update does not have existing inventory information, the
+                provided inventory information will be inserted.
+
+                If the [Product][google.cloud.retail.v2beta.Product] to
+                update has existing inventory information, the provided
+                inventory information will be merged while respecting
+                the last update time for each inventory field, using the
+                provided or default value for
+                [SetInventoryRequest.set_time][google.cloud.retail.v2beta.SetInventoryRequest.set_time].
+
+                The last update time is recorded for the following
+                inventory fields:
+
+                -  [Product.price_info][google.cloud.retail.v2beta.Product.price_info]
+                -  [Product.availability][google.cloud.retail.v2beta.Product.availability]
+                -  [Product.available_quantity][google.cloud.retail.v2beta.Product.available_quantity]
+                -  [Product.fulfillment_info][google.cloud.retail.v2beta.Product.fulfillment_info]
+
+                If a full overwrite of inventory information while
+                ignoring timestamps is needed, [UpdateProduct][] should
+                be invoked instead.
+
+                This corresponds to the ``inventory`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            set_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+                Indicates which inventory fields in the provided
+                [Product][google.cloud.retail.v2beta.Product] to update.
+                If not set or set with empty paths, all inventory fields
+                will be updated.
+
+                If an unsupported or unknown field is provided, an
+                INVALID_ARGUMENT error is returned and the entire update
+                will be ignored.
+
+                This corresponds to the ``set_mask`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation_async.AsyncOperation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be :class:`google.cloud.retail_v2beta.types.SetInventoryResponse` Response of the SetInventoryRequest. Currently empty because
+                   there is no meaningful response populated from the
+                   [SetInventory][] method.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([inventory, set_mask])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
+        request = product_service.SetInventoryRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if inventory is not None:
+            request.inventory = inventory
+        if set_mask is not None:
+            request.set_mask = set_mask
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.set_inventory,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("inventory.name", request.inventory.name),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation_async.from_gapic(
+            response,
+            self._client._transport.operations_client,
+            product_service.SetInventoryResponse,
+            metadata_type=product_service.SetInventoryMetadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    async def add_fulfillment_places(self,
+            request: product_service.AddFulfillmentPlacesRequest = None,
+            *,
+            product: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation_async.AsyncOperation:
+        r"""Incrementally adds place IDs to
+        [Product.fulfillment_info.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids].
+
+        This process is asynchronous and does not require the
+        [Product][google.cloud.retail.v2beta.Product] to exist before
+        updating fulfillment information. If the request is valid, the
+        update will be enqueued and processed downstream. As a
+        consequence, when a response is returned, the added place IDs
+        are not immediately manifested in the
+        [Product][google.cloud.retail.v2beta.Product] queried by
+        [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct]
+        or
+        [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
+
+        This feature is only available for users who have Retail Search
+        enabled. Contact Retail Support
+        (retail-search-support@google.com) if you are interested in
+        using Retail Search.
+
+        Args:
+            request (:class:`google.cloud.retail_v2beta.types.AddFulfillmentPlacesRequest`):
+                The request object. Request message for
+                [AddFulfillmentPlaces][] method.
+            product (:class:`str`):
+                Required. Full resource name of
+                [Product][google.cloud.retail.v2beta.Product], such as
+                ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id``.
+
+                If the caller does not have permission to access the
+                [Product][google.cloud.retail.v2beta.Product],
+                regardless of whether or not it exists, a
+                PERMISSION_DENIED error is returned.
+
+                This corresponds to the ``product`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation_async.AsyncOperation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be :class:`google.cloud.retail_v2beta.types.AddFulfillmentPlacesResponse` Response of the RemoveFulfillmentPlacesRequest. Currently empty because
+                   there is no meaningful response populated from the
+                   [AddFulfillmentPlaces][] method.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([product])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
+        request = product_service.AddFulfillmentPlacesRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if product is not None:
+            request.product = product
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.add_fulfillment_places,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("product", request.product),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation_async.from_gapic(
+            response,
+            self._client._transport.operations_client,
+            product_service.AddFulfillmentPlacesResponse,
+            metadata_type=product_service.AddFulfillmentPlacesMetadata,
+        )
+
+        # Done; return the response.
+        return response
+
+    async def remove_fulfillment_places(self,
+            request: product_service.RemoveFulfillmentPlacesRequest = None,
+            *,
+            product: str = None,
+            retry: retries.Retry = gapic_v1.method.DEFAULT,
+            timeout: float = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+            ) -> operation_async.AsyncOperation:
+        r"""Incrementally removes place IDs from a
+        [Product.fulfillment_info.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids].
+
+        This process is asynchronous and does not require the
+        [Product][google.cloud.retail.v2beta.Product] to exist before
+        updating fulfillment information. If the request is valid, the
+        update will be enqueued and processed downstream. As a
+        consequence, when a response is returned, the removed place IDs
+        are not immediately manifested in the
+        [Product][google.cloud.retail.v2beta.Product] queried by
+        [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct]
+        or
+        [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
+
+        This feature is only available for users who have Retail Search
+        enabled. Contact Retail Support
+        (retail-search-support@google.com) if you are interested in
+        using Retail Search.
+
+        Args:
+            request (:class:`google.cloud.retail_v2beta.types.RemoveFulfillmentPlacesRequest`):
+                The request object. Request message for
+                [RemoveFulfillmentPlaces][] method.
+            product (:class:`str`):
+                Required. Full resource name of
+                [Product][google.cloud.retail.v2beta.Product], such as
+                ``projects/*/locations/global/catalogs/default_catalog/branches/default_branch/products/some_product_id``.
+
+                If the caller does not have permission to access the
+                [Product][google.cloud.retail.v2beta.Product],
+                regardless of whether or not it exists, a
+                PERMISSION_DENIED error is returned.
+
+                This corresponds to the ``product`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                should be retried.
+            timeout (float): The timeout for this request.
+            metadata (Sequence[Tuple[str, str]]): Strings which should be
+                sent along with the request as metadata.
+
+        Returns:
+            google.api_core.operation_async.AsyncOperation:
+                An object representing a long-running operation.
+
+                The result type for the operation will be :class:`google.cloud.retail_v2beta.types.RemoveFulfillmentPlacesResponse` Response of the RemoveFulfillmentPlacesRequest. Currently empty because there
+                   is no meaningful response populated from the
+                   [RemoveFulfillmentPlaces][] method.
+
+        """
+        # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([product])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
+        request = product_service.RemoveFulfillmentPlacesRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if product is not None:
+            request.product = product
+
+        # Wrap the RPC method; this adds retry and timeout information,
+        # and friendly error handling.
+        rpc = gapic_v1.method_async.wrap_method(
+            self._client._transport.remove_fulfillment_places,
+            default_timeout=None,
+            client_info=DEFAULT_CLIENT_INFO,
+        )
+
+        # Certain fields should be provided within the metadata header;
+        # add these here.
+        metadata = tuple(metadata) + (
+            gapic_v1.routing_header.to_grpc_metadata((
+                ("product", request.product),
+            )),
+        )
+
+        # Send the request.
+        response = await rpc(
+            request,
+            retry=retry,
+            timeout=timeout,
+            metadata=metadata,
+        )
+
+        # Wrap the response in an operation future.
+        response = operation_async.from_gapic(
+            response,
+            self._client._transport.operations_client,
+            product_service.RemoveFulfillmentPlacesResponse,
+            metadata_type=product_service.RemoveFulfillmentPlacesMetadata,
         )
 
         # Done; return the response.

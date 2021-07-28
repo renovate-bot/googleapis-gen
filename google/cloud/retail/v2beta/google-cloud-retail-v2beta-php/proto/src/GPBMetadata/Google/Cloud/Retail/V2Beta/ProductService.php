@@ -18,16 +18,18 @@ class ProductService
         \GPBMetadata\Google\Api\Client::initOnce();
         \GPBMetadata\Google\Api\FieldBehavior::initOnce();
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Cloud\Retail\V2Beta\ExportConfig::initOnce();
         \GPBMetadata\Google\Cloud\Retail\V2Beta\ImportConfig::initOnce();
         \GPBMetadata\Google\Cloud\Retail\V2Beta\Product::initOnce();
         \GPBMetadata\Google\Cloud\Retail\V2Beta\PurgeConfig::initOnce();
         \GPBMetadata\Google\Longrunning\Operations::initOnce();
         \GPBMetadata\Google\Protobuf\GPBEmpty::initOnce();
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
+        \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ã
-0google/cloud/retail/v2beta/product_service.protogoogle.cloud.retail.v2betagoogle/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/cloud/retail/v2beta/import_config.proto(google/cloud/retail/v2beta/product.proto-google/cloud/retail/v2beta/purge_config.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.proto" 
+Ø$
+0google/cloud/retail/v2beta/product_service.protogoogle.cloud.retail.v2betagoogle/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/cloud/retail/v2beta/export_config.proto.google/cloud/retail/v2beta/import_config.proto(google/cloud/retail/v2beta/product.proto-google/cloud/retail/v2beta/purge_config.proto#google/longrunning/operations.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/protobuf/timestamp.proto" 
 CreateProductRequest4
 parent (	B$àAúA
 retail.googleapis.com/Branch9
@@ -36,21 +38,65 @@ class ProductService
 product_id (	BàA"H
 GetProductRequest3
 name (	B%àAúA
-retail.googleapis.com/Product"‚
+retail.googleapis.com/Product"™
 UpdateProductRequest9
 product (2#.google.cloud.retail.v2beta.ProductBàA/
-update_mask (2.google.protobuf.FieldMask"K
+update_mask (2.google.protobuf.FieldMask
+allow_missing ("K
 DeleteProductRequest3
 name (	B%àAúA
-retail.googleapis.com/Product2ª	
+retail.googleapis.com/Product"±
+ListProductsRequest4
+parent (	B$àAúA
+retail.googleapis.com/Branch
+	page_size (
+
+page_token (	
+filter (	-
+	read_mask (2.google.protobuf.FieldMask"f
+ListProductsResponse5
+products (2#.google.cloud.retail.v2beta.Product
+next_page_token (	"Å
+SetInventoryRequest;
+	inventory (2#.google.cloud.retail.v2beta.ProductBàA,
+set_mask (2.google.protobuf.FieldMask,
+set_time (2.google.protobuf.Timestamp
+allow_missing ("
+SetInventoryMetadata"
+SetInventoryResponse"Å
+AddFulfillmentPlacesRequest6
+product (	B%àAúA
+retail.googleapis.com/Product
+type (	BàA
+	place_ids (	BàA,
+add_time (2.google.protobuf.Timestamp
+allow_missing ("
+AddFulfillmentPlacesMetadata"
+AddFulfillmentPlacesResponse"Ë
+RemoveFulfillmentPlacesRequest6
+product (	B%àAúA
+retail.googleapis.com/Product
+type (	BàA
+	place_ids (	BàA/
+remove_time (2.google.protobuf.Timestamp
+allow_missing ("!
+RemoveFulfillmentPlacesMetadata"!
+RemoveFulfillmentPlacesResponse2‡
 ProductServiceÛ
 CreateProduct0.google.cloud.retail.v2beta.CreateProductRequest#.google.cloud.retail.v2beta.Product"s‚Óä“Q"F/v2beta/{parent=projects/*/locations/*/catalogs/*/branches/*}/products:productÚAparent,product,product_id¸
 
-GetProduct-.google.cloud.retail.v2beta.GetProductRequest#.google.cloud.retail.v2beta.Product"V‚Óä“IG/v2beta/{name=projects/*/locations/*/catalogs/*/branches/*/products/**}ÚAnameÞ
+GetProduct-.google.cloud.retail.v2beta.GetProductRequest#.google.cloud.retail.v2beta.Product"V‚Óä“IG/v2beta/{name=projects/*/locations/*/catalogs/*/branches/*/products/**}ÚAnameÊ
+ListProducts/.google.cloud.retail.v2beta.ListProductsRequest0.google.cloud.retail.v2beta.ListProductsResponse"W‚Óä“HF/v2beta/{parent=projects/*/locations/*/catalogs/*/branches/*}/productsÚAparentÞ
 UpdateProduct0.google.cloud.retail.v2beta.UpdateProductRequest#.google.cloud.retail.v2beta.Product"v‚Óä“Z2O/v2beta/{product.name=projects/*/locations/*/catalogs/*/branches/*/products/**}:productÚAproduct,update_mask±
 DeleteProduct0.google.cloud.retail.v2beta.DeleteProductRequest.google.protobuf.Empty"V‚Óä“I*G/v2beta/{name=projects/*/locations/*/catalogs/*/branches/*/products/**}ÚAnamež
 ImportProducts1.google.cloud.retail.v2beta.ImportProductsRequest.google.longrunning.Operation"¹‚Óä“R"M/v2beta/{parent=projects/*/locations/*/catalogs/*/branches/*}/products:import:*ÊA^
-1google.cloud.retail.v2beta.ImportProductsResponse)google.cloud.retail.v2beta.ImportMetadataIÊAretail.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÜ
+1google.cloud.retail.v2beta.ImportProductsResponse)google.cloud.retail.v2beta.ImportMetadataÄ
+SetInventory/.google.cloud.retail.v2beta.SetInventoryRequest.google.longrunning.Operation"ã‚Óä“c"^/v2beta/{inventory.name=projects/*/locations/*/catalogs/*/branches/*/products/**}:setInventory:*ÚAinventory,set_maskÊAb
+/google.cloud.retail.v2beta.SetInventoryResponse/google.cloud.retail.v2beta.SetInventoryMetadataÚ
+AddFulfillmentPlaces7.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest.google.longrunning.Operation"é‚Óä“d"_/v2beta/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:addFulfillmentPlaces:*ÚAproductÊAr
+7google.cloud.retail.v2beta.AddFulfillmentPlacesResponse7google.cloud.retail.v2beta.AddFulfillmentPlacesMetadataé
+RemoveFulfillmentPlaces:.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest.google.longrunning.Operation"ò‚Óä“g"b/v2beta/{product=projects/*/locations/*/catalogs/*/branches/*/products/**}:removeFulfillmentPlaces:*ÚAproductÊAx
+:google.cloud.retail.v2beta.RemoveFulfillmentPlacesResponse:google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadataIÊAretail.googleapis.comÒA.https://www.googleapis.com/auth/cloud-platformBÜ
 com.google.cloud.retail.v2betaBProductServiceProtoPZ@google.golang.org/genproto/googleapis/cloud/retail/v2beta;retail¢RETAILªGoogle.Cloud.Retail.V2BetaÊGoogle\\Cloud\\Retail\\V2betaêGoogle::Cloud::Retail::V2betabproto3'
         , true);
 

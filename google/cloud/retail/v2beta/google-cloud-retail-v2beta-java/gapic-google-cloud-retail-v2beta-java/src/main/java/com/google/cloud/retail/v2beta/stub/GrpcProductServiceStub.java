@@ -16,6 +16,8 @@
 
 package com.google.cloud.retail.v2beta.stub;
 
+import static com.google.cloud.retail.v2beta.ProductServiceClient.ListProductsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -25,13 +27,24 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.retail.v2beta.AddFulfillmentPlacesMetadata;
+import com.google.cloud.retail.v2beta.AddFulfillmentPlacesRequest;
+import com.google.cloud.retail.v2beta.AddFulfillmentPlacesResponse;
 import com.google.cloud.retail.v2beta.CreateProductRequest;
 import com.google.cloud.retail.v2beta.DeleteProductRequest;
 import com.google.cloud.retail.v2beta.GetProductRequest;
 import com.google.cloud.retail.v2beta.ImportMetadata;
 import com.google.cloud.retail.v2beta.ImportProductsRequest;
 import com.google.cloud.retail.v2beta.ImportProductsResponse;
+import com.google.cloud.retail.v2beta.ListProductsRequest;
+import com.google.cloud.retail.v2beta.ListProductsResponse;
 import com.google.cloud.retail.v2beta.Product;
+import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesMetadata;
+import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesRequest;
+import com.google.cloud.retail.v2beta.RemoveFulfillmentPlacesResponse;
+import com.google.cloud.retail.v2beta.SetInventoryMetadata;
+import com.google.cloud.retail.v2beta.SetInventoryRequest;
+import com.google.cloud.retail.v2beta.SetInventoryResponse;
 import com.google.cloud.retail.v2beta.UpdateProductRequest;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
@@ -71,6 +84,16 @@ public class GrpcProductServiceStub extends ProductServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
+      listProductsMethodDescriptor =
+          MethodDescriptor.<ListProductsRequest, ListProductsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2beta.ProductService/ListProducts")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListProductsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<UpdateProductRequest, Product>
       updateProductMethodDescriptor =
           MethodDescriptor.<UpdateProductRequest, Product>newBuilder()
@@ -99,13 +122,59 @@ public class GrpcProductServiceStub extends ProductServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SetInventoryRequest, Operation>
+      setInventoryMethodDescriptor =
+          MethodDescriptor.<SetInventoryRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2beta.ProductService/SetInventory")
+              .setRequestMarshaller(ProtoUtils.marshaller(SetInventoryRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<AddFulfillmentPlacesRequest, Operation>
+      addFulfillmentPlacesMethodDescriptor =
+          MethodDescriptor.<AddFulfillmentPlacesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.retail.v2beta.ProductService/AddFulfillmentPlaces")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(AddFulfillmentPlacesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RemoveFulfillmentPlacesRequest, Operation>
+      removeFulfillmentPlacesMethodDescriptor =
+          MethodDescriptor.<RemoveFulfillmentPlacesRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.retail.v2beta.ProductService/RemoveFulfillmentPlaces")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RemoveFulfillmentPlacesRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<CreateProductRequest, Product> createProductCallable;
   private final UnaryCallable<GetProductRequest, Product> getProductCallable;
+  private final UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable;
+  private final UnaryCallable<ListProductsRequest, ListProductsPagedResponse>
+      listProductsPagedCallable;
   private final UnaryCallable<UpdateProductRequest, Product> updateProductCallable;
   private final UnaryCallable<DeleteProductRequest, Empty> deleteProductCallable;
   private final UnaryCallable<ImportProductsRequest, Operation> importProductsCallable;
   private final OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable;
+  private final UnaryCallable<SetInventoryRequest, Operation> setInventoryCallable;
+  private final OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
+      setInventoryOperationCallable;
+  private final UnaryCallable<AddFulfillmentPlacesRequest, Operation> addFulfillmentPlacesCallable;
+  private final OperationCallable<
+          AddFulfillmentPlacesRequest, AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesOperationCallable;
+  private final UnaryCallable<RemoveFulfillmentPlacesRequest, Operation>
+      removeFulfillmentPlacesCallable;
+  private final OperationCallable<
+          RemoveFulfillmentPlacesRequest, RemoveFulfillmentPlacesResponse,
+          RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -177,6 +246,19 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<ListProductsRequest, ListProductsResponse> listProductsTransportSettings =
+        GrpcCallSettings.<ListProductsRequest, ListProductsResponse>newBuilder()
+            .setMethodDescriptor(listProductsMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<ListProductsRequest>() {
+                  @Override
+                  public Map<String, String> extract(ListProductsRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("parent", String.valueOf(request.getParent()));
+                    return params.build();
+                  }
+                })
+            .build();
     GrpcCallSettings<UpdateProductRequest, Product> updateProductTransportSettings =
         GrpcCallSettings.<UpdateProductRequest, Product>newBuilder()
             .setMethodDescriptor(updateProductMethodDescriptor)
@@ -216,6 +298,46 @@ public class GrpcProductServiceStub extends ProductServiceStub {
                   }
                 })
             .build();
+    GrpcCallSettings<SetInventoryRequest, Operation> setInventoryTransportSettings =
+        GrpcCallSettings.<SetInventoryRequest, Operation>newBuilder()
+            .setMethodDescriptor(setInventoryMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<SetInventoryRequest>() {
+                  @Override
+                  public Map<String, String> extract(SetInventoryRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("inventory.name", String.valueOf(request.getInventory().getName()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<AddFulfillmentPlacesRequest, Operation> addFulfillmentPlacesTransportSettings =
+        GrpcCallSettings.<AddFulfillmentPlacesRequest, Operation>newBuilder()
+            .setMethodDescriptor(addFulfillmentPlacesMethodDescriptor)
+            .setParamsExtractor(
+                new RequestParamsExtractor<AddFulfillmentPlacesRequest>() {
+                  @Override
+                  public Map<String, String> extract(AddFulfillmentPlacesRequest request) {
+                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                    params.put("product", String.valueOf(request.getProduct()));
+                    return params.build();
+                  }
+                })
+            .build();
+    GrpcCallSettings<RemoveFulfillmentPlacesRequest, Operation>
+        removeFulfillmentPlacesTransportSettings =
+            GrpcCallSettings.<RemoveFulfillmentPlacesRequest, Operation>newBuilder()
+                .setMethodDescriptor(removeFulfillmentPlacesMethodDescriptor)
+                .setParamsExtractor(
+                    new RequestParamsExtractor<RemoveFulfillmentPlacesRequest>() {
+                      @Override
+                      public Map<String, String> extract(RemoveFulfillmentPlacesRequest request) {
+                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                        params.put("product", String.valueOf(request.getProduct()));
+                        return params.build();
+                      }
+                    })
+                .build();
 
     this.createProductCallable =
         callableFactory.createUnaryCallable(
@@ -223,6 +345,12 @@ public class GrpcProductServiceStub extends ProductServiceStub {
     this.getProductCallable =
         callableFactory.createUnaryCallable(
             getProductTransportSettings, settings.getProductSettings(), clientContext);
+    this.listProductsCallable =
+        callableFactory.createUnaryCallable(
+            listProductsTransportSettings, settings.listProductsSettings(), clientContext);
+    this.listProductsPagedCallable =
+        callableFactory.createPagedCallable(
+            listProductsTransportSettings, settings.listProductsSettings(), clientContext);
     this.updateProductCallable =
         callableFactory.createUnaryCallable(
             updateProductTransportSettings, settings.updateProductSettings(), clientContext);
@@ -236,6 +364,37 @@ public class GrpcProductServiceStub extends ProductServiceStub {
         callableFactory.createOperationCallable(
             importProductsTransportSettings,
             settings.importProductsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.setInventoryCallable =
+        callableFactory.createUnaryCallable(
+            setInventoryTransportSettings, settings.setInventorySettings(), clientContext);
+    this.setInventoryOperationCallable =
+        callableFactory.createOperationCallable(
+            setInventoryTransportSettings,
+            settings.setInventoryOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.addFulfillmentPlacesCallable =
+        callableFactory.createUnaryCallable(
+            addFulfillmentPlacesTransportSettings,
+            settings.addFulfillmentPlacesSettings(),
+            clientContext);
+    this.addFulfillmentPlacesOperationCallable =
+        callableFactory.createOperationCallable(
+            addFulfillmentPlacesTransportSettings,
+            settings.addFulfillmentPlacesOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.removeFulfillmentPlacesCallable =
+        callableFactory.createUnaryCallable(
+            removeFulfillmentPlacesTransportSettings,
+            settings.removeFulfillmentPlacesSettings(),
+            clientContext);
+    this.removeFulfillmentPlacesOperationCallable =
+        callableFactory.createOperationCallable(
+            removeFulfillmentPlacesTransportSettings,
+            settings.removeFulfillmentPlacesOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -258,6 +417,16 @@ public class GrpcProductServiceStub extends ProductServiceStub {
   }
 
   @Override
+  public UnaryCallable<ListProductsRequest, ListProductsResponse> listProductsCallable() {
+    return listProductsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListProductsRequest, ListProductsPagedResponse> listProductsPagedCallable() {
+    return listProductsPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateProductRequest, Product> updateProductCallable() {
     return updateProductCallable;
   }
@@ -276,6 +445,43 @@ public class GrpcProductServiceStub extends ProductServiceStub {
   public OperationCallable<ImportProductsRequest, ImportProductsResponse, ImportMetadata>
       importProductsOperationCallable() {
     return importProductsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<SetInventoryRequest, Operation> setInventoryCallable() {
+    return setInventoryCallable;
+  }
+
+  @Override
+  public OperationCallable<SetInventoryRequest, SetInventoryResponse, SetInventoryMetadata>
+      setInventoryOperationCallable() {
+    return setInventoryOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<AddFulfillmentPlacesRequest, Operation> addFulfillmentPlacesCallable() {
+    return addFulfillmentPlacesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          AddFulfillmentPlacesRequest, AddFulfillmentPlacesResponse, AddFulfillmentPlacesMetadata>
+      addFulfillmentPlacesOperationCallable() {
+    return addFulfillmentPlacesOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RemoveFulfillmentPlacesRequest, Operation>
+      removeFulfillmentPlacesCallable() {
+    return removeFulfillmentPlacesCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RemoveFulfillmentPlacesRequest, RemoveFulfillmentPlacesResponse,
+          RemoveFulfillmentPlacesMetadata>
+      removeFulfillmentPlacesOperationCallable() {
+    return removeFulfillmentPlacesOperationCallable;
   }
 
   @Override
