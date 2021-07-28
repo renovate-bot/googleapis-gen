@@ -44,15 +44,6 @@ class ::Google::Cloud::AIPlatform::V1beta1::MigrationService::ClientPathsTest < 
 
       path = client.dataset_path project: "value0", location: "value1", dataset: "value2"
       assert_equal "projects/value0/locations/value1/datasets/value2", path
-    end
-  end
-
-  def test_dataset_path
-    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
-    ::Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::AIPlatform::V1beta1::MigrationService::Client.new do |config|
-        config.credentials = grpc_channel
-      end
 
       path = client.dataset_path project: "value0", dataset: "value1"
       assert_equal "projects/value0/datasets/value1", path

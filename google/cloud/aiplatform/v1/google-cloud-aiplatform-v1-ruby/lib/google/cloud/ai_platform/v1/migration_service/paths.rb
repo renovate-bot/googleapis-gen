@@ -46,37 +46,42 @@ module Google
             ##
             # Create a fully-qualified Dataset resource string.
             #
-            # The resource will be in the following format:
+            # @overload dataset_path(project:, location:, dataset:)
+            #   The resource will be in the following format:
             #
-            # `projects/{project}/locations/{location}/datasets/{dataset}`
+            #   `projects/{project}/locations/{location}/datasets/{dataset}`
             #
-            # @param project [String]
-            # @param location [String]
-            # @param dataset [String]
+            #   @param project [String]
+            #   @param location [String]
+            #   @param dataset [String]
             #
-            # @return [::String]
-            def dataset_path project:, location:, dataset:
-              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
-              raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
-
-              "projects/#{project}/locations/#{location}/datasets/#{dataset}"
-            end
-
-            ##
-            # Create a fully-qualified Dataset resource string.
+            # @overload dataset_path(project:, dataset:)
+            #   The resource will be in the following format:
             #
-            # The resource will be in the following format:
+            #   `projects/{project}/datasets/{dataset}`
             #
-            # `projects/{project}/datasets/{dataset}`
-            #
-            # @param project [String]
-            # @param dataset [String]
+            #   @param project [String]
+            #   @param dataset [String]
             #
             # @return [::String]
-            def dataset_path project:, dataset:
-              raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+            def dataset_path **args
+              resources = {
+                "dataset:location:project" => (proc do |project:, location:, dataset:|
+                  raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                  raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
 
-              "projects/#{project}/datasets/#{dataset}"
+                  "projects/#{project}/locations/#{location}/datasets/#{dataset}"
+                end),
+                "dataset:project" => (proc do |project:, dataset:|
+                  raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+
+                  "projects/#{project}/datasets/#{dataset}"
+                end)
+              }
+
+              resource = resources[args.keys.sort.join(":")]
+              raise ::ArgumentError, "no resource found for values #{args.keys}" if resource.nil?
+              resource.call(**args)
             end
 
             ##
