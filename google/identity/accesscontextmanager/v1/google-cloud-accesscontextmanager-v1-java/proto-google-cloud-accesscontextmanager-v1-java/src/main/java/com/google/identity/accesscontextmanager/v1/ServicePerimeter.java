@@ -324,7 +324,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Resource name for the ServicePerimeter.  The `short_name`
    * component must begin with a letter and only include alphanumeric and '_'.
-   * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+   * Format:
+   * `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -347,7 +348,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Resource name for the ServicePerimeter.  The `short_name`
    * component must begin with a letter and only include alphanumeric and '_'.
-   * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+   * Format:
+   * `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1198,7 +1200,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the ServicePerimeter.  The `short_name`
      * component must begin with a letter and only include alphanumeric and '_'.
-     * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+     * Format:
+     * `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1220,7 +1223,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the ServicePerimeter.  The `short_name`
      * component must begin with a letter and only include alphanumeric and '_'.
-     * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+     * Format:
+     * `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1243,7 +1247,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the ServicePerimeter.  The `short_name`
      * component must begin with a letter and only include alphanumeric and '_'.
-     * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+     * Format:
+     * `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1264,7 +1269,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the ServicePerimeter.  The `short_name`
      * component must begin with a letter and only include alphanumeric and '_'.
-     * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+     * Format:
+     * `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1280,7 +1286,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the ServicePerimeter.  The `short_name`
      * component must begin with a letter and only include alphanumeric and '_'.
-     * Format: `accessPolicies/{policy_id}/servicePerimeters/{short_name}`
+     * Format:
+     * `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`
      * </pre>
      *
      * <code>string name = 1;</code>

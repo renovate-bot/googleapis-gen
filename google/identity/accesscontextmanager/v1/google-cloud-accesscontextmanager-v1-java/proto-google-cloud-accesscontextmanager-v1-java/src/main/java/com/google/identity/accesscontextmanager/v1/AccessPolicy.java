@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Resource name of the `AccessPolicy`. Format:
-   * `accessPolicies/{policy_id}`
+   * `accessPolicies/{access_policy}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Resource name of the `AccessPolicy`. Format:
-   * `accessPolicies/{policy_id}`
+   * `accessPolicies/{access_policy}`
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -839,7 +839,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of the `AccessPolicy`. Format:
-     * `accessPolicies/{policy_id}`
+     * `accessPolicies/{access_policy}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -860,7 +860,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of the `AccessPolicy`. Format:
-     * `accessPolicies/{policy_id}`
+     * `accessPolicies/{access_policy}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -882,7 +882,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of the `AccessPolicy`. Format:
-     * `accessPolicies/{policy_id}`
+     * `accessPolicies/{access_policy}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -902,7 +902,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of the `AccessPolicy`. Format:
-     * `accessPolicies/{policy_id}`
+     * `accessPolicies/{access_policy}`
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -917,7 +917,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Resource name of the `AccessPolicy`. Format:
-     * `accessPolicies/{policy_id}`
+     * `accessPolicies/{access_policy}`
      * </pre>
      *
      * <code>string name = 1;</code>

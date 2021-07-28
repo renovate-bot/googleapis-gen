@@ -150,6 +150,12 @@ export class AssetServiceClient {
     // identifiers to uniquely identify resources within the API.
     // Create useful helper objects for these.
     this.pathTemplates = {
+      accessLevelPathTemplate: new this._gaxModule.PathTemplate(
+        'accessPolicies/{access_policy}/accessLevels/{access_level}'
+      ),
+      accessPolicyPathTemplate: new this._gaxModule.PathTemplate(
+        'accessPolicies/{access_policy}'
+      ),
       folderFeedPathTemplate: new this._gaxModule.PathTemplate(
         'folders/{folder}/feeds/{feed}'
       ),
@@ -158,6 +164,9 @@ export class AssetServiceClient {
       ),
       projectFeedPathTemplate: new this._gaxModule.PathTemplate(
         'projects/{project}/feeds/{feed}'
+      ),
+      servicePerimeterPathTemplate: new this._gaxModule.PathTemplate(
+        'accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}'
       ),
     };
 
@@ -2500,6 +2509,65 @@ export class AssetServiceClient {
   // --------------------
 
   /**
+   * Return a fully-qualified accessLevel resource name string.
+   *
+   * @param {string} access_policy
+   * @param {string} access_level
+   * @returns {string} Resource name string.
+   */
+  accessLevelPath(accessPolicy:string,accessLevel:string) {
+    return this.pathTemplates.accessLevelPathTemplate.render({
+      access_policy: accessPolicy,
+      access_level: accessLevel,
+    });
+  }
+
+  /**
+   * Parse the access_policy from AccessLevel resource.
+   *
+   * @param {string} accessLevelName
+   *   A fully-qualified path representing AccessLevel resource.
+   * @returns {string} A string representing the access_policy.
+   */
+  matchAccessPolicyFromAccessLevelName(accessLevelName: string) {
+    return this.pathTemplates.accessLevelPathTemplate.match(accessLevelName).access_policy;
+  }
+
+  /**
+   * Parse the access_level from AccessLevel resource.
+   *
+   * @param {string} accessLevelName
+   *   A fully-qualified path representing AccessLevel resource.
+   * @returns {string} A string representing the access_level.
+   */
+  matchAccessLevelFromAccessLevelName(accessLevelName: string) {
+    return this.pathTemplates.accessLevelPathTemplate.match(accessLevelName).access_level;
+  }
+
+  /**
+   * Return a fully-qualified accessPolicy resource name string.
+   *
+   * @param {string} access_policy
+   * @returns {string} Resource name string.
+   */
+  accessPolicyPath(accessPolicy:string) {
+    return this.pathTemplates.accessPolicyPathTemplate.render({
+      access_policy: accessPolicy,
+    });
+  }
+
+  /**
+   * Parse the access_policy from AccessPolicy resource.
+   *
+   * @param {string} accessPolicyName
+   *   A fully-qualified path representing AccessPolicy resource.
+   * @returns {string} A string representing the access_policy.
+   */
+  matchAccessPolicyFromAccessPolicyName(accessPolicyName: string) {
+    return this.pathTemplates.accessPolicyPathTemplate.match(accessPolicyName).access_policy;
+  }
+
+  /**
    * Return a fully-qualified folderFeed resource name string.
    *
    * @param {string} folder
@@ -2605,6 +2673,42 @@ export class AssetServiceClient {
    */
   matchFeedFromProjectFeedName(projectFeedName: string) {
     return this.pathTemplates.projectFeedPathTemplate.match(projectFeedName).feed;
+  }
+
+  /**
+   * Return a fully-qualified servicePerimeter resource name string.
+   *
+   * @param {string} access_policy
+   * @param {string} service_perimeter
+   * @returns {string} Resource name string.
+   */
+  servicePerimeterPath(accessPolicy:string,servicePerimeter:string) {
+    return this.pathTemplates.servicePerimeterPathTemplate.render({
+      access_policy: accessPolicy,
+      service_perimeter: servicePerimeter,
+    });
+  }
+
+  /**
+   * Parse the access_policy from ServicePerimeter resource.
+   *
+   * @param {string} servicePerimeterName
+   *   A fully-qualified path representing ServicePerimeter resource.
+   * @returns {string} A string representing the access_policy.
+   */
+  matchAccessPolicyFromServicePerimeterName(servicePerimeterName: string) {
+    return this.pathTemplates.servicePerimeterPathTemplate.match(servicePerimeterName).access_policy;
+  }
+
+  /**
+   * Parse the service_perimeter from ServicePerimeter resource.
+   *
+   * @param {string} servicePerimeterName
+   *   A fully-qualified path representing ServicePerimeter resource.
+   * @returns {string} A string representing the service_perimeter.
+   */
+  matchServicePerimeterFromServicePerimeterName(servicePerimeterName: string) {
+    return this.pathTemplates.servicePerimeterPathTemplate.match(servicePerimeterName).service_perimeter;
   }
 
   /**

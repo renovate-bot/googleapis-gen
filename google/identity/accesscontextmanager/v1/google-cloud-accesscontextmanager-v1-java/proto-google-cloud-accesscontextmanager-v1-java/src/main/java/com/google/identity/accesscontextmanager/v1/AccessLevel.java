@@ -208,8 +208,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Resource name for the Access Level. The `short_name` component
    * must begin with a letter and only include alphanumeric and '_'. Format:
-   * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
-   * of the `short_name` component is 50 characters.
+   * `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum
+   * length of the `access_level` component is 50 characters.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -232,8 +232,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Required. Resource name for the Access Level. The `short_name` component
    * must begin with a letter and only include alphanumeric and '_'. Format:
-   * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
-   * of the `short_name` component is 50 characters.
+   * `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum
+   * length of the `access_level` component is 50 characters.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -999,8 +999,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the Access Level. The `short_name` component
      * must begin with a letter and only include alphanumeric and '_'. Format:
-     * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
-     * of the `short_name` component is 50 characters.
+     * `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum
+     * length of the `access_level` component is 50 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1022,8 +1022,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the Access Level. The `short_name` component
      * must begin with a letter and only include alphanumeric and '_'. Format:
-     * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
-     * of the `short_name` component is 50 characters.
+     * `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum
+     * length of the `access_level` component is 50 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1046,8 +1046,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the Access Level. The `short_name` component
      * must begin with a letter and only include alphanumeric and '_'. Format:
-     * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
-     * of the `short_name` component is 50 characters.
+     * `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum
+     * length of the `access_level` component is 50 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1068,8 +1068,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the Access Level. The `short_name` component
      * must begin with a letter and only include alphanumeric and '_'. Format:
-     * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
-     * of the `short_name` component is 50 characters.
+     * `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum
+     * length of the `access_level` component is 50 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1085,8 +1085,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Required. Resource name for the Access Level. The `short_name` component
      * must begin with a letter and only include alphanumeric and '_'. Format:
-     * `accessPolicies/{policy_id}/accessLevels/{short_name}`. The maximum length
-     * of the `short_name` component is 50 characters.
+     * `accessPolicies/{access_policy}/accessLevels/{access_level}`. The maximum
+     * length of the `access_level` component is 50 characters.
      * </pre>
      *
      * <code>string name = 1;</code>
