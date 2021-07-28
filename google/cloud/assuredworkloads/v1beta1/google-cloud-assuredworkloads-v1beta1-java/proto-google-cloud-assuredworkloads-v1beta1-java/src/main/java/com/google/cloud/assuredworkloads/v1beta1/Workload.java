@@ -334,6 +334,14 @@ private static final long serialVersionUID = 0L;
      * <code>HITRUST = 7;</code>
      */
     HITRUST(7),
+    /**
+     * <pre>
+     * Assured Workloads For EU Regions and Support controls
+     * </pre>
+     *
+     * <code>EU_REGIONS_AND_SUPPORT = 8;</code>
+     */
+    EU_REGIONS_AND_SUPPORT(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -401,6 +409,14 @@ private static final long serialVersionUID = 0L;
      * <code>HITRUST = 7;</code>
      */
     public static final int HITRUST_VALUE = 7;
+    /**
+     * <pre>
+     * Assured Workloads For EU Regions and Support controls
+     * </pre>
+     *
+     * <code>EU_REGIONS_AND_SUPPORT = 8;</code>
+     */
+    public static final int EU_REGIONS_AND_SUPPORT_VALUE = 8;
 
 
     public final int getNumber() {
@@ -435,6 +451,7 @@ private static final long serialVersionUID = 0L;
         case 5: return US_REGIONAL_ACCESS;
         case 6: return HIPAA;
         case 7: return HITRUST;
+        case 8: return EU_REGIONS_AND_SUPPORT;
         default: return null;
       }
     }
