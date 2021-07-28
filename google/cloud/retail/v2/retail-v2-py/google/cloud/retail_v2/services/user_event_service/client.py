@@ -166,6 +166,17 @@ class UserEventServiceClient(metaclass=UserEventServiceClientMeta):
         return self._transport
 
     @staticmethod
+    def catalog_path(project: str,location: str,catalog: str,) -> str:
+        """Returns a fully-qualified catalog string."""
+        return "projects/{project}/locations/{location}/catalogs/{catalog}".format(project=project, location=location, catalog=catalog, )
+
+    @staticmethod
+    def parse_catalog_path(path: str) -> Dict[str,str]:
+        """Parses a catalog path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/catalogs/(?P<catalog>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
     def product_path(project: str,location: str,catalog: str,branch: str,product: str,) -> str:
         """Returns a fully-qualified product string."""
         return "projects/{project}/locations/{location}/catalogs/{catalog}/branches/{branch}/products/{product}".format(project=project, location=location, catalog=catalog, branch=branch, product=product, )

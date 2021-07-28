@@ -22,8 +22,10 @@
     "google retail",
     "retail",
     "catalog service",
+    "completion service",
     "prediction service",
     "product service",
+    "search service",
     "user event service"
   ],
   "scripts": {

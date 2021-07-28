@@ -48,8 +48,11 @@ from google.cloud.retail_v2.types import user_event_service
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 from google.protobuf import any_pb2  # type: ignore
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
+from google.type import date_pb2  # type: ignore
 import google.auth
 
 
@@ -417,10 +420,14 @@ def test_write_user_event(transport: str = 'grpc', request_type=user_event_servi
         call.return_value = user_event.UserEvent(
             event_type='event_type_value',
             visitor_id='visitor_id_value',
+            session_id='session_id_value',
             experiment_ids=['experiment_ids_value'],
             attribution_token='attribution_token_value',
             cart_id='cart_id_value',
             search_query='search_query_value',
+            filter='filter_value',
+            order_by='order_by_value',
+            offset=647,
             page_categories=['page_categories_value'],
             uri='uri_value',
             referrer_uri='referrer_uri_value',
@@ -437,10 +444,14 @@ def test_write_user_event(transport: str = 'grpc', request_type=user_event_servi
     assert isinstance(response, user_event.UserEvent)
     assert response.event_type == 'event_type_value'
     assert response.visitor_id == 'visitor_id_value'
+    assert response.session_id == 'session_id_value'
     assert response.experiment_ids == ['experiment_ids_value']
     assert response.attribution_token == 'attribution_token_value'
     assert response.cart_id == 'cart_id_value'
     assert response.search_query == 'search_query_value'
+    assert response.filter == 'filter_value'
+    assert response.order_by == 'order_by_value'
+    assert response.offset == 647
     assert response.page_categories == ['page_categories_value']
     assert response.uri == 'uri_value'
     assert response.referrer_uri == 'referrer_uri_value'
@@ -488,10 +499,14 @@ async def test_write_user_event_async(transport: str = 'grpc_asyncio', request_t
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(user_event.UserEvent(
             event_type='event_type_value',
             visitor_id='visitor_id_value',
+            session_id='session_id_value',
             experiment_ids=['experiment_ids_value'],
             attribution_token='attribution_token_value',
             cart_id='cart_id_value',
             search_query='search_query_value',
+            filter='filter_value',
+            order_by='order_by_value',
+            offset=647,
             page_categories=['page_categories_value'],
             uri='uri_value',
             referrer_uri='referrer_uri_value',
@@ -508,10 +523,14 @@ async def test_write_user_event_async(transport: str = 'grpc_asyncio', request_t
     assert isinstance(response, user_event.UserEvent)
     assert response.event_type == 'event_type_value'
     assert response.visitor_id == 'visitor_id_value'
+    assert response.session_id == 'session_id_value'
     assert response.experiment_ids == ['experiment_ids_value']
     assert response.attribution_token == 'attribution_token_value'
     assert response.cart_id == 'cart_id_value'
     assert response.search_query == 'search_query_value'
+    assert response.filter == 'filter_value'
+    assert response.order_by == 'order_by_value'
+    assert response.offset == 647
     assert response.page_categories == ['page_categories_value']
     assert response.uri == 'uri_value'
     assert response.referrer_uri == 'referrer_uri_value'
@@ -1646,12 +1665,33 @@ def test_user_event_service_grpc_lro_async_client():
     assert transport.operations_client is transport.operations_client
 
 
-def test_product_path():
+def test_catalog_path():
     project = "squid"
     location = "clam"
     catalog = "whelk"
-    branch = "octopus"
-    product = "oyster"
+    expected = "projects/{project}/locations/{location}/catalogs/{catalog}".format(project=project, location=location, catalog=catalog, )
+    actual = UserEventServiceClient.catalog_path(project, location, catalog)
+    assert expected == actual
+
+
+def test_parse_catalog_path():
+    expected = {
+        "project": "octopus",
+        "location": "oyster",
+        "catalog": "nudibranch",
+    }
+    path = UserEventServiceClient.catalog_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = UserEventServiceClient.parse_catalog_path(path)
+    assert expected == actual
+
+def test_product_path():
+    project = "cuttlefish"
+    location = "mussel"
+    catalog = "winkle"
+    branch = "nautilus"
+    product = "scallop"
     expected = "projects/{project}/locations/{location}/catalogs/{catalog}/branches/{branch}/products/{product}".format(project=project, location=location, catalog=catalog, branch=branch, product=product, )
     actual = UserEventServiceClient.product_path(project, location, catalog, branch, product)
     assert expected == actual
@@ -1659,11 +1699,11 @@ def test_product_path():
 
 def test_parse_product_path():
     expected = {
-        "project": "nudibranch",
-        "location": "cuttlefish",
-        "catalog": "mussel",
-        "branch": "winkle",
-        "product": "nautilus",
+        "project": "abalone",
+        "location": "squid",
+        "catalog": "clam",
+        "branch": "whelk",
+        "product": "octopus",
     }
     path = UserEventServiceClient.product_path(**expected)
 
@@ -1672,7 +1712,7 @@ def test_parse_product_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "scallop"
+    billing_account = "oyster"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = UserEventServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1680,7 +1720,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "abalone",
+        "billing_account": "nudibranch",
     }
     path = UserEventServiceClient.common_billing_account_path(**expected)
 
@@ -1689,7 +1729,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "squid"
+    folder = "cuttlefish"
     expected = "folders/{folder}".format(folder=folder, )
     actual = UserEventServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1697,7 +1737,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "clam",
+        "folder": "mussel",
     }
     path = UserEventServiceClient.common_folder_path(**expected)
 
@@ -1706,7 +1746,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "whelk"
+    organization = "winkle"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = UserEventServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1714,7 +1754,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "octopus",
+        "organization": "nautilus",
     }
     path = UserEventServiceClient.common_organization_path(**expected)
 
@@ -1723,7 +1763,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "oyster"
+    project = "scallop"
     expected = "projects/{project}".format(project=project, )
     actual = UserEventServiceClient.common_project_path(project)
     assert expected == actual
@@ -1731,7 +1771,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nudibranch",
+        "project": "abalone",
     }
     path = UserEventServiceClient.common_project_path(**expected)
 
@@ -1740,8 +1780,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "cuttlefish"
-    location = "mussel"
+    project = "squid"
+    location = "clam"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = UserEventServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1749,8 +1789,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
+        "project": "whelk",
+        "location": "octopus",
     }
     path = UserEventServiceClient.common_location_path(**expected)
 

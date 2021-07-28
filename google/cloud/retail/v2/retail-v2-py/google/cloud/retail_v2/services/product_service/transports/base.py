@@ -162,6 +162,11 @@ class ProductServiceTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.list_products: gapic_v1.method.wrap_method(
+                self.list_products,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.update_product: gapic_v1.method.wrap_method(
                 self.update_product,
                 default_timeout=None,
@@ -174,6 +179,21 @@ class ProductServiceTransport(abc.ABC):
             ),
             self.import_products: gapic_v1.method.wrap_method(
                 self.import_products,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.set_inventory: gapic_v1.method.wrap_method(
+                self.set_inventory,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.add_fulfillment_places: gapic_v1.method.wrap_method(
+                self.add_fulfillment_places,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.remove_fulfillment_places: gapic_v1.method.wrap_method(
+                self.remove_fulfillment_places,
                 default_timeout=None,
                 client_info=client_info,
             ),
@@ -203,6 +223,15 @@ class ProductServiceTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
+    def list_products(self) -> Callable[
+            [product_service.ListProductsRequest],
+            Union[
+                product_service.ListProductsResponse,
+                Awaitable[product_service.ListProductsResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def update_product(self) -> Callable[
             [product_service.UpdateProductRequest],
             Union[
@@ -223,6 +252,33 @@ class ProductServiceTransport(abc.ABC):
     @property
     def import_products(self) -> Callable[
             [import_config.ImportProductsRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def set_inventory(self) -> Callable[
+            [product_service.SetInventoryRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def add_fulfillment_places(self) -> Callable[
+            [product_service.AddFulfillmentPlacesRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def remove_fulfillment_places(self) -> Callable[
+            [product_service.RemoveFulfillmentPlacesRequest],
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]
