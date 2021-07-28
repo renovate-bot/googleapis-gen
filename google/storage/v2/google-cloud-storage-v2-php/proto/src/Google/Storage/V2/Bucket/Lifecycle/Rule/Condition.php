@@ -18,19 +18,19 @@ class Condition extends \Google\Protobuf\Internal\Message
     /**
      * Age of an object (in days). This condition is satisfied when an
      * object reaches the specified age.
+     * A value of 0 indicates that all objects immediately match this
+     * condition.
      *
      * Generated from protobuf field <code>int32 age_days = 1;</code>
      */
-    protected $age_days = 0;
+    protected $age_days = null;
     /**
-     * A date in [RFC 3339][1] format with only the date part (for
-     * instance, "2013-01-15"). This condition is satisfied when an
-     * object is created before midnight of the specified date in UTC.
-     * [1]: https://tools.ietf.org/html/rfc3339
+     * This condition is satisfied when an object is created before midnight
+     * of the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+     * Generated from protobuf field <code>.google.type.Date created_before = 2;</code>
      */
-    protected $created_before_time = null;
+    protected $created_before = null;
     /**
      * Relevant only for versioned objects. If the value is
      * `true`, this condition matches live objects; if the value
@@ -46,7 +46,7 @@ class Condition extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 num_newer_versions = 4;</code>
      */
-    protected $num_newer_versions = 0;
+    protected $num_newer_versions = null;
     /**
      * Objects having any of the storage classes specified by this condition
      * will be matched. Values include `MULTI_REGIONAL`, `REGIONAL`,
@@ -57,30 +57,20 @@ class Condition extends \Google\Protobuf\Internal\Message
      */
     private $matches_storage_class;
     /**
-     * A regular expression that satisfies the RE2 syntax. This condition is
-     * satisfied when the name of the object matches the RE2 pattern.  Note:
-     * This feature is currently in the "Early Access" launch stage and is
-     * only available to an allowlisted set of users; that means that this
-     * feature may be changed in backward-incompatible ways and that it is
-     * not guaranteed to be released.
-     *
-     * Generated from protobuf field <code>string matches_pattern = 6;</code>
-     */
-    protected $matches_pattern = '';
-    /**
-     * Number of days that has elapsed since the custom timestamp set on an
+     * Number of days that have elapsed since the custom timestamp set on an
      * object.
+     * The value of the field must be a nonnegative integer.
      *
      * Generated from protobuf field <code>int32 days_since_custom_time = 7;</code>
      */
-    protected $days_since_custom_time = 0;
+    protected $days_since_custom_time = null;
     /**
      * An object matches this condition if the custom timestamp set on the
-     * object is before this timestamp.
+     * object is before the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+     * Generated from protobuf field <code>.google.type.Date custom_time_before = 8;</code>
      */
-    protected $custom_time_before_time = null;
+    protected $custom_time_before = null;
     /**
      * This condition is relevant only for versioned objects. An object
      * version satisfies this condition only if these many days have been
@@ -90,15 +80,15 @@ class Condition extends \Google\Protobuf\Internal\Message
      *
      * Generated from protobuf field <code>int32 days_since_noncurrent_time = 9;</code>
      */
-    protected $days_since_noncurrent_time = 0;
+    protected $days_since_noncurrent_time = null;
     /**
      * This condition is relevant only for versioned objects. An object
      * version satisfies this condition only if it became noncurrent before
-     * the specified timestamp.
+     * the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+     * Generated from protobuf field <code>.google.type.Date noncurrent_time_before = 10;</code>
      */
-    protected $noncurrent_time_before_time = null;
+    protected $noncurrent_time_before = null;
 
     /**
      * Constructor.
@@ -109,11 +99,11 @@ class Condition extends \Google\Protobuf\Internal\Message
      *     @type int $age_days
      *           Age of an object (in days). This condition is satisfied when an
      *           object reaches the specified age.
-     *     @type \Google\Protobuf\Timestamp $created_before_time
-     *           A date in [RFC 3339][1] format with only the date part (for
-     *           instance, "2013-01-15"). This condition is satisfied when an
-     *           object is created before midnight of the specified date in UTC.
-     *           [1]: https://tools.ietf.org/html/rfc3339
+     *           A value of 0 indicates that all objects immediately match this
+     *           condition.
+     *     @type \Google\Type\Date $created_before
+     *           This condition is satisfied when an object is created before midnight
+     *           of the specified date in UTC.
      *     @type bool $is_live
      *           Relevant only for versioned objects. If the value is
      *           `true`, this condition matches live objects; if the value
@@ -127,29 +117,23 @@ class Condition extends \Google\Protobuf\Internal\Message
      *           will be matched. Values include `MULTI_REGIONAL`, `REGIONAL`,
      *           `NEARLINE`, `COLDLINE`, `STANDARD`, and
      *           `DURABLE_REDUCED_AVAILABILITY`.
-     *     @type string $matches_pattern
-     *           A regular expression that satisfies the RE2 syntax. This condition is
-     *           satisfied when the name of the object matches the RE2 pattern.  Note:
-     *           This feature is currently in the "Early Access" launch stage and is
-     *           only available to an allowlisted set of users; that means that this
-     *           feature may be changed in backward-incompatible ways and that it is
-     *           not guaranteed to be released.
      *     @type int $days_since_custom_time
-     *           Number of days that has elapsed since the custom timestamp set on an
+     *           Number of days that have elapsed since the custom timestamp set on an
      *           object.
-     *     @type \Google\Protobuf\Timestamp $custom_time_before_time
+     *           The value of the field must be a nonnegative integer.
+     *     @type \Google\Type\Date $custom_time_before
      *           An object matches this condition if the custom timestamp set on the
-     *           object is before this timestamp.
+     *           object is before the specified date in UTC.
      *     @type int $days_since_noncurrent_time
      *           This condition is relevant only for versioned objects. An object
      *           version satisfies this condition only if these many days have been
      *           passed since it became noncurrent. The value of the field must be a
      *           nonnegative integer. If it's zero, the object version will become
      *           eligible for Lifecycle action as soon as it becomes noncurrent.
-     *     @type \Google\Protobuf\Timestamp $noncurrent_time_before_time
+     *     @type \Google\Type\Date $noncurrent_time_before
      *           This condition is relevant only for versioned objects. An object
      *           version satisfies this condition only if it became noncurrent before
-     *           the specified timestamp.
+     *           the specified date in UTC.
      * }
      */
     public function __construct($data = NULL) {
@@ -160,18 +144,32 @@ class Condition extends \Google\Protobuf\Internal\Message
     /**
      * Age of an object (in days). This condition is satisfied when an
      * object reaches the specified age.
+     * A value of 0 indicates that all objects immediately match this
+     * condition.
      *
      * Generated from protobuf field <code>int32 age_days = 1;</code>
      * @return int
      */
     public function getAgeDays()
     {
-        return $this->age_days;
+        return isset($this->age_days) ? $this->age_days : 0;
+    }
+
+    public function hasAgeDays()
+    {
+        return isset($this->age_days);
+    }
+
+    public function clearAgeDays()
+    {
+        unset($this->age_days);
     }
 
     /**
      * Age of an object (in days). This condition is satisfied when an
      * object reaches the specified age.
+     * A value of 0 indicates that all objects immediately match this
+     * condition.
      *
      * Generated from protobuf field <code>int32 age_days = 1;</code>
      * @param int $var
@@ -186,43 +184,39 @@ class Condition extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A date in [RFC 3339][1] format with only the date part (for
-     * instance, "2013-01-15"). This condition is satisfied when an
-     * object is created before midnight of the specified date in UTC.
-     * [1]: https://tools.ietf.org/html/rfc3339
+     * This condition is satisfied when an object is created before midnight
+     * of the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_before_time = 2;</code>
-     * @return \Google\Protobuf\Timestamp|null
+     * Generated from protobuf field <code>.google.type.Date created_before = 2;</code>
+     * @return \Google\Type\Date|null
      */
-    public function getCreatedBeforeTime()
+    public function getCreatedBefore()
     {
-        return isset($this->created_before_time) ? $this->created_before_time : null;
+        return isset($this->created_before) ? $this->created_before : null;
     }
 
-    public function hasCreatedBeforeTime()
+    public function hasCreatedBefore()
     {
-        return isset($this->created_before_time);
+        return isset($this->created_before);
     }
 
-    public function clearCreatedBeforeTime()
+    public function clearCreatedBefore()
     {
-        unset($this->created_before_time);
+        unset($this->created_before);
     }
 
     /**
-     * A date in [RFC 3339][1] format with only the date part (for
-     * instance, "2013-01-15"). This condition is satisfied when an
-     * object is created before midnight of the specified date in UTC.
-     * [1]: https://tools.ietf.org/html/rfc3339
+     * This condition is satisfied when an object is created before midnight
+     * of the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_before_time = 2;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Generated from protobuf field <code>.google.type.Date created_before = 2;</code>
+     * @param \Google\Type\Date $var
      * @return $this
      */
-    public function setCreatedBeforeTime($var)
+    public function setCreatedBefore($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->created_before_time = $var;
+        GPBUtil::checkMessage($var, \Google\Type\Date::class);
+        $this->created_before = $var;
 
         return $this;
     }
@@ -277,7 +271,17 @@ class Condition extends \Google\Protobuf\Internal\Message
      */
     public function getNumNewerVersions()
     {
-        return $this->num_newer_versions;
+        return isset($this->num_newer_versions) ? $this->num_newer_versions : 0;
+    }
+
+    public function hasNumNewerVersions()
+    {
+        return isset($this->num_newer_versions);
+    }
+
+    public function clearNumNewerVersions()
+    {
+        unset($this->num_newer_versions);
     }
 
     /**
@@ -330,56 +334,32 @@ class Condition extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * A regular expression that satisfies the RE2 syntax. This condition is
-     * satisfied when the name of the object matches the RE2 pattern.  Note:
-     * This feature is currently in the "Early Access" launch stage and is
-     * only available to an allowlisted set of users; that means that this
-     * feature may be changed in backward-incompatible ways and that it is
-     * not guaranteed to be released.
-     *
-     * Generated from protobuf field <code>string matches_pattern = 6;</code>
-     * @return string
-     */
-    public function getMatchesPattern()
-    {
-        return $this->matches_pattern;
-    }
-
-    /**
-     * A regular expression that satisfies the RE2 syntax. This condition is
-     * satisfied when the name of the object matches the RE2 pattern.  Note:
-     * This feature is currently in the "Early Access" launch stage and is
-     * only available to an allowlisted set of users; that means that this
-     * feature may be changed in backward-incompatible ways and that it is
-     * not guaranteed to be released.
-     *
-     * Generated from protobuf field <code>string matches_pattern = 6;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setMatchesPattern($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->matches_pattern = $var;
-
-        return $this;
-    }
-
-    /**
-     * Number of days that has elapsed since the custom timestamp set on an
+     * Number of days that have elapsed since the custom timestamp set on an
      * object.
+     * The value of the field must be a nonnegative integer.
      *
      * Generated from protobuf field <code>int32 days_since_custom_time = 7;</code>
      * @return int
      */
     public function getDaysSinceCustomTime()
     {
-        return $this->days_since_custom_time;
+        return isset($this->days_since_custom_time) ? $this->days_since_custom_time : 0;
+    }
+
+    public function hasDaysSinceCustomTime()
+    {
+        return isset($this->days_since_custom_time);
+    }
+
+    public function clearDaysSinceCustomTime()
+    {
+        unset($this->days_since_custom_time);
     }
 
     /**
-     * Number of days that has elapsed since the custom timestamp set on an
+     * Number of days that have elapsed since the custom timestamp set on an
      * object.
+     * The value of the field must be a nonnegative integer.
      *
      * Generated from protobuf field <code>int32 days_since_custom_time = 7;</code>
      * @param int $var
@@ -395,38 +375,38 @@ class Condition extends \Google\Protobuf\Internal\Message
 
     /**
      * An object matches this condition if the custom timestamp set on the
-     * object is before this timestamp.
+     * object is before the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
-     * @return \Google\Protobuf\Timestamp|null
+     * Generated from protobuf field <code>.google.type.Date custom_time_before = 8;</code>
+     * @return \Google\Type\Date|null
      */
-    public function getCustomTimeBeforeTime()
+    public function getCustomTimeBefore()
     {
-        return isset($this->custom_time_before_time) ? $this->custom_time_before_time : null;
+        return isset($this->custom_time_before) ? $this->custom_time_before : null;
     }
 
-    public function hasCustomTimeBeforeTime()
+    public function hasCustomTimeBefore()
     {
-        return isset($this->custom_time_before_time);
+        return isset($this->custom_time_before);
     }
 
-    public function clearCustomTimeBeforeTime()
+    public function clearCustomTimeBefore()
     {
-        unset($this->custom_time_before_time);
+        unset($this->custom_time_before);
     }
 
     /**
      * An object matches this condition if the custom timestamp set on the
-     * object is before this timestamp.
+     * object is before the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Generated from protobuf field <code>.google.type.Date custom_time_before = 8;</code>
+     * @param \Google\Type\Date $var
      * @return $this
      */
-    public function setCustomTimeBeforeTime($var)
+    public function setCustomTimeBefore($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->custom_time_before_time = $var;
+        GPBUtil::checkMessage($var, \Google\Type\Date::class);
+        $this->custom_time_before = $var;
 
         return $this;
     }
@@ -443,7 +423,17 @@ class Condition extends \Google\Protobuf\Internal\Message
      */
     public function getDaysSinceNoncurrentTime()
     {
-        return $this->days_since_noncurrent_time;
+        return isset($this->days_since_noncurrent_time) ? $this->days_since_noncurrent_time : 0;
+    }
+
+    public function hasDaysSinceNoncurrentTime()
+    {
+        return isset($this->days_since_noncurrent_time);
+    }
+
+    public function clearDaysSinceNoncurrentTime()
+    {
+        unset($this->days_since_noncurrent_time);
     }
 
     /**
@@ -468,39 +458,39 @@ class Condition extends \Google\Protobuf\Internal\Message
     /**
      * This condition is relevant only for versioned objects. An object
      * version satisfies this condition only if it became noncurrent before
-     * the specified timestamp.
+     * the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
-     * @return \Google\Protobuf\Timestamp|null
+     * Generated from protobuf field <code>.google.type.Date noncurrent_time_before = 10;</code>
+     * @return \Google\Type\Date|null
      */
-    public function getNoncurrentTimeBeforeTime()
+    public function getNoncurrentTimeBefore()
     {
-        return isset($this->noncurrent_time_before_time) ? $this->noncurrent_time_before_time : null;
+        return isset($this->noncurrent_time_before) ? $this->noncurrent_time_before : null;
     }
 
-    public function hasNoncurrentTimeBeforeTime()
+    public function hasNoncurrentTimeBefore()
     {
-        return isset($this->noncurrent_time_before_time);
+        return isset($this->noncurrent_time_before);
     }
 
-    public function clearNoncurrentTimeBeforeTime()
+    public function clearNoncurrentTimeBefore()
     {
-        unset($this->noncurrent_time_before_time);
+        unset($this->noncurrent_time_before);
     }
 
     /**
      * This condition is relevant only for versioned objects. An object
      * version satisfies this condition only if it became noncurrent before
-     * the specified timestamp.
+     * the specified date in UTC.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Generated from protobuf field <code>.google.type.Date noncurrent_time_before = 10;</code>
+     * @param \Google\Type\Date $var
      * @return $this
      */
-    public function setNoncurrentTimeBeforeTime($var)
+    public function setNoncurrentTimeBefore($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->noncurrent_time_before_time = $var;
+        GPBUtil::checkMessage($var, \Google\Type\Date::class);
+        $this->noncurrent_time_before = $var;
 
         return $this;
     }

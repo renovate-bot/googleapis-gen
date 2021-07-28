@@ -17,6 +17,7 @@ import proto  # type: ignore
 
 from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
+from google.type import date_pb2  # type: ignore
 
 
 __protobuf__ = proto.module(
@@ -528,10 +529,11 @@ class CommonObjectRequestParams(proto.Message):
         encryption_algorithm (str):
             Encryption algorithm used with Customer-
             upplied Encryption Keys feature.
-        encryption_key (str):
+        encryption_key_bytes (bytes):
             Encryption key used with Customer-Supplied
-            Encryption Keys feature.
-        encryption_key_sha256 (str):
+            Encryption Keys feature. In raw bytes format
+            (not base64-encoded).
+        encryption_key_sha256_bytes (bytes):
             SHA256 hash of encryption key used with
             Customer-Supplied Encryption Keys feature.
     """
@@ -540,13 +542,13 @@ class CommonObjectRequestParams(proto.Message):
         proto.STRING,
         number=1,
     )
-    encryption_key = proto.Field(
-        proto.STRING,
-        number=2,
+    encryption_key_bytes = proto.Field(
+        proto.BYTES,
+        number=4,
     )
-    encryption_key_sha256 = proto.Field(
-        proto.STRING,
-        number=3,
+    encryption_key_sha256_bytes = proto.Field(
+        proto.BYTES,
+        number=5,
     )
 
 
@@ -900,12 +902,12 @@ class Bucket(proto.Message):
                     age_days (int):
                         Age of an object (in days). This condition is
                         satisfied when an object reaches the specified
-                        age.
-                    created_before_time (google.protobuf.timestamp_pb2.Timestamp):
-                        A date in [RFC 3339][1] format with only the date part (for
-                        instance, "2013-01-15"). This condition is satisfied when an
-                        object is created before midnight of the specified date in
-                        UTC. [1]: https://tools.ietf.org/html/rfc3339
+                        age. A value of 0 indicates that all objects
+                        immediately match this condition.
+                    created_before (google.type.date_pb2.Date):
+                        This condition is satisfied when an object is
+                        created before midnight of the specified date in
+                        UTC.
                     is_live (bool):
                         Relevant only for versioned objects. If the value is
                         ``true``, this condition matches live objects; if the value
@@ -922,23 +924,15 @@ class Bucket(proto.Message):
                         ``MULTI_REGIONAL``, ``REGIONAL``, ``NEARLINE``,
                         ``COLDLINE``, ``STANDARD``, and
                         ``DURABLE_REDUCED_AVAILABILITY``.
-                    matches_pattern (str):
-                        A regular expression that satisfies the RE2
-                        syntax. This condition is satisfied when the
-                        name of the object matches the RE2 pattern.
-                        Note: This feature is currently in the "Early
-                        Access" launch stage and is only available to an
-                        allowlisted set of users; that means that this
-                        feature may be changed in backward-incompatible
-                        ways and that it is not guaranteed to be
-                        released.
                     days_since_custom_time (int):
-                        Number of days that has elapsed since the
+                        Number of days that have elapsed since the
                         custom timestamp set on an object.
-                    custom_time_before_time (google.protobuf.timestamp_pb2.Timestamp):
+                        The value of the field must be a nonnegative
+                        integer.
+                    custom_time_before (google.type.date_pb2.Date):
                         An object matches this condition if the
-                        custom timestamp set on the object is before
-                        this timestamp.
+                        custom timestamp set on the object is before the
+                        specified date in UTC.
                     days_since_noncurrent_time (int):
                         This condition is relevant only for versioned
                         objects. An object version satisfies this
@@ -948,21 +942,22 @@ class Bucket(proto.Message):
                         zero, the object version will become eligible
                         for Lifecycle action as soon as it becomes
                         noncurrent.
-                    noncurrent_time_before_time (google.protobuf.timestamp_pb2.Timestamp):
+                    noncurrent_time_before (google.type.date_pb2.Date):
                         This condition is relevant only for versioned
                         objects. An object version satisfies this
                         condition only if it became noncurrent before
-                        the specified timestamp.
+                        the specified date in UTC.
                 """
 
                 age_days = proto.Field(
                     proto.INT32,
                     number=1,
+                    optional=True,
                 )
-                created_before_time = proto.Field(
+                created_before = proto.Field(
                     proto.MESSAGE,
                     number=2,
-                    message=timestamp_pb2.Timestamp,
+                    message=date_pb2.Date,
                 )
                 is_live = proto.Field(
                     proto.BOOL,
@@ -972,32 +967,31 @@ class Bucket(proto.Message):
                 num_newer_versions = proto.Field(
                     proto.INT32,
                     number=4,
+                    optional=True,
                 )
                 matches_storage_class = proto.RepeatedField(
                     proto.STRING,
                     number=5,
                 )
-                matches_pattern = proto.Field(
-                    proto.STRING,
-                    number=6,
-                )
                 days_since_custom_time = proto.Field(
                     proto.INT32,
                     number=7,
+                    optional=True,
                 )
-                custom_time_before_time = proto.Field(
+                custom_time_before = proto.Field(
                     proto.MESSAGE,
                     number=8,
-                    message=timestamp_pb2.Timestamp,
+                    message=date_pb2.Date,
                 )
                 days_since_noncurrent_time = proto.Field(
                     proto.INT32,
                     number=9,
+                    optional=True,
                 )
-                noncurrent_time_before_time = proto.Field(
+                noncurrent_time_before = proto.Field(
                     proto.MESSAGE,
                     number=10,
-                    message=timestamp_pb2.Timestamp,
+                    message=date_pb2.Date,
                 )
 
             action = proto.Field(

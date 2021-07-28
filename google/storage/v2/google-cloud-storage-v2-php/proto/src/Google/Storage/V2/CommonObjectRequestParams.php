@@ -23,17 +23,18 @@ class CommonObjectRequestParams extends \Google\Protobuf\Internal\Message
     protected $encryption_algorithm = '';
     /**
      * Encryption key used with Customer-Supplied Encryption Keys feature.
+     * In raw bytes format (not base64-encoded).
      *
-     * Generated from protobuf field <code>string encryption_key = 2;</code>
+     * Generated from protobuf field <code>bytes encryption_key_bytes = 4;</code>
      */
-    protected $encryption_key = '';
+    protected $encryption_key_bytes = '';
     /**
      * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
      * feature.
      *
-     * Generated from protobuf field <code>string encryption_key_sha256 = 3;</code>
+     * Generated from protobuf field <code>bytes encryption_key_sha256_bytes = 5;</code>
      */
-    protected $encryption_key_sha256 = '';
+    protected $encryption_key_sha256_bytes = '';
 
     /**
      * Constructor.
@@ -43,9 +44,10 @@ class CommonObjectRequestParams extends \Google\Protobuf\Internal\Message
      *
      *     @type string $encryption_algorithm
      *           Encryption algorithm used with Customer-Supplied Encryption Keys feature.
-     *     @type string $encryption_key
+     *     @type string $encryption_key_bytes
      *           Encryption key used with Customer-Supplied Encryption Keys feature.
-     *     @type string $encryption_key_sha256
+     *           In raw bytes format (not base64-encoded).
+     *     @type string $encryption_key_sha256_bytes
      *           SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
      *           feature.
      * }
@@ -83,26 +85,28 @@ class CommonObjectRequestParams extends \Google\Protobuf\Internal\Message
 
     /**
      * Encryption key used with Customer-Supplied Encryption Keys feature.
+     * In raw bytes format (not base64-encoded).
      *
-     * Generated from protobuf field <code>string encryption_key = 2;</code>
+     * Generated from protobuf field <code>bytes encryption_key_bytes = 4;</code>
      * @return string
      */
-    public function getEncryptionKey()
+    public function getEncryptionKeyBytes()
     {
-        return $this->encryption_key;
+        return $this->encryption_key_bytes;
     }
 
     /**
      * Encryption key used with Customer-Supplied Encryption Keys feature.
+     * In raw bytes format (not base64-encoded).
      *
-     * Generated from protobuf field <code>string encryption_key = 2;</code>
+     * Generated from protobuf field <code>bytes encryption_key_bytes = 4;</code>
      * @param string $var
      * @return $this
      */
-    public function setEncryptionKey($var)
+    public function setEncryptionKeyBytes($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->encryption_key = $var;
+        GPBUtil::checkString($var, False);
+        $this->encryption_key_bytes = $var;
 
         return $this;
     }
@@ -111,26 +115,26 @@ class CommonObjectRequestParams extends \Google\Protobuf\Internal\Message
      * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
      * feature.
      *
-     * Generated from protobuf field <code>string encryption_key_sha256 = 3;</code>
+     * Generated from protobuf field <code>bytes encryption_key_sha256_bytes = 5;</code>
      * @return string
      */
-    public function getEncryptionKeySha256()
+    public function getEncryptionKeySha256Bytes()
     {
-        return $this->encryption_key_sha256;
+        return $this->encryption_key_sha256_bytes;
     }
 
     /**
      * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
      * feature.
      *
-     * Generated from protobuf field <code>string encryption_key_sha256 = 3;</code>
+     * Generated from protobuf field <code>bytes encryption_key_sha256_bytes = 5;</code>
      * @param string $var
      * @return $this
      */
-    public function setEncryptionKeySha256($var)
+    public function setEncryptionKeySha256Bytes($var)
     {
-        GPBUtil::checkString($var, True);
-        $this->encryption_key_sha256 = $var;
+        GPBUtil::checkString($var, False);
+        $this->encryption_key_sha256_bytes = $var;
 
         return $this;
     }

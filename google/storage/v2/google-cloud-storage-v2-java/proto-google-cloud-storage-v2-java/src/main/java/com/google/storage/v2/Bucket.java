@@ -5926,6 +5926,20 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Age of an object (in days). This condition is satisfied when an
          * object reaches the specified age.
+         * A value of 0 indicates that all objects immediately match this
+         * condition.
+         * </pre>
+         *
+         * <code>int32 age_days = 1;</code>
+         * @return Whether the ageDays field is set.
+         */
+        boolean hasAgeDays();
+        /**
+         * <pre>
+         * Age of an object (in days). This condition is satisfied when an
+         * object reaches the specified age.
+         * A value of 0 indicates that all objects immediately match this
+         * condition.
          * </pre>
          *
          * <code>int32 age_days = 1;</code>
@@ -5935,39 +5949,33 @@ private static final long serialVersionUID = 0L;
 
         /**
          * <pre>
-         * A date in [RFC 3339][1] format with only the date part (for
-         * instance, "2013-01-15"). This condition is satisfied when an
-         * object is created before midnight of the specified date in UTC.
-         * [1]: https://tools.ietf.org/html/rfc3339
+         * This condition is satisfied when an object is created before midnight
+         * of the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
-         * @return Whether the createdBeforeTime field is set.
+         * <code>.google.type.Date created_before = 2;</code>
+         * @return Whether the createdBefore field is set.
          */
-        boolean hasCreatedBeforeTime();
+        boolean hasCreatedBefore();
         /**
          * <pre>
-         * A date in [RFC 3339][1] format with only the date part (for
-         * instance, "2013-01-15"). This condition is satisfied when an
-         * object is created before midnight of the specified date in UTC.
-         * [1]: https://tools.ietf.org/html/rfc3339
+         * This condition is satisfied when an object is created before midnight
+         * of the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
-         * @return The createdBeforeTime.
+         * <code>.google.type.Date created_before = 2;</code>
+         * @return The createdBefore.
          */
-        com.google.protobuf.Timestamp getCreatedBeforeTime();
+        com.google.type.Date getCreatedBefore();
         /**
          * <pre>
-         * A date in [RFC 3339][1] format with only the date part (for
-         * instance, "2013-01-15"). This condition is satisfied when an
-         * object is created before midnight of the specified date in UTC.
-         * [1]: https://tools.ietf.org/html/rfc3339
+         * This condition is satisfied when an object is created before midnight
+         * of the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+         * <code>.google.type.Date created_before = 2;</code>
          */
-        com.google.protobuf.TimestampOrBuilder getCreatedBeforeTimeOrBuilder();
+        com.google.type.DateOrBuilder getCreatedBeforeOrBuilder();
 
         /**
          * <pre>
@@ -5992,6 +6000,17 @@ private static final long serialVersionUID = 0L;
          */
         boolean getIsLive();
 
+        /**
+         * <pre>
+         * Relevant only for versioned objects. If the value is N, this
+         * condition is satisfied when there are at least N versions (including
+         * the live version) newer than this version of the object.
+         * </pre>
+         *
+         * <code>int32 num_newer_versions = 4;</code>
+         * @return Whether the numNewerVersions field is set.
+         */
+        boolean hasNumNewerVersions();
         /**
          * <pre>
          * Relevant only for versioned objects. If the value is N, this
@@ -6059,38 +6078,20 @@ private static final long serialVersionUID = 0L;
 
         /**
          * <pre>
-         * A regular expression that satisfies the RE2 syntax. This condition is
-         * satisfied when the name of the object matches the RE2 pattern.  Note:
-         * This feature is currently in the "Early Access" launch stage and is
-         * only available to an allowlisted set of users; that means that this
-         * feature may be changed in backward-incompatible ways and that it is
-         * not guaranteed to be released.
-         * </pre>
-         *
-         * <code>string matches_pattern = 6;</code>
-         * @return The matchesPattern.
-         */
-        java.lang.String getMatchesPattern();
-        /**
-         * <pre>
-         * A regular expression that satisfies the RE2 syntax. This condition is
-         * satisfied when the name of the object matches the RE2 pattern.  Note:
-         * This feature is currently in the "Early Access" launch stage and is
-         * only available to an allowlisted set of users; that means that this
-         * feature may be changed in backward-incompatible ways and that it is
-         * not guaranteed to be released.
-         * </pre>
-         *
-         * <code>string matches_pattern = 6;</code>
-         * @return The bytes for matchesPattern.
-         */
-        com.google.protobuf.ByteString
-            getMatchesPatternBytes();
-
-        /**
-         * <pre>
-         * Number of days that has elapsed since the custom timestamp set on an
+         * Number of days that have elapsed since the custom timestamp set on an
          * object.
+         * The value of the field must be a nonnegative integer.
+         * </pre>
+         *
+         * <code>int32 days_since_custom_time = 7;</code>
+         * @return Whether the daysSinceCustomTime field is set.
+         */
+        boolean hasDaysSinceCustomTime();
+        /**
+         * <pre>
+         * Number of days that have elapsed since the custom timestamp set on an
+         * object.
+         * The value of the field must be a nonnegative integer.
          * </pre>
          *
          * <code>int32 days_since_custom_time = 7;</code>
@@ -6101,33 +6102,46 @@ private static final long serialVersionUID = 0L;
         /**
          * <pre>
          * An object matches this condition if the custom timestamp set on the
-         * object is before this timestamp.
+         * object is before the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
-         * @return Whether the customTimeBeforeTime field is set.
+         * <code>.google.type.Date custom_time_before = 8;</code>
+         * @return Whether the customTimeBefore field is set.
          */
-        boolean hasCustomTimeBeforeTime();
+        boolean hasCustomTimeBefore();
         /**
          * <pre>
          * An object matches this condition if the custom timestamp set on the
-         * object is before this timestamp.
+         * object is before the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
-         * @return The customTimeBeforeTime.
+         * <code>.google.type.Date custom_time_before = 8;</code>
+         * @return The customTimeBefore.
          */
-        com.google.protobuf.Timestamp getCustomTimeBeforeTime();
+        com.google.type.Date getCustomTimeBefore();
         /**
          * <pre>
          * An object matches this condition if the custom timestamp set on the
-         * object is before this timestamp.
+         * object is before the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+         * <code>.google.type.Date custom_time_before = 8;</code>
          */
-        com.google.protobuf.TimestampOrBuilder getCustomTimeBeforeTimeOrBuilder();
+        com.google.type.DateOrBuilder getCustomTimeBeforeOrBuilder();
 
+        /**
+         * <pre>
+         * This condition is relevant only for versioned objects. An object
+         * version satisfies this condition only if these many days have been
+         * passed since it became noncurrent. The value of the field must be a
+         * nonnegative integer. If it's zero, the object version will become
+         * eligible for Lifecycle action as soon as it becomes noncurrent.
+         * </pre>
+         *
+         * <code>int32 days_since_noncurrent_time = 9;</code>
+         * @return Whether the daysSinceNoncurrentTime field is set.
+         */
+        boolean hasDaysSinceNoncurrentTime();
         /**
          * <pre>
          * This condition is relevant only for versioned objects. An object
@@ -6146,34 +6160,34 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * This condition is relevant only for versioned objects. An object
          * version satisfies this condition only if it became noncurrent before
-         * the specified timestamp.
+         * the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
-         * @return Whether the noncurrentTimeBeforeTime field is set.
+         * <code>.google.type.Date noncurrent_time_before = 10;</code>
+         * @return Whether the noncurrentTimeBefore field is set.
          */
-        boolean hasNoncurrentTimeBeforeTime();
+        boolean hasNoncurrentTimeBefore();
         /**
          * <pre>
          * This condition is relevant only for versioned objects. An object
          * version satisfies this condition only if it became noncurrent before
-         * the specified timestamp.
+         * the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
-         * @return The noncurrentTimeBeforeTime.
+         * <code>.google.type.Date noncurrent_time_before = 10;</code>
+         * @return The noncurrentTimeBefore.
          */
-        com.google.protobuf.Timestamp getNoncurrentTimeBeforeTime();
+        com.google.type.Date getNoncurrentTimeBefore();
         /**
          * <pre>
          * This condition is relevant only for versioned objects. An object
          * version satisfies this condition only if it became noncurrent before
-         * the specified timestamp.
+         * the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+         * <code>.google.type.Date noncurrent_time_before = 10;</code>
          */
-        com.google.protobuf.TimestampOrBuilder getNoncurrentTimeBeforeTimeOrBuilder();
+        com.google.type.DateOrBuilder getNoncurrentTimeBeforeOrBuilder();
       }
       /**
        * <pre>
@@ -6193,7 +6207,6 @@ private static final long serialVersionUID = 0L;
         }
         private Condition() {
           matchesStorageClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-          matchesPattern_ = "";
         }
 
         @java.lang.Override
@@ -6228,80 +6241,74 @@ private static final long serialVersionUID = 0L;
                   done = true;
                   break;
                 case 8: {
-
+                  bitField0_ |= 0x00000001;
                   ageDays_ = input.readInt32();
                   break;
                 }
                 case 18: {
-                  com.google.protobuf.Timestamp.Builder subBuilder = null;
-                  if (createdBeforeTime_ != null) {
-                    subBuilder = createdBeforeTime_.toBuilder();
+                  com.google.type.Date.Builder subBuilder = null;
+                  if (createdBefore_ != null) {
+                    subBuilder = createdBefore_.toBuilder();
                   }
-                  createdBeforeTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                  createdBefore_ = input.readMessage(com.google.type.Date.parser(), extensionRegistry);
                   if (subBuilder != null) {
-                    subBuilder.mergeFrom(createdBeforeTime_);
-                    createdBeforeTime_ = subBuilder.buildPartial();
+                    subBuilder.mergeFrom(createdBefore_);
+                    createdBefore_ = subBuilder.buildPartial();
                   }
 
                   break;
                 }
                 case 24: {
-                  bitField0_ |= 0x00000001;
+                  bitField0_ |= 0x00000002;
                   isLive_ = input.readBool();
                   break;
                 }
                 case 32: {
-
+                  bitField0_ |= 0x00000004;
                   numNewerVersions_ = input.readInt32();
                   break;
                 }
                 case 42: {
                   java.lang.String s = input.readStringRequireUtf8();
-                  if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                  if (!((mutable_bitField0_ & 0x00000008) != 0)) {
                     matchesStorageClass_ = new com.google.protobuf.LazyStringArrayList();
-                    mutable_bitField0_ |= 0x00000002;
+                    mutable_bitField0_ |= 0x00000008;
                   }
                   matchesStorageClass_.add(s);
                   break;
                 }
-                case 50: {
-                  java.lang.String s = input.readStringRequireUtf8();
-
-                  matchesPattern_ = s;
-                  break;
-                }
                 case 56: {
-
+                  bitField0_ |= 0x00000008;
                   daysSinceCustomTime_ = input.readInt32();
                   break;
                 }
                 case 66: {
-                  com.google.protobuf.Timestamp.Builder subBuilder = null;
-                  if (customTimeBeforeTime_ != null) {
-                    subBuilder = customTimeBeforeTime_.toBuilder();
+                  com.google.type.Date.Builder subBuilder = null;
+                  if (customTimeBefore_ != null) {
+                    subBuilder = customTimeBefore_.toBuilder();
                   }
-                  customTimeBeforeTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                  customTimeBefore_ = input.readMessage(com.google.type.Date.parser(), extensionRegistry);
                   if (subBuilder != null) {
-                    subBuilder.mergeFrom(customTimeBeforeTime_);
-                    customTimeBeforeTime_ = subBuilder.buildPartial();
+                    subBuilder.mergeFrom(customTimeBefore_);
+                    customTimeBefore_ = subBuilder.buildPartial();
                   }
 
                   break;
                 }
                 case 72: {
-
+                  bitField0_ |= 0x00000010;
                   daysSinceNoncurrentTime_ = input.readInt32();
                   break;
                 }
                 case 82: {
-                  com.google.protobuf.Timestamp.Builder subBuilder = null;
-                  if (noncurrentTimeBeforeTime_ != null) {
-                    subBuilder = noncurrentTimeBeforeTime_.toBuilder();
+                  com.google.type.Date.Builder subBuilder = null;
+                  if (noncurrentTimeBefore_ != null) {
+                    subBuilder = noncurrentTimeBefore_.toBuilder();
                   }
-                  noncurrentTimeBeforeTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                  noncurrentTimeBefore_ = input.readMessage(com.google.type.Date.parser(), extensionRegistry);
                   if (subBuilder != null) {
-                    subBuilder.mergeFrom(noncurrentTimeBeforeTime_);
-                    noncurrentTimeBeforeTime_ = subBuilder.buildPartial();
+                    subBuilder.mergeFrom(noncurrentTimeBefore_);
+                    noncurrentTimeBefore_ = subBuilder.buildPartial();
                   }
 
                   break;
@@ -6321,7 +6328,7 @@ private static final long serialVersionUID = 0L;
             throw new com.google.protobuf.InvalidProtocolBufferException(
                 e).setUnfinishedMessage(this);
           } finally {
-            if (((mutable_bitField0_ & 0x00000002) != 0)) {
+            if (((mutable_bitField0_ & 0x00000008) != 0)) {
               matchesStorageClass_ = matchesStorageClass_.getUnmodifiableView();
             }
             this.unknownFields = unknownFields.build();
@@ -6348,6 +6355,23 @@ private static final long serialVersionUID = 0L;
          * <pre>
          * Age of an object (in days). This condition is satisfied when an
          * object reaches the specified age.
+         * A value of 0 indicates that all objects immediately match this
+         * condition.
+         * </pre>
+         *
+         * <code>int32 age_days = 1;</code>
+         * @return Whether the ageDays field is set.
+         */
+        @java.lang.Override
+        public boolean hasAgeDays() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+        /**
+         * <pre>
+         * Age of an object (in days). This condition is satisfied when an
+         * object reaches the specified age.
+         * A value of 0 indicates that all objects immediately match this
+         * condition.
          * </pre>
          *
          * <code>int32 age_days = 1;</code>
@@ -6358,51 +6382,45 @@ private static final long serialVersionUID = 0L;
           return ageDays_;
         }
 
-        public static final int CREATED_BEFORE_TIME_FIELD_NUMBER = 2;
-        private com.google.protobuf.Timestamp createdBeforeTime_;
+        public static final int CREATED_BEFORE_FIELD_NUMBER = 2;
+        private com.google.type.Date createdBefore_;
         /**
          * <pre>
-         * A date in [RFC 3339][1] format with only the date part (for
-         * instance, "2013-01-15"). This condition is satisfied when an
-         * object is created before midnight of the specified date in UTC.
-         * [1]: https://tools.ietf.org/html/rfc3339
+         * This condition is satisfied when an object is created before midnight
+         * of the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
-         * @return Whether the createdBeforeTime field is set.
+         * <code>.google.type.Date created_before = 2;</code>
+         * @return Whether the createdBefore field is set.
          */
         @java.lang.Override
-        public boolean hasCreatedBeforeTime() {
-          return createdBeforeTime_ != null;
+        public boolean hasCreatedBefore() {
+          return createdBefore_ != null;
         }
         /**
          * <pre>
-         * A date in [RFC 3339][1] format with only the date part (for
-         * instance, "2013-01-15"). This condition is satisfied when an
-         * object is created before midnight of the specified date in UTC.
-         * [1]: https://tools.ietf.org/html/rfc3339
+         * This condition is satisfied when an object is created before midnight
+         * of the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
-         * @return The createdBeforeTime.
+         * <code>.google.type.Date created_before = 2;</code>
+         * @return The createdBefore.
          */
         @java.lang.Override
-        public com.google.protobuf.Timestamp getCreatedBeforeTime() {
-          return createdBeforeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdBeforeTime_;
+        public com.google.type.Date getCreatedBefore() {
+          return createdBefore_ == null ? com.google.type.Date.getDefaultInstance() : createdBefore_;
         }
         /**
          * <pre>
-         * A date in [RFC 3339][1] format with only the date part (for
-         * instance, "2013-01-15"). This condition is satisfied when an
-         * object is created before midnight of the specified date in UTC.
-         * [1]: https://tools.ietf.org/html/rfc3339
+         * This condition is satisfied when an object is created before midnight
+         * of the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+         * <code>.google.type.Date created_before = 2;</code>
          */
         @java.lang.Override
-        public com.google.protobuf.TimestampOrBuilder getCreatedBeforeTimeOrBuilder() {
-          return getCreatedBeforeTime();
+        public com.google.type.DateOrBuilder getCreatedBeforeOrBuilder() {
+          return getCreatedBefore();
         }
 
         public static final int IS_LIVE_FIELD_NUMBER = 3;
@@ -6419,7 +6437,7 @@ private static final long serialVersionUID = 0L;
          */
         @java.lang.Override
         public boolean hasIsLive() {
-          return ((bitField0_ & 0x00000001) != 0);
+          return ((bitField0_ & 0x00000002) != 0);
         }
         /**
          * <pre>
@@ -6438,6 +6456,20 @@ private static final long serialVersionUID = 0L;
 
         public static final int NUM_NEWER_VERSIONS_FIELD_NUMBER = 4;
         private int numNewerVersions_;
+        /**
+         * <pre>
+         * Relevant only for versioned objects. If the value is N, this
+         * condition is satisfied when there are at least N versions (including
+         * the live version) newer than this version of the object.
+         * </pre>
+         *
+         * <code>int32 num_newer_versions = 4;</code>
+         * @return Whether the numNewerVersions field is set.
+         */
+        @java.lang.Override
+        public boolean hasNumNewerVersions() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
         /**
          * <pre>
          * Relevant only for versioned objects. If the value is N, this
@@ -6516,68 +6548,27 @@ private static final long serialVersionUID = 0L;
           return matchesStorageClass_.getByteString(index);
         }
 
-        public static final int MATCHES_PATTERN_FIELD_NUMBER = 6;
-        private volatile java.lang.Object matchesPattern_;
-        /**
-         * <pre>
-         * A regular expression that satisfies the RE2 syntax. This condition is
-         * satisfied when the name of the object matches the RE2 pattern.  Note:
-         * This feature is currently in the "Early Access" launch stage and is
-         * only available to an allowlisted set of users; that means that this
-         * feature may be changed in backward-incompatible ways and that it is
-         * not guaranteed to be released.
-         * </pre>
-         *
-         * <code>string matches_pattern = 6;</code>
-         * @return The matchesPattern.
-         */
-        @java.lang.Override
-        public java.lang.String getMatchesPattern() {
-          java.lang.Object ref = matchesPattern_;
-          if (ref instanceof java.lang.String) {
-            return (java.lang.String) ref;
-          } else {
-            com.google.protobuf.ByteString bs = 
-                (com.google.protobuf.ByteString) ref;
-            java.lang.String s = bs.toStringUtf8();
-            matchesPattern_ = s;
-            return s;
-          }
-        }
-        /**
-         * <pre>
-         * A regular expression that satisfies the RE2 syntax. This condition is
-         * satisfied when the name of the object matches the RE2 pattern.  Note:
-         * This feature is currently in the "Early Access" launch stage and is
-         * only available to an allowlisted set of users; that means that this
-         * feature may be changed in backward-incompatible ways and that it is
-         * not guaranteed to be released.
-         * </pre>
-         *
-         * <code>string matches_pattern = 6;</code>
-         * @return The bytes for matchesPattern.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-            getMatchesPatternBytes() {
-          java.lang.Object ref = matchesPattern_;
-          if (ref instanceof java.lang.String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
-            matchesPattern_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-
         public static final int DAYS_SINCE_CUSTOM_TIME_FIELD_NUMBER = 7;
         private int daysSinceCustomTime_;
         /**
          * <pre>
-         * Number of days that has elapsed since the custom timestamp set on an
+         * Number of days that have elapsed since the custom timestamp set on an
          * object.
+         * The value of the field must be a nonnegative integer.
+         * </pre>
+         *
+         * <code>int32 days_since_custom_time = 7;</code>
+         * @return Whether the daysSinceCustomTime field is set.
+         */
+        @java.lang.Override
+        public boolean hasDaysSinceCustomTime() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+        /**
+         * <pre>
+         * Number of days that have elapsed since the custom timestamp set on an
+         * object.
+         * The value of the field must be a nonnegative integer.
          * </pre>
          *
          * <code>int32 days_since_custom_time = 7;</code>
@@ -6588,49 +6579,65 @@ private static final long serialVersionUID = 0L;
           return daysSinceCustomTime_;
         }
 
-        public static final int CUSTOM_TIME_BEFORE_TIME_FIELD_NUMBER = 8;
-        private com.google.protobuf.Timestamp customTimeBeforeTime_;
+        public static final int CUSTOM_TIME_BEFORE_FIELD_NUMBER = 8;
+        private com.google.type.Date customTimeBefore_;
         /**
          * <pre>
          * An object matches this condition if the custom timestamp set on the
-         * object is before this timestamp.
+         * object is before the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
-         * @return Whether the customTimeBeforeTime field is set.
+         * <code>.google.type.Date custom_time_before = 8;</code>
+         * @return Whether the customTimeBefore field is set.
          */
         @java.lang.Override
-        public boolean hasCustomTimeBeforeTime() {
-          return customTimeBeforeTime_ != null;
+        public boolean hasCustomTimeBefore() {
+          return customTimeBefore_ != null;
         }
         /**
          * <pre>
          * An object matches this condition if the custom timestamp set on the
-         * object is before this timestamp.
+         * object is before the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
-         * @return The customTimeBeforeTime.
+         * <code>.google.type.Date custom_time_before = 8;</code>
+         * @return The customTimeBefore.
          */
         @java.lang.Override
-        public com.google.protobuf.Timestamp getCustomTimeBeforeTime() {
-          return customTimeBeforeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : customTimeBeforeTime_;
+        public com.google.type.Date getCustomTimeBefore() {
+          return customTimeBefore_ == null ? com.google.type.Date.getDefaultInstance() : customTimeBefore_;
         }
         /**
          * <pre>
          * An object matches this condition if the custom timestamp set on the
-         * object is before this timestamp.
+         * object is before the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+         * <code>.google.type.Date custom_time_before = 8;</code>
          */
         @java.lang.Override
-        public com.google.protobuf.TimestampOrBuilder getCustomTimeBeforeTimeOrBuilder() {
-          return getCustomTimeBeforeTime();
+        public com.google.type.DateOrBuilder getCustomTimeBeforeOrBuilder() {
+          return getCustomTimeBefore();
         }
 
         public static final int DAYS_SINCE_NONCURRENT_TIME_FIELD_NUMBER = 9;
         private int daysSinceNoncurrentTime_;
+        /**
+         * <pre>
+         * This condition is relevant only for versioned objects. An object
+         * version satisfies this condition only if these many days have been
+         * passed since it became noncurrent. The value of the field must be a
+         * nonnegative integer. If it's zero, the object version will become
+         * eligible for Lifecycle action as soon as it becomes noncurrent.
+         * </pre>
+         *
+         * <code>int32 days_since_noncurrent_time = 9;</code>
+         * @return Whether the daysSinceNoncurrentTime field is set.
+         */
+        @java.lang.Override
+        public boolean hasDaysSinceNoncurrentTime() {
+          return ((bitField0_ & 0x00000010) != 0);
+        }
         /**
          * <pre>
          * This condition is relevant only for versioned objects. An object
@@ -6648,48 +6655,48 @@ private static final long serialVersionUID = 0L;
           return daysSinceNoncurrentTime_;
         }
 
-        public static final int NONCURRENT_TIME_BEFORE_TIME_FIELD_NUMBER = 10;
-        private com.google.protobuf.Timestamp noncurrentTimeBeforeTime_;
+        public static final int NONCURRENT_TIME_BEFORE_FIELD_NUMBER = 10;
+        private com.google.type.Date noncurrentTimeBefore_;
         /**
          * <pre>
          * This condition is relevant only for versioned objects. An object
          * version satisfies this condition only if it became noncurrent before
-         * the specified timestamp.
+         * the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
-         * @return Whether the noncurrentTimeBeforeTime field is set.
+         * <code>.google.type.Date noncurrent_time_before = 10;</code>
+         * @return Whether the noncurrentTimeBefore field is set.
          */
         @java.lang.Override
-        public boolean hasNoncurrentTimeBeforeTime() {
-          return noncurrentTimeBeforeTime_ != null;
+        public boolean hasNoncurrentTimeBefore() {
+          return noncurrentTimeBefore_ != null;
         }
         /**
          * <pre>
          * This condition is relevant only for versioned objects. An object
          * version satisfies this condition only if it became noncurrent before
-         * the specified timestamp.
+         * the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
-         * @return The noncurrentTimeBeforeTime.
+         * <code>.google.type.Date noncurrent_time_before = 10;</code>
+         * @return The noncurrentTimeBefore.
          */
         @java.lang.Override
-        public com.google.protobuf.Timestamp getNoncurrentTimeBeforeTime() {
-          return noncurrentTimeBeforeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : noncurrentTimeBeforeTime_;
+        public com.google.type.Date getNoncurrentTimeBefore() {
+          return noncurrentTimeBefore_ == null ? com.google.type.Date.getDefaultInstance() : noncurrentTimeBefore_;
         }
         /**
          * <pre>
          * This condition is relevant only for versioned objects. An object
          * version satisfies this condition only if it became noncurrent before
-         * the specified timestamp.
+         * the specified date in UTC.
          * </pre>
          *
-         * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+         * <code>.google.type.Date noncurrent_time_before = 10;</code>
          */
         @java.lang.Override
-        public com.google.protobuf.TimestampOrBuilder getNoncurrentTimeBeforeTimeOrBuilder() {
-          return getNoncurrentTimeBeforeTime();
+        public com.google.type.DateOrBuilder getNoncurrentTimeBeforeOrBuilder() {
+          return getNoncurrentTimeBefore();
         }
 
         private byte memoizedIsInitialized = -1;
@@ -6706,35 +6713,32 @@ private static final long serialVersionUID = 0L;
         @java.lang.Override
         public void writeTo(com.google.protobuf.CodedOutputStream output)
                             throws java.io.IOException {
-          if (ageDays_ != 0) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             output.writeInt32(1, ageDays_);
           }
-          if (createdBeforeTime_ != null) {
-            output.writeMessage(2, getCreatedBeforeTime());
+          if (createdBefore_ != null) {
+            output.writeMessage(2, getCreatedBefore());
           }
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             output.writeBool(3, isLive_);
           }
-          if (numNewerVersions_ != 0) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             output.writeInt32(4, numNewerVersions_);
           }
           for (int i = 0; i < matchesStorageClass_.size(); i++) {
             com.google.protobuf.GeneratedMessageV3.writeString(output, 5, matchesStorageClass_.getRaw(i));
           }
-          if (!getMatchesPatternBytes().isEmpty()) {
-            com.google.protobuf.GeneratedMessageV3.writeString(output, 6, matchesPattern_);
-          }
-          if (daysSinceCustomTime_ != 0) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             output.writeInt32(7, daysSinceCustomTime_);
           }
-          if (customTimeBeforeTime_ != null) {
-            output.writeMessage(8, getCustomTimeBeforeTime());
+          if (customTimeBefore_ != null) {
+            output.writeMessage(8, getCustomTimeBefore());
           }
-          if (daysSinceNoncurrentTime_ != 0) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             output.writeInt32(9, daysSinceNoncurrentTime_);
           }
-          if (noncurrentTimeBeforeTime_ != null) {
-            output.writeMessage(10, getNoncurrentTimeBeforeTime());
+          if (noncurrentTimeBefore_ != null) {
+            output.writeMessage(10, getNoncurrentTimeBefore());
           }
           unknownFields.writeTo(output);
         }
@@ -6745,19 +6749,19 @@ private static final long serialVersionUID = 0L;
           if (size != -1) return size;
 
           size = 0;
-          if (ageDays_ != 0) {
+          if (((bitField0_ & 0x00000001) != 0)) {
             size += com.google.protobuf.CodedOutputStream
               .computeInt32Size(1, ageDays_);
           }
-          if (createdBeforeTime_ != null) {
+          if (createdBefore_ != null) {
             size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(2, getCreatedBeforeTime());
+              .computeMessageSize(2, getCreatedBefore());
           }
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             size += com.google.protobuf.CodedOutputStream
               .computeBoolSize(3, isLive_);
           }
-          if (numNewerVersions_ != 0) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             size += com.google.protobuf.CodedOutputStream
               .computeInt32Size(4, numNewerVersions_);
           }
@@ -6769,24 +6773,21 @@ private static final long serialVersionUID = 0L;
             size += dataSize;
             size += 1 * getMatchesStorageClassList().size();
           }
-          if (!getMatchesPatternBytes().isEmpty()) {
-            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, matchesPattern_);
-          }
-          if (daysSinceCustomTime_ != 0) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             size += com.google.protobuf.CodedOutputStream
               .computeInt32Size(7, daysSinceCustomTime_);
           }
-          if (customTimeBeforeTime_ != null) {
+          if (customTimeBefore_ != null) {
             size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(8, getCustomTimeBeforeTime());
+              .computeMessageSize(8, getCustomTimeBefore());
           }
-          if (daysSinceNoncurrentTime_ != 0) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             size += com.google.protobuf.CodedOutputStream
               .computeInt32Size(9, daysSinceNoncurrentTime_);
           }
-          if (noncurrentTimeBeforeTime_ != null) {
+          if (noncurrentTimeBefore_ != null) {
             size += com.google.protobuf.CodedOutputStream
-              .computeMessageSize(10, getNoncurrentTimeBeforeTime());
+              .computeMessageSize(10, getNoncurrentTimeBefore());
           }
           size += unknownFields.getSerializedSize();
           memoizedSize = size;
@@ -6803,37 +6804,47 @@ private static final long serialVersionUID = 0L;
           }
           com.google.storage.v2.Bucket.Lifecycle.Rule.Condition other = (com.google.storage.v2.Bucket.Lifecycle.Rule.Condition) obj;
 
-          if (getAgeDays()
-              != other.getAgeDays()) return false;
-          if (hasCreatedBeforeTime() != other.hasCreatedBeforeTime()) return false;
-          if (hasCreatedBeforeTime()) {
-            if (!getCreatedBeforeTime()
-                .equals(other.getCreatedBeforeTime())) return false;
+          if (hasAgeDays() != other.hasAgeDays()) return false;
+          if (hasAgeDays()) {
+            if (getAgeDays()
+                != other.getAgeDays()) return false;
+          }
+          if (hasCreatedBefore() != other.hasCreatedBefore()) return false;
+          if (hasCreatedBefore()) {
+            if (!getCreatedBefore()
+                .equals(other.getCreatedBefore())) return false;
           }
           if (hasIsLive() != other.hasIsLive()) return false;
           if (hasIsLive()) {
             if (getIsLive()
                 != other.getIsLive()) return false;
           }
-          if (getNumNewerVersions()
-              != other.getNumNewerVersions()) return false;
+          if (hasNumNewerVersions() != other.hasNumNewerVersions()) return false;
+          if (hasNumNewerVersions()) {
+            if (getNumNewerVersions()
+                != other.getNumNewerVersions()) return false;
+          }
           if (!getMatchesStorageClassList()
               .equals(other.getMatchesStorageClassList())) return false;
-          if (!getMatchesPattern()
-              .equals(other.getMatchesPattern())) return false;
-          if (getDaysSinceCustomTime()
-              != other.getDaysSinceCustomTime()) return false;
-          if (hasCustomTimeBeforeTime() != other.hasCustomTimeBeforeTime()) return false;
-          if (hasCustomTimeBeforeTime()) {
-            if (!getCustomTimeBeforeTime()
-                .equals(other.getCustomTimeBeforeTime())) return false;
+          if (hasDaysSinceCustomTime() != other.hasDaysSinceCustomTime()) return false;
+          if (hasDaysSinceCustomTime()) {
+            if (getDaysSinceCustomTime()
+                != other.getDaysSinceCustomTime()) return false;
           }
-          if (getDaysSinceNoncurrentTime()
-              != other.getDaysSinceNoncurrentTime()) return false;
-          if (hasNoncurrentTimeBeforeTime() != other.hasNoncurrentTimeBeforeTime()) return false;
-          if (hasNoncurrentTimeBeforeTime()) {
-            if (!getNoncurrentTimeBeforeTime()
-                .equals(other.getNoncurrentTimeBeforeTime())) return false;
+          if (hasCustomTimeBefore() != other.hasCustomTimeBefore()) return false;
+          if (hasCustomTimeBefore()) {
+            if (!getCustomTimeBefore()
+                .equals(other.getCustomTimeBefore())) return false;
+          }
+          if (hasDaysSinceNoncurrentTime() != other.hasDaysSinceNoncurrentTime()) return false;
+          if (hasDaysSinceNoncurrentTime()) {
+            if (getDaysSinceNoncurrentTime()
+                != other.getDaysSinceNoncurrentTime()) return false;
+          }
+          if (hasNoncurrentTimeBefore() != other.hasNoncurrentTimeBefore()) return false;
+          if (hasNoncurrentTimeBefore()) {
+            if (!getNoncurrentTimeBefore()
+                .equals(other.getNoncurrentTimeBefore())) return false;
           }
           if (!unknownFields.equals(other.unknownFields)) return false;
           return true;
@@ -6846,36 +6857,42 @@ private static final long serialVersionUID = 0L;
           }
           int hash = 41;
           hash = (19 * hash) + getDescriptor().hashCode();
-          hash = (37 * hash) + AGE_DAYS_FIELD_NUMBER;
-          hash = (53 * hash) + getAgeDays();
-          if (hasCreatedBeforeTime()) {
-            hash = (37 * hash) + CREATED_BEFORE_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getCreatedBeforeTime().hashCode();
+          if (hasAgeDays()) {
+            hash = (37 * hash) + AGE_DAYS_FIELD_NUMBER;
+            hash = (53 * hash) + getAgeDays();
+          }
+          if (hasCreatedBefore()) {
+            hash = (37 * hash) + CREATED_BEFORE_FIELD_NUMBER;
+            hash = (53 * hash) + getCreatedBefore().hashCode();
           }
           if (hasIsLive()) {
             hash = (37 * hash) + IS_LIVE_FIELD_NUMBER;
             hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
                 getIsLive());
           }
-          hash = (37 * hash) + NUM_NEWER_VERSIONS_FIELD_NUMBER;
-          hash = (53 * hash) + getNumNewerVersions();
+          if (hasNumNewerVersions()) {
+            hash = (37 * hash) + NUM_NEWER_VERSIONS_FIELD_NUMBER;
+            hash = (53 * hash) + getNumNewerVersions();
+          }
           if (getMatchesStorageClassCount() > 0) {
             hash = (37 * hash) + MATCHES_STORAGE_CLASS_FIELD_NUMBER;
             hash = (53 * hash) + getMatchesStorageClassList().hashCode();
           }
-          hash = (37 * hash) + MATCHES_PATTERN_FIELD_NUMBER;
-          hash = (53 * hash) + getMatchesPattern().hashCode();
-          hash = (37 * hash) + DAYS_SINCE_CUSTOM_TIME_FIELD_NUMBER;
-          hash = (53 * hash) + getDaysSinceCustomTime();
-          if (hasCustomTimeBeforeTime()) {
-            hash = (37 * hash) + CUSTOM_TIME_BEFORE_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getCustomTimeBeforeTime().hashCode();
+          if (hasDaysSinceCustomTime()) {
+            hash = (37 * hash) + DAYS_SINCE_CUSTOM_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getDaysSinceCustomTime();
           }
-          hash = (37 * hash) + DAYS_SINCE_NONCURRENT_TIME_FIELD_NUMBER;
-          hash = (53 * hash) + getDaysSinceNoncurrentTime();
-          if (hasNoncurrentTimeBeforeTime()) {
-            hash = (37 * hash) + NONCURRENT_TIME_BEFORE_TIME_FIELD_NUMBER;
-            hash = (53 * hash) + getNoncurrentTimeBeforeTime().hashCode();
+          if (hasCustomTimeBefore()) {
+            hash = (37 * hash) + CUSTOM_TIME_BEFORE_FIELD_NUMBER;
+            hash = (53 * hash) + getCustomTimeBefore().hashCode();
+          }
+          if (hasDaysSinceNoncurrentTime()) {
+            hash = (37 * hash) + DAYS_SINCE_NONCURRENT_TIME_FIELD_NUMBER;
+            hash = (53 * hash) + getDaysSinceNoncurrentTime();
+          }
+          if (hasNoncurrentTimeBefore()) {
+            hash = (37 * hash) + NONCURRENT_TIME_BEFORE_FIELD_NUMBER;
+            hash = (53 * hash) + getNoncurrentTimeBefore().hashCode();
           }
           hash = (29 * hash) + unknownFields.hashCode();
           memoizedHashCode = hash;
@@ -7015,36 +7032,34 @@ private static final long serialVersionUID = 0L;
           public Builder clear() {
             super.clear();
             ageDays_ = 0;
-
-            if (createdBeforeTimeBuilder_ == null) {
-              createdBeforeTime_ = null;
+            bitField0_ = (bitField0_ & ~0x00000001);
+            if (createdBeforeBuilder_ == null) {
+              createdBefore_ = null;
             } else {
-              createdBeforeTime_ = null;
-              createdBeforeTimeBuilder_ = null;
+              createdBefore_ = null;
+              createdBeforeBuilder_ = null;
             }
             isLive_ = false;
-            bitField0_ = (bitField0_ & ~0x00000001);
-            numNewerVersions_ = 0;
-
-            matchesStorageClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
             bitField0_ = (bitField0_ & ~0x00000002);
-            matchesPattern_ = "";
-
+            numNewerVersions_ = 0;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            matchesStorageClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+            bitField0_ = (bitField0_ & ~0x00000008);
             daysSinceCustomTime_ = 0;
-
-            if (customTimeBeforeTimeBuilder_ == null) {
-              customTimeBeforeTime_ = null;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            if (customTimeBeforeBuilder_ == null) {
+              customTimeBefore_ = null;
             } else {
-              customTimeBeforeTime_ = null;
-              customTimeBeforeTimeBuilder_ = null;
+              customTimeBefore_ = null;
+              customTimeBeforeBuilder_ = null;
             }
             daysSinceNoncurrentTime_ = 0;
-
-            if (noncurrentTimeBeforeTimeBuilder_ == null) {
-              noncurrentTimeBeforeTime_ = null;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            if (noncurrentTimeBeforeBuilder_ == null) {
+              noncurrentTimeBefore_ = null;
             } else {
-              noncurrentTimeBeforeTime_ = null;
-              noncurrentTimeBeforeTimeBuilder_ = null;
+              noncurrentTimeBefore_ = null;
+              noncurrentTimeBeforeBuilder_ = null;
             }
             return this;
           }
@@ -7074,34 +7089,45 @@ private static final long serialVersionUID = 0L;
             com.google.storage.v2.Bucket.Lifecycle.Rule.Condition result = new com.google.storage.v2.Bucket.Lifecycle.Rule.Condition(this);
             int from_bitField0_ = bitField0_;
             int to_bitField0_ = 0;
-            result.ageDays_ = ageDays_;
-            if (createdBeforeTimeBuilder_ == null) {
-              result.createdBeforeTime_ = createdBeforeTime_;
-            } else {
-              result.createdBeforeTime_ = createdBeforeTimeBuilder_.build();
-            }
             if (((from_bitField0_ & 0x00000001) != 0)) {
-              result.isLive_ = isLive_;
+              result.ageDays_ = ageDays_;
               to_bitField0_ |= 0x00000001;
             }
-            result.numNewerVersions_ = numNewerVersions_;
-            if (((bitField0_ & 0x00000002) != 0)) {
+            if (createdBeforeBuilder_ == null) {
+              result.createdBefore_ = createdBefore_;
+            } else {
+              result.createdBefore_ = createdBeforeBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.isLive_ = isLive_;
+              to_bitField0_ |= 0x00000002;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.numNewerVersions_ = numNewerVersions_;
+              to_bitField0_ |= 0x00000004;
+            }
+            if (((bitField0_ & 0x00000008) != 0)) {
               matchesStorageClass_ = matchesStorageClass_.getUnmodifiableView();
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             }
             result.matchesStorageClass_ = matchesStorageClass_;
-            result.matchesPattern_ = matchesPattern_;
-            result.daysSinceCustomTime_ = daysSinceCustomTime_;
-            if (customTimeBeforeTimeBuilder_ == null) {
-              result.customTimeBeforeTime_ = customTimeBeforeTime_;
-            } else {
-              result.customTimeBeforeTime_ = customTimeBeforeTimeBuilder_.build();
+            if (((from_bitField0_ & 0x00000010) != 0)) {
+              result.daysSinceCustomTime_ = daysSinceCustomTime_;
+              to_bitField0_ |= 0x00000008;
             }
-            result.daysSinceNoncurrentTime_ = daysSinceNoncurrentTime_;
-            if (noncurrentTimeBeforeTimeBuilder_ == null) {
-              result.noncurrentTimeBeforeTime_ = noncurrentTimeBeforeTime_;
+            if (customTimeBeforeBuilder_ == null) {
+              result.customTimeBefore_ = customTimeBefore_;
             } else {
-              result.noncurrentTimeBeforeTime_ = noncurrentTimeBeforeTimeBuilder_.build();
+              result.customTimeBefore_ = customTimeBeforeBuilder_.build();
+            }
+            if (((from_bitField0_ & 0x00000020) != 0)) {
+              result.daysSinceNoncurrentTime_ = daysSinceNoncurrentTime_;
+              to_bitField0_ |= 0x00000010;
+            }
+            if (noncurrentTimeBeforeBuilder_ == null) {
+              result.noncurrentTimeBefore_ = noncurrentTimeBefore_;
+            } else {
+              result.noncurrentTimeBefore_ = noncurrentTimeBeforeBuilder_.build();
             }
             result.bitField0_ = to_bitField0_;
             onBuilt();
@@ -7152,43 +7178,39 @@ private static final long serialVersionUID = 0L;
 
           public Builder mergeFrom(com.google.storage.v2.Bucket.Lifecycle.Rule.Condition other) {
             if (other == com.google.storage.v2.Bucket.Lifecycle.Rule.Condition.getDefaultInstance()) return this;
-            if (other.getAgeDays() != 0) {
+            if (other.hasAgeDays()) {
               setAgeDays(other.getAgeDays());
             }
-            if (other.hasCreatedBeforeTime()) {
-              mergeCreatedBeforeTime(other.getCreatedBeforeTime());
+            if (other.hasCreatedBefore()) {
+              mergeCreatedBefore(other.getCreatedBefore());
             }
             if (other.hasIsLive()) {
               setIsLive(other.getIsLive());
             }
-            if (other.getNumNewerVersions() != 0) {
+            if (other.hasNumNewerVersions()) {
               setNumNewerVersions(other.getNumNewerVersions());
             }
             if (!other.matchesStorageClass_.isEmpty()) {
               if (matchesStorageClass_.isEmpty()) {
                 matchesStorageClass_ = other.matchesStorageClass_;
-                bitField0_ = (bitField0_ & ~0x00000002);
+                bitField0_ = (bitField0_ & ~0x00000008);
               } else {
                 ensureMatchesStorageClassIsMutable();
                 matchesStorageClass_.addAll(other.matchesStorageClass_);
               }
               onChanged();
             }
-            if (!other.getMatchesPattern().isEmpty()) {
-              matchesPattern_ = other.matchesPattern_;
-              onChanged();
-            }
-            if (other.getDaysSinceCustomTime() != 0) {
+            if (other.hasDaysSinceCustomTime()) {
               setDaysSinceCustomTime(other.getDaysSinceCustomTime());
             }
-            if (other.hasCustomTimeBeforeTime()) {
-              mergeCustomTimeBeforeTime(other.getCustomTimeBeforeTime());
+            if (other.hasCustomTimeBefore()) {
+              mergeCustomTimeBefore(other.getCustomTimeBefore());
             }
-            if (other.getDaysSinceNoncurrentTime() != 0) {
+            if (other.hasDaysSinceNoncurrentTime()) {
               setDaysSinceNoncurrentTime(other.getDaysSinceNoncurrentTime());
             }
-            if (other.hasNoncurrentTimeBeforeTime()) {
-              mergeNoncurrentTimeBeforeTime(other.getNoncurrentTimeBeforeTime());
+            if (other.hasNoncurrentTimeBefore()) {
+              mergeNoncurrentTimeBefore(other.getNoncurrentTimeBefore());
             }
             this.mergeUnknownFields(other.unknownFields);
             onChanged();
@@ -7225,6 +7247,23 @@ private static final long serialVersionUID = 0L;
            * <pre>
            * Age of an object (in days). This condition is satisfied when an
            * object reaches the specified age.
+           * A value of 0 indicates that all objects immediately match this
+           * condition.
+           * </pre>
+           *
+           * <code>int32 age_days = 1;</code>
+           * @return Whether the ageDays field is set.
+           */
+          @java.lang.Override
+          public boolean hasAgeDays() {
+            return ((bitField0_ & 0x00000001) != 0);
+          }
+          /**
+           * <pre>
+           * Age of an object (in days). This condition is satisfied when an
+           * object reaches the specified age.
+           * A value of 0 indicates that all objects immediately match this
+           * condition.
            * </pre>
            *
            * <code>int32 age_days = 1;</code>
@@ -7238,6 +7277,8 @@ private static final long serialVersionUID = 0L;
            * <pre>
            * Age of an object (in days). This condition is satisfied when an
            * object reaches the specified age.
+           * A value of 0 indicates that all objects immediately match this
+           * condition.
            * </pre>
            *
            * <code>int32 age_days = 1;</code>
@@ -7245,7 +7286,7 @@ private static final long serialVersionUID = 0L;
            * @return This builder for chaining.
            */
           public Builder setAgeDays(int value) {
-            
+            bitField0_ |= 0x00000001;
             ageDays_ = value;
             onChanged();
             return this;
@@ -7254,198 +7295,182 @@ private static final long serialVersionUID = 0L;
            * <pre>
            * Age of an object (in days). This condition is satisfied when an
            * object reaches the specified age.
+           * A value of 0 indicates that all objects immediately match this
+           * condition.
            * </pre>
            *
            * <code>int32 age_days = 1;</code>
            * @return This builder for chaining.
            */
           public Builder clearAgeDays() {
-            
+            bitField0_ = (bitField0_ & ~0x00000001);
             ageDays_ = 0;
             onChanged();
             return this;
           }
 
-          private com.google.protobuf.Timestamp createdBeforeTime_;
+          private com.google.type.Date createdBefore_;
           private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdBeforeTimeBuilder_;
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> createdBeforeBuilder_;
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
-           * @return Whether the createdBeforeTime field is set.
+           * <code>.google.type.Date created_before = 2;</code>
+           * @return Whether the createdBefore field is set.
            */
-          public boolean hasCreatedBeforeTime() {
-            return createdBeforeTimeBuilder_ != null || createdBeforeTime_ != null;
+          public boolean hasCreatedBefore() {
+            return createdBeforeBuilder_ != null || createdBefore_ != null;
           }
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
-           * @return The createdBeforeTime.
+           * <code>.google.type.Date created_before = 2;</code>
+           * @return The createdBefore.
            */
-          public com.google.protobuf.Timestamp getCreatedBeforeTime() {
-            if (createdBeforeTimeBuilder_ == null) {
-              return createdBeforeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdBeforeTime_;
+          public com.google.type.Date getCreatedBefore() {
+            if (createdBeforeBuilder_ == null) {
+              return createdBefore_ == null ? com.google.type.Date.getDefaultInstance() : createdBefore_;
             } else {
-              return createdBeforeTimeBuilder_.getMessage();
+              return createdBeforeBuilder_.getMessage();
             }
           }
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+           * <code>.google.type.Date created_before = 2;</code>
            */
-          public Builder setCreatedBeforeTime(com.google.protobuf.Timestamp value) {
-            if (createdBeforeTimeBuilder_ == null) {
+          public Builder setCreatedBefore(com.google.type.Date value) {
+            if (createdBeforeBuilder_ == null) {
               if (value == null) {
                 throw new NullPointerException();
               }
-              createdBeforeTime_ = value;
+              createdBefore_ = value;
               onChanged();
             } else {
-              createdBeforeTimeBuilder_.setMessage(value);
+              createdBeforeBuilder_.setMessage(value);
             }
 
             return this;
           }
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+           * <code>.google.type.Date created_before = 2;</code>
            */
-          public Builder setCreatedBeforeTime(
-              com.google.protobuf.Timestamp.Builder builderForValue) {
-            if (createdBeforeTimeBuilder_ == null) {
-              createdBeforeTime_ = builderForValue.build();
+          public Builder setCreatedBefore(
+              com.google.type.Date.Builder builderForValue) {
+            if (createdBeforeBuilder_ == null) {
+              createdBefore_ = builderForValue.build();
               onChanged();
             } else {
-              createdBeforeTimeBuilder_.setMessage(builderForValue.build());
+              createdBeforeBuilder_.setMessage(builderForValue.build());
             }
 
             return this;
           }
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+           * <code>.google.type.Date created_before = 2;</code>
            */
-          public Builder mergeCreatedBeforeTime(com.google.protobuf.Timestamp value) {
-            if (createdBeforeTimeBuilder_ == null) {
-              if (createdBeforeTime_ != null) {
-                createdBeforeTime_ =
-                  com.google.protobuf.Timestamp.newBuilder(createdBeforeTime_).mergeFrom(value).buildPartial();
+          public Builder mergeCreatedBefore(com.google.type.Date value) {
+            if (createdBeforeBuilder_ == null) {
+              if (createdBefore_ != null) {
+                createdBefore_ =
+                  com.google.type.Date.newBuilder(createdBefore_).mergeFrom(value).buildPartial();
               } else {
-                createdBeforeTime_ = value;
+                createdBefore_ = value;
               }
               onChanged();
             } else {
-              createdBeforeTimeBuilder_.mergeFrom(value);
+              createdBeforeBuilder_.mergeFrom(value);
             }
 
             return this;
           }
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+           * <code>.google.type.Date created_before = 2;</code>
            */
-          public Builder clearCreatedBeforeTime() {
-            if (createdBeforeTimeBuilder_ == null) {
-              createdBeforeTime_ = null;
+          public Builder clearCreatedBefore() {
+            if (createdBeforeBuilder_ == null) {
+              createdBefore_ = null;
               onChanged();
             } else {
-              createdBeforeTime_ = null;
-              createdBeforeTimeBuilder_ = null;
+              createdBefore_ = null;
+              createdBeforeBuilder_ = null;
             }
 
             return this;
           }
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+           * <code>.google.type.Date created_before = 2;</code>
            */
-          public com.google.protobuf.Timestamp.Builder getCreatedBeforeTimeBuilder() {
+          public com.google.type.Date.Builder getCreatedBeforeBuilder() {
             
             onChanged();
-            return getCreatedBeforeTimeFieldBuilder().getBuilder();
+            return getCreatedBeforeFieldBuilder().getBuilder();
           }
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+           * <code>.google.type.Date created_before = 2;</code>
            */
-          public com.google.protobuf.TimestampOrBuilder getCreatedBeforeTimeOrBuilder() {
-            if (createdBeforeTimeBuilder_ != null) {
-              return createdBeforeTimeBuilder_.getMessageOrBuilder();
+          public com.google.type.DateOrBuilder getCreatedBeforeOrBuilder() {
+            if (createdBeforeBuilder_ != null) {
+              return createdBeforeBuilder_.getMessageOrBuilder();
             } else {
-              return createdBeforeTime_ == null ?
-                  com.google.protobuf.Timestamp.getDefaultInstance() : createdBeforeTime_;
+              return createdBefore_ == null ?
+                  com.google.type.Date.getDefaultInstance() : createdBefore_;
             }
           }
           /**
            * <pre>
-           * A date in [RFC 3339][1] format with only the date part (for
-           * instance, "2013-01-15"). This condition is satisfied when an
-           * object is created before midnight of the specified date in UTC.
-           * [1]: https://tools.ietf.org/html/rfc3339
+           * This condition is satisfied when an object is created before midnight
+           * of the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp created_before_time = 2;</code>
+           * <code>.google.type.Date created_before = 2;</code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-              getCreatedBeforeTimeFieldBuilder() {
-            if (createdBeforeTimeBuilder_ == null) {
-              createdBeforeTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                      getCreatedBeforeTime(),
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> 
+              getCreatedBeforeFieldBuilder() {
+            if (createdBeforeBuilder_ == null) {
+              createdBeforeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                      getCreatedBefore(),
                       getParentForChildren(),
                       isClean());
-              createdBeforeTime_ = null;
+              createdBefore_ = null;
             }
-            return createdBeforeTimeBuilder_;
+            return createdBeforeBuilder_;
           }
 
           private boolean isLive_ ;
@@ -7461,7 +7486,7 @@ private static final long serialVersionUID = 0L;
            */
           @java.lang.Override
           public boolean hasIsLive() {
-            return ((bitField0_ & 0x00000001) != 0);
+            return ((bitField0_ & 0x00000002) != 0);
           }
           /**
            * <pre>
@@ -7489,7 +7514,7 @@ private static final long serialVersionUID = 0L;
            * @return This builder for chaining.
            */
           public Builder setIsLive(boolean value) {
-            bitField0_ |= 0x00000001;
+            bitField0_ |= 0x00000002;
             isLive_ = value;
             onChanged();
             return this;
@@ -7505,13 +7530,27 @@ private static final long serialVersionUID = 0L;
            * @return This builder for chaining.
            */
           public Builder clearIsLive() {
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
             isLive_ = false;
             onChanged();
             return this;
           }
 
           private int numNewerVersions_ ;
+          /**
+           * <pre>
+           * Relevant only for versioned objects. If the value is N, this
+           * condition is satisfied when there are at least N versions (including
+           * the live version) newer than this version of the object.
+           * </pre>
+           *
+           * <code>int32 num_newer_versions = 4;</code>
+           * @return Whether the numNewerVersions field is set.
+           */
+          @java.lang.Override
+          public boolean hasNumNewerVersions() {
+            return ((bitField0_ & 0x00000004) != 0);
+          }
           /**
            * <pre>
            * Relevant only for versioned objects. If the value is N, this
@@ -7538,7 +7577,7 @@ private static final long serialVersionUID = 0L;
            * @return This builder for chaining.
            */
           public Builder setNumNewerVersions(int value) {
-            
+            bitField0_ |= 0x00000004;
             numNewerVersions_ = value;
             onChanged();
             return this;
@@ -7554,7 +7593,7 @@ private static final long serialVersionUID = 0L;
            * @return This builder for chaining.
            */
           public Builder clearNumNewerVersions() {
-            
+            bitField0_ = (bitField0_ & ~0x00000004);
             numNewerVersions_ = 0;
             onChanged();
             return this;
@@ -7562,9 +7601,9 @@ private static final long serialVersionUID = 0L;
 
           private com.google.protobuf.LazyStringList matchesStorageClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
           private void ensureMatchesStorageClassIsMutable() {
-            if (!((bitField0_ & 0x00000002) != 0)) {
+            if (!((bitField0_ & 0x00000008) != 0)) {
               matchesStorageClass_ = new com.google.protobuf.LazyStringArrayList(matchesStorageClass_);
-              bitField0_ |= 0x00000002;
+              bitField0_ |= 0x00000008;
              }
           }
           /**
@@ -7705,7 +7744,7 @@ private static final long serialVersionUID = 0L;
            */
           public Builder clearMatchesStorageClass() {
             matchesStorageClass_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
             onChanged();
             return this;
           }
@@ -7733,132 +7772,26 @@ private static final long serialVersionUID = 0L;
             return this;
           }
 
-          private java.lang.Object matchesPattern_ = "";
-          /**
-           * <pre>
-           * A regular expression that satisfies the RE2 syntax. This condition is
-           * satisfied when the name of the object matches the RE2 pattern.  Note:
-           * This feature is currently in the "Early Access" launch stage and is
-           * only available to an allowlisted set of users; that means that this
-           * feature may be changed in backward-incompatible ways and that it is
-           * not guaranteed to be released.
-           * </pre>
-           *
-           * <code>string matches_pattern = 6;</code>
-           * @return The matchesPattern.
-           */
-          public java.lang.String getMatchesPattern() {
-            java.lang.Object ref = matchesPattern_;
-            if (!(ref instanceof java.lang.String)) {
-              com.google.protobuf.ByteString bs =
-                  (com.google.protobuf.ByteString) ref;
-              java.lang.String s = bs.toStringUtf8();
-              matchesPattern_ = s;
-              return s;
-            } else {
-              return (java.lang.String) ref;
-            }
-          }
-          /**
-           * <pre>
-           * A regular expression that satisfies the RE2 syntax. This condition is
-           * satisfied when the name of the object matches the RE2 pattern.  Note:
-           * This feature is currently in the "Early Access" launch stage and is
-           * only available to an allowlisted set of users; that means that this
-           * feature may be changed in backward-incompatible ways and that it is
-           * not guaranteed to be released.
-           * </pre>
-           *
-           * <code>string matches_pattern = 6;</code>
-           * @return The bytes for matchesPattern.
-           */
-          public com.google.protobuf.ByteString
-              getMatchesPatternBytes() {
-            java.lang.Object ref = matchesPattern_;
-            if (ref instanceof String) {
-              com.google.protobuf.ByteString b = 
-                  com.google.protobuf.ByteString.copyFromUtf8(
-                      (java.lang.String) ref);
-              matchesPattern_ = b;
-              return b;
-            } else {
-              return (com.google.protobuf.ByteString) ref;
-            }
-          }
-          /**
-           * <pre>
-           * A regular expression that satisfies the RE2 syntax. This condition is
-           * satisfied when the name of the object matches the RE2 pattern.  Note:
-           * This feature is currently in the "Early Access" launch stage and is
-           * only available to an allowlisted set of users; that means that this
-           * feature may be changed in backward-incompatible ways and that it is
-           * not guaranteed to be released.
-           * </pre>
-           *
-           * <code>string matches_pattern = 6;</code>
-           * @param value The matchesPattern to set.
-           * @return This builder for chaining.
-           */
-          public Builder setMatchesPattern(
-              java.lang.String value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  
-            matchesPattern_ = value;
-            onChanged();
-            return this;
-          }
-          /**
-           * <pre>
-           * A regular expression that satisfies the RE2 syntax. This condition is
-           * satisfied when the name of the object matches the RE2 pattern.  Note:
-           * This feature is currently in the "Early Access" launch stage and is
-           * only available to an allowlisted set of users; that means that this
-           * feature may be changed in backward-incompatible ways and that it is
-           * not guaranteed to be released.
-           * </pre>
-           *
-           * <code>string matches_pattern = 6;</code>
-           * @return This builder for chaining.
-           */
-          public Builder clearMatchesPattern() {
-            
-            matchesPattern_ = getDefaultInstance().getMatchesPattern();
-            onChanged();
-            return this;
-          }
-          /**
-           * <pre>
-           * A regular expression that satisfies the RE2 syntax. This condition is
-           * satisfied when the name of the object matches the RE2 pattern.  Note:
-           * This feature is currently in the "Early Access" launch stage and is
-           * only available to an allowlisted set of users; that means that this
-           * feature may be changed in backward-incompatible ways and that it is
-           * not guaranteed to be released.
-           * </pre>
-           *
-           * <code>string matches_pattern = 6;</code>
-           * @param value The bytes for matchesPattern to set.
-           * @return This builder for chaining.
-           */
-          public Builder setMatchesPatternBytes(
-              com.google.protobuf.ByteString value) {
-            if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-            
-            matchesPattern_ = value;
-            onChanged();
-            return this;
-          }
-
           private int daysSinceCustomTime_ ;
           /**
            * <pre>
-           * Number of days that has elapsed since the custom timestamp set on an
+           * Number of days that have elapsed since the custom timestamp set on an
            * object.
+           * The value of the field must be a nonnegative integer.
+           * </pre>
+           *
+           * <code>int32 days_since_custom_time = 7;</code>
+           * @return Whether the daysSinceCustomTime field is set.
+           */
+          @java.lang.Override
+          public boolean hasDaysSinceCustomTime() {
+            return ((bitField0_ & 0x00000010) != 0);
+          }
+          /**
+           * <pre>
+           * Number of days that have elapsed since the custom timestamp set on an
+           * object.
+           * The value of the field must be a nonnegative integer.
            * </pre>
            *
            * <code>int32 days_since_custom_time = 7;</code>
@@ -7870,8 +7803,9 @@ private static final long serialVersionUID = 0L;
           }
           /**
            * <pre>
-           * Number of days that has elapsed since the custom timestamp set on an
+           * Number of days that have elapsed since the custom timestamp set on an
            * object.
+           * The value of the field must be a nonnegative integer.
            * </pre>
            *
            * <code>int32 days_since_custom_time = 7;</code>
@@ -7879,75 +7813,76 @@ private static final long serialVersionUID = 0L;
            * @return This builder for chaining.
            */
           public Builder setDaysSinceCustomTime(int value) {
-            
+            bitField0_ |= 0x00000010;
             daysSinceCustomTime_ = value;
             onChanged();
             return this;
           }
           /**
            * <pre>
-           * Number of days that has elapsed since the custom timestamp set on an
+           * Number of days that have elapsed since the custom timestamp set on an
            * object.
+           * The value of the field must be a nonnegative integer.
            * </pre>
            *
            * <code>int32 days_since_custom_time = 7;</code>
            * @return This builder for chaining.
            */
           public Builder clearDaysSinceCustomTime() {
-            
+            bitField0_ = (bitField0_ & ~0x00000010);
             daysSinceCustomTime_ = 0;
             onChanged();
             return this;
           }
 
-          private com.google.protobuf.Timestamp customTimeBeforeTime_;
+          private com.google.type.Date customTimeBefore_;
           private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> customTimeBeforeTimeBuilder_;
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> customTimeBeforeBuilder_;
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
-           * @return Whether the customTimeBeforeTime field is set.
+           * <code>.google.type.Date custom_time_before = 8;</code>
+           * @return Whether the customTimeBefore field is set.
            */
-          public boolean hasCustomTimeBeforeTime() {
-            return customTimeBeforeTimeBuilder_ != null || customTimeBeforeTime_ != null;
+          public boolean hasCustomTimeBefore() {
+            return customTimeBeforeBuilder_ != null || customTimeBefore_ != null;
           }
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
-           * @return The customTimeBeforeTime.
+           * <code>.google.type.Date custom_time_before = 8;</code>
+           * @return The customTimeBefore.
            */
-          public com.google.protobuf.Timestamp getCustomTimeBeforeTime() {
-            if (customTimeBeforeTimeBuilder_ == null) {
-              return customTimeBeforeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : customTimeBeforeTime_;
+          public com.google.type.Date getCustomTimeBefore() {
+            if (customTimeBeforeBuilder_ == null) {
+              return customTimeBefore_ == null ? com.google.type.Date.getDefaultInstance() : customTimeBefore_;
             } else {
-              return customTimeBeforeTimeBuilder_.getMessage();
+              return customTimeBeforeBuilder_.getMessage();
             }
           }
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+           * <code>.google.type.Date custom_time_before = 8;</code>
            */
-          public Builder setCustomTimeBeforeTime(com.google.protobuf.Timestamp value) {
-            if (customTimeBeforeTimeBuilder_ == null) {
+          public Builder setCustomTimeBefore(com.google.type.Date value) {
+            if (customTimeBeforeBuilder_ == null) {
               if (value == null) {
                 throw new NullPointerException();
               }
-              customTimeBeforeTime_ = value;
+              customTimeBefore_ = value;
               onChanged();
             } else {
-              customTimeBeforeTimeBuilder_.setMessage(value);
+              customTimeBeforeBuilder_.setMessage(value);
             }
 
             return this;
@@ -7955,18 +7890,18 @@ private static final long serialVersionUID = 0L;
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+           * <code>.google.type.Date custom_time_before = 8;</code>
            */
-          public Builder setCustomTimeBeforeTime(
-              com.google.protobuf.Timestamp.Builder builderForValue) {
-            if (customTimeBeforeTimeBuilder_ == null) {
-              customTimeBeforeTime_ = builderForValue.build();
+          public Builder setCustomTimeBefore(
+              com.google.type.Date.Builder builderForValue) {
+            if (customTimeBeforeBuilder_ == null) {
+              customTimeBefore_ = builderForValue.build();
               onChanged();
             } else {
-              customTimeBeforeTimeBuilder_.setMessage(builderForValue.build());
+              customTimeBeforeBuilder_.setMessage(builderForValue.build());
             }
 
             return this;
@@ -7974,22 +7909,22 @@ private static final long serialVersionUID = 0L;
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+           * <code>.google.type.Date custom_time_before = 8;</code>
            */
-          public Builder mergeCustomTimeBeforeTime(com.google.protobuf.Timestamp value) {
-            if (customTimeBeforeTimeBuilder_ == null) {
-              if (customTimeBeforeTime_ != null) {
-                customTimeBeforeTime_ =
-                  com.google.protobuf.Timestamp.newBuilder(customTimeBeforeTime_).mergeFrom(value).buildPartial();
+          public Builder mergeCustomTimeBefore(com.google.type.Date value) {
+            if (customTimeBeforeBuilder_ == null) {
+              if (customTimeBefore_ != null) {
+                customTimeBefore_ =
+                  com.google.type.Date.newBuilder(customTimeBefore_).mergeFrom(value).buildPartial();
               } else {
-                customTimeBeforeTime_ = value;
+                customTimeBefore_ = value;
               }
               onChanged();
             } else {
-              customTimeBeforeTimeBuilder_.mergeFrom(value);
+              customTimeBeforeBuilder_.mergeFrom(value);
             }
 
             return this;
@@ -7997,18 +7932,18 @@ private static final long serialVersionUID = 0L;
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+           * <code>.google.type.Date custom_time_before = 8;</code>
            */
-          public Builder clearCustomTimeBeforeTime() {
-            if (customTimeBeforeTimeBuilder_ == null) {
-              customTimeBeforeTime_ = null;
+          public Builder clearCustomTimeBefore() {
+            if (customTimeBeforeBuilder_ == null) {
+              customTimeBefore_ = null;
               onChanged();
             } else {
-              customTimeBeforeTime_ = null;
-              customTimeBeforeTimeBuilder_ = null;
+              customTimeBefore_ = null;
+              customTimeBeforeBuilder_ = null;
             }
 
             return this;
@@ -8016,55 +7951,71 @@ private static final long serialVersionUID = 0L;
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+           * <code>.google.type.Date custom_time_before = 8;</code>
            */
-          public com.google.protobuf.Timestamp.Builder getCustomTimeBeforeTimeBuilder() {
+          public com.google.type.Date.Builder getCustomTimeBeforeBuilder() {
             
             onChanged();
-            return getCustomTimeBeforeTimeFieldBuilder().getBuilder();
+            return getCustomTimeBeforeFieldBuilder().getBuilder();
           }
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+           * <code>.google.type.Date custom_time_before = 8;</code>
            */
-          public com.google.protobuf.TimestampOrBuilder getCustomTimeBeforeTimeOrBuilder() {
-            if (customTimeBeforeTimeBuilder_ != null) {
-              return customTimeBeforeTimeBuilder_.getMessageOrBuilder();
+          public com.google.type.DateOrBuilder getCustomTimeBeforeOrBuilder() {
+            if (customTimeBeforeBuilder_ != null) {
+              return customTimeBeforeBuilder_.getMessageOrBuilder();
             } else {
-              return customTimeBeforeTime_ == null ?
-                  com.google.protobuf.Timestamp.getDefaultInstance() : customTimeBeforeTime_;
+              return customTimeBefore_ == null ?
+                  com.google.type.Date.getDefaultInstance() : customTimeBefore_;
             }
           }
           /**
            * <pre>
            * An object matches this condition if the custom timestamp set on the
-           * object is before this timestamp.
+           * object is before the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp custom_time_before_time = 8;</code>
+           * <code>.google.type.Date custom_time_before = 8;</code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-              getCustomTimeBeforeTimeFieldBuilder() {
-            if (customTimeBeforeTimeBuilder_ == null) {
-              customTimeBeforeTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                      getCustomTimeBeforeTime(),
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> 
+              getCustomTimeBeforeFieldBuilder() {
+            if (customTimeBeforeBuilder_ == null) {
+              customTimeBeforeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                      getCustomTimeBefore(),
                       getParentForChildren(),
                       isClean());
-              customTimeBeforeTime_ = null;
+              customTimeBefore_ = null;
             }
-            return customTimeBeforeTimeBuilder_;
+            return customTimeBeforeBuilder_;
           }
 
           private int daysSinceNoncurrentTime_ ;
+          /**
+           * <pre>
+           * This condition is relevant only for versioned objects. An object
+           * version satisfies this condition only if these many days have been
+           * passed since it became noncurrent. The value of the field must be a
+           * nonnegative integer. If it's zero, the object version will become
+           * eligible for Lifecycle action as soon as it becomes noncurrent.
+           * </pre>
+           *
+           * <code>int32 days_since_noncurrent_time = 9;</code>
+           * @return Whether the daysSinceNoncurrentTime field is set.
+           */
+          @java.lang.Override
+          public boolean hasDaysSinceNoncurrentTime() {
+            return ((bitField0_ & 0x00000020) != 0);
+          }
           /**
            * <pre>
            * This condition is relevant only for versioned objects. An object
@@ -8095,7 +8046,7 @@ private static final long serialVersionUID = 0L;
            * @return This builder for chaining.
            */
           public Builder setDaysSinceNoncurrentTime(int value) {
-            
+            bitField0_ |= 0x00000020;
             daysSinceNoncurrentTime_ = value;
             onChanged();
             return this;
@@ -8113,63 +8064,63 @@ private static final long serialVersionUID = 0L;
            * @return This builder for chaining.
            */
           public Builder clearDaysSinceNoncurrentTime() {
-            
+            bitField0_ = (bitField0_ & ~0x00000020);
             daysSinceNoncurrentTime_ = 0;
             onChanged();
             return this;
           }
 
-          private com.google.protobuf.Timestamp noncurrentTimeBeforeTime_;
+          private com.google.type.Date noncurrentTimeBefore_;
           private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> noncurrentTimeBeforeTimeBuilder_;
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> noncurrentTimeBeforeBuilder_;
           /**
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
-           * @return Whether the noncurrentTimeBeforeTime field is set.
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
+           * @return Whether the noncurrentTimeBefore field is set.
            */
-          public boolean hasNoncurrentTimeBeforeTime() {
-            return noncurrentTimeBeforeTimeBuilder_ != null || noncurrentTimeBeforeTime_ != null;
+          public boolean hasNoncurrentTimeBefore() {
+            return noncurrentTimeBeforeBuilder_ != null || noncurrentTimeBefore_ != null;
           }
           /**
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
-           * @return The noncurrentTimeBeforeTime.
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
+           * @return The noncurrentTimeBefore.
            */
-          public com.google.protobuf.Timestamp getNoncurrentTimeBeforeTime() {
-            if (noncurrentTimeBeforeTimeBuilder_ == null) {
-              return noncurrentTimeBeforeTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : noncurrentTimeBeforeTime_;
+          public com.google.type.Date getNoncurrentTimeBefore() {
+            if (noncurrentTimeBeforeBuilder_ == null) {
+              return noncurrentTimeBefore_ == null ? com.google.type.Date.getDefaultInstance() : noncurrentTimeBefore_;
             } else {
-              return noncurrentTimeBeforeTimeBuilder_.getMessage();
+              return noncurrentTimeBeforeBuilder_.getMessage();
             }
           }
           /**
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
            */
-          public Builder setNoncurrentTimeBeforeTime(com.google.protobuf.Timestamp value) {
-            if (noncurrentTimeBeforeTimeBuilder_ == null) {
+          public Builder setNoncurrentTimeBefore(com.google.type.Date value) {
+            if (noncurrentTimeBeforeBuilder_ == null) {
               if (value == null) {
                 throw new NullPointerException();
               }
-              noncurrentTimeBeforeTime_ = value;
+              noncurrentTimeBefore_ = value;
               onChanged();
             } else {
-              noncurrentTimeBeforeTimeBuilder_.setMessage(value);
+              noncurrentTimeBeforeBuilder_.setMessage(value);
             }
 
             return this;
@@ -8178,18 +8129,18 @@ private static final long serialVersionUID = 0L;
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
            */
-          public Builder setNoncurrentTimeBeforeTime(
-              com.google.protobuf.Timestamp.Builder builderForValue) {
-            if (noncurrentTimeBeforeTimeBuilder_ == null) {
-              noncurrentTimeBeforeTime_ = builderForValue.build();
+          public Builder setNoncurrentTimeBefore(
+              com.google.type.Date.Builder builderForValue) {
+            if (noncurrentTimeBeforeBuilder_ == null) {
+              noncurrentTimeBefore_ = builderForValue.build();
               onChanged();
             } else {
-              noncurrentTimeBeforeTimeBuilder_.setMessage(builderForValue.build());
+              noncurrentTimeBeforeBuilder_.setMessage(builderForValue.build());
             }
 
             return this;
@@ -8198,22 +8149,22 @@ private static final long serialVersionUID = 0L;
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
            */
-          public Builder mergeNoncurrentTimeBeforeTime(com.google.protobuf.Timestamp value) {
-            if (noncurrentTimeBeforeTimeBuilder_ == null) {
-              if (noncurrentTimeBeforeTime_ != null) {
-                noncurrentTimeBeforeTime_ =
-                  com.google.protobuf.Timestamp.newBuilder(noncurrentTimeBeforeTime_).mergeFrom(value).buildPartial();
+          public Builder mergeNoncurrentTimeBefore(com.google.type.Date value) {
+            if (noncurrentTimeBeforeBuilder_ == null) {
+              if (noncurrentTimeBefore_ != null) {
+                noncurrentTimeBefore_ =
+                  com.google.type.Date.newBuilder(noncurrentTimeBefore_).mergeFrom(value).buildPartial();
               } else {
-                noncurrentTimeBeforeTime_ = value;
+                noncurrentTimeBefore_ = value;
               }
               onChanged();
             } else {
-              noncurrentTimeBeforeTimeBuilder_.mergeFrom(value);
+              noncurrentTimeBeforeBuilder_.mergeFrom(value);
             }
 
             return this;
@@ -8222,18 +8173,18 @@ private static final long serialVersionUID = 0L;
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
            */
-          public Builder clearNoncurrentTimeBeforeTime() {
-            if (noncurrentTimeBeforeTimeBuilder_ == null) {
-              noncurrentTimeBeforeTime_ = null;
+          public Builder clearNoncurrentTimeBefore() {
+            if (noncurrentTimeBeforeBuilder_ == null) {
+              noncurrentTimeBefore_ = null;
               onChanged();
             } else {
-              noncurrentTimeBeforeTime_ = null;
-              noncurrentTimeBeforeTimeBuilder_ = null;
+              noncurrentTimeBefore_ = null;
+              noncurrentTimeBeforeBuilder_ = null;
             }
 
             return this;
@@ -8242,54 +8193,54 @@ private static final long serialVersionUID = 0L;
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
            */
-          public com.google.protobuf.Timestamp.Builder getNoncurrentTimeBeforeTimeBuilder() {
+          public com.google.type.Date.Builder getNoncurrentTimeBeforeBuilder() {
             
             onChanged();
-            return getNoncurrentTimeBeforeTimeFieldBuilder().getBuilder();
+            return getNoncurrentTimeBeforeFieldBuilder().getBuilder();
           }
           /**
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
            */
-          public com.google.protobuf.TimestampOrBuilder getNoncurrentTimeBeforeTimeOrBuilder() {
-            if (noncurrentTimeBeforeTimeBuilder_ != null) {
-              return noncurrentTimeBeforeTimeBuilder_.getMessageOrBuilder();
+          public com.google.type.DateOrBuilder getNoncurrentTimeBeforeOrBuilder() {
+            if (noncurrentTimeBeforeBuilder_ != null) {
+              return noncurrentTimeBeforeBuilder_.getMessageOrBuilder();
             } else {
-              return noncurrentTimeBeforeTime_ == null ?
-                  com.google.protobuf.Timestamp.getDefaultInstance() : noncurrentTimeBeforeTime_;
+              return noncurrentTimeBefore_ == null ?
+                  com.google.type.Date.getDefaultInstance() : noncurrentTimeBefore_;
             }
           }
           /**
            * <pre>
            * This condition is relevant only for versioned objects. An object
            * version satisfies this condition only if it became noncurrent before
-           * the specified timestamp.
+           * the specified date in UTC.
            * </pre>
            *
-           * <code>.google.protobuf.Timestamp noncurrent_time_before_time = 10;</code>
+           * <code>.google.type.Date noncurrent_time_before = 10;</code>
            */
           private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-              getNoncurrentTimeBeforeTimeFieldBuilder() {
-            if (noncurrentTimeBeforeTimeBuilder_ == null) {
-              noncurrentTimeBeforeTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                      getNoncurrentTimeBeforeTime(),
+              com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder> 
+              getNoncurrentTimeBeforeFieldBuilder() {
+            if (noncurrentTimeBeforeBuilder_ == null) {
+              noncurrentTimeBeforeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                      getNoncurrentTimeBefore(),
                       getParentForChildren(),
                       isClean());
-              noncurrentTimeBeforeTime_ = null;
+              noncurrentTimeBefore_ = null;
             }
-            return noncurrentTimeBeforeTimeBuilder_;
+            return noncurrentTimeBeforeBuilder_;
           }
           @java.lang.Override
           public final Builder setUnknownFields(

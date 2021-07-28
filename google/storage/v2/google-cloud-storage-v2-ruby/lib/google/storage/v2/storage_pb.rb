@@ -11,6 +11,7 @@ require 'google/iam/v1/policy_pb'
 require 'google/protobuf/empty_pb'
 require 'google/protobuf/field_mask_pb'
 require 'google/protobuf/timestamp_pb'
+require 'google/type/date_pb'
 Google::Protobuf::DescriptorPool.generated_pool.build do
   add_file("google/storage/v2/storage.proto", :syntax => :proto3) do
     add_message "google.storage.v2.ReadObjectRequest" do
@@ -82,8 +83,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.storage.v2.CommonObjectRequestParams" do
       optional :encryption_algorithm, :string, 1
-      optional :encryption_key, :string, 2
-      optional :encryption_key_sha256, :string, 3
+      optional :encryption_key_bytes, :bytes, 4
+      optional :encryption_key_sha256_bytes, :bytes, 5
     end
     add_message "google.storage.v2.CommonRequestParams" do
       optional :user_project, :string, 1
@@ -173,16 +174,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :storage_class, :string, 2
     end
     add_message "google.storage.v2.Bucket.Lifecycle.Rule.Condition" do
-      optional :age_days, :int32, 1
-      optional :created_before_time, :message, 2, "google.protobuf.Timestamp"
+      proto3_optional :age_days, :int32, 1
+      optional :created_before, :message, 2, "google.type.Date"
       proto3_optional :is_live, :bool, 3
-      optional :num_newer_versions, :int32, 4
+      proto3_optional :num_newer_versions, :int32, 4
       repeated :matches_storage_class, :string, 5
-      optional :matches_pattern, :string, 6
-      optional :days_since_custom_time, :int32, 7
-      optional :custom_time_before_time, :message, 8, "google.protobuf.Timestamp"
-      optional :days_since_noncurrent_time, :int32, 9
-      optional :noncurrent_time_before_time, :message, 10, "google.protobuf.Timestamp"
+      proto3_optional :days_since_custom_time, :int32, 7
+      optional :custom_time_before, :message, 8, "google.type.Date"
+      proto3_optional :days_since_noncurrent_time, :int32, 9
+      optional :noncurrent_time_before, :message, 10, "google.type.Date"
     end
     add_message "google.storage.v2.Bucket.Logging" do
       optional :log_bucket, :string, 1

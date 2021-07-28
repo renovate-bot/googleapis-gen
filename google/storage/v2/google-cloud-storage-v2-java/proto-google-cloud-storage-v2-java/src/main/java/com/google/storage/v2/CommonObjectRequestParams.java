@@ -21,8 +21,8 @@ private static final long serialVersionUID = 0L;
   }
   private CommonObjectRequestParams() {
     encryptionAlgorithm_ = "";
-    encryptionKey_ = "";
-    encryptionKeySha256_ = "";
+    encryptionKeyBytes_ = com.google.protobuf.ByteString.EMPTY;
+    encryptionKeySha256Bytes_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -61,16 +61,14 @@ private static final long serialVersionUID = 0L;
             encryptionAlgorithm_ = s;
             break;
           }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 34: {
 
-            encryptionKey_ = s;
+            encryptionKeyBytes_ = input.readBytes();
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 42: {
 
-            encryptionKeySha256_ = s;
+            encryptionKeySha256Bytes_ = input.readBytes();
             break;
           }
           default: {
@@ -151,98 +149,36 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ENCRYPTION_KEY_FIELD_NUMBER = 2;
-  private volatile java.lang.Object encryptionKey_;
+  public static final int ENCRYPTION_KEY_BYTES_FIELD_NUMBER = 4;
+  private com.google.protobuf.ByteString encryptionKeyBytes_;
   /**
    * <pre>
    * Encryption key used with Customer-Supplied Encryption Keys feature.
+   * In raw bytes format (not base64-encoded).
    * </pre>
    *
-   * <code>string encryption_key = 2;</code>
-   * @return The encryptionKey.
+   * <code>bytes encryption_key_bytes = 4;</code>
+   * @return The encryptionKeyBytes.
    */
   @java.lang.Override
-  public java.lang.String getEncryptionKey() {
-    java.lang.Object ref = encryptionKey_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      encryptionKey_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * Encryption key used with Customer-Supplied Encryption Keys feature.
-   * </pre>
-   *
-   * <code>string encryption_key = 2;</code>
-   * @return The bytes for encryptionKey.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEncryptionKeyBytes() {
-    java.lang.Object ref = encryptionKey_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      encryptionKey_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.ByteString getEncryptionKeyBytes() {
+    return encryptionKeyBytes_;
   }
 
-  public static final int ENCRYPTION_KEY_SHA256_FIELD_NUMBER = 3;
-  private volatile java.lang.Object encryptionKeySha256_;
+  public static final int ENCRYPTION_KEY_SHA256_BYTES_FIELD_NUMBER = 5;
+  private com.google.protobuf.ByteString encryptionKeySha256Bytes_;
   /**
    * <pre>
    * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
    * feature.
    * </pre>
    *
-   * <code>string encryption_key_sha256 = 3;</code>
-   * @return The encryptionKeySha256.
+   * <code>bytes encryption_key_sha256_bytes = 5;</code>
+   * @return The encryptionKeySha256Bytes.
    */
   @java.lang.Override
-  public java.lang.String getEncryptionKeySha256() {
-    java.lang.Object ref = encryptionKeySha256_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      encryptionKeySha256_ = s;
-      return s;
-    }
-  }
-  /**
-   * <pre>
-   * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
-   * feature.
-   * </pre>
-   *
-   * <code>string encryption_key_sha256 = 3;</code>
-   * @return The bytes for encryptionKeySha256.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getEncryptionKeySha256Bytes() {
-    java.lang.Object ref = encryptionKeySha256_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      encryptionKeySha256_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
+  public com.google.protobuf.ByteString getEncryptionKeySha256Bytes() {
+    return encryptionKeySha256Bytes_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -262,11 +198,11 @@ private static final long serialVersionUID = 0L;
     if (!getEncryptionAlgorithmBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, encryptionAlgorithm_);
     }
-    if (!getEncryptionKeyBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, encryptionKey_);
+    if (!encryptionKeyBytes_.isEmpty()) {
+      output.writeBytes(4, encryptionKeyBytes_);
     }
-    if (!getEncryptionKeySha256Bytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, encryptionKeySha256_);
+    if (!encryptionKeySha256Bytes_.isEmpty()) {
+      output.writeBytes(5, encryptionKeySha256Bytes_);
     }
     unknownFields.writeTo(output);
   }
@@ -280,11 +216,13 @@ private static final long serialVersionUID = 0L;
     if (!getEncryptionAlgorithmBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, encryptionAlgorithm_);
     }
-    if (!getEncryptionKeyBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, encryptionKey_);
+    if (!encryptionKeyBytes_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(4, encryptionKeyBytes_);
     }
-    if (!getEncryptionKeySha256Bytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, encryptionKeySha256_);
+    if (!encryptionKeySha256Bytes_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(5, encryptionKeySha256Bytes_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -303,10 +241,10 @@ private static final long serialVersionUID = 0L;
 
     if (!getEncryptionAlgorithm()
         .equals(other.getEncryptionAlgorithm())) return false;
-    if (!getEncryptionKey()
-        .equals(other.getEncryptionKey())) return false;
-    if (!getEncryptionKeySha256()
-        .equals(other.getEncryptionKeySha256())) return false;
+    if (!getEncryptionKeyBytes()
+        .equals(other.getEncryptionKeyBytes())) return false;
+    if (!getEncryptionKeySha256Bytes()
+        .equals(other.getEncryptionKeySha256Bytes())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -320,10 +258,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + ENCRYPTION_ALGORITHM_FIELD_NUMBER;
     hash = (53 * hash) + getEncryptionAlgorithm().hashCode();
-    hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
-    hash = (53 * hash) + getEncryptionKey().hashCode();
-    hash = (37 * hash) + ENCRYPTION_KEY_SHA256_FIELD_NUMBER;
-    hash = (53 * hash) + getEncryptionKeySha256().hashCode();
+    hash = (37 * hash) + ENCRYPTION_KEY_BYTES_FIELD_NUMBER;
+    hash = (53 * hash) + getEncryptionKeyBytes().hashCode();
+    hash = (37 * hash) + ENCRYPTION_KEY_SHA256_BYTES_FIELD_NUMBER;
+    hash = (53 * hash) + getEncryptionKeySha256Bytes().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -463,9 +401,9 @@ private static final long serialVersionUID = 0L;
       super.clear();
       encryptionAlgorithm_ = "";
 
-      encryptionKey_ = "";
+      encryptionKeyBytes_ = com.google.protobuf.ByteString.EMPTY;
 
-      encryptionKeySha256_ = "";
+      encryptionKeySha256Bytes_ = com.google.protobuf.ByteString.EMPTY;
 
       return this;
     }
@@ -494,8 +432,8 @@ private static final long serialVersionUID = 0L;
     public com.google.storage.v2.CommonObjectRequestParams buildPartial() {
       com.google.storage.v2.CommonObjectRequestParams result = new com.google.storage.v2.CommonObjectRequestParams(this);
       result.encryptionAlgorithm_ = encryptionAlgorithm_;
-      result.encryptionKey_ = encryptionKey_;
-      result.encryptionKeySha256_ = encryptionKeySha256_;
+      result.encryptionKeyBytes_ = encryptionKeyBytes_;
+      result.encryptionKeySha256Bytes_ = encryptionKeySha256Bytes_;
       onBuilt();
       return result;
     }
@@ -548,13 +486,11 @@ private static final long serialVersionUID = 0L;
         encryptionAlgorithm_ = other.encryptionAlgorithm_;
         onChanged();
       }
-      if (!other.getEncryptionKey().isEmpty()) {
-        encryptionKey_ = other.encryptionKey_;
-        onChanged();
+      if (other.getEncryptionKeyBytes() != com.google.protobuf.ByteString.EMPTY) {
+        setEncryptionKeyBytes(other.getEncryptionKeyBytes());
       }
-      if (!other.getEncryptionKeySha256().isEmpty()) {
-        encryptionKeySha256_ = other.encryptionKeySha256_;
-        onChanged();
+      if (other.getEncryptionKeySha256Bytes() != com.google.protobuf.ByteString.EMPTY) {
+        setEncryptionKeySha256Bytes(other.getEncryptionKeySha256Bytes());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -681,123 +617,68 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object encryptionKey_ = "";
+    private com.google.protobuf.ByteString encryptionKeyBytes_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
      * Encryption key used with Customer-Supplied Encryption Keys feature.
+     * In raw bytes format (not base64-encoded).
      * </pre>
      *
-     * <code>string encryption_key = 2;</code>
-     * @return The encryptionKey.
+     * <code>bytes encryption_key_bytes = 4;</code>
+     * @return The encryptionKeyBytes.
      */
-    public java.lang.String getEncryptionKey() {
-      java.lang.Object ref = encryptionKey_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        encryptionKey_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEncryptionKeyBytes() {
+      return encryptionKeyBytes_;
     }
     /**
      * <pre>
      * Encryption key used with Customer-Supplied Encryption Keys feature.
+     * In raw bytes format (not base64-encoded).
      * </pre>
      *
-     * <code>string encryption_key = 2;</code>
-     * @return The bytes for encryptionKey.
-     */
-    public com.google.protobuf.ByteString
-        getEncryptionKeyBytes() {
-      java.lang.Object ref = encryptionKey_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        encryptionKey_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * Encryption key used with Customer-Supplied Encryption Keys feature.
-     * </pre>
-     *
-     * <code>string encryption_key = 2;</code>
-     * @param value The encryptionKey to set.
+     * <code>bytes encryption_key_bytes = 4;</code>
+     * @param value The encryptionKeyBytes to set.
      * @return This builder for chaining.
      */
-    public Builder setEncryptionKey(
-        java.lang.String value) {
+    public Builder setEncryptionKeyBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      encryptionKey_ = value;
+      encryptionKeyBytes_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Encryption key used with Customer-Supplied Encryption Keys feature.
+     * In raw bytes format (not base64-encoded).
      * </pre>
      *
-     * <code>string encryption_key = 2;</code>
+     * <code>bytes encryption_key_bytes = 4;</code>
      * @return This builder for chaining.
      */
-    public Builder clearEncryptionKey() {
+    public Builder clearEncryptionKeyBytes() {
       
-      encryptionKey_ = getDefaultInstance().getEncryptionKey();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Encryption key used with Customer-Supplied Encryption Keys feature.
-     * </pre>
-     *
-     * <code>string encryption_key = 2;</code>
-     * @param value The bytes for encryptionKey to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEncryptionKeyBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      encryptionKey_ = value;
+      encryptionKeyBytes_ = getDefaultInstance().getEncryptionKeyBytes();
       onChanged();
       return this;
     }
 
-    private java.lang.Object encryptionKeySha256_ = "";
+    private com.google.protobuf.ByteString encryptionKeySha256Bytes_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <pre>
      * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
      * feature.
      * </pre>
      *
-     * <code>string encryption_key_sha256 = 3;</code>
-     * @return The encryptionKeySha256.
+     * <code>bytes encryption_key_sha256_bytes = 5;</code>
+     * @return The encryptionKeySha256Bytes.
      */
-    public java.lang.String getEncryptionKeySha256() {
-      java.lang.Object ref = encryptionKeySha256_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        encryptionKeySha256_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEncryptionKeySha256Bytes() {
+      return encryptionKeySha256Bytes_;
     }
     /**
      * <pre>
@@ -805,39 +686,16 @@ private static final long serialVersionUID = 0L;
      * feature.
      * </pre>
      *
-     * <code>string encryption_key_sha256 = 3;</code>
-     * @return The bytes for encryptionKeySha256.
-     */
-    public com.google.protobuf.ByteString
-        getEncryptionKeySha256Bytes() {
-      java.lang.Object ref = encryptionKeySha256_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        encryptionKeySha256_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <pre>
-     * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
-     * feature.
-     * </pre>
-     *
-     * <code>string encryption_key_sha256 = 3;</code>
-     * @param value The encryptionKeySha256 to set.
+     * <code>bytes encryption_key_sha256_bytes = 5;</code>
+     * @param value The encryptionKeySha256Bytes to set.
      * @return This builder for chaining.
      */
-    public Builder setEncryptionKeySha256(
-        java.lang.String value) {
+    public Builder setEncryptionKeySha256Bytes(com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      encryptionKeySha256_ = value;
+      encryptionKeySha256Bytes_ = value;
       onChanged();
       return this;
     }
@@ -847,33 +705,12 @@ private static final long serialVersionUID = 0L;
      * feature.
      * </pre>
      *
-     * <code>string encryption_key_sha256 = 3;</code>
+     * <code>bytes encryption_key_sha256_bytes = 5;</code>
      * @return This builder for chaining.
      */
-    public Builder clearEncryptionKeySha256() {
+    public Builder clearEncryptionKeySha256Bytes() {
       
-      encryptionKeySha256_ = getDefaultInstance().getEncryptionKeySha256();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
-     * feature.
-     * </pre>
-     *
-     * <code>string encryption_key_sha256 = 3;</code>
-     * @param value The bytes for encryptionKeySha256 to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEncryptionKeySha256Bytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      encryptionKeySha256_ = value;
+      encryptionKeySha256Bytes_ = getDefaultInstance().getEncryptionKeySha256Bytes();
       onChanged();
       return this;
     }

@@ -30,22 +30,13 @@ public interface CommonObjectRequestParamsOrBuilder extends
   /**
    * <pre>
    * Encryption key used with Customer-Supplied Encryption Keys feature.
+   * In raw bytes format (not base64-encoded).
    * </pre>
    *
-   * <code>string encryption_key = 2;</code>
-   * @return The encryptionKey.
+   * <code>bytes encryption_key_bytes = 4;</code>
+   * @return The encryptionKeyBytes.
    */
-  java.lang.String getEncryptionKey();
-  /**
-   * <pre>
-   * Encryption key used with Customer-Supplied Encryption Keys feature.
-   * </pre>
-   *
-   * <code>string encryption_key = 2;</code>
-   * @return The bytes for encryptionKey.
-   */
-  com.google.protobuf.ByteString
-      getEncryptionKeyBytes();
+  com.google.protobuf.ByteString getEncryptionKeyBytes();
 
   /**
    * <pre>
@@ -53,19 +44,8 @@ public interface CommonObjectRequestParamsOrBuilder extends
    * feature.
    * </pre>
    *
-   * <code>string encryption_key_sha256 = 3;</code>
-   * @return The encryptionKeySha256.
+   * <code>bytes encryption_key_sha256_bytes = 5;</code>
+   * @return The encryptionKeySha256Bytes.
    */
-  java.lang.String getEncryptionKeySha256();
-  /**
-   * <pre>
-   * SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
-   * feature.
-   * </pre>
-   *
-   * <code>string encryption_key_sha256 = 3;</code>
-   * @return The bytes for encryptionKeySha256.
-   */
-  com.google.protobuf.ByteString
-      getEncryptionKeySha256Bytes();
+  com.google.protobuf.ByteString getEncryptionKeySha256Bytes();
 }

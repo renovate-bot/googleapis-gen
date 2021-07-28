@@ -273,10 +273,11 @@ module Google
       # @!attribute [rw] encryption_algorithm
       #   @return [::String]
       #     Encryption algorithm used with Customer-Supplied Encryption Keys feature.
-      # @!attribute [rw] encryption_key
+      # @!attribute [rw] encryption_key_bytes
       #   @return [::String]
       #     Encryption key used with Customer-Supplied Encryption Keys feature.
-      # @!attribute [rw] encryption_key_sha256
+      #     In raw bytes format (not base64-encoded).
+      # @!attribute [rw] encryption_key_sha256_bytes
       #   @return [::String]
       #     SHA256 hash of encryption key used with Customer-Supplied Encryption Keys
       #     feature.
@@ -649,12 +650,12 @@ module Google
             #   @return [::Integer]
             #     Age of an object (in days). This condition is satisfied when an
             #     object reaches the specified age.
-            # @!attribute [rw] created_before_time
-            #   @return [::Google::Protobuf::Timestamp]
-            #     A date in [RFC 3339][1] format with only the date part (for
-            #     instance, "2013-01-15"). This condition is satisfied when an
-            #     object is created before midnight of the specified date in UTC.
-            #     [1]: https://tools.ietf.org/html/rfc3339
+            #     A value of 0 indicates that all objects immediately match this
+            #     condition.
+            # @!attribute [rw] created_before
+            #   @return [::Google::Type::Date]
+            #     This condition is satisfied when an object is created before midnight
+            #     of the specified date in UTC.
             # @!attribute [rw] is_live
             #   @return [::Boolean]
             #     Relevant only for versioned objects. If the value is
@@ -671,22 +672,15 @@ module Google
             #     will be matched. Values include `MULTI_REGIONAL`, `REGIONAL`,
             #     `NEARLINE`, `COLDLINE`, `STANDARD`, and
             #     `DURABLE_REDUCED_AVAILABILITY`.
-            # @!attribute [rw] matches_pattern
-            #   @return [::String]
-            #     A regular expression that satisfies the RE2 syntax. This condition is
-            #     satisfied when the name of the object matches the RE2 pattern.  Note:
-            #     This feature is currently in the "Early Access" launch stage and is
-            #     only available to an allowlisted set of users; that means that this
-            #     feature may be changed in backward-incompatible ways and that it is
-            #     not guaranteed to be released.
             # @!attribute [rw] days_since_custom_time
             #   @return [::Integer]
-            #     Number of days that has elapsed since the custom timestamp set on an
+            #     Number of days that have elapsed since the custom timestamp set on an
             #     object.
-            # @!attribute [rw] custom_time_before_time
-            #   @return [::Google::Protobuf::Timestamp]
+            #     The value of the field must be a nonnegative integer.
+            # @!attribute [rw] custom_time_before
+            #   @return [::Google::Type::Date]
             #     An object matches this condition if the custom timestamp set on the
-            #     object is before this timestamp.
+            #     object is before the specified date in UTC.
             # @!attribute [rw] days_since_noncurrent_time
             #   @return [::Integer]
             #     This condition is relevant only for versioned objects. An object
@@ -694,11 +688,11 @@ module Google
             #     passed since it became noncurrent. The value of the field must be a
             #     nonnegative integer. If it's zero, the object version will become
             #     eligible for Lifecycle action as soon as it becomes noncurrent.
-            # @!attribute [rw] noncurrent_time_before_time
-            #   @return [::Google::Protobuf::Timestamp]
+            # @!attribute [rw] noncurrent_time_before
+            #   @return [::Google::Type::Date]
             #     This condition is relevant only for versioned objects. An object
             #     version satisfies this condition only if it became noncurrent before
-            #     the specified timestamp.
+            #     the specified date in UTC.
             class Condition
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
