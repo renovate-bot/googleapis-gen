@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.datacatalog.v1.Taxonomy taxonomy_;
   /**
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -167,7 +167,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -627,7 +627,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.Taxonomy, com.google.cloud.datacatalog.v1.Taxonomy.Builder, com.google.cloud.datacatalog.v1.TaxonomyOrBuilder> taxonomyBuilder_;
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -638,7 +638,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -653,7 +653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -691,7 +691,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -713,7 +713,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -731,7 +731,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -743,7 +743,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -758,7 +758,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The taxonomy to be created.
+     * The taxonomy to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>

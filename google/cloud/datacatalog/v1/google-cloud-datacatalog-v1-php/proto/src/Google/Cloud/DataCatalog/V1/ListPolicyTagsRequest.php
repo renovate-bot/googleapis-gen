@@ -23,15 +23,17 @@ class ListPolicyTagsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * The maximum number of items to return. Must be a value between 1 and 1000.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively.
      * If not set, defaults to 50.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      */
     protected $page_size = 0;
     /**
-     * The next_page_token value returned from a previous List request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set, returns the
+     * first page.
+     * The token is returned in the response to a previous list request.
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      */
@@ -46,11 +48,13 @@ class ListPolicyTagsRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. Resource name of the taxonomy to list the policy tags of.
      *     @type int $page_size
-     *           The maximum number of items to return. Must be a value between 1 and 1000.
+     *           The maximum number of items to return. Must be a value between 1 and 1000
+     *           inclusively.
      *           If not set, defaults to 50.
      *     @type string $page_token
-     *           The next_page_token value returned from a previous List request, if any. If
-     *           not set, defaults to an empty string.
+     *           The pagination token of the next results page. If not set, returns the
+     *           first page.
+     *           The token is returned in the response to a previous list request.
      * }
      */
     public function __construct($data = NULL) {
@@ -85,7 +89,8 @@ class ListPolicyTagsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of items to return. Must be a value between 1 and 1000.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively.
      * If not set, defaults to 50.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
@@ -97,7 +102,8 @@ class ListPolicyTagsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of items to return. Must be a value between 1 and 1000.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively.
      * If not set, defaults to 50.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
@@ -113,8 +119,9 @@ class ListPolicyTagsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The next_page_token value returned from a previous List request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set, returns the
+     * first page.
+     * The token is returned in the response to a previous list request.
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      * @return string
@@ -125,8 +132,9 @@ class ListPolicyTagsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The next_page_token value returned from a previous List request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set, returns the
+     * first page.
+     * The token is returned in the response to a previous list request.
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      * @param string $var

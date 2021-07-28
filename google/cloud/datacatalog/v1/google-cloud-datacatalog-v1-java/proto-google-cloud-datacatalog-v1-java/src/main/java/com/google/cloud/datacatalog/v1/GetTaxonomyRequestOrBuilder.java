@@ -9,7 +9,7 @@ public interface GetTaxonomyRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of the requested taxonomy.
+   * Required. Resource name of the taxonomy to get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -18,7 +18,7 @@ public interface GetTaxonomyRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. Resource name of the requested taxonomy.
+   * Required. Resource name of the taxonomy to get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

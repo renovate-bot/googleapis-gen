@@ -5,7 +5,7 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * Timestamps about this resource according to a particular system.
+ * Timestamps associated with this resource in a particular system.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.SystemTimestamps}
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * The creation time of the resource within the given system.
+   * Creation timestamp of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The creation time of the resource within the given system.
+   * Creation timestamp of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -151,7 +151,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The creation time of the resource within the given system.
+   * Creation timestamp of the resource within the given system.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -165,7 +165,12 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp updateTime_;
   /**
    * <pre>
-   * The last-modified time of the resource within the given system.
+   * Timestamp of the last modification of the resource or its metadata within
+   * a given system.
+   * Note: Depending on the source system, not every modification updates this
+   * timestamp.
+   * For example, BigQuery timestamps every metadata modification but not data
+   * or permission changes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -177,7 +182,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The last-modified time of the resource within the given system.
+   * Timestamp of the last modification of the resource or its metadata within
+   * a given system.
+   * Note: Depending on the source system, not every modification updates this
+   * timestamp.
+   * For example, BigQuery timestamps every metadata modification but not data
+   * or permission changes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -189,7 +199,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The last-modified time of the resource within the given system.
+   * Timestamp of the last modification of the resource or its metadata within
+   * a given system.
+   * Note: Depending on the source system, not every modification updates this
+   * timestamp.
+   * For example, BigQuery timestamps every metadata modification but not data
+   * or permission changes.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -203,8 +218,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp expireTime_;
   /**
    * <pre>
-   * Output only. The expiration time of the resource within the given system.
-   * Currently only apllicable to BigQuery resources.
+   * Output only. Expiration timestamp of the resource within the given system.
+   * Currently only applicable to BigQuery resources.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -216,8 +231,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The expiration time of the resource within the given system.
-   * Currently only apllicable to BigQuery resources.
+   * Output only. Expiration timestamp of the resource within the given system.
+   * Currently only applicable to BigQuery resources.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -229,8 +244,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The expiration time of the resource within the given system.
-   * Currently only apllicable to BigQuery resources.
+   * Output only. Expiration timestamp of the resource within the given system.
+   * Currently only applicable to BigQuery resources.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -434,7 +449,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Timestamps about this resource according to a particular system.
+   * Timestamps associated with this resource in a particular system.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.SystemTimestamps}
@@ -624,7 +639,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -635,7 +650,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -650,7 +665,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -670,7 +685,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -688,7 +703,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -710,7 +725,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -728,7 +743,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -740,7 +755,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -755,7 +770,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The creation time of the resource within the given system.
+     * Creation timestamp of the resource within the given system.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1;</code>
@@ -779,7 +794,12 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -790,7 +810,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -805,7 +830,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -825,7 +855,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -843,7 +878,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -865,7 +905,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -883,7 +928,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -895,7 +945,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -910,7 +965,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The last-modified time of the resource within the given system.
+     * Timestamp of the last modification of the resource or its metadata within
+     * a given system.
+     * Note: Depending on the source system, not every modification updates this
+     * timestamp.
+     * For example, BigQuery timestamps every metadata modification but not data
+     * or permission changes.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 2;</code>
@@ -934,8 +994,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> expireTimeBuilder_;
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -946,8 +1006,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -962,8 +1022,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -983,8 +1043,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1002,8 +1062,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1025,8 +1085,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1044,8 +1104,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1057,8 +1117,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1073,8 +1133,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The expiration time of the resource within the given system.
-     * Currently only apllicable to BigQuery resources.
+     * Output only. Expiration timestamp of the resource within the given system.
+     * Currently only applicable to BigQuery resources.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp expire_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

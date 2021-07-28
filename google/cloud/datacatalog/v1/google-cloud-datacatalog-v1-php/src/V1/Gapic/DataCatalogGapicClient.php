@@ -79,8 +79,8 @@ use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
 /**
- * Service Description: Data Catalog API service allows clients to discover, understand, and manage
- * their data.
+ * Service Description: Data Catalog API service allows you to discover, understand, and manage
+ * your data.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -496,15 +496,17 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Creates an entry. Only entries of types 'FILESET', 'CLUSTER', 'DATA_STREAM'
-     * or with a user-specified type can be created.
+     * Creates an entry.
      *
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM',
+     * or custom types. Data Catalog automatically creates entries with other
+     * types during metadata ingestion from integrated systems.
      *
-     * A maximum of 100,000 entries may be created per entry group.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     *
+     * An entry group can have a maximum of 100,000 entries.
      *
      * Sample code:
      * ```
@@ -519,9 +521,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The name of the entry group this entry belongs to. Example:
-     *
-     *                             `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * @param string $parent       Required. The name of the entry group this entry belongs to.
      *
      *                             Note: The entry itself and its child resources might not be stored in
      *                             the location specified in its name.
@@ -559,25 +559,33 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Creates an EntryGroup.
+     * Creates an entry group.
      *
-     * An entry group contains logically related entries together with Cloud
-     * Identity and Access Management policies that specify the users who can
-     * create, edit, and view entries within the entry group.
+     * An entry group contains logically related entries together with [Cloud
+     * Identity and Access Management](/data-catalog/docs/concepts/iam) policies.
+     * These policies specify users who can create, edit, and view entries
+     * within entry groups.
      *
-     * Data Catalog automatically creates an entry group for BigQuery entries
-     * ("&#64;bigquery") and Pub/Sub topics ("&#64;pubsub"). Users create their own entry
-     * group to contain Cloud Storage fileset entries or custom type entries,
-     * and the IAM policies associated with those entries. Entry groups, like
-     * entries, can be searched.
+     * Data Catalog automatically creates entry groups with names that start with
+     * the `&#64;` symbol for the following resources:
+     *
+     * * BigQuery entries (`&#64;bigquery`)
+     * * Pub/Sub topics (`&#64;pubsub`)
+     * * Dataproc Metastore services (`&#64;dataproc_metastore_{SERVICE_NAME_HASH}`)
+     *
+     * You can create your own entry groups for Cloud Storage fileset entries
+     * and custom entries together with the corresponding IAM policies.
+     * User-created entry groups can't contain the `&#64;` symbol, it is reserved
+     * for automatically created groups.
+     *
+     * Entry groups, like entries, can be searched.
      *
      * A maximum of 10,000 entry groups may be created per organization across all
      * locations.
      *
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -591,9 +599,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The name of the project this entry group belongs to. Example:
-     *
-     *                             `projects/{project_id}/locations/{location}`
+     * @param string $parent       Required. The names of the project and location that the new entry group belongs to.
      *
      *                             Note: The entry group itself and its child resources might not be
      *                             stored in the location specified in its name.
@@ -606,7 +612,7 @@ class DataCatalogGapicClient
      *     Optional.
      *
      *     @type EntryGroup $entryGroup
-     *           The entry group to create. Defaults to an empty entry group.
+     *           The entry group to create. Defaults to empty.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -635,13 +641,18 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
-     * Note: The project identified by the `parent` parameter for the
-     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
-     * and the
-     * [tag
-     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
-     * used to create the tag must be from the same organization.
+     * Creates a tag and assigns it to:
+     *
+     * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
+     * ``projects.locations.entryGroups.entries.tags.create``.
+     * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
+     * name is ``projects.locations.entryGroups.tags.create``.
+     *
+     * Note: The project identified by the `parent` parameter for the [tag]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the [tag template]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be in the same organization.
      *
      * Sample code:
      * ```
@@ -655,10 +666,10 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The name of the resource to attach this tag to. Tags can be attached to
-     *                             entries. An entry can have up to 1000 attached tags. Example:
+     * @param string $parent       Required. The name of the resource to attach this tag to.
      *
-     *                             `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
+     *                             Tags can be attached to entries or entry groups. An entry can have up to
+     *                             1000 attached tags.
      *
      *                             Note: The tag and its child resources might not be stored in
      *                             the location specified in its name.
@@ -690,11 +701,12 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Creates a tag template. The user should enable the Data Catalog API in
-     * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a tag template.
+     *
+     * You must enable the Data Catalog API in the project identified by the
+     * `parent` parameter.
+     * For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -711,10 +723,6 @@ class DataCatalogGapicClient
      *
      * @param string      $parent        Required. The name of the project and the template location
      *                                   [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     *
-     *                                   Example:
-     *
-     *                                   * projects/{project_id}/locations/us-central1
      * @param string      $tagTemplateId Required. The ID of the tag template to create.
      *
      *                                   The ID must contain only lowercase letters (a-z), numbers (0-9),
@@ -749,11 +757,11 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Creates a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `parent` parameter (see
-     * [Data Catalog Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a field in a tag template.
+     *
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -770,10 +778,6 @@ class DataCatalogGapicClient
      *
      * @param string           $parent             Required. The name of the project and the template location
      *                                             [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     *
-     *                                             Example:
-     *
-     *                                             * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
      * @param string           $tagTemplateFieldId Required. The ID of the tag template field to create.
      *
      *                                             Note: Adding a required field to an existing template is *not* allowed.
@@ -811,13 +815,16 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Deletes an existing entry. Only entries created through
+     * Deletes an existing entry.
+     *
+     * You can delete only the entries created by the
      * [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry]
-     * method can be deleted.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * method.
+     *
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -830,9 +837,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the entry. Example:
-     *
-     *                             * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * @param string $name         Required. The name of the entry to delete.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -857,11 +862,12 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
-     * deleted. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes an entry group.
+     *
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -874,8 +880,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the entry group. For example,
-     *                             `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * @param string $name         Required. The name of the entry group to delete.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -919,9 +924,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the tag to delete. Example:
-     *
-     *                             * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+     * @param string $name         Required. The name of the tag to delete.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -946,11 +949,11 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Deletes a tag template and all tags using the template.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a tag template and all tags that use it.
+     *
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -964,12 +967,10 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the tag template to delete. Example:
+     * @param string $name         Required. The name of the tag template to delete.
+     * @param bool   $force        Required. If true, deletes all tags that use this template.
      *
-     *                             * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-     * @param bool   $force        Required. Currently, this field must always be set to `true`.
-     *                             This confirms the deletion of any possible tags using this template.
-     *                             `force = false` will be supported in the future.
+     *                             Currently, `true` is the only supported value.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -995,11 +996,12 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Deletes a field in a tag template and all uses of that field.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a field in a tag template and all uses of this field from the tags
+     * based on this template.
+     *
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -1013,12 +1015,10 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the tag template field to delete. Example:
+     * @param string $name         Required. The name of the tag template field to delete.
+     * @param bool   $force        Required. If true, deletes this field from any tags that use it.
      *
-     *                             * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
-     * @param bool   $force        Required. Currently, this field must always be set to `true`.
-     *                             This confirms the deletion of this field from any tags using this field.
-     *                             `force = false` will be supported in the future.
+     *                             Currently, `true` is the only supported value.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -1057,9 +1057,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the entry. Example:
-     *
-     *                             * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * @param string $name         Required. The name of the entry to get.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -1086,7 +1084,7 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Gets an EntryGroup.
+     * Gets an entry group.
      *
      * Sample code:
      * ```
@@ -1099,13 +1097,12 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the entry group. For example,
-     *                             `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * @param string $name         Required. The name of the entry group to get.
      * @param array  $optionalArgs {
      *     Optional.
      *
      *     @type FieldMask $readMask
-     *           The fields to return. If not set or empty, all fields are returned.
+     *           The fields to return. If empty or omitted, all fields are returned.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1133,21 +1130,26 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Gets the access control policy for a resource. A `NOT_FOUND` error
-     * is returned if the resource does not exist. An empty policy is returned
-     * if the resource exists but does not have a policy set on it.
+     * Gets the access control policy for a resource.
+     *
+     * May return:
+     *
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     * permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
      *
      * Supported resources are:
-     * - Tag templates.
-     * - Entries.
-     * - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
      *
-     * Callers must have following Google IAM permission
+     * - Tag templates
+     * - Entry groups
+     *
+     * Note: This method doesn't get policies from Google Cloud Platform
+     * resources ingested into Data Catalog.
+     *
+     * To call this method, you must have the following Google IAM permissions:
+     *
      * - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
      * templates.
-     * - `datacatalog.entries.getIamPolicy` to get policies on entries.
      * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      *
      * Sample code:
@@ -1209,9 +1211,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the tag template. Example:
-     *
-     *                             * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
+     * @param string $name         Required. The name of the tag template to get.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -1263,10 +1263,9 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The name of the entry group that contains the entries, which can
-     *                             be provided in URL format. Example:
+     * @param string $parent       Required. The name of the entry group that contains the entries to list.
      *
-     *                             * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+     *                             Can be provided in URL format.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -1280,10 +1279,11 @@ class DataCatalogGapicClient
      *           of values will be returned. Any page token used here must have
      *           been generated by a previous call to the API.
      *     @type FieldMask $readMask
-     *           The fields to return for each Entry. If not set or empty, all
+     *           The fields to return for each entry. If empty or omitted, all
      *           fields are returned.
-     *           For example, setting read_mask to contain only one path "name" will cause
-     *           ListEntries to return a list of Entries with only "name" field.
+     *
+     *           For example, to return a list of entries with only the `name` field,
+     *           set `read_mask` to only one path with the `name` value.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1344,10 +1344,9 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The name of the location that contains the entry groups, which can be
-     *                             provided in URL format. Example:
+     * @param string $parent       Required. The name of the location that contains the entry groups to list.
      *
-     *                             * projects/{project_id}/locations/{location}
+     *                             Can be provided as a URL.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -1391,7 +1390,7 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
      *
      * Sample code:
      * ```
@@ -1416,14 +1415,11 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The name of the Data Catalog resource to list the tags of. The resource
-     *                             could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-     *                             [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
+     * @param string $parent       Required. The name of the Data Catalog resource to list the tags of.
      *
-     *                             Examples:
-     *
-     *                             * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     *                             * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     *                             The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+     *                             or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+     *                             (without `/entries/{entries}` at the end).
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -1467,9 +1463,9 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Get an entry by target resource name. This method allows clients to use
-     * the resource name from the source Google Cloud Platform service to get the
-     * Data Catalog Entry.
+     * Gets an entry by its target resource name.
+     *
+     * The resource name comes from the source Google Cloud Platform service.
      *
      * Sample code:
      * ```
@@ -1486,27 +1482,27 @@ class DataCatalogGapicClient
      *
      *     @type string $linkedResource
      *           The full name of the Google Cloud Platform resource the Data Catalog
-     *           entry represents. See:
-     *           https://cloud.google.com/apis/design/resource_names#full_resource_name.
-     *           Full names are case-sensitive.
+     *           entry represents. For more information, see [Full Resource Name]
+     *           (https://cloud.google.com/apis/design/resource_names#full_resource_name).
      *
-     *           Examples:
+     *           Full names are case-sensitive. For example:
      *
-     *           * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     *           * //pubsub.googleapis.com/projects/projectId/topics/topicId
+     *           * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     *           * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      *     @type string $sqlResource
      *           The SQL name of the entry. SQL names are case-sensitive.
      *
      *           Examples:
      *
-     *           * `pubsub.project_id.topic_id`
-     *           * ``pubsub.project_id.`topic.id.with.dots` ``
-     *           * `bigquery.table.project_id.dataset_id.table_id`
-     *           * `bigquery.dataset.project_id.dataset_id`
-     *           * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
+     *           * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+     *           * `pubsub.topic.{PROJECT_ID}.`\``{TOPIC.ID.SEPARATED.WITH.DOTS}`\`
+     *           * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+     *           * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+     *           * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
      *
-     *           `*_id`s should satisfy the standard SQL rules for identifiers.
-     *           https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+     *           Identifiers (`*_ID`) should comply with the
+     *           [Lexical structure in Standard SQL]
+     *           (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      *     @type string $fullyQualifiedName
      *           Fully qualified name (FQN) of the resource.
      *
@@ -1522,7 +1518,7 @@ class DataCatalogGapicClient
      *
      *           Example for a DPMS table:
      *
-     *           `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     *           `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1553,11 +1549,11 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Renames a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Renames a field in a tag template.
+     *
+     * You must enable the Data Catalog API in the project identified by the
+     * `name` parameter. For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -1571,9 +1567,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name                  Required. The name of the tag template. Example:
-     *
-     *                                      * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * @param string $name                  Required. The name of the tag template.
      * @param string $newTagTemplateFieldId Required. The new ID of this tag template field. For example, `my_new_field`.
      * @param array  $optionalArgs          {
      *     Optional.
@@ -1602,8 +1596,9 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Renames an enum value in a tag template. The enum values have to be unique
-     * within one enum field.
+     * Renames an enum value in a tag template.
+     *
+     * Within a single enum field, enum values must be unique.
      *
      * Sample code:
      * ```
@@ -1617,9 +1612,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string $name                    Required. The name of the enum field value. Example:
-     *
-     *                                        * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+     * @param string $name                    Required. The name of the enum field value.
      * @param string $newEnumValueDisplayName Required. The new display name of the enum value. For example, `my_new_enum_value`.
      * @param array  $optionalArgs            {
      *     Optional.
@@ -1648,22 +1641,21 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Searches Data Catalog for multiple resources like entries, tags that
+     * Searches Data Catalog for multiple resources like entries and tags that
      * match a query.
      *
-     * This is a custom method
-     * (https://cloud.google.com/apis/design/custom_methods) and does not return
-     * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequently call `Get` methods.
+     * This is a [Custom Method]
+     * (https://cloud.google.com/apis/design/custom_methods) that doesn't return
+     * all information on a resource, only its ID and high level fields. To get
+     * more information, you can subsequently call specific get methods.
      *
-     * Note that Data Catalog search queries do not guarantee full recall. Query
-     * results that match your query may not be returned, even in subsequent
-     * result pages. Also note that results returned (and not returned) can vary
-     * across repeated search queries.
+     * Note: Data Catalog search queries don't guarantee full recall. Results
+     * that match your query might not be returned, even in subsequent
+     * result pages. Additionally, returned (and not returned) results can vary
+     * if you repeat search queries.
      *
-     * See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * For more information, see [Data Catalog search syntax]
+     * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      *
      * Sample code:
      * ```
@@ -1688,27 +1680,27 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param Scope $scope        Required. The scope of this search request. A `scope` that has empty
-     *                            `include_org_ids`, `include_project_ids` AND false
-     *                            `include_gcp_public_datasets` is considered invalid. Data Catalog will
-     *                            return an error in such a case.
+     * @param Scope $scope        Required. The scope of this search request.
+     *
+     *                            The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+     *                            empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+     *                            the request returns an error.
      * @param array $optionalArgs {
      *     Optional.
      *
      *     @type string $query
-     *           Optional. The query string in search query syntax. An empty query string will result
-     *           in all data assets (in the specified scope) that the user has access to.
+     *           Optional. The query string with a minimum of 3 characters and specific syntax.
+     *           For more information, see
+     *           [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
      *
-     *           Query strings can be simple as "x" or more qualified as:
+     *           An empty query string returns all data assets (in the specified scope)
+     *           that you have access to.
      *
-     *           * name:x
-     *           * column:x
-     *           * description:y
+     *           A query string can be a simple `xyz` or qualified by predicates:
      *
-     *           Note: Query tokens need to have a minimum of 3 characters for substring
-     *           matching to work correctly. See [Data Catalog Search
-     *           Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     *           for more information.
+     *           * `name:x`
+     *           * `column:y`
+     *           * `description:z`
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if
@@ -1719,14 +1711,14 @@ class DataCatalogGapicClient
      *           of values will be returned. Any page token used here must have
      *           been generated by a previous call to the API.
      *     @type string $orderBy
-     *           Specifies the ordering of results, currently supported case-sensitive
-     *           choices are:
+     *           Specifies the order of results.
      *
-     *           * `relevance`, only supports descending
-     *           * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-     *           specified
+     *           Currently supported case-sensitive values are:
      *
-     *           If not specified, defaults to `relevance` descending.
+     *           * `relevance` that can only be descending
+     *           * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+     *
+     *           If this parameter is omitted, it defaults to the descending `relevance`.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1762,19 +1754,22 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Sets the access control policy for a resource. Replaces any existing
+     * Sets an access control policy for a resource. Replaces any existing
      * policy.
-     * Supported resources are:
-     * - Tag templates.
-     * - Entries.
-     * - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
      *
-     * Callers must have following Google IAM permission
+     * Supported resources are:
+     *
+     * - Tag templates
+     * - Entry groups
+     *
+     * Note: This method sets policies only within Data Catalog and can't be
+     * used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources synced with the Data Catalog.
+     *
+     * To call this method, you must have the following Google IAM permissions:
+     *
      * - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
      * templates.
-     * - `datacatalog.entries.setIamPolicy` to set policies on entries.
      * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      *
      * Sample code:
@@ -1822,19 +1817,20 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Returns the caller's permissions on a resource.
-     * If the resource does not exist, an empty set of permissions is returned
-     * (We don't return a `NOT_FOUND` error).
+     * Gets your permissions on a resource.
+     *
+     * Returns an empty set of permissions if the resource doesn't exist.
      *
      * Supported resources are:
-     * - Tag templates.
-     * - Entries.
-     * - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
      *
-     * A caller is not required to have Google IAM permission to make this
-     * request.
+     * - Tag templates
+     * - Entry groups
+     *
+     * Note: This method gets policies only within Data Catalog and can't be
+     * used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources ingested into Data Catalog.
+     *
+     * No Google IAM permissions are required to call this method.
      *
      * Sample code:
      * ```
@@ -1882,10 +1878,11 @@ class DataCatalogGapicClient
 
     /**
      * Updates an existing entry.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     *
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -1898,7 +1895,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param Entry $entry        Required. The updated entry. The "name" field must be set.
+     * @param Entry $entry        Required. Updates for the entry. The `name` field must be set.
      * @param array $optionalArgs {
      *     Optional.
      *
@@ -1909,17 +1906,22 @@ class DataCatalogGapicClient
      *           are overwritten. If such fields are non-required and omitted in the
      *           request body, their values are emptied.
      *
-     *           The following fields are modifiable:
+     *           You can modify only the fields listed below.
      *
-     *           * For entries with type `DATA_STREAM`:
+     *           For entries with type `DATA_STREAM`:
+     *
      *           * `schema`
-     *           * For entries with type `FILESET`:
+     *
+     *           For entries with type `FILESET`:
+     *
      *           * `schema`
      *           * `display_name`
      *           * `description`
      *           * `gcs_fileset_spec`
      *           * `gcs_fileset_spec.file_patterns`
-     *           * For entries with `user_specified_type`:
+     *
+     *           For entries with `user_specified_type`:
+     *
      *           * `schema`
      *           * `display_name`
      *           * `description`
@@ -1954,11 +1956,12 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Updates an EntryGroup. The user should enable the Data Catalog API in the
-     * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates an entry group.
+     *
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry_group.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -1971,7 +1974,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param EntryGroup $entryGroup   Required. The updated entry group. "name" field must be set.
+     * @param EntryGroup $entryGroup   Required. Updates for the entry group. The `name` field must be set.
      * @param array      $optionalArgs {
      *     Optional.
      *
@@ -2059,13 +2062,15 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Updates a tag template. This method cannot be used to update the fields of
-     * a template. The tag template fields are represented as separate resources
-     * and should be updated using their own create/update/delete methods.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a tag template.
+     *
+     * You can't update template fields with this method. These fields are
+     * separate resources with their own create, update, and delete methods.
+     *
+     * You must enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -2078,7 +2083,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param TagTemplate $tagTemplate  Required. The template to update. The "name" field must be set.
+     * @param TagTemplate $tagTemplate  Required. The template to update. The `name` field must be set.
      * @param array       $optionalArgs {
      *     Optional.
      *
@@ -2086,7 +2091,7 @@ class DataCatalogGapicClient
      *           Names of fields whose values to overwrite on a tag template. Currently,
      *           only `display_name` can be overwritten.
      *
-     *           In general, if this parameter is absent or empty, all modifiable fields
+     *           If this parameter is absent or empty, all modifiable fields
      *           are overwritten. If such fields are non-required and omitted in the
      *           request body, their values are emptied.
      *     @type RetrySettings|array $retrySettings
@@ -2116,11 +2121,14 @@ class DataCatalogGapicClient
     }
 
     /**
-     * Updates a field in a tag template. This method cannot be used to update the
-     * field type. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a field in a tag template.
+     *
+     * You can't update the field type with this method.
+     *
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      *
      * Sample code:
      * ```
@@ -2134,9 +2142,7 @@ class DataCatalogGapicClient
      * }
      * ```
      *
-     * @param string           $name             Required. The name of the tag template field. Example:
-     *
-     *                                           * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * @param string           $name             Required. The name of the tag template field.
      * @param TagTemplateField $tagTemplateField Required. The template to update.
      * @param array            $optionalArgs     {
      *     Optional.

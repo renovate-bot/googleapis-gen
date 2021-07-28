@@ -9,8 +9,9 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Message representing a taxonomy, including its policy tags in hierarchy, as a
- * nested proto. Used for taxonomy replacement, import, and export.
+ * A nested protocol buffer that represents a taxonomy and the hierarchy of its
+ * policy tags. Used for taxonomy replacement, import, and
+ * export.
  *
  * Generated from protobuf message <code>google.cloud.datacatalog.v1.SerializedTaxonomy</code>
  */
@@ -23,8 +24,8 @@ class SerializedTaxonomy extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = '';
     /**
-     * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     * UTF-8. If not set, defaults to an empty description.
+     * Description of the serialized taxonomy. At most 2000 bytes when
+     * encoded in UTF-8. If not set, defaults to an empty description.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      */
@@ -51,8 +52,8 @@ class SerializedTaxonomy extends \Google\Protobuf\Internal\Message
      *     @type string $display_name
      *           Required. Display name of the taxonomy. At most 200 bytes when encoded in UTF-8.
      *     @type string $description
-     *           Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     *           UTF-8. If not set, defaults to an empty description.
+     *           Description of the serialized taxonomy. At most 2000 bytes when
+     *           encoded in UTF-8. If not set, defaults to an empty description.
      *     @type \Google\Cloud\DataCatalog\V1\SerializedPolicyTag[]|\Google\Protobuf\Internal\RepeatedField $policy_tags
      *           Top level policy tags associated with the taxonomy, if any.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $activated_policy_types
@@ -91,8 +92,8 @@ class SerializedTaxonomy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     * UTF-8. If not set, defaults to an empty description.
+     * Description of the serialized taxonomy. At most 2000 bytes when
+     * encoded in UTF-8. If not set, defaults to an empty description.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      * @return string
@@ -103,8 +104,8 @@ class SerializedTaxonomy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description of the serialized taxonomy. At most 2000 bytes when encoded in
-     * UTF-8. If not set, defaults to an empty description.
+     * Description of the serialized taxonomy. At most 2000 bytes when
+     * encoded in UTF-8. If not set, defaults to an empty description.
      *
      * Generated from protobuf field <code>string description = 2;</code>
      * @param string $var

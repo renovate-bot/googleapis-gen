@@ -9,7 +9,7 @@ public interface InlineSourceOrBuilder extends
 
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -18,7 +18,7 @@ public interface InlineSourceOrBuilder extends
       getTaxonomiesList();
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -26,7 +26,7 @@ public interface InlineSourceOrBuilder extends
   com.google.cloud.datacatalog.v1.SerializedTaxonomy getTaxonomies(int index);
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -34,7 +34,7 @@ public interface InlineSourceOrBuilder extends
   int getTaxonomiesCount();
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -43,7 +43,7 @@ public interface InlineSourceOrBuilder extends
       getTaxonomiesOrBuilderList();
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>

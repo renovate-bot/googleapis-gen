@@ -108,12 +108,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The resource
-   * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-   * Examples:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Required. The name of the Data Catalog resource to list the tags of.
+   * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+   * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+   * (without `/entries/{entries}` at the end).
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -134,12 +132,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the Data Catalog resource to list the tags of. The resource
-   * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-   * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-   * Examples:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+   * Required. The name of the Data Catalog resource to list the tags of.
+   * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+   * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+   * (without `/entries/{entries}` at the end).
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -164,7 +160,7 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * The maximum number of tags to return. Default is 10. Max limit is 1000.
+   * The maximum number of tags to return. Default is 10. Maximum limit is 1000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -179,8 +175,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Pagination token that specifies the next page to return. If empty, the
+   * first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -201,8 +197,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Pagination token that specifies the next page to return. If empty, the
+   * first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -567,12 +563,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-     * Examples:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Required. The name of the Data Catalog resource to list the tags of.
+     * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+     * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+     * (without `/entries/{entries}` at the end).
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -592,12 +586,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-     * Examples:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Required. The name of the Data Catalog resource to list the tags of.
+     * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+     * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+     * (without `/entries/{entries}` at the end).
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -618,12 +610,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-     * Examples:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Required. The name of the Data Catalog resource to list the tags of.
+     * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+     * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+     * (without `/entries/{entries}` at the end).
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -642,12 +632,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-     * Examples:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Required. The name of the Data Catalog resource to list the tags of.
+     * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+     * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+     * (without `/entries/{entries}` at the end).
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -661,12 +649,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the Data Catalog resource to list the tags of. The resource
-     * could be an [Entry][google.cloud.datacatalog.v1.Entry] or an
-     * [EntryGroup][google.cloud.datacatalog.v1.EntryGroup].
-     * Examples:
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-     * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
+     * Required. The name of the Data Catalog resource to list the tags of.
+     * The resource can be an [Entry][google.cloud.datacatalog.v1.Entry]
+     * or an [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]
+     * (without `/entries/{entries}` at the end).
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -688,7 +674,7 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * The maximum number of tags to return. Default is 10. Max limit is 1000.
+     * The maximum number of tags to return. Default is 10. Maximum limit is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -700,7 +686,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The maximum number of tags to return. Default is 10. Max limit is 1000.
+     * The maximum number of tags to return. Default is 10. Maximum limit is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -715,7 +701,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The maximum number of tags to return. Default is 10. Max limit is 1000.
+     * The maximum number of tags to return. Default is 10. Maximum limit is 1000.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -731,8 +717,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Pagination token that specifies the next page to return. If empty, the
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -752,8 +738,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Pagination token that specifies the next page to return. If empty, the
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -774,8 +760,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Pagination token that specifies the next page to return. If empty, the
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -794,8 +780,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Pagination token that specifies the next page to return. If empty, the
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -809,8 +795,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token that specifies which page is requested. If empty, the first page is
-     * returned.
+     * Pagination token that specifies the next page to return. If empty, the
+     * first page is returned.
      * </pre>
      *
      * <code>string page_token = 3;</code>

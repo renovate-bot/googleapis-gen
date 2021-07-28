@@ -17,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateEntryGroupRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The name of the project this entry group belongs to. Example:
-     * `projects/{project_id}/locations/{location}`
+     * Required. The names of the project and location that the new entry group belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      *
@@ -35,7 +34,7 @@ class CreateEntryGroupRequest extends \Google\Protobuf\Internal\Message
      */
     protected $entry_group_id = '';
     /**
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
      */
@@ -48,8 +47,7 @@ class CreateEntryGroupRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. The name of the project this entry group belongs to. Example:
-     *           `projects/{project_id}/locations/{location}`
+     *           Required. The names of the project and location that the new entry group belongs to.
      *           Note: The entry group itself and its child resources might not be
      *           stored in the location specified in its name.
      *     @type string $entry_group_id
@@ -58,7 +56,7 @@ class CreateEntryGroupRequest extends \Google\Protobuf\Internal\Message
      *           underscores (_), and must start with a letter or underscore.
      *           The maximum size is 64 bytes when encoded in UTF-8.
      *     @type \Google\Cloud\DataCatalog\V1\EntryGroup $entry_group
-     *           The entry group to create. Defaults to an empty entry group.
+     *           The entry group to create. Defaults to empty.
      * }
      */
     public function __construct($data = NULL) {
@@ -67,8 +65,7 @@ class CreateEntryGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the project this entry group belongs to. Example:
-     * `projects/{project_id}/locations/{location}`
+     * Required. The names of the project and location that the new entry group belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      *
@@ -81,8 +78,7 @@ class CreateEntryGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the project this entry group belongs to. Example:
-     * `projects/{project_id}/locations/{location}`
+     * Required. The names of the project and location that the new entry group belongs to.
      * Note: The entry group itself and its child resources might not be
      * stored in the location specified in its name.
      *
@@ -131,7 +127,7 @@ class CreateEntryGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
      * @return \Google\Cloud\DataCatalog\V1\EntryGroup|null
@@ -152,7 +148,7 @@ class CreateEntryGroupRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The entry group to create. Defaults to an empty entry group.
+     * The entry group to create. Defaults to empty.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 2;</code>
      * @param \Google\Cloud\DataCatalog\V1\EntryGroup $var

@@ -36,6 +36,7 @@ from google.cloud.datacatalog_v1.services.data_catalog import DataCatalogClient
 from google.cloud.datacatalog_v1.services.data_catalog import pagers
 from google.cloud.datacatalog_v1.services.data_catalog import transports
 from google.cloud.datacatalog_v1.services.data_catalog.transports.base import _GOOGLE_AUTH_VERSION
+from google.cloud.datacatalog_v1.types import bigquery
 from google.cloud.datacatalog_v1.types import common
 from google.cloud.datacatalog_v1.types import data_source
 from google.cloud.datacatalog_v1.types import datacatalog
@@ -45,6 +46,7 @@ from google.cloud.datacatalog_v1.types import search
 from google.cloud.datacatalog_v1.types import table_spec
 from google.cloud.datacatalog_v1.types import tags
 from google.cloud.datacatalog_v1.types import timestamps
+from google.cloud.datacatalog_v1.types import usage
 from google.iam.v1 import iam_policy_pb2  # type: ignore
 from google.iam.v1 import options_pb2  # type: ignore
 from google.iam.v1 import policy_pb2  # type: ignore
@@ -3682,6 +3684,7 @@ def test_create_tag_template(transport: str = 'grpc', request_type=datacatalog.C
         call.return_value = tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
+            is_publicly_readable=True,
         )
         response = client.create_tag_template(request)
 
@@ -3694,6 +3697,7 @@ def test_create_tag_template(transport: str = 'grpc', request_type=datacatalog.C
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.is_publicly_readable is True
 
 
 def test_create_tag_template_from_dict():
@@ -3737,6 +3741,7 @@ async def test_create_tag_template_async(transport: str = 'grpc_asyncio', reques
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
+            is_publicly_readable=True,
         ))
         response = await client.create_tag_template(request)
 
@@ -3749,6 +3754,7 @@ async def test_create_tag_template_async(transport: str = 'grpc_asyncio', reques
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.is_publicly_readable is True
 
 
 @pytest.mark.asyncio
@@ -3929,6 +3935,7 @@ def test_get_tag_template(transport: str = 'grpc', request_type=datacatalog.GetT
         call.return_value = tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
+            is_publicly_readable=True,
         )
         response = client.get_tag_template(request)
 
@@ -3941,6 +3948,7 @@ def test_get_tag_template(transport: str = 'grpc', request_type=datacatalog.GetT
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.is_publicly_readable is True
 
 
 def test_get_tag_template_from_dict():
@@ -3984,6 +3992,7 @@ async def test_get_tag_template_async(transport: str = 'grpc_asyncio', request_t
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
+            is_publicly_readable=True,
         ))
         response = await client.get_tag_template(request)
 
@@ -3996,6 +4005,7 @@ async def test_get_tag_template_async(transport: str = 'grpc_asyncio', request_t
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.is_publicly_readable is True
 
 
 @pytest.mark.asyncio
@@ -4164,6 +4174,7 @@ def test_update_tag_template(transport: str = 'grpc', request_type=datacatalog.U
         call.return_value = tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
+            is_publicly_readable=True,
         )
         response = client.update_tag_template(request)
 
@@ -4176,6 +4187,7 @@ def test_update_tag_template(transport: str = 'grpc', request_type=datacatalog.U
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.is_publicly_readable is True
 
 
 def test_update_tag_template_from_dict():
@@ -4219,6 +4231,7 @@ async def test_update_tag_template_async(transport: str = 'grpc_asyncio', reques
         call.return_value =grpc_helpers_async.FakeUnaryUnaryCall(tags.TagTemplate(
             name='name_value',
             display_name='display_name_value',
+            is_publicly_readable=True,
         ))
         response = await client.update_tag_template(request)
 
@@ -4231,6 +4244,7 @@ async def test_update_tag_template_async(transport: str = 'grpc_asyncio', reques
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
+    assert response.is_publicly_readable is True
 
 
 @pytest.mark.asyncio

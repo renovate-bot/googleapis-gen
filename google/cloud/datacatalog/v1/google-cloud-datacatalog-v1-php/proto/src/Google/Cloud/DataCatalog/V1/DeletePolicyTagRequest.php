@@ -17,8 +17,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeletePolicyTagRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Resource name of the policy tag to be deleted. All of its descendant
-     * policy tags will also be deleted.
+     * Required. Resource name of the policy tag to delete.
+     * Note: All of its descendant policy tags are also deleted.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -31,8 +31,8 @@ class DeletePolicyTagRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. Resource name of the policy tag to be deleted. All of its descendant
-     *           policy tags will also be deleted.
+     *           Required. Resource name of the policy tag to delete.
+     *           Note: All of its descendant policy tags are also deleted.
      * }
      */
     public function __construct($data = NULL) {
@@ -41,8 +41,8 @@ class DeletePolicyTagRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Resource name of the policy tag to be deleted. All of its descendant
-     * policy tags will also be deleted.
+     * Required. Resource name of the policy tag to delete.
+     * Note: All of its descendant policy tags are also deleted.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -53,8 +53,8 @@ class DeletePolicyTagRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Resource name of the policy tag to be deleted. All of its descendant
-     * policy tags will also be deleted.
+     * Required. Resource name of the policy tag to delete.
+     * Note: All of its descendant policy tags are also deleted.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

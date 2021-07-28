@@ -19,8 +19,6 @@ class CreateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -52,8 +50,6 @@ class CreateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The name of the project and the template location
      *           [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     *           Example:
-     *           * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
      *     @type string $tag_template_field_id
      *           Required. The ID of the tag template field to create.
      *           Note: Adding a required field to an existing template is *not* allowed.
@@ -73,8 +69,6 @@ class CreateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -87,8 +81,6 @@ class CreateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

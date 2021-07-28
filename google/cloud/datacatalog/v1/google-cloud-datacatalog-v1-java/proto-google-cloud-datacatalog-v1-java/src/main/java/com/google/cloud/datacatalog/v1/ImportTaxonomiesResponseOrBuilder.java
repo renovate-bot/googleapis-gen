@@ -9,7 +9,7 @@ public interface ImportTaxonomiesResponseOrBuilder extends
 
   /**
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -18,7 +18,7 @@ public interface ImportTaxonomiesResponseOrBuilder extends
       getTaxonomiesList();
   /**
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -26,7 +26,7 @@ public interface ImportTaxonomiesResponseOrBuilder extends
   com.google.cloud.datacatalog.v1.Taxonomy getTaxonomies(int index);
   /**
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -34,7 +34,7 @@ public interface ImportTaxonomiesResponseOrBuilder extends
   int getTaxonomiesCount();
   /**
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
@@ -43,7 +43,7 @@ public interface ImportTaxonomiesResponseOrBuilder extends
       getTaxonomiesOrBuilderList();
   /**
    * <pre>
-   * Taxonomies that were imported.
+   * Imported taxonomies.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>

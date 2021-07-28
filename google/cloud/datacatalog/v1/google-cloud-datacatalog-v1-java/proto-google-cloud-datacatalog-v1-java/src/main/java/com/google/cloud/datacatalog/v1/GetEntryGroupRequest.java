@@ -109,8 +109,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * Required. The name of the entry group. For example,
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * Required. The name of the entry group to get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -131,8 +130,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the entry group. For example,
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * Required. The name of the entry group to get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -157,7 +155,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask readMask_;
   /**
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -169,7 +167,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -181,7 +179,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -531,8 +529,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -552,8 +549,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -574,8 +570,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -594,8 +589,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -609,8 +603,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entry group. For example,
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+     * Required. The name of the entry group to get.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -634,7 +627,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> readMaskBuilder_;
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -645,7 +638,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -660,7 +653,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -680,7 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -698,7 +691,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -720,7 +713,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -738,7 +731,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -750,7 +743,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -765,7 +758,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fields to return. If not set or empty, all fields are returned.
+     * The fields to return. If empty or omitted, all fields are returned.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask read_mask = 2;</code>

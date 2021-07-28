@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ExportTaxonomiesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
      */
@@ -30,7 +30,7 @@ class ExportTaxonomiesResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\DataCatalog\V1\SerializedTaxonomy[]|\Google\Protobuf\Internal\RepeatedField $taxonomies
-     *           List of taxonomies and policy tags as nested protos.
+     *           List of taxonomies and policy tags as nested protocol buffers.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,7 +39,7 @@ class ExportTaxonomiesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -50,7 +50,7 @@ class ExportTaxonomiesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
      * @param \Google\Cloud\DataCatalog\V1\SerializedTaxonomy[]|\Google\Protobuf\Internal\RepeatedField $var

@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Represents a schema (e.g. BigQuery, GoogleSQL, Avro schema).
+ * Represents a schema, for example, a BigQuery, GoogleSQL, or Avro schema.
  *
  * Generated from protobuf message <code>google.cloud.datacatalog.v1.Schema</code>
  */

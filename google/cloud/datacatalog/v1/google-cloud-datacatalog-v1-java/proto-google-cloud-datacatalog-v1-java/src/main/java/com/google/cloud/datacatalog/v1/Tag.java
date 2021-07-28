@@ -5,8 +5,8 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * Tags are used to attach custom metadata to Data Catalog resources. Tags
- * conform to the specifications within their tag template.
+ * Tags contain custom metadata and are attached to Data Catalog resources. Tags
+ * conform with the specification of their tag template.
  * See [Data Catalog
  * IAM](https://cloud.google.com/data-catalog/docs/concepts/iam) for information
  * on the permissions needed to create or view tags.
@@ -184,9 +184,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource name of the tag in URL format. Example:
-   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-   * where `tag_id` is a system-generated identifier.
+   * The resource name of the tag in URL format where tag ID is a
+   * system-generated identifier.
    * Note: The tag itself might not be stored in the location specified in its
    * name.
    * </pre>
@@ -209,9 +208,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the tag in URL format. Example:
-   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-   * where `tag_id` is a system-generated identifier.
+   * The resource name of the tag in URL format where tag ID is a
+   * system-generated identifier.
    * Note: The tag itself might not be stored in the location specified in its
    * name.
    * </pre>
@@ -238,8 +236,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object template_;
   /**
    * <pre>
-   * Required. The resource name of the tag template that this tag uses. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * Required. The resource name of the tag template this tag uses. Example:
+   * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -261,8 +259,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the tag template that this tag uses. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * Required. The resource name of the tag template this tag uses. Example:
+   * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -334,7 +332,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
-   * allows users to attach tags to an individual column based on that schema.
+   * allows you to attach tags to an individual column based on that schema.
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -348,7 +346,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
-   * allows users to attach tags to an individual column based on that schema.
+   * allows you to attach tags to an individual column based on that schema.
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -376,7 +374,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
-   * allows users to attach tags to an individual column based on that schema.
+   * allows you to attach tags to an individual column based on that schema.
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -431,8 +429,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *
@@ -455,8 +454,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *
@@ -469,8 +469,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *
@@ -488,8 +489,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *
@@ -729,8 +731,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Tags are used to attach custom metadata to Data Catalog resources. Tags
-   * conform to the specifications within their tag template.
+   * Tags contain custom metadata and are attached to Data Catalog resources. Tags
+   * conform with the specification of their tag template.
    * See [Data Catalog
    * IAM](https://cloud.google.com/data-catalog/docs/concepts/iam) for information
    * on the permissions needed to create or view tags.
@@ -961,9 +963,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource name of the tag in URL format. Example:
-     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-     * where `tag_id` is a system-generated identifier.
+     * The resource name of the tag in URL format where tag ID is a
+     * system-generated identifier.
      * Note: The tag itself might not be stored in the location specified in its
      * name.
      * </pre>
@@ -985,9 +986,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the tag in URL format. Example:
-     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-     * where `tag_id` is a system-generated identifier.
+     * The resource name of the tag in URL format where tag ID is a
+     * system-generated identifier.
      * Note: The tag itself might not be stored in the location specified in its
      * name.
      * </pre>
@@ -1010,9 +1010,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the tag in URL format. Example:
-     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-     * where `tag_id` is a system-generated identifier.
+     * The resource name of the tag in URL format where tag ID is a
+     * system-generated identifier.
      * Note: The tag itself might not be stored in the location specified in its
      * name.
      * </pre>
@@ -1033,9 +1032,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the tag in URL format. Example:
-     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-     * where `tag_id` is a system-generated identifier.
+     * The resource name of the tag in URL format where tag ID is a
+     * system-generated identifier.
      * Note: The tag itself might not be stored in the location specified in its
      * name.
      * </pre>
@@ -1051,9 +1049,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the tag in URL format. Example:
-     * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-     * where `tag_id` is a system-generated identifier.
+     * The resource name of the tag in URL format where tag ID is a
+     * system-generated identifier.
      * Note: The tag itself might not be stored in the location specified in its
      * name.
      * </pre>
@@ -1077,8 +1074,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object template_ = "";
     /**
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Required. The resource name of the tag template this tag uses. Example:
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1099,8 +1096,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Required. The resource name of the tag template this tag uses. Example:
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1122,8 +1119,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Required. The resource name of the tag template this tag uses. Example:
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1143,8 +1140,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Required. The resource name of the tag template this tag uses. Example:
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1159,8 +1156,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the tag template that this tag uses. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * Required. The resource name of the tag template this tag uses. Example:
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
      * This field cannot be modified after creation.
      * </pre>
      *
@@ -1279,7 +1276,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resources like entry can have schemas associated with them. This scope
-     * allows users to attach tags to an individual column based on that schema.
+     * allows you to attach tags to an individual column based on that schema.
      * To attach a tag to a nested column, separate column names with a dot
      * (`.`). Example: `column.nested_column`.
      * </pre>
@@ -1294,7 +1291,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resources like entry can have schemas associated with them. This scope
-     * allows users to attach tags to an individual column based on that schema.
+     * allows you to attach tags to an individual column based on that schema.
      * To attach a tag to a nested column, separate column names with a dot
      * (`.`). Example: `column.nested_column`.
      * </pre>
@@ -1323,7 +1320,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resources like entry can have schemas associated with them. This scope
-     * allows users to attach tags to an individual column based on that schema.
+     * allows you to attach tags to an individual column based on that schema.
      * To attach a tag to a nested column, separate column names with a dot
      * (`.`). Example: `column.nested_column`.
      * </pre>
@@ -1353,7 +1350,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resources like entry can have schemas associated with them. This scope
-     * allows users to attach tags to an individual column based on that schema.
+     * allows you to attach tags to an individual column based on that schema.
      * To attach a tag to a nested column, separate column names with a dot
      * (`.`). Example: `column.nested_column`.
      * </pre>
@@ -1375,7 +1372,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resources like entry can have schemas associated with them. This scope
-     * allows users to attach tags to an individual column based on that schema.
+     * allows you to attach tags to an individual column based on that schema.
      * To attach a tag to a nested column, separate column names with a dot
      * (`.`). Example: `column.nested_column`.
      * </pre>
@@ -1394,7 +1391,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resources like entry can have schemas associated with them. This scope
-     * allows users to attach tags to an individual column based on that schema.
+     * allows you to attach tags to an individual column based on that schema.
      * To attach a tag to a nested column, separate column names with a dot
      * (`.`). Example: `column.nested_column`.
      * </pre>
@@ -1443,8 +1440,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This maps the ID of a tag field to the value of and additional information
-     * about that field. Valid field IDs are defined by the tag's template. A tag
+     * Required. Maps the ID of a tag field to its value and additional information
+     * about that field.
+     * Tag template defines valid field IDs. A tag
      * must have at least 1 field and at most 500 fields.
      * </pre>
      *
@@ -1467,8 +1465,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This maps the ID of a tag field to the value of and additional information
-     * about that field. Valid field IDs are defined by the tag's template. A tag
+     * Required. Maps the ID of a tag field to its value and additional information
+     * about that field.
+     * Tag template defines valid field IDs. A tag
      * must have at least 1 field and at most 500 fields.
      * </pre>
      *
@@ -1481,8 +1480,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This maps the ID of a tag field to the value of and additional information
-     * about that field. Valid field IDs are defined by the tag's template. A tag
+     * Required. Maps the ID of a tag field to its value and additional information
+     * about that field.
+     * Tag template defines valid field IDs. A tag
      * must have at least 1 field and at most 500 fields.
      * </pre>
      *
@@ -1500,8 +1500,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This maps the ID of a tag field to the value of and additional information
-     * about that field. Valid field IDs are defined by the tag's template. A tag
+     * Required. Maps the ID of a tag field to its value and additional information
+     * about that field.
+     * Tag template defines valid field IDs. A tag
      * must have at least 1 field and at most 500 fields.
      * </pre>
      *
@@ -1527,8 +1528,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This maps the ID of a tag field to the value of and additional information
-     * about that field. Valid field IDs are defined by the tag's template. A tag
+     * Required. Maps the ID of a tag field to its value and additional information
+     * about that field.
+     * Tag template defines valid field IDs. A tag
      * must have at least 1 field and at most 500 fields.
      * </pre>
      *
@@ -1552,8 +1554,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This maps the ID of a tag field to the value of and additional information
-     * about that field. Valid field IDs are defined by the tag's template. A tag
+     * Required. Maps the ID of a tag field to its value and additional information
+     * about that field.
+     * Tag template defines valid field IDs. A tag
      * must have at least 1 field and at most 500 fields.
      * </pre>
      *
@@ -1570,8 +1573,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. This maps the ID of a tag field to the value of and additional information
-     * about that field. Valid field IDs are defined by the tag's template. A tag
+     * Required. Maps the ID of a tag field to its value and additional information
+     * about that field.
+     * Tag template defines valid field IDs. A tag
      * must have at least 1 field and at most 500 fields.
      * </pre>
      *

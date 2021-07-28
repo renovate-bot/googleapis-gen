@@ -9,7 +9,7 @@ public interface ListPolicyTagsResponseOrBuilder extends
 
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -18,7 +18,7 @@ public interface ListPolicyTagsResponseOrBuilder extends
       getPolicyTagsList();
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -26,7 +26,7 @@ public interface ListPolicyTagsResponseOrBuilder extends
   com.google.cloud.datacatalog.v1.PolicyTag getPolicyTags(int index);
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -34,7 +34,7 @@ public interface ListPolicyTagsResponseOrBuilder extends
   int getPolicyTagsCount();
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -43,7 +43,7 @@ public interface ListPolicyTagsResponseOrBuilder extends
       getPolicyTagsOrBuilderList();
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -53,7 +53,7 @@ public interface ListPolicyTagsResponseOrBuilder extends
 
   /**
    * <pre>
-   * Token used to retrieve the next page of results, or empty if there are no
+   * Pagination token of the next results page. Empty if there are no
    * more results in the list.
    * </pre>
    *
@@ -63,7 +63,7 @@ public interface ListPolicyTagsResponseOrBuilder extends
   java.lang.String getNextPageToken();
   /**
    * <pre>
-   * Token used to retrieve the next page of results, or empty if there are no
+   * Pagination token of the next results page. Empty if there are no
    * more results in the list.
    * </pre>
    *

@@ -17,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The name of the tag template field. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template field.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -32,9 +31,9 @@ class UpdateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     /**
      * Optional. Names of fields whose values to overwrite on an individual field of a tag
      * template. The following fields are modifiable:
-     *   * `display_name`
-     *   * `type.enum_type`
-     *   * `is_required`
+     * * `display_name`
+     * * `type.enum_type`
+     * * `is_required`
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
@@ -55,16 +54,15 @@ class UpdateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The name of the tag template field. Example:
-     *           * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     *           Required. The name of the tag template field.
      *     @type \Google\Cloud\DataCatalog\V1\TagTemplateField $tag_template_field
      *           Required. The template to update.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Optional. Names of fields whose values to overwrite on an individual field of a tag
      *           template. The following fields are modifiable:
-     *             * `display_name`
-     *             * `type.enum_type`
-     *             * `is_required`
+     *           * `display_name`
+     *           * `type.enum_type`
+     *           * `is_required`
      *           If this parameter is absent or empty, all modifiable fields
      *           are overwritten. If such fields are non-required and omitted in the request
      *           body, their values are emptied with one exception: when updating an enum
@@ -81,8 +79,7 @@ class UpdateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the tag template field. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template field.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -93,8 +90,7 @@ class UpdateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the tag template field. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template field.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -147,9 +143,9 @@ class UpdateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     /**
      * Optional. Names of fields whose values to overwrite on an individual field of a tag
      * template. The following fields are modifiable:
-     *   * `display_name`
-     *   * `type.enum_type`
-     *   * `is_required`
+     * * `display_name`
+     * * `type.enum_type`
+     * * `is_required`
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum
@@ -180,9 +176,9 @@ class UpdateTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     /**
      * Optional. Names of fields whose values to overwrite on an individual field of a tag
      * template. The following fields are modifiable:
-     *   * `display_name`
-     *   * `type.enum_type`
-     *   * `is_required`
+     * * `display_name`
+     * * `type.enum_type`
+     * * `is_required`
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the request
      * body, their values are emptied with one exception: when updating an enum

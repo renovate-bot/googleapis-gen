@@ -17,13 +17,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListPolicyTagsResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
      */
     private $policy_tags;
     /**
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
@@ -37,9 +37,9 @@ class ListPolicyTagsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\DataCatalog\V1\PolicyTag[]|\Google\Protobuf\Internal\RepeatedField $policy_tags
-     *           The policy tags that are in the requested taxonomy.
+     *           The policy tags that belong to the taxonomy.
      *     @type string $next_page_token
-     *           Token used to retrieve the next page of results, or empty if there are no
+     *           Pagination token of the next results page. Empty if there are no
      *           more results in the list.
      * }
      */
@@ -49,7 +49,7 @@ class ListPolicyTagsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -60,7 +60,7 @@ class ListPolicyTagsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
      * @param \Google\Cloud\DataCatalog\V1\PolicyTag[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -75,7 +75,7 @@ class ListPolicyTagsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
@@ -87,7 +87,7 @@ class ListPolicyTagsResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>

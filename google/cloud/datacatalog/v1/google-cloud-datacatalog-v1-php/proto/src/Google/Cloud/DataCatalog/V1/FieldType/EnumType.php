@@ -19,7 +19,7 @@ class EnumType extends \Google\Protobuf\Internal\Message
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
      * The order of items in this set is preserved. This field can be used to
-     * create, remove and reorder enum values. To rename enum values, use the
+     * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue allowed_values = 1;</code>
@@ -38,7 +38,7 @@ class EnumType extends \Google\Protobuf\Internal\Message
      *           The display names of the values in this set must not be empty and must
      *           be case-insensitively unique within this set.
      *           The order of items in this set is preserved. This field can be used to
-     *           create, remove and reorder enum values. To rename enum values, use the
+     *           create, remove, and reorder enum values. To rename enum values, use the
      *           `RenameTagTemplateFieldEnumValue` method.
      * }
      */
@@ -53,7 +53,7 @@ class EnumType extends \Google\Protobuf\Internal\Message
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
      * The order of items in this set is preserved. This field can be used to
-     * create, remove and reorder enum values. To rename enum values, use the
+     * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue allowed_values = 1;</code>
@@ -70,7 +70,7 @@ class EnumType extends \Google\Protobuf\Internal\Message
      * The display names of the values in this set must not be empty and must
      * be case-insensitively unique within this set.
      * The order of items in this set is preserved. This field can be used to
-     * create, remove and reorder enum values. To rename enum values, use the
+     * create, remove, and reorder enum values. To rename enum values, use the
      * `RenameTagTemplateFieldEnumValue` method.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.FieldType.EnumType.EnumValue allowed_values = 1;</code>

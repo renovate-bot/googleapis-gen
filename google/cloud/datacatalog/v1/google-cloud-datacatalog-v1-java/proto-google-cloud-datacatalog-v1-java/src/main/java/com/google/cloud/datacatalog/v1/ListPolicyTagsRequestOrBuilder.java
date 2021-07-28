@@ -29,7 +29,8 @@ public interface ListPolicyTagsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The maximum number of items to return. Must be a value between 1 and 1000.
+   * The maximum number of items to return. Must be a value between 1 and 1000
+   * inclusively.
    * If not set, defaults to 50.
    * </pre>
    *
@@ -40,8 +41,9 @@ public interface ListPolicyTagsRequestOrBuilder extends
 
   /**
    * <pre>
-   * The next_page_token value returned from a previous List request, if any. If
-   * not set, defaults to an empty string.
+   * The pagination token of the next results page. If not set, returns the
+   * first page.
+   * The token is returned in the response to a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -50,8 +52,9 @@ public interface ListPolicyTagsRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * The next_page_token value returned from a previous List request, if any. If
-   * not set, defaults to an empty string.
+   * The pagination token of the next results page. If not set, returns the
+   * first page.
+   * The token is returned in the response to a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>

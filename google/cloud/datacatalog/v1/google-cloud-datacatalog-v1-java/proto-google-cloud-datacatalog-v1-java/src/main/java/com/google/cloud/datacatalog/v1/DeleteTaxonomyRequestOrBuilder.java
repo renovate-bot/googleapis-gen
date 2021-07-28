@@ -9,8 +9,8 @@ public interface DeleteTaxonomyRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of the taxonomy to be deleted. All policy tags in
-   * this taxonomy will also be deleted.
+   * Required. Resource name of the taxonomy to delete.
+   * Note: All policy tags in this taxonomy are also deleted.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +19,8 @@ public interface DeleteTaxonomyRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. Resource name of the taxonomy to be deleted. All policy tags in
-   * this taxonomy will also be deleted.
+   * Required. Resource name of the taxonomy to delete.
+   * Note: All policy tags in this taxonomy are also deleted.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

@@ -9,7 +9,7 @@ public interface ListEntryGroupsResponseOrBuilder extends
 
   /**
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -18,7 +18,7 @@ public interface ListEntryGroupsResponseOrBuilder extends
       getEntryGroupsList();
   /**
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -26,7 +26,7 @@ public interface ListEntryGroupsResponseOrBuilder extends
   com.google.cloud.datacatalog.v1.EntryGroup getEntryGroups(int index);
   /**
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -34,7 +34,7 @@ public interface ListEntryGroupsResponseOrBuilder extends
   int getEntryGroupsCount();
   /**
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -43,7 +43,7 @@ public interface ListEntryGroupsResponseOrBuilder extends
       getEntryGroupsOrBuilderList();
   /**
    * <pre>
-   * EntryGroup details.
+   * Entry group details.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.EntryGroup entry_groups = 1;</code>
@@ -53,8 +53,8 @@ public interface ListEntryGroupsResponseOrBuilder extends
 
   /**
    * <pre>
-   * Token to retrieve the next page of results. It is set to empty if no items
-   * remain in results.
+   * Pagination token to specify in the next call to retrieve the next page of
+   * results. Empty if there are no more items.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -63,8 +63,8 @@ public interface ListEntryGroupsResponseOrBuilder extends
   java.lang.String getNextPageToken();
   /**
    * <pre>
-   * Token to retrieve the next page of results. It is set to empty if no items
-   * remain in results.
+   * Pagination token to specify in the next call to retrieve the next page of
+   * results. Empty if there are no more items.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

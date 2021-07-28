@@ -9,8 +9,7 @@ public interface GetEntryGroupRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the entry group. For example,
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * Required. The name of the entry group to get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +18,7 @@ public interface GetEntryGroupRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the entry group. For example,
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
+   * Required. The name of the entry group to get.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -31,7 +29,7 @@ public interface GetEntryGroupRequestOrBuilder extends
 
   /**
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -40,7 +38,7 @@ public interface GetEntryGroupRequestOrBuilder extends
   boolean hasReadMask();
   /**
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>
@@ -49,7 +47,7 @@ public interface GetEntryGroupRequestOrBuilder extends
   com.google.protobuf.FieldMask getReadMask();
   /**
    * <pre>
-   * The fields to return. If not set or empty, all fields are returned.
+   * The fields to return. If empty or omitted, all fields are returned.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 2;</code>

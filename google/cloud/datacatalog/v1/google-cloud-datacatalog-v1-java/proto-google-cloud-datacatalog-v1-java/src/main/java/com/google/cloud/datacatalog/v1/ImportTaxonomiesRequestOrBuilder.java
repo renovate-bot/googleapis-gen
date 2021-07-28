@@ -29,7 +29,7 @@ public interface ImportTaxonomiesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -38,7 +38,7 @@ public interface ImportTaxonomiesRequestOrBuilder extends
   boolean hasInlineSource();
   /**
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -47,7 +47,7 @@ public interface ImportTaxonomiesRequestOrBuilder extends
   com.google.cloud.datacatalog.v1.InlineSource getInlineSource();
   /**
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -56,7 +56,7 @@ public interface ImportTaxonomiesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -65,7 +65,7 @@ public interface ImportTaxonomiesRequestOrBuilder extends
   boolean hasCrossRegionalSource();
   /**
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -74,7 +74,7 @@ public interface ImportTaxonomiesRequestOrBuilder extends
   com.google.cloud.datacatalog.v1.CrossRegionalSource getCrossRegionalSource();
   /**
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>

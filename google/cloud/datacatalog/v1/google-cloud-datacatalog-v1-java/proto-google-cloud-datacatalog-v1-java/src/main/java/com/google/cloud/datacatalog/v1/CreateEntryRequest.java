@@ -116,8 +116,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. The name of the entry group this entry belongs to. Example:
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Required. The name of the entry group this entry belongs to.
    * Note: The entry itself and its child resources might not be stored in
    * the location specified in its name.
    * </pre>
@@ -140,8 +139,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The name of the entry group this entry belongs to. Example:
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Required. The name of the entry group this entry belongs to.
    * Note: The entry itself and its child resources might not be stored in
    * the location specified in its name.
    * </pre>
@@ -611,8 +609,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. The name of the entry group this entry belongs to. Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Required. The name of the entry group this entry belongs to.
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -634,8 +631,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entry group this entry belongs to. Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Required. The name of the entry group this entry belongs to.
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -658,8 +654,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entry group this entry belongs to. Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Required. The name of the entry group this entry belongs to.
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -680,8 +675,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entry group this entry belongs to. Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Required. The name of the entry group this entry belongs to.
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>
@@ -697,8 +691,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The name of the entry group this entry belongs to. Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Required. The name of the entry group this entry belongs to.
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      * </pre>

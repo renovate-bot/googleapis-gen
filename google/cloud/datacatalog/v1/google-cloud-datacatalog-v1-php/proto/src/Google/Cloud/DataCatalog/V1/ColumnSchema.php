@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Representation of a column within a schema. Columns could be nested inside
+ * A column within a schema. Columns can be nested inside
  * other columns.
  *
  * Generated from protobuf message <code>google.cloud.datacatalog.v1.ColumnSchema</code>
@@ -40,7 +40,7 @@ class ColumnSchema extends \Google\Protobuf\Internal\Message
      */
     protected $description = '';
     /**
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -73,7 +73,7 @@ class ColumnSchema extends \Google\Protobuf\Internal\Message
      *           The description must be a UTF-8 string with the maximum size of 2000
      *           bytes.
      *     @type string $mode
-     *           Optional. A column's mode indicates if values in this column are required,
+     *           Optional. A column's mode indicates whether values in this column are required,
      *           nullable, or repeated.
      *           Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      *           Default mode is `NULLABLE`.
@@ -175,7 +175,7 @@ class ColumnSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -189,7 +189,7 @@ class ColumnSchema extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.

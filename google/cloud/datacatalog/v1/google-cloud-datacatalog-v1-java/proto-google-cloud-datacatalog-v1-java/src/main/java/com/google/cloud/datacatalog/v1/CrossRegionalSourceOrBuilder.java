@@ -9,7 +9,7 @@ public interface CrossRegionalSourceOrBuilder extends
 
   /**
    * <pre>
-   * Required. The resource name of the source taxonomy to be imported.
+   * Required. The resource name of the source taxonomy to import.
    * </pre>
    *
    * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -18,7 +18,7 @@ public interface CrossRegionalSourceOrBuilder extends
   java.lang.String getTaxonomy();
   /**
    * <pre>
-   * Required. The resource name of the source taxonomy to be imported.
+   * Required. The resource name of the source taxonomy to import.
    * </pre>
    *
    * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

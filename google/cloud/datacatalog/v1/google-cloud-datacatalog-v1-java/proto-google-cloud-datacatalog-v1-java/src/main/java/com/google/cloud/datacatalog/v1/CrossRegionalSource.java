@@ -96,7 +96,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object taxonomy_;
   /**
    * <pre>
-   * Required. The resource name of the source taxonomy to be imported.
+   * Required. The resource name of the source taxonomy to import.
    * </pre>
    *
    * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -117,7 +117,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The resource name of the source taxonomy to be imported.
+   * Required. The resource name of the source taxonomy to import.
    * </pre>
    *
    * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -448,7 +448,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object taxonomy_ = "";
     /**
      * <pre>
-     * Required. The resource name of the source taxonomy to be imported.
+     * Required. The resource name of the source taxonomy to import.
      * </pre>
      *
      * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -468,7 +468,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the source taxonomy to be imported.
+     * Required. The resource name of the source taxonomy to import.
      * </pre>
      *
      * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the source taxonomy to be imported.
+     * Required. The resource name of the source taxonomy to import.
      * </pre>
      *
      * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -508,7 +508,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the source taxonomy to be imported.
+     * Required. The resource name of the source taxonomy to import.
      * </pre>
      *
      * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -522,7 +522,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The resource name of the source taxonomy to be imported.
+     * Required. The resource name of the source taxonomy to import.
      * </pre>
      *
      * <code>string taxonomy = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

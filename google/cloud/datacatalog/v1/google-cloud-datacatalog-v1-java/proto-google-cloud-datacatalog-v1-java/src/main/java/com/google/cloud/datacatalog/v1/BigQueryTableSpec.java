@@ -190,8 +190,8 @@ private static final long serialVersionUID = 0L;
   public static final int VIEW_SPEC_FIELD_NUMBER = 2;
   /**
    * <pre>
-   * Table view specification. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_VIEW`.
+   * Table view specification. Populated only if
+   * the `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -203,8 +203,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Table view specification. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_VIEW`.
+   * Table view specification. Populated only if
+   * the `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -219,8 +219,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Table view specification. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_VIEW`.
+   * Table view specification. Populated only if
+   * the `table_source_type` is `BIGQUERY_VIEW`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -236,8 +236,8 @@ private static final long serialVersionUID = 0L;
   public static final int TABLE_SPEC_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * Spec of a BigQuery table. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_TABLE`.
+   * Specification of a BigQuery table. Populated only if
+   * the `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -249,8 +249,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Spec of a BigQuery table. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_TABLE`.
+   * Specification of a BigQuery table. Populated only if
+   * the `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -265,8 +265,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Spec of a BigQuery table. This field should only be populated if
-   * `table_source_type` is `BIGQUERY_TABLE`.
+   * Specification of a BigQuery table. Populated only if
+   * the `table_source_type` is `BIGQUERY_TABLE`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -746,8 +746,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.ViewSpec, com.google.cloud.datacatalog.v1.ViewSpec.Builder, com.google.cloud.datacatalog.v1.ViewSpecOrBuilder> viewSpecBuilder_;
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -759,8 +759,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -782,8 +782,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -803,8 +803,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -822,8 +822,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -849,8 +849,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -873,8 +873,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -884,8 +884,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -903,8 +903,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Table view specification. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_VIEW`.
+     * Table view specification. Populated only if
+     * the `table_source_type` is `BIGQUERY_VIEW`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.ViewSpec view_spec = 2;</code>
@@ -932,8 +932,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.TableSpec, com.google.cloud.datacatalog.v1.TableSpec.Builder, com.google.cloud.datacatalog.v1.TableSpecOrBuilder> tableSpecBuilder_;
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -945,8 +945,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -968,8 +968,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -989,8 +989,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -1008,8 +1008,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -1035,8 +1035,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -1059,8 +1059,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -1070,8 +1070,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>
@@ -1089,8 +1089,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Spec of a BigQuery table. This field should only be populated if
-     * `table_source_type` is `BIGQUERY_TABLE`.
+     * Specification of a BigQuery table. Populated only if
+     * the `table_source_type` is `BIGQUERY_TABLE`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TableSpec table_spec = 3;</code>

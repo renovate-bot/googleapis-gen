@@ -10,7 +10,7 @@ public interface SerializedPolicyTagOrBuilder extends
   /**
    * <pre>
    * Resource name of the policy tag.
-   * This field will be ignored when calling ImportTaxonomies.
+   * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
    * <code>string policy_tag = 1;</code>
@@ -20,7 +20,7 @@ public interface SerializedPolicyTagOrBuilder extends
   /**
    * <pre>
    * Resource name of the policy tag.
-   * This field will be ignored when calling ImportTaxonomies.
+   * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
    * <code>string policy_tag = 1;</code>
@@ -31,7 +31,8 @@ public interface SerializedPolicyTagOrBuilder extends
 
   /**
    * <pre>
-   * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. At most 200 bytes when encoded
+   * in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,7 +41,8 @@ public interface SerializedPolicyTagOrBuilder extends
   java.lang.String getDisplayName();
   /**
    * <pre>
-   * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. At most 200 bytes when encoded
+   * in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -51,8 +53,8 @@ public interface SerializedPolicyTagOrBuilder extends
 
   /**
    * <pre>
-   * Description of the serialized policy tag. The length of the description is
-   * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+   * Description of the serialized policy tag. At most
+   * 2000 bytes when encoded in UTF-8. If not set, defaults to an
    * empty description.
    * </pre>
    *
@@ -62,8 +64,8 @@ public interface SerializedPolicyTagOrBuilder extends
   java.lang.String getDescription();
   /**
    * <pre>
-   * Description of the serialized policy tag. The length of the description is
-   * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+   * Description of the serialized policy tag. At most
+   * 2000 bytes when encoded in UTF-8. If not set, defaults to an
    * empty description.
    * </pre>
    *

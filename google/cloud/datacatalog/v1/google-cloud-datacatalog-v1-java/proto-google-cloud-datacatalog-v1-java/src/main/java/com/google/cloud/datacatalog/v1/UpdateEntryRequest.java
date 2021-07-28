@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.datacatalog.v1.Entry entry_;
   /**
    * <pre>
-   * Required. The updated entry. The "name" field must be set.
+   * Required. Updates for the entry. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The updated entry. The "name" field must be set.
+   * Required. Updates for the entry. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The updated entry. The "name" field must be set.
+   * Required. Updates for the entry. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -157,23 +157,23 @@ private static final long serialVersionUID = 0L;
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
-   * The following fields are modifiable:
-   * * For entries with type `DATA_STREAM`:
-   *    * `schema`
-   * * For entries with type `FILESET`:
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `gcs_fileset_spec`
-   *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`:
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `user_specified_type`
-   *    * `user_specified_system`
-   *    * `linked_resource`
-   *    * `source_system_timestamps`
+   * You can modify only the fields listed below.
+   * For entries with type `DATA_STREAM`:
+   * * `schema`
+   * For entries with type `FILESET`:
+   * * `schema`
+   * * `display_name`
+   * * `description`
+   * * `gcs_fileset_spec`
+   * * `gcs_fileset_spec.file_patterns`
+   * For entries with `user_specified_type`:
+   * * `schema`
+   * * `display_name`
+   * * `description`
+   * * `user_specified_type`
+   * * `user_specified_system`
+   * * `linked_resource`
+   * * `source_system_timestamps`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -189,23 +189,23 @@ private static final long serialVersionUID = 0L;
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
-   * The following fields are modifiable:
-   * * For entries with type `DATA_STREAM`:
-   *    * `schema`
-   * * For entries with type `FILESET`:
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `gcs_fileset_spec`
-   *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`:
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `user_specified_type`
-   *    * `user_specified_system`
-   *    * `linked_resource`
-   *    * `source_system_timestamps`
+   * You can modify only the fields listed below.
+   * For entries with type `DATA_STREAM`:
+   * * `schema`
+   * For entries with type `FILESET`:
+   * * `schema`
+   * * `display_name`
+   * * `description`
+   * * `gcs_fileset_spec`
+   * * `gcs_fileset_spec.file_patterns`
+   * For entries with `user_specified_type`:
+   * * `schema`
+   * * `display_name`
+   * * `description`
+   * * `user_specified_type`
+   * * `user_specified_system`
+   * * `linked_resource`
+   * * `source_system_timestamps`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -221,23 +221,23 @@ private static final long serialVersionUID = 0L;
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
-   * The following fields are modifiable:
-   * * For entries with type `DATA_STREAM`:
-   *    * `schema`
-   * * For entries with type `FILESET`:
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `gcs_fileset_spec`
-   *    * `gcs_fileset_spec.file_patterns`
-   * * For entries with `user_specified_type`:
-   *    * `schema`
-   *    * `display_name`
-   *    * `description`
-   *    * `user_specified_type`
-   *    * `user_specified_system`
-   *    * `linked_resource`
-   *    * `source_system_timestamps`
+   * You can modify only the fields listed below.
+   * For entries with type `DATA_STREAM`:
+   * * `schema`
+   * For entries with type `FILESET`:
+   * * `schema`
+   * * `display_name`
+   * * `description`
+   * * `gcs_fileset_spec`
+   * * `gcs_fileset_spec.file_patterns`
+   * For entries with `user_specified_type`:
+   * * `schema`
+   * * `display_name`
+   * * `description`
+   * * `user_specified_type`
+   * * `user_specified_system`
+   * * `linked_resource`
+   * * `source_system_timestamps`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -602,7 +602,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.Entry, com.google.cloud.datacatalog.v1.Entry.Builder, com.google.cloud.datacatalog.v1.EntryOrBuilder> entryBuilder_;
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -613,7 +613,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -628,7 +628,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -648,7 +648,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -666,7 +666,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -688,7 +688,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -706,7 +706,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -718,7 +718,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -733,7 +733,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The updated entry. The "name" field must be set.
+     * Required. Updates for the entry. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.Entry entry = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -761,23 +761,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -792,23 +792,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -827,23 +827,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -867,23 +867,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -905,23 +905,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -947,23 +947,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -985,23 +985,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1017,23 +1017,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1052,23 +1052,23 @@ private static final long serialVersionUID = 0L;
      * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
-     * The following fields are modifiable:
-     * * For entries with type `DATA_STREAM`:
-     *    * `schema`
-     * * For entries with type `FILESET`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `gcs_fileset_spec`
-     *    * `gcs_fileset_spec.file_patterns`
-     * * For entries with `user_specified_type`:
-     *    * `schema`
-     *    * `display_name`
-     *    * `description`
-     *    * `user_specified_type`
-     *    * `user_specified_system`
-     *    * `linked_resource`
-     *    * `source_system_timestamps`
+     * You can modify only the fields listed below.
+     * For entries with type `DATA_STREAM`:
+     * * `schema`
+     * For entries with type `FILESET`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `gcs_fileset_spec`
+     * * `gcs_fileset_spec.file_patterns`
+     * For entries with `user_specified_type`:
+     * * `schema`
+     * * `display_name`
+     * * `description`
+     * * `user_specified_type`
+     * * `user_specified_system`
+     * * `linked_resource`
+     * * `source_system_timestamps`
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

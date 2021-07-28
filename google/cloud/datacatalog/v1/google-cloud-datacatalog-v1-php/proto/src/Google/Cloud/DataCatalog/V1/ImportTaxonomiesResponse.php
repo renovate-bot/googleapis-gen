@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ImportTaxonomiesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
      */
@@ -30,7 +30,7 @@ class ImportTaxonomiesResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\DataCatalog\V1\Taxonomy[]|\Google\Protobuf\Internal\RepeatedField $taxonomies
-     *           Taxonomies that were imported.
+     *           Imported taxonomies.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,7 +39,7 @@ class ImportTaxonomiesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -50,7 +50,7 @@ class ImportTaxonomiesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Taxonomies that were imported.
+     * Imported taxonomies.
      *
      * Generated from protobuf field <code>repeated .google.cloud.datacatalog.v1.Taxonomy taxonomies = 1;</code>
      * @param \Google\Cloud\DataCatalog\V1\Taxonomy[]|\Google\Protobuf\Internal\RepeatedField $var

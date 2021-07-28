@@ -29,8 +29,8 @@ public interface ListTaxonomiesRequestOrBuilder extends
 
   /**
    * <pre>
-   * The maximum number of items to return. Must be a value between 1 and 1000.
-   * If not set, defaults to 50.
+   * The maximum number of items to return. Must be a value between 1 and 1000
+   * inclusively. If not set, defaults to 50.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -40,8 +40,9 @@ public interface ListTaxonomiesRequestOrBuilder extends
 
   /**
    * <pre>
-   * The next_page_token value returned from a previous list request, if any. If
-   * not set, defaults to an empty string.
+   * The pagination token of the next results page. If not set,
+   * the first page is returned.
+   * The token is returned in the response to a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -50,8 +51,9 @@ public interface ListTaxonomiesRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * The next_page_token value returned from a previous list request, if any. If
-   * not set, defaults to an empty string.
+   * The pagination token of the next results page. If not set,
+   * the first page is returned.
+   * The token is returned in the response to a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>

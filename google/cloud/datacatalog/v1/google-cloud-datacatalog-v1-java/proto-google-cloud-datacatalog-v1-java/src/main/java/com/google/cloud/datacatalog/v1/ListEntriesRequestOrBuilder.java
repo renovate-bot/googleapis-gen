@@ -9,9 +9,8 @@ public interface ListEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the entry group that contains the entries, which can
-   * be provided in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   * Required. The name of the entry group that contains the entries to list.
+   * Can be provided in URL format.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,9 +19,8 @@ public interface ListEntriesRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The name of the entry group that contains the entries, which can
-   * be provided in URL format. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
+   * Required. The name of the entry group that contains the entries to list.
+   * Can be provided in URL format.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -33,8 +31,8 @@ public interface ListEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * The maximum number of items to return. Default is 10. Max limit is 1000.
-   * Throws an invalid argument for `page_size &gt; 1000`.
+   * The maximum number of items to return. Default is 10. Maximum limit is
+   * 1000. Throws an invalid argument if `page_size` is more than 1000.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -44,8 +42,8 @@ public interface ListEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Pagination token that specifies the next page to return. If empty, the
+   * first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -54,8 +52,8 @@ public interface ListEntriesRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * Token that specifies which page is requested. If empty, the first page is
-   * returned.
+   * Pagination token that specifies the next page to return. If empty, the
+   * first page is returned.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -66,10 +64,10 @@ public interface ListEntriesRequestOrBuilder extends
 
   /**
    * <pre>
-   * The fields to return for each Entry. If not set or empty, all
+   * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
-   * For example, setting read_mask to contain only one path "name" will cause
-   * ListEntries to return a list of Entries with only "name" field.
+   * For example, to return a list of entries with only the `name` field,
+   * set `read_mask` to only one path with the `name` value.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 4;</code>
@@ -78,10 +76,10 @@ public interface ListEntriesRequestOrBuilder extends
   boolean hasReadMask();
   /**
    * <pre>
-   * The fields to return for each Entry. If not set or empty, all
+   * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
-   * For example, setting read_mask to contain only one path "name" will cause
-   * ListEntries to return a list of Entries with only "name" field.
+   * For example, to return a list of entries with only the `name` field,
+   * set `read_mask` to only one path with the `name` value.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 4;</code>
@@ -90,10 +88,10 @@ public interface ListEntriesRequestOrBuilder extends
   com.google.protobuf.FieldMask getReadMask();
   /**
    * <pre>
-   * The fields to return for each Entry. If not set or empty, all
+   * The fields to return for each entry. If empty or omitted, all
    * fields are returned.
-   * For example, setting read_mask to contain only one path "name" will cause
-   * ListEntries to return a list of Entries with only "name" field.
+   * For example, to return a list of entries with only the `name` field,
+   * set `read_mask` to only one path with the `name` value.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask read_mask = 4;</code>

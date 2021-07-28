@@ -17,17 +17,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The taxonomy to update. Only description, display_name, and activated
-     * policy types can be updated.
+     * The taxonomy to update. You can update only its description, display name,
+     * and activated policy types.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 1;</code>
      */
     protected $taxonomy = null;
     /**
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies fields to update. If not set, defaults to all fields you can
+     * update.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
@@ -40,13 +40,13 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\DataCatalog\V1\Taxonomy $taxonomy
-     *           The taxonomy to update. Only description, display_name, and activated
-     *           policy types can be updated.
+     *           The taxonomy to update. You can update only its description, display name,
+     *           and activated policy types.
      *     @type \Google\Protobuf\FieldMask $update_mask
-     *           The update mask applies to the resource. For the `FieldMask` definition,
-     *           see
-     *           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     *           If not set, defaults to all of the fields that are allowed to update.
+     *           Specifies fields to update. If not set, defaults to all fields you can
+     *           update.
+     *           For more information, see [FieldMask]
+     *           (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      * }
      */
     public function __construct($data = NULL) {
@@ -55,8 +55,8 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The taxonomy to update. Only description, display_name, and activated
-     * policy types can be updated.
+     * The taxonomy to update. You can update only its description, display name,
+     * and activated policy types.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 1;</code>
      * @return \Google\Cloud\DataCatalog\V1\Taxonomy|null
@@ -77,8 +77,8 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The taxonomy to update. Only description, display_name, and activated
-     * policy types can be updated.
+     * The taxonomy to update. You can update only its description, display name,
+     * and activated policy types.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 1;</code>
      * @param \Google\Cloud\DataCatalog\V1\Taxonomy $var
@@ -93,10 +93,10 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies fields to update. If not set, defaults to all fields you can
+     * update.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -117,10 +117,10 @@ class UpdateTaxonomyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The update mask applies to the resource. For the `FieldMask` definition,
-     * see
-     * https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     * If not set, defaults to all of the fields that are allowed to update.
+     * Specifies fields to update. If not set, defaults to all fields you can
+     * update.
+     * For more information, see [FieldMask]
+     * (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 2;</code>
      * @param \Google\Protobuf\FieldMask $var

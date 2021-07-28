@@ -5,7 +5,7 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * Represents a schema (e.g. BigQuery, GoogleSQL, Avro schema).
+ * Represents a schema, for example, a BigQuery, GoogleSQL, or Avro schema.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.Schema}
@@ -327,7 +327,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Represents a schema (e.g. BigQuery, GoogleSQL, Avro schema).
+   * Represents a schema, for example, a BigQuery, GoogleSQL, or Avro schema.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.Schema}

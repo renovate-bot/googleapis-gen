@@ -17,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateEntryRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The name of the entry group this entry belongs to. Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Required. The name of the entry group this entry belongs to.
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      *
@@ -48,8 +47,7 @@ class CreateEntryRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. The name of the entry group this entry belongs to. Example:
-     *           `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     *           Required. The name of the entry group this entry belongs to.
      *           Note: The entry itself and its child resources might not be stored in
      *           the location specified in its name.
      *     @type string $entry_id
@@ -67,8 +65,7 @@ class CreateEntryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the entry group this entry belongs to. Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Required. The name of the entry group this entry belongs to.
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      *
@@ -81,8 +78,7 @@ class CreateEntryRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the entry group this entry belongs to. Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+     * Required. The name of the entry group this entry belongs to.
      * Note: The entry itself and its child resources might not be stored in
      * the location specified in its name.
      *

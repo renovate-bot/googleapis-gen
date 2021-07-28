@@ -19,7 +19,7 @@
 namespace Google\Cloud\DataCatalog\V1;
 
 /**
- * Policy Tag Manager API service allows clients to manage their policy tags and
+ * Policy Tag Manager API service allows you to manage your policy tags and
  * taxonomies.
  *
  * Policy tags are used to tag BigQuery columns and apply additional access
@@ -38,8 +38,9 @@ class PolicyTagManagerGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Creates a taxonomy in a specified project. The taxonomy is initially empty,
-     * i.e., does not contain policy tags.
+     * Creates a taxonomy in a specified project.
+     *
+     * The taxonomy is initially empty, that is, it doesn't contain policy tags.
      * @param \Google\Cloud\DataCatalog\V1\CreateTaxonomyRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -54,7 +55,7 @@ class PolicyTagManagerGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Deletes a taxonomy. This method will also delete all policy tags in this
+     * Deletes a taxonomy, including all policy tags in this
      * taxonomy, their associated policies, and the policy tags references from
      * BigQuery columns.
      * @param \Google\Cloud\DataCatalog\V1\DeleteTaxonomyRequest $argument input argument
@@ -71,7 +72,7 @@ class PolicyTagManagerGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Updates a taxonomy. This method can update the taxonomy's display name,
+     * Updates a taxonomy, including its display name,
      * description, and activated policy types.
      * @param \Google\Cloud\DataCatalog\V1\UpdateTaxonomyRequest $argument input argument
      * @param array $metadata metadata
@@ -87,8 +88,8 @@ class PolicyTagManagerGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Lists all taxonomies in a project in a particular location that the caller
-     * has permission to view.
+     * Lists all taxonomies in a project in a particular location that you
+     * have a permission to view.
      * @param \Google\Cloud\DataCatalog\V1\ListTaxonomiesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -133,12 +134,12 @@ class PolicyTagManagerGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Deletes a policy tag. This method also deletes:
+     * Deletes a policy tag together with the following:
      *
-     * * all of its descendant policy tags, if any
-     * * the policies associated with the policy tag and its descendants
-     * * references from BigQuery table schema of the policy tag and its
-     *   descendants.
+     * * All of its descendant policy tags, if any
+     * * Policies associated with the policy tag and its descendants
+     * * References from BigQuery table schema of the policy tag and its
+     *   descendants
      * @param \Google\Cloud\DataCatalog\V1\DeletePolicyTagRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -153,7 +154,7 @@ class PolicyTagManagerGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Updates a policy tag. This method can update the policy tag's display
+     * Updates a policy tag, including its display
      * name, description, and parent policy tag.
      * @param \Google\Cloud\DataCatalog\V1\UpdatePolicyTagRequest $argument input argument
      * @param array $metadata metadata
@@ -229,7 +230,7 @@ class PolicyTagManagerGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns the permissions that a caller has on a specified policy tag or
+     * Returns your permissions on a specified policy tag or
      * taxonomy.
      * @param \Google\Cloud\Iam\V1\TestIamPermissionsRequest $argument input argument
      * @param array $metadata metadata

@@ -4,9 +4,9 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Policy Tag Manager serialization API service allows clients to manipulate
- * their policy tags and taxonomies in serialized format, where taxonomy is a
- * hierarchical group of policy tags.
+ * Policy Tag Manager Serialization API service allows you to manipulate
+ * your policy tags and taxonomies in a serialized format.
+ * Taxonomy is a hierarchical group of policy tags.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -19,6 +19,37 @@ public final class PolicyTagManagerSerializationGrpc {
   public static final String SERVICE_NAME = "google.cloud.datacatalog.v1.PolicyTagManagerSerialization";
 
   // Static method descriptors that strictly reflect the proto.
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest,
+      com.google.cloud.datacatalog.v1.Taxonomy> getReplaceTaxonomyMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ReplaceTaxonomy",
+      requestType = com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest.class,
+      responseType = com.google.cloud.datacatalog.v1.Taxonomy.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest,
+      com.google.cloud.datacatalog.v1.Taxonomy> getReplaceTaxonomyMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest, com.google.cloud.datacatalog.v1.Taxonomy> getReplaceTaxonomyMethod;
+    if ((getReplaceTaxonomyMethod = PolicyTagManagerSerializationGrpc.getReplaceTaxonomyMethod) == null) {
+      synchronized (PolicyTagManagerSerializationGrpc.class) {
+        if ((getReplaceTaxonomyMethod = PolicyTagManagerSerializationGrpc.getReplaceTaxonomyMethod) == null) {
+          PolicyTagManagerSerializationGrpc.getReplaceTaxonomyMethod = getReplaceTaxonomyMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest, com.google.cloud.datacatalog.v1.Taxonomy>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ReplaceTaxonomy"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.datacatalog.v1.Taxonomy.getDefaultInstance()))
+              .setSchemaDescriptor(new PolicyTagManagerSerializationMethodDescriptorSupplier("ReplaceTaxonomy"))
+              .build();
+        }
+      }
+    }
+    return getReplaceTaxonomyMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest,
       com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse> getImportTaxonomiesMethod;
 
@@ -127,22 +158,40 @@ public final class PolicyTagManagerSerializationGrpc {
 
   /**
    * <pre>
-   * Policy Tag Manager serialization API service allows clients to manipulate
-   * their policy tags and taxonomies in serialized format, where taxonomy is a
-   * hierarchical group of policy tags.
+   * Policy Tag Manager Serialization API service allows you to manipulate
+   * your policy tags and taxonomies in a serialized format.
+   * Taxonomy is a hierarchical group of policy tags.
    * </pre>
    */
   public static abstract class PolicyTagManagerSerializationImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     * Creates new taxonomies (including their policy tags) by importing from
-     * inlined source or cross-regional source. New taxonomies will be created in
-     * a given parent project.
-     * If using the cross-regional source, a new taxonomy is created by copying
+     * Replaces (updates) a taxonomy and all its policy tags.
+     * The taxonomy and its entire hierarchy of policy tags must be
+     * represented literally by `SerializedTaxonomy` and the nested
+     * `SerializedPolicyTag` messages.
+     * This operation automatically does the following:
+     * - Deletes the existing policy tags that are missing from the
+     *   `SerializedPolicyTag`.
+     * - Creates policy tags that don't have resource names. They are considered
+     *   new.
+     * - Updates policy tags with valid resources names accordingly.
+     * </pre>
+     */
+    public void replaceTaxonomy(com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Taxonomy> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getReplaceTaxonomyMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates new taxonomies (including their policy tags) in a given project
+     * by importing from inlined or cross-regional sources.
+     * For a cross-regional source, new taxonomies are created by copying
      * from a source in another region.
-     * If using the inlined source, this method provides a way to bulk create
-     * taxonomies and policy tags using nested proto structure.
+     * For an inlined source, taxonomies and policy tags are created in bulk using
+     * nested protocol buffer structures.
      * </pre>
      */
     public void importTaxonomies(com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest request,
@@ -152,11 +201,11 @@ public final class PolicyTagManagerSerializationGrpc {
 
     /**
      * <pre>
-     * Exports taxonomies as the requested type and returns the taxonomies
-     * including their policy tags. The requested taxonomies must belong to one
-     * project.
-     * SerializedTaxonomy protos with nested policy tags that are generated by
-     * this method can be used as input for future ImportTaxonomies calls.
+     * Exports taxonomies in the requested type and returns them,
+     * including their policy tags. The requested taxonomies must belong to the
+     * same project.
+     * This method generates `SerializedTaxonomy` protocol buffers with nested
+     * policy tags that can be used as input for `ImportTaxonomies` calls.
      * </pre>
      */
     public void exportTaxonomies(com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest request,
@@ -166,6 +215,13 @@ public final class PolicyTagManagerSerializationGrpc {
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+          .addMethod(
+            getReplaceTaxonomyMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest,
+                com.google.cloud.datacatalog.v1.Taxonomy>(
+                  this, METHODID_REPLACE_TAXONOMY)))
           .addMethod(
             getImportTaxonomiesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -186,9 +242,9 @@ public final class PolicyTagManagerSerializationGrpc {
 
   /**
    * <pre>
-   * Policy Tag Manager serialization API service allows clients to manipulate
-   * their policy tags and taxonomies in serialized format, where taxonomy is a
-   * hierarchical group of policy tags.
+   * Policy Tag Manager Serialization API service allows you to manipulate
+   * your policy tags and taxonomies in a serialized format.
+   * Taxonomy is a hierarchical group of policy tags.
    * </pre>
    */
   public static final class PolicyTagManagerSerializationStub extends io.grpc.stub.AbstractAsyncStub<PolicyTagManagerSerializationStub> {
@@ -205,13 +261,32 @@ public final class PolicyTagManagerSerializationGrpc {
 
     /**
      * <pre>
-     * Creates new taxonomies (including their policy tags) by importing from
-     * inlined source or cross-regional source. New taxonomies will be created in
-     * a given parent project.
-     * If using the cross-regional source, a new taxonomy is created by copying
+     * Replaces (updates) a taxonomy and all its policy tags.
+     * The taxonomy and its entire hierarchy of policy tags must be
+     * represented literally by `SerializedTaxonomy` and the nested
+     * `SerializedPolicyTag` messages.
+     * This operation automatically does the following:
+     * - Deletes the existing policy tags that are missing from the
+     *   `SerializedPolicyTag`.
+     * - Creates policy tags that don't have resource names. They are considered
+     *   new.
+     * - Updates policy tags with valid resources names accordingly.
+     * </pre>
+     */
+    public void replaceTaxonomy(com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Taxonomy> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getReplaceTaxonomyMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Creates new taxonomies (including their policy tags) in a given project
+     * by importing from inlined or cross-regional sources.
+     * For a cross-regional source, new taxonomies are created by copying
      * from a source in another region.
-     * If using the inlined source, this method provides a way to bulk create
-     * taxonomies and policy tags using nested proto structure.
+     * For an inlined source, taxonomies and policy tags are created in bulk using
+     * nested protocol buffer structures.
      * </pre>
      */
     public void importTaxonomies(com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest request,
@@ -222,11 +297,11 @@ public final class PolicyTagManagerSerializationGrpc {
 
     /**
      * <pre>
-     * Exports taxonomies as the requested type and returns the taxonomies
-     * including their policy tags. The requested taxonomies must belong to one
-     * project.
-     * SerializedTaxonomy protos with nested policy tags that are generated by
-     * this method can be used as input for future ImportTaxonomies calls.
+     * Exports taxonomies in the requested type and returns them,
+     * including their policy tags. The requested taxonomies must belong to the
+     * same project.
+     * This method generates `SerializedTaxonomy` protocol buffers with nested
+     * policy tags that can be used as input for `ImportTaxonomies` calls.
      * </pre>
      */
     public void exportTaxonomies(com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest request,
@@ -238,9 +313,9 @@ public final class PolicyTagManagerSerializationGrpc {
 
   /**
    * <pre>
-   * Policy Tag Manager serialization API service allows clients to manipulate
-   * their policy tags and taxonomies in serialized format, where taxonomy is a
-   * hierarchical group of policy tags.
+   * Policy Tag Manager Serialization API service allows you to manipulate
+   * your policy tags and taxonomies in a serialized format.
+   * Taxonomy is a hierarchical group of policy tags.
    * </pre>
    */
   public static final class PolicyTagManagerSerializationBlockingStub extends io.grpc.stub.AbstractBlockingStub<PolicyTagManagerSerializationBlockingStub> {
@@ -257,13 +332,31 @@ public final class PolicyTagManagerSerializationGrpc {
 
     /**
      * <pre>
-     * Creates new taxonomies (including their policy tags) by importing from
-     * inlined source or cross-regional source. New taxonomies will be created in
-     * a given parent project.
-     * If using the cross-regional source, a new taxonomy is created by copying
+     * Replaces (updates) a taxonomy and all its policy tags.
+     * The taxonomy and its entire hierarchy of policy tags must be
+     * represented literally by `SerializedTaxonomy` and the nested
+     * `SerializedPolicyTag` messages.
+     * This operation automatically does the following:
+     * - Deletes the existing policy tags that are missing from the
+     *   `SerializedPolicyTag`.
+     * - Creates policy tags that don't have resource names. They are considered
+     *   new.
+     * - Updates policy tags with valid resources names accordingly.
+     * </pre>
+     */
+    public com.google.cloud.datacatalog.v1.Taxonomy replaceTaxonomy(com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReplaceTaxonomyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Creates new taxonomies (including their policy tags) in a given project
+     * by importing from inlined or cross-regional sources.
+     * For a cross-regional source, new taxonomies are created by copying
      * from a source in another region.
-     * If using the inlined source, this method provides a way to bulk create
-     * taxonomies and policy tags using nested proto structure.
+     * For an inlined source, taxonomies and policy tags are created in bulk using
+     * nested protocol buffer structures.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse importTaxonomies(com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest request) {
@@ -273,11 +366,11 @@ public final class PolicyTagManagerSerializationGrpc {
 
     /**
      * <pre>
-     * Exports taxonomies as the requested type and returns the taxonomies
-     * including their policy tags. The requested taxonomies must belong to one
-     * project.
-     * SerializedTaxonomy protos with nested policy tags that are generated by
-     * this method can be used as input for future ImportTaxonomies calls.
+     * Exports taxonomies in the requested type and returns them,
+     * including their policy tags. The requested taxonomies must belong to the
+     * same project.
+     * This method generates `SerializedTaxonomy` protocol buffers with nested
+     * policy tags that can be used as input for `ImportTaxonomies` calls.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse exportTaxonomies(com.google.cloud.datacatalog.v1.ExportTaxonomiesRequest request) {
@@ -288,9 +381,9 @@ public final class PolicyTagManagerSerializationGrpc {
 
   /**
    * <pre>
-   * Policy Tag Manager serialization API service allows clients to manipulate
-   * their policy tags and taxonomies in serialized format, where taxonomy is a
-   * hierarchical group of policy tags.
+   * Policy Tag Manager Serialization API service allows you to manipulate
+   * your policy tags and taxonomies in a serialized format.
+   * Taxonomy is a hierarchical group of policy tags.
    * </pre>
    */
   public static final class PolicyTagManagerSerializationFutureStub extends io.grpc.stub.AbstractFutureStub<PolicyTagManagerSerializationFutureStub> {
@@ -307,13 +400,32 @@ public final class PolicyTagManagerSerializationGrpc {
 
     /**
      * <pre>
-     * Creates new taxonomies (including their policy tags) by importing from
-     * inlined source or cross-regional source. New taxonomies will be created in
-     * a given parent project.
-     * If using the cross-regional source, a new taxonomy is created by copying
+     * Replaces (updates) a taxonomy and all its policy tags.
+     * The taxonomy and its entire hierarchy of policy tags must be
+     * represented literally by `SerializedTaxonomy` and the nested
+     * `SerializedPolicyTag` messages.
+     * This operation automatically does the following:
+     * - Deletes the existing policy tags that are missing from the
+     *   `SerializedPolicyTag`.
+     * - Creates policy tags that don't have resource names. They are considered
+     *   new.
+     * - Updates policy tags with valid resources names accordingly.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Taxonomy> replaceTaxonomy(
+        com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getReplaceTaxonomyMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Creates new taxonomies (including their policy tags) in a given project
+     * by importing from inlined or cross-regional sources.
+     * For a cross-regional source, new taxonomies are created by copying
      * from a source in another region.
-     * If using the inlined source, this method provides a way to bulk create
-     * taxonomies and policy tags using nested proto structure.
+     * For an inlined source, taxonomies and policy tags are created in bulk using
+     * nested protocol buffer structures.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse> importTaxonomies(
@@ -324,11 +436,11 @@ public final class PolicyTagManagerSerializationGrpc {
 
     /**
      * <pre>
-     * Exports taxonomies as the requested type and returns the taxonomies
-     * including their policy tags. The requested taxonomies must belong to one
-     * project.
-     * SerializedTaxonomy protos with nested policy tags that are generated by
-     * this method can be used as input for future ImportTaxonomies calls.
+     * Exports taxonomies in the requested type and returns them,
+     * including their policy tags. The requested taxonomies must belong to the
+     * same project.
+     * This method generates `SerializedTaxonomy` protocol buffers with nested
+     * policy tags that can be used as input for `ImportTaxonomies` calls.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.ExportTaxonomiesResponse> exportTaxonomies(
@@ -338,8 +450,9 @@ public final class PolicyTagManagerSerializationGrpc {
     }
   }
 
-  private static final int METHODID_IMPORT_TAXONOMIES = 0;
-  private static final int METHODID_EXPORT_TAXONOMIES = 1;
+  private static final int METHODID_REPLACE_TAXONOMY = 0;
+  private static final int METHODID_IMPORT_TAXONOMIES = 1;
+  private static final int METHODID_EXPORT_TAXONOMIES = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -358,6 +471,10 @@ public final class PolicyTagManagerSerializationGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
+        case METHODID_REPLACE_TAXONOMY:
+          serviceImpl.replaceTaxonomy((com.google.cloud.datacatalog.v1.ReplaceTaxonomyRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.Taxonomy>) responseObserver);
+          break;
         case METHODID_IMPORT_TAXONOMIES:
           serviceImpl.importTaxonomies((com.google.cloud.datacatalog.v1.ImportTaxonomiesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.datacatalog.v1.ImportTaxonomiesResponse>) responseObserver);
@@ -427,6 +544,7 @@ public final class PolicyTagManagerSerializationGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new PolicyTagManagerSerializationFileDescriptorSupplier())
+              .addMethod(getReplaceTaxonomyMethod())
               .addMethod(getImportTaxonomiesMethod())
               .addMethod(getExportTaxonomiesMethod())
               .build();

@@ -133,8 +133,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The resource name of the tag template field in URL format. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-   * Note: The `TagTemplateField` itself might not be stored in the location
+   * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+   * Note: The tag template field itself might not be stored in the location
    * specified in its name.
    * The name must contain only letters (a-z, A-Z), numbers (0-9),
    * or underscores (_), and must start with a letter or underscore.
@@ -160,8 +160,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The resource name of the tag template field in URL format. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-   * Note: The `TagTemplateField` itself might not be stored in the location
+   * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+   * Note: The tag template field itself might not be stored in the location
    * specified in its name.
    * The name must contain only letters (a-z, A-Z), numbers (0-9),
    * or underscores (_), and must start with a letter or underscore.
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
   private boolean isRequired_;
   /**
    * <pre>
-   * Whether this is a required field. Defaults to false.
+   * If true, this field is required. Defaults to false.
    * </pre>
    *
    * <code>bool is_required = 3;</code>
@@ -342,9 +342,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The order of this field with respect to other fields in this tag
-   * template. For example, a higher value can indicate a more important field.
-   * The value can be negative. Multiple fields can have the same order, and
-   * field orders within a tag do not have to be sequential.
+   * template.
+   * For example, a higher value can indicate a more important field.
+   * The value can be negative. Multiple fields can have the same order and
+   * field orders within a tag don't have to be sequential.
    * </pre>
    *
    * <code>int32 order = 5;</code>
@@ -764,8 +765,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     * Note: The `TagTemplateField` itself might not be stored in the location
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     * Note: The tag template field itself might not be stored in the location
      * specified in its name.
      * The name must contain only letters (a-z, A-Z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
@@ -790,8 +791,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     * Note: The `TagTemplateField` itself might not be stored in the location
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     * Note: The tag template field itself might not be stored in the location
      * specified in its name.
      * The name must contain only letters (a-z, A-Z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
@@ -817,8 +818,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     * Note: The `TagTemplateField` itself might not be stored in the location
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     * Note: The tag template field itself might not be stored in the location
      * specified in its name.
      * The name must contain only letters (a-z, A-Z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
@@ -842,8 +843,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     * Note: The `TagTemplateField` itself might not be stored in the location
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     * Note: The tag template field itself might not be stored in the location
      * specified in its name.
      * The name must contain only letters (a-z, A-Z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
@@ -862,8 +863,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of the tag template field in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     * Note: The `TagTemplateField` itself might not be stored in the location
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     * Note: The tag template field itself might not be stored in the location
      * specified in its name.
      * The name must contain only letters (a-z, A-Z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
@@ -1155,7 +1156,7 @@ private static final long serialVersionUID = 0L;
     private boolean isRequired_ ;
     /**
      * <pre>
-     * Whether this is a required field. Defaults to false.
+     * If true, this field is required. Defaults to false.
      * </pre>
      *
      * <code>bool is_required = 3;</code>
@@ -1167,7 +1168,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether this is a required field. Defaults to false.
+     * If true, this field is required. Defaults to false.
      * </pre>
      *
      * <code>bool is_required = 3;</code>
@@ -1182,7 +1183,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Whether this is a required field. Defaults to false.
+     * If true, this field is required. Defaults to false.
      * </pre>
      *
      * <code>bool is_required = 3;</code>
@@ -1295,9 +1296,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The order of this field with respect to other fields in this tag
-     * template. For example, a higher value can indicate a more important field.
-     * The value can be negative. Multiple fields can have the same order, and
-     * field orders within a tag do not have to be sequential.
+     * template.
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order and
+     * field orders within a tag don't have to be sequential.
      * </pre>
      *
      * <code>int32 order = 5;</code>
@@ -1310,9 +1312,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The order of this field with respect to other fields in this tag
-     * template. For example, a higher value can indicate a more important field.
-     * The value can be negative. Multiple fields can have the same order, and
-     * field orders within a tag do not have to be sequential.
+     * template.
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order and
+     * field orders within a tag don't have to be sequential.
      * </pre>
      *
      * <code>int32 order = 5;</code>
@@ -1328,9 +1331,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The order of this field with respect to other fields in this tag
-     * template. For example, a higher value can indicate a more important field.
-     * The value can be negative. Multiple fields can have the same order, and
-     * field orders within a tag do not have to be sequential.
+     * template.
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order and
+     * field orders within a tag don't have to be sequential.
      * </pre>
      *
      * <code>int32 order = 5;</code>

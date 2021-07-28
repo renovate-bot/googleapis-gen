@@ -9,63 +9,64 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A result that appears in the response of a search request. Each result
- * captures details of one entry that matches the search.
+ * Result in the response to a search request.
+ * Each result captures details of one entry that matches the search.
  *
  * Generated from protobuf message <code>google.cloud.datacatalog.v1.SearchCatalogResult</code>
  */
 class SearchCatalogResult extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Type of the search result. This field can be used to determine which Get
-     * method to call to fetch the full resource.
+     * Type of the search result.
+     * You can use this field to determine which get method to call to fetch the
+     * full resource.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.SearchResultType search_result_type = 1;</code>
      */
     protected $search_result_type = 0;
     /**
-     * Sub-type of the search result. This is a dot-delimited description of the
-     * resource's full type, and is the same as the value callers would provide in
-     * the "type" search facet.  Examples: `entry.table`, `entry.dataStream`,
-     * `tagTemplate`.
+     * Sub-type of the search result.
+     * A dot-delimited full type of the resource. The same type you
+     * specify in the `type` search predicate.
+     * Examples: `entry.table`, `entry.dataStream`, `tagTemplate`.
      *
      * Generated from protobuf field <code>string search_result_subtype = 2;</code>
      */
     protected $search_result_subtype = '';
     /**
-     * The relative resource name of the resource in URL format.
+     * The relative name of the resource in URL format.
      * Examples:
-     *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
-     *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
+     *  * `projects/{PROJECT_ID}/locations/{LOCATION_ID}/entryGroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`
+     *  * `projects/{PROJECT_ID}/tagTemplates/{TAG_TEMPLATE_ID}`
      *
      * Generated from protobuf field <code>string relative_resource_name = 3;</code>
      */
     protected $relative_resource_name = '';
     /**
-     * The full name of the cloud resource the entry belongs to. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
+     * The full name of the Google Cloud resource the entry belongs to.
+     * For more information, see [Full Resource Name]
+     * (/apis/design/resource_names#full_resource_name).
      * Example:
-     *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
+     * `//bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`
      *
      * Generated from protobuf field <code>string linked_resource = 4;</code>
      */
     protected $linked_resource = '';
     /**
-     * Last-modified timestamp of the entry from the managing system.
+     * The last modification timestamp of the entry in the source system.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modify_time = 7;</code>
      */
     protected $modify_time = null;
     /**
-     * Fully Qualified Name of the resource.
-     * There are two main forms of FQNs:
-     * {system}:{project}.{dot-separated path to resource}
-     *     for non-regionalized resources
-     * {system}:{project}.{location id}.{dot-separated path to resource}
-     *     for regionalized resources
-     * Examples:
-     * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
-     * * bigquery:table.project_id.dataset_id.table_id
+     * Fully qualified name (FQN) of the resource.
+     * FQNs take two forms:
+     * * For non-regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * * For regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * Example for a DPMS table:
+     * `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
      *
      * Generated from protobuf field <code>string fully_qualified_name = 10;</code>
      */
@@ -79,41 +80,41 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $search_result_type
-     *           Type of the search result. This field can be used to determine which Get
-     *           method to call to fetch the full resource.
+     *           Type of the search result.
+     *           You can use this field to determine which get method to call to fetch the
+     *           full resource.
      *     @type string $search_result_subtype
-     *           Sub-type of the search result. This is a dot-delimited description of the
-     *           resource's full type, and is the same as the value callers would provide in
-     *           the "type" search facet.  Examples: `entry.table`, `entry.dataStream`,
-     *           `tagTemplate`.
+     *           Sub-type of the search result.
+     *           A dot-delimited full type of the resource. The same type you
+     *           specify in the `type` search predicate.
+     *           Examples: `entry.table`, `entry.dataStream`, `tagTemplate`.
      *     @type string $relative_resource_name
-     *           The relative resource name of the resource in URL format.
+     *           The relative name of the resource in URL format.
      *           Examples:
-     *            * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
-     *            * `projects/{project_id}/tagTemplates/{tag_template_id}`
+     *            * `projects/{PROJECT_ID}/locations/{LOCATION_ID}/entryGroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`
+     *            * `projects/{PROJECT_ID}/tagTemplates/{TAG_TEMPLATE_ID}`
      *     @type string $linked_resource
-     *           The full name of the cloud resource the entry belongs to. See:
-     *           https://cloud.google.com/apis/design/resource_names#full_resource_name.
+     *           The full name of the Google Cloud resource the entry belongs to.
+     *           For more information, see [Full Resource Name]
+     *           (/apis/design/resource_names#full_resource_name).
      *           Example:
-     *            * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
+     *           `//bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`
      *     @type \Google\Protobuf\Timestamp $modify_time
-     *           Last-modified timestamp of the entry from the managing system.
+     *           The last modification timestamp of the entry in the source system.
      *     @type int $integrated_system
-     *           Output only. This field indicates the entry's source system that Data Catalog
-     *           integrates with, such as BigQuery or Cloud Pub/Sub.
+     *           Output only. The source system that Data Catalog automatically integrates  with, such
+     *           as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      *     @type string $user_specified_system
-     *           This field indicates the entry's source system that Data Catalog does not
-     *           integrate with.
+     *           Custom source system that you can manually integrate Data Catalog with.
      *     @type string $fully_qualified_name
-     *           Fully Qualified Name of the resource.
-     *           There are two main forms of FQNs:
-     *           {system}:{project}.{dot-separated path to resource}
-     *               for non-regionalized resources
-     *           {system}:{project}.{location id}.{dot-separated path to resource}
-     *               for regionalized resources
-     *           Examples:
-     *           * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
-     *           * bigquery:table.project_id.dataset_id.table_id
+     *           Fully qualified name (FQN) of the resource.
+     *           FQNs take two forms:
+     *           * For non-regionalized resources:
+     *             `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *           * For regionalized resources:
+     *             `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     *           Example for a DPMS table:
+     *           `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
      * }
      */
     public function __construct($data = NULL) {
@@ -122,8 +123,9 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the search result. This field can be used to determine which Get
-     * method to call to fetch the full resource.
+     * Type of the search result.
+     * You can use this field to determine which get method to call to fetch the
+     * full resource.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.SearchResultType search_result_type = 1;</code>
      * @return int
@@ -134,8 +136,9 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Type of the search result. This field can be used to determine which Get
-     * method to call to fetch the full resource.
+     * Type of the search result.
+     * You can use this field to determine which get method to call to fetch the
+     * full resource.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.SearchResultType search_result_type = 1;</code>
      * @param int $var
@@ -150,10 +153,10 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sub-type of the search result. This is a dot-delimited description of the
-     * resource's full type, and is the same as the value callers would provide in
-     * the "type" search facet.  Examples: `entry.table`, `entry.dataStream`,
-     * `tagTemplate`.
+     * Sub-type of the search result.
+     * A dot-delimited full type of the resource. The same type you
+     * specify in the `type` search predicate.
+     * Examples: `entry.table`, `entry.dataStream`, `tagTemplate`.
      *
      * Generated from protobuf field <code>string search_result_subtype = 2;</code>
      * @return string
@@ -164,10 +167,10 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Sub-type of the search result. This is a dot-delimited description of the
-     * resource's full type, and is the same as the value callers would provide in
-     * the "type" search facet.  Examples: `entry.table`, `entry.dataStream`,
-     * `tagTemplate`.
+     * Sub-type of the search result.
+     * A dot-delimited full type of the resource. The same type you
+     * specify in the `type` search predicate.
+     * Examples: `entry.table`, `entry.dataStream`, `tagTemplate`.
      *
      * Generated from protobuf field <code>string search_result_subtype = 2;</code>
      * @param string $var
@@ -182,10 +185,10 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The relative resource name of the resource in URL format.
+     * The relative name of the resource in URL format.
      * Examples:
-     *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
-     *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
+     *  * `projects/{PROJECT_ID}/locations/{LOCATION_ID}/entryGroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`
+     *  * `projects/{PROJECT_ID}/tagTemplates/{TAG_TEMPLATE_ID}`
      *
      * Generated from protobuf field <code>string relative_resource_name = 3;</code>
      * @return string
@@ -196,10 +199,10 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The relative resource name of the resource in URL format.
+     * The relative name of the resource in URL format.
      * Examples:
-     *  * `projects/{project_id}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}`
-     *  * `projects/{project_id}/tagTemplates/{tag_template_id}`
+     *  * `projects/{PROJECT_ID}/locations/{LOCATION_ID}/entryGroups/{ENTRY_GROUP_ID}/entries/{ENTRY_ID}`
+     *  * `projects/{PROJECT_ID}/tagTemplates/{TAG_TEMPLATE_ID}`
      *
      * Generated from protobuf field <code>string relative_resource_name = 3;</code>
      * @param string $var
@@ -214,10 +217,11 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full name of the cloud resource the entry belongs to. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
+     * The full name of the Google Cloud resource the entry belongs to.
+     * For more information, see [Full Resource Name]
+     * (/apis/design/resource_names#full_resource_name).
      * Example:
-     *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
+     * `//bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`
      *
      * Generated from protobuf field <code>string linked_resource = 4;</code>
      * @return string
@@ -228,10 +232,11 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The full name of the cloud resource the entry belongs to. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
+     * The full name of the Google Cloud resource the entry belongs to.
+     * For more information, see [Full Resource Name]
+     * (/apis/design/resource_names#full_resource_name).
      * Example:
-     *  * `//bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId`
+     * `//bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID`
      *
      * Generated from protobuf field <code>string linked_resource = 4;</code>
      * @param string $var
@@ -246,7 +251,7 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Last-modified timestamp of the entry from the managing system.
+     * The last modification timestamp of the entry in the source system.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modify_time = 7;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -267,7 +272,7 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Last-modified timestamp of the entry from the managing system.
+     * The last modification timestamp of the entry in the source system.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp modify_time = 7;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -282,8 +287,8 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Cloud Pub/Sub.
+     * Output only. The source system that Data Catalog automatically integrates  with, such
+     * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -299,8 +304,8 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Cloud Pub/Sub.
+     * Output only. The source system that Data Catalog automatically integrates  with, such
+     * as BigQuery, Cloud Pub/Sub, or Dataproc Metastore.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var
@@ -315,8 +320,7 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This field indicates the entry's source system that Data Catalog does not
-     * integrate with.
+     * Custom source system that you can manually integrate Data Catalog with.
      *
      * Generated from protobuf field <code>string user_specified_system = 9;</code>
      * @return string
@@ -332,8 +336,7 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * This field indicates the entry's source system that Data Catalog does not
-     * integrate with.
+     * Custom source system that you can manually integrate Data Catalog with.
      *
      * Generated from protobuf field <code>string user_specified_system = 9;</code>
      * @param string $var
@@ -348,15 +351,14 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Fully Qualified Name of the resource.
-     * There are two main forms of FQNs:
-     * {system}:{project}.{dot-separated path to resource}
-     *     for non-regionalized resources
-     * {system}:{project}.{location id}.{dot-separated path to resource}
-     *     for regionalized resources
-     * Examples:
-     * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
-     * * bigquery:table.project_id.dataset_id.table_id
+     * Fully qualified name (FQN) of the resource.
+     * FQNs take two forms:
+     * * For non-regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * * For regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * Example for a DPMS table:
+     * `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
      *
      * Generated from protobuf field <code>string fully_qualified_name = 10;</code>
      * @return string
@@ -367,15 +369,14 @@ class SearchCatalogResult extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Fully Qualified Name of the resource.
-     * There are two main forms of FQNs:
-     * {system}:{project}.{dot-separated path to resource}
-     *     for non-regionalized resources
-     * {system}:{project}.{location id}.{dot-separated path to resource}
-     *     for regionalized resources
-     * Examples:
-     * * dataproc_metastore:projectId.locationId.instanceId.databaseId.tableId
-     * * bigquery:table.project_id.dataset_id.table_id
+     * Fully qualified name (FQN) of the resource.
+     * FQNs take two forms:
+     * * For non-regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * * For regionalized resources:
+     *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
+     * Example for a DPMS table:
+     * `dataproc_metastore:PROJECT_ID.LOCATION_ID.INSTANCE_ID.DATABASE_ID.TABLE_ID`
      *
      * Generated from protobuf field <code>string fully_qualified_name = 10;</code>
      * @param string $var

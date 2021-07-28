@@ -9,8 +9,7 @@ public interface DeleteTagTemplateFieldRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the tag template field to delete. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   * Required. The name of the tag template field to delete.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +18,7 @@ public interface DeleteTagTemplateFieldRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the tag template field to delete. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   * Required. The name of the tag template field to delete.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -31,9 +29,8 @@ public interface DeleteTagTemplateFieldRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Currently, this field must always be set to `true`.
-   * This confirms the deletion of this field from any tags using this field.
-   * `force = false` will be supported in the future.
+   * Required. If true, deletes this field from any tags that use it.
+   * Currently, `true` is the only supported value.
    * </pre>
    *
    * <code>bool force = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -23,15 +23,16 @@ class ListTaxonomiesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * The maximum number of items to return. Must be a value between 1 and 1000.
-     * If not set, defaults to 50.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively. If not set, defaults to 50.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      */
     protected $page_size = 0;
     /**
-     * The next_page_token value returned from a previous list request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set,
+     * the first page is returned.
+     * The token is returned in the response to a previous list request.
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      */
@@ -46,11 +47,12 @@ class ListTaxonomiesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. Resource name of the project to list the taxonomies of.
      *     @type int $page_size
-     *           The maximum number of items to return. Must be a value between 1 and 1000.
-     *           If not set, defaults to 50.
+     *           The maximum number of items to return. Must be a value between 1 and 1000
+     *           inclusively. If not set, defaults to 50.
      *     @type string $page_token
-     *           The next_page_token value returned from a previous list request, if any. If
-     *           not set, defaults to an empty string.
+     *           The pagination token of the next results page. If not set,
+     *           the first page is returned.
+     *           The token is returned in the response to a previous list request.
      * }
      */
     public function __construct($data = NULL) {
@@ -85,8 +87,8 @@ class ListTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of items to return. Must be a value between 1 and 1000.
-     * If not set, defaults to 50.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively. If not set, defaults to 50.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      * @return int
@@ -97,8 +99,8 @@ class ListTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The maximum number of items to return. Must be a value between 1 and 1000.
-     * If not set, defaults to 50.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively. If not set, defaults to 50.
      *
      * Generated from protobuf field <code>int32 page_size = 2;</code>
      * @param int $var
@@ -113,8 +115,9 @@ class ListTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The next_page_token value returned from a previous list request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set,
+     * the first page is returned.
+     * The token is returned in the response to a previous list request.
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      * @return string
@@ -125,8 +128,9 @@ class ListTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The next_page_token value returned from a previous list request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set,
+     * the first page is returned.
+     * The token is returned in the response to a previous list request.
      *
      * Generated from protobuf field <code>string page_token = 3;</code>
      * @param string $var

@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList taxonomies_;
   /**
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -212,7 +212,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -223,7 +223,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -235,7 +235,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -250,8 +250,8 @@ private static final long serialVersionUID = 0L;
   public static final int SERIALIZED_TAXONOMIES_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * Export taxonomies as serialized taxonomies, which contain all the policy
-   * tags as nested protos.
+   * Serialized export taxonomies that contain all the policy
+   * tags as nested protocol buffers.
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>
@@ -263,8 +263,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Export taxonomies as serialized taxonomies, which contain all the policy
-   * tags as nested protos.
+   * Serialized export taxonomies that contain all the policy
+   * tags as nested protocol buffers.
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>
@@ -783,7 +783,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -806,7 +806,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -831,7 +831,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -851,7 +851,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -870,7 +870,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -887,7 +887,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -901,7 +901,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      * </pre>
      *
      * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -922,8 +922,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
@@ -934,8 +934,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
@@ -949,8 +949,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>
@@ -965,8 +965,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      * </pre>
      *
      * <code>bool serialized_taxonomies = 3;</code>

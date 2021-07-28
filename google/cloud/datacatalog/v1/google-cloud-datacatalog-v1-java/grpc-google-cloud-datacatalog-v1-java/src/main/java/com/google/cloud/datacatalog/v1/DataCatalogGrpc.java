@@ -4,8 +4,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
- * Data Catalog API service allows clients to discover, understand, and manage
- * their data.
+ * Data Catalog API service allows you to discover, understand, and manage
+ * your data.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -932,27 +932,26 @@ public final class DataCatalogGrpc {
 
   /**
    * <pre>
-   * Data Catalog API service allows clients to discover, understand, and manage
-   * their data.
+   * Data Catalog API service allows you to discover, understand, and manage
+   * your data.
    * </pre>
    */
   public static abstract class DataCatalogImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     * Searches Data Catalog for multiple resources like entries, tags that
+     * Searches Data Catalog for multiple resources like entries and tags that
      * match a query.
-     * This is a custom method
-     * (https://cloud.google.com/apis/design/custom_methods) and does not return
-     * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequently call `Get` methods.
-     * Note that Data Catalog search queries do not guarantee full recall. Query
-     * results that match your query may not be returned, even in subsequent
-     * result pages. Also note that results returned (and not returned) can vary
-     * across repeated search queries.
-     * See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * This is a [Custom Method]
+     * (https://cloud.google.com/apis/design/custom_methods) that doesn't return
+     * all information on a resource, only its ID and high level fields. To get
+     * more information, you can subsequently call specific get methods.
+     * Note: Data Catalog search queries don't guarantee full recall. Results
+     * that match your query might not be returned, even in subsequent
+     * result pages. Additionally, returned (and not returned) results can vary
+     * if you repeat search queries.
+     * For more information, see [Data Catalog search syntax]
+     * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * </pre>
      */
     public void searchCatalog(com.google.cloud.datacatalog.v1.SearchCatalogRequest request,
@@ -962,21 +961,26 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates an EntryGroup.
-     * An entry group contains logically related entries together with Cloud
-     * Identity and Access Management policies that specify the users who can
-     * create, edit, and view entries within the entry group.
-     * Data Catalog automatically creates an entry group for BigQuery entries
-     * ("&#64;bigquery") and Pub/Sub topics ("&#64;pubsub"). Users create their own entry
-     * group to contain Cloud Storage fileset entries or custom type entries,
-     * and the IAM policies associated with those entries. Entry groups, like
-     * entries, can be searched.
+     * Creates an entry group.
+     * An entry group contains logically related entries together with [Cloud
+     * Identity and Access Management](/data-catalog/docs/concepts/iam) policies.
+     * These policies specify users who can create, edit, and view entries
+     * within entry groups.
+     * Data Catalog automatically creates entry groups with names that start with
+     * the `&#64;` symbol for the following resources:
+     * * BigQuery entries (`&#64;bigquery`)
+     * * Pub/Sub topics (`&#64;pubsub`)
+     * * Dataproc Metastore services (`&#64;dataproc_metastore_{SERVICE_NAME_HASH}`)
+     * You can create your own entry groups for Cloud Storage fileset entries
+     * and custom entries together with the corresponding IAM policies.
+     * User-created entry groups can't contain the `&#64;` symbol, it is reserved
+     * for automatically created groups.
+     * Entry groups, like entries, can be searched.
      * A maximum of 10,000 entry groups may be created per organization across all
      * locations.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void createEntryGroup(com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request,
@@ -986,7 +990,7 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Gets an EntryGroup.
+     * Gets an entry group.
      * </pre>
      */
     public void getEntryGroup(com.google.cloud.datacatalog.v1.GetEntryGroupRequest request,
@@ -996,11 +1000,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates an EntryGroup. The user should enable the Data Catalog API in the
-     * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates an entry group.
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry_group.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void updateEntryGroup(com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request,
@@ -1010,11 +1014,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
-     * deleted. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes an entry group.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void deleteEntryGroup(com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request,
@@ -1034,13 +1038,14 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates an entry. Only entries of types 'FILESET', 'CLUSTER', 'DATA_STREAM'
-     * or with a user-specified type can be created.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
-     * A maximum of 100,000 entries may be created per entry group.
+     * Creates an entry.
+     * You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM',
+     * or custom types. Data Catalog automatically creates entries with other
+     * types during metadata ingestion from integrated systems.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * An entry group can have a maximum of 100,000 entries.
      * </pre>
      */
     public void createEntry(com.google.cloud.datacatalog.v1.CreateEntryRequest request,
@@ -1051,10 +1056,10 @@ public final class DataCatalogGrpc {
     /**
      * <pre>
      * Updates an existing entry.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void updateEntry(com.google.cloud.datacatalog.v1.UpdateEntryRequest request,
@@ -1064,13 +1069,14 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes an existing entry. Only entries created through
+     * Deletes an existing entry.
+     * You can delete only the entries created by the
      * [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry]
-     * method can be deleted.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * method.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void deleteEntry(com.google.cloud.datacatalog.v1.DeleteEntryRequest request,
@@ -1090,9 +1096,8 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Get an entry by target resource name. This method allows clients to use
-     * the resource name from the source Google Cloud Platform service to get the
-     * Data Catalog Entry.
+     * Gets an entry by its target resource name.
+     * The resource name comes from the source Google Cloud Platform service.
      * </pre>
      */
     public void lookupEntry(com.google.cloud.datacatalog.v1.LookupEntryRequest request,
@@ -1112,11 +1117,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a tag template. The user should enable the Data Catalog API in
-     * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `parent` parameter.
+     * For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void createTagTemplate(com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request,
@@ -1136,13 +1141,13 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates a tag template. This method cannot be used to update the fields of
-     * a template. The tag template fields are represented as separate resources
-     * and should be updated using their own create/update/delete methods.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a tag template.
+     * You can't update template fields with this method. These fields are
+     * separate resources with their own create, update, and delete methods.
+     * You must enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void updateTagTemplate(com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request,
@@ -1152,11 +1157,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes a tag template and all tags using the template.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a tag template and all tags that use it.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void deleteTagTemplate(com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request,
@@ -1166,11 +1170,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `parent` parameter (see
-     * [Data Catalog Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void createTagTemplateField(com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request,
@@ -1180,11 +1183,12 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates a field in a tag template. This method cannot be used to update the
-     * field type. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a field in a tag template.
+     * You can't update the field type with this method.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void updateTagTemplateField(com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request,
@@ -1194,11 +1198,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Renames a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Renames a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `name` parameter. For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void renameTagTemplateField(com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request,
@@ -1208,8 +1211,8 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Renames an enum value in a tag template. The enum values have to be unique
-     * within one enum field.
+     * Renames an enum value in a tag template.
+     * Within a single enum field, enum values must be unique.
      * </pre>
      */
     public void renameTagTemplateFieldEnumValue(com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request,
@@ -1219,11 +1222,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes a field in a tag template and all uses of that field.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a field in a tag template and all uses of this field from the tags
+     * based on this template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void deleteTagTemplateField(com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request,
@@ -1233,13 +1236,16 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
-     * Note: The project identified by the `parent` parameter for the
-     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
-     * and the
-     * [tag
-     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
-     * used to create the tag must be from the same organization.
+     * Creates a tag and assigns it to:
+     * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
+     *   ``projects.locations.entryGroups.entries.tags.create``.
+     * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
+     *   name is ``projects.locations.entryGroups.tags.create``.
+     * Note: The project identified by the `parent` parameter for the [tag]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the [tag template]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be in the same organization.
      * </pre>
      */
     public void createTag(com.google.cloud.datacatalog.v1.CreateTagRequest request,
@@ -1269,7 +1275,7 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
      * </pre>
      */
     public void listTags(com.google.cloud.datacatalog.v1.ListTagsRequest request,
@@ -1279,19 +1285,18 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Sets the access control policy for a resource. Replaces any existing
+     * Sets an access control policy for a resource. Replaces any existing
      * policy.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * Callers must have following Google IAM permission
-     *   - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
-     *     templates.
-     *   - `datacatalog.entries.setIamPolicy` to set policies on entries.
-     *   - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method sets policies only within Data Catalog and can't be
+     * used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources synced with the Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
     public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
@@ -1301,20 +1306,20 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Gets the access control policy for a resource. A `NOT_FOUND` error
-     * is returned if the resource does not exist. An empty policy is returned
-     * if the resource exists but does not have a policy set on it.
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * Callers must have following Google IAM permission
-     *   - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
-     *     templates.
-     *   - `datacatalog.entries.getIamPolicy` to get policies on entries.
-     *   - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method doesn't get policies from Google Cloud Platform
+     * resources ingested into Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
     public void getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request,
@@ -1324,17 +1329,15 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Returns the caller's permissions on a resource.
-     * If the resource does not exist, an empty set of permissions is returned
-     * (We don't return a `NOT_FOUND` error).
+     * Gets your permissions on a resource.
+     * Returns an empty set of permissions if the resource doesn't exist.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * A caller is not required to have Google IAM permission to make this
-     * request.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method gets policies only within Data Catalog and can't be
+     * used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources ingested into Data Catalog.
+     * No Google IAM permissions are required to call this method.
      * </pre>
      */
     public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
@@ -1546,8 +1549,8 @@ public final class DataCatalogGrpc {
 
   /**
    * <pre>
-   * Data Catalog API service allows clients to discover, understand, and manage
-   * their data.
+   * Data Catalog API service allows you to discover, understand, and manage
+   * your data.
    * </pre>
    */
   public static final class DataCatalogStub extends io.grpc.stub.AbstractAsyncStub<DataCatalogStub> {
@@ -1564,19 +1567,18 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Searches Data Catalog for multiple resources like entries, tags that
+     * Searches Data Catalog for multiple resources like entries and tags that
      * match a query.
-     * This is a custom method
-     * (https://cloud.google.com/apis/design/custom_methods) and does not return
-     * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequently call `Get` methods.
-     * Note that Data Catalog search queries do not guarantee full recall. Query
-     * results that match your query may not be returned, even in subsequent
-     * result pages. Also note that results returned (and not returned) can vary
-     * across repeated search queries.
-     * See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * This is a [Custom Method]
+     * (https://cloud.google.com/apis/design/custom_methods) that doesn't return
+     * all information on a resource, only its ID and high level fields. To get
+     * more information, you can subsequently call specific get methods.
+     * Note: Data Catalog search queries don't guarantee full recall. Results
+     * that match your query might not be returned, even in subsequent
+     * result pages. Additionally, returned (and not returned) results can vary
+     * if you repeat search queries.
+     * For more information, see [Data Catalog search syntax]
+     * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * </pre>
      */
     public void searchCatalog(com.google.cloud.datacatalog.v1.SearchCatalogRequest request,
@@ -1587,21 +1589,26 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates an EntryGroup.
-     * An entry group contains logically related entries together with Cloud
-     * Identity and Access Management policies that specify the users who can
-     * create, edit, and view entries within the entry group.
-     * Data Catalog automatically creates an entry group for BigQuery entries
-     * ("&#64;bigquery") and Pub/Sub topics ("&#64;pubsub"). Users create their own entry
-     * group to contain Cloud Storage fileset entries or custom type entries,
-     * and the IAM policies associated with those entries. Entry groups, like
-     * entries, can be searched.
+     * Creates an entry group.
+     * An entry group contains logically related entries together with [Cloud
+     * Identity and Access Management](/data-catalog/docs/concepts/iam) policies.
+     * These policies specify users who can create, edit, and view entries
+     * within entry groups.
+     * Data Catalog automatically creates entry groups with names that start with
+     * the `&#64;` symbol for the following resources:
+     * * BigQuery entries (`&#64;bigquery`)
+     * * Pub/Sub topics (`&#64;pubsub`)
+     * * Dataproc Metastore services (`&#64;dataproc_metastore_{SERVICE_NAME_HASH}`)
+     * You can create your own entry groups for Cloud Storage fileset entries
+     * and custom entries together with the corresponding IAM policies.
+     * User-created entry groups can't contain the `&#64;` symbol, it is reserved
+     * for automatically created groups.
+     * Entry groups, like entries, can be searched.
      * A maximum of 10,000 entry groups may be created per organization across all
      * locations.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void createEntryGroup(com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request,
@@ -1612,7 +1619,7 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Gets an EntryGroup.
+     * Gets an entry group.
      * </pre>
      */
     public void getEntryGroup(com.google.cloud.datacatalog.v1.GetEntryGroupRequest request,
@@ -1623,11 +1630,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates an EntryGroup. The user should enable the Data Catalog API in the
-     * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates an entry group.
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry_group.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void updateEntryGroup(com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request,
@@ -1638,11 +1645,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
-     * deleted. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes an entry group.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void deleteEntryGroup(com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request,
@@ -1664,13 +1671,14 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates an entry. Only entries of types 'FILESET', 'CLUSTER', 'DATA_STREAM'
-     * or with a user-specified type can be created.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
-     * A maximum of 100,000 entries may be created per entry group.
+     * Creates an entry.
+     * You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM',
+     * or custom types. Data Catalog automatically creates entries with other
+     * types during metadata ingestion from integrated systems.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * An entry group can have a maximum of 100,000 entries.
      * </pre>
      */
     public void createEntry(com.google.cloud.datacatalog.v1.CreateEntryRequest request,
@@ -1682,10 +1690,10 @@ public final class DataCatalogGrpc {
     /**
      * <pre>
      * Updates an existing entry.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void updateEntry(com.google.cloud.datacatalog.v1.UpdateEntryRequest request,
@@ -1696,13 +1704,14 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes an existing entry. Only entries created through
+     * Deletes an existing entry.
+     * You can delete only the entries created by the
      * [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry]
-     * method can be deleted.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * method.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void deleteEntry(com.google.cloud.datacatalog.v1.DeleteEntryRequest request,
@@ -1724,9 +1733,8 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Get an entry by target resource name. This method allows clients to use
-     * the resource name from the source Google Cloud Platform service to get the
-     * Data Catalog Entry.
+     * Gets an entry by its target resource name.
+     * The resource name comes from the source Google Cloud Platform service.
      * </pre>
      */
     public void lookupEntry(com.google.cloud.datacatalog.v1.LookupEntryRequest request,
@@ -1748,11 +1756,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a tag template. The user should enable the Data Catalog API in
-     * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `parent` parameter.
+     * For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void createTagTemplate(com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request,
@@ -1774,13 +1782,13 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates a tag template. This method cannot be used to update the fields of
-     * a template. The tag template fields are represented as separate resources
-     * and should be updated using their own create/update/delete methods.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a tag template.
+     * You can't update template fields with this method. These fields are
+     * separate resources with their own create, update, and delete methods.
+     * You must enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void updateTagTemplate(com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request,
@@ -1791,11 +1799,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes a tag template and all tags using the template.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a tag template and all tags that use it.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void deleteTagTemplate(com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request,
@@ -1806,11 +1813,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `parent` parameter (see
-     * [Data Catalog Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void createTagTemplateField(com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request,
@@ -1821,11 +1827,12 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates a field in a tag template. This method cannot be used to update the
-     * field type. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a field in a tag template.
+     * You can't update the field type with this method.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void updateTagTemplateField(com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request,
@@ -1836,11 +1843,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Renames a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Renames a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `name` parameter. For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void renameTagTemplateField(com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request,
@@ -1851,8 +1857,8 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Renames an enum value in a tag template. The enum values have to be unique
-     * within one enum field.
+     * Renames an enum value in a tag template.
+     * Within a single enum field, enum values must be unique.
      * </pre>
      */
     public void renameTagTemplateFieldEnumValue(com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request,
@@ -1863,11 +1869,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes a field in a tag template and all uses of that field.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a field in a tag template and all uses of this field from the tags
+     * based on this template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public void deleteTagTemplateField(com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request,
@@ -1878,13 +1884,16 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
-     * Note: The project identified by the `parent` parameter for the
-     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
-     * and the
-     * [tag
-     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
-     * used to create the tag must be from the same organization.
+     * Creates a tag and assigns it to:
+     * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
+     *   ``projects.locations.entryGroups.entries.tags.create``.
+     * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
+     *   name is ``projects.locations.entryGroups.tags.create``.
+     * Note: The project identified by the `parent` parameter for the [tag]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the [tag template]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be in the same organization.
      * </pre>
      */
     public void createTag(com.google.cloud.datacatalog.v1.CreateTagRequest request,
@@ -1917,7 +1926,7 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
      * </pre>
      */
     public void listTags(com.google.cloud.datacatalog.v1.ListTagsRequest request,
@@ -1928,19 +1937,18 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Sets the access control policy for a resource. Replaces any existing
+     * Sets an access control policy for a resource. Replaces any existing
      * policy.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * Callers must have following Google IAM permission
-     *   - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
-     *     templates.
-     *   - `datacatalog.entries.setIamPolicy` to set policies on entries.
-     *   - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method sets policies only within Data Catalog and can't be
+     * used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources synced with the Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
     public void setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request,
@@ -1951,20 +1959,20 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Gets the access control policy for a resource. A `NOT_FOUND` error
-     * is returned if the resource does not exist. An empty policy is returned
-     * if the resource exists but does not have a policy set on it.
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * Callers must have following Google IAM permission
-     *   - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
-     *     templates.
-     *   - `datacatalog.entries.getIamPolicy` to get policies on entries.
-     *   - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method doesn't get policies from Google Cloud Platform
+     * resources ingested into Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
     public void getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request,
@@ -1975,17 +1983,15 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Returns the caller's permissions on a resource.
-     * If the resource does not exist, an empty set of permissions is returned
-     * (We don't return a `NOT_FOUND` error).
+     * Gets your permissions on a resource.
+     * Returns an empty set of permissions if the resource doesn't exist.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * A caller is not required to have Google IAM permission to make this
-     * request.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method gets policies only within Data Catalog and can't be
+     * used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources ingested into Data Catalog.
+     * No Google IAM permissions are required to call this method.
      * </pre>
      */
     public void testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request,
@@ -1997,8 +2003,8 @@ public final class DataCatalogGrpc {
 
   /**
    * <pre>
-   * Data Catalog API service allows clients to discover, understand, and manage
-   * their data.
+   * Data Catalog API service allows you to discover, understand, and manage
+   * your data.
    * </pre>
    */
   public static final class DataCatalogBlockingStub extends io.grpc.stub.AbstractBlockingStub<DataCatalogBlockingStub> {
@@ -2015,19 +2021,18 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Searches Data Catalog for multiple resources like entries, tags that
+     * Searches Data Catalog for multiple resources like entries and tags that
      * match a query.
-     * This is a custom method
-     * (https://cloud.google.com/apis/design/custom_methods) and does not return
-     * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequently call `Get` methods.
-     * Note that Data Catalog search queries do not guarantee full recall. Query
-     * results that match your query may not be returned, even in subsequent
-     * result pages. Also note that results returned (and not returned) can vary
-     * across repeated search queries.
-     * See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * This is a [Custom Method]
+     * (https://cloud.google.com/apis/design/custom_methods) that doesn't return
+     * all information on a resource, only its ID and high level fields. To get
+     * more information, you can subsequently call specific get methods.
+     * Note: Data Catalog search queries don't guarantee full recall. Results
+     * that match your query might not be returned, even in subsequent
+     * result pages. Additionally, returned (and not returned) results can vary
+     * if you repeat search queries.
+     * For more information, see [Data Catalog search syntax]
+     * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.SearchCatalogResponse searchCatalog(com.google.cloud.datacatalog.v1.SearchCatalogRequest request) {
@@ -2037,21 +2042,26 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates an EntryGroup.
-     * An entry group contains logically related entries together with Cloud
-     * Identity and Access Management policies that specify the users who can
-     * create, edit, and view entries within the entry group.
-     * Data Catalog automatically creates an entry group for BigQuery entries
-     * ("&#64;bigquery") and Pub/Sub topics ("&#64;pubsub"). Users create their own entry
-     * group to contain Cloud Storage fileset entries or custom type entries,
-     * and the IAM policies associated with those entries. Entry groups, like
-     * entries, can be searched.
+     * Creates an entry group.
+     * An entry group contains logically related entries together with [Cloud
+     * Identity and Access Management](/data-catalog/docs/concepts/iam) policies.
+     * These policies specify users who can create, edit, and view entries
+     * within entry groups.
+     * Data Catalog automatically creates entry groups with names that start with
+     * the `&#64;` symbol for the following resources:
+     * * BigQuery entries (`&#64;bigquery`)
+     * * Pub/Sub topics (`&#64;pubsub`)
+     * * Dataproc Metastore services (`&#64;dataproc_metastore_{SERVICE_NAME_HASH}`)
+     * You can create your own entry groups for Cloud Storage fileset entries
+     * and custom entries together with the corresponding IAM policies.
+     * User-created entry groups can't contain the `&#64;` symbol, it is reserved
+     * for automatically created groups.
+     * Entry groups, like entries, can be searched.
      * A maximum of 10,000 entry groups may be created per organization across all
      * locations.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.EntryGroup createEntryGroup(com.google.cloud.datacatalog.v1.CreateEntryGroupRequest request) {
@@ -2061,7 +2071,7 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Gets an EntryGroup.
+     * Gets an entry group.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.EntryGroup getEntryGroup(com.google.cloud.datacatalog.v1.GetEntryGroupRequest request) {
@@ -2071,11 +2081,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates an EntryGroup. The user should enable the Data Catalog API in the
-     * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates an entry group.
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry_group.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.EntryGroup updateEntryGroup(com.google.cloud.datacatalog.v1.UpdateEntryGroupRequest request) {
@@ -2085,11 +2095,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
-     * deleted. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes an entry group.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntryGroup(com.google.cloud.datacatalog.v1.DeleteEntryGroupRequest request) {
@@ -2109,13 +2119,14 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates an entry. Only entries of types 'FILESET', 'CLUSTER', 'DATA_STREAM'
-     * or with a user-specified type can be created.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
-     * A maximum of 100,000 entries may be created per entry group.
+     * Creates an entry.
+     * You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM',
+     * or custom types. Data Catalog automatically creates entries with other
+     * types during metadata ingestion from integrated systems.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * An entry group can have a maximum of 100,000 entries.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Entry createEntry(com.google.cloud.datacatalog.v1.CreateEntryRequest request) {
@@ -2126,10 +2137,10 @@ public final class DataCatalogGrpc {
     /**
      * <pre>
      * Updates an existing entry.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Entry updateEntry(com.google.cloud.datacatalog.v1.UpdateEntryRequest request) {
@@ -2139,13 +2150,14 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes an existing entry. Only entries created through
+     * Deletes an existing entry.
+     * You can delete only the entries created by the
      * [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry]
-     * method can be deleted.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * method.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntry(com.google.cloud.datacatalog.v1.DeleteEntryRequest request) {
@@ -2165,9 +2177,8 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Get an entry by target resource name. This method allows clients to use
-     * the resource name from the source Google Cloud Platform service to get the
-     * Data Catalog Entry.
+     * Gets an entry by its target resource name.
+     * The resource name comes from the source Google Cloud Platform service.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Entry lookupEntry(com.google.cloud.datacatalog.v1.LookupEntryRequest request) {
@@ -2187,11 +2198,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a tag template. The user should enable the Data Catalog API in
-     * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `parent` parameter.
+     * For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplate createTagTemplate(com.google.cloud.datacatalog.v1.CreateTagTemplateRequest request) {
@@ -2211,13 +2222,13 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates a tag template. This method cannot be used to update the fields of
-     * a template. The tag template fields are represented as separate resources
-     * and should be updated using their own create/update/delete methods.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a tag template.
+     * You can't update template fields with this method. These fields are
+     * separate resources with their own create, update, and delete methods.
+     * You must enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplate updateTagTemplate(com.google.cloud.datacatalog.v1.UpdateTagTemplateRequest request) {
@@ -2227,11 +2238,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes a tag template and all tags using the template.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a tag template and all tags that use it.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.protobuf.Empty deleteTagTemplate(com.google.cloud.datacatalog.v1.DeleteTagTemplateRequest request) {
@@ -2241,11 +2251,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `parent` parameter (see
-     * [Data Catalog Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplateField createTagTemplateField(com.google.cloud.datacatalog.v1.CreateTagTemplateFieldRequest request) {
@@ -2255,11 +2264,12 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates a field in a tag template. This method cannot be used to update the
-     * field type. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a field in a tag template.
+     * You can't update the field type with this method.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplateField updateTagTemplateField(com.google.cloud.datacatalog.v1.UpdateTagTemplateFieldRequest request) {
@@ -2269,11 +2279,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Renames a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Renames a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `name` parameter. For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateField(com.google.cloud.datacatalog.v1.RenameTagTemplateFieldRequest request) {
@@ -2283,8 +2292,8 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Renames an enum value in a tag template. The enum values have to be unique
-     * within one enum field.
+     * Renames an enum value in a tag template.
+     * Within a single enum field, enum values must be unique.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.TagTemplateField renameTagTemplateFieldEnumValue(com.google.cloud.datacatalog.v1.RenameTagTemplateFieldEnumValueRequest request) {
@@ -2294,11 +2303,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes a field in a tag template and all uses of that field.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a field in a tag template and all uses of this field from the tags
+     * based on this template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.protobuf.Empty deleteTagTemplateField(com.google.cloud.datacatalog.v1.DeleteTagTemplateFieldRequest request) {
@@ -2308,13 +2317,16 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
-     * Note: The project identified by the `parent` parameter for the
-     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
-     * and the
-     * [tag
-     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
-     * used to create the tag must be from the same organization.
+     * Creates a tag and assigns it to:
+     * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
+     *   ``projects.locations.entryGroups.entries.tags.create``.
+     * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
+     *   name is ``projects.locations.entryGroups.tags.create``.
+     * Note: The project identified by the `parent` parameter for the [tag]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the [tag template]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be in the same organization.
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.Tag createTag(com.google.cloud.datacatalog.v1.CreateTagRequest request) {
@@ -2344,7 +2356,7 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
      * </pre>
      */
     public com.google.cloud.datacatalog.v1.ListTagsResponse listTags(com.google.cloud.datacatalog.v1.ListTagsRequest request) {
@@ -2354,19 +2366,18 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Sets the access control policy for a resource. Replaces any existing
+     * Sets an access control policy for a resource. Replaces any existing
      * policy.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * Callers must have following Google IAM permission
-     *   - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
-     *     templates.
-     *   - `datacatalog.entries.setIamPolicy` to set policies on entries.
-     *   - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method sets policies only within Data Catalog and can't be
+     * used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources synced with the Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
     public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
@@ -2376,20 +2387,20 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Gets the access control policy for a resource. A `NOT_FOUND` error
-     * is returned if the resource does not exist. An empty policy is returned
-     * if the resource exists but does not have a policy set on it.
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * Callers must have following Google IAM permission
-     *   - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
-     *     templates.
-     *   - `datacatalog.entries.getIamPolicy` to get policies on entries.
-     *   - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method doesn't get policies from Google Cloud Platform
+     * resources ingested into Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
     public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
@@ -2399,17 +2410,15 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Returns the caller's permissions on a resource.
-     * If the resource does not exist, an empty set of permissions is returned
-     * (We don't return a `NOT_FOUND` error).
+     * Gets your permissions on a resource.
+     * Returns an empty set of permissions if the resource doesn't exist.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * A caller is not required to have Google IAM permission to make this
-     * request.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method gets policies only within Data Catalog and can't be
+     * used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources ingested into Data Catalog.
+     * No Google IAM permissions are required to call this method.
      * </pre>
      */
     public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(com.google.iam.v1.TestIamPermissionsRequest request) {
@@ -2420,8 +2429,8 @@ public final class DataCatalogGrpc {
 
   /**
    * <pre>
-   * Data Catalog API service allows clients to discover, understand, and manage
-   * their data.
+   * Data Catalog API service allows you to discover, understand, and manage
+   * your data.
    * </pre>
    */
   public static final class DataCatalogFutureStub extends io.grpc.stub.AbstractFutureStub<DataCatalogFutureStub> {
@@ -2438,19 +2447,18 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Searches Data Catalog for multiple resources like entries, tags that
+     * Searches Data Catalog for multiple resources like entries and tags that
      * match a query.
-     * This is a custom method
-     * (https://cloud.google.com/apis/design/custom_methods) and does not return
-     * the complete resource, only the resource identifier and high level
-     * fields. Clients can subsequently call `Get` methods.
-     * Note that Data Catalog search queries do not guarantee full recall. Query
-     * results that match your query may not be returned, even in subsequent
-     * result pages. Also note that results returned (and not returned) can vary
-     * across repeated search queries.
-     * See [Data Catalog Search
-     * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-     * for more information.
+     * This is a [Custom Method]
+     * (https://cloud.google.com/apis/design/custom_methods) that doesn't return
+     * all information on a resource, only its ID and high level fields. To get
+     * more information, you can subsequently call specific get methods.
+     * Note: Data Catalog search queries don't guarantee full recall. Results
+     * that match your query might not be returned, even in subsequent
+     * result pages. Additionally, returned (and not returned) results can vary
+     * if you repeat search queries.
+     * For more information, see [Data Catalog search syntax]
+     * (https://cloud.google.com/data-catalog/docs/how-to/search-reference).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.SearchCatalogResponse> searchCatalog(
@@ -2461,21 +2469,26 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates an EntryGroup.
-     * An entry group contains logically related entries together with Cloud
-     * Identity and Access Management policies that specify the users who can
-     * create, edit, and view entries within the entry group.
-     * Data Catalog automatically creates an entry group for BigQuery entries
-     * ("&#64;bigquery") and Pub/Sub topics ("&#64;pubsub"). Users create their own entry
-     * group to contain Cloud Storage fileset entries or custom type entries,
-     * and the IAM policies associated with those entries. Entry groups, like
-     * entries, can be searched.
+     * Creates an entry group.
+     * An entry group contains logically related entries together with [Cloud
+     * Identity and Access Management](/data-catalog/docs/concepts/iam) policies.
+     * These policies specify users who can create, edit, and view entries
+     * within entry groups.
+     * Data Catalog automatically creates entry groups with names that start with
+     * the `&#64;` symbol for the following resources:
+     * * BigQuery entries (`&#64;bigquery`)
+     * * Pub/Sub topics (`&#64;pubsub`)
+     * * Dataproc Metastore services (`&#64;dataproc_metastore_{SERVICE_NAME_HASH}`)
+     * You can create your own entry groups for Cloud Storage fileset entries
+     * and custom entries together with the corresponding IAM policies.
+     * User-created entry groups can't contain the `&#64;` symbol, it is reserved
+     * for automatically created groups.
+     * Entry groups, like entries, can be searched.
      * A maximum of 10,000 entry groups may be created per organization across all
      * locations.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.EntryGroup> createEntryGroup(
@@ -2486,7 +2499,7 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Gets an EntryGroup.
+     * Gets an entry group.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.EntryGroup> getEntryGroup(
@@ -2497,11 +2510,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates an EntryGroup. The user should enable the Data Catalog API in the
-     * project identified by the `entry_group.name` parameter (see [Data Catalog
-     * Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates an entry group.
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry_group.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.EntryGroup> updateEntryGroup(
@@ -2512,11 +2525,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes an EntryGroup. Only entry groups that do not contain entries can be
-     * deleted. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes an entry group.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteEntryGroup(
@@ -2538,13 +2551,14 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates an entry. Only entries of types 'FILESET', 'CLUSTER', 'DATA_STREAM'
-     * or with a user-specified type can be created.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `parent` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
-     * A maximum of 100,000 entries may be created per entry group.
+     * Creates an entry.
+     * You can create entries only with 'FILESET', 'CLUSTER', 'DATA_STREAM',
+     * or custom types. Data Catalog automatically creates entries with other
+     * types during metadata ingestion from integrated systems.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
+     * An entry group can have a maximum of 100,000 entries.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Entry> createEntry(
@@ -2556,10 +2570,10 @@ public final class DataCatalogGrpc {
     /**
      * <pre>
      * Updates an existing entry.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `entry.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * You must enable the Data Catalog API in the project identified by
+     * the `entry.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Entry> updateEntry(
@@ -2570,13 +2584,14 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes an existing entry. Only entries created through
+     * Deletes an existing entry.
+     * You can delete only the entries created by the
      * [CreateEntry][google.cloud.datacatalog.v1.DataCatalog.CreateEntry]
-     * method can be deleted.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * method.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteEntry(
@@ -2598,9 +2613,8 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Get an entry by target resource name. This method allows clients to use
-     * the resource name from the source Google Cloud Platform service to get the
-     * Data Catalog Entry.
+     * Gets an entry by its target resource name.
+     * The resource name comes from the source Google Cloud Platform service.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Entry> lookupEntry(
@@ -2622,11 +2636,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a tag template. The user should enable the Data Catalog API in
-     * the project identified by the `parent` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `parent` parameter.
+     * For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.TagTemplate> createTagTemplate(
@@ -2648,13 +2662,13 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates a tag template. This method cannot be used to update the fields of
-     * a template. The tag template fields are represented as separate resources
-     * and should be updated using their own create/update/delete methods.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `tag_template.name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a tag template.
+     * You can't update template fields with this method. These fields are
+     * separate resources with their own create, update, and delete methods.
+     * You must enable the Data Catalog API in the project identified by
+     * the `tag_template.name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.TagTemplate> updateTagTemplate(
@@ -2665,11 +2679,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes a tag template and all tags using the template.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a tag template and all tags that use it.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTagTemplate(
@@ -2680,11 +2693,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `parent` parameter (see
-     * [Data Catalog Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Creates a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `parent` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.TagTemplateField> createTagTemplateField(
@@ -2695,11 +2707,12 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Updates a field in a tag template. This method cannot be used to update the
-     * field type. Users should enable the Data Catalog API in the project
-     * identified by the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Updates a field in a tag template.
+     * You can't update the field type with this method.
+     * You must enable the Data Catalog API in the project
+     * identified by the `name` parameter. For more information, see [Data Catalog
+     * resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.TagTemplateField> updateTagTemplateField(
@@ -2710,11 +2723,10 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Renames a field in a tag template. The user should enable the Data Catalog
-     * API in the project identified by the `name` parameter (see [Data Catalog
-     * Resource
-     * Project](https://cloud.google.com/data-catalog/docs/concepts/resource-project)
-     * for more information).
+     * Renames a field in a tag template.
+     * You must enable the Data Catalog API in the project identified by the
+     * `name` parameter. For more information, see [Data Catalog resource project]
+     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.TagTemplateField> renameTagTemplateField(
@@ -2725,8 +2737,8 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Renames an enum value in a tag template. The enum values have to be unique
-     * within one enum field.
+     * Renames an enum value in a tag template.
+     * Within a single enum field, enum values must be unique.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.TagTemplateField> renameTagTemplateFieldEnumValue(
@@ -2737,11 +2749,11 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Deletes a field in a tag template and all uses of that field.
-     * Users should enable the Data Catalog API in the project identified by
-     * the `name` parameter (see [Data Catalog Resource Project]
-     * (https://cloud.google.com/data-catalog/docs/concepts/resource-project) for
-     * more information).
+     * Deletes a field in a tag template and all uses of this field from the tags
+     * based on this template.
+     * You must enable the Data Catalog API in the project identified by
+     * the `name` parameter. For more information, see [Data Catalog resource
+     * project](https://cloud.google.com/data-catalog/docs/concepts/resource-project).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteTagTemplateField(
@@ -2752,13 +2764,16 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Creates a tag on an [Entry][google.cloud.datacatalog.v1.Entry].
-     * Note: The project identified by the `parent` parameter for the
-     * [tag](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
-     * and the
-     * [tag
-     * template](https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
-     * used to create the tag must be from the same organization.
+     * Creates a tag and assigns it to:
+     * * An [Entry][google.cloud.datacatalog.v1.Entry] if the method name is
+     *   ``projects.locations.entryGroups.entries.tags.create``.
+     * * Or [EntryGroup][google.cloud.datacatalog.v1.EntryGroup]if the method
+     *   name is ``projects.locations.entryGroups.tags.create``.
+     * Note: The project identified by the `parent` parameter for the [tag]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.entryGroups.entries.tags/create#path-parameters)
+     * and the [tag template]
+     * (https://cloud.google.com/data-catalog/docs/reference/rest/v1/projects.locations.tagTemplates/create#path-parameters)
+     * used to create the tag must be in the same organization.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.Tag> createTag(
@@ -2791,7 +2806,7 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Lists the tags on an [Entry][google.cloud.datacatalog.v1.Entry].
+     * Lists tags assigned to an [Entry][google.cloud.datacatalog.v1.Entry].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.datacatalog.v1.ListTagsResponse> listTags(
@@ -2802,19 +2817,18 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Sets the access control policy for a resource. Replaces any existing
+     * Sets an access control policy for a resource. Replaces any existing
      * policy.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * Callers must have following Google IAM permission
-     *   - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
-     *     templates.
-     *   - `datacatalog.entries.setIamPolicy` to set policies on entries.
-     *   - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method sets policies only within Data Catalog and can't be
+     * used to manage policies in BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources synced with the Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.setIamPolicy` to set policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.setIamPolicy` to set policies on entry groups.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> setIamPolicy(
@@ -2825,20 +2839,20 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Gets the access control policy for a resource. A `NOT_FOUND` error
-     * is returned if the resource does not exist. An empty policy is returned
-     * if the resource exists but does not have a policy set on it.
+     * Gets the access control policy for a resource.
+     * May return:
+     * * A`NOT_FOUND` error if the resource doesn't exist or you don't have the
+     *   permission to view it.
+     * * An empty policy if the resource exists but doesn't have a set policy.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * Callers must have following Google IAM permission
-     *   - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
-     *     templates.
-     *   - `datacatalog.entries.getIamPolicy` to get policies on entries.
-     *   - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method doesn't get policies from Google Cloud Platform
+     * resources ingested into Data Catalog.
+     * To call this method, you must have the following Google IAM permissions:
+     * - `datacatalog.tagTemplates.getIamPolicy` to get policies on tag
+     *   templates.
+     * - `datacatalog.entryGroups.getIamPolicy` to get policies on entry groups.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.Policy> getIamPolicy(
@@ -2849,17 +2863,15 @@ public final class DataCatalogGrpc {
 
     /**
      * <pre>
-     * Returns the caller's permissions on a resource.
-     * If the resource does not exist, an empty set of permissions is returned
-     * (We don't return a `NOT_FOUND` error).
+     * Gets your permissions on a resource.
+     * Returns an empty set of permissions if the resource doesn't exist.
      * Supported resources are:
-     *   - Tag templates.
-     *   - Entries.
-     *   - Entry groups.
-     * Note, this method cannot be used to manage policies for BigQuery, Pub/Sub
-     * and any external Google Cloud Platform resources synced to Data Catalog.
-     * A caller is not required to have Google IAM permission to make this
-     * request.
+     * - Tag templates
+     * - Entry groups
+     * Note: This method gets policies only within Data Catalog and can't be
+     * used to get policies from BigQuery, Pub/Sub, Dataproc Metastore, and any
+     * external Google Cloud Platform resources ingested into Data Catalog.
+     * No Google IAM permissions are required to call this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.iam.v1.TestIamPermissionsResponse> testIamPermissions(

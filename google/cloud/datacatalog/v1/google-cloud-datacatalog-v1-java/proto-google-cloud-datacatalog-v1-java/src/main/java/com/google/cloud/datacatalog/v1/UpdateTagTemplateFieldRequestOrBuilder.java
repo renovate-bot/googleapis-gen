@@ -9,8 +9,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the tag template field. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   * Required. The name of the tag template field.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +18,7 @@ public interface UpdateTagTemplateFieldRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the tag template field. Example:
-   * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+   * Required. The name of the tag template field.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -60,9 +58,9 @@ public interface UpdateTagTemplateFieldRequestOrBuilder extends
    * <pre>
    * Optional. Names of fields whose values to overwrite on an individual field of a tag
    * template. The following fields are modifiable:
-   *   * `display_name`
-   *   * `type.enum_type`
-   *   * `is_required`
+   * * `display_name`
+   * * `type.enum_type`
+   * * `is_required`
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the request
    * body, their values are emptied with one exception: when updating an enum
@@ -81,9 +79,9 @@ public interface UpdateTagTemplateFieldRequestOrBuilder extends
    * <pre>
    * Optional. Names of fields whose values to overwrite on an individual field of a tag
    * template. The following fields are modifiable:
-   *   * `display_name`
-   *   * `type.enum_type`
-   *   * `is_required`
+   * * `display_name`
+   * * `type.enum_type`
+   * * `is_required`
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the request
    * body, their values are emptied with one exception: when updating an enum
@@ -102,9 +100,9 @@ public interface UpdateTagTemplateFieldRequestOrBuilder extends
    * <pre>
    * Optional. Names of fields whose values to overwrite on an individual field of a tag
    * template. The following fields are modifiable:
-   *   * `display_name`
-   *   * `type.enum_type`
-   *   * `is_required`
+   * * `display_name`
+   * * `type.enum_type`
+   * * `is_required`
    * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the request
    * body, their values are emptied with one exception: when updating an enum

@@ -154,7 +154,8 @@ private static final long serialVersionUID = 0L;
   private int pageSize_;
   /**
    * <pre>
-   * The maximum number of items to return. Must be a value between 1 and 1000.
+   * The maximum number of items to return. Must be a value between 1 and 1000
+   * inclusively.
    * If not set, defaults to 50.
    * </pre>
    *
@@ -170,8 +171,9 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object pageToken_;
   /**
    * <pre>
-   * The next_page_token value returned from a previous List request, if any. If
-   * not set, defaults to an empty string.
+   * The pagination token of the next results page. If not set, returns the
+   * first page.
+   * The token is returned in the response to a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -192,8 +194,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The next_page_token value returned from a previous List request, if any. If
-   * not set, defaults to an empty string.
+   * The pagination token of the next results page. If not set, returns the
+   * first page.
+   * The token is returned in the response to a previous list request.
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -654,7 +657,8 @@ private static final long serialVersionUID = 0L;
     private int pageSize_ ;
     /**
      * <pre>
-     * The maximum number of items to return. Must be a value between 1 and 1000.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively.
      * If not set, defaults to 50.
      * </pre>
      *
@@ -667,7 +671,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The maximum number of items to return. Must be a value between 1 and 1000.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively.
      * If not set, defaults to 50.
      * </pre>
      *
@@ -683,7 +688,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The maximum number of items to return. Must be a value between 1 and 1000.
+     * The maximum number of items to return. Must be a value between 1 and 1000
+     * inclusively.
      * If not set, defaults to 50.
      * </pre>
      *
@@ -700,8 +706,9 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object pageToken_ = "";
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set, returns the
+     * first page.
+     * The token is returned in the response to a previous list request.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -721,8 +728,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set, returns the
+     * first page.
+     * The token is returned in the response to a previous list request.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -743,8 +751,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set, returns the
+     * first page.
+     * The token is returned in the response to a previous list request.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -763,8 +772,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set, returns the
+     * first page.
+     * The token is returned in the response to a previous list request.
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -778,8 +788,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The next_page_token value returned from a previous List request, if any. If
-     * not set, defaults to an empty string.
+     * The pagination token of the next results page. If not set, returns the
+     * first page.
+     * The token is returned in the response to a previous list request.
      * </pre>
      *
      * <code>string page_token = 3;</code>

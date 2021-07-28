@@ -9,7 +9,7 @@ public interface UpdateEntryGroupRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The updated entry group. "name" field must be set.
+   * Required. Updates for the entry group. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -18,7 +18,7 @@ public interface UpdateEntryGroupRequestOrBuilder extends
   boolean hasEntryGroup();
   /**
    * <pre>
-   * Required. The updated entry group. "name" field must be set.
+   * Required. Updates for the entry group. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -27,7 +27,7 @@ public interface UpdateEntryGroupRequestOrBuilder extends
   com.google.cloud.datacatalog.v1.EntryGroup getEntryGroup();
   /**
    * <pre>
-   * Required. The updated entry group. "name" field must be set.
+   * Required. Updates for the entry group. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryGroup entry_group = 1 [(.google.api.field_behavior) = REQUIRED];</code>

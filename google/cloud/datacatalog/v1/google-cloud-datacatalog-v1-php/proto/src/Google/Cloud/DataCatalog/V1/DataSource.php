@@ -9,21 +9,21 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Describes the physical location of an entry.
+ * Physical location of an entry.
  *
  * Generated from protobuf message <code>google.cloud.datacatalog.v1.DataSource</code>
  */
 class DataSource extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Service in which the data is physically stored.
+     * Service that physically stores the data.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
      */
     protected $service = 0;
     /**
-     * Full name of the resource as defined by the service, e.g.
-     * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     * Full name of a resource as defined by the service. For example:
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *
      * Generated from protobuf field <code>string resource = 2;</code>
      */
@@ -36,10 +36,10 @@ class DataSource extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int $service
-     *           Service in which the data is physically stored.
+     *           Service that physically stores the data.
      *     @type string $resource
-     *           Full name of the resource as defined by the service, e.g.
-     *           //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     *           Full name of a resource as defined by the service. For example:
+     *           `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      * }
      */
     public function __construct($data = NULL) {
@@ -48,7 +48,7 @@ class DataSource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Service in which the data is physically stored.
+     * Service that physically stores the data.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
      * @return int
@@ -59,7 +59,7 @@ class DataSource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Service in which the data is physically stored.
+     * Service that physically stores the data.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.DataSource.Service service = 1;</code>
      * @param int $var
@@ -74,8 +74,8 @@ class DataSource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Full name of the resource as defined by the service, e.g.
-     * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     * Full name of a resource as defined by the service. For example:
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *
      * Generated from protobuf field <code>string resource = 2;</code>
      * @return string
@@ -86,8 +86,8 @@ class DataSource extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Full name of the resource as defined by the service, e.g.
-     * //bigquery.googleapis.com/projects/{project_id}/locations/{location}/datasets/{dataset_id}/tables/{table_id}
+     * Full name of a resource as defined by the service. For example:
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/locations/{LOCATION}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
      *
      * Generated from protobuf field <code>string resource = 2;</code>
      * @param string $var

@@ -13,6 +13,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+from .bigquery import (
+    BigQueryConnectionSpec,
+    BigQueryRoutineSpec,
+    CloudSqlBigQueryConnectionSpec,
+)
 from .data_source import (
     DataSource,
 )
@@ -23,6 +28,7 @@ from .datacatalog import (
     CreateTagTemplateFieldRequest,
     CreateTagTemplateRequest,
     DatabaseTableSpec,
+    DataSourceConnectionSpec,
     DeleteEntryGroupRequest,
     DeleteEntryRequest,
     DeleteTagRequest,
@@ -42,6 +48,7 @@ from .datacatalog import (
     LookupEntryRequest,
     RenameTagTemplateFieldEnumValueRequest,
     RenameTagTemplateFieldRequest,
+    RoutineSpec,
     SearchCatalogRequest,
     SearchCatalogResponse,
     UpdateEntryGroupRequest,
@@ -78,6 +85,7 @@ from .policytagmanagerserialization import (
     ImportTaxonomiesRequest,
     ImportTaxonomiesResponse,
     InlineSource,
+    ReplaceTaxonomyRequest,
     SerializedPolicyTag,
     SerializedTaxonomy,
 )
@@ -106,8 +114,15 @@ from .tags import (
 from .timestamps import (
     SystemTimestamps,
 )
+from .usage import (
+    UsageSignal,
+    UsageStats,
+)
 
 __all__ = (
+    'BigQueryConnectionSpec',
+    'BigQueryRoutineSpec',
+    'CloudSqlBigQueryConnectionSpec',
     'IntegratedSystem',
     'DataSource',
     'CreateEntryGroupRequest',
@@ -116,6 +131,7 @@ __all__ = (
     'CreateTagTemplateFieldRequest',
     'CreateTagTemplateRequest',
     'DatabaseTableSpec',
+    'DataSourceConnectionSpec',
     'DeleteEntryGroupRequest',
     'DeleteEntryRequest',
     'DeleteTagRequest',
@@ -135,6 +151,7 @@ __all__ = (
     'LookupEntryRequest',
     'RenameTagTemplateFieldEnumValueRequest',
     'RenameTagTemplateFieldRequest',
+    'RoutineSpec',
     'SearchCatalogRequest',
     'SearchCatalogResponse',
     'UpdateEntryGroupRequest',
@@ -165,6 +182,7 @@ __all__ = (
     'ImportTaxonomiesRequest',
     'ImportTaxonomiesResponse',
     'InlineSource',
+    'ReplaceTaxonomyRequest',
     'SerializedPolicyTag',
     'SerializedTaxonomy',
     'ColumnSchema',
@@ -182,4 +200,6 @@ __all__ = (
     'TagTemplate',
     'TagTemplateField',
     'SystemTimestamps',
+    'UsageSignal',
+    'UsageStats',
 )

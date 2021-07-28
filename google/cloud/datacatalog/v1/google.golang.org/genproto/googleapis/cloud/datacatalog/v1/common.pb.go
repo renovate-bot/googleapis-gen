@@ -39,8 +39,7 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
-// This enum describes all the possible systems that Data Catalog integrates
-// with.
+// This enum lists all the systems that Data Catalog integrates with.
 type IntegratedSystem int32
 
 const (

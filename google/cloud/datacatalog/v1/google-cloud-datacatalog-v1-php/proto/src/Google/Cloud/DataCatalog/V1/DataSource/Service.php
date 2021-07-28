@@ -7,7 +7,7 @@ namespace Google\Cloud\DataCatalog\V1\DataSource;
 use UnexpectedValueException;
 
 /**
- * Service name where the data is stored.
+ * Name of a service that stores the data.
  *
  * Protobuf type <code>google.cloud.datacatalog.v1.DataSource.Service</code>
  */

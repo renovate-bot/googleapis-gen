@@ -9,8 +9,7 @@ public interface CreateEntryRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the entry group this entry belongs to. Example:
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Required. The name of the entry group this entry belongs to.
    * Note: The entry itself and its child resources might not be stored in
    * the location specified in its name.
    * </pre>
@@ -21,8 +20,7 @@ public interface CreateEntryRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. The name of the entry group this entry belongs to. Example:
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`
+   * Required. The name of the entry group this entry belongs to.
    * Note: The entry itself and its child resources might not be stored in
    * the location specified in its name.
    * </pre>

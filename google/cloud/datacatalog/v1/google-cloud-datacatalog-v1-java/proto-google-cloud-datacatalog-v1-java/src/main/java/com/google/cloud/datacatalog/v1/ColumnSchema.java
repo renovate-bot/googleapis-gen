@@ -5,7 +5,7 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * Representation of a column within a schema. Columns could be nested inside
+ * A column within a schema. Columns can be nested inside
  * other columns.
  * </pre>
  *
@@ -279,7 +279,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object mode_;
   /**
    * <pre>
-   * Optional. A column's mode indicates if values in this column are required,
+   * Optional. A column's mode indicates whether values in this column are required,
    * nullable, or repeated.
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
@@ -303,7 +303,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A column's mode indicates if values in this column are required,
+   * Optional. A column's mode indicates whether values in this column are required,
    * nullable, or repeated.
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Representation of a column within a schema. Columns could be nested inside
+   * A column within a schema. Columns can be nested inside
    * other columns.
    * </pre>
    *
@@ -1118,7 +1118,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object mode_ = "";
     /**
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -1141,7 +1141,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -1165,7 +1165,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -1187,7 +1187,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.
@@ -1204,7 +1204,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A column's mode indicates if values in this column are required,
+     * Optional. A column's mode indicates whether values in this column are required,
      * nullable, or repeated.
      * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
      * Default mode is `NULLABLE`.

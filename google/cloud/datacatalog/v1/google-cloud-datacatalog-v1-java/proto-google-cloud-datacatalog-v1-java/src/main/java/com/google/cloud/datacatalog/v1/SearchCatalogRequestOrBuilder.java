@@ -9,10 +9,10 @@ public interface SearchCatalogRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The scope of this search request. A `scope` that has empty
-   * `include_org_ids`, `include_project_ids` AND false
-   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-   * return an error in such a case.
+   * Required. The scope of this search request.
+   * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+   * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+   * the request returns an error.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -21,10 +21,10 @@ public interface SearchCatalogRequestOrBuilder extends
   boolean hasScope();
   /**
    * <pre>
-   * Required. The scope of this search request. A `scope` that has empty
-   * `include_org_ids`, `include_project_ids` AND false
-   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-   * return an error in such a case.
+   * Required. The scope of this search request.
+   * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+   * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+   * the request returns an error.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -33,10 +33,10 @@ public interface SearchCatalogRequestOrBuilder extends
   com.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope getScope();
   /**
    * <pre>
-   * Required. The scope of this search request. A `scope` that has empty
-   * `include_org_ids`, `include_project_ids` AND false
-   * `include_gcp_public_datasets` is considered invalid. Data Catalog will
-   * return an error in such a case.
+   * Required. The scope of this search request.
+   * The `scope` is invalid if `include_org_ids`, `include_project_ids` are
+   * empty AND `include_gcp_public_datasets` is set to `false`. In this case,
+   * the request returns an error.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SearchCatalogRequest.Scope scope = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,16 +45,15 @@ public interface SearchCatalogRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. The query string in search query syntax. An empty query string will result
-   * in all data assets (in the specified scope) that the user has access to.
-   * Query strings can be simple as "x" or more qualified as:
-   * * name:x
-   * * column:x
-   * * description:y
-   * Note: Query tokens need to have a minimum of 3 characters for substring
-   * matching to work correctly. See [Data Catalog Search
-   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-   * for more information.
+   * Optional. The query string with a minimum of 3 characters and specific syntax.
+   * For more information, see
+   * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+   * An empty query string returns all data assets (in the specified scope)
+   * that you have access to.
+   * A query string can be a simple `xyz` or qualified by predicates:
+   * * `name:x`
+   * * `column:y`
+   * * `description:z`
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -63,16 +62,15 @@ public interface SearchCatalogRequestOrBuilder extends
   java.lang.String getQuery();
   /**
    * <pre>
-   * Optional. The query string in search query syntax. An empty query string will result
-   * in all data assets (in the specified scope) that the user has access to.
-   * Query strings can be simple as "x" or more qualified as:
-   * * name:x
-   * * column:x
-   * * description:y
-   * Note: Query tokens need to have a minimum of 3 characters for substring
-   * matching to work correctly. See [Data Catalog Search
-   * Syntax](https://cloud.google.com/data-catalog/docs/how-to/search-reference)
-   * for more information.
+   * Optional. The query string with a minimum of 3 characters and specific syntax.
+   * For more information, see
+   * [Data Catalog search syntax](/data-catalog/docs/how-to/search-reference).
+   * An empty query string returns all data assets (in the specified scope)
+   * that you have access to.
+   * A query string can be a simple `xyz` or qualified by predicates:
+   * * `name:x`
+   * * `column:y`
+   * * `description:z`
    * </pre>
    *
    * <code>string query = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -83,8 +81,10 @@ public interface SearchCatalogRequestOrBuilder extends
 
   /**
    * <pre>
-   * Number of results in the search page. If &lt;=0 then defaults to 10. Max limit
-   * for page_size is 1000. Throws an invalid argument for page_size &gt; 1000.
+   * Number of results to return in a single search page.
+   * Can't be negative or 0, defaults to 10 in this case.
+   * The maximum number is 1000. If exceeded, throws an "invalid argument"
+   * exception.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -94,12 +94,12 @@ public interface SearchCatalogRequestOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * Optional. Pagination token that, if specified, returns the next page of search
+   * results. If empty, returns the first page.
+   * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+   * field of the response to a previous
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-   * call, and that the system should return the next page of data. If empty,
-   * the first page is returned.
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -108,12 +108,12 @@ public interface SearchCatalogRequestOrBuilder extends
   java.lang.String getPageToken();
   /**
    * <pre>
-   * Optional. Pagination token returned in an earlier
-   * [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token], which
-   * indicates that this is a continuation of a prior
+   * Optional. Pagination token that, if specified, returns the next page of search
+   * results. If empty, returns the first page.
+   * This token is returned in the [SearchCatalogResponse.next_page_token][google.cloud.datacatalog.v1.SearchCatalogResponse.next_page_token]
+   * field of the response to a previous
    * [SearchCatalogRequest][google.cloud.datacatalog.v1.DataCatalog.SearchCatalog]
-   * call, and that the system should return the next page of data. If empty,
-   * the first page is returned.
+   * call.
    * </pre>
    *
    * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -124,12 +124,11 @@ public interface SearchCatalogRequestOrBuilder extends
 
   /**
    * <pre>
-   * Specifies the ordering of results, currently supported case-sensitive
-   * choices are:
-   *   * `relevance`, only supports descending
-   *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-   *     specified
-   * If not specified, defaults to `relevance` descending.
+   * Specifies the order of results.
+   * Currently supported case-sensitive values are:
+   * * `relevance` that can only be descending
+   * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+   * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
    * <code>string order_by = 5;</code>
@@ -138,12 +137,11 @@ public interface SearchCatalogRequestOrBuilder extends
   java.lang.String getOrderBy();
   /**
    * <pre>
-   * Specifies the ordering of results, currently supported case-sensitive
-   * choices are:
-   *   * `relevance`, only supports descending
-   *   * `last_modified_timestamp [asc|desc]`, defaults to descending if not
-   *     specified
-   * If not specified, defaults to `relevance` descending.
+   * Specifies the order of results.
+   * Currently supported case-sensitive values are:
+   * * `relevance` that can only be descending
+   * * `last_modified_timestamp [asc|desc]` with descending (`desc`) as default
+   * If this parameter is omitted, it defaults to the descending `relevance`.
    * </pre>
    *
    * <code>string order_by = 5;</code>

@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -25,7 +25,7 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      *
@@ -40,11 +40,11 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\DataCatalog\V1\TagTemplate $tag_template
-     *           Required. The template to update. The "name" field must be set.
+     *           Required. The template to update. The `name` field must be set.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           Names of fields whose values to overwrite on a tag template. Currently,
      *           only `display_name` can be overwritten.
-     *           In general, if this parameter is absent or empty, all modifiable fields
+     *           If this parameter is absent or empty, all modifiable fields
      *           are overwritten. If such fields are non-required and omitted in the
      *           request body, their values are emptied.
      * }
@@ -55,7 +55,7 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\DataCatalog\V1\TagTemplate|null
@@ -76,7 +76,7 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\DataCatalog\V1\TagTemplate $var
@@ -93,7 +93,7 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      *
@@ -118,7 +118,7 @@ class UpdateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      *

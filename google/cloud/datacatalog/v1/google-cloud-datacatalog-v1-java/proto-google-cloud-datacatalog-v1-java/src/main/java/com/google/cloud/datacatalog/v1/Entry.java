@@ -5,14 +5,14 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * Entry Metadata.
- * A Data Catalog Entry resource represents another resource in Google
+ * Entry metadata.
+ * A Data Catalog entry represents another resource in Google
  * Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic) or
- * outside of Google Cloud Platform. Clients can use the `linked_resource` field
- * in the Entry resource to refer to the original resource ID of the source
+ * outside of it. You can use the `linked_resource` field
+ * in the entry resource to refer to the original resource ID of the source
  * system.
- * An Entry resource contains resource details, such as its schema. An Entry can
- * also be used to attach flexible metadata, such as a
+ * An entry resource contains resource details, for example, its schema.
+ * Additionally, you can attach flexible metadata to an entry in the form of a
  * [Tag][google.cloud.datacatalog.v1.Tag].
  * </pre>
  *
@@ -55,6 +55,7 @@ private static final long serialVersionUID = 0L;
     if (extensionRegistry == null) {
       throw new java.lang.NullPointerException();
     }
+    int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
@@ -149,6 +150,32 @@ private static final long serialVersionUID = 0L;
             typeSpecCase_ = 12;
             break;
           }
+          case 106: {
+            com.google.cloud.datacatalog.v1.UsageSignal.Builder subBuilder = null;
+            if (usageSignal_ != null) {
+              subBuilder = usageSignal_.toBuilder();
+            }
+            usageSignal_ = input.readMessage(com.google.cloud.datacatalog.v1.UsageSignal.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(usageSignal_);
+              usageSignal_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 114: {
+            if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+              labels_ = com.google.protobuf.MapField.newMapField(
+                  LabelsDefaultEntryHolder.defaultEntry);
+              mutable_bitField0_ |= 0x00000001;
+            }
+            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+            labels__ = input.readMessage(
+                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+            labels_.getMutableMap().put(
+                labels__.getKey(), labels__.getValue());
+            break;
+          }
           case 122: {
             com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec.Builder subBuilder = null;
             if (typeSpecCase_ == 15) {
@@ -208,6 +235,34 @@ private static final long serialVersionUID = 0L;
             specCase_ = 24;
             break;
           }
+          case 218: {
+            com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.Builder subBuilder = null;
+            if (specCase_ == 27) {
+              subBuilder = ((com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_).toBuilder();
+            }
+            spec_ =
+                input.readMessage(com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_);
+              spec_ = subBuilder.buildPartial();
+            }
+            specCase_ = 27;
+            break;
+          }
+          case 226: {
+            com.google.cloud.datacatalog.v1.RoutineSpec.Builder subBuilder = null;
+            if (specCase_ == 28) {
+              subBuilder = ((com.google.cloud.datacatalog.v1.RoutineSpec) spec_).toBuilder();
+            }
+            spec_ =
+                input.readMessage(com.google.cloud.datacatalog.v1.RoutineSpec.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.datacatalog.v1.RoutineSpec) spec_);
+              spec_ = subBuilder.buildPartial();
+            }
+            specCase_ = 28;
+            break;
+          }
           case 234: {
             java.lang.String s = input.readStringRequireUtf8();
 
@@ -238,6 +293,18 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.datacatalog.v1.Datacatalog.internal_static_google_cloud_datacatalog_v1_Entry_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 14:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -377,6 +444,8 @@ private static final long serialVersionUID = 0L;
       implements com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     DATABASE_TABLE_SPEC(24),
+    DATA_SOURCE_CONNECTION_SPEC(27),
+    ROUTINE_SPEC(28),
     SPEC_NOT_SET(0);
     private final int value;
     private SpecCase(int value) {
@@ -395,6 +464,8 @@ private static final long serialVersionUID = 0L;
     public static SpecCase forNumber(int value) {
       switch (value) {
         case 24: return DATABASE_TABLE_SPEC;
+        case 27: return DATA_SOURCE_CONNECTION_SPEC;
+        case 28: return ROUTINE_SPEC;
         case 0: return SPEC_NOT_SET;
         default: return null;
       }
@@ -415,8 +486,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The resource name of an entry in URL format.
-   * Example:
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
    * Note: The entry itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -440,8 +509,6 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The resource name of an entry in URL format.
-   * Example:
-   * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
    * Note: The entry itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -469,12 +536,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The resource this metadata entry refers to.
-   * For Google Cloud Platform resources, `linked_resource` is the [full name of
-   * the
-   * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   * For Google Cloud Platform resources, `linked_resource` is the
+   * [Full Resource Name]
+   * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-   * Output only when entry is one of the types in the `EntryType` enum.
+   * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+   * Output only when the entry is one of the types in the `EntryType` enum.
    * For entries with a `user_specified_type`, this field is optional and
    * defaults to an empty string.
    * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -502,12 +569,12 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The resource this metadata entry refers to.
-   * For Google Cloud Platform resources, `linked_resource` is the [full name of
-   * the
-   * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   * For Google Cloud Platform resources, `linked_resource` is the
+   * [Full Resource Name]
+   * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
    * For example, the `linked_resource` for a table resource from BigQuery is:
-   * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-   * Output only when entry is one of the types in the `EntryType` enum.
+   * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+   * Output only when the entry is one of the types in the `EntryType` enum.
    * For entries with a `user_specified_type`, this field is optional and
    * defaults to an empty string.
    * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -547,7 +614,7 @@ private static final long serialVersionUID = 0L;
    * * For regionalized resources:
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
    * Example for a DPMS table:
-   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
    * <code>string fully_qualified_name = 29;</code>
@@ -577,7 +644,7 @@ private static final long serialVersionUID = 0L;
    * * For regionalized resources:
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
    * Example for a DPMS table:
-   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
    * <code>string fully_qualified_name = 29;</code>
@@ -602,7 +669,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of the entry.
-   * Only used for Entries with types in the EntryType enum.
+   * Only used for entries with types listed in the `EntryType` enum.
+   * Currently, only `FILESET` enum value is allowed. All other entries
+   * created in Data Catalog must use the `user_specified_type`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -614,7 +683,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of the entry.
-   * Only used for Entries with types in the EntryType enum.
+   * Only used for entries with types listed in the `EntryType` enum.
+   * Currently, only `FILESET` enum value is allowed. All other entries
+   * created in Data Catalog must use the `user_specified_type`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -629,7 +700,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The type of the entry.
-   * Only used for Entries with types in the EntryType enum.
+   * Only used for entries with types listed in the `EntryType` enum.
+   * Currently, only `FILESET` enum value is allowed. All other entries
+   * created in Data Catalog must use the `user_specified_type`.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -648,15 +721,16 @@ private static final long serialVersionUID = 0L;
   public static final int USER_SPECIFIED_TYPE_FIELD_NUMBER = 16;
   /**
    * <pre>
-   * Entry type if it does not fit any of the input-allowed values listed in
-   * `EntryType` enum above. When creating an entry, users should check the
-   * enum values first, if nothing matches the entry to be created, then
-   * provide a custom value, for example "my_special_type".
-   * `user_specified_type` strings must begin with a letter or underscore and
-   * can only contain letters, numbers, and underscores; are case insensitive;
-   * must be at least 1 character and at most 64 characters long.
-   * Currently, only FILESET enum value is allowed. All other entries created
-   * through Data Catalog must use `user_specified_type`.
+   * Custom entry type that doesn't match any of the values allowed for input
+   * and listed in the `EntryType` enum.
+   * When creating an entry, first check the type values in the enum.
+   * If there are no appropriate types for the new entry,
+   * provide a custom value, for example, `my_special_type`.
+   * The `user_specified_type` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_type = 16;</code>
@@ -667,15 +741,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Entry type if it does not fit any of the input-allowed values listed in
-   * `EntryType` enum above. When creating an entry, users should check the
-   * enum values first, if nothing matches the entry to be created, then
-   * provide a custom value, for example "my_special_type".
-   * `user_specified_type` strings must begin with a letter or underscore and
-   * can only contain letters, numbers, and underscores; are case insensitive;
-   * must be at least 1 character and at most 64 characters long.
-   * Currently, only FILESET enum value is allowed. All other entries created
-   * through Data Catalog must use `user_specified_type`.
+   * Custom entry type that doesn't match any of the values allowed for input
+   * and listed in the `EntryType` enum.
+   * When creating an entry, first check the type values in the enum.
+   * If there are no appropriate types for the new entry,
+   * provide a custom value, for example, `my_special_type`.
+   * The `user_specified_type` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_type = 16;</code>
@@ -700,15 +775,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Entry type if it does not fit any of the input-allowed values listed in
-   * `EntryType` enum above. When creating an entry, users should check the
-   * enum values first, if nothing matches the entry to be created, then
-   * provide a custom value, for example "my_special_type".
-   * `user_specified_type` strings must begin with a letter or underscore and
-   * can only contain letters, numbers, and underscores; are case insensitive;
-   * must be at least 1 character and at most 64 characters long.
-   * Currently, only FILESET enum value is allowed. All other entries created
-   * through Data Catalog must use `user_specified_type`.
+   * Custom entry type that doesn't match any of the values allowed for input
+   * and listed in the `EntryType` enum.
+   * When creating an entry, first check the type values in the enum.
+   * If there are no appropriate types for the new entry,
+   * provide a custom value, for example, `my_special_type`.
+   * The `user_specified_type` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_type = 16;</code>
@@ -736,8 +812,8 @@ private static final long serialVersionUID = 0L;
   public static final int INTEGRATED_SYSTEM_FIELD_NUMBER = 17;
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. Indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -748,8 +824,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. Indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -763,8 +839,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. This field indicates the entry's source system that Data Catalog
-   * integrates with, such as BigQuery or Pub/Sub.
+   * Output only. Indicates the entry's source system that Data Catalog
+   * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -783,11 +859,13 @@ private static final long serialVersionUID = 0L;
   public static final int USER_SPECIFIED_SYSTEM_FIELD_NUMBER = 18;
   /**
    * <pre>
-   * This field indicates the entry's source system that Data Catalog does not
-   * integrate with. `user_specified_system` strings must begin with a letter
-   * or underscore and can only contain letters, numbers, and underscores; are
-   * case insensitive; must be at least 1 character and at most 64 characters
-   * long.
+   * Indicates the entry's source system that Data Catalog doesn't
+   * automatically integrate with.
+   * The `user_specified_system` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_system = 18;</code>
@@ -798,11 +876,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This field indicates the entry's source system that Data Catalog does not
-   * integrate with. `user_specified_system` strings must begin with a letter
-   * or underscore and can only contain letters, numbers, and underscores; are
-   * case insensitive; must be at least 1 character and at most 64 characters
-   * long.
+   * Indicates the entry's source system that Data Catalog doesn't
+   * automatically integrate with.
+   * The `user_specified_system` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_system = 18;</code>
@@ -827,11 +907,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * This field indicates the entry's source system that Data Catalog does not
-   * integrate with. `user_specified_system` strings must begin with a letter
-   * or underscore and can only contain letters, numbers, and underscores; are
-   * case insensitive; must be at least 1 character and at most 64 characters
-   * long.
+   * Indicates the entry's source system that Data Catalog doesn't
+   * automatically integrate with.
+   * The `user_specified_system` string has the following limitations:
+   * * Is case insensitive.
+   * * Must begin with a letter or underscore.
+   * * Can only contain letters, numbers, and underscores.
+   * * Must be at least 1 character and at most 64 characters long.
    * </pre>
    *
    * <code>string user_specified_system = 18;</code>
@@ -859,8 +941,8 @@ private static final long serialVersionUID = 0L;
   public static final int GCS_FILESET_SPEC_FIELD_NUMBER = 6;
   /**
    * <pre>
-   * Specification that applies to a Cloud Storage fileset. This is only valid
-   * on entries of type FILESET.
+   * Specification that applies to a Cloud Storage fileset. Valid only
+   * for entries with the `FILESET` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -872,8 +954,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification that applies to a Cloud Storage fileset. This is only valid
-   * on entries of type FILESET.
+   * Specification that applies to a Cloud Storage fileset. Valid only
+   * for entries with the `FILESET` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -888,8 +970,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification that applies to a Cloud Storage fileset. This is only valid
-   * on entries of type FILESET.
+   * Specification that applies to a Cloud Storage fileset. Valid only
+   * for entries with the `FILESET` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -905,8 +987,8 @@ private static final long serialVersionUID = 0L;
   public static final int BIGQUERY_TABLE_SPEC_FIELD_NUMBER = 12;
   /**
    * <pre>
-   * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type `TABLE`.
+   * Specification that applies to a BigQuery table. Valid only for
+   * entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -918,8 +1000,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type `TABLE`.
+   * Specification that applies to a BigQuery table. Valid only for
+   * entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -934,8 +1016,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification that applies to a BigQuery table. This is only valid on
-   * entries of type `TABLE`.
+   * Specification that applies to a BigQuery table. Valid only for
+   * entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -951,9 +1033,10 @@ private static final long serialVersionUID = 0L;
   public static final int BIGQUERY_DATE_SHARDED_SPEC_FIELD_NUMBER = 15;
   /**
    * <pre>
-   * Specification for a group of BigQuery tables with name pattern
-   * `[prefix]YYYYMMDD`. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+   * name pattern.
+   * For more information, see [Introduction to partitioned tables]
+   * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -965,9 +1048,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification for a group of BigQuery tables with name pattern
-   * `[prefix]YYYYMMDD`. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+   * name pattern.
+   * For more information, see [Introduction to partitioned tables]
+   * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -982,9 +1066,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification for a group of BigQuery tables with name pattern
-   * `[prefix]YYYYMMDD`. Context:
-   * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+   * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+   * name pattern.
+   * For more information, see [Introduction to partitioned tables]
+   * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -1000,8 +1085,8 @@ private static final long serialVersionUID = 0L;
   public static final int DATABASE_TABLE_SPEC_FIELD_NUMBER = 24;
   /**
    * <pre>
-   * Specification that applies to a table resource. Only valid
-   * for entries of `TABLE` type.
+   * Specification that applies to a table resource. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -1013,8 +1098,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification that applies to a table resource. Only valid
-   * for entries of `TABLE` type.
+   * Specification that applies to a table resource. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -1029,8 +1114,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specification that applies to a table resource. Only valid
-   * for entries of `TABLE` type.
+   * Specification that applies to a table resource. Valid only
+   * for entries with the `TABLE` type.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -1041,6 +1126,98 @@ private static final long serialVersionUID = 0L;
        return (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_;
     }
     return com.google.cloud.datacatalog.v1.DatabaseTableSpec.getDefaultInstance();
+  }
+
+  public static final int DATA_SOURCE_CONNECTION_SPEC_FIELD_NUMBER = 27;
+  /**
+   * <pre>
+   * Specification that applies to a data source connection. Valid only
+   * for entries with the `DATA_SOURCE_CONNECTION` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+   * @return Whether the dataSourceConnectionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataSourceConnectionSpec() {
+    return specCase_ == 27;
+  }
+  /**
+   * <pre>
+   * Specification that applies to a data source connection. Valid only
+   * for entries with the `DATA_SOURCE_CONNECTION` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+   * @return The dataSourceConnectionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DataSourceConnectionSpec getDataSourceConnectionSpec() {
+    if (specCase_ == 27) {
+       return (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Specification that applies to a data source connection. Valid only
+   * for entries with the `DATA_SOURCE_CONNECTION` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DataSourceConnectionSpecOrBuilder getDataSourceConnectionSpecOrBuilder() {
+    if (specCase_ == 27) {
+       return (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.getDefaultInstance();
+  }
+
+  public static final int ROUTINE_SPEC_FIELD_NUMBER = 28;
+  /**
+   * <pre>
+   * Specification that applies to a user-defined function or procedure. Valid
+   * only for entries with the `ROUTINE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+   * @return Whether the routineSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasRoutineSpec() {
+    return specCase_ == 28;
+  }
+  /**
+   * <pre>
+   * Specification that applies to a user-defined function or procedure. Valid
+   * only for entries with the `ROUTINE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+   * @return The routineSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.RoutineSpec getRoutineSpec() {
+    if (specCase_ == 28) {
+       return (com.google.cloud.datacatalog.v1.RoutineSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Specification that applies to a user-defined function or procedure. Valid
+   * only for entries with the `ROUTINE` type.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.RoutineSpecOrBuilder getRoutineSpecOrBuilder() {
+    if (specCase_ == 28) {
+       return (com.google.cloud.datacatalog.v1.RoutineSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance();
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
@@ -1197,10 +1374,11 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.datacatalog.v1.SystemTimestamps sourceSystemTimestamps_;
   /**
    * <pre>
-   * Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Timestamps from the underlying resource, not from the Data Catalog
+   * entry.
+   * Output only when the entry has a type listed in the `EntryType` enum.
+   * For entries with `user_specified_type`, this field is optional and defaults
+   * to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -1212,10 +1390,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Timestamps from the underlying resource, not from the Data Catalog
+   * entry.
+   * Output only when the entry has a type listed in the `EntryType` enum.
+   * For entries with `user_specified_type`, this field is optional and defaults
+   * to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -1227,10 +1406,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Timestamps about the underlying resource, not about this Data Catalog
-   * entry. Output only when Entry is of type in the EntryType enum. For entries
-   * with user_specified_type, this field is optional and defaults to an empty
-   * timestamp.
+   * Timestamps from the underlying resource, not from the Data Catalog
+   * entry.
+   * Output only when the entry has a type listed in the `EntryType` enum.
+   * For entries with `user_specified_type`, this field is optional and defaults
+   * to an empty timestamp.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -1238,6 +1418,153 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder getSourceSystemTimestampsOrBuilder() {
     return getSourceSystemTimestamps();
+  }
+
+  public static final int USAGE_SIGNAL_FIELD_NUMBER = 13;
+  private com.google.cloud.datacatalog.v1.UsageSignal usageSignal_;
+  /**
+   * <pre>
+   * Output only. Resource usage statistics.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the usageSignal field is set.
+   */
+  @java.lang.Override
+  public boolean hasUsageSignal() {
+    return usageSignal_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. Resource usage statistics.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The usageSignal.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.UsageSignal getUsageSignal() {
+    return usageSignal_ == null ? com.google.cloud.datacatalog.v1.UsageSignal.getDefaultInstance() : usageSignal_;
+  }
+  /**
+   * <pre>
+   * Output only. Resource usage statistics.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.UsageSignalOrBuilder getUsageSignalOrBuilder() {
+    return getUsageSignal();
+  }
+
+  public static final int LABELS_FIELD_NUMBER = 14;
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.google.cloud.datacatalog.v1.Datacatalog.internal_static_google_cloud_datacatalog_v1_Entry_LabelsEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> labels_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+
+  @java.lang.Override
+  public boolean containsLabels(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getLabelsMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+  @java.lang.Override
+
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      java.lang.String defaultValue) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * Cloud labels attached to the entry.
+   * In Data Catalog, you can create and modify labels attached only to custom
+   * entries. Synced entries have unmodifiable labels that come from the source
+   * system.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 14;</code>
+   */
+  @java.lang.Override
+
+  public java.lang.String getLabelsOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new java.lang.NullPointerException(); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
   }
 
   public static final int DATA_SOURCE_FIELD_NUMBER = 20;
@@ -1319,6 +1646,15 @@ private static final long serialVersionUID = 0L;
     if (typeSpecCase_ == 12) {
       output.writeMessage(12, (com.google.cloud.datacatalog.v1.BigQueryTableSpec) typeSpec_);
     }
+    if (usageSignal_ != null) {
+      output.writeMessage(13, getUsageSignal());
+    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetLabels(),
+        LabelsDefaultEntryHolder.defaultEntry,
+        14);
     if (typeSpecCase_ == 15) {
       output.writeMessage(15, (com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec) typeSpec_);
     }
@@ -1336,6 +1672,12 @@ private static final long serialVersionUID = 0L;
     }
     if (specCase_ == 24) {
       output.writeMessage(24, (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_);
+    }
+    if (specCase_ == 27) {
+      output.writeMessage(27, (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_);
+    }
+    if (specCase_ == 28) {
+      output.writeMessage(28, (com.google.cloud.datacatalog.v1.RoutineSpec) spec_);
     }
     if (!getFullyQualifiedNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, fullyQualifiedName_);
@@ -1381,6 +1723,20 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, (com.google.cloud.datacatalog.v1.BigQueryTableSpec) typeSpec_);
     }
+    if (usageSignal_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getUsageSignal());
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, labels__);
+    }
     if (typeSpecCase_ == 15) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(15, (com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec) typeSpec_);
@@ -1402,6 +1758,14 @@ private static final long serialVersionUID = 0L;
     if (specCase_ == 24) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(24, (com.google.cloud.datacatalog.v1.DatabaseTableSpec) spec_);
+    }
+    if (specCase_ == 27) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(27, (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_);
+    }
+    if (specCase_ == 28) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(28, (com.google.cloud.datacatalog.v1.RoutineSpec) spec_);
     }
     if (!getFullyQualifiedNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, fullyQualifiedName_);
@@ -1441,6 +1805,13 @@ private static final long serialVersionUID = 0L;
       if (!getSourceSystemTimestamps()
           .equals(other.getSourceSystemTimestamps())) return false;
     }
+    if (hasUsageSignal() != other.hasUsageSignal()) return false;
+    if (hasUsageSignal()) {
+      if (!getUsageSignal()
+          .equals(other.getUsageSignal())) return false;
+    }
+    if (!internalGetLabels().equals(
+        other.internalGetLabels())) return false;
     if (hasDataSource() != other.hasDataSource()) return false;
     if (hasDataSource()) {
       if (!getDataSource()
@@ -1495,6 +1866,14 @@ private static final long serialVersionUID = 0L;
         if (!getDatabaseTableSpec()
             .equals(other.getDatabaseTableSpec())) return false;
         break;
+      case 27:
+        if (!getDataSourceConnectionSpec()
+            .equals(other.getDataSourceConnectionSpec())) return false;
+        break;
+      case 28:
+        if (!getRoutineSpec()
+            .equals(other.getRoutineSpec())) return false;
+        break;
       case 0:
       default:
     }
@@ -1526,6 +1905,14 @@ private static final long serialVersionUID = 0L;
     if (hasSourceSystemTimestamps()) {
       hash = (37 * hash) + SOURCE_SYSTEM_TIMESTAMPS_FIELD_NUMBER;
       hash = (53 * hash) + getSourceSystemTimestamps().hashCode();
+    }
+    if (hasUsageSignal()) {
+      hash = (37 * hash) + USAGE_SIGNAL_FIELD_NUMBER;
+      hash = (53 * hash) + getUsageSignal().hashCode();
+    }
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
     }
     if (hasDataSource()) {
       hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
@@ -1575,6 +1962,14 @@ private static final long serialVersionUID = 0L;
       case 24:
         hash = (37 * hash) + DATABASE_TABLE_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getDatabaseTableSpec().hashCode();
+        break;
+      case 27:
+        hash = (37 * hash) + DATA_SOURCE_CONNECTION_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getDataSourceConnectionSpec().hashCode();
+        break;
+      case 28:
+        hash = (37 * hash) + ROUTINE_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getRoutineSpec().hashCode();
         break;
       case 0:
       default:
@@ -1676,14 +2071,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Entry Metadata.
-   * A Data Catalog Entry resource represents another resource in Google
+   * Entry metadata.
+   * A Data Catalog entry represents another resource in Google
    * Cloud Platform (such as a BigQuery dataset or a Pub/Sub topic) or
-   * outside of Google Cloud Platform. Clients can use the `linked_resource` field
-   * in the Entry resource to refer to the original resource ID of the source
+   * outside of it. You can use the `linked_resource` field
+   * in the entry resource to refer to the original resource ID of the source
    * system.
-   * An Entry resource contains resource details, such as its schema. An Entry can
-   * also be used to attach flexible metadata, such as a
+   * An entry resource contains resource details, for example, its schema.
+   * Additionally, you can attach flexible metadata to an entry in the form of a
    * [Tag][google.cloud.datacatalog.v1.Tag].
    * </pre>
    *
@@ -1698,6 +2093,28 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.datacatalog.v1.Datacatalog.internal_static_google_cloud_datacatalog_v1_Entry_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 14:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 14:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1746,6 +2163,13 @@ private static final long serialVersionUID = 0L;
         sourceSystemTimestamps_ = null;
         sourceSystemTimestampsBuilder_ = null;
       }
+      if (usageSignalBuilder_ == null) {
+        usageSignal_ = null;
+      } else {
+        usageSignal_ = null;
+        usageSignalBuilder_ = null;
+      }
+      internalGetMutableLabels().clear();
       if (dataSourceBuilder_ == null) {
         dataSource_ = null;
       } else {
@@ -1786,6 +2210,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.datacatalog.v1.Entry buildPartial() {
       com.google.cloud.datacatalog.v1.Entry result = new com.google.cloud.datacatalog.v1.Entry(this);
+      int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.linkedResource_ = linkedResource_;
       result.fullyQualifiedName_ = fullyQualifiedName_;
@@ -1829,6 +2254,20 @@ private static final long serialVersionUID = 0L;
           result.spec_ = databaseTableSpecBuilder_.build();
         }
       }
+      if (specCase_ == 27) {
+        if (dataSourceConnectionSpecBuilder_ == null) {
+          result.spec_ = spec_;
+        } else {
+          result.spec_ = dataSourceConnectionSpecBuilder_.build();
+        }
+      }
+      if (specCase_ == 28) {
+        if (routineSpecBuilder_ == null) {
+          result.spec_ = spec_;
+        } else {
+          result.spec_ = routineSpecBuilder_.build();
+        }
+      }
       result.displayName_ = displayName_;
       result.description_ = description_;
       if (schemaBuilder_ == null) {
@@ -1841,6 +2280,13 @@ private static final long serialVersionUID = 0L;
       } else {
         result.sourceSystemTimestamps_ = sourceSystemTimestampsBuilder_.build();
       }
+      if (usageSignalBuilder_ == null) {
+        result.usageSignal_ = usageSignal_;
+      } else {
+        result.usageSignal_ = usageSignalBuilder_.build();
+      }
+      result.labels_ = internalGetLabels();
+      result.labels_.makeImmutable();
       if (dataSourceBuilder_ == null) {
         result.dataSource_ = dataSource_;
       } else {
@@ -1924,6 +2370,11 @@ private static final long serialVersionUID = 0L;
       if (other.hasSourceSystemTimestamps()) {
         mergeSourceSystemTimestamps(other.getSourceSystemTimestamps());
       }
+      if (other.hasUsageSignal()) {
+        mergeUsageSignal(other.getUsageSignal());
+      }
+      internalGetMutableLabels().mergeFrom(
+          other.internalGetLabels());
       if (other.hasDataSource()) {
         mergeDataSource(other.getDataSource());
       }
@@ -1977,6 +2428,14 @@ private static final long serialVersionUID = 0L;
       switch (other.getSpecCase()) {
         case DATABASE_TABLE_SPEC: {
           mergeDatabaseTableSpec(other.getDatabaseTableSpec());
+          break;
+        }
+        case DATA_SOURCE_CONNECTION_SPEC: {
+          mergeDataSourceConnectionSpec(other.getDataSourceConnectionSpec());
+          break;
+        }
+        case ROUTINE_SPEC: {
+          mergeRoutineSpec(other.getRoutineSpec());
           break;
         }
         case SPEC_NOT_SET: {
@@ -2071,13 +2530,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
      * <pre>
      * Output only. The resource name of an entry in URL format.
-     * Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -2100,8 +2558,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of an entry in URL format.
-     * Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -2125,8 +2581,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of an entry in URL format.
-     * Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -2148,8 +2602,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of an entry in URL format.
-     * Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -2166,8 +2618,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The resource name of an entry in URL format.
-     * Example:
-     * `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}`
      * Note: The entry itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -2192,12 +2642,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource this metadata entry refers to.
-     * For Google Cloud Platform resources, `linked_resource` is the [full name of
-     * the
-     * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * For Google Cloud Platform resources, `linked_resource` is the
+     * [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-     * Output only when entry is one of the types in the `EntryType` enum.
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     * Output only when the entry is one of the types in the `EntryType` enum.
      * For entries with a `user_specified_type`, this field is optional and
      * defaults to an empty string.
      * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2224,12 +2674,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource this metadata entry refers to.
-     * For Google Cloud Platform resources, `linked_resource` is the [full name of
-     * the
-     * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * For Google Cloud Platform resources, `linked_resource` is the
+     * [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-     * Output only when entry is one of the types in the `EntryType` enum.
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     * Output only when the entry is one of the types in the `EntryType` enum.
      * For entries with a `user_specified_type`, this field is optional and
      * defaults to an empty string.
      * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2257,12 +2707,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource this metadata entry refers to.
-     * For Google Cloud Platform resources, `linked_resource` is the [full name of
-     * the
-     * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * For Google Cloud Platform resources, `linked_resource` is the
+     * [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-     * Output only when entry is one of the types in the `EntryType` enum.
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     * Output only when the entry is one of the types in the `EntryType` enum.
      * For entries with a `user_specified_type`, this field is optional and
      * defaults to an empty string.
      * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2288,12 +2738,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource this metadata entry refers to.
-     * For Google Cloud Platform resources, `linked_resource` is the [full name of
-     * the
-     * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * For Google Cloud Platform resources, `linked_resource` is the
+     * [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-     * Output only when entry is one of the types in the `EntryType` enum.
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     * Output only when the entry is one of the types in the `EntryType` enum.
      * For entries with a `user_specified_type`, this field is optional and
      * defaults to an empty string.
      * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2314,12 +2764,12 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The resource this metadata entry refers to.
-     * For Google Cloud Platform resources, `linked_resource` is the [full name of
-     * the
-     * resource](https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * For Google Cloud Platform resources, `linked_resource` is the
+     * [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
      * For example, the `linked_resource` for a table resource from BigQuery is:
-     * `//bigquery.googleapis.com/projects/{projectId}/datasets/{datasetId}/tables/{tableId}`
-     * Output only when entry is one of the types in the `EntryType` enum.
+     * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     * Output only when the entry is one of the types in the `EntryType` enum.
      * For entries with a `user_specified_type`, this field is optional and
      * defaults to an empty string.
      * The resource string must contain only letters (a-z, A-Z), numbers (0-9),
@@ -2356,7 +2806,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 29;</code>
@@ -2385,7 +2835,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 29;</code>
@@ -2415,7 +2865,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 29;</code>
@@ -2443,7 +2893,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 29;</code>
@@ -2466,7 +2916,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 29;</code>
@@ -2488,7 +2938,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the entry.
-     * Only used for Entries with types in the EntryType enum.
+     * Only used for entries with types listed in the `EntryType` enum.
+     * Currently, only `FILESET` enum value is allowed. All other entries
+     * created in Data Catalog must use the `user_specified_type`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -2501,7 +2953,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the entry.
-     * Only used for Entries with types in the EntryType enum.
+     * Only used for entries with types listed in the `EntryType` enum.
+     * Currently, only `FILESET` enum value is allowed. All other entries
+     * created in Data Catalog must use the `user_specified_type`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -2517,7 +2971,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the entry.
-     * Only used for Entries with types in the EntryType enum.
+     * Only used for entries with types listed in the `EntryType` enum.
+     * Currently, only `FILESET` enum value is allowed. All other entries
+     * created in Data Catalog must use the `user_specified_type`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -2533,7 +2989,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the entry.
-     * Only used for Entries with types in the EntryType enum.
+     * Only used for entries with types listed in the `EntryType` enum.
+     * Currently, only `FILESET` enum value is allowed. All other entries
+     * created in Data Catalog must use the `user_specified_type`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -2552,7 +3010,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the entry.
-     * Only used for Entries with types in the EntryType enum.
+     * Only used for entries with types listed in the `EntryType` enum.
+     * Currently, only `FILESET` enum value is allowed. All other entries
+     * created in Data Catalog must use the `user_specified_type`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -2571,7 +3031,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the entry.
-     * Only used for Entries with types in the EntryType enum.
+     * Only used for entries with types listed in the `EntryType` enum.
+     * Currently, only `FILESET` enum value is allowed. All other entries
+     * created in Data Catalog must use the `user_specified_type`.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.EntryType type = 2;</code>
@@ -2588,15 +3050,16 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Entry type if it does not fit any of the input-allowed values listed in
-     * `EntryType` enum above. When creating an entry, users should check the
-     * enum values first, if nothing matches the entry to be created, then
-     * provide a custom value, for example "my_special_type".
-     * `user_specified_type` strings must begin with a letter or underscore and
-     * can only contain letters, numbers, and underscores; are case insensitive;
-     * must be at least 1 character and at most 64 characters long.
-     * Currently, only FILESET enum value is allowed. All other entries created
-     * through Data Catalog must use `user_specified_type`.
+     * Custom entry type that doesn't match any of the values allowed for input
+     * and listed in the `EntryType` enum.
+     * When creating an entry, first check the type values in the enum.
+     * If there are no appropriate types for the new entry,
+     * provide a custom value, for example, `my_special_type`.
+     * The `user_specified_type` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_type = 16;</code>
@@ -2608,15 +3071,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry type if it does not fit any of the input-allowed values listed in
-     * `EntryType` enum above. When creating an entry, users should check the
-     * enum values first, if nothing matches the entry to be created, then
-     * provide a custom value, for example "my_special_type".
-     * `user_specified_type` strings must begin with a letter or underscore and
-     * can only contain letters, numbers, and underscores; are case insensitive;
-     * must be at least 1 character and at most 64 characters long.
-     * Currently, only FILESET enum value is allowed. All other entries created
-     * through Data Catalog must use `user_specified_type`.
+     * Custom entry type that doesn't match any of the values allowed for input
+     * and listed in the `EntryType` enum.
+     * When creating an entry, first check the type values in the enum.
+     * If there are no appropriate types for the new entry,
+     * provide a custom value, for example, `my_special_type`.
+     * The `user_specified_type` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_type = 16;</code>
@@ -2642,15 +3106,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry type if it does not fit any of the input-allowed values listed in
-     * `EntryType` enum above. When creating an entry, users should check the
-     * enum values first, if nothing matches the entry to be created, then
-     * provide a custom value, for example "my_special_type".
-     * `user_specified_type` strings must begin with a letter or underscore and
-     * can only contain letters, numbers, and underscores; are case insensitive;
-     * must be at least 1 character and at most 64 characters long.
-     * Currently, only FILESET enum value is allowed. All other entries created
-     * through Data Catalog must use `user_specified_type`.
+     * Custom entry type that doesn't match any of the values allowed for input
+     * and listed in the `EntryType` enum.
+     * When creating an entry, first check the type values in the enum.
+     * If there are no appropriate types for the new entry,
+     * provide a custom value, for example, `my_special_type`.
+     * The `user_specified_type` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_type = 16;</code>
@@ -2677,15 +3142,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry type if it does not fit any of the input-allowed values listed in
-     * `EntryType` enum above. When creating an entry, users should check the
-     * enum values first, if nothing matches the entry to be created, then
-     * provide a custom value, for example "my_special_type".
-     * `user_specified_type` strings must begin with a letter or underscore and
-     * can only contain letters, numbers, and underscores; are case insensitive;
-     * must be at least 1 character and at most 64 characters long.
-     * Currently, only FILESET enum value is allowed. All other entries created
-     * through Data Catalog must use `user_specified_type`.
+     * Custom entry type that doesn't match any of the values allowed for input
+     * and listed in the `EntryType` enum.
+     * When creating an entry, first check the type values in the enum.
+     * If there are no appropriate types for the new entry,
+     * provide a custom value, for example, `my_special_type`.
+     * The `user_specified_type` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_type = 16;</code>
@@ -2704,15 +3170,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry type if it does not fit any of the input-allowed values listed in
-     * `EntryType` enum above. When creating an entry, users should check the
-     * enum values first, if nothing matches the entry to be created, then
-     * provide a custom value, for example "my_special_type".
-     * `user_specified_type` strings must begin with a letter or underscore and
-     * can only contain letters, numbers, and underscores; are case insensitive;
-     * must be at least 1 character and at most 64 characters long.
-     * Currently, only FILESET enum value is allowed. All other entries created
-     * through Data Catalog must use `user_specified_type`.
+     * Custom entry type that doesn't match any of the values allowed for input
+     * and listed in the `EntryType` enum.
+     * When creating an entry, first check the type values in the enum.
+     * If there are no appropriate types for the new entry,
+     * provide a custom value, for example, `my_special_type`.
+     * The `user_specified_type` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_type = 16;</code>
@@ -2728,15 +3195,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Entry type if it does not fit any of the input-allowed values listed in
-     * `EntryType` enum above. When creating an entry, users should check the
-     * enum values first, if nothing matches the entry to be created, then
-     * provide a custom value, for example "my_special_type".
-     * `user_specified_type` strings must begin with a letter or underscore and
-     * can only contain letters, numbers, and underscores; are case insensitive;
-     * must be at least 1 character and at most 64 characters long.
-     * Currently, only FILESET enum value is allowed. All other entries created
-     * through Data Catalog must use `user_specified_type`.
+     * Custom entry type that doesn't match any of the values allowed for input
+     * and listed in the `EntryType` enum.
+     * When creating an entry, first check the type values in the enum.
+     * If there are no appropriate types for the new entry,
+     * provide a custom value, for example, `my_special_type`.
+     * The `user_specified_type` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_type = 16;</code>
@@ -2757,8 +3225,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. Indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2770,8 +3238,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. Indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2786,8 +3254,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. Indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2802,8 +3270,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. Indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2821,8 +3289,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. Indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2840,8 +3308,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. This field indicates the entry's source system that Data Catalog
-     * integrates with, such as BigQuery or Pub/Sub.
+     * Output only. Indicates the entry's source system that Data Catalog
+     * integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.IntegratedSystem integrated_system = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2858,11 +3326,13 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * This field indicates the entry's source system that Data Catalog does not
-     * integrate with. `user_specified_system` strings must begin with a letter
-     * or underscore and can only contain letters, numbers, and underscores; are
-     * case insensitive; must be at least 1 character and at most 64 characters
-     * long.
+     * Indicates the entry's source system that Data Catalog doesn't
+     * automatically integrate with.
+     * The `user_specified_system` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_system = 18;</code>
@@ -2874,11 +3344,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This field indicates the entry's source system that Data Catalog does not
-     * integrate with. `user_specified_system` strings must begin with a letter
-     * or underscore and can only contain letters, numbers, and underscores; are
-     * case insensitive; must be at least 1 character and at most 64 characters
-     * long.
+     * Indicates the entry's source system that Data Catalog doesn't
+     * automatically integrate with.
+     * The `user_specified_system` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_system = 18;</code>
@@ -2904,11 +3376,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This field indicates the entry's source system that Data Catalog does not
-     * integrate with. `user_specified_system` strings must begin with a letter
-     * or underscore and can only contain letters, numbers, and underscores; are
-     * case insensitive; must be at least 1 character and at most 64 characters
-     * long.
+     * Indicates the entry's source system that Data Catalog doesn't
+     * automatically integrate with.
+     * The `user_specified_system` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_system = 18;</code>
@@ -2935,11 +3409,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This field indicates the entry's source system that Data Catalog does not
-     * integrate with. `user_specified_system` strings must begin with a letter
-     * or underscore and can only contain letters, numbers, and underscores; are
-     * case insensitive; must be at least 1 character and at most 64 characters
-     * long.
+     * Indicates the entry's source system that Data Catalog doesn't
+     * automatically integrate with.
+     * The `user_specified_system` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_system = 18;</code>
@@ -2958,11 +3434,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This field indicates the entry's source system that Data Catalog does not
-     * integrate with. `user_specified_system` strings must begin with a letter
-     * or underscore and can only contain letters, numbers, and underscores; are
-     * case insensitive; must be at least 1 character and at most 64 characters
-     * long.
+     * Indicates the entry's source system that Data Catalog doesn't
+     * automatically integrate with.
+     * The `user_specified_system` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_system = 18;</code>
@@ -2978,11 +3456,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * This field indicates the entry's source system that Data Catalog does not
-     * integrate with. `user_specified_system` strings must begin with a letter
-     * or underscore and can only contain letters, numbers, and underscores; are
-     * case insensitive; must be at least 1 character and at most 64 characters
-     * long.
+     * Indicates the entry's source system that Data Catalog doesn't
+     * automatically integrate with.
+     * The `user_specified_system` string has the following limitations:
+     * * Is case insensitive.
+     * * Must begin with a letter or underscore.
+     * * Can only contain letters, numbers, and underscores.
+     * * Must be at least 1 character and at most 64 characters long.
      * </pre>
      *
      * <code>string user_specified_system = 18;</code>
@@ -3005,8 +3485,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.GcsFilesetSpec, com.google.cloud.datacatalog.v1.GcsFilesetSpec.Builder, com.google.cloud.datacatalog.v1.GcsFilesetSpecOrBuilder> gcsFilesetSpecBuilder_;
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3018,8 +3498,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3041,8 +3521,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3062,8 +3542,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3081,8 +3561,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3108,8 +3588,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3132,8 +3612,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3143,8 +3623,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3162,8 +3642,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a Cloud Storage fileset. This is only valid
-     * on entries of type FILESET.
+     * Specification that applies to a Cloud Storage fileset. Valid only
+     * for entries with the `FILESET` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.GcsFilesetSpec gcs_fileset_spec = 6;</code>
@@ -3191,8 +3671,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.BigQueryTableSpec, com.google.cloud.datacatalog.v1.BigQueryTableSpec.Builder, com.google.cloud.datacatalog.v1.BigQueryTableSpecOrBuilder> bigqueryTableSpecBuilder_;
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3204,8 +3684,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3227,8 +3707,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3248,8 +3728,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3267,8 +3747,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3294,8 +3774,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3318,8 +3798,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3329,8 +3809,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3348,8 +3828,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a BigQuery table. This is only valid on
-     * entries of type `TABLE`.
+     * Specification that applies to a BigQuery table. Valid only for
+     * entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryTableSpec bigquery_table_spec = 12;</code>
@@ -3377,9 +3857,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec, com.google.cloud.datacatalog.v1.BigQueryDateShardedSpec.Builder, com.google.cloud.datacatalog.v1.BigQueryDateShardedSpecOrBuilder> bigqueryDateShardedSpecBuilder_;
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3391,9 +3872,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3415,9 +3897,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3437,9 +3920,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3457,9 +3941,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3485,9 +3970,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3510,9 +3996,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3522,9 +4009,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3542,9 +4030,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification for a group of BigQuery tables with name pattern
-     * `[prefix]YYYYMMDD`. Context:
-     * https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding.
+     * Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD`
+     * name pattern.
+     * For more information, see [Introduction to partitioned tables]
+     * (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.BigQueryDateShardedSpec bigquery_date_sharded_spec = 15;</code>
@@ -3572,8 +4061,8 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.DatabaseTableSpec, com.google.cloud.datacatalog.v1.DatabaseTableSpec.Builder, com.google.cloud.datacatalog.v1.DatabaseTableSpecOrBuilder> databaseTableSpecBuilder_;
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3585,8 +4074,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3608,8 +4097,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3629,8 +4118,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3648,8 +4137,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3675,8 +4164,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3699,8 +4188,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3710,8 +4199,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3729,8 +4218,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Specification that applies to a table resource. Only valid
-     * for entries of `TABLE` type.
+     * Specification that applies to a table resource. Valid only
+     * for entries with the `TABLE` type.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.DatabaseTableSpec database_table_spec = 24;</code>
@@ -3752,6 +4241,378 @@ private static final long serialVersionUID = 0L;
       specCase_ = 24;
       onChanged();;
       return databaseTableSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.DataSourceConnectionSpec, com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.Builder, com.google.cloud.datacatalog.v1.DataSourceConnectionSpecOrBuilder> dataSourceConnectionSpecBuilder_;
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     * @return Whether the dataSourceConnectionSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataSourceConnectionSpec() {
+      return specCase_ == 27;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     * @return The dataSourceConnectionSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.DataSourceConnectionSpec getDataSourceConnectionSpec() {
+      if (dataSourceConnectionSpecBuilder_ == null) {
+        if (specCase_ == 27) {
+          return (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 27) {
+          return dataSourceConnectionSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     */
+    public Builder setDataSourceConnectionSpec(com.google.cloud.datacatalog.v1.DataSourceConnectionSpec value) {
+      if (dataSourceConnectionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        dataSourceConnectionSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 27;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     */
+    public Builder setDataSourceConnectionSpec(
+        com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.Builder builderForValue) {
+      if (dataSourceConnectionSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataSourceConnectionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 27;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     */
+    public Builder mergeDataSourceConnectionSpec(com.google.cloud.datacatalog.v1.DataSourceConnectionSpec value) {
+      if (dataSourceConnectionSpecBuilder_ == null) {
+        if (specCase_ == 27 &&
+            spec_ != com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.getDefaultInstance()) {
+          spec_ = com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.newBuilder((com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 27) {
+          dataSourceConnectionSpecBuilder_.mergeFrom(value);
+        }
+        dataSourceConnectionSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 27;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     */
+    public Builder clearDataSourceConnectionSpec() {
+      if (dataSourceConnectionSpecBuilder_ == null) {
+        if (specCase_ == 27) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 27) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        dataSourceConnectionSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     */
+    public com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.Builder getDataSourceConnectionSpecBuilder() {
+      return getDataSourceConnectionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.DataSourceConnectionSpecOrBuilder getDataSourceConnectionSpecOrBuilder() {
+      if ((specCase_ == 27) && (dataSourceConnectionSpecBuilder_ != null)) {
+        return dataSourceConnectionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 27) {
+          return (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Specification that applies to a data source connection. Valid only
+     * for entries with the `DATA_SOURCE_CONNECTION` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DataSourceConnectionSpec data_source_connection_spec = 27;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.DataSourceConnectionSpec, com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.Builder, com.google.cloud.datacatalog.v1.DataSourceConnectionSpecOrBuilder> 
+        getDataSourceConnectionSpecFieldBuilder() {
+      if (dataSourceConnectionSpecBuilder_ == null) {
+        if (!(specCase_ == 27)) {
+          spec_ = com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.getDefaultInstance();
+        }
+        dataSourceConnectionSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.DataSourceConnectionSpec, com.google.cloud.datacatalog.v1.DataSourceConnectionSpec.Builder, com.google.cloud.datacatalog.v1.DataSourceConnectionSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.DataSourceConnectionSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 27;
+      onChanged();;
+      return dataSourceConnectionSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.RoutineSpec, com.google.cloud.datacatalog.v1.RoutineSpec.Builder, com.google.cloud.datacatalog.v1.RoutineSpecOrBuilder> routineSpecBuilder_;
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     * @return Whether the routineSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoutineSpec() {
+      return specCase_ == 28;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     * @return The routineSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.RoutineSpec getRoutineSpec() {
+      if (routineSpecBuilder_ == null) {
+        if (specCase_ == 28) {
+          return (com.google.cloud.datacatalog.v1.RoutineSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 28) {
+          return routineSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     */
+    public Builder setRoutineSpec(com.google.cloud.datacatalog.v1.RoutineSpec value) {
+      if (routineSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        routineSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 28;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     */
+    public Builder setRoutineSpec(
+        com.google.cloud.datacatalog.v1.RoutineSpec.Builder builderForValue) {
+      if (routineSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        routineSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 28;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     */
+    public Builder mergeRoutineSpec(com.google.cloud.datacatalog.v1.RoutineSpec value) {
+      if (routineSpecBuilder_ == null) {
+        if (specCase_ == 28 &&
+            spec_ != com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance()) {
+          spec_ = com.google.cloud.datacatalog.v1.RoutineSpec.newBuilder((com.google.cloud.datacatalog.v1.RoutineSpec) spec_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 28) {
+          routineSpecBuilder_.mergeFrom(value);
+        }
+        routineSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 28;
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     */
+    public Builder clearRoutineSpec() {
+      if (routineSpecBuilder_ == null) {
+        if (specCase_ == 28) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 28) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        routineSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     */
+    public com.google.cloud.datacatalog.v1.RoutineSpec.Builder getRoutineSpecBuilder() {
+      return getRoutineSpecFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.RoutineSpecOrBuilder getRoutineSpecOrBuilder() {
+      if ((specCase_ == 28) && (routineSpecBuilder_ != null)) {
+        return routineSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 28) {
+          return (com.google.cloud.datacatalog.v1.RoutineSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Specification that applies to a user-defined function or procedure. Valid
+     * only for entries with the `ROUTINE` type.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.RoutineSpec routine_spec = 28;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.RoutineSpec, com.google.cloud.datacatalog.v1.RoutineSpec.Builder, com.google.cloud.datacatalog.v1.RoutineSpecOrBuilder> 
+        getRoutineSpecFieldBuilder() {
+      if (routineSpecBuilder_ == null) {
+        if (!(specCase_ == 28)) {
+          spec_ = com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance();
+        }
+        routineSpecBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.RoutineSpec, com.google.cloud.datacatalog.v1.RoutineSpec.Builder, com.google.cloud.datacatalog.v1.RoutineSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.RoutineSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 28;
+      onChanged();;
+      return routineSpecBuilder_;
     }
 
     private java.lang.Object displayName_ = "";
@@ -4156,10 +5017,11 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.SystemTimestamps, com.google.cloud.datacatalog.v1.SystemTimestamps.Builder, com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder> sourceSystemTimestampsBuilder_;
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4170,10 +5032,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4188,10 +5051,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4211,10 +5075,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4232,10 +5097,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4257,10 +5123,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4278,10 +5145,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4293,10 +5161,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4311,10 +5180,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Timestamps about the underlying resource, not about this Data Catalog
-     * entry. Output only when Entry is of type in the EntryType enum. For entries
-     * with user_specified_type, this field is optional and defaults to an empty
-     * timestamp.
+     * Timestamps from the underlying resource, not from the Data Catalog
+     * entry.
+     * Output only when the entry has a type listed in the `EntryType` enum.
+     * For entries with `user_specified_type`, this field is optional and defaults
+     * to an empty timestamp.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
@@ -4331,6 +5201,338 @@ private static final long serialVersionUID = 0L;
         sourceSystemTimestamps_ = null;
       }
       return sourceSystemTimestampsBuilder_;
+    }
+
+    private com.google.cloud.datacatalog.v1.UsageSignal usageSignal_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.UsageSignal, com.google.cloud.datacatalog.v1.UsageSignal.Builder, com.google.cloud.datacatalog.v1.UsageSignalOrBuilder> usageSignalBuilder_;
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the usageSignal field is set.
+     */
+    public boolean hasUsageSignal() {
+      return usageSignalBuilder_ != null || usageSignal_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The usageSignal.
+     */
+    public com.google.cloud.datacatalog.v1.UsageSignal getUsageSignal() {
+      if (usageSignalBuilder_ == null) {
+        return usageSignal_ == null ? com.google.cloud.datacatalog.v1.UsageSignal.getDefaultInstance() : usageSignal_;
+      } else {
+        return usageSignalBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setUsageSignal(com.google.cloud.datacatalog.v1.UsageSignal value) {
+      if (usageSignalBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        usageSignal_ = value;
+        onChanged();
+      } else {
+        usageSignalBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setUsageSignal(
+        com.google.cloud.datacatalog.v1.UsageSignal.Builder builderForValue) {
+      if (usageSignalBuilder_ == null) {
+        usageSignal_ = builderForValue.build();
+        onChanged();
+      } else {
+        usageSignalBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeUsageSignal(com.google.cloud.datacatalog.v1.UsageSignal value) {
+      if (usageSignalBuilder_ == null) {
+        if (usageSignal_ != null) {
+          usageSignal_ =
+            com.google.cloud.datacatalog.v1.UsageSignal.newBuilder(usageSignal_).mergeFrom(value).buildPartial();
+        } else {
+          usageSignal_ = value;
+        }
+        onChanged();
+      } else {
+        usageSignalBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearUsageSignal() {
+      if (usageSignalBuilder_ == null) {
+        usageSignal_ = null;
+        onChanged();
+      } else {
+        usageSignal_ = null;
+        usageSignalBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.datacatalog.v1.UsageSignal.Builder getUsageSignalBuilder() {
+      
+      onChanged();
+      return getUsageSignalFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.cloud.datacatalog.v1.UsageSignalOrBuilder getUsageSignalOrBuilder() {
+      if (usageSignalBuilder_ != null) {
+        return usageSignalBuilder_.getMessageOrBuilder();
+      } else {
+        return usageSignal_ == null ?
+            com.google.cloud.datacatalog.v1.UsageSignal.getDefaultInstance() : usageSignal_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. Resource usage statistics.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.datacatalog.v1.UsageSignal, com.google.cloud.datacatalog.v1.UsageSignal.Builder, com.google.cloud.datacatalog.v1.UsageSignalOrBuilder> 
+        getUsageSignalFieldBuilder() {
+      if (usageSignalBuilder_ == null) {
+        usageSignalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.UsageSignal, com.google.cloud.datacatalog.v1.UsageSignal.Builder, com.google.cloud.datacatalog.v1.UsageSignalOrBuilder>(
+                getUsageSignal(),
+                getParentForChildren(),
+                isClean());
+        usageSignal_ = null;
+      }
+      return usageSignalBuilder_;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> labels_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMutableLabels() {
+      onChanged();;
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(
+            LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     * <pre>
+     * Cloud labels attached to the entry.
+     * In Data Catalog, you can create and modify labels attached only to custom
+     * entries. Synced entries have unmodifiable labels that come from the source
+     * system.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 14;</code>
+     */
+
+    @java.lang.Override
+    public boolean containsLabels(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getLabelsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     * <pre>
+     * Cloud labels attached to the entry.
+     * In Data Catalog, you can create and modify labels attached only to custom
+     * entries. Synced entries have unmodifiable labels that come from the source
+     * system.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 14;</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     * <pre>
+     * Cloud labels attached to the entry.
+     * In Data Catalog, you can create and modify labels attached only to custom
+     * entries. Synced entries have unmodifiable labels that come from the source
+     * system.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 14;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * Cloud labels attached to the entry.
+     * In Data Catalog, you can create and modify labels attached only to custom
+     * entries. Synced entries have unmodifiable labels that come from the source
+     * system.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 14;</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getLabelsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      internalGetMutableLabels().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * Cloud labels attached to the entry.
+     * In Data Catalog, you can create and modify labels attached only to custom
+     * entries. Synced entries have unmodifiable labels that come from the source
+     * system.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 14;</code>
+     */
+
+    public Builder removeLabels(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableLabels().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+    getMutableLabels() {
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     * <pre>
+     * Cloud labels attached to the entry.
+     * In Data Catalog, you can create and modify labels attached only to custom
+     * entries. Synced entries have unmodifiable labels that come from the source
+     * system.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 14;</code>
+     */
+    public Builder putLabels(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      if (value == null) { throw new java.lang.NullPointerException(); }
+      internalGetMutableLabels().getMutableMap()
+          .put(key, value);
+      return this;
+    }
+    /**
+     * <pre>
+     * Cloud labels attached to the entry.
+     * In Data Catalog, you can create and modify labels attached only to custom
+     * entries. Synced entries have unmodifiable labels that come from the source
+     * system.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 14;</code>
+     */
+
+    public Builder putAllLabels(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap()
+          .putAll(values);
+      return this;
     }
 
     private com.google.cloud.datacatalog.v1.DataSource dataSource_;

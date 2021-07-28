@@ -79,7 +79,7 @@ public interface ColumnSchemaOrBuilder extends
 
   /**
    * <pre>
-   * Optional. A column's mode indicates if values in this column are required,
+   * Optional. A column's mode indicates whether values in this column are required,
    * nullable, or repeated.
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.
@@ -91,7 +91,7 @@ public interface ColumnSchemaOrBuilder extends
   java.lang.String getMode();
   /**
    * <pre>
-   * Optional. A column's mode indicates if values in this column are required,
+   * Optional. A column's mode indicates whether values in this column are required,
    * nullable, or repeated.
    * Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported.
    * Default mode is `NULLABLE`.

@@ -109,7 +109,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.
+   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+   * /&gt;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -130,7 +131,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.
+   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+   * /&gt;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -155,7 +157,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.datacatalog.v1.PolicyTag policyTag_;
   /**
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -167,7 +169,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -179,7 +181,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -529,7 +531,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.
+     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+     * /&gt;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -549,7 +552,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.
+     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+     * /&gt;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -570,7 +574,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.
+     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+     * /&gt;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -589,7 +594,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.
+     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+     * /&gt;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -603,7 +609,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Resource name of the taxonomy that the policy tag will belong to.
+     * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+     * /&gt;
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -627,7 +634,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.PolicyTag, com.google.cloud.datacatalog.v1.PolicyTag.Builder, com.google.cloud.datacatalog.v1.PolicyTagOrBuilder> policyTagBuilder_;
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -638,7 +645,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -653,7 +660,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -673,7 +680,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -691,7 +698,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -713,7 +720,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -731,7 +738,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -743,7 +750,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -758,7 +765,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tag to be created.
+     * The policy tag to create.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>

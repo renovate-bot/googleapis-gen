@@ -5,14 +5,14 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * A tag template defines a tag, which can have one or more typed fields.
- * The template is used to create and attach the tag to GCP resources.
- * [Tag template
- * roles](https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles)
- * provide permissions to create, edit, and use the template. See, for example,
- * the [TagTemplate
- * User](https://cloud.google.com/data-catalog/docs/how-to/template-user) role,
- * which includes permission to use the tag template to tag resources.
+ * A tag template defines a tag that can have one or more typed fields.
+ * The template is used to create tags that are attached to GCP resources.
+ * [Tag template roles]
+ * (https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles)
+ * provide permissions to create, edit, and use the template. For example,
+ * see the [TagTemplate User]
+ * (https://cloud.google.com/data-catalog/docs/how-to/template-user) role
+ * that includes a permission to use the tag template to tag resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.TagTemplate}
@@ -87,6 +87,11 @@ private static final long serialVersionUID = 0L;
                 fields__.getKey(), fields__.getValue());
             break;
           }
+          case 40: {
+
+            isPubliclyReadable_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -135,8 +140,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource name of the tag template in URL format. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * The resource name of the tag template in URL format.
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -159,8 +163,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource name of the tag template in URL format. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * The resource name of the tag template in URL format.
    * Note: The tag template itself and its child resources might not be
    * stored in the location specified in its name.
    * </pre>
@@ -235,6 +238,41 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IS_PUBLICLY_READABLE_FIELD_NUMBER = 5;
+  private boolean isPubliclyReadable_;
+  /**
+   * <pre>
+   * Indicates whether this is a public tag template.
+   * Every user has view access to a *public* tag template by default.
+   * This means that:
+   *   * Every user can use this tag template to tag an entry.
+   *   * If an entry is tagged using the tag template, the tag is always
+   *     shown in the response to ``ListTags`` called on the entry.
+   *   * To get the template using the GetTagTemplate method, you
+   *     need view access either on the project or the organization the tag
+   *     template resides in but no other permission is needed.
+   *   * Operations on the tag template other than viewing (for example,
+   *     editing IAM policies) follow standard IAM structures.
+   * Tags created with a public tag template are referred to as public tags.
+   * You can search for a public tag by value with a
+   * simple search query instead of using a ``tag:`` predicate.
+   * Public tag templates may not appear in search results depending on scope,
+   * see:
+   * [include_public_tag_templates][google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates]
+   * Note: If an [IAM domain
+   * restriction](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains)
+   * is configured in the tag template's location, the public access will not be
+   * enabled but the simple search for tag values will still work.
+   * </pre>
+   *
+   * <code>bool is_publicly_readable = 5;</code>
+   * @return The isPubliclyReadable.
+   */
+  @java.lang.Override
+  public boolean getIsPubliclyReadable() {
+    return isPubliclyReadable_;
+  }
+
   public static final int FIELDS_FIELD_NUMBER = 3;
   private static final class FieldsDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
@@ -264,12 +302,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -292,12 +332,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -310,12 +352,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -333,12 +377,14 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. Map of tag template field IDs to the settings for the field.
-   * This map is an exhaustive list of the allowed fields. This map must contain
+   * This map is an exhaustive list of the allowed fields. The map must contain
    * at least one field and at most 500 fields.
-   * The keys to this map are tag template field IDs. Field IDs can contain
-   * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-   * Field IDs must be at least 1 character long and at most
-   * 64 characters long. Field IDs must start with a letter or underscore.
+   * The keys to this map are tag template field IDs. The IDs have the
+   * following limitations:
+   * * Can contain uppercase and lowercase letters, numbers (0-9) and
+   *   underscores (_).
+   * * Must be at least 1 character and at most 64 characters long.
+   * * Must start with a letter or underscore.
    * </pre>
    *
    * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -382,6 +428,9 @@ private static final long serialVersionUID = 0L;
         internalGetFields(),
         FieldsDefaultEntryHolder.defaultEntry,
         3);
+    if (isPubliclyReadable_ != false) {
+      output.writeBool(5, isPubliclyReadable_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -407,6 +456,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, fields__);
     }
+    if (isPubliclyReadable_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, isPubliclyReadable_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -426,6 +479,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getName())) return false;
     if (!getDisplayName()
         .equals(other.getDisplayName())) return false;
+    if (getIsPubliclyReadable()
+        != other.getIsPubliclyReadable()) return false;
     if (!internalGetFields().equals(
         other.internalGetFields())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -443,6 +498,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + IS_PUBLICLY_READABLE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsPubliclyReadable());
     if (!internalGetFields().getMap().isEmpty()) {
       hash = (37 * hash) + FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetFields().hashCode();
@@ -544,14 +602,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A tag template defines a tag, which can have one or more typed fields.
-   * The template is used to create and attach the tag to GCP resources.
-   * [Tag template
-   * roles](https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles)
-   * provide permissions to create, edit, and use the template. See, for example,
-   * the [TagTemplate
-   * User](https://cloud.google.com/data-catalog/docs/how-to/template-user) role,
-   * which includes permission to use the tag template to tag resources.
+   * A tag template defines a tag that can have one or more typed fields.
+   * The template is used to create tags that are attached to GCP resources.
+   * [Tag template roles]
+   * (https://cloud.google.com/iam/docs/understanding-roles#data-catalog-roles)
+   * provide permissions to create, edit, and use the template. For example,
+   * see the [TagTemplate User]
+   * (https://cloud.google.com/data-catalog/docs/how-to/template-user) role
+   * that includes a permission to use the tag template to tag resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.TagTemplate}
@@ -617,6 +675,8 @@ private static final long serialVersionUID = 0L;
 
       displayName_ = "";
 
+      isPubliclyReadable_ = false;
+
       internalGetMutableFields().clear();
       return this;
     }
@@ -647,6 +707,7 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       result.name_ = name_;
       result.displayName_ = displayName_;
+      result.isPubliclyReadable_ = isPubliclyReadable_;
       result.fields_ = internalGetFields();
       result.fields_.makeImmutable();
       onBuilt();
@@ -705,6 +766,9 @@ private static final long serialVersionUID = 0L;
         displayName_ = other.displayName_;
         onChanged();
       }
+      if (other.getIsPubliclyReadable() != false) {
+        setIsPubliclyReadable(other.getIsPubliclyReadable());
+      }
       internalGetMutableFields().mergeFrom(
           other.internalGetFields());
       this.mergeUnknownFields(other.unknownFields);
@@ -740,8 +804,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource name of the tag template in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * The resource name of the tag template in URL format.
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -763,8 +826,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the tag template in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * The resource name of the tag template in URL format.
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -787,8 +849,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the tag template in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * The resource name of the tag template in URL format.
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -809,8 +870,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the tag template in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * The resource name of the tag template in URL format.
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -826,8 +886,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource name of the tag template in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+     * The resource name of the tag template in URL format.
      * Note: The tag template itself and its child resources might not be
      * stored in the location specified in its name.
      * </pre>
@@ -959,6 +1018,109 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean isPubliclyReadable_ ;
+    /**
+     * <pre>
+     * Indicates whether this is a public tag template.
+     * Every user has view access to a *public* tag template by default.
+     * This means that:
+     *   * Every user can use this tag template to tag an entry.
+     *   * If an entry is tagged using the tag template, the tag is always
+     *     shown in the response to ``ListTags`` called on the entry.
+     *   * To get the template using the GetTagTemplate method, you
+     *     need view access either on the project or the organization the tag
+     *     template resides in but no other permission is needed.
+     *   * Operations on the tag template other than viewing (for example,
+     *     editing IAM policies) follow standard IAM structures.
+     * Tags created with a public tag template are referred to as public tags.
+     * You can search for a public tag by value with a
+     * simple search query instead of using a ``tag:`` predicate.
+     * Public tag templates may not appear in search results depending on scope,
+     * see:
+     * [include_public_tag_templates][google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates]
+     * Note: If an [IAM domain
+     * restriction](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains)
+     * is configured in the tag template's location, the public access will not be
+     * enabled but the simple search for tag values will still work.
+     * </pre>
+     *
+     * <code>bool is_publicly_readable = 5;</code>
+     * @return The isPubliclyReadable.
+     */
+    @java.lang.Override
+    public boolean getIsPubliclyReadable() {
+      return isPubliclyReadable_;
+    }
+    /**
+     * <pre>
+     * Indicates whether this is a public tag template.
+     * Every user has view access to a *public* tag template by default.
+     * This means that:
+     *   * Every user can use this tag template to tag an entry.
+     *   * If an entry is tagged using the tag template, the tag is always
+     *     shown in the response to ``ListTags`` called on the entry.
+     *   * To get the template using the GetTagTemplate method, you
+     *     need view access either on the project or the organization the tag
+     *     template resides in but no other permission is needed.
+     *   * Operations on the tag template other than viewing (for example,
+     *     editing IAM policies) follow standard IAM structures.
+     * Tags created with a public tag template are referred to as public tags.
+     * You can search for a public tag by value with a
+     * simple search query instead of using a ``tag:`` predicate.
+     * Public tag templates may not appear in search results depending on scope,
+     * see:
+     * [include_public_tag_templates][google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates]
+     * Note: If an [IAM domain
+     * restriction](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains)
+     * is configured in the tag template's location, the public access will not be
+     * enabled but the simple search for tag values will still work.
+     * </pre>
+     *
+     * <code>bool is_publicly_readable = 5;</code>
+     * @param value The isPubliclyReadable to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsPubliclyReadable(boolean value) {
+      
+      isPubliclyReadable_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates whether this is a public tag template.
+     * Every user has view access to a *public* tag template by default.
+     * This means that:
+     *   * Every user can use this tag template to tag an entry.
+     *   * If an entry is tagged using the tag template, the tag is always
+     *     shown in the response to ``ListTags`` called on the entry.
+     *   * To get the template using the GetTagTemplate method, you
+     *     need view access either on the project or the organization the tag
+     *     template resides in but no other permission is needed.
+     *   * Operations on the tag template other than viewing (for example,
+     *     editing IAM policies) follow standard IAM structures.
+     * Tags created with a public tag template are referred to as public tags.
+     * You can search for a public tag by value with a
+     * simple search query instead of using a ``tag:`` predicate.
+     * Public tag templates may not appear in search results depending on scope,
+     * see:
+     * [include_public_tag_templates][google.cloud.datacatalog.v1.SearchCatalogRequest.Scope.include_public_tag_templates]
+     * Note: If an [IAM domain
+     * restriction](https://cloud.google.com/resource-manager/docs/organization-policy/restricting-domains)
+     * is configured in the tag template's location, the public access will not be
+     * enabled but the simple search for tag values will still work.
+     * </pre>
+     *
+     * <code>bool is_publicly_readable = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIsPubliclyReadable() {
+      
+      isPubliclyReadable_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.MapField<
         java.lang.String, com.google.cloud.datacatalog.v1.TagTemplateField> fields_;
     private com.google.protobuf.MapField<java.lang.String, com.google.cloud.datacatalog.v1.TagTemplateField>
@@ -988,12 +1150,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map of tag template field IDs to the settings for the field.
-     * This map is an exhaustive list of the allowed fields. This map must contain
+     * This map is an exhaustive list of the allowed fields. The map must contain
      * at least one field and at most 500 fields.
-     * The keys to this map are tag template field IDs. Field IDs can contain
-     * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-     * Field IDs must be at least 1 character long and at most
-     * 64 characters long. Field IDs must start with a letter or underscore.
+     * The keys to this map are tag template field IDs. The IDs have the
+     * following limitations:
+     * * Can contain uppercase and lowercase letters, numbers (0-9) and
+     *   underscores (_).
+     * * Must be at least 1 character and at most 64 characters long.
+     * * Must start with a letter or underscore.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1016,12 +1180,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map of tag template field IDs to the settings for the field.
-     * This map is an exhaustive list of the allowed fields. This map must contain
+     * This map is an exhaustive list of the allowed fields. The map must contain
      * at least one field and at most 500 fields.
-     * The keys to this map are tag template field IDs. Field IDs can contain
-     * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-     * Field IDs must be at least 1 character long and at most
-     * 64 characters long. Field IDs must start with a letter or underscore.
+     * The keys to this map are tag template field IDs. The IDs have the
+     * following limitations:
+     * * Can contain uppercase and lowercase letters, numbers (0-9) and
+     *   underscores (_).
+     * * Must be at least 1 character and at most 64 characters long.
+     * * Must start with a letter or underscore.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1034,12 +1200,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map of tag template field IDs to the settings for the field.
-     * This map is an exhaustive list of the allowed fields. This map must contain
+     * This map is an exhaustive list of the allowed fields. The map must contain
      * at least one field and at most 500 fields.
-     * The keys to this map are tag template field IDs. Field IDs can contain
-     * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-     * Field IDs must be at least 1 character long and at most
-     * 64 characters long. Field IDs must start with a letter or underscore.
+     * The keys to this map are tag template field IDs. The IDs have the
+     * following limitations:
+     * * Can contain uppercase and lowercase letters, numbers (0-9) and
+     *   underscores (_).
+     * * Must be at least 1 character and at most 64 characters long.
+     * * Must start with a letter or underscore.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1057,12 +1225,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map of tag template field IDs to the settings for the field.
-     * This map is an exhaustive list of the allowed fields. This map must contain
+     * This map is an exhaustive list of the allowed fields. The map must contain
      * at least one field and at most 500 fields.
-     * The keys to this map are tag template field IDs. Field IDs can contain
-     * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-     * Field IDs must be at least 1 character long and at most
-     * 64 characters long. Field IDs must start with a letter or underscore.
+     * The keys to this map are tag template field IDs. The IDs have the
+     * following limitations:
+     * * Can contain uppercase and lowercase letters, numbers (0-9) and
+     *   underscores (_).
+     * * Must be at least 1 character and at most 64 characters long.
+     * * Must start with a letter or underscore.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1088,12 +1258,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map of tag template field IDs to the settings for the field.
-     * This map is an exhaustive list of the allowed fields. This map must contain
+     * This map is an exhaustive list of the allowed fields. The map must contain
      * at least one field and at most 500 fields.
-     * The keys to this map are tag template field IDs. Field IDs can contain
-     * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-     * Field IDs must be at least 1 character long and at most
-     * 64 characters long. Field IDs must start with a letter or underscore.
+     * The keys to this map are tag template field IDs. The IDs have the
+     * following limitations:
+     * * Can contain uppercase and lowercase letters, numbers (0-9) and
+     *   underscores (_).
+     * * Must be at least 1 character and at most 64 characters long.
+     * * Must start with a letter or underscore.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1117,12 +1289,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map of tag template field IDs to the settings for the field.
-     * This map is an exhaustive list of the allowed fields. This map must contain
+     * This map is an exhaustive list of the allowed fields. The map must contain
      * at least one field and at most 500 fields.
-     * The keys to this map are tag template field IDs. Field IDs can contain
-     * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-     * Field IDs must be at least 1 character long and at most
-     * 64 characters long. Field IDs must start with a letter or underscore.
+     * The keys to this map are tag template field IDs. The IDs have the
+     * following limitations:
+     * * Can contain uppercase and lowercase letters, numbers (0-9) and
+     *   underscores (_).
+     * * Must be at least 1 character and at most 64 characters long.
+     * * Must start with a letter or underscore.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1139,12 +1313,14 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. Map of tag template field IDs to the settings for the field.
-     * This map is an exhaustive list of the allowed fields. This map must contain
+     * This map is an exhaustive list of the allowed fields. The map must contain
      * at least one field and at most 500 fields.
-     * The keys to this map are tag template field IDs. Field IDs can contain
-     * letters (both uppercase and lowercase), numbers (0-9) and underscores (_).
-     * Field IDs must be at least 1 character long and at most
-     * 64 characters long. Field IDs must start with a letter or underscore.
+     * The keys to this map are tag template field IDs. The IDs have the
+     * following limitations:
+     * * Can contain uppercase and lowercase letters, numbers (0-9) and
+     *   underscores (_).
+     * * Must be at least 1 character and at most 64 characters long.
+     * * Must start with a letter or underscore.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.datacatalog.v1.TagTemplateField&gt; fields = 3 [(.google.api.field_behavior) = REQUIRED];</code>

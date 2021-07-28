@@ -210,7 +210,7 @@ private static final long serialVersionUID = 0L;
   public static final int INLINE_SOURCE_FIELD_NUMBER = 2;
   /**
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -222,7 +222,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -237,7 +237,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Inline source used for taxonomies import.
+   * Inline source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
   public static final int CROSS_REGIONAL_SOURCE_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Cross-regional source taxonomy to be imported.
+   * Cross-regional source taxonomy to import.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -784,7 +784,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.InlineSource, com.google.cloud.datacatalog.v1.InlineSource.Builder, com.google.cloud.datacatalog.v1.InlineSourceOrBuilder> inlineSourceBuilder_;
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -796,7 +796,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -818,7 +818,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -838,7 +838,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -856,7 +856,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -882,7 +882,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -905,7 +905,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -915,7 +915,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -933,7 +933,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
@@ -961,7 +961,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.CrossRegionalSource, com.google.cloud.datacatalog.v1.CrossRegionalSource.Builder, com.google.cloud.datacatalog.v1.CrossRegionalSourceOrBuilder> crossRegionalSourceBuilder_;
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -973,7 +973,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -995,7 +995,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1015,7 +1015,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1033,7 +1033,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1059,7 +1059,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1082,7 +1082,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1092,7 +1092,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
@@ -1110,7 +1110,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>

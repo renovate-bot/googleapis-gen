@@ -33,9 +33,9 @@ class ImportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. Resource name of project that the imported taxonomies will belong to.
      *     @type \Google\Cloud\DataCatalog\V1\InlineSource $inline_source
-     *           Inline source used for taxonomies import.
+     *           Inline source taxonomy to import.
      *     @type \Google\Cloud\DataCatalog\V1\CrossRegionalSource $cross_regional_source
-     *           Cross-regional source taxonomy to be imported.
+     *           Cross-regional source taxonomy to import.
      * }
      */
     public function __construct($data = NULL) {
@@ -70,7 +70,7 @@ class ImportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
      * @return \Google\Cloud\DataCatalog\V1\InlineSource|null
@@ -86,7 +86,7 @@ class ImportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Inline source used for taxonomies import.
+     * Inline source taxonomy to import.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.InlineSource inline_source = 2;</code>
      * @param \Google\Cloud\DataCatalog\V1\InlineSource $var
@@ -101,7 +101,7 @@ class ImportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
      * @return \Google\Cloud\DataCatalog\V1\CrossRegionalSource|null
@@ -117,7 +117,7 @@ class ImportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Cross-regional source taxonomy to be imported.
+     * Cross-regional source taxonomy to import.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.CrossRegionalSource cross_regional_source = 3;</code>
      * @param \Google\Cloud\DataCatalog\V1\CrossRegionalSource $var

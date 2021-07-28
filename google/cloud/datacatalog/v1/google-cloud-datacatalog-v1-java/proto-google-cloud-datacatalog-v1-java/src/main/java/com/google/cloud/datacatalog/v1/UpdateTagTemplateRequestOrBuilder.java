@@ -9,7 +9,7 @@ public interface UpdateTagTemplateRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -18,7 +18,7 @@ public interface UpdateTagTemplateRequestOrBuilder extends
   boolean hasTagTemplate();
   /**
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -27,7 +27,7 @@ public interface UpdateTagTemplateRequestOrBuilder extends
   com.google.cloud.datacatalog.v1.TagTemplate getTagTemplate();
   /**
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -38,7 +38,7 @@ public interface UpdateTagTemplateRequestOrBuilder extends
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>
@@ -51,7 +51,7 @@ public interface UpdateTagTemplateRequestOrBuilder extends
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>
@@ -64,7 +64,7 @@ public interface UpdateTagTemplateRequestOrBuilder extends
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>

@@ -102,7 +102,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.datacatalog.v1.SerializedTaxonomy> taxonomies_;
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -125,7 +125,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -136,7 +136,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Taxonomies to be imported.
+   * Required. Taxonomies to import.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -518,7 +518,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -532,7 +532,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -546,7 +546,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -560,7 +560,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -581,7 +581,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -599,7 +599,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -619,7 +619,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -676,7 +676,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -712,7 +712,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -729,7 +729,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -740,7 +740,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -754,7 +754,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -780,7 +780,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -792,7 +792,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Taxonomies to be imported.
+     * Required. Taxonomies to import.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1 [(.google.api.field_behavior) = REQUIRED];</code>

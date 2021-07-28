@@ -7,8 +7,7 @@ namespace Google\Cloud\DataCatalog\V1;
 use UnexpectedValueException;
 
 /**
- * This enum describes all the possible systems that Data Catalog integrates
- * with.
+ * This enum lists all the systems that Data Catalog integrates with.
  *
  * Protobuf type <code>google.cloud.datacatalog.v1.IntegratedSystem</code>
  */

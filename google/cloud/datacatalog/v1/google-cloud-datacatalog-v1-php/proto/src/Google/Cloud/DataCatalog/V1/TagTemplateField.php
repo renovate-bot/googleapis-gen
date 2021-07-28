@@ -17,8 +17,8 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
 {
     /**
      * Output only. The resource name of the tag template field in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     * Note: The `TagTemplateField` itself might not be stored in the location
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     * Note: The tag template field itself might not be stored in the location
      * specified in its name.
      * The name must contain only letters (a-z, A-Z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
@@ -43,7 +43,7 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
      */
     protected $type = null;
     /**
-     * Whether this is a required field. Defaults to false.
+     * If true, this field is required. Defaults to false.
      *
      * Generated from protobuf field <code>bool is_required = 3;</code>
      */
@@ -56,9 +56,10 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
     protected $description = '';
     /**
      * The order of this field with respect to other fields in this tag
-     * template. For example, a higher value can indicate a more important field.
-     * The value can be negative. Multiple fields can have the same order, and
-     * field orders within a tag do not have to be sequential.
+     * template.
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order and
+     * field orders within a tag don't have to be sequential.
      *
      * Generated from protobuf field <code>int32 order = 5;</code>
      */
@@ -72,8 +73,8 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Output only. The resource name of the tag template field in URL format. Example:
-     *           `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     *           Note: The `TagTemplateField` itself might not be stored in the location
+     *           `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     *           Note: The tag template field itself might not be stored in the location
      *           specified in its name.
      *           The name must contain only letters (a-z, A-Z), numbers (0-9),
      *           or underscores (_), and must start with a letter or underscore.
@@ -86,14 +87,15 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\DataCatalog\V1\FieldType $type
      *           Required. The type of value this tag field can contain.
      *     @type bool $is_required
-     *           Whether this is a required field. Defaults to false.
+     *           If true, this field is required. Defaults to false.
      *     @type string $description
      *           The description for this field. Defaults to an empty string.
      *     @type int $order
      *           The order of this field with respect to other fields in this tag
-     *           template. For example, a higher value can indicate a more important field.
-     *           The value can be negative. Multiple fields can have the same order, and
-     *           field orders within a tag do not have to be sequential.
+     *           template.
+     *           For example, a higher value can indicate a more important field.
+     *           The value can be negative. Multiple fields can have the same order and
+     *           field orders within a tag don't have to be sequential.
      * }
      */
     public function __construct($data = NULL) {
@@ -103,8 +105,8 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the tag template field in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     * Note: The `TagTemplateField` itself might not be stored in the location
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     * Note: The tag template field itself might not be stored in the location
      * specified in its name.
      * The name must contain only letters (a-z, A-Z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
@@ -120,8 +122,8 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. The resource name of the tag template field in URL format. Example:
-     * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field}`
-     * Note: The `TagTemplateField` itself might not be stored in the location
+     * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE}/fields/{FIELD}`
+     * Note: The tag template field itself might not be stored in the location
      * specified in its name.
      * The name must contain only letters (a-z, A-Z), numbers (0-9),
      * or underscores (_), and must start with a letter or underscore.
@@ -208,7 +210,7 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether this is a required field. Defaults to false.
+     * If true, this field is required. Defaults to false.
      *
      * Generated from protobuf field <code>bool is_required = 3;</code>
      * @return bool
@@ -219,7 +221,7 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether this is a required field. Defaults to false.
+     * If true, this field is required. Defaults to false.
      *
      * Generated from protobuf field <code>bool is_required = 3;</code>
      * @param bool $var
@@ -261,9 +263,10 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
 
     /**
      * The order of this field with respect to other fields in this tag
-     * template. For example, a higher value can indicate a more important field.
-     * The value can be negative. Multiple fields can have the same order, and
-     * field orders within a tag do not have to be sequential.
+     * template.
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order and
+     * field orders within a tag don't have to be sequential.
      *
      * Generated from protobuf field <code>int32 order = 5;</code>
      * @return int
@@ -275,9 +278,10 @@ class TagTemplateField extends \Google\Protobuf\Internal\Message
 
     /**
      * The order of this field with respect to other fields in this tag
-     * template. For example, a higher value can indicate a more important field.
-     * The value can be negative. Multiple fields can have the same order, and
-     * field orders within a tag do not have to be sequential.
+     * template.
+     * For example, a higher value can indicate a more important field.
+     * The value can be negative. Multiple fields can have the same order and
+     * field orders within a tag don't have to be sequential.
      *
      * Generated from protobuf field <code>int32 order = 5;</code>
      * @param int $var

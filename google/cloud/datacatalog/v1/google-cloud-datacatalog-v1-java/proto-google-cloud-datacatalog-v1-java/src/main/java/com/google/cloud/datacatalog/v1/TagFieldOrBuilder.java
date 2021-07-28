@@ -29,7 +29,7 @@ public interface TagFieldOrBuilder extends
 
   /**
    * <pre>
-   * Holds the value for a tag field with double type.
+   * The value of a tag field with a double type.
    * </pre>
    *
    * <code>double double_value = 2;</code>
@@ -38,7 +38,7 @@ public interface TagFieldOrBuilder extends
   boolean hasDoubleValue();
   /**
    * <pre>
-   * Holds the value for a tag field with double type.
+   * The value of a tag field with a double type.
    * </pre>
    *
    * <code>double double_value = 2;</code>
@@ -48,7 +48,7 @@ public interface TagFieldOrBuilder extends
 
   /**
    * <pre>
-   * Holds the value for a tag field with string type.
+   * The value of a tag field with a string type.
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -58,7 +58,7 @@ public interface TagFieldOrBuilder extends
   boolean hasStringValue();
   /**
    * <pre>
-   * Holds the value for a tag field with string type.
+   * The value of a tag field with a string type.
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -68,7 +68,7 @@ public interface TagFieldOrBuilder extends
   java.lang.String getStringValue();
   /**
    * <pre>
-   * Holds the value for a tag field with string type.
+   * The value of a tag field with a string type.
    * The maximum length is 2000 UTF-8 characters.
    * </pre>
    *
@@ -80,7 +80,7 @@ public interface TagFieldOrBuilder extends
 
   /**
    * <pre>
-   * Holds the value for a tag field with boolean type.
+   * The value of a tag field with a boolean type.
    * </pre>
    *
    * <code>bool bool_value = 4;</code>
@@ -89,7 +89,7 @@ public interface TagFieldOrBuilder extends
   boolean hasBoolValue();
   /**
    * <pre>
-   * Holds the value for a tag field with boolean type.
+   * The value of a tag field with a boolean type.
    * </pre>
    *
    * <code>bool bool_value = 4;</code>
@@ -99,7 +99,7 @@ public interface TagFieldOrBuilder extends
 
   /**
    * <pre>
-   * Holds the value for a tag field with timestamp type.
+   * The value of a tag field with a timestamp type.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -108,7 +108,7 @@ public interface TagFieldOrBuilder extends
   boolean hasTimestampValue();
   /**
    * <pre>
-   * Holds the value for a tag field with timestamp type.
+   * The value of a tag field with a timestamp type.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -117,7 +117,7 @@ public interface TagFieldOrBuilder extends
   com.google.protobuf.Timestamp getTimestampValue();
   /**
    * <pre>
-   * Holds the value for a tag field with timestamp type.
+   * The value of a tag field with a timestamp type.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp timestamp_value = 5;</code>
@@ -126,8 +126,8 @@ public interface TagFieldOrBuilder extends
 
   /**
    * <pre>
-   * Holds the value for a tag field with enum type. This value must be
-   * one of the allowed values in the definition of this enum.
+   * The value of a tag field with an enum type.
+   * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -136,8 +136,8 @@ public interface TagFieldOrBuilder extends
   boolean hasEnumValue();
   /**
    * <pre>
-   * Holds the value for a tag field with enum type. This value must be
-   * one of the allowed values in the definition of this enum.
+   * The value of a tag field with an enum type.
+   * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -146,8 +146,8 @@ public interface TagFieldOrBuilder extends
   com.google.cloud.datacatalog.v1.TagField.EnumValue getEnumValue();
   /**
    * <pre>
-   * Holds the value for a tag field with enum type. This value must be
-   * one of the allowed values in the definition of this enum.
+   * The value of a tag field with an enum type.
+   * This value must be one of the allowed values listed in this enum.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagField.EnumValue enum_value = 6;</code>
@@ -156,11 +156,49 @@ public interface TagFieldOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The order of this field with respect to other fields in this tag. It can be
-   * set in [Tag][google.cloud.datacatalog.v1.TagTemplateField.order]. For
-   * example, a higher value can indicate a more important field. The value can
-   * be negative. Multiple fields can have the same order, and field orders
-   * within a tag do not have to be sequential.
+   * The value of a tag field with a rich text type.
+   * The maximum length is 10 MiB as this value holds HTML descriptions
+   * including encoded images. The maximum length of the text without images
+   * is 100 KiB.
+   * </pre>
+   *
+   * <code>string richtext_value = 8;</code>
+   * @return Whether the richtextValue field is set.
+   */
+  boolean hasRichtextValue();
+  /**
+   * <pre>
+   * The value of a tag field with a rich text type.
+   * The maximum length is 10 MiB as this value holds HTML descriptions
+   * including encoded images. The maximum length of the text without images
+   * is 100 KiB.
+   * </pre>
+   *
+   * <code>string richtext_value = 8;</code>
+   * @return The richtextValue.
+   */
+  java.lang.String getRichtextValue();
+  /**
+   * <pre>
+   * The value of a tag field with a rich text type.
+   * The maximum length is 10 MiB as this value holds HTML descriptions
+   * including encoded images. The maximum length of the text without images
+   * is 100 KiB.
+   * </pre>
+   *
+   * <code>string richtext_value = 8;</code>
+   * @return The bytes for richtextValue.
+   */
+  com.google.protobuf.ByteString
+      getRichtextValueBytes();
+
+  /**
+   * <pre>
+   * Output only. The order of this field with respect to other fields in this tag. Can be
+   * set by [Tag][google.cloud.datacatalog.v1.TagTemplateField.order].
+   * For example, a higher value can indicate a more important field.
+   * The value can be negative. Multiple fields can have the same order, and
+   * field orders within a tag don't have to be sequential.
    * </pre>
    *
    * <code>int32 order = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

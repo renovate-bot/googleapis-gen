@@ -9,8 +9,7 @@ public interface DeleteTagRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the tag to delete. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * Required. The name of the tag to delete.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -19,8 +18,7 @@ public interface DeleteTagRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the tag to delete. Example:
-   * * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
+   * Required. The name of the tag to delete.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

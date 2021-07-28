@@ -20,7 +20,7 @@ class PolicyType
      */
     const POLICY_TYPE_UNSPECIFIED = 0;
     /**
-     * Fine-grained access control policy, which enables access control on
+     * Fine-grained access control policy that enables access control on
      * tagged sub-resources.
      *
      * Generated from protobuf enum <code>FINE_GRAINED_ACCESS_CONTROL = 1;</code>

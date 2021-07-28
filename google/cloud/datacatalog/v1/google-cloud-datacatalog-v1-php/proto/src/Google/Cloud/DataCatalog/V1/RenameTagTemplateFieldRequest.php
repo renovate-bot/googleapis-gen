@@ -17,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class RenameTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The name of the tag template. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -37,8 +36,7 @@ class RenameTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The name of the tag template. Example:
-     *           * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     *           Required. The name of the tag template.
      *     @type string $new_tag_template_field_id
      *           Required. The new ID of this tag template field. For example, `my_new_field`.
      * }
@@ -49,8 +47,7 @@ class RenameTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the tag template. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -61,8 +58,7 @@ class RenameTagTemplateFieldRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the tag template. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
+     * Required. The name of the tag template.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

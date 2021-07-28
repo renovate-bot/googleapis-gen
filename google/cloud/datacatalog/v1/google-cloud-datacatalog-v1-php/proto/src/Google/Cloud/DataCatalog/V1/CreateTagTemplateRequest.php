@@ -19,8 +19,6 @@ class CreateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -50,8 +48,6 @@ class CreateTagTemplateRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. The name of the project and the template location
      *           [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     *           Example:
-     *           * projects/{project_id}/locations/us-central1
      *     @type string $tag_template_id
      *           Required. The ID of the tag template to create.
      *           The ID must contain only lowercase letters (a-z), numbers (0-9),
@@ -69,8 +65,6 @@ class CreateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -83,8 +77,6 @@ class CreateTagTemplateRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. The name of the project and the template location
      * [region](https://cloud.google.com/data-catalog/docs/concepts/regions).
-     * Example:
-     * * projects/{project_id}/locations/us-central1
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

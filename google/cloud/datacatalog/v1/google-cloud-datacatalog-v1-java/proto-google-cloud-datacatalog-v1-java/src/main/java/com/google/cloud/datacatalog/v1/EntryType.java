@@ -5,9 +5,8 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * Entry resources in Data Catalog can be of different types e.g. a BigQuery
- * Table entry is of type `TABLE`. This enum describes all the possible types
- * Data Catalog contains.
+ * The enum field that lists all the types of entry resources in Data
+ * Catalog. For example, a BigQuery table entry has the `TABLE` type.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.datacatalog.v1.EntryType}
@@ -24,7 +23,7 @@ public enum EntryType
   ENTRY_TYPE_UNSPECIFIED(0),
   /**
    * <pre>
-   * Output only. The type of entry that has a GoogleSQL schema, including
+   * Output only. The entry type that has a GoogleSQL schema, including
    * logical views.
    * </pre>
    *
@@ -33,8 +32,9 @@ public enum EntryType
   TABLE(2),
   /**
    * <pre>
-   * Output only. The type of models, examples include
-   * https://cloud.google.com/bigquery-ml/docs/bigqueryml-intro
+   * Output only. The type of models.
+   * For more information, see [Supported models in BigQuery ML]
+   * (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in).
    * </pre>
    *
    * <code>MODEL = 5;</code>
@@ -42,8 +42,7 @@ public enum EntryType
   MODEL(5),
   /**
    * <pre>
-   * An entry type which is used for streaming entries. Example:
-   * Pub/Sub topic.
+   * An entry type for streaming entries. For example, a Pub/Sub topic.
    * </pre>
    *
    * <code>DATA_STREAM = 3;</code>
@@ -51,7 +50,7 @@ public enum EntryType
   DATA_STREAM(3),
   /**
    * <pre>
-   * An entry type which is a set of files or objects. Example:
+   * An entry type for a set of files or objects. For example, a
    * Cloud Storage fileset.
    * </pre>
    *
@@ -60,12 +59,37 @@ public enum EntryType
   FILESET(4),
   /**
    * <pre>
+   * A group of servers that work together. For example, a Kafka cluster.
+   * </pre>
+   *
+   * <code>CLUSTER = 6;</code>
+   */
+  CLUSTER(6),
+  /**
+   * <pre>
    * A database.
    * </pre>
    *
    * <code>DATABASE = 7;</code>
    */
   DATABASE(7),
+  /**
+   * <pre>
+   * Output only. Connection to a data source. For example, a BigQuery
+   * connection.
+   * </pre>
+   *
+   * <code>DATA_SOURCE_CONNECTION = 8;</code>
+   */
+  DATA_SOURCE_CONNECTION(8),
+  /**
+   * <pre>
+   * Output only. Routine, for example, a BigQuery routine.
+   * </pre>
+   *
+   * <code>ROUTINE = 9;</code>
+   */
+  ROUTINE(9),
   /**
    * <pre>
    * A service, for example, a Dataproc Metastore service.
@@ -87,7 +111,7 @@ public enum EntryType
   public static final int ENTRY_TYPE_UNSPECIFIED_VALUE = 0;
   /**
    * <pre>
-   * Output only. The type of entry that has a GoogleSQL schema, including
+   * Output only. The entry type that has a GoogleSQL schema, including
    * logical views.
    * </pre>
    *
@@ -96,8 +120,9 @@ public enum EntryType
   public static final int TABLE_VALUE = 2;
   /**
    * <pre>
-   * Output only. The type of models, examples include
-   * https://cloud.google.com/bigquery-ml/docs/bigqueryml-intro
+   * Output only. The type of models.
+   * For more information, see [Supported models in BigQuery ML]
+   * (https://cloud.google.com/bigquery-ml/docs/introduction#supported_models_in).
    * </pre>
    *
    * <code>MODEL = 5;</code>
@@ -105,8 +130,7 @@ public enum EntryType
   public static final int MODEL_VALUE = 5;
   /**
    * <pre>
-   * An entry type which is used for streaming entries. Example:
-   * Pub/Sub topic.
+   * An entry type for streaming entries. For example, a Pub/Sub topic.
    * </pre>
    *
    * <code>DATA_STREAM = 3;</code>
@@ -114,7 +138,7 @@ public enum EntryType
   public static final int DATA_STREAM_VALUE = 3;
   /**
    * <pre>
-   * An entry type which is a set of files or objects. Example:
+   * An entry type for a set of files or objects. For example, a
    * Cloud Storage fileset.
    * </pre>
    *
@@ -123,12 +147,37 @@ public enum EntryType
   public static final int FILESET_VALUE = 4;
   /**
    * <pre>
+   * A group of servers that work together. For example, a Kafka cluster.
+   * </pre>
+   *
+   * <code>CLUSTER = 6;</code>
+   */
+  public static final int CLUSTER_VALUE = 6;
+  /**
+   * <pre>
    * A database.
    * </pre>
    *
    * <code>DATABASE = 7;</code>
    */
   public static final int DATABASE_VALUE = 7;
+  /**
+   * <pre>
+   * Output only. Connection to a data source. For example, a BigQuery
+   * connection.
+   * </pre>
+   *
+   * <code>DATA_SOURCE_CONNECTION = 8;</code>
+   */
+  public static final int DATA_SOURCE_CONNECTION_VALUE = 8;
+  /**
+   * <pre>
+   * Output only. Routine, for example, a BigQuery routine.
+   * </pre>
+   *
+   * <code>ROUTINE = 9;</code>
+   */
+  public static final int ROUTINE_VALUE = 9;
   /**
    * <pre>
    * A service, for example, a Dataproc Metastore service.
@@ -168,7 +217,10 @@ public enum EntryType
       case 5: return MODEL;
       case 3: return DATA_STREAM;
       case 4: return FILESET;
+      case 6: return CLUSTER;
       case 7: return DATABASE;
+      case 8: return DATA_SOURCE_CONNECTION;
+      case 9: return ROUTINE;
       case 14: return SERVICE;
       default: return null;
     }

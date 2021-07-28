@@ -115,7 +115,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.datacatalog.v1.TagTemplate tagTemplate_;
   /**
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -139,7 +139,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The template to update. The "name" field must be set.
+   * Required. The template to update. The `name` field must be set.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>
@@ -187,7 +187,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Names of fields whose values to overwrite on a tag template. Currently,
    * only `display_name` can be overwritten.
-   * In general, if this parameter is absent or empty, all modifiable fields
+   * If this parameter is absent or empty, all modifiable fields
    * are overwritten. If such fields are non-required and omitted in the
    * request body, their values are emptied.
    * </pre>
@@ -554,7 +554,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.TagTemplate, com.google.cloud.datacatalog.v1.TagTemplate.Builder, com.google.cloud.datacatalog.v1.TagTemplateOrBuilder> tagTemplateBuilder_;
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -600,7 +600,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -618,7 +618,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -640,7 +640,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -658,7 +658,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -670,7 +670,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -685,7 +685,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The template to update. The "name" field must be set.
+     * Required. The template to update. The `name` field must be set.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.TagTemplate tag_template = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -711,7 +711,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -726,7 +726,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -745,7 +745,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -791,7 +791,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -817,7 +817,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -839,7 +839,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -855,7 +855,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>
@@ -874,7 +874,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Names of fields whose values to overwrite on a tag template. Currently,
      * only `display_name` can be overwritten.
-     * In general, if this parameter is absent or empty, all modifiable fields
+     * If this parameter is absent or empty, all modifiable fields
      * are overwritten. If such fields are non-required and omitted in the
      * request body, their values are emptied.
      * </pre>

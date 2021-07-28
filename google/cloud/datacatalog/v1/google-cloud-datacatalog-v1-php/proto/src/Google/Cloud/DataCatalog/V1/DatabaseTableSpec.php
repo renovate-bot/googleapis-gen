@@ -9,8 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Specification that applies to a table resource. Only valid
- * for entries of `TABLE` type.
+ * Specification that applies to a table resource. Valid only
+ * for entries with the `TABLE` type.
  *
  * Generated from protobuf message <code>google.cloud.datacatalog.v1.DatabaseTableSpec</code>
  */

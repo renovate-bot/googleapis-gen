@@ -26,6 +26,18 @@ return [
                     ],
                 ],
             ],
+            'ReplaceTaxonomy' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/taxonomies/*}:replace',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 ];

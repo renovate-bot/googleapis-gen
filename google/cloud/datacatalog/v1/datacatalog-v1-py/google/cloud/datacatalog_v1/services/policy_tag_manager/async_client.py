@@ -37,7 +37,7 @@ from .client import PolicyTagManagerClient
 
 
 class PolicyTagManagerAsyncClient:
-    """Policy Tag Manager API service allows clients to manage their
+    """Policy Tag Manager API service allows you to manage your
     policy tags and taxonomies.
 
     Policy tags are used to tag BigQuery columns and apply
@@ -164,9 +164,9 @@ class PolicyTagManagerAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.Taxonomy:
-        r"""Creates a taxonomy in a specified project. The
-        taxonomy is initially empty, i.e., does not contain
-        policy tags.
+        r"""Creates a taxonomy in a specified project.
+        The taxonomy is initially empty, that is, it doesn't
+        contain policy tags.
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.CreateTaxonomyRequest`):
@@ -181,7 +181,7 @@ class PolicyTagManagerAsyncClient:
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             taxonomy (:class:`google.cloud.datacatalog_v1.types.Taxonomy`):
-                The taxonomy to be created.
+                The taxonomy to create.
                 This corresponds to the ``taxonomy`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -194,13 +194,14 @@ class PolicyTagManagerAsyncClient:
         Returns:
             google.cloud.datacatalog_v1.types.Taxonomy:
                 A taxonomy is a collection of hierarchical policy tags that classify data
-                   along a common axis. For instance a "data
-                   sensitivity" taxonomy could contain the following
-                   policy tags:
+                   along a common axis.
+
+                   For example, a "data sensitivity" taxonomy might
+                   contain the following policy tags:
 
                    :literal:`\` + PII   + Account number   + Age   + SSN   + Zipcode + Financials   + Revenue`\ \`
 
-                   A "data origin" taxonomy could contain the following
+                   A "data origin" taxonomy might contain the following
                    policy tags:
 
                    :literal:`\` + User data + Employee data + Partner data + Public data`\ \`
@@ -258,9 +259,9 @@ class PolicyTagManagerAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
-        r"""Deletes a taxonomy. This method will also delete all
-        policy tags in this taxonomy, their associated policies,
-        and the policy tags references from BigQuery columns.
+        r"""Deletes a taxonomy, including all policy tags in this
+        taxonomy, their associated policies, and the policy tags
+        references from BigQuery columns.
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.DeleteTaxonomyRequest`):
@@ -268,8 +269,9 @@ class PolicyTagManagerAsyncClient:
                 [DeleteTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.DeleteTaxonomy].
             name (:class:`str`):
                 Required. Resource name of the
-                taxonomy to be deleted. All policy tags
-                in this taxonomy will also be deleted.
+                taxonomy to delete.
+                Note: All policy tags in this taxonomy
+                are also deleted.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -327,17 +329,17 @@ class PolicyTagManagerAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.Taxonomy:
-        r"""Updates a taxonomy. This method can update the
-        taxonomy's display name, description, and activated
-        policy types.
+        r"""Updates a taxonomy, including its display name,
+        description, and activated policy types.
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.UpdateTaxonomyRequest`):
                 The request object. Request message for
                 [UpdateTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.UpdateTaxonomy].
             taxonomy (:class:`google.cloud.datacatalog_v1.types.Taxonomy`):
-                The taxonomy to update. Only description, display_name,
-                and activated policy types can be updated.
+                The taxonomy to update. You can
+                update only its description, display
+                name, and activated policy types.
 
                 This corresponds to the ``taxonomy`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -351,13 +353,14 @@ class PolicyTagManagerAsyncClient:
         Returns:
             google.cloud.datacatalog_v1.types.Taxonomy:
                 A taxonomy is a collection of hierarchical policy tags that classify data
-                   along a common axis. For instance a "data
-                   sensitivity" taxonomy could contain the following
-                   policy tags:
+                   along a common axis.
+
+                   For example, a "data sensitivity" taxonomy might
+                   contain the following policy tags:
 
                    :literal:`\` + PII   + Account number   + Age   + SSN   + Zipcode + Financials   + Revenue`\ \`
 
-                   A "data origin" taxonomy could contain the following
+                   A "data origin" taxonomy might contain the following
                    policy tags:
 
                    :literal:`\` + User data + Employee data + Partner data + Public data`\ \`
@@ -414,7 +417,7 @@ class PolicyTagManagerAsyncClient:
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListTaxonomiesAsyncPager:
         r"""Lists all taxonomies in a project in a particular
-        location that the caller has permission to view.
+        location that you have a permission to view.
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.ListTaxonomiesRequest`):
@@ -509,7 +512,7 @@ class PolicyTagManagerAsyncClient:
                 [GetTaxonomy][google.cloud.datacatalog.v1.PolicyTagManager.GetTaxonomy].
             name (:class:`str`):
                 Required. Resource name of the
-                requested taxonomy.
+                taxonomy to get.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -523,13 +526,14 @@ class PolicyTagManagerAsyncClient:
         Returns:
             google.cloud.datacatalog_v1.types.Taxonomy:
                 A taxonomy is a collection of hierarchical policy tags that classify data
-                   along a common axis. For instance a "data
-                   sensitivity" taxonomy could contain the following
-                   policy tags:
+                   along a common axis.
+
+                   For example, a "data sensitivity" taxonomy might
+                   contain the following policy tags:
 
                    :literal:`\` + PII   + Account number   + Age   + SSN   + Zipcode + Financials   + Revenue`\ \`
 
-                   A "data origin" taxonomy could contain the following
+                   A "data origin" taxonomy might contain the following
                    policy tags:
 
                    :literal:`\` + User data + Employee data + Partner data + Public data`\ \`
@@ -595,13 +599,13 @@ class PolicyTagManagerAsyncClient:
             parent (:class:`str`):
                 Required. Resource name of the
                 taxonomy that the policy tag will belong
-                to.
+                to.<br /><br />
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             policy_tag (:class:`google.cloud.datacatalog_v1.types.PolicyTag`):
-                The policy tag to be created.
+                The policy tag to create.
                 This corresponds to the ``policy_tag`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -613,14 +617,15 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.PolicyTag:
-                Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
-                   in a hierarchy. For example, consider the following
-                   hierarchy:
+                Denotes one policy tag in a taxonomy, for example, SSN.
+
+                   Policy tags can be defined in a hierarchy. For
+                   example:
 
                    :literal:`\` + Geolocation   + LatLong   + City   + ZipCode`\ \`
 
-                   Policy tag "Geolocation" contains 3 child policy
-                   tags: "LatLong", "City", and "ZipCode".
+                   Where the "Geolocation" policy tag contains three
+                   children.
 
         """
         # Create or coerce a protobuf request object.
@@ -675,13 +680,12 @@ class PolicyTagManagerAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> None:
-        r"""Deletes a policy tag. This method also deletes:
+        r"""Deletes a policy tag together with the following:
 
-        -  all of its descendant policy tags, if any
-        -  the policies associated with the policy tag and its
-           descendants
-        -  references from BigQuery table schema of the policy tag and
-           its descendants.
+        -  All of its descendant policy tags, if any
+        -  Policies associated with the policy tag and its descendants
+        -  References from BigQuery table schema of the policy tag and
+           its descendants
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.DeletePolicyTagRequest`):
@@ -689,8 +693,9 @@ class PolicyTagManagerAsyncClient:
                 [DeletePolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.DeletePolicyTag].
             name (:class:`str`):
                 Required. Resource name of the policy
-                tag to be deleted. All of its descendant
-                policy tags will also be deleted.
+                tag to delete.
+                Note: All of its descendant policy tags
+                are also deleted.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -748,18 +753,17 @@ class PolicyTagManagerAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> policytagmanager.PolicyTag:
-        r"""Updates a policy tag. This method can update the
-        policy tag's display name, description, and parent
-        policy tag.
+        r"""Updates a policy tag, including its display
+        name, description, and parent policy tag.
 
         Args:
             request (:class:`google.cloud.datacatalog_v1.types.UpdatePolicyTagRequest`):
                 The request object. Request message for
                 [UpdatePolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.UpdatePolicyTag].
             policy_tag (:class:`google.cloud.datacatalog_v1.types.PolicyTag`):
-                The policy tag to update. Only the description,
-                display_name, and parent_policy_tag fields can be
-                updated.
+                The policy tag to update. You can
+                update only its description, display
+                name, and parent policy tag fields.
 
                 This corresponds to the ``policy_tag`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -772,14 +776,15 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.PolicyTag:
-                Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
-                   in a hierarchy. For example, consider the following
-                   hierarchy:
+                Denotes one policy tag in a taxonomy, for example, SSN.
+
+                   Policy tags can be defined in a hierarchy. For
+                   example:
 
                    :literal:`\` + Geolocation   + LatLong   + City   + ZipCode`\ \`
 
-                   Policy tag "Geolocation" contains 3 child policy
-                   tags: "LatLong", "City", and "ZipCode".
+                   Where the "Geolocation" policy tag contains three
+                   children.
 
         """
         # Create or coerce a protobuf request object.
@@ -926,8 +931,8 @@ class PolicyTagManagerAsyncClient:
                 The request object. Request message for
                 [GetPolicyTag][google.cloud.datacatalog.v1.PolicyTagManager.GetPolicyTag].
             name (:class:`str`):
-                Required. Resource name of the
-                requested policy tag.
+                Required. Resource name of the policy
+                tag.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -940,14 +945,15 @@ class PolicyTagManagerAsyncClient:
 
         Returns:
             google.cloud.datacatalog_v1.types.PolicyTag:
-                Denotes one policy tag in a taxonomy (e.g. ssn). Policy tags can be defined
-                   in a hierarchy. For example, consider the following
-                   hierarchy:
+                Denotes one policy tag in a taxonomy, for example, SSN.
+
+                   Policy tags can be defined in a hierarchy. For
+                   example:
 
                    :literal:`\` + Geolocation   + LatLong   + City   + ZipCode`\ \`
 
-                   Policy tag "Geolocation" contains 3 child policy
-                   tags: "LatLong", "City", and "ZipCode".
+                   Where the "Geolocation" policy tag contains three
+                   children.
 
         """
         # Create or coerce a protobuf request object.
@@ -1221,8 +1227,8 @@ class PolicyTagManagerAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> iam_policy_pb2.TestIamPermissionsResponse:
-        r"""Returns the permissions that a caller has on a
-        specified policy tag or taxonomy.
+        r"""Returns your permissions on a specified policy tag or
+        taxonomy.
 
         Args:
             request (:class:`google.iam.v1.iam_policy_pb2.TestIamPermissionsRequest`):

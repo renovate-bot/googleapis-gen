@@ -58,7 +58,7 @@ use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
 /**
- * Service Description: Policy Tag Manager API service allows clients to manage their policy tags and
+ * Service Description: Policy Tag Manager API service allows you to manage your policy tags and
  * taxonomies.
  *
  * Policy tags are used to tag BigQuery columns and apply additional access
@@ -352,12 +352,13 @@ class PolicyTagManagerGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. Resource name of the taxonomy that the policy tag will belong to.
+     * @param string $parent       Required. Resource name of the taxonomy that the policy tag will belong to.<br /><br
+     *                             />
      * @param array  $optionalArgs {
      *     Optional.
      *
      *     @type PolicyTag $policyTag
-     *           The policy tag to be created.
+     *           The policy tag to create.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -385,8 +386,9 @@ class PolicyTagManagerGapicClient
     }
 
     /**
-     * Creates a taxonomy in a specified project. The taxonomy is initially empty,
-     * i.e., does not contain policy tags.
+     * Creates a taxonomy in a specified project.
+     *
+     * The taxonomy is initially empty, that is, it doesn't contain policy tags.
      *
      * Sample code:
      * ```
@@ -404,7 +406,7 @@ class PolicyTagManagerGapicClient
      *     Optional.
      *
      *     @type Taxonomy $taxonomy
-     *           The taxonomy to be created.
+     *           The taxonomy to create.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -432,12 +434,12 @@ class PolicyTagManagerGapicClient
     }
 
     /**
-     * Deletes a policy tag. This method also deletes:
+     * Deletes a policy tag together with the following:
      *
-     * * all of its descendant policy tags, if any
-     * * the policies associated with the policy tag and its descendants
-     * * references from BigQuery table schema of the policy tag and its
-     * descendants.
+     * * All of its descendant policy tags, if any
+     * * Policies associated with the policy tag and its descendants
+     * * References from BigQuery table schema of the policy tag and its
+     * descendants
      *
      * Sample code:
      * ```
@@ -450,8 +452,9 @@ class PolicyTagManagerGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. Resource name of the policy tag to be deleted. All of its descendant
-     *                             policy tags will also be deleted.
+     * @param string $name         Required. Resource name of the policy tag to delete.
+     *
+     *                             Note: All of its descendant policy tags are also deleted.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -476,7 +479,7 @@ class PolicyTagManagerGapicClient
     }
 
     /**
-     * Deletes a taxonomy. This method will also delete all policy tags in this
+     * Deletes a taxonomy, including all policy tags in this
      * taxonomy, their associated policies, and the policy tags references from
      * BigQuery columns.
      *
@@ -491,8 +494,9 @@ class PolicyTagManagerGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. Resource name of the taxonomy to be deleted. All policy tags in
-     *                             this taxonomy will also be deleted.
+     * @param string $name         Required. Resource name of the taxonomy to delete.
+     *
+     *                             Note: All policy tags in this taxonomy are also deleted.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -578,7 +582,7 @@ class PolicyTagManagerGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. Resource name of the requested policy tag.
+     * @param string $name         Required. Resource name of the policy tag.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -618,7 +622,7 @@ class PolicyTagManagerGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. Resource name of the requested taxonomy.
+     * @param string $name         Required. Resource name of the taxonomy to get.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -714,8 +718,8 @@ class PolicyTagManagerGapicClient
     }
 
     /**
-     * Lists all taxonomies in a project in a particular location that the caller
-     * has permission to view.
+     * Lists all taxonomies in a project in a particular location that you
+     * have a permission to view.
      *
      * Sample code:
      * ```
@@ -831,7 +835,7 @@ class PolicyTagManagerGapicClient
     }
 
     /**
-     * Returns the permissions that a caller has on a specified policy tag or
+     * Returns your permissions on a specified policy tag or
      * taxonomy.
      *
      * Sample code:
@@ -879,7 +883,7 @@ class PolicyTagManagerGapicClient
     }
 
     /**
-     * Updates a policy tag. This method can update the policy tag's display
+     * Updates a policy tag, including its display
      * name, description, and parent policy tag.
      *
      * Sample code:
@@ -896,16 +900,15 @@ class PolicyTagManagerGapicClient
      *     Optional.
      *
      *     @type PolicyTag $policyTag
-     *           The policy tag to update. Only the description, display_name, and
-     *           parent_policy_tag fields can be updated.
+     *           The policy tag to update. You can update only its description, display
+     *           name, and parent policy tag fields.
      *     @type FieldMask $updateMask
-     *           The update mask applies to the resource. Only display_name, description and
-     *           parent_policy_tag can be updated and thus can be listed in the mask. If
-     *           update_mask is not provided, all allowed fields (i.e. display_name,
-     *           description and parent) will be updated. For more information including the
-     *           `FieldMask` definition, see
-     *           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     *           If not set, defaults to all of the fields that are allowed to update.
+     *           Specifies the fields to update.
+     *
+     *           You can update only display name, description, and parent policy tag.
+     *           If not set, defaults to all updatable fields.
+     *           For more information, see [FieldMask]
+     *           (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -935,7 +938,7 @@ class PolicyTagManagerGapicClient
     }
 
     /**
-     * Updates a taxonomy. This method can update the taxonomy's display name,
+     * Updates a taxonomy, including its display name,
      * description, and activated policy types.
      *
      * Sample code:
@@ -952,13 +955,14 @@ class PolicyTagManagerGapicClient
      *     Optional.
      *
      *     @type Taxonomy $taxonomy
-     *           The taxonomy to update. Only description, display_name, and activated
-     *           policy types can be updated.
+     *           The taxonomy to update. You can update only its description, display name,
+     *           and activated policy types.
      *     @type FieldMask $updateMask
-     *           The update mask applies to the resource. For the `FieldMask` definition,
-     *           see
-     *           https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
-     *           If not set, defaults to all of the fields that are allowed to update.
+     *           Specifies fields to update. If not set, defaults to all fields you can
+     *           update.
+     *
+     *           For more information, see [FieldMask]
+     *           (https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask).
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

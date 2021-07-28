@@ -47,16 +47,16 @@ import javax.annotation.Generated;
  * <p>The builder of this class is recursive, so contained classes are themselves builders. When
  * build() is called, the tree of builders is called to create the complete settings object.
  *
- * <p>For example, to set the total timeout of importTaxonomies to 30 seconds:
+ * <p>For example, to set the total timeout of replaceTaxonomy to 30 seconds:
  *
  * <pre>{@code
  * PolicyTagManagerSerializationSettings.Builder policyTagManagerSerializationSettingsBuilder =
  *     PolicyTagManagerSerializationSettings.newBuilder();
  * policyTagManagerSerializationSettingsBuilder
- *     .importTaxonomiesSettings()
+ *     .replaceTaxonomySettings()
  *     .setRetrySettings(
  *         policyTagManagerSerializationSettingsBuilder
- *             .importTaxonomiesSettings()
+ *             .replaceTaxonomySettings()
  *             .getRetrySettings()
  *             .toBuilder()
  *             .setTotalTimeout(Duration.ofSeconds(30))
@@ -68,6 +68,12 @@ import javax.annotation.Generated;
 @Generated("by gapic-generator-java")
 public class PolicyTagManagerSerializationSettings
     extends ClientSettings<PolicyTagManagerSerializationSettings> {
+
+  /** Returns the object with the settings used for calls to replaceTaxonomy. */
+  public UnaryCallSettings<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomySettings() {
+    return ((PolicyTagManagerSerializationStubSettings) getStubSettings())
+        .replaceTaxonomySettings();
+  }
 
   /** Returns the object with the settings used for calls to importTaxonomies. */
   public UnaryCallSettings<ImportTaxonomiesRequest, ImportTaxonomiesResponse>
@@ -180,6 +186,11 @@ public class PolicyTagManagerSerializationSettings
       super.applyToAllUnaryMethods(
           getStubSettingsBuilder().unaryMethodSettingsBuilders(), settingsUpdater);
       return this;
+    }
+
+    /** Returns the builder for the settings used for calls to replaceTaxonomy. */
+    public UnaryCallSettings.Builder<ReplaceTaxonomyRequest, Taxonomy> replaceTaxonomySettings() {
+      return getStubSettingsBuilder().replaceTaxonomySettings();
     }
 
     /** Returns the builder for the settings used for calls to importTaxonomies. */

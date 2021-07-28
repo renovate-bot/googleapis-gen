@@ -339,9 +339,11 @@ class DataCatalogClientTest extends GeneratedTest
         // Mock response
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
+        $isPubliclyReadable = true;
         $expectedResponse = new TagTemplate();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setIsPubliclyReadable($isPubliclyReadable);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->locationName('[PROJECT]', '[LOCATION]');
@@ -1034,9 +1036,11 @@ class DataCatalogClientTest extends GeneratedTest
         // Mock response
         $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
+        $isPubliclyReadable = true;
         $expectedResponse = new TagTemplate();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setIsPubliclyReadable($isPubliclyReadable);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->tagTemplateName('[PROJECT]', '[LOCATION]', '[TAG_TEMPLATE]');
@@ -1974,9 +1978,11 @@ class DataCatalogClientTest extends GeneratedTest
         // Mock response
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
+        $isPubliclyReadable = true;
         $expectedResponse = new TagTemplate();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
+        $expectedResponse->setIsPubliclyReadable($isPubliclyReadable);
         $transport->addResponse($expectedResponse);
         // Mock request
         $tagTemplate = new TagTemplate();

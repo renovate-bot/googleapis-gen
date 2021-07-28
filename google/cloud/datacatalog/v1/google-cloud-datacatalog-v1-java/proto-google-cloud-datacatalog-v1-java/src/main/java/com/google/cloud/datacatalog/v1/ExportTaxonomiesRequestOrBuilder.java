@@ -29,7 +29,7 @@ public interface ExportTaxonomiesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -39,7 +39,7 @@ public interface ExportTaxonomiesRequestOrBuilder extends
       getTaxonomiesList();
   /**
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -48,7 +48,7 @@ public interface ExportTaxonomiesRequestOrBuilder extends
   int getTaxonomiesCount();
   /**
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -58,7 +58,7 @@ public interface ExportTaxonomiesRequestOrBuilder extends
   java.lang.String getTaxonomies(int index);
   /**
    * <pre>
-   * Required. Resource names of the taxonomies to be exported.
+   * Required. Resource names of the taxonomies to export.
    * </pre>
    *
    * <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -70,8 +70,8 @@ public interface ExportTaxonomiesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Export taxonomies as serialized taxonomies, which contain all the policy
-   * tags as nested protos.
+   * Serialized export taxonomies that contain all the policy
+   * tags as nested protocol buffers.
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>
@@ -80,8 +80,8 @@ public interface ExportTaxonomiesRequestOrBuilder extends
   boolean hasSerializedTaxonomies();
   /**
    * <pre>
-   * Export taxonomies as serialized taxonomies, which contain all the policy
-   * tags as nested protos.
+   * Serialized export taxonomies that contain all the policy
+   * tags as nested protocol buffers.
    * </pre>
    *
    * <code>bool serialized_taxonomies = 3;</code>

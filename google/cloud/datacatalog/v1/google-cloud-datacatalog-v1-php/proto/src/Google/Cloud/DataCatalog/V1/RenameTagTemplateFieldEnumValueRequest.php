@@ -17,8 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class RenameTagTemplateFieldEnumValueRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The name of the enum field value. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+     * Required. The name of the enum field value.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -37,8 +36,7 @@ class RenameTagTemplateFieldEnumValueRequest extends \Google\Protobuf\Internal\M
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The name of the enum field value. Example:
-     *           * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+     *           Required. The name of the enum field value.
      *     @type string $new_enum_value_display_name
      *           Required. The new display name of the enum value. For example, `my_new_enum_value`.
      * }
@@ -49,8 +47,7 @@ class RenameTagTemplateFieldEnumValueRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Required. The name of the enum field value. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+     * Required. The name of the enum field value.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -61,8 +58,7 @@ class RenameTagTemplateFieldEnumValueRequest extends \Google\Protobuf\Internal\M
     }
 
     /**
-     * Required. The name of the enum field value. Example:
-     * * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
+     * Required. The name of the enum field value.
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

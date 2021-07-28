@@ -23,7 +23,7 @@ class ListTaxonomiesResponse extends \Google\Protobuf\Internal\Message
      */
     private $taxonomies;
     /**
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
@@ -39,7 +39,7 @@ class ListTaxonomiesResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\DataCatalog\V1\Taxonomy[]|\Google\Protobuf\Internal\RepeatedField $taxonomies
      *           Taxonomies that the project contains.
      *     @type string $next_page_token
-     *           Token used to retrieve the next page of results, or empty if there are no
+     *           Pagination token of the next results page. Empty if there are no
      *           more results in the list.
      * }
      */
@@ -75,7 +75,7 @@ class ListTaxonomiesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
@@ -87,7 +87,7 @@ class ListTaxonomiesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>

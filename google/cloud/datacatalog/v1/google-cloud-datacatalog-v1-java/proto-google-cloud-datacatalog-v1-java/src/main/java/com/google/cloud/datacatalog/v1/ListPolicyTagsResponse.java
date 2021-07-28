@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.datacatalog.v1.PolicyTag> policyTags_;
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -121,7 +121,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -133,7 +133,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -144,7 +144,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -155,7 +155,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The policy tags that are in the requested taxonomy.
+   * The policy tags that belong to the taxonomy.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -170,7 +170,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object nextPageToken_;
   /**
    * <pre>
-   * Token used to retrieve the next page of results, or empty if there are no
+   * Pagination token of the next results page. Empty if there are no
    * more results in the list.
    * </pre>
    *
@@ -192,7 +192,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Token used to retrieve the next page of results, or empty if there are no
+   * Pagination token of the next results page. Empty if there are no
    * more results in the list.
    * </pre>
    *
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -620,7 +620,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -634,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -655,7 +655,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -673,7 +673,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -732,7 +732,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -750,7 +750,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -769,7 +769,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -786,7 +786,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -803,7 +803,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -814,7 +814,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -854,7 +854,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -866,7 +866,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The policy tags that are in the requested taxonomy.
+     * The policy tags that belong to the taxonomy.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.PolicyTag policy_tags = 1;</code>
@@ -893,7 +893,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object nextPageToken_ = "";
     /**
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *
@@ -914,7 +914,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *
@@ -936,7 +936,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *
@@ -956,7 +956,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *
@@ -971,7 +971,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Token used to retrieve the next page of results, or empty if there are no
+     * Pagination token of the next results page. Empty if there are no
      * more results in the list.
      * </pre>
      *

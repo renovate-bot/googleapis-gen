@@ -9,9 +9,8 @@ public interface TagOrBuilder extends
 
   /**
    * <pre>
-   * The resource name of the tag in URL format. Example:
-   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-   * where `tag_id` is a system-generated identifier.
+   * The resource name of the tag in URL format where tag ID is a
+   * system-generated identifier.
    * Note: The tag itself might not be stored in the location specified in its
    * name.
    * </pre>
@@ -22,9 +21,8 @@ public interface TagOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * The resource name of the tag in URL format. Example:
-   * `projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}`
-   * where `tag_id` is a system-generated identifier.
+   * The resource name of the tag in URL format where tag ID is a
+   * system-generated identifier.
    * Note: The tag itself might not be stored in the location specified in its
    * name.
    * </pre>
@@ -37,8 +35,8 @@ public interface TagOrBuilder extends
 
   /**
    * <pre>
-   * Required. The resource name of the tag template that this tag uses. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * Required. The resource name of the tag template this tag uses. Example:
+   * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -48,8 +46,8 @@ public interface TagOrBuilder extends
   java.lang.String getTemplate();
   /**
    * <pre>
-   * Required. The resource name of the tag template that this tag uses. Example:
-   * `projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}`
+   * Required. The resource name of the tag template this tag uses. Example:
+   * `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}`
    * This field cannot be modified after creation.
    * </pre>
    *
@@ -82,7 +80,7 @@ public interface TagOrBuilder extends
   /**
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
-   * allows users to attach tags to an individual column based on that schema.
+   * allows you to attach tags to an individual column based on that schema.
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -94,7 +92,7 @@ public interface TagOrBuilder extends
   /**
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
-   * allows users to attach tags to an individual column based on that schema.
+   * allows you to attach tags to an individual column based on that schema.
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -106,7 +104,7 @@ public interface TagOrBuilder extends
   /**
    * <pre>
    * Resources like entry can have schemas associated with them. This scope
-   * allows users to attach tags to an individual column based on that schema.
+   * allows you to attach tags to an individual column based on that schema.
    * To attach a tag to a nested column, separate column names with a dot
    * (`.`). Example: `column.nested_column`.
    * </pre>
@@ -119,8 +117,9 @@ public interface TagOrBuilder extends
 
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *
@@ -129,8 +128,9 @@ public interface TagOrBuilder extends
   int getFieldsCount();
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *
@@ -146,8 +146,9 @@ public interface TagOrBuilder extends
   getFields();
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *
@@ -157,8 +158,9 @@ public interface TagOrBuilder extends
   getFieldsMap();
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *
@@ -170,8 +172,9 @@ public interface TagOrBuilder extends
       com.google.cloud.datacatalog.v1.TagField defaultValue);
   /**
    * <pre>
-   * Required. This maps the ID of a tag field to the value of and additional information
-   * about that field. Valid field IDs are defined by the tag's template. A tag
+   * Required. Maps the ID of a tag field to its value and additional information
+   * about that field.
+   * Tag template defines valid field IDs. A tag
    * must have at least 1 field and at most 500 fields.
    * </pre>
    *

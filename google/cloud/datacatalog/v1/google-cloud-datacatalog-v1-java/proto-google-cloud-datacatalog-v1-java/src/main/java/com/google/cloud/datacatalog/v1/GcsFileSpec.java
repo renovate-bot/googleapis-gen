@@ -5,7 +5,7 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * Specifications of a single file in Cloud Storage.
+ * Specification of a single file in Cloud Storage.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.GcsFileSpec}
@@ -113,7 +113,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object filePath_;
   /**
    * <pre>
-   * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+   * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
    * </pre>
    *
    * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+   * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
    * </pre>
    *
    * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.datacatalog.v1.SystemTimestamps gcsTimestamps_;
   /**
    * <pre>
-   * Output only. Timestamps about the Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -171,7 +171,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Timestamps about the Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -183,7 +183,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Timestamps about the Cloud Storage file.
+   * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -197,7 +197,7 @@ private static final long serialVersionUID = 0L;
   private long sizeBytes_;
   /**
    * <pre>
-   * Output only. The size of the file, in bytes.
+   * Output only. File size in bytes.
    * </pre>
    *
    * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -392,7 +392,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Specifications of a single file in Cloud Storage.
+   * Specification of a single file in Cloud Storage.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.GcsFileSpec}
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object filePath_ = "";
     /**
      * <pre>
-     * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+     * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -585,7 +585,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+     * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -606,7 +606,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+     * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -625,7 +625,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+     * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -639,7 +639,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The full file path. Example: `gs://bucket_name/a/b.txt`.
+     * Required. Full file path. Example: `gs://bucket_name/a/b.txt`.
      * </pre>
      *
      * <code>string file_path = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.datacatalog.v1.SystemTimestamps, com.google.cloud.datacatalog.v1.SystemTimestamps.Builder, com.google.cloud.datacatalog.v1.SystemTimestampsOrBuilder> gcsTimestampsBuilder_;
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -674,7 +674,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -689,7 +689,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -709,7 +709,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -727,7 +727,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -749,7 +749,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -767,7 +767,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -794,7 +794,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Timestamps about the Cloud Storage file.
+     * Output only. Creation, modification, and expiration timestamps of a Cloud Storage file.
      * </pre>
      *
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps gcs_timestamps = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -816,7 +816,7 @@ private static final long serialVersionUID = 0L;
     private long sizeBytes_ ;
     /**
      * <pre>
-     * Output only. The size of the file, in bytes.
+     * Output only. File size in bytes.
      * </pre>
      *
      * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -828,7 +828,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The size of the file, in bytes.
+     * Output only. File size in bytes.
      * </pre>
      *
      * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -843,7 +843,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The size of the file, in bytes.
+     * Output only. File size in bytes.
      * </pre>
      *
      * <code>int64 size_bytes = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

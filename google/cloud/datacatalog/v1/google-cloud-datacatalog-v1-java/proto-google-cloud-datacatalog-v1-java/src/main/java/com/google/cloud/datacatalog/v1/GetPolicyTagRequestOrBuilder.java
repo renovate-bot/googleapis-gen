@@ -9,7 +9,7 @@ public interface GetPolicyTagRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of the requested policy tag.
+   * Required. Resource name of the policy tag.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -18,7 +18,7 @@ public interface GetPolicyTagRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. Resource name of the requested policy tag.
+   * Required. Resource name of the policy tag.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

@@ -23,7 +23,7 @@ class CreateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * The taxonomy to be created.
+     * The taxonomy to create.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
      */
@@ -38,7 +38,7 @@ class CreateTaxonomyRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. Resource name of the project that the taxonomy will belong to.
      *     @type \Google\Cloud\DataCatalog\V1\Taxonomy $taxonomy
-     *           The taxonomy to be created.
+     *           The taxonomy to create.
      * }
      */
     public function __construct($data = NULL) {
@@ -73,7 +73,7 @@ class CreateTaxonomyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The taxonomy to be created.
+     * The taxonomy to create.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
      * @return \Google\Cloud\DataCatalog\V1\Taxonomy|null
@@ -94,7 +94,7 @@ class CreateTaxonomyRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The taxonomy to be created.
+     * The taxonomy to create.
      *
      * Generated from protobuf field <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
      * @param \Google\Cloud\DataCatalog\V1\Taxonomy $var

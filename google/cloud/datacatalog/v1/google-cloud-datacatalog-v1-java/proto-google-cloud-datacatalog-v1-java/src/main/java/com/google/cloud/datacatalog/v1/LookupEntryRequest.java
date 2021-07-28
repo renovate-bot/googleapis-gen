@@ -150,12 +150,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The full name of the Google Cloud Platform resource the Data Catalog
-   * entry represents. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-   * Full names are case-sensitive.
-   * Examples:
-   *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-   *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+   * entry represents. For more information, see [Full Resource Name]
+   * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   * Full names are case-sensitive. For example:
+   *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+   *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
@@ -167,12 +166,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The full name of the Google Cloud Platform resource the Data Catalog
-   * entry represents. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-   * Full names are case-sensitive.
-   * Examples:
-   *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-   *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+   * entry represents. For more information, see [Full Resource Name]
+   * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   * Full names are case-sensitive. For example:
+   *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+   *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
@@ -198,12 +196,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The full name of the Google Cloud Platform resource the Data Catalog
-   * entry represents. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-   * Full names are case-sensitive.
-   * Examples:
-   *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-   *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+   * entry represents. For more information, see [Full Resource Name]
+   * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+   * Full names are case-sensitive. For example:
+   *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+   *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
    * </pre>
    *
    * <code>string linked_resource = 1;</code>
@@ -233,13 +230,14 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   *   * `pubsub.project_id.topic_id`
-   *   * ``pubsub.project_id.`topic.id.with.dots` ``
-   *   * `bigquery.table.project_id.dataset_id.table_id`
-   *   * `bigquery.dataset.project_id.dataset_id`
-   *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
-   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+   * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+   * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+   * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+   * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+   * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   * Identifiers (`*_ID`) should comply with the
+   * [Lexical structure in Standard SQL]
+   * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
@@ -252,13 +250,14 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   *   * `pubsub.project_id.topic_id`
-   *   * ``pubsub.project_id.`topic.id.with.dots` ``
-   *   * `bigquery.table.project_id.dataset_id.table_id`
-   *   * `bigquery.dataset.project_id.dataset_id`
-   *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
-   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+   * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+   * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+   * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+   * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+   * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   * Identifiers (`*_ID`) should comply with the
+   * [Lexical structure in Standard SQL]
+   * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
@@ -285,13 +284,14 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The SQL name of the entry. SQL names are case-sensitive.
    * Examples:
-   *   * `pubsub.project_id.topic_id`
-   *   * ``pubsub.project_id.`topic.id.with.dots` ``
-   *   * `bigquery.table.project_id.dataset_id.table_id`
-   *   * `bigquery.dataset.project_id.dataset_id`
-   *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-   * `*_id`s should satisfy the standard SQL rules for identifiers.
-   * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+   * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+   * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+   * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+   * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+   * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+   * Identifiers (`*_ID`) should comply with the
+   * [Lexical structure in Standard SQL]
+   * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
    * </pre>
    *
    * <code>string sql_resource = 3;</code>
@@ -326,7 +326,7 @@ private static final long serialVersionUID = 0L;
    * * For regionalized resources:
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
    * Example for a DPMS table:
-   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
    * <code>string fully_qualified_name = 5;</code>
@@ -344,7 +344,7 @@ private static final long serialVersionUID = 0L;
    * * For regionalized resources:
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
    * Example for a DPMS table:
-   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
    * <code>string fully_qualified_name = 5;</code>
@@ -376,7 +376,7 @@ private static final long serialVersionUID = 0L;
    * * For regionalized resources:
    *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
    * Example for a DPMS table:
-   * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+   * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
    * </pre>
    *
    * <code>string fully_qualified_name = 5;</code>
@@ -795,12 +795,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Cloud Platform resource the Data Catalog
-     * entry represents. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-     * Full names are case-sensitive.
-     * Examples:
-     *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+     * entry represents. For more information, see [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * Full names are case-sensitive. For example:
+     *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
@@ -813,12 +812,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Cloud Platform resource the Data Catalog
-     * entry represents. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-     * Full names are case-sensitive.
-     * Examples:
-     *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+     * entry represents. For more information, see [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * Full names are case-sensitive. For example:
+     *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
@@ -845,12 +843,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Cloud Platform resource the Data Catalog
-     * entry represents. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-     * Full names are case-sensitive.
-     * Examples:
-     *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+     * entry represents. For more information, see [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * Full names are case-sensitive. For example:
+     *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
@@ -878,12 +875,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Cloud Platform resource the Data Catalog
-     * entry represents. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-     * Full names are case-sensitive.
-     * Examples:
-     *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+     * entry represents. For more information, see [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * Full names are case-sensitive. For example:
+     *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
@@ -903,12 +899,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Cloud Platform resource the Data Catalog
-     * entry represents. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-     * Full names are case-sensitive.
-     * Examples:
-     *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+     * entry represents. For more information, see [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * Full names are case-sensitive. For example:
+     *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
@@ -925,12 +920,11 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Cloud Platform resource the Data Catalog
-     * entry represents. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name.
-     * Full names are case-sensitive.
-     * Examples:
-     *  * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId
-     *  * //pubsub.googleapis.com/projects/projectId/topics/topicId
+     * entry represents. For more information, see [Full Resource Name]
+     * (https://cloud.google.com/apis/design/resource_names#full_resource_name).
+     * Full names are case-sensitive. For example:
+     *  * `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}`
+     *  * `//pubsub.googleapis.com/projects/{PROJECT_ID}/topics/{TOPIC_ID}`
      * </pre>
      *
      * <code>string linked_resource = 1;</code>
@@ -953,13 +947,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `pubsub.project_id.topic_id`
-     *   * ``pubsub.project_id.`topic.id.with.dots` ``
-     *   * `bigquery.table.project_id.dataset_id.table_id`
-     *   * `bigquery.dataset.project_id.dataset_id`
-     *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
-     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+     * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+     * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+     * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+     * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+     * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     * Identifiers (`*_ID`) should comply with the
+     * [Lexical structure in Standard SQL]
+     * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -973,13 +968,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `pubsub.project_id.topic_id`
-     *   * ``pubsub.project_id.`topic.id.with.dots` ``
-     *   * `bigquery.table.project_id.dataset_id.table_id`
-     *   * `bigquery.dataset.project_id.dataset_id`
-     *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
-     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+     * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+     * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+     * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+     * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+     * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     * Identifiers (`*_ID`) should comply with the
+     * [Lexical structure in Standard SQL]
+     * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -1007,13 +1003,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `pubsub.project_id.topic_id`
-     *   * ``pubsub.project_id.`topic.id.with.dots` ``
-     *   * `bigquery.table.project_id.dataset_id.table_id`
-     *   * `bigquery.dataset.project_id.dataset_id`
-     *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
-     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+     * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+     * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+     * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+     * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+     * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     * Identifiers (`*_ID`) should comply with the
+     * [Lexical structure in Standard SQL]
+     * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -1042,13 +1039,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `pubsub.project_id.topic_id`
-     *   * ``pubsub.project_id.`topic.id.with.dots` ``
-     *   * `bigquery.table.project_id.dataset_id.table_id`
-     *   * `bigquery.dataset.project_id.dataset_id`
-     *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
-     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+     * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+     * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+     * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+     * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+     * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     * Identifiers (`*_ID`) should comply with the
+     * [Lexical structure in Standard SQL]
+     * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -1069,13 +1067,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `pubsub.project_id.topic_id`
-     *   * ``pubsub.project_id.`topic.id.with.dots` ``
-     *   * `bigquery.table.project_id.dataset_id.table_id`
-     *   * `bigquery.dataset.project_id.dataset_id`
-     *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
-     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+     * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+     * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+     * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+     * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+     * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     * Identifiers (`*_ID`) should comply with the
+     * [Lexical structure in Standard SQL]
+     * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -1093,13 +1092,14 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The SQL name of the entry. SQL names are case-sensitive.
      * Examples:
-     *   * `pubsub.project_id.topic_id`
-     *   * ``pubsub.project_id.`topic.id.with.dots` ``
-     *   * `bigquery.table.project_id.dataset_id.table_id`
-     *   * `bigquery.dataset.project_id.dataset_id`
-     *   * `datacatalog.entry.project_id.location_id.entry_group_id.entry_id`
-     * `*_id`s should satisfy the standard SQL rules for identifiers.
-     * https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical.
+     * * `pubsub.topic.{PROJECT_ID}.{TOPIC_ID}`
+     * * `pubsub.topic.{PROJECT_ID}.`&#92;``{TOPIC.ID.SEPARATED.WITH.DOTS}`&#92;`
+     * * `bigquery.table.{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}`
+     * * `bigquery.dataset.{PROJECT_ID}.{DATASET_ID}`
+     * * `datacatalog.entry.{PROJECT_ID}.{LOCATION_ID}.{ENTRY_GROUP_ID}.{ENTRY_ID}`
+     * Identifiers (`*_ID`) should comply with the
+     * [Lexical structure in Standard SQL]
+     * (https://cloud.google.com/bigquery/docs/reference/standard-sql/lexical).
      * </pre>
      *
      * <code>string sql_resource = 3;</code>
@@ -1127,7 +1127,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 5;</code>
@@ -1146,7 +1146,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 5;</code>
@@ -1179,7 +1179,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 5;</code>
@@ -1213,7 +1213,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 5;</code>
@@ -1239,7 +1239,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 5;</code>
@@ -1262,7 +1262,7 @@ private static final long serialVersionUID = 0L;
      * * For regionalized resources:
      *   `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}`
      * Example for a DPMS table:
-     * `dataproc_metastore:project_id.location_id.instance_id.database_id.table_id`
+     * `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
      * </pre>
      *
      * <code>string fully_qualified_name = 5;</code>

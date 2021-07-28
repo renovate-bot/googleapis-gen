@@ -29,7 +29,7 @@ public interface CreateTaxonomyRequestOrBuilder extends
 
   /**
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -38,7 +38,7 @@ public interface CreateTaxonomyRequestOrBuilder extends
   boolean hasTaxonomy();
   /**
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>
@@ -47,7 +47,7 @@ public interface CreateTaxonomyRequestOrBuilder extends
   com.google.cloud.datacatalog.v1.Taxonomy getTaxonomy();
   /**
    * <pre>
-   * The taxonomy to be created.
+   * The taxonomy to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.Taxonomy taxonomy = 2;</code>

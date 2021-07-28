@@ -5,8 +5,8 @@ package com.google.cloud.datacatalog.v1;
 
 /**
  * <pre>
- * Message representing one policy tag, including all its descendant policy
- * tags, as a nested proto.
+ * A nested protocol buffer that represents a policy tag and all its
+ * descendants.
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1.SerializedPolicyTag}
@@ -125,7 +125,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Resource name of the policy tag.
-   * This field will be ignored when calling ImportTaxonomies.
+   * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
    * <code>string policy_tag = 1;</code>
@@ -147,7 +147,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Resource name of the policy tag.
-   * This field will be ignored when calling ImportTaxonomies.
+   * This field is ignored when calling `ImportTaxonomies`.
    * </pre>
    *
    * <code>string policy_tag = 1;</code>
@@ -172,7 +172,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. At most 200 bytes when encoded
+   * in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -193,7 +194,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+   * Required. Display name of the policy tag. At most 200 bytes when encoded
+   * in UTF-8.
    * </pre>
    *
    * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -218,8 +220,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object description_;
   /**
    * <pre>
-   * Description of the serialized policy tag. The length of the description is
-   * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+   * Description of the serialized policy tag. At most
+   * 2000 bytes when encoded in UTF-8. If not set, defaults to an
    * empty description.
    * </pre>
    *
@@ -241,8 +243,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Description of the serialized policy tag. The length of the description is
-   * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+   * Description of the serialized policy tag. At most
+   * 2000 bytes when encoded in UTF-8. If not set, defaults to an
    * empty description.
    * </pre>
    *
@@ -513,8 +515,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Message representing one policy tag, including all its descendant policy
-   * tags, as a nested proto.
+   * A nested protocol buffer that represents a policy tag and all its
+   * descendants.
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1.SerializedPolicyTag}
@@ -726,7 +728,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -747,7 +749,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -769,7 +771,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -789,7 +791,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -804,7 +806,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      * </pre>
      *
      * <code>string policy_tag = 1;</code>
@@ -826,7 +828,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -846,7 +849,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -867,7 +871,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -886,7 +891,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -900,7 +906,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      * </pre>
      *
      * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -922,8 +929,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object description_ = "";
     /**
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *
@@ -944,8 +951,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *
@@ -967,8 +974,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *
@@ -988,8 +995,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *
@@ -1004,8 +1011,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      * </pre>
      *

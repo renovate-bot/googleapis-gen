@@ -23,7 +23,7 @@ class ExportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      *
      * Generated from protobuf field <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -39,10 +39,10 @@ class ExportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Required. Resource name of the project that the exported taxonomies belong to.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $taxonomies
-     *           Required. Resource names of the taxonomies to be exported.
+     *           Required. Resource names of the taxonomies to export.
      *     @type bool $serialized_taxonomies
-     *           Export taxonomies as serialized taxonomies, which contain all the policy
-     *           tags as nested protos.
+     *           Serialized export taxonomies that contain all the policy
+     *           tags as nested protocol buffers.
      * }
      */
     public function __construct($data = NULL) {
@@ -77,7 +77,7 @@ class ExportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      *
      * Generated from protobuf field <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -88,7 +88,7 @@ class ExportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Resource names of the taxonomies to be exported.
+     * Required. Resource names of the taxonomies to export.
      *
      * Generated from protobuf field <code>repeated string taxonomies = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -103,8 +103,8 @@ class ExportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      *
      * Generated from protobuf field <code>bool serialized_taxonomies = 3;</code>
      * @return bool
@@ -120,8 +120,8 @@ class ExportTaxonomiesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Export taxonomies as serialized taxonomies, which contain all the policy
-     * tags as nested protos.
+     * Serialized export taxonomies that contain all the policy
+     * tags as nested protocol buffers.
      *
      * Generated from protobuf field <code>bool serialized_taxonomies = 3;</code>
      * @param bool $var

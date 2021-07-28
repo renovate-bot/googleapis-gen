@@ -103,7 +103,7 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.datacatalog.v1.SerializedTaxonomy> taxonomies_;
   /**
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -137,7 +137,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * List of taxonomies and policy tags as nested protos.
+   * List of taxonomies and policy tags as nested protocol buffers.
    * </pre>
    *
    * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -520,7 +520,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -534,7 +534,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -548,7 +548,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -562,7 +562,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -583,7 +583,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -601,7 +601,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -621,7 +621,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -642,7 +642,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -660,7 +660,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -697,7 +697,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -714,7 +714,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -731,7 +731,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -756,7 +756,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -771,7 +771,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -782,7 +782,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>
@@ -794,7 +794,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * List of taxonomies and policy tags as nested protos.
+     * List of taxonomies and policy tags as nested protocol buffers.
      * </pre>
      *
      * <code>repeated .google.cloud.datacatalog.v1.SerializedTaxonomy taxonomies = 1;</code>

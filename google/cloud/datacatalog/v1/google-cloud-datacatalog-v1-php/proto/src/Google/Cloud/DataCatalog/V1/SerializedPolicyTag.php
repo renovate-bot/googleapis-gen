@@ -9,8 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Message representing one policy tag, including all its descendant policy
- * tags, as a nested proto.
+ * A nested protocol buffer that represents a policy tag and all its
+ * descendants.
  *
  * Generated from protobuf message <code>google.cloud.datacatalog.v1.SerializedPolicyTag</code>
  */
@@ -18,20 +18,21 @@ class SerializedPolicyTag extends \Google\Protobuf\Internal\Message
 {
     /**
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      *
      * Generated from protobuf field <code>string policy_tag = 1;</code>
      */
     protected $policy_tag = '';
     /**
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      *
      * Generated from protobuf field <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $display_name = '';
     /**
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      *
      * Generated from protobuf field <code>string description = 3;</code>
@@ -52,12 +53,13 @@ class SerializedPolicyTag extends \Google\Protobuf\Internal\Message
      *
      *     @type string $policy_tag
      *           Resource name of the policy tag.
-     *           This field will be ignored when calling ImportTaxonomies.
+     *           This field is ignored when calling `ImportTaxonomies`.
      *     @type string $display_name
-     *           Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     *           Required. Display name of the policy tag. At most 200 bytes when encoded
+     *           in UTF-8.
      *     @type string $description
-     *           Description of the serialized policy tag. The length of the description is
-     *           limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     *           Description of the serialized policy tag. At most
+     *           2000 bytes when encoded in UTF-8. If not set, defaults to an
      *           empty description.
      *     @type \Google\Cloud\DataCatalog\V1\SerializedPolicyTag[]|\Google\Protobuf\Internal\RepeatedField $child_policy_tags
      *           Children of the policy tag, if any.
@@ -70,7 +72,7 @@ class SerializedPolicyTag extends \Google\Protobuf\Internal\Message
 
     /**
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      *
      * Generated from protobuf field <code>string policy_tag = 1;</code>
      * @return string
@@ -82,7 +84,7 @@ class SerializedPolicyTag extends \Google\Protobuf\Internal\Message
 
     /**
      * Resource name of the policy tag.
-     * This field will be ignored when calling ImportTaxonomies.
+     * This field is ignored when calling `ImportTaxonomies`.
      *
      * Generated from protobuf field <code>string policy_tag = 1;</code>
      * @param string $var
@@ -97,7 +99,8 @@ class SerializedPolicyTag extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      *
      * Generated from protobuf field <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -108,7 +111,8 @@ class SerializedPolicyTag extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Display name of the policy tag. At most 200 bytes when encoded in UTF-8.
+     * Required. Display name of the policy tag. At most 200 bytes when encoded
+     * in UTF-8.
      *
      * Generated from protobuf field <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -123,8 +127,8 @@ class SerializedPolicyTag extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      *
      * Generated from protobuf field <code>string description = 3;</code>
@@ -136,8 +140,8 @@ class SerializedPolicyTag extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Description of the serialized policy tag. The length of the description is
-     * limited to 2000 bytes when encoded in UTF-8. If not set, defaults to an
+     * Description of the serialized policy tag. At most
+     * 2000 bytes when encoded in UTF-8. If not set, defaults to an
      * empty description.
      *
      * Generated from protobuf field <code>string description = 3;</code>

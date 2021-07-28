@@ -9,7 +9,8 @@ public interface CreatePolicyTagRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.
+   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+   * /&gt;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -18,7 +19,8 @@ public interface CreatePolicyTagRequestOrBuilder extends
   java.lang.String getParent();
   /**
    * <pre>
-   * Required. Resource name of the taxonomy that the policy tag will belong to.
+   * Required. Resource name of the taxonomy that the policy tag will belong to.&lt;br /&gt;&lt;br
+   * /&gt;
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -29,7 +31,7 @@ public interface CreatePolicyTagRequestOrBuilder extends
 
   /**
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -38,7 +40,7 @@ public interface CreatePolicyTagRequestOrBuilder extends
   boolean hasPolicyTag();
   /**
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
@@ -47,7 +49,7 @@ public interface CreatePolicyTagRequestOrBuilder extends
   com.google.cloud.datacatalog.v1.PolicyTag getPolicyTag();
   /**
    * <pre>
-   * The policy tag to be created.
+   * The policy tag to create.
    * </pre>
    *
    * <code>.google.cloud.datacatalog.v1.PolicyTag policy_tag = 2;</code>
