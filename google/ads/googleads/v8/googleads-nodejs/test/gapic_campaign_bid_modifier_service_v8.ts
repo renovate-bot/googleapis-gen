@@ -61,13 +61,6 @@ describe('v8.CampaignBidModifierServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new campaignbidmodifierserviceModule.v8.CampaignBidModifierServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignbidmodifierserviceModule.v8.CampaignBidModifierServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

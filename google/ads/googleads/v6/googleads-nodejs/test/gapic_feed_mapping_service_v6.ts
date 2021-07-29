@@ -61,13 +61,6 @@ describe('v6.FeedMappingServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new feedmappingserviceModule.v6.FeedMappingServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new feedmappingserviceModule.v6.FeedMappingServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

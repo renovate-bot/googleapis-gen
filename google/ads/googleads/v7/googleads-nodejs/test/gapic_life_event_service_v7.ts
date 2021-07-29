@@ -61,13 +61,6 @@ describe('v7.LifeEventServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new lifeeventserviceModule.v7.LifeEventServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new lifeeventserviceModule.v7.LifeEventServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

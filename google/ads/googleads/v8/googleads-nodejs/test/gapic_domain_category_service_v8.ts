@@ -61,13 +61,6 @@ describe('v8.DomainCategoryServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new domaincategoryserviceModule.v8.DomainCategoryServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new domaincategoryserviceModule.v8.DomainCategoryServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

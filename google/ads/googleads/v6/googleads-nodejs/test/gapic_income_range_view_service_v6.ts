@@ -61,13 +61,6 @@ describe('v6.IncomeRangeViewServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new incomerangeviewserviceModule.v6.IncomeRangeViewServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new incomerangeviewserviceModule.v6.IncomeRangeViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

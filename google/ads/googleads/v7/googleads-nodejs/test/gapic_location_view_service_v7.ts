@@ -61,13 +61,6 @@ describe('v7.LocationViewServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new locationviewserviceModule.v7.LocationViewServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new locationviewserviceModule.v7.LocationViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

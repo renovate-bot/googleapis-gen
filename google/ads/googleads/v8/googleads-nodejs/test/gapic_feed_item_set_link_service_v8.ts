@@ -61,13 +61,6 @@ describe('v8.FeedItemSetLinkServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new feeditemsetlinkserviceModule.v8.FeedItemSetLinkServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new feeditemsetlinkserviceModule.v8.FeedItemSetLinkServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

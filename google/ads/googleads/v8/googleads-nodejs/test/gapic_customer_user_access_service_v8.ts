@@ -61,13 +61,6 @@ describe('v8.CustomerUserAccessServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new customeruseraccessserviceModule.v8.CustomerUserAccessServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new customeruseraccessserviceModule.v8.CustomerUserAccessServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

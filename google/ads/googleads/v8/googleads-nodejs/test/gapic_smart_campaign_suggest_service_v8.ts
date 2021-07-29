@@ -61,13 +61,6 @@ describe('v8.SmartCampaignSuggestServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new smartcampaignsuggestserviceModule.v8.SmartCampaignSuggestServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new smartcampaignsuggestserviceModule.v8.SmartCampaignSuggestServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

@@ -61,13 +61,6 @@ describe('v7.SearchTermViewServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new searchtermviewserviceModule.v7.SearchTermViewServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new searchtermviewserviceModule.v7.SearchTermViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

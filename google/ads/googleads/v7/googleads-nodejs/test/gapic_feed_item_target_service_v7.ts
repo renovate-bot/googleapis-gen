@@ -61,13 +61,6 @@ describe('v7.FeedItemTargetServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new feeditemtargetserviceModule.v7.FeedItemTargetServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new feeditemtargetserviceModule.v7.FeedItemTargetServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

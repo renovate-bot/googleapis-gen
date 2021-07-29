@@ -61,13 +61,6 @@ describe('v7.AdScheduleViewServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new adscheduleviewserviceModule.v7.AdScheduleViewServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adscheduleviewserviceModule.v7.AdScheduleViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

@@ -61,13 +61,6 @@ describe('v6.ProductGroupViewServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new productgroupviewserviceModule.v6.ProductGroupViewServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new productgroupviewserviceModule.v6.ProductGroupViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

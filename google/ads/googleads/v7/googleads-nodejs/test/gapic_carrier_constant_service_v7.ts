@@ -61,13 +61,6 @@ describe('v7.CarrierConstantServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new carrierconstantserviceModule.v7.CarrierConstantServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new carrierconstantserviceModule.v7.CarrierConstantServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

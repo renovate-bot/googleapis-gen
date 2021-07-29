@@ -61,13 +61,6 @@ describe('v6.CampaignBudgetServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new campaignbudgetserviceModule.v6.CampaignBudgetServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignbudgetserviceModule.v6.CampaignBudgetServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

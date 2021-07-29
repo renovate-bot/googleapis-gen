@@ -61,13 +61,6 @@ describe('v7.GeographicViewServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new geographicviewserviceModule.v7.GeographicViewServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new geographicviewserviceModule.v7.GeographicViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

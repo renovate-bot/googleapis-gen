@@ -61,13 +61,6 @@ describe('v7.KeywordPlanCampaignKeywordServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new keywordplancampaignkeywordserviceModule.v7.KeywordPlanCampaignKeywordServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new keywordplancampaignkeywordserviceModule.v7.KeywordPlanCampaignKeywordServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

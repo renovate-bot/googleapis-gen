@@ -61,13 +61,6 @@ describe('v8.AdParameterServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new adparameterserviceModule.v8.AdParameterServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new adparameterserviceModule.v8.AdParameterServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

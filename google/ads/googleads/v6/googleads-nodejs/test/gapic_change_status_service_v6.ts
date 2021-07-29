@@ -61,13 +61,6 @@ describe('v6.ChangeStatusServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new changestatusserviceModule.v6.ChangeStatusServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new changestatusserviceModule.v6.ChangeStatusServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

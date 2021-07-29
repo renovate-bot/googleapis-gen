@@ -61,13 +61,6 @@ describe('v7.CustomerAssetServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new customerassetserviceModule.v7.CustomerAssetServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new customerassetserviceModule.v7.CustomerAssetServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

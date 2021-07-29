@@ -61,13 +61,6 @@ describe('v6.ConversionUploadServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new conversionuploadserviceModule.v6.ConversionUploadServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new conversionuploadserviceModule.v6.ConversionUploadServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

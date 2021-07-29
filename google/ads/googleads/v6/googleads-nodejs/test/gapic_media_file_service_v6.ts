@@ -61,13 +61,6 @@ describe('v6.MediaFileServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new mediafileserviceModule.v6.MediaFileServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new mediafileserviceModule.v6.MediaFileServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

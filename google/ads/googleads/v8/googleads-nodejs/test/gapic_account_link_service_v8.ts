@@ -61,13 +61,6 @@ describe('v8.AccountLinkServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new accountlinkserviceModule.v8.AccountLinkServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new accountlinkserviceModule.v8.AccountLinkServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

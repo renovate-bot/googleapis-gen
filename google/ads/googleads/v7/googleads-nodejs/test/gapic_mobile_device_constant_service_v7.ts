@@ -61,13 +61,6 @@ describe('v7.MobileDeviceConstantServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new mobiledeviceconstantserviceModule.v7.MobileDeviceConstantServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new mobiledeviceconstantserviceModule.v7.MobileDeviceConstantServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

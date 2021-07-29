@@ -61,13 +61,6 @@ describe('v8.CampaignAudienceViewServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new campaignaudienceviewserviceModule.v8.CampaignAudienceViewServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new campaignaudienceviewserviceModule.v8.CampaignAudienceViewServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

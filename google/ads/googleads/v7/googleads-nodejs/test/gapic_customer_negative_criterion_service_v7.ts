@@ -61,13 +61,6 @@ describe('v7.CustomerNegativeCriterionServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new customernegativecriterionserviceModule.v7.CustomerNegativeCriterionServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new customernegativecriterionserviceModule.v7.CustomerNegativeCriterionServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

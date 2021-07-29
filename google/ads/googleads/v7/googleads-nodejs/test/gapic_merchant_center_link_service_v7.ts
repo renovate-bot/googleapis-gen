@@ -61,13 +61,6 @@ describe('v7.MerchantCenterLinkServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new merchantcenterlinkserviceModule.v7.MerchantCenterLinkServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new merchantcenterlinkserviceModule.v7.MerchantCenterLinkServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

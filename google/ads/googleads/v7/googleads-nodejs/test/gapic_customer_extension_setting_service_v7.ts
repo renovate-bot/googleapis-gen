@@ -61,13 +61,6 @@ describe('v7.CustomerExtensionSettingServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new customerextensionsettingserviceModule.v7.CustomerExtensionSettingServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new customerextensionsettingserviceModule.v7.CustomerExtensionSettingServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},

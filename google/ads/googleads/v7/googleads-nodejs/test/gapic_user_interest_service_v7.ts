@@ -61,13 +61,6 @@ describe('v7.UserInterestServiceClient', () => {
         assert(client);
     });
 
-    it('should create a client with gRPC fallback', () => {
-        const client = new userinterestserviceModule.v7.UserInterestServiceClient({
-            fallback: true,
-        });
-        assert(client);
-    });
-
     it('has initialize method and supports deferred initialization', async () => {
         const client = new userinterestserviceModule.v7.UserInterestServiceClient({
               credentials: {client_email: 'bogus', private_key: 'bogus'},
