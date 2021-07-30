@@ -49,6 +49,11 @@ public final class SecuritySettingsProto {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_InsightsExportSettings_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_InsightsExportSettings_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -86,7 +91,7 @@ public final class SecuritySettingsProto {
       "oud.dialogflow.cx.v3beta1.SecuritySettin" +
       "gsB\003\340A\002\"a\n\035DeleteSecuritySettingsRequest" +
       "\022@\n\004name\030\001 \001(\tB2\340A\002\372A,\n*dialogflow.googl" +
-      "eapis.com/SecuritySettings\"\224\006\n\020SecurityS" +
+      "eapis.com/SecuritySettings\"\302\007\n\020SecurityS" +
       "ettings\022\021\n\004name\030\001 \001(\tB\003\340A\002\022\031\n\014display_na" +
       "me\030\002 \001(\tB\003\340A\002\022b\n\022redaction_strategy\030\003 \001(" +
       "\0162F.google.cloud.dialogflow.cx.v3beta1.S" +
@@ -97,54 +102,58 @@ public final class SecuritySettingsProto {
       "ention_window_days\030\006 \001(\005H\000\022\\\n\020purge_data" +
       "_types\030\010 \003(\0162B.google.cloud.dialogflow.c" +
       "x.v3beta1.SecuritySettings.PurgeDataType" +
-      "\"P\n\021RedactionStrategy\022\"\n\036REDACTION_STRAT" +
-      "EGY_UNSPECIFIED\020\000\022\027\n\023REDACT_WITH_SERVICE" +
-      "\020\001\"J\n\016RedactionScope\022\037\n\033REDACTION_SCOPE_" +
-      "UNSPECIFIED\020\000\022\027\n\023REDACT_DISK_STORAGE\020\002\"H" +
-      "\n\rPurgeDataType\022\037\n\033PURGE_DATA_TYPE_UNSPE" +
-      "CIFIED\020\000\022\026\n\022DIALOGFLOW_HISTORY\020\001:}\352Az\n*d" +
-      "ialogflow.googleapis.com/SecuritySetting" +
-      "s\022Lprojects/{project}/locations/{locatio" +
-      "n}/securitySettings/{security_settings}B" +
-      "\020\n\016data_retention2\265\n\n\027SecuritySettingsSe" +
-      "rvice\022\202\002\n\026CreateSecuritySettings\022A.googl" +
-      "e.cloud.dialogflow.cx.v3beta1.CreateSecu" +
-      "ritySettingsRequest\0324.google.cloud.dialo" +
-      "gflow.cx.v3beta1.SecuritySettings\"o\202\323\344\223\002" +
-      "N\"9/v3beta1/{parent=projects/*/locations" +
-      "/*}/securitySettings:\021security_settings\332" +
-      "A\030parent,security_settings\022\325\001\n\023GetSecuri" +
-      "tySettings\022>.google.cloud.dialogflow.cx." +
-      "v3beta1.GetSecuritySettingsRequest\0324.goo" +
+      "\022r\n\030insights_export_settings\030\r \001(\0132K.goo" +
       "gle.cloud.dialogflow.cx.v3beta1.Security" +
-      "Settings\"H\202\323\344\223\002;\0229/v3beta1/{name=project" +
-      "s/*/locations/*/securitySettings/*}\332A\004na" +
-      "me\022\232\002\n\026UpdateSecuritySettings\022A.google.c" +
-      "loud.dialogflow.cx.v3beta1.UpdateSecurit" +
-      "ySettingsRequest\0324.google.cloud.dialogfl" +
-      "ow.cx.v3beta1.SecuritySettings\"\206\001\202\323\344\223\002`2" +
-      "K/v3beta1/{security_settings.name=projec" +
-      "ts/*/locations/*/securitySettings/*}:\021se" +
-      "curity_settings\332A\035security_settings,upda" +
-      "te_mask\022\345\001\n\024ListSecuritySettings\022?.googl" +
-      "e.cloud.dialogflow.cx.v3beta1.ListSecuri" +
-      "tySettingsRequest\032@.google.cloud.dialogf" +
-      "low.cx.v3beta1.ListSecuritySettingsRespo" +
-      "nse\"J\202\323\344\223\002;\0229/v3beta1/{parent=projects/*" +
-      "/locations/*}/securitySettings\332A\006parent\022" +
-      "\275\001\n\026DeleteSecuritySettings\022A.google.clou" +
-      "d.dialogflow.cx.v3beta1.DeleteSecuritySe" +
-      "ttingsRequest\032\026.google.protobuf.Empty\"H\202" +
-      "\323\344\223\002;*9/v3beta1/{name=projects/*/locatio" +
-      "ns/*/securitySettings/*}\332A\004name\032x\312A\031dial" +
-      "ogflow.googleapis.com\322AYhttps://www.goog" +
-      "leapis.com/auth/cloud-platform,https://w" +
-      "ww.googleapis.com/auth/dialogflowB\264\001\n&co" +
-      "m.google.cloud.dialogflow.cx.v3beta1B\025Se" +
-      "curitySettingsProtoP\001ZDgoogle.golang.org" +
-      "/genproto/googleapis/cloud/dialogflow/cx" +
-      "/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Google.Cloud.Dialo" +
-      "gflow.Cx.V3Beta1b\006proto3"
+      "Settings.InsightsExportSettingsB\003\340A\001\0328\n\026" +
+      "InsightsExportSettings\022\036\n\026enable_insight" +
+      "s_export\030\001 \001(\010\"P\n\021RedactionStrategy\022\"\n\036R" +
+      "EDACTION_STRATEGY_UNSPECIFIED\020\000\022\027\n\023REDAC" +
+      "T_WITH_SERVICE\020\001\"J\n\016RedactionScope\022\037\n\033RE" +
+      "DACTION_SCOPE_UNSPECIFIED\020\000\022\027\n\023REDACT_DI" +
+      "SK_STORAGE\020\002\"H\n\rPurgeDataType\022\037\n\033PURGE_D" +
+      "ATA_TYPE_UNSPECIFIED\020\000\022\026\n\022DIALOGFLOW_HIS" +
+      "TORY\020\001:}\352Az\n*dialogflow.googleapis.com/S" +
+      "ecuritySettings\022Lprojects/{project}/loca" +
+      "tions/{location}/securitySettings/{secur" +
+      "ity_settings}B\020\n\016data_retention2\265\n\n\027Secu" +
+      "ritySettingsService\022\202\002\n\026CreateSecuritySe" +
+      "ttings\022A.google.cloud.dialogflow.cx.v3be" +
+      "ta1.CreateSecuritySettingsRequest\0324.goog" +
+      "le.cloud.dialogflow.cx.v3beta1.SecurityS" +
+      "ettings\"o\202\323\344\223\002N\"9/v3beta1/{parent=projec" +
+      "ts/*/locations/*}/securitySettings:\021secu" +
+      "rity_settings\332A\030parent,security_settings" +
+      "\022\325\001\n\023GetSecuritySettings\022>.google.cloud." +
+      "dialogflow.cx.v3beta1.GetSecuritySetting" +
+      "sRequest\0324.google.cloud.dialogflow.cx.v3" +
+      "beta1.SecuritySettings\"H\202\323\344\223\002;\0229/v3beta1" +
+      "/{name=projects/*/locations/*/securitySe" +
+      "ttings/*}\332A\004name\022\232\002\n\026UpdateSecuritySetti" +
+      "ngs\022A.google.cloud.dialogflow.cx.v3beta1" +
+      ".UpdateSecuritySettingsRequest\0324.google." +
+      "cloud.dialogflow.cx.v3beta1.SecuritySett" +
+      "ings\"\206\001\202\323\344\223\002`2K/v3beta1/{security_settin" +
+      "gs.name=projects/*/locations/*/securityS" +
+      "ettings/*}:\021security_settings\332A\035security" +
+      "_settings,update_mask\022\345\001\n\024ListSecuritySe" +
+      "ttings\022?.google.cloud.dialogflow.cx.v3be" +
+      "ta1.ListSecuritySettingsRequest\032@.google" +
+      ".cloud.dialogflow.cx.v3beta1.ListSecurit" +
+      "ySettingsResponse\"J\202\323\344\223\002;\0229/v3beta1/{par" +
+      "ent=projects/*/locations/*}/securitySett" +
+      "ings\332A\006parent\022\275\001\n\026DeleteSecuritySettings" +
+      "\022A.google.cloud.dialogflow.cx.v3beta1.De" +
+      "leteSecuritySettingsRequest\032\026.google.pro" +
+      "tobuf.Empty\"H\202\323\344\223\002;*9/v3beta1/{name=proj" +
+      "ects/*/locations/*/securitySettings/*}\332A" +
+      "\004name\032x\312A\031dialogflow.googleapis.com\322AYht" +
+      "tps://www.googleapis.com/auth/cloud-plat" +
+      "form,https://www.googleapis.com/auth/dia" +
+      "logflowB\264\001\n&com.google.cloud.dialogflow." +
+      "cx.v3beta1B\025SecuritySettingsProtoP\001ZDgoo" +
+      "gle.golang.org/genproto/googleapis/cloud" +
+      "/dialogflow/cx/v3beta1;cx\370\001\001\242\002\002DF\252\002\"Goog" +
+      "le.Cloud.Dialogflow.Cx.V3Beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -198,7 +207,13 @@ public final class SecuritySettingsProto {
     internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_descriptor,
-        new java.lang.String[] { "Name", "DisplayName", "RedactionStrategy", "RedactionScope", "InspectTemplate", "RetentionWindowDays", "PurgeDataTypes", "DataRetention", });
+        new java.lang.String[] { "Name", "DisplayName", "RedactionStrategy", "RedactionScope", "InspectTemplate", "RetentionWindowDays", "PurgeDataTypes", "InsightsExportSettings", "DataRetention", });
+    internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_InsightsExportSettings_descriptor =
+      internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_InsightsExportSettings_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_google_cloud_dialogflow_cx_v3beta1_SecuritySettings_InsightsExportSettings_descriptor,
+        new java.lang.String[] { "EnableInsightsExport", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

@@ -273,6 +273,9 @@ module Google
           #     Time offset of the end of this Speech recognition result relative to the
           #     beginning of the audio. Only populated for `message_type` =
           #     `TRANSCRIPT`.
+          # @!attribute [rw] language_code
+          #   @return [::String]
+          #     Detected language code for the transcript.
           class StreamingRecognitionResult
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -382,6 +385,16 @@ module Google
           #     Google's specified headers are not allowed. Including: "Host",
           #     "Content-Length", "Connection", "From", "User-Agent", "Accept-Encoding",
           #     "If-Modified-Since", "If-None-Match", "X-Forwarded-For", etc.
+          # @!attribute [rw] flow_versions
+          #   @return [::Array<::String>]
+          #     A list of flow versions to override for the request.
+          #     Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+          #     ID>/flows/<Flow ID>/versions/<Version ID>`.
+          #
+          #     If version 1 of flow X is included in this list, the traffic of
+          #     flow X will go through version 1 regardless of the version configuration in
+          #     the environment. Each flow can have at most one version specified in this
+          #     list.
           class QueryParameters
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

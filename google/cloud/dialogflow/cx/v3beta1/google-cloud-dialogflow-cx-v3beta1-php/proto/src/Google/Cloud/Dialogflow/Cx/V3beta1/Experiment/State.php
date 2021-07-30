@@ -37,12 +37,19 @@ class State
      * Generated from protobuf enum <code>DONE = 3;</code>
      */
     const DONE = 3;
+    /**
+     * The experiment with auto-rollout enabled has failed.
+     *
+     * Generated from protobuf enum <code>ROLLOUT_FAILED = 4;</code>
+     */
+    const ROLLOUT_FAILED = 4;
 
     private static $valueToName = [
         self::STATE_UNSPECIFIED => 'STATE_UNSPECIFIED',
         self::DRAFT => 'DRAFT',
         self::RUNNING => 'RUNNING',
         self::DONE => 'DONE',
+        self::ROLLOUT_FAILED => 'ROLLOUT_FAILED',
     ];
 
     public static function name($value)

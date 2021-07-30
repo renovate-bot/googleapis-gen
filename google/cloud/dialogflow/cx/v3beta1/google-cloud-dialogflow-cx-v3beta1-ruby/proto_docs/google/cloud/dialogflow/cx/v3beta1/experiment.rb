@@ -38,12 +38,26 @@ module Google
           # @!attribute [rw] state
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::State]
           #     The current state of the experiment.
-          #     Transition triggered by Expriments.StartExperiment: PENDING->RUNNING.
-          #     Transition triggered by Expriments.CancelExperiment: PENDING->CANCELLED or
-          #     RUNNING->CANCELLED.
+          #     Transition triggered by Experiments.StartExperiment: DRAFT->RUNNING.
+          #     Transition triggered by Experiments.CancelExperiment: DRAFT->DONE or
+          #     RUNNING->DONE.
           # @!attribute [rw] definition
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Definition]
           #     The definition of the experiment.
+          # @!attribute [rw] rollout_config
+          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::RolloutConfig]
+          #     The configuration for auto rollout. If set, there should be exactly two
+          #     variants in the experiment (control variant being the default version of
+          #     the flow), the traffic allocation for the non-control variant will
+          #     gradually increase to 100% when conditions are met, and eventually
+          #     replace the control variant to become the default version of the flow.
+          # @!attribute [rw] rollout_state
+          #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::RolloutState]
+          #     State of the auto rollout process.
+          # @!attribute [rw] rollout_failure_reason
+          #   @return [::String]
+          #     The reason why rollout has failed. Should only be set when state is
+          #     ROLLOUT_FAILED.
           # @!attribute [rw] result
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::Experiment::Result]
           #     Inference result of the experiment.
@@ -213,6 +227,9 @@ module Google
 
               # The experiment is done.
               DONE = 3
+
+              # The experiment with auto-rollout enabled has failed.
+              ROLLOUT_FAILED = 4
             end
           end
 
@@ -241,6 +258,62 @@ module Google
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
+          end
+
+          # The configuration for auto rollout.
+          # @!attribute [rw] rollout_steps
+          #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3beta1::RolloutConfig::RolloutStep>]
+          #     Steps to roll out a flow version. Steps should be sorted by percentage in
+          #     ascending order.
+          # @!attribute [rw] rollout_condition
+          #   @return [::String]
+          #     The conditions that are used to evaluate the success of a rollout
+          #     step. If not specified, all rollout steps will proceed to the next one
+          #     unless failure conditions are met. E.g. "containment_rate > 60% AND
+          #     callback_rate < 20%". See the [conditions
+          #     reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
+          # @!attribute [rw] failure_condition
+          #   @return [::String]
+          #     The conditions that are used to evaluate the failure of a rollout
+          #     step. If not specified, no rollout steps will fail. E.g. "containment_rate
+          #     < 10% OR average_turn_count < 3". See the [conditions
+          #     reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition).
+          class RolloutConfig
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+
+            # A single rollout step with specified traffic allocation.
+            # @!attribute [rw] display_name
+            #   @return [::String]
+            #     The name of the rollout step;
+            # @!attribute [rw] traffic_percent
+            #   @return [::Integer]
+            #     The percentage of traffic allocated to the flow version of this rollout
+            #     step. (0%, 100%].
+            # @!attribute [rw] min_duration
+            #   @return [::Google::Protobuf::Duration]
+            #     The minimum time that this step should last. Should be longer than 1
+            #     hour. If not set, the default minimum duration for each step will be 1
+            #     hour.
+            class RolloutStep
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+          end
+
+          # State of the auto-rollout process.
+          # @!attribute [rw] step
+          #   @return [::String]
+          #     Display name of the current auto rollout step.
+          # @!attribute [rw] step_index
+          #   @return [::Integer]
+          #     Index of the current step in the auto rollout steps list.
+          # @!attribute [rw] start_time
+          #   @return [::Google::Protobuf::Timestamp]
+          #     Start time of the current step.
+          class RolloutState
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
           # The history of variants update.

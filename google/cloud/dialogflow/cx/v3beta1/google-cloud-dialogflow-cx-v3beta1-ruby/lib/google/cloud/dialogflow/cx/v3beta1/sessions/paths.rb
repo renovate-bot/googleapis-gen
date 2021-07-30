@@ -192,6 +192,29 @@ module Google
                 resource.call(**args)
               end
 
+              ##
+              # Create a fully-qualified Version resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/versions/{version}`
+              #
+              # @param project [String]
+              # @param location [String]
+              # @param agent [String]
+              # @param flow [String]
+              # @param version [String]
+              #
+              # @return [::String]
+              def version_path project:, location:, agent:, flow:, version:
+                raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+                raise ::ArgumentError, "agent cannot contain /" if agent.to_s.include? "/"
+                raise ::ArgumentError, "flow cannot contain /" if flow.to_s.include? "/"
+
+                "projects/#{project}/locations/#{location}/agents/#{agent}/flows/#{flow}/versions/#{version}"
+              end
+
               extend self
             end
           end

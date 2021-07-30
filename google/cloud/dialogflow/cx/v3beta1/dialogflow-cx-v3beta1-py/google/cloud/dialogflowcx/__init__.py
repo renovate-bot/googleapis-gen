@@ -43,6 +43,7 @@ from google.cloud.dialogflowcx_v3beta1.services.versions.async_client import Ver
 from google.cloud.dialogflowcx_v3beta1.services.webhooks.client import WebhooksClient
 from google.cloud.dialogflowcx_v3beta1.services.webhooks.async_client import WebhooksAsyncClient
 
+from google.cloud.dialogflowcx_v3beta1.types.advanced_settings import AdvancedSettings
 from google.cloud.dialogflowcx_v3beta1.types.agent import Agent
 from google.cloud.dialogflowcx_v3beta1.types.agent import AgentValidationResult
 from google.cloud.dialogflowcx_v3beta1.types.agent import CreateAgentRequest
@@ -94,6 +95,8 @@ from google.cloud.dialogflowcx_v3beta1.types.experiment import Experiment
 from google.cloud.dialogflowcx_v3beta1.types.experiment import GetExperimentRequest
 from google.cloud.dialogflowcx_v3beta1.types.experiment import ListExperimentsRequest
 from google.cloud.dialogflowcx_v3beta1.types.experiment import ListExperimentsResponse
+from google.cloud.dialogflowcx_v3beta1.types.experiment import RolloutConfig
+from google.cloud.dialogflowcx_v3beta1.types.experiment import RolloutState
 from google.cloud.dialogflowcx_v3beta1.types.experiment import StartExperimentRequest
 from google.cloud.dialogflowcx_v3beta1.types.experiment import StopExperimentRequest
 from google.cloud.dialogflowcx_v3beta1.types.experiment import UpdateExperimentRequest
@@ -260,6 +263,7 @@ __all__ = ('AgentsClient',
     'VersionsAsyncClient',
     'WebhooksClient',
     'WebhooksAsyncClient',
+    'AdvancedSettings',
     'Agent',
     'AgentValidationResult',
     'CreateAgentRequest',
@@ -311,6 +315,8 @@ __all__ = ('AgentsClient',
     'GetExperimentRequest',
     'ListExperimentsRequest',
     'ListExperimentsResponse',
+    'RolloutConfig',
+    'RolloutState',
     'StartExperimentRequest',
     'StopExperimentRequest',
     'UpdateExperimentRequest',

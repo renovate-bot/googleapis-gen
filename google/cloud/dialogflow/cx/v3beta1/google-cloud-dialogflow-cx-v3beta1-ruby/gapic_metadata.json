@@ -513,6 +513,40 @@
         }
       }
     },
+    "Webhooks": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client",
+          "rpcs": {
+            "ListWebhooks": {
+              "methods": [
+                "list_webhooks"
+              ]
+            },
+            "GetWebhook": {
+              "methods": [
+                "get_webhook"
+              ]
+            },
+            "CreateWebhook": {
+              "methods": [
+                "create_webhook"
+              ]
+            },
+            "UpdateWebhook": {
+              "methods": [
+                "update_webhook"
+              ]
+            },
+            "DeleteWebhook": {
+              "methods": [
+                "delete_webhook"
+              ]
+            }
+          }
+        }
+      }
+    },
     "Versions": {
       "clients": {
         "grpc": {
@@ -546,40 +580,6 @@
             "LoadVersion": {
               "methods": [
                 "load_version"
-              ]
-            }
-          }
-        }
-      }
-    },
-    "Webhooks": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "::Google::Cloud::Dialogflow::Cx::V3beta1::Webhooks::Client",
-          "rpcs": {
-            "ListWebhooks": {
-              "methods": [
-                "list_webhooks"
-              ]
-            },
-            "GetWebhook": {
-              "methods": [
-                "get_webhook"
-              ]
-            },
-            "CreateWebhook": {
-              "methods": [
-                "create_webhook"
-              ]
-            },
-            "UpdateWebhook": {
-              "methods": [
-                "update_webhook"
-              ]
-            },
-            "DeleteWebhook": {
-              "methods": [
-                "delete_webhook"
               ]
             }
           }

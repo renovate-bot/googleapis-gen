@@ -4,6 +4,7 @@
 require 'google/protobuf'
 
 require 'google/api/resource_pb'
+require 'google/cloud/dialogflow/cx/v3beta1/advanced_settings_pb'
 require 'google/cloud/dialogflow/cx/v3beta1/response_message_pb'
 require 'google/protobuf/struct_pb'
 require 'google/api/annotations_pb'

@@ -19,6 +19,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :description, :string, 3
       optional :state, :enum, 4, "google.cloud.dialogflow.cx.v3beta1.Experiment.State"
       optional :definition, :message, 5, "google.cloud.dialogflow.cx.v3beta1.Experiment.Definition"
+      optional :rollout_config, :message, 14, "google.cloud.dialogflow.cx.v3beta1.RolloutConfig"
+      optional :rollout_state, :message, 15, "google.cloud.dialogflow.cx.v3beta1.RolloutState"
+      optional :rollout_failure_reason, :string, 16
       optional :result, :message, 6, "google.cloud.dialogflow.cx.v3beta1.Experiment.Result"
       optional :create_time, :message, 7, "google.protobuf.Timestamp"
       optional :start_time, :message, 8, "google.protobuf.Timestamp"
@@ -76,6 +79,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :DRAFT, 1
       value :RUNNING, 2
       value :DONE, 3
+      value :ROLLOUT_FAILED, 4
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.VersionVariants" do
       repeated :variants, :message, 1, "google.cloud.dialogflow.cx.v3beta1.VersionVariants.Variant"
@@ -84,6 +88,21 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :version, :string, 1
       optional :traffic_allocation, :float, 2
       optional :is_control_group, :bool, 3
+    end
+    add_message "google.cloud.dialogflow.cx.v3beta1.RolloutConfig" do
+      repeated :rollout_steps, :message, 1, "google.cloud.dialogflow.cx.v3beta1.RolloutConfig.RolloutStep"
+      optional :rollout_condition, :string, 2
+      optional :failure_condition, :string, 3
+    end
+    add_message "google.cloud.dialogflow.cx.v3beta1.RolloutConfig.RolloutStep" do
+      optional :display_name, :string, 1
+      optional :traffic_percent, :int32, 2
+      optional :min_duration, :message, 3, "google.protobuf.Duration"
+    end
+    add_message "google.cloud.dialogflow.cx.v3beta1.RolloutState" do
+      optional :step, :string, 1
+      optional :step_index, :int32, 3
+      optional :start_time, :message, 2, "google.protobuf.Timestamp"
     end
     add_message "google.cloud.dialogflow.cx.v3beta1.VariantsHistory" do
       optional :update_time, :message, 2, "google.protobuf.Timestamp"
@@ -139,6 +158,9 @@ module Google
           Experiment::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.Experiment.State").enummodule
           VersionVariants = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.VersionVariants").msgclass
           VersionVariants::Variant = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.VersionVariants.Variant").msgclass
+          RolloutConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.RolloutConfig").msgclass
+          RolloutConfig::RolloutStep = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.RolloutConfig.RolloutStep").msgclass
+          RolloutState = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.RolloutState").msgclass
           VariantsHistory = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.VariantsHistory").msgclass
           ListExperimentsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.ListExperimentsRequest").msgclass
           ListExperimentsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3beta1.ListExperimentsResponse").msgclass

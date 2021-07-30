@@ -49,7 +49,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             "Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuU2VjdXJpdHlT",
             "ZXR0aW5nc0ID4EECImEKHURlbGV0ZVNlY3VyaXR5U2V0dGluZ3NSZXF1ZXN0",
             "EkAKBG5hbWUYASABKAlCMuBBAvpBLAoqZGlhbG9nZmxvdy5nb29nbGVhcGlz",
-            "LmNvbS9TZWN1cml0eVNldHRpbmdzIpQGChBTZWN1cml0eVNldHRpbmdzEhEK",
+            "LmNvbS9TZWN1cml0eVNldHRpbmdzIsIHChBTZWN1cml0eVNldHRpbmdzEhEK",
             "BG5hbWUYASABKAlCA+BBAhIZCgxkaXNwbGF5X25hbWUYAiABKAlCA+BBAhJi",
             "ChJyZWRhY3Rpb25fc3RyYXRlZ3kYAyABKA4yRi5nb29nbGUuY2xvdWQuZGlh",
             "bG9nZmxvdy5jeC52M2JldGExLlNlY3VyaXR5U2V0dGluZ3MuUmVkYWN0aW9u",
@@ -58,49 +58,53 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             "ZGFjdGlvblNjb3BlEhgKEGluc3BlY3RfdGVtcGxhdGUYCSABKAkSHwoVcmV0",
             "ZW50aW9uX3dpbmRvd19kYXlzGAYgASgFSAASXAoQcHVyZ2VfZGF0YV90eXBl",
             "cxgIIAMoDjJCLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEu",
-            "U2VjdXJpdHlTZXR0aW5ncy5QdXJnZURhdGFUeXBlIlAKEVJlZGFjdGlvblN0",
-            "cmF0ZWd5EiIKHlJFREFDVElPTl9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEhcK",
-            "E1JFREFDVF9XSVRIX1NFUlZJQ0UQASJKCg5SZWRhY3Rpb25TY29wZRIfChtS",
-            "RURBQ1RJT05fU0NPUEVfVU5TUEVDSUZJRUQQABIXChNSRURBQ1RfRElTS19T",
-            "VE9SQUdFEAIiSAoNUHVyZ2VEYXRhVHlwZRIfChtQVVJHRV9EQVRBX1RZUEVf",
-            "VU5TUEVDSUZJRUQQABIWChJESUFMT0dGTE9XX0hJU1RPUlkQATp96kF6Cipk",
-            "aWFsb2dmbG93Lmdvb2dsZWFwaXMuY29tL1NlY3VyaXR5U2V0dGluZ3MSTHBy",
-            "b2plY3RzL3twcm9qZWN0fS9sb2NhdGlvbnMve2xvY2F0aW9ufS9zZWN1cml0",
-            "eVNldHRpbmdzL3tzZWN1cml0eV9zZXR0aW5nc31CEAoOZGF0YV9yZXRlbnRp",
-            "b24ytQoKF1NlY3VyaXR5U2V0dGluZ3NTZXJ2aWNlEoICChZDcmVhdGVTZWN1",
-            "cml0eVNldHRpbmdzEkEuZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNi",
-            "ZXRhMS5DcmVhdGVTZWN1cml0eVNldHRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5j",
-            "bG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuU2VjdXJpdHlTZXR0aW5ncyJv",
-            "gtPkkwJOIjkvdjNiZXRhMS97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25z",
-            "Lyp9L3NlY3VyaXR5U2V0dGluZ3M6EXNlY3VyaXR5X3NldHRpbmdz2kEYcGFy",
-            "ZW50LHNlY3VyaXR5X3NldHRpbmdzEtUBChNHZXRTZWN1cml0eVNldHRpbmdz",
-            "Ej4uZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5HZXRTZWN1",
-            "cml0eVNldHRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93",
-            "LmN4LnYzYmV0YTEuU2VjdXJpdHlTZXR0aW5ncyJIgtPkkwI7EjkvdjNiZXRh",
-            "MS97bmFtZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL3NlY3VyaXR5U2V0dGlu",
-            "Z3MvKn3aQQRuYW1lEpoCChZVcGRhdGVTZWN1cml0eVNldHRpbmdzEkEuZ29v",
-            "Z2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5VcGRhdGVTZWN1cml0",
-            "eVNldHRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4",
-            "LnYzYmV0YTEuU2VjdXJpdHlTZXR0aW5ncyKGAYLT5JMCYDJLL3YzYmV0YTEv",
-            "e3NlY3VyaXR5X3NldHRpbmdzLm5hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMv",
-            "Ki9zZWN1cml0eVNldHRpbmdzLyp9OhFzZWN1cml0eV9zZXR0aW5nc9pBHXNl",
-            "Y3VyaXR5X3NldHRpbmdzLHVwZGF0ZV9tYXNrEuUBChRMaXN0U2VjdXJpdHlT",
-            "ZXR0aW5ncxI/Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEu",
-            "TGlzdFNlY3VyaXR5U2V0dGluZ3NSZXF1ZXN0GkAuZ29vZ2xlLmNsb3VkLmRp",
-            "YWxvZ2Zsb3cuY3gudjNiZXRhMS5MaXN0U2VjdXJpdHlTZXR0aW5nc1Jlc3Bv",
-            "bnNlIkqC0+STAjsSOS92M2JldGExL3twYXJlbnQ9cHJvamVjdHMvKi9sb2Nh",
-            "dGlvbnMvKn0vc2VjdXJpdHlTZXR0aW5nc9pBBnBhcmVudBK9AQoWRGVsZXRl",
-            "U2VjdXJpdHlTZXR0aW5ncxJBLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4",
-            "LnYzYmV0YTEuRGVsZXRlU2VjdXJpdHlTZXR0aW5nc1JlcXVlc3QaFi5nb29n",
-            "bGUucHJvdG9idWYuRW1wdHkiSILT5JMCOyo5L3YzYmV0YTEve25hbWU9cHJv",
-            "amVjdHMvKi9sb2NhdGlvbnMvKi9zZWN1cml0eVNldHRpbmdzLyp92kEEbmFt",
-            "ZRp4ykEZZGlhbG9nZmxvdy5nb29nbGVhcGlzLmNvbdJBWWh0dHBzOi8vd3d3",
-            "Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xvdWQtcGxhdGZvcm0saHR0cHM6Ly93",
-            "d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9kaWFsb2dmbG93QrQBCiZjb20uZ29v",
-            "Z2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMUIVU2VjdXJpdHlTZXR0",
-            "aW5nc1Byb3RvUAFaRGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2ds",
-            "ZWFwaXMvY2xvdWQvZGlhbG9nZmxvdy9jeC92M2JldGExO2N4+AEBogICREaq",
-            "AiJHb29nbGUuQ2xvdWQuRGlhbG9nZmxvdy5DeC5WM0JldGExYgZwcm90bzM="));
+            "U2VjdXJpdHlTZXR0aW5ncy5QdXJnZURhdGFUeXBlEnIKGGluc2lnaHRzX2V4",
+            "cG9ydF9zZXR0aW5ncxgNIAEoCzJLLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93",
+            "LmN4LnYzYmV0YTEuU2VjdXJpdHlTZXR0aW5ncy5JbnNpZ2h0c0V4cG9ydFNl",
+            "dHRpbmdzQgPgQQEaOAoWSW5zaWdodHNFeHBvcnRTZXR0aW5ncxIeChZlbmFi",
+            "bGVfaW5zaWdodHNfZXhwb3J0GAEgASgIIlAKEVJlZGFjdGlvblN0cmF0ZWd5",
+            "EiIKHlJFREFDVElPTl9TVFJBVEVHWV9VTlNQRUNJRklFRBAAEhcKE1JFREFD",
+            "VF9XSVRIX1NFUlZJQ0UQASJKCg5SZWRhY3Rpb25TY29wZRIfChtSRURBQ1RJ",
+            "T05fU0NPUEVfVU5TUEVDSUZJRUQQABIXChNSRURBQ1RfRElTS19TVE9SQUdF",
+            "EAIiSAoNUHVyZ2VEYXRhVHlwZRIfChtQVVJHRV9EQVRBX1RZUEVfVU5TUEVD",
+            "SUZJRUQQABIWChJESUFMT0dGTE9XX0hJU1RPUlkQATp96kF6CipkaWFsb2dm",
+            "bG93Lmdvb2dsZWFwaXMuY29tL1NlY3VyaXR5U2V0dGluZ3MSTHByb2plY3Rz",
+            "L3twcm9qZWN0fS9sb2NhdGlvbnMve2xvY2F0aW9ufS9zZWN1cml0eVNldHRp",
+            "bmdzL3tzZWN1cml0eV9zZXR0aW5nc31CEAoOZGF0YV9yZXRlbnRpb24ytQoK",
+            "F1NlY3VyaXR5U2V0dGluZ3NTZXJ2aWNlEoICChZDcmVhdGVTZWN1cml0eVNl",
+            "dHRpbmdzEkEuZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5D",
+            "cmVhdGVTZWN1cml0eVNldHRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91ZC5k",
+            "aWFsb2dmbG93LmN4LnYzYmV0YTEuU2VjdXJpdHlTZXR0aW5ncyJvgtPkkwJO",
+            "IjkvdjNiZXRhMS97cGFyZW50PXByb2plY3RzLyovbG9jYXRpb25zLyp9L3Nl",
+            "Y3VyaXR5U2V0dGluZ3M6EXNlY3VyaXR5X3NldHRpbmdz2kEYcGFyZW50LHNl",
+            "Y3VyaXR5X3NldHRpbmdzEtUBChNHZXRTZWN1cml0eVNldHRpbmdzEj4uZ29v",
+            "Z2xlLmNsb3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5HZXRTZWN1cml0eVNl",
+            "dHRpbmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYz",
+            "YmV0YTEuU2VjdXJpdHlTZXR0aW5ncyJIgtPkkwI7EjkvdjNiZXRhMS97bmFt",
+            "ZT1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL3NlY3VyaXR5U2V0dGluZ3MvKn3a",
+            "QQRuYW1lEpoCChZVcGRhdGVTZWN1cml0eVNldHRpbmdzEkEuZ29vZ2xlLmNs",
+            "b3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMS5VcGRhdGVTZWN1cml0eVNldHRp",
+            "bmdzUmVxdWVzdBo0Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0",
+            "YTEuU2VjdXJpdHlTZXR0aW5ncyKGAYLT5JMCYDJLL3YzYmV0YTEve3NlY3Vy",
+            "aXR5X3NldHRpbmdzLm5hbWU9cHJvamVjdHMvKi9sb2NhdGlvbnMvKi9zZWN1",
+            "cml0eVNldHRpbmdzLyp9OhFzZWN1cml0eV9zZXR0aW5nc9pBHXNlY3VyaXR5",
+            "X3NldHRpbmdzLHVwZGF0ZV9tYXNrEuUBChRMaXN0U2VjdXJpdHlTZXR0aW5n",
+            "cxI/Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0YTEuTGlzdFNl",
+            "Y3VyaXR5U2V0dGluZ3NSZXF1ZXN0GkAuZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zs",
+            "b3cuY3gudjNiZXRhMS5MaXN0U2VjdXJpdHlTZXR0aW5nc1Jlc3BvbnNlIkqC",
+            "0+STAjsSOS92M2JldGExL3twYXJlbnQ9cHJvamVjdHMvKi9sb2NhdGlvbnMv",
+            "Kn0vc2VjdXJpdHlTZXR0aW5nc9pBBnBhcmVudBK9AQoWRGVsZXRlU2VjdXJp",
+            "dHlTZXR0aW5ncxJBLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LmN4LnYzYmV0",
+            "YTEuRGVsZXRlU2VjdXJpdHlTZXR0aW5nc1JlcXVlc3QaFi5nb29nbGUucHJv",
+            "dG9idWYuRW1wdHkiSILT5JMCOyo5L3YzYmV0YTEve25hbWU9cHJvamVjdHMv",
+            "Ki9sb2NhdGlvbnMvKi9zZWN1cml0eVNldHRpbmdzLyp92kEEbmFtZRp4ykEZ",
+            "ZGlhbG9nZmxvdy5nb29nbGVhcGlzLmNvbdJBWWh0dHBzOi8vd3d3Lmdvb2ds",
+            "ZWFwaXMuY29tL2F1dGgvY2xvdWQtcGxhdGZvcm0saHR0cHM6Ly93d3cuZ29v",
+            "Z2xlYXBpcy5jb20vYXV0aC9kaWFsb2dmbG93QrQBCiZjb20uZ29vZ2xlLmNs",
+            "b3VkLmRpYWxvZ2Zsb3cuY3gudjNiZXRhMUIVU2VjdXJpdHlTZXR0aW5nc1By",
+            "b3RvUAFaRGdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMv",
+            "Y2xvdWQvZGlhbG9nZmxvdy9jeC92M2JldGExO2N4+AEBogICREaqAiJHb29n",
+            "bGUuQ2xvdWQuRGlhbG9nZmxvdy5DeC5WM0JldGExYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.LongRunning.OperationsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -110,7 +114,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.ListSecuritySettingsResponse), global::Google.Cloud.Dialogflow.Cx.V3Beta1.ListSecuritySettingsResponse.Parser, new[]{ "SecuritySettings", "NextPageToken" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.CreateSecuritySettingsRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.CreateSecuritySettingsRequest.Parser, new[]{ "Parent", "SecuritySettings" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.DeleteSecuritySettingsRequest), global::Google.Cloud.Dialogflow.Cx.V3Beta1.DeleteSecuritySettingsRequest.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings), global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Parser, new[]{ "Name", "DisplayName", "RedactionStrategy", "RedactionScope", "InspectTemplate", "RetentionWindowDays", "PurgeDataTypes" }, new[]{ "DataRetention" }, new[]{ typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.RedactionStrategy), typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.RedactionScope), typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.PurgeDataType) }, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings), global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Parser, new[]{ "Name", "DisplayName", "RedactionStrategy", "RedactionScope", "InspectTemplate", "RetentionWindowDays", "PurgeDataTypes", "InsightsExportSettings" }, new[]{ "DataRetention" }, new[]{ typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.RedactionStrategy), typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.RedactionScope), typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.PurgeDataType) }, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.InsightsExportSettings), global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.InsightsExportSettings.Parser, new[]{ "EnableInsightsExport" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -1446,6 +1450,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
       redactionScope_ = other.redactionScope_;
       inspectTemplate_ = other.inspectTemplate_;
       purgeDataTypes_ = other.purgeDataTypes_.Clone();
+      insightsExportSettings_ = other.insightsExportSettings_ != null ? other.insightsExportSettings_.Clone() : null;
       switch (other.DataRetentionCase) {
         case DataRetentionOneofCase.RetentionWindowDays:
           RetentionWindowDays = other.RetentionWindowDays;
@@ -1525,8 +1530,8 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
     public const int InspectTemplateFieldNumber = 9;
     private string inspectTemplate_ = "";
     /// <summary>
-    /// DLP inspect template name. Use this template to define inspect base
-    /// settings.
+    /// [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+    /// template to define inspect base settings.
     ///
     /// If empty, we use the default DLP inspect config.
     ///
@@ -1579,6 +1584,24 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
       get { return purgeDataTypes_; }
     }
 
+    /// <summary>Field number for the "insights_export_settings" field.</summary>
+    public const int InsightsExportSettingsFieldNumber = 13;
+    private global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.InsightsExportSettings insightsExportSettings_;
+    /// <summary>
+    /// Optional. Controls conversation exporting settings to Insights after conversation is
+    /// completed.
+    ///
+    /// If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+    /// Insights export is disabled no matter what you configure here.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.InsightsExportSettings InsightsExportSettings {
+      get { return insightsExportSettings_; }
+      set {
+        insightsExportSettings_ = value;
+      }
+    }
+
     private object dataRetention_;
     /// <summary>Enum of possible cases for the "data_retention" oneof.</summary>
     public enum DataRetentionOneofCase {
@@ -1617,6 +1640,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
       if (InspectTemplate != other.InspectTemplate) return false;
       if (RetentionWindowDays != other.RetentionWindowDays) return false;
       if(!purgeDataTypes_.Equals(other.purgeDataTypes_)) return false;
+      if (!object.Equals(InsightsExportSettings, other.InsightsExportSettings)) return false;
       if (DataRetentionCase != other.DataRetentionCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
@@ -1631,6 +1655,7 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
       if (InspectTemplate.Length != 0) hash ^= InspectTemplate.GetHashCode();
       if (dataRetentionCase_ == DataRetentionOneofCase.RetentionWindowDays) hash ^= RetentionWindowDays.GetHashCode();
       hash ^= purgeDataTypes_.GetHashCode();
+      if (insightsExportSettings_ != null) hash ^= InsightsExportSettings.GetHashCode();
       hash ^= (int) dataRetentionCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
@@ -1673,6 +1698,10 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
         output.WriteRawTag(74);
         output.WriteString(InspectTemplate);
       }
+      if (insightsExportSettings_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(InsightsExportSettings);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1707,6 +1736,10 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
         output.WriteRawTag(74);
         output.WriteString(InspectTemplate);
       }
+      if (insightsExportSettings_ != null) {
+        output.WriteRawTag(106);
+        output.WriteMessage(InsightsExportSettings);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -1735,6 +1768,9 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(RetentionWindowDays);
       }
       size += purgeDataTypes_.CalculateSize(_repeated_purgeDataTypes_codec);
+      if (insightsExportSettings_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(InsightsExportSettings);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1762,6 +1798,12 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
         InspectTemplate = other.InspectTemplate;
       }
       purgeDataTypes_.Add(other.purgeDataTypes_);
+      if (other.insightsExportSettings_ != null) {
+        if (insightsExportSettings_ == null) {
+          InsightsExportSettings = new global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.InsightsExportSettings();
+        }
+        InsightsExportSettings.MergeFrom(other.InsightsExportSettings);
+      }
       switch (other.DataRetentionCase) {
         case DataRetentionOneofCase.RetentionWindowDays:
           RetentionWindowDays = other.RetentionWindowDays;
@@ -1811,6 +1853,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
             InspectTemplate = input.ReadString();
             break;
           }
+          case 106: {
+            if (insightsExportSettings_ == null) {
+              InsightsExportSettings = new global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.InsightsExportSettings();
+            }
+            input.ReadMessage(InsightsExportSettings);
+            break;
+          }
         }
       }
     #endif
@@ -1852,6 +1901,13 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
           }
           case 74: {
             InspectTemplate = input.ReadString();
+            break;
+          }
+          case 106: {
+            if (insightsExportSettings_ == null) {
+              InsightsExportSettings = new global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Types.InsightsExportSettings();
+            }
+            input.ReadMessage(InsightsExportSettings);
             break;
           }
         }
@@ -1906,6 +1962,186 @@ namespace Google.Cloud.Dialogflow.Cx.V3Beta1 {
         /// owned by the user - not Dialogflow.
         /// </summary>
         [pbr::OriginalName("DIALOGFLOW_HISTORY")] DialogflowHistory = 1,
+      }
+
+      /// <summary>
+      /// Settings for exporting conversations to
+      /// [Insights](https://cloud.google.com/dialogflow/priv/docs/insights).
+      /// </summary>
+      public sealed partial class InsightsExportSettings : pb::IMessage<InsightsExportSettings>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<InsightsExportSettings> _parser = new pb::MessageParser<InsightsExportSettings>(() => new InsightsExportSettings());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<InsightsExportSettings> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Cloud.Dialogflow.Cx.V3Beta1.SecuritySettings.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public InsightsExportSettings() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public InsightsExportSettings(InsightsExportSettings other) : this() {
+          enableInsightsExport_ = other.enableInsightsExport_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public InsightsExportSettings Clone() {
+          return new InsightsExportSettings(this);
+        }
+
+        /// <summary>Field number for the "enable_insights_export" field.</summary>
+        public const int EnableInsightsExportFieldNumber = 1;
+        private bool enableInsightsExport_;
+        /// <summary>
+        /// If enabled, we will automatically exports
+        /// conversations to Insights and Insights runs its analyzers.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool EnableInsightsExport {
+          get { return enableInsightsExport_; }
+          set {
+            enableInsightsExport_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as InsightsExportSettings);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(InsightsExportSettings other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (EnableInsightsExport != other.EnableInsightsExport) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (EnableInsightsExport != false) hash ^= EnableInsightsExport.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (EnableInsightsExport != false) {
+            output.WriteRawTag(8);
+            output.WriteBool(EnableInsightsExport);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (EnableInsightsExport != false) {
+            output.WriteRawTag(8);
+            output.WriteBool(EnableInsightsExport);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (EnableInsightsExport != false) {
+            size += 1 + 1;
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(InsightsExportSettings other) {
+          if (other == null) {
+            return;
+          }
+          if (other.EnableInsightsExport != false) {
+            EnableInsightsExport = other.EnableInsightsExport;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                EnableInsightsExport = input.ReadBool();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                EnableInsightsExport = input.ReadBool();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
       }
 
     }

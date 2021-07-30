@@ -88,4 +88,16 @@ class ::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::ClientPathsTest < Mini
       assert_equal "projects/value0/locations/value1/agents/value2/environments/value3/sessions/value4/entityTypes/value5", path
     end
   end
+
+  def test_version_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Dialogflow::Cx::V3beta1::Sessions::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.version_path project: "value0", location: "value1", agent: "value2", flow: "value3", version: "value4"
+      assert_equal "projects/value0/locations/value1/agents/value2/flows/value3/versions/value4", path
+    end
+  end
 end
