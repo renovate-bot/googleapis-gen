@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const storagetransfer = require('@google-cloud/storagetransfer');
+const storagetransfer = require('@google-cloud/storage-transfer');
 
 function main() {
   const storageTransferServiceClient = new storagetransfer.StorageTransferServiceClient();

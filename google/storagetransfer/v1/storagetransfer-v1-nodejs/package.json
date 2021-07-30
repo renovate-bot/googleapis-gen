@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/storagetransfer",
+  "name": "@google-cloud/storage-transfer",
   "version": "0.1.0",
   "description": "Storagetransfer client for Node.js",
   "repository": "googleapis/nodejs-storagetransfer",
