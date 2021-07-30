@@ -828,6 +828,7 @@ def test_get_experiment(transport: str = 'grpc', request_type=experiment.GetExpe
             display_name='display_name_value',
             description='description_value',
             state=experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         )
         response = client.get_experiment(request)
 
@@ -842,6 +843,7 @@ def test_get_experiment(transport: str = 'grpc', request_type=experiment.GetExpe
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 def test_get_experiment_from_dict():
@@ -887,6 +889,7 @@ async def test_get_experiment_async(transport: str = 'grpc_asyncio', request_typ
             display_name='display_name_value',
             description='description_value',
             state=experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         ))
         response = await client.get_experiment(request)
 
@@ -901,6 +904,7 @@ async def test_get_experiment_async(transport: str = 'grpc_asyncio', request_typ
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 @pytest.mark.asyncio
@@ -1071,6 +1075,7 @@ def test_create_experiment(transport: str = 'grpc', request_type=gcdc_experiment
             display_name='display_name_value',
             description='description_value',
             state=gcdc_experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         )
         response = client.create_experiment(request)
 
@@ -1085,6 +1090,7 @@ def test_create_experiment(transport: str = 'grpc', request_type=gcdc_experiment
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == gcdc_experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 def test_create_experiment_from_dict():
@@ -1130,6 +1136,7 @@ async def test_create_experiment_async(transport: str = 'grpc_asyncio', request_
             display_name='display_name_value',
             description='description_value',
             state=gcdc_experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         ))
         response = await client.create_experiment(request)
 
@@ -1144,6 +1151,7 @@ async def test_create_experiment_async(transport: str = 'grpc_asyncio', request_
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == gcdc_experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 @pytest.mark.asyncio
@@ -1320,6 +1328,7 @@ def test_update_experiment(transport: str = 'grpc', request_type=gcdc_experiment
             display_name='display_name_value',
             description='description_value',
             state=gcdc_experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         )
         response = client.update_experiment(request)
 
@@ -1334,6 +1343,7 @@ def test_update_experiment(transport: str = 'grpc', request_type=gcdc_experiment
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == gcdc_experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 def test_update_experiment_from_dict():
@@ -1379,6 +1389,7 @@ async def test_update_experiment_async(transport: str = 'grpc_asyncio', request_
             display_name='display_name_value',
             description='description_value',
             state=gcdc_experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         ))
         response = await client.update_experiment(request)
 
@@ -1393,6 +1404,7 @@ async def test_update_experiment_async(transport: str = 'grpc_asyncio', request_
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == gcdc_experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 @pytest.mark.asyncio
@@ -1794,6 +1806,7 @@ def test_start_experiment(transport: str = 'grpc', request_type=experiment.Start
             display_name='display_name_value',
             description='description_value',
             state=experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         )
         response = client.start_experiment(request)
 
@@ -1808,6 +1821,7 @@ def test_start_experiment(transport: str = 'grpc', request_type=experiment.Start
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 def test_start_experiment_from_dict():
@@ -1853,6 +1867,7 @@ async def test_start_experiment_async(transport: str = 'grpc_asyncio', request_t
             display_name='display_name_value',
             description='description_value',
             state=experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         ))
         response = await client.start_experiment(request)
 
@@ -1867,6 +1882,7 @@ async def test_start_experiment_async(transport: str = 'grpc_asyncio', request_t
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 @pytest.mark.asyncio
@@ -2037,6 +2053,7 @@ def test_stop_experiment(transport: str = 'grpc', request_type=experiment.StopEx
             display_name='display_name_value',
             description='description_value',
             state=experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         )
         response = client.stop_experiment(request)
 
@@ -2051,6 +2068,7 @@ def test_stop_experiment(transport: str = 'grpc', request_type=experiment.StopEx
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 def test_stop_experiment_from_dict():
@@ -2096,6 +2114,7 @@ async def test_stop_experiment_async(transport: str = 'grpc_asyncio', request_ty
             display_name='display_name_value',
             description='description_value',
             state=experiment.Experiment.State.DRAFT,
+            rollout_failure_reason='rollout_failure_reason_value',
         ))
         response = await client.stop_experiment(request)
 
@@ -2110,6 +2129,7 @@ async def test_stop_experiment_async(transport: str = 'grpc_asyncio', request_ty
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
+    assert response.rollout_failure_reason == 'rollout_failure_reason_value'
 
 
 @pytest.mark.asyncio

@@ -103,8 +103,11 @@ class Agent extends \Google\Protobuf\Internal\Message
     protected $security_settings = '';
     /**
      * Indicates if stackdriver logging is enabled for the agent.
+     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+     * instead.
      *
-     * Generated from protobuf field <code>bool enable_stackdriver_logging = 18;</code>
+     * Generated from protobuf field <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
+     * @deprecated
      */
     protected $enable_stackdriver_logging = false;
     /**
@@ -114,6 +117,13 @@ class Agent extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool enable_spell_correction = 20;</code>
      */
     protected $enable_spell_correction = false;
+    /**
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
+     */
+    protected $advanced_settings = null;
 
     /**
      * Constructor.
@@ -163,9 +173,14 @@ class Agent extends \Google\Protobuf\Internal\Message
      *           ID>/securitySettings/<Security Settings ID>`.
      *     @type bool $enable_stackdriver_logging
      *           Indicates if stackdriver logging is enabled for the agent.
+     *           Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+     *           instead.
      *     @type bool $enable_spell_correction
      *           Indicates if automatic spell correction is enabled in detect intent
      *           requests.
+     *     @type \Google\Cloud\Dialogflow\Cx\V3\AdvancedSettings $advanced_settings
+     *           Hierarchical advanced settings for this agent. The settings exposed at the
+     *           lower level overrides the settings exposed at the higher level.
      * }
      */
     public function __construct($data = NULL) {
@@ -485,24 +500,32 @@ class Agent extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates if stackdriver logging is enabled for the agent.
+     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+     * instead.
      *
-     * Generated from protobuf field <code>bool enable_stackdriver_logging = 18;</code>
+     * Generated from protobuf field <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      * @return bool
+     * @deprecated
      */
     public function getEnableStackdriverLogging()
     {
+        @trigger_error('enable_stackdriver_logging is deprecated.', E_USER_DEPRECATED);
         return $this->enable_stackdriver_logging;
     }
 
     /**
      * Indicates if stackdriver logging is enabled for the agent.
+     * Please use [agent.advanced_settings][google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings]
+     * instead.
      *
-     * Generated from protobuf field <code>bool enable_stackdriver_logging = 18;</code>
+     * Generated from protobuf field <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
      * @param bool $var
      * @return $this
+     * @deprecated
      */
     public function setEnableStackdriverLogging($var)
     {
+        @trigger_error('enable_stackdriver_logging is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkBool($var);
         $this->enable_stackdriver_logging = $var;
 
@@ -533,6 +556,44 @@ class Agent extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->enable_spell_correction = $var;
+
+        return $this;
+    }
+
+    /**
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
+     * @return \Google\Cloud\Dialogflow\Cx\V3\AdvancedSettings|null
+     */
+    public function getAdvancedSettings()
+    {
+        return isset($this->advanced_settings) ? $this->advanced_settings : null;
+    }
+
+    public function hasAdvancedSettings()
+    {
+        return isset($this->advanced_settings);
+    }
+
+    public function clearAdvancedSettings()
+    {
+        unset($this->advanced_settings);
+    }
+
+    /**
+     * Hierarchical advanced settings for this agent. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 22;</code>
+     * @param \Google\Cloud\Dialogflow\Cx\V3\AdvancedSettings $var
+     * @return $this
+     */
+    public function setAdvancedSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\AdvancedSettings::class);
+        $this->advanced_settings = $var;
 
         return $this;
     }

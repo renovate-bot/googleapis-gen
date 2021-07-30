@@ -6,6 +6,7 @@ require 'google/protobuf'
 require 'google/api/annotations_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/dialogflow/cx/v3/advanced_settings_pb'
 require 'google/cloud/dialogflow/cx/v3/audio_config_pb'
 require 'google/cloud/dialogflow/cx/v3/flow_pb'
 require 'google/cloud/dialogflow/cx/v3/intent_pb'
@@ -59,6 +60,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :stability, :float, 6
       repeated :speech_word_info, :message, 7, "google.cloud.dialogflow.cx.v3.SpeechWordInfo"
       optional :speech_end_offset, :message, 8, "google.protobuf.Duration"
+      optional :language_code, :string, 10
     end
     add_enum "google.cloud.dialogflow.cx.v3.StreamingRecognitionResult.MessageType" do
       value :MESSAGE_TYPE_UNSPECIFIED, 0
@@ -75,6 +77,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :disable_webhook, :bool, 7
       optional :analyze_query_text_sentiment, :bool, 8
       map :webhook_headers, :string, :string, 10
+      repeated :flow_versions, :string, 14
     end
     add_message "google.cloud.dialogflow.cx.v3.QueryInput" do
       optional :language_code, :string, 4

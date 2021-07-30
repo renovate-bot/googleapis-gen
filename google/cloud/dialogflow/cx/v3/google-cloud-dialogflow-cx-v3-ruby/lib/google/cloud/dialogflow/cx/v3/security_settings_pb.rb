@@ -42,9 +42,13 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :redaction_scope, :enum, 4, "google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope"
       optional :inspect_template, :string, 9
       repeated :purge_data_types, :enum, 8, "google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType"
+      optional :insights_export_settings, :message, 13, "google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings"
       oneof :data_retention do
         optional :retention_window_days, :int32, 6
       end
+    end
+    add_message "google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings" do
+      optional :enable_insights_export, :bool, 1
     end
     add_enum "google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy" do
       value :REDACTION_STRATEGY_UNSPECIFIED, 0
@@ -73,6 +77,7 @@ module Google
           CreateSecuritySettingsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.CreateSecuritySettingsRequest").msgclass
           DeleteSecuritySettingsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.DeleteSecuritySettingsRequest").msgclass
           SecuritySettings = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.SecuritySettings").msgclass
+          SecuritySettings::InsightsExportSettings = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings").msgclass
           SecuritySettings::RedactionStrategy = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy").enummodule
           SecuritySettings::RedactionScope = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope").enummodule
           SecuritySettings::PurgeDataType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType").enummodule

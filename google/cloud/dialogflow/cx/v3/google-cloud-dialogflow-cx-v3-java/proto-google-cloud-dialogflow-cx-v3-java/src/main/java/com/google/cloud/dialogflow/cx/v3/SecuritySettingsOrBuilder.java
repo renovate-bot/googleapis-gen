@@ -97,8 +97,8 @@ public interface SecuritySettingsOrBuilder extends
 
   /**
    * <pre>
-   * DLP inspect template name. Use this template to define inspect base
-   * settings.
+   * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+   * template to define inspect base settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
@@ -113,8 +113,8 @@ public interface SecuritySettingsOrBuilder extends
   java.lang.String getInspectTemplate();
   /**
    * <pre>
-   * DLP inspect template name. Use this template to define inspect base
-   * settings.
+   * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+   * template to define inspect base settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
    * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
@@ -212,6 +212,42 @@ public interface SecuritySettingsOrBuilder extends
    * @return The enum numeric value on the wire of purgeDataTypes at the given index.
    */
   int getPurgeDataTypesValue(int index);
+
+  /**
+   * <pre>
+   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * completed.
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+   * Insights export is disabled no matter what you configure here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return Whether the insightsExportSettings field is set.
+   */
+  boolean hasInsightsExportSettings();
+  /**
+   * <pre>
+   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * completed.
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+   * Insights export is disabled no matter what you configure here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The insightsExportSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings getInsightsExportSettings();
+  /**
+   * <pre>
+   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * completed.
+   * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+   * Insights export is disabled no matter what you configure here.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder getInsightsExportSettingsOrBuilder();
 
   public com.google.cloud.dialogflow.cx.v3.SecuritySettings.DataRetentionCase getDataRetentionCase();
 }

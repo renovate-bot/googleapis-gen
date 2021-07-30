@@ -188,8 +188,8 @@ class SecuritySettings(proto.Message):
             it does not have access to – for example, Cloud
             logging.
         inspect_template (str):
-            DLP inspect template name. Use this template to define
-            inspect base settings.
+            `DLP <https://cloud.google.com/dlp/docs>`__ inspect template
+            name. Use this template to define inspect base settings.
 
             If empty, we use the default DLP inspect config.
 
@@ -214,6 +214,14 @@ class SecuritySettings(proto.Message):
         purge_data_types (Sequence[google.cloud.dialogflowcx_v3.types.SecuritySettings.PurgeDataType]):
             List of types of data to remove when
             retention settings triggers purge.
+        insights_export_settings (google.cloud.dialogflowcx_v3.types.SecuritySettings.InsightsExportSettings):
+            Optional. Controls conversation exporting settings to
+            Insights after conversation is completed.
+
+            If
+            [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy]
+            is set to REMOVE_AFTER_CONVERSATION, Insights export is
+            disabled no matter what you configure here.
     """
     class RedactionStrategy(proto.Enum):
         r"""Defines how we redact data."""
@@ -231,6 +239,22 @@ class SecuritySettings(proto.Message):
         """
         PURGE_DATA_TYPE_UNSPECIFIED = 0
         DIALOGFLOW_HISTORY = 1
+
+    class InsightsExportSettings(proto.Message):
+        r"""Settings for exporting conversations to
+        `Insights <https://cloud.google.com/dialogflow/priv/docs/insights>`__.
+
+        Attributes:
+            enable_insights_export (bool):
+                If enabled, we will automatically exports
+                conversations to Insights and Insights runs its
+                analyzers.
+        """
+
+        enable_insights_export = proto.Field(
+            proto.BOOL,
+            number=1,
+        )
 
     name = proto.Field(
         proto.STRING,
@@ -263,6 +287,11 @@ class SecuritySettings(proto.Message):
         proto.ENUM,
         number=8,
         enum=PurgeDataType,
+    )
+    insights_export_settings = proto.Field(
+        proto.MESSAGE,
+        number=13,
+        message=InsightsExportSettings,
     )
 
 

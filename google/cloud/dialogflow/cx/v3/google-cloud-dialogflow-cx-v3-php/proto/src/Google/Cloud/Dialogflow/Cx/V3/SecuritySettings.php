@@ -47,8 +47,8 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      */
     protected $redaction_scope = 0;
     /**
-     * DLP inspect template name. Use this template to define inspect base
-     * settings.
+     * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
      * `projects/<Project ID>/inspectTemplates/<Template ID>` OR
@@ -65,6 +65,15 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType purge_data_types = 8;</code>
      */
     private $purge_data_types;
+    /**
+     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $insights_export_settings = null;
     protected $data_retention;
 
     /**
@@ -87,8 +96,8 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      *           not redact data that it does not have access to – for example, Cloud
      *           logging.
      *     @type string $inspect_template
-     *           DLP inspect template name. Use this template to define inspect base
-     *           settings.
+     *           [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     *           template to define inspect base settings.
      *           If empty, we use the default DLP inspect config.
      *           The template name will have one of the following formats:
      *           `projects/<Project ID>/inspectTemplates/<Template ID>` OR
@@ -107,6 +116,11 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      *           Google representative to check availability for you.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $purge_data_types
      *           List of types of data to remove when retention settings triggers purge.
+     *     @type \Google\Cloud\Dialogflow\Cx\V3\SecuritySettings\InsightsExportSettings $insights_export_settings
+     *           Optional. Controls conversation exporting settings to Insights after conversation is
+     *           completed.
+     *           If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     *           Insights export is disabled no matter what you configure here.
      * }
      */
     public function __construct($data = NULL) {
@@ -229,8 +243,8 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * DLP inspect template name. Use this template to define inspect base
-     * settings.
+     * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
      * `projects/<Project ID>/inspectTemplates/<Template ID>` OR
@@ -247,8 +261,8 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * DLP inspect template name. Use this template to define inspect base
-     * settings.
+     * [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+     * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
      * `projects/<Project ID>/inspectTemplates/<Template ID>` OR
@@ -337,6 +351,48 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Google\Cloud\Dialogflow\Cx\V3\SecuritySettings\PurgeDataType::class);
         $this->purge_data_types = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return \Google\Cloud\Dialogflow\Cx\V3\SecuritySettings\InsightsExportSettings|null
+     */
+    public function getInsightsExportSettings()
+    {
+        return isset($this->insights_export_settings) ? $this->insights_export_settings : null;
+    }
+
+    public function hasInsightsExportSettings()
+    {
+        return isset($this->insights_export_settings);
+    }
+
+    public function clearInsightsExportSettings()
+    {
+        unset($this->insights_export_settings);
+    }
+
+    /**
+     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * completed.
+     * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+     * Insights export is disabled no matter what you configure here.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param \Google\Cloud\Dialogflow\Cx\V3\SecuritySettings\InsightsExportSettings $var
+     * @return $this
+     */
+    public function setInsightsExportSettings($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\SecuritySettings\InsightsExportSettings::class);
+        $this->insights_export_settings = $var;
 
         return $this;
     }

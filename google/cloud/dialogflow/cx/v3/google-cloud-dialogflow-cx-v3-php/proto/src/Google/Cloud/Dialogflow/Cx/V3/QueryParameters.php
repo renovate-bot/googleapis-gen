@@ -122,6 +122,18 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> webhook_headers = 10;</code>
      */
     private $webhook_headers;
+    /**
+     * A list of flow versions to override for the request.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     *
+     * Generated from protobuf field <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = {</code>
+     */
+    private $flow_versions;
 
     /**
      * Constructor.
@@ -200,6 +212,14 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
      *           Google's specified headers are not allowed. Including: "Host",
      *           "Content-Length", "Connection", "From", "User-Agent", "Accept-Encoding",
      *           "If-Modified-Since", "If-None-Match", "X-Forwarded-For", etc.
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $flow_versions
+     *           A list of flow versions to override for the request.
+     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           ID>/flows/<Flow ID>/versions/<Version ID>`.
+     *           If version 1 of flow X is included in this list, the traffic of
+     *           flow X will go through version 1 regardless of the version configuration in
+     *           the environment. Each flow can have at most one version specified in this
+     *           list.
      * }
      */
     public function __construct($data = NULL) {
@@ -573,6 +593,44 @@ class QueryParameters extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
         $this->webhook_headers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * A list of flow versions to override for the request.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     *
+     * Generated from protobuf field <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = {</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFlowVersions()
+    {
+        return $this->flow_versions;
+    }
+
+    /**
+     * A list of flow versions to override for the request.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/versions/<Version ID>`.
+     * If version 1 of flow X is included in this list, the traffic of
+     * flow X will go through version 1 regardless of the version configuration in
+     * the environment. Each flow can have at most one version specified in this
+     * list.
+     *
+     * Generated from protobuf field <code>repeated string flow_versions = 14 [(.google.api.resource_reference) = {</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFlowVersions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->flow_versions = $arr;
 
         return $this;
     }

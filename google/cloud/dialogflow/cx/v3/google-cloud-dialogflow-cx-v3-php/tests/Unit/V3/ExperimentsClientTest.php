@@ -84,10 +84,12 @@ class ExperimentsClientTest extends GeneratedTest
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
+        $rolloutFailureReason = 'rolloutFailureReason-379444505';
         $expectedResponse = new Experiment();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setRolloutFailureReason($rolloutFailureReason);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->environmentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]');
@@ -221,10 +223,12 @@ class ExperimentsClientTest extends GeneratedTest
         $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
+        $rolloutFailureReason = 'rolloutFailureReason-379444505';
         $expectedResponse = new Experiment();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setRolloutFailureReason($rolloutFailureReason);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->experimentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]', '[EXPERIMENT]');
@@ -361,10 +365,12 @@ class ExperimentsClientTest extends GeneratedTest
         $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
+        $rolloutFailureReason = 'rolloutFailureReason-379444505';
         $expectedResponse = new Experiment();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setRolloutFailureReason($rolloutFailureReason);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->experimentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]', '[EXPERIMENT]');
@@ -429,10 +435,12 @@ class ExperimentsClientTest extends GeneratedTest
         $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
+        $rolloutFailureReason = 'rolloutFailureReason-379444505';
         $expectedResponse = new Experiment();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setRolloutFailureReason($rolloutFailureReason);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->experimentName('[PROJECT]', '[LOCATION]', '[AGENT]', '[ENVIRONMENT]', '[EXPERIMENT]');
@@ -497,10 +505,12 @@ class ExperimentsClientTest extends GeneratedTest
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
         $description = 'description-1724546052';
+        $rolloutFailureReason = 'rolloutFailureReason-379444505';
         $expectedResponse = new Experiment();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setRolloutFailureReason($rolloutFailureReason);
         $transport->addResponse($expectedResponse);
         // Mock request
         $experiment = new Experiment();

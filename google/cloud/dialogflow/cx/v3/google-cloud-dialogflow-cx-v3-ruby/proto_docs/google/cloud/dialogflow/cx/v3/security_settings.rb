@@ -123,8 +123,8 @@ module Google
           #     logging.
           # @!attribute [rw] inspect_template
           #   @return [::String]
-          #     DLP inspect template name. Use this template to define inspect base
-          #     settings.
+          #     [DLP](https://cloud.google.com/dlp/docs) inspect template name. Use this
+          #     template to define inspect base settings.
           #
           #     If empty, we use the default DLP inspect config.
           #
@@ -147,9 +147,27 @@ module Google
           # @!attribute [rw] purge_data_types
           #   @return [::Array<::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings::PurgeDataType>]
           #     List of types of data to remove when retention settings triggers purge.
+          # @!attribute [rw] insights_export_settings
+          #   @return [::Google::Cloud::Dialogflow::Cx::V3::SecuritySettings::InsightsExportSettings]
+          #     Optional. Controls conversation exporting settings to Insights after conversation is
+          #     completed.
+          #
+          #     If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
+          #     Insights export is disabled no matter what you configure here.
           class SecuritySettings
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
+
+            # Settings for exporting conversations to
+            # [Insights](https://cloud.google.com/dialogflow/priv/docs/insights).
+            # @!attribute [rw] enable_insights_export
+            #   @return [::Boolean]
+            #     If enabled, we will automatically exports
+            #     conversations to Insights and Insights runs its analyzers.
+            class InsightsExportSettings
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
 
             # Defines how we redact data.
             module RedactionStrategy

@@ -28,8 +28,8 @@ require "google/cloud/dialogflow/cx/v3/transition_route_groups"
 require "google/cloud/dialogflow/cx/v3/test_cases"
 require "google/cloud/dialogflow/cx/v3/environments"
 require "google/cloud/dialogflow/cx/v3/experiments"
-require "google/cloud/dialogflow/cx/v3/versions"
 require "google/cloud/dialogflow/cx/v3/webhooks"
+require "google/cloud/dialogflow/cx/v3/versions"
 require "google/cloud/dialogflow/cx/v3/version"
 
 module Google

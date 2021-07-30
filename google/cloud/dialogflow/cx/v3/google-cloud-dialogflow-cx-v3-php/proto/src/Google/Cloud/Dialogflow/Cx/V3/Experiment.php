@@ -38,9 +38,9 @@ class Experiment extends \Google\Protobuf\Internal\Message
     protected $description = '';
     /**
      * The current state of the experiment.
-     * Transition triggered by Expriments.StartExperiment: PENDING->RUNNING.
-     * Transition triggered by Expriments.CancelExperiment: PENDING->CANCELLED or
-     * RUNNING->CANCELLED.
+     * Transition triggered by Experiments.StartExperiment: DRAFT->RUNNING.
+     * Transition triggered by Experiments.CancelExperiment: DRAFT->DONE or
+     * RUNNING->DONE.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment.State state = 4;</code>
      */
@@ -51,6 +51,29 @@ class Experiment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment.Definition definition = 5;</code>
      */
     protected $definition = null;
+    /**
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RolloutConfig rollout_config = 14;</code>
+     */
+    protected $rollout_config = null;
+    /**
+     * State of the auto rollout process.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RolloutState rollout_state = 15;</code>
+     */
+    protected $rollout_state = null;
+    /**
+     * The reason why rollout has failed. Should only be set when state is
+     * ROLLOUT_FAILED.
+     *
+     * Generated from protobuf field <code>string rollout_failure_reason = 16;</code>
+     */
+    protected $rollout_failure_reason = '';
     /**
      * Inference result of the experiment.
      *
@@ -113,11 +136,22 @@ class Experiment extends \Google\Protobuf\Internal\Message
      *           The human-readable description of the experiment.
      *     @type int $state
      *           The current state of the experiment.
-     *           Transition triggered by Expriments.StartExperiment: PENDING->RUNNING.
-     *           Transition triggered by Expriments.CancelExperiment: PENDING->CANCELLED or
-     *           RUNNING->CANCELLED.
+     *           Transition triggered by Experiments.StartExperiment: DRAFT->RUNNING.
+     *           Transition triggered by Experiments.CancelExperiment: DRAFT->DONE or
+     *           RUNNING->DONE.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Experiment\Definition $definition
      *           The definition of the experiment.
+     *     @type \Google\Cloud\Dialogflow\Cx\V3\RolloutConfig $rollout_config
+     *           The configuration for auto rollout. If set, there should be exactly two
+     *           variants in the experiment (control variant being the default version of
+     *           the flow), the traffic allocation for the non-control variant will
+     *           gradually increase to 100% when conditions are met, and eventually
+     *           replace the control variant to become the default version of the flow.
+     *     @type \Google\Cloud\Dialogflow\Cx\V3\RolloutState $rollout_state
+     *           State of the auto rollout process.
+     *     @type string $rollout_failure_reason
+     *           The reason why rollout has failed. Should only be set when state is
+     *           ROLLOUT_FAILED.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\Experiment\Result $result
      *           Inference result of the experiment.
      *     @type \Google\Protobuf\Timestamp $create_time
@@ -227,9 +261,9 @@ class Experiment extends \Google\Protobuf\Internal\Message
 
     /**
      * The current state of the experiment.
-     * Transition triggered by Expriments.StartExperiment: PENDING->RUNNING.
-     * Transition triggered by Expriments.CancelExperiment: PENDING->CANCELLED or
-     * RUNNING->CANCELLED.
+     * Transition triggered by Experiments.StartExperiment: DRAFT->RUNNING.
+     * Transition triggered by Experiments.CancelExperiment: DRAFT->DONE or
+     * RUNNING->DONE.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment.State state = 4;</code>
      * @return int
@@ -241,9 +275,9 @@ class Experiment extends \Google\Protobuf\Internal\Message
 
     /**
      * The current state of the experiment.
-     * Transition triggered by Expriments.StartExperiment: PENDING->RUNNING.
-     * Transition triggered by Expriments.CancelExperiment: PENDING->CANCELLED or
-     * RUNNING->CANCELLED.
+     * Transition triggered by Experiments.StartExperiment: DRAFT->RUNNING.
+     * Transition triggered by Experiments.CancelExperiment: DRAFT->DONE or
+     * RUNNING->DONE.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.Experiment.State state = 4;</code>
      * @param int $var
@@ -289,6 +323,114 @@ class Experiment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\Experiment\Definition::class);
         $this->definition = $var;
+
+        return $this;
+    }
+
+    /**
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RolloutConfig rollout_config = 14;</code>
+     * @return \Google\Cloud\Dialogflow\Cx\V3\RolloutConfig|null
+     */
+    public function getRolloutConfig()
+    {
+        return isset($this->rollout_config) ? $this->rollout_config : null;
+    }
+
+    public function hasRolloutConfig()
+    {
+        return isset($this->rollout_config);
+    }
+
+    public function clearRolloutConfig()
+    {
+        unset($this->rollout_config);
+    }
+
+    /**
+     * The configuration for auto rollout. If set, there should be exactly two
+     * variants in the experiment (control variant being the default version of
+     * the flow), the traffic allocation for the non-control variant will
+     * gradually increase to 100% when conditions are met, and eventually
+     * replace the control variant to become the default version of the flow.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RolloutConfig rollout_config = 14;</code>
+     * @param \Google\Cloud\Dialogflow\Cx\V3\RolloutConfig $var
+     * @return $this
+     */
+    public function setRolloutConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\RolloutConfig::class);
+        $this->rollout_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * State of the auto rollout process.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RolloutState rollout_state = 15;</code>
+     * @return \Google\Cloud\Dialogflow\Cx\V3\RolloutState|null
+     */
+    public function getRolloutState()
+    {
+        return isset($this->rollout_state) ? $this->rollout_state : null;
+    }
+
+    public function hasRolloutState()
+    {
+        return isset($this->rollout_state);
+    }
+
+    public function clearRolloutState()
+    {
+        unset($this->rollout_state);
+    }
+
+    /**
+     * State of the auto rollout process.
+     *
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.RolloutState rollout_state = 15;</code>
+     * @param \Google\Cloud\Dialogflow\Cx\V3\RolloutState $var
+     * @return $this
+     */
+    public function setRolloutState($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Dialogflow\Cx\V3\RolloutState::class);
+        $this->rollout_state = $var;
+
+        return $this;
+    }
+
+    /**
+     * The reason why rollout has failed. Should only be set when state is
+     * ROLLOUT_FAILED.
+     *
+     * Generated from protobuf field <code>string rollout_failure_reason = 16;</code>
+     * @return string
+     */
+    public function getRolloutFailureReason()
+    {
+        return $this->rollout_failure_reason;
+    }
+
+    /**
+     * The reason why rollout has failed. Should only be set when state is
+     * ROLLOUT_FAILED.
+     *
+     * Generated from protobuf field <code>string rollout_failure_reason = 16;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRolloutFailureReason($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->rollout_failure_reason = $var;
 
         return $this;
     }

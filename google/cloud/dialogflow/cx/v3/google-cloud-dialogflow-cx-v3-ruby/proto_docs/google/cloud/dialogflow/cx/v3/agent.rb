@@ -92,10 +92,16 @@ module Google
           # @!attribute [rw] enable_stackdriver_logging
           #   @return [::Boolean]
           #     Indicates if stackdriver logging is enabled for the agent.
+          #     Please use {::Google::Cloud::Dialogflow::Cx::V3::AdvancedSettings::LoggingSettings agent.advanced_settings}
+          #     instead.
           # @!attribute [rw] enable_spell_correction
           #   @return [::Boolean]
           #     Indicates if automatic spell correction is enabled in detect intent
           #     requests.
+          # @!attribute [rw] advanced_settings
+          #   @return [::Google::Cloud::Dialogflow::Cx::V3::AdvancedSettings]
+          #     Hierarchical advanced settings for this agent. The settings exposed at the
+          #     lower level overrides the settings exposed at the higher level.
           class Agent
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

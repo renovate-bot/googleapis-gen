@@ -7,6 +7,7 @@ require 'google/api/annotations_pb'
 require 'google/api/client_pb'
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
+require 'google/cloud/dialogflow/cx/v3/advanced_settings_pb'
 require 'google/cloud/dialogflow/cx/v3/flow_pb'
 require 'google/cloud/dialogflow/cx/v3/security_settings_pb'
 require 'google/longrunning/operations_pb'
@@ -30,6 +31,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :security_settings, :string, 17
       optional :enable_stackdriver_logging, :bool, 18
       optional :enable_spell_correction, :bool, 20
+      optional :advanced_settings, :message, 22, "google.cloud.dialogflow.cx.v3.AdvancedSettings"
     end
     add_message "google.cloud.dialogflow.cx.v3.ListAgentsRequest" do
       optional :parent, :string, 1

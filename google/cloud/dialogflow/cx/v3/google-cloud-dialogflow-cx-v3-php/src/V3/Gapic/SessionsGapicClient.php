@@ -112,6 +112,8 @@ class SessionsGapicClient
 
     private static $sessionNameTemplate;
 
+    private static $versionNameTemplate;
+
     private static $pathTemplateMap;
 
     private static function getClientDefaults()
@@ -169,6 +171,15 @@ class SessionsGapicClient
         return self::$sessionNameTemplate;
     }
 
+    private static function getVersionNameTemplate()
+    {
+        if (self::$versionNameTemplate == null) {
+            self::$versionNameTemplate = new PathTemplate('projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/versions/{version}');
+        }
+
+        return self::$versionNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
@@ -177,6 +188,7 @@ class SessionsGapicClient
                 'projectLocationAgentEnvironmentSession' => self::getProjectLocationAgentEnvironmentSessionNameTemplate(),
                 'projectLocationAgentSession' => self::getProjectLocationAgentSessionNameTemplate(),
                 'session' => self::getSessionNameTemplate(),
+                'version' => self::getVersionNameTemplate(),
             ];
         }
 
@@ -272,6 +284,29 @@ class SessionsGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a version
+     * resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $agent
+     * @param string $flow
+     * @param string $version
+     *
+     * @return string The formatted version resource.
+     */
+    public static function versionName($project, $location, $agent, $flow, $version)
+    {
+        return self::getVersionNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'agent' => $agent,
+            'flow' => $flow,
+            'version' => $version,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
@@ -279,6 +314,7 @@ class SessionsGapicClient
      * - projectLocationAgentEnvironmentSession: projects/{project}/locations/{location}/agents/{agent}/environments/{environment}/sessions/{session}
      * - projectLocationAgentSession: projects/{project}/locations/{location}/agents/{agent}/sessions/{session}
      * - session: projects/{project}/locations/{location}/agents/{agent}/sessions/{session}
+     * - version: projects/{project}/locations/{location}/agents/{agent}/flows/{flow}/versions/{version}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is

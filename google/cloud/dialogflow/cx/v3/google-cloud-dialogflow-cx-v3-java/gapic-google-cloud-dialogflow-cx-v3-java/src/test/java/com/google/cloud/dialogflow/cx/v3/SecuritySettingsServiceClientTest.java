@@ -92,6 +92,7 @@ public class SecuritySettingsServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
 
@@ -139,6 +140,7 @@ public class SecuritySettingsServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
 
@@ -186,6 +188,7 @@ public class SecuritySettingsServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
 
@@ -231,6 +234,7 @@ public class SecuritySettingsServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
 
@@ -274,6 +278,7 @@ public class SecuritySettingsServiceClientTest {
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
+            .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
     mockSecuritySettingsService.addResponse(expectedResponse);
 
