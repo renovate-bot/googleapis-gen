@@ -23,9 +23,10 @@
 namespace Google\Ads\GoogleAds\Tests\Unit\V8\Services;
 
 use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestServiceClient;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
 use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse;
-use Google\ApiCore\ApiException;
 
+use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\Testing\GeneratedTest;
 use Google\ApiCore\Testing\MockTransport;
@@ -81,8 +82,9 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $transport->addResponse($expectedResponse);
         // Mock request
         $customerId = 'customerId-1772061412';
-        $formattedCampaign = $client->campaignName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
-        $response = $client->suggestSmartCampaignBudgetOptions($customerId, $formattedCampaign);
+        $suggestionData = new SuggestionDataOneof();
+        $suggestionData->setCampaign('formattedCampaign1309185331');
+        $response = $client->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
         $this->assertEquals($expectedResponse, $response);
         $actualRequests = $transport->popReceivedCalls();
         $this->assertSame(1, count($actualRequests));
@@ -92,7 +94,7 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $actualValue = $actualRequestObject->getCustomerId();
         $this->assertProtobufEquals($customerId, $actualValue);
         $actualValue = $actualRequestObject->getCampaign();
-        $this->assertProtobufEquals($formattedCampaign, $actualValue);
+        $this->assertTrue($suggestionData->isCampaign());
         $this->assertTrue($transport->isExhausted());
     }
 
@@ -118,9 +120,10 @@ class SmartCampaignSuggestServiceClientTest extends GeneratedTest
         $transport->addResponse(null, $status);
         // Mock request
         $customerId = 'customerId-1772061412';
-        $formattedCampaign = $client->campaignName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
+        $suggestionData = new SuggestionDataOneof();
+        $suggestionData->setCampaign('formattedCampaign1309185331');
         try {
-            $client->suggestSmartCampaignBudgetOptions($customerId, $formattedCampaign);
+            $client->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
             // If the $client method call did not throw, fail the test
             $this->fail('Expected an ApiException, but no exception was thrown.');
         } catch (ApiException $ex) {

@@ -24,8 +24,8 @@
 
 namespace Google\Ads\GoogleAds\V8\Services\Gapic;
 
-use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo;
 use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
 use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse;
 
 use Google\ApiCore\ApiException;
@@ -48,9 +48,9 @@ use Google\Auth\FetchAuthTokenInterface;
  * $smartCampaignSuggestServiceClient = new SmartCampaignSuggestServiceClient();
  * try {
  *     $customerId = 'customer_id';
- *     $formattedCampaign = $smartCampaignSuggestServiceClient->campaignName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
- *     $suggestionInfo = new SmartCampaignSuggestionInfo();
- *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignBudgetOptions($customerId, $formattedCampaign, $suggestionInfo);
+ *     $suggestionData = new SuggestionDataOneof();
+ *     $suggestionData->setCampaign('formattedCampaign-1139828244');
+ *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
  * } finally {
  *     $smartCampaignSuggestServiceClient->close();
  * }
@@ -261,18 +261,17 @@ class SmartCampaignSuggestServiceGapicClient
      * $smartCampaignSuggestServiceClient = new SmartCampaignSuggestServiceClient();
      * try {
      *     $customerId = 'customer_id';
-     *     $formattedCampaign = $smartCampaignSuggestServiceClient->campaignName('[CUSTOMER_ID]', '[CAMPAIGN_ID]');
-     *     $suggestionInfo = new SmartCampaignSuggestionInfo();
-     *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignBudgetOptions($customerId, $formattedCampaign, $suggestionInfo);
+     *     $suggestionData = new SuggestionDataOneof();
+     *     $suggestionData->setCampaign('formattedCampaign-1139828244');
+     *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
      * } finally {
      *     $smartCampaignSuggestServiceClient->close();
      * }
      * ```
      *
-     * @param string                      $customerId     Required. The ID of the customer whose budget options are to be suggested.
-     * @param string                      $campaign       Required. The resource name of the campaign to get suggestion for.
-     * @param SmartCampaignSuggestionInfo $suggestionInfo Required. Information needed to get budget options
-     * @param array                       $optionalArgs   {
+     * @param string              $customerId     Required. The ID of the customer whose budget options are to be suggested.
+     * @param SuggestionDataOneof $suggestionData An instance of the wrapper class for the required proto oneof suggestion_data.
+     * @param array               $optionalArgs   {
      *     Optional.
      *
      *     @type RetrySettings|array $retrySettings
@@ -286,13 +285,20 @@ class SmartCampaignSuggestServiceGapicClient
      *
      * @throws ApiException if the remote call fails
      */
-    public function suggestSmartCampaignBudgetOptions($customerId, $campaign, $suggestionInfo, array $optionalArgs = [])
+    public function suggestSmartCampaignBudgetOptions($customerId, $suggestionData, array $optionalArgs = [])
     {
         $request = new SuggestSmartCampaignBudgetOptionsRequest();
         $requestParamHeaders = [];
         $request->setCustomerId($customerId);
-        $request->setCampaign($campaign);
-        $request->setSuggestionInfo($suggestionInfo);
+        if ($suggestionData->isCampaign()) {
+            $request->setCampaign($suggestionData->getCampaign());
+        } elseif ($suggestionData->isSuggestionInfo()) {
+            $request->setSuggestionInfo($suggestionData->getSuggestionInfo());
+        } else {
+            throw new ValidationException("A field for the oneof suggestion_data must be set in param $suggestionData");
+        }
+
+        
         $requestParamHeaders['customer_id'] = $customerId;
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
