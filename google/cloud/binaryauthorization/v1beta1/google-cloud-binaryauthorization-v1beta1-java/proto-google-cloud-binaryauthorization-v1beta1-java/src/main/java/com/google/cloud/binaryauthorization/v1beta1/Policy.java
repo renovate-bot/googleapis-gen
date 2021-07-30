@@ -186,7 +186,7 @@ private static final long serialVersionUID = 0L;
     GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED(0),
     /**
      * <pre>
-     * Enables global policy evaluation.
+     * Enables system policy evaluation.
      * </pre>
      *
      * <code>ENABLE = 1;</code>
@@ -194,7 +194,7 @@ private static final long serialVersionUID = 0L;
     ENABLE(1),
     /**
      * <pre>
-     * Disables global policy evaluation.
+     * Disables system policy evaluation.
      * </pre>
      *
      * <code>DISABLE = 2;</code>
@@ -213,7 +213,7 @@ private static final long serialVersionUID = 0L;
     public static final int GLOBAL_POLICY_EVALUATION_MODE_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Enables global policy evaluation.
+     * Enables system policy evaluation.
      * </pre>
      *
      * <code>ENABLE = 1;</code>
@@ -221,7 +221,7 @@ private static final long serialVersionUID = 0L;
     public static final int ENABLE_VALUE = 1;
     /**
      * <pre>
-     * Disables global policy evaluation.
+     * Disables system policy evaluation.
      * </pre>
      *
      * <code>DISABLE = 2;</code>
