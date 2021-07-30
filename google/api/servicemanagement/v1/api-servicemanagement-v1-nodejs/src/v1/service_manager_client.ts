@@ -1377,6 +1377,7 @@ export class ServiceManagerClient {
  * @deprecated EnableService is deprecated and may be removed in a future version.
  */
   async checkEnableServiceProgress(name: string): Promise<LROperation<protos.google.api.servicemanagement.v1.EnableServiceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>>{
+    this.warn('DEP$ServiceManager-$checkEnableServiceProgress','checkEnableServiceProgress is deprecated and may be removed in a future version.', 'DeprecationWarning');
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.enableService, gax.createDefaultBackoffSettings());
@@ -1490,6 +1491,7 @@ export class ServiceManagerClient {
  * @deprecated DisableService is deprecated and may be removed in a future version.
  */
   async checkDisableServiceProgress(name: string): Promise<LROperation<protos.google.api.servicemanagement.v1.DisableServiceResponse, protos.google.api.servicemanagement.v1.OperationMetadata>>{
+    this.warn('DEP$ServiceManager-$checkDisableServiceProgress','checkDisableServiceProgress is deprecated and may be removed in a future version.', 'DeprecationWarning');
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.disableService, gax.createDefaultBackoffSettings());
