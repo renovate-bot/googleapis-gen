@@ -341,8 +341,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// <summary>
     /// The filter syntax consists of an expression language for constructing a
     /// predicate from one or more fields of the products being filtered. Filter
-    /// expression is case-sensitive. See more details at this [user
-    /// guide](/retail/private/docs/filter-and-order#filter).
+    /// expression is case-sensitive.
     ///
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
@@ -383,9 +382,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// <summary>
     /// The order in which products are returned. Products can be ordered by
     /// a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-    /// it unset if ordered by relevance. OrderBy expression is case-sensitive. See
-    /// more details at this [user
-    /// guide](/retail/private/docs/filter-and-order#order).
+    /// it unset if ordered by relevance. OrderBy expression is case-sensitive.
     ///
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
@@ -436,8 +433,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     public const int BoostSpecFieldNumber = 13;
     private global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.BoostSpec boostSpec_;
     /// <summary>
-    /// Boost specification to boost certain products. See more details at this
-    /// [user guide](/retail/private/docs/boosting).
+    /// Boost specification to boost certain products.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.BoostSpec BoostSpec {
@@ -452,8 +448,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     private global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.QueryExpansionSpec queryExpansionSpec_;
     /// <summary>
     /// The query expansion specification that specifies the conditions under which
-    /// query expansion will occur. See more details at this [user
-    /// guide](/retail/private/docs/result-size#query_expansion).
+    /// query expansion will occur.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.QueryExpansionSpec QueryExpansionSpec {
@@ -472,8 +467,7 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// Defaults to
     /// [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
     /// which means only the most relevant results are shown, and the least number
-    /// of results are returned. See more details at this [user
-    /// guide](/retail/private/docs/result-size#relevance_thresholding).
+    /// of results are returned.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Alpha.SearchRequest.Types.RelevanceThreshold RelevanceThreshold {
