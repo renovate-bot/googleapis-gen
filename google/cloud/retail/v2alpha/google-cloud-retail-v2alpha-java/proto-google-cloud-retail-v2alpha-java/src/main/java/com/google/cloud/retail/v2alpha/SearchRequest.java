@@ -732,172 +732,34 @@ private static final long serialVersionUID = 0L;
        * Allowed facet keys when
        * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
        * is not specified:
-       * * textual_field =&lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "brands";
-       *     &lt;br&gt;
-       *     &lt;font color='categories'&gt;
-       *     *# The
-       *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "categories";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "genders";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "ageGroups";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-       *     Value is one of&lt;br&gt;*
-       *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "availability";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "colorFamilies";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "colors";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "sizes";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "materials";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "patterns";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "conditions";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The textual custom attribute in
-       *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-       *     *# be any key in the
-       *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-       *     map&lt;br&gt;*
-       *     *# if the attribute values are textual.&lt;br&gt;*
-       *     *# map.&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "attributes.key";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "pickupInStore";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "shipToStore";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "sameDayDelivery";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "nextDayDelivery";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment1";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment2";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment3";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment4";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment5";
-       * * numerical_field =&lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "price";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "discount";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "rating";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "ratingCount";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The numerical custom attribute in
-       *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-       *     *# be any key in the
-       *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-       *     map&lt;br&gt;*
-       *     *# if the attribute values are numerical.&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "attributes.key";
+       * Textual facet keys:
+       * * brands
+       * * categories
+       * * genders
+       * * ageGroups
+       * * availability
+       * * colorFamilies
+       * * colors
+       * * sizes
+       * * materials
+       * * patterns
+       * * conditions
+       * * attributes.key
+       * * pickupInStore
+       * * shipToStore
+       * * sameDayDelivery
+       * * nextDayDelivery
+       * * customFulfillment1
+       * * customFulfillment2
+       * * customFulfillment3
+       * * customFulfillment4
+       * * customFulfillment5
+       * Numeric facet keys:
+       * * price
+       * * discount
+       * * rating
+       * * ratingCount
+       * * attributes.key
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -912,172 +774,34 @@ private static final long serialVersionUID = 0L;
        * Allowed facet keys when
        * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
        * is not specified:
-       * * textual_field =&lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "brands";
-       *     &lt;br&gt;
-       *     &lt;font color='categories'&gt;
-       *     *# The
-       *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "categories";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "genders";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "ageGroups";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-       *     Value is one of&lt;br&gt;*
-       *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "availability";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "colorFamilies";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "colors";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "sizes";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "materials";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "patterns";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "conditions";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The textual custom attribute in
-       *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-       *     *# be any key in the
-       *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-       *     map&lt;br&gt;*
-       *     *# if the attribute values are textual.&lt;br&gt;*
-       *     *# map.&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "attributes.key";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "pickupInStore";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "shipToStore";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "sameDayDelivery";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "nextDayDelivery";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment1";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment2";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment3";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment4";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment5";
-       * * numerical_field =&lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "price";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "discount";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "rating";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "ratingCount";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The numerical custom attribute in
-       *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-       *     *# be any key in the
-       *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-       *     map&lt;br&gt;*
-       *     *# if the attribute values are numerical.&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "attributes.key";
+       * Textual facet keys:
+       * * brands
+       * * categories
+       * * genders
+       * * ageGroups
+       * * availability
+       * * colorFamilies
+       * * colors
+       * * sizes
+       * * materials
+       * * patterns
+       * * conditions
+       * * attributes.key
+       * * pickupInStore
+       * * shipToStore
+       * * sameDayDelivery
+       * * nextDayDelivery
+       * * customFulfillment1
+       * * customFulfillment2
+       * * customFulfillment3
+       * * customFulfillment4
+       * * customFulfillment5
+       * Numeric facet keys:
+       * * price
+       * * discount
+       * * rating
+       * * ratingCount
+       * * attributes.key
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1616,172 +1340,34 @@ private static final long serialVersionUID = 0L;
        * Allowed facet keys when
        * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
        * is not specified:
-       * * textual_field =&lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "brands";
-       *     &lt;br&gt;
-       *     &lt;font color='categories'&gt;
-       *     *# The
-       *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "categories";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "genders";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "ageGroups";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-       *     Value is one of&lt;br&gt;*
-       *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "availability";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "colorFamilies";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "colors";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "sizes";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "materials";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "patterns";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "conditions";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The textual custom attribute in
-       *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-       *     *# be any key in the
-       *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-       *     map&lt;br&gt;*
-       *     *# if the attribute values are textual.&lt;br&gt;*
-       *     *# map.&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "attributes.key";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "pickupInStore";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "shipToStore";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "sameDayDelivery";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "nextDayDelivery";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment1";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment2";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment3";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment4";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment5";
-       * * numerical_field =&lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "price";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "discount";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "rating";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "ratingCount";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The numerical custom attribute in
-       *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-       *     *# be any key in the
-       *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-       *     map&lt;br&gt;*
-       *     *# if the attribute values are numerical.&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "attributes.key";
+       * Textual facet keys:
+       * * brands
+       * * categories
+       * * genders
+       * * ageGroups
+       * * availability
+       * * colorFamilies
+       * * colors
+       * * sizes
+       * * materials
+       * * patterns
+       * * conditions
+       * * attributes.key
+       * * pickupInStore
+       * * shipToStore
+       * * sameDayDelivery
+       * * nextDayDelivery
+       * * customFulfillment1
+       * * customFulfillment2
+       * * customFulfillment3
+       * * customFulfillment4
+       * * customFulfillment5
+       * Numeric facet keys:
+       * * price
+       * * discount
+       * * rating
+       * * ratingCount
+       * * attributes.key
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1808,172 +1394,34 @@ private static final long serialVersionUID = 0L;
        * Allowed facet keys when
        * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
        * is not specified:
-       * * textual_field =&lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "brands";
-       *     &lt;br&gt;
-       *     &lt;font color='categories'&gt;
-       *     *# The
-       *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "categories";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "genders";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "ageGroups";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-       *     Value is one of&lt;br&gt;*
-       *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "availability";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "colorFamilies";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "colors";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "sizes";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "materials";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "patterns";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "conditions";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The textual custom attribute in
-       *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-       *     *# be any key in the
-       *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-       *     map&lt;br&gt;*
-       *     *# if the attribute values are textual.&lt;br&gt;*
-       *     *# map.&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "attributes.key";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "pickupInStore";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "shipToStore";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "sameDayDelivery";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "nextDayDelivery";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment1";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment2";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment3";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment4";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The [FulfillmentInfo.ids][] for type
-       *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "customFulfillment5";
-       * * numerical_field =&lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "price";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "discount";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "rating";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The
-       *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     "ratingCount";
-       *     &lt;br&gt;
-       *     &lt;font color='grey'&gt;
-       *     *# The numerical custom attribute in
-       *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-       *     *# be any key in the
-       *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-       *     map&lt;br&gt;*
-       *     *# if the attribute values are numerical.&lt;br&gt;*
-       *     &lt;/font&gt;
-       *     | "attributes.key";
+       * Textual facet keys:
+       * * brands
+       * * categories
+       * * genders
+       * * ageGroups
+       * * availability
+       * * colorFamilies
+       * * colors
+       * * sizes
+       * * materials
+       * * patterns
+       * * conditions
+       * * attributes.key
+       * * pickupInStore
+       * * shipToStore
+       * * sameDayDelivery
+       * * nextDayDelivery
+       * * customFulfillment1
+       * * customFulfillment2
+       * * customFulfillment3
+       * * customFulfillment4
+       * * customFulfillment5
+       * Numeric facet keys:
+       * * price
+       * * discount
+       * * rating
+       * * ratingCount
+       * * attributes.key
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2965,172 +2413,34 @@ private static final long serialVersionUID = 0L;
          * Allowed facet keys when
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is not specified:
-         * * textual_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "brands";
-         *     &lt;br&gt;
-         *     &lt;font color='categories'&gt;
-         *     *# The
-         *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "categories";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "genders";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "ageGroups";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-         *     Value is one of&lt;br&gt;*
-         *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "availability";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colorFamilies";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colors";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sizes";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "materials";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "patterns";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "conditions";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The textual custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are textual.&lt;br&gt;*
-         *     *# map.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "pickupInStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "shipToStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sameDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "nextDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment1";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment2";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment3";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment4";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment5";
-         * * numerical_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "price";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "discount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "rating";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "ratingCount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The numerical custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are numerical.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
+         * Textual facet keys:
+         * * brands
+         * * categories
+         * * genders
+         * * ageGroups
+         * * availability
+         * * colorFamilies
+         * * colors
+         * * sizes
+         * * materials
+         * * patterns
+         * * conditions
+         * * attributes.key
+         * * pickupInStore
+         * * shipToStore
+         * * sameDayDelivery
+         * * nextDayDelivery
+         * * customFulfillment1
+         * * customFulfillment2
+         * * customFulfillment3
+         * * customFulfillment4
+         * * customFulfillment5
+         * Numeric facet keys:
+         * * price
+         * * discount
+         * * rating
+         * * ratingCount
+         * * attributes.key
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3156,172 +2466,34 @@ private static final long serialVersionUID = 0L;
          * Allowed facet keys when
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is not specified:
-         * * textual_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "brands";
-         *     &lt;br&gt;
-         *     &lt;font color='categories'&gt;
-         *     *# The
-         *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "categories";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "genders";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "ageGroups";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-         *     Value is one of&lt;br&gt;*
-         *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "availability";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colorFamilies";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colors";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sizes";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "materials";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "patterns";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "conditions";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The textual custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are textual.&lt;br&gt;*
-         *     *# map.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "pickupInStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "shipToStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sameDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "nextDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment1";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment2";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment3";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment4";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment5";
-         * * numerical_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "price";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "discount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "rating";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "ratingCount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The numerical custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are numerical.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
+         * Textual facet keys:
+         * * brands
+         * * categories
+         * * genders
+         * * ageGroups
+         * * availability
+         * * colorFamilies
+         * * colors
+         * * sizes
+         * * materials
+         * * patterns
+         * * conditions
+         * * attributes.key
+         * * pickupInStore
+         * * shipToStore
+         * * sameDayDelivery
+         * * nextDayDelivery
+         * * customFulfillment1
+         * * customFulfillment2
+         * * customFulfillment3
+         * * customFulfillment4
+         * * customFulfillment5
+         * Numeric facet keys:
+         * * price
+         * * discount
+         * * rating
+         * * ratingCount
+         * * attributes.key
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3348,172 +2520,34 @@ private static final long serialVersionUID = 0L;
          * Allowed facet keys when
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is not specified:
-         * * textual_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "brands";
-         *     &lt;br&gt;
-         *     &lt;font color='categories'&gt;
-         *     *# The
-         *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "categories";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "genders";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "ageGroups";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-         *     Value is one of&lt;br&gt;*
-         *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "availability";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colorFamilies";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colors";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sizes";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "materials";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "patterns";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "conditions";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The textual custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are textual.&lt;br&gt;*
-         *     *# map.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "pickupInStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "shipToStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sameDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "nextDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment1";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment2";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment3";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment4";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment5";
-         * * numerical_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "price";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "discount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "rating";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "ratingCount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The numerical custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are numerical.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
+         * Textual facet keys:
+         * * brands
+         * * categories
+         * * genders
+         * * ageGroups
+         * * availability
+         * * colorFamilies
+         * * colors
+         * * sizes
+         * * materials
+         * * patterns
+         * * conditions
+         * * attributes.key
+         * * pickupInStore
+         * * shipToStore
+         * * sameDayDelivery
+         * * nextDayDelivery
+         * * customFulfillment1
+         * * customFulfillment2
+         * * customFulfillment3
+         * * customFulfillment4
+         * * customFulfillment5
+         * Numeric facet keys:
+         * * price
+         * * discount
+         * * rating
+         * * ratingCount
+         * * attributes.key
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3538,172 +2572,34 @@ private static final long serialVersionUID = 0L;
          * Allowed facet keys when
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is not specified:
-         * * textual_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "brands";
-         *     &lt;br&gt;
-         *     &lt;font color='categories'&gt;
-         *     *# The
-         *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "categories";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "genders";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "ageGroups";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-         *     Value is one of&lt;br&gt;*
-         *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "availability";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colorFamilies";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colors";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sizes";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "materials";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "patterns";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "conditions";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The textual custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are textual.&lt;br&gt;*
-         *     *# map.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "pickupInStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "shipToStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sameDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "nextDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment1";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment2";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment3";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment4";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment5";
-         * * numerical_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "price";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "discount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "rating";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "ratingCount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The numerical custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are numerical.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
+         * Textual facet keys:
+         * * brands
+         * * categories
+         * * genders
+         * * ageGroups
+         * * availability
+         * * colorFamilies
+         * * colors
+         * * sizes
+         * * materials
+         * * patterns
+         * * conditions
+         * * attributes.key
+         * * pickupInStore
+         * * shipToStore
+         * * sameDayDelivery
+         * * nextDayDelivery
+         * * customFulfillment1
+         * * customFulfillment2
+         * * customFulfillment3
+         * * customFulfillment4
+         * * customFulfillment5
+         * Numeric facet keys:
+         * * price
+         * * discount
+         * * rating
+         * * ratingCount
+         * * attributes.key
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3723,172 +2619,34 @@ private static final long serialVersionUID = 0L;
          * Allowed facet keys when
          * [FacetKey.query][google.cloud.retail.v2alpha.SearchRequest.FacetSpec.FacetKey.query]
          * is not specified:
-         * * textual_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.brands][google.cloud.retail.v2alpha.Product.brands].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "brands";
-         *     &lt;br&gt;
-         *     &lt;font color='categories'&gt;
-         *     *# The
-         *     [Product.categories][google.cloud.retail.v2alpha.Product.categories].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "categories";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.genders][google.cloud.retail.v2alpha.Audience.genders].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "genders";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Audience.age_groups][google.cloud.retail.v2alpha.Audience.age_groups].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "ageGroups";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.availability][google.cloud.retail.v2alpha.Product.availability].
-         *     Value is one of&lt;br&gt;*
-         *     *# "IN_STOCK", "OUT_OF_STOCK", PREORDER", "BACKORDER".&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "availability";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.color_families][google.cloud.retail.v2alpha.ColorInfo.color_families].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colorFamilies";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [ColorInfo.colors][google.cloud.retail.v2alpha.ColorInfo.colors].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "colors";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.sizes][google.cloud.retail.v2alpha.Product.sizes].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sizes";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.materials][google.cloud.retail.v2alpha.Product.materials].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "materials";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.patterns][google.cloud.retail.v2alpha.Product.patterns].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "patterns";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Product.conditions][google.cloud.retail.v2alpha.Product.conditions].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "conditions";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The textual custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are textual.&lt;br&gt;*
-         *     *# map.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.PICKUP_IN_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "pickupInStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SHIP_TO_STORE][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "shipToStore";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "sameDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "nextDayDelivery";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_1][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment1";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_2][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment2";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_3][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment3";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_4][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment4";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The [FulfillmentInfo.ids][] for type
-         *     *# [FulfillmentInfo.Type.CUSTOM_TYPE_5][].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "customFulfillment5";
-         * * numerical_field =&lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [PriceInfo.price][google.cloud.retail.v2alpha.PriceInfo.price].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "price";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The discount. Computed by (original_price-price)/price &lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "discount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.average_rating][google.cloud.retail.v2alpha.Rating.average_rating].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "rating";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The
-         *     [Rating.rating_count][google.cloud.retail.v2alpha.Rating.rating_count].&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     "ratingCount";
-         *     &lt;br&gt;
-         *     &lt;font color='grey'&gt;
-         *     *# The numerical custom attribute in
-         *     [Product][google.cloud.retail.v2alpha.Product] object. Key can&lt;br&gt;*
-         *     *# be any key in the
-         *     [Product.attributes][google.cloud.retail.v2alpha.Product.attributes]
-         *     map&lt;br&gt;*
-         *     *# if the attribute values are numerical.&lt;br&gt;*
-         *     &lt;/font&gt;
-         *     | "attributes.key";
+         * Textual facet keys:
+         * * brands
+         * * categories
+         * * genders
+         * * ageGroups
+         * * availability
+         * * colorFamilies
+         * * colors
+         * * sizes
+         * * materials
+         * * patterns
+         * * conditions
+         * * attributes.key
+         * * pickupInStore
+         * * shipToStore
+         * * sameDayDelivery
+         * * nextDayDelivery
+         * * customFulfillment1
+         * * customFulfillment2
+         * * customFulfillment3
+         * * customFulfillment4
+         * * customFulfillment5
+         * Numeric facet keys:
+         * * price
+         * * discount
+         * * rating
+         * * ratingCount
+         * * attributes.key
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7409,11 +6167,12 @@ private static final long serialVersionUID = 0L;
        * for detail syntax and limitations.
        * Examples:
        * * To boost products with product ID "product_1" or "product_2", and
-       * color
-       *   "Red" or "Blue":&lt;br&gt;
-       *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-       *   *AND&lt;br&gt;*
-       *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+       * color "Red" or "Blue":
+       *   ```
+       *   (id: ANY("product_1", "product_2"))
+       *   AND
+       *   (colorFamilies: ANY("Red", "Blue"))
+       *   ```
        * </pre>
        *
        * <code>string condition = 1;</code>
@@ -7428,11 +6187,12 @@ private static final long serialVersionUID = 0L;
        * for detail syntax and limitations.
        * Examples:
        * * To boost products with product ID "product_1" or "product_2", and
-       * color
-       *   "Red" or "Blue":&lt;br&gt;
-       *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-       *   *AND&lt;br&gt;*
-       *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+       * color "Red" or "Blue":
+       *   ```
+       *   (id: ANY("product_1", "product_2"))
+       *   AND
+       *   (colorFamilies: ANY("Red", "Blue"))
+       *   ```
        * </pre>
        *
        * <code>string condition = 1;</code>
@@ -7567,11 +6327,12 @@ private static final long serialVersionUID = 0L;
        * for detail syntax and limitations.
        * Examples:
        * * To boost products with product ID "product_1" or "product_2", and
-       * color
-       *   "Red" or "Blue":&lt;br&gt;
-       *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-       *   *AND&lt;br&gt;*
-       *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+       * color "Red" or "Blue":
+       *   ```
+       *   (id: ANY("product_1", "product_2"))
+       *   AND
+       *   (colorFamilies: ANY("Red", "Blue"))
+       *   ```
        * </pre>
        *
        * <code>string condition = 1;</code>
@@ -7598,11 +6359,12 @@ private static final long serialVersionUID = 0L;
        * for detail syntax and limitations.
        * Examples:
        * * To boost products with product ID "product_1" or "product_2", and
-       * color
-       *   "Red" or "Blue":&lt;br&gt;
-       *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-       *   *AND&lt;br&gt;*
-       *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+       * color "Red" or "Blue":
+       *   ```
+       *   (id: ANY("product_1", "product_2"))
+       *   AND
+       *   (colorFamilies: ANY("Red", "Blue"))
+       *   ```
        * </pre>
        *
        * <code>string condition = 1;</code>
@@ -7985,11 +6747,12 @@ private static final long serialVersionUID = 0L;
          * for detail syntax and limitations.
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
-         * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         * color "Red" or "Blue":
+         *   ```
+         *   (id: ANY("product_1", "product_2"))
+         *   AND
+         *   (colorFamilies: ANY("Red", "Blue"))
+         *   ```
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -8015,11 +6778,12 @@ private static final long serialVersionUID = 0L;
          * for detail syntax and limitations.
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
-         * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         * color "Red" or "Blue":
+         *   ```
+         *   (id: ANY("product_1", "product_2"))
+         *   AND
+         *   (colorFamilies: ANY("Red", "Blue"))
+         *   ```
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -8046,11 +6810,12 @@ private static final long serialVersionUID = 0L;
          * for detail syntax and limitations.
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
-         * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         * color "Red" or "Blue":
+         *   ```
+         *   (id: ANY("product_1", "product_2"))
+         *   AND
+         *   (colorFamilies: ANY("Red", "Blue"))
+         *   ```
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -8075,11 +6840,12 @@ private static final long serialVersionUID = 0L;
          * for detail syntax and limitations.
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
-         * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         * color "Red" or "Blue":
+         *   ```
+         *   (id: ANY("product_1", "product_2"))
+         *   AND
+         *   (colorFamilies: ANY("Red", "Blue"))
+         *   ```
          * </pre>
          *
          * <code>string condition = 1;</code>
@@ -8099,11 +6865,12 @@ private static final long serialVersionUID = 0L;
          * for detail syntax and limitations.
          * Examples:
          * * To boost products with product ID "product_1" or "product_2", and
-         * color
-         *   "Red" or "Blue":&lt;br&gt;
-         *   *(id: ANY("product_1", "product_2"))&lt;br&gt;*
-         *   *AND&lt;br&gt;*
-         *   *(colorFamilies: ANY("Red", "Blue"))&lt;br&gt;*
+         * color "Red" or "Blue":
+         *   ```
+         *   (id: ANY("product_1", "product_2"))
+         *   AND
+         *   (colorFamilies: ANY("Red", "Blue"))
+         *   ```
          * </pre>
          *
          * <code>string condition = 1;</code>
