@@ -87,8 +87,7 @@ module Google
         #   @return [::String]
         #     The filter syntax consists of an expression language for constructing a
         #     predicate from one or more fields of the products being filtered. Filter
-        #     expression is case-sensitive. See more details at this [user
-        #     guide](/retail/private/docs/filter-and-order#filter).
+        #     expression is case-sensitive.
         #
         #     If this field is unrecognizable, an INVALID_ARGUMENT is returned.
         # @!attribute [rw] canonical_filter
@@ -106,9 +105,7 @@ module Google
         #   @return [::String]
         #     The order in which products are returned. Products can be ordered by
         #     a field in an {::Google::Cloud::Retail::V2::Product Product} object. Leave it
-        #     unset if ordered by relevance. OrderBy expression is case-sensitive. See
-        #     more details at this [user
-        #     guide](/retail/private/docs/filter-and-order#order).
+        #     unset if ordered by relevance. OrderBy expression is case-sensitive.
         #
         #     If this field is unrecognizable, an INVALID_ARGUMENT is returned.
         # @!attribute [rw] facet_specs
@@ -127,13 +124,11 @@ module Google
         #     facet feature.
         # @!attribute [rw] boost_spec
         #   @return [::Google::Cloud::Retail::V2::SearchRequest::BoostSpec]
-        #     Boost specification to boost certain products. See more details at this
-        #     [user guide](/retail/private/docs/boosting).
+        #     Boost specification to boost certain products.
         # @!attribute [rw] query_expansion_spec
         #   @return [::Google::Cloud::Retail::V2::SearchRequest::QueryExpansionSpec]
         #     The query expansion specification that specifies the conditions under which
-        #     query expansion will occur. See more details at this [user
-        #     guide](/retail/private/docs/result-size#query_expansion).
+        #     query expansion will occur.
         # @!attribute [rw] variant_rollup_keys
         #   @return [::Array<::String>]
         #     The keys to fetch and rollup the matching
