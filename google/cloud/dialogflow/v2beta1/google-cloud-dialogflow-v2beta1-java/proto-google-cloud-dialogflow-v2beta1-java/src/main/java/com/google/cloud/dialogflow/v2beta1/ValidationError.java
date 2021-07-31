@@ -421,7 +421,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object errorMessage_;
   /**
    * <pre>
-   * The detailed error messsage.
+   * The detailed error message.
    * </pre>
    *
    * <code>string error_message = 4;</code>
@@ -442,7 +442,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The detailed error messsage.
+   * The detailed error message.
    * </pre>
    *
    * <code>string error_message = 4;</code>
@@ -1152,7 +1152,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object errorMessage_ = "";
     /**
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
@@ -1172,7 +1172,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
@@ -1193,7 +1193,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
@@ -1212,7 +1212,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>
@@ -1226,7 +1226,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The detailed error messsage.
+     * The detailed error message.
      * </pre>
      *
      * <code>string error_message = 4;</code>

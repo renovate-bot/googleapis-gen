@@ -51,7 +51,7 @@ class ValidationError(proto.Message):
             ID>", if the error is associated with certain
             entities.
         error_message (str):
-            The detailed error messsage.
+            The detailed error message.
     """
     class Severity(proto.Enum):
         r"""Represents a level of severity."""

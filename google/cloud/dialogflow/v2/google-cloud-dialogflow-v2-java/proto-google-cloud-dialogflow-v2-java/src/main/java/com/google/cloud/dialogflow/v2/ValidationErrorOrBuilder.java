@@ -117,7 +117,7 @@ public interface ValidationErrorOrBuilder extends
 
   /**
    * <pre>
-   * The detailed error messsage.
+   * The detailed error message.
    * </pre>
    *
    * <code>string error_message = 4;</code>
@@ -126,7 +126,7 @@ public interface ValidationErrorOrBuilder extends
   java.lang.String getErrorMessage();
   /**
    * <pre>
-   * The detailed error messsage.
+   * The detailed error message.
    * </pre>
    *
    * <code>string error_message = 4;</code>
