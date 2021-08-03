@@ -16,7 +16,6 @@
 
 package com.google.apps.alertcenter.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -790,14 +789,7 @@ public class AlertCenterServiceClient implements BackgroundResource {
       ApiFuture<ListAlertsPage> futurePage =
           ListAlertsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListAlertsPage, ListAlertsPagedResponse>() {
-            @Override
-            public ListAlertsPagedResponse apply(ListAlertsPage input) {
-              return new ListAlertsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListAlertsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListAlertsPagedResponse(ListAlertsPage page) {

@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2906,12 +2905,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListFeaturestoresPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListFeaturestoresPage, ListFeaturestoresPagedResponse>() {
-            @Override
-            public ListFeaturestoresPagedResponse apply(ListFeaturestoresPage input) {
-              return new ListFeaturestoresPagedResponse(input);
-            }
-          },
+          input -> new ListFeaturestoresPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2983,12 +2977,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListEntityTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEntityTypesPage, ListEntityTypesPagedResponse>() {
-            @Override
-            public ListEntityTypesPagedResponse apply(ListEntityTypesPage input) {
-              return new ListEntityTypesPagedResponse(input);
-            }
-          },
+          input -> new ListEntityTypesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3059,12 +3048,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           ListFeaturesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListFeaturesPage, ListFeaturesPagedResponse>() {
-            @Override
-            public ListFeaturesPagedResponse apply(ListFeaturesPage input) {
-              return new ListFeaturesPagedResponse(input);
-            }
-          },
+          input -> new ListFeaturesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3133,12 +3117,7 @@ public class FeaturestoreServiceClient implements BackgroundResource {
           SearchFeaturesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchFeaturesPage, SearchFeaturesPagedResponse>() {
-            @Override
-            public SearchFeaturesPagedResponse apply(SearchFeaturesPage input) {
-              return new SearchFeaturesPagedResponse(input);
-            }
-          },
+          input -> new SearchFeaturesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.talent.v4.CompleteQueryRequest;
 import com.google.cloud.talent.v4.CompleteQueryResponse;
@@ -101,13 +100,10 @@ public class GrpcCompletionStub extends CompletionStub {
         GrpcCallSettings.<CompleteQueryRequest, CompleteQueryResponse>newBuilder()
             .setMethodDescriptor(completeQueryMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CompleteQueryRequest>() {
-                  @Override
-                  public Map<String, String> extract(CompleteQueryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("tenant", String.valueOf(request.getTenant()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("tenant", String.valueOf(request.getTenant()));
+                  return params.build();
                 })
             .build();
 

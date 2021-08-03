@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.migration.v2alpha;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1014,12 +1013,7 @@ public class MigrationServiceClient implements BackgroundResource {
           ListMigrationWorkflowsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMigrationWorkflowsPage, ListMigrationWorkflowsPagedResponse>() {
-            @Override
-            public ListMigrationWorkflowsPagedResponse apply(ListMigrationWorkflowsPage input) {
-              return new ListMigrationWorkflowsPagedResponse(input);
-            }
-          },
+          input -> new ListMigrationWorkflowsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1098,12 +1092,7 @@ public class MigrationServiceClient implements BackgroundResource {
           ListMigrationSubtasksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMigrationSubtasksPage, ListMigrationSubtasksPagedResponse>() {
-            @Override
-            public ListMigrationSubtasksPagedResponse apply(ListMigrationSubtasksPage input) {
-              return new ListMigrationSubtasksPagedResponse(input);
-            }
-          },
+          input -> new ListMigrationSubtasksPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

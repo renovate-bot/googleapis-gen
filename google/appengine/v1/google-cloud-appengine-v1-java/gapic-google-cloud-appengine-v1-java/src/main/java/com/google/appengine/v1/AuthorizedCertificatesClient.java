@@ -16,7 +16,6 @@
 
 package com.google.appengine.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -518,14 +517,7 @@ public class AuthorizedCertificatesClient implements BackgroundResource {
           ListAuthorizedCertificatesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListAuthorizedCertificatesPage, ListAuthorizedCertificatesPagedResponse>() {
-            @Override
-            public ListAuthorizedCertificatesPagedResponse apply(
-                ListAuthorizedCertificatesPage input) {
-              return new ListAuthorizedCertificatesPagedResponse(input);
-            }
-          },
+          input -> new ListAuthorizedCertificatesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -29,7 +29,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.CreateTensorboardExperimentRequest;
@@ -508,40 +507,31 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
         GrpcCallSettings.<CreateTensorboardRequest, Operation>newBuilder()
             .setMethodDescriptor(createTensorboardMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateTensorboardRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateTensorboardRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetTensorboardRequest, Tensorboard> getTensorboardTransportSettings =
         GrpcCallSettings.<GetTensorboardRequest, Tensorboard>newBuilder()
             .setMethodDescriptor(getTensorboardMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTensorboardRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTensorboardRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateTensorboardRequest, Operation> updateTensorboardTransportSettings =
         GrpcCallSettings.<UpdateTensorboardRequest, Operation>newBuilder()
             .setMethodDescriptor(updateTensorboardMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateTensorboardRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateTensorboardRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "tensorboard.name", String.valueOf(request.getTensorboard().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "tensorboard.name", String.valueOf(request.getTensorboard().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListTensorboardsRequest, ListTensorboardsResponse>
@@ -549,26 +539,20 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<ListTensorboardsRequest, ListTensorboardsResponse>newBuilder()
                 .setMethodDescriptor(listTensorboardsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListTensorboardsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListTensorboardsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteTensorboardRequest, Operation> deleteTensorboardTransportSettings =
         GrpcCallSettings.<DeleteTensorboardRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteTensorboardMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTensorboardRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTensorboardRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateTensorboardExperimentRequest, TensorboardExperiment>
@@ -576,14 +560,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<CreateTensorboardExperimentRequest, TensorboardExperiment>newBuilder()
                 .setMethodDescriptor(createTensorboardExperimentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateTensorboardExperimentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateTensorboardExperimentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetTensorboardExperimentRequest, TensorboardExperiment>
@@ -591,13 +571,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<GetTensorboardExperimentRequest, TensorboardExperiment>newBuilder()
                 .setMethodDescriptor(getTensorboardExperimentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetTensorboardExperimentRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetTensorboardExperimentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateTensorboardExperimentRequest, TensorboardExperiment>
@@ -605,16 +582,12 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<UpdateTensorboardExperimentRequest, TensorboardExperiment>newBuilder()
                 .setMethodDescriptor(updateTensorboardExperimentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateTensorboardExperimentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateTensorboardExperimentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "tensorboard_experiment.name",
-                            String.valueOf(request.getTensorboardExperiment().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "tensorboard_experiment.name",
+                          String.valueOf(request.getTensorboardExperiment().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse>
@@ -623,14 +596,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                 .<ListTensorboardExperimentsRequest, ListTensorboardExperimentsResponse>newBuilder()
                 .setMethodDescriptor(listTensorboardExperimentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListTensorboardExperimentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListTensorboardExperimentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteTensorboardExperimentRequest, Operation>
@@ -638,14 +607,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<DeleteTensorboardExperimentRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteTensorboardExperimentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteTensorboardExperimentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteTensorboardExperimentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateTensorboardRunRequest, TensorboardRun>
@@ -653,26 +618,20 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<CreateTensorboardRunRequest, TensorboardRun>newBuilder()
                 .setMethodDescriptor(createTensorboardRunMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateTensorboardRunRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateTensorboardRunRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetTensorboardRunRequest, TensorboardRun> getTensorboardRunTransportSettings =
         GrpcCallSettings.<GetTensorboardRunRequest, TensorboardRun>newBuilder()
             .setMethodDescriptor(getTensorboardRunMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTensorboardRunRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTensorboardRunRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateTensorboardRunRequest, TensorboardRun>
@@ -680,15 +639,12 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<UpdateTensorboardRunRequest, TensorboardRun>newBuilder()
                 .setMethodDescriptor(updateTensorboardRunMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateTensorboardRunRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateTensorboardRunRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "tensorboard_run.name",
-                            String.valueOf(request.getTensorboardRun().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "tensorboard_run.name",
+                          String.valueOf(request.getTensorboardRun().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListTensorboardRunsRequest, ListTensorboardRunsResponse>
@@ -696,26 +652,20 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<ListTensorboardRunsRequest, ListTensorboardRunsResponse>newBuilder()
                 .setMethodDescriptor(listTensorboardRunsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListTensorboardRunsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListTensorboardRunsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteTensorboardRunRequest, Operation> deleteTensorboardRunTransportSettings =
         GrpcCallSettings.<DeleteTensorboardRunRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteTensorboardRunMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTensorboardRunRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTensorboardRunRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -723,14 +673,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<CreateTensorboardTimeSeriesRequest, TensorboardTimeSeries>newBuilder()
                 .setMethodDescriptor(createTensorboardTimeSeriesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateTensorboardTimeSeriesRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateTensorboardTimeSeriesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -738,13 +684,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<GetTensorboardTimeSeriesRequest, TensorboardTimeSeries>newBuilder()
                 .setMethodDescriptor(getTensorboardTimeSeriesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetTensorboardTimeSeriesRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetTensorboardTimeSeriesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateTensorboardTimeSeriesRequest, TensorboardTimeSeries>
@@ -752,16 +695,12 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<UpdateTensorboardTimeSeriesRequest, TensorboardTimeSeries>newBuilder()
                 .setMethodDescriptor(updateTensorboardTimeSeriesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateTensorboardTimeSeriesRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateTensorboardTimeSeriesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "tensorboard_time_series.name",
-                            String.valueOf(request.getTensorboardTimeSeries().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "tensorboard_time_series.name",
+                          String.valueOf(request.getTensorboardTimeSeries().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse>
@@ -770,13 +709,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                 .<ListTensorboardTimeSeriesRequest, ListTensorboardTimeSeriesResponse>newBuilder()
                 .setMethodDescriptor(listTensorboardTimeSeriesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListTensorboardTimeSeriesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListTensorboardTimeSeriesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteTensorboardTimeSeriesRequest, Operation>
@@ -784,14 +720,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             GrpcCallSettings.<DeleteTensorboardTimeSeriesRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteTensorboardTimeSeriesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteTensorboardTimeSeriesRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteTensorboardTimeSeriesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ReadTensorboardTimeSeriesDataRequest, ReadTensorboardTimeSeriesDataResponse>
@@ -801,16 +733,12 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                     newBuilder()
                 .setMethodDescriptor(readTensorboardTimeSeriesDataMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ReadTensorboardTimeSeriesDataRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ReadTensorboardTimeSeriesDataRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "tensorboard_time_series",
-                            String.valueOf(request.getTensorboardTimeSeries()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "tensorboard_time_series",
+                          String.valueOf(request.getTensorboardTimeSeries()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>
@@ -819,13 +747,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                 .<ReadTensorboardBlobDataRequest, ReadTensorboardBlobDataResponse>newBuilder()
                 .setMethodDescriptor(readTensorboardBlobDataMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ReadTensorboardBlobDataRequest>() {
-                      @Override
-                      public Map<String, String> extract(ReadTensorboardBlobDataRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("time_series", String.valueOf(request.getTimeSeries()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("time_series", String.valueOf(request.getTimeSeries()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<WriteTensorboardRunDataRequest, WriteTensorboardRunDataResponse>
@@ -834,13 +759,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                 .<WriteTensorboardRunDataRequest, WriteTensorboardRunDataResponse>newBuilder()
                 .setMethodDescriptor(writeTensorboardRunDataMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<WriteTensorboardRunDataRequest>() {
-                      @Override
-                      public Map<String, String> extract(WriteTensorboardRunDataRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("tensorboard_run", String.valueOf(request.getTensorboardRun()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("tensorboard_run", String.valueOf(request.getTensorboardRun()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -851,16 +773,12 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                     newBuilder()
                 .setMethodDescriptor(exportTensorboardTimeSeriesDataMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ExportTensorboardTimeSeriesDataRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ExportTensorboardTimeSeriesDataRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "tensorboard_time_series",
-                            String.valueOf(request.getTensorboardTimeSeries()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "tensorboard_time_series",
+                          String.valueOf(request.getTensorboardTimeSeries()));
+                      return params.build();
                     })
                 .build();
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -525,13 +524,7 @@ public class MigrationServiceClient implements BackgroundResource {
           SearchMigratableResourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchMigratableResourcesPage, SearchMigratableResourcesPagedResponse>() {
-            @Override
-            public SearchMigratableResourcesPagedResponse apply(
-                SearchMigratableResourcesPage input) {
-              return new SearchMigratableResourcesPagedResponse(input);
-            }
-          },
+          input -> new SearchMigratableResourcesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

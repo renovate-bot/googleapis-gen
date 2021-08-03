@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.connection.v1beta1.ConnectionProto;
 import com.google.common.collect.ImmutableMap;
@@ -232,14 +231,10 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                 .<ConnectionProto.CreateConnectionRequest, ConnectionProto.Connection>newBuilder()
                 .setMethodDescriptor(createConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ConnectionProto.CreateConnectionRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ConnectionProto.CreateConnectionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>
@@ -248,14 +243,10 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                 .<ConnectionProto.GetConnectionRequest, ConnectionProto.Connection>newBuilder()
                 .setMethodDescriptor(getConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ConnectionProto.GetConnectionRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ConnectionProto.GetConnectionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -266,14 +257,10 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listConnectionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ConnectionProto.ListConnectionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ConnectionProto.ListConnectionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>
@@ -282,14 +269,10 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                 .<ConnectionProto.UpdateConnectionRequest, ConnectionProto.Connection>newBuilder()
                 .setMethodDescriptor(updateConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ConnectionProto.UpdateConnectionRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ConnectionProto.UpdateConnectionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ConnectionProto.UpdateConnectionCredentialRequest, Empty>
@@ -297,15 +280,10 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
             GrpcCallSettings.<ConnectionProto.UpdateConnectionCredentialRequest, Empty>newBuilder()
                 .setMethodDescriptor(updateConnectionCredentialMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<
-                        ConnectionProto.UpdateConnectionCredentialRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ConnectionProto.UpdateConnectionCredentialRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ConnectionProto.DeleteConnectionRequest, Empty>
@@ -313,40 +291,30 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
             GrpcCallSettings.<ConnectionProto.DeleteConnectionRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteConnectionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ConnectionProto.DeleteConnectionRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ConnectionProto.DeleteConnectionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -354,13 +322,10 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
 

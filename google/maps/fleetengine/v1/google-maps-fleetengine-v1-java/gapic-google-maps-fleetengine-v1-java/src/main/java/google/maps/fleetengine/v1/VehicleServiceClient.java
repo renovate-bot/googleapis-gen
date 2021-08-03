@@ -16,7 +16,6 @@
 
 package google.maps.fleetengine.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -828,12 +827,7 @@ public class VehicleServiceClient implements BackgroundResource {
           ListVehiclesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListVehiclesPage, ListVehiclesPagedResponse>() {
-            @Override
-            public ListVehiclesPagedResponse apply(ListVehiclesPage input) {
-              return new ListVehiclesPagedResponse(input);
-            }
-          },
+          input -> new ListVehiclesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

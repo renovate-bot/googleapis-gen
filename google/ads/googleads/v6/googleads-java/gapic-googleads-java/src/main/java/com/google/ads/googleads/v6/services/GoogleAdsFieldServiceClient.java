@@ -20,7 +20,6 @@ import com.google.ads.googleads.v6.resources.GoogleAdsField;
 import com.google.ads.googleads.v6.resources.GoogleAdsFieldName;
 import com.google.ads.googleads.v6.services.stub.GoogleAdsFieldServiceStub;
 import com.google.ads.googleads.v6.services.stub.GoogleAdsFieldServiceStubSettings;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -413,12 +412,7 @@ public class GoogleAdsFieldServiceClient implements BackgroundResource {
           SearchGoogleAdsFieldsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchGoogleAdsFieldsPage, SearchGoogleAdsFieldsPagedResponse>() {
-            @Override
-            public SearchGoogleAdsFieldsPagedResponse apply(SearchGoogleAdsFieldsPage input) {
-              return new SearchGoogleAdsFieldsPagedResponse(input);
-            }
-          },
+          input -> new SearchGoogleAdsFieldsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.asset.v1p7beta1.ExportAssetsRequest;
 import com.google.cloud.asset.v1p7beta1.ExportAssetsResponse;
@@ -105,13 +104,10 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
         GrpcCallSettings.<ExportAssetsRequest, Operation>newBuilder()
             .setMethodDescriptor(exportAssetsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportAssetsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportAssetsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 

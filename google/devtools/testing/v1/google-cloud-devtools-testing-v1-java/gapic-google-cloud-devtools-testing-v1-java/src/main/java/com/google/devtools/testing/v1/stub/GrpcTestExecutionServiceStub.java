@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.testing.v1.CancelTestMatrixRequest;
@@ -129,27 +128,21 @@ public class GrpcTestExecutionServiceStub extends TestExecutionServiceStub {
         GrpcCallSettings.<CreateTestMatrixRequest, TestMatrix>newBuilder()
             .setMethodDescriptor(createTestMatrixMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateTestMatrixRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateTestMatrixRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetTestMatrixRequest, TestMatrix> getTestMatrixTransportSettings =
         GrpcCallSettings.<GetTestMatrixRequest, TestMatrix>newBuilder()
             .setMethodDescriptor(getTestMatrixMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTestMatrixRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTestMatrixRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    params.put("test_matrix_id", String.valueOf(request.getTestMatrixId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  params.put("test_matrix_id", String.valueOf(request.getTestMatrixId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CancelTestMatrixRequest, CancelTestMatrixResponse>
@@ -157,14 +150,11 @@ public class GrpcTestExecutionServiceStub extends TestExecutionServiceStub {
             GrpcCallSettings.<CancelTestMatrixRequest, CancelTestMatrixResponse>newBuilder()
                 .setMethodDescriptor(cancelTestMatrixMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CancelTestMatrixRequest>() {
-                      @Override
-                      public Map<String, String> extract(CancelTestMatrixRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        params.put("test_matrix_id", String.valueOf(request.getTestMatrixId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      params.put("test_matrix_id", String.valueOf(request.getTestMatrixId()));
+                      return params.build();
                     })
                 .build();
 

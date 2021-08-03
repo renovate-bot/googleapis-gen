@@ -16,7 +16,6 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2984,12 +2983,7 @@ public class ProductSearchClient implements BackgroundResource {
           ListProductSetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProductSetsPage, ListProductSetsPagedResponse>() {
-            @Override
-            public ListProductSetsPagedResponse apply(ListProductSetsPage input) {
-              return new ListProductSetsPagedResponse(input);
-            }
-          },
+          input -> new ListProductSetsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3060,12 +3054,7 @@ public class ProductSearchClient implements BackgroundResource {
           ListProductsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProductsPage, ListProductsPagedResponse>() {
-            @Override
-            public ListProductsPagedResponse apply(ListProductsPage input) {
-              return new ListProductsPagedResponse(input);
-            }
-          },
+          input -> new ListProductsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3135,12 +3124,7 @@ public class ProductSearchClient implements BackgroundResource {
           ListReferenceImagesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListReferenceImagesPage, ListReferenceImagesPagedResponse>() {
-            @Override
-            public ListReferenceImagesPagedResponse apply(ListReferenceImagesPage input) {
-              return new ListReferenceImagesPagedResponse(input);
-            }
-          },
+          input -> new ListReferenceImagesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3216,12 +3200,7 @@ public class ProductSearchClient implements BackgroundResource {
           ListProductsInProductSetPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProductsInProductSetPage, ListProductsInProductSetPagedResponse>() {
-            @Override
-            public ListProductsInProductSetPagedResponse apply(ListProductsInProductSetPage input) {
-              return new ListProductsInProductSetPagedResponse(input);
-            }
-          },
+          input -> new ListProductsInProductSetPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

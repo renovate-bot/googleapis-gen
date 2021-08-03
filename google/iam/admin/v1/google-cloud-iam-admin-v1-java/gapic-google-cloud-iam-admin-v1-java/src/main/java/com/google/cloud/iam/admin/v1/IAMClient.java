@@ -16,7 +16,6 @@
 
 package com.google.cloud.iam.admin.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2982,12 +2981,7 @@ public class IAMClient implements BackgroundResource {
           ListServiceAccountsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServiceAccountsPage, ListServiceAccountsPagedResponse>() {
-            @Override
-            public ListServiceAccountsPagedResponse apply(ListServiceAccountsPage input) {
-              return new ListServiceAccountsPagedResponse(input);
-            }
-          },
+          input -> new ListServiceAccountsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3062,12 +3056,7 @@ public class IAMClient implements BackgroundResource {
           QueryGrantableRolesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<QueryGrantableRolesPage, QueryGrantableRolesPagedResponse>() {
-            @Override
-            public QueryGrantableRolesPagedResponse apply(QueryGrantableRolesPage input) {
-              return new QueryGrantableRolesPagedResponse(input);
-            }
-          },
+          input -> new QueryGrantableRolesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3136,14 +3125,7 @@ public class IAMClient implements BackgroundResource {
       ApiFuture<ListRolesPage> futurePage =
           ListRolesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListRolesPage, ListRolesPagedResponse>() {
-            @Override
-            public ListRolesPagedResponse apply(ListRolesPage input) {
-              return new ListRolesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListRolesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListRolesPagedResponse(ListRolesPage page) {
@@ -3211,12 +3193,7 @@ public class IAMClient implements BackgroundResource {
           QueryTestablePermissionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<QueryTestablePermissionsPage, QueryTestablePermissionsPagedResponse>() {
-            @Override
-            public QueryTestablePermissionsPagedResponse apply(QueryTestablePermissionsPage input) {
-              return new QueryTestablePermissionsPagedResponse(input);
-            }
-          },
+          input -> new QueryTestablePermissionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

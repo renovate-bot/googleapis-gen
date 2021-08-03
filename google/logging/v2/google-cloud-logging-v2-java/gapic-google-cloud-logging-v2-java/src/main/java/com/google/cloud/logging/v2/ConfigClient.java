@@ -16,7 +16,6 @@
 
 package com.google.cloud.logging.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2852,14 +2851,7 @@ public class ConfigClient implements BackgroundResource {
       ApiFuture<ListBucketsPage> futurePage =
           ListBucketsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListBucketsPage, ListBucketsPagedResponse>() {
-            @Override
-            public ListBucketsPagedResponse apply(ListBucketsPage input) {
-              return new ListBucketsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListBucketsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListBucketsPagedResponse(ListBucketsPage page) {
@@ -2926,14 +2918,7 @@ public class ConfigClient implements BackgroundResource {
       ApiFuture<ListViewsPage> futurePage =
           ListViewsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListViewsPage, ListViewsPagedResponse>() {
-            @Override
-            public ListViewsPagedResponse apply(ListViewsPage input) {
-              return new ListViewsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListViewsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListViewsPagedResponse(ListViewsPage page) {
@@ -3000,14 +2985,7 @@ public class ConfigClient implements BackgroundResource {
       ApiFuture<ListSinksPage> futurePage =
           ListSinksPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListSinksPage, ListSinksPagedResponse>() {
-            @Override
-            public ListSinksPagedResponse apply(ListSinksPage input) {
-              return new ListSinksPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListSinksPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListSinksPagedResponse(ListSinksPage page) {
@@ -3075,12 +3053,7 @@ public class ConfigClient implements BackgroundResource {
           ListExclusionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListExclusionsPage, ListExclusionsPagedResponse>() {
-            @Override
-            public ListExclusionsPagedResponse apply(ListExclusionsPage input) {
-              return new ListExclusionsPagedResponse(input);
-            }
-          },
+          input -> new ListExclusionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

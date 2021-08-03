@@ -16,7 +16,6 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1392,14 +1391,7 @@ public class IntentsClient implements BackgroundResource {
       ApiFuture<ListIntentsPage> futurePage =
           ListIntentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListIntentsPage, ListIntentsPagedResponse>() {
-            @Override
-            public ListIntentsPagedResponse apply(ListIntentsPage input) {
-              return new ListIntentsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListIntentsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListIntentsPagedResponse(ListIntentsPage page) {

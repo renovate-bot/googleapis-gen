@@ -62,7 +62,6 @@ import com.google.cloudbuild.v1.RetryBuildRequest;
 import com.google.cloudbuild.v1.RunBuildTriggerRequest;
 import com.google.cloudbuild.v1.Secret;
 import com.google.cloudbuild.v1.Secrets;
-import com.google.cloudbuild.v1.ServiceAccountName;
 import com.google.cloudbuild.v1.Source;
 import com.google.cloudbuild.v1.SourceProvenance;
 import com.google.cloudbuild.v1.TimeSpan;
@@ -160,7 +159,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
@@ -235,7 +234,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
@@ -349,7 +348,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
@@ -416,7 +415,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())
@@ -740,7 +739,7 @@ public class CloudBuildClientTest {
             .addAllTags(new ArrayList<String>())
             .addAllSecrets(new ArrayList<Secret>())
             .putAllTiming(new HashMap<String, TimeSpan>())
-            .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+            .setServiceAccount("serviceAccount1079137720")
             .setAvailableSecrets(Secrets.newBuilder().build())
             .addAllWarnings(new ArrayList<Build.Warning>())
             .setFailureInfo(Build.FailureInfo.newBuilder().build())

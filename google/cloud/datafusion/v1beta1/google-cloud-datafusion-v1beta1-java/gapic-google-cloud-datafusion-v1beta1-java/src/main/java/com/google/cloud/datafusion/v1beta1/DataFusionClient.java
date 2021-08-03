@@ -16,7 +16,6 @@
 
 package com.google.cloud.datafusion.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1346,12 +1345,7 @@ public class DataFusionClient implements BackgroundResource {
           ListAvailableVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAvailableVersionsPage, ListAvailableVersionsPagedResponse>() {
-            @Override
-            public ListAvailableVersionsPagedResponse apply(ListAvailableVersionsPage input) {
-              return new ListAvailableVersionsPagedResponse(input);
-            }
-          },
+          input -> new ListAvailableVersionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1423,12 +1417,7 @@ public class DataFusionClient implements BackgroundResource {
           ListInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstancesPage, ListInstancesPagedResponse>() {
-            @Override
-            public ListInstancesPagedResponse apply(ListInstancesPage input) {
-              return new ListInstancesPagedResponse(input);
-            }
-          },
+          input -> new ListInstancesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1498,12 +1487,7 @@ public class DataFusionClient implements BackgroundResource {
           ListNamespacesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListNamespacesPage, ListNamespacesPagedResponse>() {
-            @Override
-            public ListNamespacesPagedResponse apply(ListNamespacesPage input) {
-              return new ListNamespacesPagedResponse(input);
-            }
-          },
+          input -> new ListNamespacesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1573,12 +1557,7 @@ public class DataFusionClient implements BackgroundResource {
           ListDnsPeeringsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDnsPeeringsPage, ListDnsPeeringsPagedResponse>() {
-            @Override
-            public ListDnsPeeringsPagedResponse apply(ListDnsPeeringsPage input) {
-              return new ListDnsPeeringsPagedResponse(input);
-            }
-          },
+          input -> new ListDnsPeeringsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.spanner.admin.database.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2662,12 +2661,7 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListDatabasesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDatabasesPage, ListDatabasesPagedResponse>() {
-            @Override
-            public ListDatabasesPagedResponse apply(ListDatabasesPage input) {
-              return new ListDatabasesPagedResponse(input);
-            }
-          },
+          input -> new ListDatabasesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2736,14 +2730,7 @@ public class DatabaseAdminClient implements BackgroundResource {
       ApiFuture<ListBackupsPage> futurePage =
           ListBackupsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListBackupsPage, ListBackupsPagedResponse>() {
-            @Override
-            public ListBackupsPagedResponse apply(ListBackupsPage input) {
-              return new ListBackupsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListBackupsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListBackupsPagedResponse(ListBackupsPage page) {
@@ -2812,12 +2799,7 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListDatabaseOperationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDatabaseOperationsPage, ListDatabaseOperationsPagedResponse>() {
-            @Override
-            public ListDatabaseOperationsPagedResponse apply(ListDatabaseOperationsPage input) {
-              return new ListDatabaseOperationsPagedResponse(input);
-            }
-          },
+          input -> new ListDatabaseOperationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2892,12 +2874,7 @@ public class DatabaseAdminClient implements BackgroundResource {
           ListBackupOperationsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListBackupOperationsPage, ListBackupOperationsPagedResponse>() {
-            @Override
-            public ListBackupOperationsPagedResponse apply(ListBackupOperationsPage input) {
-              return new ListBackupOperationsPagedResponse(input);
-            }
-          },
+          input -> new ListBackupOperationsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1931,12 +1930,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListDataSourcesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDataSourcesPage, ListDataSourcesPagedResponse>() {
-            @Override
-            public ListDataSourcesPagedResponse apply(ListDataSourcesPage input) {
-              return new ListDataSourcesPagedResponse(input);
-            }
-          },
+          input -> new ListDataSourcesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2008,12 +2002,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTransferConfigsPage, ListTransferConfigsPagedResponse>() {
-            @Override
-            public ListTransferConfigsPagedResponse apply(ListTransferConfigsPage input) {
-              return new ListTransferConfigsPagedResponse(input);
-            }
-          },
+          input -> new ListTransferConfigsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2088,12 +2077,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferRunsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTransferRunsPage, ListTransferRunsPagedResponse>() {
-            @Override
-            public ListTransferRunsPagedResponse apply(ListTransferRunsPage input) {
-              return new ListTransferRunsPagedResponse(input);
-            }
-          },
+          input -> new ListTransferRunsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2164,12 +2148,7 @@ public class DataTransferServiceClient implements BackgroundResource {
           ListTransferLogsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTransferLogsPage, ListTransferLogsPagedResponse>() {
-            @Override
-            public ListTransferLogsPagedResponse apply(ListTransferLogsPage input) {
-              return new ListTransferLogsPagedResponse(input);
-            }
-          },
+          input -> new ListTransferLogsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

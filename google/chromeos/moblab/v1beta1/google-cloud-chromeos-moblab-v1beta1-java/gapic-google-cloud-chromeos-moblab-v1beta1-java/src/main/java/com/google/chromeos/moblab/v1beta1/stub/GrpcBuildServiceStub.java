@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusRequest;
 import com.google.chromeos.moblab.v1beta1.CheckBuildStageStatusResponse;
@@ -174,13 +173,10 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
         GrpcCallSettings.<ListBuildsRequest, ListBuildsResponse>newBuilder()
             .setMethodDescriptor(listBuildsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListBuildsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListBuildsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse>
@@ -189,26 +185,20 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
                 .<CheckBuildStageStatusRequest, CheckBuildStageStatusResponse>newBuilder()
                 .setMethodDescriptor(checkBuildStageStatusMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CheckBuildStageStatusRequest>() {
-                      @Override
-                      public Map<String, String> extract(CheckBuildStageStatusRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<StageBuildRequest, Operation> stageBuildTransportSettings =
         GrpcCallSettings.<StageBuildRequest, Operation>newBuilder()
             .setMethodDescriptor(stageBuildMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StageBuildRequest>() {
-                  @Override
-                  public Map<String, String> extract(StageBuildRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<FindMostStableBuildRequest, FindMostStableBuildResponse>
@@ -216,13 +206,10 @@ public class GrpcBuildServiceStub extends BuildServiceStub {
             GrpcCallSettings.<FindMostStableBuildRequest, FindMostStableBuildResponse>newBuilder()
                 .setMethodDescriptor(findMostStableBuildMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<FindMostStableBuildRequest>() {
-                      @Override
-                      public Map<String, String> extract(FindMostStableBuildRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("build_target", String.valueOf(request.getBuildTarget()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("build_target", String.valueOf(request.getBuildTarget()));
+                      return params.build();
                     })
                 .build();
 

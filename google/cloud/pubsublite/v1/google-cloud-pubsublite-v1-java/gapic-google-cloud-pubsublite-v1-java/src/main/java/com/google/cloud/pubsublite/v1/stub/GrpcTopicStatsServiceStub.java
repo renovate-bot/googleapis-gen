@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.pubsublite.proto.ComputeHeadCursorRequest;
 import com.google.cloud.pubsublite.proto.ComputeHeadCursorResponse;
@@ -135,13 +134,10 @@ public class GrpcTopicStatsServiceStub extends TopicStatsServiceStub {
             GrpcCallSettings.<ComputeMessageStatsRequest, ComputeMessageStatsResponse>newBuilder()
                 .setMethodDescriptor(computeMessageStatsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ComputeMessageStatsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ComputeMessageStatsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("topic", String.valueOf(request.getTopic()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("topic", String.valueOf(request.getTopic()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ComputeHeadCursorRequest, ComputeHeadCursorResponse>
@@ -149,13 +145,10 @@ public class GrpcTopicStatsServiceStub extends TopicStatsServiceStub {
             GrpcCallSettings.<ComputeHeadCursorRequest, ComputeHeadCursorResponse>newBuilder()
                 .setMethodDescriptor(computeHeadCursorMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ComputeHeadCursorRequest>() {
-                      @Override
-                      public Map<String, String> extract(ComputeHeadCursorRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("topic", String.valueOf(request.getTopic()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("topic", String.valueOf(request.getTopic()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ComputeTimeCursorRequest, ComputeTimeCursorResponse>
@@ -163,13 +156,10 @@ public class GrpcTopicStatsServiceStub extends TopicStatsServiceStub {
             GrpcCallSettings.<ComputeTimeCursorRequest, ComputeTimeCursorResponse>newBuilder()
                 .setMethodDescriptor(computeTimeCursorMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ComputeTimeCursorRequest>() {
-                      @Override
-                      public Map<String, String> extract(ComputeTimeCursorRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("topic", String.valueOf(request.getTopic()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("topic", String.valueOf(request.getTopic()));
+                      return params.build();
                     })
                 .build();
 

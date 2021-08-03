@@ -16,7 +16,6 @@
 
 package com.google.cloud.iot.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2366,12 +2365,7 @@ public class DeviceManagerClient implements BackgroundResource {
           ListDeviceRegistriesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListDeviceRegistriesPage, ListDeviceRegistriesPagedResponse>() {
-            @Override
-            public ListDeviceRegistriesPagedResponse apply(ListDeviceRegistriesPage input) {
-              return new ListDeviceRegistriesPagedResponse(input);
-            }
-          },
+          input -> new ListDeviceRegistriesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2445,14 +2439,7 @@ public class DeviceManagerClient implements BackgroundResource {
       ApiFuture<ListDevicesPage> futurePage =
           ListDevicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListDevicesPage, ListDevicesPagedResponse>() {
-            @Override
-            public ListDevicesPagedResponse apply(ListDevicesPage input) {
-              return new ListDevicesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListDevicesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListDevicesPagedResponse(ListDevicesPage page) {

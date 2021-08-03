@@ -28,7 +28,7 @@
  *     IdentityAwareProxyAdminV1Beta1Client.create()) {
  *   SetIamPolicyRequest request =
  *       SetIamPolicyRequest.newBuilder()
- *           .setResource(ProjectName.of("[PROJECT]").toString())
+ *           .setResource("resource-341064690")
  *           .setPolicy(Policy.newBuilder().build())
  *           .build();
  *   Policy response = identityAwareProxyAdminV1Beta1Client.setIamPolicy(request);

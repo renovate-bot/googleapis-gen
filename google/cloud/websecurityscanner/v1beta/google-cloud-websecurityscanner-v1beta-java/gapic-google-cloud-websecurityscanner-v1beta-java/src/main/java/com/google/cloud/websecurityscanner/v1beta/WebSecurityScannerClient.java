@@ -16,7 +16,6 @@
 
 package com.google.cloud.websecurityscanner.v1beta;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1601,12 +1600,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListScanConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListScanConfigsPage, ListScanConfigsPagedResponse>() {
-            @Override
-            public ListScanConfigsPagedResponse apply(ListScanConfigsPage input) {
-              return new ListScanConfigsPagedResponse(input);
-            }
-          },
+          input -> new ListScanConfigsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1677,12 +1671,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListScanRunsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListScanRunsPage, ListScanRunsPagedResponse>() {
-            @Override
-            public ListScanRunsPagedResponse apply(ListScanRunsPage input) {
-              return new ListScanRunsPagedResponse(input);
-            }
-          },
+          input -> new ListScanRunsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1751,12 +1740,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListCrawledUrlsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListCrawledUrlsPage, ListCrawledUrlsPagedResponse>() {
-            @Override
-            public ListCrawledUrlsPagedResponse apply(ListCrawledUrlsPage input) {
-              return new ListCrawledUrlsPagedResponse(input);
-            }
-          },
+          input -> new ListCrawledUrlsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1827,12 +1811,7 @@ public class WebSecurityScannerClient implements BackgroundResource {
           ListFindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListFindingsPage, ListFindingsPagedResponse>() {
-            @Override
-            public ListFindingsPagedResponse apply(ListFindingsPage input) {
-              return new ListFindingsPagedResponse(input);
-            }
-          },
+          input -> new ListFindingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3.CreateExperimentRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteExperimentRequest;
@@ -181,92 +180,70 @@ public class GrpcExperimentsStub extends ExperimentsStub {
             GrpcCallSettings.<ListExperimentsRequest, ListExperimentsResponse>newBuilder()
                 .setMethodDescriptor(listExperimentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListExperimentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListExperimentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetExperimentRequest, Experiment> getExperimentTransportSettings =
         GrpcCallSettings.<GetExperimentRequest, Experiment>newBuilder()
             .setMethodDescriptor(getExperimentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetExperimentRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetExperimentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateExperimentRequest, Experiment> createExperimentTransportSettings =
         GrpcCallSettings.<CreateExperimentRequest, Experiment>newBuilder()
             .setMethodDescriptor(createExperimentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateExperimentRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateExperimentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateExperimentRequest, Experiment> updateExperimentTransportSettings =
         GrpcCallSettings.<UpdateExperimentRequest, Experiment>newBuilder()
             .setMethodDescriptor(updateExperimentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateExperimentRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateExperimentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "experiment.name", String.valueOf(request.getExperiment().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("experiment.name", String.valueOf(request.getExperiment().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteExperimentRequest, Empty> deleteExperimentTransportSettings =
         GrpcCallSettings.<DeleteExperimentRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteExperimentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteExperimentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteExperimentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StartExperimentRequest, Experiment> startExperimentTransportSettings =
         GrpcCallSettings.<StartExperimentRequest, Experiment>newBuilder()
             .setMethodDescriptor(startExperimentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StartExperimentRequest>() {
-                  @Override
-                  public Map<String, String> extract(StartExperimentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StopExperimentRequest, Experiment> stopExperimentTransportSettings =
         GrpcCallSettings.<StopExperimentRequest, Experiment>newBuilder()
             .setMethodDescriptor(stopExperimentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StopExperimentRequest>() {
-                  @Override
-                  public Map<String, String> extract(StopExperimentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

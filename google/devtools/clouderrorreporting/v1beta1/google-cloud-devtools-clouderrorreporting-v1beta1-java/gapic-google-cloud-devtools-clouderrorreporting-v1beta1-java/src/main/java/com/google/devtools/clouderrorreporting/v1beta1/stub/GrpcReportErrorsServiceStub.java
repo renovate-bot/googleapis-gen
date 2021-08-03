@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
@@ -108,13 +107,10 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
             GrpcCallSettings.<ReportErrorEventRequest, ReportErrorEventResponse>newBuilder()
                 .setMethodDescriptor(reportErrorEventMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ReportErrorEventRequest>() {
-                      @Override
-                      public Map<String, String> extract(ReportErrorEventRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("project_name", String.valueOf(request.getProjectName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("project_name", String.valueOf(request.getProjectName()));
+                      return params.build();
                     })
                 .build();
 

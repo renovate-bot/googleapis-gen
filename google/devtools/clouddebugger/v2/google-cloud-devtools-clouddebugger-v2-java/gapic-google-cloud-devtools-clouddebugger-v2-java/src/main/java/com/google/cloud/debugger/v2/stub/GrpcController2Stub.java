@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest;
@@ -143,13 +142,10 @@ public class GrpcController2Stub extends Controller2Stub {
                 .<ListActiveBreakpointsRequest, ListActiveBreakpointsResponse>newBuilder()
                 .setMethodDescriptor(listActiveBreakpointsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListActiveBreakpointsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListActiveBreakpointsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateActiveBreakpointRequest, UpdateActiveBreakpointResponse>
@@ -158,15 +154,11 @@ public class GrpcController2Stub extends Controller2Stub {
                 .<UpdateActiveBreakpointRequest, UpdateActiveBreakpointResponse>newBuilder()
                 .setMethodDescriptor(updateActiveBreakpointMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateActiveBreakpointRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateActiveBreakpointRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "breakpoint.id", String.valueOf(request.getBreakpoint().getId()));
-                        params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("breakpoint.id", String.valueOf(request.getBreakpoint().getId()));
+                      params.put("debuggee_id", String.valueOf(request.getDebuggeeId()));
+                      return params.build();
                     })
                 .build();
 

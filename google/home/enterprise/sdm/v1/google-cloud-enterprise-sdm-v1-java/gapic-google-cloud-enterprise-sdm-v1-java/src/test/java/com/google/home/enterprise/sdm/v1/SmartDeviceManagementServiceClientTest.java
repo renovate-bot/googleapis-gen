@@ -87,7 +87,7 @@ public class SmartDeviceManagementServiceClientTest {
   public void getDeviceTest() throws Exception {
     Device expectedResponse =
         Device.newBuilder()
-            .setName(DeviceName.of("[ENTERPRISE]", "[DEVICE]").toString())
+            .setName("name3373707")
             .setType("type3575610")
             .setTraits(Struct.newBuilder().build())
             .addAllParentRelations(new ArrayList<ParentRelation>())
@@ -236,7 +236,7 @@ public class SmartDeviceManagementServiceClientTest {
   public void getStructureTest() throws Exception {
     Structure expectedResponse =
         Structure.newBuilder()
-            .setName(StructureName.of("[ENTERPRISE]", "[STRUCTURE]").toString())
+            .setName("name3373707")
             .setTraits(Struct.newBuilder().build())
             .build();
     mockSmartDeviceManagementService.addResponse(expectedResponse);
@@ -333,10 +333,7 @@ public class SmartDeviceManagementServiceClientTest {
   @Test
   public void getRoomTest() throws Exception {
     Room expectedResponse =
-        Room.newBuilder()
-            .setName(RoomName.of("[ENTERPRISE]", "[STRUCTURE]", "[ROOM]").toString())
-            .setTraits(Struct.newBuilder().build())
-            .build();
+        Room.newBuilder().setName("name3373707").setTraits(Struct.newBuilder().build()).build();
     mockSmartDeviceManagementService.addResponse(expectedResponse);
 
     GetRoomRequest request = GetRoomRequest.newBuilder().setName("name3373707").build();

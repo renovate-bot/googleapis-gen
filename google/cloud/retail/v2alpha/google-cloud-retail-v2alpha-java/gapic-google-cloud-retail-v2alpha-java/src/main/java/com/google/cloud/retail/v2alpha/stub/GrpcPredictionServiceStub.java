@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2alpha.PredictRequest;
 import com.google.cloud.retail.v2alpha.PredictResponse;
@@ -102,13 +101,10 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
         GrpcCallSettings.<PredictRequest, PredictResponse>newBuilder()
             .setMethodDescriptor(predictMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<PredictRequest>() {
-                  @Override
-                  public Map<String, String> extract(PredictRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("placement", String.valueOf(request.getPlacement()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("placement", String.valueOf(request.getPlacement()));
+                  return params.build();
                 })
             .build();
 

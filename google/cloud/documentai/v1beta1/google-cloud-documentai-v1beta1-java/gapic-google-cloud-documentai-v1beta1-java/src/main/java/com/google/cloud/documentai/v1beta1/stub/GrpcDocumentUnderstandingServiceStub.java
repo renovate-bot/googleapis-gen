@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.documentai.v1beta1.BatchProcessDocumentsRequest;
 import com.google.cloud.documentai.v1beta1.BatchProcessDocumentsResponse;
@@ -116,13 +115,10 @@ public class GrpcDocumentUnderstandingServiceStub extends DocumentUnderstandingS
             GrpcCallSettings.<BatchProcessDocumentsRequest, Operation>newBuilder()
                 .setMethodDescriptor(batchProcessDocumentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchProcessDocumentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchProcessDocumentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 

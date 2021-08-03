@@ -16,7 +16,6 @@
 
 package com.google.cloud.networkconnectivity.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1611,14 +1610,7 @@ public class HubServiceClient implements BackgroundResource {
       ApiFuture<ListHubsPage> futurePage =
           ListHubsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListHubsPage, ListHubsPagedResponse>() {
-            @Override
-            public ListHubsPagedResponse apply(ListHubsPage input) {
-              return new ListHubsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListHubsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListHubsPagedResponse(ListHubsPage page) {
@@ -1682,14 +1674,7 @@ public class HubServiceClient implements BackgroundResource {
       ApiFuture<ListSpokesPage> futurePage =
           ListSpokesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListSpokesPage, ListSpokesPagedResponse>() {
-            @Override
-            public ListSpokesPagedResponse apply(ListSpokesPage input) {
-              return new ListSpokesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListSpokesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListSpokesPagedResponse(ListSpokesPage page) {

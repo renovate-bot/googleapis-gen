@@ -27,7 +27,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.networksecurity.v1beta1.AuthorizationPolicy;
 import com.google.cloud.networksecurity.v1beta1.ClientTlsPolicy;
@@ -350,13 +349,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                 .<ListAuthorizationPoliciesRequest, ListAuthorizationPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listAuthorizationPoliciesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAuthorizationPoliciesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAuthorizationPoliciesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetAuthorizationPolicyRequest, AuthorizationPolicy>
@@ -364,13 +360,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<GetAuthorizationPolicyRequest, AuthorizationPolicy>newBuilder()
                 .setMethodDescriptor(getAuthorizationPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetAuthorizationPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetAuthorizationPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateAuthorizationPolicyRequest, Operation>
@@ -378,13 +371,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<CreateAuthorizationPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(createAuthorizationPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateAuthorizationPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateAuthorizationPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateAuthorizationPolicyRequest, Operation>
@@ -392,15 +382,12 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<UpdateAuthorizationPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateAuthorizationPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateAuthorizationPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateAuthorizationPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "authorization_policy.name",
-                            String.valueOf(request.getAuthorizationPolicy().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "authorization_policy.name",
+                          String.valueOf(request.getAuthorizationPolicy().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteAuthorizationPolicyRequest, Operation>
@@ -408,13 +395,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<DeleteAuthorizationPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteAuthorizationPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteAuthorizationPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteAuthorizationPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse>
@@ -423,13 +407,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                 .<ListServerTlsPoliciesRequest, ListServerTlsPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listServerTlsPoliciesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListServerTlsPoliciesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListServerTlsPoliciesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetServerTlsPolicyRequest, ServerTlsPolicy>
@@ -437,13 +418,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<GetServerTlsPolicyRequest, ServerTlsPolicy>newBuilder()
                 .setMethodDescriptor(getServerTlsPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetServerTlsPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetServerTlsPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateServerTlsPolicyRequest, Operation>
@@ -451,13 +429,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<CreateServerTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(createServerTlsPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateServerTlsPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateServerTlsPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateServerTlsPolicyRequest, Operation>
@@ -465,15 +440,12 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<UpdateServerTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateServerTlsPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateServerTlsPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateServerTlsPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "server_tls_policy.name",
-                            String.valueOf(request.getServerTlsPolicy().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "server_tls_policy.name",
+                          String.valueOf(request.getServerTlsPolicy().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteServerTlsPolicyRequest, Operation>
@@ -481,13 +453,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<DeleteServerTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteServerTlsPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteServerTlsPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteServerTlsPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse>
@@ -496,13 +465,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
                 .<ListClientTlsPoliciesRequest, ListClientTlsPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listClientTlsPoliciesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListClientTlsPoliciesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListClientTlsPoliciesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetClientTlsPolicyRequest, ClientTlsPolicy>
@@ -510,13 +476,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<GetClientTlsPolicyRequest, ClientTlsPolicy>newBuilder()
                 .setMethodDescriptor(getClientTlsPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetClientTlsPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetClientTlsPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateClientTlsPolicyRequest, Operation>
@@ -524,13 +487,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<CreateClientTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(createClientTlsPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateClientTlsPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateClientTlsPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateClientTlsPolicyRequest, Operation>
@@ -538,15 +498,12 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<UpdateClientTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateClientTlsPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateClientTlsPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateClientTlsPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "client_tls_policy.name",
-                            String.valueOf(request.getClientTlsPolicy().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "client_tls_policy.name",
+                          String.valueOf(request.getClientTlsPolicy().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteClientTlsPolicyRequest, Operation>
@@ -554,13 +511,10 @@ public class GrpcNetworkSecurityStub extends NetworkSecurityStub {
             GrpcCallSettings.<DeleteClientTlsPolicyRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteClientTlsPolicyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteClientTlsPolicyRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteClientTlsPolicyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

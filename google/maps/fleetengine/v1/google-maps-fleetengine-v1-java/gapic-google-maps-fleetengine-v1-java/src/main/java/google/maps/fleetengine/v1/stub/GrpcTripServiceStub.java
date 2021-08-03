@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -148,65 +147,50 @@ public class GrpcTripServiceStub extends TripServiceStub {
         GrpcCallSettings.<CreateTripRequest, Trip>newBuilder()
             .setMethodDescriptor(createTripMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateTripRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateTripRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetTripRequest, Trip> getTripTransportSettings =
         GrpcCallSettings.<GetTripRequest, Trip>newBuilder()
             .setMethodDescriptor(getTripMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTripRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTripRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReportBillableTripRequest, Empty> reportBillableTripTransportSettings =
         GrpcCallSettings.<ReportBillableTripRequest, Empty>newBuilder()
             .setMethodDescriptor(reportBillableTripMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReportBillableTripRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReportBillableTripRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SearchTripsRequest, SearchTripsResponse> searchTripsTransportSettings =
         GrpcCallSettings.<SearchTripsRequest, SearchTripsResponse>newBuilder()
             .setMethodDescriptor(searchTripsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SearchTripsRequest>() {
-                  @Override
-                  public Map<String, String> extract(SearchTripsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateTripRequest, Trip> updateTripTransportSettings =
         GrpcCallSettings.<UpdateTripRequest, Trip>newBuilder()
             .setMethodDescriptor(updateTripMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateTripRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateTripRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

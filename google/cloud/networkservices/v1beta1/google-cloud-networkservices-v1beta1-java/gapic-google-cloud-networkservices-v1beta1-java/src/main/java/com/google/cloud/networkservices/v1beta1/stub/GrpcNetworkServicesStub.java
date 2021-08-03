@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.networkservices.v1beta1.CreateEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1beta1.DeleteEndpointPolicyRequest;
@@ -175,67 +174,52 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
             GrpcCallSettings.<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse>newBuilder()
                 .setMethodDescriptor(listEndpointPoliciesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListEndpointPoliciesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListEndpointPoliciesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetEndpointPolicyRequest, EndpointPolicy> getEndpointPolicyTransportSettings =
         GrpcCallSettings.<GetEndpointPolicyRequest, EndpointPolicy>newBuilder()
             .setMethodDescriptor(getEndpointPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetEndpointPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetEndpointPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateEndpointPolicyRequest, Operation> createEndpointPolicyTransportSettings =
         GrpcCallSettings.<CreateEndpointPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(createEndpointPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateEndpointPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateEndpointPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateEndpointPolicyRequest, Operation> updateEndpointPolicyTransportSettings =
         GrpcCallSettings.<UpdateEndpointPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(updateEndpointPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateEndpointPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateEndpointPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "endpoint_policy.name",
-                        String.valueOf(request.getEndpointPolicy().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "endpoint_policy.name",
+                      String.valueOf(request.getEndpointPolicy().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteEndpointPolicyRequest, Operation> deleteEndpointPolicyTransportSettings =
         GrpcCallSettings.<DeleteEndpointPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEndpointPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteEndpointPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteEndpointPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

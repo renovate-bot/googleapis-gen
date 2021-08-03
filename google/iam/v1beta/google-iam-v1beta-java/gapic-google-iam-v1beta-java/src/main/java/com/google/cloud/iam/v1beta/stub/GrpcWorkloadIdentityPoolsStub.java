@@ -26,7 +26,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.v1beta.CreateWorkloadIdentityPoolProviderRequest;
@@ -328,13 +327,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
                 .<ListWorkloadIdentityPoolsRequest, ListWorkloadIdentityPoolsResponse>newBuilder()
                 .setMethodDescriptor(listWorkloadIdentityPoolsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListWorkloadIdentityPoolsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListWorkloadIdentityPoolsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetWorkloadIdentityPoolRequest, WorkloadIdentityPool>
@@ -342,13 +338,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<GetWorkloadIdentityPoolRequest, WorkloadIdentityPool>newBuilder()
                 .setMethodDescriptor(getWorkloadIdentityPoolMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetWorkloadIdentityPoolRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetWorkloadIdentityPoolRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateWorkloadIdentityPoolRequest, Operation>
@@ -356,14 +349,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<CreateWorkloadIdentityPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(createWorkloadIdentityPoolMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateWorkloadIdentityPoolRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateWorkloadIdentityPoolRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateWorkloadIdentityPoolRequest, Operation>
@@ -371,16 +360,12 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<UpdateWorkloadIdentityPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateWorkloadIdentityPoolMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateWorkloadIdentityPoolRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateWorkloadIdentityPoolRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "workload_identity_pool.name",
-                            String.valueOf(request.getWorkloadIdentityPool().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "workload_identity_pool.name",
+                          String.valueOf(request.getWorkloadIdentityPool().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteWorkloadIdentityPoolRequest, Operation>
@@ -388,14 +373,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<DeleteWorkloadIdentityPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteWorkloadIdentityPoolMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteWorkloadIdentityPoolRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteWorkloadIdentityPoolRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UndeleteWorkloadIdentityPoolRequest, Operation>
@@ -403,14 +384,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<UndeleteWorkloadIdentityPoolRequest, Operation>newBuilder()
                 .setMethodDescriptor(undeleteWorkloadIdentityPoolMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UndeleteWorkloadIdentityPoolRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UndeleteWorkloadIdentityPoolRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -422,14 +399,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
                     newBuilder()
                 .setMethodDescriptor(listWorkloadIdentityPoolProvidersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListWorkloadIdentityPoolProvidersRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListWorkloadIdentityPoolProvidersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider>
@@ -438,14 +411,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
                 .<GetWorkloadIdentityPoolProviderRequest, WorkloadIdentityPoolProvider>newBuilder()
                 .setMethodDescriptor(getWorkloadIdentityPoolProviderMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetWorkloadIdentityPoolProviderRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetWorkloadIdentityPoolProviderRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateWorkloadIdentityPoolProviderRequest, Operation>
@@ -453,14 +422,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<CreateWorkloadIdentityPoolProviderRequest, Operation>newBuilder()
                 .setMethodDescriptor(createWorkloadIdentityPoolProviderMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateWorkloadIdentityPoolProviderRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateWorkloadIdentityPoolProviderRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateWorkloadIdentityPoolProviderRequest, Operation>
@@ -468,16 +433,12 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<UpdateWorkloadIdentityPoolProviderRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateWorkloadIdentityPoolProviderMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateWorkloadIdentityPoolProviderRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateWorkloadIdentityPoolProviderRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "workload_identity_pool_provider.name",
-                            String.valueOf(request.getWorkloadIdentityPoolProvider().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "workload_identity_pool_provider.name",
+                          String.valueOf(request.getWorkloadIdentityPoolProvider().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteWorkloadIdentityPoolProviderRequest, Operation>
@@ -485,14 +446,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<DeleteWorkloadIdentityPoolProviderRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteWorkloadIdentityPoolProviderMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteWorkloadIdentityPoolProviderRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteWorkloadIdentityPoolProviderRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UndeleteWorkloadIdentityPoolProviderRequest, Operation>
@@ -500,14 +457,10 @@ public class GrpcWorkloadIdentityPoolsStub extends WorkloadIdentityPoolsStub {
             GrpcCallSettings.<UndeleteWorkloadIdentityPoolProviderRequest, Operation>newBuilder()
                 .setMethodDescriptor(undeleteWorkloadIdentityPoolProviderMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UndeleteWorkloadIdentityPoolProviderRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UndeleteWorkloadIdentityPoolProviderRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

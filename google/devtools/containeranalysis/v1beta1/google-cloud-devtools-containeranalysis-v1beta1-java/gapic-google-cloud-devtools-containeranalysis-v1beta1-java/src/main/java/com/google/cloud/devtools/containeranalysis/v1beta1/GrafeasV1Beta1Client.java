@@ -16,7 +16,6 @@
 
 package com.google.cloud.devtools.containeranalysis.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1059,12 +1058,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
           ListOccurrencesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListOccurrencesPage, ListOccurrencesPagedResponse>() {
-            @Override
-            public ListOccurrencesPagedResponse apply(ListOccurrencesPage input) {
-              return new ListOccurrencesPagedResponse(input);
-            }
-          },
+          input -> new ListOccurrencesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1133,14 +1127,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
       ApiFuture<ListNotesPage> futurePage =
           ListNotesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListNotesPage, ListNotesPagedResponse>() {
-            @Override
-            public ListNotesPagedResponse apply(ListNotesPage input) {
-              return new ListNotesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListNotesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListNotesPagedResponse(ListNotesPage page) {
@@ -1207,12 +1194,7 @@ public class GrafeasV1Beta1Client implements BackgroundResource {
           ListNoteOccurrencesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListNoteOccurrencesPage, ListNoteOccurrencesPagedResponse>() {
-            @Override
-            public ListNoteOccurrencesPagedResponse apply(ListNoteOccurrencesPage input) {
-              return new ListNoteOccurrencesPagedResponse(input);
-            }
-          },
+          input -> new ListNoteOccurrencesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

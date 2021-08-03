@@ -20,7 +20,6 @@ import com.google.ads.googleads.v6.resources.CampaignExperiment;
 import com.google.ads.googleads.v6.resources.CampaignExperimentName;
 import com.google.ads.googleads.v6.services.stub.CampaignExperimentServiceStub;
 import com.google.ads.googleads.v6.services.stub.CampaignExperimentServiceStubSettings;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1022,15 +1021,7 @@ public class CampaignExperimentServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListCampaignExperimentAsyncErrorsPage,
-              ListCampaignExperimentAsyncErrorsPagedResponse>() {
-            @Override
-            public ListCampaignExperimentAsyncErrorsPagedResponse apply(
-                ListCampaignExperimentAsyncErrorsPage input) {
-              return new ListCampaignExperimentAsyncErrorsPagedResponse(input);
-            }
-          },
+          input -> new ListCampaignExperimentAsyncErrorsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

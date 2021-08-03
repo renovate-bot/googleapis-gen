@@ -34,7 +34,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -174,13 +173,10 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
         GrpcCallSettings.<RunReportRequest, RunReportResponse>newBuilder()
             .setMethodDescriptor(runReportMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RunReportRequest>() {
-                  @Override
-                  public Map<String, String> extract(RunReportRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("property", String.valueOf(request.getProperty()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("property", String.valueOf(request.getProperty()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RunPivotReportRequest, RunPivotReportResponse>
@@ -188,13 +184,10 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
             GrpcCallSettings.<RunPivotReportRequest, RunPivotReportResponse>newBuilder()
                 .setMethodDescriptor(runPivotReportMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RunPivotReportRequest>() {
-                      @Override
-                      public Map<String, String> extract(RunPivotReportRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("property", String.valueOf(request.getProperty()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("property", String.valueOf(request.getProperty()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchRunReportsRequest, BatchRunReportsResponse>
@@ -202,13 +195,10 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
             GrpcCallSettings.<BatchRunReportsRequest, BatchRunReportsResponse>newBuilder()
                 .setMethodDescriptor(batchRunReportsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchRunReportsRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchRunReportsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("property", String.valueOf(request.getProperty()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("property", String.valueOf(request.getProperty()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
@@ -216,26 +206,20 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
             GrpcCallSettings.<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>newBuilder()
                 .setMethodDescriptor(batchRunPivotReportsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BatchRunPivotReportsRequest>() {
-                      @Override
-                      public Map<String, String> extract(BatchRunPivotReportsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("property", String.valueOf(request.getProperty()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("property", String.valueOf(request.getProperty()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetMetadataRequest, Metadata> getMetadataTransportSettings =
         GrpcCallSettings.<GetMetadataRequest, Metadata>newBuilder()
             .setMethodDescriptor(getMetadataMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetMetadataRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetMetadataRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
@@ -243,13 +227,10 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
             GrpcCallSettings.<RunRealtimeReportRequest, RunRealtimeReportResponse>newBuilder()
                 .setMethodDescriptor(runRealtimeReportMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RunRealtimeReportRequest>() {
-                      @Override
-                      public Map<String, String> extract(RunRealtimeReportRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("property", String.valueOf(request.getProperty()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("property", String.valueOf(request.getProperty()));
+                      return params.build();
                     })
                 .build();
 

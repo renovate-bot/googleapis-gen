@@ -16,7 +16,6 @@
 
 package com.google.cloud.filestore.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1598,12 +1597,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
           ListInstancesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInstancesPage, ListInstancesPagedResponse>() {
-            @Override
-            public ListInstancesPagedResponse apply(ListInstancesPage input) {
-              return new ListInstancesPagedResponse(input);
-            }
-          },
+          input -> new ListInstancesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1672,14 +1666,7 @@ public class CloudFilestoreManagerClient implements BackgroundResource {
       ApiFuture<ListBackupsPage> futurePage =
           ListBackupsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListBackupsPage, ListBackupsPagedResponse>() {
-            @Override
-            public ListBackupsPagedResponse apply(ListBackupsPage input) {
-              return new ListBackupsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListBackupsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListBackupsPagedResponse(ListBackupsPage page) {

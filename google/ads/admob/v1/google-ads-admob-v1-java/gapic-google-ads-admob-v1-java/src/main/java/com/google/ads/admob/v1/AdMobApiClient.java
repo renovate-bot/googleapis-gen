@@ -18,7 +18,6 @@ package com.google.ads.admob.v1;
 
 import com.google.ads.admob.v1.stub.AdMobApiStub;
 import com.google.ads.admob.v1.stub.AdMobApiStubSettings;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -410,12 +409,7 @@ public class AdMobApiClient implements BackgroundResource {
           ListPublisherAccountsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPublisherAccountsPage, ListPublisherAccountsPagedResponse>() {
-            @Override
-            public ListPublisherAccountsPagedResponse apply(ListPublisherAccountsPage input) {
-              return new ListPublisherAccountsPagedResponse(input);
-            }
-          },
+          input -> new ListPublisherAccountsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

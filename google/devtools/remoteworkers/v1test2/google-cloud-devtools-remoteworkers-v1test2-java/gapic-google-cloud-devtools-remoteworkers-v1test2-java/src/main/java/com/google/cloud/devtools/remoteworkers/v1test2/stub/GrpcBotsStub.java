@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.remoteworkers.v1test2.BotSession;
@@ -108,26 +107,20 @@ public class GrpcBotsStub extends BotsStub {
         GrpcCallSettings.<CreateBotSessionRequest, BotSession>newBuilder()
             .setMethodDescriptor(createBotSessionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateBotSessionRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateBotSessionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateBotSessionRequest, BotSession> updateBotSessionTransportSettings =
         GrpcCallSettings.<UpdateBotSessionRequest, BotSession>newBuilder()
             .setMethodDescriptor(updateBotSessionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateBotSessionRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateBotSessionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

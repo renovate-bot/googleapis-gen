@@ -16,7 +16,6 @@
 
 package com.google.cloud.security.privateca.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3079,12 +3078,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificatesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListCertificatesPage, ListCertificatesPagedResponse>() {
-            @Override
-            public ListCertificatesPagedResponse apply(ListCertificatesPage input) {
-              return new ListCertificatesPagedResponse(input);
-            }
-          },
+          input -> new ListCertificatesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3159,14 +3153,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListCertificateAuthoritiesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListCertificateAuthoritiesPage, ListCertificateAuthoritiesPagedResponse>() {
-            @Override
-            public ListCertificateAuthoritiesPagedResponse apply(
-                ListCertificateAuthoritiesPage input) {
-              return new ListCertificateAuthoritiesPagedResponse(input);
-            }
-          },
+          input -> new ListCertificateAuthoritiesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3253,14 +3240,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListCertificateRevocationListsPage, ListCertificateRevocationListsPagedResponse>() {
-            @Override
-            public ListCertificateRevocationListsPagedResponse apply(
-                ListCertificateRevocationListsPage input) {
-              return new ListCertificateRevocationListsPagedResponse(input);
-            }
-          },
+          input -> new ListCertificateRevocationListsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3343,12 +3323,7 @@ public class CertificateAuthorityServiceClient implements BackgroundResource {
           ListReusableConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListReusableConfigsPage, ListReusableConfigsPagedResponse>() {
-            @Override
-            public ListReusableConfigsPagedResponse apply(ListReusableConfigsPage input) {
-              return new ListReusableConfigsPagedResponse(input);
-            }
-          },
+          input -> new ListReusableConfigsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

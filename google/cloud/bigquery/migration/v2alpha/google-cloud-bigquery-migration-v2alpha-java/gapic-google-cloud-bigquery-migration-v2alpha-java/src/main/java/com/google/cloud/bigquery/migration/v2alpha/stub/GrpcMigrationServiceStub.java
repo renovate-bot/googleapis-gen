@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.migration.v2alpha.CreateMigrationWorkflowRequest;
 import com.google.cloud.bigquery.migration.v2alpha.DeleteMigrationWorkflowRequest;
@@ -205,13 +204,10 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
             GrpcCallSettings.<CreateMigrationWorkflowRequest, MigrationWorkflow>newBuilder()
                 .setMethodDescriptor(createMigrationWorkflowMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateMigrationWorkflowRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateMigrationWorkflowRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetMigrationWorkflowRequest, MigrationWorkflow>
@@ -219,13 +215,10 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
             GrpcCallSettings.<GetMigrationWorkflowRequest, MigrationWorkflow>newBuilder()
                 .setMethodDescriptor(getMigrationWorkflowMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetMigrationWorkflowRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetMigrationWorkflowRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse>
@@ -234,13 +227,10 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .<ListMigrationWorkflowsRequest, ListMigrationWorkflowsResponse>newBuilder()
                 .setMethodDescriptor(listMigrationWorkflowsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListMigrationWorkflowsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListMigrationWorkflowsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteMigrationWorkflowRequest, Empty>
@@ -248,26 +238,20 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
             GrpcCallSettings.<DeleteMigrationWorkflowRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteMigrationWorkflowMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteMigrationWorkflowRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteMigrationWorkflowRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<StartMigrationWorkflowRequest, Empty> startMigrationWorkflowTransportSettings =
         GrpcCallSettings.<StartMigrationWorkflowRequest, Empty>newBuilder()
             .setMethodDescriptor(startMigrationWorkflowMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<StartMigrationWorkflowRequest>() {
-                  @Override
-                  public Map<String, String> extract(StartMigrationWorkflowRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetMigrationSubtaskRequest, MigrationSubtask>
@@ -275,13 +259,10 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
             GrpcCallSettings.<GetMigrationSubtaskRequest, MigrationSubtask>newBuilder()
                 .setMethodDescriptor(getMigrationSubtaskMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetMigrationSubtaskRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetMigrationSubtaskRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>
@@ -290,13 +271,10 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                 .<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>newBuilder()
                 .setMethodDescriptor(listMigrationSubtasksMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListMigrationSubtasksRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListMigrationSubtasksRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 

@@ -16,7 +16,6 @@
 
 package google.maps.fleetengine.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -501,14 +500,7 @@ public class TripServiceClient implements BackgroundResource {
       ApiFuture<SearchTripsPage> futurePage =
           SearchTripsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<SearchTripsPage, SearchTripsPagedResponse>() {
-            @Override
-            public SearchTripsPagedResponse apply(SearchTripsPage input) {
-              return new SearchTripsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new SearchTripsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private SearchTripsPagedResponse(SearchTripsPage page) {

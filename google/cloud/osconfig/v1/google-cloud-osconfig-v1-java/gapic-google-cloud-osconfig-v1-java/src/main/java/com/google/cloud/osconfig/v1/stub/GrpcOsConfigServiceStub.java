@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.osconfig.v1.PatchDeployments;
 import com.google.cloud.osconfig.v1.PatchJobs;
@@ -249,13 +248,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
             GrpcCallSettings.<PatchJobs.ExecutePatchJobRequest, PatchJobs.PatchJob>newBuilder()
                 .setMethodDescriptor(executePatchJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchJobs.ExecutePatchJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(PatchJobs.ExecutePatchJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>
@@ -263,13 +259,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
             GrpcCallSettings.<PatchJobs.GetPatchJobRequest, PatchJobs.PatchJob>newBuilder()
                 .setMethodDescriptor(getPatchJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchJobs.GetPatchJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(PatchJobs.GetPatchJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>
@@ -277,13 +270,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
             GrpcCallSettings.<PatchJobs.CancelPatchJobRequest, PatchJobs.PatchJob>newBuilder()
                 .setMethodDescriptor(cancelPatchJobMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchJobs.CancelPatchJobRequest>() {
-                      @Override
-                      public Map<String, String> extract(PatchJobs.CancelPatchJobRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>
@@ -292,13 +282,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                 .<PatchJobs.ListPatchJobsRequest, PatchJobs.ListPatchJobsResponse>newBuilder()
                 .setMethodDescriptor(listPatchJobsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchJobs.ListPatchJobsRequest>() {
-                      @Override
-                      public Map<String, String> extract(PatchJobs.ListPatchJobsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -311,14 +298,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listPatchJobInstanceDetailsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchJobs.ListPatchJobInstanceDetailsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PatchJobs.ListPatchJobInstanceDetailsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -329,14 +312,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(createPatchDeploymentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchDeployments.CreatePatchDeploymentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PatchDeployments.CreatePatchDeploymentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PatchDeployments.GetPatchDeploymentRequest, PatchDeployments.PatchDeployment>
@@ -346,14 +325,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(getPatchDeploymentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchDeployments.GetPatchDeploymentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PatchDeployments.GetPatchDeploymentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -366,14 +341,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
                     newBuilder()
                 .setMethodDescriptor(listPatchDeploymentsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchDeployments.ListPatchDeploymentsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PatchDeployments.ListPatchDeploymentsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<PatchDeployments.DeletePatchDeploymentRequest, Empty>
@@ -381,14 +352,10 @@ public class GrpcOsConfigServiceStub extends OsConfigServiceStub {
             GrpcCallSettings.<PatchDeployments.DeletePatchDeploymentRequest, Empty>newBuilder()
                 .setMethodDescriptor(deletePatchDeploymentMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchDeployments.DeletePatchDeploymentRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PatchDeployments.DeletePatchDeploymentRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

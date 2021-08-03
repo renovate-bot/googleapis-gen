@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.datastore.v1.AllocateIdsRequest;
@@ -172,26 +171,20 @@ public class GrpcDatastoreStub extends DatastoreStub {
         GrpcCallSettings.<LookupRequest, LookupResponse>newBuilder()
             .setMethodDescriptor(lookupMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<LookupRequest>() {
-                  @Override
-                  public Map<String, String> extract(LookupRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RunQueryRequest, RunQueryResponse> runQueryTransportSettings =
         GrpcCallSettings.<RunQueryRequest, RunQueryResponse>newBuilder()
             .setMethodDescriptor(runQueryMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RunQueryRequest>() {
-                  @Override
-                  public Map<String, String> extract(RunQueryRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<BeginTransactionRequest, BeginTransactionResponse>
@@ -199,65 +192,50 @@ public class GrpcDatastoreStub extends DatastoreStub {
             GrpcCallSettings.<BeginTransactionRequest, BeginTransactionResponse>newBuilder()
                 .setMethodDescriptor(beginTransactionMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<BeginTransactionRequest>() {
-                      @Override
-                      public Map<String, String> extract(BeginTransactionRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CommitRequest, CommitResponse> commitTransportSettings =
         GrpcCallSettings.<CommitRequest, CommitResponse>newBuilder()
             .setMethodDescriptor(commitMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CommitRequest>() {
-                  @Override
-                  public Map<String, String> extract(CommitRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RollbackRequest, RollbackResponse> rollbackTransportSettings =
         GrpcCallSettings.<RollbackRequest, RollbackResponse>newBuilder()
             .setMethodDescriptor(rollbackMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RollbackRequest>() {
-                  @Override
-                  public Map<String, String> extract(RollbackRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AllocateIdsRequest, AllocateIdsResponse> allocateIdsTransportSettings =
         GrpcCallSettings.<AllocateIdsRequest, AllocateIdsResponse>newBuilder()
             .setMethodDescriptor(allocateIdsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<AllocateIdsRequest>() {
-                  @Override
-                  public Map<String, String> extract(AllocateIdsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReserveIdsRequest, ReserveIdsResponse> reserveIdsTransportSettings =
         GrpcCallSettings.<ReserveIdsRequest, ReserveIdsResponse>newBuilder()
             .setMethodDescriptor(reserveIdsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReserveIdsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReserveIdsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
 

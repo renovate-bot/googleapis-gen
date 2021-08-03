@@ -16,7 +16,6 @@
 
 package com.google.cloud.retail.v2alpha;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1644,12 +1643,7 @@ public class ProductServiceClient implements BackgroundResource {
           ListProductsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProductsPage, ListProductsPagedResponse>() {
-            @Override
-            public ListProductsPagedResponse apply(ListProductsPage input) {
-              return new ListProductsPagedResponse(input);
-            }
-          },
+          input -> new ListProductsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

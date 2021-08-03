@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.apps.alertcenter.v1beta1.Alert;
 import com.google.apps.alertcenter.v1beta1.AlertFeedback;
@@ -243,39 +242,30 @@ public class GrpcAlertCenterServiceStub extends AlertCenterServiceStub {
         GrpcCallSettings.<GetAlertRequest, Alert>newBuilder()
             .setMethodDescriptor(getAlertMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAlertRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAlertRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("alert_id", String.valueOf(request.getAlertId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("alert_id", String.valueOf(request.getAlertId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteAlertRequest, Empty> deleteAlertTransportSettings =
         GrpcCallSettings.<DeleteAlertRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteAlertMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAlertRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAlertRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("alert_id", String.valueOf(request.getAlertId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("alert_id", String.valueOf(request.getAlertId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UndeleteAlertRequest, Alert> undeleteAlertTransportSettings =
         GrpcCallSettings.<UndeleteAlertRequest, Alert>newBuilder()
             .setMethodDescriptor(undeleteAlertMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UndeleteAlertRequest>() {
-                  @Override
-                  public Map<String, String> extract(UndeleteAlertRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("alert_id", String.valueOf(request.getAlertId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("alert_id", String.valueOf(request.getAlertId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateAlertFeedbackRequest, AlertFeedback>
@@ -283,13 +273,10 @@ public class GrpcAlertCenterServiceStub extends AlertCenterServiceStub {
             GrpcCallSettings.<CreateAlertFeedbackRequest, AlertFeedback>newBuilder()
                 .setMethodDescriptor(createAlertFeedbackMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateAlertFeedbackRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateAlertFeedbackRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("alert_id", String.valueOf(request.getAlertId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("alert_id", String.valueOf(request.getAlertId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListAlertFeedbackRequest, ListAlertFeedbackResponse>
@@ -297,26 +284,20 @@ public class GrpcAlertCenterServiceStub extends AlertCenterServiceStub {
             GrpcCallSettings.<ListAlertFeedbackRequest, ListAlertFeedbackResponse>newBuilder()
                 .setMethodDescriptor(listAlertFeedbackMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAlertFeedbackRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAlertFeedbackRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("alert_id", String.valueOf(request.getAlertId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("alert_id", String.valueOf(request.getAlertId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetAlertMetadataRequest, AlertMetadata> getAlertMetadataTransportSettings =
         GrpcCallSettings.<GetAlertMetadataRequest, AlertMetadata>newBuilder()
             .setMethodDescriptor(getAlertMetadataMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAlertMetadataRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAlertMetadataRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("alert_id", String.valueOf(request.getAlertId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("alert_id", String.valueOf(request.getAlertId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =

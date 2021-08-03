@@ -18,7 +18,6 @@ package com.google.ads.googleads.v6.services;
 
 import com.google.ads.googleads.v6.resources.BillingSetup;
 import com.google.ads.googleads.v6.resources.BillingSetupName;
-import com.google.ads.googleads.v6.resources.PaymentsAccountName;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GaxGrpcProperties;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
@@ -84,8 +83,7 @@ public class BillingSetupServiceClientTest {
         BillingSetup.newBuilder()
             .setResourceName(BillingSetupName.of("[CUSTOMER_ID]", "[BILLING_SETUP_ID]").toString())
             .setId(3355)
-            .setPaymentsAccount(
-                PaymentsAccountName.of("[CUSTOMER_ID]", "[PAYMENTS_ACCOUNT_ID]").toString())
+            .setPaymentsAccount("paymentsAccount-1818749376")
             .setPaymentsAccountInfo(BillingSetup.PaymentsAccountInfo.newBuilder().build())
             .build();
     mockBillingSetupService.addResponse(expectedResponse);
@@ -126,8 +124,7 @@ public class BillingSetupServiceClientTest {
         BillingSetup.newBuilder()
             .setResourceName(BillingSetupName.of("[CUSTOMER_ID]", "[BILLING_SETUP_ID]").toString())
             .setId(3355)
-            .setPaymentsAccount(
-                PaymentsAccountName.of("[CUSTOMER_ID]", "[PAYMENTS_ACCOUNT_ID]").toString())
+            .setPaymentsAccount("paymentsAccount-1818749376")
             .setPaymentsAccountInfo(BillingSetup.PaymentsAccountInfo.newBuilder().build())
             .build();
     mockBillingSetupService.addResponse(expectedResponse);

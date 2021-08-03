@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.datastore.admin.v1.CreateIndexRequest;
@@ -177,80 +176,62 @@ public class GrpcDatastoreAdminStub extends DatastoreAdminStub {
         GrpcCallSettings.<ExportEntitiesRequest, Operation>newBuilder()
             .setMethodDescriptor(exportEntitiesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExportEntitiesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExportEntitiesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ImportEntitiesRequest, Operation> importEntitiesTransportSettings =
         GrpcCallSettings.<ImportEntitiesRequest, Operation>newBuilder()
             .setMethodDescriptor(importEntitiesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ImportEntitiesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ImportEntitiesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateIndexRequest, Operation> createIndexTransportSettings =
         GrpcCallSettings.<CreateIndexRequest, Operation>newBuilder()
             .setMethodDescriptor(createIndexMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateIndexRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateIndexRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteIndexRequest, Operation> deleteIndexTransportSettings =
         GrpcCallSettings.<DeleteIndexRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteIndexMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteIndexRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteIndexRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("index_id", String.valueOf(request.getIndexId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("index_id", String.valueOf(request.getIndexId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIndexRequest, Index> getIndexTransportSettings =
         GrpcCallSettings.<GetIndexRequest, Index>newBuilder()
             .setMethodDescriptor(getIndexMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIndexRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIndexRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("index_id", String.valueOf(request.getIndexId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("index_id", String.valueOf(request.getIndexId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListIndexesRequest, ListIndexesResponse> listIndexesTransportSettings =
         GrpcCallSettings.<ListIndexesRequest, ListIndexesResponse>newBuilder()
             .setMethodDescriptor(listIndexesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListIndexesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListIndexesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
 

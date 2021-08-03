@@ -17,7 +17,6 @@
 package com.google.cloud.api.servicemanagement.v1;
 
 import com.google.api.Service;
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1950,12 +1949,7 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServicesPage, ListServicesPagedResponse>() {
-            @Override
-            public ListServicesPagedResponse apply(ListServicesPage input) {
-              return new ListServicesPagedResponse(input);
-            }
-          },
+          input -> new ListServicesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2025,12 +2019,7 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServiceConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServiceConfigsPage, ListServiceConfigsPagedResponse>() {
-            @Override
-            public ListServiceConfigsPagedResponse apply(ListServiceConfigsPage input) {
-              return new ListServiceConfigsPagedResponse(input);
-            }
-          },
+          input -> new ListServiceConfigsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2101,12 +2090,7 @@ public class ServiceManagerClient implements BackgroundResource {
           ListServiceRolloutsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServiceRolloutsPage, ListServiceRolloutsPagedResponse>() {
-            @Override
-            public ListServiceRolloutsPagedResponse apply(ListServiceRolloutsPage input) {
-              return new ListServiceRolloutsPagedResponse(input);
-            }
-          },
+          input -> new ListServiceRolloutsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

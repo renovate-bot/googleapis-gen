@@ -27,7 +27,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.identity.accesscontextmanager.v1.AccessContextManagerOperationMetadata;
@@ -491,13 +490,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
         GrpcCallSettings.<GetAccessPolicyRequest, AccessPolicy>newBuilder()
             .setMethodDescriptor(getAccessPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAccessPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAccessPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<AccessPolicy, Operation> createAccessPolicyTransportSettings =
@@ -508,26 +504,20 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
         GrpcCallSettings.<UpdateAccessPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(updateAccessPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateAccessPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateAccessPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("policy.name", String.valueOf(request.getPolicy().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("policy.name", String.valueOf(request.getPolicy().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteAccessPolicyRequest, Operation> deleteAccessPolicyTransportSettings =
         GrpcCallSettings.<DeleteAccessPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteAccessPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAccessPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAccessPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListAccessLevelsRequest, ListAccessLevelsResponse>
@@ -535,79 +525,61 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<ListAccessLevelsRequest, ListAccessLevelsResponse>newBuilder()
                 .setMethodDescriptor(listAccessLevelsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAccessLevelsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAccessLevelsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetAccessLevelRequest, AccessLevel> getAccessLevelTransportSettings =
         GrpcCallSettings.<GetAccessLevelRequest, AccessLevel>newBuilder()
             .setMethodDescriptor(getAccessLevelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAccessLevelRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAccessLevelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateAccessLevelRequest, Operation> createAccessLevelTransportSettings =
         GrpcCallSettings.<CreateAccessLevelRequest, Operation>newBuilder()
             .setMethodDescriptor(createAccessLevelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateAccessLevelRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateAccessLevelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateAccessLevelRequest, Operation> updateAccessLevelTransportSettings =
         GrpcCallSettings.<UpdateAccessLevelRequest, Operation>newBuilder()
             .setMethodDescriptor(updateAccessLevelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateAccessLevelRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateAccessLevelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "access_level.name", String.valueOf(request.getAccessLevel().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "access_level.name", String.valueOf(request.getAccessLevel().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteAccessLevelRequest, Operation> deleteAccessLevelTransportSettings =
         GrpcCallSettings.<DeleteAccessLevelRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteAccessLevelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteAccessLevelRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteAccessLevelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ReplaceAccessLevelsRequest, Operation> replaceAccessLevelsTransportSettings =
         GrpcCallSettings.<ReplaceAccessLevelsRequest, Operation>newBuilder()
             .setMethodDescriptor(replaceAccessLevelsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ReplaceAccessLevelsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ReplaceAccessLevelsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListServicePerimetersRequest, ListServicePerimetersResponse>
@@ -616,13 +588,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                 .<ListServicePerimetersRequest, ListServicePerimetersResponse>newBuilder()
                 .setMethodDescriptor(listServicePerimetersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListServicePerimetersRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListServicePerimetersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetServicePerimeterRequest, ServicePerimeter>
@@ -630,13 +599,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<GetServicePerimeterRequest, ServicePerimeter>newBuilder()
                 .setMethodDescriptor(getServicePerimeterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetServicePerimeterRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetServicePerimeterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateServicePerimeterRequest, Operation>
@@ -644,13 +610,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<CreateServicePerimeterRequest, Operation>newBuilder()
                 .setMethodDescriptor(createServicePerimeterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateServicePerimeterRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateServicePerimeterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateServicePerimeterRequest, Operation>
@@ -658,15 +621,12 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<UpdateServicePerimeterRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateServicePerimeterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateServicePerimeterRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateServicePerimeterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "service_perimeter.name",
-                            String.valueOf(request.getServicePerimeter().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "service_perimeter.name",
+                          String.valueOf(request.getServicePerimeter().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteServicePerimeterRequest, Operation>
@@ -674,13 +634,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<DeleteServicePerimeterRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteServicePerimeterMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteServicePerimeterRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteServicePerimeterRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ReplaceServicePerimetersRequest, Operation>
@@ -688,13 +645,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<ReplaceServicePerimetersRequest, Operation>newBuilder()
                 .setMethodDescriptor(replaceServicePerimetersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ReplaceServicePerimetersRequest>() {
-                      @Override
-                      public Map<String, String> extract(ReplaceServicePerimetersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CommitServicePerimetersRequest, Operation>
@@ -702,13 +656,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<CommitServicePerimetersRequest, Operation>newBuilder()
                 .setMethodDescriptor(commitServicePerimetersMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CommitServicePerimetersRequest>() {
-                      @Override
-                      public Map<String, String> extract(CommitServicePerimetersRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListGcpUserAccessBindingsRequest, ListGcpUserAccessBindingsResponse>
@@ -717,13 +668,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
                 .<ListGcpUserAccessBindingsRequest, ListGcpUserAccessBindingsResponse>newBuilder()
                 .setMethodDescriptor(listGcpUserAccessBindingsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListGcpUserAccessBindingsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListGcpUserAccessBindingsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetGcpUserAccessBindingRequest, GcpUserAccessBinding>
@@ -731,13 +679,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<GetGcpUserAccessBindingRequest, GcpUserAccessBinding>newBuilder()
                 .setMethodDescriptor(getGcpUserAccessBindingMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetGcpUserAccessBindingRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetGcpUserAccessBindingRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateGcpUserAccessBindingRequest, Operation>
@@ -745,14 +690,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<CreateGcpUserAccessBindingRequest, Operation>newBuilder()
                 .setMethodDescriptor(createGcpUserAccessBindingMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateGcpUserAccessBindingRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateGcpUserAccessBindingRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateGcpUserAccessBindingRequest, Operation>
@@ -760,16 +701,12 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<UpdateGcpUserAccessBindingRequest, Operation>newBuilder()
                 .setMethodDescriptor(updateGcpUserAccessBindingMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateGcpUserAccessBindingRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          UpdateGcpUserAccessBindingRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "gcp_user_access_binding.name",
-                            String.valueOf(request.getGcpUserAccessBinding().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "gcp_user_access_binding.name",
+                          String.valueOf(request.getGcpUserAccessBinding().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteGcpUserAccessBindingRequest, Operation>
@@ -777,14 +714,10 @@ public class GrpcAccessContextManagerStub extends AccessContextManagerStub {
             GrpcCallSettings.<DeleteGcpUserAccessBindingRequest, Operation>newBuilder()
                 .setMethodDescriptor(deleteGcpUserAccessBindingMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteGcpUserAccessBindingRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteGcpUserAccessBindingRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

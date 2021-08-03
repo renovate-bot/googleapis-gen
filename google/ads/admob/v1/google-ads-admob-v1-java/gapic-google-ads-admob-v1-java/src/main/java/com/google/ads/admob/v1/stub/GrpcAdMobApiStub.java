@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
@@ -175,14 +174,10 @@ public class GrpcAdMobApiStub extends AdMobApiStub {
                     newBuilder()
                 .setMethodDescriptor(getPublisherAccountMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AdMobApiProto.GetPublisherAccountRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          AdMobApiProto.GetPublisherAccountRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -203,14 +198,10 @@ public class GrpcAdMobApiStub extends AdMobApiStub {
                     newBuilder()
                 .setMethodDescriptor(generateNetworkReportMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AdMobApiProto.GenerateNetworkReportRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          AdMobApiProto.GenerateNetworkReportRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -223,14 +214,10 @@ public class GrpcAdMobApiStub extends AdMobApiStub {
                     newBuilder()
                 .setMethodDescriptor(generateMediationReportMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<AdMobApiProto.GenerateMediationReportRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          AdMobApiProto.GenerateMediationReportRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 

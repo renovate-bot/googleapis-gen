@@ -16,7 +16,6 @@
 
 package com.google.cloud.speech.v1p1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -1230,12 +1229,7 @@ public class AdaptationClient implements BackgroundResource {
           ListPhraseSetPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPhraseSetPage, ListPhraseSetPagedResponse>() {
-            @Override
-            public ListPhraseSetPagedResponse apply(ListPhraseSetPage input) {
-              return new ListPhraseSetPagedResponse(input);
-            }
-          },
+          input -> new ListPhraseSetPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -1305,12 +1299,7 @@ public class AdaptationClient implements BackgroundResource {
           ListCustomClassesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListCustomClassesPage, ListCustomClassesPagedResponse>() {
-            @Override
-            public ListCustomClassesPagedResponse apply(ListCustomClassesPage input) {
-              return new ListCustomClassesPagedResponse(input);
-            }
-          },
+          input -> new ListCustomClassesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

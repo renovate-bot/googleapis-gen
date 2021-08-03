@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.iap.v1.Brand;
 import com.google.cloud.iap.v1.CreateBrandRequest;
@@ -218,39 +217,30 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
         GrpcCallSettings.<ListBrandsRequest, ListBrandsResponse>newBuilder()
             .setMethodDescriptor(listBrandsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListBrandsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListBrandsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateBrandRequest, Brand> createBrandTransportSettings =
         GrpcCallSettings.<CreateBrandRequest, Brand>newBuilder()
             .setMethodDescriptor(createBrandMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateBrandRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateBrandRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetBrandRequest, Brand> getBrandTransportSettings =
         GrpcCallSettings.<GetBrandRequest, Brand>newBuilder()
             .setMethodDescriptor(getBrandMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetBrandRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetBrandRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateIdentityAwareProxyClientRequest, IdentityAwareProxyClient>
@@ -259,14 +249,10 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
                 .<CreateIdentityAwareProxyClientRequest, IdentityAwareProxyClient>newBuilder()
                 .setMethodDescriptor(createIdentityAwareProxyClientMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateIdentityAwareProxyClientRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          CreateIdentityAwareProxyClientRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListIdentityAwareProxyClientsRequest, ListIdentityAwareProxyClientsResponse>
@@ -276,14 +262,10 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
                     newBuilder()
                 .setMethodDescriptor(listIdentityAwareProxyClientsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListIdentityAwareProxyClientsRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ListIdentityAwareProxyClientsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetIdentityAwareProxyClientRequest, IdentityAwareProxyClient>
@@ -292,14 +274,10 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
                 .<GetIdentityAwareProxyClientRequest, IdentityAwareProxyClient>newBuilder()
                 .setMethodDescriptor(getIdentityAwareProxyClientMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetIdentityAwareProxyClientRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          GetIdentityAwareProxyClientRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ResetIdentityAwareProxyClientSecretRequest, IdentityAwareProxyClient>
@@ -308,14 +286,10 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
                 .<ResetIdentityAwareProxyClientSecretRequest, IdentityAwareProxyClient>newBuilder()
                 .setMethodDescriptor(resetIdentityAwareProxyClientSecretMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ResetIdentityAwareProxyClientSecretRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          ResetIdentityAwareProxyClientSecretRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteIdentityAwareProxyClientRequest, Empty>
@@ -323,14 +297,10 @@ public class GrpcIdentityAwareProxyOAuthServiceStub extends IdentityAwareProxyOA
             GrpcCallSettings.<DeleteIdentityAwareProxyClientRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteIdentityAwareProxyClientMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteIdentityAwareProxyClientRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          DeleteIdentityAwareProxyClientRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
 

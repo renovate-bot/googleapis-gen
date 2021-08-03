@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.home.enterprise.sdm.v1.Device;
@@ -194,26 +193,20 @@ public class GrpcSmartDeviceManagementServiceStub extends SmartDeviceManagementS
         GrpcCallSettings.<GetDeviceRequest, Device>newBuilder()
             .setMethodDescriptor(getDeviceMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetDeviceRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetDeviceRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListDevicesRequest, ListDevicesResponse> listDevicesTransportSettings =
         GrpcCallSettings.<ListDevicesRequest, ListDevicesResponse>newBuilder()
             .setMethodDescriptor(listDevicesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListDevicesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListDevicesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ExecuteDeviceCommandRequest, ExecuteDeviceCommandResponse>
@@ -221,26 +214,20 @@ public class GrpcSmartDeviceManagementServiceStub extends SmartDeviceManagementS
             GrpcCallSettings.<ExecuteDeviceCommandRequest, ExecuteDeviceCommandResponse>newBuilder()
                 .setMethodDescriptor(executeDeviceCommandMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ExecuteDeviceCommandRequest>() {
-                      @Override
-                      public Map<String, String> extract(ExecuteDeviceCommandRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetStructureRequest, Structure> getStructureTransportSettings =
         GrpcCallSettings.<GetStructureRequest, Structure>newBuilder()
             .setMethodDescriptor(getStructureMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetStructureRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetStructureRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListStructuresRequest, ListStructuresResponse>
@@ -248,39 +235,30 @@ public class GrpcSmartDeviceManagementServiceStub extends SmartDeviceManagementS
             GrpcCallSettings.<ListStructuresRequest, ListStructuresResponse>newBuilder()
                 .setMethodDescriptor(listStructuresMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListStructuresRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListStructuresRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetRoomRequest, Room> getRoomTransportSettings =
         GrpcCallSettings.<GetRoomRequest, Room>newBuilder()
             .setMethodDescriptor(getRoomMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetRoomRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetRoomRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListRoomsRequest, ListRoomsResponse> listRoomsTransportSettings =
         GrpcCallSettings.<ListRoomsRequest, ListRoomsResponse>newBuilder()
             .setMethodDescriptor(listRoomsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListRoomsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListRoomsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 

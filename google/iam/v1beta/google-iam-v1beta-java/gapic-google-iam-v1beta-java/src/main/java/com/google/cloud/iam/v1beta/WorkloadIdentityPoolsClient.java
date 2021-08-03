@@ -16,7 +16,6 @@
 
 package com.google.cloud.iam.v1beta;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2106,13 +2105,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
           ListWorkloadIdentityPoolsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListWorkloadIdentityPoolsPage, ListWorkloadIdentityPoolsPagedResponse>() {
-            @Override
-            public ListWorkloadIdentityPoolsPagedResponse apply(
-                ListWorkloadIdentityPoolsPage input) {
-              return new ListWorkloadIdentityPoolsPagedResponse(input);
-            }
-          },
+          input -> new ListWorkloadIdentityPoolsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2198,15 +2191,7 @@ public class WorkloadIdentityPoolsClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListWorkloadIdentityPoolProvidersPage,
-              ListWorkloadIdentityPoolProvidersPagedResponse>() {
-            @Override
-            public ListWorkloadIdentityPoolProvidersPagedResponse apply(
-                ListWorkloadIdentityPoolProvidersPage input) {
-              return new ListWorkloadIdentityPoolProvidersPagedResponse(input);
-            }
-          },
+          input -> new ListWorkloadIdentityPoolProvidersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

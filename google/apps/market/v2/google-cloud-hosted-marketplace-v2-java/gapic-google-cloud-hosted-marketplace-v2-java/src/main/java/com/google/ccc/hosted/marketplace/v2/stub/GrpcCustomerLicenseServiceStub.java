@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.ccc.hosted.marketplace.v2.CustomerLicense;
 import com.google.ccc.hosted.marketplace.v2.CustomerLicenseGetRequest;
@@ -102,14 +101,11 @@ public class GrpcCustomerLicenseServiceStub extends CustomerLicenseServiceStub {
         GrpcCallSettings.<CustomerLicenseGetRequest, CustomerLicense>newBuilder()
             .setMethodDescriptor(getMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CustomerLicenseGetRequest>() {
-                  @Override
-                  public Map<String, String> extract(CustomerLicenseGetRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("application_id", String.valueOf(request.getApplicationId()));
-                    params.put("customer_id", String.valueOf(request.getCustomerId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("application_id", String.valueOf(request.getApplicationId()));
+                  params.put("customer_id", String.valueOf(request.getCustomerId()));
+                  return params.build();
                 })
             .build();
 

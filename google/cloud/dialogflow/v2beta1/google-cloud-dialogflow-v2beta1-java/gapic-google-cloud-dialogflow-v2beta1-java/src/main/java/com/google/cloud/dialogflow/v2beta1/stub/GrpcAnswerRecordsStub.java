@@ -24,7 +24,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2beta1.AnswerRecord;
 import com.google.cloud.dialogflow.v2beta1.GetAnswerRecordRequest;
@@ -133,13 +132,10 @@ public class GrpcAnswerRecordsStub extends AnswerRecordsStub {
         GrpcCallSettings.<GetAnswerRecordRequest, AnswerRecord>newBuilder()
             .setMethodDescriptor(getAnswerRecordMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAnswerRecordRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAnswerRecordRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListAnswerRecordsRequest, ListAnswerRecordsResponse>
@@ -147,27 +143,21 @@ public class GrpcAnswerRecordsStub extends AnswerRecordsStub {
             GrpcCallSettings.<ListAnswerRecordsRequest, ListAnswerRecordsResponse>newBuilder()
                 .setMethodDescriptor(listAnswerRecordsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListAnswerRecordsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListAnswerRecordsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateAnswerRecordRequest, AnswerRecord> updateAnswerRecordTransportSettings =
         GrpcCallSettings.<UpdateAnswerRecordRequest, AnswerRecord>newBuilder()
             .setMethodDescriptor(updateAnswerRecordMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateAnswerRecordRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateAnswerRecordRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "answer_record.name", String.valueOf(request.getAnswerRecord().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "answer_record.name", String.valueOf(request.getAnswerRecord().getName()));
+                  return params.build();
                 })
             .build();
 

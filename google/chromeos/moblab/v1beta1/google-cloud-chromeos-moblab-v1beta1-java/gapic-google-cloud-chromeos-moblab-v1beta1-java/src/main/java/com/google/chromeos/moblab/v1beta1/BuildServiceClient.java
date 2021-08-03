@@ -16,7 +16,6 @@
 
 package com.google.chromeos.moblab.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -816,12 +815,7 @@ public class BuildServiceClient implements BackgroundResource {
           ListBuildTargetsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListBuildTargetsPage, ListBuildTargetsPagedResponse>() {
-            @Override
-            public ListBuildTargetsPagedResponse apply(ListBuildTargetsPage input) {
-              return new ListBuildTargetsPagedResponse(input);
-            }
-          },
+          input -> new ListBuildTargetsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -891,14 +885,7 @@ public class BuildServiceClient implements BackgroundResource {
       ApiFuture<ListBuildsPage> futurePage =
           ListBuildsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListBuildsPage, ListBuildsPagedResponse>() {
-            @Override
-            public ListBuildsPagedResponse apply(ListBuildsPage input) {
-              return new ListBuildsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListBuildsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListBuildsPagedResponse(ListBuildsPage page) {

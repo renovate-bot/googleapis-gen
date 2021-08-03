@@ -16,7 +16,6 @@
 
 package com.google.apps.drive.activity.v2;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -302,12 +301,7 @@ public class DriveActivityServiceClient implements BackgroundResource {
           QueryDriveActivityPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<QueryDriveActivityPage, QueryDriveActivityPagedResponse>() {
-            @Override
-            public QueryDriveActivityPagedResponse apply(QueryDriveActivityPage input) {
-              return new QueryDriveActivityPagedResponse(input);
-            }
-          },
+          input -> new QueryDriveActivityPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

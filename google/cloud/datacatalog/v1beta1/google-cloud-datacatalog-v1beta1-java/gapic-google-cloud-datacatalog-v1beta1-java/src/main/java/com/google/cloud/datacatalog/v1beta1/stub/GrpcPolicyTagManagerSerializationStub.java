@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesRequest;
 import com.google.cloud.datacatalog.v1beta1.ExportTaxonomiesResponse;
@@ -127,13 +126,10 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
             GrpcCallSettings.<ImportTaxonomiesRequest, ImportTaxonomiesResponse>newBuilder()
                 .setMethodDescriptor(importTaxonomiesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ImportTaxonomiesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ImportTaxonomiesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ExportTaxonomiesRequest, ExportTaxonomiesResponse>
@@ -141,13 +137,10 @@ public class GrpcPolicyTagManagerSerializationStub extends PolicyTagManagerSeria
             GrpcCallSettings.<ExportTaxonomiesRequest, ExportTaxonomiesResponse>newBuilder()
                 .setMethodDescriptor(exportTaxonomiesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ExportTaxonomiesRequest>() {
-                      @Override
-                      public Map<String, String> extract(ExportTaxonomiesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 

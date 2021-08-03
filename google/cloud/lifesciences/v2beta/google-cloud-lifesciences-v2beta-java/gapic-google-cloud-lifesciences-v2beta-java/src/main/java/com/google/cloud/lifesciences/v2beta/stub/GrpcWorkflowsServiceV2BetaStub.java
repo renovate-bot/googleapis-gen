@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.lifesciences.v2beta.Metadata;
 import com.google.cloud.lifesciences.v2beta.RunPipelineRequest;
@@ -107,13 +106,10 @@ public class GrpcWorkflowsServiceV2BetaStub extends WorkflowsServiceV2BetaStub {
         GrpcCallSettings.<RunPipelineRequest, Operation>newBuilder()
             .setMethodDescriptor(runPipelineMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<RunPipelineRequest>() {
-                  @Override
-                  public Map<String, String> extract(RunPipelineRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
 

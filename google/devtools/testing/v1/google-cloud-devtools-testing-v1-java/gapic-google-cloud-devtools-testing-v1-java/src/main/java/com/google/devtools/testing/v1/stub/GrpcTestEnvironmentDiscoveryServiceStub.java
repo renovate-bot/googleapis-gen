@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.testing.v1.GetTestEnvironmentCatalogRequest;
@@ -109,14 +108,10 @@ public class GrpcTestEnvironmentDiscoveryServiceStub extends TestEnvironmentDisc
             GrpcCallSettings.<GetTestEnvironmentCatalogRequest, TestEnvironmentCatalog>newBuilder()
                 .setMethodDescriptor(getTestEnvironmentCatalogMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetTestEnvironmentCatalogRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetTestEnvironmentCatalogRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "environment_type", String.valueOf(request.getEnvironmentType()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("environment_type", String.valueOf(request.getEnvironmentType()));
+                      return params.build();
                     })
                 .build();
 

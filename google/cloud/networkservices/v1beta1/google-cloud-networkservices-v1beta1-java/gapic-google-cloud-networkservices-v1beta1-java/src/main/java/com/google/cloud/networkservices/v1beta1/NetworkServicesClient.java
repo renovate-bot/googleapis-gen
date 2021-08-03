@@ -16,7 +16,6 @@
 
 package com.google.cloud.networkservices.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -844,12 +843,7 @@ public class NetworkServicesClient implements BackgroundResource {
           ListEndpointPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListEndpointPoliciesPage, ListEndpointPoliciesPagedResponse>() {
-            @Override
-            public ListEndpointPoliciesPagedResponse apply(ListEndpointPoliciesPage input) {
-              return new ListEndpointPoliciesPagedResponse(input);
-            }
-          },
+          input -> new ListEndpointPoliciesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

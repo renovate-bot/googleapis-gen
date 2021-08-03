@@ -16,7 +16,6 @@
 
 package com.google.home.enterprise.sdm.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -661,14 +660,7 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
       ApiFuture<ListDevicesPage> futurePage =
           ListDevicesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListDevicesPage, ListDevicesPagedResponse>() {
-            @Override
-            public ListDevicesPagedResponse apply(ListDevicesPage input) {
-              return new ListDevicesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListDevicesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListDevicesPagedResponse(ListDevicesPage page) {
@@ -736,12 +728,7 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
           ListStructuresPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListStructuresPage, ListStructuresPagedResponse>() {
-            @Override
-            public ListStructuresPagedResponse apply(ListStructuresPage input) {
-              return new ListStructuresPagedResponse(input);
-            }
-          },
+          input -> new ListStructuresPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -809,14 +796,7 @@ public class SmartDeviceManagementServiceClient implements BackgroundResource {
       ApiFuture<ListRoomsPage> futurePage =
           ListRoomsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListRoomsPage, ListRoomsPagedResponse>() {
-            @Override
-            public ListRoomsPagedResponse apply(ListRoomsPage input) {
-              return new ListRoomsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListRoomsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListRoomsPagedResponse(ListRoomsPage page) {

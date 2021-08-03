@@ -34,7 +34,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -194,13 +193,10 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
         GrpcCallSettings.<GetMetadataRequest, Metadata>newBuilder()
             .setMethodDescriptor(getMetadataMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetMetadataRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetMetadataRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<RunRealtimeReportRequest, RunRealtimeReportResponse>
@@ -208,13 +204,10 @@ public class GrpcAlphaAnalyticsDataStub extends AlphaAnalyticsDataStub {
             GrpcCallSettings.<RunRealtimeReportRequest, RunRealtimeReportResponse>newBuilder()
                 .setMethodDescriptor(runRealtimeReportMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<RunRealtimeReportRequest>() {
-                      @Override
-                      public Map<String, String> extract(RunRealtimeReportRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("property", String.valueOf(request.getProperty()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("property", String.valueOf(request.getProperty()));
+                      return params.build();
                     })
                 .build();
 

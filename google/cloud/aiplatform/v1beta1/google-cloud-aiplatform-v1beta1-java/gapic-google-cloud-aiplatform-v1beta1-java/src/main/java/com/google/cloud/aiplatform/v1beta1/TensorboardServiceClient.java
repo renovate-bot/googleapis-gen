@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3286,12 +3285,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTensorboardsPage, ListTensorboardsPagedResponse>() {
-            @Override
-            public ListTensorboardsPagedResponse apply(ListTensorboardsPage input) {
-              return new ListTensorboardsPagedResponse(input);
-            }
-          },
+          input -> new ListTensorboardsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3366,14 +3360,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardExperimentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListTensorboardExperimentsPage, ListTensorboardExperimentsPagedResponse>() {
-            @Override
-            public ListTensorboardExperimentsPagedResponse apply(
-                ListTensorboardExperimentsPage input) {
-              return new ListTensorboardExperimentsPagedResponse(input);
-            }
-          },
+          input -> new ListTensorboardExperimentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3456,12 +3443,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardRunsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTensorboardRunsPage, ListTensorboardRunsPagedResponse>() {
-            @Override
-            public ListTensorboardRunsPagedResponse apply(ListTensorboardRunsPage input) {
-              return new ListTensorboardRunsPagedResponse(input);
-            }
-          },
+          input -> new ListTensorboardRunsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3540,13 +3522,7 @@ public class TensorboardServiceClient implements BackgroundResource {
           ListTensorboardTimeSeriesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTensorboardTimeSeriesPage, ListTensorboardTimeSeriesPagedResponse>() {
-            @Override
-            public ListTensorboardTimeSeriesPagedResponse apply(
-                ListTensorboardTimeSeriesPage input) {
-              return new ListTensorboardTimeSeriesPagedResponse(input);
-            }
-          },
+          input -> new ListTensorboardTimeSeriesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3633,14 +3609,7 @@ public class TensorboardServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ExportTensorboardTimeSeriesDataPage, ExportTensorboardTimeSeriesDataPagedResponse>() {
-            @Override
-            public ExportTensorboardTimeSeriesDataPagedResponse apply(
-                ExportTensorboardTimeSeriesDataPage input) {
-              return new ExportTensorboardTimeSeriesDataPagedResponse(input);
-            }
-          },
+          input -> new ExportTensorboardTimeSeriesDataPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

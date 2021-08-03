@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -106,13 +105,10 @@ public class GrpcCurrencyConstantServiceStub extends CurrencyConstantServiceStub
             GrpcCallSettings.<GetCurrencyConstantRequest, CurrencyConstant>newBuilder()
                 .setMethodDescriptor(getCurrencyConstantMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetCurrencyConstantRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetCurrencyConstantRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource_name", String.valueOf(request.getResourceName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource_name", String.valueOf(request.getResourceName()));
+                      return params.build();
                     })
                 .build();
 

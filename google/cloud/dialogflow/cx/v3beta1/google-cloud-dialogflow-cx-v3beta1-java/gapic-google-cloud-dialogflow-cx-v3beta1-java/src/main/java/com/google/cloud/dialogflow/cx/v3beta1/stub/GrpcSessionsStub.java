@@ -23,7 +23,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
@@ -143,13 +142,10 @@ public class GrpcSessionsStub extends SessionsStub {
         GrpcCallSettings.<DetectIntentRequest, DetectIntentResponse>newBuilder()
             .setMethodDescriptor(detectIntentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DetectIntentRequest>() {
-                  @Override
-                  public Map<String, String> extract(DetectIntentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("session", String.valueOf(request.getSession()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("session", String.valueOf(request.getSession()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<StreamingDetectIntentRequest, StreamingDetectIntentResponse>
@@ -162,28 +158,22 @@ public class GrpcSessionsStub extends SessionsStub {
         GrpcCallSettings.<MatchIntentRequest, MatchIntentResponse>newBuilder()
             .setMethodDescriptor(matchIntentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<MatchIntentRequest>() {
-                  @Override
-                  public Map<String, String> extract(MatchIntentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("session", String.valueOf(request.getSession()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("session", String.valueOf(request.getSession()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<FulfillIntentRequest, FulfillIntentResponse> fulfillIntentTransportSettings =
         GrpcCallSettings.<FulfillIntentRequest, FulfillIntentResponse>newBuilder()
             .setMethodDescriptor(fulfillIntentMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<FulfillIntentRequest>() {
-                  @Override
-                  public Map<String, String> extract(FulfillIntentRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "match_intent_request.session",
-                        String.valueOf(request.getMatchIntentRequest().getSession()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "match_intent_request.session",
+                      String.valueOf(request.getMatchIntentRequest().getSession()));
+                  return params.build();
                 })
             .build();
 

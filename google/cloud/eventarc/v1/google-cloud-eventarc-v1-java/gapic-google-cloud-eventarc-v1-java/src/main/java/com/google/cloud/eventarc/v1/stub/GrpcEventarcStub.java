@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.eventarc.v1.CreateTriggerRequest;
 import com.google.cloud.eventarc.v1.DeleteTriggerRequest;
@@ -157,65 +156,50 @@ public class GrpcEventarcStub extends EventarcStub {
         GrpcCallSettings.<GetTriggerRequest, Trigger>newBuilder()
             .setMethodDescriptor(getTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListTriggersRequest, ListTriggersResponse> listTriggersTransportSettings =
         GrpcCallSettings.<ListTriggersRequest, ListTriggersResponse>newBuilder()
             .setMethodDescriptor(listTriggersMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListTriggersRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListTriggersRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateTriggerRequest, Operation> createTriggerTransportSettings =
         GrpcCallSettings.<CreateTriggerRequest, Operation>newBuilder()
             .setMethodDescriptor(createTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateTriggerRequest, Operation> updateTriggerTransportSettings =
         GrpcCallSettings.<UpdateTriggerRequest, Operation>newBuilder()
             .setMethodDescriptor(updateTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("trigger.name", String.valueOf(request.getTrigger().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("trigger.name", String.valueOf(request.getTrigger().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteTriggerRequest, Operation> deleteTriggerTransportSettings =
         GrpcCallSettings.<DeleteTriggerRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteTriggerMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteTriggerRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteTriggerRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

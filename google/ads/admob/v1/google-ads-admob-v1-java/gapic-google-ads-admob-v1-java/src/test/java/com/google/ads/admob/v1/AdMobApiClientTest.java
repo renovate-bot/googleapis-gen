@@ -86,7 +86,7 @@ public class AdMobApiClientTest {
   public void getPublisherAccountTest() throws Exception {
     AdMobResourcesProto.PublisherAccount expectedResponse =
         AdMobResourcesProto.PublisherAccount.newBuilder()
-            .setName(PublisherAccountName.of("[PUBLISHER]").toString())
+            .setName("name3373707")
             .setPublisherId("publisherId-614130633")
             .setReportingTimeZone("reportingTimeZone354539623")
             .setCurrencyCode("currencyCode1004773790")

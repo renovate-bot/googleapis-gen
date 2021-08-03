@@ -16,7 +16,6 @@
 
 package com.google.identity.accesscontextmanager.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3255,12 +3254,7 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListAccessPoliciesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAccessPoliciesPage, ListAccessPoliciesPagedResponse>() {
-            @Override
-            public ListAccessPoliciesPagedResponse apply(ListAccessPoliciesPage input) {
-              return new ListAccessPoliciesPagedResponse(input);
-            }
-          },
+          input -> new ListAccessPoliciesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3332,12 +3326,7 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListAccessLevelsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListAccessLevelsPage, ListAccessLevelsPagedResponse>() {
-            @Override
-            public ListAccessLevelsPagedResponse apply(ListAccessLevelsPage input) {
-              return new ListAccessLevelsPagedResponse(input);
-            }
-          },
+          input -> new ListAccessLevelsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3409,12 +3398,7 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListServicePerimetersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListServicePerimetersPage, ListServicePerimetersPagedResponse>() {
-            @Override
-            public ListServicePerimetersPagedResponse apply(ListServicePerimetersPage input) {
-              return new ListServicePerimetersPagedResponse(input);
-            }
-          },
+          input -> new ListServicePerimetersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3492,13 +3476,7 @@ public class AccessContextManagerClient implements BackgroundResource {
           ListGcpUserAccessBindingsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListGcpUserAccessBindingsPage, ListGcpUserAccessBindingsPagedResponse>() {
-            @Override
-            public ListGcpUserAccessBindingsPagedResponse apply(
-                ListGcpUserAccessBindingsPage input) {
-              return new ListGcpUserAccessBindingsPagedResponse(input);
-            }
-          },
+          input -> new ListGcpUserAccessBindingsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

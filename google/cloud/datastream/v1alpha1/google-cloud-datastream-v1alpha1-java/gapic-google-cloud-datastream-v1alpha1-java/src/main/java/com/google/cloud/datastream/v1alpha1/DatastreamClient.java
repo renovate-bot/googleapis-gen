@@ -16,7 +16,6 @@
 
 package com.google.cloud.datastream.v1alpha1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2799,12 +2798,7 @@ public class DatastreamClient implements BackgroundResource {
           ListConnectionProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListConnectionProfilesPage, ListConnectionProfilesPagedResponse>() {
-            @Override
-            public ListConnectionProfilesPagedResponse apply(ListConnectionProfilesPage input) {
-              return new ListConnectionProfilesPagedResponse(input);
-            }
-          },
+          input -> new ListConnectionProfilesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2881,14 +2875,7 @@ public class DatastreamClient implements BackgroundResource {
       ApiFuture<ListStreamsPage> futurePage =
           ListStreamsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListStreamsPage, ListStreamsPagedResponse>() {
-            @Override
-            public ListStreamsPagedResponse apply(ListStreamsPage input) {
-              return new ListStreamsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListStreamsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListStreamsPagedResponse(ListStreamsPage page) {
@@ -2956,12 +2943,7 @@ public class DatastreamClient implements BackgroundResource {
           FetchStaticIpsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<FetchStaticIpsPage, FetchStaticIpsPagedResponse>() {
-            @Override
-            public FetchStaticIpsPagedResponse apply(FetchStaticIpsPage input) {
-              return new FetchStaticIpsPagedResponse(input);
-            }
-          },
+          input -> new FetchStaticIpsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3033,12 +3015,7 @@ public class DatastreamClient implements BackgroundResource {
           ListPrivateConnectionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListPrivateConnectionsPage, ListPrivateConnectionsPagedResponse>() {
-            @Override
-            public ListPrivateConnectionsPagedResponse apply(ListPrivateConnectionsPage input) {
-              return new ListPrivateConnectionsPagedResponse(input);
-            }
-          },
+          input -> new ListPrivateConnectionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -3115,14 +3092,7 @@ public class DatastreamClient implements BackgroundResource {
       ApiFuture<ListRoutesPage> futurePage =
           ListRoutesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListRoutesPage, ListRoutesPagedResponse>() {
-            @Override
-            public ListRoutesPagedResponse apply(ListRoutesPage input) {
-              return new ListRoutesPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListRoutesPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListRoutesPagedResponse(ListRoutesPage page) {

@@ -16,7 +16,6 @@
 
 package com.google.cloud.talent.v4beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -834,12 +833,7 @@ public class ProfileServiceClient implements BackgroundResource {
           ListProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListProfilesPage, ListProfilesPagedResponse>() {
-            @Override
-            public ListProfilesPagedResponse apply(ListProfilesPage input) {
-              return new ListProfilesPagedResponse(input);
-            }
-          },
+          input -> new ListProfilesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -908,12 +902,7 @@ public class ProfileServiceClient implements BackgroundResource {
           SearchProfilesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchProfilesPage, SearchProfilesPagedResponse>() {
-            @Override
-            public SearchProfilesPagedResponse apply(SearchProfilesPage input) {
-              return new SearchProfilesPagedResponse(input);
-            }
-          },
+          input -> new SearchProfilesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

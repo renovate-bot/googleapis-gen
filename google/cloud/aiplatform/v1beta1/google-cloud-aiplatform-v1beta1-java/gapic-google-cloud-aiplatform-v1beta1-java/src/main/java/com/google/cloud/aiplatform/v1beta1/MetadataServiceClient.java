@@ -16,7 +16,6 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -3998,12 +3997,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListMetadataStoresPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMetadataStoresPage, ListMetadataStoresPagedResponse>() {
-            @Override
-            public ListMetadataStoresPagedResponse apply(ListMetadataStoresPage input) {
-              return new ListMetadataStoresPagedResponse(input);
-            }
-          },
+          input -> new ListMetadataStoresPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4075,12 +4069,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListArtifactsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListArtifactsPage, ListArtifactsPagedResponse>() {
-            @Override
-            public ListArtifactsPagedResponse apply(ListArtifactsPage input) {
-              return new ListArtifactsPagedResponse(input);
-            }
-          },
+          input -> new ListArtifactsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4150,12 +4139,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListContextsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListContextsPage, ListContextsPagedResponse>() {
-            @Override
-            public ListContextsPagedResponse apply(ListContextsPage input) {
-              return new ListContextsPagedResponse(input);
-            }
-          },
+          input -> new ListContextsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4224,12 +4208,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListExecutionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListExecutionsPage, ListExecutionsPagedResponse>() {
-            @Override
-            public ListExecutionsPagedResponse apply(ListExecutionsPage input) {
-              return new ListExecutionsPagedResponse(input);
-            }
-          },
+          input -> new ListExecutionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -4300,12 +4279,7 @@ public class MetadataServiceClient implements BackgroundResource {
           ListMetadataSchemasPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListMetadataSchemasPage, ListMetadataSchemasPagedResponse>() {
-            @Override
-            public ListMetadataSchemasPagedResponse apply(ListMetadataSchemasPage input) {
-              return new ListMetadataSchemasPagedResponse(input);
-            }
-          },
+          input -> new ListMetadataSchemasPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

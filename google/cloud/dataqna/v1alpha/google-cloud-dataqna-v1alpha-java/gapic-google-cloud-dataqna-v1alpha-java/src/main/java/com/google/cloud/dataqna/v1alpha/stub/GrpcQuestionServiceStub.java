@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataqna.v1alpha.CreateQuestionRequest;
 import com.google.cloud.dataqna.v1alpha.ExecuteQuestionRequest;
@@ -151,66 +150,51 @@ public class GrpcQuestionServiceStub extends QuestionServiceStub {
         GrpcCallSettings.<GetQuestionRequest, Question>newBuilder()
             .setMethodDescriptor(getQuestionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetQuestionRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetQuestionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateQuestionRequest, Question> createQuestionTransportSettings =
         GrpcCallSettings.<CreateQuestionRequest, Question>newBuilder()
             .setMethodDescriptor(createQuestionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateQuestionRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateQuestionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ExecuteQuestionRequest, Question> executeQuestionTransportSettings =
         GrpcCallSettings.<ExecuteQuestionRequest, Question>newBuilder()
             .setMethodDescriptor(executeQuestionMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExecuteQuestionRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExecuteQuestionRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetUserFeedbackRequest, UserFeedback> getUserFeedbackTransportSettings =
         GrpcCallSettings.<GetUserFeedbackRequest, UserFeedback>newBuilder()
             .setMethodDescriptor(getUserFeedbackMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetUserFeedbackRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetUserFeedbackRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateUserFeedbackRequest, UserFeedback> updateUserFeedbackTransportSettings =
         GrpcCallSettings.<UpdateUserFeedbackRequest, UserFeedback>newBuilder()
             .setMethodDescriptor(updateUserFeedbackMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateUserFeedbackRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateUserFeedbackRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put(
-                        "user_feedback.name", String.valueOf(request.getUserFeedback().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put(
+                      "user_feedback.name", String.valueOf(request.getUserFeedback().getName()));
+                  return params.build();
                 })
             .build();
 

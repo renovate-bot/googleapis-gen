@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.ccc.hosted.marketplace.v2.LicenseNotificationList;
 import com.google.ccc.hosted.marketplace.v2.LicenseNotificationListRequest;
@@ -107,13 +106,10 @@ public class GrpcLicenseNotificationServiceStub extends LicenseNotificationServi
             GrpcCallSettings.<LicenseNotificationListRequest, LicenseNotificationList>newBuilder()
                 .setMethodDescriptor(listMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<LicenseNotificationListRequest>() {
-                      @Override
-                      public Map<String, String> extract(LicenseNotificationListRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("application_id", String.valueOf(request.getApplicationId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("application_id", String.valueOf(request.getApplicationId()));
+                      return params.build();
                     })
                 .build();
 

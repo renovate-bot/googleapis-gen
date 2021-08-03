@@ -16,7 +16,6 @@
 
 package com.google.cloud.osconfig.v1alpha;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2022,12 +2021,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListOSPolicyAssignmentsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListOSPolicyAssignmentsPage, ListOSPolicyAssignmentsPagedResponse>() {
-            @Override
-            public ListOSPolicyAssignmentsPagedResponse apply(ListOSPolicyAssignmentsPage input) {
-              return new ListOSPolicyAssignmentsPagedResponse(input);
-            }
-          },
+          input -> new ListOSPolicyAssignmentsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2110,14 +2104,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListOSPolicyAssignmentRevisionsPage, ListOSPolicyAssignmentRevisionsPagedResponse>() {
-            @Override
-            public ListOSPolicyAssignmentRevisionsPagedResponse apply(
-                ListOSPolicyAssignmentRevisionsPage input) {
-              return new ListOSPolicyAssignmentRevisionsPagedResponse(input);
-            }
-          },
+          input -> new ListOSPolicyAssignmentRevisionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2204,15 +2191,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
               .createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<
-              ListInstanceOSPoliciesCompliancesPage,
-              ListInstanceOSPoliciesCompliancesPagedResponse>() {
-            @Override
-            public ListInstanceOSPoliciesCompliancesPagedResponse apply(
-                ListInstanceOSPoliciesCompliancesPage input) {
-              return new ListInstanceOSPoliciesCompliancesPagedResponse(input);
-            }
-          },
+          input -> new ListInstanceOSPoliciesCompliancesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2295,12 +2274,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListInventoriesPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListInventoriesPage, ListInventoriesPagedResponse>() {
-            @Override
-            public ListInventoriesPagedResponse apply(ListInventoriesPage input) {
-              return new ListInventoriesPagedResponse(input);
-            }
-          },
+          input -> new ListInventoriesPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2374,12 +2348,7 @@ public class OsConfigZonalServiceClient implements BackgroundResource {
           ListVulnerabilityReportsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListVulnerabilityReportsPage, ListVulnerabilityReportsPagedResponse>() {
-            @Override
-            public ListVulnerabilityReportsPagedResponse apply(ListVulnerabilityReportsPage input) {
-              return new ListVulnerabilityReportsPagedResponse(input);
-            }
-          },
+          input -> new ListVulnerabilityReportsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

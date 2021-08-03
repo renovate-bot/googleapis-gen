@@ -25,7 +25,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.networkconnectivity.v1.ActivateSpokeRequest;
 import com.google.cloud.networkconnectivity.v1.CreateHubRequest;
@@ -242,156 +241,120 @@ public class GrpcHubServiceStub extends HubServiceStub {
         GrpcCallSettings.<ListHubsRequest, ListHubsResponse>newBuilder()
             .setMethodDescriptor(listHubsMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListHubsRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListHubsRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetHubRequest, Hub> getHubTransportSettings =
         GrpcCallSettings.<GetHubRequest, Hub>newBuilder()
             .setMethodDescriptor(getHubMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetHubRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetHubRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateHubRequest, Operation> createHubTransportSettings =
         GrpcCallSettings.<CreateHubRequest, Operation>newBuilder()
             .setMethodDescriptor(createHubMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateHubRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateHubRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateHubRequest, Operation> updateHubTransportSettings =
         GrpcCallSettings.<UpdateHubRequest, Operation>newBuilder()
             .setMethodDescriptor(updateHubMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateHubRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateHubRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("hub.name", String.valueOf(request.getHub().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("hub.name", String.valueOf(request.getHub().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteHubRequest, Operation> deleteHubTransportSettings =
         GrpcCallSettings.<DeleteHubRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteHubMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteHubRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteHubRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListSpokesRequest, ListSpokesResponse> listSpokesTransportSettings =
         GrpcCallSettings.<ListSpokesRequest, ListSpokesResponse>newBuilder()
             .setMethodDescriptor(listSpokesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListSpokesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListSpokesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetSpokeRequest, Spoke> getSpokeTransportSettings =
         GrpcCallSettings.<GetSpokeRequest, Spoke>newBuilder()
             .setMethodDescriptor(getSpokeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetSpokeRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetSpokeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateSpokeRequest, Operation> createSpokeTransportSettings =
         GrpcCallSettings.<CreateSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(createSpokeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateSpokeRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateSpokeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateSpokeRequest, Operation> updateSpokeTransportSettings =
         GrpcCallSettings.<UpdateSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(updateSpokeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateSpokeRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateSpokeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("spoke.name", String.valueOf(request.getSpoke().getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("spoke.name", String.valueOf(request.getSpoke().getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeactivateSpokeRequest, Operation> deactivateSpokeTransportSettings =
         GrpcCallSettings.<DeactivateSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(deactivateSpokeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeactivateSpokeRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeactivateSpokeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ActivateSpokeRequest, Operation> activateSpokeTransportSettings =
         GrpcCallSettings.<ActivateSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(activateSpokeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ActivateSpokeRequest>() {
-                  @Override
-                  public Map<String, String> extract(ActivateSpokeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteSpokeRequest, Operation> deleteSpokeTransportSettings =
         GrpcCallSettings.<DeleteSpokeRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteSpokeMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteSpokeRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteSpokeRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
 

@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.retail.v2.SearchRequest;
 import com.google.cloud.retail.v2.SearchResponse;
@@ -101,13 +100,10 @@ public class GrpcSearchServiceStub extends SearchServiceStub {
         GrpcCallSettings.<SearchRequest, SearchResponse>newBuilder()
             .setMethodDescriptor(searchMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SearchRequest>() {
-                  @Override
-                  public Map<String, String> extract(SearchRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("placement", String.valueOf(request.getPlacement()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("placement", String.valueOf(request.getPlacement()));
+                  return params.build();
                 })
             .build();
 

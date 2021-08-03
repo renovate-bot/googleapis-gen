@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -117,13 +116,10 @@ public class GrpcAdGroupAdServiceStub extends AdGroupAdServiceStub {
         GrpcCallSettings.<GetAdGroupAdRequest, AdGroupAd>newBuilder()
             .setMethodDescriptor(getAdGroupAdMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetAdGroupAdRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetAdGroupAdRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource_name", String.valueOf(request.getResourceName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource_name", String.valueOf(request.getResourceName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<MutateAdGroupAdsRequest, MutateAdGroupAdsResponse>
@@ -131,13 +127,10 @@ public class GrpcAdGroupAdServiceStub extends AdGroupAdServiceStub {
             GrpcCallSettings.<MutateAdGroupAdsRequest, MutateAdGroupAdsResponse>newBuilder()
                 .setMethodDescriptor(mutateAdGroupAdsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<MutateAdGroupAdsRequest>() {
-                      @Override
-                      public Map<String, String> extract(MutateAdGroupAdsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("customer_id", String.valueOf(request.getCustomerId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("customer_id", String.valueOf(request.getCustomerId()));
+                      return params.build();
                     })
                 .build();
 

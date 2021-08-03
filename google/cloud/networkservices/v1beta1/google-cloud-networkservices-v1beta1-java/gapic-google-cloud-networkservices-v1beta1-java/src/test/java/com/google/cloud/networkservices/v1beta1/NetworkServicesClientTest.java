@@ -185,16 +185,12 @@ public class NetworkServicesClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setAuthorizationPolicy(
-                AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-                    .toString())
+            .setAuthorizationPolicy("authorizationPolicy1042707211")
             .setEndpointMatcher(EndpointMatcher.newBuilder().build())
             .setTrafficPortSelector(TrafficPortSelector.newBuilder().build())
             .setDescription("description-1724546052")
-            .setServerTlsPolicy(
-                ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]").toString())
-            .setClientTlsPolicy(
-                ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]").toString())
+            .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .setClientTlsPolicy("clientTlsPolicy1568516738")
             .build();
     mockNetworkServices.addResponse(expectedResponse);
 
@@ -238,16 +234,12 @@ public class NetworkServicesClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setAuthorizationPolicy(
-                AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-                    .toString())
+            .setAuthorizationPolicy("authorizationPolicy1042707211")
             .setEndpointMatcher(EndpointMatcher.newBuilder().build())
             .setTrafficPortSelector(TrafficPortSelector.newBuilder().build())
             .setDescription("description-1724546052")
-            .setServerTlsPolicy(
-                ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]").toString())
-            .setClientTlsPolicy(
-                ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]").toString())
+            .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .setClientTlsPolicy("clientTlsPolicy1568516738")
             .build();
     mockNetworkServices.addResponse(expectedResponse);
 
@@ -290,16 +282,12 @@ public class NetworkServicesClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setAuthorizationPolicy(
-                AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-                    .toString())
+            .setAuthorizationPolicy("authorizationPolicy1042707211")
             .setEndpointMatcher(EndpointMatcher.newBuilder().build())
             .setTrafficPortSelector(TrafficPortSelector.newBuilder().build())
             .setDescription("description-1724546052")
-            .setServerTlsPolicy(
-                ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]").toString())
-            .setClientTlsPolicy(
-                ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]").toString())
+            .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .setClientTlsPolicy("clientTlsPolicy1568516738")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -358,16 +346,12 @@ public class NetworkServicesClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setAuthorizationPolicy(
-                AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-                    .toString())
+            .setAuthorizationPolicy("authorizationPolicy1042707211")
             .setEndpointMatcher(EndpointMatcher.newBuilder().build())
             .setTrafficPortSelector(TrafficPortSelector.newBuilder().build())
             .setDescription("description-1724546052")
-            .setServerTlsPolicy(
-                ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]").toString())
-            .setClientTlsPolicy(
-                ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]").toString())
+            .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .setClientTlsPolicy("clientTlsPolicy1568516738")
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -426,16 +410,12 @@ public class NetworkServicesClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
-            .setAuthorizationPolicy(
-                AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
-                    .toString())
+            .setAuthorizationPolicy("authorizationPolicy1042707211")
             .setEndpointMatcher(EndpointMatcher.newBuilder().build())
             .setTrafficPortSelector(TrafficPortSelector.newBuilder().build())
             .setDescription("description-1724546052")
-            .setServerTlsPolicy(
-                ServerTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[SERVER_TLS_POLICY]").toString())
-            .setClientTlsPolicy(
-                ClientTlsPolicyName.of("[PROJECT]", "[LOCATION]", "[CLIENT_TLS_POLICY]").toString())
+            .setServerTlsPolicy("serverTlsPolicy-1897015798")
+            .setClientTlsPolicy("clientTlsPolicy1568516738")
             .build();
     Operation resultOperation =
         Operation.newBuilder()

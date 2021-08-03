@@ -16,7 +16,6 @@
 
 package com.google.cloud.devtools.cloudbuild.v1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -2095,14 +2094,7 @@ public class CloudBuildClient implements BackgroundResource {
       ApiFuture<ListBuildsPage> futurePage =
           ListBuildsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
-          futurePage,
-          new ApiFunction<ListBuildsPage, ListBuildsPagedResponse>() {
-            @Override
-            public ListBuildsPagedResponse apply(ListBuildsPage input) {
-              return new ListBuildsPagedResponse(input);
-            }
-          },
-          MoreExecutors.directExecutor());
+          futurePage, input -> new ListBuildsPagedResponse(input), MoreExecutors.directExecutor());
     }
 
     private ListBuildsPagedResponse(ListBuildsPage page) {
@@ -2170,12 +2162,7 @@ public class CloudBuildClient implements BackgroundResource {
           ListBuildTriggersPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListBuildTriggersPage, ListBuildTriggersPagedResponse>() {
-            @Override
-            public ListBuildTriggersPagedResponse apply(ListBuildTriggersPage input) {
-              return new ListBuildTriggersPagedResponse(input);
-            }
-          },
+          input -> new ListBuildTriggersPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -2247,12 +2234,7 @@ public class CloudBuildClient implements BackgroundResource {
           ListWorkerPoolsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListWorkerPoolsPage, ListWorkerPoolsPagedResponse>() {
-            @Override
-            public ListWorkerPoolsPagedResponse apply(ListWorkerPoolsPage input) {
-              return new ListWorkerPoolsPagedResponse(input);
-            }
-          },
+          input -> new ListWorkerPoolsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

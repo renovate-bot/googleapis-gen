@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dataqna.v1alpha.SuggestQueriesRequest;
 import com.google.cloud.dataqna.v1alpha.SuggestQueriesResponse;
@@ -107,13 +106,10 @@ public class GrpcAutoSuggestionServiceStub extends AutoSuggestionServiceStub {
             GrpcCallSettings.<SuggestQueriesRequest, SuggestQueriesResponse>newBuilder()
                 .setMethodDescriptor(suggestQueriesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SuggestQueriesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SuggestQueriesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 

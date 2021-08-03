@@ -16,7 +16,6 @@
 
 package com.google.cloud.privatecatalog.v1beta1;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -501,12 +500,7 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchCatalogsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchCatalogsPage, SearchCatalogsPagedResponse>() {
-            @Override
-            public SearchCatalogsPagedResponse apply(SearchCatalogsPage input) {
-              return new SearchCatalogsPagedResponse(input);
-            }
-          },
+          input -> new SearchCatalogsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -576,12 +570,7 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchProductsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchProductsPage, SearchProductsPagedResponse>() {
-            @Override
-            public SearchProductsPagedResponse apply(SearchProductsPage input) {
-              return new SearchProductsPagedResponse(input);
-            }
-          },
+          input -> new SearchProductsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 
@@ -651,12 +640,7 @@ public class PrivateCatalogClient implements BackgroundResource {
           SearchVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<SearchVersionsPage, SearchVersionsPagedResponse>() {
-            @Override
-            public SearchVersionsPagedResponse apply(SearchVersionsPage input) {
-              return new SearchVersionsPagedResponse(input);
-            }
-          },
+          input -> new SearchVersionsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

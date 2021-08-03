@@ -22,7 +22,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
@@ -113,26 +112,20 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
         GrpcCallSettings.<PredictRequest, PredictResponse>newBuilder()
             .setMethodDescriptor(predictMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<PredictRequest>() {
-                  @Override
-                  public Map<String, String> extract(PredictRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("endpoint", String.valueOf(request.getEndpoint()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("endpoint", String.valueOf(request.getEndpoint()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ExplainRequest, ExplainResponse> explainTransportSettings =
         GrpcCallSettings.<ExplainRequest, ExplainResponse>newBuilder()
             .setMethodDescriptor(explainMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ExplainRequest>() {
-                  @Override
-                  public Map<String, String> extract(ExplainRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("endpoint", String.valueOf(request.getEndpoint()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("endpoint", String.valueOf(request.getEndpoint()));
+                  return params.build();
                 })
             .build();
 

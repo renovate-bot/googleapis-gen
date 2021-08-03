@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.geo.ugc.streetview.publish.v1.StreetViewPublishResources;
@@ -286,14 +285,10 @@ public class GrpcStreetViewPublishServiceStub extends StreetViewPublishServiceSt
                     newBuilder()
                 .setMethodDescriptor(getPhotoMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<StreetViewPublishRpcMessages.GetPhotoRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          StreetViewPublishRpcMessages.GetPhotoRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("photo_id", String.valueOf(request.getPhotoId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("photo_id", String.valueOf(request.getPhotoId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -324,16 +319,12 @@ public class GrpcStreetViewPublishServiceStub extends StreetViewPublishServiceSt
                     newBuilder()
                 .setMethodDescriptor(updatePhotoMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<StreetViewPublishRpcMessages.UpdatePhotoRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          StreetViewPublishRpcMessages.UpdatePhotoRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "photo.photo_id.id",
-                            String.valueOf(request.getPhoto().getPhotoId().getId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "photo.photo_id.id",
+                          String.valueOf(request.getPhoto().getPhotoId().getId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<
@@ -351,14 +342,10 @@ public class GrpcStreetViewPublishServiceStub extends StreetViewPublishServiceSt
             GrpcCallSettings.<StreetViewPublishRpcMessages.DeletePhotoRequest, Empty>newBuilder()
                 .setMethodDescriptor(deletePhotoMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<StreetViewPublishRpcMessages.DeletePhotoRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          StreetViewPublishRpcMessages.DeletePhotoRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("photo_id", String.valueOf(request.getPhotoId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("photo_id", String.valueOf(request.getPhotoId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<

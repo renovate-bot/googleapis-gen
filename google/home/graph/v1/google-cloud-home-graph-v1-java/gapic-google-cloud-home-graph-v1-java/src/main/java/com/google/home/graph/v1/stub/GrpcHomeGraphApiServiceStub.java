@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.home.graph.v1.HomeGraphApiServiceProto;
@@ -207,14 +206,10 @@ public class GrpcHomeGraphApiServiceStub extends HomeGraphApiServiceStub {
             GrpcCallSettings.<HomeGraphApiServiceProto.DeleteAgentUserRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteAgentUserMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<HomeGraphApiServiceProto.DeleteAgentUserRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          HomeGraphApiServiceProto.DeleteAgentUserRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("agent_user_id", String.valueOf(request.getAgentUserId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("agent_user_id", String.valueOf(request.getAgentUserId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<HomeGraphApiServiceProto.QueryRequest, HomeGraphApiServiceProto.QueryResponse>

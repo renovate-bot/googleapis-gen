@@ -25,7 +25,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -119,13 +118,10 @@ public class GrpcCustomInterestServiceStub extends CustomInterestServiceStub {
         GrpcCallSettings.<GetCustomInterestRequest, CustomInterest>newBuilder()
             .setMethodDescriptor(getCustomInterestMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetCustomInterestRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetCustomInterestRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource_name", String.valueOf(request.getResourceName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource_name", String.valueOf(request.getResourceName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<MutateCustomInterestsRequest, MutateCustomInterestsResponse>
@@ -134,13 +130,10 @@ public class GrpcCustomInterestServiceStub extends CustomInterestServiceStub {
                 .<MutateCustomInterestsRequest, MutateCustomInterestsResponse>newBuilder()
                 .setMethodDescriptor(mutateCustomInterestsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<MutateCustomInterestsRequest>() {
-                      @Override
-                      public Map<String, String> extract(MutateCustomInterestsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("customer_id", String.valueOf(request.getCustomerId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("customer_id", String.valueOf(request.getCustomerId()));
+                      return params.build();
                     })
                 .build();
 

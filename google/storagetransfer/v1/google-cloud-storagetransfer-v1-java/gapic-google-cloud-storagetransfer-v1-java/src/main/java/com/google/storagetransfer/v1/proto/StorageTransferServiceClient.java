@@ -16,7 +16,6 @@
 
 package com.google.storagetransfer.v1.proto;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.core.BetaApi;
@@ -723,12 +722,7 @@ public class StorageTransferServiceClient implements BackgroundResource {
           ListTransferJobsPage.createEmptyPage().createPageAsync(context, futureResponse);
       return ApiFutures.transform(
           futurePage,
-          new ApiFunction<ListTransferJobsPage, ListTransferJobsPagedResponse>() {
-            @Override
-            public ListTransferJobsPagedResponse apply(ListTransferJobsPage input) {
-              return new ListTransferJobsPagedResponse(input);
-            }
-          },
+          input -> new ListTransferJobsPagedResponse(input),
           MoreExecutors.directExecutor());
     }
 

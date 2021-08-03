@@ -23,7 +23,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.stub.GrpcOperationsStub;
@@ -199,39 +198,30 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
         GrpcCallSettings.<CreateVehicleRequest, Vehicle>newBuilder()
             .setMethodDescriptor(createVehicleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateVehicleRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateVehicleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetVehicleRequest, Vehicle> getVehicleTransportSettings =
         GrpcCallSettings.<GetVehicleRequest, Vehicle>newBuilder()
             .setMethodDescriptor(getVehicleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetVehicleRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetVehicleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateVehicleRequest, Vehicle> updateVehicleTransportSettings =
         GrpcCallSettings.<UpdateVehicleRequest, Vehicle>newBuilder()
             .setMethodDescriptor(updateVehicleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateVehicleRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateVehicleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateVehicleLocationRequest, VehicleLocation>
@@ -239,13 +229,10 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
             GrpcCallSettings.<UpdateVehicleLocationRequest, VehicleLocation>newBuilder()
                 .setMethodDescriptor(updateVehicleLocationMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateVehicleLocationRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateVehicleLocationRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UpdateVehicleAttributesRequest, UpdateVehicleAttributesResponse>
@@ -254,26 +241,20 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
                 .<UpdateVehicleAttributesRequest, UpdateVehicleAttributesResponse>newBuilder()
                 .setMethodDescriptor(updateVehicleAttributesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UpdateVehicleAttributesRequest>() {
-                      @Override
-                      public Map<String, String> extract(UpdateVehicleAttributesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ListVehiclesRequest, ListVehiclesResponse> listVehiclesTransportSettings =
         GrpcCallSettings.<ListVehiclesRequest, ListVehiclesResponse>newBuilder()
             .setMethodDescriptor(listVehiclesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListVehiclesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListVehiclesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SearchVehiclesRequest, SearchVehiclesResponse>
@@ -281,13 +262,10 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
             GrpcCallSettings.<SearchVehiclesRequest, SearchVehiclesResponse>newBuilder()
                 .setMethodDescriptor(searchVehiclesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchVehiclesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchVehiclesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SearchVehiclesRequest, SearchVehiclesResponse>
@@ -295,13 +273,10 @@ public class GrpcVehicleServiceStub extends VehicleServiceStub {
             GrpcCallSettings.<SearchVehiclesRequest, SearchVehiclesResponse>newBuilder()
                 .setMethodDescriptor(searchFuzzedVehiclesMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<SearchVehiclesRequest>() {
-                      @Override
-                      public Map<String, String> extract(SearchVehiclesRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("parent", String.valueOf(request.getParent()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("parent", String.valueOf(request.getParent()));
+                      return params.build();
                     })
                 .build();
 

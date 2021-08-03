@@ -21,7 +21,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.v2.ModelProto;
 import com.google.common.collect.ImmutableMap;
@@ -135,15 +134,12 @@ public class GrpcModelServiceStub extends ModelServiceStub {
         GrpcCallSettings.<ModelProto.GetModelRequest, ModelProto.Model>newBuilder()
             .setMethodDescriptor(getModelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ModelProto.GetModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(ModelProto.GetModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("dataset_id", String.valueOf(request.getDatasetId()));
-                    params.put("model_id", String.valueOf(request.getModelId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("dataset_id", String.valueOf(request.getDatasetId()));
+                  params.put("model_id", String.valueOf(request.getModelId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ModelProto.ListModelsRequest, ModelProto.ListModelsResponse>
@@ -152,44 +148,35 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                 .<ModelProto.ListModelsRequest, ModelProto.ListModelsResponse>newBuilder()
                 .setMethodDescriptor(listModelsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ModelProto.ListModelsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ModelProto.ListModelsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("dataset_id", String.valueOf(request.getDatasetId()));
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("dataset_id", String.valueOf(request.getDatasetId()));
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ModelProto.PatchModelRequest, ModelProto.Model> patchModelTransportSettings =
         GrpcCallSettings.<ModelProto.PatchModelRequest, ModelProto.Model>newBuilder()
             .setMethodDescriptor(patchModelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ModelProto.PatchModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(ModelProto.PatchModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("dataset_id", String.valueOf(request.getDatasetId()));
-                    params.put("model_id", String.valueOf(request.getModelId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("dataset_id", String.valueOf(request.getDatasetId()));
+                  params.put("model_id", String.valueOf(request.getModelId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ModelProto.DeleteModelRequest, Empty> deleteModelTransportSettings =
         GrpcCallSettings.<ModelProto.DeleteModelRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteModelMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ModelProto.DeleteModelRequest>() {
-                  @Override
-                  public Map<String, String> extract(ModelProto.DeleteModelRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("dataset_id", String.valueOf(request.getDatasetId()));
-                    params.put("model_id", String.valueOf(request.getModelId()));
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("dataset_id", String.valueOf(request.getDatasetId()));
+                  params.put("model_id", String.valueOf(request.getModelId()));
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
 

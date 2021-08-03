@@ -22,7 +22,6 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.devtools.build.v1.PublishBuildToolEventStreamRequest;
@@ -122,13 +121,10 @@ public class GrpcPublishBuildEventStub extends PublishBuildEventStub {
         GrpcCallSettings.<PublishLifecycleEventRequest, Empty>newBuilder()
             .setMethodDescriptor(publishLifecycleEventMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<PublishLifecycleEventRequest>() {
-                  @Override
-                  public Map<String, String> extract(PublishLifecycleEventRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("project_id", String.valueOf(request.getProjectId()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("project_id", String.valueOf(request.getProjectId()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<PublishBuildToolEventStreamRequest, PublishBuildToolEventStreamResponse>
@@ -138,14 +134,10 @@ public class GrpcPublishBuildEventStub extends PublishBuildEventStub {
                     newBuilder()
                 .setMethodDescriptor(publishBuildToolEventStreamMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PublishBuildToolEventStreamRequest>() {
-                      @Override
-                      public Map<String, String> extract(
-                          PublishBuildToolEventStreamRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("project_id", String.valueOf(request.getProjectId()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("project_id", String.valueOf(request.getProjectId()));
+                      return params.build();
                     })
                 .build();
 

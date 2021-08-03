@@ -26,7 +26,6 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
-import com.google.api.gax.rpc.RequestParamsExtractor;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.common.collect.ImmutableMap;
 import com.google.iam.admin.v1.CreateRoleRequest;
@@ -467,26 +466,20 @@ public class GrpcIAMStub extends IAMStub {
             GrpcCallSettings.<ListServiceAccountsRequest, ListServiceAccountsResponse>newBuilder()
                 .setMethodDescriptor(listServiceAccountsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListServiceAccountsRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListServiceAccountsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetServiceAccountRequest, ServiceAccount> getServiceAccountTransportSettings =
         GrpcCallSettings.<GetServiceAccountRequest, ServiceAccount>newBuilder()
             .setMethodDescriptor(getServiceAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetServiceAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetServiceAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateServiceAccountRequest, ServiceAccount>
@@ -494,26 +487,20 @@ public class GrpcIAMStub extends IAMStub {
             GrpcCallSettings.<CreateServiceAccountRequest, ServiceAccount>newBuilder()
                 .setMethodDescriptor(createServiceAccountMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateServiceAccountRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateServiceAccountRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<ServiceAccount, ServiceAccount> updateServiceAccountTransportSettings =
         GrpcCallSettings.<ServiceAccount, ServiceAccount>newBuilder()
             .setMethodDescriptor(updateServiceAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ServiceAccount>() {
-                  @Override
-                  public Map<String, String> extract(ServiceAccount request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<PatchServiceAccountRequest, ServiceAccount>
@@ -521,28 +508,22 @@ public class GrpcIAMStub extends IAMStub {
             GrpcCallSettings.<PatchServiceAccountRequest, ServiceAccount>newBuilder()
                 .setMethodDescriptor(patchServiceAccountMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<PatchServiceAccountRequest>() {
-                      @Override
-                      public Map<String, String> extract(PatchServiceAccountRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put(
-                            "service_account.name",
-                            String.valueOf(request.getServiceAccount().getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put(
+                          "service_account.name",
+                          String.valueOf(request.getServiceAccount().getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteServiceAccountRequest, Empty> deleteServiceAccountTransportSettings =
         GrpcCallSettings.<DeleteServiceAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteServiceAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteServiceAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteServiceAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>
@@ -551,39 +532,30 @@ public class GrpcIAMStub extends IAMStub {
                 .<UndeleteServiceAccountRequest, UndeleteServiceAccountResponse>newBuilder()
                 .setMethodDescriptor(undeleteServiceAccountMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UndeleteServiceAccountRequest>() {
-                      @Override
-                      public Map<String, String> extract(UndeleteServiceAccountRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<EnableServiceAccountRequest, Empty> enableServiceAccountTransportSettings =
         GrpcCallSettings.<EnableServiceAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(enableServiceAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<EnableServiceAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(EnableServiceAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DisableServiceAccountRequest, Empty> disableServiceAccountTransportSettings =
         GrpcCallSettings.<DisableServiceAccountRequest, Empty>newBuilder()
             .setMethodDescriptor(disableServiceAccountMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DisableServiceAccountRequest>() {
-                  @Override
-                  public Map<String, String> extract(DisableServiceAccountRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<ListServiceAccountKeysRequest, ListServiceAccountKeysResponse>
@@ -592,13 +564,10 @@ public class GrpcIAMStub extends IAMStub {
                 .<ListServiceAccountKeysRequest, ListServiceAccountKeysResponse>newBuilder()
                 .setMethodDescriptor(listServiceAccountKeysMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<ListServiceAccountKeysRequest>() {
-                      @Override
-                      public Map<String, String> extract(ListServiceAccountKeysRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<GetServiceAccountKeyRequest, ServiceAccountKey>
@@ -606,13 +575,10 @@ public class GrpcIAMStub extends IAMStub {
             GrpcCallSettings.<GetServiceAccountKeyRequest, ServiceAccountKey>newBuilder()
                 .setMethodDescriptor(getServiceAccountKeyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<GetServiceAccountKeyRequest>() {
-                      @Override
-                      public Map<String, String> extract(GetServiceAccountKeyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<CreateServiceAccountKeyRequest, ServiceAccountKey>
@@ -620,13 +586,10 @@ public class GrpcIAMStub extends IAMStub {
             GrpcCallSettings.<CreateServiceAccountKeyRequest, ServiceAccountKey>newBuilder()
                 .setMethodDescriptor(createServiceAccountKeyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<CreateServiceAccountKeyRequest>() {
-                      @Override
-                      public Map<String, String> extract(CreateServiceAccountKeyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<UploadServiceAccountKeyRequest, ServiceAccountKey>
@@ -634,13 +597,10 @@ public class GrpcIAMStub extends IAMStub {
             GrpcCallSettings.<UploadServiceAccountKeyRequest, ServiceAccountKey>newBuilder()
                 .setMethodDescriptor(uploadServiceAccountKeyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<UploadServiceAccountKeyRequest>() {
-                      @Override
-                      public Map<String, String> extract(UploadServiceAccountKeyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<DeleteServiceAccountKeyRequest, Empty>
@@ -648,65 +608,50 @@ public class GrpcIAMStub extends IAMStub {
             GrpcCallSettings.<DeleteServiceAccountKeyRequest, Empty>newBuilder()
                 .setMethodDescriptor(deleteServiceAccountKeyMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<DeleteServiceAccountKeyRequest>() {
-                      @Override
-                      public Map<String, String> extract(DeleteServiceAccountKeyRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("name", String.valueOf(request.getName()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("name", String.valueOf(request.getName()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<SignBlobRequest, SignBlobResponse> signBlobTransportSettings =
         GrpcCallSettings.<SignBlobRequest, SignBlobResponse>newBuilder()
             .setMethodDescriptor(signBlobMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SignBlobRequest>() {
-                  @Override
-                  public Map<String, String> extract(SignBlobRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SignJwtRequest, SignJwtResponse> signJwtTransportSettings =
         GrpcCallSettings.<SignJwtRequest, SignJwtResponse>newBuilder()
             .setMethodDescriptor(signJwtMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SignJwtRequest>() {
-                  @Override
-                  public Map<String, String> extract(SignJwtRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<SetIamPolicyRequest, Policy> setIamPolicyTransportSettings =
         GrpcCallSettings.<SetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(setIamPolicyMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<SetIamPolicyRequest>() {
-                  @Override
-                  public Map<String, String> extract(SetIamPolicyRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("resource", String.valueOf(request.getResource()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("resource", String.valueOf(request.getResource()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -714,13 +659,10 @@ public class GrpcIAMStub extends IAMStub {
             GrpcCallSettings.<TestIamPermissionsRequest, TestIamPermissionsResponse>newBuilder()
                 .setMethodDescriptor(testIamPermissionsMethodDescriptor)
                 .setParamsExtractor(
-                    new RequestParamsExtractor<TestIamPermissionsRequest>() {
-                      @Override
-                      public Map<String, String> extract(TestIamPermissionsRequest request) {
-                        ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                        params.put("resource", String.valueOf(request.getResource()));
-                        return params.build();
-                      }
+                    request -> {
+                      ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                      params.put("resource", String.valueOf(request.getResource()));
+                      return params.build();
                     })
                 .build();
     GrpcCallSettings<QueryGrantableRolesRequest, QueryGrantableRolesResponse>
@@ -732,78 +674,60 @@ public class GrpcIAMStub extends IAMStub {
         GrpcCallSettings.<ListRolesRequest, ListRolesResponse>newBuilder()
             .setMethodDescriptor(listRolesMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<ListRolesRequest>() {
-                  @Override
-                  public Map<String, String> extract(ListRolesRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<GetRoleRequest, Role> getRoleTransportSettings =
         GrpcCallSettings.<GetRoleRequest, Role>newBuilder()
             .setMethodDescriptor(getRoleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<GetRoleRequest>() {
-                  @Override
-                  public Map<String, String> extract(GetRoleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<CreateRoleRequest, Role> createRoleTransportSettings =
         GrpcCallSettings.<CreateRoleRequest, Role>newBuilder()
             .setMethodDescriptor(createRoleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<CreateRoleRequest>() {
-                  @Override
-                  public Map<String, String> extract(CreateRoleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("parent", String.valueOf(request.getParent()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("parent", String.valueOf(request.getParent()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UpdateRoleRequest, Role> updateRoleTransportSettings =
         GrpcCallSettings.<UpdateRoleRequest, Role>newBuilder()
             .setMethodDescriptor(updateRoleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UpdateRoleRequest>() {
-                  @Override
-                  public Map<String, String> extract(UpdateRoleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<DeleteRoleRequest, Role> deleteRoleTransportSettings =
         GrpcCallSettings.<DeleteRoleRequest, Role>newBuilder()
             .setMethodDescriptor(deleteRoleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<DeleteRoleRequest>() {
-                  @Override
-                  public Map<String, String> extract(DeleteRoleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<UndeleteRoleRequest, Role> undeleteRoleTransportSettings =
         GrpcCallSettings.<UndeleteRoleRequest, Role>newBuilder()
             .setMethodDescriptor(undeleteRoleMethodDescriptor)
             .setParamsExtractor(
-                new RequestParamsExtractor<UndeleteRoleRequest>() {
-                  @Override
-                  public Map<String, String> extract(UndeleteRoleRequest request) {
-                    ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
-                    params.put("name", String.valueOf(request.getName()));
-                    return params.build();
-                  }
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
                 })
             .build();
     GrpcCallSettings<QueryTestablePermissionsRequest, QueryTestablePermissionsResponse>
