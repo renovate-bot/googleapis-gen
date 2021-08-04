@@ -308,6 +308,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Creates an intent in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void createIntent(com.google.cloud.dialogflow.v2beta1.CreateIntentRequest request,
@@ -318,6 +321,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Updates the specified intent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void updateIntent(com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest request,
@@ -328,6 +334,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Deletes the specified intent and its direct or indirect followup intents.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void deleteIntent(com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest request,
@@ -338,7 +347,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchUpdateIntents(com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest request,
@@ -349,7 +360,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Deletes intents in the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchDeleteIntents(com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest request,
@@ -454,6 +467,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Creates an intent in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void createIntent(com.google.cloud.dialogflow.v2beta1.CreateIntentRequest request,
@@ -465,6 +481,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Updates the specified intent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void updateIntent(com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest request,
@@ -476,6 +495,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Deletes the specified intent and its direct or indirect followup intents.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void deleteIntent(com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest request,
@@ -487,7 +509,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchUpdateIntents(com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest request,
@@ -499,7 +523,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Deletes intents in the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchDeleteIntents(com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest request,
@@ -549,6 +575,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Creates an intent in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent createIntent(com.google.cloud.dialogflow.v2beta1.CreateIntentRequest request) {
@@ -559,6 +588,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Updates the specified intent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent updateIntent(com.google.cloud.dialogflow.v2beta1.UpdateIntentRequest request) {
@@ -569,6 +601,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Deletes the specified intent and its direct or indirect followup intents.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.protobuf.Empty deleteIntent(com.google.cloud.dialogflow.v2beta1.DeleteIntentRequest request) {
@@ -579,7 +614,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation batchUpdateIntents(com.google.cloud.dialogflow.v2beta1.BatchUpdateIntentsRequest request) {
@@ -590,7 +627,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Deletes intents in the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation batchDeleteIntents(com.google.cloud.dialogflow.v2beta1.BatchDeleteIntentsRequest request) {
@@ -641,6 +680,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Creates an intent in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.Intent> createIntent(
@@ -652,6 +694,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Updates the specified intent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.Intent> updateIntent(
@@ -663,6 +708,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Deletes the specified intent and its direct or indirect followup intents.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteIntent(
@@ -674,7 +722,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchUpdateIntents(
@@ -686,7 +736,9 @@ public final class IntentsGrpc {
     /**
      * <pre>
      * Deletes intents in the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchDeleteIntents(

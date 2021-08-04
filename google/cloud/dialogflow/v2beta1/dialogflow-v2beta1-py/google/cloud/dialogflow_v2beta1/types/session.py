@@ -960,6 +960,8 @@ class StreamingRecognitionResult(proto.Message):
             Time offset of the end of this Speech recognition result
             relative to the beginning of the audio. Only populated for
             ``message_type`` = ``TRANSCRIPT``.
+        language_code (str):
+            Detected language code for the transcript.
         dtmf_digits (google.cloud.dialogflow_v2beta1.types.TelephonyDtmfEvents):
             DTMF digits. Populated if and only if ``message_type`` =
             ``DTMF_DIGITS``.
@@ -1002,6 +1004,10 @@ class StreamingRecognitionResult(proto.Message):
         proto.MESSAGE,
         number=8,
         message=duration_pb2.Duration,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=10,
     )
     dtmf_digits = proto.Field(
         proto.MESSAGE,

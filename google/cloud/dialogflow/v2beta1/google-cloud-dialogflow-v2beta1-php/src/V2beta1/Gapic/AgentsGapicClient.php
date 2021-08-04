@@ -31,8 +31,8 @@ use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
 
 use Google\ApiCore\LongRunning\OperationsClient;
-use Google\ApiCore\OperationResponse;
 
+use Google\ApiCore\OperationResponse;
 use Google\ApiCore\PathTemplate;
 use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
@@ -42,7 +42,6 @@ use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\V2beta1\Agent;
 use Google\Cloud\Dialogflow\V2beta1\DeleteAgentRequest;
 use Google\Cloud\Dialogflow\V2beta1\ExportAgentRequest;
-use Google\Cloud\Dialogflow\V2beta1\ExportAgentResponse;
 use Google\Cloud\Dialogflow\V2beta1\GetAgentRequest;
 use Google\Cloud\Dialogflow\V2beta1\GetValidationResultRequest;
 use Google\Cloud\Dialogflow\V2beta1\ImportAgentRequest;
@@ -481,9 +480,6 @@ class AgentsGapicClient
     /**
      * Exports the specified agent to a ZIP file.
      *
-     *
-     * Operation <response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]>
-     *
      * Sample code:
      * ```
      * $agentsClient = new AgentsClient();
@@ -670,10 +666,9 @@ class AgentsGapicClient
      * call [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it returns in order to train
      * explicitly.
      *
-     *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
-     * An operation which tracks when importing is complete. It only tracks
-     * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -762,10 +757,9 @@ class AgentsGapicClient
      * completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it
      * returns in order to train explicitly.
      *
-     *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
-     * An operation which tracks when restoring is complete. It only tracks
-     * when the draft agent is updated not when it is done training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -925,6 +919,10 @@ class AgentsGapicClient
     /**
      * Creates/updates the specified agent.
      *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     *
      * Sample code:
      * ```
      * $agentsClient = new AgentsClient();
@@ -973,8 +971,9 @@ class AgentsGapicClient
     /**
      * Trains the specified agent.
      *
-     *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```

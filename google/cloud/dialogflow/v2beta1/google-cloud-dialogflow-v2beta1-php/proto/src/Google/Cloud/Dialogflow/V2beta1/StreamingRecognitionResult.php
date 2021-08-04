@@ -95,6 +95,12 @@ class StreamingRecognitionResult extends \Google\Protobuf\Internal\Message
      */
     protected $speech_end_offset = null;
     /**
+     * Detected language code for the transcript.
+     *
+     * Generated from protobuf field <code>string language_code = 10;</code>
+     */
+    protected $language_code = '';
+    /**
      * DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents dtmf_digits = 5;</code>
@@ -139,6 +145,8 @@ class StreamingRecognitionResult extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Duration $speech_end_offset
      *           Time offset of the end of this Speech recognition result relative to the
      *           beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+     *     @type string $language_code
+     *           Detected language code for the transcript.
      *     @type \Google\Cloud\Dialogflow\V2beta1\TelephonyDtmfEvents $dtmf_digits
      *           DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.
      * }
@@ -372,6 +380,32 @@ class StreamingRecognitionResult extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->speech_end_offset = $var;
+
+        return $this;
+    }
+
+    /**
+     * Detected language code for the transcript.
+     *
+     * Generated from protobuf field <code>string language_code = 10;</code>
+     * @return string
+     */
+    public function getLanguageCode()
+    {
+        return $this->language_code;
+    }
+
+    /**
+     * Detected language code for the transcript.
+     *
+     * Generated from protobuf field <code>string language_code = 10;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setLanguageCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->language_code = $var;
 
         return $this;
     }

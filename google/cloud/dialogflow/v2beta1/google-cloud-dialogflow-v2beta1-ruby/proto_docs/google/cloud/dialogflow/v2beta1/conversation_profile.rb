@@ -66,6 +66,18 @@ module Google
         #     Language code for the conversation profile. If not specified, the language
         #     is en-US. Language at ConversationProfile should be set for all non en-us
         #     languages.
+        #     This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt)
+        #     language tag. Example: "en-US".
+        # @!attribute [rw] time_zone
+        #   @return [::String]
+        #     The time zone of this conversational profile from the
+        #     [time zone database](https://www.iana.org/time-zones), e.g.,
+        #     America/New_York, Europe/Paris. Defaults to America/New_York.
+        # @!attribute [rw] security_settings
+        #   @return [::String]
+        #     Name of the CX SecuritySettings reference for the agent.
+        #     Format: `projects/<Project ID>/locations/<Location
+        #     ID>/securitySettings/<Security Settings ID>`.
         class ConversationProfile
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

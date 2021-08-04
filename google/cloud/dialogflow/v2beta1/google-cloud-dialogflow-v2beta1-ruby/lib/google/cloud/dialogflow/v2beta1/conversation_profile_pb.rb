@@ -29,6 +29,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :new_message_event_notification_config, :message, 8, "google.cloud.dialogflow.v2beta1.NotificationConfig"
       optional :stt_config, :message, 9, "google.cloud.dialogflow.v2beta1.SpeechToTextConfig"
       optional :language_code, :string, 10
+      optional :time_zone, :string, 14
+      optional :security_settings, :string, 13
     end
     add_message "google.cloud.dialogflow.v2beta1.AutomatedAgentConfig" do
       optional :agent, :string, 1

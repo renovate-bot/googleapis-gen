@@ -44,7 +44,6 @@ use Google\Cloud\Dialogflow\V2beta1\BatchDeleteEntitiesRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchDeleteEntityTypesRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchUpdateEntitiesRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchUpdateEntityTypesRequest;
-use Google\Cloud\Dialogflow\V2beta1\BatchUpdateEntityTypesResponse;
 use Google\Cloud\Dialogflow\V2beta1\CreateEntityTypeRequest;
 use Google\Cloud\Dialogflow\V2beta1\DeleteEntityTypeRequest;
 use Google\Cloud\Dialogflow\V2beta1\EntityType;
@@ -501,7 +500,9 @@ class EntityTypesGapicClient
     /**
      * Creates multiple new entities in the specified entity type.
      *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -585,7 +586,9 @@ class EntityTypesGapicClient
     /**
      * Deletes entities in the specified entity type.
      *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -670,7 +673,10 @@ class EntityTypesGapicClient
 
     /**
      * Deletes entity types in the specified agent.
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -746,7 +752,9 @@ class EntityTypesGapicClient
      * method does not affect entities in the entity type that aren't explicitly
      * specified in the request.
      *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -835,7 +843,10 @@ class EntityTypesGapicClient
 
     /**
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation <response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]>
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -938,6 +949,10 @@ class EntityTypesGapicClient
     /**
      * Creates an entity type in the specified agent.
      *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     *
      * Sample code:
      * ```
      * $entityTypesClient = new EntityTypesClient();
@@ -995,6 +1010,10 @@ class EntityTypesGapicClient
 
     /**
      * Deletes the specified entity type.
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -1179,6 +1198,10 @@ class EntityTypesGapicClient
 
     /**
      * Updates the specified entity type.
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```

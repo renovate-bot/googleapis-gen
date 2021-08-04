@@ -529,6 +529,10 @@ export class IntentsClient {
 /**
  * Creates an intent in the specified agent.
  *
+ * Note: You should always train an agent prior to sending it queries. See the
+ * [training
+ * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+ *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
@@ -614,6 +618,10 @@ export class IntentsClient {
 /**
  * Updates the specified intent.
  *
+ * Note: You should always train an agent prior to sending it queries. See the
+ * [training
+ * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+ *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {google.cloud.dialogflow.v2beta1.Intent} request.intent
@@ -695,6 +703,10 @@ export class IntentsClient {
 /**
  * Deletes the specified intent and its direct or indirect followup intents.
  *
+ * Note: You should always train an agent prior to sending it queries. See the
+ * [training
+ * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+ *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.name
@@ -773,7 +785,9 @@ export class IntentsClient {
 /**
  * Updates/Creates multiple intents in the specified agent.
  *
- * Operation <response: {@link google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse|BatchUpdateIntentsResponse}>
+ * Note: You should always train an agent prior to sending it queries. See the
+ * [training
+ * documentation](https://cloud.google.com/dialogflow/es/docs/training).
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -890,7 +904,9 @@ export class IntentsClient {
 /**
  * Deletes intents in the specified agent.
  *
- * Operation <response: {@link google.protobuf.Empty|google.protobuf.Empty}>
+ * Note: You should always train an agent prior to sending it queries. See the
+ * [training
+ * documentation](https://cloud.google.com/dialogflow/es/docs/training).
  *
  * @param {Object} request
  *   The request object that will be sent.

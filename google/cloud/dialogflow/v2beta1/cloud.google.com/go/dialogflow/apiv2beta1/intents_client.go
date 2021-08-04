@@ -213,23 +213,37 @@ func (c *IntentsClient) GetIntent(ctx context.Context, req *dialogflowpb.GetInte
 }
 
 // CreateIntent creates an intent in the specified agent.
+//
+// Note: You should always train an agent prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/es/docs/training).
 func (c *IntentsClient) CreateIntent(ctx context.Context, req *dialogflowpb.CreateIntentRequest, opts ...gax.CallOption) (*dialogflowpb.Intent, error) {
 	return c.internalClient.CreateIntent(ctx, req, opts...)
 }
 
 // UpdateIntent updates the specified intent.
+//
+// Note: You should always train an agent prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/es/docs/training).
 func (c *IntentsClient) UpdateIntent(ctx context.Context, req *dialogflowpb.UpdateIntentRequest, opts ...gax.CallOption) (*dialogflowpb.Intent, error) {
 	return c.internalClient.UpdateIntent(ctx, req, opts...)
 }
 
 // DeleteIntent deletes the specified intent and its direct or indirect followup intents.
+//
+// Note: You should always train an agent prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/es/docs/training).
 func (c *IntentsClient) DeleteIntent(ctx context.Context, req *dialogflowpb.DeleteIntentRequest, opts ...gax.CallOption) error {
 	return c.internalClient.DeleteIntent(ctx, req, opts...)
 }
 
 // BatchUpdateIntents updates/Creates multiple intents in the specified agent.
 //
-// Operation <response: BatchUpdateIntentsResponse>
+// Note: You should always train an agent prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/es/docs/training).
 func (c *IntentsClient) BatchUpdateIntents(ctx context.Context, req *dialogflowpb.BatchUpdateIntentsRequest, opts ...gax.CallOption) (*BatchUpdateIntentsOperation, error) {
 	return c.internalClient.BatchUpdateIntents(ctx, req, opts...)
 }
@@ -242,7 +256,9 @@ func (c *IntentsClient) BatchUpdateIntentsOperation(name string) *BatchUpdateInt
 
 // BatchDeleteIntents deletes intents in the specified agent.
 //
-// Operation <response: google.protobuf.Empty>
+// Note: You should always train an agent prior to sending it queries. See the
+// training
+// documentation (at https://cloud.google.com/dialogflow/es/docs/training).
 func (c *IntentsClient) BatchDeleteIntents(ctx context.Context, req *dialogflowpb.BatchDeleteIntentsRequest, opts ...gax.CallOption) (*BatchDeleteIntentsOperation, error) {
 	return c.internalClient.BatchDeleteIntents(ctx, req, opts...)
 }

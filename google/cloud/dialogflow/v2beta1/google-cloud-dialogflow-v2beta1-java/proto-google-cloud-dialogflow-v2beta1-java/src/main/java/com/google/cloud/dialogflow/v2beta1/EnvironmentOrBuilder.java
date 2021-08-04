@@ -66,7 +66,7 @@ public interface EnvironmentOrBuilder extends
    *   ID&gt;`
    * </pre>
    *
-   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @return The agentVersion.
    */
   java.lang.String getAgentVersion();
@@ -79,7 +79,7 @@ public interface EnvironmentOrBuilder extends
    *   ID&gt;`
    * </pre>
    *
-   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for agentVersion.
    */
   com.google.protobuf.ByteString

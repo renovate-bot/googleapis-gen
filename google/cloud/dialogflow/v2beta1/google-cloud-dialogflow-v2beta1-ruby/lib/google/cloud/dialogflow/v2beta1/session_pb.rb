@@ -117,6 +117,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :stability, :float, 6
       repeated :speech_word_info, :message, 7, "google.cloud.dialogflow.v2beta1.SpeechWordInfo"
       optional :speech_end_offset, :message, 8, "google.protobuf.Duration"
+      optional :language_code, :string, 10
       optional :dtmf_digits, :message, 5, "google.cloud.dialogflow.v2beta1.TelephonyDtmfEvents"
     end
     add_enum "google.cloud.dialogflow.v2beta1.StreamingRecognitionResult.MessageType" do

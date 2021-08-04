@@ -102,6 +102,8 @@ class ConversationProfilesGapicClient
         'https://www.googleapis.com/auth/dialogflow',
     ];
 
+    private static $cXSecuritySettingsNameTemplate;
+
     private static $conversationProfileNameTemplate;
 
     private static $locationNameTemplate;
@@ -131,6 +133,15 @@ class ConversationProfilesGapicClient
                 ],
             ],
         ];
+    }
+
+    private static function getCXSecuritySettingsNameTemplate()
+    {
+        if (self::$cXSecuritySettingsNameTemplate == null) {
+            self::$cXSecuritySettingsNameTemplate = new PathTemplate('projects/{project}/locations/{location}/securitySettings/{security_settings}');
+        }
+
+        return self::$cXSecuritySettingsNameTemplate;
     }
 
     private static function getConversationProfileNameTemplate()
@@ -182,6 +193,7 @@ class ConversationProfilesGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'cXSecuritySettings' => self::getCXSecuritySettingsNameTemplate(),
                 'conversationProfile' => self::getConversationProfileNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
                 'project' => self::getProjectNameTemplate(),
@@ -191,6 +203,27 @@ class ConversationProfilesGapicClient
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * cx_security_settings resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $securitySettings
+     *
+     * @return string The formatted cx_security_settings resource.
+     *
+     * @experimental
+     */
+    public static function cXSecuritySettingsName($project, $location, $securitySettings)
+    {
+        return self::getCXSecuritySettingsNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'security_settings' => $securitySettings,
+        ]);
     }
 
     /**
@@ -292,6 +325,7 @@ class ConversationProfilesGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - cXSecuritySettings: projects/{project}/locations/{location}/securitySettings/{security_settings}
      * - conversationProfile: projects/{project}/conversationProfiles/{conversation_profile}
      * - location: projects/{project}/locations/{location}
      * - project: projects/{project}

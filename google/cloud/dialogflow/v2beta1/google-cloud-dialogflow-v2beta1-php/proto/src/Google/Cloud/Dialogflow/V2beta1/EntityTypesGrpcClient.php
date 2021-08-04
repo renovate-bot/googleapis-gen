@@ -64,6 +64,10 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Creates an entity type in the specified agent.
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * @param \Google\Cloud\Dialogflow\V2beta1\CreateEntityTypeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -79,6 +83,10 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates the specified entity type.
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * @param \Google\Cloud\Dialogflow\V2beta1\UpdateEntityTypeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -94,6 +102,10 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes the specified entity type.
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * @param \Google\Cloud\Dialogflow\V2beta1\DeleteEntityTypeRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -109,7 +121,10 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation <response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]>
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * @param \Google\Cloud\Dialogflow\V2beta1\BatchUpdateEntityTypesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -125,7 +140,10 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
 
     /**
      * Deletes entity types in the specified agent.
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * @param \Google\Cloud\Dialogflow\V2beta1\BatchDeleteEntityTypesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -142,7 +160,9 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
     /**
      * Creates multiple new entities in the specified entity type.
      *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * @param \Google\Cloud\Dialogflow\V2beta1\BatchCreateEntitiesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -161,7 +181,9 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
      * method does not affect entities in the entity type that aren't explicitly
      * specified in the request.
      *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * @param \Google\Cloud\Dialogflow\V2beta1\BatchUpdateEntitiesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -178,7 +200,9 @@ class EntityTypesGrpcClient extends \Grpc\BaseStub {
     /**
      * Deletes entities in the specified entity type.
      *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * @param \Google\Cloud\Dialogflow\V2beta1\BatchDeleteEntitiesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

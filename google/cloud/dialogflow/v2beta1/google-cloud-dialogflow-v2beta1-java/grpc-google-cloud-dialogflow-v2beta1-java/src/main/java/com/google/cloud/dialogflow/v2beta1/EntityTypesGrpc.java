@@ -401,6 +401,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Creates an entity type in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void createEntityType(com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest request,
@@ -411,6 +414,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void updateEntityType(com.google.cloud.dialogflow.v2beta1.UpdateEntityTypeRequest request,
@@ -421,6 +427,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void deleteEntityType(com.google.cloud.dialogflow.v2beta1.DeleteEntityTypeRequest request,
@@ -431,7 +440,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation &lt;response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchUpdateEntityTypes(com.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest request,
@@ -442,7 +453,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes entity types in the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchDeleteEntityTypes(com.google.cloud.dialogflow.v2beta1.BatchDeleteEntityTypesRequest request,
@@ -453,7 +466,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Creates multiple new entities in the specified entity type.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchCreateEntities(com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest request,
@@ -466,7 +481,9 @@ public final class EntityTypesGrpc {
      * Updates or creates multiple entities in the specified entity type. This
      * method does not affect entities in the entity type that aren't explicitly
      * specified in the request.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchUpdateEntities(com.google.cloud.dialogflow.v2beta1.BatchUpdateEntitiesRequest request,
@@ -477,7 +494,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes entities in the specified entity type.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchDeleteEntities(com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest request,
@@ -603,6 +622,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Creates an entity type in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void createEntityType(com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest request,
@@ -614,6 +636,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void updateEntityType(com.google.cloud.dialogflow.v2beta1.UpdateEntityTypeRequest request,
@@ -625,6 +650,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void deleteEntityType(com.google.cloud.dialogflow.v2beta1.DeleteEntityTypeRequest request,
@@ -636,7 +664,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation &lt;response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchUpdateEntityTypes(com.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest request,
@@ -648,7 +678,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes entity types in the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchDeleteEntityTypes(com.google.cloud.dialogflow.v2beta1.BatchDeleteEntityTypesRequest request,
@@ -660,7 +692,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Creates multiple new entities in the specified entity type.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchCreateEntities(com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest request,
@@ -674,7 +708,9 @@ public final class EntityTypesGrpc {
      * Updates or creates multiple entities in the specified entity type. This
      * method does not affect entities in the entity type that aren't explicitly
      * specified in the request.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchUpdateEntities(com.google.cloud.dialogflow.v2beta1.BatchUpdateEntitiesRequest request,
@@ -686,7 +722,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes entities in the specified entity type.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public void batchDeleteEntities(com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest request,
@@ -736,6 +774,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Creates an entity type in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType createEntityType(com.google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest request) {
@@ -746,6 +787,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType updateEntityType(com.google.cloud.dialogflow.v2beta1.UpdateEntityTypeRequest request) {
@@ -756,6 +800,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.protobuf.Empty deleteEntityType(com.google.cloud.dialogflow.v2beta1.DeleteEntityTypeRequest request) {
@@ -766,7 +813,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation &lt;response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation batchUpdateEntityTypes(com.google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesRequest request) {
@@ -777,7 +826,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes entity types in the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation batchDeleteEntityTypes(com.google.cloud.dialogflow.v2beta1.BatchDeleteEntityTypesRequest request) {
@@ -788,7 +839,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Creates multiple new entities in the specified entity type.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation batchCreateEntities(com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest request) {
@@ -801,7 +854,9 @@ public final class EntityTypesGrpc {
      * Updates or creates multiple entities in the specified entity type. This
      * method does not affect entities in the entity type that aren't explicitly
      * specified in the request.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation batchUpdateEntities(com.google.cloud.dialogflow.v2beta1.BatchUpdateEntitiesRequest request) {
@@ -812,7 +867,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes entities in the specified entity type.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.longrunning.Operation batchDeleteEntities(com.google.cloud.dialogflow.v2beta1.BatchDeleteEntitiesRequest request) {
@@ -863,6 +920,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Creates an entity type in the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.EntityType> createEntityType(
@@ -874,6 +934,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2beta1.EntityType> updateEntityType(
@@ -885,6 +948,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes the specified entity type.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> deleteEntityType(
@@ -896,7 +962,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation &lt;response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchUpdateEntityTypes(
@@ -908,7 +976,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes entity types in the specified agent.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchDeleteEntityTypes(
@@ -920,7 +990,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Creates multiple new entities in the specified entity type.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchCreateEntities(
@@ -934,7 +1006,9 @@ public final class EntityTypesGrpc {
      * Updates or creates multiple entities in the specified entity type. This
      * method does not affect entities in the entity type that aren't explicitly
      * specified in the request.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchUpdateEntities(
@@ -946,7 +1020,9 @@ public final class EntityTypesGrpc {
     /**
      * <pre>
      * Deletes entities in the specified entity type.
-     * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty]&gt;
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> batchDeleteEntities(

@@ -36,6 +36,10 @@ module Google
             # Retrieves the specified agent.
             rpc :GetAgent, ::Google::Cloud::Dialogflow::V2beta1::GetAgentRequest, ::Google::Cloud::Dialogflow::V2beta1::Agent
             # Creates/updates the specified agent.
+            #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :SetAgent, ::Google::Cloud::Dialogflow::V2beta1::SetAgentRequest, ::Google::Cloud::Dialogflow::V2beta1::Agent
             # Deletes the specified agent.
             rpc :DeleteAgent, ::Google::Cloud::Dialogflow::V2beta1::DeleteAgentRequest, ::Google::Protobuf::Empty
@@ -48,13 +52,11 @@ module Google
             rpc :SearchAgents, ::Google::Cloud::Dialogflow::V2beta1::SearchAgentsRequest, ::Google::Cloud::Dialogflow::V2beta1::SearchAgentsResponse
             # Trains the specified agent.
             #
-            #
-            # Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :TrainAgent, ::Google::Cloud::Dialogflow::V2beta1::TrainAgentRequest, ::Google::Longrunning::Operation
             # Exports the specified agent to a ZIP file.
-            #
-            #
-            # Operation <response: [ExportAgentResponse][google.cloud.dialogflow.v2beta1.ExportAgentResponse]>
             rpc :ExportAgent, ::Google::Cloud::Dialogflow::V2beta1::ExportAgentRequest, ::Google::Longrunning::Operation
             # Imports the specified agent from a ZIP file.
             #
@@ -66,10 +68,9 @@ module Google
             # call [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it returns in order to train
             # explicitly.
             #
-            #
-            # Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
-            # An operation which tracks when importing is complete. It only tracks
-            # when the draft agent is updated not when it is done training.
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :ImportAgent, ::Google::Cloud::Dialogflow::V2beta1::ImportAgentRequest, ::Google::Longrunning::Operation
             # Restores the specified agent from a ZIP file.
             #
@@ -80,10 +81,9 @@ module Google
             # completed yet. Please call [TrainAgent][google.cloud.dialogflow.v2beta1.Agents.TrainAgent] and wait for the operation it
             # returns in order to train explicitly.
             #
-            #
-            # Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
-            # An operation which tracks when restoring is complete. It only tracks
-            # when the draft agent is updated not when it is done training.
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :RestoreAgent, ::Google::Cloud::Dialogflow::V2beta1::RestoreAgentRequest, ::Google::Longrunning::Operation
             # Gets agent validation result. Agent validation is performed during
             # training time and is updated automatically when training is completed.

@@ -52,7 +52,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      * - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
      *   ID>`
      *
-     * Generated from protobuf field <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
      */
     protected $agent_version = '';
     /**
@@ -189,7 +189,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      * - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
      *   ID>`
      *
-     * Generated from protobuf field <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getAgentVersion()
@@ -204,7 +204,7 @@ class Environment extends \Google\Protobuf\Internal\Message
      * - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
      *   ID>`
      *
-     * Generated from protobuf field <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>string agent_version = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

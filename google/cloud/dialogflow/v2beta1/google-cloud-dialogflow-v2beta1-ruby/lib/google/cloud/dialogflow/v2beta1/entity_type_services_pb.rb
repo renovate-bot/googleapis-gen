@@ -38,30 +38,54 @@ module Google
             # Retrieves the specified entity type.
             rpc :GetEntityType, ::Google::Cloud::Dialogflow::V2beta1::GetEntityTypeRequest, ::Google::Cloud::Dialogflow::V2beta1::EntityType
             # Creates an entity type in the specified agent.
+            #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :CreateEntityType, ::Google::Cloud::Dialogflow::V2beta1::CreateEntityTypeRequest, ::Google::Cloud::Dialogflow::V2beta1::EntityType
             # Updates the specified entity type.
+            #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :UpdateEntityType, ::Google::Cloud::Dialogflow::V2beta1::UpdateEntityTypeRequest, ::Google::Cloud::Dialogflow::V2beta1::EntityType
             # Deletes the specified entity type.
+            #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :DeleteEntityType, ::Google::Cloud::Dialogflow::V2beta1::DeleteEntityTypeRequest, ::Google::Protobuf::Empty
             # Updates/Creates multiple entity types in the specified agent.
-            # Operation <response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse]>
+            #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :BatchUpdateEntityTypes, ::Google::Cloud::Dialogflow::V2beta1::BatchUpdateEntityTypesRequest, ::Google::Longrunning::Operation
             # Deletes entity types in the specified agent.
-            # Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+            #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :BatchDeleteEntityTypes, ::Google::Cloud::Dialogflow::V2beta1::BatchDeleteEntityTypesRequest, ::Google::Longrunning::Operation
             # Creates multiple new entities in the specified entity type.
             #
-            # Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :BatchCreateEntities, ::Google::Cloud::Dialogflow::V2beta1::BatchCreateEntitiesRequest, ::Google::Longrunning::Operation
             # Updates or creates multiple entities in the specified entity type. This
             # method does not affect entities in the entity type that aren't explicitly
             # specified in the request.
             #
-            # Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :BatchUpdateEntities, ::Google::Cloud::Dialogflow::V2beta1::BatchUpdateEntitiesRequest, ::Google::Longrunning::Operation
             # Deletes entities in the specified entity type.
             #
-            # Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             rpc :BatchDeleteEntities, ::Google::Cloud::Dialogflow::V2beta1::BatchDeleteEntitiesRequest, ::Google::Longrunning::Operation
           end
 

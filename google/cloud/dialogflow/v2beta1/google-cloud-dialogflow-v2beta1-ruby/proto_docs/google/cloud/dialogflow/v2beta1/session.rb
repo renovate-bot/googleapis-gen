@@ -641,6 +641,9 @@ module Google
         #   @return [::Google::Protobuf::Duration]
         #     Time offset of the end of this Speech recognition result relative to the
         #     beginning of the audio. Only populated for `message_type` = `TRANSCRIPT`.
+        # @!attribute [rw] language_code
+        #   @return [::String]
+        #     Detected language code for the transcript.
         # @!attribute [rw] dtmf_digits
         #   @return [::Google::Cloud::Dialogflow::V2beta1::TelephonyDtmfEvents]
         #     DTMF digits. Populated if and only if `message_type` = `DTMF_DIGITS`.

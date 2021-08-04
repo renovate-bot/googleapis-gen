@@ -41,7 +41,6 @@ use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Dialogflow\V2beta1\BatchDeleteIntentsRequest;
 use Google\Cloud\Dialogflow\V2beta1\BatchUpdateIntentsRequest;
-use Google\Cloud\Dialogflow\V2beta1\BatchUpdateIntentsResponse;
 use Google\Cloud\Dialogflow\V2beta1\CreateIntentRequest;
 use Google\Cloud\Dialogflow\V2beta1\DeleteIntentRequest;
 use Google\Cloud\Dialogflow\V2beta1\GetIntentRequest;
@@ -498,7 +497,9 @@ class IntentsGapicClient
     /**
      * Deletes intents in the specified agent.
      *
-     * Operation <response: [google.protobuf.Empty][google.protobuf.Empty]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -573,7 +574,9 @@ class IntentsGapicClient
     /**
      * Updates/Creates multiple intents in the specified agent.
      *
-     * Operation <response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]>
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -683,6 +686,10 @@ class IntentsGapicClient
     /**
      * Creates an intent in the specified agent.
      *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     *
      * Sample code:
      * ```
      * $intentsClient = new IntentsClient();
@@ -748,6 +755,10 @@ class IntentsGapicClient
 
     /**
      * Deletes the specified intent and its direct or indirect followup intents.
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```
@@ -954,6 +965,10 @@ class IntentsGapicClient
 
     /**
      * Updates the specified intent.
+     *
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
      *
      * Sample code:
      * ```

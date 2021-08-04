@@ -307,6 +307,10 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
 
         Creates an intent in the specified agent.
 
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
+
         Returns:
             Callable[[~.CreateIntentRequest],
                     Awaitable[~.Intent]]:
@@ -333,6 +337,10 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
 
         Updates the specified intent.
 
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
+
         Returns:
             Callable[[~.UpdateIntentRequest],
                     Awaitable[~.Intent]]:
@@ -357,8 +365,12 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
             Awaitable[empty_pb2.Empty]]:
         r"""Return a callable for the delete intent method over gRPC.
 
-        Deletes the specified intent and its direct or
-        indirect followup intents.
+        Deletes the specified intent and its direct or indirect followup
+        intents.
+
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.DeleteIntentRequest],
@@ -386,8 +398,9 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
 
         Updates/Creates multiple intents in the specified agent.
 
-        Operation <response:
-        [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.BatchUpdateIntentsRequest],
@@ -415,8 +428,9 @@ class IntentsGrpcAsyncIOTransport(IntentsTransport):
 
         Deletes intents in the specified agent.
 
-        Operation <response:
-        [google.protobuf.Empty][google.protobuf.Empty]>
+        Note: You should always train an agent prior to sending it
+        queries. See the `training
+        documentation <https://cloud.google.com/dialogflow/es/docs/training>`__.
 
         Returns:
             Callable[[~.BatchDeleteIntentsRequest],

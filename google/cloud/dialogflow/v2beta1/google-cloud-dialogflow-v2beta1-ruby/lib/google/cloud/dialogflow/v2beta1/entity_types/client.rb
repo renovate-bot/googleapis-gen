@@ -327,6 +327,10 @@ module Google
             ##
             # Creates an entity type in the specified agent.
             #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
+            #
             # @overload create_entity_type(request, options = nil)
             #   Pass arguments to `create_entity_type` via a request object, either of type
             #   {::Google::Cloud::Dialogflow::V2beta1::CreateEntityTypeRequest} or an equivalent Hash.
@@ -404,6 +408,10 @@ module Google
             ##
             # Updates the specified entity type.
             #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
+            #
             # @overload update_entity_type(request, options = nil)
             #   Pass arguments to `update_entity_type` via a request object, either of type
             #   {::Google::Cloud::Dialogflow::V2beta1::UpdateEntityTypeRequest} or an equivalent Hash.
@@ -478,6 +486,10 @@ module Google
             ##
             # Deletes the specified entity type.
             #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
+            #
             # @overload delete_entity_type(request, options = nil)
             #   Pass arguments to `delete_entity_type` via a request object, either of type
             #   {::Google::Cloud::Dialogflow::V2beta1::DeleteEntityTypeRequest} or an equivalent Hash.
@@ -547,7 +559,10 @@ module Google
 
             ##
             # Updates/Creates multiple entity types in the specified agent.
-            # Operation <response: {::Google::Cloud::Dialogflow::V2beta1::BatchUpdateEntityTypesResponse BatchUpdateEntityTypesResponse}>
+            #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             #
             # @overload batch_update_entity_types(request, options = nil)
             #   Pass arguments to `batch_update_entity_types` via a request object, either of type
@@ -633,7 +648,10 @@ module Google
 
             ##
             # Deletes entity types in the specified agent.
-            # Operation <response: {::Google::Protobuf::Empty google.protobuf.Empty}>
+            #
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             #
             # @overload batch_delete_entity_types(request, options = nil)
             #   Pass arguments to `batch_delete_entity_types` via a request object, either of type
@@ -708,7 +726,9 @@ module Google
             ##
             # Creates multiple new entities in the specified entity type.
             #
-            # Operation <response: {::Google::Protobuf::Empty google.protobuf.Empty}>
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             #
             # @overload batch_create_entities(request, options = nil)
             #   Pass arguments to `batch_create_entities` via a request object, either of type
@@ -791,7 +811,9 @@ module Google
             # method does not affect entities in the entity type that aren't explicitly
             # specified in the request.
             #
-            # Operation <response: {::Google::Protobuf::Empty google.protobuf.Empty}>
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             #
             # @overload batch_update_entities(request, options = nil)
             #   Pass arguments to `batch_update_entities` via a request object, either of type
@@ -874,7 +896,9 @@ module Google
             ##
             # Deletes entities in the specified entity type.
             #
-            # Operation <response: {::Google::Protobuf::Empty google.protobuf.Empty}>
+            # Note: You should always train an agent prior to sending it queries. See the
+            # [training
+            # documentation](https://cloud.google.com/dialogflow/es/docs/training).
             #
             # @overload batch_delete_entities(request, options = nil)
             #   Pass arguments to `batch_delete_entities` via a request object, either of type
