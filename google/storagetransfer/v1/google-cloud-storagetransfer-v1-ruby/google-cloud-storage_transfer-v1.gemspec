@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/storagetransfer/v1/version", __dir__)
+require File.expand_path("lib/google/cloud/storage_transfer/v1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-storagetransfer-v1"
-  gem.version       = Google::Cloud::Storagetransfer::V1::VERSION
+  gem.name          = "google-cloud-storage_transfer-v1"
+  gem.version       = Google::Cloud::StorageTransfer::V1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-storagetransfer-v1 is the official client library for the Google Cloud Storagetransfer V1 API. Note that google-cloud-storagetransfer-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-storagetransfer instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Storagetransfer V1 API"
+  gem.description   = "Storage Transfer Service allows you to quickly import online data into Cloud Storage. You can also set up a repeating schedule for transferring data, as well as transfer data within Cloud Storage, from one bucket to another. Note that google-cloud-storage_transfer-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-storage_transfer instead. See the readme for more details."
+  gem.summary       = "API Client library for the Storage Transfer Service V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

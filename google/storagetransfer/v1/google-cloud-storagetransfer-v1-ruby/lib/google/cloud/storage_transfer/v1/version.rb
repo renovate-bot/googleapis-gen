@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Storagetransfer
+    module StorageTransfer
       module V1
         VERSION = "0.0.1"
       end

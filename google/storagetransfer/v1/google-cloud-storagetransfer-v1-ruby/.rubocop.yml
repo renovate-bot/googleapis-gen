@@ -3,7 +3,7 @@ inherit_gem:
 
 AllCops:
   Exclude:
-    - "google-cloud-storagetransfer-v1.gemspec"
+    - "google-cloud-storage_transfer-v1.gemspec"
     - "lib/**/*_pb.rb"
     - "proto_docs/**/*"
     - "test/**/*"
@@ -26,4 +26,4 @@ Metrics/PerceivedComplexity:
   Enabled: false
 Naming/FileName:
   Exclude:
-    - "lib/google-cloud-storagetransfer-v1.rb"
+    - "lib/google-cloud-storage_transfer-v1.rb"

@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/storagetransfer/v1/version"
+require "google/cloud/storage_transfer/v1/version"
 
 require "google/cloud/storage_transfer/v1/storage_transfer_service/credentials"
 require "google/cloud/storage_transfer/v1/storage_transfer_service/operations"

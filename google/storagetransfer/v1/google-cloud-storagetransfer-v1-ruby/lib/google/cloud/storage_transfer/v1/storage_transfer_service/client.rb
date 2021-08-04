@@ -215,7 +215,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Storagetransfer::V1::VERSION
+                gapic_version: ::Google::Cloud::StorageTransfer::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -281,7 +281,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Storagetransfer::V1::VERSION
+                gapic_version: ::Google::Cloud::StorageTransfer::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               options.apply_defaults timeout:      @config.rpcs.create_transfer_job.timeout,
@@ -374,7 +374,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Storagetransfer::V1::VERSION
+                gapic_version: ::Google::Cloud::StorageTransfer::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -444,7 +444,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Storagetransfer::V1::VERSION
+                gapic_version: ::Google::Cloud::StorageTransfer::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -525,7 +525,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Storagetransfer::V1::VERSION
+                gapic_version: ::Google::Cloud::StorageTransfer::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               options.apply_defaults timeout:      @config.rpcs.list_transfer_jobs.timeout,
@@ -586,7 +586,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Storagetransfer::V1::VERSION
+                gapic_version: ::Google::Cloud::StorageTransfer::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -652,7 +652,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Storagetransfer::V1::VERSION
+                gapic_version: ::Google::Cloud::StorageTransfer::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
@@ -723,7 +723,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Storagetransfer::V1::VERSION
+                gapic_version: ::Google::Cloud::StorageTransfer::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {
