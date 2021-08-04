@@ -26,12 +26,13 @@ public final class DrilldownsProto {
       "\n/google/monitoring/dashboard/v1/drilldo" +
       "wns.proto\022\036google.monitoring.dashboard.v" +
       "1\032+google/monitoring/dashboard/v1/common" +
-      ".protoB\322\001\n\"com.google.monitoring.dashboa" +
+      ".protoB\371\001\n\"com.google.monitoring.dashboa" +
       "rd.v1B\017DrilldownsProtoP\001ZGgoogle.golang." +
       "org/genproto/googleapis/monitoring/dashb" +
-      "oard/v1;dashboard\312\002$Google\\Cloud\\Monitor" +
-      "ing\\Dashboard\\V1\352\002(Google::Cloud::Monito" +
-      "ring::Dashboard::V1b\006proto3"
+      "oard/v1;dashboard\252\002$Google.Cloud.Monitor" +
+      "ing.Dashboard.V1\312\002$Google\\Cloud\\Monitori" +
+      "ng\\Dashboard\\V1\352\002(Google::Cloud::Monitor" +
+      "ing::Dashboard::V1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

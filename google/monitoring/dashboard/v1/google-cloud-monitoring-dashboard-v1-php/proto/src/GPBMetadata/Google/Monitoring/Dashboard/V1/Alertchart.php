@@ -18,13 +18,13 @@ class Alertchart
         \GPBMetadata\Google\Api\Resource::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ç
+î
 /google/monitoring/dashboard/v1/alertchart.protogoogle.monitoring.dashboard.v1google/api/resource.proto"|
 
 AlertChart
 name (	BàA:[êAX
-%monitoring.googleapis.com/AlertPolicy/projects/{project}/alertPolicies/{alert_policy}BÒ
-"com.google.monitoring.dashboard.v1BAlertChartProtoPZGgoogle.golang.org/genproto/googleapis/monitoring/dashboard/v1;dashboardÊ$Google\\Cloud\\Monitoring\\Dashboard\\V1ê(Google::Cloud::Monitoring::Dashboard::V1bproto3'
+%monitoring.googleapis.com/AlertPolicy/projects/{project}/alertPolicies/{alert_policy}Bù
+"com.google.monitoring.dashboard.v1BAlertChartProtoPZGgoogle.golang.org/genproto/googleapis/monitoring/dashboard/v1;dashboardª$Google.Cloud.Monitoring.Dashboard.V1Ê$Google\\Cloud\\Monitoring\\Dashboard\\V1ê(Google::Cloud::Monitoring::Dashboard::V1bproto3'
         , true);
 
         static::$is_initialized = true;

@@ -23,7 +23,7 @@ class DashboardsService
         \GPBMetadata\Google\Api\Client::initOnce();
         $pool->internalAddGeneratedFile(
             '
-“
+˘
 7google/monitoring/dashboard/v1/dashboards_service.protogoogle.monitoring.dashboard.v1google/api/field_behavior.protogoogle/api/resource.proto.google/monitoring/dashboard/v1/dashboard.protogoogle/protobuf/empty.proto google/protobuf/field_mask.protogoogle/api/client.proto"á
 CreateDashboardRequest
 parent (	B‡AA
@@ -53,8 +53,8 @@ dashboards (2).google.monitoring.dashboard.v1.Dashboard
 ListDashboards5.google.monitoring.dashboard.v1.ListDashboardsRequest6.google.monitoring.dashboard.v1.ListDashboardsResponse"*Ç”‰ì$"/v1/{parent=projects/*}/dashboardsö
 GetDashboard3.google.monitoring.dashboard.v1.GetDashboardRequest).google.monitoring.dashboard.v1.Dashboard"*Ç”‰ì$"/v1/{name=projects/*/dashboards/*}ç
 DeleteDashboard6.google.monitoring.dashboard.v1.DeleteDashboardRequest.google.protobuf.Empty"*Ç”‰ì$*"/v1/{name=projects/*/dashboards/*}µ
-UpdateDashboard6.google.monitoring.dashboard.v1.UpdateDashboardRequest).google.monitoring.dashboard.v1.Dashboard"?Ç”‰ì92,/v1/{dashboard.name=projects/*/dashboards/*}:	dashboard⁄ Amonitoring.googleapis.com“A∫https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/monitoring,https://www.googleapis.com/auth/monitoring.read,https://www.googleapis.com/auth/monitoring.writeBŸ
-"com.google.monitoring.dashboard.v1BDashboardsServiceProtoPZGgoogle.golang.org/genproto/googleapis/monitoring/dashboard/v1;dashboard $Google\\Cloud\\Monitoring\\Dashboard\\V1Í(Google::Cloud::Monitoring::Dashboard::V1bproto3'
+UpdateDashboard6.google.monitoring.dashboard.v1.UpdateDashboardRequest).google.monitoring.dashboard.v1.Dashboard"?Ç”‰ì92,/v1/{dashboard.name=projects/*/dashboards/*}:	dashboard⁄ Amonitoring.googleapis.com“A∫https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/monitoring,https://www.googleapis.com/auth/monitoring.read,https://www.googleapis.com/auth/monitoring.writeBÄ
+"com.google.monitoring.dashboard.v1BDashboardsServiceProtoPZGgoogle.golang.org/genproto/googleapis/monitoring/dashboard/v1;dashboard™$Google.Cloud.Monitoring.Dashboard.V1 $Google\\Cloud\\Monitoring\\Dashboard\\V1Í(Google::Cloud::Monitoring::Dashboard::V1bproto3'
         , true);
 
         static::$is_initialized = true;
