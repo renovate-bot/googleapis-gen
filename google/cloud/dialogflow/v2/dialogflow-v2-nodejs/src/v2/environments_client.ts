@@ -421,9 +421,12 @@ export class EnvironmentsClient {
  * @param {string} request.name
  *   Required. The name of the environment.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent/environments/<Environment ID>`
  *   - `projects/<Project ID>/locations/<Location
  *     ID>/agent/environments/<Environment ID>`
+ *
+ *   The environment ID for the default environment is `-`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -496,6 +499,7 @@ export class EnvironmentsClient {
  * @param {string} request.parent
  *   Required. The agent to create an environment for.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent`
  *   - `projects/<Project ID>/locations/<Location ID>/agent`
  * @param {google.cloud.dialogflow.v2.Environment} request.environment
@@ -572,13 +576,13 @@ export class EnvironmentsClient {
  * This method allows you to deploy new agent versions into the environment.
  * When an environment is pointed to a new agent version by setting
  * `environment.agent_version`, the environment is temporarily set to the
- * `LOADING` state. During that time, the environment keeps on serving the
+ * `LOADING` state. During that time, the environment continues serving the
  * previous version of the agent. After the new agent version is done loading,
  * the environment is set back to the `RUNNING` state.
- * You can use "-" as Environment ID in environment name to update version
- * in "draft" environment. WARNING: this will negate all recent changes to
- * draft and can't be undone. You may want to save the draft to a version
- * before calling this function.
+ * You can use "-" as Environment ID in environment name to update an agent
+ * version in the default environment. WARNING: this will negate all recent
+ * changes to the draft agent and can't be undone. You may want to save the
+ * draft agent to a version before calling this method.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -587,10 +591,10 @@ export class EnvironmentsClient {
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. The mask to control which fields get updated.
  * @param {boolean} [request.allowLoadToDraftAndDiscardChanges]
- *   Optional. This field is used to prevent accidental overwrite of the draft
+ *   Optional. This field is used to prevent accidental overwrite of the default
  *   environment, which is an operation that cannot be undone. To confirm that
  *   the caller desires this overwrite, this field must be explicitly set to
- *   true when updating the draft environment (environment ID = `-`).
+ *   true when updating the default environment (environment ID = `-`).
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -663,9 +667,12 @@ export class EnvironmentsClient {
  * @param {string} request.name
  *   Required. The name of the environment to delete.
  *   / Format:
+ *
  *   - `projects/<Project ID>/agent/environments/<Environment ID>`
  *   - `projects/<Project ID>/locations/<Location
- *   ID>/agent/environments/<Environment ID>`
+ *     ID>/agent/environments/<Environment ID>`
+ *
+ *   The environment ID for the default environment is `-`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -733,13 +740,14 @@ export class EnvironmentsClient {
           protos.google.cloud.dialogflow.v2.IListEnvironmentsResponse|null|undefined,
           protos.google.cloud.dialogflow.v2.IEnvironment>): void;
 /**
- * Returns the list of all non-draft environments of the specified agent.
+ * Returns the list of all non-default environments of the specified agent.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.parent
  *   Required. The agent to list all environments from.
  *   Format:
+ *
  *   - `projects/<Project ID>/agent`
  *   - `projects/<Project ID>/locations/<Location ID>/agent`
  * @param {number} [request.pageSize]
@@ -803,6 +811,7 @@ export class EnvironmentsClient {
  * @param {string} request.parent
  *   Required. The agent to list all environments from.
  *   Format:
+ *
  *   - `projects/<Project ID>/agent`
  *   - `projects/<Project ID>/locations/<Location ID>/agent`
  * @param {number} [request.pageSize]
@@ -853,6 +862,7 @@ export class EnvironmentsClient {
  * @param {string} request.parent
  *   Required. The agent to list all environments from.
  *   Format:
+ *
  *   - `projects/<Project ID>/agent`
  *   - `projects/<Project ID>/locations/<Location ID>/agent`
  * @param {number} [request.pageSize]
@@ -927,9 +937,12 @@ export class EnvironmentsClient {
  * @param {string} request.parent
  *   Required. The name of the environment to retrieve history for.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent/environments/<Environment ID>`
  *   - `projects/<Project ID>/locations/<Location
  *     ID>/agent/environments/<Environment ID>`
+ *
+ *   The environment ID for the default environment is `-`.
  * @param {number} [request.pageSize]
  *   Optional. The maximum number of items to return in a single page. By default 100 and
  *   at most 1000.
@@ -991,9 +1004,12 @@ export class EnvironmentsClient {
  * @param {string} request.parent
  *   Required. The name of the environment to retrieve history for.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent/environments/<Environment ID>`
  *   - `projects/<Project ID>/locations/<Location
  *     ID>/agent/environments/<Environment ID>`
+ *
+ *   The environment ID for the default environment is `-`.
  * @param {number} [request.pageSize]
  *   Optional. The maximum number of items to return in a single page. By default 100 and
  *   at most 1000.
@@ -1042,9 +1058,12 @@ export class EnvironmentsClient {
  * @param {string} request.parent
  *   Required. The name of the environment to retrieve history for.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent/environments/<Environment ID>`
  *   - `projects/<Project ID>/locations/<Location
  *     ID>/agent/environments/<Environment ID>`
+ *
+ *   The environment ID for the default environment is `-`.
  * @param {number} [request.pageSize]
  *   Optional. The maximum number of items to return in a single page. By default 100 and
  *   at most 1000.

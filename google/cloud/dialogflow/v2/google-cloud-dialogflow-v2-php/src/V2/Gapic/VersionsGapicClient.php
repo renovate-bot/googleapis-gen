@@ -426,6 +426,7 @@ class VersionsGapicClient
      *
      * @param string  $parent       Required. The agent to create a version for.
      *                              Supported formats:
+     *
      *                              - `projects/<Project ID>/agent`
      *                              - `projects/<Project ID>/locations/<Location ID>/agent`
      * @param Version $version      Required. The version to create.
@@ -471,6 +472,7 @@ class VersionsGapicClient
      *
      * @param string $name         Required. The name of the version to delete.
      *                             Supported formats:
+     *
      *                             - `projects/<Project ID>/agent/versions/<Version ID>`
      *                             - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
      *                             ID>`
@@ -513,6 +515,7 @@ class VersionsGapicClient
      *
      * @param string $name         Required. The name of the version.
      *                             Supported formats:
+     *
      *                             - `projects/<Project ID>/agent/versions/<Version ID>`
      *                             - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
      *                             ID>`
@@ -569,6 +572,7 @@ class VersionsGapicClient
      *
      * @param string $parent       Required. The agent to list all versions from.
      *                             Supported formats:
+     *
      *                             - `projects/<Project ID>/agent`
      *                             - `projects/<Project ID>/locations/<Location ID>/agent`
      * @param array  $optionalArgs {
@@ -634,6 +638,7 @@ class VersionsGapicClient
      *
      * @param Version   $version      Required. The version to update.
      *                                Supported formats:
+     *
      *                                - `projects/<Project ID>/agent/versions/<Version ID>`
      *                                - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
      *                                ID>`

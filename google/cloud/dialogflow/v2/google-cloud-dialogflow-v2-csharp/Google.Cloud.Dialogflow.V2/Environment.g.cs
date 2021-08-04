@@ -212,9 +212,12 @@ namespace Google.Cloud.Dialogflow.V2 {
     /// <summary>
     /// Output only. The unique identifier of this agent environment.
     /// Supported formats:
+    ///
     /// - `projects/&lt;Project ID>/agent/environments/&lt;Environment ID>`
     /// - `projects/&lt;Project ID>/locations/&lt;Location
     ///   ID>/agent/environments/&lt;Environment ID>`
+    ///
+    /// The environment ID for the default environment is `-`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -243,8 +246,9 @@ namespace Google.Cloud.Dialogflow.V2 {
     public const int AgentVersionFieldNumber = 3;
     private string agentVersion_ = "";
     /// <summary>
-    /// Required. The agent version loaded into this environment.
+    /// Optional. The agent version loaded into this environment.
     /// Supported formats:
+    ///
     /// - `projects/&lt;Project ID>/agent/versions/&lt;Version ID>`
     /// - `projects/&lt;Project ID>/locations/&lt;Location ID>/agent/versions/&lt;Version
     ///   ID>`
@@ -982,6 +986,7 @@ namespace Google.Cloud.Dialogflow.V2 {
     /// <summary>
     /// Required. The agent to list all environments from.
     /// Format:
+    ///
     /// - `projects/&lt;Project ID>/agent`
     /// - `projects/&lt;Project ID>/locations/&lt;Location ID>/agent`
     /// </summary>
@@ -1448,9 +1453,12 @@ namespace Google.Cloud.Dialogflow.V2 {
     /// <summary>
     /// Required. The name of the environment.
     /// Supported formats:
+    ///
     /// - `projects/&lt;Project ID>/agent/environments/&lt;Environment ID>`
     /// - `projects/&lt;Project ID>/locations/&lt;Location
     ///   ID>/agent/environments/&lt;Environment ID>`
+    ///
+    /// The environment ID for the default environment is `-`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -1632,6 +1640,7 @@ namespace Google.Cloud.Dialogflow.V2 {
     /// <summary>
     /// Required. The agent to create an environment for.
     /// Supported formats:
+    ///
     /// - `projects/&lt;Project ID>/agent`
     /// - `projects/&lt;Project ID>/locations/&lt;Location ID>/agent`
     /// </summary>
@@ -1926,10 +1935,10 @@ namespace Google.Cloud.Dialogflow.V2 {
     public const int AllowLoadToDraftAndDiscardChangesFieldNumber = 3;
     private bool allowLoadToDraftAndDiscardChanges_;
     /// <summary>
-    /// Optional. This field is used to prevent accidental overwrite of the draft
+    /// Optional. This field is used to prevent accidental overwrite of the default
     /// environment, which is an operation that cannot be undone. To confirm that
     /// the caller desires this overwrite, this field must be explicitly set to
-    /// true when updating the draft environment (environment ID = `-`).
+    /// true when updating the default environment (environment ID = `-`).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public bool AllowLoadToDraftAndDiscardChanges {
@@ -2175,9 +2184,12 @@ namespace Google.Cloud.Dialogflow.V2 {
     /// <summary>
     /// Required. The name of the environment to delete.
     /// / Format:
+    ///
     /// - `projects/&lt;Project ID>/agent/environments/&lt;Environment ID>`
     /// - `projects/&lt;Project ID>/locations/&lt;Location
-    /// ID>/agent/environments/&lt;Environment ID>`
+    ///   ID>/agent/environments/&lt;Environment ID>`
+    ///
+    /// The environment ID for the default environment is `-`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -2359,9 +2371,12 @@ namespace Google.Cloud.Dialogflow.V2 {
     /// <summary>
     /// Required. The name of the environment to retrieve history for.
     /// Supported formats:
+    ///
     /// - `projects/&lt;Project ID>/agent/environments/&lt;Environment ID>`
     /// - `projects/&lt;Project ID>/locations/&lt;Location
     ///   ID>/agent/environments/&lt;Environment ID>`
+    ///
+    /// The environment ID for the default environment is `-`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Parent {
@@ -2620,9 +2635,12 @@ namespace Google.Cloud.Dialogflow.V2 {
     /// <summary>
     /// Output only. The name of the environment this history is for.
     /// Supported formats:
+    ///
     /// - `projects/&lt;Project ID>/agent/environments/&lt;Environment ID>`
     /// - `projects/&lt;Project ID>/locations/&lt;Location
     ///    ID>/agent/environments/&lt;Environment ID>`
+    ///
+    /// The environment ID for the default environment is `-`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Parent {

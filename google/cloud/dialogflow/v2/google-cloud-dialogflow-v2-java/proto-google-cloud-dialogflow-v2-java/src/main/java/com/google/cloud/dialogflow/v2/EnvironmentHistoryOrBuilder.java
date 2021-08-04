@@ -14,6 +14,7 @@ public interface EnvironmentHistoryOrBuilder extends
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -27,6 +28,7 @@ public interface EnvironmentHistoryOrBuilder extends
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *    ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

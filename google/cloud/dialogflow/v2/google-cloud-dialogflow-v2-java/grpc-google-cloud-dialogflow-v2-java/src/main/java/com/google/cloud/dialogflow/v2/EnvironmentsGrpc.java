@@ -256,7 +256,7 @@ public final class EnvironmentsGrpc {
 
     /**
      * <pre>
-     * Returns the list of all non-draft environments of the specified agent.
+     * Returns the list of all non-default environments of the specified agent.
      * </pre>
      */
     public void listEnvironments(com.google.cloud.dialogflow.v2.ListEnvironmentsRequest request,
@@ -290,13 +290,13 @@ public final class EnvironmentsGrpc {
      * This method allows you to deploy new agent versions into the environment.
      * When an environment is pointed to a new agent version by setting
      * `environment.agent_version`, the environment is temporarily set to the
-     * `LOADING` state. During that time, the environment keeps on serving the
+     * `LOADING` state. During that time, the environment continues serving the
      * previous version of the agent. After the new agent version is done loading,
      * the environment is set back to the `RUNNING` state.
-     * You can use "-" as Environment ID in environment name to update version
-     * in "draft" environment. WARNING: this will negate all recent changes to
-     * draft and can't be undone. You may want to save the draft to a version
-     * before calling this function.
+     * You can use "-" as Environment ID in environment name to update an agent
+     * version in the default environment. WARNING: this will negate all recent
+     * changes to the draft agent and can't be undone. You may want to save the
+     * draft agent to a version before calling this method.
      * </pre>
      */
     public void updateEnvironment(com.google.cloud.dialogflow.v2.UpdateEnvironmentRequest request,
@@ -391,7 +391,7 @@ public final class EnvironmentsGrpc {
 
     /**
      * <pre>
-     * Returns the list of all non-draft environments of the specified agent.
+     * Returns the list of all non-default environments of the specified agent.
      * </pre>
      */
     public void listEnvironments(com.google.cloud.dialogflow.v2.ListEnvironmentsRequest request,
@@ -428,13 +428,13 @@ public final class EnvironmentsGrpc {
      * This method allows you to deploy new agent versions into the environment.
      * When an environment is pointed to a new agent version by setting
      * `environment.agent_version`, the environment is temporarily set to the
-     * `LOADING` state. During that time, the environment keeps on serving the
+     * `LOADING` state. During that time, the environment continues serving the
      * previous version of the agent. After the new agent version is done loading,
      * the environment is set back to the `RUNNING` state.
-     * You can use "-" as Environment ID in environment name to update version
-     * in "draft" environment. WARNING: this will negate all recent changes to
-     * draft and can't be undone. You may want to save the draft to a version
-     * before calling this function.
+     * You can use "-" as Environment ID in environment name to update an agent
+     * version in the default environment. WARNING: this will negate all recent
+     * changes to the draft agent and can't be undone. You may want to save the
+     * draft agent to a version before calling this method.
      * </pre>
      */
     public void updateEnvironment(com.google.cloud.dialogflow.v2.UpdateEnvironmentRequest request,
@@ -485,7 +485,7 @@ public final class EnvironmentsGrpc {
 
     /**
      * <pre>
-     * Returns the list of all non-draft environments of the specified agent.
+     * Returns the list of all non-default environments of the specified agent.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.ListEnvironmentsResponse listEnvironments(com.google.cloud.dialogflow.v2.ListEnvironmentsRequest request) {
@@ -519,13 +519,13 @@ public final class EnvironmentsGrpc {
      * This method allows you to deploy new agent versions into the environment.
      * When an environment is pointed to a new agent version by setting
      * `environment.agent_version`, the environment is temporarily set to the
-     * `LOADING` state. During that time, the environment keeps on serving the
+     * `LOADING` state. During that time, the environment continues serving the
      * previous version of the agent. After the new agent version is done loading,
      * the environment is set back to the `RUNNING` state.
-     * You can use "-" as Environment ID in environment name to update version
-     * in "draft" environment. WARNING: this will negate all recent changes to
-     * draft and can't be undone. You may want to save the draft to a version
-     * before calling this function.
+     * You can use "-" as Environment ID in environment name to update an agent
+     * version in the default environment. WARNING: this will negate all recent
+     * changes to the draft agent and can't be undone. You may want to save the
+     * draft agent to a version before calling this method.
      * </pre>
      */
     public com.google.cloud.dialogflow.v2.Environment updateEnvironment(com.google.cloud.dialogflow.v2.UpdateEnvironmentRequest request) {
@@ -573,7 +573,7 @@ public final class EnvironmentsGrpc {
 
     /**
      * <pre>
-     * Returns the list of all non-draft environments of the specified agent.
+     * Returns the list of all non-default environments of the specified agent.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.ListEnvironmentsResponse> listEnvironments(
@@ -610,13 +610,13 @@ public final class EnvironmentsGrpc {
      * This method allows you to deploy new agent versions into the environment.
      * When an environment is pointed to a new agent version by setting
      * `environment.agent_version`, the environment is temporarily set to the
-     * `LOADING` state. During that time, the environment keeps on serving the
+     * `LOADING` state. During that time, the environment continues serving the
      * previous version of the agent. After the new agent version is done loading,
      * the environment is set back to the `RUNNING` state.
-     * You can use "-" as Environment ID in environment name to update version
-     * in "draft" environment. WARNING: this will negate all recent changes to
-     * draft and can't be undone. You may want to save the draft to a version
-     * before calling this function.
+     * You can use "-" as Environment ID in environment name to update an agent
+     * version in the default environment. WARNING: this will negate all recent
+     * changes to the draft agent and can't be undone. You may want to save the
+     * draft agent to a version before calling this method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.v2.Environment> updateEnvironment(

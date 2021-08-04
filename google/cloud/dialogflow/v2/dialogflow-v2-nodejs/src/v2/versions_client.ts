@@ -419,6 +419,7 @@ export class VersionsClient {
  * @param {string} request.name
  *   Required. The name of the version.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent/versions/<Version ID>`
  *   - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
  *     ID>`
@@ -496,6 +497,7 @@ export class VersionsClient {
  * @param {string} request.parent
  *   Required. The agent to create a version for.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent`
  *   - `projects/<Project ID>/locations/<Location ID>/agent`
  * @param {google.cloud.dialogflow.v2.Version} request.version
@@ -576,6 +578,7 @@ export class VersionsClient {
  * @param {google.cloud.dialogflow.v2.Version} request.version
  *   Required. The version to update.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent/versions/<Version ID>`
  *   - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
  *     ID>`
@@ -653,6 +656,7 @@ export class VersionsClient {
  * @param {string} request.name
  *   Required. The name of the version to delete.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent/versions/<Version ID>`
  *   - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
  *     ID>`
@@ -730,6 +734,7 @@ export class VersionsClient {
  * @param {string} request.parent
  *   Required. The agent to list all versions from.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent`
  *   - `projects/<Project ID>/locations/<Location ID>/agent`
  * @param {number} [request.pageSize]
@@ -793,6 +798,7 @@ export class VersionsClient {
  * @param {string} request.parent
  *   Required. The agent to list all versions from.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent`
  *   - `projects/<Project ID>/locations/<Location ID>/agent`
  * @param {number} [request.pageSize]
@@ -843,6 +849,7 @@ export class VersionsClient {
  * @param {string} request.parent
  *   Required. The agent to list all versions from.
  *   Supported formats:
+ *
  *   - `projects/<Project ID>/agent`
  *   - `projects/<Project ID>/locations/<Location ID>/agent`
  * @param {number} [request.pageSize]

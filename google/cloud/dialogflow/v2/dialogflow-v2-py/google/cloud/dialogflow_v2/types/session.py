@@ -785,6 +785,8 @@ class StreamingRecognitionResult(proto.Message):
             Time offset of the end of this Speech recognition result
             relative to the beginning of the audio. Only populated for
             ``message_type`` = ``TRANSCRIPT``.
+        language_code (str):
+            Detected language code for the transcript.
     """
     class MessageType(proto.Enum):
         r"""Type of the response message."""
@@ -818,6 +820,10 @@ class StreamingRecognitionResult(proto.Message):
         proto.MESSAGE,
         number=8,
         message=duration_pb2.Duration,
+    )
+    language_code = proto.Field(
+        proto.STRING,
+        number=10,
     )
 
 

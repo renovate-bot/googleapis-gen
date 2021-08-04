@@ -100,6 +100,7 @@ private static final long serialVersionUID = 0L;
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -125,6 +126,7 @@ private static final long serialVersionUID = 0L;
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
    *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -459,6 +461,7 @@ private static final long serialVersionUID = 0L;
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -483,6 +486,7 @@ private static final long serialVersionUID = 0L;
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -508,6 +512,7 @@ private static final long serialVersionUID = 0L;
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -531,6 +536,7 @@ private static final long serialVersionUID = 0L;
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -549,6 +555,7 @@ private static final long serialVersionUID = 0L;
      * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
      * - `projects/&lt;Project ID&gt;/locations/&lt;Location
      *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+     * The environment ID for the default environment is `-`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

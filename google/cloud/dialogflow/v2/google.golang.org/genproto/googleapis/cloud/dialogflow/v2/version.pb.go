@@ -129,6 +129,7 @@ type Version struct {
 
 	// Output only. The unique identifier of this agent version.
 	// Supported formats:
+	//
 	// - `projects/<Project ID>/agent/versions/<Version ID>`
 	// - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
 	//   ID>`
@@ -221,6 +222,7 @@ type ListVersionsRequest struct {
 
 	// Required. The agent to list all versions from.
 	// Supported formats:
+	//
 	// - `projects/<Project ID>/agent`
 	// - `projects/<Project ID>/locations/<Location ID>/agent`
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
@@ -352,6 +354,7 @@ type GetVersionRequest struct {
 
 	// Required. The name of the version.
 	// Supported formats:
+	//
 	// - `projects/<Project ID>/agent/versions/<Version ID>`
 	// - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
 	//   ID>`
@@ -405,6 +408,7 @@ type CreateVersionRequest struct {
 
 	// Required. The agent to create a version for.
 	// Supported formats:
+	//
 	// - `projects/<Project ID>/agent`
 	// - `projects/<Project ID>/locations/<Location ID>/agent`
 	Parent string `protobuf:"bytes,1,opt,name=parent,proto3" json:"parent,omitempty"`
@@ -466,6 +470,7 @@ type UpdateVersionRequest struct {
 
 	// Required. The version to update.
 	// Supported formats:
+	//
 	// - `projects/<Project ID>/agent/versions/<Version ID>`
 	// - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
 	//   ID>`
@@ -528,6 +533,7 @@ type DeleteVersionRequest struct {
 
 	// Required. The name of the version to delete.
 	// Supported formats:
+	//
 	// - `projects/<Project ID>/agent/versions/<Version ID>`
 	// - `projects/<Project ID>/locations/<Location ID>/agent/versions/<Version
 	//   ID>`

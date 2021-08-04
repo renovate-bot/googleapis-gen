@@ -66,13 +66,15 @@ class Environment(proto.Message):
 
             -  ``projects/<Project ID>/agent/environments/<Environment ID>``
             -  ``projects/<Project ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+
+            The environment ID for the default environment is ``-``.
         description (str):
             Optional. The developer-provided description
             for this environment. The maximum length is 500
             characters. If exceeded, the request is
             rejected.
         agent_version (str):
-            Required. The agent version loaded into this environment.
+            Optional. The agent version loaded into this environment.
             Supported formats:
 
             -  ``projects/<Project ID>/agent/versions/<Version ID>``
@@ -261,6 +263,8 @@ class GetEnvironmentRequest(proto.Message):
 
             -  ``projects/<Project ID>/agent/environments/<Environment ID>``
             -  ``projects/<Project ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+
+            The environment ID for the default environment is ``-``.
     """
 
     name = proto.Field(
@@ -314,10 +318,10 @@ class UpdateEnvironmentRequest(proto.Message):
             get updated.
         allow_load_to_draft_and_discard_changes (bool):
             Optional. This field is used to prevent accidental overwrite
-            of the draft environment, which is an operation that cannot
-            be undone. To confirm that the caller desires this
+            of the default environment, which is an operation that
+            cannot be undone. To confirm that the caller desires this
             overwrite, this field must be explicitly set to true when
-            updating the draft environment (environment ID = ``-``).
+            updating the default environment (environment ID = ``-``).
     """
 
     environment = proto.Field(
@@ -346,6 +350,8 @@ class DeleteEnvironmentRequest(proto.Message):
 
             -  ``projects/<Project ID>/agent/environments/<Environment ID>``
             -  ``projects/<Project ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+
+            The environment ID for the default environment is ``-``.
     """
 
     name = proto.Field(
@@ -365,6 +371,8 @@ class GetEnvironmentHistoryRequest(proto.Message):
 
             -  ``projects/<Project ID>/agent/environments/<Environment ID>``
             -  ``projects/<Project ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+
+            The environment ID for the default environment is ``-``.
         page_size (int):
             Optional. The maximum number of items to
             return in a single page. By default 100 and at
@@ -399,6 +407,8 @@ class EnvironmentHistory(proto.Message):
 
             -  ``projects/<Project ID>/agent/environments/<Environment ID>``
             -  ``projects/<Project ID>/locations/<Location ID>/agent/environments/<Environment ID>``
+
+            The environment ID for the default environment is ``-``.
         entries (Sequence[google.cloud.dialogflow_v2.types.EnvironmentHistory.Entry]):
             Output only. The list of agent environments. There will be a
             maximum number of items returned based on the page_size

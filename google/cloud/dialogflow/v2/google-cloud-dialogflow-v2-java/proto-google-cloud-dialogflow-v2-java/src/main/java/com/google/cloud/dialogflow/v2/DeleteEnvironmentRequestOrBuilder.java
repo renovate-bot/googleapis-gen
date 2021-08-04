@@ -13,7 +13,8 @@ public interface DeleteEnvironmentRequestOrBuilder extends
    * / Format:
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -26,7 +27,8 @@ public interface DeleteEnvironmentRequestOrBuilder extends
    * / Format:
    * - `projects/&lt;Project ID&gt;/agent/environments/&lt;Environment ID&gt;`
    * - `projects/&lt;Project ID&gt;/locations/&lt;Location
-   * ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   *   ID&gt;/agent/environments/&lt;Environment ID&gt;`
+   * The environment ID for the default environment is `-`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
