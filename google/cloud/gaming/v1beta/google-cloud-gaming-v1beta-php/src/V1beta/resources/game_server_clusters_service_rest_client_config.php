@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'game_server_cluster_id',
+                ],
             ],
             'DeleteGameServerCluster' => [
                 'method' => 'delete',
@@ -95,6 +98,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
         ],

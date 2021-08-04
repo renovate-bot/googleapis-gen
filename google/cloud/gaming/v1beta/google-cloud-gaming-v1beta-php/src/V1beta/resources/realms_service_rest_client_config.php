@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'realm_id',
+                ],
             ],
             'DeleteRealm' => [
                 'method' => 'delete',
@@ -72,6 +75,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
         ],

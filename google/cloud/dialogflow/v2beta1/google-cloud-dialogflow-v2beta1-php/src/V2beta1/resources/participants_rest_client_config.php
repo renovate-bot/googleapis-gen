@@ -164,6 +164,9 @@ return [
                         'method' => 'patch',
                         'uriTemplate' => '/v2beta1/{participant.name=projects/*/locations/*/conversations/*/participants/*}',
                         'body' => 'participant',
+                        'queryParams' => [
+                            'update_mask',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -173,6 +176,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
         ],

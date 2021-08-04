@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'deployment_id',
+                ],
             ],
             'DeleteDeployment' => [
                 'method' => 'delete',

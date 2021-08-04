@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'workload_identity_pool_id',
+                ],
             ],
             'CreateWorkloadIdentityPoolProvider' => [
                 'method' => 'post',
@@ -25,6 +28,9 @@ return [
                             'getParent',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'workload_identity_pool_provider_id',
                 ],
             ],
             'DeleteWorkloadIdentityPool' => [
@@ -129,6 +135,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'update_mask',
+                ],
             ],
             'UpdateWorkloadIdentityPoolProvider' => [
                 'method' => 'patch',
@@ -141,6 +150,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
         ],

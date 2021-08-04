@@ -14,6 +14,10 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'trigger_id',
+                    'validate_only',
+                ],
             ],
             'DeleteTrigger' => [
                 'method' => 'delete',
@@ -24,6 +28,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'validate_only',
                 ],
             ],
             'GetTrigger' => [
@@ -59,6 +66,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'validate_only',
                 ],
             ],
         ],

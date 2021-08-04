@@ -38,6 +38,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'endpoint_policy_id',
+                ],
             ],
             'DeleteEndpointPolicy' => [
                 'method' => 'delete',

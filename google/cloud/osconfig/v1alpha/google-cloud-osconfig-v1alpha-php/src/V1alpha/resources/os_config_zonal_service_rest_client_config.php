@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'os_policy_assignment_id',
+                ],
             ],
             'DeleteOSPolicyAssignment' => [
                 'method' => 'delete',

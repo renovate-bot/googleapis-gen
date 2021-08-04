@@ -141,6 +141,11 @@ return [
                     [
                         'method' => 'delete',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/clusters/{cluster_id}',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                            'cluster_id',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -165,6 +170,11 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
+                    'cluster_id',
+                ],
             ],
             'DeleteNodePool' => [
                 'method' => 'delete',
@@ -173,6 +183,12 @@ return [
                     [
                         'method' => 'delete',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/clusters/{cluster_id}/nodePools/{node_pool_id}',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                            'cluster_id',
+                            'node_pool_id',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -202,6 +218,12 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
+                    'cluster_id',
+                    'node_pool_id',
+                ],
             ],
             'GetCluster' => [
                 'method' => 'get',
@@ -210,6 +232,11 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/clusters/{cluster_id}',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                            'cluster_id',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -233,6 +260,11 @@ return [
                             'getZone',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
+                    'cluster_id',
                 ],
             ],
             'GetJSONWebKeys' => [
@@ -253,6 +285,12 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/clusters/{cluster_id}/nodePools/{node_pool_id}',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                            'cluster_id',
+                            'node_pool_id',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -282,6 +320,12 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
+                    'cluster_id',
+                    'node_pool_id',
+                ],
             ],
             'GetOperation' => [
                 'method' => 'get',
@@ -290,6 +334,11 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/operations/{operation_id}',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                            'operation_id',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -314,6 +363,11 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
+                    'operation_id',
+                ],
             ],
             'GetServerConfig' => [
                 'method' => 'get',
@@ -322,6 +376,10 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/serverconfig',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -341,6 +399,10 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
+                ],
             ],
             'ListClusters' => [
                 'method' => 'get',
@@ -349,6 +411,10 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/clusters',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -367,6 +433,10 @@ return [
                             'getZone',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
                 ],
             ],
             'ListLocations' => [
@@ -387,6 +457,11 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/clusters/{cluster_id}/nodePools',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                            'cluster_id',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -411,6 +486,11 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
+                    'cluster_id',
+                ],
             ],
             'ListOperations' => [
                 'method' => 'get',
@@ -419,6 +499,10 @@ return [
                     [
                         'method' => 'get',
                         'uriTemplate' => '/v1beta1/projects/{project_id}/zones/{zone}/operations',
+                        'queryParams' => [
+                            'project_id',
+                            'zone',
+                        ],
                     ],
                 ],
                 'placeholders' => [
@@ -437,6 +521,10 @@ return [
                             'getZone',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'project_id',
+                    'zone',
                 ],
             ],
             'ListUsableSubnetworks' => [

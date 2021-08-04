@@ -59,6 +59,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'max_results',
+                ],
             ],
             'SetIamPolicy' => [
                 'method' => 'post',
@@ -94,6 +97,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
             'UpdateConnectionCredential' => [

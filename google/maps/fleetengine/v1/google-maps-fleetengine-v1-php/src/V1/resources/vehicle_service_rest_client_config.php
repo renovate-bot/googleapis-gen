@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'vehicle_id',
+                ],
             ],
             'GetVehicle' => [
                 'method' => 'get',
@@ -35,6 +38,9 @@ return [
                             'getParent',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'vehicle_type_categories',
                 ],
             ],
             'SearchFuzzedVehicles' => [
@@ -71,6 +77,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
             'UpdateVehicleAttributes' => [

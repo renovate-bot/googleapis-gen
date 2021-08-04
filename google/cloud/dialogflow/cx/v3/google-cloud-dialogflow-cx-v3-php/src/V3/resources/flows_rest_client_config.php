@@ -107,6 +107,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'update_mask',
+                ],
             ],
             'ValidateFlow' => [
                 'method' => 'post',

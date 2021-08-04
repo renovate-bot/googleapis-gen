@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'config_id',
+                ],
             ],
             'DeleteGameServerConfig' => [
                 'method' => 'delete',

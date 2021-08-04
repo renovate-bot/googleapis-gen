@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'deployment_id',
+                ],
             ],
             'DeleteGameServerDeployment' => [
                 'method' => 'delete',
@@ -96,6 +99,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'update_mask',
+                ],
             ],
             'UpdateGameServerDeploymentRollout' => [
                 'method' => 'patch',
@@ -108,6 +114,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
         ],

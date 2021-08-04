@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'workflow_id',
+                ],
             ],
             'DeleteWorkflow' => [
                 'method' => 'delete',

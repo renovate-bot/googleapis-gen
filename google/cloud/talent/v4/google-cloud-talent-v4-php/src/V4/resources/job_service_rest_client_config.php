@@ -83,6 +83,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'filter',
+                ],
             ],
             'SearchJobs' => [
                 'method' => 'post',

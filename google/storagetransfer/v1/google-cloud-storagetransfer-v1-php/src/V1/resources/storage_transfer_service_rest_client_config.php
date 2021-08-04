@@ -65,10 +65,16 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'project_id',
+                ],
             ],
             'ListTransferJobs' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/transferJobs',
+                'queryParams' => [
+                    'filter',
+                ],
             ],
             'PauseTransferOperation' => [
                 'method' => 'post',

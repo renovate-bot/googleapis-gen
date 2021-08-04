@@ -26,6 +26,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'guest_policy_id',
+                ],
             ],
             'CreatePatchDeployment' => [
                 'method' => 'post',
@@ -37,6 +40,9 @@ return [
                             'getParent',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'patch_deployment_id',
                 ],
             ],
             'DeleteGuestPolicy' => [

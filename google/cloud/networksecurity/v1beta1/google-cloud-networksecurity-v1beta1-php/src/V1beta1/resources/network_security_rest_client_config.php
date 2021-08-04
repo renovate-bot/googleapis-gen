@@ -38,6 +38,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'authorization_policy_id',
+                ],
             ],
             'CreateClientTlsPolicy' => [
                 'method' => 'post',
@@ -50,6 +53,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'client_tls_policy_id',
+                ],
             ],
             'CreateServerTlsPolicy' => [
                 'method' => 'post',
@@ -61,6 +67,9 @@ return [
                             'getParent',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'server_tls_policy_id',
                 ],
             ],
             'DeleteAuthorizationPolicy' => [

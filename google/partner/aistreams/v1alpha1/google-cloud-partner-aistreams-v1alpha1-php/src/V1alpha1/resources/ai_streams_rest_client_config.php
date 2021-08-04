@@ -118,6 +118,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'cluster_id',
+                ],
             ],
             'CreateStream' => [
                 'method' => 'post',
@@ -129,6 +132,9 @@ return [
                             'getParent',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'stream_id',
                 ],
             ],
             'DeleteCluster' => [
@@ -209,6 +215,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'update_mask',
+                ],
             ],
             'UpdateStream' => [
                 'method' => 'patch',
@@ -221,6 +230,9 @@ return [
                             'getName',
                         ],
                     ],
+                ],
+                'queryParams' => [
+                    'update_mask',
                 ],
             ],
         ],

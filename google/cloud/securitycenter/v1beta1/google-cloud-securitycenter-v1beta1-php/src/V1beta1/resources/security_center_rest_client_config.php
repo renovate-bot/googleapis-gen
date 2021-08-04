@@ -14,6 +14,9 @@ return [
                         ],
                     ],
                 ],
+                'queryParams' => [
+                    'finding_id',
+                ],
             ],
             'CreateSource' => [
                 'method' => 'post',
