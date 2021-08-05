@@ -1,0 +1,38 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.monitoring.metricsscope.v1",
+    "libraryPackage": "Google\\Cloud\\Monitoring\\MetricsScope\\V1",
+    "services": {
+        "MetricsScopes": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "MetricsScopesGapicClient",
+                    "rpcs": {
+                        "CreateMonitoredProject": {
+                            "methods": [
+                                "createMonitoredProject"
+                            ]
+                        },
+                        "DeleteMonitoredProject": {
+                            "methods": [
+                                "deleteMonitoredProject"
+                            ]
+                        },
+                        "GetMetricsScope": {
+                            "methods": [
+                                "getMetricsScope"
+                            ]
+                        },
+                        "ListMetricsScopesByMonitoredProject": {
+                            "methods": [
+                                "listMetricsScopesByMonitoredProject"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
