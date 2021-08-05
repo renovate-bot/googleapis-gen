@@ -183,7 +183,10 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      *           The source repository where a function is hosted.
      *     @type string $source_upload_url
      *           The Google Cloud Storage signed URL used for source uploading, generated
-     *           by [google.cloud.functions.v1.GenerateUploadUrl][]
+     *           by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     *           The signature is validated on write methods {Create, Update}
+     *           The signature is stripped from the Function object on read methods {Get,
+     *           List}
      *     @type \Google\Cloud\Functions\V1\HttpsTrigger $https_trigger
      *           An HTTPS endpoint type of source that can be triggered via URL.
      *     @type \Google\Cloud\Functions\V1\EventTrigger $event_trigger
@@ -385,7 +388,10 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
 
     /**
      * The Google Cloud Storage signed URL used for source uploading, generated
-     * by [google.cloud.functions.v1.GenerateUploadUrl][]
+     * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     * The signature is validated on write methods {Create, Update}
+     * The signature is stripped from the Function object on read methods {Get,
+     * List}
      *
      * Generated from protobuf field <code>string source_upload_url = 16;</code>
      * @return string
@@ -402,7 +408,10 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
 
     /**
      * The Google Cloud Storage signed URL used for source uploading, generated
-     * by [google.cloud.functions.v1.GenerateUploadUrl][]
+     * by calling [google.cloud.functions.v1.GenerateUploadUrl].
+     * The signature is validated on write methods {Create, Update}
+     * The signature is stripped from the Function object on read methods {Get,
+     * List}
      *
      * Generated from protobuf field <code>string source_upload_url = 16;</code>
      * @param string $var
