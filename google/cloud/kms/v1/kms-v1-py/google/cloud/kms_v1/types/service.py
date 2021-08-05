@@ -43,17 +43,23 @@ __protobuf__ = proto.module(
         'CreateImportJobRequest',
         'UpdateCryptoKeyRequest',
         'UpdateCryptoKeyVersionRequest',
+        'UpdateCryptoKeyPrimaryVersionRequest',
+        'DestroyCryptoKeyVersionRequest',
+        'RestoreCryptoKeyVersionRequest',
         'EncryptRequest',
         'DecryptRequest',
         'AsymmetricSignRequest',
         'AsymmetricDecryptRequest',
-        'DecryptResponse',
+        'MacSignRequest',
+        'MacVerifyRequest',
+        'GenerateRandomBytesRequest',
         'EncryptResponse',
+        'DecryptResponse',
         'AsymmetricSignResponse',
         'AsymmetricDecryptResponse',
-        'UpdateCryptoKeyPrimaryVersionRequest',
-        'DestroyCryptoKeyVersionRequest',
-        'RestoreCryptoKeyVersionRequest',
+        'MacSignResponse',
+        'MacVerifyResponse',
+        'GenerateRandomBytesResponse',
         'Digest',
         'LocationMetadata',
     },
@@ -780,6 +786,64 @@ class UpdateCryptoKeyVersionRequest(proto.Message):
     )
 
 
+class UpdateCryptoKeyPrimaryVersionRequest(proto.Message):
+    r"""Request message for
+    [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+
+    Attributes:
+        name (str):
+            Required. The resource name of the
+            [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
+        crypto_key_version_id (str):
+            Required. The id of the child
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
+            use as primary.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    crypto_key_version_id = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class DestroyCryptoKeyVersionRequest(proto.Message):
+    r"""Request message for
+    [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
+
+    Attributes:
+        name (str):
+            Required. The resource name of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
+            destroy.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
+class RestoreCryptoKeyVersionRequest(proto.Message):
+    r"""Request message for
+    [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
+
+    Attributes:
+        name (str):
+            Required. The resource name of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
+            restore.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+
+
 class EncryptRequest(proto.Message):
     r"""Request message for
     [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
@@ -839,8 +903,6 @@ class EncryptRequest(proto.Message):
             However, it is a non-negative integer, which will never
             exceed 2^32-1, and can be safely downconverted to uint32 in
             languages that support this type.
-
-            NOTE: This field is in Beta.
         additional_authenticated_data_crc32c (google.protobuf.wrappers_pb2.Int64Value):
             Optional. An optional CRC32C checksum of the
             [EncryptRequest.additional_authenticated_data][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].
@@ -862,8 +924,6 @@ class EncryptRequest(proto.Message):
             However, it is a non-negative integer, which will never
             exceed 2^32-1, and can be safely downconverted to uint32 in
             languages that support this type.
-
-            NOTE: This field is in Beta.
     """
 
     name = proto.Field(
@@ -927,8 +987,6 @@ class DecryptRequest(proto.Message):
             However, it is a non-negative integer, which will never
             exceed 2^32-1, and can be safely downconverted to uint32 in
             languages that support this type.
-
-            NOTE: This field is in Beta.
         additional_authenticated_data_crc32c (google.protobuf.wrappers_pb2.Int64Value):
             Optional. An optional CRC32C checksum of the
             [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data].
@@ -950,8 +1008,6 @@ class DecryptRequest(proto.Message):
             However, it is a non-negative integer, which will never
             exceed 2^32-1, and can be safely downconverted to uint32 in
             languages that support this type.
-
-            NOTE: This field is in Beta.
     """
 
     name = proto.Field(
@@ -1013,8 +1069,6 @@ class AsymmetricSignRequest(proto.Message):
             However, it is a non-negative integer, which will never
             exceed 2^32-1, and can be safely downconverted to uint32 in
             languages that support this type.
-
-            NOTE: This field is in Beta.
     """
 
     name = proto.Field(
@@ -1067,8 +1121,6 @@ class AsymmetricDecryptRequest(proto.Message):
             However, it is a non-negative integer, which will never
             exceed 2^32-1, and can be safely downconverted to uint32 in
             languages that support this type.
-
-            NOTE: This field is in Beta.
     """
 
     name = proto.Field(
@@ -1083,6 +1135,267 @@ class AsymmetricDecryptRequest(proto.Message):
         proto.MESSAGE,
         number=4,
         message=wrappers_pb2.Int64Value,
+    )
+
+
+class MacSignRequest(proto.Message):
+    r"""Request message for
+    [KeyManagementService.MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
+
+    Attributes:
+        name (str):
+            Required. The resource name of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
+            use for signing.
+        data (bytes):
+            Required. The data to sign. The MAC tag is
+            computed over this data field based on the
+            specific algorithm.
+        data_crc32c (google.protobuf.wrappers_pb2.Int64Value):
+            Optional. An optional CRC32C checksum of the
+            [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data].
+            If specified,
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            will verify the integrity of the received
+            [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]
+            using this checksum.
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            will report an error if the checksum verification fails. If
+            you receive a checksum error, your client should verify that
+            CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data])
+            is equal to
+            [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c],
+            and if so, perform a limited number of retries. A persistent
+            mismatch may indicate an issue in your computation of the
+            CRC32C checksum. Note: This field is defined as int64 for
+            reasons of compatibility across different languages.
+            However, it is a non-negative integer, which will never
+            exceed 2^32-1, and can be safely downconverted to uint32 in
+            languages that support this type.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    data = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    data_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
+    )
+
+
+class MacVerifyRequest(proto.Message):
+    r"""Request message for
+    [KeyManagementService.MacVerify][google.cloud.kms.v1.KeyManagementService.MacVerify].
+
+    Attributes:
+        name (str):
+            Required. The resource name of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
+            use for verification.
+        data (bytes):
+            Required. The data used previously as a
+            [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]
+            to generate the MAC tag.
+        data_crc32c (google.protobuf.wrappers_pb2.Int64Value):
+            Optional. An optional CRC32C checksum of the
+            [MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data].
+            If specified,
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            will verify the integrity of the received
+            [MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data]
+            using this checksum.
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            will report an error if the checksum verification fails. If
+            you receive a checksum error, your client should verify that
+            CRC32C([MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data])
+            is equal to
+            [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c],
+            and if so, perform a limited number of retries. A persistent
+            mismatch may indicate an issue in your computation of the
+            CRC32C checksum. Note: This field is defined as int64 for
+            reasons of compatibility across different languages.
+            However, it is a non-negative integer, which will never
+            exceed 2^32-1, and can be safely downconverted to uint32 in
+            languages that support this type.
+        mac (bytes):
+            Required. The signature to verify.
+        mac_crc32c (google.protobuf.wrappers_pb2.Int64Value):
+            Optional. An optional CRC32C checksum of the
+            [MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac].
+            If specified,
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            will verify the integrity of the received
+            [MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]
+            using this checksum.
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            will report an error if the checksum verification fails. If
+            you receive a checksum error, your client should verify that
+            CRC32C([MacVerifyRequest.tag][]) is equal to
+            [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c],
+            and if so, perform a limited number of retries. A persistent
+            mismatch may indicate an issue in your computation of the
+            CRC32C checksum. Note: This field is defined as int64 for
+            reasons of compatibility across different languages.
+            However, it is a non-negative integer, which will never
+            exceed 2^32-1, and can be safely downconverted to uint32 in
+            languages that support this type.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    data = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    data_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
+    )
+    mac = proto.Field(
+        proto.BYTES,
+        number=4,
+    )
+    mac_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=wrappers_pb2.Int64Value,
+    )
+
+
+class GenerateRandomBytesRequest(proto.Message):
+    r"""Request message for
+    [KeyManagementService.GenerateRandomBytes][google.cloud.kms.v1.KeyManagementService.GenerateRandomBytes].
+
+    Attributes:
+        location (str):
+            The project-specific location in which to
+            generate random bytes. For example,
+            "projects/my-project/locations/us-central1".
+        length_bytes (int):
+            The length in bytes of the amount of
+            randomness to retrieve.  Minimum 8 bytes,
+            maximum 1024 bytes.
+        protection_level (google.cloud.kms_v1.types.ProtectionLevel):
+            The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+            to use when generating the random data. Defaults to
+            [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+    """
+
+    location = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    length_bytes = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    protection_level = proto.Field(
+        proto.ENUM,
+        number=3,
+        enum=resources.ProtectionLevel,
+    )
+
+
+class EncryptResponse(proto.Message):
+    r"""Response message for
+    [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+
+    Attributes:
+        name (str):
+            The resource name of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used in encryption. Check this field to verify that the
+            intended resource was used for encryption.
+        ciphertext (bytes):
+            The encrypted data.
+        ciphertext_crc32c (google.protobuf.wrappers_pb2.Int64Value):
+            Integrity verification field. A CRC32C checksum of the
+            returned
+            [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
+            An integrity check of
+            [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
+            can be performed by computing the CRC32C checksum of
+            [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
+            and comparing your results to this field. Discard the
+            response in case of non-matching checksum values, and
+            perform a limited number of retries. A persistent mismatch
+            may indicate an issue in your computation of the CRC32C
+            checksum. Note: This field is defined as int64 for reasons
+            of compatibility across different languages. However, it is
+            a non-negative integer, which will never exceed 2^32-1, and
+            can be safely downconverted to uint32 in languages that
+            support this type.
+        verified_plaintext_crc32c (bool):
+            Integrity verification field. A flag indicating whether
+            [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
+            was received by
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            and used for the integrity verification of the
+            [plaintext][google.cloud.kms.v1.EncryptRequest.plaintext]. A
+            false value of this field indicates either that
+            [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
+            was left unset or that it was not delivered to
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService].
+            If you've set
+            [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
+            but this field is still false, discard the response and
+            perform a limited number of retries.
+        verified_additional_authenticated_data_crc32c (bool):
+            Integrity verification field. A flag indicating whether
+            [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
+            was received by
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            and used for the integrity verification of the
+            [AAD][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].
+            A false value of this field indicates either that
+            [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
+            was left unset or that it was not delivered to
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService].
+            If you've set
+            [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
+            but this field is still false, discard the response and
+            perform a limited number of retries.
+        protection_level (google.cloud.kms_v1.types.ProtectionLevel):
+            The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+            of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used in encryption.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    ciphertext = proto.Field(
+        proto.BYTES,
+        number=2,
+    )
+    ciphertext_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.Int64Value,
+    )
+    verified_plaintext_crc32c = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    verified_additional_authenticated_data_crc32c = proto.Field(
+        proto.BOOL,
+        number=6,
+    )
+    protection_level = proto.Field(
+        proto.ENUM,
+        number=7,
+        enum=resources.ProtectionLevel,
     )
 
 
@@ -1116,8 +1429,14 @@ class DecryptResponse(proto.Message):
             non-negative integer, which will never exceed 2^32-1, and
             can be safely downconverted to uint32 in languages that
             support this type.
-
-            NOTE: This field is in Beta.
+        used_primary (bool):
+            Whether the Decryption was performed using
+            the primary key version.
+        protection_level (google.cloud.kms_v1.types.ProtectionLevel):
+            The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+            of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used in decryption.
     """
 
     plaintext = proto.Field(
@@ -1129,95 +1448,14 @@ class DecryptResponse(proto.Message):
         number=2,
         message=wrappers_pb2.Int64Value,
     )
-
-
-class EncryptResponse(proto.Message):
-    r"""Response message for
-    [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
-
-    Attributes:
-        name (str):
-            The resource name of the
-            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
-            used in encryption. Check this field to verify that the
-            intended resource was used for encryption.
-        ciphertext (bytes):
-            The encrypted data.
-        ciphertext_crc32c (google.protobuf.wrappers_pb2.Int64Value):
-            Integrity verification field. A CRC32C checksum of the
-            returned
-            [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext].
-            An integrity check of
-            [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
-            can be performed by computing the CRC32C checksum of
-            [EncryptResponse.ciphertext][google.cloud.kms.v1.EncryptResponse.ciphertext]
-            and comparing your results to this field. Discard the
-            response in case of non-matching checksum values, and
-            perform a limited number of retries. A persistent mismatch
-            may indicate an issue in your computation of the CRC32C
-            checksum. Note: This field is defined as int64 for reasons
-            of compatibility across different languages. However, it is
-            a non-negative integer, which will never exceed 2^32-1, and
-            can be safely downconverted to uint32 in languages that
-            support this type.
-
-            NOTE: This field is in Beta.
-        verified_plaintext_crc32c (bool):
-            Integrity verification field. A flag indicating whether
-            [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
-            was received by
-            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
-            and used for the integrity verification of the
-            [plaintext][google.cloud.kms.v1.EncryptRequest.plaintext]. A
-            false value of this field indicates either that
-            [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
-            was left unset or that it was not delivered to
-            [KeyManagementService][google.cloud.kms.v1.KeyManagementService].
-            If you've set
-            [EncryptRequest.plaintext_crc32c][google.cloud.kms.v1.EncryptRequest.plaintext_crc32c]
-            but this field is still false, discard the response and
-            perform a limited number of retries.
-
-            NOTE: This field is in Beta.
-        verified_additional_authenticated_data_crc32c (bool):
-            Integrity verification field. A flag indicating whether
-            [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
-            was received by
-            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
-            and used for the integrity verification of the
-            [AAD][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data].
-            A false value of this field indicates either that
-            [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
-            was left unset or that it was not delivered to
-            [KeyManagementService][google.cloud.kms.v1.KeyManagementService].
-            If you've set
-            [EncryptRequest.additional_authenticated_data_crc32c][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data_crc32c]
-            but this field is still false, discard the response and
-            perform a limited number of retries.
-
-            NOTE: This field is in Beta.
-    """
-
-    name = proto.Field(
-        proto.STRING,
-        number=1,
+    used_primary = proto.Field(
+        proto.BOOL,
+        number=3,
     )
-    ciphertext = proto.Field(
-        proto.BYTES,
-        number=2,
-    )
-    ciphertext_crc32c = proto.Field(
-        proto.MESSAGE,
+    protection_level = proto.Field(
+        proto.ENUM,
         number=4,
-        message=wrappers_pb2.Int64Value,
-    )
-    verified_plaintext_crc32c = proto.Field(
-        proto.BOOL,
-        number=5,
-    )
-    verified_additional_authenticated_data_crc32c = proto.Field(
-        proto.BOOL,
-        number=6,
+        enum=resources.ProtectionLevel,
     )
 
 
@@ -1245,8 +1483,6 @@ class AsymmetricSignResponse(proto.Message):
             a non-negative integer, which will never exceed 2^32-1, and
             can be safely downconverted to uint32 in languages that
             support this type.
-
-            NOTE: This field is in Beta.
         verified_digest_crc32c (bool):
             Integrity verification field. A flag indicating whether
             [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c]
@@ -1262,15 +1498,16 @@ class AsymmetricSignResponse(proto.Message):
             [AsymmetricSignRequest.digest_crc32c][google.cloud.kms.v1.AsymmetricSignRequest.digest_crc32c]
             but this field is still false, discard the response and
             perform a limited number of retries.
-
-            NOTE: This field is in Beta.
         name (str):
             The resource name of the
             [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
             used for signing. Check this field to verify that the
             intended resource was used for signing.
-
-            NOTE: This field is in Beta.
+        protection_level (google.cloud.kms_v1.types.ProtectionLevel):
+            The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+            of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used for signing.
     """
 
     signature = proto.Field(
@@ -1289,6 +1526,11 @@ class AsymmetricSignResponse(proto.Message):
     name = proto.Field(
         proto.STRING,
         number=4,
+    )
+    protection_level = proto.Field(
+        proto.ENUM,
+        number=6,
+        enum=resources.ProtectionLevel,
     )
 
 
@@ -1317,8 +1559,6 @@ class AsymmetricDecryptResponse(proto.Message):
             a non-negative integer, which will never exceed 2^32-1, and
             can be safely downconverted to uint32 in languages that
             support this type.
-
-            NOTE: This field is in Beta.
         verified_ciphertext_crc32c (bool):
             Integrity verification field. A flag indicating whether
             [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c]
@@ -1334,8 +1574,11 @@ class AsymmetricDecryptResponse(proto.Message):
             [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c]
             but this field is still false, discard the response and
             perform a limited number of retries.
-
-            NOTE: This field is in Beta.
+        protection_level (google.cloud.kms_v1.types.ProtectionLevel):
+            The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+            of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used in decryption.
     """
 
     plaintext = proto.Field(
@@ -1351,63 +1594,209 @@ class AsymmetricDecryptResponse(proto.Message):
         proto.BOOL,
         number=3,
     )
+    protection_level = proto.Field(
+        proto.ENUM,
+        number=4,
+        enum=resources.ProtectionLevel,
+    )
 
 
-class UpdateCryptoKeyPrimaryVersionRequest(proto.Message):
-    r"""Request message for
-    [KeyManagementService.UpdateCryptoKeyPrimaryVersion][google.cloud.kms.v1.KeyManagementService.UpdateCryptoKeyPrimaryVersion].
+class MacSignResponse(proto.Message):
+    r"""Response message for
+    [KeyManagementService.MacSign][google.cloud.kms.v1.KeyManagementService.MacSign].
 
     Attributes:
         name (str):
-            Required. The resource name of the
-            [CryptoKey][google.cloud.kms.v1.CryptoKey] to update.
-        crypto_key_version_id (str):
-            Required. The id of the child
-            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
-            use as primary.
+            The resource name of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used for signing. Check this field to verify that the
+            intended resource was used for signing.
+        mac (bytes):
+            The created signature.
+        mac_crc32c (google.protobuf.wrappers_pb2.Int64Value):
+            Integrity verification field. A CRC32C checksum of the
+            returned
+            [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac].
+            An integrity check of
+            [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]
+            can be performed by computing the CRC32C checksum of
+            [MacSignResponse.mac][google.cloud.kms.v1.MacSignResponse.mac]
+            and comparing your results to this field. Discard the
+            response in case of non-matching checksum values, and
+            perform a limited number of retries. A persistent mismatch
+            may indicate an issue in your computation of the CRC32C
+            checksum. Note: This field is defined as int64 for reasons
+            of compatibility across different languages. However, it is
+            a non-negative integer, which will never exceed 2^32-1, and
+            can be safely downconverted to uint32 in languages that
+            support this type.
+        verified_data_crc32c (bool):
+            Integrity verification field. A flag indicating whether
+            [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c]
+            was received by
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            and used for the integrity verification of the
+            [data][google.cloud.kms.v1.MacSignRequest.data]. A false
+            value of this field indicates either that
+            [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c]
+            was left unset or that it was not delivered to
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService].
+            If you've set
+            [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c]
+            but this field is still false, discard the response and
+            perform a limited number of retries.
+        protection_level (google.cloud.kms_v1.types.ProtectionLevel):
+            The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+            of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used for signing.
     """
 
     name = proto.Field(
         proto.STRING,
         number=1,
     )
-    crypto_key_version_id = proto.Field(
-        proto.STRING,
+    mac = proto.Field(
+        proto.BYTES,
         number=2,
     )
+    mac_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
+    )
+    verified_data_crc32c = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+    protection_level = proto.Field(
+        proto.ENUM,
+        number=5,
+        enum=resources.ProtectionLevel,
+    )
 
 
-class DestroyCryptoKeyVersionRequest(proto.Message):
-    r"""Request message for
-    [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
+class MacVerifyResponse(proto.Message):
+    r"""Response message for
+    [KeyManagementService.MacVerify][google.cloud.kms.v1.KeyManagementService.MacVerify].
 
     Attributes:
         name (str):
-            Required. The resource name of the
-            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
-            destroy.
+            The resource name of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used for verification. Check this field to verify that the
+            intended resource was used for verification.
+        success (bool):
+            This field indicates whether or not the verification
+            operation for
+            [MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]
+            over
+            [MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data]
+            was successful.
+        verified_data_crc32c (bool):
+            Integrity verification field. A flag indicating whether
+            [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c]
+            was received by
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            and used for the integrity verification of the
+            [data][google.cloud.kms.v1.MacVerifyRequest.data]. A false
+            value of this field indicates either that
+            [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c]
+            was left unset or that it was not delivered to
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService].
+            If you've set
+            [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c]
+            but this field is still false, discard the response and
+            perform a limited number of retries.
+        verified_mac_crc32c (bool):
+            Integrity verification field. A flag indicating whether
+            [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c]
+            was received by
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService]
+            and used for the integrity verification of the
+            [data][google.cloud.kms.v1.MacVerifyRequest.mac]. A false
+            value of this field indicates either that
+            [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c]
+            was left unset or that it was not delivered to
+            [KeyManagementService][google.cloud.kms.v1.KeyManagementService].
+            If you've set
+            [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c]
+            but this field is still false, discard the response and
+            perform a limited number of retries.
+        verified_success_integrity (bool):
+            Integrity verification field. This value is used for the
+            integrity verification of [MacVerifyResponse.success]. If
+            the value of this field contradicts the value of
+            [MacVerifyResponse.success], discard the response and
+            perform a limited number of retries.
+        protection_level (google.cloud.kms_v1.types.ProtectionLevel):
+            The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+            of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            used for verification.
     """
 
     name = proto.Field(
         proto.STRING,
         number=1,
     )
+    success = proto.Field(
+        proto.BOOL,
+        number=2,
+    )
+    verified_data_crc32c = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    verified_mac_crc32c = proto.Field(
+        proto.BOOL,
+        number=4,
+    )
+    verified_success_integrity = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    protection_level = proto.Field(
+        proto.ENUM,
+        number=6,
+        enum=resources.ProtectionLevel,
+    )
 
 
-class RestoreCryptoKeyVersionRequest(proto.Message):
-    r"""Request message for
-    [KeyManagementService.RestoreCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.RestoreCryptoKeyVersion].
+class GenerateRandomBytesResponse(proto.Message):
+    r"""Response message for
+    [KeyManagementService.GenerateRandomBytes][google.cloud.kms.v1.KeyManagementService.GenerateRandomBytes].
 
     Attributes:
-        name (str):
-            Required. The resource name of the
-            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to
-            restore.
+        data (bytes):
+            The generated data.
+        data_crc32c (google.protobuf.wrappers_pb2.Int64Value):
+            Integrity verification field. A CRC32C checksum of the
+            returned
+            [GenerateRandomBytesResponse.data][google.cloud.kms.v1.GenerateRandomBytesResponse.data].
+            An integrity check of
+            [GenerateRandomBytesResponse.data][google.cloud.kms.v1.GenerateRandomBytesResponse.data]
+            can be performed by computing the CRC32C checksum of
+            [GenerateRandomBytesResponse.data][google.cloud.kms.v1.GenerateRandomBytesResponse.data]
+            and comparing your results to this field. Discard the
+            response in case of non-matching checksum values, and
+            perform a limited number of retries. A persistent mismatch
+            may indicate an issue in your computation of the CRC32C
+            checksum. Note: This field is defined as int64 for reasons
+            of compatibility across different languages. However, it is
+            a non-negative integer, which will never exceed 2^32-1, and
+            can be safely downconverted to uint32 in languages that
+            support this type.
     """
 
-    name = proto.Field(
-        proto.STRING,
+    data = proto.Field(
+        proto.BYTES,
         number=1,
+    )
+    data_crc32c = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int64Value,
     )
 
 

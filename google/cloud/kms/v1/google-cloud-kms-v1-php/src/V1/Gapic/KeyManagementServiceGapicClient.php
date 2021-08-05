@@ -58,6 +58,8 @@ use Google\Cloud\Kms\V1\DestroyCryptoKeyVersionRequest;
 use Google\Cloud\Kms\V1\Digest;
 use Google\Cloud\Kms\V1\EncryptRequest;
 use Google\Cloud\Kms\V1\EncryptResponse;
+use Google\Cloud\Kms\V1\GenerateRandomBytesRequest;
+use Google\Cloud\Kms\V1\GenerateRandomBytesResponse;
 use Google\Cloud\Kms\V1\GetCryptoKeyRequest;
 use Google\Cloud\Kms\V1\GetCryptoKeyVersionRequest;
 use Google\Cloud\Kms\V1\GetImportJobRequest;
@@ -73,8 +75,13 @@ use Google\Cloud\Kms\V1\ListCryptoKeyVersionsResponse;
 use Google\Cloud\Kms\V1\ListImportJobsRequest;
 use Google\Cloud\Kms\V1\ListImportJobsResponse;
 use Google\Cloud\Kms\V1\ListKeyRingsRequest;
-
 use Google\Cloud\Kms\V1\ListKeyRingsResponse;
+use Google\Cloud\Kms\V1\MacSignRequest;
+use Google\Cloud\Kms\V1\MacSignResponse;
+
+use Google\Cloud\Kms\V1\MacVerifyRequest;
+use Google\Cloud\Kms\V1\MacVerifyResponse;
+use Google\Cloud\Kms\V1\ProtectionLevel;
 use Google\Cloud\Kms\V1\PublicKey;
 use Google\Cloud\Kms\V1\RestoreCryptoKeyVersionRequest;
 use Google\Cloud\Kms\V1\UpdateCryptoKeyPrimaryVersionRequest;
@@ -483,8 +490,6 @@ class KeyManagementServiceGapicClient
      *           different languages. However, it is a non-negative integer, which will
      *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      *           that support this type.
-     *
-     *           NOTE: This field is in Beta.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -550,8 +555,6 @@ class KeyManagementServiceGapicClient
      *           different languages. However, it is a non-negative integer, which will
      *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      *           that support this type.
-     *
-     *           NOTE: This field is in Beta.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -827,8 +830,6 @@ class KeyManagementServiceGapicClient
      *           different languages. However, it is a non-negative integer, which will
      *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      *           that support this type.
-     *
-     *           NOTE: This field is in Beta.
      *     @type Int64Value $additionalAuthenticatedDataCrc32c
      *           Optional. An optional CRC32C checksum of the
      *           [DecryptRequest.additional_authenticated_data][google.cloud.kms.v1.DecryptRequest.additional_authenticated_data]. If specified,
@@ -844,8 +845,6 @@ class KeyManagementServiceGapicClient
      *           different languages. However, it is a non-negative integer, which will
      *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      *           that support this type.
-     *
-     *           NOTE: This field is in Beta.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -989,8 +988,6 @@ class KeyManagementServiceGapicClient
      *           different languages. However, it is a non-negative integer, which will
      *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      *           that support this type.
-     *
-     *           NOTE: This field is in Beta.
      *     @type Int64Value $additionalAuthenticatedDataCrc32c
      *           Optional. An optional CRC32C checksum of the
      *           [EncryptRequest.additional_authenticated_data][google.cloud.kms.v1.EncryptRequest.additional_authenticated_data]. If specified,
@@ -1006,8 +1003,6 @@ class KeyManagementServiceGapicClient
      *           different languages. However, it is a non-negative integer, which will
      *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      *           that support this type.
-     *
-     *           NOTE: This field is in Beta.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -1041,6 +1036,66 @@ class KeyManagementServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('Encrypt', EncryptResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Generate random bytes using the Cloud KMS randomness source in the provided
+     * location.
+     *
+     * Sample code:
+     * ```
+     * $keyManagementServiceClient = new KeyManagementServiceClient();
+     * try {
+     *     $response = $keyManagementServiceClient->generateRandomBytes();
+     * } finally {
+     *     $keyManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type string $location
+     *           The project-specific location in which to generate random bytes.
+     *           For example, "projects/my-project/locations/us-central1".
+     *     @type int $lengthBytes
+     *           The length in bytes of the amount of randomness to retrieve.  Minimum 8
+     *           bytes, maximum 1024 bytes.
+     *     @type int $protectionLevel
+     *           The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when generating the random data. Defaults to
+     *           [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Kms\V1\ProtectionLevel}
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Kms\V1\GenerateRandomBytesResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function generateRandomBytes(array $optionalArgs = [])
+    {
+        $request = new GenerateRandomBytesRequest();
+        $requestParamHeaders = [];
+        if (isset($optionalArgs['location'])) {
+            $request->setLocation($optionalArgs['location']);
+            $requestParamHeaders['location'] = $optionalArgs['location'];
+        }
+
+        if (isset($optionalArgs['lengthBytes'])) {
+            $request->setLengthBytes($optionalArgs['lengthBytes']);
+        }
+
+        if (isset($optionalArgs['protectionLevel'])) {
+            $request->setProtectionLevel($optionalArgs['protectionLevel']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GenerateRandomBytes', GenerateRandomBytesResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1696,6 +1751,155 @@ class KeyManagementServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListKeyRings', $optionalArgs, ListKeyRingsResponse::class, $request);
+    }
+
+    /**
+     * Signs data using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, producing a tag that can be verified by another source with the
+     * same key.
+     *
+     * Sample code:
+     * ```
+     * $keyManagementServiceClient = new KeyManagementServiceClient();
+     * try {
+     *     $formattedName = $keyManagementServiceClient->cryptoKeyVersionName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]', '[CRYPTO_KEY_VERSION]');
+     *     $data = '';
+     *     $response = $keyManagementServiceClient->macSign($formattedName, $data);
+     * } finally {
+     *     $keyManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+     * @param string $data         Required. The data to sign. The MAC tag is computed over this data field based on
+     *                             the specific algorithm.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type Int64Value $dataCrc32c
+     *           Optional. An optional CRC32C checksum of the [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]. If
+     *           specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     *           received [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] using this checksum.
+     *           [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     *           fails. If you receive a checksum error, your client should verify that
+     *           CRC32C([MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data]) is equal to
+     *           [MacSignRequest.data_crc32c][google.cloud.kms.v1.MacSignRequest.data_crc32c], and if so, perform a limited
+     *           number of retries. A persistent mismatch may indicate an issue in your
+     *           computation of the CRC32C checksum.
+     *           Note: This field is defined as int64 for reasons of compatibility across
+     *           different languages. However, it is a non-negative integer, which will
+     *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     *           that support this type.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Kms\V1\MacSignResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function macSign($name, $data, array $optionalArgs = [])
+    {
+        $request = new MacSignRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $request->setData($data);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['dataCrc32c'])) {
+            $request->setDataCrc32c($optionalArgs['dataCrc32c']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('MacSign', MacSignResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Verifies MAC tag using a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * MAC, and returns a response that indicates whether or not the verification
+     * was successful.
+     *
+     * Sample code:
+     * ```
+     * $keyManagementServiceClient = new KeyManagementServiceClient();
+     * try {
+     *     $formattedName = $keyManagementServiceClient->cryptoKeyVersionName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]', '[CRYPTO_KEY_VERSION]');
+     *     $data = '';
+     *     $mac = '';
+     *     $response = $keyManagementServiceClient->macVerify($formattedName, $data, $mac);
+     * } finally {
+     *     $keyManagementServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for verification.
+     * @param string $data         Required. The data used previously as a [MacSignRequest.data][google.cloud.kms.v1.MacSignRequest.data] to generate the MAC
+     *                             tag.
+     * @param string $mac          Required. The signature to verify.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type Int64Value $dataCrc32c
+     *           Optional. An optional CRC32C checksum of the [MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data]. If
+     *           specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     *           received [MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data] using this checksum.
+     *           [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     *           fails. If you receive a checksum error, your client should verify that
+     *           CRC32C([MacVerifyRequest.data][google.cloud.kms.v1.MacVerifyRequest.data]) is equal to
+     *           [MacVerifyRequest.data_crc32c][google.cloud.kms.v1.MacVerifyRequest.data_crc32c], and if so, perform a limited
+     *           number of retries. A persistent mismatch may indicate an issue in your
+     *           computation of the CRC32C checksum.
+     *           Note: This field is defined as int64 for reasons of compatibility across
+     *           different languages. However, it is a non-negative integer, which will
+     *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     *           that support this type.
+     *     @type Int64Value $macCrc32c
+     *           Optional. An optional CRC32C checksum of the [MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac]. If
+     *           specified, [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will verify the integrity of the
+     *           received [MacVerifyRequest.mac][google.cloud.kms.v1.MacVerifyRequest.mac] using this checksum.
+     *           [KeyManagementService][google.cloud.kms.v1.KeyManagementService] will report an error if the checksum verification
+     *           fails. If you receive a checksum error, your client should verify that
+     *           CRC32C([MacVerifyRequest.tag][]) is equal to
+     *           [MacVerifyRequest.mac_crc32c][google.cloud.kms.v1.MacVerifyRequest.mac_crc32c], and if so, perform a limited
+     *           number of retries. A persistent mismatch may indicate an issue in your
+     *           computation of the CRC32C checksum.
+     *           Note: This field is defined as int64 for reasons of compatibility across
+     *           different languages. However, it is a non-negative integer, which will
+     *           never exceed 2^32-1, and can be safely downconverted to uint32 in languages
+     *           that support this type.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Kms\V1\MacVerifyResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function macVerify($name, $data, $mac, array $optionalArgs = [])
+    {
+        $request = new MacVerifyRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $request->setData($data);
+        $request->setMac($mac);
+        $requestParamHeaders['name'] = $name;
+        if (isset($optionalArgs['dataCrc32c'])) {
+            $request->setDataCrc32c($optionalArgs['dataCrc32c']);
+        }
+
+        if (isset($optionalArgs['macCrc32c'])) {
+            $request->setMacCrc32c($optionalArgs['macCrc32c']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('MacVerify', MacVerifyResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**

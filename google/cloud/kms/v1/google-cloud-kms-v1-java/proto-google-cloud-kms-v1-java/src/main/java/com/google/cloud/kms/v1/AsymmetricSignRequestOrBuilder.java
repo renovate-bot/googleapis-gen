@@ -75,7 +75,6 @@ public interface AsymmetricSignRequestOrBuilder extends
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97,7 +96,6 @@ public interface AsymmetricSignRequestOrBuilder extends
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -119,7 +117,6 @@ public interface AsymmetricSignRequestOrBuilder extends
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value digest_crc32c = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

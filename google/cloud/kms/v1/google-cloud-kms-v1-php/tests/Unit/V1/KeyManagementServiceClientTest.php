@@ -37,6 +37,7 @@ use Google\Cloud\Kms\V1\CryptoKeyVersion\CryptoKeyVersionAlgorithm;
 use Google\Cloud\Kms\V1\DecryptResponse;
 use Google\Cloud\Kms\V1\Digest;
 use Google\Cloud\Kms\V1\EncryptResponse;
+use Google\Cloud\Kms\V1\GenerateRandomBytesResponse;
 use Google\Cloud\Kms\V1\ImportJob;
 use Google\Cloud\Kms\V1\ImportJob\ImportMethod;
 use Google\Cloud\Kms\V1\KeyManagementServiceClient;
@@ -45,6 +46,8 @@ use Google\Cloud\Kms\V1\ListCryptoKeysResponse;
 use Google\Cloud\Kms\V1\ListCryptoKeyVersionsResponse;
 use Google\Cloud\Kms\V1\ListImportJobsResponse;
 use Google\Cloud\Kms\V1\ListKeyRingsResponse;
+use Google\Cloud\Kms\V1\MacSignResponse;
+use Google\Cloud\Kms\V1\MacVerifyResponse;
 use Google\Cloud\Kms\V1\ProtectionLevel;
 use Google\Cloud\Kms\V1\PublicKey;
 use Google\Protobuf\FieldMask;
@@ -239,8 +242,10 @@ class KeyManagementServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $name = 'name3373707';
+        $importOnly = true;
         $expectedResponse = new CryptoKey();
         $expectedResponse->setName($name);
+        $expectedResponse->setImportOnly($importOnly);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedParent = $client->keyRingName('[PROJECT]', '[LOCATION]', '[KEY_RING]');
@@ -535,8 +540,10 @@ class KeyManagementServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $plaintext = '-9';
+        $usedPrimary = true;
         $expectedResponse = new DecryptResponse();
         $expectedResponse->setPlaintext($plaintext);
+        $expectedResponse->setUsedPrimary($usedPrimary);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->cryptoKeyName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]');
@@ -736,6 +743,64 @@ class KeyManagementServiceClientTest extends GeneratedTest
     /**
      * @test
      */
+    public function generateRandomBytesTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $data = '-86';
+        $expectedResponse = new GenerateRandomBytesResponse();
+        $expectedResponse->setData($data);
+        $transport->addResponse($expectedResponse);
+        $response = $client->generateRandomBytes();
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.kms.v1.KeyManagementService/GenerateRandomBytes', $actualFuncCall);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function generateRandomBytesExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        try {
+            $client->generateRandomBytes();
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
     public function getCryptoKeyTest()
     {
         $transport = $this->createTransport();
@@ -745,8 +810,10 @@ class KeyManagementServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $name2 = 'name2-1052831874';
+        $importOnly = true;
         $expectedResponse = new CryptoKey();
         $expectedResponse->setName($name2);
+        $expectedResponse->setImportOnly($importOnly);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->cryptoKeyName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]');
@@ -1434,6 +1501,158 @@ class KeyManagementServiceClientTest extends GeneratedTest
     /**
      * @test
      */
+    public function macSignTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $name2 = 'name2-1052831874';
+        $mac = '79';
+        $verifiedDataCrc32c = true;
+        $expectedResponse = new MacSignResponse();
+        $expectedResponse->setName($name2);
+        $expectedResponse->setMac($mac);
+        $expectedResponse->setVerifiedDataCrc32c($verifiedDataCrc32c);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedName = $client->cryptoKeyVersionName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]', '[CRYPTO_KEY_VERSION]');
+        $data = '-86';
+        $response = $client->macSign($formattedName, $data);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.kms.v1.KeyManagementService/MacSign', $actualFuncCall);
+        $actualValue = $actualRequestObject->getName();
+        $this->assertProtobufEquals($formattedName, $actualValue);
+        $actualValue = $actualRequestObject->getData();
+        $this->assertProtobufEquals($data, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function macSignExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedName = $client->cryptoKeyVersionName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]', '[CRYPTO_KEY_VERSION]');
+        $data = '-86';
+        try {
+            $client->macSign($formattedName, $data);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function macVerifyTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        // Mock response
+        $name2 = 'name2-1052831874';
+        $success = false;
+        $verifiedDataCrc32c = true;
+        $verifiedMacCrc32c = false;
+        $verifiedSuccessIntegrity = true;
+        $expectedResponse = new MacVerifyResponse();
+        $expectedResponse->setName($name2);
+        $expectedResponse->setSuccess($success);
+        $expectedResponse->setVerifiedDataCrc32c($verifiedDataCrc32c);
+        $expectedResponse->setVerifiedMacCrc32c($verifiedMacCrc32c);
+        $expectedResponse->setVerifiedSuccessIntegrity($verifiedSuccessIntegrity);
+        $transport->addResponse($expectedResponse);
+        // Mock request
+        $formattedName = $client->cryptoKeyVersionName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]', '[CRYPTO_KEY_VERSION]');
+        $data = '-86';
+        $mac = '79';
+        $response = $client->macVerify($formattedName, $data, $mac);
+        $this->assertEquals($expectedResponse, $response);
+        $actualRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($actualRequests));
+        $actualFuncCall = $actualRequests[0]->getFuncCall();
+        $actualRequestObject = $actualRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.kms.v1.KeyManagementService/MacVerify', $actualFuncCall);
+        $actualValue = $actualRequestObject->getName();
+        $this->assertProtobufEquals($formattedName, $actualValue);
+        $actualValue = $actualRequestObject->getData();
+        $this->assertProtobufEquals($data, $actualValue);
+        $actualValue = $actualRequestObject->getMac();
+        $this->assertProtobufEquals($mac, $actualValue);
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function macVerifyExceptionTest()
+    {
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage  = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $transport->addResponse(null, $status);
+        // Mock request
+        $formattedName = $client->cryptoKeyVersionName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]', '[CRYPTO_KEY_VERSION]');
+        $data = '-86';
+        $mac = '79';
+        try {
+            $client->macVerify($formattedName, $data, $mac);
+            // If the $client method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stub is exhausted
+        $transport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
     public function restoreCryptoKeyVersionTest()
     {
         $transport = $this->createTransport();
@@ -1511,8 +1730,10 @@ class KeyManagementServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $name = 'name3373707';
+        $importOnly = true;
         $expectedResponse = new CryptoKey();
         $expectedResponse->setName($name);
+        $expectedResponse->setImportOnly($importOnly);
         $transport->addResponse($expectedResponse);
         // Mock request
         $cryptoKey = new CryptoKey();
@@ -1579,8 +1800,10 @@ class KeyManagementServiceClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $name2 = 'name2-1052831874';
+        $importOnly = true;
         $expectedResponse = new CryptoKey();
         $expectedResponse->setName($name2);
+        $expectedResponse->setImportOnly($importOnly);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->cryptoKeyName('[PROJECT]', '[LOCATION]', '[KEY_RING]', '[CRYPTO_KEY]');

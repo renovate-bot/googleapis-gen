@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private AsymmetricDecryptResponse() {
     plaintext_ = com.google.protobuf.ByteString.EMPTY;
+    protectionLevel_ = 0;
   }
 
   @java.lang.Override
@@ -74,6 +75,12 @@ private static final long serialVersionUID = 0L;
           case 24: {
 
             verifiedCiphertextCrc32C_ = input.readBool();
+            break;
+          }
+          case 32: {
+            int rawValue = input.readEnum();
+
+            protectionLevel_ = rawValue;
             break;
           }
           default: {
@@ -138,7 +145,6 @@ private static final long serialVersionUID = 0L;
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -161,7 +167,6 @@ private static final long serialVersionUID = 0L;
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -184,7 +189,6 @@ private static final long serialVersionUID = 0L;
    * different languages. However, it is a non-negative integer, which will
    * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
    * that support this type.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -206,7 +210,6 @@ private static final long serialVersionUID = 0L;
    * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
    * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
    * still false, discard the response and perform a limited number of retries.
-   * NOTE: This field is in Beta.
    * </pre>
    *
    * <code>bool verified_ciphertext_crc32c = 3;</code>
@@ -215,6 +218,33 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean getVerifiedCiphertextCrc32C() {
     return verifiedCiphertextCrc32C_;
+  }
+
+  public static final int PROTECTION_LEVEL_FIELD_NUMBER = 4;
+  private int protectionLevel_;
+  /**
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+   * @return The enum numeric value on the wire for protectionLevel.
+   */
+  @java.lang.Override public int getProtectionLevelValue() {
+    return protectionLevel_;
+  }
+  /**
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+   * @return The protectionLevel.
+   */
+  @java.lang.Override public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.kms.v1.ProtectionLevel result = com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+    return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -240,6 +270,9 @@ private static final long serialVersionUID = 0L;
     if (verifiedCiphertextCrc32C_ != false) {
       output.writeBool(3, verifiedCiphertextCrc32C_);
     }
+    if (protectionLevel_ != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(4, protectionLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -260,6 +293,10 @@ private static final long serialVersionUID = 0L;
     if (verifiedCiphertextCrc32C_ != false) {
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, verifiedCiphertextCrc32C_);
+    }
+    if (protectionLevel_ != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(4, protectionLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -285,6 +322,7 @@ private static final long serialVersionUID = 0L;
     }
     if (getVerifiedCiphertextCrc32C()
         != other.getVerifiedCiphertextCrc32C()) return false;
+    if (protectionLevel_ != other.protectionLevel_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -305,6 +343,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + VERIFIED_CIPHERTEXT_CRC32C_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getVerifiedCiphertextCrc32C());
+    hash = (37 * hash) + PROTECTION_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + protectionLevel_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -452,6 +492,8 @@ private static final long serialVersionUID = 0L;
       }
       verifiedCiphertextCrc32C_ = false;
 
+      protectionLevel_ = 0;
+
       return this;
     }
 
@@ -485,6 +527,7 @@ private static final long serialVersionUID = 0L;
         result.plaintextCrc32C_ = plaintextCrc32CBuilder_.build();
       }
       result.verifiedCiphertextCrc32C_ = verifiedCiphertextCrc32C_;
+      result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
     }
@@ -541,6 +584,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getVerifiedCiphertextCrc32C() != false) {
         setVerifiedCiphertextCrc32C(other.getVerifiedCiphertextCrc32C());
+      }
+      if (other.protectionLevel_ != 0) {
+        setProtectionLevelValue(other.getProtectionLevelValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -633,7 +679,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -655,7 +700,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -681,7 +725,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -712,7 +755,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -741,7 +783,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -774,7 +815,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -803,7 +843,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -826,7 +865,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -852,7 +890,6 @@ private static final long serialVersionUID = 0L;
      * different languages. However, it is a non-negative integer, which will
      * never exceed 2^32-1, and can be safely downconverted to uint32 in languages
      * that support this type.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>.google.protobuf.Int64Value plaintext_crc32c = 2;</code>
@@ -882,7 +919,6 @@ private static final long serialVersionUID = 0L;
      * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
      * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
      * still false, discard the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_ciphertext_crc32c = 3;</code>
@@ -902,7 +938,6 @@ private static final long serialVersionUID = 0L;
      * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
      * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
      * still false, discard the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_ciphertext_crc32c = 3;</code>
@@ -925,7 +960,6 @@ private static final long serialVersionUID = 0L;
      * was left unset or that it was not delivered to [KeyManagementService][google.cloud.kms.v1.KeyManagementService]. If
      * you've set [AsymmetricDecryptRequest.ciphertext_crc32c][google.cloud.kms.v1.AsymmetricDecryptRequest.ciphertext_crc32c] but this field is
      * still false, discard the response and perform a limited number of retries.
-     * NOTE: This field is in Beta.
      * </pre>
      *
      * <code>bool verified_ciphertext_crc32c = 3;</code>
@@ -934,6 +968,80 @@ private static final long serialVersionUID = 0L;
     public Builder clearVerifiedCiphertextCrc32C() {
       
       verifiedCiphertextCrc32C_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int protectionLevel_ = 0;
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     * @return The enum numeric value on the wire for protectionLevel.
+     */
+    @java.lang.Override public int getProtectionLevelValue() {
+      return protectionLevel_;
+    }
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     * @param value The enum numeric value on the wire for protectionLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionLevelValue(int value) {
+      
+      protectionLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     * @return The protectionLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.kms.v1.ProtectionLevel result = com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+      return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     * @param value The protectionLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionLevel(com.google.cloud.kms.v1.ProtectionLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      protectionLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in decryption.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProtectionLevel() {
+      
+      protectionLevel_ = 0;
       onChanged();
       return this;
     }

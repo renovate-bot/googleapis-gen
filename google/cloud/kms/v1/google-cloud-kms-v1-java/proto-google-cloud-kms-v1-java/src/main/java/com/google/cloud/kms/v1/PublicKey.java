@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     pem_ = "";
     algorithm_ = 0;
     name_ = "";
+    protectionLevel_ = 0;
   }
 
   @java.lang.Override
@@ -85,6 +86,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             name_ = s;
+            break;
+          }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            protectionLevel_ = rawValue;
             break;
           }
           default: {
@@ -323,6 +330,33 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int PROTECTION_LEVEL_FIELD_NUMBER = 5;
+  private int protectionLevel_;
+  /**
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+   * @return The enum numeric value on the wire for protectionLevel.
+   */
+  @java.lang.Override public int getProtectionLevelValue() {
+    return protectionLevel_;
+  }
+  /**
+   * <pre>
+   * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+   * </pre>
+   *
+   * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+   * @return The protectionLevel.
+   */
+  @java.lang.Override public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.kms.v1.ProtectionLevel result = com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+    return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -349,6 +383,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, name_);
     }
+    if (protectionLevel_ != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, protectionLevel_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -371,6 +408,10 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
+    }
+    if (protectionLevel_ != com.google.cloud.kms.v1.ProtectionLevel.PROTECTION_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, protectionLevel_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -397,6 +438,7 @@ private static final long serialVersionUID = 0L;
     }
     if (!getName()
         .equals(other.getName())) return false;
+    if (protectionLevel_ != other.protectionLevel_) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -418,6 +460,8 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + PROTECTION_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + protectionLevel_;
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -568,6 +612,8 @@ private static final long serialVersionUID = 0L;
       }
       name_ = "";
 
+      protectionLevel_ = 0;
+
       return this;
     }
 
@@ -602,6 +648,7 @@ private static final long serialVersionUID = 0L;
         result.pemCrc32C_ = pemCrc32CBuilder_.build();
       }
       result.name_ = name_;
+      result.protectionLevel_ = protectionLevel_;
       onBuilt();
       return result;
     }
@@ -663,6 +710,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.protectionLevel_ != 0) {
+        setProtectionLevelValue(other.getProtectionLevelValue());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1244,6 +1294,80 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int protectionLevel_ = 0;
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+     * @return The enum numeric value on the wire for protectionLevel.
+     */
+    @java.lang.Override public int getProtectionLevelValue() {
+      return protectionLevel_;
+    }
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+     * @param value The enum numeric value on the wire for protectionLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionLevelValue(int value) {
+      
+      protectionLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+     * @return The protectionLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.kms.v1.ProtectionLevel getProtectionLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.kms.v1.ProtectionLevel result = com.google.cloud.kms.v1.ProtectionLevel.valueOf(protectionLevel_);
+      return result == null ? com.google.cloud.kms.v1.ProtectionLevel.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+     * @param value The protectionLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtectionLevel(com.google.cloud.kms.v1.ProtectionLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      protectionLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key.
+     * </pre>
+     *
+     * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearProtectionLevel() {
+      
+      protectionLevel_ = 0;
       onChanged();
       return this;
     }

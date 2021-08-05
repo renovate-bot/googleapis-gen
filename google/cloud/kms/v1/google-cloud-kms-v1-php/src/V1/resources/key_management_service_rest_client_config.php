@@ -120,6 +120,18 @@ return [
                     ],
                 ],
             ],
+            'GenerateRandomBytes' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{location=projects/*/locations/*}:generateRandomBytes',
+                'body' => '*',
+                'placeholders' => [
+                    'location' => [
+                        'getters' => [
+                            'getLocation',
+                        ],
+                    ],
+                ],
+            ],
             'GetCryptoKey' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*}',
@@ -227,6 +239,30 @@ return [
                     'parent' => [
                         'getters' => [
                             'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'MacSign' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*}:macSign',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'MacVerify' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*}:macVerify',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
                         ],
                     ],
                 ],

@@ -157,6 +157,17 @@ class CryptoKey(proto.Message):
             Labels with user-defined metadata. For more information, see
             `Labeling
             Keys <https://cloud.google.com/kms/docs/labeling-keys>`__.
+        import_only (bool):
+            Immutable. Whether this key may contain
+            imported versions only.
+        destroy_scheduled_duration (google.protobuf.duration_pb2.Duration):
+            Immutable. The period of time that versions of this key
+            spend in the
+            [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED]
+            state before transitioning to
+            [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
+            If not specified at creation time, the default duration is
+            24 hours.
     """
     class CryptoKeyPurpose(proto.Enum):
         r"""[CryptoKeyPurpose][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose]
@@ -170,6 +181,7 @@ class CryptoKey(proto.Message):
         ENCRYPT_DECRYPT = 1
         ASYMMETRIC_SIGN = 5
         ASYMMETRIC_DECRYPT = 6
+        MAC = 9
 
     name = proto.Field(
         proto.STRING,
@@ -210,6 +222,15 @@ class CryptoKey(proto.Message):
         proto.STRING,
         proto.STRING,
         number=10,
+    )
+    import_only = proto.Field(
+        proto.BOOL,
+        number=13,
+    )
+    destroy_scheduled_duration = proto.Field(
+        proto.MESSAGE,
+        number=14,
+        message=duration_pb2.Duration,
     )
 
 
@@ -408,6 +429,13 @@ class CryptoKeyVersion(proto.Message):
         The fields in the name after "EC_SIGN_" correspond to the following
         parameters: elliptic curve, digest algorithm.
 
+        Algorithms beginning with "HMAC_" are usable with
+        [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+        [MAC][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.MAC].
+
+        The suffix following "HMAC_" corresponds to the hash algorithm being
+        used (eg. SHA256).
+
         For more information, see [Key purposes and algorithms]
         (https://cloud.google.com/kms/docs/algorithms).
         """
@@ -428,6 +456,7 @@ class CryptoKeyVersion(proto.Message):
         EC_SIGN_P256_SHA256 = 12
         EC_SIGN_P384_SHA384 = 13
         EC_SIGN_SECP256K1_SHA256 = 31
+        HMAC_SHA256 = 32
         EXTERNAL_SYMMETRIC_ENCRYPTION = 18
 
     class CryptoKeyVersionState(proto.Enum):
@@ -562,6 +591,11 @@ class PublicKey(proto.Message):
             public key. Provided here for verification.
 
             NOTE: This field is in Beta.
+        protection_level (google.cloud.kms_v1.types.ProtectionLevel):
+            The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+            of the
+            [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+            public key.
     """
 
     pem = proto.Field(
@@ -581,6 +615,11 @@ class PublicKey(proto.Message):
     name = proto.Field(
         proto.STRING,
         number=4,
+    )
+    protection_level = proto.Field(
+        proto.ENUM,
+        number=5,
+        enum='ProtectionLevel',
     )
 
 

@@ -364,6 +364,63 @@ func ExampleKeyManagementClient_UpdateCryptoKeyVersion() {
 	_ = resp
 }
 
+func ExampleKeyManagementClient_UpdateCryptoKeyPrimaryVersion() {
+	ctx := context.Background()
+	c, err := kms.NewKeyManagementClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &kmspb.UpdateCryptoKeyPrimaryVersionRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.UpdateCryptoKeyPrimaryVersion(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleKeyManagementClient_DestroyCryptoKeyVersion() {
+	ctx := context.Background()
+	c, err := kms.NewKeyManagementClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &kmspb.DestroyCryptoKeyVersionRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.DestroyCryptoKeyVersion(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleKeyManagementClient_RestoreCryptoKeyVersion() {
+	ctx := context.Background()
+	c, err := kms.NewKeyManagementClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &kmspb.RestoreCryptoKeyVersionRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.RestoreCryptoKeyVersion(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleKeyManagementClient_Encrypt() {
 	ctx := context.Background()
 	c, err := kms.NewKeyManagementClient(ctx)
@@ -440,7 +497,7 @@ func ExampleKeyManagementClient_AsymmetricDecrypt() {
 	_ = resp
 }
 
-func ExampleKeyManagementClient_UpdateCryptoKeyPrimaryVersion() {
+func ExampleKeyManagementClient_MacSign() {
 	ctx := context.Background()
 	c, err := kms.NewKeyManagementClient(ctx)
 	if err != nil {
@@ -448,10 +505,10 @@ func ExampleKeyManagementClient_UpdateCryptoKeyPrimaryVersion() {
 	}
 	defer c.Close()
 
-	req := &kmspb.UpdateCryptoKeyPrimaryVersionRequest{
+	req := &kmspb.MacSignRequest{
 		// TODO: Fill request struct fields.
 	}
-	resp, err := c.UpdateCryptoKeyPrimaryVersion(ctx, req)
+	resp, err := c.MacSign(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}
@@ -459,7 +516,7 @@ func ExampleKeyManagementClient_UpdateCryptoKeyPrimaryVersion() {
 	_ = resp
 }
 
-func ExampleKeyManagementClient_DestroyCryptoKeyVersion() {
+func ExampleKeyManagementClient_MacVerify() {
 	ctx := context.Background()
 	c, err := kms.NewKeyManagementClient(ctx)
 	if err != nil {
@@ -467,10 +524,10 @@ func ExampleKeyManagementClient_DestroyCryptoKeyVersion() {
 	}
 	defer c.Close()
 
-	req := &kmspb.DestroyCryptoKeyVersionRequest{
+	req := &kmspb.MacVerifyRequest{
 		// TODO: Fill request struct fields.
 	}
-	resp, err := c.DestroyCryptoKeyVersion(ctx, req)
+	resp, err := c.MacVerify(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}
@@ -478,7 +535,7 @@ func ExampleKeyManagementClient_DestroyCryptoKeyVersion() {
 	_ = resp
 }
 
-func ExampleKeyManagementClient_RestoreCryptoKeyVersion() {
+func ExampleKeyManagementClient_GenerateRandomBytes() {
 	ctx := context.Background()
 	c, err := kms.NewKeyManagementClient(ctx)
 	if err != nil {
@@ -486,10 +543,10 @@ func ExampleKeyManagementClient_RestoreCryptoKeyVersion() {
 	}
 	defer c.Close()
 
-	req := &kmspb.RestoreCryptoKeyVersionRequest{
+	req := &kmspb.GenerateRandomBytesRequest{
 		// TODO: Fill request struct fields.
 	}
-	resp, err := c.RestoreCryptoKeyVersion(ctx, req)
+	resp, err := c.GenerateRandomBytes(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}

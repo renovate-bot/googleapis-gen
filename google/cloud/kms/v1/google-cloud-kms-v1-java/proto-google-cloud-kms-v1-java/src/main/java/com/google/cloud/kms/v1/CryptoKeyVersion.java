@@ -249,6 +249,10 @@ private static final long serialVersionUID = 0L;
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
    * The fields in the name after "EC_SIGN_" correspond to the following
    * parameters: elliptic curve, digest algorithm.
+   * Algorithms beginning with "HMAC_" are usable with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+   * [MAC][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.MAC].
+   * The suffix following "HMAC_" corresponds to the hash algorithm being used
+   * (eg. SHA256).
    * For more information, see [Key purposes and algorithms]
    * (https://cloud.google.com/kms/docs/algorithms).
    * </pre>
@@ -394,6 +398,14 @@ private static final long serialVersionUID = 0L;
      * <code>EC_SIGN_SECP256K1_SHA256 = 31;</code>
      */
     EC_SIGN_SECP256K1_SHA256(31),
+    /**
+     * <pre>
+     * HMAC-SHA256 signing with a 256 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA256 = 32;</code>
+     */
+    HMAC_SHA256(32),
     /**
      * <pre>
      * Algorithm representing symmetric encryption by an external key manager.
@@ -544,6 +556,14 @@ private static final long serialVersionUID = 0L;
     public static final int EC_SIGN_SECP256K1_SHA256_VALUE = 31;
     /**
      * <pre>
+     * HMAC-SHA256 signing with a 256 bit key.
+     * </pre>
+     *
+     * <code>HMAC_SHA256 = 32;</code>
+     */
+    public static final int HMAC_SHA256_VALUE = 32;
+    /**
+     * <pre>
      * Algorithm representing symmetric encryption by an external key manager.
      * </pre>
      *
@@ -593,6 +613,7 @@ private static final long serialVersionUID = 0L;
         case 12: return EC_SIGN_P256_SHA256;
         case 13: return EC_SIGN_P384_SHA384;
         case 31: return EC_SIGN_SECP256K1_SHA256;
+        case 32: return HMAC_SHA256;
         case 18: return EXTERNAL_SYMMETRIC_ENCRYPTION;
         default: return null;
       }
@@ -697,7 +718,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This version is destroyed, and the key material is no longer stored.
-     * A version may not leave this state once entered.
      * </pre>
      *
      * <code>DESTROYED = 3;</code>
@@ -776,7 +796,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This version is destroyed, and the key material is no longer stored.
-     * A version may not leave this state once entered.
      * </pre>
      *
      * <code>DESTROYED = 3;</code>
