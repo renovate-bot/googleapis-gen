@@ -1,5 +1,5 @@
 {
-  "name": "@google-cloud/networkmanagement",
+  "name": "@google-cloud/network-management",
   "version": "0.1.0",
   "description": "Networkmanagement client for Node.js",
   "repository": "googleapis/nodejs-networkmanagement",
