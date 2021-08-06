@@ -257,11 +257,10 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object codec_;
   /**
    * <pre>
-   * Codec type. The default is `"h264"`.
-   * Supported codecs:
-   * - 'h264'
-   * - 'h265'
-   * - 'vp9'
+   * Codec type. The following codecs are supported:
+   * *   `h264` (default)
+   * *   `h265`
+   * *   `vp9`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -282,11 +281,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Codec type. The default is `"h264"`.
-   * Supported codecs:
-   * - 'h264'
-   * - 'h265'
-   * - 'vp9'
+   * Codec type. The following codecs are supported:
+   * *   `h264` (default)
+   * *   `h265`
+   * *   `vp9`
    * </pre>
    *
    * <code>string codec = 1;</code>
@@ -311,11 +309,15 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object profile_;
   /**
    * <pre>
-   * Enforce specified codec profile. The default is `"high"`.
-   * Supported codec profiles:
-   * - 'baseline'
-   * - 'main'
-   * - 'high'
+   * Enforces the specified codec profile. The following profiles are supported:
+   * *   `baseline`
+   * *   `main`
+   * *   `high` (default)
+   * The available options are
+   * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Profile"
+   * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+   * field may cause the transcoder to override other fields you set in the
+   * `VideoStream` message.
    * </pre>
    *
    * <code>string profile = 2;</code>
@@ -336,11 +338,15 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Enforce specified codec profile. The default is `"high"`.
-   * Supported codec profiles:
-   * - 'baseline'
-   * - 'main'
-   * - 'high'
+   * Enforces the specified codec profile. The following profiles are supported:
+   * *   `baseline`
+   * *   `main`
+   * *   `high` (default)
+   * The available options are
+   * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Profile"
+   * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+   * field may cause the transcoder to override other fields you set in the
+   * `VideoStream` message.
    * </pre>
    *
    * <code>string profile = 2;</code>
@@ -365,7 +371,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object tune_;
   /**
    * <pre>
-   * Enforce specified codec tune.
+   * Enforces the specified codec tune. The available options are
+   * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Tune"
+   * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+   * field may cause the transcoder to override other fields you set in the
+   * `VideoStream` message.
    * </pre>
    *
    * <code>string tune = 3;</code>
@@ -386,7 +396,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Enforce specified codec tune.
+   * Enforces the specified codec tune. The available options are
+   * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Tune"
+   * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+   * field may cause the transcoder to override other fields you set in the
+   * `VideoStream` message.
    * </pre>
    *
    * <code>string tune = 3;</code>
@@ -411,7 +425,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object preset_;
   /**
    * <pre>
-   * Enforce specified codec preset. The default is `"veryfast"`.
+   * Enforces the specified codec preset. The default is `veryfast`. The
+   * available options are
+   * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Preset"
+   * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+   * field may cause the transcoder to override other fields you set in the
+   * `VideoStream` message.
    * </pre>
    *
    * <code>string preset = 4;</code>
@@ -432,7 +451,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Enforce specified codec preset. The default is `"veryfast"`.
+   * Enforces the specified codec preset. The default is `veryfast`. The
+   * available options are
+   * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Preset"
+   * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+   * field may cause the transcoder to override other fields you set in the
+   * `VideoStream` message.
    * </pre>
    *
    * <code>string preset = 4;</code>
@@ -557,7 +581,9 @@ private static final long serialVersionUID = 0L;
   private int bitrateBps_;
   /**
    * <pre>
-   * Required. The video bitrate in bits per second. Must be between 1 and 1,000,000,000.
+   * Required. The video bitrate in bits per second. The minimum value is 1,000.
+   * The maximum value for H264/H265 is 800,000,000. The maximum value for VP9
+   * is 480,000,000.
    * </pre>
    *
    * <code>int32 bitrate_bps = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -736,7 +762,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Select the GOP size based on the specified duration. The default is
-   * `"3s"`.
+   * `"3s"`. Note that `gopDuration` must be less than or equal to
+   * [`segmentDuration`](#SegmentSettings), and
+   * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
    * </pre>
    *
    * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -749,7 +777,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Select the GOP size based on the specified duration. The default is
-   * `"3s"`.
+   * `"3s"`. Note that `gopDuration` must be less than or equal to
+   * [`segmentDuration`](#SegmentSettings), and
+   * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
    * </pre>
    *
    * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -765,7 +795,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Select the GOP size based on the specified duration. The default is
-   * `"3s"`.
+   * `"3s"`. Note that `gopDuration` must be less than or equal to
+   * [`segmentDuration`](#SegmentSettings), and
+   * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
    * </pre>
    *
    * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -869,27 +901,10 @@ private static final long serialVersionUID = 0L;
    * Required. The target video frame rate in frames per second (FPS). Must be less than
    * or equal to 120. Will default to the input frame rate if larger than the
    * input frame rate. The API will generate an output FPS that is divisible by
-   * the input FPS, and smaller or equal to the target FPS.
-   * The following table shows the computed video FPS given the target FPS (in
-   * parenthesis) and input FPS (in the first column):
-   * ```
-   * |        | (30)   | (60)   | (25) | (50) |
-   * |--------|--------|--------|------|------|
-   * | 240    | Fail   | Fail   | Fail | Fail |
-   * | 120    | 30     | 60     | 20   | 30   |
-   * | 100    | 25     | 50     | 20   | 30   |
-   * | 50     | 25     | 50     | 20   | 30   |
-   * | 60     | 30     | 60     | 20   | 30   |
-   * | 59.94  | 29.97  | 59.94  | 20   | 30   |
-   * | 48     | 24     | 48     | 20   | 30   |
-   * | 30     | 30     | 30     | 20   | 30   |
-   * | 25     | 25     | 25     | 20   | 30   |
-   * | 24     | 24     | 24     | 20   | 30   |
-   * | 23.976 | 23.976 | 23.976 | 20   | 30   |
-   * | 15     | 15     | 15     | 20   | 30   |
-   * | 12     | 12     | 12     | 20   | 30   |
-   * | 10     | 10     | 10     | 20   | 30   |
-   * ```
+   * the input FPS, and smaller or equal to the target FPS. See
+   * [Calculate frame
+   * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+   * more information.
    * </pre>
    *
    * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1621,11 +1636,10 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object codec_ = "";
     /**
      * <pre>
-     * Codec type. The default is `"h264"`.
-     * Supported codecs:
-     * - 'h264'
-     * - 'h265'
-     * - 'vp9'
+     * Codec type. The following codecs are supported:
+     * *   `h264` (default)
+     * *   `h265`
+     * *   `vp9`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1645,11 +1659,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Codec type. The default is `"h264"`.
-     * Supported codecs:
-     * - 'h264'
-     * - 'h265'
-     * - 'vp9'
+     * Codec type. The following codecs are supported:
+     * *   `h264` (default)
+     * *   `h265`
+     * *   `vp9`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1670,11 +1683,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Codec type. The default is `"h264"`.
-     * Supported codecs:
-     * - 'h264'
-     * - 'h265'
-     * - 'vp9'
+     * Codec type. The following codecs are supported:
+     * *   `h264` (default)
+     * *   `h265`
+     * *   `vp9`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1693,11 +1705,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Codec type. The default is `"h264"`.
-     * Supported codecs:
-     * - 'h264'
-     * - 'h265'
-     * - 'vp9'
+     * Codec type. The following codecs are supported:
+     * *   `h264` (default)
+     * *   `h265`
+     * *   `vp9`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1711,11 +1722,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Codec type. The default is `"h264"`.
-     * Supported codecs:
-     * - 'h264'
-     * - 'h265'
-     * - 'vp9'
+     * Codec type. The following codecs are supported:
+     * *   `h264` (default)
+     * *   `h265`
+     * *   `vp9`
      * </pre>
      *
      * <code>string codec = 1;</code>
@@ -1737,11 +1747,15 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object profile_ = "";
     /**
      * <pre>
-     * Enforce specified codec profile. The default is `"high"`.
-     * Supported codec profiles:
-     * - 'baseline'
-     * - 'main'
-     * - 'high'
+     * Enforces the specified codec profile. The following profiles are supported:
+     * *   `baseline`
+     * *   `main`
+     * *   `high` (default)
+     * The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Profile"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string profile = 2;</code>
@@ -1761,11 +1775,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec profile. The default is `"high"`.
-     * Supported codec profiles:
-     * - 'baseline'
-     * - 'main'
-     * - 'high'
+     * Enforces the specified codec profile. The following profiles are supported:
+     * *   `baseline`
+     * *   `main`
+     * *   `high` (default)
+     * The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Profile"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string profile = 2;</code>
@@ -1786,11 +1804,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec profile. The default is `"high"`.
-     * Supported codec profiles:
-     * - 'baseline'
-     * - 'main'
-     * - 'high'
+     * Enforces the specified codec profile. The following profiles are supported:
+     * *   `baseline`
+     * *   `main`
+     * *   `high` (default)
+     * The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Profile"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string profile = 2;</code>
@@ -1809,11 +1831,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec profile. The default is `"high"`.
-     * Supported codec profiles:
-     * - 'baseline'
-     * - 'main'
-     * - 'high'
+     * Enforces the specified codec profile. The following profiles are supported:
+     * *   `baseline`
+     * *   `main`
+     * *   `high` (default)
+     * The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Profile"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string profile = 2;</code>
@@ -1827,11 +1853,15 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec profile. The default is `"high"`.
-     * Supported codec profiles:
-     * - 'baseline'
-     * - 'main'
-     * - 'high'
+     * Enforces the specified codec profile. The following profiles are supported:
+     * *   `baseline`
+     * *   `main`
+     * *   `high` (default)
+     * The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Profile"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string profile = 2;</code>
@@ -1853,7 +1883,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object tune_ = "";
     /**
      * <pre>
-     * Enforce specified codec tune.
+     * Enforces the specified codec tune. The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Tune"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string tune = 3;</code>
@@ -1873,7 +1907,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec tune.
+     * Enforces the specified codec tune. The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Tune"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string tune = 3;</code>
@@ -1894,7 +1932,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec tune.
+     * Enforces the specified codec tune. The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Tune"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string tune = 3;</code>
@@ -1913,7 +1955,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec tune.
+     * Enforces the specified codec tune. The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Tune"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string tune = 3;</code>
@@ -1927,7 +1973,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec tune.
+     * Enforces the specified codec tune. The available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Tune"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string tune = 3;</code>
@@ -1949,7 +1999,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object preset_ = "";
     /**
      * <pre>
-     * Enforce specified codec preset. The default is `"veryfast"`.
+     * Enforces the specified codec preset. The default is `veryfast`. The
+     * available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Preset"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string preset = 4;</code>
@@ -1969,7 +2024,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec preset. The default is `"veryfast"`.
+     * Enforces the specified codec preset. The default is `veryfast`. The
+     * available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Preset"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string preset = 4;</code>
@@ -1990,7 +2050,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec preset. The default is `"veryfast"`.
+     * Enforces the specified codec preset. The default is `veryfast`. The
+     * available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Preset"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string preset = 4;</code>
@@ -2009,7 +2074,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec preset. The default is `"veryfast"`.
+     * Enforces the specified codec preset. The default is `veryfast`. The
+     * available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Preset"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string preset = 4;</code>
@@ -2023,7 +2093,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Enforce specified codec preset. The default is `"veryfast"`.
+     * Enforces the specified codec preset. The default is `veryfast`. The
+     * available options are
+     * &lt;a href="https://trac.ffmpeg.org/wiki/Encode/H.264#Preset"
+     * class="external"&gt;FFmpeg-compatible&lt;/a&gt;. Note that certain values for this
+     * field may cause the transcoder to override other fields you set in the
+     * `VideoStream` message.
      * </pre>
      *
      * <code>string preset = 4;</code>
@@ -2289,7 +2364,9 @@ private static final long serialVersionUID = 0L;
     private int bitrateBps_ ;
     /**
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value for H264/H265 is 800,000,000. The maximum value for VP9
+     * is 480,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2301,7 +2378,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value for H264/H265 is 800,000,000. The maximum value for VP9
+     * is 480,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2316,7 +2395,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The video bitrate in bits per second. Must be between 1 and 1,000,000,000.
+     * Required. The video bitrate in bits per second. The minimum value is 1,000.
+     * The maximum value for H264/H265 is 800,000,000. The maximum value for VP9
+     * is 480,000,000.
      * </pre>
      *
      * <code>int32 bitrate_bps = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2739,7 +2820,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -2752,7 +2835,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -2775,7 +2860,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -2796,7 +2883,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -2815,7 +2904,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -2842,7 +2933,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -2866,7 +2959,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -2877,7 +2972,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -2896,7 +2993,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Select the GOP size based on the specified duration. The default is
-     * `"3s"`.
+     * `"3s"`. Note that `gopDuration` must be less than or equal to
+     * [`segmentDuration`](#SegmentSettings), and
+     * [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`.
      * </pre>
      *
      * <code>.google.protobuf.Duration gop_duration = 16;</code>
@@ -3129,27 +3228,10 @@ private static final long serialVersionUID = 0L;
      * Required. The target video frame rate in frames per second (FPS). Must be less than
      * or equal to 120. Will default to the input frame rate if larger than the
      * input frame rate. The API will generate an output FPS that is divisible by
-     * the input FPS, and smaller or equal to the target FPS.
-     * The following table shows the computed video FPS given the target FPS (in
-     * parenthesis) and input FPS (in the first column):
-     * ```
-     * |        | (30)   | (60)   | (25) | (50) |
-     * |--------|--------|--------|------|------|
-     * | 240    | Fail   | Fail   | Fail | Fail |
-     * | 120    | 30     | 60     | 20   | 30   |
-     * | 100    | 25     | 50     | 20   | 30   |
-     * | 50     | 25     | 50     | 20   | 30   |
-     * | 60     | 30     | 60     | 20   | 30   |
-     * | 59.94  | 29.97  | 59.94  | 20   | 30   |
-     * | 48     | 24     | 48     | 20   | 30   |
-     * | 30     | 30     | 30     | 20   | 30   |
-     * | 25     | 25     | 25     | 20   | 30   |
-     * | 24     | 24     | 24     | 20   | 30   |
-     * | 23.976 | 23.976 | 23.976 | 20   | 30   |
-     * | 15     | 15     | 15     | 20   | 30   |
-     * | 12     | 12     | 12     | 20   | 30   |
-     * | 10     | 10     | 10     | 20   | 30   |
-     * ```
+     * the input FPS, and smaller or equal to the target FPS. See
+     * [Calculate frame
+     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+     * more information.
      * </pre>
      *
      * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3164,27 +3246,10 @@ private static final long serialVersionUID = 0L;
      * Required. The target video frame rate in frames per second (FPS). Must be less than
      * or equal to 120. Will default to the input frame rate if larger than the
      * input frame rate. The API will generate an output FPS that is divisible by
-     * the input FPS, and smaller or equal to the target FPS.
-     * The following table shows the computed video FPS given the target FPS (in
-     * parenthesis) and input FPS (in the first column):
-     * ```
-     * |        | (30)   | (60)   | (25) | (50) |
-     * |--------|--------|--------|------|------|
-     * | 240    | Fail   | Fail   | Fail | Fail |
-     * | 120    | 30     | 60     | 20   | 30   |
-     * | 100    | 25     | 50     | 20   | 30   |
-     * | 50     | 25     | 50     | 20   | 30   |
-     * | 60     | 30     | 60     | 20   | 30   |
-     * | 59.94  | 29.97  | 59.94  | 20   | 30   |
-     * | 48     | 24     | 48     | 20   | 30   |
-     * | 30     | 30     | 30     | 20   | 30   |
-     * | 25     | 25     | 25     | 20   | 30   |
-     * | 24     | 24     | 24     | 20   | 30   |
-     * | 23.976 | 23.976 | 23.976 | 20   | 30   |
-     * | 15     | 15     | 15     | 20   | 30   |
-     * | 12     | 12     | 12     | 20   | 30   |
-     * | 10     | 10     | 10     | 20   | 30   |
-     * ```
+     * the input FPS, and smaller or equal to the target FPS. See
+     * [Calculate frame
+     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+     * more information.
      * </pre>
      *
      * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3202,27 +3267,10 @@ private static final long serialVersionUID = 0L;
      * Required. The target video frame rate in frames per second (FPS). Must be less than
      * or equal to 120. Will default to the input frame rate if larger than the
      * input frame rate. The API will generate an output FPS that is divisible by
-     * the input FPS, and smaller or equal to the target FPS.
-     * The following table shows the computed video FPS given the target FPS (in
-     * parenthesis) and input FPS (in the first column):
-     * ```
-     * |        | (30)   | (60)   | (25) | (50) |
-     * |--------|--------|--------|------|------|
-     * | 240    | Fail   | Fail   | Fail | Fail |
-     * | 120    | 30     | 60     | 20   | 30   |
-     * | 100    | 25     | 50     | 20   | 30   |
-     * | 50     | 25     | 50     | 20   | 30   |
-     * | 60     | 30     | 60     | 20   | 30   |
-     * | 59.94  | 29.97  | 59.94  | 20   | 30   |
-     * | 48     | 24     | 48     | 20   | 30   |
-     * | 30     | 30     | 30     | 20   | 30   |
-     * | 25     | 25     | 25     | 20   | 30   |
-     * | 24     | 24     | 24     | 20   | 30   |
-     * | 23.976 | 23.976 | 23.976 | 20   | 30   |
-     * | 15     | 15     | 15     | 20   | 30   |
-     * | 12     | 12     | 12     | 20   | 30   |
-     * | 10     | 10     | 10     | 20   | 30   |
-     * ```
+     * the input FPS, and smaller or equal to the target FPS. See
+     * [Calculate frame
+     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+     * more information.
      * </pre>
      *
      * <code>double frame_rate = 20 [(.google.api.field_behavior) = REQUIRED];</code>

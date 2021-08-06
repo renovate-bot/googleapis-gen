@@ -872,8 +872,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Required. URI of the image in Cloud Storage. For example,
-     * `gs://bucket/inputs/image.jpeg`.
+     * Required. URI of the JPEG image in Cloud Storage. For example,
+     * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -882,8 +882,8 @@ private static final long serialVersionUID = 0L;
     java.lang.String getUri();
     /**
      * <pre>
-     * Required. URI of the image in Cloud Storage. For example,
-     * `gs://bucket/inputs/image.jpeg`.
+     * Required. URI of the JPEG image in Cloud Storage. For example,
+     * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -930,8 +930,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Target image opacity. Valid values: `1` (solid, default),
-     * `0` (transparent).
+     * Target image opacity. Valid values are from  `1.0` (solid, default) to
+     * `0.0` (transparent), exclusive. Set this to a value greater than `0.0`.
      * </pre>
      *
      * <code>double alpha = 3;</code>
@@ -1049,8 +1049,8 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object uri_;
     /**
      * <pre>
-     * Required. URI of the image in Cloud Storage. For example,
-     * `gs://bucket/inputs/image.jpeg`.
+     * Required. URI of the JPEG image in Cloud Storage. For example,
+     * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1071,8 +1071,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. URI of the image in Cloud Storage. For example,
-     * `gs://bucket/inputs/image.jpeg`.
+     * Required. URI of the JPEG image in Cloud Storage. For example,
+     * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
      * </pre>
      *
      * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1144,8 +1144,8 @@ private static final long serialVersionUID = 0L;
     private double alpha_;
     /**
      * <pre>
-     * Target image opacity. Valid values: `1` (solid, default),
-     * `0` (transparent).
+     * Target image opacity. Valid values are from  `1.0` (solid, default) to
+     * `0.0` (transparent), exclusive. Set this to a value greater than `0.0`.
      * </pre>
      *
      * <code>double alpha = 3;</code>
@@ -1514,8 +1514,8 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object uri_ = "";
       /**
        * <pre>
-       * Required. URI of the image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`.
+       * Required. URI of the JPEG image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1535,8 +1535,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. URI of the image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`.
+       * Required. URI of the JPEG image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1557,8 +1557,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. URI of the image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`.
+       * Required. URI of the JPEG image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1577,8 +1577,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. URI of the image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`.
+       * Required. URI of the JPEG image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1592,8 +1592,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Required. URI of the image in Cloud Storage. For example,
-       * `gs://bucket/inputs/image.jpeg`.
+       * Required. URI of the JPEG image in Cloud Storage. For example,
+       * `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
        * </pre>
        *
        * <code>string uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1797,8 +1797,8 @@ private static final long serialVersionUID = 0L;
       private double alpha_ ;
       /**
        * <pre>
-       * Target image opacity. Valid values: `1` (solid, default),
-       * `0` (transparent).
+       * Target image opacity. Valid values are from  `1.0` (solid, default) to
+       * `0.0` (transparent), exclusive. Set this to a value greater than `0.0`.
        * </pre>
        *
        * <code>double alpha = 3;</code>
@@ -1810,8 +1810,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Target image opacity. Valid values: `1` (solid, default),
-       * `0` (transparent).
+       * Target image opacity. Valid values are from  `1.0` (solid, default) to
+       * `0.0` (transparent), exclusive. Set this to a value greater than `0.0`.
        * </pre>
        *
        * <code>double alpha = 3;</code>
@@ -1826,8 +1826,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Target image opacity. Valid values: `1` (solid, default),
-       * `0` (transparent).
+       * Target image opacity. Valid values are from  `1.0` (solid, default) to
+       * `0.0` (transparent), exclusive. Set this to a value greater than `0.0`.
        * </pre>
        *
        * <code>double alpha = 3;</code>
@@ -1900,7 +1900,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -1911,7 +1913,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -1922,7 +1926,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2069,7 +2075,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2083,7 +2091,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2097,7 +2107,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2501,7 +2513,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2514,7 +2528,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2531,7 +2547,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2553,7 +2571,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2573,7 +2593,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2597,7 +2619,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2617,7 +2641,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2631,7 +2657,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2648,7 +2676,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 1;</code>
@@ -2901,7 +2931,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -2912,7 +2944,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -2923,7 +2957,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3147,7 +3183,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3161,7 +3199,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3175,7 +3215,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Normalized coordinates based on output video resolution. Valid
      * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-     * object.
+     * object. For example, use the x and y coordinates {0,0} to position the
+     * top-left corner of the overlay animation in the top-left corner of the
+     * output video.
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3740,7 +3782,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3753,7 +3797,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3770,7 +3816,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3792,7 +3840,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3812,7 +3862,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3836,7 +3888,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3856,7 +3910,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3870,7 +3926,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>
@@ -3887,7 +3945,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * Normalized coordinates based on output video resolution. Valid
        * values: `0.0`–`1.0`. `xy` is the upper-left coordinate of the overlay
-       * object.
+       * object. For example, use the x and y coordinates {0,0} to position the
+       * top-left corner of the overlay animation in the top-left corner of the
+       * output video.
        * </pre>
        *
        * <code>.google.cloud.video.transcoder.v1beta1.Overlay.NormalizedCoordinate xy = 2;</code>

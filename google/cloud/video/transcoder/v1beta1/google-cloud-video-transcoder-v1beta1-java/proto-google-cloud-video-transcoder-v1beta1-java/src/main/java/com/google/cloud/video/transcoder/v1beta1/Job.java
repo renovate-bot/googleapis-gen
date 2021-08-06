@@ -188,6 +188,11 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 120: {
+
+            ttlAfterCompletionDays_ = input.readInt32();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -410,8 +415,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * HLS master manifest URI. If multiple HLS master manifests are created
-     * only first one is listed.
+     * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+     * If multiple HLS manifests are created, only the first one is listed.
      * </pre>
      *
      * <code>string hls = 1;</code>
@@ -420,8 +425,8 @@ private static final long serialVersionUID = 0L;
     java.lang.String getHls();
     /**
      * <pre>
-     * HLS master manifest URI. If multiple HLS master manifests are created
-     * only first one is listed.
+     * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+     * If multiple HLS manifests are created, only the first one is listed.
      * </pre>
      *
      * <code>string hls = 1;</code>
@@ -551,8 +556,8 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object hls_;
     /**
      * <pre>
-     * HLS master manifest URI. If multiple HLS master manifests are created
-     * only first one is listed.
+     * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+     * If multiple HLS manifests are created, only the first one is listed.
      * </pre>
      *
      * <code>string hls = 1;</code>
@@ -573,8 +578,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * HLS master manifest URI. If multiple HLS master manifests are created
-     * only first one is listed.
+     * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+     * If multiple HLS manifests are created, only the first one is listed.
      * </pre>
      *
      * <code>string hls = 1;</code>
@@ -969,8 +974,8 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object hls_ = "";
       /**
        * <pre>
-       * HLS master manifest URI. If multiple HLS master manifests are created
-       * only first one is listed.
+       * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+       * If multiple HLS manifests are created, only the first one is listed.
        * </pre>
        *
        * <code>string hls = 1;</code>
@@ -990,8 +995,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * HLS master manifest URI. If multiple HLS master manifests are created
-       * only first one is listed.
+       * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+       * If multiple HLS manifests are created, only the first one is listed.
        * </pre>
        *
        * <code>string hls = 1;</code>
@@ -1012,8 +1017,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * HLS master manifest URI. If multiple HLS master manifests are created
-       * only first one is listed.
+       * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+       * If multiple HLS manifests are created, only the first one is listed.
        * </pre>
        *
        * <code>string hls = 1;</code>
@@ -1032,8 +1037,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * HLS master manifest URI. If multiple HLS master manifests are created
-       * only first one is listed.
+       * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+       * If multiple HLS manifests are created, only the first one is listed.
        * </pre>
        *
        * <code>string hls = 1;</code>
@@ -1047,8 +1052,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * HLS master manifest URI. If multiple HLS master manifests are created
-       * only first one is listed.
+       * HLS manifest URI per https://tools.ietf.org/html/rfc8216#section-4.3.4.
+       * If multiple HLS manifests are created, only the first one is listed.
        * </pre>
        *
        * <code>string hls = 1;</code>
@@ -1315,8 +1320,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
    * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-   * URI of the media. It must be stored in Cloud Storage. For example,
-   * `gs://bucket/inputs/file.mp4`.
+   * URI of the media. Input files must be at least 5 seconds in duration and
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
    * </pre>
    *
    * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1339,8 +1344,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
    * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-   * URI of the media. It must be stored in Cloud Storage. For example,
-   * `gs://bucket/inputs/file.mp4`.
+   * URI of the media. Input files must be at least 5 seconds in duration and
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
    * </pre>
    *
    * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1554,6 +1559,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The origin URI.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1566,6 +1572,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The origin URI.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1578,6 +1585,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. The origin URI.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1620,6 +1628,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. Estimated fractional progress, from `0` to `1` for each
    * step.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1633,6 +1642,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. Estimated fractional progress, from `0` to `1` for each
    * step.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1646,6 +1656,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. Estimated fractional progress, from `0` to `1` for each
    * step.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1709,6 +1720,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1721,6 +1733,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1734,6 +1747,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1746,6 +1760,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1758,6 +1773,7 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1882,6 +1898,23 @@ private static final long serialVersionUID = 0L;
     return getEndTime();
   }
 
+  public static final int TTL_AFTER_COMPLETION_DAYS_FIELD_NUMBER = 15;
+  private int ttlAfterCompletionDays_;
+  /**
+   * <pre>
+   * Job time to live value in days, which will be effective after job
+   * completion. Job should be deleted automatically after the given TTL. Enter
+   * a value between 1 and 90. The default is 30.
+   * </pre>
+   *
+   * <code>int32 ttl_after_completion_days = 15;</code>
+   * @return The ttlAfterCompletionDays.
+   */
+  @java.lang.Override
+  public int getTtlAfterCompletionDays() {
+    return ttlAfterCompletionDays_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1937,6 +1970,9 @@ private static final long serialVersionUID = 0L;
     }
     if (endTime_ != null) {
       output.writeMessage(14, getEndTime());
+    }
+    if (ttlAfterCompletionDays_ != 0) {
+      output.writeInt32(15, ttlAfterCompletionDays_);
     }
     unknownFields.writeTo(output);
   }
@@ -1998,6 +2034,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getEndTime());
     }
+    if (ttlAfterCompletionDays_ != 0) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeInt32Size(15, ttlAfterCompletionDays_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2051,6 +2091,8 @@ private static final long serialVersionUID = 0L;
       if (!getEndTime()
           .equals(other.getEndTime())) return false;
     }
+    if (getTtlAfterCompletionDays()
+        != other.getTtlAfterCompletionDays()) return false;
     if (!getJobConfigCase().equals(other.getJobConfigCase())) return false;
     switch (jobConfigCase_) {
       case 4:
@@ -2111,6 +2153,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
+    hash = (37 * hash) + TTL_AFTER_COMPLETION_DAYS_FIELD_NUMBER;
+    hash = (53 * hash) + getTtlAfterCompletionDays();
     switch (jobConfigCase_) {
       case 4:
         hash = (37 * hash) + TEMPLATE_ID_FIELD_NUMBER;
@@ -2309,6 +2353,8 @@ private static final long serialVersionUID = 0L;
         endTime_ = null;
         endTimeBuilder_ = null;
       }
+      ttlAfterCompletionDays_ = 0;
+
       jobConfigCase_ = 0;
       jobConfig_ = null;
       return this;
@@ -2388,6 +2434,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.endTime_ = endTimeBuilder_.build();
       }
+      result.ttlAfterCompletionDays_ = ttlAfterCompletionDays_;
       result.jobConfigCase_ = jobConfigCase_;
       onBuilt();
       return result;
@@ -2499,6 +2546,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
+      }
+      if (other.getTtlAfterCompletionDays() != 0) {
+        setTtlAfterCompletionDays(other.getTtlAfterCompletionDays());
       }
       switch (other.getJobConfigCase()) {
         case TEMPLATE_ID: {
@@ -2666,8 +2716,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-     * URI of the media. It must be stored in Cloud Storage. For example,
-     * `gs://bucket/inputs/file.mp4`.
+     * URI of the media. Input files must be at least 5 seconds in duration and
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2689,8 +2739,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-     * URI of the media. It must be stored in Cloud Storage. For example,
-     * `gs://bucket/inputs/file.mp4`.
+     * URI of the media. Input files must be at least 5 seconds in duration and
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2713,8 +2763,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-     * URI of the media. It must be stored in Cloud Storage. For example,
-     * `gs://bucket/inputs/file.mp4`.
+     * URI of the media. Input files must be at least 5 seconds in duration and
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2735,8 +2785,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-     * URI of the media. It must be stored in Cloud Storage. For example,
-     * `gs://bucket/inputs/file.mp4`.
+     * URI of the media. Input files must be at least 5 seconds in duration and
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -2752,8 +2802,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
      * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-     * URI of the media. It must be stored in Cloud Storage. For example,
-     * `gs://bucket/inputs/file.mp4`.
+     * URI of the media. Input files must be at least 5 seconds in duration and
+     * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
      * </pre>
      *
      * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -3258,6 +3308,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3269,6 +3320,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3284,6 +3336,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3304,6 +3357,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3322,6 +3376,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3344,6 +3399,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3362,6 +3418,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3374,6 +3431,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3389,6 +3447,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. The origin URI.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3488,6 +3547,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3500,6 +3560,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3516,6 +3577,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3537,6 +3599,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3556,6 +3619,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3579,6 +3643,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3598,6 +3663,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3611,6 +3677,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3627,6 +3694,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. Estimated fractional progress, from `0` to `1` for each
      * step.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3762,6 +3830,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3777,6 +3846,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3792,6 +3862,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3807,6 +3878,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3829,6 +3901,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3848,6 +3921,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3869,6 +3943,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3891,6 +3966,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3910,6 +3986,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3929,6 +4006,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3949,6 +4027,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3967,6 +4046,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3985,6 +4065,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3997,6 +4078,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4012,6 +4094,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4028,6 +4111,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4040,6 +4124,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4053,6 +4138,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Output only. List of failure details. This property may contain additional
      * information about the failure when `failure_reason` is present.
+     * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
      * </pre>
      *
      * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4539,6 +4625,55 @@ private static final long serialVersionUID = 0L;
         endTime_ = null;
       }
       return endTimeBuilder_;
+    }
+
+    private int ttlAfterCompletionDays_ ;
+    /**
+     * <pre>
+     * Job time to live value in days, which will be effective after job
+     * completion. Job should be deleted automatically after the given TTL. Enter
+     * a value between 1 and 90. The default is 30.
+     * </pre>
+     *
+     * <code>int32 ttl_after_completion_days = 15;</code>
+     * @return The ttlAfterCompletionDays.
+     */
+    @java.lang.Override
+    public int getTtlAfterCompletionDays() {
+      return ttlAfterCompletionDays_;
+    }
+    /**
+     * <pre>
+     * Job time to live value in days, which will be effective after job
+     * completion. Job should be deleted automatically after the given TTL. Enter
+     * a value between 1 and 90. The default is 30.
+     * </pre>
+     *
+     * <code>int32 ttl_after_completion_days = 15;</code>
+     * @param value The ttlAfterCompletionDays to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTtlAfterCompletionDays(int value) {
+      
+      ttlAfterCompletionDays_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Job time to live value in days, which will be effective after job
+     * completion. Job should be deleted automatically after the given TTL. Enter
+     * a value between 1 and 90. The default is 30.
+     * </pre>
+     *
+     * <code>int32 ttl_after_completion_days = 15;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTtlAfterCompletionDays() {
+      
+      ttlAfterCompletionDays_ = 0;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -42,6 +42,7 @@ const version = require('../../../package.json').version;
  *  concatenation, and digital ad-stitch ready content generation.
  * @class
  * @memberof v1beta1
+ * @deprecated TranscoderService is deprecated and may be removed in a future version.
  */
 export class TranscoderServiceClient {
   private _terminated = false;
@@ -203,6 +204,7 @@ export class TranscoderServiceClient {
   initialize() {
     // If the client stub promise is already initialized, return immediately.
     if (this.transcoderServiceStub) {
+      this.warn('DEP$TranscoderService', 'TranscoderService is deprecated and may be removed in a future version.', 'DeprecationWarning');
       return this.transcoderServiceStub;
     }
 
@@ -243,6 +245,7 @@ export class TranscoderServiceClient {
 
       this.innerApiCalls[methodName] = apiCall;
     }
+    this.warn('DEP$TranscoderService', 'TranscoderService is deprecated and may be removed in a future version.', 'DeprecationWarning');
 
     return this.transcoderServiceStub;
   }

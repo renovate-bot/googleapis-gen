@@ -33,8 +33,8 @@ public interface JobOrBuilder extends
    * <pre>
    * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
    * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-   * URI of the media. It must be stored in Cloud Storage. For example,
-   * `gs://bucket/inputs/file.mp4`.
+   * URI of the media. Input files must be at least 5 seconds in duration and
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
    * </pre>
    *
    * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -45,8 +45,8 @@ public interface JobOrBuilder extends
    * <pre>
    * Input only. Specify the `input_uri` to populate empty `uri` fields in each element of
    * `Job.config.inputs` or `JobTemplate.config.inputs` when using template.
-   * URI of the media. It must be stored in Cloud Storage. For example,
-   * `gs://bucket/inputs/file.mp4`.
+   * URI of the media. Input files must be at least 5 seconds in duration and
+   * stored in Cloud Storage (for example, `gs://bucket/inputs/file.mp4`).
    * </pre>
    *
    * <code>string input_uri = 2 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -164,6 +164,7 @@ public interface JobOrBuilder extends
   /**
    * <pre>
    * Output only. The origin URI.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -173,6 +174,7 @@ public interface JobOrBuilder extends
   /**
    * <pre>
    * Output only. The origin URI.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -182,6 +184,7 @@ public interface JobOrBuilder extends
   /**
    * <pre>
    * Output only. The origin URI.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Job.OriginUri origin_uri = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -211,6 +214,7 @@ public interface JobOrBuilder extends
    * <pre>
    * Output only. Estimated fractional progress, from `0` to `1` for each
    * step.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -221,6 +225,7 @@ public interface JobOrBuilder extends
    * <pre>
    * Output only. Estimated fractional progress, from `0` to `1` for each
    * step.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -231,6 +236,7 @@ public interface JobOrBuilder extends
    * <pre>
    * Output only. Estimated fractional progress, from `0` to `1` for each
    * step.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>.google.cloud.video.transcoder.v1beta1.Progress progress = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -263,6 +269,7 @@ public interface JobOrBuilder extends
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -273,6 +280,7 @@ public interface JobOrBuilder extends
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -282,6 +290,7 @@ public interface JobOrBuilder extends
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -291,6 +300,7 @@ public interface JobOrBuilder extends
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -301,6 +311,7 @@ public interface JobOrBuilder extends
    * <pre>
    * Output only. List of failure details. This property may contain additional
    * information about the failure when `failure_reason` is present.
+   * &lt;aside class="note"&gt;&lt;b&gt;Note&lt;/b&gt;: This feature is not yet available.&lt;/aside&gt;
    * </pre>
    *
    * <code>repeated .google.cloud.video.transcoder.v1beta1.FailureDetail failure_details = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -388,6 +399,18 @@ public interface JobOrBuilder extends
    * <code>.google.protobuf.Timestamp end_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Job time to live value in days, which will be effective after job
+   * completion. Job should be deleted automatically after the given TTL. Enter
+   * a value between 1 and 90. The default is 30.
+   * </pre>
+   *
+   * <code>int32 ttl_after_completion_days = 15;</code>
+   * @return The ttlAfterCompletionDays.
+   */
+  int getTtlAfterCompletionDays();
 
   public com.google.cloud.video.transcoder.v1beta1.Job.JobConfigCase getJobConfigCase();
 }
