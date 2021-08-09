@@ -260,7 +260,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public void createCluster(com.google.cloud.dataproc.v1beta2.CreateClusterRequest request,
@@ -272,7 +272,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public void updateCluster(com.google.cloud.dataproc.v1beta2.UpdateClusterRequest request,
@@ -284,7 +284,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public void deleteCluster(com.google.cloud.dataproc.v1beta2.DeleteClusterRequest request,
@@ -316,7 +316,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
@@ -398,7 +398,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public void createCluster(com.google.cloud.dataproc.v1beta2.CreateClusterRequest request,
@@ -411,7 +411,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public void updateCluster(com.google.cloud.dataproc.v1beta2.UpdateClusterRequest request,
@@ -424,7 +424,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public void deleteCluster(com.google.cloud.dataproc.v1beta2.DeleteClusterRequest request,
@@ -459,7 +459,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
@@ -495,7 +495,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public com.google.longrunning.Operation createCluster(com.google.cloud.dataproc.v1beta2.CreateClusterRequest request) {
@@ -507,7 +507,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public com.google.longrunning.Operation updateCluster(com.google.cloud.dataproc.v1beta2.UpdateClusterRequest request) {
@@ -519,7 +519,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public com.google.longrunning.Operation deleteCluster(com.google.cloud.dataproc.v1beta2.DeleteClusterRequest request) {
@@ -551,7 +551,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
@@ -586,7 +586,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createCluster(
@@ -599,7 +599,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateCluster(
@@ -612,7 +612,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteCluster(
@@ -647,7 +647,7 @@ public final class ClusterControllerGrpc {
      * <pre>
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains

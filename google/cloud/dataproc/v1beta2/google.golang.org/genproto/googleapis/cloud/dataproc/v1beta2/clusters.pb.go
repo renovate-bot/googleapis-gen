@@ -4112,15 +4112,15 @@ const _ = grpc.SupportPackageIsVersion6
 type ClusterControllerClient interface {
 	// Creates a cluster in a project. The returned
 	// [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+	// ClusterOperationMetadata.
 	CreateCluster(ctx context.Context, in *CreateClusterRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Updates a cluster in a project. The returned
 	// [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+	// ClusterOperationMetadata.
 	UpdateCluster(ctx context.Context, in *UpdateClusterRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Deletes a cluster in a project. The returned
 	// [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+	// ClusterOperationMetadata.
 	DeleteCluster(ctx context.Context, in *DeleteClusterRequest, opts ...grpc.CallOption) (*longrunning.Operation, error)
 	// Gets the resource representation for a cluster in a project.
 	GetCluster(ctx context.Context, in *GetClusterRequest, opts ...grpc.CallOption) (*Cluster, error)
@@ -4128,7 +4128,7 @@ type ClusterControllerClient interface {
 	ListClusters(ctx context.Context, in *ListClustersRequest, opts ...grpc.CallOption) (*ListClustersResponse, error)
 	// Gets cluster diagnostic information. The returned
 	// [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+	// ClusterOperationMetadata.
 	// After the operation completes,
 	// [Operation.response][google.longrunning.Operation.response]
 	// contains
@@ -4202,15 +4202,15 @@ func (c *clusterControllerClient) DiagnoseCluster(ctx context.Context, in *Diagn
 type ClusterControllerServer interface {
 	// Creates a cluster in a project. The returned
 	// [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+	// ClusterOperationMetadata.
 	CreateCluster(context.Context, *CreateClusterRequest) (*longrunning.Operation, error)
 	// Updates a cluster in a project. The returned
 	// [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+	// ClusterOperationMetadata.
 	UpdateCluster(context.Context, *UpdateClusterRequest) (*longrunning.Operation, error)
 	// Deletes a cluster in a project. The returned
 	// [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+	// ClusterOperationMetadata.
 	DeleteCluster(context.Context, *DeleteClusterRequest) (*longrunning.Operation, error)
 	// Gets the resource representation for a cluster in a project.
 	GetCluster(context.Context, *GetClusterRequest) (*Cluster, error)
@@ -4218,7 +4218,7 @@ type ClusterControllerServer interface {
 	ListClusters(context.Context, *ListClustersRequest) (*ListClustersResponse, error)
 	// Gets cluster diagnostic information. The returned
 	// [Operation.metadata][google.longrunning.Operation.metadata] will be
-	// [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+	// ClusterOperationMetadata.
 	// After the operation completes,
 	// [Operation.response][google.longrunning.Operation.response]
 	// contains

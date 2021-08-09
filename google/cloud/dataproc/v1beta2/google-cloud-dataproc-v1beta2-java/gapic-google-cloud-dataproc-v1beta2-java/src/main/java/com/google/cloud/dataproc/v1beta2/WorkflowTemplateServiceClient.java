@@ -501,8 +501,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be WorkflowMetadata.
    * Also see [Using
    * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
@@ -557,8 +556,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be WorkflowMetadata.
    * Also see [Using
    * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
@@ -612,8 +610,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be WorkflowMetadata.
    * Also see [Using
    * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
@@ -672,8 +669,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be WorkflowMetadata.
    * Also see [Using
    * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
@@ -733,8 +729,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be WorkflowMetadata.
    * Also see [Using
    * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
@@ -781,8 +776,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be WorkflowMetadata.
    * Also see [Using
    * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *
@@ -831,8 +825,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * [operations.cancel][google.longrunning.Operations.CancelOperation]. This will cause any
    * inflight jobs to be cancelled and workflow-owned clusters to be deleted.
    *
-   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be
-   * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+   * <p>The [Operation.metadata][google.longrunning.Operation.metadata] will be WorkflowMetadata.
    * Also see [Using
    * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
    *

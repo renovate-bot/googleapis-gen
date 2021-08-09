@@ -372,9 +372,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         workflow-owned clusters to be deleted.
 
         The [Operation.metadata][google.longrunning.Operation.metadata]
-        will be
-        `WorkflowMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata>`__.
-        Also see `Using
+        will be WorkflowMetadata. Also see `Using
         WorkflowMetadata <https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata>`__.
 
         On successful completion,

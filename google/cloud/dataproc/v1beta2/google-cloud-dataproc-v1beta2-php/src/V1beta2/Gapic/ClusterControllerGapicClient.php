@@ -248,7 +248,7 @@ class ClusterControllerGapicClient
     /**
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      *
      * Sample code:
      * ```
@@ -342,7 +342,7 @@ class ClusterControllerGapicClient
     /**
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      *
      * Sample code:
      * ```
@@ -442,7 +442,7 @@ class ClusterControllerGapicClient
     /**
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
@@ -673,7 +673,7 @@ class ClusterControllerGapicClient
     /**
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      *
      * Sample code:
      * ```

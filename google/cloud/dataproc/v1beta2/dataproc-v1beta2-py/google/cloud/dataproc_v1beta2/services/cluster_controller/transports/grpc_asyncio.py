@@ -252,8 +252,7 @@ class ClusterControllerGrpcAsyncIOTransport(ClusterControllerTransport):
 
         Creates a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
-        be
-        `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata>`__.
+        be ClusterOperationMetadata.
 
         Returns:
             Callable[[~.CreateClusterRequest],
@@ -281,8 +280,7 @@ class ClusterControllerGrpcAsyncIOTransport(ClusterControllerTransport):
 
         Updates a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
-        be
-        `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata>`__.
+        be ClusterOperationMetadata.
 
         Returns:
             Callable[[~.UpdateClusterRequest],
@@ -310,8 +308,7 @@ class ClusterControllerGrpcAsyncIOTransport(ClusterControllerTransport):
 
         Deletes a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
-        be
-        `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata>`__.
+        be ClusterOperationMetadata.
 
         Returns:
             Callable[[~.DeleteClusterRequest],
@@ -393,9 +390,7 @@ class ClusterControllerGrpcAsyncIOTransport(ClusterControllerTransport):
 
         Gets cluster diagnostic information. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
-        be
-        `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata>`__.
-        After the operation completes,
+        be ClusterOperationMetadata. After the operation completes,
         [Operation.response][google.longrunning.Operation.response]
         contains [Empty][google.protobuf.Empty].
 

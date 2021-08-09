@@ -354,8 +354,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             ) -> operation.Operation:
         r"""Creates a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
-        be
-        `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata>`__.
+        be ClusterOperationMetadata.
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.CreateClusterRequest):
@@ -454,8 +453,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             ) -> operation.Operation:
         r"""Updates a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
-        be
-        `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata>`__.
+        be ClusterOperationMetadata.
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.UpdateClusterRequest):
@@ -635,8 +633,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             ) -> operation.Operation:
         r"""Deletes a cluster in a project. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
-        be
-        `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata>`__.
+        be ClusterOperationMetadata.
 
         Args:
             request (google.cloud.dataproc_v1beta2.types.DeleteClusterRequest):
@@ -954,9 +951,7 @@ class ClusterControllerClient(metaclass=ClusterControllerClientMeta):
             ) -> operation.Operation:
         r"""Gets cluster diagnostic information. The returned
         [Operation.metadata][google.longrunning.Operation.metadata] will
-        be
-        `ClusterOperationMetadata <https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata>`__.
-        After the operation completes,
+        be ClusterOperationMetadata. After the operation completes,
         [Operation.response][google.longrunning.Operation.response]
         contains [Empty][google.protobuf.Empty].
 

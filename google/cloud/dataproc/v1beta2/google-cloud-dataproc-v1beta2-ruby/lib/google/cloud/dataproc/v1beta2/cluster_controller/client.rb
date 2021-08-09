@@ -196,7 +196,7 @@ module Google
             ##
             # Creates a cluster in a project. The returned
             # {::Google::Longrunning::Operation#metadata Operation.metadata} will be
-            # [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+            # ClusterOperationMetadata.
             #
             # @overload create_cluster(request, options = nil)
             #   Pass arguments to `create_cluster` via a request object, either of type
@@ -284,7 +284,7 @@ module Google
             ##
             # Updates a cluster in a project. The returned
             # {::Google::Longrunning::Operation#metadata Operation.metadata} will be
-            # [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+            # ClusterOperationMetadata.
             #
             # @overload update_cluster(request, options = nil)
             #   Pass arguments to `update_cluster` via a request object, either of type
@@ -446,7 +446,7 @@ module Google
             ##
             # Deletes a cluster in a project. The returned
             # {::Google::Longrunning::Operation#metadata Operation.metadata} will be
-            # [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+            # ClusterOperationMetadata.
             #
             # @overload delete_cluster(request, options = nil)
             #   Pass arguments to `delete_cluster` via a request object, either of type
@@ -706,7 +706,7 @@ module Google
             ##
             # Gets cluster diagnostic information. The returned
             # {::Google::Longrunning::Operation#metadata Operation.metadata} will be
-            # [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+            # ClusterOperationMetadata.
             # After the operation completes,
             # {::Google::Longrunning::Operation#response Operation.response}
             # contains

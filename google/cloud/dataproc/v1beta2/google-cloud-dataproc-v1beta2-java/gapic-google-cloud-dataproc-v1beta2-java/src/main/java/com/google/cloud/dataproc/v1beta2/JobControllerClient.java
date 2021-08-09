@@ -645,9 +645,7 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a job cancellation request. To access the job resource after cancellation, call
-   * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
-   * or
-   * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+   * regions/{region}/jobs.list or regions/{region}/jobs.get.
    *
    * <p>Sample code:
    *
@@ -678,9 +676,7 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a job cancellation request. To access the job resource after cancellation, call
-   * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
-   * or
-   * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+   * regions/{region}/jobs.list or regions/{region}/jobs.get.
    *
    * <p>Sample code:
    *
@@ -706,9 +702,7 @@ public class JobControllerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
    * Starts a job cancellation request. To access the job resource after cancellation, call
-   * [regions/{region}/jobs.list](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/list)
-   * or
-   * [regions/{region}/jobs.get](https://cloud.google.com/dataproc/docs/reference/rest/v1beta2/projects.regions.jobs/get).
+   * regions/{region}/jobs.list or regions/{region}/jobs.get.
    *
    * <p>Sample code:
    *

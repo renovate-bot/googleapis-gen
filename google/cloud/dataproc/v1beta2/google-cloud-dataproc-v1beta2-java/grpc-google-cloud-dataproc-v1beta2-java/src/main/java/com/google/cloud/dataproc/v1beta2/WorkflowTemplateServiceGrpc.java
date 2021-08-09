@@ -321,7 +321,7 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+     * WorkflowMetadata.
      * Also see [Using
      * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
@@ -503,7 +503,7 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+     * WorkflowMetadata.
      * Also see [Using
      * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
@@ -634,7 +634,7 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+     * WorkflowMetadata.
      * Also see [Using
      * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,
@@ -762,7 +762,7 @@ public final class WorkflowTemplateServiceGrpc {
      * This will cause any inflight jobs to be cancelled and workflow-owned
      * clusters to be deleted.
      * The [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [WorkflowMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#workflowmetadata).
+     * WorkflowMetadata.
      * Also see [Using
      * WorkflowMetadata](https://cloud.google.com/dataproc/docs/concepts/workflows/debugging#using_workflowmetadata).
      * On successful completion,

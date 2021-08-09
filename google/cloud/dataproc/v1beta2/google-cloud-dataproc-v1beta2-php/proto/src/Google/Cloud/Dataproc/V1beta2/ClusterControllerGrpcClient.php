@@ -36,7 +36,7 @@ class ClusterControllerGrpcClient extends \Grpc\BaseStub {
     /**
      * Creates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * @param \Google\Cloud\Dataproc\V1beta2\CreateClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -53,7 +53,7 @@ class ClusterControllerGrpcClient extends \Grpc\BaseStub {
     /**
      * Updates a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * @param \Google\Cloud\Dataproc\V1beta2\UpdateClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -70,7 +70,7 @@ class ClusterControllerGrpcClient extends \Grpc\BaseStub {
     /**
      * Deletes a cluster in a project. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * @param \Google\Cloud\Dataproc\V1beta2\DeleteClusterRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -117,7 +117,7 @@ class ClusterControllerGrpcClient extends \Grpc\BaseStub {
     /**
      * Gets cluster diagnostic information. The returned
      * [Operation.metadata][google.longrunning.Operation.metadata] will be
-     * [ClusterOperationMetadata](https://cloud.google.com/dataproc/docs/reference/rpc/google.cloud.dataproc.v1beta2#clusteroperationmetadata).
+     * ClusterOperationMetadata.
      * After the operation completes,
      * [Operation.response][google.longrunning.Operation.response]
      * contains
