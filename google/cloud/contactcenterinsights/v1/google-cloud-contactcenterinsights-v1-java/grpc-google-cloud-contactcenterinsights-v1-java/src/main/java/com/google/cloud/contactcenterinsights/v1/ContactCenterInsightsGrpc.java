@@ -327,6 +327,68 @@ public final class ContactCenterInsightsGrpc {
     return getExportInsightsDataMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest,
+      com.google.longrunning.Operation> getCreateIssueModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateIssueModel",
+      requestType = com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest,
+      com.google.longrunning.Operation> getCreateIssueModelMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest, com.google.longrunning.Operation> getCreateIssueModelMethod;
+    if ((getCreateIssueModelMethod = ContactCenterInsightsGrpc.getCreateIssueModelMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getCreateIssueModelMethod = ContactCenterInsightsGrpc.getCreateIssueModelMethod) == null) {
+          ContactCenterInsightsGrpc.getCreateIssueModelMethod = getCreateIssueModelMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateIssueModel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new ContactCenterInsightsMethodDescriptorSupplier("CreateIssueModel"))
+              .build();
+        }
+      }
+    }
+    return getCreateIssueModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest,
+      com.google.cloud.contactcenterinsights.v1.IssueModel> getUpdateIssueModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateIssueModel",
+      requestType = com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.class,
+      responseType = com.google.cloud.contactcenterinsights.v1.IssueModel.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest,
+      com.google.cloud.contactcenterinsights.v1.IssueModel> getUpdateIssueModelMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest, com.google.cloud.contactcenterinsights.v1.IssueModel> getUpdateIssueModelMethod;
+    if ((getUpdateIssueModelMethod = ContactCenterInsightsGrpc.getUpdateIssueModelMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getUpdateIssueModelMethod = ContactCenterInsightsGrpc.getUpdateIssueModelMethod) == null) {
+          ContactCenterInsightsGrpc.getUpdateIssueModelMethod = getUpdateIssueModelMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest, com.google.cloud.contactcenterinsights.v1.IssueModel>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateIssueModel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.contactcenterinsights.v1.IssueModel.getDefaultInstance()))
+              .setSchemaDescriptor(new ContactCenterInsightsMethodDescriptorSupplier("UpdateIssueModel"))
+              .build();
+        }
+      }
+    }
+    return getUpdateIssueModelMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest,
       com.google.cloud.contactcenterinsights.v1.IssueModel> getGetIssueModelMethod;
 
@@ -389,6 +451,99 @@ public final class ContactCenterInsightsGrpc {
     return getListIssueModelsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest,
+      com.google.longrunning.Operation> getDeleteIssueModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteIssueModel",
+      requestType = com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest,
+      com.google.longrunning.Operation> getDeleteIssueModelMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest, com.google.longrunning.Operation> getDeleteIssueModelMethod;
+    if ((getDeleteIssueModelMethod = ContactCenterInsightsGrpc.getDeleteIssueModelMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getDeleteIssueModelMethod = ContactCenterInsightsGrpc.getDeleteIssueModelMethod) == null) {
+          ContactCenterInsightsGrpc.getDeleteIssueModelMethod = getDeleteIssueModelMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteIssueModel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new ContactCenterInsightsMethodDescriptorSupplier("DeleteIssueModel"))
+              .build();
+        }
+      }
+    }
+    return getDeleteIssueModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest,
+      com.google.longrunning.Operation> getDeployIssueModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeployIssueModel",
+      requestType = com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest,
+      com.google.longrunning.Operation> getDeployIssueModelMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest, com.google.longrunning.Operation> getDeployIssueModelMethod;
+    if ((getDeployIssueModelMethod = ContactCenterInsightsGrpc.getDeployIssueModelMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getDeployIssueModelMethod = ContactCenterInsightsGrpc.getDeployIssueModelMethod) == null) {
+          ContactCenterInsightsGrpc.getDeployIssueModelMethod = getDeployIssueModelMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeployIssueModel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new ContactCenterInsightsMethodDescriptorSupplier("DeployIssueModel"))
+              .build();
+        }
+      }
+    }
+    return getDeployIssueModelMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest,
+      com.google.longrunning.Operation> getUndeployIssueModelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UndeployIssueModel",
+      requestType = com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest,
+      com.google.longrunning.Operation> getUndeployIssueModelMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest, com.google.longrunning.Operation> getUndeployIssueModelMethod;
+    if ((getUndeployIssueModelMethod = ContactCenterInsightsGrpc.getUndeployIssueModelMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getUndeployIssueModelMethod = ContactCenterInsightsGrpc.getUndeployIssueModelMethod) == null) {
+          ContactCenterInsightsGrpc.getUndeployIssueModelMethod = getUndeployIssueModelMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UndeployIssueModel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new ContactCenterInsightsMethodDescriptorSupplier("UndeployIssueModel"))
+              .build();
+        }
+      }
+    }
+    return getUndeployIssueModelMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.GetIssueRequest,
       com.google.cloud.contactcenterinsights.v1.Issue> getGetIssueMethod;
 
@@ -449,6 +604,37 @@ public final class ContactCenterInsightsGrpc {
       }
     }
     return getListIssuesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest,
+      com.google.cloud.contactcenterinsights.v1.Issue> getUpdateIssueMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateIssue",
+      requestType = com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest.class,
+      responseType = com.google.cloud.contactcenterinsights.v1.Issue.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest,
+      com.google.cloud.contactcenterinsights.v1.Issue> getUpdateIssueMethod() {
+    io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest, com.google.cloud.contactcenterinsights.v1.Issue> getUpdateIssueMethod;
+    if ((getUpdateIssueMethod = ContactCenterInsightsGrpc.getUpdateIssueMethod) == null) {
+      synchronized (ContactCenterInsightsGrpc.class) {
+        if ((getUpdateIssueMethod = ContactCenterInsightsGrpc.getUpdateIssueMethod) == null) {
+          ContactCenterInsightsGrpc.getUpdateIssueMethod = getUpdateIssueMethod =
+              io.grpc.MethodDescriptor.<com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest, com.google.cloud.contactcenterinsights.v1.Issue>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateIssue"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.cloud.contactcenterinsights.v1.Issue.getDefaultInstance()))
+              .setSchemaDescriptor(new ContactCenterInsightsMethodDescriptorSupplier("UpdateIssue"))
+              .build();
+        }
+      }
+    }
+    return getUpdateIssueMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest,
@@ -853,6 +1039,26 @@ public final class ContactCenterInsightsGrpc {
 
     /**
      * <pre>
+     * Creates an issue model.
+     * </pre>
+     */
+    public void createIssueModel(com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCreateIssueModelMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates an issue model.
+     * </pre>
+     */
+    public void updateIssueModel(com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.IssueModel> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateIssueModelMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Gets an issue model.
      * </pre>
      */
@@ -873,6 +1079,38 @@ public final class ContactCenterInsightsGrpc {
 
     /**
      * <pre>
+     * Deletes an issue model.
+     * </pre>
+     */
+    public void deleteIssueModel(com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeleteIssueModelMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deploys an issue model. Returns an error if a model is already deployed.
+     * An issue model can only be used in analysis after it has been deployed.
+     * </pre>
+     */
+    public void deployIssueModel(com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDeployIssueModelMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Undeploys an issue model.
+     * An issue model can not be used in analysis after it has been undeployed.
+     * </pre>
+     */
+    public void undeployIssueModel(com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUndeployIssueModelMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
      * Gets an issue.
      * </pre>
      */
@@ -889,6 +1127,16 @@ public final class ContactCenterInsightsGrpc {
     public void listIssues(com.google.cloud.contactcenterinsights.v1.ListIssuesRequest request,
         io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.ListIssuesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListIssuesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates an issue.
+     * </pre>
+     */
+    public void updateIssue(com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.Issue> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateIssueMethod(), responseObserver);
     }
 
     /**
@@ -1044,6 +1292,20 @@ public final class ContactCenterInsightsGrpc {
                 com.google.longrunning.Operation>(
                   this, METHODID_EXPORT_INSIGHTS_DATA)))
           .addMethod(
+            getCreateIssueModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_CREATE_ISSUE_MODEL)))
+          .addMethod(
+            getUpdateIssueModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest,
+                com.google.cloud.contactcenterinsights.v1.IssueModel>(
+                  this, METHODID_UPDATE_ISSUE_MODEL)))
+          .addMethod(
             getGetIssueModelMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -1058,6 +1320,27 @@ public final class ContactCenterInsightsGrpc {
                 com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse>(
                   this, METHODID_LIST_ISSUE_MODELS)))
           .addMethod(
+            getDeleteIssueModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_DELETE_ISSUE_MODEL)))
+          .addMethod(
+            getDeployIssueModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_DEPLOY_ISSUE_MODEL)))
+          .addMethod(
+            getUndeployIssueModelMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_UNDEPLOY_ISSUE_MODEL)))
+          .addMethod(
             getGetIssueMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
               new MethodHandlers<
@@ -1071,6 +1354,13 @@ public final class ContactCenterInsightsGrpc {
                 com.google.cloud.contactcenterinsights.v1.ListIssuesRequest,
                 com.google.cloud.contactcenterinsights.v1.ListIssuesResponse>(
                   this, METHODID_LIST_ISSUES)))
+          .addMethod(
+            getUpdateIssueMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest,
+                com.google.cloud.contactcenterinsights.v1.Issue>(
+                  this, METHODID_UPDATE_ISSUE)))
           .addMethod(
             getCalculateIssueModelStatsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1261,6 +1551,28 @@ public final class ContactCenterInsightsGrpc {
 
     /**
      * <pre>
+     * Creates an issue model.
+     * </pre>
+     */
+    public void createIssueModel(com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateIssueModelMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates an issue model.
+     * </pre>
+     */
+    public void updateIssueModel(com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.IssueModel> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateIssueModelMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Gets an issue model.
      * </pre>
      */
@@ -1283,6 +1595,41 @@ public final class ContactCenterInsightsGrpc {
 
     /**
      * <pre>
+     * Deletes an issue model.
+     * </pre>
+     */
+    public void deleteIssueModel(com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteIssueModelMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Deploys an issue model. Returns an error if a model is already deployed.
+     * An issue model can only be used in analysis after it has been deployed.
+     * </pre>
+     */
+    public void deployIssueModel(com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeployIssueModelMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Undeploys an issue model.
+     * An issue model can not be used in analysis after it has been undeployed.
+     * </pre>
+     */
+    public void undeployIssueModel(com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUndeployIssueModelMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
      * Gets an issue.
      * </pre>
      */
@@ -1301,6 +1648,17 @@ public final class ContactCenterInsightsGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.ListIssuesResponse> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListIssuesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates an issue.
+     * </pre>
+     */
+    public void updateIssue(com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.Issue> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateIssueMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -1512,6 +1870,26 @@ public final class ContactCenterInsightsGrpc {
 
     /**
      * <pre>
+     * Creates an issue model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIssueModel(com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Updates an issue model.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.IssueModel updateIssueModel(com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Gets an issue model.
      * </pre>
      */
@@ -1532,6 +1910,38 @@ public final class ContactCenterInsightsGrpc {
 
     /**
      * <pre>
+     * Deletes an issue model.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIssueModel(com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Deploys an issue model. Returns an error if a model is already deployed.
+     * An issue model can only be used in analysis after it has been deployed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployIssueModel(com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Undeploys an issue model.
+     * An issue model can not be used in analysis after it has been undeployed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployIssueModel(com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeployIssueModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
      * Gets an issue.
      * </pre>
      */
@@ -1548,6 +1958,16 @@ public final class ContactCenterInsightsGrpc {
     public com.google.cloud.contactcenterinsights.v1.ListIssuesResponse listIssues(com.google.cloud.contactcenterinsights.v1.ListIssuesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListIssuesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Updates an issue.
+     * </pre>
+     */
+    public com.google.cloud.contactcenterinsights.v1.Issue updateIssue(com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateIssueMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1761,6 +2181,28 @@ public final class ContactCenterInsightsGrpc {
 
     /**
      * <pre>
+     * Creates an issue model.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> createIssueModel(
+        com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateIssueModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Updates an issue model.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.contactcenterinsights.v1.IssueModel> updateIssueModel(
+        com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateIssueModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Gets an issue model.
      * </pre>
      */
@@ -1783,6 +2225,41 @@ public final class ContactCenterInsightsGrpc {
 
     /**
      * <pre>
+     * Deletes an issue model.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteIssueModel(
+        com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteIssueModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Deploys an issue model. Returns an error if a model is already deployed.
+     * An issue model can only be used in analysis after it has been deployed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deployIssueModel(
+        com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeployIssueModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Undeploys an issue model.
+     * An issue model can not be used in analysis after it has been undeployed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> undeployIssueModel(
+        com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUndeployIssueModelMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
      * Gets an issue.
      * </pre>
      */
@@ -1801,6 +2278,17 @@ public final class ContactCenterInsightsGrpc {
         com.google.cloud.contactcenterinsights.v1.ListIssuesRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListIssuesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Updates an issue.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.contactcenterinsights.v1.Issue> updateIssue(
+        com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateIssueMethod(), getCallOptions()), request);
     }
 
     /**
@@ -1902,18 +2390,24 @@ public final class ContactCenterInsightsGrpc {
   private static final int METHODID_LIST_ANALYSES = 7;
   private static final int METHODID_DELETE_ANALYSIS = 8;
   private static final int METHODID_EXPORT_INSIGHTS_DATA = 9;
-  private static final int METHODID_GET_ISSUE_MODEL = 10;
-  private static final int METHODID_LIST_ISSUE_MODELS = 11;
-  private static final int METHODID_GET_ISSUE = 12;
-  private static final int METHODID_LIST_ISSUES = 13;
-  private static final int METHODID_CALCULATE_ISSUE_MODEL_STATS = 14;
-  private static final int METHODID_CREATE_PHRASE_MATCHER = 15;
-  private static final int METHODID_GET_PHRASE_MATCHER = 16;
-  private static final int METHODID_LIST_PHRASE_MATCHERS = 17;
-  private static final int METHODID_DELETE_PHRASE_MATCHER = 18;
-  private static final int METHODID_CALCULATE_STATS = 19;
-  private static final int METHODID_GET_SETTINGS = 20;
-  private static final int METHODID_UPDATE_SETTINGS = 21;
+  private static final int METHODID_CREATE_ISSUE_MODEL = 10;
+  private static final int METHODID_UPDATE_ISSUE_MODEL = 11;
+  private static final int METHODID_GET_ISSUE_MODEL = 12;
+  private static final int METHODID_LIST_ISSUE_MODELS = 13;
+  private static final int METHODID_DELETE_ISSUE_MODEL = 14;
+  private static final int METHODID_DEPLOY_ISSUE_MODEL = 15;
+  private static final int METHODID_UNDEPLOY_ISSUE_MODEL = 16;
+  private static final int METHODID_GET_ISSUE = 17;
+  private static final int METHODID_LIST_ISSUES = 18;
+  private static final int METHODID_UPDATE_ISSUE = 19;
+  private static final int METHODID_CALCULATE_ISSUE_MODEL_STATS = 20;
+  private static final int METHODID_CREATE_PHRASE_MATCHER = 21;
+  private static final int METHODID_GET_PHRASE_MATCHER = 22;
+  private static final int METHODID_LIST_PHRASE_MATCHERS = 23;
+  private static final int METHODID_DELETE_PHRASE_MATCHER = 24;
+  private static final int METHODID_CALCULATE_STATS = 25;
+  private static final int METHODID_GET_SETTINGS = 26;
+  private static final int METHODID_UPDATE_SETTINGS = 27;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1972,6 +2466,14 @@ public final class ContactCenterInsightsGrpc {
           serviceImpl.exportInsightsData((com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_CREATE_ISSUE_MODEL:
+          serviceImpl.createIssueModel((com.google.cloud.contactcenterinsights.v1.CreateIssueModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UPDATE_ISSUE_MODEL:
+          serviceImpl.updateIssueModel((com.google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.IssueModel>) responseObserver);
+          break;
         case METHODID_GET_ISSUE_MODEL:
           serviceImpl.getIssueModel((com.google.cloud.contactcenterinsights.v1.GetIssueModelRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.IssueModel>) responseObserver);
@@ -1980,6 +2482,18 @@ public final class ContactCenterInsightsGrpc {
           serviceImpl.listIssueModels((com.google.cloud.contactcenterinsights.v1.ListIssueModelsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.ListIssueModelsResponse>) responseObserver);
           break;
+        case METHODID_DELETE_ISSUE_MODEL:
+          serviceImpl.deleteIssueModel((com.google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DEPLOY_ISSUE_MODEL:
+          serviceImpl.deployIssueModel((com.google.cloud.contactcenterinsights.v1.DeployIssueModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_UNDEPLOY_ISSUE_MODEL:
+          serviceImpl.undeployIssueModel((com.google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_GET_ISSUE:
           serviceImpl.getIssue((com.google.cloud.contactcenterinsights.v1.GetIssueRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.Issue>) responseObserver);
@@ -1987,6 +2501,10 @@ public final class ContactCenterInsightsGrpc {
         case METHODID_LIST_ISSUES:
           serviceImpl.listIssues((com.google.cloud.contactcenterinsights.v1.ListIssuesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.ListIssuesResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_ISSUE:
+          serviceImpl.updateIssue((com.google.cloud.contactcenterinsights.v1.UpdateIssueRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.contactcenterinsights.v1.Issue>) responseObserver);
           break;
         case METHODID_CALCULATE_ISSUE_MODEL_STATS:
           serviceImpl.calculateIssueModelStats((com.google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest) request,
@@ -2091,10 +2609,16 @@ public final class ContactCenterInsightsGrpc {
               .addMethod(getListAnalysesMethod())
               .addMethod(getDeleteAnalysisMethod())
               .addMethod(getExportInsightsDataMethod())
+              .addMethod(getCreateIssueModelMethod())
+              .addMethod(getUpdateIssueModelMethod())
               .addMethod(getGetIssueModelMethod())
               .addMethod(getListIssueModelsMethod())
+              .addMethod(getDeleteIssueModelMethod())
+              .addMethod(getDeployIssueModelMethod())
+              .addMethod(getUndeployIssueModelMethod())
               .addMethod(getGetIssueMethod())
               .addMethod(getListIssuesMethod())
+              .addMethod(getUpdateIssueMethod())
               .addMethod(getCalculateIssueModelStatsMethod())
               .addMethod(getCreatePhraseMatcherMethod())
               .addMethod(getGetPhraseMatcherMethod())

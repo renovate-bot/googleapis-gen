@@ -653,12 +653,27 @@ module Google
         # @!attribute [r] state
         #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModel::State]
         #     Output only. State of the model.
+        # @!attribute [rw] input_data_config
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModel::InputDataConfig]
+        #     Configs for the input data that used to create the issue model.
         # @!attribute [r] training_stats
         #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModelLabelStats]
         #     Output only. Immutable. The issue model's label statistics on its training data.
         class IssueModel
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # Configs for the input data used to create the issue model.
+          # @!attribute [rw] medium
+          #   @return [::Google::Cloud::ContactCenterInsights::V1::Conversation::Medium]
+          #     Required. Medium of conversations used in training data.
+          # @!attribute [r] training_conversations_count
+          #   @return [::Integer]
+          #     Output only. Number of conversations used in training. Output only.
+          class InputDataConfig
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
 
           # State of the model.
           module State
@@ -895,6 +910,8 @@ module Google
         #     * "create-analysis": Notify each time an analysis is created.
         #     * "create-conversation": Notify each time a conversation is created.
         #     * "export-insights-data": Notify each time an export is complete.
+        #     * "update-conversation": Notify each time a conversation is updated via
+        #     UpdateConversation.
         #
         #     Values are Pub/Sub topics. The format of each Pub/Sub topic is:
         #     projects/\\{project}/topics/\\{topic}
@@ -1154,6 +1171,13 @@ module Google
         end
 
         # The call participant speaking for a given utterance.
+        # @!attribute [rw] dialogflow_participant_name
+        #   @return [::String]
+        #     The name of the participant provided by Dialogflow. Format:
+        #     projects/\\{project}/locations/\\{location}/conversations/\\{conversation}/participants/\\{participant}
+        # @!attribute [rw] user_id
+        #   @return [::String]
+        #     A user-specified ID representing the participant.
         # @!attribute [rw] dialogflow_participant
         #   @return [::String]
         #     The name of the Dialogflow participant. Format:

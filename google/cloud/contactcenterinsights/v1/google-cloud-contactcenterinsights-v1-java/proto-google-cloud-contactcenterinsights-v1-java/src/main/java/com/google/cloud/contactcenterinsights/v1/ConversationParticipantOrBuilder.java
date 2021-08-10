@@ -9,24 +9,85 @@ public interface ConversationParticipantOrBuilder extends
 
   /**
    * <pre>
-   * The name of the Dialogflow participant. Format:
+   * The name of the participant provided by Dialogflow. Format:
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
    * </pre>
    *
-   * <code>string dialogflow_participant = 1;</code>
-   * @return The dialogflowParticipant.
+   * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the dialogflowParticipantName field is set.
    */
-  java.lang.String getDialogflowParticipant();
+  boolean hasDialogflowParticipantName();
+  /**
+   * <pre>
+   * The name of the participant provided by Dialogflow. Format:
+   * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+   * </pre>
+   *
+   * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The dialogflowParticipantName.
+   */
+  java.lang.String getDialogflowParticipantName();
+  /**
+   * <pre>
+   * The name of the participant provided by Dialogflow. Format:
+   * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+   * </pre>
+   *
+   * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for dialogflowParticipantName.
+   */
+  com.google.protobuf.ByteString
+      getDialogflowParticipantNameBytes();
+
+  /**
+   * <pre>
+   * A user-specified ID representing the participant.
+   * </pre>
+   *
+   * <code>string user_id = 6;</code>
+   * @return Whether the userId field is set.
+   */
+  boolean hasUserId();
+  /**
+   * <pre>
+   * A user-specified ID representing the participant.
+   * </pre>
+   *
+   * <code>string user_id = 6;</code>
+   * @return The userId.
+   */
+  java.lang.String getUserId();
+  /**
+   * <pre>
+   * A user-specified ID representing the participant.
+   * </pre>
+   *
+   * <code>string user_id = 6;</code>
+   * @return The bytes for userId.
+   */
+  com.google.protobuf.ByteString
+      getUserIdBytes();
+
   /**
    * <pre>
    * The name of the Dialogflow participant. Format:
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
    * </pre>
    *
-   * <code>string dialogflow_participant = 1;</code>
+   * <code>string dialogflow_participant = 1 [deprecated = true];</code>
+   * @return The dialogflowParticipant.
+   */
+  @java.lang.Deprecated java.lang.String getDialogflowParticipant();
+  /**
+   * <pre>
+   * The name of the Dialogflow participant. Format:
+   * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+   * </pre>
+   *
+   * <code>string dialogflow_participant = 1 [deprecated = true];</code>
    * @return The bytes for dialogflowParticipant.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getDialogflowParticipantBytes();
 
   /**
@@ -47,4 +108,6 @@ public interface ConversationParticipantOrBuilder extends
    * @return The role.
    */
   com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role getRole();
+
+  public com.google.cloud.contactcenterinsights.v1.ConversationParticipant.ParticipantCase getParticipantCase();
 }

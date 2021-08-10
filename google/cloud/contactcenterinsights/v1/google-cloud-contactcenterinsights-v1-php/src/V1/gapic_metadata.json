@@ -30,6 +30,11 @@
                                 "createConversation"
                             ]
                         },
+                        "CreateIssueModel": {
+                            "methods": [
+                                "createIssueModel"
+                            ]
+                        },
                         "CreatePhraseMatcher": {
                             "methods": [
                                 "createPhraseMatcher"
@@ -45,9 +50,19 @@
                                 "deleteConversation"
                             ]
                         },
+                        "DeleteIssueModel": {
+                            "methods": [
+                                "deleteIssueModel"
+                            ]
+                        },
                         "DeletePhraseMatcher": {
                             "methods": [
                                 "deletePhraseMatcher"
+                            ]
+                        },
+                        "DeployIssueModel": {
+                            "methods": [
+                                "deployIssueModel"
                             ]
                         },
                         "ExportInsightsData": {
@@ -110,9 +125,24 @@
                                 "listPhraseMatchers"
                             ]
                         },
+                        "UndeployIssueModel": {
+                            "methods": [
+                                "undeployIssueModel"
+                            ]
+                        },
                         "UpdateConversation": {
                             "methods": [
                                 "updateConversation"
+                            ]
+                        },
+                        "UpdateIssue": {
+                            "methods": [
+                                "updateIssue"
+                            ]
+                        },
+                        "UpdateIssueModel": {
+                            "methods": [
+                                "updateIssueModel"
                             ]
                         },
                         "UpdateSettings": {

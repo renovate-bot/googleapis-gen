@@ -54,14 +54,28 @@ module Google
             rpc :DeleteAnalysis, ::Google::Cloud::ContactCenterInsights::V1::DeleteAnalysisRequest, ::Google::Protobuf::Empty
             # Export insights data to a destination defined in the request body.
             rpc :ExportInsightsData, ::Google::Cloud::ContactCenterInsights::V1::ExportInsightsDataRequest, ::Google::Longrunning::Operation
+            # Creates an issue model.
+            rpc :CreateIssueModel, ::Google::Cloud::ContactCenterInsights::V1::CreateIssueModelRequest, ::Google::Longrunning::Operation
+            # Updates an issue model.
+            rpc :UpdateIssueModel, ::Google::Cloud::ContactCenterInsights::V1::UpdateIssueModelRequest, ::Google::Cloud::ContactCenterInsights::V1::IssueModel
             # Gets an issue model.
             rpc :GetIssueModel, ::Google::Cloud::ContactCenterInsights::V1::GetIssueModelRequest, ::Google::Cloud::ContactCenterInsights::V1::IssueModel
             # Lists issue models.
             rpc :ListIssueModels, ::Google::Cloud::ContactCenterInsights::V1::ListIssueModelsRequest, ::Google::Cloud::ContactCenterInsights::V1::ListIssueModelsResponse
+            # Deletes an issue model.
+            rpc :DeleteIssueModel, ::Google::Cloud::ContactCenterInsights::V1::DeleteIssueModelRequest, ::Google::Longrunning::Operation
+            # Deploys an issue model. Returns an error if a model is already deployed.
+            # An issue model can only be used in analysis after it has been deployed.
+            rpc :DeployIssueModel, ::Google::Cloud::ContactCenterInsights::V1::DeployIssueModelRequest, ::Google::Longrunning::Operation
+            # Undeploys an issue model.
+            # An issue model can not be used in analysis after it has been undeployed.
+            rpc :UndeployIssueModel, ::Google::Cloud::ContactCenterInsights::V1::UndeployIssueModelRequest, ::Google::Longrunning::Operation
             # Gets an issue.
             rpc :GetIssue, ::Google::Cloud::ContactCenterInsights::V1::GetIssueRequest, ::Google::Cloud::ContactCenterInsights::V1::Issue
             # Lists issues.
             rpc :ListIssues, ::Google::Cloud::ContactCenterInsights::V1::ListIssuesRequest, ::Google::Cloud::ContactCenterInsights::V1::ListIssuesResponse
+            # Updates an issue.
+            rpc :UpdateIssue, ::Google::Cloud::ContactCenterInsights::V1::UpdateIssueRequest, ::Google::Cloud::ContactCenterInsights::V1::Issue
             # Gets an issue model's statistics.
             rpc :CalculateIssueModelStats, ::Google::Cloud::ContactCenterInsights::V1::CalculateIssueModelStatsRequest, ::Google::Cloud::ContactCenterInsights::V1::CalculateIssueModelStatsResponse
             # Creates a phrase matcher.

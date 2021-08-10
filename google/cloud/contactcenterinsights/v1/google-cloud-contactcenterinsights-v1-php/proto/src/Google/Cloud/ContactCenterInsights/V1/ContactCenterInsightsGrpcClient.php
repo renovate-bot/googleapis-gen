@@ -184,6 +184,36 @@ class ContactCenterInsightsGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Creates an issue model.
+     * @param \Google\Cloud\ContactCenterInsights\V1\CreateIssueModelRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateIssueModel(\Google\Cloud\ContactCenterInsights\V1\CreateIssueModelRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateIssueModel',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Updates an issue model.
+     * @param \Google\Cloud\ContactCenterInsights\V1\UpdateIssueModelRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateIssueModel(\Google\Cloud\ContactCenterInsights\V1\UpdateIssueModelRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateIssueModel',
+        $argument,
+        ['\Google\Cloud\ContactCenterInsights\V1\IssueModel', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Gets an issue model.
      * @param \Google\Cloud\ContactCenterInsights\V1\GetIssueModelRequest $argument input argument
      * @param array $metadata metadata
@@ -214,6 +244,53 @@ class ContactCenterInsightsGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Deletes an issue model.
+     * @param \Google\Cloud\ContactCenterInsights\V1\DeleteIssueModelRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteIssueModel(\Google\Cloud\ContactCenterInsights\V1\DeleteIssueModelRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteIssueModel',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deploys an issue model. Returns an error if a model is already deployed.
+     * An issue model can only be used in analysis after it has been deployed.
+     * @param \Google\Cloud\ContactCenterInsights\V1\DeployIssueModelRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeployIssueModel(\Google\Cloud\ContactCenterInsights\V1\DeployIssueModelRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeployIssueModel',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Undeploys an issue model.
+     * An issue model can not be used in analysis after it has been undeployed.
+     * @param \Google\Cloud\ContactCenterInsights\V1\UndeployIssueModelRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UndeployIssueModel(\Google\Cloud\ContactCenterInsights\V1\UndeployIssueModelRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.contactcenterinsights.v1.ContactCenterInsights/UndeployIssueModel',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
      * Gets an issue.
      * @param \Google\Cloud\ContactCenterInsights\V1\GetIssueRequest $argument input argument
      * @param array $metadata metadata
@@ -240,6 +317,21 @@ class ContactCenterInsightsGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListIssues',
         $argument,
         ['\Google\Cloud\ContactCenterInsights\V1\ListIssuesResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Updates an issue.
+     * @param \Google\Cloud\ContactCenterInsights\V1\UpdateIssueRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateIssue(\Google\Cloud\ContactCenterInsights\V1\UpdateIssueRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateIssue',
+        $argument,
+        ['\Google\Cloud\ContactCenterInsights\V1\Issue', 'decode'],
         $metadata, $options);
     }
 

@@ -66,6 +66,18 @@ private static final long serialVersionUID = 0L;
             role_ = rawValue;
             break;
           }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+            participantCase_ = 5;
+            participant_ = s;
+            break;
+          }
+          case 50: {
+            java.lang.String s = input.readStringRequireUtf8();
+            participantCase_ = 6;
+            participant_ = s;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -277,6 +289,178 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.contactcenterinsights.v1.ConversationParticipant.Role)
   }
 
+  private int participantCase_ = 0;
+  private java.lang.Object participant_;
+  public enum ParticipantCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DIALOGFLOW_PARTICIPANT_NAME(5),
+    USER_ID(6),
+    PARTICIPANT_NOT_SET(0);
+    private final int value;
+    private ParticipantCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ParticipantCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ParticipantCase forNumber(int value) {
+      switch (value) {
+        case 5: return DIALOGFLOW_PARTICIPANT_NAME;
+        case 6: return USER_ID;
+        case 0: return PARTICIPANT_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ParticipantCase
+  getParticipantCase() {
+    return ParticipantCase.forNumber(
+        participantCase_);
+  }
+
+  public static final int DIALOGFLOW_PARTICIPANT_NAME_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   * The name of the participant provided by Dialogflow. Format:
+   * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+   * </pre>
+   *
+   * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return Whether the dialogflowParticipantName field is set.
+   */
+  public boolean hasDialogflowParticipantName() {
+    return participantCase_ == 5;
+  }
+  /**
+   * <pre>
+   * The name of the participant provided by Dialogflow. Format:
+   * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+   * </pre>
+   *
+   * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The dialogflowParticipantName.
+   */
+  public java.lang.String getDialogflowParticipantName() {
+    java.lang.Object ref = "";
+    if (participantCase_ == 5) {
+      ref = participant_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (participantCase_ == 5) {
+        participant_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * The name of the participant provided by Dialogflow. Format:
+   * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+   * </pre>
+   *
+   * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for dialogflowParticipantName.
+   */
+  public com.google.protobuf.ByteString
+      getDialogflowParticipantNameBytes() {
+    java.lang.Object ref = "";
+    if (participantCase_ == 5) {
+      ref = participant_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (participantCase_ == 5) {
+        participant_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int USER_ID_FIELD_NUMBER = 6;
+  /**
+   * <pre>
+   * A user-specified ID representing the participant.
+   * </pre>
+   *
+   * <code>string user_id = 6;</code>
+   * @return Whether the userId field is set.
+   */
+  public boolean hasUserId() {
+    return participantCase_ == 6;
+  }
+  /**
+   * <pre>
+   * A user-specified ID representing the participant.
+   * </pre>
+   *
+   * <code>string user_id = 6;</code>
+   * @return The userId.
+   */
+  public java.lang.String getUserId() {
+    java.lang.Object ref = "";
+    if (participantCase_ == 6) {
+      ref = participant_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (participantCase_ == 6) {
+        participant_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * A user-specified ID representing the participant.
+   * </pre>
+   *
+   * <code>string user_id = 6;</code>
+   * @return The bytes for userId.
+   */
+  public com.google.protobuf.ByteString
+      getUserIdBytes() {
+    java.lang.Object ref = "";
+    if (participantCase_ == 6) {
+      ref = participant_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (participantCase_ == 6) {
+        participant_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int DIALOGFLOW_PARTICIPANT_FIELD_NUMBER = 1;
   private volatile java.lang.Object dialogflowParticipant_;
   /**
@@ -285,11 +469,11 @@ private static final long serialVersionUID = 0L;
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
    * </pre>
    *
-   * <code>string dialogflow_participant = 1;</code>
+   * <code>string dialogflow_participant = 1 [deprecated = true];</code>
    * @return The dialogflowParticipant.
    */
   @java.lang.Override
-  public java.lang.String getDialogflowParticipant() {
+  @java.lang.Deprecated public java.lang.String getDialogflowParticipant() {
     java.lang.Object ref = dialogflowParticipant_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -307,11 +491,11 @@ private static final long serialVersionUID = 0L;
    * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
    * </pre>
    *
-   * <code>string dialogflow_participant = 1;</code>
+   * <code>string dialogflow_participant = 1 [deprecated = true];</code>
    * @return The bytes for dialogflowParticipant.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getDialogflowParticipantBytes() {
     java.lang.Object ref = dialogflowParticipant_;
     if (ref instanceof java.lang.String) {
@@ -372,6 +556,12 @@ private static final long serialVersionUID = 0L;
     if (role_ != com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.ROLE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, role_);
     }
+    if (participantCase_ == 5) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, participant_);
+    }
+    if (participantCase_ == 6) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, participant_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -387,6 +577,12 @@ private static final long serialVersionUID = 0L;
     if (role_ != com.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role.ROLE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, role_);
+    }
+    if (participantCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, participant_);
+    }
+    if (participantCase_ == 6) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, participant_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -406,6 +602,19 @@ private static final long serialVersionUID = 0L;
     if (!getDialogflowParticipant()
         .equals(other.getDialogflowParticipant())) return false;
     if (role_ != other.role_) return false;
+    if (!getParticipantCase().equals(other.getParticipantCase())) return false;
+    switch (participantCase_) {
+      case 5:
+        if (!getDialogflowParticipantName()
+            .equals(other.getDialogflowParticipantName())) return false;
+        break;
+      case 6:
+        if (!getUserId()
+            .equals(other.getUserId())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -421,6 +630,18 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getDialogflowParticipant().hashCode();
     hash = (37 * hash) + ROLE_FIELD_NUMBER;
     hash = (53 * hash) + role_;
+    switch (participantCase_) {
+      case 5:
+        hash = (37 * hash) + DIALOGFLOW_PARTICIPANT_NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getDialogflowParticipantName().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getUserId().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -562,6 +783,8 @@ private static final long serialVersionUID = 0L;
 
       role_ = 0;
 
+      participantCase_ = 0;
+      participant_ = null;
       return this;
     }
 
@@ -588,8 +811,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.cloud.contactcenterinsights.v1.ConversationParticipant buildPartial() {
       com.google.cloud.contactcenterinsights.v1.ConversationParticipant result = new com.google.cloud.contactcenterinsights.v1.ConversationParticipant(this);
+      if (participantCase_ == 5) {
+        result.participant_ = participant_;
+      }
+      if (participantCase_ == 6) {
+        result.participant_ = participant_;
+      }
       result.dialogflowParticipant_ = dialogflowParticipant_;
       result.role_ = role_;
+      result.participantCase_ = participantCase_;
       onBuilt();
       return result;
     }
@@ -645,6 +875,23 @@ private static final long serialVersionUID = 0L;
       if (other.role_ != 0) {
         setRoleValue(other.getRoleValue());
       }
+      switch (other.getParticipantCase()) {
+        case DIALOGFLOW_PARTICIPANT_NAME: {
+          participantCase_ = 5;
+          participant_ = other.participant_;
+          onChanged();
+          break;
+        }
+        case USER_ID: {
+          participantCase_ = 6;
+          participant_ = other.participant_;
+          onChanged();
+          break;
+        }
+        case PARTICIPANT_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -673,6 +920,269 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+    private int participantCase_ = 0;
+    private java.lang.Object participant_;
+    public ParticipantCase
+        getParticipantCase() {
+      return ParticipantCase.forNumber(
+          participantCase_);
+    }
+
+    public Builder clearParticipant() {
+      participantCase_ = 0;
+      participant_ = null;
+      onChanged();
+      return this;
+    }
+
+
+    /**
+     * <pre>
+     * The name of the participant provided by Dialogflow. Format:
+     * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     * </pre>
+     *
+     * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return Whether the dialogflowParticipantName field is set.
+     */
+    @java.lang.Override
+    public boolean hasDialogflowParticipantName() {
+      return participantCase_ == 5;
+    }
+    /**
+     * <pre>
+     * The name of the participant provided by Dialogflow. Format:
+     * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     * </pre>
+     *
+     * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return The dialogflowParticipantName.
+     */
+    @java.lang.Override
+    public java.lang.String getDialogflowParticipantName() {
+      java.lang.Object ref = "";
+      if (participantCase_ == 5) {
+        ref = participant_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (participantCase_ == 5) {
+          participant_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the participant provided by Dialogflow. Format:
+     * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     * </pre>
+     *
+     * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for dialogflowParticipantName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDialogflowParticipantNameBytes() {
+      java.lang.Object ref = "";
+      if (participantCase_ == 5) {
+        ref = participant_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (participantCase_ == 5) {
+          participant_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The name of the participant provided by Dialogflow. Format:
+     * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     * </pre>
+     *
+     * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The dialogflowParticipantName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDialogflowParticipantName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  participantCase_ = 5;
+      participant_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The name of the participant provided by Dialogflow. Format:
+     * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     * </pre>
+     *
+     * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDialogflowParticipantName() {
+      if (participantCase_ == 5) {
+        participantCase_ = 0;
+        participant_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * The name of the participant provided by Dialogflow. Format:
+     * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     * </pre>
+     *
+     * <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for dialogflowParticipantName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDialogflowParticipantNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      participantCase_ = 5;
+      participant_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <pre>
+     * A user-specified ID representing the participant.
+     * </pre>
+     *
+     * <code>string user_id = 6;</code>
+     * @return Whether the userId field is set.
+     */
+    @java.lang.Override
+    public boolean hasUserId() {
+      return participantCase_ == 6;
+    }
+    /**
+     * <pre>
+     * A user-specified ID representing the participant.
+     * </pre>
+     *
+     * <code>string user_id = 6;</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = "";
+      if (participantCase_ == 6) {
+        ref = participant_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (participantCase_ == 6) {
+          participant_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A user-specified ID representing the participant.
+     * </pre>
+     *
+     * <code>string user_id = 6;</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = "";
+      if (participantCase_ == 6) {
+        ref = participant_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (participantCase_ == 6) {
+          participant_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * A user-specified ID representing the participant.
+     * </pre>
+     *
+     * <code>string user_id = 6;</code>
+     * @param value The userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  participantCase_ = 6;
+      participant_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * A user-specified ID representing the participant.
+     * </pre>
+     *
+     * <code>string user_id = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUserId() {
+      if (participantCase_ == 6) {
+        participantCase_ = 0;
+        participant_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * A user-specified ID representing the participant.
+     * </pre>
+     *
+     * <code>string user_id = 6;</code>
+     * @param value The bytes for userId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUserIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      participantCase_ = 6;
+      participant_ = value;
+      onChanged();
+      return this;
+    }
 
     private java.lang.Object dialogflowParticipant_ = "";
     /**
@@ -681,10 +1191,10 @@ private static final long serialVersionUID = 0L;
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
      *
-     * <code>string dialogflow_participant = 1;</code>
+     * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      * @return The dialogflowParticipant.
      */
-    public java.lang.String getDialogflowParticipant() {
+    @java.lang.Deprecated public java.lang.String getDialogflowParticipant() {
       java.lang.Object ref = dialogflowParticipant_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -702,10 +1212,10 @@ private static final long serialVersionUID = 0L;
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
      *
-     * <code>string dialogflow_participant = 1;</code>
+     * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      * @return The bytes for dialogflowParticipant.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getDialogflowParticipantBytes() {
       java.lang.Object ref = dialogflowParticipant_;
       if (ref instanceof String) {
@@ -724,11 +1234,11 @@ private static final long serialVersionUID = 0L;
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
      *
-     * <code>string dialogflow_participant = 1;</code>
+     * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      * @param value The dialogflowParticipant to set.
      * @return This builder for chaining.
      */
-    public Builder setDialogflowParticipant(
+    @java.lang.Deprecated public Builder setDialogflowParticipant(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
@@ -744,10 +1254,10 @@ private static final long serialVersionUID = 0L;
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
      *
-     * <code>string dialogflow_participant = 1;</code>
+     * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      * @return This builder for chaining.
      */
-    public Builder clearDialogflowParticipant() {
+    @java.lang.Deprecated public Builder clearDialogflowParticipant() {
       
       dialogflowParticipant_ = getDefaultInstance().getDialogflowParticipant();
       onChanged();
@@ -759,11 +1269,11 @@ private static final long serialVersionUID = 0L;
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      * </pre>
      *
-     * <code>string dialogflow_participant = 1;</code>
+     * <code>string dialogflow_participant = 1 [deprecated = true];</code>
      * @param value The bytes for dialogflowParticipant to set.
      * @return This builder for chaining.
      */
-    public Builder setDialogflowParticipantBytes(
+    @java.lang.Deprecated public Builder setDialogflowParticipantBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();

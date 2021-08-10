@@ -901,6 +901,147 @@ module Google
             end
 
             ##
+            # Creates an issue model.
+            #
+            # @overload create_issue_model(request, options = nil)
+            #   Pass arguments to `create_issue_model` via a request object, either of type
+            #   {::Google::Cloud::ContactCenterInsights::V1::CreateIssueModelRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::ContactCenterInsights::V1::CreateIssueModelRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload create_issue_model(parent: nil, issue_model: nil)
+            #   Pass arguments to `create_issue_model` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param parent [::String]
+            #     Required. The parent resource of the issue model.
+            #   @param issue_model [::Google::Cloud::ContactCenterInsights::V1::IssueModel, ::Hash]
+            #     Required. The issue model to create.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def create_issue_model request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::ContactCenterInsights::V1::CreateIssueModelRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.create_issue_model.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Contactcenterinsights::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "parent" => request.parent
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.create_issue_model.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.create_issue_model.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @contact_center_insights_stub.call_rpc :create_issue_model, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Updates an issue model.
+            #
+            # @overload update_issue_model(request, options = nil)
+            #   Pass arguments to `update_issue_model` via a request object, either of type
+            #   {::Google::Cloud::ContactCenterInsights::V1::UpdateIssueModelRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::ContactCenterInsights::V1::UpdateIssueModelRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload update_issue_model(issue_model: nil, update_mask: nil)
+            #   Pass arguments to `update_issue_model` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param issue_model [::Google::Cloud::ContactCenterInsights::V1::IssueModel, ::Hash]
+            #     Required. The new values for the issue model.
+            #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
+            #     The list of fields to be updated.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::ContactCenterInsights::V1::IssueModel]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::ContactCenterInsights::V1::IssueModel]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def update_issue_model request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::ContactCenterInsights::V1::UpdateIssueModelRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.update_issue_model.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Contactcenterinsights::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "issue_model.name" => request.issue_model.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.update_issue_model.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.update_issue_model.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @contact_center_insights_stub.call_rpc :update_issue_model, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Gets an issue model.
             #
             # @overload get_issue_model(request, options = nil)
@@ -1037,6 +1178,215 @@ module Google
             end
 
             ##
+            # Deletes an issue model.
+            #
+            # @overload delete_issue_model(request, options = nil)
+            #   Pass arguments to `delete_issue_model` via a request object, either of type
+            #   {::Google::Cloud::ContactCenterInsights::V1::DeleteIssueModelRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::ContactCenterInsights::V1::DeleteIssueModelRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload delete_issue_model(name: nil)
+            #   Pass arguments to `delete_issue_model` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The name of the issue model to delete.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def delete_issue_model request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::ContactCenterInsights::V1::DeleteIssueModelRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.delete_issue_model.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Contactcenterinsights::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.delete_issue_model.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.delete_issue_model.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @contact_center_insights_stub.call_rpc :delete_issue_model, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Deploys an issue model. Returns an error if a model is already deployed.
+            # An issue model can only be used in analysis after it has been deployed.
+            #
+            # @overload deploy_issue_model(request, options = nil)
+            #   Pass arguments to `deploy_issue_model` via a request object, either of type
+            #   {::Google::Cloud::ContactCenterInsights::V1::DeployIssueModelRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::ContactCenterInsights::V1::DeployIssueModelRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload deploy_issue_model(name: nil)
+            #   Pass arguments to `deploy_issue_model` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The issue model to deploy.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def deploy_issue_model request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::ContactCenterInsights::V1::DeployIssueModelRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.deploy_issue_model.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Contactcenterinsights::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.deploy_issue_model.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.deploy_issue_model.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @contact_center_insights_stub.call_rpc :deploy_issue_model, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Undeploys an issue model.
+            # An issue model can not be used in analysis after it has been undeployed.
+            #
+            # @overload undeploy_issue_model(request, options = nil)
+            #   Pass arguments to `undeploy_issue_model` via a request object, either of type
+            #   {::Google::Cloud::ContactCenterInsights::V1::UndeployIssueModelRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::ContactCenterInsights::V1::UndeployIssueModelRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload undeploy_issue_model(name: nil)
+            #   Pass arguments to `undeploy_issue_model` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param name [::String]
+            #     Required. The issue model to undeploy.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def undeploy_issue_model request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::ContactCenterInsights::V1::UndeployIssueModelRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.undeploy_issue_model.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Contactcenterinsights::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "name" => request.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.undeploy_issue_model.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.undeploy_issue_model.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @contact_center_insights_stub.call_rpc :undeploy_issue_model, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Gets an issue.
             #
             # @overload get_issue(request, options = nil)
@@ -1165,6 +1515,76 @@ module Google
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :list_issues, request, options: options do |response, operation|
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
+            # Updates an issue.
+            #
+            # @overload update_issue(request, options = nil)
+            #   Pass arguments to `update_issue` via a request object, either of type
+            #   {::Google::Cloud::ContactCenterInsights::V1::UpdateIssueRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::ContactCenterInsights::V1::UpdateIssueRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload update_issue(issue: nil, update_mask: nil)
+            #   Pass arguments to `update_issue` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param issue [::Google::Cloud::ContactCenterInsights::V1::Issue, ::Hash]
+            #     Required. The new values for the issue.
+            #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
+            #     The list of fields to be updated.
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Google::Cloud::ContactCenterInsights::V1::Issue]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Google::Cloud::ContactCenterInsights::V1::Issue]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            def update_issue request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::ContactCenterInsights::V1::UpdateIssueRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.update_issue.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Contactcenterinsights::V1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {
+                "issue.name" => request.issue.name
+              }
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.update_issue.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.update_issue.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @contact_center_insights_stub.call_rpc :update_issue, request, options: options do |response, operation|
                 yield response, operation if block_given?
                 return response
               end
@@ -1925,6 +2345,16 @@ module Google
                 #
                 attr_reader :export_insights_data
                 ##
+                # RPC-specific configuration for `create_issue_model`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :create_issue_model
+                ##
+                # RPC-specific configuration for `update_issue_model`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :update_issue_model
+                ##
                 # RPC-specific configuration for `get_issue_model`
                 # @return [::Gapic::Config::Method]
                 #
@@ -1935,6 +2365,21 @@ module Google
                 #
                 attr_reader :list_issue_models
                 ##
+                # RPC-specific configuration for `delete_issue_model`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :delete_issue_model
+                ##
+                # RPC-specific configuration for `deploy_issue_model`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :deploy_issue_model
+                ##
+                # RPC-specific configuration for `undeploy_issue_model`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :undeploy_issue_model
+                ##
                 # RPC-specific configuration for `get_issue`
                 # @return [::Gapic::Config::Method]
                 #
@@ -1944,6 +2389,11 @@ module Google
                 # @return [::Gapic::Config::Method]
                 #
                 attr_reader :list_issues
+                ##
+                # RPC-specific configuration for `update_issue`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :update_issue
                 ##
                 # RPC-specific configuration for `calculate_issue_model_stats`
                 # @return [::Gapic::Config::Method]
@@ -2007,14 +2457,26 @@ module Google
                   @delete_analysis = ::Gapic::Config::Method.new delete_analysis_config
                   export_insights_data_config = parent_rpcs.export_insights_data if parent_rpcs.respond_to? :export_insights_data
                   @export_insights_data = ::Gapic::Config::Method.new export_insights_data_config
+                  create_issue_model_config = parent_rpcs.create_issue_model if parent_rpcs.respond_to? :create_issue_model
+                  @create_issue_model = ::Gapic::Config::Method.new create_issue_model_config
+                  update_issue_model_config = parent_rpcs.update_issue_model if parent_rpcs.respond_to? :update_issue_model
+                  @update_issue_model = ::Gapic::Config::Method.new update_issue_model_config
                   get_issue_model_config = parent_rpcs.get_issue_model if parent_rpcs.respond_to? :get_issue_model
                   @get_issue_model = ::Gapic::Config::Method.new get_issue_model_config
                   list_issue_models_config = parent_rpcs.list_issue_models if parent_rpcs.respond_to? :list_issue_models
                   @list_issue_models = ::Gapic::Config::Method.new list_issue_models_config
+                  delete_issue_model_config = parent_rpcs.delete_issue_model if parent_rpcs.respond_to? :delete_issue_model
+                  @delete_issue_model = ::Gapic::Config::Method.new delete_issue_model_config
+                  deploy_issue_model_config = parent_rpcs.deploy_issue_model if parent_rpcs.respond_to? :deploy_issue_model
+                  @deploy_issue_model = ::Gapic::Config::Method.new deploy_issue_model_config
+                  undeploy_issue_model_config = parent_rpcs.undeploy_issue_model if parent_rpcs.respond_to? :undeploy_issue_model
+                  @undeploy_issue_model = ::Gapic::Config::Method.new undeploy_issue_model_config
                   get_issue_config = parent_rpcs.get_issue if parent_rpcs.respond_to? :get_issue
                   @get_issue = ::Gapic::Config::Method.new get_issue_config
                   list_issues_config = parent_rpcs.list_issues if parent_rpcs.respond_to? :list_issues
                   @list_issues = ::Gapic::Config::Method.new list_issues_config
+                  update_issue_config = parent_rpcs.update_issue if parent_rpcs.respond_to? :update_issue
+                  @update_issue = ::Gapic::Config::Method.new update_issue_config
                   calculate_issue_model_stats_config = parent_rpcs.calculate_issue_model_stats if parent_rpcs.respond_to? :calculate_issue_model_stats
                   @calculate_issue_model_stats = ::Gapic::Config::Method.new calculate_issue_model_stats_config
                   create_phrase_matcher_config = parent_rpcs.create_phrase_matcher if parent_rpcs.respond_to? :create_phrase_matcher

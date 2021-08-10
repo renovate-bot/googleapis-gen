@@ -368,6 +368,45 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # The request to create an issue model.
+        # @!attribute [rw] parent
+        #   @return [::String]
+        #     Required. The parent resource of the issue model.
+        # @!attribute [rw] issue_model
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModel]
+        #     Required. The issue model to create.
+        class CreateIssueModelRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Metadata for creating an issue model.
+        # @!attribute [r] create_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time the operation was created.
+        # @!attribute [r] end_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time the operation finished running.
+        # @!attribute [rw] request
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::CreateIssueModelRequest]
+        #     The original request for creation.
+        class CreateIssueModelMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The request to update an issue model.
+        # @!attribute [rw] issue_model
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::IssueModel]
+        #     Required. The new values for the issue model.
+        # @!attribute [rw] update_mask
+        #   @return [::Google::Protobuf::FieldMask]
+        #     The list of fields to be updated.
+        class UpdateIssueModelRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Request to list issue models.
         # @!attribute [rw] parent
         #   @return [::String]
@@ -395,6 +434,90 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # The request to delete an issue model.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The name of the issue model to delete.
+        class DeleteIssueModelRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Metadata for deleting an issue model.
+        # @!attribute [r] create_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time the operation was created.
+        # @!attribute [r] end_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time the operation finished running.
+        # @!attribute [rw] request
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::DeleteIssueModelRequest]
+        #     The original request for deletion.
+        class DeleteIssueModelMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The request to deploy an issue model.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The issue model to deploy.
+        class DeployIssueModelRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The response to deploy an issue model.
+        class DeployIssueModelResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Metadata for deploying an issue model.
+        # @!attribute [r] create_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time the operation was created.
+        # @!attribute [r] end_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time the operation finished running.
+        # @!attribute [rw] request
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::DeployIssueModelRequest]
+        #     The original request for deployment.
+        class DeployIssueModelMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The request to undeploy an issue model.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     Required. The issue model to undeploy.
+        class UndeployIssueModelRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The response to undeploy an issue model.
+        class UndeployIssueModelResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Metadata for undeploying an issue model.
+        # @!attribute [r] create_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time the operation was created.
+        # @!attribute [r] end_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time the operation finished running.
+        # @!attribute [rw] request
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::UndeployIssueModelRequest]
+        #     The original request for undeployment.
+        class UndeployIssueModelMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # The request to get an issue.
         # @!attribute [rw] name
         #   @return [::String]
@@ -418,6 +541,18 @@ module Google
         #   @return [::Array<::Google::Cloud::ContactCenterInsights::V1::Issue>]
         #     The issues that match the request.
         class ListIssuesResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # The request to update an issue.
+        # @!attribute [rw] issue
+        #   @return [::Google::Cloud::ContactCenterInsights::V1::Issue]
+        #     Required. The new values for the issue.
+        # @!attribute [rw] update_mask
+        #   @return [::Google::Protobuf::FieldMask]
+        #     The list of fields to be updated.
+        class UpdateIssueRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

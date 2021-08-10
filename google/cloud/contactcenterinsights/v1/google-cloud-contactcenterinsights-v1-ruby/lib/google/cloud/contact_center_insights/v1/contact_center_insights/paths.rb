@@ -122,6 +122,51 @@ module Google
             end
 
             ##
+            # Create a fully-qualified Participant resource string.
+            #
+            # @overload participant_path(project:, conversation:, participant:)
+            #   The resource will be in the following format:
+            #
+            #   `projects/{project}/conversations/{conversation}/participants/{participant}`
+            #
+            #   @param project [String]
+            #   @param conversation [String]
+            #   @param participant [String]
+            #
+            # @overload participant_path(project:, location:, conversation:, participant:)
+            #   The resource will be in the following format:
+            #
+            #   `projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}`
+            #
+            #   @param project [String]
+            #   @param location [String]
+            #   @param conversation [String]
+            #   @param participant [String]
+            #
+            # @return [::String]
+            def participant_path **args
+              resources = {
+                "conversation:participant:project" => (proc do |project:, conversation:, participant:|
+                  raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                  raise ::ArgumentError, "conversation cannot contain /" if conversation.to_s.include? "/"
+
+                  "projects/#{project}/conversations/#{conversation}/participants/#{participant}"
+                end),
+                "conversation:location:participant:project" => (proc do |project:, location:, conversation:, participant:|
+                  raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                  raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+                  raise ::ArgumentError, "conversation cannot contain /" if conversation.to_s.include? "/"
+
+                  "projects/#{project}/locations/#{location}/conversations/#{conversation}/participants/#{participant}"
+                end)
+              }
+
+              resource = resources[args.keys.sort.join(":")]
+              raise ::ArgumentError, "no resource found for values #{args.keys}" if resource.nil?
+              resource.call(**args)
+            end
+
+            ##
             # Create a fully-qualified PhraseMatcher resource string.
             #
             # The resource will be in the following format:

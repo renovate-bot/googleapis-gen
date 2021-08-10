@@ -958,6 +958,8 @@ private static final long serialVersionUID = 0L;
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
+   * * "update-conversation": Notify each time a conversation is updated via
+   * UpdateConversation.
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -989,6 +991,8 @@ private static final long serialVersionUID = 0L;
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
+   * * "update-conversation": Notify each time a conversation is updated via
+   * UpdateConversation.
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -1010,6 +1014,8 @@ private static final long serialVersionUID = 0L;
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
+   * * "update-conversation": Notify each time a conversation is updated via
+   * UpdateConversation.
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -1036,6 +1042,8 @@ private static final long serialVersionUID = 0L;
    * * "create-analysis": Notify each time an analysis is created.
    * * "create-conversation": Notify each time a conversation is created.
    * * "export-insights-data": Notify each time an export is complete.
+   * * "update-conversation": Notify each time a conversation is updated via
+   * UpdateConversation.
    * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
    * projects/{project}/topics/{topic}
    * </pre>
@@ -2327,6 +2335,8 @@ private static final long serialVersionUID = 0L;
      * * "create-analysis": Notify each time an analysis is created.
      * * "create-conversation": Notify each time a conversation is created.
      * * "export-insights-data": Notify each time an export is complete.
+     * * "update-conversation": Notify each time a conversation is updated via
+     * UpdateConversation.
      * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
      * projects/{project}/topics/{topic}
      * </pre>
@@ -2358,6 +2368,8 @@ private static final long serialVersionUID = 0L;
      * * "create-analysis": Notify each time an analysis is created.
      * * "create-conversation": Notify each time a conversation is created.
      * * "export-insights-data": Notify each time an export is complete.
+     * * "update-conversation": Notify each time a conversation is updated via
+     * UpdateConversation.
      * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
      * projects/{project}/topics/{topic}
      * </pre>
@@ -2379,6 +2391,8 @@ private static final long serialVersionUID = 0L;
      * * "create-analysis": Notify each time an analysis is created.
      * * "create-conversation": Notify each time a conversation is created.
      * * "export-insights-data": Notify each time an export is complete.
+     * * "update-conversation": Notify each time a conversation is updated via
+     * UpdateConversation.
      * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
      * projects/{project}/topics/{topic}
      * </pre>
@@ -2405,6 +2419,8 @@ private static final long serialVersionUID = 0L;
      * * "create-analysis": Notify each time an analysis is created.
      * * "create-conversation": Notify each time a conversation is created.
      * * "export-insights-data": Notify each time an export is complete.
+     * * "update-conversation": Notify each time a conversation is updated via
+     * UpdateConversation.
      * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
      * projects/{project}/topics/{topic}
      * </pre>
@@ -2439,6 +2455,8 @@ private static final long serialVersionUID = 0L;
      * * "create-analysis": Notify each time an analysis is created.
      * * "create-conversation": Notify each time a conversation is created.
      * * "export-insights-data": Notify each time an export is complete.
+     * * "update-conversation": Notify each time a conversation is updated via
+     * UpdateConversation.
      * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
      * projects/{project}/topics/{topic}
      * </pre>
@@ -2471,6 +2489,8 @@ private static final long serialVersionUID = 0L;
      * * "create-analysis": Notify each time an analysis is created.
      * * "create-conversation": Notify each time a conversation is created.
      * * "export-insights-data": Notify each time an export is complete.
+     * * "update-conversation": Notify each time a conversation is updated via
+     * UpdateConversation.
      * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
      * projects/{project}/topics/{topic}
      * </pre>
@@ -2496,6 +2516,8 @@ private static final long serialVersionUID = 0L;
      * * "create-analysis": Notify each time an analysis is created.
      * * "create-conversation": Notify each time a conversation is created.
      * * "export-insights-data": Notify each time an export is complete.
+     * * "update-conversation": Notify each time a conversation is updated via
+     * UpdateConversation.
      * Values are Pub/Sub topics. The format of each Pub/Sub topic is:
      * projects/{project}/topics/{topic}
      * </pre>

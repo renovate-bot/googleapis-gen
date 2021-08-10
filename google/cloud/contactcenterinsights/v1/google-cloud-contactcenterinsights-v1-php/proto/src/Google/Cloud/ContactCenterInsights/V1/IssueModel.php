@@ -48,6 +48,12 @@ class IssueModel extends \Google\Protobuf\Internal\Message
      */
     protected $state = 0;
     /**
+     * Configs for the input data that used to create the issue model.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;</code>
+     */
+    protected $input_data_config = null;
+    /**
      * Output only. Immutable. The issue model's label statistics on its training data.
      *
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.IssueModelLabelStats training_stats = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
@@ -72,6 +78,8 @@ class IssueModel extends \Google\Protobuf\Internal\Message
      *           Output only. The most recent time at which the issue model was updated.
      *     @type int $state
      *           Output only. State of the model.
+     *     @type \Google\Cloud\ContactCenterInsights\V1\IssueModel\InputDataConfig $input_data_config
+     *           Configs for the input data that used to create the issue model.
      *     @type \Google\Cloud\ContactCenterInsights\V1\IssueModelLabelStats $training_stats
      *           Output only. Immutable. The issue model's label statistics on its training data.
      * }
@@ -231,6 +239,42 @@ class IssueModel extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\ContactCenterInsights\V1\IssueModel\State::class);
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * Configs for the input data that used to create the issue model.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;</code>
+     * @return \Google\Cloud\ContactCenterInsights\V1\IssueModel\InputDataConfig|null
+     */
+    public function getInputDataConfig()
+    {
+        return isset($this->input_data_config) ? $this->input_data_config : null;
+    }
+
+    public function hasInputDataConfig()
+    {
+        return isset($this->input_data_config);
+    }
+
+    public function clearInputDataConfig()
+    {
+        unset($this->input_data_config);
+    }
+
+    /**
+     * Configs for the input data that used to create the issue model.
+     *
+     * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig input_data_config = 6;</code>
+     * @param \Google\Cloud\ContactCenterInsights\V1\IssueModel\InputDataConfig $var
+     * @return $this
+     */
+    public function setInputDataConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\ContactCenterInsights\V1\IssueModel\InputDataConfig::class);
+        $this->input_data_config = $var;
 
         return $this;
     }

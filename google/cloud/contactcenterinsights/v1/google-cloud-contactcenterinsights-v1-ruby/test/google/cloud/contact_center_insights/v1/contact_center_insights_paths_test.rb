@@ -83,6 +83,21 @@ class ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::ClientP
     end
   end
 
+  def test_participant_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.participant_path project: "value0", conversation: "value1", participant: "value2"
+      assert_equal "projects/value0/conversations/value1/participants/value2", path
+
+      path = client.participant_path project: "value0", location: "value1", conversation: "value2", participant: "value3"
+      assert_equal "projects/value0/locations/value1/conversations/value2/participants/value3", path
+    end
+  end
+
   def test_phrase_matcher_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do

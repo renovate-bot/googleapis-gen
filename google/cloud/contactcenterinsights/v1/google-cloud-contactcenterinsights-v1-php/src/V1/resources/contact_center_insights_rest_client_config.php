@@ -49,6 +49,18 @@ return [
                     ],
                 ],
             ],
+            'CreateIssueModel' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{parent=projects/*/locations/*}/issueModels',
+                'body' => 'issue_model',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'CreatePhraseMatcher' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{parent=projects/*/locations/*}/phraseMatchers',
@@ -83,9 +95,32 @@ return [
                     ],
                 ],
             ],
+            'DeleteIssueModel' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/issueModels/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'DeletePhraseMatcher' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1/{name=projects/*/locations/*/phraseMatchers/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeployIssueModel' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/issueModels/*}:deploy',
+                'body' => '*',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -227,6 +262,18 @@ return [
                     ],
                 ],
             ],
+            'UndeployIssueModel' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{name=projects/*/locations/*/issueModels/*}:undeploy',
+                'body' => '*',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'UpdateConversation' => [
                 'method' => 'patch',
                 'uriTemplate' => '/v1/{conversation.name=projects/*/locations/*/conversations/*}',
@@ -235,6 +282,32 @@ return [
                     'conversation.name' => [
                         'getters' => [
                             'getConversation',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateIssue' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{issue.name=projects/*/locations/*/issueModels/*/issues/*}',
+                'body' => 'issue',
+                'placeholders' => [
+                    'issue.name' => [
+                        'getters' => [
+                            'getIssue',
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'UpdateIssueModel' => [
+                'method' => 'patch',
+                'uriTemplate' => '/v1/{issue_model.name=projects/*/locations/*/issueModels/*}',
+                'body' => 'issue_model',
+                'placeholders' => [
+                    'issue_model.name' => [
+                        'getters' => [
+                            'getIssueModel',
                             'getName',
                         ],
                     ],

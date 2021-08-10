@@ -111,6 +111,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse" do
     end
+    add_message "google.cloud.contactcenterinsights.v1.CreateIssueModelRequest" do
+      optional :parent, :string, 1
+      optional :issue_model, :message, 2, "google.cloud.contactcenterinsights.v1.IssueModel"
+    end
+    add_message "google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata" do
+      optional :create_time, :message, 1, "google.protobuf.Timestamp"
+      optional :end_time, :message, 2, "google.protobuf.Timestamp"
+      optional :request, :message, 3, "google.cloud.contactcenterinsights.v1.CreateIssueModelRequest"
+    end
+    add_message "google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest" do
+      optional :issue_model, :message, 1, "google.cloud.contactcenterinsights.v1.IssueModel"
+      optional :update_mask, :message, 2, "google.protobuf.FieldMask"
+    end
     add_message "google.cloud.contactcenterinsights.v1.ListIssueModelsRequest" do
       optional :parent, :string, 1
     end
@@ -120,6 +133,34 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.contactcenterinsights.v1.GetIssueModelRequest" do
       optional :name, :string, 1
     end
+    add_message "google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata" do
+      optional :create_time, :message, 1, "google.protobuf.Timestamp"
+      optional :end_time, :message, 2, "google.protobuf.Timestamp"
+      optional :request, :message, 3, "google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest"
+    end
+    add_message "google.cloud.contactcenterinsights.v1.DeployIssueModelRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.contactcenterinsights.v1.DeployIssueModelResponse" do
+    end
+    add_message "google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata" do
+      optional :create_time, :message, 1, "google.protobuf.Timestamp"
+      optional :end_time, :message, 2, "google.protobuf.Timestamp"
+      optional :request, :message, 3, "google.cloud.contactcenterinsights.v1.DeployIssueModelRequest"
+    end
+    add_message "google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest" do
+      optional :name, :string, 1
+    end
+    add_message "google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse" do
+    end
+    add_message "google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata" do
+      optional :create_time, :message, 1, "google.protobuf.Timestamp"
+      optional :end_time, :message, 2, "google.protobuf.Timestamp"
+      optional :request, :message, 3, "google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest"
+    end
     add_message "google.cloud.contactcenterinsights.v1.GetIssueRequest" do
       optional :name, :string, 1
     end
@@ -128,6 +169,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.contactcenterinsights.v1.ListIssuesResponse" do
       repeated :issues, :message, 1, "google.cloud.contactcenterinsights.v1.Issue"
+    end
+    add_message "google.cloud.contactcenterinsights.v1.UpdateIssueRequest" do
+      optional :issue, :message, 1, "google.cloud.contactcenterinsights.v1.Issue"
+      optional :update_mask, :message, 2, "google.protobuf.FieldMask"
     end
     add_message "google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest" do
       optional :issue_model, :string, 1
@@ -194,12 +239,24 @@ module Google
         ExportInsightsDataRequest::BigQueryDestination = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.BigQueryDestination").msgclass
         ExportInsightsDataMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ExportInsightsDataMetadata").msgclass
         ExportInsightsDataResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ExportInsightsDataResponse").msgclass
+        CreateIssueModelRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CreateIssueModelRequest").msgclass
+        CreateIssueModelMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CreateIssueModelMetadata").msgclass
+        UpdateIssueModelRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.UpdateIssueModelRequest").msgclass
         ListIssueModelsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ListIssueModelsRequest").msgclass
         ListIssueModelsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ListIssueModelsResponse").msgclass
         GetIssueModelRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.GetIssueModelRequest").msgclass
+        DeleteIssueModelRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.DeleteIssueModelRequest").msgclass
+        DeleteIssueModelMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.DeleteIssueModelMetadata").msgclass
+        DeployIssueModelRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.DeployIssueModelRequest").msgclass
+        DeployIssueModelResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.DeployIssueModelResponse").msgclass
+        DeployIssueModelMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.DeployIssueModelMetadata").msgclass
+        UndeployIssueModelRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.UndeployIssueModelRequest").msgclass
+        UndeployIssueModelResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.UndeployIssueModelResponse").msgclass
+        UndeployIssueModelMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.UndeployIssueModelMetadata").msgclass
         GetIssueRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.GetIssueRequest").msgclass
         ListIssuesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ListIssuesRequest").msgclass
         ListIssuesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.ListIssuesResponse").msgclass
+        UpdateIssueRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.UpdateIssueRequest").msgclass
         CalculateIssueModelStatsRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsRequest").msgclass
         CalculateIssueModelStatsResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CalculateIssueModelStatsResponse").msgclass
         CreatePhraseMatcherRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.CreatePhraseMatcherRequest").msgclass

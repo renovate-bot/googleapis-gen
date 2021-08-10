@@ -188,7 +188,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_time, :message, 3, "google.protobuf.Timestamp"
       optional :update_time, :message, 4, "google.protobuf.Timestamp"
       optional :state, :enum, 5, "google.cloud.contactcenterinsights.v1.IssueModel.State"
+      optional :input_data_config, :message, 6, "google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig"
       optional :training_stats, :message, 7, "google.cloud.contactcenterinsights.v1.IssueModelLabelStats"
+    end
+    add_message "google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig" do
+      optional :medium, :enum, 1, "google.cloud.contactcenterinsights.v1.Conversation.Medium"
+      optional :training_conversations_count, :int64, 2
     end
     add_enum "google.cloud.contactcenterinsights.v1.IssueModel.State" do
       value :STATE_UNSPECIFIED, 0
@@ -324,6 +329,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.contactcenterinsights.v1.ConversationParticipant" do
       optional :dialogflow_participant, :string, 1
       optional :role, :enum, 2, "google.cloud.contactcenterinsights.v1.ConversationParticipant.Role"
+      oneof :participant do
+        optional :dialogflow_participant_name, :string, 5
+        optional :user_id, :string, 6
+      end
     end
     add_enum "google.cloud.contactcenterinsights.v1.ConversationParticipant.Role" do
       value :ROLE_UNSPECIFIED, 0
@@ -369,6 +378,7 @@ module Google
         IntentMatchData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.IntentMatchData").msgclass
         SentimentData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.SentimentData").msgclass
         IssueModel = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.IssueModel").msgclass
+        IssueModel::InputDataConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.IssueModel.InputDataConfig").msgclass
         IssueModel::State = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.IssueModel.State").enummodule
         Issue = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.Issue").msgclass
         IssueModelLabelStats = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.contactcenterinsights.v1.IssueModelLabelStats").msgclass

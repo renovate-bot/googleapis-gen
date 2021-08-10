@@ -200,6 +200,16 @@ class ContactCenterInsightsTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.create_issue_model: gapic_v1.method.wrap_method(
+                self.create_issue_model,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.update_issue_model: gapic_v1.method.wrap_method(
+                self.update_issue_model,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.get_issue_model: gapic_v1.method.wrap_method(
                 self.get_issue_model,
                 default_timeout=None,
@@ -210,6 +220,21 @@ class ContactCenterInsightsTransport(abc.ABC):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.delete_issue_model: gapic_v1.method.wrap_method(
+                self.delete_issue_model,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.deploy_issue_model: gapic_v1.method.wrap_method(
+                self.deploy_issue_model,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.undeploy_issue_model: gapic_v1.method.wrap_method(
+                self.undeploy_issue_model,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.get_issue: gapic_v1.method.wrap_method(
                 self.get_issue,
                 default_timeout=None,
@@ -217,6 +242,11 @@ class ContactCenterInsightsTransport(abc.ABC):
             ),
             self.list_issues: gapic_v1.method.wrap_method(
                 self.list_issues,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.update_issue: gapic_v1.method.wrap_method(
+                self.update_issue,
                 default_timeout=None,
                 client_info=client_info,
             ),
@@ -358,6 +388,24 @@ class ContactCenterInsightsTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
+    def create_issue_model(self) -> Callable[
+            [contact_center_insights.CreateIssueModelRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_issue_model(self) -> Callable[
+            [contact_center_insights.UpdateIssueModelRequest],
+            Union[
+                resources.IssueModel,
+                Awaitable[resources.IssueModel]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def get_issue_model(self) -> Callable[
             [contact_center_insights.GetIssueModelRequest],
             Union[
@@ -376,6 +424,33 @@ class ContactCenterInsightsTransport(abc.ABC):
         raise NotImplementedError()
 
     @property
+    def delete_issue_model(self) -> Callable[
+            [contact_center_insights.DeleteIssueModelRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def deploy_issue_model(self) -> Callable[
+            [contact_center_insights.DeployIssueModelRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def undeploy_issue_model(self) -> Callable[
+            [contact_center_insights.UndeployIssueModelRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
     def get_issue(self) -> Callable[
             [contact_center_insights.GetIssueRequest],
             Union[
@@ -390,6 +465,15 @@ class ContactCenterInsightsTransport(abc.ABC):
             Union[
                 contact_center_insights.ListIssuesResponse,
                 Awaitable[contact_center_insights.ListIssuesResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_issue(self) -> Callable[
+            [contact_center_insights.UpdateIssueRequest],
+            Union[
+                resources.Issue,
+                Awaitable[resources.Issue]
             ]]:
         raise NotImplementedError()
 

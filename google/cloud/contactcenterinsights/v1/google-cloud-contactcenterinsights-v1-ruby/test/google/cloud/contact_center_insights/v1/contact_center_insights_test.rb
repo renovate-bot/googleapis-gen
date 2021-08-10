@@ -680,6 +680,131 @@ class ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::ClientT
     end
   end
 
+  def test_create_issue_model
+    # Create GRPC objects.
+    grpc_response = ::Google::Longrunning::Operation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    parent = "hello world"
+    issue_model = {}
+
+    create_issue_model_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :create_issue_model, name
+      assert_kind_of ::Google::Cloud::ContactCenterInsights::V1::CreateIssueModelRequest, request
+      assert_equal "hello world", request["parent"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::ContactCenterInsights::V1::IssueModel), request["issue_model"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, create_issue_model_client_stub do
+      # Create client
+      client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.create_issue_model({ parent: parent, issue_model: issue_model }) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.create_issue_model parent: parent, issue_model: issue_model do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.create_issue_model ::Google::Cloud::ContactCenterInsights::V1::CreateIssueModelRequest.new(parent: parent, issue_model: issue_model) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.create_issue_model({ parent: parent, issue_model: issue_model }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.create_issue_model(::Google::Cloud::ContactCenterInsights::V1::CreateIssueModelRequest.new(parent: parent, issue_model: issue_model), grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, create_issue_model_client_stub.call_rpc_count
+    end
+  end
+
+  def test_update_issue_model
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::ContactCenterInsights::V1::IssueModel.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    issue_model = {}
+    update_mask = {}
+
+    update_issue_model_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :update_issue_model, name
+      assert_kind_of ::Google::Cloud::ContactCenterInsights::V1::UpdateIssueModelRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::ContactCenterInsights::V1::IssueModel), request["issue_model"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, update_issue_model_client_stub do
+      # Create client
+      client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.update_issue_model({ issue_model: issue_model, update_mask: update_mask }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.update_issue_model issue_model: issue_model, update_mask: update_mask do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.update_issue_model ::Google::Cloud::ContactCenterInsights::V1::UpdateIssueModelRequest.new(issue_model: issue_model, update_mask: update_mask) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.update_issue_model({ issue_model: issue_model, update_mask: update_mask }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.update_issue_model(::Google::Cloud::ContactCenterInsights::V1::UpdateIssueModelRequest.new(issue_model: issue_model, update_mask: update_mask), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, update_issue_model_client_stub.call_rpc_count
+    end
+  end
+
   def test_get_issue_model
     # Create GRPC objects.
     grpc_response = ::Google::Cloud::ContactCenterInsights::V1::IssueModel.new
@@ -796,6 +921,195 @@ class ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::ClientT
     end
   end
 
+  def test_delete_issue_model
+    # Create GRPC objects.
+    grpc_response = ::Google::Longrunning::Operation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    delete_issue_model_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :delete_issue_model, name
+      assert_kind_of ::Google::Cloud::ContactCenterInsights::V1::DeleteIssueModelRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, delete_issue_model_client_stub do
+      # Create client
+      client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.delete_issue_model({ name: name }) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.delete_issue_model name: name do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.delete_issue_model ::Google::Cloud::ContactCenterInsights::V1::DeleteIssueModelRequest.new(name: name) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.delete_issue_model({ name: name }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.delete_issue_model(::Google::Cloud::ContactCenterInsights::V1::DeleteIssueModelRequest.new(name: name), grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, delete_issue_model_client_stub.call_rpc_count
+    end
+  end
+
+  def test_deploy_issue_model
+    # Create GRPC objects.
+    grpc_response = ::Google::Longrunning::Operation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    deploy_issue_model_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :deploy_issue_model, name
+      assert_kind_of ::Google::Cloud::ContactCenterInsights::V1::DeployIssueModelRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, deploy_issue_model_client_stub do
+      # Create client
+      client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.deploy_issue_model({ name: name }) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.deploy_issue_model name: name do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.deploy_issue_model ::Google::Cloud::ContactCenterInsights::V1::DeployIssueModelRequest.new(name: name) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.deploy_issue_model({ name: name }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.deploy_issue_model(::Google::Cloud::ContactCenterInsights::V1::DeployIssueModelRequest.new(name: name), grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, deploy_issue_model_client_stub.call_rpc_count
+    end
+  end
+
+  def test_undeploy_issue_model
+    # Create GRPC objects.
+    grpc_response = ::Google::Longrunning::Operation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    name = "hello world"
+
+    undeploy_issue_model_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :undeploy_issue_model, name
+      assert_kind_of ::Google::Cloud::ContactCenterInsights::V1::UndeployIssueModelRequest, request
+      assert_equal "hello world", request["name"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, undeploy_issue_model_client_stub do
+      # Create client
+      client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.undeploy_issue_model({ name: name }) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.undeploy_issue_model name: name do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.undeploy_issue_model ::Google::Cloud::ContactCenterInsights::V1::UndeployIssueModelRequest.new(name: name) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.undeploy_issue_model({ name: name }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.undeploy_issue_model(::Google::Cloud::ContactCenterInsights::V1::UndeployIssueModelRequest.new(name: name), grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, undeploy_issue_model_client_stub.call_rpc_count
+    end
+  end
+
   def test_get_issue
     # Create GRPC objects.
     grpc_response = ::Google::Cloud::ContactCenterInsights::V1::Issue.new
@@ -909,6 +1223,66 @@ class ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::ClientT
 
       # Verify method calls
       assert_equal 5, list_issues_client_stub.call_rpc_count
+    end
+  end
+
+  def test_update_issue
+    # Create GRPC objects.
+    grpc_response = ::Google::Cloud::ContactCenterInsights::V1::Issue.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    issue = {}
+    update_mask = {}
+
+    update_issue_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :update_issue, name
+      assert_kind_of ::Google::Cloud::ContactCenterInsights::V1::UpdateIssueRequest, request
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::ContactCenterInsights::V1::Issue), request["issue"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::FieldMask), request["update_mask"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, update_issue_client_stub do
+      # Create client
+      client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.update_issue({ issue: issue, update_mask: update_mask }) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.update_issue issue: issue, update_mask: update_mask do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.update_issue ::Google::Cloud::ContactCenterInsights::V1::UpdateIssueRequest.new(issue: issue, update_mask: update_mask) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.update_issue({ issue: issue, update_mask: update_mask }, grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.update_issue(::Google::Cloud::ContactCenterInsights::V1::UpdateIssueRequest.new(issue: issue, update_mask: update_mask), grpc_options) do |response, operation|
+        assert_equal grpc_response, response
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, update_issue_client_stub.call_rpc_count
     end
   end
 

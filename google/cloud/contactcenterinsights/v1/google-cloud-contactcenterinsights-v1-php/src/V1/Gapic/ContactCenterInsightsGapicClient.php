@@ -32,7 +32,9 @@ use Google\ApiCore\LongRunning\OperationsClient;
 use Google\ApiCore\OperationResponse;
 
 use Google\ApiCore\PathTemplate;
+
 use Google\ApiCore\RequestParamsHeaderDescriptor;
+
 use Google\ApiCore\RetrySettings;
 use Google\ApiCore\Transport\TransportInterface;
 use Google\ApiCore\ValidationException;
@@ -45,10 +47,13 @@ use Google\Cloud\ContactCenterInsights\V1\CalculateStatsResponse;
 use Google\Cloud\ContactCenterInsights\V1\Conversation;
 use Google\Cloud\ContactCenterInsights\V1\CreateAnalysisRequest;
 use Google\Cloud\ContactCenterInsights\V1\CreateConversationRequest;
+use Google\Cloud\ContactCenterInsights\V1\CreateIssueModelRequest;
 use Google\Cloud\ContactCenterInsights\V1\CreatePhraseMatcherRequest;
 use Google\Cloud\ContactCenterInsights\V1\DeleteAnalysisRequest;
 use Google\Cloud\ContactCenterInsights\V1\DeleteConversationRequest;
+use Google\Cloud\ContactCenterInsights\V1\DeleteIssueModelRequest;
 use Google\Cloud\ContactCenterInsights\V1\DeletePhraseMatcherRequest;
+use Google\Cloud\ContactCenterInsights\V1\DeployIssueModelRequest;
 use Google\Cloud\ContactCenterInsights\V1\ExportInsightsDataRequest;
 use Google\Cloud\ContactCenterInsights\V1\ExportInsightsDataRequest\BigQueryDestination;
 use Google\Cloud\ContactCenterInsights\V1\GetAnalysisRequest;
@@ -67,12 +72,15 @@ use Google\Cloud\ContactCenterInsights\V1\ListIssueModelsRequest;
 use Google\Cloud\ContactCenterInsights\V1\ListIssueModelsResponse;
 use Google\Cloud\ContactCenterInsights\V1\ListIssuesRequest;
 use Google\Cloud\ContactCenterInsights\V1\ListIssuesResponse;
-
 use Google\Cloud\ContactCenterInsights\V1\ListPhraseMatchersRequest;
 use Google\Cloud\ContactCenterInsights\V1\ListPhraseMatchersResponse;
 use Google\Cloud\ContactCenterInsights\V1\PhraseMatcher;
 use Google\Cloud\ContactCenterInsights\V1\Settings;
+
+use Google\Cloud\ContactCenterInsights\V1\UndeployIssueModelRequest;
 use Google\Cloud\ContactCenterInsights\V1\UpdateConversationRequest;
+use Google\Cloud\ContactCenterInsights\V1\UpdateIssueModelRequest;
+use Google\Cloud\ContactCenterInsights\V1\UpdateIssueRequest;
 use Google\Cloud\ContactCenterInsights\V1\UpdateSettingsRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
@@ -728,6 +736,74 @@ class ContactCenterInsightsGapicClient
     }
 
     /**
+     * Creates an issue model.
+     *
+     * Sample code:
+     * ```
+     * $contactCenterInsightsClient = new ContactCenterInsightsClient();
+     * try {
+     *     $formattedParent = $contactCenterInsightsClient->locationName('[PROJECT]', '[LOCATION]');
+     *     $issueModel = new IssueModel();
+     *     $operationResponse = $contactCenterInsightsClient->createIssueModel($formattedParent, $issueModel);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $contactCenterInsightsClient->createIssueModel($formattedParent, $issueModel);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $contactCenterInsightsClient->resumeOperation($operationName, 'createIssueModel');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $contactCenterInsightsClient->close();
+     * }
+     * ```
+     *
+     * @param string     $parent       Required. The parent resource of the issue model.
+     * @param IssueModel $issueModel   Required. The issue model to create.
+     * @param array      $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function createIssueModel($parent, $issueModel, array $optionalArgs = [])
+    {
+        $request = new CreateIssueModelRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setIssueModel($issueModel);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('CreateIssueModel', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Creates a phrase matcher.
      *
      * Sample code:
@@ -858,6 +934,69 @@ class ContactCenterInsightsGapicClient
     }
 
     /**
+     * Deletes an issue model.
+     *
+     * Sample code:
+     * ```
+     * $contactCenterInsightsClient = new ContactCenterInsightsClient();
+     * try {
+     *     $formattedName = $contactCenterInsightsClient->issueModelName('[PROJECT]', '[LOCATION]', '[ISSUE_MODEL]');
+     *     $operationResponse = $contactCenterInsightsClient->deleteIssueModel($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $contactCenterInsightsClient->deleteIssueModel($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $contactCenterInsightsClient->resumeOperation($operationName, 'deleteIssueModel');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         // operation succeeded and returns no value
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $contactCenterInsightsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the issue model to delete.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function deleteIssueModel($name, array $optionalArgs = [])
+    {
+        $request = new DeleteIssueModelRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeleteIssueModel', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Deletes a phrase matcher.
      *
      * Sample code:
@@ -893,6 +1032,72 @@ class ContactCenterInsightsGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('DeletePhraseMatcher', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Deploys an issue model. Returns an error if a model is already deployed.
+     * An issue model can only be used in analysis after it has been deployed.
+     *
+     * Sample code:
+     * ```
+     * $contactCenterInsightsClient = new ContactCenterInsightsClient();
+     * try {
+     *     $formattedName = $contactCenterInsightsClient->issueModelName('[PROJECT]', '[LOCATION]', '[ISSUE_MODEL]');
+     *     $operationResponse = $contactCenterInsightsClient->deployIssueModel($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $contactCenterInsightsClient->deployIssueModel($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $contactCenterInsightsClient->resumeOperation($operationName, 'deployIssueModel');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $contactCenterInsightsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The issue model to deploy.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function deployIssueModel($name, array $optionalArgs = [])
+    {
+        $request = new DeployIssueModelRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('DeployIssueModel', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**
@@ -1544,6 +1749,72 @@ class ContactCenterInsightsGapicClient
     }
 
     /**
+     * Undeploys an issue model.
+     * An issue model can not be used in analysis after it has been undeployed.
+     *
+     * Sample code:
+     * ```
+     * $contactCenterInsightsClient = new ContactCenterInsightsClient();
+     * try {
+     *     $formattedName = $contactCenterInsightsClient->issueModelName('[PROJECT]', '[LOCATION]', '[ISSUE_MODEL]');
+     *     $operationResponse = $contactCenterInsightsClient->undeployIssueModel($formattedName);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $contactCenterInsightsClient->undeployIssueModel($formattedName);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $contactCenterInsightsClient->resumeOperation($operationName, 'undeployIssueModel');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $contactCenterInsightsClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The issue model to undeploy.
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function undeployIssueModel($name, array $optionalArgs = [])
+    {
+        $request = new UndeployIssueModelRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('UndeployIssueModel', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
      * Updates a conversation.
      *
      * Sample code:
@@ -1587,6 +1858,98 @@ class ContactCenterInsightsGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('UpdateConversation', Conversation::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Updates an issue.
+     *
+     * Sample code:
+     * ```
+     * $contactCenterInsightsClient = new ContactCenterInsightsClient();
+     * try {
+     *     $issue = new Issue();
+     *     $response = $contactCenterInsightsClient->updateIssue($issue);
+     * } finally {
+     *     $contactCenterInsightsClient->close();
+     * }
+     * ```
+     *
+     * @param Issue $issue        Required. The new values for the issue.
+     * @param array $optionalArgs {
+     *     Optional.
+     *
+     *     @type FieldMask $updateMask
+     *           The list of fields to be updated.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\ContactCenterInsights\V1\Issue
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function updateIssue($issue, array $optionalArgs = [])
+    {
+        $request = new UpdateIssueRequest();
+        $requestParamHeaders = [];
+        $request->setIssue($issue);
+        $requestParamHeaders['issue.name'] = $issue->getName();
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateIssue', Issue::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Updates an issue model.
+     *
+     * Sample code:
+     * ```
+     * $contactCenterInsightsClient = new ContactCenterInsightsClient();
+     * try {
+     *     $issueModel = new IssueModel();
+     *     $response = $contactCenterInsightsClient->updateIssueModel($issueModel);
+     * } finally {
+     *     $contactCenterInsightsClient->close();
+     * }
+     * ```
+     *
+     * @param IssueModel $issueModel   Required. The new values for the issue model.
+     * @param array      $optionalArgs {
+     *     Optional.
+     *
+     *     @type FieldMask $updateMask
+     *           The list of fields to be updated.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\ContactCenterInsights\V1\IssueModel
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function updateIssueModel($issueModel, array $optionalArgs = [])
+    {
+        $request = new UpdateIssueModelRequest();
+        $requestParamHeaders = [];
+        $request->setIssueModel($issueModel);
+        $requestParamHeaders['issue_model.name'] = $issueModel->getName();
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateIssueModel', IssueModel::class, $optionalArgs, $request)->wait();
     }
 
     /**

@@ -60,6 +60,16 @@
                 "export_insights_data"
               ]
             },
+            "CreateIssueModel": {
+              "methods": [
+                "create_issue_model"
+              ]
+            },
+            "UpdateIssueModel": {
+              "methods": [
+                "update_issue_model"
+              ]
+            },
             "GetIssueModel": {
               "methods": [
                 "get_issue_model"
@@ -70,6 +80,21 @@
                 "list_issue_models"
               ]
             },
+            "DeleteIssueModel": {
+              "methods": [
+                "delete_issue_model"
+              ]
+            },
+            "DeployIssueModel": {
+              "methods": [
+                "deploy_issue_model"
+              ]
+            },
+            "UndeployIssueModel": {
+              "methods": [
+                "undeploy_issue_model"
+              ]
+            },
             "GetIssue": {
               "methods": [
                 "get_issue"
@@ -78,6 +103,11 @@
             "ListIssues": {
               "methods": [
                 "list_issues"
+              ]
+            },
+            "UpdateIssue": {
+              "methods": [
+                "update_issue"
               ]
             },
             "CalculateIssueModelStats": {

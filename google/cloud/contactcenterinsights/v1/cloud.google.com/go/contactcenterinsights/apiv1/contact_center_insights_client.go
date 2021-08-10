@@ -52,10 +52,16 @@ type CallOptions struct {
 	ListAnalyses             []gax.CallOption
 	DeleteAnalysis           []gax.CallOption
 	ExportInsightsData       []gax.CallOption
+	CreateIssueModel         []gax.CallOption
+	UpdateIssueModel         []gax.CallOption
 	GetIssueModel            []gax.CallOption
 	ListIssueModels          []gax.CallOption
+	DeleteIssueModel         []gax.CallOption
+	DeployIssueModel         []gax.CallOption
+	UndeployIssueModel       []gax.CallOption
 	GetIssue                 []gax.CallOption
 	ListIssues               []gax.CallOption
+	UpdateIssue              []gax.CallOption
 	CalculateIssueModelStats []gax.CallOption
 	CreatePhraseMatcher      []gax.CallOption
 	GetPhraseMatcher         []gax.CallOption
@@ -191,6 +197,28 @@ func defaultCallOptions() *CallOptions {
 				})
 			}),
 		},
+		CreateIssueModel: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+				}, gax.Backoff{
+					Initial:    1000 * time.Millisecond,
+					Max:        10000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
+		UpdateIssueModel: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+				}, gax.Backoff{
+					Initial:    1000 * time.Millisecond,
+					Max:        10000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 		GetIssueModel: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -213,6 +241,39 @@ func defaultCallOptions() *CallOptions {
 				})
 			}),
 		},
+		DeleteIssueModel: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+				}, gax.Backoff{
+					Initial:    1000 * time.Millisecond,
+					Max:        10000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
+		DeployIssueModel: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+				}, gax.Backoff{
+					Initial:    1000 * time.Millisecond,
+					Max:        10000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
+		UndeployIssueModel: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+				}, gax.Backoff{
+					Initial:    1000 * time.Millisecond,
+					Max:        10000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
 		GetIssue: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
@@ -225,6 +286,17 @@ func defaultCallOptions() *CallOptions {
 			}),
 		},
 		ListIssues: []gax.CallOption{
+			gax.WithRetry(func() gax.Retryer {
+				return gax.OnCodes([]codes.Code{
+					codes.Unavailable,
+				}, gax.Backoff{
+					Initial:    1000 * time.Millisecond,
+					Max:        10000 * time.Millisecond,
+					Multiplier: 1.30,
+				})
+			}),
+		},
+		UpdateIssue: []gax.CallOption{
 			gax.WithRetry(func() gax.Retryer {
 				return gax.OnCodes([]codes.Code{
 					codes.Unavailable,
@@ -343,10 +415,20 @@ type internalClient interface {
 	DeleteAnalysis(context.Context, *contactcenterinsightspb.DeleteAnalysisRequest, ...gax.CallOption) error
 	ExportInsightsData(context.Context, *contactcenterinsightspb.ExportInsightsDataRequest, ...gax.CallOption) (*ExportInsightsDataOperation, error)
 	ExportInsightsDataOperation(name string) *ExportInsightsDataOperation
+	CreateIssueModel(context.Context, *contactcenterinsightspb.CreateIssueModelRequest, ...gax.CallOption) (*CreateIssueModelOperation, error)
+	CreateIssueModelOperation(name string) *CreateIssueModelOperation
+	UpdateIssueModel(context.Context, *contactcenterinsightspb.UpdateIssueModelRequest, ...gax.CallOption) (*contactcenterinsightspb.IssueModel, error)
 	GetIssueModel(context.Context, *contactcenterinsightspb.GetIssueModelRequest, ...gax.CallOption) (*contactcenterinsightspb.IssueModel, error)
 	ListIssueModels(context.Context, *contactcenterinsightspb.ListIssueModelsRequest, ...gax.CallOption) (*contactcenterinsightspb.ListIssueModelsResponse, error)
+	DeleteIssueModel(context.Context, *contactcenterinsightspb.DeleteIssueModelRequest, ...gax.CallOption) (*DeleteIssueModelOperation, error)
+	DeleteIssueModelOperation(name string) *DeleteIssueModelOperation
+	DeployIssueModel(context.Context, *contactcenterinsightspb.DeployIssueModelRequest, ...gax.CallOption) (*DeployIssueModelOperation, error)
+	DeployIssueModelOperation(name string) *DeployIssueModelOperation
+	UndeployIssueModel(context.Context, *contactcenterinsightspb.UndeployIssueModelRequest, ...gax.CallOption) (*UndeployIssueModelOperation, error)
+	UndeployIssueModelOperation(name string) *UndeployIssueModelOperation
 	GetIssue(context.Context, *contactcenterinsightspb.GetIssueRequest, ...gax.CallOption) (*contactcenterinsightspb.Issue, error)
 	ListIssues(context.Context, *contactcenterinsightspb.ListIssuesRequest, ...gax.CallOption) (*contactcenterinsightspb.ListIssuesResponse, error)
+	UpdateIssue(context.Context, *contactcenterinsightspb.UpdateIssueRequest, ...gax.CallOption) (*contactcenterinsightspb.Issue, error)
 	CalculateIssueModelStats(context.Context, *contactcenterinsightspb.CalculateIssueModelStatsRequest, ...gax.CallOption) (*contactcenterinsightspb.CalculateIssueModelStatsResponse, error)
 	CreatePhraseMatcher(context.Context, *contactcenterinsightspb.CreatePhraseMatcherRequest, ...gax.CallOption) (*contactcenterinsightspb.PhraseMatcher, error)
 	GetPhraseMatcher(context.Context, *contactcenterinsightspb.GetPhraseMatcherRequest, ...gax.CallOption) (*contactcenterinsightspb.PhraseMatcher, error)
@@ -459,6 +541,22 @@ func (c *Client) ExportInsightsDataOperation(name string) *ExportInsightsDataOpe
 	return c.internalClient.ExportInsightsDataOperation(name)
 }
 
+// CreateIssueModel creates an issue model.
+func (c *Client) CreateIssueModel(ctx context.Context, req *contactcenterinsightspb.CreateIssueModelRequest, opts ...gax.CallOption) (*CreateIssueModelOperation, error) {
+	return c.internalClient.CreateIssueModel(ctx, req, opts...)
+}
+
+// CreateIssueModelOperation returns a new CreateIssueModelOperation from a given name.
+// The name must be that of a previously created CreateIssueModelOperation, possibly from a different process.
+func (c *Client) CreateIssueModelOperation(name string) *CreateIssueModelOperation {
+	return c.internalClient.CreateIssueModelOperation(name)
+}
+
+// UpdateIssueModel updates an issue model.
+func (c *Client) UpdateIssueModel(ctx context.Context, req *contactcenterinsightspb.UpdateIssueModelRequest, opts ...gax.CallOption) (*contactcenterinsightspb.IssueModel, error) {
+	return c.internalClient.UpdateIssueModel(ctx, req, opts...)
+}
+
 // GetIssueModel gets an issue model.
 func (c *Client) GetIssueModel(ctx context.Context, req *contactcenterinsightspb.GetIssueModelRequest, opts ...gax.CallOption) (*contactcenterinsightspb.IssueModel, error) {
 	return c.internalClient.GetIssueModel(ctx, req, opts...)
@@ -469,6 +567,41 @@ func (c *Client) ListIssueModels(ctx context.Context, req *contactcenterinsights
 	return c.internalClient.ListIssueModels(ctx, req, opts...)
 }
 
+// DeleteIssueModel deletes an issue model.
+func (c *Client) DeleteIssueModel(ctx context.Context, req *contactcenterinsightspb.DeleteIssueModelRequest, opts ...gax.CallOption) (*DeleteIssueModelOperation, error) {
+	return c.internalClient.DeleteIssueModel(ctx, req, opts...)
+}
+
+// DeleteIssueModelOperation returns a new DeleteIssueModelOperation from a given name.
+// The name must be that of a previously created DeleteIssueModelOperation, possibly from a different process.
+func (c *Client) DeleteIssueModelOperation(name string) *DeleteIssueModelOperation {
+	return c.internalClient.DeleteIssueModelOperation(name)
+}
+
+// DeployIssueModel deploys an issue model. Returns an error if a model is already deployed.
+// An issue model can only be used in analysis after it has been deployed.
+func (c *Client) DeployIssueModel(ctx context.Context, req *contactcenterinsightspb.DeployIssueModelRequest, opts ...gax.CallOption) (*DeployIssueModelOperation, error) {
+	return c.internalClient.DeployIssueModel(ctx, req, opts...)
+}
+
+// DeployIssueModelOperation returns a new DeployIssueModelOperation from a given name.
+// The name must be that of a previously created DeployIssueModelOperation, possibly from a different process.
+func (c *Client) DeployIssueModelOperation(name string) *DeployIssueModelOperation {
+	return c.internalClient.DeployIssueModelOperation(name)
+}
+
+// UndeployIssueModel undeploys an issue model.
+// An issue model can not be used in analysis after it has been undeployed.
+func (c *Client) UndeployIssueModel(ctx context.Context, req *contactcenterinsightspb.UndeployIssueModelRequest, opts ...gax.CallOption) (*UndeployIssueModelOperation, error) {
+	return c.internalClient.UndeployIssueModel(ctx, req, opts...)
+}
+
+// UndeployIssueModelOperation returns a new UndeployIssueModelOperation from a given name.
+// The name must be that of a previously created UndeployIssueModelOperation, possibly from a different process.
+func (c *Client) UndeployIssueModelOperation(name string) *UndeployIssueModelOperation {
+	return c.internalClient.UndeployIssueModelOperation(name)
+}
+
 // GetIssue gets an issue.
 func (c *Client) GetIssue(ctx context.Context, req *contactcenterinsightspb.GetIssueRequest, opts ...gax.CallOption) (*contactcenterinsightspb.Issue, error) {
 	return c.internalClient.GetIssue(ctx, req, opts...)
@@ -477,6 +610,11 @@ func (c *Client) GetIssue(ctx context.Context, req *contactcenterinsightspb.GetI
 // ListIssues lists issues.
 func (c *Client) ListIssues(ctx context.Context, req *contactcenterinsightspb.ListIssuesRequest, opts ...gax.CallOption) (*contactcenterinsightspb.ListIssuesResponse, error) {
 	return c.internalClient.ListIssues(ctx, req, opts...)
+}
+
+// UpdateIssue updates an issue.
+func (c *Client) UpdateIssue(ctx context.Context, req *contactcenterinsightspb.UpdateIssueRequest, opts ...gax.CallOption) (*contactcenterinsightspb.Issue, error) {
+	return c.internalClient.UpdateIssue(ctx, req, opts...)
 }
 
 // CalculateIssueModelStats gets an issue model’s statistics.
@@ -859,6 +997,50 @@ func (c *gRPCClient) ExportInsightsData(ctx context.Context, req *contactcenteri
 	}, nil
 }
 
+func (c *gRPCClient) CreateIssueModel(ctx context.Context, req *contactcenterinsightspb.CreateIssueModelRequest, opts ...gax.CallOption) (*CreateIssueModelOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "parent", url.QueryEscape(req.GetParent())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).CreateIssueModel[0:len((*c.CallOptions).CreateIssueModel):len((*c.CallOptions).CreateIssueModel)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.CreateIssueModel(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &CreateIssueModelOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
+func (c *gRPCClient) UpdateIssueModel(ctx context.Context, req *contactcenterinsightspb.UpdateIssueModelRequest, opts ...gax.CallOption) (*contactcenterinsightspb.IssueModel, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "issue_model.name", url.QueryEscape(req.GetIssueModel().GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).UpdateIssueModel[0:len((*c.CallOptions).UpdateIssueModel):len((*c.CallOptions).UpdateIssueModel)], opts...)
+	var resp *contactcenterinsightspb.IssueModel
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.UpdateIssueModel(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
 func (c *gRPCClient) GetIssueModel(ctx context.Context, req *contactcenterinsightspb.GetIssueModelRequest, opts ...gax.CallOption) (*contactcenterinsightspb.IssueModel, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -901,6 +1083,75 @@ func (c *gRPCClient) ListIssueModels(ctx context.Context, req *contactcenterinsi
 	return resp, nil
 }
 
+func (c *gRPCClient) DeleteIssueModel(ctx context.Context, req *contactcenterinsightspb.DeleteIssueModelRequest, opts ...gax.CallOption) (*DeleteIssueModelOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).DeleteIssueModel[0:len((*c.CallOptions).DeleteIssueModel):len((*c.CallOptions).DeleteIssueModel)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.DeleteIssueModel(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &DeleteIssueModelOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
+func (c *gRPCClient) DeployIssueModel(ctx context.Context, req *contactcenterinsightspb.DeployIssueModelRequest, opts ...gax.CallOption) (*DeployIssueModelOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).DeployIssueModel[0:len((*c.CallOptions).DeployIssueModel):len((*c.CallOptions).DeployIssueModel)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.DeployIssueModel(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &DeployIssueModelOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
+func (c *gRPCClient) UndeployIssueModel(ctx context.Context, req *contactcenterinsightspb.UndeployIssueModelRequest, opts ...gax.CallOption) (*UndeployIssueModelOperation, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "name", url.QueryEscape(req.GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).UndeployIssueModel[0:len((*c.CallOptions).UndeployIssueModel):len((*c.CallOptions).UndeployIssueModel)], opts...)
+	var resp *longrunningpb.Operation
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.UndeployIssueModel(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return &UndeployIssueModelOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, resp),
+	}, nil
+}
+
 func (c *gRPCClient) GetIssue(ctx context.Context, req *contactcenterinsightspb.GetIssueRequest, opts ...gax.CallOption) (*contactcenterinsightspb.Issue, error) {
 	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
 		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
@@ -935,6 +1186,27 @@ func (c *gRPCClient) ListIssues(ctx context.Context, req *contactcenterinsightsp
 	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
 		var err error
 		resp, err = c.client.ListIssues(ctx, req, settings.GRPC...)
+		return err
+	}, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return resp, nil
+}
+
+func (c *gRPCClient) UpdateIssue(ctx context.Context, req *contactcenterinsightspb.UpdateIssueRequest, opts ...gax.CallOption) (*contactcenterinsightspb.Issue, error) {
+	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
+		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
+		defer cancel()
+		ctx = cctx
+	}
+	md := metadata.Pairs("x-goog-request-params", fmt.Sprintf("%s=%v", "issue.name", url.QueryEscape(req.GetIssue().GetName())))
+	ctx = insertMetadata(ctx, c.xGoogMetadata, md)
+	opts = append((*c.CallOptions).UpdateIssue[0:len((*c.CallOptions).UpdateIssue):len((*c.CallOptions).UpdateIssue)], opts...)
+	var resp *contactcenterinsightspb.Issue
+	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+		var err error
+		resp, err = c.client.UpdateIssue(ctx, req, settings.GRPC...)
 		return err
 	}, opts...)
 	if err != nil {
@@ -1195,6 +1467,202 @@ func (op *CreateAnalysisOperation) Name() string {
 	return op.lro.Name()
 }
 
+// CreateIssueModelOperation manages a long-running operation from CreateIssueModel.
+type CreateIssueModelOperation struct {
+	lro *longrunning.Operation
+}
+
+// CreateIssueModelOperation returns a new CreateIssueModelOperation from a given name.
+// The name must be that of a previously created CreateIssueModelOperation, possibly from a different process.
+func (c *gRPCClient) CreateIssueModelOperation(name string) *CreateIssueModelOperation {
+	return &CreateIssueModelOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *CreateIssueModelOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*contactcenterinsightspb.IssueModel, error) {
+	var resp contactcenterinsightspb.IssueModel
+	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
+		return nil, err
+	}
+	return &resp, nil
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *CreateIssueModelOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*contactcenterinsightspb.IssueModel, error) {
+	var resp contactcenterinsightspb.IssueModel
+	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
+		return nil, err
+	}
+	if !op.Done() {
+		return nil, nil
+	}
+	return &resp, nil
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *CreateIssueModelOperation) Metadata() (*contactcenterinsightspb.CreateIssueModelMetadata, error) {
+	var meta contactcenterinsightspb.CreateIssueModelMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *CreateIssueModelOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *CreateIssueModelOperation) Name() string {
+	return op.lro.Name()
+}
+
+// DeleteIssueModelOperation manages a long-running operation from DeleteIssueModel.
+type DeleteIssueModelOperation struct {
+	lro *longrunning.Operation
+}
+
+// DeleteIssueModelOperation returns a new DeleteIssueModelOperation from a given name.
+// The name must be that of a previously created DeleteIssueModelOperation, possibly from a different process.
+func (c *gRPCClient) DeleteIssueModelOperation(name string) *DeleteIssueModelOperation {
+	return &DeleteIssueModelOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *DeleteIssueModelOperation) Wait(ctx context.Context, opts ...gax.CallOption) error {
+	return op.lro.WaitWithInterval(ctx, nil, time.Minute, opts...)
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *DeleteIssueModelOperation) Poll(ctx context.Context, opts ...gax.CallOption) error {
+	return op.lro.Poll(ctx, nil, opts...)
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *DeleteIssueModelOperation) Metadata() (*contactcenterinsightspb.DeleteIssueModelMetadata, error) {
+	var meta contactcenterinsightspb.DeleteIssueModelMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *DeleteIssueModelOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *DeleteIssueModelOperation) Name() string {
+	return op.lro.Name()
+}
+
+// DeployIssueModelOperation manages a long-running operation from DeployIssueModel.
+type DeployIssueModelOperation struct {
+	lro *longrunning.Operation
+}
+
+// DeployIssueModelOperation returns a new DeployIssueModelOperation from a given name.
+// The name must be that of a previously created DeployIssueModelOperation, possibly from a different process.
+func (c *gRPCClient) DeployIssueModelOperation(name string) *DeployIssueModelOperation {
+	return &DeployIssueModelOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *DeployIssueModelOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*contactcenterinsightspb.DeployIssueModelResponse, error) {
+	var resp contactcenterinsightspb.DeployIssueModelResponse
+	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
+		return nil, err
+	}
+	return &resp, nil
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *DeployIssueModelOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*contactcenterinsightspb.DeployIssueModelResponse, error) {
+	var resp contactcenterinsightspb.DeployIssueModelResponse
+	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
+		return nil, err
+	}
+	if !op.Done() {
+		return nil, nil
+	}
+	return &resp, nil
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *DeployIssueModelOperation) Metadata() (*contactcenterinsightspb.DeployIssueModelMetadata, error) {
+	var meta contactcenterinsightspb.DeployIssueModelMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *DeployIssueModelOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *DeployIssueModelOperation) Name() string {
+	return op.lro.Name()
+}
+
 // ExportInsightsDataOperation manages a long-running operation from ExportInsightsData.
 type ExportInsightsDataOperation struct {
 	lro *longrunning.Operation
@@ -1261,6 +1729,75 @@ func (op *ExportInsightsDataOperation) Done() bool {
 // Name returns the name of the long-running operation.
 // The name is assigned by the server and is unique within the service from which the operation is created.
 func (op *ExportInsightsDataOperation) Name() string {
+	return op.lro.Name()
+}
+
+// UndeployIssueModelOperation manages a long-running operation from UndeployIssueModel.
+type UndeployIssueModelOperation struct {
+	lro *longrunning.Operation
+}
+
+// UndeployIssueModelOperation returns a new UndeployIssueModelOperation from a given name.
+// The name must be that of a previously created UndeployIssueModelOperation, possibly from a different process.
+func (c *gRPCClient) UndeployIssueModelOperation(name string) *UndeployIssueModelOperation {
+	return &UndeployIssueModelOperation{
+		lro: longrunning.InternalNewOperation(*c.LROClient, &longrunningpb.Operation{Name: name}),
+	}
+}
+
+// Wait blocks until the long-running operation is completed, returning the response and any errors encountered.
+//
+// See documentation of Poll for error-handling information.
+func (op *UndeployIssueModelOperation) Wait(ctx context.Context, opts ...gax.CallOption) (*contactcenterinsightspb.UndeployIssueModelResponse, error) {
+	var resp contactcenterinsightspb.UndeployIssueModelResponse
+	if err := op.lro.WaitWithInterval(ctx, &resp, time.Minute, opts...); err != nil {
+		return nil, err
+	}
+	return &resp, nil
+}
+
+// Poll fetches the latest state of the long-running operation.
+//
+// Poll also fetches the latest metadata, which can be retrieved by Metadata.
+//
+// If Poll fails, the error is returned and op is unmodified. If Poll succeeds and
+// the operation has completed with failure, the error is returned and op.Done will return true.
+// If Poll succeeds and the operation has completed successfully,
+// op.Done will return true, and the response of the operation is returned.
+// If Poll succeeds and the operation has not completed, the returned response and error are both nil.
+func (op *UndeployIssueModelOperation) Poll(ctx context.Context, opts ...gax.CallOption) (*contactcenterinsightspb.UndeployIssueModelResponse, error) {
+	var resp contactcenterinsightspb.UndeployIssueModelResponse
+	if err := op.lro.Poll(ctx, &resp, opts...); err != nil {
+		return nil, err
+	}
+	if !op.Done() {
+		return nil, nil
+	}
+	return &resp, nil
+}
+
+// Metadata returns metadata associated with the long-running operation.
+// Metadata itself does not contact the server, but Poll does.
+// To get the latest metadata, call this method after a successful call to Poll.
+// If the metadata is not available, the returned metadata and error are both nil.
+func (op *UndeployIssueModelOperation) Metadata() (*contactcenterinsightspb.UndeployIssueModelMetadata, error) {
+	var meta contactcenterinsightspb.UndeployIssueModelMetadata
+	if err := op.lro.Metadata(&meta); err == longrunning.ErrNoMetadata {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+	return &meta, nil
+}
+
+// Done reports whether the long-running operation has completed.
+func (op *UndeployIssueModelOperation) Done() bool {
+	return op.lro.Done()
+}
+
+// Name returns the name of the long-running operation.
+// The name is assigned by the server and is unique within the service from which the operation is created.
+func (op *UndeployIssueModelOperation) Name() string {
 	return op.lro.Name()
 }
 

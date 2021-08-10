@@ -19,7 +19,8 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      *
-     * Generated from protobuf field <code>string dialogflow_participant = 1;</code>
+     * Generated from protobuf field <code>string dialogflow_participant = 1 [deprecated = true];</code>
+     * @deprecated
      */
     protected $dialogflow_participant = '';
     /**
@@ -28,6 +29,7 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.contactcenterinsights.v1.ConversationParticipant.Role role = 2;</code>
      */
     protected $role = 0;
+    protected $participant;
 
     /**
      * Constructor.
@@ -35,6 +37,11 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type string $dialogflow_participant_name
+     *           The name of the participant provided by Dialogflow. Format:
+     *           projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     *     @type string $user_id
+     *           A user-specified ID representing the participant.
      *     @type string $dialogflow_participant
      *           The name of the Dialogflow participant. Format:
      *           projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
@@ -48,14 +55,80 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The name of the participant provided by Dialogflow. Format:
+     * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     *
+     * Generated from protobuf field <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getDialogflowParticipantName()
+    {
+        return $this->readOneof(5);
+    }
+
+    public function hasDialogflowParticipantName()
+    {
+        return $this->hasOneof(5);
+    }
+
+    /**
+     * The name of the participant provided by Dialogflow. Format:
+     * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+     *
+     * Generated from protobuf field <code>string dialogflow_participant_name = 5 [(.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDialogflowParticipantName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * A user-specified ID representing the participant.
+     *
+     * Generated from protobuf field <code>string user_id = 6;</code>
+     * @return string
+     */
+    public function getUserId()
+    {
+        return $this->readOneof(6);
+    }
+
+    public function hasUserId()
+    {
+        return $this->hasOneof(6);
+    }
+
+    /**
+     * A user-specified ID representing the participant.
+     *
+     * Generated from protobuf field <code>string user_id = 6;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->writeOneof(6, $var);
+
+        return $this;
+    }
+
+    /**
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      *
-     * Generated from protobuf field <code>string dialogflow_participant = 1;</code>
+     * Generated from protobuf field <code>string dialogflow_participant = 1 [deprecated = true];</code>
      * @return string
+     * @deprecated
      */
     public function getDialogflowParticipant()
     {
+        @trigger_error('dialogflow_participant is deprecated.', E_USER_DEPRECATED);
         return $this->dialogflow_participant;
     }
 
@@ -63,12 +136,14 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
      * The name of the Dialogflow participant. Format:
      * projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
      *
-     * Generated from protobuf field <code>string dialogflow_participant = 1;</code>
+     * Generated from protobuf field <code>string dialogflow_participant = 1 [deprecated = true];</code>
      * @param string $var
      * @return $this
+     * @deprecated
      */
     public function setDialogflowParticipant($var)
     {
+        @trigger_error('dialogflow_participant is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkString($var, True);
         $this->dialogflow_participant = $var;
 
@@ -99,6 +174,14 @@ class ConversationParticipant extends \Google\Protobuf\Internal\Message
         $this->role = $var;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getParticipant()
+    {
+        return $this->whichOneof("participant");
     }
 
 }

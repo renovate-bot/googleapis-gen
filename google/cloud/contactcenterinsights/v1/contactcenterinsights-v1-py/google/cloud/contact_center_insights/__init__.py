@@ -24,10 +24,17 @@ from google.cloud.contact_center_insights_v1.types.contact_center_insights impor
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import CreateAnalysisOperationMetadata
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import CreateAnalysisRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import CreateConversationRequest
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import CreateIssueModelMetadata
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import CreateIssueModelRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import CreatePhraseMatcherRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import DeleteAnalysisRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import DeleteConversationRequest
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import DeleteIssueModelMetadata
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import DeleteIssueModelRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import DeletePhraseMatcherRequest
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import DeployIssueModelMetadata
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import DeployIssueModelRequest
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import DeployIssueModelResponse
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import ExportInsightsDataMetadata
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import ExportInsightsDataRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import ExportInsightsDataResponse
@@ -47,7 +54,12 @@ from google.cloud.contact_center_insights_v1.types.contact_center_insights impor
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import ListIssuesResponse
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import ListPhraseMatchersRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import ListPhraseMatchersResponse
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import UndeployIssueModelMetadata
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import UndeployIssueModelRequest
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import UndeployIssueModelResponse
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdateConversationRequest
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdateIssueModelRequest
+from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdateIssueRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import UpdateSettingsRequest
 from google.cloud.contact_center_insights_v1.types.contact_center_insights import ConversationView
 from google.cloud.contact_center_insights_v1.types.resources import Analysis
@@ -98,10 +110,17 @@ __all__ = ('ContactCenterInsightsClient',
     'CreateAnalysisOperationMetadata',
     'CreateAnalysisRequest',
     'CreateConversationRequest',
+    'CreateIssueModelMetadata',
+    'CreateIssueModelRequest',
     'CreatePhraseMatcherRequest',
     'DeleteAnalysisRequest',
     'DeleteConversationRequest',
+    'DeleteIssueModelMetadata',
+    'DeleteIssueModelRequest',
     'DeletePhraseMatcherRequest',
+    'DeployIssueModelMetadata',
+    'DeployIssueModelRequest',
+    'DeployIssueModelResponse',
     'ExportInsightsDataMetadata',
     'ExportInsightsDataRequest',
     'ExportInsightsDataResponse',
@@ -121,7 +140,12 @@ __all__ = ('ContactCenterInsightsClient',
     'ListIssuesResponse',
     'ListPhraseMatchersRequest',
     'ListPhraseMatchersResponse',
+    'UndeployIssueModelMetadata',
+    'UndeployIssueModelRequest',
+    'UndeployIssueModelResponse',
     'UpdateConversationRequest',
+    'UpdateIssueModelRequest',
+    'UpdateIssueRequest',
     'UpdateSettingsRequest',
     'ConversationView',
     'Analysis',

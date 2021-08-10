@@ -244,6 +244,49 @@ func ExampleClient_ExportInsightsData() {
 	_ = resp
 }
 
+func ExampleClient_CreateIssueModel() {
+	ctx := context.Background()
+	c, err := contactcenterinsights.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &contactcenterinsightspb.CreateIssueModelRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.CreateIssueModel(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleClient_UpdateIssueModel() {
+	ctx := context.Background()
+	c, err := contactcenterinsights.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &contactcenterinsightspb.UpdateIssueModelRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.UpdateIssueModel(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleClient_GetIssueModel() {
 	ctx := context.Background()
 	c, err := contactcenterinsights.NewClient(ctx)
@@ -282,6 +325,76 @@ func ExampleClient_ListIssueModels() {
 	_ = resp
 }
 
+func ExampleClient_DeleteIssueModel() {
+	ctx := context.Background()
+	c, err := contactcenterinsights.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &contactcenterinsightspb.DeleteIssueModelRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.DeleteIssueModel(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	err = op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+}
+
+func ExampleClient_DeployIssueModel() {
+	ctx := context.Background()
+	c, err := contactcenterinsights.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &contactcenterinsightspb.DeployIssueModelRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.DeployIssueModel(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleClient_UndeployIssueModel() {
+	ctx := context.Background()
+	c, err := contactcenterinsights.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &contactcenterinsightspb.UndeployIssueModelRequest{
+		// TODO: Fill request struct fields.
+	}
+	op, err := c.UndeployIssueModel(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+
+	resp, err := op.Wait(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
 func ExampleClient_GetIssue() {
 	ctx := context.Background()
 	c, err := contactcenterinsights.NewClient(ctx)
@@ -313,6 +426,25 @@ func ExampleClient_ListIssues() {
 		// TODO: Fill request struct fields.
 	}
 	resp, err := c.ListIssues(ctx, req)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	// TODO: Use resp.
+	_ = resp
+}
+
+func ExampleClient_UpdateIssue() {
+	ctx := context.Background()
+	c, err := contactcenterinsights.NewClient(ctx)
+	if err != nil {
+		// TODO: Handle error.
+	}
+	defer c.Close()
+
+	req := &contactcenterinsightspb.UpdateIssueRequest{
+		// TODO: Fill request struct fields.
+	}
+	resp, err := c.UpdateIssue(ctx, req)
 	if err != nil {
 		// TODO: Handle error.
 	}

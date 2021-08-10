@@ -30,6 +30,11 @@
                 "CreateConversation"
               ]
             },
+            "CreateIssueModel":  {
+              "methods":  [
+                "CreateIssueModel"
+              ]
+            },
             "CreatePhraseMatcher":  {
               "methods":  [
                 "CreatePhraseMatcher"
@@ -45,9 +50,19 @@
                 "DeleteConversation"
               ]
             },
+            "DeleteIssueModel":  {
+              "methods":  [
+                "DeleteIssueModel"
+              ]
+            },
             "DeletePhraseMatcher":  {
               "methods":  [
                 "DeletePhraseMatcher"
+              ]
+            },
+            "DeployIssueModel":  {
+              "methods":  [
+                "DeployIssueModel"
               ]
             },
             "ExportInsightsData":  {
@@ -110,9 +125,24 @@
                 "ListPhraseMatchers"
               ]
             },
+            "UndeployIssueModel":  {
+              "methods":  [
+                "UndeployIssueModel"
+              ]
+            },
             "UpdateConversation":  {
               "methods":  [
                 "UpdateConversation"
+              ]
+            },
+            "UpdateIssue":  {
+              "methods":  [
+                "UpdateIssue"
+              ]
+            },
+            "UpdateIssueModel":  {
+              "methods":  [
+                "UpdateIssueModel"
               ]
             },
             "UpdateSettings":  {

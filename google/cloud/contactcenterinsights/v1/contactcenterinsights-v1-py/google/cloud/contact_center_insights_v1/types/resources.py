@@ -950,6 +950,9 @@ class IssueModel(proto.Message):
             the issue model was updated.
         state (google.cloud.contact_center_insights_v1.types.IssueModel.State):
             Output only. State of the model.
+        input_data_config (google.cloud.contact_center_insights_v1.types.IssueModel.InputDataConfig):
+            Configs for the input data that used to
+            create the issue model.
         training_stats (google.cloud.contact_center_insights_v1.types.IssueModelLabelStats):
             Output only. Immutable. The issue model's
             label statistics on its training data.
@@ -962,6 +965,27 @@ class IssueModel(proto.Message):
         DEPLOYED = 3
         UNDEPLOYING = 4
         DELETING = 5
+
+    class InputDataConfig(proto.Message):
+        r"""Configs for the input data used to create the issue model.
+        Attributes:
+            medium (google.cloud.contact_center_insights_v1.types.Conversation.Medium):
+                Required. Medium of conversations used in
+                training data.
+            training_conversations_count (int):
+                Output only. Number of conversations used in
+                training. Output only.
+        """
+
+        medium = proto.Field(
+            proto.ENUM,
+            number=1,
+            enum='Conversation.Medium',
+        )
+        training_conversations_count = proto.Field(
+            proto.INT64,
+            number=2,
+        )
 
     name = proto.Field(
         proto.STRING,
@@ -985,6 +1009,11 @@ class IssueModel(proto.Message):
         proto.ENUM,
         number=5,
         enum=State,
+    )
+    input_data_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        message=InputDataConfig,
     )
     training_stats = proto.Field(
         proto.MESSAGE,
@@ -1304,6 +1333,8 @@ class Settings(proto.Message):
                created.
             -  "export-insights-data": Notify each time an export is
                complete.
+            -  "update-conversation": Notify each time a conversation is
+               updated via UpdateConversation.
 
             Values are Pub/Sub topics. The format of each Pub/Sub topic
             is: projects/{project}/topics/{topic}
@@ -1688,6 +1719,13 @@ class DialogflowInteractionData(proto.Message):
 class ConversationParticipant(proto.Message):
     r"""The call participant speaking for a given utterance.
     Attributes:
+        dialogflow_participant_name (str):
+            The name of the participant provided by
+            Dialogflow. Format:
+            projects/{project}/locations/{location}/conversations/{conversation}/participants/{participant}
+        user_id (str):
+            A user-specified ID representing the
+            participant.
         dialogflow_participant (str):
             The name of the Dialogflow participant.
             Format:
@@ -1703,6 +1741,16 @@ class ConversationParticipant(proto.Message):
         END_USER = 3
         ANY_AGENT = 4
 
+    dialogflow_participant_name = proto.Field(
+        proto.STRING,
+        number=5,
+        oneof='participant',
+    )
+    user_id = proto.Field(
+        proto.STRING,
+        number=6,
+        oneof='participant',
+    )
     dialogflow_participant = proto.Field(
         proto.STRING,
         number=1,
