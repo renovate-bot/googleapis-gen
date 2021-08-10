@@ -40,7 +40,7 @@ class SpeakerDiarizationConfig extends \Google\Protobuf\Internal\Message
      */
     protected $max_speaker_count = 0;
     /**
-     * Unused.
+     * Output only. Unused.
      *
      * Generated from protobuf field <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @deprecated
@@ -66,7 +66,7 @@ class SpeakerDiarizationConfig extends \Google\Protobuf\Internal\Message
      *           flexibility by allowing the system to automatically determine the correct
      *           number of speakers. If not set, the default value is 6.
      *     @type int $speaker_tag
-     *           Unused.
+     *           Output only. Unused.
      * }
      */
     public function __construct($data = NULL) {
@@ -165,7 +165,7 @@ class SpeakerDiarizationConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unused.
+     * Output only. Unused.
      *
      * Generated from protobuf field <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int
@@ -178,7 +178,7 @@ class SpeakerDiarizationConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Unused.
+     * Output only. Unused.
      *
      * Generated from protobuf field <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int $var

@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
   private int speakerTag_;
   /**
    * <pre>
-   * Unused.
+   * Output only. Unused.
    * </pre>
    *
    * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -678,7 +678,7 @@ private static final long serialVersionUID = 0L;
     private int speakerTag_ ;
     /**
      * <pre>
-     * Unused.
+     * Output only. Unused.
      * </pre>
      *
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -690,7 +690,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unused.
+     * Output only. Unused.
      * </pre>
      *
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -705,7 +705,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Unused.
+     * Output only. Unused.
      * </pre>
      *
      * <code>int32 speaker_tag = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>

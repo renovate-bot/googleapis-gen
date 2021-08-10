@@ -97,7 +97,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      *
      * Generated from protobuf field <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      */
@@ -116,9 +116,6 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      *
      * Generated from protobuf field <code>bool enable_automatic_punctuation = 11;</code>
      */
@@ -163,7 +160,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      *   </tr>
      *   <tr>
      *     <td><code>video</code></td>
-     *     <td>Best for audio that originated from from video or includes multiple
+     *     <td>Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.</td>
@@ -251,7 +248,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      *           A means to provide context to assist the speech recognition. For more
      *           information, see
      *           [speech
-     *           adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     *           adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      *     @type bool $enable_word_time_offsets
      *           If `true`, the top result includes a list of words and
      *           the start and end time offsets (timestamps) for those words. If
@@ -262,9 +259,6 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      *           This feature is only available in select languages. Setting this for
      *           requests in other languages has no effect at all.
      *           The default 'false' value does not add punctuation to result hypotheses.
-     *           Note: This is currently offered as an experimental service, complimentary
-     *           to all users. In the future this may be exclusively available as a
-     *           premium feature.
      *     @type \Google\Cloud\Speech\V1\SpeakerDiarizationConfig $diarization_config
      *           Config to enable speaker diarization and set additional
      *           parameters to make diarization better suited for your application.
@@ -297,7 +291,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      *             </tr>
      *             <tr>
      *               <td><code>video</code></td>
-     *               <td>Best for audio that originated from from video or includes multiple
+     *               <td>Best for audio that originated from video or includes multiple
      *                   speakers. Ideally the audio is recorded at a 16khz or greater
      *                   sampling rate. This is a premium model that costs more than the
      *                   standard rate.</td>
@@ -579,7 +573,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      *
      * Generated from protobuf field <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -594,7 +588,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      * A means to provide context to assist the speech recognition. For more
      * information, see
      * [speech
-     * adaptation](https://cloud.google.com/speech-to-text/docs/context-strength).
+     * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
      *
      * Generated from protobuf field <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
      * @param \Google\Cloud\Speech\V1\SpeechContext[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -645,9 +639,6 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      *
      * Generated from protobuf field <code>bool enable_automatic_punctuation = 11;</code>
      * @return bool
@@ -662,9 +653,6 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      * This feature is only available in select languages. Setting this for
      * requests in other languages has no effect at all.
      * The default 'false' value does not add punctuation to result hypotheses.
-     * Note: This is currently offered as an experimental service, complimentary
-     * to all users. In the future this may be exclusively available as a
-     * premium feature.
      *
      * Generated from protobuf field <code>bool enable_automatic_punctuation = 11;</code>
      * @param bool $var
@@ -785,7 +773,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      *   </tr>
      *   <tr>
      *     <td><code>video</code></td>
-     *     <td>Best for audio that originated from from video or includes multiple
+     *     <td>Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.</td>
@@ -827,7 +815,7 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      *   </tr>
      *   <tr>
      *     <td><code>video</code></td>
-     *     <td>Best for audio that originated from from video or includes multiple
+     *     <td>Best for audio that originated from video or includes multiple
      *         speakers. Ideally the audio is recorded at a 16khz or greater
      *         sampling rate. This is a premium model that costs more than the
      *         standard rate.</td>
