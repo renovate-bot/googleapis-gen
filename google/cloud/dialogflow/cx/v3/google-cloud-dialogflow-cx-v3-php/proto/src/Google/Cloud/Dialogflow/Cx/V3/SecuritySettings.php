@@ -51,14 +51,29 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/<Project ID>/inspectTemplates/<Template ID>` OR
      * `projects/<Project ID>/locations/<Location ID>/inspectTemplates/<Template
-     * ID>` OR
-     * `organizations/<Organization ID>/inspectTemplates/<Template ID>`
+     * ID>` OR `organizations/<Organization ID>/locations/<Location
+     * ID>/inspectTemplates/<Template ID>`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      *
-     * Generated from protobuf field <code>string inspect_template = 9;</code>
+     * Generated from protobuf field <code>string inspect_template = 9 [(.google.api.resource_reference) = {</code>
      */
     protected $inspect_template = '';
+    /**
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/<Project ID>/locations/<Location
+     * ID>/deidentifyTemplates/<Template ID>` OR `organizations/<Organization
+     * ID>/locations/<Location ID>/deidentifyTemplates/<Template ID>`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     *
+     * Generated from protobuf field <code>string deidentify_template = 17 [(.google.api.resource_reference) = {</code>
+     */
+    protected $deidentify_template = '';
     /**
      * List of types of data to remove when retention settings triggers purge.
      *
@@ -66,12 +81,12 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      */
     private $purge_data_types;
     /**
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      */
     protected $insights_export_settings = null;
     protected $data_retention;
@@ -100,10 +115,21 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      *           template to define inspect base settings.
      *           If empty, we use the default DLP inspect config.
      *           The template name will have one of the following formats:
-     *           `projects/<Project ID>/inspectTemplates/<Template ID>` OR
      *           `projects/<Project ID>/locations/<Location ID>/inspectTemplates/<Template
-     *           ID>` OR
-     *           `organizations/<Organization ID>/inspectTemplates/<Template ID>`
+     *           ID>` OR `organizations/<Organization ID>/locations/<Location
+     *           ID>/inspectTemplates/<Template ID>`
+     *           Note: `inspect_template` must be located in the same region as the
+     *           `SecuritySettings`.
+     *     @type string $deidentify_template
+     *           [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     *           template to define de-identification configuration for the content.
+     *           If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     *           The template name will have one of the following formats:
+     *           `projects/<Project ID>/locations/<Location
+     *           ID>/deidentifyTemplates/<Template ID>` OR `organizations/<Organization
+     *           ID>/locations/<Location ID>/deidentifyTemplates/<Template ID>`
+     *           Note: `deidentify_template` must be located in the same region as the
+     *           `SecuritySettings`.
      *     @type int $retention_window_days
      *           Retains data in interaction logging for the specified number of days.
      *           This does not apply to Cloud logging, which is owned by the user - not
@@ -117,7 +143,7 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $purge_data_types
      *           List of types of data to remove when retention settings triggers purge.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\SecuritySettings\InsightsExportSettings $insights_export_settings
-     *           Optional. Controls conversation exporting settings to Insights after conversation is
+     *           Controls conversation exporting settings to Insights after conversation is
      *           completed.
      *           If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      *           Insights export is disabled no matter what you configure here.
@@ -247,12 +273,13 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/<Project ID>/inspectTemplates/<Template ID>` OR
      * `projects/<Project ID>/locations/<Location ID>/inspectTemplates/<Template
-     * ID>` OR
-     * `organizations/<Organization ID>/inspectTemplates/<Template ID>`
+     * ID>` OR `organizations/<Organization ID>/locations/<Location
+     * ID>/inspectTemplates/<Template ID>`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      *
-     * Generated from protobuf field <code>string inspect_template = 9;</code>
+     * Generated from protobuf field <code>string inspect_template = 9 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getInspectTemplate()
@@ -265,12 +292,13 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
      * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/<Project ID>/inspectTemplates/<Template ID>` OR
      * `projects/<Project ID>/locations/<Location ID>/inspectTemplates/<Template
-     * ID>` OR
-     * `organizations/<Organization ID>/inspectTemplates/<Template ID>`
+     * ID>` OR `organizations/<Organization ID>/locations/<Location
+     * ID>/inspectTemplates/<Template ID>`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      *
-     * Generated from protobuf field <code>string inspect_template = 9;</code>
+     * Generated from protobuf field <code>string inspect_template = 9 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -278,6 +306,48 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->inspect_template = $var;
+
+        return $this;
+    }
+
+    /**
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/<Project ID>/locations/<Location
+     * ID>/deidentifyTemplates/<Template ID>` OR `organizations/<Organization
+     * ID>/locations/<Location ID>/deidentifyTemplates/<Template ID>`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     *
+     * Generated from protobuf field <code>string deidentify_template = 17 [(.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getDeidentifyTemplate()
+    {
+        return $this->deidentify_template;
+    }
+
+    /**
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/<Project ID>/locations/<Location
+     * ID>/deidentifyTemplates/<Template ID>` OR `organizations/<Organization
+     * ID>/locations/<Location ID>/deidentifyTemplates/<Template ID>`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     *
+     * Generated from protobuf field <code>string deidentify_template = 17 [(.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeidentifyTemplate($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->deidentify_template = $var;
 
         return $this;
     }
@@ -356,12 +426,12 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      * @return \Google\Cloud\Dialogflow\Cx\V3\SecuritySettings\InsightsExportSettings|null
      */
     public function getInsightsExportSettings()
@@ -380,12 +450,12 @@ class SecuritySettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      *
-     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      * @param \Google\Cloud\Dialogflow\Cx\V3\SecuritySettings\InsightsExportSettings $var
      * @return $this
      */

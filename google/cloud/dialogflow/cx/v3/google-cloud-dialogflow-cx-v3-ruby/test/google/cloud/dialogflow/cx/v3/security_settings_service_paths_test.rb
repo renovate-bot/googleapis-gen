@@ -23,6 +23,36 @@ require "gapic/grpc/service_stub"
 require "google/cloud/dialogflow/cx/v3/security_settings_service"
 
 class ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::ClientPathsTest < Minitest::Test
+  def test_deidentify_template_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.deidentify_template_path organization: "value0", location: "value1", deidentify_template: "value2"
+      assert_equal "organizations/value0/locations/value1/deidentifyTemplates/value2", path
+
+      path = client.deidentify_template_path project: "value0", location: "value1", deidentify_template: "value2"
+      assert_equal "projects/value0/locations/value1/deidentifyTemplates/value2", path
+    end
+  end
+
+  def test_inspect_template_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Dialogflow::Cx::V3::SecuritySettingsService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.inspect_template_path organization: "value0", location: "value1", inspect_template: "value2"
+      assert_equal "organizations/value0/locations/value1/inspectTemplates/value2", path
+
+      path = client.inspect_template_path project: "value0", location: "value1", inspect_template: "value2"
+      assert_equal "projects/value0/locations/value1/inspectTemplates/value2", path
+    end
+  end
+
   def test_location_path
     grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
     ::Gapic::ServiceStub.stub :new, nil do

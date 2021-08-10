@@ -101,13 +101,14 @@ public interface SecuritySettingsOrBuilder extends
    * template to define inspect base settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-   * ID&gt;` OR
-   * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+   * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * Note: `inspect_template` must be located in the same region as the
+   * `SecuritySettings`.
    * </pre>
    *
-   * <code>string inspect_template = 9;</code>
+   * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
    * @return The inspectTemplate.
    */
   java.lang.String getInspectTemplate();
@@ -117,17 +118,54 @@ public interface SecuritySettingsOrBuilder extends
    * template to define inspect base settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-   * ID&gt;` OR
-   * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+   * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * Note: `inspect_template` must be located in the same region as the
+   * `SecuritySettings`.
    * </pre>
    *
-   * <code>string inspect_template = 9;</code>
+   * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for inspectTemplate.
    */
   com.google.protobuf.ByteString
       getInspectTemplateBytes();
+
+  /**
+   * <pre>
+   * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+   * template to define de-identification configuration for the content.
+   * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+   * The template name will have one of the following formats:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+   * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   * Note: `deidentify_template` must be located in the same region as the
+   * `SecuritySettings`.
+   * </pre>
+   *
+   * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+   * @return The deidentifyTemplate.
+   */
+  java.lang.String getDeidentifyTemplate();
+  /**
+   * <pre>
+   * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+   * template to define de-identification configuration for the content.
+   * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+   * The template name will have one of the following formats:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+   * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   * Note: `deidentify_template` must be located in the same region as the
+   * `SecuritySettings`.
+   * </pre>
+   *
+   * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for deidentifyTemplate.
+   */
+  com.google.protobuf.ByteString
+      getDeidentifyTemplateBytes();
 
   /**
    * <pre>
@@ -215,37 +253,37 @@ public interface SecuritySettingsOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * Controls conversation exporting settings to Insights after conversation is
    * completed.
    * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
    * Insights export is disabled no matter what you configure here.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
    * @return Whether the insightsExportSettings field is set.
    */
   boolean hasInsightsExportSettings();
   /**
    * <pre>
-   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * Controls conversation exporting settings to Insights after conversation is
    * completed.
    * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
    * Insights export is disabled no matter what you configure here.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
    * @return The insightsExportSettings.
    */
   com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings getInsightsExportSettings();
   /**
    * <pre>
-   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * Controls conversation exporting settings to Insights after conversation is
    * completed.
    * If [retention_strategy][google.cloud.dialogflow.cx.v3.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
    * Insights export is disabled no matter what you configure here.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
    */
   com.google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettingsOrBuilder getInsightsExportSettingsOrBuilder();
 

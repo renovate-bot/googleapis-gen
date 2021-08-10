@@ -84,11 +84,13 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
         $inspectTemplate = 'inspectTemplate-159468987';
+        $deidentifyTemplate = 'deidentifyTemplate1397891564';
         $retentionWindowDays = 810238885;
         $expectedResponse = new SecuritySettings();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setInspectTemplate($inspectTemplate);
+        $expectedResponse->setDeidentifyTemplate($deidentifyTemplate);
         $expectedResponse->setRetentionWindowDays($retentionWindowDays);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -227,11 +229,13 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         $name2 = 'name2-1052831874';
         $displayName = 'displayName1615086568';
         $inspectTemplate = 'inspectTemplate-159468987';
+        $deidentifyTemplate = 'deidentifyTemplate1397891564';
         $retentionWindowDays = 810238885;
         $expectedResponse = new SecuritySettings();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setInspectTemplate($inspectTemplate);
+        $expectedResponse->setDeidentifyTemplate($deidentifyTemplate);
         $expectedResponse->setRetentionWindowDays($retentionWindowDays);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -369,11 +373,13 @@ class SecuritySettingsServiceClientTest extends GeneratedTest
         $name = 'name3373707';
         $displayName = 'displayName1615086568';
         $inspectTemplate = 'inspectTemplate-159468987';
+        $deidentifyTemplate = 'deidentifyTemplate1397891564';
         $retentionWindowDays = 810238885;
         $expectedResponse = new SecuritySettings();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setInspectTemplate($inspectTemplate);
+        $expectedResponse->setDeidentifyTemplate($deidentifyTemplate);
         $expectedResponse->setRetentionWindowDays($retentionWindowDays);
         $transport->addResponse($expectedResponse);
         // Mock request

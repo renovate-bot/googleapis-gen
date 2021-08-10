@@ -410,6 +410,7 @@ def test_create_security_settings(transport: str = 'grpc', request_type=gcdc_sec
             redaction_strategy=gcdc_security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE,
             redaction_scope=gcdc_security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE,
             inspect_template='inspect_template_value',
+            deidentify_template='deidentify_template_value',
             purge_data_types=[gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY],
             retention_window_days=2271,
         )
@@ -427,6 +428,7 @@ def test_create_security_settings(transport: str = 'grpc', request_type=gcdc_sec
     assert response.redaction_strategy == gcdc_security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE
     assert response.redaction_scope == gcdc_security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE
     assert response.inspect_template == 'inspect_template_value'
+    assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
 
 
@@ -474,6 +476,7 @@ async def test_create_security_settings_async(transport: str = 'grpc_asyncio', r
             redaction_strategy=gcdc_security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE,
             redaction_scope=gcdc_security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE,
             inspect_template='inspect_template_value',
+            deidentify_template='deidentify_template_value',
             purge_data_types=[gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY],
         ))
         response = await client.create_security_settings(request)
@@ -490,6 +493,7 @@ async def test_create_security_settings_async(transport: str = 'grpc_asyncio', r
     assert response.redaction_strategy == gcdc_security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE
     assert response.redaction_scope == gcdc_security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE
     assert response.inspect_template == 'inspect_template_value'
+    assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
 
 
@@ -668,6 +672,7 @@ def test_get_security_settings(transport: str = 'grpc', request_type=security_se
             redaction_strategy=security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE,
             redaction_scope=security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE,
             inspect_template='inspect_template_value',
+            deidentify_template='deidentify_template_value',
             purge_data_types=[security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY],
             retention_window_days=2271,
         )
@@ -685,6 +690,7 @@ def test_get_security_settings(transport: str = 'grpc', request_type=security_se
     assert response.redaction_strategy == security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE
     assert response.redaction_scope == security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE
     assert response.inspect_template == 'inspect_template_value'
+    assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
 
 
@@ -732,6 +738,7 @@ async def test_get_security_settings_async(transport: str = 'grpc_asyncio', requ
             redaction_strategy=security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE,
             redaction_scope=security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE,
             inspect_template='inspect_template_value',
+            deidentify_template='deidentify_template_value',
             purge_data_types=[security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY],
         ))
         response = await client.get_security_settings(request)
@@ -748,6 +755,7 @@ async def test_get_security_settings_async(transport: str = 'grpc_asyncio', requ
     assert response.redaction_strategy == security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE
     assert response.redaction_scope == security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE
     assert response.inspect_template == 'inspect_template_value'
+    assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
 
 
@@ -920,6 +928,7 @@ def test_update_security_settings(transport: str = 'grpc', request_type=gcdc_sec
             redaction_strategy=gcdc_security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE,
             redaction_scope=gcdc_security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE,
             inspect_template='inspect_template_value',
+            deidentify_template='deidentify_template_value',
             purge_data_types=[gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY],
             retention_window_days=2271,
         )
@@ -937,6 +946,7 @@ def test_update_security_settings(transport: str = 'grpc', request_type=gcdc_sec
     assert response.redaction_strategy == gcdc_security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE
     assert response.redaction_scope == gcdc_security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE
     assert response.inspect_template == 'inspect_template_value'
+    assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
 
 
@@ -984,6 +994,7 @@ async def test_update_security_settings_async(transport: str = 'grpc_asyncio', r
             redaction_strategy=gcdc_security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE,
             redaction_scope=gcdc_security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE,
             inspect_template='inspect_template_value',
+            deidentify_template='deidentify_template_value',
             purge_data_types=[gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY],
         ))
         response = await client.update_security_settings(request)
@@ -1000,6 +1011,7 @@ async def test_update_security_settings_async(transport: str = 'grpc_asyncio', r
     assert response.redaction_strategy == gcdc_security_settings.SecuritySettings.RedactionStrategy.REDACT_WITH_SERVICE
     assert response.redaction_scope == gcdc_security_settings.SecuritySettings.RedactionScope.REDACT_DISK_STORAGE
     assert response.inspect_template == 'inspect_template_value'
+    assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
 
 
@@ -2228,6 +2240,48 @@ def test_security_settings_service_transport_channel_mtls_with_adc(
             )
             assert transport.grpc_channel == mock_grpc_channel
 
+
+def test_deidentify_template_path():
+    organization = "squid"
+    location = "clam"
+    deidentify_template = "whelk"
+    expected = "organizations/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}".format(organization=organization, location=location, deidentify_template=deidentify_template, )
+    actual = SecuritySettingsServiceClient.deidentify_template_path(organization, location, deidentify_template)
+    assert expected == actual
+
+
+def test_parse_deidentify_template_path():
+    expected = {
+        "organization": "octopus",
+        "location": "oyster",
+        "deidentify_template": "nudibranch",
+    }
+    path = SecuritySettingsServiceClient.deidentify_template_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = SecuritySettingsServiceClient.parse_deidentify_template_path(path)
+    assert expected == actual
+
+def test_inspect_template_path():
+    organization = "cuttlefish"
+    location = "mussel"
+    inspect_template = "winkle"
+    expected = "organizations/{organization}/locations/{location}/inspectTemplates/{inspect_template}".format(organization=organization, location=location, inspect_template=inspect_template, )
+    actual = SecuritySettingsServiceClient.inspect_template_path(organization, location, inspect_template)
+    assert expected == actual
+
+
+def test_parse_inspect_template_path():
+    expected = {
+        "organization": "nautilus",
+        "location": "scallop",
+        "inspect_template": "abalone",
+    }
+    path = SecuritySettingsServiceClient.inspect_template_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = SecuritySettingsServiceClient.parse_inspect_template_path(path)
+    assert expected == actual
 
 def test_security_settings_path():
     project = "squid"

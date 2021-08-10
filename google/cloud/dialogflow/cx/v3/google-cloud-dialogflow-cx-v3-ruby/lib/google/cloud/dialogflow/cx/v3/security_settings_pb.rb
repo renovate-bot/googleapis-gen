@@ -41,6 +41,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :redaction_strategy, :enum, 3, "google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionStrategy"
       optional :redaction_scope, :enum, 4, "google.cloud.dialogflow.cx.v3.SecuritySettings.RedactionScope"
       optional :inspect_template, :string, 9
+      optional :deidentify_template, :string, 17
       repeated :purge_data_types, :enum, 8, "google.cloud.dialogflow.cx.v3.SecuritySettings.PurgeDataType"
       optional :insights_export_settings, :message, 13, "google.cloud.dialogflow.cx.v3.SecuritySettings.InsightsExportSettings"
       oneof :data_retention do

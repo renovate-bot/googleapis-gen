@@ -98,7 +98,19 @@ class SecuritySettingsServiceGapicClient
         'https://www.googleapis.com/auth/dialogflow',
     ];
 
+    private static $deidentifyTemplateNameTemplate;
+
+    private static $inspectTemplateNameTemplate;
+
     private static $locationNameTemplate;
+
+    private static $organizationLocationDeidentifyTemplateNameTemplate;
+
+    private static $organizationLocationInspectTemplateNameTemplate;
+
+    private static $projectLocationDeidentifyTemplateNameTemplate;
+
+    private static $projectLocationInspectTemplateNameTemplate;
 
     private static $securitySettingsNameTemplate;
 
@@ -123,6 +135,24 @@ class SecuritySettingsServiceGapicClient
         ];
     }
 
+    private static function getDeidentifyTemplateNameTemplate()
+    {
+        if (self::$deidentifyTemplateNameTemplate == null) {
+            self::$deidentifyTemplateNameTemplate = new PathTemplate('organizations/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}');
+        }
+
+        return self::$deidentifyTemplateNameTemplate;
+    }
+
+    private static function getInspectTemplateNameTemplate()
+    {
+        if (self::$inspectTemplateNameTemplate == null) {
+            self::$inspectTemplateNameTemplate = new PathTemplate('organizations/{organization}/locations/{location}/inspectTemplates/{inspect_template}');
+        }
+
+        return self::$inspectTemplateNameTemplate;
+    }
+
     private static function getLocationNameTemplate()
     {
         if (self::$locationNameTemplate == null) {
@@ -130,6 +160,42 @@ class SecuritySettingsServiceGapicClient
         }
 
         return self::$locationNameTemplate;
+    }
+
+    private static function getOrganizationLocationDeidentifyTemplateNameTemplate()
+    {
+        if (self::$organizationLocationDeidentifyTemplateNameTemplate == null) {
+            self::$organizationLocationDeidentifyTemplateNameTemplate = new PathTemplate('organizations/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}');
+        }
+
+        return self::$organizationLocationDeidentifyTemplateNameTemplate;
+    }
+
+    private static function getOrganizationLocationInspectTemplateNameTemplate()
+    {
+        if (self::$organizationLocationInspectTemplateNameTemplate == null) {
+            self::$organizationLocationInspectTemplateNameTemplate = new PathTemplate('organizations/{organization}/locations/{location}/inspectTemplates/{inspect_template}');
+        }
+
+        return self::$organizationLocationInspectTemplateNameTemplate;
+    }
+
+    private static function getProjectLocationDeidentifyTemplateNameTemplate()
+    {
+        if (self::$projectLocationDeidentifyTemplateNameTemplate == null) {
+            self::$projectLocationDeidentifyTemplateNameTemplate = new PathTemplate('projects/{project}/locations/{location}/deidentifyTemplates/{deidentify_template}');
+        }
+
+        return self::$projectLocationDeidentifyTemplateNameTemplate;
+    }
+
+    private static function getProjectLocationInspectTemplateNameTemplate()
+    {
+        if (self::$projectLocationInspectTemplateNameTemplate == null) {
+            self::$projectLocationInspectTemplateNameTemplate = new PathTemplate('projects/{project}/locations/{location}/inspectTemplates/{inspect_template}');
+        }
+
+        return self::$projectLocationInspectTemplateNameTemplate;
     }
 
     private static function getSecuritySettingsNameTemplate()
@@ -145,12 +211,56 @@ class SecuritySettingsServiceGapicClient
     {
         if (self::$pathTemplateMap == null) {
             self::$pathTemplateMap = [
+                'deidentifyTemplate' => self::getDeidentifyTemplateNameTemplate(),
+                'inspectTemplate' => self::getInspectTemplateNameTemplate(),
                 'location' => self::getLocationNameTemplate(),
+                'organizationLocationDeidentifyTemplate' => self::getOrganizationLocationDeidentifyTemplateNameTemplate(),
+                'organizationLocationInspectTemplate' => self::getOrganizationLocationInspectTemplateNameTemplate(),
+                'projectLocationDeidentifyTemplate' => self::getProjectLocationDeidentifyTemplateNameTemplate(),
+                'projectLocationInspectTemplate' => self::getProjectLocationInspectTemplateNameTemplate(),
                 'securitySettings' => self::getSecuritySettingsNameTemplate(),
             ];
         }
 
         return self::$pathTemplateMap;
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * deidentify_template resource.
+     *
+     * @param string $organization
+     * @param string $location
+     * @param string $deidentifyTemplate
+     *
+     * @return string The formatted deidentify_template resource.
+     */
+    public static function deidentifyTemplateName($organization, $location, $deidentifyTemplate)
+    {
+        return self::getDeidentifyTemplateNameTemplate()->render([
+            'organization' => $organization,
+            'location' => $location,
+            'deidentify_template' => $deidentifyTemplate,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * inspect_template resource.
+     *
+     * @param string $organization
+     * @param string $location
+     * @param string $inspectTemplate
+     *
+     * @return string The formatted inspect_template resource.
+     */
+    public static function inspectTemplateName($organization, $location, $inspectTemplate)
+    {
+        return self::getInspectTemplateNameTemplate()->render([
+            'organization' => $organization,
+            'location' => $location,
+            'inspect_template' => $inspectTemplate,
+        ]);
     }
 
     /**
@@ -167,6 +277,82 @@ class SecuritySettingsServiceGapicClient
         return self::getLocationNameTemplate()->render([
             'project' => $project,
             'location' => $location,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * organization_location_deidentify_template resource.
+     *
+     * @param string $organization
+     * @param string $location
+     * @param string $deidentifyTemplate
+     *
+     * @return string The formatted organization_location_deidentify_template resource.
+     */
+    public static function organizationLocationDeidentifyTemplateName($organization, $location, $deidentifyTemplate)
+    {
+        return self::getOrganizationLocationDeidentifyTemplateNameTemplate()->render([
+            'organization' => $organization,
+            'location' => $location,
+            'deidentify_template' => $deidentifyTemplate,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * organization_location_inspect_template resource.
+     *
+     * @param string $organization
+     * @param string $location
+     * @param string $inspectTemplate
+     *
+     * @return string The formatted organization_location_inspect_template resource.
+     */
+    public static function organizationLocationInspectTemplateName($organization, $location, $inspectTemplate)
+    {
+        return self::getOrganizationLocationInspectTemplateNameTemplate()->render([
+            'organization' => $organization,
+            'location' => $location,
+            'inspect_template' => $inspectTemplate,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * project_location_deidentify_template resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $deidentifyTemplate
+     *
+     * @return string The formatted project_location_deidentify_template resource.
+     */
+    public static function projectLocationDeidentifyTemplateName($project, $location, $deidentifyTemplate)
+    {
+        return self::getProjectLocationDeidentifyTemplateNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'deidentify_template' => $deidentifyTemplate,
+        ]);
+    }
+
+    /**
+     * Formats a string containing the fully-qualified path to represent a
+     * project_location_inspect_template resource.
+     *
+     * @param string $project
+     * @param string $location
+     * @param string $inspectTemplate
+     *
+     * @return string The formatted project_location_inspect_template resource.
+     */
+    public static function projectLocationInspectTemplateName($project, $location, $inspectTemplate)
+    {
+        return self::getProjectLocationInspectTemplateNameTemplate()->render([
+            'project' => $project,
+            'location' => $location,
+            'inspect_template' => $inspectTemplate,
         ]);
     }
 
@@ -193,7 +379,13 @@ class SecuritySettingsServiceGapicClient
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
+     * - deidentifyTemplate: organizations/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}
+     * - inspectTemplate: organizations/{organization}/locations/{location}/inspectTemplates/{inspect_template}
      * - location: projects/{project}/locations/{location}
+     * - organizationLocationDeidentifyTemplate: organizations/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}
+     * - organizationLocationInspectTemplate: organizations/{organization}/locations/{location}/inspectTemplates/{inspect_template}
+     * - projectLocationDeidentifyTemplate: projects/{project}/locations/{location}/deidentifyTemplates/{deidentify_template}
+     * - projectLocationInspectTemplate: projects/{project}/locations/{location}/inspectTemplates/{inspect_template}
      * - securitySettings: projects/{project}/locations/{location}/securitySettings/{security_settings}
      *
      * The optional $template argument can be supplied to specify a particular pattern,

@@ -91,6 +91,7 @@ public class SecuritySettingsServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
+            .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
@@ -139,6 +140,7 @@ public class SecuritySettingsServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
+            .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
@@ -187,6 +189,7 @@ public class SecuritySettingsServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
+            .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
@@ -233,6 +236,7 @@ public class SecuritySettingsServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
+            .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
@@ -277,6 +281,7 @@ public class SecuritySettingsServiceClientTest {
                     .toString())
             .setDisplayName("displayName1714148973")
             .setInspectTemplate("inspectTemplate-2053620050")
+            .setDeidentifyTemplate("deidentifyTemplate-2141929945")
             .addAllPurgeDataTypes(new ArrayList<SecuritySettings.PurgeDataType>())
             .setInsightsExportSettings(SecuritySettings.InsightsExportSettings.newBuilder().build())
             .build();
