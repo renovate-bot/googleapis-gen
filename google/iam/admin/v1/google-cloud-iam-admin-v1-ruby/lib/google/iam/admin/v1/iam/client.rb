@@ -59,13 +59,12 @@ module Google
             # See {::Google::Iam::Admin::V1::IAM::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all IAM clients:
-            #
-            #     ::Google::Iam::Admin::V1::IAM::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all IAM clients
+            #   ::Google::Iam::Admin::V1::IAM::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -163,19 +162,15 @@ module Google
             ##
             # Create a new IAM client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new IAM client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Iam::Admin::V1::IAM::Client.new
             #
-            #     client = ::Google::Iam::Admin::V1::IAM::Client.new
-            #
-            # To create a new IAM client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Iam::Admin::V1::IAM::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Iam::Admin::V1::IAM::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the IAM client.
             # @yieldparam config [Client::Configuration]
@@ -195,10 +190,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -285,7 +279,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_service_accounts.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_service_accounts.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :list_service_accounts, request, options: options do |response, operation|
@@ -356,7 +352,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_service_account.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_service_account.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :get_service_account, request, options: options do |response, operation|
@@ -432,7 +430,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_service_account.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_service_account.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :create_service_account, request, options: options do |response, operation|
@@ -529,7 +529,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_service_account.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_service_account.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :update_service_account, request, options: options do |response, operation|
@@ -595,7 +597,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.patch_service_account.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.patch_service_account.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :patch_service_account, request, options: options do |response, operation|
@@ -679,7 +683,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_service_account.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_service_account.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :delete_service_account, request, options: options do |response, operation|
@@ -755,7 +761,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.undelete_service_account.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.undelete_service_account.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :undelete_service_account, request, options: options do |response, operation|
@@ -832,7 +840,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.enable_service_account.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.enable_service_account.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :enable_service_account, request, options: options do |response, operation|
@@ -917,7 +927,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.disable_service_account.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.disable_service_account.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :disable_service_account, request, options: options do |response, operation|
@@ -992,7 +1004,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_service_account_keys.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_service_account_keys.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :list_service_account_keys, request, options: options do |response, operation|
@@ -1066,7 +1080,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_service_account_key.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_service_account_key.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :get_service_account_key, request, options: options do |response, operation|
@@ -1144,7 +1160,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_service_account_key.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_service_account_key.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :create_service_account_key, request, options: options do |response, operation|
@@ -1219,7 +1237,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.upload_service_account_key.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.upload_service_account_key.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :upload_service_account_key, request, options: options do |response, operation|
@@ -1291,7 +1311,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_service_account_key.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_service_account_key.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :delete_service_account_key, request, options: options do |response, operation|
@@ -1311,6 +1333,8 @@ module Google
             # instructions.
             #
             # Signs a blob using the system-managed private key for a {::Google::Iam::Admin::V1::ServiceAccount ServiceAccount}.
+            #
+            # @deprecated This method is deprecated and may be removed in the next major version update.
             #
             # @overload sign_blob(request, options = nil)
             #   Pass arguments to `sign_blob` via a request object, either of type
@@ -1376,7 +1400,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.sign_blob.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.sign_blob.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :sign_blob, request, options: options do |response, operation|
@@ -1397,6 +1423,8 @@ module Google
             #
             # Signs a JSON Web Token (JWT) using the system-managed private key for a
             # {::Google::Iam::Admin::V1::ServiceAccount ServiceAccount}.
+            #
+            # @deprecated This method is deprecated and may be removed in the next major version update.
             #
             # @overload sign_jwt(request, options = nil)
             #   Pass arguments to `sign_jwt` via a request object, either of type
@@ -1471,7 +1499,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.sign_jwt.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.sign_jwt.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :sign_jwt, request, options: options do |response, operation|
@@ -1550,7 +1580,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_iam_policy.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_iam_policy.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :get_iam_policy, request, options: options do |response, operation|
@@ -1638,7 +1670,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.set_iam_policy.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.set_iam_policy.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :set_iam_policy, request, options: options do |response, operation|
@@ -1711,7 +1745,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.test_iam_permissions.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.test_iam_permissions.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :test_iam_permissions, request, options: options do |response, operation|
@@ -1785,7 +1821,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.query_grantable_roles.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.query_grantable_roles.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :query_grantable_roles, request, options: options do |response, operation|
@@ -1886,7 +1924,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_roles.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_roles.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :list_roles, request, options: options do |response, operation|
@@ -1979,7 +2019,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_role.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_role.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :get_role, request, options: options do |response, operation|
@@ -2072,7 +2114,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_role.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_role.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :create_role, request, options: options do |response, operation|
@@ -2161,7 +2205,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_role.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_role.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :update_role, request, options: options do |response, operation|
@@ -2264,7 +2310,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_role.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_role.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :delete_role, request, options: options do |response, operation|
@@ -2351,7 +2399,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.undelete_role.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.undelete_role.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :undelete_role, request, options: options do |response, operation|
@@ -2425,7 +2475,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.query_testable_permissions.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.query_testable_permissions.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :query_testable_permissions, request, options: options do |response, operation|
@@ -2495,7 +2547,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.query_auditable_services.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.query_auditable_services.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :query_auditable_services, request, options: options do |response, operation|
@@ -2570,7 +2624,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.lint_policy.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.lint_policy.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @iam_stub.call_rpc :lint_policy, request, options: options do |response, operation|
@@ -2594,22 +2650,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for list_service_accounts
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # list_service_accounts to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Iam::Admin::V1::IAM::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_service_accounts.timeout = 20.0
+            #   end
             #
-            #     ::Google::Iam::Admin::V1::IAM::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_service_accounts.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Iam::Admin::V1::IAM::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_service_accounts.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Iam::Admin::V1::IAM::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_service_accounts.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

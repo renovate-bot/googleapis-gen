@@ -42,13 +42,12 @@ module Google
               # See {::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client::Configuration}
               # for a description of the configuration fields.
               #
-              # ## Example
+              # @example
               #
-              # To modify the configuration for all Webhooks clients:
-              #
-              #     ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.configure do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Modify the configuration for all Webhooks clients
+              #   ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.configure do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the Client client.
               # @yieldparam config [Client::Configuration]
@@ -100,19 +99,15 @@ module Google
               ##
               # Create a new Webhooks client object.
               #
-              # ## Examples
+              # @example
               #
-              # To create a new Webhooks client with the default
-              # configuration:
+              #   # Create a client using the default configuration
+              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new
               #
-              #     client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new
-              #
-              # To create a new Webhooks client with a custom
-              # configuration:
-              #
-              #     client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Create a client using a custom configuration
+              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the Webhooks client.
               # @yieldparam config [Client::Configuration]
@@ -132,10 +127,9 @@ module Google
 
                 # Create credentials
                 credentials = @config.credentials
-                # Use self-signed JWT if the scope and endpoint are unchanged from default,
+                # Use self-signed JWT if the endpoint is unchanged from default,
                 # but only if the default endpoint does not have a region prefix.
-                enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                         @config.endpoint == Client.configure.endpoint &&
+                enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
                 credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
@@ -217,7 +211,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.list_webhooks.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.list_webhooks.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @webhooks_stub.call_rpc :list_webhooks, request, options: options do |response, operation|
@@ -286,7 +282,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_webhook.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_webhook.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @webhooks_stub.call_rpc :get_webhook, request, options: options do |response, operation|
@@ -355,7 +353,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.create_webhook.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.create_webhook.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @webhooks_stub.call_rpc :create_webhook, request, options: options do |response, operation|
@@ -424,7 +424,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.update_webhook.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.update_webhook.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @webhooks_stub.call_rpc :update_webhook, request, options: options do |response, operation|
@@ -502,7 +504,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.delete_webhook.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.delete_webhook.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @webhooks_stub.call_rpc :delete_webhook, request, options: options do |response, operation|
@@ -526,22 +530,21 @@ module Google
               # Configuration can be applied globally to all clients, or to a single client
               # on construction.
               #
-              # # Examples
+              # @example
               #
-              # To modify the global config, setting the timeout for list_webhooks
-              # to 20 seconds, and all remaining timeouts to 10 seconds:
+              #   # Modify the global config, setting the timeout for
+              #   # list_webhooks to 20 seconds,
+              #   # and all remaining timeouts to 10 seconds.
+              #   ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.configure do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.list_webhooks.timeout = 20.0
+              #   end
               #
-              #     ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.configure do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.list_webhooks.timeout = 20.0
-              #     end
-              #
-              # To apply the above configuration only to a new client:
-              #
-              #     client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.list_webhooks.timeout = 20.0
-              #     end
+              #   # Apply the above configuration only to a new client.
+              #   client = ::Google::Cloud::Dialogflow::Cx::V3::Webhooks::Client.new do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.list_webhooks.timeout = 20.0
+              #   end
               #
               # @!attribute [rw] endpoint
               #   The hostname or hostname:port of the service endpoint.

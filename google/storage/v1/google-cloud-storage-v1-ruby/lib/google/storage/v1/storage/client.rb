@@ -38,13 +38,12 @@ module Google
           # See {::Google::Storage::V1::Storage::Client::Configuration}
           # for a description of the configuration fields.
           #
-          # ## Example
+          # @example
           #
-          # To modify the configuration for all Storage clients:
-          #
-          #     ::Google::Storage::V1::Storage::Client.configure do |config|
-          #       config.timeout = 10.0
-          #     end
+          #   # Modify the configuration for all Storage clients
+          #   ::Google::Storage::V1::Storage::Client.configure do |config|
+          #     config.timeout = 10.0
+          #   end
           #
           # @yield [config] Configure the Client client.
           # @yieldparam config [Client::Configuration]
@@ -91,19 +90,15 @@ module Google
           ##
           # Create a new Storage client object.
           #
-          # ## Examples
+          # @example
           #
-          # To create a new Storage client with the default
-          # configuration:
+          #   # Create a client using the default configuration
+          #   client = ::Google::Storage::V1::Storage::Client.new
           #
-          #     client = ::Google::Storage::V1::Storage::Client.new
-          #
-          # To create a new Storage client with a custom
-          # configuration:
-          #
-          #     client = ::Google::Storage::V1::Storage::Client.new do |config|
-          #       config.timeout = 10.0
-          #     end
+          #   # Create a client using a custom configuration
+          #   client = ::Google::Storage::V1::Storage::Client.new do |config|
+          #     config.timeout = 10.0
+          #   end
           #
           # @yield [config] Configure the Storage client.
           # @yieldparam config [Client::Configuration]
@@ -123,10 +118,9 @@ module Google
 
             # Create credentials
             credentials = @config.credentials
-            # Use self-signed JWT if the scope and endpoint are unchanged from default,
+            # Use self-signed JWT if the endpoint is unchanged from default,
             # but only if the default endpoint does not have a region prefix.
-            enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                     @config.endpoint == Client.configure.endpoint &&
+            enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                      !@config.endpoint.split(".").first.include?("-")
             credentials ||= Credentials.default scope: @config.scope,
                                                 enable_self_signed_jwt: enable_self_signed_jwt
@@ -207,7 +201,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.delete_bucket_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.delete_bucket_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :delete_bucket_access_control, request, options: options do |response, operation|
@@ -277,7 +273,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_bucket_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_bucket_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_bucket_access_control, request, options: options do |response, operation|
@@ -341,7 +339,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.insert_bucket_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.insert_bucket_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :insert_bucket_access_control, request, options: options do |response, operation|
@@ -403,7 +403,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.list_bucket_access_controls.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_bucket_access_controls.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :list_bucket_access_controls, request, options: options do |response, operation|
@@ -477,7 +479,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.update_bucket_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_bucket_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :update_bucket_access_control, request, options: options do |response, operation|
@@ -559,7 +563,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.patch_bucket_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.patch_bucket_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :patch_bucket_access_control, request, options: options do |response, operation|
@@ -626,7 +632,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.delete_bucket.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.delete_bucket.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :delete_bucket, request, options: options do |response, operation|
@@ -696,7 +704,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_bucket.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_bucket.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_bucket, request, options: options do |response, operation|
@@ -768,7 +778,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.insert_bucket.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.insert_bucket.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :insert_bucket, request, options: options do |response, operation|
@@ -830,7 +842,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.list_channels.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_channels.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :list_channels, request, options: options do |response, operation|
@@ -902,7 +916,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.list_buckets.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_buckets.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :list_buckets, request, options: options do |response, operation|
@@ -967,7 +983,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.lock_bucket_retention_policy.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.lock_bucket_retention_policy.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :lock_bucket_retention_policy, request, options: options do |response, operation|
@@ -1029,7 +1047,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_bucket_iam_policy.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_bucket_iam_policy.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_bucket_iam_policy, request, options: options do |response, operation|
@@ -1091,7 +1111,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.set_bucket_iam_policy.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.set_bucket_iam_policy.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :set_bucket_iam_policy, request, options: options do |response, operation|
@@ -1154,7 +1176,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.test_bucket_iam_permissions.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.test_bucket_iam_permissions.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :test_bucket_iam_permissions, request, options: options do |response, operation|
@@ -1242,7 +1266,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.patch_bucket.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.patch_bucket.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :patch_bucket, request, options: options do |response, operation|
@@ -1322,7 +1348,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.update_bucket.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_bucket.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :update_bucket, request, options: options do |response, operation|
@@ -1387,7 +1415,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.stop_channel.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.stop_channel.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :stop_channel, request, options: options do |response, operation|
@@ -1458,7 +1488,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.delete_default_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.delete_default_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :delete_default_object_access_control, request, options: options do |response, operation|
@@ -1529,7 +1561,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_default_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_default_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_default_object_access_control, request, options: options do |response, operation|
@@ -1593,7 +1627,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.insert_default_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.insert_default_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :insert_default_object_access_control, request, options: options do |response, operation|
@@ -1661,7 +1697,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.list_default_object_access_controls.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_default_object_access_controls.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :list_default_object_access_controls, request, options: options do |response, operation|
@@ -1744,7 +1782,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.patch_default_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.patch_default_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :patch_default_object_access_control, request, options: options do |response, operation|
@@ -1818,7 +1858,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.update_default_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_default_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :update_default_object_access_control, request, options: options do |response, operation|
@@ -1884,7 +1926,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.delete_notification.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.delete_notification.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :delete_notification, request, options: options do |response, operation|
@@ -1949,7 +1993,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_notification.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_notification.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_notification, request, options: options do |response, operation|
@@ -2016,7 +2062,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.insert_notification.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.insert_notification.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :insert_notification, request, options: options do |response, operation|
@@ -2078,7 +2126,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.list_notifications.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_notifications.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :list_notifications, request, options: options do |response, operation|
@@ -2154,7 +2204,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.delete_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.delete_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :delete_object_access_control, request, options: options do |response, operation|
@@ -2229,7 +2281,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_object_access_control, request, options: options do |response, operation|
@@ -2298,7 +2352,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.insert_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.insert_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :insert_object_access_control, request, options: options do |response, operation|
@@ -2365,7 +2421,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.list_object_access_controls.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_object_access_controls.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :list_object_access_controls, request, options: options do |response, operation|
@@ -2456,7 +2514,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.patch_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.patch_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :patch_object_access_control, request, options: options do |response, operation|
@@ -2545,7 +2605,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.update_object_access_control.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_object_access_control.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :update_object_access_control, request, options: options do |response, operation|
@@ -2631,7 +2693,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.compose_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.compose_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :compose_object, request, options: options do |response, operation|
@@ -2750,7 +2814,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.copy_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.copy_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :copy_object, request, options: options do |response, operation|
@@ -2840,7 +2906,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.delete_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.delete_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :delete_object, request, options: options do |response, operation|
@@ -2926,7 +2994,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_object, request, options: options do |response, operation|
@@ -3026,7 +3096,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_object_media.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_object_media.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_object_media, request, options: options do |response, operation|
@@ -3101,7 +3173,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.insert_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.insert_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :insert_object, request, options: options do |response, operation|
@@ -3191,7 +3265,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.list_objects.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_objects.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :list_objects, request, options: options do |response, operation|
@@ -3329,7 +3405,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.rewrite_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.rewrite_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :rewrite_object, request, options: options do |response, operation|
@@ -3395,7 +3473,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.start_resumable_write.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.start_resumable_write.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :start_resumable_write, request, options: options do |response, operation|
@@ -3472,7 +3552,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.query_write_status.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.query_write_status.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :query_write_status, request, options: options do |response, operation|
@@ -3573,7 +3655,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.patch_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.patch_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :patch_object, request, options: options do |response, operation|
@@ -3665,7 +3749,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.update_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :update_object, request, options: options do |response, operation|
@@ -3727,7 +3813,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_object_iam_policy.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_object_iam_policy.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_object_iam_policy, request, options: options do |response, operation|
@@ -3789,7 +3877,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.set_object_iam_policy.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.set_object_iam_policy.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :set_object_iam_policy, request, options: options do |response, operation|
@@ -3852,7 +3942,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.test_object_iam_permissions.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.test_object_iam_permissions.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :test_object_iam_permissions, request, options: options do |response, operation|
@@ -3944,7 +4036,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.watch_all_objects.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.watch_all_objects.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :watch_all_objects, request, options: options do |response, operation|
@@ -4006,7 +4100,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_service_account.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_service_account.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_service_account, request, options: options do |response, operation|
@@ -4070,7 +4166,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.create_hmac_key.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.create_hmac_key.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :create_hmac_key, request, options: options do |response, operation|
@@ -4134,7 +4232,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.delete_hmac_key.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.delete_hmac_key.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :delete_hmac_key, request, options: options do |response, operation|
@@ -4198,7 +4298,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.get_hmac_key.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_hmac_key.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :get_hmac_key, request, options: options do |response, operation|
@@ -4268,7 +4370,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.list_hmac_keys.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_hmac_keys.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :list_hmac_keys, request, options: options do |response, operation|
@@ -4334,7 +4438,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.update_hmac_key.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_hmac_key.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :update_hmac_key, request, options: options do |response, operation|
@@ -4358,22 +4464,21 @@ module Google
           # Configuration can be applied globally to all clients, or to a single client
           # on construction.
           #
-          # # Examples
+          # @example
           #
-          # To modify the global config, setting the timeout for delete_bucket_access_control
-          # to 20 seconds, and all remaining timeouts to 10 seconds:
+          #   # Modify the global config, setting the timeout for
+          #   # delete_bucket_access_control to 20 seconds,
+          #   # and all remaining timeouts to 10 seconds.
+          #   ::Google::Storage::V1::Storage::Client.configure do |config|
+          #     config.timeout = 10.0
+          #     config.rpcs.delete_bucket_access_control.timeout = 20.0
+          #   end
           #
-          #     ::Google::Storage::V1::Storage::Client.configure do |config|
-          #       config.timeout = 10.0
-          #       config.rpcs.delete_bucket_access_control.timeout = 20.0
-          #     end
-          #
-          # To apply the above configuration only to a new client:
-          #
-          #     client = ::Google::Storage::V1::Storage::Client.new do |config|
-          #       config.timeout = 10.0
-          #       config.rpcs.delete_bucket_access_control.timeout = 20.0
-          #     end
+          #   # Apply the above configuration only to a new client.
+          #   client = ::Google::Storage::V1::Storage::Client.new do |config|
+          #     config.timeout = 10.0
+          #     config.rpcs.delete_bucket_access_control.timeout = 20.0
+          #   end
           #
           # @!attribute [rw] endpoint
           #   The hostname or hostname:port of the service endpoint.

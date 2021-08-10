@@ -40,13 +40,12 @@ module Maps
           # See {::Maps::Fleetengine::V1::TripService::Client::Configuration}
           # for a description of the configuration fields.
           #
-          # ## Example
+          # @example
           #
-          # To modify the configuration for all TripService clients:
-          #
-          #     ::Maps::Fleetengine::V1::TripService::Client.configure do |config|
-          #       config.timeout = 10.0
-          #     end
+          #   # Modify the configuration for all TripService clients
+          #   ::Maps::Fleetengine::V1::TripService::Client.configure do |config|
+          #     config.timeout = 10.0
+          #   end
           #
           # @yield [config] Configure the Client client.
           # @yieldparam config [Client::Configuration]
@@ -113,19 +112,15 @@ module Maps
           ##
           # Create a new TripService client object.
           #
-          # ## Examples
+          # @example
           #
-          # To create a new TripService client with the default
-          # configuration:
+          #   # Create a client using the default configuration
+          #   client = ::Maps::Fleetengine::V1::TripService::Client.new
           #
-          #     client = ::Maps::Fleetengine::V1::TripService::Client.new
-          #
-          # To create a new TripService client with a custom
-          # configuration:
-          #
-          #     client = ::Maps::Fleetengine::V1::TripService::Client.new do |config|
-          #       config.timeout = 10.0
-          #     end
+          #   # Create a client using a custom configuration
+          #   client = ::Maps::Fleetengine::V1::TripService::Client.new do |config|
+          #     config.timeout = 10.0
+          #   end
           #
           # @yield [config] Configure the TripService client.
           # @yieldparam config [Client::Configuration]
@@ -145,10 +140,9 @@ module Maps
 
             # Create credentials
             credentials = @config.credentials
-            # Use self-signed JWT if the scope and endpoint are unchanged from default,
+            # Use self-signed JWT if the endpoint is unchanged from default,
             # but only if the default endpoint does not have a region prefix.
-            enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                     @config.endpoint == Client.configure.endpoint &&
+            enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                      !@config.endpoint.split(".").first.include?("-")
             credentials ||= Credentials.default scope: @config.scope,
                                                 enable_self_signed_jwt: enable_self_signed_jwt
@@ -266,7 +260,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.create_trip.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.create_trip.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @trip_service_stub.call_rpc :create_trip, request, options: options do |response, operation|
@@ -353,7 +349,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.get_trip.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_trip.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @trip_service_stub.call_rpc :get_trip, request, options: options do |response, operation|
@@ -436,7 +434,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.report_billable_trip.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.report_billable_trip.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @trip_service_stub.call_rpc :report_billable_trip, request, options: options do |response, operation|
@@ -527,7 +527,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.search_trips.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.search_trips.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @trip_service_stub.call_rpc :search_trips, request, options: options do |response, operation|
@@ -638,7 +640,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.update_trip.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_trip.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @trip_service_stub.call_rpc :update_trip, request, options: options do |response, operation|
@@ -662,22 +666,21 @@ module Maps
           # Configuration can be applied globally to all clients, or to a single client
           # on construction.
           #
-          # # Examples
+          # @example
           #
-          # To modify the global config, setting the timeout for create_trip
-          # to 20 seconds, and all remaining timeouts to 10 seconds:
+          #   # Modify the global config, setting the timeout for
+          #   # create_trip to 20 seconds,
+          #   # and all remaining timeouts to 10 seconds.
+          #   ::Maps::Fleetengine::V1::TripService::Client.configure do |config|
+          #     config.timeout = 10.0
+          #     config.rpcs.create_trip.timeout = 20.0
+          #   end
           #
-          #     ::Maps::Fleetengine::V1::TripService::Client.configure do |config|
-          #       config.timeout = 10.0
-          #       config.rpcs.create_trip.timeout = 20.0
-          #     end
-          #
-          # To apply the above configuration only to a new client:
-          #
-          #     client = ::Maps::Fleetengine::V1::TripService::Client.new do |config|
-          #       config.timeout = 10.0
-          #       config.rpcs.create_trip.timeout = 20.0
-          #     end
+          #   # Apply the above configuration only to a new client.
+          #   client = ::Maps::Fleetengine::V1::TripService::Client.new do |config|
+          #     config.timeout = 10.0
+          #     config.rpcs.create_trip.timeout = 20.0
+          #   end
           #
           # @!attribute [rw] endpoint
           #   The hostname or hostname:port of the service endpoint.

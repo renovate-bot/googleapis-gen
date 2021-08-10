@@ -42,13 +42,12 @@ module Google
               # See {::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client::Configuration}
               # for a description of the configuration fields.
               #
-              # ## Example
+              # @example
               #
-              # To modify the configuration for all SmartCampaignSuggestService clients:
-              #
-              #     ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Modify the configuration for all SmartCampaignSuggestService clients
+              #   ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the Client client.
               # @yieldparam config [Client::Configuration]
@@ -93,19 +92,15 @@ module Google
               ##
               # Create a new SmartCampaignSuggestService client object.
               #
-              # ## Examples
+              # @example
               #
-              # To create a new SmartCampaignSuggestService client with the default
-              # configuration:
+              #   # Create a client using the default configuration
+              #   client = ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.new
               #
-              #     client = ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.new
-              #
-              # To create a new SmartCampaignSuggestService client with a custom
-              # configuration:
-              #
-              #     client = ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.new do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Create a client using a custom configuration
+              #   client = ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.new do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the SmartCampaignSuggestService client.
               # @yieldparam config [Client::Configuration]
@@ -125,10 +120,9 @@ module Google
 
                 # Create credentials
                 credentials = @config.credentials
-                # Use self-signed JWT if the scope and endpoint are unchanged from default,
+                # Use self-signed JWT if the endpoint is unchanged from default,
                 # but only if the default endpoint does not have a region prefix.
-                enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                         @config.endpoint == Client.configure.endpoint &&
+                enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
                 credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
@@ -209,7 +203,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.suggest_smart_campaign_budget_options.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.suggest_smart_campaign_budget_options.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @smart_campaign_suggest_service_stub.call_rpc :suggest_smart_campaign_budget_options, request,
@@ -234,22 +230,21 @@ module Google
               # Configuration can be applied globally to all clients, or to a single client
               # on construction.
               #
-              # # Examples
+              # @example
               #
-              # To modify the global config, setting the timeout for suggest_smart_campaign_budget_options
-              # to 20 seconds, and all remaining timeouts to 10 seconds:
+              #   # Modify the global config, setting the timeout for
+              #   # suggest_smart_campaign_budget_options to 20 seconds,
+              #   # and all remaining timeouts to 10 seconds.
+              #   ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.suggest_smart_campaign_budget_options.timeout = 20.0
+              #   end
               #
-              #     ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.suggest_smart_campaign_budget_options.timeout = 20.0
-              #     end
-              #
-              # To apply the above configuration only to a new client:
-              #
-              #     client = ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.new do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.suggest_smart_campaign_budget_options.timeout = 20.0
-              #     end
+              #   # Apply the above configuration only to a new client.
+              #   client = ::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client.new do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.suggest_smart_campaign_budget_options.timeout = 20.0
+              #   end
               #
               # @!attribute [rw] endpoint
               #   The hostname or hostname:port of the service endpoint.

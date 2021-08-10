@@ -42,13 +42,12 @@ module Google
               # See {::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client::Configuration}
               # for a description of the configuration fields.
               #
-              # ## Example
+              # @example
               #
-              # To modify the configuration for all CustomerFeedService clients:
-              #
-              #     ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Modify the configuration for all CustomerFeedService clients
+              #   ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the Client client.
               # @yieldparam config [Client::Configuration]
@@ -93,19 +92,15 @@ module Google
               ##
               # Create a new CustomerFeedService client object.
               #
-              # ## Examples
+              # @example
               #
-              # To create a new CustomerFeedService client with the default
-              # configuration:
+              #   # Create a client using the default configuration
+              #   client = ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.new
               #
-              #     client = ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.new
-              #
-              # To create a new CustomerFeedService client with a custom
-              # configuration:
-              #
-              #     client = ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.new do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Create a client using a custom configuration
+              #   client = ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.new do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the CustomerFeedService client.
               # @yieldparam config [Client::Configuration]
@@ -125,10 +120,9 @@ module Google
 
                 # Create credentials
                 credentials = @config.credentials
-                # Use self-signed JWT if the scope and endpoint are unchanged from default,
+                # Use self-signed JWT if the endpoint is unchanged from default,
                 # but only if the default endpoint does not have a region prefix.
-                enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                         @config.endpoint == Client.configure.endpoint &&
+                enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
                 credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
@@ -213,7 +207,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_customer_feed.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_customer_feed.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @customer_feed_service_stub.call_rpc :get_customer_feed, request,
@@ -319,7 +315,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.mutate_customer_feeds.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.mutate_customer_feeds.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @customer_feed_service_stub.call_rpc :mutate_customer_feeds, request,
@@ -344,22 +342,21 @@ module Google
               # Configuration can be applied globally to all clients, or to a single client
               # on construction.
               #
-              # # Examples
+              # @example
               #
-              # To modify the global config, setting the timeout for get_customer_feed
-              # to 20 seconds, and all remaining timeouts to 10 seconds:
+              #   # Modify the global config, setting the timeout for
+              #   # get_customer_feed to 20 seconds,
+              #   # and all remaining timeouts to 10 seconds.
+              #   ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.get_customer_feed.timeout = 20.0
+              #   end
               #
-              #     ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.get_customer_feed.timeout = 20.0
-              #     end
-              #
-              # To apply the above configuration only to a new client:
-              #
-              #     client = ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.new do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.get_customer_feed.timeout = 20.0
-              #     end
+              #   # Apply the above configuration only to a new client.
+              #   client = ::Google::Ads::GoogleAds::V7::Services::CustomerFeedService::Client.new do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.get_customer_feed.timeout = 20.0
+              #   end
               #
               # @!attribute [rw] endpoint
               #   The hostname or hostname:port of the service endpoint.

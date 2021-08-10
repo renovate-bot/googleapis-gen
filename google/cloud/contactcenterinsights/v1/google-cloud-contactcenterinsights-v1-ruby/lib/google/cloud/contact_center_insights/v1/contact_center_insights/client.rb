@@ -41,13 +41,12 @@ module Google
             # See {::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all ContactCenterInsights clients:
-            #
-            #     ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all ContactCenterInsights clients
+            #   ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -99,19 +98,15 @@ module Google
             ##
             # Create a new ContactCenterInsights client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new ContactCenterInsights client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new
             #
-            #     client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new
-            #
-            # To create a new ContactCenterInsights client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the ContactCenterInsights client.
             # @yieldparam config [Client::Configuration]
@@ -131,10 +126,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -231,7 +225,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_conversation.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_conversation.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :create_conversation, request, options: options do |response, operation|
@@ -299,7 +295,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_conversation.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_conversation.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :update_conversation, request, options: options do |response, operation|
@@ -367,7 +365,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_conversation.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_conversation.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :get_conversation, request, options: options do |response, operation|
@@ -447,7 +447,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_conversations.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_conversations.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :list_conversations, request, options: options do |response, operation|
@@ -518,7 +520,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_conversation.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_conversation.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :delete_conversation, request, options: options do |response, operation|
@@ -587,7 +591,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_analysis.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_analysis.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :create_analysis, request, options: options do |response, operation|
@@ -654,7 +660,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_analysis.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_analysis.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :get_analysis, request, options: options do |response, operation|
@@ -732,7 +740,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_analyses.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_analyses.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :list_analyses, request, options: options do |response, operation|
@@ -799,7 +809,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_analysis.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_analysis.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :delete_analysis, request, options: options do |response, operation|
@@ -874,7 +886,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.export_insights_data.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.export_insights_data.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :export_insights_data, request, options: options do |response, operation|
@@ -941,7 +955,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_issue_model.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_issue_model.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :get_issue_model, request, options: options do |response, operation|
@@ -1007,7 +1023,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_issue_models.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_issue_models.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :list_issue_models, request, options: options do |response, operation|
@@ -1073,7 +1091,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_issue.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_issue.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :get_issue, request, options: options do |response, operation|
@@ -1139,7 +1159,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_issues.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_issues.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :list_issues, request, options: options do |response, operation|
@@ -1205,7 +1227,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.calculate_issue_model_stats.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.calculate_issue_model_stats.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :calculate_issue_model_stats, request, options: options do |response, operation|
@@ -1276,7 +1300,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_phrase_matcher.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_phrase_matcher.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :create_phrase_matcher, request, options: options do |response, operation|
@@ -1342,7 +1368,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_phrase_matcher.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_phrase_matcher.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :get_phrase_matcher, request, options: options do |response, operation|
@@ -1420,7 +1448,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_phrase_matchers.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_phrase_matchers.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :list_phrase_matchers, request, options: options do |response, operation|
@@ -1487,7 +1517,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_phrase_matcher.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_phrase_matcher.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :delete_phrase_matcher, request, options: options do |response, operation|
@@ -1556,7 +1588,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.calculate_stats.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.calculate_stats.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :calculate_stats, request, options: options do |response, operation|
@@ -1622,7 +1656,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_settings.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_settings.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :get_settings, request, options: options do |response, operation|
@@ -1690,7 +1726,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_settings.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_settings.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @contact_center_insights_stub.call_rpc :update_settings, request, options: options do |response, operation|
@@ -1714,22 +1752,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for create_conversation
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # create_conversation to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_conversation.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_conversation.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_conversation.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::ContactCenterInsights::V1::ContactCenterInsights::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_conversation.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

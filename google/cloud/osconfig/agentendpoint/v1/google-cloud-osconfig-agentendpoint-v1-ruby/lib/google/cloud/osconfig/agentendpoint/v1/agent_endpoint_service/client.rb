@@ -42,13 +42,12 @@ module Google
               # See {::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client::Configuration}
               # for a description of the configuration fields.
               #
-              # ## Example
+              # @example
               #
-              # To modify the configuration for all AgentEndpointService clients:
-              #
-              #     ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Modify the configuration for all AgentEndpointService clients
+              #   ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the Client client.
               # @yieldparam config [Client::Configuration]
@@ -105,19 +104,15 @@ module Google
               ##
               # Create a new AgentEndpointService client object.
               #
-              # ## Examples
+              # @example
               #
-              # To create a new AgentEndpointService client with the default
-              # configuration:
+              #   # Create a client using the default configuration
+              #   client = ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new
               #
-              #     client = ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new
-              #
-              # To create a new AgentEndpointService client with a custom
-              # configuration:
-              #
-              #     client = ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Create a client using a custom configuration
+              #   client = ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the AgentEndpointService client.
               # @yieldparam config [Client::Configuration]
@@ -137,10 +132,9 @@ module Google
 
                 # Create credentials
                 credentials = @config.credentials
-                # Use self-signed JWT if the scope and endpoint are unchanged from default,
+                # Use self-signed JWT if the endpoint is unchanged from default,
                 # but only if the default endpoint does not have a region prefix.
-                enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                         @config.endpoint == Client.configure.endpoint &&
+                enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
                 credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
@@ -214,7 +208,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.receive_task_notification.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.receive_task_notification.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @agent_endpoint_service_stub.call_rpc :receive_task_notification, request, options: options do |response, operation|
@@ -276,7 +272,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.start_next_task.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.start_next_task.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @agent_endpoint_service_stub.call_rpc :start_next_task, request, options: options do |response, operation|
@@ -354,7 +352,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.report_task_progress.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.report_task_progress.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @agent_endpoint_service_stub.call_rpc :report_task_progress, request, options: options do |response, operation|
@@ -435,7 +435,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.report_task_complete.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.report_task_complete.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @agent_endpoint_service_stub.call_rpc :report_task_complete, request, options: options do |response, operation|
@@ -515,7 +517,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.register_agent.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.register_agent.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @agent_endpoint_service_stub.call_rpc :register_agent, request, options: options do |response, operation|
@@ -585,7 +589,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.report_inventory.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.report_inventory.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @agent_endpoint_service_stub.call_rpc :report_inventory, request, options: options do |response, operation|
@@ -609,22 +615,21 @@ module Google
               # Configuration can be applied globally to all clients, or to a single client
               # on construction.
               #
-              # # Examples
+              # @example
               #
-              # To modify the global config, setting the timeout for receive_task_notification
-              # to 20 seconds, and all remaining timeouts to 10 seconds:
+              #   # Modify the global config, setting the timeout for
+              #   # receive_task_notification to 20 seconds,
+              #   # and all remaining timeouts to 10 seconds.
+              #   ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.receive_task_notification.timeout = 20.0
+              #   end
               #
-              #     ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.receive_task_notification.timeout = 20.0
-              #     end
-              #
-              # To apply the above configuration only to a new client:
-              #
-              #     client = ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.receive_task_notification.timeout = 20.0
-              #     end
+              #   # Apply the above configuration only to a new client.
+              #   client = ::Google::Cloud::Osconfig::Agentendpoint::V1::AgentEndpointService::Client.new do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.receive_task_notification.timeout = 20.0
+              #   end
               #
               # @!attribute [rw] endpoint
               #   The hostname or hostname:port of the service endpoint.

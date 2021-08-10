@@ -41,13 +41,12 @@ module Google
             # See {::Google::Cloud::AIPlatform::V1beta1::JobService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all JobService clients:
-            #
-            #     ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all JobService clients
+            #   ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -150,19 +149,15 @@ module Google
             ##
             # Create a new JobService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new JobService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
             #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.new
-            #
-            # To create a new JobService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the JobService client.
             # @yieldparam config [Client::Configuration]
@@ -182,10 +177,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -277,7 +271,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_custom_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_custom_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :create_custom_job, request, options: options do |response, operation|
@@ -345,7 +341,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_custom_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_custom_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :get_custom_job, request, options: options do |response, operation|
@@ -439,7 +437,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_custom_jobs.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_custom_jobs.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :list_custom_jobs, request, options: options do |response, operation|
@@ -508,7 +508,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_custom_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_custom_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :delete_custom_job, request, options: options do |response, operation|
@@ -586,7 +588,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.cancel_custom_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.cancel_custom_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :cancel_custom_job, request, options: options do |response, operation|
@@ -655,7 +659,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_data_labeling_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_data_labeling_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :create_data_labeling_job, request, options: options do |response, operation|
@@ -723,7 +729,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_data_labeling_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_data_labeling_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :get_data_labeling_job, request, options: options do |response, operation|
@@ -821,7 +829,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_data_labeling_jobs.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_data_labeling_jobs.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :list_data_labeling_jobs, request, options: options do |response, operation|
@@ -890,7 +900,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_data_labeling_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_data_labeling_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :delete_data_labeling_job, request, options: options do |response, operation|
@@ -959,7 +971,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.cancel_data_labeling_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.cancel_data_labeling_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :cancel_data_labeling_job, request, options: options do |response, operation|
@@ -1028,7 +1042,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_hyperparameter_tuning_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_hyperparameter_tuning_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :create_hyperparameter_tuning_job, request, options: options do |response, operation|
@@ -1096,7 +1112,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_hyperparameter_tuning_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_hyperparameter_tuning_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :get_hyperparameter_tuning_job, request, options: options do |response, operation|
@@ -1190,7 +1208,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_hyperparameter_tuning_jobs.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_hyperparameter_tuning_jobs.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :list_hyperparameter_tuning_jobs, request, options: options do |response, operation|
@@ -1259,7 +1279,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_hyperparameter_tuning_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_hyperparameter_tuning_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :delete_hyperparameter_tuning_job, request, options: options do |response, operation|
@@ -1337,7 +1359,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.cancel_hyperparameter_tuning_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.cancel_hyperparameter_tuning_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :cancel_hyperparameter_tuning_job, request, options: options do |response, operation|
@@ -1407,7 +1431,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_batch_prediction_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_batch_prediction_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :create_batch_prediction_job, request, options: options do |response, operation|
@@ -1475,7 +1501,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_batch_prediction_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_batch_prediction_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :get_batch_prediction_job, request, options: options do |response, operation|
@@ -1571,7 +1599,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_batch_prediction_jobs.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_batch_prediction_jobs.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :list_batch_prediction_jobs, request, options: options do |response, operation|
@@ -1641,7 +1671,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_batch_prediction_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_batch_prediction_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :delete_batch_prediction_job, request, options: options do |response, operation|
@@ -1719,7 +1751,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.cancel_batch_prediction_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.cancel_batch_prediction_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :cancel_batch_prediction_job, request, options: options do |response, operation|
@@ -1789,7 +1823,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_model_deployment_monitoring_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_model_deployment_monitoring_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :create_model_deployment_monitoring_job, request, options: options do |response, operation|
@@ -1879,7 +1915,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.search_model_deployment_monitoring_stats_anomalies.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.search_model_deployment_monitoring_stats_anomalies.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :search_model_deployment_monitoring_stats_anomalies, request, options: options do |response, operation|
@@ -1948,7 +1986,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_model_deployment_monitoring_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_model_deployment_monitoring_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :get_model_deployment_monitoring_job, request, options: options do |response, operation|
@@ -2023,7 +2063,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_model_deployment_monitoring_jobs.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_model_deployment_monitoring_jobs.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :list_model_deployment_monitoring_jobs, request, options: options do |response, operation|
@@ -2093,7 +2135,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_model_deployment_monitoring_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_model_deployment_monitoring_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :update_model_deployment_monitoring_job, request, options: options do |response, operation|
@@ -2162,7 +2206,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_model_deployment_monitoring_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_model_deployment_monitoring_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :delete_model_deployment_monitoring_job, request, options: options do |response, operation|
@@ -2233,7 +2279,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.pause_model_deployment_monitoring_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.pause_model_deployment_monitoring_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :pause_model_deployment_monitoring_job, request, options: options do |response, operation|
@@ -2303,7 +2351,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.resume_model_deployment_monitoring_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.resume_model_deployment_monitoring_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @job_service_stub.call_rpc :resume_model_deployment_monitoring_job, request, options: options do |response, operation|
@@ -2327,22 +2377,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for create_custom_job
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # create_custom_job to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_custom_job.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_custom_job.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_custom_job.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::JobService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_custom_job.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

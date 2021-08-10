@@ -41,13 +41,12 @@ module Google
             # See {::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all FeaturestoreService clients:
-            #
-            #     ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all FeaturestoreService clients
+            #   ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -132,19 +131,15 @@ module Google
             ##
             # Create a new FeaturestoreService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new FeaturestoreService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.new
             #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.new
-            #
-            # To create a new FeaturestoreService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the FeaturestoreService client.
             # @yieldparam config [Client::Configuration]
@@ -164,10 +159,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -267,7 +261,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_featurestore.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_featurestore.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :create_featurestore, request, options: options do |response, operation|
@@ -334,7 +330,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_featurestore.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_featurestore.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :get_featurestore, request, options: options do |response, operation|
@@ -445,7 +443,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_featurestores.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_featurestores.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :list_featurestores, request, options: options do |response, operation|
@@ -528,7 +528,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_featurestore.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_featurestore.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :update_featurestore, request, options: options do |response, operation|
@@ -602,7 +604,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_featurestore.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_featurestore.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :delete_featurestore, request, options: options do |response, operation|
@@ -681,7 +685,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_entity_type.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_entity_type.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :create_entity_type, request, options: options do |response, operation|
@@ -750,7 +756,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_entity_type.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_entity_type.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :get_entity_type, request, options: options do |response, operation|
@@ -861,7 +869,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_entity_types.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_entity_types.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :list_entity_types, request, options: options do |response, operation|
@@ -946,7 +956,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_entity_type.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_entity_type.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :update_entity_type, request, options: options do |response, operation|
@@ -1018,7 +1030,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_entity_type.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_entity_type.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :delete_entity_type, request, options: options do |response, operation|
@@ -1097,7 +1111,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_feature.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_feature.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :create_feature, request, options: options do |response, operation|
@@ -1171,7 +1187,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_create_features.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_create_features.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :batch_create_features, request, options: options do |response, operation|
@@ -1240,7 +1258,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_feature.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_feature.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :get_feature, request, options: options do |response, operation|
@@ -1358,7 +1378,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_features.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_features.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :list_features, request, options: options do |response, operation|
@@ -1443,7 +1465,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_feature.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_feature.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :update_feature, request, options: options do |response, operation|
@@ -1511,7 +1535,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_feature.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_feature.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :delete_feature, request, options: options do |response, operation|
@@ -1626,7 +1652,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.import_feature_values.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.import_feature_values.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :import_feature_values, request, options: options do |response, operation|
@@ -1743,7 +1771,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_read_feature_values.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_read_feature_values.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :batch_read_feature_values, request, options: options do |response, operation|
@@ -1821,7 +1851,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.export_feature_values.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.export_feature_values.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :export_feature_values, request, options: options do |response, operation|
@@ -1963,7 +1995,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.search_features.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.search_features.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @featurestore_service_stub.call_rpc :search_features, request, options: options do |response, operation|
@@ -1988,22 +2022,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for create_featurestore
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # create_featurestore to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_featurestore.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_featurestore.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_featurestore.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::FeaturestoreService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_featurestore.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

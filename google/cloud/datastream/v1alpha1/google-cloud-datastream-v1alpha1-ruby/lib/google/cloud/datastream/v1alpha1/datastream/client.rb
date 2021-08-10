@@ -41,13 +41,12 @@ module Google
             # See {::Google::Cloud::Datastream::V1alpha1::Datastream::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all Datastream clients:
-            #
-            #     ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all Datastream clients
+            #   ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -119,19 +118,15 @@ module Google
             ##
             # Create a new Datastream client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new Datastream client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.new
             #
-            #     client = ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.new
-            #
-            # To create a new Datastream client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Datastream client.
             # @yieldparam config [Client::Configuration]
@@ -151,10 +146,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -257,7 +251,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_connection_profiles.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_connection_profiles.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :list_connection_profiles, request, options: options do |response, operation|
@@ -324,7 +320,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_connection_profile.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_connection_profile.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :get_connection_profile, request, options: options do |response, operation|
@@ -408,7 +406,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_connection_profile.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_connection_profile.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :create_connection_profile, request, options: options do |response, operation|
@@ -495,7 +495,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_connection_profile.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_connection_profile.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :update_connection_profile, request, options: options do |response, operation|
@@ -576,7 +578,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_connection_profile.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_connection_profile.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :delete_connection_profile, request, options: options do |response, operation|
@@ -660,7 +664,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.discover_connection_profile.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.discover_connection_profile.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :discover_connection_profile, request, options: options do |response, operation|
@@ -740,7 +746,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_streams.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_streams.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :list_streams, request, options: options do |response, operation|
@@ -807,7 +815,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_stream.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_stream.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :get_stream, request, options: options do |response, operation|
@@ -896,7 +906,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_stream.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_stream.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :create_stream, request, options: options do |response, operation|
@@ -988,7 +1000,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_stream.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_stream.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :update_stream, request, options: options do |response, operation|
@@ -1069,7 +1083,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_stream.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_stream.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :delete_stream, request, options: options do |response, operation|
@@ -1136,7 +1152,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.fetch_errors.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.fetch_errors.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :fetch_errors, request, options: options do |response, operation|
@@ -1211,7 +1229,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.fetch_static_ips.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.fetch_static_ips.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :fetch_static_ips, request, options: options do |response, operation|
@@ -1295,7 +1315,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_private_connection.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_private_connection.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :create_private_connection, request, options: options do |response, operation|
@@ -1362,7 +1384,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_private_connection.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_private_connection.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :get_private_connection, request, options: options do |response, operation|
@@ -1445,7 +1469,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_private_connections.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_private_connections.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :list_private_connections, request, options: options do |response, operation|
@@ -1529,7 +1555,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_private_connection.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_private_connection.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :delete_private_connection, request, options: options do |response, operation|
@@ -1615,7 +1643,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_route.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_route.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :create_route, request, options: options do |response, operation|
@@ -1682,7 +1712,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_route.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_route.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :get_route, request, options: options do |response, operation|
@@ -1765,7 +1797,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_routes.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_routes.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :list_routes, request, options: options do |response, operation|
@@ -1846,7 +1880,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_route.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_route.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @datastream_stub.call_rpc :delete_route, request, options: options do |response, operation|
@@ -1871,22 +1907,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for list_connection_profiles
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # list_connection_profiles to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_connection_profiles.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_connection_profiles.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_connection_profiles.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::Datastream::V1alpha1::Datastream::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_connection_profiles.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

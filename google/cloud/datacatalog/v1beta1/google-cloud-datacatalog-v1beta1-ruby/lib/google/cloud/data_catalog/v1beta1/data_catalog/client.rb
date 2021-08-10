@@ -42,13 +42,12 @@ module Google
             # See {::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all DataCatalog clients:
-            #
-            #     ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all DataCatalog clients
+            #   ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -95,19 +94,15 @@ module Google
             ##
             # Create a new DataCatalog client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new DataCatalog client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
             #
-            #     client = ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new
-            #
-            # To create a new DataCatalog client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the DataCatalog client.
             # @yieldparam config [Client::Configuration]
@@ -127,10 +122,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -250,7 +244,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.search_catalog.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.search_catalog.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :search_catalog, request, options: options do |response, operation|
@@ -334,7 +330,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_entry_group.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_entry_group.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :create_entry_group, request, options: options do |response, operation|
@@ -407,7 +405,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_entry_group.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_entry_group.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :update_entry_group, request, options: options do |response, operation|
@@ -476,7 +476,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_entry_group.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_entry_group.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :get_entry_group, request, options: options do |response, operation|
@@ -549,7 +551,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_entry_group.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_entry_group.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :delete_entry_group, request, options: options do |response, operation|
@@ -624,7 +628,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_entry_groups.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_entry_groups.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :list_entry_groups, request, options: options do |response, operation|
@@ -708,7 +714,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_entry.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_entry.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :create_entry, request, options: options do |response, operation|
@@ -799,7 +807,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_entry.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_entry.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :update_entry, request, options: options do |response, operation|
@@ -873,7 +883,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_entry.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_entry.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :delete_entry, request, options: options do |response, operation|
@@ -941,7 +953,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_entry.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_entry.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :get_entry, request, options: options do |response, operation|
@@ -1024,7 +1038,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.lookup_entry.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.lookup_entry.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :lookup_entry, request, options: options do |response, operation|
@@ -1104,7 +1120,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_entries.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_entries.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :list_entries, request, options: options do |response, operation|
@@ -1184,7 +1202,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_tag_template.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_tag_template.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :create_tag_template, request, options: options do |response, operation|
@@ -1252,7 +1272,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_tag_template.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_tag_template.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :get_tag_template, request, options: options do |response, operation|
@@ -1332,7 +1354,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_tag_template.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_tag_template.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :update_tag_template, request, options: options do |response, operation|
@@ -1408,7 +1432,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_tag_template.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_tag_template.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :delete_tag_template, request, options: options do |response, operation|
@@ -1491,7 +1517,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_tag_template_field.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_tag_template_field.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :create_tag_template_field, request, options: options do |response, operation|
@@ -1580,7 +1608,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_tag_template_field.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_tag_template_field.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :update_tag_template_field, request, options: options do |response, operation|
@@ -1654,7 +1684,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.rename_tag_template_field.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.rename_tag_template_field.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :rename_tag_template_field, request, options: options do |response, operation|
@@ -1730,7 +1762,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_tag_template_field.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_tag_template_field.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :delete_tag_template_field, request, options: options do |response, operation|
@@ -1810,7 +1844,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_tag.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_tag.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :create_tag, request, options: options do |response, operation|
@@ -1879,7 +1915,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_tag.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_tag.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :update_tag, request, options: options do |response, operation|
@@ -1947,7 +1985,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_tag.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_tag.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :delete_tag, request, options: options do |response, operation|
@@ -2025,7 +2065,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_tags.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_tags.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :list_tags, request, options: options do |response, operation|
@@ -2111,7 +2153,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.set_iam_policy.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.set_iam_policy.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :set_iam_policy, request, options: options do |response, operation|
@@ -2196,7 +2240,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_iam_policy.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_iam_policy.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :get_iam_policy, request, options: options do |response, operation|
@@ -2280,7 +2326,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.test_iam_permissions.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.test_iam_permissions.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_catalog_stub.call_rpc :test_iam_permissions, request, options: options do |response, operation|
@@ -2304,22 +2352,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for search_catalog
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # search_catalog to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.search_catalog.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.search_catalog.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.search_catalog.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::DataCatalog::V1beta1::DataCatalog::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.search_catalog.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

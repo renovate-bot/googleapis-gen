@@ -39,13 +39,12 @@ module Google
             # See {::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all AlertCenterService clients:
-            #
-            #     ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all AlertCenterService clients
+            #   ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -94,19 +93,15 @@ module Google
             ##
             # Create a new AlertCenterService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new AlertCenterService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
             #
-            #     client = ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new
-            #
-            # To create a new AlertCenterService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the AlertCenterService client.
             # @yieldparam config [Client::Configuration]
@@ -126,10 +121,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -222,7 +216,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_alerts.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_alerts.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :list_alerts, request, options: options do |response, operation|
@@ -294,7 +290,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_alert.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_alert.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :get_alert, request, options: options do |response, operation|
@@ -368,7 +366,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_alert.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_alert.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :delete_alert, request, options: options do |response, operation|
@@ -442,7 +442,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.undelete_alert.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.undelete_alert.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :undelete_alert, request, options: options do |response, operation|
@@ -517,7 +519,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_alert_feedback.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_alert_feedback.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :create_alert_feedback, request, options: options do |response, operation|
@@ -595,7 +599,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_alert_feedback.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_alert_feedback.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :list_alert_feedback, request, options: options do |response, operation|
@@ -666,7 +672,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_alert_metadata.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_alert_metadata.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :get_alert_metadata, request, options: options do |response, operation|
@@ -728,7 +736,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_settings.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_settings.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :get_settings, request, options: options do |response, operation|
@@ -792,7 +802,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_settings.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_settings.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :update_settings, request, options: options do |response, operation|
@@ -855,7 +867,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_delete_alerts.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_delete_alerts.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :batch_delete_alerts, request, options: options do |response, operation|
@@ -918,7 +932,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_undelete_alerts.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_undelete_alerts.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @alert_center_service_stub.call_rpc :batch_undelete_alerts, request, options: options do |response, operation|
@@ -942,22 +958,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for list_alerts
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # list_alerts to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_alerts.timeout = 20.0
+            #   end
             #
-            #     ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_alerts.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_alerts.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Apps::AlertCenter::V1beta1::AlertCenterService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_alerts.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

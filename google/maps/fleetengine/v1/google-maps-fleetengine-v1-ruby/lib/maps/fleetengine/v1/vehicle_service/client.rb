@@ -40,13 +40,12 @@ module Maps
           # See {::Maps::Fleetengine::V1::VehicleService::Client::Configuration}
           # for a description of the configuration fields.
           #
-          # ## Example
+          # @example
           #
-          # To modify the configuration for all VehicleService clients:
-          #
-          #     ::Maps::Fleetengine::V1::VehicleService::Client.configure do |config|
-          #       config.timeout = 10.0
-          #     end
+          #   # Modify the configuration for all VehicleService clients
+          #   ::Maps::Fleetengine::V1::VehicleService::Client.configure do |config|
+          #     config.timeout = 10.0
+          #   end
           #
           # @yield [config] Configure the Client client.
           # @yieldparam config [Client::Configuration]
@@ -118,19 +117,15 @@ module Maps
           ##
           # Create a new VehicleService client object.
           #
-          # ## Examples
+          # @example
           #
-          # To create a new VehicleService client with the default
-          # configuration:
+          #   # Create a client using the default configuration
+          #   client = ::Maps::Fleetengine::V1::VehicleService::Client.new
           #
-          #     client = ::Maps::Fleetengine::V1::VehicleService::Client.new
-          #
-          # To create a new VehicleService client with a custom
-          # configuration:
-          #
-          #     client = ::Maps::Fleetengine::V1::VehicleService::Client.new do |config|
-          #       config.timeout = 10.0
-          #     end
+          #   # Create a client using a custom configuration
+          #   client = ::Maps::Fleetengine::V1::VehicleService::Client.new do |config|
+          #     config.timeout = 10.0
+          #   end
           #
           # @yield [config] Configure the VehicleService client.
           # @yieldparam config [Client::Configuration]
@@ -150,10 +145,9 @@ module Maps
 
             # Create credentials
             credentials = @config.credentials
-            # Use self-signed JWT if the scope and endpoint are unchanged from default,
+            # Use self-signed JWT if the endpoint is unchanged from default,
             # but only if the default endpoint does not have a region prefix.
-            enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                     @config.endpoint == Client.configure.endpoint &&
+            enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                      !@config.endpoint.split(".").first.include?("-")
             credentials ||= Credentials.default scope: @config.scope,
                                                 enable_self_signed_jwt: enable_self_signed_jwt
@@ -284,7 +278,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.create_vehicle.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.create_vehicle.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @vehicle_service_stub.call_rpc :create_vehicle, request, options: options do |response, operation|
@@ -367,7 +363,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.get_vehicle.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.get_vehicle.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @vehicle_service_stub.call_rpc :get_vehicle, request, options: options do |response, operation|
@@ -468,7 +466,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.update_vehicle.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_vehicle.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @vehicle_service_stub.call_rpc :update_vehicle, request, options: options do |response, operation|
@@ -482,6 +482,8 @@ module Maps
           ##
           # UpdateVehicleLocation updates the location of the vehicle.
           # This method is deprecated. Use UpdateVehicle method instead.
+          #
+          # @deprecated This method is deprecated and may be removed in the next major version update.
           #
           # @overload update_vehicle_location(request, options = nil)
           #   Pass arguments to `update_vehicle_location` via a request object, either of type
@@ -547,7 +549,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.update_vehicle_location.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_vehicle_location.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @vehicle_service_stub.call_rpc :update_vehicle_location, request, options: options do |response, operation|
@@ -628,7 +632,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.update_vehicle_attributes.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.update_vehicle_attributes.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @vehicle_service_stub.call_rpc :update_vehicle_attributes, request, options: options do |response, operation|
@@ -758,7 +764,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.list_vehicles.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.list_vehicles.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @vehicle_service_stub.call_rpc :list_vehicles, request, options: options do |response, operation|
@@ -901,7 +909,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.search_vehicles.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.search_vehicles.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @vehicle_service_stub.call_rpc :search_vehicles, request, options: options do |response, operation|
@@ -1048,7 +1058,9 @@ module Maps
             options.apply_defaults timeout:      @config.rpcs.search_fuzzed_vehicles.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.search_fuzzed_vehicles.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @vehicle_service_stub.call_rpc :search_fuzzed_vehicles, request, options: options do |response, operation|
@@ -1072,22 +1084,21 @@ module Maps
           # Configuration can be applied globally to all clients, or to a single client
           # on construction.
           #
-          # # Examples
+          # @example
           #
-          # To modify the global config, setting the timeout for create_vehicle
-          # to 20 seconds, and all remaining timeouts to 10 seconds:
+          #   # Modify the global config, setting the timeout for
+          #   # create_vehicle to 20 seconds,
+          #   # and all remaining timeouts to 10 seconds.
+          #   ::Maps::Fleetengine::V1::VehicleService::Client.configure do |config|
+          #     config.timeout = 10.0
+          #     config.rpcs.create_vehicle.timeout = 20.0
+          #   end
           #
-          #     ::Maps::Fleetengine::V1::VehicleService::Client.configure do |config|
-          #       config.timeout = 10.0
-          #       config.rpcs.create_vehicle.timeout = 20.0
-          #     end
-          #
-          # To apply the above configuration only to a new client:
-          #
-          #     client = ::Maps::Fleetengine::V1::VehicleService::Client.new do |config|
-          #       config.timeout = 10.0
-          #       config.rpcs.create_vehicle.timeout = 20.0
-          #     end
+          #   # Apply the above configuration only to a new client.
+          #   client = ::Maps::Fleetengine::V1::VehicleService::Client.new do |config|
+          #     config.timeout = 10.0
+          #     config.rpcs.create_vehicle.timeout = 20.0
+          #   end
           #
           # @!attribute [rw] endpoint
           #   The hostname or hostname:port of the service endpoint.

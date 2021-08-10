@@ -68,13 +68,12 @@ module Google
             # See {::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all GSuiteAddOns clients:
-            #
-            #     ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all GSuiteAddOns clients
+            #   ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -132,19 +131,15 @@ module Google
             ##
             # Create a new GSuiteAddOns client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new GSuiteAddOns client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new
             #
-            #     client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new
-            #
-            # To create a new GSuiteAddOns client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the GSuiteAddOns client.
             # @yieldparam config [Client::Configuration]
@@ -164,10 +159,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -246,7 +240,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_authorization.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_authorization.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :get_authorization, request, options: options do |response, operation|
@@ -319,7 +315,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_deployment.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_deployment.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :create_deployment, request, options: options do |response, operation|
@@ -385,7 +383,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.replace_deployment.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.replace_deployment.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :replace_deployment, request, options: options do |response, operation|
@@ -453,7 +453,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_deployment.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_deployment.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :get_deployment, request, options: options do |response, operation|
@@ -532,7 +534,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_deployments.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_deployments.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :list_deployments, request, options: options do |response, operation|
@@ -604,7 +608,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_deployment.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_deployment.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :delete_deployment, request, options: options do |response, operation|
@@ -674,7 +680,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.install_deployment.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.install_deployment.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :install_deployment, request, options: options do |response, operation|
@@ -744,7 +752,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.uninstall_deployment.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.uninstall_deployment.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :uninstall_deployment, request, options: options do |response, operation|
@@ -812,7 +822,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_install_status.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_install_status.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @g_suite_add_ons_stub.call_rpc :get_install_status, request, options: options do |response, operation|
@@ -836,22 +848,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for get_authorization
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # get_authorization to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.get_authorization.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.get_authorization.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.get_authorization.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::GSuiteAddOns::V1::GSuiteAddOns::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.get_authorization.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

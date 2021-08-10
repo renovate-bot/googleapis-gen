@@ -39,13 +39,12 @@ module Google
             # See {::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all ServiceUsage clients:
-            #
-            #     ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all ServiceUsage clients
+            #   ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -94,19 +93,15 @@ module Google
             ##
             # Create a new ServiceUsage client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new ServiceUsage client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
             #
-            #     client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new
-            #
-            # To create a new ServiceUsage client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the ServiceUsage client.
             # @yieldparam config [Client::Configuration]
@@ -126,10 +121,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -166,6 +160,8 @@ module Google
             # Enables a service so that it can be used with a project.
             #
             # Operation response type: `google.protobuf.Empty`
+            #
+            # @deprecated This method is deprecated and may be removed in the next major version update.
             #
             # @overload enable_service(request, options = nil)
             #   Pass arguments to `enable_service` via a request object, either of type
@@ -229,7 +225,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.enable_service.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.enable_service.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :enable_service, request, options: options do |response, operation|
@@ -251,6 +249,8 @@ module Google
             # the target service is not currently enabled.
             #
             # Operation response type: `google.protobuf.Empty`
+            #
+            # @deprecated This method is deprecated and may be removed in the next major version update.
             #
             # @overload disable_service(request, options = nil)
             #   Pass arguments to `disable_service` via a request object, either of type
@@ -310,7 +310,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.disable_service.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.disable_service.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :disable_service, request, options: options do |response, operation|
@@ -324,6 +326,8 @@ module Google
 
             ##
             # Returns the service configuration and enabled state for a given service.
+            #
+            # @deprecated This method is deprecated and may be removed in the next major version update.
             #
             # @overload get_service(request, options = nil)
             #   Pass arguments to `get_service` via a request object, either of type
@@ -381,7 +385,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_service.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_service.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :get_service, request, options: options do |response, operation|
@@ -400,6 +406,8 @@ module Google
             # already been enabled on the project. The list can be filtered to
             # only include services in a specific state, for example to only include
             # services enabled on the project.
+            #
+            # @deprecated This method is deprecated and may be removed in the next major version update.
             #
             # @overload list_services(request, options = nil)
             #   Pass arguments to `list_services` via a request object, either of type
@@ -467,7 +475,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_services.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_services.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :list_services, request, options: options do |response, operation|
@@ -485,6 +495,8 @@ module Google
             # changes occur.
             #
             # Operation response type: `google.protobuf.Empty`
+            #
+            # @deprecated This method is deprecated and may be removed in the next major version update.
             #
             # @overload batch_enable_services(request, options = nil)
             #   Pass arguments to `batch_enable_services` via a request object, either of type
@@ -559,7 +571,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_enable_services.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_enable_services.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :batch_enable_services, request, options: options do |response, operation|
@@ -642,7 +656,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_consumer_quota_metrics.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_consumer_quota_metrics.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :list_consumer_quota_metrics, request, options: options do |response, operation|
@@ -714,7 +730,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_consumer_quota_metric.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_consumer_quota_metric.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :get_consumer_quota_metric, request, options: options do |response, operation|
@@ -785,7 +803,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_consumer_quota_limit.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_consumer_quota_limit.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :get_consumer_quota_limit, request, options: options do |response, operation|
@@ -871,7 +891,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_admin_override.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_admin_override.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :create_admin_override, request, options: options do |response, operation|
@@ -956,7 +978,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_admin_override.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_admin_override.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :update_admin_override, request, options: options do |response, operation|
@@ -1035,7 +1059,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_admin_override.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_admin_override.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :delete_admin_override, request, options: options do |response, operation|
@@ -1111,7 +1137,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_admin_overrides.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_admin_overrides.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :list_admin_overrides, request, options: options do |response, operation|
@@ -1194,7 +1222,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.import_admin_overrides.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.import_admin_overrides.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :import_admin_overrides, request, options: options do |response, operation|
@@ -1280,7 +1310,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_consumer_override.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_consumer_override.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :create_consumer_override, request, options: options do |response, operation|
@@ -1365,7 +1397,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_consumer_override.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_consumer_override.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :update_consumer_override, request, options: options do |response, operation|
@@ -1444,7 +1478,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_consumer_override.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_consumer_override.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :delete_consumer_override, request, options: options do |response, operation|
@@ -1520,7 +1556,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_consumer_overrides.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_consumer_overrides.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :list_consumer_overrides, request, options: options do |response, operation|
@@ -1603,7 +1641,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.import_consumer_overrides.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.import_consumer_overrides.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :import_consumer_overrides, request, options: options do |response, operation|
@@ -1676,7 +1716,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.generate_service_identity.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.generate_service_identity.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @service_usage_stub.call_rpc :generate_service_identity, request, options: options do |response, operation|
@@ -1701,22 +1743,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for enable_service
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # enable_service to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.enable_service.timeout = 20.0
+            #   end
             #
-            #     ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.enable_service.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.enable_service.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Api::ServiceUsage::V1beta1::ServiceUsage::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.enable_service.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

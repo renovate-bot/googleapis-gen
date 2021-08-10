@@ -43,13 +43,12 @@ module Google
             # See {::Google::Cloud::AIPlatform::V1::PipelineService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all PipelineService clients:
-            #
-            #     ::Google::Cloud::AIPlatform::V1::PipelineService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all PipelineService clients
+            #   ::Google::Cloud::AIPlatform::V1::PipelineService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -106,19 +105,15 @@ module Google
             ##
             # Create a new PipelineService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new PipelineService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::AIPlatform::V1::PipelineService::Client.new
             #
-            #     client = ::Google::Cloud::AIPlatform::V1::PipelineService::Client.new
-            #
-            # To create a new PipelineService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1::PipelineService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::AIPlatform::V1::PipelineService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the PipelineService client.
             # @yieldparam config [Client::Configuration]
@@ -138,10 +133,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -233,7 +227,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_training_pipeline.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_training_pipeline.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :create_training_pipeline, request, options: options do |response, operation|
@@ -301,7 +297,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_training_pipeline.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_training_pipeline.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :get_training_pipeline, request, options: options do |response, operation|
@@ -404,7 +402,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_training_pipelines.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_training_pipelines.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :list_training_pipelines, request, options: options do |response, operation|
@@ -473,7 +473,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_training_pipeline.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_training_pipeline.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :delete_training_pipeline, request, options: options do |response, operation|
@@ -551,7 +553,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.cancel_training_pipeline.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.cancel_training_pipeline.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :cancel_training_pipeline, request, options: options do |response, operation|
@@ -627,7 +631,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_pipeline_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_pipeline_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :create_pipeline_job, request, options: options do |response, operation|
@@ -695,7 +701,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_pipeline_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_pipeline_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :get_pipeline_job, request, options: options do |response, operation|
@@ -782,7 +790,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_pipeline_jobs.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_pipeline_jobs.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :list_pipeline_jobs, request, options: options do |response, operation|
@@ -851,7 +861,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_pipeline_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_pipeline_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :delete_pipeline_job, request, options: options do |response, operation|
@@ -929,7 +941,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.cancel_pipeline_job.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.cancel_pipeline_job.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @pipeline_service_stub.call_rpc :cancel_pipeline_job, request, options: options do |response, operation|
@@ -953,22 +967,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for create_training_pipeline
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # create_training_pipeline to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::AIPlatform::V1::PipelineService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_training_pipeline.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::AIPlatform::V1::PipelineService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_training_pipeline.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1::PipelineService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_training_pipeline.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::AIPlatform::V1::PipelineService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_training_pipeline.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

@@ -56,13 +56,12 @@ module Google
               # See {::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client::Configuration}
               # for a description of the configuration fields.
               #
-              # ## Example
+              # @example
               #
-              # To modify the configuration for all ReservationService clients:
-              #
-              #     ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Modify the configuration for all ReservationService clients
+              #   ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the Client client.
               # @yieldparam config [Client::Configuration]
@@ -109,19 +108,15 @@ module Google
               ##
               # Create a new ReservationService client object.
               #
-              # ## Examples
+              # @example
               #
-              # To create a new ReservationService client with the default
-              # configuration:
+              #   # Create a client using the default configuration
+              #   client = ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
               #
-              #     client = ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new
-              #
-              # To create a new ReservationService client with a custom
-              # configuration:
-              #
-              #     client = ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Create a client using a custom configuration
+              #   client = ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the ReservationService client.
               # @yieldparam config [Client::Configuration]
@@ -141,10 +136,9 @@ module Google
 
                 # Create credentials
                 credentials = @config.credentials
-                # Use self-signed JWT if the scope and endpoint are unchanged from default,
+                # Use self-signed JWT if the endpoint is unchanged from default,
                 # but only if the default endpoint does not have a region prefix.
-                enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                         @config.endpoint == Client.configure.endpoint &&
+                enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
                 credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
@@ -226,7 +220,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.create_reservation.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.create_reservation.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :create_reservation, request, options: options do |response, operation|
@@ -303,7 +299,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.list_reservations.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.list_reservations.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :list_reservations, request, options: options do |response, operation|
@@ -371,7 +369,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_reservation.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_reservation.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :get_reservation, request, options: options do |response, operation|
@@ -440,7 +440,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.delete_reservation.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.delete_reservation.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :delete_reservation, request, options: options do |response, operation|
@@ -508,7 +510,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.update_reservation.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.update_reservation.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :update_reservation, request, options: options do |response, operation|
@@ -580,7 +584,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.create_capacity_commitment.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.create_capacity_commitment.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :create_capacity_commitment, request, options: options do |response, operation|
@@ -651,7 +657,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.list_capacity_commitments.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.list_capacity_commitments.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :list_capacity_commitments, request, options: options do |response, operation|
@@ -719,7 +727,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_capacity_commitment.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_capacity_commitment.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :get_capacity_commitment, request, options: options do |response, operation|
@@ -788,7 +798,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.delete_capacity_commitment.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.delete_capacity_commitment.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :delete_capacity_commitment, request, options: options do |response, operation|
@@ -862,7 +874,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.update_capacity_commitment.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.update_capacity_commitment.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :update_capacity_commitment, request, options: options do |response, operation|
@@ -938,7 +952,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.split_capacity_commitment.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.split_capacity_commitment.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :split_capacity_commitment, request, options: options do |response, operation|
@@ -1015,7 +1031,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.merge_capacity_commitments.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.merge_capacity_commitments.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :merge_capacity_commitments, request, options: options do |response, operation|
@@ -1113,7 +1131,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.create_assignment.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.create_assignment.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :create_assignment, request, options: options do |response, operation|
@@ -1209,7 +1229,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.list_assignments.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.list_assignments.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :list_assignments, request, options: options do |response, operation|
@@ -1291,7 +1313,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.delete_assignment.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.delete_assignment.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :delete_assignment, request, options: options do |response, operation|
@@ -1393,7 +1417,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.search_assignments.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.search_assignments.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :search_assignments, request, options: options do |response, operation|
@@ -1469,7 +1495,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.move_assignment.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.move_assignment.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :move_assignment, request, options: options do |response, operation|
@@ -1536,7 +1564,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_bi_reservation.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_bi_reservation.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :get_bi_reservation, request, options: options do |response, operation|
@@ -1611,7 +1641,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.update_bi_reservation.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.update_bi_reservation.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @reservation_service_stub.call_rpc :update_bi_reservation, request, options: options do |response, operation|
@@ -1635,22 +1667,21 @@ module Google
               # Configuration can be applied globally to all clients, or to a single client
               # on construction.
               #
-              # # Examples
+              # @example
               #
-              # To modify the global config, setting the timeout for create_reservation
-              # to 20 seconds, and all remaining timeouts to 10 seconds:
+              #   # Modify the global config, setting the timeout for
+              #   # create_reservation to 20 seconds,
+              #   # and all remaining timeouts to 10 seconds.
+              #   ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.create_reservation.timeout = 20.0
+              #   end
               #
-              #     ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.create_reservation.timeout = 20.0
-              #     end
-              #
-              # To apply the above configuration only to a new client:
-              #
-              #     client = ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.create_reservation.timeout = 20.0
-              #     end
+              #   # Apply the above configuration only to a new client.
+              #   client = ::Google::Cloud::Bigquery::Reservation::V1beta1::ReservationService::Client.new do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.create_reservation.timeout = 20.0
+              #   end
               #
               # @!attribute [rw] endpoint
               #   The hostname or hostname:port of the service endpoint.

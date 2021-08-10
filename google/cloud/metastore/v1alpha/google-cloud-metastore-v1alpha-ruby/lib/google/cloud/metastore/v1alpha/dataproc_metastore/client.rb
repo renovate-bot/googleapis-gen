@@ -57,13 +57,12 @@ module Google
             # See {::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all DataprocMetastore clients:
-            #
-            #     ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all DataprocMetastore clients
+            #   ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -133,19 +132,15 @@ module Google
             ##
             # Create a new DataprocMetastore client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new DataprocMetastore client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.new
             #
-            #     client = ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.new
-            #
-            # To create a new DataprocMetastore client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the DataprocMetastore client.
             # @yieldparam config [Client::Configuration]
@@ -165,10 +160,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -278,7 +272,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_services.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_services.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :list_services, request, options: options do |response, operation|
@@ -348,7 +344,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_service.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_service.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :get_service, request, options: options do |response, operation|
@@ -441,7 +439,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_service.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_service.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :create_service, request, options: options do |response, operation|
@@ -530,7 +530,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_service.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_service.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :update_service, request, options: options do |response, operation|
@@ -613,7 +615,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_service.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_service.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :delete_service, request, options: options do |response, operation|
@@ -702,7 +706,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_metadata_imports.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_metadata_imports.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :list_metadata_imports, request, options: options do |response, operation|
@@ -772,7 +778,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_metadata_import.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_metadata_import.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :get_metadata_import, request, options: options do |response, operation|
@@ -865,7 +873,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_metadata_import.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_metadata_import.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :create_metadata_import, request, options: options do |response, operation|
@@ -955,7 +965,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_metadata_import.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_metadata_import.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :update_metadata_import, request, options: options do |response, operation|
@@ -1044,7 +1056,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.export_metadata.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.export_metadata.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :export_metadata, request, options: options do |response, operation|
@@ -1134,7 +1148,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.restore_service.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.restore_service.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :restore_service, request, options: options do |response, operation|
@@ -1223,7 +1239,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_backups.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_backups.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :list_backups, request, options: options do |response, operation|
@@ -1293,7 +1311,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_backup.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_backup.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :get_backup, request, options: options do |response, operation|
@@ -1385,7 +1405,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_backup.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_backup.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :create_backup, request, options: options do |response, operation|
@@ -1468,7 +1490,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_backup.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_backup.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @dataproc_metastore_stub.call_rpc :delete_backup, request, options: options do |response, operation|
@@ -1493,22 +1517,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for list_services
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # list_services to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_services.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_services.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_services.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::Metastore::V1alpha::DataprocMetastore::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_services.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

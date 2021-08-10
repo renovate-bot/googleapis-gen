@@ -40,13 +40,12 @@ module Google
           # See {::Google::Storage::V2::Storage::Client::Configuration}
           # for a description of the configuration fields.
           #
-          # ## Example
+          # @example
           #
-          # To modify the configuration for all Storage clients:
-          #
-          #     ::Google::Storage::V2::Storage::Client.configure do |config|
-          #       config.timeout = 10.0
-          #     end
+          #   # Modify the configuration for all Storage clients
+          #   ::Google::Storage::V2::Storage::Client.configure do |config|
+          #     config.timeout = 10.0
+          #   end
           #
           # @yield [config] Configure the Client client.
           # @yieldparam config [Client::Configuration]
@@ -98,19 +97,15 @@ module Google
           ##
           # Create a new Storage client object.
           #
-          # ## Examples
+          # @example
           #
-          # To create a new Storage client with the default
-          # configuration:
+          #   # Create a client using the default configuration
+          #   client = ::Google::Storage::V2::Storage::Client.new
           #
-          #     client = ::Google::Storage::V2::Storage::Client.new
-          #
-          # To create a new Storage client with a custom
-          # configuration:
-          #
-          #     client = ::Google::Storage::V2::Storage::Client.new do |config|
-          #       config.timeout = 10.0
-          #     end
+          #   # Create a client using a custom configuration
+          #   client = ::Google::Storage::V2::Storage::Client.new do |config|
+          #     config.timeout = 10.0
+          #   end
           #
           # @yield [config] Configure the Storage client.
           # @yieldparam config [Client::Configuration]
@@ -130,10 +125,9 @@ module Google
 
             # Create credentials
             credentials = @config.credentials
-            # Use self-signed JWT if the scope and endpoint are unchanged from default,
+            # Use self-signed JWT if the endpoint is unchanged from default,
             # but only if the default endpoint does not have a region prefix.
-            enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                     @config.endpoint == Client.configure.endpoint &&
+            enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                      !@config.endpoint.split(".").first.include?("-")
             credentials ||= Credentials.default scope: @config.scope,
                                                 enable_self_signed_jwt: enable_self_signed_jwt
@@ -251,7 +245,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.read_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.read_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :read_object, request, options: options do |response, operation|
@@ -326,7 +322,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.write_object.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.write_object.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :write_object, request, options: options do |response, operation|
@@ -392,7 +390,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.start_resumable_write.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.start_resumable_write.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :start_resumable_write, request, options: options do |response, operation|
@@ -469,7 +469,9 @@ module Google
             options.apply_defaults timeout:      @config.rpcs.query_write_status.timeout,
                                    metadata:     metadata,
                                    retry_policy: @config.rpcs.query_write_status.retry_policy
-            options.apply_defaults metadata:     @config.metadata,
+
+            options.apply_defaults timeout:      @config.timeout,
+                                   metadata:     @config.metadata,
                                    retry_policy: @config.retry_policy
 
             @storage_stub.call_rpc :query_write_status, request, options: options do |response, operation|
@@ -493,22 +495,21 @@ module Google
           # Configuration can be applied globally to all clients, or to a single client
           # on construction.
           #
-          # # Examples
+          # @example
           #
-          # To modify the global config, setting the timeout for read_object
-          # to 20 seconds, and all remaining timeouts to 10 seconds:
+          #   # Modify the global config, setting the timeout for
+          #   # read_object to 20 seconds,
+          #   # and all remaining timeouts to 10 seconds.
+          #   ::Google::Storage::V2::Storage::Client.configure do |config|
+          #     config.timeout = 10.0
+          #     config.rpcs.read_object.timeout = 20.0
+          #   end
           #
-          #     ::Google::Storage::V2::Storage::Client.configure do |config|
-          #       config.timeout = 10.0
-          #       config.rpcs.read_object.timeout = 20.0
-          #     end
-          #
-          # To apply the above configuration only to a new client:
-          #
-          #     client = ::Google::Storage::V2::Storage::Client.new do |config|
-          #       config.timeout = 10.0
-          #       config.rpcs.read_object.timeout = 20.0
-          #     end
+          #   # Apply the above configuration only to a new client.
+          #   client = ::Google::Storage::V2::Storage::Client.new do |config|
+          #     config.timeout = 10.0
+          #     config.rpcs.read_object.timeout = 20.0
+          #   end
           #
           # @!attribute [rw] endpoint
           #   The hostname or hostname:port of the service endpoint.

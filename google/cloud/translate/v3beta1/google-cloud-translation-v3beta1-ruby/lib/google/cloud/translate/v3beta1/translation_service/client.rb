@@ -41,13 +41,12 @@ module Google
             # See {::Google::Cloud::Translate::V3beta1::TranslationService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all TranslationService clients:
-            #
-            #     ::Google::Cloud::Translate::V3beta1::TranslationService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all TranslationService clients
+            #   ::Google::Cloud::Translate::V3beta1::TranslationService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -126,19 +125,15 @@ module Google
             ##
             # Create a new TranslationService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new TranslationService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::Translate::V3beta1::TranslationService::Client.new
             #
-            #     client = ::Google::Cloud::Translate::V3beta1::TranslationService::Client.new
-            #
-            # To create a new TranslationService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::Translate::V3beta1::TranslationService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::Translate::V3beta1::TranslationService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the TranslationService client.
             # @yieldparam config [Client::Configuration]
@@ -158,10 +153,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -310,7 +304,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.translate_text.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.translate_text.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :translate_text, request, options: options do |response, operation|
@@ -410,7 +406,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.detect_language.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.detect_language.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :detect_language, request, options: options do |response, operation|
@@ -507,7 +505,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_supported_languages.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_supported_languages.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :get_supported_languages, request, options: options do |response, operation|
@@ -631,7 +631,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.translate_document.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.translate_document.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :translate_document, request, options: options do |response, operation|
@@ -753,7 +755,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_translate_text.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_translate_text.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :batch_translate_text, request, options: options do |response, operation|
@@ -869,7 +873,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_translate_document.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_translate_document.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :batch_translate_document, request, options: options do |response, operation|
@@ -939,7 +945,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_glossary.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_glossary.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :create_glossary, request, options: options do |response, operation|
@@ -1032,7 +1040,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_glossaries.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_glossaries.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :list_glossaries, request, options: options do |response, operation|
@@ -1100,7 +1110,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_glossary.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_glossary.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :get_glossary, request, options: options do |response, operation|
@@ -1168,7 +1180,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_glossary.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_glossary.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @translation_service_stub.call_rpc :delete_glossary, request, options: options do |response, operation|
@@ -1193,22 +1207,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for translate_text
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # translate_text to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::Translate::V3beta1::TranslationService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.translate_text.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::Translate::V3beta1::TranslationService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.translate_text.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::Translate::V3beta1::TranslationService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.translate_text.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::Translate::V3beta1::TranslationService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.translate_text.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

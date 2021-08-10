@@ -41,13 +41,12 @@ module Google
             # See {::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all MetadataService clients:
-            #
-            #     ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all MetadataService clients
+            #   ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -144,19 +143,15 @@ module Google
             ##
             # Create a new MetadataService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new MetadataService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
             #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new
-            #
-            # To create a new MetadataService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the MetadataService client.
             # @yieldparam config [Client::Configuration]
@@ -176,10 +171,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -280,7 +274,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_metadata_store.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_metadata_store.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :create_metadata_store, request, options: options do |response, operation|
@@ -349,7 +345,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_metadata_store.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_metadata_store.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :get_metadata_store, request, options: options do |response, operation|
@@ -429,7 +427,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_metadata_stores.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_metadata_stores.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :list_metadata_stores, request, options: options do |response, operation|
@@ -502,7 +502,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_metadata_store.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_metadata_store.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :delete_metadata_store, request, options: options do |response, operation|
@@ -582,7 +584,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_artifact.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_artifact.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :create_artifact, request, options: options do |response, operation|
@@ -650,7 +654,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_artifact.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_artifact.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :get_artifact, request, options: options do |response, operation|
@@ -756,7 +762,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_artifacts.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_artifacts.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :list_artifacts, request, options: options do |response, operation|
@@ -832,7 +840,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_artifact.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_artifact.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :update_artifact, request, options: options do |response, operation|
@@ -904,7 +914,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_artifact.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_artifact.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :delete_artifact, request, options: options do |response, operation|
@@ -980,7 +992,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.purge_artifacts.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.purge_artifacts.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :purge_artifacts, request, options: options do |response, operation|
@@ -1060,7 +1074,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_context.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_context.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :create_context, request, options: options do |response, operation|
@@ -1128,7 +1144,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_context.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_context.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :get_context, request, options: options do |response, operation|
@@ -1238,7 +1256,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_contexts.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_contexts.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :list_contexts, request, options: options do |response, operation|
@@ -1314,7 +1334,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_context.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_context.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :update_context, request, options: options do |response, operation|
@@ -1389,7 +1411,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_context.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_context.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :delete_context, request, options: options do |response, operation|
@@ -1465,7 +1489,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.purge_contexts.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.purge_contexts.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :purge_contexts, request, options: options do |response, operation|
@@ -1548,7 +1574,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.add_context_artifacts_and_executions.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.add_context_artifacts_and_executions.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :add_context_artifacts_and_executions, request, options: options do |response, operation|
@@ -1623,7 +1651,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.add_context_children.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.add_context_children.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :add_context_children, request, options: options do |response, operation|
@@ -1697,7 +1727,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.query_context_lineage_subgraph.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.query_context_lineage_subgraph.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :query_context_lineage_subgraph, request, options: options do |response, operation|
@@ -1777,7 +1809,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_execution.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_execution.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :create_execution, request, options: options do |response, operation|
@@ -1845,7 +1879,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_execution.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_execution.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :get_execution, request, options: options do |response, operation|
@@ -1950,7 +1986,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_executions.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_executions.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :list_executions, request, options: options do |response, operation|
@@ -2026,7 +2064,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_execution.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_execution.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :update_execution, request, options: options do |response, operation|
@@ -2098,7 +2138,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_execution.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_execution.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :delete_execution, request, options: options do |response, operation|
@@ -2174,7 +2216,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.purge_executions.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.purge_executions.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :purge_executions, request, options: options do |response, operation|
@@ -2249,7 +2293,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.add_execution_events.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.add_execution_events.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :add_execution_events, request, options: options do |response, operation|
@@ -2320,7 +2366,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.query_execution_inputs_and_outputs.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.query_execution_inputs_and_outputs.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :query_execution_inputs_and_outputs, request, options: options do |response, operation|
@@ -2400,7 +2448,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_metadata_schema.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_metadata_schema.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :create_metadata_schema, request, options: options do |response, operation|
@@ -2468,7 +2518,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_metadata_schema.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_metadata_schema.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :get_metadata_schema, request, options: options do |response, operation|
@@ -2550,7 +2602,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_metadata_schemas.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_metadata_schemas.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :list_metadata_schemas, request, options: options do |response, operation|
@@ -2653,7 +2707,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.query_artifact_lineage_subgraph.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.query_artifact_lineage_subgraph.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @metadata_service_stub.call_rpc :query_artifact_lineage_subgraph, request, options: options do |response, operation|
@@ -2677,22 +2733,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for create_metadata_store
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # create_metadata_store to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_metadata_store.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_metadata_store.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_metadata_store.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::MetadataService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_metadata_store.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

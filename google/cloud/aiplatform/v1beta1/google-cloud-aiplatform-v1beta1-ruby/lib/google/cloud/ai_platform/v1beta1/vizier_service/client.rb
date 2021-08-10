@@ -45,13 +45,12 @@ module Google
             # See {::Google::Cloud::AIPlatform::V1beta1::VizierService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all VizierService clients:
-            #
-            #     ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all VizierService clients
+            #   ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -128,19 +127,15 @@ module Google
             ##
             # Create a new VizierService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new VizierService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.new
             #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.new
-            #
-            # To create a new VizierService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the VizierService client.
             # @yieldparam config [Client::Configuration]
@@ -160,10 +155,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -255,7 +249,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_study.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_study.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :create_study, request, options: options do |response, operation|
@@ -322,7 +318,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_study.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_study.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :get_study, request, options: options do |response, operation|
@@ -395,7 +393,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_studies.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_studies.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :list_studies, request, options: options do |response, operation|
@@ -463,7 +463,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_study.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_study.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :delete_study, request, options: options do |response, operation|
@@ -533,7 +535,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.lookup_study.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.lookup_study.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :lookup_study, request, options: options do |response, operation|
@@ -612,7 +616,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.suggest_trials.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.suggest_trials.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :suggest_trials, request, options: options do |response, operation|
@@ -682,7 +688,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_trial.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_trial.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :create_trial, request, options: options do |response, operation|
@@ -750,7 +758,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_trial.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_trial.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :get_trial, request, options: options do |response, operation|
@@ -823,7 +833,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_trials.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_trials.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :list_trials, request, options: options do |response, operation|
@@ -895,7 +907,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.add_trial_measurement.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.add_trial_measurement.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :add_trial_measurement, request, options: options do |response, operation|
@@ -973,7 +987,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.complete_trial.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.complete_trial.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :complete_trial, request, options: options do |response, operation|
@@ -1041,7 +1057,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_trial.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_trial.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :delete_trial, request, options: options do |response, operation|
@@ -1112,7 +1130,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.check_trial_early_stopping_state.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.check_trial_early_stopping_state.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :check_trial_early_stopping_state, request, options: options do |response, operation|
@@ -1181,7 +1201,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.stop_trial.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.stop_trial.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :stop_trial, request, options: options do |response, operation|
@@ -1250,7 +1272,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_optimal_trials.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_optimal_trials.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @vizier_service_stub.call_rpc :list_optimal_trials, request, options: options do |response, operation|
@@ -1274,22 +1298,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for create_study
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # create_study to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_study.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_study.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.create_study.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::AIPlatform::V1beta1::VizierService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.create_study.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

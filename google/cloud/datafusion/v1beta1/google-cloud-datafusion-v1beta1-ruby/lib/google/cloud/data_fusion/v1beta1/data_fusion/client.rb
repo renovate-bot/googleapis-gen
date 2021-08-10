@@ -43,13 +43,12 @@ module Google
             # See {::Google::Cloud::DataFusion::V1beta1::DataFusion::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all DataFusion clients:
-            #
-            #     ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all DataFusion clients
+            #   ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -98,19 +97,15 @@ module Google
             ##
             # Create a new DataFusion client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new DataFusion client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
             #
-            #     client = ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new
-            #
-            # To create a new DataFusion client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the DataFusion client.
             # @yieldparam config [Client::Configuration]
@@ -130,10 +125,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -232,7 +226,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_available_versions.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_available_versions.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :list_available_versions, request, options: options do |response, operation|
@@ -311,7 +307,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_instances.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_instances.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :list_instances, request, options: options do |response, operation|
@@ -379,7 +377,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_instance.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_instance.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :get_instance, request, options: options do |response, operation|
@@ -450,7 +450,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_instance.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_instance.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :create_instance, request, options: options do |response, operation|
@@ -518,7 +520,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_instance.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_instance.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :delete_instance, request, options: options do |response, operation|
@@ -594,7 +598,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_instance.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_instance.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :update_instance, request, options: options do |response, operation|
@@ -663,7 +669,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.restart_instance.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.restart_instance.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :restart_instance, request, options: options do |response, operation|
@@ -734,7 +742,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.upgrade_instance.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.upgrade_instance.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :upgrade_instance, request, options: options do |response, operation|
@@ -801,7 +811,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.remove_iam_policy.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.remove_iam_policy.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :remove_iam_policy, request, options: options do |response, operation|
@@ -877,7 +889,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_namespaces.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_namespaces.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :list_namespaces, request, options: options do |response, operation|
@@ -946,7 +960,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.add_dns_peering.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.add_dns_peering.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :add_dns_peering, request, options: options do |response, operation|
@@ -1014,7 +1030,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.remove_dns_peering.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.remove_dns_peering.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :remove_dns_peering, request, options: options do |response, operation|
@@ -1085,7 +1103,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_dns_peerings.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_dns_peerings.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @data_fusion_stub.call_rpc :list_dns_peerings, request, options: options do |response, operation|
@@ -1110,22 +1130,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for list_available_versions
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # list_available_versions to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_available_versions.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_available_versions.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_available_versions.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::DataFusion::V1beta1::DataFusion::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_available_versions.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

@@ -47,13 +47,12 @@ module Google
               # See {::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client::Configuration}
               # for a description of the configuration fields.
               #
-              # ## Example
+              # @example
               #
-              # To modify the configuration for all SecurityCenterSettingsService clients:
-              #
-              #     ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Modify the configuration for all SecurityCenterSettingsService clients
+              #   ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the Client client.
               # @yieldparam config [Client::Configuration]
@@ -100,19 +99,15 @@ module Google
               ##
               # Create a new SecurityCenterSettingsService client object.
               #
-              # ## Examples
+              # @example
               #
-              # To create a new SecurityCenterSettingsService client with the default
-              # configuration:
+              #   # Create a client using the default configuration
+              #   client = ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
               #
-              #     client = ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new
-              #
-              # To create a new SecurityCenterSettingsService client with a custom
-              # configuration:
-              #
-              #     client = ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Create a client using a custom configuration
+              #   client = ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the SecurityCenterSettingsService client.
               # @yieldparam config [Client::Configuration]
@@ -132,10 +127,9 @@ module Google
 
                 # Create credentials
                 credentials = @config.credentials
-                # Use self-signed JWT if the scope and endpoint are unchanged from default,
+                # Use self-signed JWT if the endpoint is unchanged from default,
                 # but only if the default endpoint does not have a region prefix.
-                enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                         @config.endpoint == Client.configure.endpoint &&
+                enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
                 credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
@@ -222,7 +216,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_service_account.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_service_account.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :get_service_account, request, options: options do |response, operation|
@@ -295,7 +291,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :get_settings, request, options: options do |response, operation|
@@ -372,7 +370,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.update_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.update_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :update_settings, request, options: options do |response, operation|
@@ -457,7 +457,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.reset_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.reset_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :reset_settings, request, options: options do |response, operation|
@@ -536,7 +538,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.batch_get_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.batch_get_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :batch_get_settings, request, options: options do |response, operation|
@@ -619,7 +623,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.calculate_effective_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.calculate_effective_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :calculate_effective_settings, request, options: options do |response, operation|
@@ -691,7 +697,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.batch_calculate_effective_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.batch_calculate_effective_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :batch_calculate_effective_settings, request, options: options do |response, operation|
@@ -765,7 +773,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_component_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_component_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :get_component_settings, request, options: options do |response, operation|
@@ -842,7 +852,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.update_component_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.update_component_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :update_component_settings, request, options: options do |response, operation|
@@ -923,7 +935,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.reset_component_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.reset_component_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :reset_component_settings, request, options: options do |response, operation|
@@ -997,7 +1011,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.calculate_effective_component_settings.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.calculate_effective_component_settings.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :calculate_effective_component_settings, request, options: options do |response, operation|
@@ -1087,7 +1103,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.list_detectors.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.list_detectors.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :list_detectors, request, options: options do |response, operation|
@@ -1166,7 +1184,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.list_components.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.list_components.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @security_center_settings_service_stub.call_rpc :list_components, request, options: options do |response, operation|
@@ -1190,22 +1210,21 @@ module Google
               # Configuration can be applied globally to all clients, or to a single client
               # on construction.
               #
-              # # Examples
+              # @example
               #
-              # To modify the global config, setting the timeout for get_service_account
-              # to 20 seconds, and all remaining timeouts to 10 seconds:
+              #   # Modify the global config, setting the timeout for
+              #   # get_service_account to 20 seconds,
+              #   # and all remaining timeouts to 10 seconds.
+              #   ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.configure do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.get_service_account.timeout = 20.0
+              #   end
               #
-              #     ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.configure do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.get_service_account.timeout = 20.0
-              #     end
-              #
-              # To apply the above configuration only to a new client:
-              #
-              #     client = ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.get_service_account.timeout = 20.0
-              #     end
+              #   # Apply the above configuration only to a new client.
+              #   client = ::Google::Cloud::SecurityCenter::Settings::V1beta1::SecurityCenterSettingsService::Client.new do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.get_service_account.timeout = 20.0
+              #   end
               #
               # @!attribute [rw] endpoint
               #   The hostname or hostname:port of the service endpoint.

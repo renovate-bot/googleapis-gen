@@ -37,13 +37,12 @@ module Google
             # See {::Google::Cloud::Bigquery::V2::ModelService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all ModelService clients:
-            #
-            #     ::Google::Cloud::Bigquery::V2::ModelService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all ModelService clients
+            #   ::Google::Cloud::Bigquery::V2::ModelService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -90,19 +89,15 @@ module Google
             ##
             # Create a new ModelService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new ModelService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::Bigquery::V2::ModelService::Client.new
             #
-            #     client = ::Google::Cloud::Bigquery::V2::ModelService::Client.new
-            #
-            # To create a new ModelService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::Bigquery::V2::ModelService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::Bigquery::V2::ModelService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the ModelService client.
             # @yieldparam config [Client::Configuration]
@@ -122,10 +117,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -207,7 +201,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_model.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_model.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @model_service_stub.call_rpc :get_model, request, options: options do |response, operation|
@@ -284,7 +280,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_models.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_models.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @model_service_stub.call_rpc :list_models, request, options: options do |response, operation|
@@ -360,7 +358,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.patch_model.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.patch_model.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @model_service_stub.call_rpc :patch_model, request, options: options do |response, operation|
@@ -432,7 +432,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_model.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_model.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @model_service_stub.call_rpc :delete_model, request, options: options do |response, operation|
@@ -456,22 +458,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for get_model
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # get_model to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::Bigquery::V2::ModelService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.get_model.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::Bigquery::V2::ModelService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.get_model.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::Bigquery::V2::ModelService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.get_model.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::Bigquery::V2::ModelService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.get_model.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

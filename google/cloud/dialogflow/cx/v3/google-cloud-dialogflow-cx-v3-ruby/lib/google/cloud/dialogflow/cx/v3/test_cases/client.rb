@@ -43,13 +43,12 @@ module Google
               # See {::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client::Configuration}
               # for a description of the configuration fields.
               #
-              # ## Example
+              # @example
               #
-              # To modify the configuration for all TestCases clients:
-              #
-              #     ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.configure do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Modify the configuration for all TestCases clients
+              #   ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.configure do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the Client client.
               # @yieldparam config [Client::Configuration]
@@ -101,19 +100,15 @@ module Google
               ##
               # Create a new TestCases client object.
               #
-              # ## Examples
+              # @example
               #
-              # To create a new TestCases client with the default
-              # configuration:
+              #   # Create a client using the default configuration
+              #   client = ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.new
               #
-              #     client = ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.new
-              #
-              # To create a new TestCases client with a custom
-              # configuration:
-              #
-              #     client = ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.new do |config|
-              #       config.timeout = 10.0
-              #     end
+              #   # Create a client using a custom configuration
+              #   client = ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.new do |config|
+              #     config.timeout = 10.0
+              #   end
               #
               # @yield [config] Configure the TestCases client.
               # @yieldparam config [Client::Configuration]
@@ -133,10 +128,9 @@ module Google
 
                 # Create credentials
                 credentials = @config.credentials
-                # Use self-signed JWT if the scope and endpoint are unchanged from default,
+                # Use self-signed JWT if the endpoint is unchanged from default,
                 # but only if the default endpoint does not have a region prefix.
-                enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                         @config.endpoint == Client.configure.endpoint &&
+                enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                          !@config.endpoint.split(".").first.include?("-")
                 credentials ||= Credentials.default scope: @config.scope,
                                                     enable_self_signed_jwt: enable_self_signed_jwt
@@ -233,7 +227,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.list_test_cases.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.list_test_cases.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :list_test_cases, request, options: options do |response, operation|
@@ -304,7 +300,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.batch_delete_test_cases.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.batch_delete_test_cases.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :batch_delete_test_cases, request, options: options do |response, operation|
@@ -372,7 +370,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_test_case.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_test_case.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :get_test_case, request, options: options do |response, operation|
@@ -441,7 +441,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.create_test_case.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.create_test_case.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :create_test_case, request, options: options do |response, operation|
@@ -511,7 +513,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.update_test_case.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.update_test_case.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :update_test_case, request, options: options do |response, operation|
@@ -582,7 +586,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.run_test_case.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.run_test_case.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :run_test_case, request, options: options do |response, operation|
@@ -657,7 +663,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.batch_run_test_cases.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.batch_run_test_cases.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :batch_run_test_cases, request, options: options do |response, operation|
@@ -727,7 +735,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.calculate_coverage.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.calculate_coverage.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :calculate_coverage, request, options: options do |response, operation|
@@ -802,7 +812,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.import_test_cases.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.import_test_cases.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :import_test_cases, request, options: options do |response, operation|
@@ -890,7 +902,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.export_test_cases.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.export_test_cases.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :export_test_cases, request, options: options do |response, operation|
@@ -990,7 +1004,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.list_test_case_results.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.list_test_case_results.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :list_test_case_results, request, options: options do |response, operation|
@@ -1059,7 +1075,9 @@ module Google
                 options.apply_defaults timeout:      @config.rpcs.get_test_case_result.timeout,
                                        metadata:     metadata,
                                        retry_policy: @config.rpcs.get_test_case_result.retry_policy
-                options.apply_defaults metadata:     @config.metadata,
+
+                options.apply_defaults timeout:      @config.timeout,
+                                       metadata:     @config.metadata,
                                        retry_policy: @config.retry_policy
 
                 @test_cases_stub.call_rpc :get_test_case_result, request, options: options do |response, operation|
@@ -1083,22 +1101,21 @@ module Google
               # Configuration can be applied globally to all clients, or to a single client
               # on construction.
               #
-              # # Examples
+              # @example
               #
-              # To modify the global config, setting the timeout for list_test_cases
-              # to 20 seconds, and all remaining timeouts to 10 seconds:
+              #   # Modify the global config, setting the timeout for
+              #   # list_test_cases to 20 seconds,
+              #   # and all remaining timeouts to 10 seconds.
+              #   ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.configure do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.list_test_cases.timeout = 20.0
+              #   end
               #
-              #     ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.configure do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.list_test_cases.timeout = 20.0
-              #     end
-              #
-              # To apply the above configuration only to a new client:
-              #
-              #     client = ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.new do |config|
-              #       config.timeout = 10.0
-              #       config.rpcs.list_test_cases.timeout = 20.0
-              #     end
+              #   # Apply the above configuration only to a new client.
+              #   client = ::Google::Cloud::Dialogflow::Cx::V3::TestCases::Client.new do |config|
+              #     config.timeout = 10.0
+              #     config.rpcs.list_test_cases.timeout = 20.0
+              #   end
               #
               # @!attribute [rw] endpoint
               #   The hostname or hostname:port of the service endpoint.

@@ -43,13 +43,12 @@ module Google
             # See {::Google::Cloud::NetworkConnectivity::V1::HubService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all HubService clients:
-            #
-            #     ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all HubService clients
+            #   ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -117,19 +116,15 @@ module Google
             ##
             # Create a new HubService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new HubService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.new
             #
-            #     client = ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.new
-            #
-            # To create a new HubService client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the HubService client.
             # @yieldparam config [Client::Configuration]
@@ -149,10 +144,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -248,7 +242,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_hubs.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_hubs.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :list_hubs, request, options: options do |response, operation|
@@ -315,7 +311,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_hub.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_hub.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :get_hub, request, options: options do |response, operation|
@@ -400,7 +398,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_hub.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_hub.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :create_hub, request, options: options do |response, operation|
@@ -488,7 +488,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_hub.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_hub.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :update_hub, request, options: options do |response, operation|
@@ -570,7 +572,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_hub.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_hub.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :delete_hub, request, options: options do |response, operation|
@@ -645,7 +649,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_spokes.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_spokes.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :list_spokes, request, options: options do |response, operation|
@@ -712,7 +718,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_spoke.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_spoke.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :get_spoke, request, options: options do |response, operation|
@@ -797,7 +805,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_spoke.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_spoke.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :create_spoke, request, options: options do |response, operation|
@@ -885,7 +895,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_spoke.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_spoke.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :update_spoke, request, options: options do |response, operation|
@@ -969,7 +981,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.deactivate_spoke.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.deactivate_spoke.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :deactivate_spoke, request, options: options do |response, operation|
@@ -1052,7 +1066,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.activate_spoke.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.activate_spoke.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :activate_spoke, request, options: options do |response, operation|
@@ -1134,7 +1150,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_spoke.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_spoke.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @hub_service_stub.call_rpc :delete_spoke, request, options: options do |response, operation|
@@ -1159,22 +1177,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for list_hubs
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # list_hubs to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_hubs.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_hubs.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.list_hubs.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::NetworkConnectivity::V1::HubService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.list_hubs.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

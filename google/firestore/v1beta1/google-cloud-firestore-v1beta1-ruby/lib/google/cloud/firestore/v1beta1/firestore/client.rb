@@ -46,13 +46,12 @@ module Google
             # See {::Google::Cloud::Firestore::V1beta1::Firestore::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all Firestore clients:
-            #
-            #     ::Google::Cloud::Firestore::V1beta1::Firestore::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all Firestore clients
+            #   ::Google::Cloud::Firestore::V1beta1::Firestore::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -99,19 +98,15 @@ module Google
             ##
             # Create a new Firestore client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new Firestore client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Google::Cloud::Firestore::V1beta1::Firestore::Client.new
             #
-            #     client = ::Google::Cloud::Firestore::V1beta1::Firestore::Client.new
-            #
-            # To create a new Firestore client with a custom
-            # configuration:
-            #
-            #     client = ::Google::Cloud::Firestore::V1beta1::Firestore::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Google::Cloud::Firestore::V1beta1::Firestore::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Firestore client.
             # @yieldparam config [Client::Configuration]
@@ -131,10 +126,9 @@ module Google
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -221,7 +215,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.get_document.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get_document.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :get_document, request, options: options do |response, operation|
@@ -320,7 +316,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_documents.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_documents.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :list_documents, request, options: options do |response, operation|
@@ -404,7 +402,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.update_document.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.update_document.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :update_document, request, options: options do |response, operation|
@@ -474,7 +474,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.delete_document.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.delete_document.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :delete_document, request, options: options do |response, operation|
@@ -564,7 +566,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_get_documents.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_get_documents.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :batch_get_documents, request, options: options do |response, operation|
@@ -634,7 +638,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.begin_transaction.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.begin_transaction.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :begin_transaction, request, options: options do |response, operation|
@@ -707,7 +713,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.commit.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.commit.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :commit, request, options: options do |response, operation|
@@ -776,7 +784,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.rollback.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.rollback.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :rollback, request, options: options do |response, operation|
@@ -859,7 +869,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.run_query.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.run_query.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :run_query, request, options: options do |response, operation|
@@ -966,7 +978,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.partition_query.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.partition_query.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :partition_query, request, options: options do |response, operation|
@@ -1019,7 +1033,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.write.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.write.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :write, request, options: options do |response, operation|
@@ -1071,7 +1087,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.listen.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.listen.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :listen, request, options: options do |response, operation|
@@ -1145,7 +1163,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.list_collection_ids.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.list_collection_ids.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :list_collection_ids, request, options: options do |response, operation|
@@ -1228,7 +1248,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.batch_write.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.batch_write.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :batch_write, request, options: options do |response, operation|
@@ -1310,7 +1332,9 @@ module Google
               options.apply_defaults timeout:      @config.rpcs.create_document.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.create_document.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @firestore_stub.call_rpc :create_document, request, options: options do |response, operation|
@@ -1334,22 +1358,21 @@ module Google
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for get_document
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # get_document to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Google::Cloud::Firestore::V1beta1::Firestore::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.get_document.timeout = 20.0
+            #   end
             #
-            #     ::Google::Cloud::Firestore::V1beta1::Firestore::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.get_document.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Google::Cloud::Firestore::V1beta1::Firestore::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.get_document.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Google::Cloud::Firestore::V1beta1::Firestore::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.get_document.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.

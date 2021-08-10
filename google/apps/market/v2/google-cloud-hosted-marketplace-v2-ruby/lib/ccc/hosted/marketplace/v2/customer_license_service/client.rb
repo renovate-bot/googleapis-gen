@@ -37,13 +37,12 @@ module Ccc
             # See {::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client::Configuration}
             # for a description of the configuration fields.
             #
-            # ## Example
+            # @example
             #
-            # To modify the configuration for all CustomerLicenseService clients:
-            #
-            #     ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Modify the configuration for all CustomerLicenseService clients
+            #   ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the Client client.
             # @yieldparam config [Client::Configuration]
@@ -95,19 +94,15 @@ module Ccc
             ##
             # Create a new CustomerLicenseService client object.
             #
-            # ## Examples
+            # @example
             #
-            # To create a new CustomerLicenseService client with the default
-            # configuration:
+            #   # Create a client using the default configuration
+            #   client = ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.new
             #
-            #     client = ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.new
-            #
-            # To create a new CustomerLicenseService client with a custom
-            # configuration:
-            #
-            #     client = ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.new do |config|
-            #       config.timeout = 10.0
-            #     end
+            #   # Create a client using a custom configuration
+            #   client = ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.new do |config|
+            #     config.timeout = 10.0
+            #   end
             #
             # @yield [config] Configure the CustomerLicenseService client.
             # @yieldparam config [Client::Configuration]
@@ -127,10 +122,9 @@ module Ccc
 
               # Create credentials
               credentials = @config.credentials
-              # Use self-signed JWT if the scope and endpoint are unchanged from default,
+              # Use self-signed JWT if the endpoint is unchanged from default,
               # but only if the default endpoint does not have a region prefix.
-              enable_self_signed_jwt = @config.scope == Client.configure.scope &&
-                                       @config.endpoint == Client.configure.endpoint &&
+              enable_self_signed_jwt = @config.endpoint == Client.configure.endpoint &&
                                        !@config.endpoint.split(".").first.include?("-")
               credentials ||= Credentials.default scope: @config.scope,
                                                   enable_self_signed_jwt: enable_self_signed_jwt
@@ -210,7 +204,9 @@ module Ccc
               options.apply_defaults timeout:      @config.rpcs.get.timeout,
                                      metadata:     metadata,
                                      retry_policy: @config.rpcs.get.retry_policy
-              options.apply_defaults metadata:     @config.metadata,
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
                                      retry_policy: @config.retry_policy
 
               @customer_license_service_stub.call_rpc :get, request, options: options do |response, operation|
@@ -234,22 +230,21 @@ module Ccc
             # Configuration can be applied globally to all clients, or to a single client
             # on construction.
             #
-            # # Examples
+            # @example
             #
-            # To modify the global config, setting the timeout for get
-            # to 20 seconds, and all remaining timeouts to 10 seconds:
+            #   # Modify the global config, setting the timeout for
+            #   # get to 20 seconds,
+            #   # and all remaining timeouts to 10 seconds.
+            #   ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.configure do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.get.timeout = 20.0
+            #   end
             #
-            #     ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.configure do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.get.timeout = 20.0
-            #     end
-            #
-            # To apply the above configuration only to a new client:
-            #
-            #     client = ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.new do |config|
-            #       config.timeout = 10.0
-            #       config.rpcs.get.timeout = 20.0
-            #     end
+            #   # Apply the above configuration only to a new client.
+            #   client = ::Ccc::Hosted::Marketplace::V2::CustomerLicenseService::Client.new do |config|
+            #     config.timeout = 10.0
+            #     config.rpcs.get.timeout = 20.0
+            #   end
             #
             # @!attribute [rw] endpoint
             #   The hostname or hostname:port of the service endpoint.
