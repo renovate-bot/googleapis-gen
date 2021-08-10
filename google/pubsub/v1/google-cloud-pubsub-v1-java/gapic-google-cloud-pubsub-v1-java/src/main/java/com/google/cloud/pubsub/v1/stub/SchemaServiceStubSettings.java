@@ -44,6 +44,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.CreateSchemaRequest;
 import com.google.pubsub.v1.DeleteSchemaRequest;
@@ -109,6 +114,10 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
       validateSchemaSettings;
   private final UnaryCallSettings<ValidateMessageRequest, ValidateMessageResponse>
       validateMessageSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListSchemasRequest, ListSchemasResponse, Schema>
       LIST_SCHEMAS_PAGE_STR_DESC =
@@ -195,6 +204,22 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     return validateMessageSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public SchemaServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -275,6 +300,9 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     deleteSchemaSettings = settingsBuilder.deleteSchemaSettings().build();
     validateSchemaSettings = settingsBuilder.validateSchemaSettings().build();
     validateMessageSettings = settingsBuilder.validateMessageSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for SchemaServiceStubSettings. */
@@ -290,6 +318,10 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
         validateSchemaSettings;
     private final UnaryCallSettings.Builder<ValidateMessageRequest, ValidateMessageResponse>
         validateMessageSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -323,6 +355,9 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
       deleteSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       validateSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       validateMessageSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -331,7 +366,10 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
               listSchemasSettings,
               deleteSchemaSettings,
               validateSchemaSettings,
-              validateMessageSettings);
+              validateMessageSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -344,6 +382,9 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
       deleteSchemaSettings = settings.deleteSchemaSettings.toBuilder();
       validateSchemaSettings = settings.validateSchemaSettings.toBuilder();
       validateMessageSettings = settings.validateMessageSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -352,7 +393,10 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
               listSchemasSettings,
               deleteSchemaSettings,
               validateSchemaSettings,
-              validateMessageSettings);
+              validateMessageSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -396,6 +440,21 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
 
       builder
           .validateMessageSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -449,6 +508,22 @@ public class SchemaServiceStubSettings extends StubSettings<SchemaServiceStubSet
     public UnaryCallSettings.Builder<ValidateMessageRequest, ValidateMessageResponse>
         validateMessageSettings() {
       return validateMessageSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override
