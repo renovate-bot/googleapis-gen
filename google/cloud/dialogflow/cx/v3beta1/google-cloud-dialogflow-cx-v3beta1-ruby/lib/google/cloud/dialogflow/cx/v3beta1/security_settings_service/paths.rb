@@ -26,6 +26,92 @@ module Google
             # Path helper methods for the SecuritySettingsService API.
             module Paths
               ##
+              # Create a fully-qualified DeidentifyTemplate resource string.
+              #
+              # @overload deidentify_template_path(organization:, location:, deidentify_template:)
+              #   The resource will be in the following format:
+              #
+              #   `organizations/{organization}/locations/{location}/deidentifyTemplates/{deidentify_template}`
+              #
+              #   @param organization [String]
+              #   @param location [String]
+              #   @param deidentify_template [String]
+              #
+              # @overload deidentify_template_path(project:, location:, deidentify_template:)
+              #   The resource will be in the following format:
+              #
+              #   `projects/{project}/locations/{location}/deidentifyTemplates/{deidentify_template}`
+              #
+              #   @param project [String]
+              #   @param location [String]
+              #   @param deidentify_template [String]
+              #
+              # @return [::String]
+              def deidentify_template_path **args
+                resources = {
+                  "deidentify_template:location:organization" => (proc do |organization:, location:, deidentify_template:|
+                    raise ::ArgumentError, "organization cannot contain /" if organization.to_s.include? "/"
+                    raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+                    "organizations/#{organization}/locations/#{location}/deidentifyTemplates/#{deidentify_template}"
+                  end),
+                  "deidentify_template:location:project" => (proc do |project:, location:, deidentify_template:|
+                    raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                    raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+                    "projects/#{project}/locations/#{location}/deidentifyTemplates/#{deidentify_template}"
+                  end)
+                }
+
+                resource = resources[args.keys.sort.join(":")]
+                raise ::ArgumentError, "no resource found for values #{args.keys}" if resource.nil?
+                resource.call(**args)
+              end
+
+              ##
+              # Create a fully-qualified InspectTemplate resource string.
+              #
+              # @overload inspect_template_path(organization:, location:, inspect_template:)
+              #   The resource will be in the following format:
+              #
+              #   `organizations/{organization}/locations/{location}/inspectTemplates/{inspect_template}`
+              #
+              #   @param organization [String]
+              #   @param location [String]
+              #   @param inspect_template [String]
+              #
+              # @overload inspect_template_path(project:, location:, inspect_template:)
+              #   The resource will be in the following format:
+              #
+              #   `projects/{project}/locations/{location}/inspectTemplates/{inspect_template}`
+              #
+              #   @param project [String]
+              #   @param location [String]
+              #   @param inspect_template [String]
+              #
+              # @return [::String]
+              def inspect_template_path **args
+                resources = {
+                  "inspect_template:location:organization" => (proc do |organization:, location:, inspect_template:|
+                    raise ::ArgumentError, "organization cannot contain /" if organization.to_s.include? "/"
+                    raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+                    "organizations/#{organization}/locations/#{location}/inspectTemplates/#{inspect_template}"
+                  end),
+                  "inspect_template:location:project" => (proc do |project:, location:, inspect_template:|
+                    raise ::ArgumentError, "project cannot contain /" if project.to_s.include? "/"
+                    raise ::ArgumentError, "location cannot contain /" if location.to_s.include? "/"
+
+                    "projects/#{project}/locations/#{location}/inspectTemplates/#{inspect_template}"
+                  end)
+                }
+
+                resource = resources[args.keys.sort.join(":")]
+                raise ::ArgumentError, "no resource found for values #{args.keys}" if resource.nil?
+                resource.call(**args)
+              end
+
+              ##
               # Create a fully-qualified Location resource string.
               #
               # The resource will be in the following format:

@@ -129,10 +129,26 @@ module Google
           #     If empty, we use the default DLP inspect config.
           #
           #     The template name will have one of the following formats:
-          #     `projects/<Project ID>/inspectTemplates/<Template ID>` OR
           #     `projects/<Project ID>/locations/<Location ID>/inspectTemplates/<Template
-          #     ID>` OR
-          #     `organizations/<Organization ID>/inspectTemplates/<Template ID>`
+          #     ID>` OR `organizations/<Organization ID>/locations/<Location
+          #     ID>/inspectTemplates/<Template ID>`
+          #
+          #     Note: `inspect_template` must be located in the same region as the
+          #     `SecuritySettings`.
+          # @!attribute [rw] deidentify_template
+          #   @return [::String]
+          #     [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+          #     template to define de-identification configuration for the content.
+          #
+          #     If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+          #
+          #     The template name will have one of the following formats:
+          #     `projects/<Project ID>/locations/<Location
+          #     ID>/deidentifyTemplates/<Template ID>` OR `organizations/<Organization
+          #     ID>/locations/<Location ID>/deidentifyTemplates/<Template ID>`
+          #
+          #     Note: `deidentify_template` must be located in the same region as the
+          #     `SecuritySettings`.
           # @!attribute [rw] retention_window_days
           #   @return [::Integer]
           #     Retains data in interaction logging for the specified number of days.
@@ -149,7 +165,7 @@ module Google
           #     List of types of data to remove when retention settings triggers purge.
           # @!attribute [rw] insights_export_settings
           #   @return [::Google::Cloud::Dialogflow::Cx::V3beta1::SecuritySettings::InsightsExportSettings]
-          #     Optional. Controls conversation exporting settings to Insights after conversation is
+          #     Controls conversation exporting settings to Insights after conversation is
           #     completed.
           #
           #     If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,

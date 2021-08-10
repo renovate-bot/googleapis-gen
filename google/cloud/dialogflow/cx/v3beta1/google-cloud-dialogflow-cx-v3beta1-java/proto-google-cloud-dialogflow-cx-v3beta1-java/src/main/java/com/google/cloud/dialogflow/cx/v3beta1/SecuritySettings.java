@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     redactionStrategy_ = 0;
     redactionScope_ = 0;
     inspectTemplate_ = "";
+    deidentifyTemplate_ = "";
     purgeDataTypes_ = java.util.Collections.emptyList();
   }
 
@@ -130,6 +131,12 @@ private static final long serialVersionUID = 0L;
               insightsExportSettings_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 138: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            deidentifyTemplate_ = s;
             break;
           }
           default: {
@@ -1284,13 +1291,14 @@ private static final long serialVersionUID = 0L;
    * template to define inspect base settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-   * ID&gt;` OR
-   * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+   * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * Note: `inspect_template` must be located in the same region as the
+   * `SecuritySettings`.
    * </pre>
    *
-   * <code>string inspect_template = 9;</code>
+   * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
    * @return The inspectTemplate.
    */
   @java.lang.Override
@@ -1312,13 +1320,14 @@ private static final long serialVersionUID = 0L;
    * template to define inspect base settings.
    * If empty, we use the default DLP inspect config.
    * The template name will have one of the following formats:
-   * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
    * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-   * ID&gt;` OR
-   * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+   * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+   * Note: `inspect_template` must be located in the same region as the
+   * `SecuritySettings`.
    * </pre>
    *
-   * <code>string inspect_template = 9;</code>
+   * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
    * @return The bytes for inspectTemplate.
    */
   @java.lang.Override
@@ -1330,6 +1339,68 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       inspectTemplate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DEIDENTIFY_TEMPLATE_FIELD_NUMBER = 17;
+  private volatile java.lang.Object deidentifyTemplate_;
+  /**
+   * <pre>
+   * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+   * template to define de-identification configuration for the content.
+   * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+   * The template name will have one of the following formats:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+   * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   * Note: `deidentify_template` must be located in the same region as the
+   * `SecuritySettings`.
+   * </pre>
+   *
+   * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+   * @return The deidentifyTemplate.
+   */
+  @java.lang.Override
+  public java.lang.String getDeidentifyTemplate() {
+    java.lang.Object ref = deidentifyTemplate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      deidentifyTemplate_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+   * template to define de-identification configuration for the content.
+   * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+   * The template name will have one of the following formats:
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+   * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+   * Note: `deidentify_template` must be located in the same region as the
+   * `SecuritySettings`.
+   * </pre>
+   *
+   * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for deidentifyTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDeidentifyTemplateBytes() {
+    java.lang.Object ref = deidentifyTemplate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      deidentifyTemplate_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -1463,13 +1534,13 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insightsExportSettings_;
   /**
    * <pre>
-   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * Controls conversation exporting settings to Insights after conversation is
    * completed.
    * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
    * Insights export is disabled no matter what you configure here.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
    * @return Whether the insightsExportSettings field is set.
    */
   @java.lang.Override
@@ -1478,13 +1549,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * Controls conversation exporting settings to Insights after conversation is
    * completed.
    * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
    * Insights export is disabled no matter what you configure here.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
    * @return The insightsExportSettings.
    */
   @java.lang.Override
@@ -1493,13 +1564,13 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Controls conversation exporting settings to Insights after conversation is
+   * Controls conversation exporting settings to Insights after conversation is
    * completed.
    * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
    * Insights export is disabled no matter what you configure here.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettingsOrBuilder getInsightsExportSettingsOrBuilder() {
@@ -1550,6 +1621,9 @@ private static final long serialVersionUID = 0L;
     if (insightsExportSettings_ != null) {
       output.writeMessage(13, getInsightsExportSettings());
     }
+    if (!getDeidentifyTemplateBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, deidentifyTemplate_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1597,6 +1671,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, getInsightsExportSettings());
     }
+    if (!getDeidentifyTemplateBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, deidentifyTemplate_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1620,6 +1697,8 @@ private static final long serialVersionUID = 0L;
     if (redactionScope_ != other.redactionScope_) return false;
     if (!getInspectTemplate()
         .equals(other.getInspectTemplate())) return false;
+    if (!getDeidentifyTemplate()
+        .equals(other.getDeidentifyTemplate())) return false;
     if (!purgeDataTypes_.equals(other.purgeDataTypes_)) return false;
     if (hasInsightsExportSettings() != other.hasInsightsExportSettings()) return false;
     if (hasInsightsExportSettings()) {
@@ -1656,6 +1735,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + redactionScope_;
     hash = (37 * hash) + INSPECT_TEMPLATE_FIELD_NUMBER;
     hash = (53 * hash) + getInspectTemplate().hashCode();
+    hash = (37 * hash) + DEIDENTIFY_TEMPLATE_FIELD_NUMBER;
+    hash = (53 * hash) + getDeidentifyTemplate().hashCode();
     if (getPurgeDataTypesCount() > 0) {
       hash = (37 * hash) + PURGE_DATA_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + purgeDataTypes_.hashCode();
@@ -1821,6 +1902,8 @@ private static final long serialVersionUID = 0L;
 
       inspectTemplate_ = "";
 
+      deidentifyTemplate_ = "";
+
       purgeDataTypes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000001);
       if (insightsExportSettingsBuilder_ == null) {
@@ -1863,6 +1946,7 @@ private static final long serialVersionUID = 0L;
       result.redactionStrategy_ = redactionStrategy_;
       result.redactionScope_ = redactionScope_;
       result.inspectTemplate_ = inspectTemplate_;
+      result.deidentifyTemplate_ = deidentifyTemplate_;
       if (dataRetentionCase_ == 6) {
         result.dataRetention_ = dataRetention_;
       }
@@ -1941,6 +2025,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getInspectTemplate().isEmpty()) {
         inspectTemplate_ = other.inspectTemplate_;
+        onChanged();
+      }
+      if (!other.getDeidentifyTemplate().isEmpty()) {
+        deidentifyTemplate_ = other.deidentifyTemplate_;
         onChanged();
       }
       if (!other.purgeDataTypes_.isEmpty()) {
@@ -2382,13 +2470,14 @@ private static final long serialVersionUID = 0L;
      * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      * @return The inspectTemplate.
      */
     public java.lang.String getInspectTemplate() {
@@ -2409,13 +2498,14 @@ private static final long serialVersionUID = 0L;
      * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      * @return The bytes for inspectTemplate.
      */
     public com.google.protobuf.ByteString
@@ -2437,13 +2527,14 @@ private static final long serialVersionUID = 0L;
      * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      * @param value The inspectTemplate to set.
      * @return This builder for chaining.
      */
@@ -2463,13 +2554,14 @@ private static final long serialVersionUID = 0L;
      * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearInspectTemplate() {
@@ -2484,13 +2576,14 @@ private static final long serialVersionUID = 0L;
      * template to define inspect base settings.
      * If empty, we use the default DLP inspect config.
      * The template name will have one of the following formats:
-     * `projects/&lt;Project ID&gt;/inspectTemplates/&lt;Template ID&gt;` OR
      * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/inspectTemplates/&lt;Template
-     * ID&gt;` OR
-     * `organizations/&lt;Organization ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * ID&gt;` OR `organizations/&lt;Organization ID&gt;/locations/&lt;Location
+     * ID&gt;/inspectTemplates/&lt;Template ID&gt;`
+     * Note: `inspect_template` must be located in the same region as the
+     * `SecuritySettings`.
      * </pre>
      *
-     * <code>string inspect_template = 9;</code>
+     * <code>string inspect_template = 9 [(.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for inspectTemplate to set.
      * @return This builder for chaining.
      */
@@ -2502,6 +2595,142 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       inspectTemplate_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object deidentifyTemplate_ = "";
+    /**
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     * @return The deidentifyTemplate.
+     */
+    public java.lang.String getDeidentifyTemplate() {
+      java.lang.Object ref = deidentifyTemplate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deidentifyTemplate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     * @return The bytes for deidentifyTemplate.
+     */
+    public com.google.protobuf.ByteString
+        getDeidentifyTemplateBytes() {
+      java.lang.Object ref = deidentifyTemplate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deidentifyTemplate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The deidentifyTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeidentifyTemplate(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      deidentifyTemplate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearDeidentifyTemplate() {
+      
+      deidentifyTemplate_ = getDefaultInstance().getDeidentifyTemplate();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * [DLP](https://cloud.google.com/dlp/docs) deidentify template name. Use this
+     * template to define de-identification configuration for the content.
+     * If empty, Dialogflow replaces sensitive info with `[redacted]` text.
+     * The template name will have one of the following formats:
+     * `projects/&lt;Project ID&gt;/locations/&lt;Location
+     * ID&gt;/deidentifyTemplates/&lt;Template ID&gt;` OR `organizations/&lt;Organization
+     * ID&gt;/locations/&lt;Location ID&gt;/deidentifyTemplates/&lt;Template ID&gt;`
+     * Note: `deidentify_template` must be located in the same region as the
+     * `SecuritySettings`.
+     * </pre>
+     *
+     * <code>string deidentify_template = 17 [(.google.api.resource_reference) = { ... }</code>
+     * @param value The bytes for deidentifyTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeidentifyTemplateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      deidentifyTemplate_ = value;
       onChanged();
       return this;
     }
@@ -2788,13 +3017,13 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings, com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings.Builder, com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettingsOrBuilder> insightsExportSettingsBuilder_;
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      * @return Whether the insightsExportSettings field is set.
      */
     public boolean hasInsightsExportSettings() {
@@ -2802,13 +3031,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      * @return The insightsExportSettings.
      */
     public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings getInsightsExportSettings() {
@@ -2820,13 +3049,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      */
     public Builder setInsightsExportSettings(com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings value) {
       if (insightsExportSettingsBuilder_ == null) {
@@ -2843,13 +3072,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      */
     public Builder setInsightsExportSettings(
         com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings.Builder builderForValue) {
@@ -2864,13 +3093,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      */
     public Builder mergeInsightsExportSettings(com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings value) {
       if (insightsExportSettingsBuilder_ == null) {
@@ -2889,13 +3118,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      */
     public Builder clearInsightsExportSettings() {
       if (insightsExportSettingsBuilder_ == null) {
@@ -2910,13 +3139,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings.Builder getInsightsExportSettingsBuilder() {
       
@@ -2925,13 +3154,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      */
     public com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettingsOrBuilder getInsightsExportSettingsOrBuilder() {
       if (insightsExportSettingsBuilder_ != null) {
@@ -2943,13 +3172,13 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Controls conversation exporting settings to Insights after conversation is
+     * Controls conversation exporting settings to Insights after conversation is
      * completed.
      * If [retention_strategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.retention_strategy] is set to REMOVE_AFTER_CONVERSATION,
      * Insights export is disabled no matter what you configure here.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings insights_export_settings = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings, com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettings.Builder, com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.InsightsExportSettingsOrBuilder> 
