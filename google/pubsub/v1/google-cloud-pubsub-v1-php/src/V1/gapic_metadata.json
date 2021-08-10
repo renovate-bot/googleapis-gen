@@ -39,21 +39,6 @@
                             "methods": [
                                 "validateSchema"
                             ]
-                        },
-                        "GetIamPolicy": {
-                            "methods": [
-                                "getIamPolicy"
-                            ]
-                        },
-                        "SetIamPolicy": {
-                            "methods": [
-                                "setIamPolicy"
-                            ]
-                        },
-                        "TestIamPermissions": {
-                            "methods": [
-                                "testIamPermissions"
-                            ]
                         }
                     }
                 }
@@ -107,21 +92,6 @@
                         "UpdateTopic": {
                             "methods": [
                                 "updateTopic"
-                            ]
-                        },
-                        "GetIamPolicy": {
-                            "methods": [
-                                "getIamPolicy"
-                            ]
-                        },
-                        "SetIamPolicy": {
-                            "methods": [
-                                "setIamPolicy"
-                            ]
-                        },
-                        "TestIamPermissions": {
-                            "methods": [
-                                "testIamPermissions"
                             ]
                         }
                     }
@@ -211,21 +181,6 @@
                         "UpdateSubscription": {
                             "methods": [
                                 "updateSubscription"
-                            ]
-                        },
-                        "GetIamPolicy": {
-                            "methods": [
-                                "getIamPolicy"
-                            ]
-                        },
-                        "SetIamPolicy": {
-                            "methods": [
-                                "setIamPolicy"
-                            ]
-                        },
-                        "TestIamPermissions": {
-                            "methods": [
-                                "testIamPermissions"
                             ]
                         }
                     }

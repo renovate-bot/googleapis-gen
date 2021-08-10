@@ -6,6 +6,7 @@ package com.google.pubsub.v1;
 /**
  * <pre>
  * Response for the `ValidateMessage` method.
+ * Empty for now.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.ValidateMessageResponse}
@@ -231,6 +232,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Response for the `ValidateMessage` method.
+   * Empty for now.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.ValidateMessageResponse}

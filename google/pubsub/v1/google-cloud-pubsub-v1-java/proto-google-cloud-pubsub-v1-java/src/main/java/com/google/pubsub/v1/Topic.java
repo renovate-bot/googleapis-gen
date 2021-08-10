@@ -111,6 +111,19 @@ private static final long serialVersionUID = 0L;
             satisfiesPzs_ = input.readBool();
             break;
           }
+          case 66: {
+            com.google.protobuf.Duration.Builder subBuilder = null;
+            if (messageRetentionDuration_ != null) {
+              subBuilder = messageRetentionDuration_.toBuilder();
+            }
+            messageRetentionDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(messageRetentionDuration_);
+              messageRetentionDuration_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -460,6 +473,65 @@ private static final long serialVersionUID = 0L;
     return satisfiesPzs_;
   }
 
+  public static final int MESSAGE_RETENTION_DURATION_FIELD_NUMBER = 8;
+  private com.google.protobuf.Duration messageRetentionDuration_;
+  /**
+   * <pre>
+   * Indicates the minimum duration to retain a message after it is published to
+   * the topic. If this field is set, messages published to the topic in the
+   * last `message_retention_duration` are always available to subscribers. For
+   * instance, it allows any attached subscription to [seek to a
+   * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+   * that is up to `message_retention_duration` in the past. If this field is
+   * not set, message retention is controlled by settings on individual
+   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * @return Whether the messageRetentionDuration field is set.
+   */
+  @java.lang.Override
+  public boolean hasMessageRetentionDuration() {
+    return messageRetentionDuration_ != null;
+  }
+  /**
+   * <pre>
+   * Indicates the minimum duration to retain a message after it is published to
+   * the topic. If this field is set, messages published to the topic in the
+   * last `message_retention_duration` are always available to subscribers. For
+   * instance, it allows any attached subscription to [seek to a
+   * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+   * that is up to `message_retention_duration` in the past. If this field is
+   * not set, message retention is controlled by settings on individual
+   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   * @return The messageRetentionDuration.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getMessageRetentionDuration() {
+    return messageRetentionDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : messageRetentionDuration_;
+  }
+  /**
+   * <pre>
+   * Indicates the minimum duration to retain a message after it is published to
+   * the topic. If this field is set, messages published to the topic in the
+   * last `message_retention_duration` are always available to subscribers. For
+   * instance, it allows any attached subscription to [seek to a
+   * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+   * that is up to `message_retention_duration` in the past. If this field is
+   * not set, message retention is controlled by settings on individual
+   * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder() {
+    return getMessageRetentionDuration();
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -494,6 +566,9 @@ private static final long serialVersionUID = 0L;
     }
     if (satisfiesPzs_ != false) {
       output.writeBool(7, satisfiesPzs_);
+    }
+    if (messageRetentionDuration_ != null) {
+      output.writeMessage(8, getMessageRetentionDuration());
     }
     unknownFields.writeTo(output);
   }
@@ -532,6 +607,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(7, satisfiesPzs_);
     }
+    if (messageRetentionDuration_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, getMessageRetentionDuration());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -565,6 +644,11 @@ private static final long serialVersionUID = 0L;
     }
     if (getSatisfiesPzs()
         != other.getSatisfiesPzs()) return false;
+    if (hasMessageRetentionDuration() != other.hasMessageRetentionDuration()) return false;
+    if (hasMessageRetentionDuration()) {
+      if (!getMessageRetentionDuration()
+          .equals(other.getMessageRetentionDuration())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -595,6 +679,10 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getSatisfiesPzs());
+    if (hasMessageRetentionDuration()) {
+      hash = (37 * hash) + MESSAGE_RETENTION_DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getMessageRetentionDuration().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -773,6 +861,12 @@ private static final long serialVersionUID = 0L;
       }
       satisfiesPzs_ = false;
 
+      if (messageRetentionDurationBuilder_ == null) {
+        messageRetentionDuration_ = null;
+      } else {
+        messageRetentionDuration_ = null;
+        messageRetentionDurationBuilder_ = null;
+      }
       return this;
     }
 
@@ -815,6 +909,11 @@ private static final long serialVersionUID = 0L;
         result.schemaSettings_ = schemaSettingsBuilder_.build();
       }
       result.satisfiesPzs_ = satisfiesPzs_;
+      if (messageRetentionDurationBuilder_ == null) {
+        result.messageRetentionDuration_ = messageRetentionDuration_;
+      } else {
+        result.messageRetentionDuration_ = messageRetentionDurationBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -881,6 +980,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasMessageRetentionDuration()) {
+        mergeMessageRetentionDuration(other.getMessageRetentionDuration());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1674,6 +1776,224 @@ private static final long serialVersionUID = 0L;
       satisfiesPzs_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.Duration messageRetentionDuration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> messageRetentionDurationBuilder_;
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * @return Whether the messageRetentionDuration field is set.
+     */
+    public boolean hasMessageRetentionDuration() {
+      return messageRetentionDurationBuilder_ != null || messageRetentionDuration_ != null;
+    }
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     * @return The messageRetentionDuration.
+     */
+    public com.google.protobuf.Duration getMessageRetentionDuration() {
+      if (messageRetentionDurationBuilder_ == null) {
+        return messageRetentionDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : messageRetentionDuration_;
+      } else {
+        return messageRetentionDurationBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     */
+    public Builder setMessageRetentionDuration(com.google.protobuf.Duration value) {
+      if (messageRetentionDurationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        messageRetentionDuration_ = value;
+        onChanged();
+      } else {
+        messageRetentionDurationBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     */
+    public Builder setMessageRetentionDuration(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (messageRetentionDurationBuilder_ == null) {
+        messageRetentionDuration_ = builderForValue.build();
+        onChanged();
+      } else {
+        messageRetentionDurationBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     */
+    public Builder mergeMessageRetentionDuration(com.google.protobuf.Duration value) {
+      if (messageRetentionDurationBuilder_ == null) {
+        if (messageRetentionDuration_ != null) {
+          messageRetentionDuration_ =
+            com.google.protobuf.Duration.newBuilder(messageRetentionDuration_).mergeFrom(value).buildPartial();
+        } else {
+          messageRetentionDuration_ = value;
+        }
+        onChanged();
+      } else {
+        messageRetentionDurationBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     */
+    public Builder clearMessageRetentionDuration() {
+      if (messageRetentionDurationBuilder_ == null) {
+        messageRetentionDuration_ = null;
+        onChanged();
+      } else {
+        messageRetentionDuration_ = null;
+        messageRetentionDurationBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     */
+    public com.google.protobuf.Duration.Builder getMessageRetentionDurationBuilder() {
+      
+      onChanged();
+      return getMessageRetentionDurationFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getMessageRetentionDurationOrBuilder() {
+      if (messageRetentionDurationBuilder_ != null) {
+        return messageRetentionDurationBuilder_.getMessageOrBuilder();
+      } else {
+        return messageRetentionDuration_ == null ?
+            com.google.protobuf.Duration.getDefaultInstance() : messageRetentionDuration_;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates the minimum duration to retain a message after it is published to
+     * the topic. If this field is set, messages published to the topic in the
+     * last `message_retention_duration` are always available to subscribers. For
+     * instance, it allows any attached subscription to [seek to a
+     * timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time)
+     * that is up to `message_retention_duration` in the past. If this field is
+     * not set, message retention is controlled by settings on individual
+     * subscriptions. Cannot be more than 7 days or less than 10 minutes.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        getMessageRetentionDurationFieldBuilder() {
+      if (messageRetentionDurationBuilder_ == null) {
+        messageRetentionDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                getMessageRetentionDuration(),
+                getParentForChildren(),
+                isClean());
+        messageRetentionDuration_ = null;
+      }
+      return messageRetentionDurationBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -41,6 +41,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
                 KmsKeyName = "",
                 SchemaSettings = new SchemaSettings(),
                 SatisfiesPzs = false,
+                MessageRetentionDuration = new Duration(),
             };
             // Make the request
             Topic response = publisherClient.CreateTopic(request);
@@ -63,6 +64,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
                 KmsKeyName = "",
                 SchemaSettings = new SchemaSettings(),
                 SatisfiesPzs = false,
+                MessageRetentionDuration = new Duration(),
             };
             // Make the request
             Topic response = await publisherClient.CreateTopicAsync(request);

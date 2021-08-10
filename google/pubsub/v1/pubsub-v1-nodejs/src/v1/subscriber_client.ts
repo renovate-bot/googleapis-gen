@@ -18,7 +18,7 @@
 
 /* global window */
 import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallback, GaxCall, IamClient, IamProtos} from 'google-gax';
+import {Callback, CallOptions, Descriptors, ClientOptions, PaginationCallback, GaxCall} from 'google-gax';
 
 import { Transform } from 'stream';
 import { RequestType } from 'google-gax/build/src/apitypes';
@@ -57,7 +57,6 @@ export class SubscriberClient {
   };
   warn: (code: string, message: string, warnType?: string) => void;
   innerApiCalls: {[name: string]: Function};
-  iamClient: IamClient;
   pathTemplates: {[name: string]: gax.PathTemplate};
   subscriberStub?: Promise<{[name: string]: Function}>;
 
@@ -126,8 +125,6 @@ export class SubscriberClient {
     if (servicePath === staticMembers.servicePath) {
       this.auth.defaultScopes = staticMembers.scopes;
     }
-    this.iamClient = new IamClient(this._gaxGrpc, opts);
-  
 
     // Determine the client header string.
     const clientHeader = [
@@ -390,8 +387,9 @@ export class SubscriberClient {
  *   Indicates whether to retain acknowledged messages. If true, then
  *   messages are not expunged from the subscription's backlog, even if they are
  *   acknowledged, until they fall out of the `message_retention_duration`
- *   window. This must be true if you would like to [Seek to a timestamp]
- *   (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time).
+ *   window. This must be true if you would like to [`Seek` to a timestamp]
+ *   (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in
+ *   the past to replay previously-acknowledged messages.
  * @param {google.protobuf.Duration} request.messageRetentionDuration
  *   How long to retain unacknowledged messages in the subscription's backlog,
  *   from the moment a message is published.
@@ -443,6 +441,13 @@ export class SubscriberClient {
  *   backlog. `Pull` and `StreamingPull` requests will return
  *   FAILED_PRECONDITION. If the subscription is a push subscription, pushes to
  *   the endpoint will not be made.
+ * @param {google.protobuf.Duration} request.topicMessageRetentionDuration
+ *   Output only. Indicates the minimum duration for which a message is retained
+ *   after it is published to the subscription's topic. If this field is set,
+ *   messages published to the subscription's topic in the last
+ *   `topic_message_retention_duration` are always available to subscribers. See
+ *   the `message_retention_duration` field in `Topic`. This field is set only
+ *   in responses from the server; it is ignored if it is set in any requests.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1886,146 +1891,6 @@ export class SubscriberClient {
       callSettings
     ) as AsyncIterable<protos.google.pubsub.v1.ISnapshot>;
   }
-/**
- * Gets the access control policy for a resource. Returns an empty policy
- * if the resource exists and does not have a policy set.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resource
- *   REQUIRED: The resource for which the policy is being requested.
- *   See the operation documentation for the appropriate value for this field.
- * @param {Object} [request.options]
- *   OPTIONAL: A `GetPolicyOptions` object for specifying options to
- *   `GetIamPolicy`. This field is only used by Cloud IAM.
- *
- *   This object should have the same structure as [GetPolicyOptions]{@link google.iam.v1.GetPolicyOptions}
- * @param {Object} [options]
- *   Optional parameters. You can override the default settings for this call, e.g, timeout,
- *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
- * @param {function(?Error, ?Object)} [callback]
- *   The function which will be called with the result of the API call.
- *
- *   The second parameter to the callback is an object representing [Policy]{@link google.iam.v1.Policy}.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Policy]{@link google.iam.v1.Policy}.
- *   The promise has a method named "cancel" which cancels the ongoing API call.
- */
-  getIamPolicy(
-    request: IamProtos.google.iam.v1.GetIamPolicyRequest,
-    options?:
-      | gax.CallOptions
-      | Callback<
-          IamProtos.google.iam.v1.Policy,
-          IamProtos.google.iam.v1.GetIamPolicyRequest | null | undefined,
-          {} | null | undefined
-        >,
-    callback?: Callback<
-      IamProtos.google.iam.v1.Policy,
-      IamProtos.google.iam.v1.GetIamPolicyRequest | null | undefined,
-      {} | null | undefined
-    >
-  ):Promise<IamProtos.google.iam.v1.Policy> {
-    return this.iamClient.getIamPolicy(request, options, callback);
-  }
-
-/**
- * Returns permissions that a caller has on the specified resource. If the
- * resource does not exist, this will return an empty set of
- * permissions, not a NOT_FOUND error.
- *
- * Note: This operation is designed to be used for building
- * permission-aware UIs and command-line tools, not for authorization
- * checking. This operation may "fail open" without warning.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resource
- *   REQUIRED: The resource for which the policy detail is being requested.
- *   See the operation documentation for the appropriate value for this field.
- * @param {string[]} request.permissions
- *   The set of permissions to check for the `resource`. Permissions with
- *   wildcards (such as '*' or 'storage.*') are not allowed. For more
- *   information see
- *   [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
- * @param {Object} [options]
- *   Optional parameters. You can override the default settings for this call, e.g, timeout,
- *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
- * @param {function(?Error, ?Object)} [callback]
- *   The function which will be called with the result of the API call.
- *
- *   The second parameter to the callback is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
- *   The promise has a method named "cancel" which cancels the ongoing API call.
- */
-  setIamPolicy(
-    request: IamProtos.google.iam.v1.SetIamPolicyRequest,
-    options?:
-      | gax.CallOptions
-      | Callback<
-          IamProtos.google.iam.v1.Policy,
-          IamProtos.google.iam.v1.SetIamPolicyRequest | null | undefined,
-          {} | null | undefined
-        >,
-    callback?: Callback<
-      IamProtos.google.iam.v1.Policy,
-      IamProtos.google.iam.v1.SetIamPolicyRequest | null | undefined,
-      {} | null | undefined
-    >
-  ):Promise<IamProtos.google.iam.v1.Policy> {
-    return this.iamClient.setIamPolicy(request, options, callback);
-  }
-
-/**
- * Returns permissions that a caller has on the specified resource. If the
- * resource does not exist, this will return an empty set of
- * permissions, not a NOT_FOUND error.
- *
- * Note: This operation is designed to be used for building
- * permission-aware UIs and command-line tools, not for authorization
- * checking. This operation may "fail open" without warning.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.resource
- *   REQUIRED: The resource for which the policy detail is being requested.
- *   See the operation documentation for the appropriate value for this field.
- * @param {string[]} request.permissions
- *   The set of permissions to check for the `resource`. Permissions with
- *   wildcards (such as '*' or 'storage.*') are not allowed. For more
- *   information see
- *   [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
- * @param {Object} [options]
- *   Optional parameters. You can override the default settings for this call, e.g, timeout,
- *   retries, paginations, etc. See [gax.CallOptions]{@link https://googleapis.github.io/gax-nodejs/interfaces/CallOptions.html} for the details.
- * @param {function(?Error, ?Object)} [callback]
- *   The function which will be called with the result of the API call.
- *
- *   The second parameter to the callback is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TestIamPermissionsResponse]{@link google.iam.v1.TestIamPermissionsResponse}.
- *   The promise has a method named "cancel" which cancels the ongoing API call.
- *
- */
-  testIamPermissions(
-    request: IamProtos.google.iam.v1.TestIamPermissionsRequest,
-    options?:
-      | gax.CallOptions
-      | Callback<
-          IamProtos.google.iam.v1.TestIamPermissionsResponse,
-          IamProtos.google.iam.v1.TestIamPermissionsRequest | null | undefined,
-          {} | null | undefined
-        >,
-    callback?: Callback<
-      IamProtos.google.iam.v1.TestIamPermissionsResponse,
-      IamProtos.google.iam.v1.TestIamPermissionsRequest | null | undefined,
-      {} | null | undefined
-    >
-  ):Promise<IamProtos.google.iam.v1.TestIamPermissionsResponse> {
-    return this.iamClient.testIamPermissions(request, options, callback);
-  }
-
   // --------------------
   // -- Path templates --
   // --------------------

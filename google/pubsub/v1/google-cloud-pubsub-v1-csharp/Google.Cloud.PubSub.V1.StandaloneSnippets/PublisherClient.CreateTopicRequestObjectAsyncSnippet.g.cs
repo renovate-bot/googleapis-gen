@@ -17,6 +17,7 @@
 namespace Google.Cloud.PubSub.V1.Snippets
 {
     using Google.Cloud.PubSub.V1;
+    using Google.Protobuf.WellKnownTypes;
     using System.Threading.Tasks;
 
     public sealed partial class GeneratedPublisherClientStandaloneSnippets
@@ -39,6 +40,7 @@ namespace Google.Cloud.PubSub.V1.Snippets
                 KmsKeyName = "",
                 SchemaSettings = new SchemaSettings(),
                 SatisfiesPzs = false,
+                MessageRetentionDuration = new Duration(),
             };
             // Make the request
             Topic response = await publisherClient.CreateTopicAsync(request);
