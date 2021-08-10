@@ -41448,13 +41448,14 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object rootFollowupIntentName_;
   /**
    * <pre>
+   * Output only.
    * Read-only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent. We populate this field only in the output.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string root_followup_intent_name = 16;</code>
+   * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The rootFollowupIntentName.
    */
   @java.lang.Override
@@ -41472,13 +41473,14 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * Output only.
    * Read-only. The unique identifier of the root intent in the chain of
    * followup intents. It identifies the correct followup intents chain for
    * this intent. We populate this field only in the output.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
    * </pre>
    *
-   * <code>string root_followup_intent_name = 16;</code>
+   * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for rootFollowupIntentName.
    */
   @java.lang.Override
@@ -41558,11 +41560,11 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo> followupIntentInfo_;
   /**
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo> getFollowupIntentInfoList() {
@@ -41570,11 +41572,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder> 
@@ -41583,11 +41585,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public int getFollowupIntentInfoCount() {
@@ -41595,11 +41597,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getFollowupIntentInfo(int index) {
@@ -41607,11 +41609,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Read-only. Information about all followup intents that have this intent as
+   * Output only. Read-only. Information about all followup intents that have this intent as
    * a direct or indirect parent. We populate this field only in the output.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+   * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder getFollowupIntentInfoOrBuilder(
@@ -45091,13 +45093,14 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object rootFollowupIntentName_ = "";
     /**
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The rootFollowupIntentName.
      */
     public java.lang.String getRootFollowupIntentName() {
@@ -45114,13 +45117,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for rootFollowupIntentName.
      */
     public com.google.protobuf.ByteString
@@ -45138,13 +45142,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The rootFollowupIntentName to set.
      * @return This builder for chaining.
      */
@@ -45160,13 +45165,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearRootFollowupIntentName() {
@@ -45177,13 +45183,14 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * Output only.
      * Read-only. The unique identifier of the root intent in the chain of
      * followup intents. It identifies the correct followup intents chain for
      * this intent. We populate this field only in the output.
      * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
      * </pre>
      *
-     * <code>string root_followup_intent_name = 16;</code>
+     * <code>string root_followup_intent_name = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for rootFollowupIntentName to set.
      * @return This builder for chaining.
      */
@@ -45339,11 +45346,11 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo> getFollowupIntentInfoList() {
       if (followupIntentInfoBuilder_ == null) {
@@ -45354,11 +45361,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getFollowupIntentInfoCount() {
       if (followupIntentInfoBuilder_ == null) {
@@ -45369,11 +45376,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo getFollowupIntentInfo(int index) {
       if (followupIntentInfoBuilder_ == null) {
@@ -45384,11 +45391,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setFollowupIntentInfo(
         int index, com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo value) {
@@ -45406,11 +45413,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setFollowupIntentInfo(
         int index, com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder builderForValue) {
@@ -45425,11 +45432,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addFollowupIntentInfo(com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo value) {
       if (followupIntentInfoBuilder_ == null) {
@@ -45446,11 +45453,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addFollowupIntentInfo(
         int index, com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo value) {
@@ -45468,11 +45475,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addFollowupIntentInfo(
         com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder builderForValue) {
@@ -45487,11 +45494,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addFollowupIntentInfo(
         int index, com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder builderForValue) {
@@ -45506,11 +45513,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAllFollowupIntentInfo(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo> values) {
@@ -45526,11 +45533,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearFollowupIntentInfo() {
       if (followupIntentInfoBuilder_ == null) {
@@ -45544,11 +45551,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder removeFollowupIntentInfo(int index) {
       if (followupIntentInfoBuilder_ == null) {
@@ -45562,11 +45569,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder getFollowupIntentInfoBuilder(
         int index) {
@@ -45574,11 +45581,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder getFollowupIntentInfoOrBuilder(
         int index) {
@@ -45589,11 +45596,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<? extends com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfoOrBuilder> 
          getFollowupIntentInfoOrBuilderList() {
@@ -45605,11 +45612,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder addFollowupIntentInfoBuilder() {
       return getFollowupIntentInfoFieldBuilder().addBuilder(
@@ -45617,11 +45624,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder addFollowupIntentInfoBuilder(
         int index) {
@@ -45630,11 +45637,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Read-only. Information about all followup intents that have this intent as
+     * Output only. Read-only. Information about all followup intents that have this intent as
      * a direct or indirect parent. We populate this field only in the output.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18;</code>
+     * <code>repeated .google.cloud.dialogflow.v2.Intent.FollowupIntentInfo followup_intent_info = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<com.google.cloud.dialogflow.v2.Intent.FollowupIntentInfo.Builder> 
          getFollowupIntentInfoBuilderList() {
