@@ -46,9 +46,9 @@ type DocumentUnderstandingCallOptions struct {
 
 func defaultDocumentUnderstandingGRPCClientOptions() []option.ClientOption {
 	return []option.ClientOption{
-		internaloption.WithDefaultEndpoint("us-documentai.googleapis.com:443"),
-		internaloption.WithDefaultMTLSEndpoint("us-documentai.mtls.googleapis.com:443"),
-		internaloption.WithDefaultAudience("https://us-documentai.googleapis.com/"),
+		internaloption.WithDefaultEndpoint("documentai.googleapis.com:443"),
+		internaloption.WithDefaultMTLSEndpoint("documentai.mtls.googleapis.com:443"),
+		internaloption.WithDefaultAudience("https://documentai.googleapis.com/"),
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
 		option.WithGRPCDialOption(grpc.WithDisableServiceConfig()),

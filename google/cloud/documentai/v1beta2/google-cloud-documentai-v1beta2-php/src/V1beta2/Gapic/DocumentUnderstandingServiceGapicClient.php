@@ -107,7 +107,7 @@ class DocumentUnderstandingServiceGapicClient
     /**
      * The default address of the service.
      */
-    const SERVICE_ADDRESS = 'us-documentai.googleapis.com';
+    const SERVICE_ADDRESS = 'documentai.googleapis.com';
 
     /**
      * The default port of the service.
@@ -188,7 +188,7 @@ class DocumentUnderstandingServiceGapicClient
      *
      *     @type string $serviceAddress
      *           The address of the API remote host. May optionally include the port, formatted
-     *           as "<uri>:<port>". Default 'us-documentai.googleapis.com:443'.
+     *           as "<uri>:<port>". Default 'documentai.googleapis.com:443'.
      *     @type string|array|FetchAuthTokenInterface|CredentialsWrapper $credentials
      *           The credentials to be used by the client to authorize API calls. This option
      *           accepts either a path to a credentials file, or a decoded credentials file as a

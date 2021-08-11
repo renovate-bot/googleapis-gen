@@ -48,7 +48,7 @@ class DocumentUnderstandingServiceGrpcTransport(DocumentUnderstandingServiceTran
     _stubs: Dict[str, Callable]
 
     def __init__(self, *,
-            host: str = 'us-documentai.googleapis.com',
+            host: str = 'documentai.googleapis.com',
             credentials: ga_credentials.Credentials = None,
             credentials_file: str = None,
             scopes: Sequence[str] = None,
@@ -177,7 +177,7 @@ class DocumentUnderstandingServiceGrpcTransport(DocumentUnderstandingServiceTran
 
     @classmethod
     def create_channel(cls,
-                       host: str = 'us-documentai.googleapis.com',
+                       host: str = 'documentai.googleapis.com',
                        credentials: ga_credentials.Credentials = None,
                        credentials_file: str = None,
                        scopes: Optional[Sequence[str]] = None,
