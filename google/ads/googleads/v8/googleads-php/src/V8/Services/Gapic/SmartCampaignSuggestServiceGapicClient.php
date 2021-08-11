@@ -24,10 +24,13 @@
 
 namespace Google\Ads\GoogleAds\V8\Services\Gapic;
 
+use Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdRequest;
+use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdResponse;
+
 use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest;
 use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsRequest\SuggestionDataOneof;
 use Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignBudgetOptionsResponse;
-
 use Google\ApiCore\ApiException;
 use Google\ApiCore\CredentialsWrapper;
 use Google\ApiCore\GapicClientTrait;
@@ -48,9 +51,8 @@ use Google\Auth\FetchAuthTokenInterface;
  * $smartCampaignSuggestServiceClient = new SmartCampaignSuggestServiceClient();
  * try {
  *     $customerId = 'customer_id';
- *     $suggestionData = new SuggestionDataOneof();
- *     $suggestionData->setCampaign('formattedCampaign-1139828244');
- *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignBudgetOptions($customerId, $suggestionData);
+ *     $suggestionInfo = new SmartCampaignSuggestionInfo();
+ *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignAd($customerId, $suggestionInfo);
  * } finally {
  *     $smartCampaignSuggestServiceClient->close();
  * }
@@ -251,6 +253,53 @@ class SmartCampaignSuggestServiceGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+    }
+
+    /**
+     * Suggests a Smart campaign ad compatible with the Ad family of resources,
+     * based on data points such as targeting and the business to advertise.
+     *
+     * Sample code:
+     * ```
+     * $smartCampaignSuggestServiceClient = new SmartCampaignSuggestServiceClient();
+     * try {
+     *     $customerId = 'customer_id';
+     *     $suggestionInfo = new SmartCampaignSuggestionInfo();
+     *     $response = $smartCampaignSuggestServiceClient->suggestSmartCampaignAd($customerId, $suggestionInfo);
+     * } finally {
+     *     $smartCampaignSuggestServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string                      $customerId     Required. The ID of the customer.
+     * @param SmartCampaignSuggestionInfo $suggestionInfo Required. Inputs used to suggest a Smart campaign ad.
+     *                                                    Required fields: final_url, language_code, keyword_themes.
+     *                                                    Optional but recommended fields to improve the quality of the suggestion:
+     *                                                    business_setting and geo_target.
+     * @param array                       $optionalArgs   {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Ads\GoogleAds\V8\Services\SuggestSmartCampaignAdResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function suggestSmartCampaignAd($customerId, $suggestionInfo, array $optionalArgs = [])
+    {
+        $request = new SuggestSmartCampaignAdRequest();
+        $requestParamHeaders = [];
+        $request->setCustomerId($customerId);
+        $request->setSuggestionInfo($suggestionInfo);
+        $requestParamHeaders['customer_id'] = $customerId;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('SuggestSmartCampaignAd', SuggestSmartCampaignAdResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**

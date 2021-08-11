@@ -147,6 +147,11 @@ module Google
           # @!attribute [rw] cart_data
           #   @return [::Google::Ads::GoogleAds::V8::Services::CartData]
           #     The cart data associated with this conversion.
+          # @!attribute [rw] user_identifiers
+          #   @return [::Array<::Google::Ads::GoogleAds::V8::Common::UserIdentifier>]
+          #     The user identifiers associated with this conversion. Only hashed_email and
+          #     hashed_phone_number are supported for conversion uploads. The maximum
+          #     number of user identifiers for each conversion is 5.
           class ClickConversion
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -212,6 +217,11 @@ module Google
           #   @return [::String]
           #     The date time at which the conversion occurred. The format is
           #     "yyyy-mm-dd hh:mm:ss+|-hh:mm", e.g. “2019-01-01 12:32:45-08:00”.
+          # @!attribute [rw] user_identifiers
+          #   @return [::Array<::Google::Ads::GoogleAds::V8::Common::UserIdentifier>]
+          #     The user identifiers associated with this conversion. Only hashed_email and
+          #     hashed_phone_number are supported for conversion uploads. The maximum
+          #     number of user identifiers for each conversion is 5.
           class ClickConversionResult
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

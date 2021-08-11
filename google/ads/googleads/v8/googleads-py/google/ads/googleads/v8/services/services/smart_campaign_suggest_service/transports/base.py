@@ -87,12 +87,23 @@ class SmartCampaignSuggestServiceTransport(metaclass=abc.ABCMeta):
                 default_timeout=None,
                 client_info=client_info,
             ),
+            self.suggest_smart_campaign_ad: gapic_v1.method.wrap_method(
+                self.suggest_smart_campaign_ad,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     @property
     def suggest_smart_campaign_budget_options(self) -> typing.Callable[
             [smart_campaign_suggest_service.SuggestSmartCampaignBudgetOptionsRequest],
             smart_campaign_suggest_service.SuggestSmartCampaignBudgetOptionsResponse]:
+        raise NotImplementedError
+
+    @property
+    def suggest_smart_campaign_ad(self) -> typing.Callable[
+            [smart_campaign_suggest_service.SuggestSmartCampaignAdRequest],
+            smart_campaign_suggest_service.SuggestSmartCampaignAdResponse]:
         raise NotImplementedError
 
 

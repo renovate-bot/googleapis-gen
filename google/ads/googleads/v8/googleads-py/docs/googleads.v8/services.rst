@@ -76,6 +76,12 @@ Services for Google Ads Googleads v8 API
 .. automodule:: google.ads.googleads.v8.services.services.batch_job_service
     :members:
     :inherited-members:
+.. automodule:: google.ads.googleads.v8.services.services.bidding_data_exclusion_service
+    :members:
+    :inherited-members:
+.. automodule:: google.ads.googleads.v8.services.services.bidding_seasonality_adjustment_service
+    :members:
+    :inherited-members:
 .. automodule:: google.ads.googleads.v8.services.services.bidding_strategy_service
     :members:
     :inherited-members:
@@ -149,6 +155,12 @@ Services for Google Ads Googleads v8 API
     :members:
     :inherited-members:
 .. automodule:: google.ads.googleads.v8.services.services.conversion_upload_service
+    :members:
+    :inherited-members:
+.. automodule:: google.ads.googleads.v8.services.services.conversion_value_rule_service
+    :members:
+    :inherited-members:
+.. automodule:: google.ads.googleads.v8.services.services.conversion_value_rule_set_service
     :members:
     :inherited-members:
 .. automodule:: google.ads.googleads.v8.services.services.currency_constant_service

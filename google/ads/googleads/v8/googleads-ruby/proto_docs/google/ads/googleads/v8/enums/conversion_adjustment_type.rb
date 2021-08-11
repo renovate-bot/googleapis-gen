@@ -42,6 +42,10 @@ module Google
 
               # Changes the value of a conversion.
               RESTATEMENT = 3
+
+              # Supplements an existing conversion with provided user identifiers and
+              # user agent, which can be used by Google to enhance the conversion count.
+              ENHANCEMENT = 4
             end
           end
         end

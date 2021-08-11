@@ -77,6 +77,13 @@ public class SmartCampaignSuggestServiceSettings
         .suggestSmartCampaignBudgetOptionsSettings();
   }
 
+  /** Returns the object with the settings used for calls to suggestSmartCampaignAd. */
+  public UnaryCallSettings<SuggestSmartCampaignAdRequest, SuggestSmartCampaignAdResponse>
+      suggestSmartCampaignAdSettings() {
+    return ((SmartCampaignSuggestServiceStubSettings) getStubSettings())
+        .suggestSmartCampaignAdSettings();
+  }
+
   public static final SmartCampaignSuggestServiceSettings create(
       SmartCampaignSuggestServiceStubSettings stub) throws IOException {
     return new SmartCampaignSuggestServiceSettings.Builder(stub.toBuilder()).build();
@@ -180,6 +187,12 @@ public class SmartCampaignSuggestServiceSettings
             SuggestSmartCampaignBudgetOptionsRequest, SuggestSmartCampaignBudgetOptionsResponse>
         suggestSmartCampaignBudgetOptionsSettings() {
       return getStubSettingsBuilder().suggestSmartCampaignBudgetOptionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to suggestSmartCampaignAd. */
+    public UnaryCallSettings.Builder<SuggestSmartCampaignAdRequest, SuggestSmartCampaignAdResponse>
+        suggestSmartCampaignAdSettings() {
+      return getStubSettingsBuilder().suggestSmartCampaignAdSettings();
     }
 
     @Override

@@ -103,10 +103,12 @@ module Google
           #   @return [::Integer]
           #     Maximum bid limit that can be set by the bid strategy.
           #     The limit applies to all keywords managed by the strategy.
+          #     This should only be set for portfolio bid strategies.
           # @!attribute [rw] cpc_bid_floor_micros
           #   @return [::Integer]
           #     Minimum bid limit that can be set by the bid strategy.
           #     The limit applies to all keywords managed by the strategy.
+          #     This should only be set for portfolio bid strategies.
           class TargetCpa
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -149,10 +151,12 @@ module Google
           #   @return [::Integer]
           #     Maximum bid limit that can be set by the bid strategy.
           #     The limit applies to all keywords managed by the strategy.
+          #     This should only be set for portfolio bid strategies.
           # @!attribute [rw] cpc_bid_floor_micros
           #   @return [::Integer]
           #     Minimum bid limit that can be set by the bid strategy.
           #     The limit applies to all keywords managed by the strategy.
+          #     This should only be set for portfolio bid strategies.
           class TargetRoas
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -195,6 +195,12 @@ module Google
           # @!attribute [rw] batch_job
           #   @return [::Google::Ads::GoogleAds::V8::Resources::BatchJob]
           #     The batch job referenced in the query.
+          # @!attribute [rw] bidding_data_exclusion
+          #   @return [::Google::Ads::GoogleAds::V8::Resources::BiddingDataExclusion]
+          #     The bidding data exclusion referenced in the query.
+          # @!attribute [rw] bidding_seasonality_adjustment
+          #   @return [::Google::Ads::GoogleAds::V8::Resources::BiddingSeasonalityAdjustment]
+          #     The bidding seasonality adjustment referenced in the query.
           # @!attribute [rw] bidding_strategy
           #   @return [::Google::Ads::GoogleAds::V8::Resources::BiddingStrategy]
           #     The bidding strategy referenced in the query.
@@ -267,6 +273,12 @@ module Google
           # @!attribute [rw] conversion_custom_variable
           #   @return [::Google::Ads::GoogleAds::V8::Resources::ConversionCustomVariable]
           #     The conversion custom variable referenced in the query.
+          # @!attribute [rw] conversion_value_rule
+          #   @return [::Google::Ads::GoogleAds::V8::Resources::ConversionValueRule]
+          #     The conversion value rule referenced in the query.
+          # @!attribute [rw] conversion_value_rule_set
+          #   @return [::Google::Ads::GoogleAds::V8::Resources::ConversionValueRuleSet]
+          #     The conversion value rule set referenced in the query.
           # @!attribute [rw] click_view
           #   @return [::Google::Ads::GoogleAds::V8::Resources::ClickView]
           #     The ClickView referenced in the query.
@@ -586,6 +598,12 @@ module Google
           # @!attribute [rw] asset_operation
           #   @return [::Google::Ads::GoogleAds::V8::Services::AssetOperation]
           #     An asset mutate operation.
+          # @!attribute [rw] bidding_data_exclusion_operation
+          #   @return [::Google::Ads::GoogleAds::V8::Services::BiddingDataExclusionOperation]
+          #     A bidding data exclusion mutate operation.
+          # @!attribute [rw] bidding_seasonality_adjustment_operation
+          #   @return [::Google::Ads::GoogleAds::V8::Services::BiddingSeasonalityAdjustmentOperation]
+          #     A bidding seasonality adjustment mutate operation.
           # @!attribute [rw] bidding_strategy_operation
           #   @return [::Google::Ads::GoogleAds::V8::Services::BiddingStrategyOperation]
           #     A bidding strategy mutate operation.
@@ -628,6 +646,12 @@ module Google
           # @!attribute [rw] conversion_custom_variable_operation
           #   @return [::Google::Ads::GoogleAds::V8::Services::ConversionCustomVariableOperation]
           #     A conversion custom variable mutate operation.
+          # @!attribute [rw] conversion_value_rule_operation
+          #   @return [::Google::Ads::GoogleAds::V8::Services::ConversionValueRuleOperation]
+          #     A conversion value rule mutate operation.
+          # @!attribute [rw] conversion_value_rule_set_operation
+          #   @return [::Google::Ads::GoogleAds::V8::Services::ConversionValueRuleSetOperation]
+          #     A conversion value rule set mutate operation.
           # @!attribute [rw] customer_asset_operation
           #   @return [::Google::Ads::GoogleAds::V8::Services::CustomerAssetOperation]
           #     A customer asset mutate operation.
@@ -748,6 +772,12 @@ module Google
           # @!attribute [rw] asset_result
           #   @return [::Google::Ads::GoogleAds::V8::Services::MutateAssetResult]
           #     The result for the asset mutate.
+          # @!attribute [rw] bidding_data_exclusion_result
+          #   @return [::Google::Ads::GoogleAds::V8::Services::MutateBiddingDataExclusionsResult]
+          #     The result for the bidding data exclusion mutate.
+          # @!attribute [rw] bidding_seasonality_adjustment_result
+          #   @return [::Google::Ads::GoogleAds::V8::Services::MutateBiddingSeasonalityAdjustmentsResult]
+          #     The result for the bidding seasonality adjustment mutate.
           # @!attribute [rw] bidding_strategy_result
           #   @return [::Google::Ads::GoogleAds::V8::Services::MutateBiddingStrategyResult]
           #     The result for the bidding strategy mutate.
@@ -790,6 +820,12 @@ module Google
           # @!attribute [rw] conversion_custom_variable_result
           #   @return [::Google::Ads::GoogleAds::V8::Services::MutateConversionCustomVariableResult]
           #     The result for the conversion custom variable mutate.
+          # @!attribute [rw] conversion_value_rule_result
+          #   @return [::Google::Ads::GoogleAds::V8::Services::MutateConversionValueRuleResult]
+          #     The result for the conversion value rule mutate.
+          # @!attribute [rw] conversion_value_rule_set_result
+          #   @return [::Google::Ads::GoogleAds::V8::Services::MutateConversionValueRuleSetResult]
+          #     The result for the conversion value rule set mutate.
           # @!attribute [rw] customer_asset_result
           #   @return [::Google::Ads::GoogleAds::V8::Services::MutateCustomerAssetResult]
           #     The result for the customer asset mutate.

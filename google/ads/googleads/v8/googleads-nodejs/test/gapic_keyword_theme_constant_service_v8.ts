@@ -1439,6 +1439,82 @@ describe('v8.KeywordThemeConstantServiceClient', () => {
             });
         });
 
+        describe('biddingDataExclusion', () => {
+            const fakePath = "/rendered/path/biddingDataExclusion";
+            const expectedParameters = {
+                customer_id: "customerIdValue",
+                seasonality_event_id: "seasonalityEventIdValue",
+            };
+            const client = new keywordthemeconstantserviceModule.v8.KeywordThemeConstantServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.biddingDataExclusionPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.biddingDataExclusionPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('biddingDataExclusionPath', () => {
+                const result = client.biddingDataExclusionPath("customerIdValue", "seasonalityEventIdValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.biddingDataExclusionPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchCustomerIdFromBiddingDataExclusionName', () => {
+                const result = client.matchCustomerIdFromBiddingDataExclusionName(fakePath);
+                assert.strictEqual(result, "customerIdValue");
+                assert((client.pathTemplates.biddingDataExclusionPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchSeasonalityEventIdFromBiddingDataExclusionName', () => {
+                const result = client.matchSeasonalityEventIdFromBiddingDataExclusionName(fakePath);
+                assert.strictEqual(result, "seasonalityEventIdValue");
+                assert((client.pathTemplates.biddingDataExclusionPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('biddingSeasonalityAdjustment', () => {
+            const fakePath = "/rendered/path/biddingSeasonalityAdjustment";
+            const expectedParameters = {
+                customer_id: "customerIdValue",
+                seasonality_event_id: "seasonalityEventIdValue",
+            };
+            const client = new keywordthemeconstantserviceModule.v8.KeywordThemeConstantServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('biddingSeasonalityAdjustmentPath', () => {
+                const result = client.biddingSeasonalityAdjustmentPath("customerIdValue", "seasonalityEventIdValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchCustomerIdFromBiddingSeasonalityAdjustmentName', () => {
+                const result = client.matchCustomerIdFromBiddingSeasonalityAdjustmentName(fakePath);
+                assert.strictEqual(result, "customerIdValue");
+                assert((client.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchSeasonalityEventIdFromBiddingSeasonalityAdjustmentName', () => {
+                const result = client.matchSeasonalityEventIdFromBiddingSeasonalityAdjustmentName(fakePath);
+                assert.strictEqual(result, "seasonalityEventIdValue");
+                assert((client.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
         describe('biddingStrategy', () => {
             const fakePath = "/rendered/path/biddingStrategy";
             const expectedParameters = {
@@ -2585,6 +2661,82 @@ describe('v8.KeywordThemeConstantServiceClient', () => {
                 const result = client.matchConversionCustomVariableIdFromConversionCustomVariableName(fakePath);
                 assert.strictEqual(result, "conversionCustomVariableIdValue");
                 assert((client.pathTemplates.conversionCustomVariablePathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('conversionValueRule', () => {
+            const fakePath = "/rendered/path/conversionValueRule";
+            const expectedParameters = {
+                customer_id: "customerIdValue",
+                conversion_value_rule_id: "conversionValueRuleIdValue",
+            };
+            const client = new keywordthemeconstantserviceModule.v8.KeywordThemeConstantServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.conversionValueRulePathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.conversionValueRulePathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('conversionValueRulePath', () => {
+                const result = client.conversionValueRulePath("customerIdValue", "conversionValueRuleIdValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.conversionValueRulePathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchCustomerIdFromConversionValueRuleName', () => {
+                const result = client.matchCustomerIdFromConversionValueRuleName(fakePath);
+                assert.strictEqual(result, "customerIdValue");
+                assert((client.pathTemplates.conversionValueRulePathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchConversionValueRuleIdFromConversionValueRuleName', () => {
+                const result = client.matchConversionValueRuleIdFromConversionValueRuleName(fakePath);
+                assert.strictEqual(result, "conversionValueRuleIdValue");
+                assert((client.pathTemplates.conversionValueRulePathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+        });
+
+        describe('conversionValueRuleSet', () => {
+            const fakePath = "/rendered/path/conversionValueRuleSet";
+            const expectedParameters = {
+                customer_id: "customerIdValue",
+                conversion_value_rule_set_id: "conversionValueRuleSetIdValue",
+            };
+            const client = new keywordthemeconstantserviceModule.v8.KeywordThemeConstantServiceClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            client.pathTemplates.conversionValueRuleSetPathTemplate.render =
+                sinon.stub().returns(fakePath);
+            client.pathTemplates.conversionValueRuleSetPathTemplate.match =
+                sinon.stub().returns(expectedParameters);
+
+            it('conversionValueRuleSetPath', () => {
+                const result = client.conversionValueRuleSetPath("customerIdValue", "conversionValueRuleSetIdValue");
+                assert.strictEqual(result, fakePath);
+                assert((client.pathTemplates.conversionValueRuleSetPathTemplate.render as SinonStub)
+                    .getCall(-1).calledWith(expectedParameters));
+            });
+
+            it('matchCustomerIdFromConversionValueRuleSetName', () => {
+                const result = client.matchCustomerIdFromConversionValueRuleSetName(fakePath);
+                assert.strictEqual(result, "customerIdValue");
+                assert((client.pathTemplates.conversionValueRuleSetPathTemplate.match as SinonStub)
+                    .getCall(-1).calledWith(fakePath));
+            });
+
+            it('matchConversionValueRuleSetIdFromConversionValueRuleSetName', () => {
+                const result = client.matchConversionValueRuleSetIdFromConversionValueRuleSetName(fakePath);
+                assert.strictEqual(result, "conversionValueRuleSetIdValue");
+                assert((client.pathTemplates.conversionValueRuleSetPathTemplate.match as SinonStub)
                     .getCall(-1).calledWith(fakePath));
             });
         });

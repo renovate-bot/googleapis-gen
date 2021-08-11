@@ -102,18 +102,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # An automated bid strategy that sets bids to help get as many conversions as
-            # possible at the target cost-per-acquisition (CPA) you set.
-            # @!attribute [r] target_cpa_micros
-            #   @return [::Integer]
-            #     Output only. Average CPA target.
-            #     This target should be greater than or equal to minimum billable unit
-            #     based on the currency for the account.
-            class TargetCpa
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # An automated bid strategy that sets your bids to help get as many clicks
             # as possible within your budget.
             # @!attribute [r] target_spend_micros
@@ -130,6 +118,18 @@ module Google
             #     Output only. Maximum bid limit that can be set by the bid strategy.
             #     The limit applies to all keywords managed by the strategy.
             class TargetSpend
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # An automated bid strategy that sets bids to help get as many conversions as
+            # possible at the target cost-per-acquisition (CPA) you set.
+            # @!attribute [r] target_cpa_micros
+            #   @return [::Integer]
+            #     Output only. Average CPA target.
+            #     This target should be greater than or equal to minimum billable unit
+            #     based on the currency for the account.
+            class TargetCpa
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

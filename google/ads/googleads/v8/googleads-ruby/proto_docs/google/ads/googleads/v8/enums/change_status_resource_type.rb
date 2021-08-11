@@ -66,6 +66,24 @@ module Google
 
               # An AdGroupBidModifier resource change.
               AD_GROUP_BID_MODIFIER = 13
+
+              # A SharedSet resource change.
+              SHARED_SET = 14
+
+              # A CampaignSharedSet resource change.
+              CAMPAIGN_SHARED_SET = 15
+
+              # An Asset resource change.
+              ASSET = 16
+
+              # A CustomerAsset resource change.
+              CUSTOMER_ASSET = 17
+
+              # A CampaignAsset resource change.
+              CAMPAIGN_ASSET = 18
+
+              # An AdGroupAsset resource change.
+              AD_GROUP_ASSET = 19
             end
           end
         end

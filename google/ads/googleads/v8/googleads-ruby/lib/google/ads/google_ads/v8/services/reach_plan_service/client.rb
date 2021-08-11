@@ -401,7 +401,7 @@ module Google
               #   @param options [::Gapic::CallOptions, ::Hash]
               #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
               #
-              # @overload generate_reach_forecast(customer_id: nil, currency_code: nil, campaign_duration: nil, cookie_frequency_cap: nil, cookie_frequency_cap_setting: nil, min_effective_frequency: nil, targeting: nil, planned_products: nil)
+              # @overload generate_reach_forecast(customer_id: nil, currency_code: nil, campaign_duration: nil, cookie_frequency_cap: nil, cookie_frequency_cap_setting: nil, min_effective_frequency: nil, effective_frequency_limit: nil, targeting: nil, planned_products: nil)
               #   Pass arguments to `generate_reach_forecast` via keyword arguments. Note that at
               #   least one keyword argument is required. To specify no parameters, or to keep all
               #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -435,6 +435,19 @@ module Google
               #     exposed to the ad) for the reported reach metrics [1-10].
               #     This won't affect the targeting, but just the reporting.
               #     If not specified, a default of 1 is applied.
+              #
+              #     This field cannot be combined with the effective_frequency_limit field.
+              #   @param effective_frequency_limit [::Google::Ads::GoogleAds::V8::Services::EffectiveFrequencyLimit, ::Hash]
+              #     The highest minimum effective frequency (the number of times a person was
+              #     exposed to the ad) value [1-10] to include in
+              #     Forecast.effective_frequency_breakdowns.
+              #     If not specified, Forecast.effective_frequency_breakdowns will not be
+              #     provided.
+              #
+              #     The effective frequency value provided here will also be used as the
+              #     minimum effective frequency for the reported reach metrics.
+              #
+              #     This field cannot be combined with the min_effective_frequency field.
               #   @param targeting [::Google::Ads::GoogleAds::V8::Services::Targeting, ::Hash]
               #     The targeting to be applied to all products selected in the product mix.
               #

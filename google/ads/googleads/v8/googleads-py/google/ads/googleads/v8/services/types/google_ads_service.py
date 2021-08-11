@@ -43,6 +43,8 @@ from google.ads.googleads.v8.resources.types import age_range_view as gagr_age_r
 from google.ads.googleads.v8.resources.types import asset as gagr_asset
 from google.ads.googleads.v8.resources.types import asset_field_type_view as gagr_asset_field_type_view
 from google.ads.googleads.v8.resources.types import batch_job as gagr_batch_job
+from google.ads.googleads.v8.resources.types import bidding_data_exclusion as gagr_bidding_data_exclusion
+from google.ads.googleads.v8.resources.types import bidding_seasonality_adjustment as gagr_bidding_seasonality_adjustment
 from google.ads.googleads.v8.resources.types import bidding_strategy as gagr_bidding_strategy
 from google.ads.googleads.v8.resources.types import bidding_strategy_simulation as gagr_bidding_strategy_simulation
 from google.ads.googleads.v8.resources.types import billing_setup as gagr_billing_setup
@@ -68,6 +70,8 @@ from google.ads.googleads.v8.resources.types import click_view as gagr_click_vie
 from google.ads.googleads.v8.resources.types import combined_audience as gagr_combined_audience
 from google.ads.googleads.v8.resources.types import conversion_action as gagr_conversion_action
 from google.ads.googleads.v8.resources.types import conversion_custom_variable as gagr_conversion_custom_variable
+from google.ads.googleads.v8.resources.types import conversion_value_rule as gagr_conversion_value_rule
+from google.ads.googleads.v8.resources.types import conversion_value_rule_set as gagr_conversion_value_rule_set
 from google.ads.googleads.v8.resources.types import currency_constant as gagr_currency_constant
 from google.ads.googleads.v8.resources.types import custom_audience as gagr_custom_audience
 from google.ads.googleads.v8.resources.types import custom_interest as gagr_custom_interest
@@ -155,6 +159,8 @@ from google.ads.googleads.v8.services.types import ad_group_service
 from google.ads.googleads.v8.services.types import ad_parameter_service
 from google.ads.googleads.v8.services.types import ad_service
 from google.ads.googleads.v8.services.types import asset_service
+from google.ads.googleads.v8.services.types import bidding_data_exclusion_service
+from google.ads.googleads.v8.services.types import bidding_seasonality_adjustment_service
 from google.ads.googleads.v8.services.types import bidding_strategy_service
 from google.ads.googleads.v8.services.types import campaign_asset_service
 from google.ads.googleads.v8.services.types import campaign_bid_modifier_service
@@ -169,6 +175,8 @@ from google.ads.googleads.v8.services.types import campaign_service
 from google.ads.googleads.v8.services.types import campaign_shared_set_service
 from google.ads.googleads.v8.services.types import conversion_action_service
 from google.ads.googleads.v8.services.types import conversion_custom_variable_service
+from google.ads.googleads.v8.services.types import conversion_value_rule_service
+from google.ads.googleads.v8.services.types import conversion_value_rule_set_service
 from google.ads.googleads.v8.services.types import customer_asset_service
 from google.ads.googleads.v8.services.types import customer_extension_setting_service
 from google.ads.googleads.v8.services.types import customer_feed_service
@@ -468,6 +476,12 @@ class GoogleAdsRow(proto.Message):
             query.
         batch_job (google.ads.googleads.v8.resources.types.BatchJob):
             The batch job referenced in the query.
+        bidding_data_exclusion (google.ads.googleads.v8.resources.types.BiddingDataExclusion):
+            The bidding data exclusion referenced in the
+            query.
+        bidding_seasonality_adjustment (google.ads.googleads.v8.resources.types.BiddingSeasonalityAdjustment):
+            The bidding seasonality adjustment referenced
+            in the query.
         bidding_strategy (google.ads.googleads.v8.resources.types.BiddingStrategy):
             The bidding strategy referenced in the query.
         bidding_strategy_simulation (google.ads.googleads.v8.resources.types.BiddingStrategySimulation):
@@ -525,6 +539,12 @@ class GoogleAdsRow(proto.Message):
             query.
         conversion_custom_variable (google.ads.googleads.v8.resources.types.ConversionCustomVariable):
             The conversion custom variable referenced in
+            the query.
+        conversion_value_rule (google.ads.googleads.v8.resources.types.ConversionValueRule):
+            The conversion value rule referenced in the
+            query.
+        conversion_value_rule_set (google.ads.googleads.v8.resources.types.ConversionValueRuleSet):
+            The conversion value rule set referenced in
             the query.
         click_view (google.ads.googleads.v8.resources.types.ClickView):
             The ClickView referenced in the query.
@@ -843,6 +863,16 @@ class GoogleAdsRow(proto.Message):
         number=139,
         message=gagr_batch_job.BatchJob,
     )
+    bidding_data_exclusion = proto.Field(
+        proto.MESSAGE,
+        number=159,
+        message=gagr_bidding_data_exclusion.BiddingDataExclusion,
+    )
+    bidding_seasonality_adjustment = proto.Field(
+        proto.MESSAGE,
+        number=160,
+        message=gagr_bidding_seasonality_adjustment.BiddingSeasonalityAdjustment,
+    )
     bidding_strategy = proto.Field(
         proto.MESSAGE,
         number=18,
@@ -962,6 +992,16 @@ class GoogleAdsRow(proto.Message):
         proto.MESSAGE,
         number=153,
         message=gagr_conversion_custom_variable.ConversionCustomVariable,
+    )
+    conversion_value_rule = proto.Field(
+        proto.MESSAGE,
+        number=164,
+        message=gagr_conversion_value_rule.ConversionValueRule,
+    )
+    conversion_value_rule_set = proto.Field(
+        proto.MESSAGE,
+        number=165,
+        message=gagr_conversion_value_rule_set.ConversionValueRuleSet,
     )
     click_view = proto.Field(
         proto.MESSAGE,
@@ -1460,6 +1500,11 @@ class MutateOperation(proto.Message):
             An ad parameter mutate operation.
         asset_operation (google.ads.googleads.v8.services.types.AssetOperation):
             An asset mutate operation.
+        bidding_data_exclusion_operation (google.ads.googleads.v8.services.types.BiddingDataExclusionOperation):
+            A bidding data exclusion mutate operation.
+        bidding_seasonality_adjustment_operation (google.ads.googleads.v8.services.types.BiddingSeasonalityAdjustmentOperation):
+            A bidding seasonality adjustment mutate
+            operation.
         bidding_strategy_operation (google.ads.googleads.v8.services.types.BiddingStrategyOperation):
             A bidding strategy mutate operation.
         campaign_asset_operation (google.ads.googleads.v8.services.types.CampaignAssetOperation):
@@ -1490,6 +1535,10 @@ class MutateOperation(proto.Message):
         conversion_custom_variable_operation (google.ads.googleads.v8.services.types.ConversionCustomVariableOperation):
             A conversion custom variable mutate
             operation.
+        conversion_value_rule_operation (google.ads.googleads.v8.services.types.ConversionValueRuleOperation):
+            A conversion value rule mutate operation.
+        conversion_value_rule_set_operation (google.ads.googleads.v8.services.types.ConversionValueRuleSetOperation):
+            A conversion value rule set mutate operation.
         customer_asset_operation (google.ads.googleads.v8.services.types.CustomerAssetOperation):
             A customer asset mutate operation.
         customer_extension_setting_operation (google.ads.googleads.v8.services.types.CustomerExtensionSettingOperation):
@@ -1622,6 +1671,18 @@ class MutateOperation(proto.Message):
         oneof='operation',
         message=asset_service.AssetOperation,
     )
+    bidding_data_exclusion_operation = proto.Field(
+        proto.MESSAGE,
+        number=58,
+        oneof='operation',
+        message=bidding_data_exclusion_service.BiddingDataExclusionOperation,
+    )
+    bidding_seasonality_adjustment_operation = proto.Field(
+        proto.MESSAGE,
+        number=59,
+        oneof='operation',
+        message=bidding_seasonality_adjustment_service.BiddingSeasonalityAdjustmentOperation,
+    )
     bidding_strategy_operation = proto.Field(
         proto.MESSAGE,
         number=6,
@@ -1705,6 +1766,18 @@ class MutateOperation(proto.Message):
         number=55,
         oneof='operation',
         message=conversion_custom_variable_service.ConversionCustomVariableOperation,
+    )
+    conversion_value_rule_operation = proto.Field(
+        proto.MESSAGE,
+        number=63,
+        oneof='operation',
+        message=conversion_value_rule_service.ConversionValueRuleOperation,
+    )
+    conversion_value_rule_set_operation = proto.Field(
+        proto.MESSAGE,
+        number=64,
+        oneof='operation',
+        message=conversion_value_rule_set_service.ConversionValueRuleSetOperation,
     )
     customer_asset_operation = proto.Field(
         proto.MESSAGE,
@@ -1890,6 +1963,12 @@ class MutateOperationResponse(proto.Message):
             The result for the ad mutate.
         asset_result (google.ads.googleads.v8.services.types.MutateAssetResult):
             The result for the asset mutate.
+        bidding_data_exclusion_result (google.ads.googleads.v8.services.types.MutateBiddingDataExclusionsResult):
+            The result for the bidding data exclusion
+            mutate.
+        bidding_seasonality_adjustment_result (google.ads.googleads.v8.services.types.MutateBiddingSeasonalityAdjustmentsResult):
+            The result for the bidding seasonality
+            adjustment mutate.
         bidding_strategy_result (google.ads.googleads.v8.services.types.MutateBiddingStrategyResult):
             The result for the bidding strategy mutate.
         campaign_asset_result (google.ads.googleads.v8.services.types.MutateCampaignAssetResult):
@@ -1922,6 +2001,12 @@ class MutateOperationResponse(proto.Message):
             The result for the conversion action mutate.
         conversion_custom_variable_result (google.ads.googleads.v8.services.types.MutateConversionCustomVariableResult):
             The result for the conversion custom variable
+            mutate.
+        conversion_value_rule_result (google.ads.googleads.v8.services.types.MutateConversionValueRuleResult):
+            The result for the conversion value rule
+            mutate.
+        conversion_value_rule_set_result (google.ads.googleads.v8.services.types.MutateConversionValueRuleSetResult):
+            The result for the conversion value rule set
             mutate.
         customer_asset_result (google.ads.googleads.v8.services.types.MutateCustomerAssetResult):
             The result for the customer asset mutate.
@@ -2061,6 +2146,18 @@ class MutateOperationResponse(proto.Message):
         oneof='response',
         message=asset_service.MutateAssetResult,
     )
+    bidding_data_exclusion_result = proto.Field(
+        proto.MESSAGE,
+        number=58,
+        oneof='response',
+        message=bidding_data_exclusion_service.MutateBiddingDataExclusionsResult,
+    )
+    bidding_seasonality_adjustment_result = proto.Field(
+        proto.MESSAGE,
+        number=59,
+        oneof='response',
+        message=bidding_seasonality_adjustment_service.MutateBiddingSeasonalityAdjustmentsResult,
+    )
     bidding_strategy_result = proto.Field(
         proto.MESSAGE,
         number=6,
@@ -2144,6 +2241,18 @@ class MutateOperationResponse(proto.Message):
         number=55,
         oneof='response',
         message=conversion_custom_variable_service.MutateConversionCustomVariableResult,
+    )
+    conversion_value_rule_result = proto.Field(
+        proto.MESSAGE,
+        number=63,
+        oneof='response',
+        message=conversion_value_rule_service.MutateConversionValueRuleResult,
+    )
+    conversion_value_rule_set_result = proto.Field(
+        proto.MESSAGE,
+        number=64,
+        oneof='response',
+        message=conversion_value_rule_set_service.MutateConversionValueRuleSetResult,
     )
     customer_asset_result = proto.Field(
         proto.MESSAGE,

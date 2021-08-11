@@ -124,7 +124,7 @@ module Google
               # The value passed to the DURING operator is not a Date range literal
               INVALID_VALUE_WITH_DURING_OPERATOR = 22
 
-              # A non-string value was passed to the LIKE operator.
+              # An invalid value was passed to the LIKE operator.
               INVALID_VALUE_WITH_LIKE_OPERATOR = 56
 
               # An operator was provided that is inapplicable to the field being

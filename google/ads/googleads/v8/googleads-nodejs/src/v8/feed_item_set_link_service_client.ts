@@ -214,6 +214,12 @@ export class FeedItemSetLinkServiceClient {
       batchJobPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/batchJobs/{batch_job_id}'
       ),
+      biddingDataExclusionPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/biddingDataExclusions/{seasonality_event_id}'
+      ),
+      biddingSeasonalityAdjustmentPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/biddingSeasonalityAdjustments/{seasonality_event_id}'
+      ),
       biddingStrategyPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/biddingStrategies/{bidding_strategy_id}'
       ),
@@ -288,6 +294,12 @@ export class FeedItemSetLinkServiceClient {
       ),
       conversionCustomVariablePathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}'
+      ),
+      conversionValueRulePathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}'
+      ),
+      conversionValueRuleSetPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}'
       ),
       currencyConstantPathTemplate: new this._gaxModule.PathTemplate(
         'currencyConstants/{code}'
@@ -2099,6 +2111,78 @@ export class FeedItemSetLinkServiceClient {
   }
 
   /**
+   * Return a fully-qualified biddingDataExclusion resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} seasonality_event_id
+   * @returns {string} Resource name string.
+   */
+  biddingDataExclusionPath(customerId:string,seasonalityEventId:string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.render({
+      customer_id: customerId,
+      seasonality_event_id: seasonalityEventId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from BiddingDataExclusion resource.
+   *
+   * @param {string} biddingDataExclusionName
+   *   A fully-qualified path representing BiddingDataExclusion resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromBiddingDataExclusionName(biddingDataExclusionName: string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.match(biddingDataExclusionName).customer_id;
+  }
+
+  /**
+   * Parse the seasonality_event_id from BiddingDataExclusion resource.
+   *
+   * @param {string} biddingDataExclusionName
+   *   A fully-qualified path representing BiddingDataExclusion resource.
+   * @returns {string} A string representing the seasonality_event_id.
+   */
+  matchSeasonalityEventIdFromBiddingDataExclusionName(biddingDataExclusionName: string) {
+    return this.pathTemplates.biddingDataExclusionPathTemplate.match(biddingDataExclusionName).seasonality_event_id;
+  }
+
+  /**
+   * Return a fully-qualified biddingSeasonalityAdjustment resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} seasonality_event_id
+   * @returns {string} Resource name string.
+   */
+  biddingSeasonalityAdjustmentPath(customerId:string,seasonalityEventId:string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.render({
+      customer_id: customerId,
+      seasonality_event_id: seasonalityEventId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from BiddingSeasonalityAdjustment resource.
+   *
+   * @param {string} biddingSeasonalityAdjustmentName
+   *   A fully-qualified path representing BiddingSeasonalityAdjustment resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromBiddingSeasonalityAdjustmentName(biddingSeasonalityAdjustmentName: string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match(biddingSeasonalityAdjustmentName).customer_id;
+  }
+
+  /**
+   * Parse the seasonality_event_id from BiddingSeasonalityAdjustment resource.
+   *
+   * @param {string} biddingSeasonalityAdjustmentName
+   *   A fully-qualified path representing BiddingSeasonalityAdjustment resource.
+   * @returns {string} A string representing the seasonality_event_id.
+   */
+  matchSeasonalityEventIdFromBiddingSeasonalityAdjustmentName(biddingSeasonalityAdjustmentName: string) {
+    return this.pathTemplates.biddingSeasonalityAdjustmentPathTemplate.match(biddingSeasonalityAdjustmentName).seasonality_event_id;
+  }
+
+  /**
    * Return a fully-qualified biddingStrategy resource name string.
    *
    * @param {string} customer_id
@@ -3321,6 +3405,78 @@ export class FeedItemSetLinkServiceClient {
    */
   matchConversionCustomVariableIdFromConversionCustomVariableName(conversionCustomVariableName: string) {
     return this.pathTemplates.conversionCustomVariablePathTemplate.match(conversionCustomVariableName).conversion_custom_variable_id;
+  }
+
+  /**
+   * Return a fully-qualified conversionValueRule resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} conversion_value_rule_id
+   * @returns {string} Resource name string.
+   */
+  conversionValueRulePath(customerId:string,conversionValueRuleId:string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.render({
+      customer_id: customerId,
+      conversion_value_rule_id: conversionValueRuleId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from ConversionValueRule resource.
+   *
+   * @param {string} conversionValueRuleName
+   *   A fully-qualified path representing ConversionValueRule resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromConversionValueRuleName(conversionValueRuleName: string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.match(conversionValueRuleName).customer_id;
+  }
+
+  /**
+   * Parse the conversion_value_rule_id from ConversionValueRule resource.
+   *
+   * @param {string} conversionValueRuleName
+   *   A fully-qualified path representing ConversionValueRule resource.
+   * @returns {string} A string representing the conversion_value_rule_id.
+   */
+  matchConversionValueRuleIdFromConversionValueRuleName(conversionValueRuleName: string) {
+    return this.pathTemplates.conversionValueRulePathTemplate.match(conversionValueRuleName).conversion_value_rule_id;
+  }
+
+  /**
+   * Return a fully-qualified conversionValueRuleSet resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} conversion_value_rule_set_id
+   * @returns {string} Resource name string.
+   */
+  conversionValueRuleSetPath(customerId:string,conversionValueRuleSetId:string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.render({
+      customer_id: customerId,
+      conversion_value_rule_set_id: conversionValueRuleSetId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from ConversionValueRuleSet resource.
+   *
+   * @param {string} conversionValueRuleSetName
+   *   A fully-qualified path representing ConversionValueRuleSet resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromConversionValueRuleSetName(conversionValueRuleSetName: string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.match(conversionValueRuleSetName).customer_id;
+  }
+
+  /**
+   * Parse the conversion_value_rule_set_id from ConversionValueRuleSet resource.
+   *
+   * @param {string} conversionValueRuleSetName
+   *   A fully-qualified path representing ConversionValueRuleSet resource.
+   * @returns {string} A string representing the conversion_value_rule_set_id.
+   */
+  matchConversionValueRuleSetIdFromConversionValueRuleSetName(conversionValueRuleSetName: string) {
+    return this.pathTemplates.conversionValueRuleSetPathTemplate.match(conversionValueRuleSetName).conversion_value_rule_set_id;
   }
 
   /**

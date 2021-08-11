@@ -228,6 +228,20 @@ module Google
           #     exposed to the ad) for the reported reach metrics [1-10].
           #     This won't affect the targeting, but just the reporting.
           #     If not specified, a default of 1 is applied.
+          #
+          #     This field cannot be combined with the effective_frequency_limit field.
+          # @!attribute [rw] effective_frequency_limit
+          #   @return [::Google::Ads::GoogleAds::V8::Services::EffectiveFrequencyLimit]
+          #     The highest minimum effective frequency (the number of times a person was
+          #     exposed to the ad) value [1-10] to include in
+          #     Forecast.effective_frequency_breakdowns.
+          #     If not specified, Forecast.effective_frequency_breakdowns will not be
+          #     provided.
+          #
+          #     The effective frequency value provided here will also be used as the
+          #     minimum effective frequency for the reported reach metrics.
+          #
+          #     This field cannot be combined with the min_effective_frequency field.
           # @!attribute [rw] targeting
           #   @return [::Google::Ads::GoogleAds::V8::Services::Targeting]
           #     The targeting to be applied to all products selected in the product mix.
@@ -241,6 +255,17 @@ module Google
           #     Required. The products to be forecast.
           #     The max number of allowed planned products is 15.
           class GenerateReachForecastRequest
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # Effective frequency limit.
+          # @!attribute [rw] effective_frequency_breakdown_limit
+          #   @return [::Integer]
+          #     The highest effective frequency value to include in
+          #     Forecast.effective_frequency_breakdowns.
+          #     This field supports frequencies 1-10, inclusive.
+          class EffectiveFrequencyLimit
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
@@ -352,13 +377,23 @@ module Google
           # @!attribute [rw] on_target_reach
           #   @return [::Integer]
           #     Number of unique people reached at least
-          #     GenerateReachForecastRequest.min_effective_frequency times that exactly
+          #     GenerateReachForecastRequest.min_effective_frequency or
+          #     GenerateReachForecastRequest.effective_frequency_limit times that exactly
           #     matches the Targeting.
+          #
+          #     Note that a minimum number of unique people must be reached in order for
+          #     data to be reported. If the minimum number is not met, the on_target_reach
+          #     value will be rounded to 0.
           # @!attribute [rw] total_reach
           #   @return [::Integer]
           #     Total number of unique people reached at least
-          #     GenerateReachForecastRequest.min_effective_frequency times. This includes
+          #     GenerateReachForecastRequest.min_effective_frequency or
+          #     GenerateReachForecastRequest.effective_frequency_limit times. This includes
           #     people that may fall outside the specified Targeting.
+          #
+          #     Note that a minimum number of unique people must be reached in order for
+          #     data to be reported. If the minimum number is not met, the total_reach
+          #     value will be rounded to 0.
           # @!attribute [rw] on_target_impressions
           #   @return [::Integer]
           #     Number of ad impressions that exactly matches the Targeting.
@@ -373,6 +408,12 @@ module Google
           #     See https://support.google.com/google-ads/answer/7029393 for
           #     more information about what makes an ad viewable and how
           #     viewability is measured.
+          # @!attribute [rw] effective_frequency_breakdowns
+          #   @return [::Array<::Google::Ads::GoogleAds::V8::Services::EffectiveFrequencyBreakdown>]
+          #     A list of effective frequency forecasts. The list is ordered starting with
+          #     1+ and ending with the value set in
+          #     GenerateReachForecastRequest.effective_frequency_limit. If no
+          #     effective_frequency_limit was set, this list will be empty.
           class Forecast
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -402,10 +443,18 @@ module Google
           # @!attribute [rw] on_target_reach
           #   @return [::Integer]
           #     Number of unique people reached that exactly matches the Targeting.
+          #
+          #     Note that a minimum number of unique people must be reached in order for
+          #     data to be reported. If the minimum number is not met, the on_target_reach
+          #     value will be rounded to 0.
           # @!attribute [rw] total_reach
           #   @return [::Integer]
           #     Number of unique people reached. This includes people that may fall
           #     outside the specified Targeting.
+          #
+          #     Note that a minimum number of unique people must be reached in order for
+          #     data to be reported. If the minimum number is not met, the total_reach
+          #     value will be rounded to 0.
           # @!attribute [rw] on_target_impressions
           #   @return [::Integer]
           #     Number of ad impressions that exactly matches the Targeting.
@@ -438,6 +487,32 @@ module Google
           #   @return [::Integer]
           #     Reference audience size matching the considered targeting for Census.
           class OnTargetAudienceMetrics
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # A breakdown of the number of unique people reached at a given effective
+          # frequency.
+          # @!attribute [rw] effective_frequency
+          #   @return [::Integer]
+          #     The effective frequency [1-10].
+          # @!attribute [rw] on_target_reach
+          #   @return [::Integer]
+          #     The number of unique people reached at least effective_frequency times that
+          #     exactly matches the Targeting.
+          #
+          #     Note that a minimum number of unique people must be reached in order for
+          #     data to be reported. If the minimum number is not met, the on_target_reach
+          #     value will be rounded to 0.
+          # @!attribute [rw] total_reach
+          #   @return [::Integer]
+          #     Total number of unique people reached at least effective_frequency times.
+          #     This includes people that may fall outside the specified Targeting.
+          #
+          #     Note that a minimum number of unique people must be reached in order for
+          #     data to be reported. If the minimum number is not met, the total_reach
+          #     value will be rounded to 0.
+          class EffectiveFrequencyBreakdown
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end

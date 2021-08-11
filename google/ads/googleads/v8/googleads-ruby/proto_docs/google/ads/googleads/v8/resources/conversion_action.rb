@@ -133,18 +133,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Settings related to a third party app analytics conversion action.
-            # @!attribute [r] event_name
-            #   @return [::String]
-            #     Output only. The event name of a third-party app analytics conversion.
-            # @!attribute [r] provider_name
-            #   @return [::String]
-            #     Output only. Name of the third-party app analytics provider.
-            class ThirdPartyAppAnalyticsSettings
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # Settings related to a Firebase conversion action.
             # @!attribute [r] event_name
             #   @return [::String]
@@ -153,6 +141,18 @@ module Google
             #   @return [::String]
             #     Output only. The Firebase project ID of the conversion.
             class FirebaseSettings
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Settings related to a third party app analytics conversion action.
+            # @!attribute [r] event_name
+            #   @return [::String]
+            #     Output only. The event name of a third-party app analytics conversion.
+            # @!attribute [r] provider_name
+            #   @return [::String]
+            #     Output only. Name of the third-party app analytics provider.
+            class ThirdPartyAppAnalyticsSettings
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

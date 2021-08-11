@@ -41,7 +41,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Tests
             gagvr::BiddingStrategy expectedResponse = new gagvr::BiddingStrategy
             {
                 ResourceNameAsBiddingStrategyName = gagvr::BiddingStrategyName.FromCustomerBiddingStrategy("[CUSTOMER_ID]", "[BIDDING_STRATEGY_ID]"),
-                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.ManualCpm,
+                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.MaximizeConversionValue,
                 EnhancedCpc = new gagvc::EnhancedCpc(),
                 TargetCpa = new gagvc::TargetCpa(),
                 TargetRoas = new gagvc::TargetRoas(),
@@ -75,7 +75,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Tests
             gagvr::BiddingStrategy expectedResponse = new gagvr::BiddingStrategy
             {
                 ResourceNameAsBiddingStrategyName = gagvr::BiddingStrategyName.FromCustomerBiddingStrategy("[CUSTOMER_ID]", "[BIDDING_STRATEGY_ID]"),
-                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.ManualCpm,
+                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.MaximizeConversionValue,
                 EnhancedCpc = new gagvc::EnhancedCpc(),
                 TargetCpa = new gagvc::TargetCpa(),
                 TargetRoas = new gagvc::TargetRoas(),
@@ -111,7 +111,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Tests
             gagvr::BiddingStrategy expectedResponse = new gagvr::BiddingStrategy
             {
                 ResourceNameAsBiddingStrategyName = gagvr::BiddingStrategyName.FromCustomerBiddingStrategy("[CUSTOMER_ID]", "[BIDDING_STRATEGY_ID]"),
-                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.ManualCpm,
+                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.MaximizeConversionValue,
                 EnhancedCpc = new gagvc::EnhancedCpc(),
                 TargetCpa = new gagvc::TargetCpa(),
                 TargetRoas = new gagvc::TargetRoas(),
@@ -145,7 +145,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Tests
             gagvr::BiddingStrategy expectedResponse = new gagvr::BiddingStrategy
             {
                 ResourceNameAsBiddingStrategyName = gagvr::BiddingStrategyName.FromCustomerBiddingStrategy("[CUSTOMER_ID]", "[BIDDING_STRATEGY_ID]"),
-                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.ManualCpm,
+                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.MaximizeConversionValue,
                 EnhancedCpc = new gagvc::EnhancedCpc(),
                 TargetCpa = new gagvc::TargetCpa(),
                 TargetRoas = new gagvc::TargetRoas(),
@@ -181,7 +181,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Tests
             gagvr::BiddingStrategy expectedResponse = new gagvr::BiddingStrategy
             {
                 ResourceNameAsBiddingStrategyName = gagvr::BiddingStrategyName.FromCustomerBiddingStrategy("[CUSTOMER_ID]", "[BIDDING_STRATEGY_ID]"),
-                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.ManualCpm,
+                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.MaximizeConversionValue,
                 EnhancedCpc = new gagvc::EnhancedCpc(),
                 TargetCpa = new gagvc::TargetCpa(),
                 TargetRoas = new gagvc::TargetRoas(),
@@ -215,7 +215,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Tests
             gagvr::BiddingStrategy expectedResponse = new gagvr::BiddingStrategy
             {
                 ResourceNameAsBiddingStrategyName = gagvr::BiddingStrategyName.FromCustomerBiddingStrategy("[CUSTOMER_ID]", "[BIDDING_STRATEGY_ID]"),
-                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.ManualCpm,
+                Type = gagve::BiddingStrategyTypeEnum.Types.BiddingStrategyType.MaximizeConversionValue,
                 EnhancedCpc = new gagvc::EnhancedCpc(),
                 TargetCpa = new gagvc::TargetCpa(),
                 TargetRoas = new gagvc::TargetRoas(),

@@ -23,13 +23,13 @@ module Google
       module V8
         module Enums
           # Container for enum describing the source of the user identifier for offline
-          # Store Sales third party uploads.
+          # Store Sales, click conversion, and conversion adjustment uploads.
           class UserIdentifierSourceEnum
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
 
-            # The type of user identifier source for offline Store Sales third party
-            # uploads.
+            # The type of user identifier source for offline Store Sales, click
+            # conversion, and conversion adjustment uploads.
             module UserIdentifierSource
               # Not specified.
               UNSPECIFIED = 0

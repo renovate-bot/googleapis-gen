@@ -295,6 +295,7 @@ def test_get_ad_group_ad(transport: str = 'grpc', request_type=ad_group_ad_servi
             status=ad_group_ad_status.AdGroupAdStatusEnum.AdGroupAdStatus.UNKNOWN,
             ad_group='ad_group_value',
             ad_strength=ad_strength.AdStrengthEnum.AdStrength.UNKNOWN,
+            action_items=['action_items_value'],
             labels=['labels_value'],
         )
         response = client.get_ad_group_ad(request)
@@ -310,6 +311,7 @@ def test_get_ad_group_ad(transport: str = 'grpc', request_type=ad_group_ad_servi
     assert response.status == ad_group_ad_status.AdGroupAdStatusEnum.AdGroupAdStatus.UNKNOWN
     assert response.ad_group == 'ad_group_value'
     assert response.ad_strength == ad_strength.AdStrengthEnum.AdStrength.UNKNOWN
+    assert response.action_items == ['action_items_value']
     assert response.labels == ['labels_value']
 
 

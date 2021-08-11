@@ -23,7 +23,7 @@ module Google
       module V8
         module Services
           # Request message for
-          # [SmartCampaignBudgetSuggestService.SuggestSmartCampaignBudgets][].
+          # [SmartCampaignSuggestService.SuggestSmartCampaignBudgets][].
           # @!attribute [rw] customer_id
           #   @return [::String]
           #     Required. The ID of the customer whose budget options are to be suggested.
@@ -43,14 +43,6 @@ module Google
           # @!attribute [rw] final_url
           #   @return [::String]
           #     Optional. Landing page URL of the campaign.
-          # @!attribute [rw] business_location_id
-          #   @return [::Integer]
-          #     Optional. The ID of the Google My Business (GMB) Location.
-          #     The location ID can be fetched by GMB API with its form:
-          #     accounts/\\{accountId}/locations/\\{locationId}. The last \\{locationId}
-          #     component from the GMB API represents the business_location_id.
-          #     See the [Google My Business API]
-          #     (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
           # @!attribute [rw] language_code
           #   @return [::String]
           #     Optional. The two letter advertising language for the Smart campaign to be
@@ -62,6 +54,17 @@ module Google
           #   @return [::Array<::Google::Ads::GoogleAds::V8::Common::KeywordThemeInfo>]
           #     Optional. Smart campaign keyword themes. This field may greatly improve suggestion
           #     accuracy and we recommend always setting it if possible.
+          # @!attribute [rw] business_context
+          #   @return [::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestionInfo::BusinessContext]
+          #     Optional. Context describing the business to advertise.
+          # @!attribute [rw] business_location_id
+          #   @return [::Integer]
+          #     Optional. The ID of the Google My Business (GMB) Location.
+          #     The location ID can be fetched by GMB API with its form:
+          #     accounts/\\{accountId}/locations/\\{locationId}. The last \\{locationId}
+          #     component from the GMB API represents the business_location_id.
+          #     See the [Google My Business API]
+          #     (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
           # @!attribute [rw] location_list
           #   @return [::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestionInfo::LocationList]
           #     Optional. The targeting geo location by locations.
@@ -80,11 +83,20 @@ module Google
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
+
+            # A context that describes a business.
+            # @!attribute [rw] business_name
+            #   @return [::String]
+            #     Optional. The name of the business.
+            class BusinessContext
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
           end
 
           # Response message for
-          # [SmartCampaignBudgetSuggestService.SuggestSmartCampaignBudgets][]. Depending
-          # on whether the system could suggest the options, either all of the options or
+          # [SmartCampaignSuggestService.SuggestSmartCampaignBudgets][]. Depending on
+          # whether the system could suggest the options, either all of the options or
           # none of them might be returned.
           # @!attribute [rw] low
           #   @return [::Google::Ads::GoogleAds::V8::Services::SuggestSmartCampaignBudgetOptionsResponse::BudgetOption]
@@ -125,6 +137,32 @@ module Google
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
+          end
+
+          # Request message for
+          # {::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client#suggest_smart_campaign_ad SmartCampaignSuggestService.SuggestSmartCampaignAd}.
+          # @!attribute [rw] customer_id
+          #   @return [::String]
+          #     Required. The ID of the customer.
+          # @!attribute [rw] suggestion_info
+          #   @return [::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestionInfo]
+          #     Required. Inputs used to suggest a Smart campaign ad.
+          #     Required fields: final_url, language_code, keyword_themes.
+          #     Optional but recommended fields to improve the quality of the suggestion:
+          #     business_setting and geo_target.
+          class SuggestSmartCampaignAdRequest
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # Response message for
+          # {::Google::Ads::GoogleAds::V8::Services::SmartCampaignSuggestService::Client#suggest_smart_campaign_ad SmartCampaignSuggestService.SuggestSmartCampaignAd}.
+          # @!attribute [rw] ad_info
+          #   @return [::Google::Ads::GoogleAds::V8::Common::SmartCampaignAdInfo]
+          #     Optional. Ad info includes 3 creative headlines and 2 creative descriptions.
+          class SuggestSmartCampaignAdResponse
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
           end
         end
       end

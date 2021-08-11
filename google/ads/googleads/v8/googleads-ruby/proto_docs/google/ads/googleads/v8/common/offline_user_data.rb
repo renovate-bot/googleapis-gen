@@ -34,43 +34,58 @@ module Google
           #     case only and no punctuation).
           # @!attribute [rw] city
           #   @return [::String]
-          #     City of the address. Only accepted for Store Sales Direct data.
+          #     City of the address. Only accepted for Store Sales and
+          #     ConversionAdjustmentUploadService.
           # @!attribute [rw] state
           #   @return [::String]
-          #     State code of the address. Only accepted for Store Sales Direct data.
+          #     State code of the address. Only accepted for Store Sales and
+          #     ConversionAdjustmentUploadService.
           # @!attribute [rw] country_code
           #   @return [::String]
           #     2-letter country code in ISO-3166-1 alpha-2 of the user's address.
           # @!attribute [rw] postal_code
           #   @return [::String]
           #     Postal code of the user's address.
+          # @!attribute [rw] hashed_street_address
+          #   @return [::String]
+          #     The street address of the user hashed using SHA-256 hash function after
+          #     normalization (lower case only). Only accepted for
+          #     ConversionAdjustmentUploadService.
           class OfflineUserAddressInfo
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
-          # Hashed user identifying information.
+          # User identifying information.
           # @!attribute [rw] user_identifier_source
           #   @return [::Google::Ads::GoogleAds::V8::Enums::UserIdentifierSourceEnum::UserIdentifierSource]
-          #     Source of the user identifier when the upload is from Store Sales third
-          #     party partners.
+          #     Source of the user identifier when the upload is from Store Sales,
+          #     ConversionUploadService, or ConversionAdjustmentUploadService. For
+          #     ConversionUploadService and ConversionAdjustmentUploadService, the source
+          #     of the user identifier must be specified as FIRST_PARTY, otherwise an error
+          #     will be returned.
           # @!attribute [rw] hashed_email
           #   @return [::String]
           #     Hashed email address using SHA-256 hash function after normalization.
+          #     Accepted for Customer Match, Store Sales, ConversionUploadService, and
+          #     ConversionAdjustmentUploadService.
           # @!attribute [rw] hashed_phone_number
           #   @return [::String]
           #     Hashed phone number using SHA-256 hash function after normalization
-          #     (E164 standard).
+          #     (E164 standard). Accepted for Customer Match, Store Sales,
+          #     ConversionUploadService, and ConversionAdjustmentUploadService.
           # @!attribute [rw] mobile_id
           #   @return [::String]
-          #     Mobile device ID (advertising ID/IDFA).
+          #     Mobile device ID (advertising ID/IDFA). Accepted only for Customer Match.
           # @!attribute [rw] third_party_user_id
           #   @return [::String]
           #     Advertiser-assigned user ID for Customer Match upload, or
-          #     third-party-assigned user ID for SSD.
+          #     third-party-assigned user ID for Store Sales. Accepted only for Customer
+          #     Match and Store Sales.
           # @!attribute [rw] address_info
           #   @return [::Google::Ads::GoogleAds::V8::Common::OfflineUserAddressInfo]
-          #     Address information.
+          #     Address information. Accepted only for Customer Match, Store Sales, and
+          #     ConversionAdjustmentUploadService.
           class UserIdentifier
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -87,6 +102,7 @@ module Google
           # @!attribute [rw] transaction_amount_micros
           #   @return [::Float]
           #     Transaction amount in micros. Required.
+          #     Transaction amount in micros needs to be greater than 1000.
           #     If item Attributes are provided, it represents the total value of the
           #     items, after multiplying the unit price per item by the quantity provided
           #     in the ItemAttributes.

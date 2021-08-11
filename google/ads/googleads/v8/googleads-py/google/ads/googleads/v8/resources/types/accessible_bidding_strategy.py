@@ -122,25 +122,6 @@ class AccessibleBiddingStrategy(proto.Message):
             number=1,
         )
 
-    class TargetCpa(proto.Message):
-        r"""An automated bid strategy that sets bids to help get as many
-        conversions as possible at the target cost-per-acquisition (CPA)
-        you set.
-
-        Attributes:
-            target_cpa_micros (int):
-                Output only. Average CPA target.
-                This target should be greater than or equal to
-                minimum billable unit based on the currency for
-                the account.
-        """
-
-        target_cpa_micros = proto.Field(
-            proto.INT64,
-            number=1,
-            optional=True,
-        )
-
     class TargetSpend(proto.Message):
         r"""An automated bid strategy that sets your bids to help get as
         many clicks as possible within your budget.
@@ -170,6 +151,25 @@ class AccessibleBiddingStrategy(proto.Message):
         cpc_bid_ceiling_micros = proto.Field(
             proto.INT64,
             number=2,
+            optional=True,
+        )
+
+    class TargetCpa(proto.Message):
+        r"""An automated bid strategy that sets bids to help get as many
+        conversions as possible at the target cost-per-acquisition (CPA)
+        you set.
+
+        Attributes:
+            target_cpa_micros (int):
+                Output only. Average CPA target.
+                This target should be greater than or equal to
+                minimum billable unit based on the currency for
+                the account.
+        """
+
+        target_cpa_micros = proto.Field(
+            proto.INT64,
+            number=1,
             optional=True,
         )
 

@@ -271,6 +271,15 @@ module Google
           # @!attribute [rw] slot
           #   @return [::Google::Ads::GoogleAds::V8::Enums::SlotEnum::Slot]
           #     Position of the ad.
+          # @!attribute [rw] conversion_value_rule_primary_dimension
+          #   @return [::Google::Ads::GoogleAds::V8::Enums::ConversionValueRulePrimaryDimensionEnum::ConversionValueRulePrimaryDimension]
+          #     Primary dimension of applied conversion value rules.
+          #     NO_RULE_APPLIED shows the total recorded value of conversions that
+          #     do not have a value rule applied.
+          #     ORIGINAL shows the original value of conversions to which a value rule
+          #     has been applied.
+          #     GEO_LOCATION, DEVICE, AUDIENCE show the net adjustment after value
+          #     rules were applied.
           # @!attribute [rw] webpage
           #   @return [::String]
           #     Resource name of the ad group criterion that represents webpage criterion.

@@ -97,6 +97,8 @@ from google.ads.googleads.v8.enums.types import conversion_action_counting_type
 from google.ads.googleads.v8.enums.types import conversion_action_status
 from google.ads.googleads.v8.enums.types import conversion_action_type
 from google.ads.googleads.v8.enums.types import conversion_custom_variable_status
+from google.ads.googleads.v8.enums.types import conversion_value_rule_set_status
+from google.ads.googleads.v8.enums.types import conversion_value_rule_status
 from google.ads.googleads.v8.enums.types import criterion_system_serving_status
 from google.ads.googleads.v8.enums.types import criterion_type
 from google.ads.googleads.v8.enums.types import custom_placeholder_field
@@ -190,6 +192,8 @@ from google.ads.googleads.v8.enums.types import proximity_radius_units
 from google.ads.googleads.v8.enums.types import quality_score_bucket
 from google.ads.googleads.v8.enums.types import real_estate_placeholder_field
 from google.ads.googleads.v8.enums.types import response_content_type
+from google.ads.googleads.v8.enums.types import seasonality_event_scope
+from google.ads.googleads.v8.enums.types import seasonality_event_status
 from google.ads.googleads.v8.enums.types import served_asset_field_type
 from google.ads.googleads.v8.enums.types import shared_set_status
 from google.ads.googleads.v8.enums.types import shared_set_type
@@ -214,6 +218,11 @@ from google.ads.googleads.v8.enums.types import user_list_rule_type
 from google.ads.googleads.v8.enums.types import user_list_size_range
 from google.ads.googleads.v8.enums.types import user_list_string_rule_item_operator
 from google.ads.googleads.v8.enums.types import user_list_type
+from google.ads.googleads.v8.enums.types import value_rule_device_type
+from google.ads.googleads.v8.enums.types import value_rule_geo_location_match_type
+from google.ads.googleads.v8.enums.types import value_rule_operation
+from google.ads.googleads.v8.enums.types import value_rule_set_attachment_type
+from google.ads.googleads.v8.enums.types import value_rule_set_dimension
 from google.ads.googleads.v8.enums.types import vanity_pharma_display_url_mode
 from google.ads.googleads.v8.enums.types import vanity_pharma_text
 from google.ads.googleads.v8.enums.types import webpage_condition_operand
@@ -233,6 +242,8 @@ from google.ads.googleads.v8.resources.types import ad_group_label
 from google.ads.googleads.v8.resources.types import ad_parameter
 from google.ads.googleads.v8.resources.types import asset
 from google.ads.googleads.v8.resources.types import batch_job
+from google.ads.googleads.v8.resources.types import bidding_data_exclusion
+from google.ads.googleads.v8.resources.types import bidding_seasonality_adjustment
 from google.ads.googleads.v8.resources.types import bidding_strategy
 from google.ads.googleads.v8.resources.types import campaign
 from google.ads.googleads.v8.resources.types import campaign_asset
@@ -247,6 +258,8 @@ from google.ads.googleads.v8.resources.types import campaign_label
 from google.ads.googleads.v8.resources.types import campaign_shared_set
 from google.ads.googleads.v8.resources.types import conversion_action
 from google.ads.googleads.v8.resources.types import conversion_custom_variable
+from google.ads.googleads.v8.resources.types import conversion_value_rule
+from google.ads.googleads.v8.resources.types import conversion_value_rule_set
 from google.ads.googleads.v8.resources.types import customer
 from google.ads.googleads.v8.resources.types import customer_asset
 from google.ads.googleads.v8.resources.types import customer_extension_setting
@@ -289,6 +302,8 @@ from google.ads.googleads.v8.services.types import ad_parameter_service
 from google.ads.googleads.v8.services.types import ad_service
 from google.ads.googleads.v8.services.types import asset_service
 from google.ads.googleads.v8.services.types import batch_job_service
+from google.ads.googleads.v8.services.types import bidding_data_exclusion_service
+from google.ads.googleads.v8.services.types import bidding_seasonality_adjustment_service
 from google.ads.googleads.v8.services.types import bidding_strategy_service
 from google.ads.googleads.v8.services.types import campaign_asset_service
 from google.ads.googleads.v8.services.types import campaign_bid_modifier_service
@@ -303,6 +318,8 @@ from google.ads.googleads.v8.services.types import campaign_service
 from google.ads.googleads.v8.services.types import campaign_shared_set_service
 from google.ads.googleads.v8.services.types import conversion_action_service
 from google.ads.googleads.v8.services.types import conversion_custom_variable_service
+from google.ads.googleads.v8.services.types import conversion_value_rule_service
+from google.ads.googleads.v8.services.types import conversion_value_rule_set_service
 from google.ads.googleads.v8.services.types import customer_asset_service
 from google.ads.googleads.v8.services.types import customer_extension_setting_service
 from google.ads.googleads.v8.services.types import customer_feed_service
@@ -1728,9 +1745,47 @@ def test_parse_batch_job_path():
     actual = BatchJobServiceClient.parse_batch_job_path(path)
     assert expected == actual
 
-def test_bidding_strategy_path():
+def test_bidding_data_exclusion_path():
     customer_id = "oyster"
-    bidding_strategy_id = "nudibranch"
+    seasonality_event_id = "nudibranch"
+    expected = "customers/{customer_id}/biddingDataExclusions/{seasonality_event_id}".format(customer_id=customer_id, seasonality_event_id=seasonality_event_id, )
+    actual = BatchJobServiceClient.bidding_data_exclusion_path(customer_id, seasonality_event_id)
+    assert expected == actual
+
+
+def test_parse_bidding_data_exclusion_path():
+    expected = {
+        "customer_id": "cuttlefish",
+        "seasonality_event_id": "mussel",
+    }
+    path = BatchJobServiceClient.bidding_data_exclusion_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = BatchJobServiceClient.parse_bidding_data_exclusion_path(path)
+    assert expected == actual
+
+def test_bidding_seasonality_adjustment_path():
+    customer_id = "winkle"
+    seasonality_event_id = "nautilus"
+    expected = "customers/{customer_id}/biddingSeasonalityAdjustments/{seasonality_event_id}".format(customer_id=customer_id, seasonality_event_id=seasonality_event_id, )
+    actual = BatchJobServiceClient.bidding_seasonality_adjustment_path(customer_id, seasonality_event_id)
+    assert expected == actual
+
+
+def test_parse_bidding_seasonality_adjustment_path():
+    expected = {
+        "customer_id": "scallop",
+        "seasonality_event_id": "abalone",
+    }
+    path = BatchJobServiceClient.bidding_seasonality_adjustment_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = BatchJobServiceClient.parse_bidding_seasonality_adjustment_path(path)
+    assert expected == actual
+
+def test_bidding_strategy_path():
+    customer_id = "squid"
+    bidding_strategy_id = "clam"
     expected = "customers/{customer_id}/biddingStrategies/{bidding_strategy_id}".format(customer_id=customer_id, bidding_strategy_id=bidding_strategy_id, )
     actual = BatchJobServiceClient.bidding_strategy_path(customer_id, bidding_strategy_id)
     assert expected == actual
@@ -1738,8 +1793,8 @@ def test_bidding_strategy_path():
 
 def test_parse_bidding_strategy_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "bidding_strategy_id": "mussel",
+        "customer_id": "whelk",
+        "bidding_strategy_id": "octopus",
     }
     path = BatchJobServiceClient.bidding_strategy_path(**expected)
 
@@ -1748,8 +1803,8 @@ def test_parse_bidding_strategy_path():
     assert expected == actual
 
 def test_campaign_path():
-    customer_id = "winkle"
-    campaign_id = "nautilus"
+    customer_id = "oyster"
+    campaign_id = "nudibranch"
     expected = "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = BatchJobServiceClient.campaign_path(customer_id, campaign_id)
     assert expected == actual
@@ -1757,8 +1812,8 @@ def test_campaign_path():
 
 def test_parse_campaign_path():
     expected = {
-        "customer_id": "scallop",
-        "campaign_id": "abalone",
+        "customer_id": "cuttlefish",
+        "campaign_id": "mussel",
     }
     path = BatchJobServiceClient.campaign_path(**expected)
 
@@ -1767,10 +1822,10 @@ def test_parse_campaign_path():
     assert expected == actual
 
 def test_campaign_asset_path():
-    customer_id = "squid"
-    campaign_id = "clam"
-    asset_id = "whelk"
-    field_type = "octopus"
+    customer_id = "winkle"
+    campaign_id = "nautilus"
+    asset_id = "scallop"
+    field_type = "abalone"
     expected = "customers/{customer_id}/campaignAssets/{campaign_id}~{asset_id}~{field_type}".format(customer_id=customer_id, campaign_id=campaign_id, asset_id=asset_id, field_type=field_type, )
     actual = BatchJobServiceClient.campaign_asset_path(customer_id, campaign_id, asset_id, field_type)
     assert expected == actual
@@ -1778,10 +1833,10 @@ def test_campaign_asset_path():
 
 def test_parse_campaign_asset_path():
     expected = {
-        "customer_id": "oyster",
-        "campaign_id": "nudibranch",
-        "asset_id": "cuttlefish",
-        "field_type": "mussel",
+        "customer_id": "squid",
+        "campaign_id": "clam",
+        "asset_id": "whelk",
+        "field_type": "octopus",
     }
     path = BatchJobServiceClient.campaign_asset_path(**expected)
 
@@ -1790,9 +1845,9 @@ def test_parse_campaign_asset_path():
     assert expected == actual
 
 def test_campaign_bid_modifier_path():
-    customer_id = "winkle"
-    campaign_id = "nautilus"
-    criterion_id = "scallop"
+    customer_id = "oyster"
+    campaign_id = "nudibranch"
+    criterion_id = "cuttlefish"
     expected = "customers/{customer_id}/campaignBidModifiers/{campaign_id}~{criterion_id}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, )
     actual = BatchJobServiceClient.campaign_bid_modifier_path(customer_id, campaign_id, criterion_id)
     assert expected == actual
@@ -1800,9 +1855,9 @@ def test_campaign_bid_modifier_path():
 
 def test_parse_campaign_bid_modifier_path():
     expected = {
-        "customer_id": "abalone",
-        "campaign_id": "squid",
-        "criterion_id": "clam",
+        "customer_id": "mussel",
+        "campaign_id": "winkle",
+        "criterion_id": "nautilus",
     }
     path = BatchJobServiceClient.campaign_bid_modifier_path(**expected)
 
@@ -1811,8 +1866,8 @@ def test_parse_campaign_bid_modifier_path():
     assert expected == actual
 
 def test_campaign_budget_path():
-    customer_id = "whelk"
-    campaign_budget_id = "octopus"
+    customer_id = "scallop"
+    campaign_budget_id = "abalone"
     expected = "customers/{customer_id}/campaignBudgets/{campaign_budget_id}".format(customer_id=customer_id, campaign_budget_id=campaign_budget_id, )
     actual = BatchJobServiceClient.campaign_budget_path(customer_id, campaign_budget_id)
     assert expected == actual
@@ -1820,8 +1875,8 @@ def test_campaign_budget_path():
 
 def test_parse_campaign_budget_path():
     expected = {
-        "customer_id": "oyster",
-        "campaign_budget_id": "nudibranch",
+        "customer_id": "squid",
+        "campaign_budget_id": "clam",
     }
     path = BatchJobServiceClient.campaign_budget_path(**expected)
 
@@ -1830,9 +1885,9 @@ def test_parse_campaign_budget_path():
     assert expected == actual
 
 def test_campaign_criterion_path():
-    customer_id = "cuttlefish"
-    campaign_id = "mussel"
-    criterion_id = "winkle"
+    customer_id = "whelk"
+    campaign_id = "octopus"
+    criterion_id = "oyster"
     expected = "customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, )
     actual = BatchJobServiceClient.campaign_criterion_path(customer_id, campaign_id, criterion_id)
     assert expected == actual
@@ -1840,9 +1895,9 @@ def test_campaign_criterion_path():
 
 def test_parse_campaign_criterion_path():
     expected = {
-        "customer_id": "nautilus",
-        "campaign_id": "scallop",
-        "criterion_id": "abalone",
+        "customer_id": "nudibranch",
+        "campaign_id": "cuttlefish",
+        "criterion_id": "mussel",
     }
     path = BatchJobServiceClient.campaign_criterion_path(**expected)
 
@@ -1851,9 +1906,9 @@ def test_parse_campaign_criterion_path():
     assert expected == actual
 
 def test_campaign_draft_path():
-    customer_id = "squid"
-    base_campaign_id = "clam"
-    draft_id = "whelk"
+    customer_id = "winkle"
+    base_campaign_id = "nautilus"
+    draft_id = "scallop"
     expected = "customers/{customer_id}/campaignDrafts/{base_campaign_id}~{draft_id}".format(customer_id=customer_id, base_campaign_id=base_campaign_id, draft_id=draft_id, )
     actual = BatchJobServiceClient.campaign_draft_path(customer_id, base_campaign_id, draft_id)
     assert expected == actual
@@ -1861,9 +1916,9 @@ def test_campaign_draft_path():
 
 def test_parse_campaign_draft_path():
     expected = {
-        "customer_id": "octopus",
-        "base_campaign_id": "oyster",
-        "draft_id": "nudibranch",
+        "customer_id": "abalone",
+        "base_campaign_id": "squid",
+        "draft_id": "clam",
     }
     path = BatchJobServiceClient.campaign_draft_path(**expected)
 
@@ -1872,8 +1927,8 @@ def test_parse_campaign_draft_path():
     assert expected == actual
 
 def test_campaign_experiment_path():
-    customer_id = "cuttlefish"
-    campaign_experiment_id = "mussel"
+    customer_id = "whelk"
+    campaign_experiment_id = "octopus"
     expected = "customers/{customer_id}/campaignExperiments/{campaign_experiment_id}".format(customer_id=customer_id, campaign_experiment_id=campaign_experiment_id, )
     actual = BatchJobServiceClient.campaign_experiment_path(customer_id, campaign_experiment_id)
     assert expected == actual
@@ -1881,8 +1936,8 @@ def test_campaign_experiment_path():
 
 def test_parse_campaign_experiment_path():
     expected = {
-        "customer_id": "winkle",
-        "campaign_experiment_id": "nautilus",
+        "customer_id": "oyster",
+        "campaign_experiment_id": "nudibranch",
     }
     path = BatchJobServiceClient.campaign_experiment_path(**expected)
 
@@ -1891,9 +1946,9 @@ def test_parse_campaign_experiment_path():
     assert expected == actual
 
 def test_campaign_extension_setting_path():
-    customer_id = "scallop"
-    campaign_id = "abalone"
-    extension_type = "squid"
+    customer_id = "cuttlefish"
+    campaign_id = "mussel"
+    extension_type = "winkle"
     expected = "customers/{customer_id}/campaignExtensionSettings/{campaign_id}~{extension_type}".format(customer_id=customer_id, campaign_id=campaign_id, extension_type=extension_type, )
     actual = BatchJobServiceClient.campaign_extension_setting_path(customer_id, campaign_id, extension_type)
     assert expected == actual
@@ -1901,9 +1956,9 @@ def test_campaign_extension_setting_path():
 
 def test_parse_campaign_extension_setting_path():
     expected = {
-        "customer_id": "clam",
-        "campaign_id": "whelk",
-        "extension_type": "octopus",
+        "customer_id": "nautilus",
+        "campaign_id": "scallop",
+        "extension_type": "abalone",
     }
     path = BatchJobServiceClient.campaign_extension_setting_path(**expected)
 
@@ -1912,9 +1967,9 @@ def test_parse_campaign_extension_setting_path():
     assert expected == actual
 
 def test_campaign_feed_path():
-    customer_id = "oyster"
-    campaign_id = "nudibranch"
-    feed_id = "cuttlefish"
+    customer_id = "squid"
+    campaign_id = "clam"
+    feed_id = "whelk"
     expected = "customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}".format(customer_id=customer_id, campaign_id=campaign_id, feed_id=feed_id, )
     actual = BatchJobServiceClient.campaign_feed_path(customer_id, campaign_id, feed_id)
     assert expected == actual
@@ -1922,9 +1977,9 @@ def test_campaign_feed_path():
 
 def test_parse_campaign_feed_path():
     expected = {
-        "customer_id": "mussel",
-        "campaign_id": "winkle",
-        "feed_id": "nautilus",
+        "customer_id": "octopus",
+        "campaign_id": "oyster",
+        "feed_id": "nudibranch",
     }
     path = BatchJobServiceClient.campaign_feed_path(**expected)
 
@@ -1933,9 +1988,9 @@ def test_parse_campaign_feed_path():
     assert expected == actual
 
 def test_campaign_label_path():
-    customer_id = "scallop"
-    campaign_id = "abalone"
-    label_id = "squid"
+    customer_id = "cuttlefish"
+    campaign_id = "mussel"
+    label_id = "winkle"
     expected = "customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}".format(customer_id=customer_id, campaign_id=campaign_id, label_id=label_id, )
     actual = BatchJobServiceClient.campaign_label_path(customer_id, campaign_id, label_id)
     assert expected == actual
@@ -1943,9 +1998,9 @@ def test_campaign_label_path():
 
 def test_parse_campaign_label_path():
     expected = {
-        "customer_id": "clam",
-        "campaign_id": "whelk",
-        "label_id": "octopus",
+        "customer_id": "nautilus",
+        "campaign_id": "scallop",
+        "label_id": "abalone",
     }
     path = BatchJobServiceClient.campaign_label_path(**expected)
 
@@ -1954,9 +2009,9 @@ def test_parse_campaign_label_path():
     assert expected == actual
 
 def test_campaign_shared_set_path():
-    customer_id = "oyster"
-    campaign_id = "nudibranch"
-    shared_set_id = "cuttlefish"
+    customer_id = "squid"
+    campaign_id = "clam"
+    shared_set_id = "whelk"
     expected = "customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}".format(customer_id=customer_id, campaign_id=campaign_id, shared_set_id=shared_set_id, )
     actual = BatchJobServiceClient.campaign_shared_set_path(customer_id, campaign_id, shared_set_id)
     assert expected == actual
@@ -1964,9 +2019,9 @@ def test_campaign_shared_set_path():
 
 def test_parse_campaign_shared_set_path():
     expected = {
-        "customer_id": "mussel",
-        "campaign_id": "winkle",
-        "shared_set_id": "nautilus",
+        "customer_id": "octopus",
+        "campaign_id": "oyster",
+        "shared_set_id": "nudibranch",
     }
     path = BatchJobServiceClient.campaign_shared_set_path(**expected)
 
@@ -1975,8 +2030,8 @@ def test_parse_campaign_shared_set_path():
     assert expected == actual
 
 def test_conversion_action_path():
-    customer_id = "scallop"
-    conversion_action_id = "abalone"
+    customer_id = "cuttlefish"
+    conversion_action_id = "mussel"
     expected = "customers/{customer_id}/conversionActions/{conversion_action_id}".format(customer_id=customer_id, conversion_action_id=conversion_action_id, )
     actual = BatchJobServiceClient.conversion_action_path(customer_id, conversion_action_id)
     assert expected == actual
@@ -1984,8 +2039,8 @@ def test_conversion_action_path():
 
 def test_parse_conversion_action_path():
     expected = {
-        "customer_id": "squid",
-        "conversion_action_id": "clam",
+        "customer_id": "winkle",
+        "conversion_action_id": "nautilus",
     }
     path = BatchJobServiceClient.conversion_action_path(**expected)
 
@@ -1994,8 +2049,8 @@ def test_parse_conversion_action_path():
     assert expected == actual
 
 def test_conversion_custom_variable_path():
-    customer_id = "whelk"
-    conversion_custom_variable_id = "octopus"
+    customer_id = "scallop"
+    conversion_custom_variable_id = "abalone"
     expected = "customers/{customer_id}/conversionCustomVariables/{conversion_custom_variable_id}".format(customer_id=customer_id, conversion_custom_variable_id=conversion_custom_variable_id, )
     actual = BatchJobServiceClient.conversion_custom_variable_path(customer_id, conversion_custom_variable_id)
     assert expected == actual
@@ -2003,8 +2058,8 @@ def test_conversion_custom_variable_path():
 
 def test_parse_conversion_custom_variable_path():
     expected = {
-        "customer_id": "oyster",
-        "conversion_custom_variable_id": "nudibranch",
+        "customer_id": "squid",
+        "conversion_custom_variable_id": "clam",
     }
     path = BatchJobServiceClient.conversion_custom_variable_path(**expected)
 
@@ -2012,8 +2067,46 @@ def test_parse_conversion_custom_variable_path():
     actual = BatchJobServiceClient.parse_conversion_custom_variable_path(path)
     assert expected == actual
 
-def test_customer_path():
+def test_conversion_value_rule_path():
+    customer_id = "whelk"
+    conversion_value_rule_id = "octopus"
+    expected = "customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}".format(customer_id=customer_id, conversion_value_rule_id=conversion_value_rule_id, )
+    actual = BatchJobServiceClient.conversion_value_rule_path(customer_id, conversion_value_rule_id)
+    assert expected == actual
+
+
+def test_parse_conversion_value_rule_path():
+    expected = {
+        "customer_id": "oyster",
+        "conversion_value_rule_id": "nudibranch",
+    }
+    path = BatchJobServiceClient.conversion_value_rule_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = BatchJobServiceClient.parse_conversion_value_rule_path(path)
+    assert expected == actual
+
+def test_conversion_value_rule_set_path():
     customer_id = "cuttlefish"
+    conversion_value_rule_set_id = "mussel"
+    expected = "customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}".format(customer_id=customer_id, conversion_value_rule_set_id=conversion_value_rule_set_id, )
+    actual = BatchJobServiceClient.conversion_value_rule_set_path(customer_id, conversion_value_rule_set_id)
+    assert expected == actual
+
+
+def test_parse_conversion_value_rule_set_path():
+    expected = {
+        "customer_id": "winkle",
+        "conversion_value_rule_set_id": "nautilus",
+    }
+    path = BatchJobServiceClient.conversion_value_rule_set_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = BatchJobServiceClient.parse_conversion_value_rule_set_path(path)
+    assert expected == actual
+
+def test_customer_path():
+    customer_id = "scallop"
     expected = "customers/{customer_id}".format(customer_id=customer_id, )
     actual = BatchJobServiceClient.customer_path(customer_id)
     assert expected == actual
@@ -2021,7 +2114,7 @@ def test_customer_path():
 
 def test_parse_customer_path():
     expected = {
-        "customer_id": "mussel",
+        "customer_id": "abalone",
     }
     path = BatchJobServiceClient.customer_path(**expected)
 
@@ -2030,9 +2123,9 @@ def test_parse_customer_path():
     assert expected == actual
 
 def test_customer_asset_path():
-    customer_id = "winkle"
-    asset_id = "nautilus"
-    field_type = "scallop"
+    customer_id = "squid"
+    asset_id = "clam"
+    field_type = "whelk"
     expected = "customers/{customer_id}/customerAssets/{asset_id}~{field_type}".format(customer_id=customer_id, asset_id=asset_id, field_type=field_type, )
     actual = BatchJobServiceClient.customer_asset_path(customer_id, asset_id, field_type)
     assert expected == actual
@@ -2040,9 +2133,9 @@ def test_customer_asset_path():
 
 def test_parse_customer_asset_path():
     expected = {
-        "customer_id": "abalone",
-        "asset_id": "squid",
-        "field_type": "clam",
+        "customer_id": "octopus",
+        "asset_id": "oyster",
+        "field_type": "nudibranch",
     }
     path = BatchJobServiceClient.customer_asset_path(**expected)
 
@@ -2051,8 +2144,8 @@ def test_parse_customer_asset_path():
     assert expected == actual
 
 def test_customer_extension_setting_path():
-    customer_id = "whelk"
-    extension_type = "octopus"
+    customer_id = "cuttlefish"
+    extension_type = "mussel"
     expected = "customers/{customer_id}/customerExtensionSettings/{extension_type}".format(customer_id=customer_id, extension_type=extension_type, )
     actual = BatchJobServiceClient.customer_extension_setting_path(customer_id, extension_type)
     assert expected == actual
@@ -2060,8 +2153,8 @@ def test_customer_extension_setting_path():
 
 def test_parse_customer_extension_setting_path():
     expected = {
-        "customer_id": "oyster",
-        "extension_type": "nudibranch",
+        "customer_id": "winkle",
+        "extension_type": "nautilus",
     }
     path = BatchJobServiceClient.customer_extension_setting_path(**expected)
 
@@ -2070,8 +2163,8 @@ def test_parse_customer_extension_setting_path():
     assert expected == actual
 
 def test_customer_feed_path():
-    customer_id = "cuttlefish"
-    feed_id = "mussel"
+    customer_id = "scallop"
+    feed_id = "abalone"
     expected = "customers/{customer_id}/customerFeeds/{feed_id}".format(customer_id=customer_id, feed_id=feed_id, )
     actual = BatchJobServiceClient.customer_feed_path(customer_id, feed_id)
     assert expected == actual
@@ -2079,8 +2172,8 @@ def test_customer_feed_path():
 
 def test_parse_customer_feed_path():
     expected = {
-        "customer_id": "winkle",
-        "feed_id": "nautilus",
+        "customer_id": "squid",
+        "feed_id": "clam",
     }
     path = BatchJobServiceClient.customer_feed_path(**expected)
 
@@ -2089,8 +2182,8 @@ def test_parse_customer_feed_path():
     assert expected == actual
 
 def test_customer_label_path():
-    customer_id = "scallop"
-    label_id = "abalone"
+    customer_id = "whelk"
+    label_id = "octopus"
     expected = "customers/{customer_id}/customerLabels/{label_id}".format(customer_id=customer_id, label_id=label_id, )
     actual = BatchJobServiceClient.customer_label_path(customer_id, label_id)
     assert expected == actual
@@ -2098,8 +2191,8 @@ def test_customer_label_path():
 
 def test_parse_customer_label_path():
     expected = {
-        "customer_id": "squid",
-        "label_id": "clam",
+        "customer_id": "oyster",
+        "label_id": "nudibranch",
     }
     path = BatchJobServiceClient.customer_label_path(**expected)
 
@@ -2108,8 +2201,8 @@ def test_parse_customer_label_path():
     assert expected == actual
 
 def test_customer_negative_criterion_path():
-    customer_id = "whelk"
-    criterion_id = "octopus"
+    customer_id = "cuttlefish"
+    criterion_id = "mussel"
     expected = "customers/{customer_id}/customerNegativeCriteria/{criterion_id}".format(customer_id=customer_id, criterion_id=criterion_id, )
     actual = BatchJobServiceClient.customer_negative_criterion_path(customer_id, criterion_id)
     assert expected == actual
@@ -2117,8 +2210,8 @@ def test_customer_negative_criterion_path():
 
 def test_parse_customer_negative_criterion_path():
     expected = {
-        "customer_id": "oyster",
-        "criterion_id": "nudibranch",
+        "customer_id": "winkle",
+        "criterion_id": "nautilus",
     }
     path = BatchJobServiceClient.customer_negative_criterion_path(**expected)
 
@@ -2127,8 +2220,8 @@ def test_parse_customer_negative_criterion_path():
     assert expected == actual
 
 def test_extension_feed_item_path():
-    customer_id = "cuttlefish"
-    feed_item_id = "mussel"
+    customer_id = "scallop"
+    feed_item_id = "abalone"
     expected = "customers/{customer_id}/extensionFeedItems/{feed_item_id}".format(customer_id=customer_id, feed_item_id=feed_item_id, )
     actual = BatchJobServiceClient.extension_feed_item_path(customer_id, feed_item_id)
     assert expected == actual
@@ -2136,8 +2229,8 @@ def test_extension_feed_item_path():
 
 def test_parse_extension_feed_item_path():
     expected = {
-        "customer_id": "winkle",
-        "feed_item_id": "nautilus",
+        "customer_id": "squid",
+        "feed_item_id": "clam",
     }
     path = BatchJobServiceClient.extension_feed_item_path(**expected)
 
@@ -2146,8 +2239,8 @@ def test_parse_extension_feed_item_path():
     assert expected == actual
 
 def test_feed_path():
-    customer_id = "scallop"
-    feed_id = "abalone"
+    customer_id = "whelk"
+    feed_id = "octopus"
     expected = "customers/{customer_id}/feeds/{feed_id}".format(customer_id=customer_id, feed_id=feed_id, )
     actual = BatchJobServiceClient.feed_path(customer_id, feed_id)
     assert expected == actual
@@ -2155,8 +2248,8 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-        "customer_id": "squid",
-        "feed_id": "clam",
+        "customer_id": "oyster",
+        "feed_id": "nudibranch",
     }
     path = BatchJobServiceClient.feed_path(**expected)
 
@@ -2165,9 +2258,9 @@ def test_parse_feed_path():
     assert expected == actual
 
 def test_feed_item_path():
-    customer_id = "whelk"
-    feed_id = "octopus"
-    feed_item_id = "oyster"
+    customer_id = "cuttlefish"
+    feed_id = "mussel"
+    feed_item_id = "winkle"
     expected = "customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_id=feed_item_id, )
     actual = BatchJobServiceClient.feed_item_path(customer_id, feed_id, feed_item_id)
     assert expected == actual
@@ -2175,9 +2268,9 @@ def test_feed_item_path():
 
 def test_parse_feed_item_path():
     expected = {
-        "customer_id": "nudibranch",
-        "feed_id": "cuttlefish",
-        "feed_item_id": "mussel",
+        "customer_id": "nautilus",
+        "feed_id": "scallop",
+        "feed_item_id": "abalone",
     }
     path = BatchJobServiceClient.feed_item_path(**expected)
 
@@ -2186,9 +2279,9 @@ def test_parse_feed_item_path():
     assert expected == actual
 
 def test_feed_item_set_path():
-    customer_id = "winkle"
-    feed_id = "nautilus"
-    feed_item_set_id = "scallop"
+    customer_id = "squid"
+    feed_id = "clam"
+    feed_item_set_id = "whelk"
     expected = "customers/{customer_id}/feedItemSets/{feed_id}~{feed_item_set_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_set_id=feed_item_set_id, )
     actual = BatchJobServiceClient.feed_item_set_path(customer_id, feed_id, feed_item_set_id)
     assert expected == actual
@@ -2196,9 +2289,9 @@ def test_feed_item_set_path():
 
 def test_parse_feed_item_set_path():
     expected = {
-        "customer_id": "abalone",
-        "feed_id": "squid",
-        "feed_item_set_id": "clam",
+        "customer_id": "octopus",
+        "feed_id": "oyster",
+        "feed_item_set_id": "nudibranch",
     }
     path = BatchJobServiceClient.feed_item_set_path(**expected)
 
@@ -2207,10 +2300,10 @@ def test_parse_feed_item_set_path():
     assert expected == actual
 
 def test_feed_item_set_link_path():
-    customer_id = "whelk"
-    feed_id = "octopus"
-    feed_item_set_id = "oyster"
-    feed_item_id = "nudibranch"
+    customer_id = "cuttlefish"
+    feed_id = "mussel"
+    feed_item_set_id = "winkle"
+    feed_item_id = "nautilus"
     expected = "customers/{customer_id}/feedItemSetLinks/{feed_id}~{feed_item_set_id}~{feed_item_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_set_id=feed_item_set_id, feed_item_id=feed_item_id, )
     actual = BatchJobServiceClient.feed_item_set_link_path(customer_id, feed_id, feed_item_set_id, feed_item_id)
     assert expected == actual
@@ -2218,10 +2311,10 @@ def test_feed_item_set_link_path():
 
 def test_parse_feed_item_set_link_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "feed_id": "mussel",
-        "feed_item_set_id": "winkle",
-        "feed_item_id": "nautilus",
+        "customer_id": "scallop",
+        "feed_id": "abalone",
+        "feed_item_set_id": "squid",
+        "feed_item_id": "clam",
     }
     path = BatchJobServiceClient.feed_item_set_link_path(**expected)
 
@@ -2230,11 +2323,11 @@ def test_parse_feed_item_set_link_path():
     assert expected == actual
 
 def test_feed_item_target_path():
-    customer_id = "scallop"
-    feed_id = "abalone"
-    feed_item_id = "squid"
-    feed_item_target_type = "clam"
-    feed_item_target_id = "whelk"
+    customer_id = "whelk"
+    feed_id = "octopus"
+    feed_item_id = "oyster"
+    feed_item_target_type = "nudibranch"
+    feed_item_target_id = "cuttlefish"
     expected = "customers/{customer_id}/feedItemTargets/{feed_id}~{feed_item_id}~{feed_item_target_type}~{feed_item_target_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_id=feed_item_id, feed_item_target_type=feed_item_target_type, feed_item_target_id=feed_item_target_id, )
     actual = BatchJobServiceClient.feed_item_target_path(customer_id, feed_id, feed_item_id, feed_item_target_type, feed_item_target_id)
     assert expected == actual
@@ -2242,11 +2335,11 @@ def test_feed_item_target_path():
 
 def test_parse_feed_item_target_path():
     expected = {
-        "customer_id": "octopus",
-        "feed_id": "oyster",
-        "feed_item_id": "nudibranch",
-        "feed_item_target_type": "cuttlefish",
-        "feed_item_target_id": "mussel",
+        "customer_id": "mussel",
+        "feed_id": "winkle",
+        "feed_item_id": "nautilus",
+        "feed_item_target_type": "scallop",
+        "feed_item_target_id": "abalone",
     }
     path = BatchJobServiceClient.feed_item_target_path(**expected)
 
@@ -2255,9 +2348,9 @@ def test_parse_feed_item_target_path():
     assert expected == actual
 
 def test_feed_mapping_path():
-    customer_id = "winkle"
-    feed_id = "nautilus"
-    feed_mapping_id = "scallop"
+    customer_id = "squid"
+    feed_id = "clam"
+    feed_mapping_id = "whelk"
     expected = "customers/{customer_id}/feedMappings/{feed_id}~{feed_mapping_id}".format(customer_id=customer_id, feed_id=feed_id, feed_mapping_id=feed_mapping_id, )
     actual = BatchJobServiceClient.feed_mapping_path(customer_id, feed_id, feed_mapping_id)
     assert expected == actual
@@ -2265,9 +2358,9 @@ def test_feed_mapping_path():
 
 def test_parse_feed_mapping_path():
     expected = {
-        "customer_id": "abalone",
-        "feed_id": "squid",
-        "feed_mapping_id": "clam",
+        "customer_id": "octopus",
+        "feed_id": "oyster",
+        "feed_mapping_id": "nudibranch",
     }
     path = BatchJobServiceClient.feed_mapping_path(**expected)
 
@@ -2276,7 +2369,7 @@ def test_parse_feed_mapping_path():
     assert expected == actual
 
 def test_geo_target_constant_path():
-    criterion_id = "whelk"
+    criterion_id = "cuttlefish"
     expected = "geoTargetConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = BatchJobServiceClient.geo_target_constant_path(criterion_id)
     assert expected == actual
@@ -2284,7 +2377,7 @@ def test_geo_target_constant_path():
 
 def test_parse_geo_target_constant_path():
     expected = {
-        "criterion_id": "octopus",
+        "criterion_id": "mussel",
     }
     path = BatchJobServiceClient.geo_target_constant_path(**expected)
 
@@ -2293,8 +2386,8 @@ def test_parse_geo_target_constant_path():
     assert expected == actual
 
 def test_keyword_plan_path():
-    customer_id = "oyster"
-    keyword_plan_id = "nudibranch"
+    customer_id = "winkle"
+    keyword_plan_id = "nautilus"
     expected = "customers/{customer_id}/keywordPlans/{keyword_plan_id}".format(customer_id=customer_id, keyword_plan_id=keyword_plan_id, )
     actual = BatchJobServiceClient.keyword_plan_path(customer_id, keyword_plan_id)
     assert expected == actual
@@ -2302,8 +2395,8 @@ def test_keyword_plan_path():
 
 def test_parse_keyword_plan_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "keyword_plan_id": "mussel",
+        "customer_id": "scallop",
+        "keyword_plan_id": "abalone",
     }
     path = BatchJobServiceClient.keyword_plan_path(**expected)
 
@@ -2312,8 +2405,8 @@ def test_parse_keyword_plan_path():
     assert expected == actual
 
 def test_keyword_plan_ad_group_path():
-    customer_id = "winkle"
-    keyword_plan_ad_group_id = "nautilus"
+    customer_id = "squid"
+    keyword_plan_ad_group_id = "clam"
     expected = "customers/{customer_id}/keywordPlanAdGroups/{keyword_plan_ad_group_id}".format(customer_id=customer_id, keyword_plan_ad_group_id=keyword_plan_ad_group_id, )
     actual = BatchJobServiceClient.keyword_plan_ad_group_path(customer_id, keyword_plan_ad_group_id)
     assert expected == actual
@@ -2321,8 +2414,8 @@ def test_keyword_plan_ad_group_path():
 
 def test_parse_keyword_plan_ad_group_path():
     expected = {
-        "customer_id": "scallop",
-        "keyword_plan_ad_group_id": "abalone",
+        "customer_id": "whelk",
+        "keyword_plan_ad_group_id": "octopus",
     }
     path = BatchJobServiceClient.keyword_plan_ad_group_path(**expected)
 
@@ -2331,8 +2424,8 @@ def test_parse_keyword_plan_ad_group_path():
     assert expected == actual
 
 def test_keyword_plan_ad_group_keyword_path():
-    customer_id = "squid"
-    keyword_plan_ad_group_keyword_id = "clam"
+    customer_id = "oyster"
+    keyword_plan_ad_group_keyword_id = "nudibranch"
     expected = "customers/{customer_id}/keywordPlanAdGroupKeywords/{keyword_plan_ad_group_keyword_id}".format(customer_id=customer_id, keyword_plan_ad_group_keyword_id=keyword_plan_ad_group_keyword_id, )
     actual = BatchJobServiceClient.keyword_plan_ad_group_keyword_path(customer_id, keyword_plan_ad_group_keyword_id)
     assert expected == actual
@@ -2340,8 +2433,8 @@ def test_keyword_plan_ad_group_keyword_path():
 
 def test_parse_keyword_plan_ad_group_keyword_path():
     expected = {
-        "customer_id": "whelk",
-        "keyword_plan_ad_group_keyword_id": "octopus",
+        "customer_id": "cuttlefish",
+        "keyword_plan_ad_group_keyword_id": "mussel",
     }
     path = BatchJobServiceClient.keyword_plan_ad_group_keyword_path(**expected)
 
@@ -2350,8 +2443,8 @@ def test_parse_keyword_plan_ad_group_keyword_path():
     assert expected == actual
 
 def test_keyword_plan_campaign_path():
-    customer_id = "oyster"
-    keyword_plan_campaign_id = "nudibranch"
+    customer_id = "winkle"
+    keyword_plan_campaign_id = "nautilus"
     expected = "customers/{customer_id}/keywordPlanCampaigns/{keyword_plan_campaign_id}".format(customer_id=customer_id, keyword_plan_campaign_id=keyword_plan_campaign_id, )
     actual = BatchJobServiceClient.keyword_plan_campaign_path(customer_id, keyword_plan_campaign_id)
     assert expected == actual
@@ -2359,8 +2452,8 @@ def test_keyword_plan_campaign_path():
 
 def test_parse_keyword_plan_campaign_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "keyword_plan_campaign_id": "mussel",
+        "customer_id": "scallop",
+        "keyword_plan_campaign_id": "abalone",
     }
     path = BatchJobServiceClient.keyword_plan_campaign_path(**expected)
 
@@ -2369,8 +2462,8 @@ def test_parse_keyword_plan_campaign_path():
     assert expected == actual
 
 def test_keyword_plan_campaign_keyword_path():
-    customer_id = "winkle"
-    keyword_plan_campaign_keyword_id = "nautilus"
+    customer_id = "squid"
+    keyword_plan_campaign_keyword_id = "clam"
     expected = "customers/{customer_id}/keywordPlanCampaignKeywords/{keyword_plan_campaign_keyword_id}".format(customer_id=customer_id, keyword_plan_campaign_keyword_id=keyword_plan_campaign_keyword_id, )
     actual = BatchJobServiceClient.keyword_plan_campaign_keyword_path(customer_id, keyword_plan_campaign_keyword_id)
     assert expected == actual
@@ -2378,8 +2471,8 @@ def test_keyword_plan_campaign_keyword_path():
 
 def test_parse_keyword_plan_campaign_keyword_path():
     expected = {
-        "customer_id": "scallop",
-        "keyword_plan_campaign_keyword_id": "abalone",
+        "customer_id": "whelk",
+        "keyword_plan_campaign_keyword_id": "octopus",
     }
     path = BatchJobServiceClient.keyword_plan_campaign_keyword_path(**expected)
 
@@ -2388,8 +2481,8 @@ def test_parse_keyword_plan_campaign_keyword_path():
     assert expected == actual
 
 def test_label_path():
-    customer_id = "squid"
-    label_id = "clam"
+    customer_id = "oyster"
+    label_id = "nudibranch"
     expected = "customers/{customer_id}/labels/{label_id}".format(customer_id=customer_id, label_id=label_id, )
     actual = BatchJobServiceClient.label_path(customer_id, label_id)
     assert expected == actual
@@ -2397,8 +2490,8 @@ def test_label_path():
 
 def test_parse_label_path():
     expected = {
-        "customer_id": "whelk",
-        "label_id": "octopus",
+        "customer_id": "cuttlefish",
+        "label_id": "mussel",
     }
     path = BatchJobServiceClient.label_path(**expected)
 
@@ -2407,7 +2500,7 @@ def test_parse_label_path():
     assert expected == actual
 
 def test_language_constant_path():
-    criterion_id = "oyster"
+    criterion_id = "winkle"
     expected = "languageConstants/{criterion_id}".format(criterion_id=criterion_id, )
     actual = BatchJobServiceClient.language_constant_path(criterion_id)
     assert expected == actual
@@ -2415,7 +2508,7 @@ def test_language_constant_path():
 
 def test_parse_language_constant_path():
     expected = {
-        "criterion_id": "nudibranch",
+        "criterion_id": "nautilus",
     }
     path = BatchJobServiceClient.language_constant_path(**expected)
 
@@ -2424,8 +2517,8 @@ def test_parse_language_constant_path():
     assert expected == actual
 
 def test_media_file_path():
-    customer_id = "cuttlefish"
-    media_file_id = "mussel"
+    customer_id = "scallop"
+    media_file_id = "abalone"
     expected = "customers/{customer_id}/mediaFiles/{media_file_id}".format(customer_id=customer_id, media_file_id=media_file_id, )
     actual = BatchJobServiceClient.media_file_path(customer_id, media_file_id)
     assert expected == actual
@@ -2433,8 +2526,8 @@ def test_media_file_path():
 
 def test_parse_media_file_path():
     expected = {
-        "customer_id": "winkle",
-        "media_file_id": "nautilus",
+        "customer_id": "squid",
+        "media_file_id": "clam",
     }
     path = BatchJobServiceClient.media_file_path(**expected)
 
@@ -2443,8 +2536,8 @@ def test_parse_media_file_path():
     assert expected == actual
 
 def test_remarketing_action_path():
-    customer_id = "scallop"
-    remarketing_action_id = "abalone"
+    customer_id = "whelk"
+    remarketing_action_id = "octopus"
     expected = "customers/{customer_id}/remarketingActions/{remarketing_action_id}".format(customer_id=customer_id, remarketing_action_id=remarketing_action_id, )
     actual = BatchJobServiceClient.remarketing_action_path(customer_id, remarketing_action_id)
     assert expected == actual
@@ -2452,8 +2545,8 @@ def test_remarketing_action_path():
 
 def test_parse_remarketing_action_path():
     expected = {
-        "customer_id": "squid",
-        "remarketing_action_id": "clam",
+        "customer_id": "oyster",
+        "remarketing_action_id": "nudibranch",
     }
     path = BatchJobServiceClient.remarketing_action_path(**expected)
 
@@ -2462,9 +2555,9 @@ def test_parse_remarketing_action_path():
     assert expected == actual
 
 def test_shared_criterion_path():
-    customer_id = "whelk"
-    shared_set_id = "octopus"
-    criterion_id = "oyster"
+    customer_id = "cuttlefish"
+    shared_set_id = "mussel"
+    criterion_id = "winkle"
     expected = "customers/{customer_id}/sharedCriteria/{shared_set_id}~{criterion_id}".format(customer_id=customer_id, shared_set_id=shared_set_id, criterion_id=criterion_id, )
     actual = BatchJobServiceClient.shared_criterion_path(customer_id, shared_set_id, criterion_id)
     assert expected == actual
@@ -2472,9 +2565,9 @@ def test_shared_criterion_path():
 
 def test_parse_shared_criterion_path():
     expected = {
-        "customer_id": "nudibranch",
-        "shared_set_id": "cuttlefish",
-        "criterion_id": "mussel",
+        "customer_id": "nautilus",
+        "shared_set_id": "scallop",
+        "criterion_id": "abalone",
     }
     path = BatchJobServiceClient.shared_criterion_path(**expected)
 
@@ -2483,8 +2576,8 @@ def test_parse_shared_criterion_path():
     assert expected == actual
 
 def test_shared_set_path():
-    customer_id = "winkle"
-    shared_set_id = "nautilus"
+    customer_id = "squid"
+    shared_set_id = "clam"
     expected = "customers/{customer_id}/sharedSets/{shared_set_id}".format(customer_id=customer_id, shared_set_id=shared_set_id, )
     actual = BatchJobServiceClient.shared_set_path(customer_id, shared_set_id)
     assert expected == actual
@@ -2492,8 +2585,8 @@ def test_shared_set_path():
 
 def test_parse_shared_set_path():
     expected = {
-        "customer_id": "scallop",
-        "shared_set_id": "abalone",
+        "customer_id": "whelk",
+        "shared_set_id": "octopus",
     }
     path = BatchJobServiceClient.shared_set_path(**expected)
 
@@ -2502,8 +2595,8 @@ def test_parse_shared_set_path():
     assert expected == actual
 
 def test_smart_campaign_setting_path():
-    customer_id = "squid"
-    campaign_id = "clam"
+    customer_id = "oyster"
+    campaign_id = "nudibranch"
     expected = "customers/{customer_id}/smartCampaignSettings/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
     actual = BatchJobServiceClient.smart_campaign_setting_path(customer_id, campaign_id)
     assert expected == actual
@@ -2511,8 +2604,8 @@ def test_smart_campaign_setting_path():
 
 def test_parse_smart_campaign_setting_path():
     expected = {
-        "customer_id": "whelk",
-        "campaign_id": "octopus",
+        "customer_id": "cuttlefish",
+        "campaign_id": "mussel",
     }
     path = BatchJobServiceClient.smart_campaign_setting_path(**expected)
 
@@ -2520,9 +2613,28 @@ def test_parse_smart_campaign_setting_path():
     actual = BatchJobServiceClient.parse_smart_campaign_setting_path(path)
     assert expected == actual
 
+def test_user_interest_path():
+    customer_id = "winkle"
+    user_interest_id = "nautilus"
+    expected = "customers/{customer_id}/userInterests/{user_interest_id}".format(customer_id=customer_id, user_interest_id=user_interest_id, )
+    actual = BatchJobServiceClient.user_interest_path(customer_id, user_interest_id)
+    assert expected == actual
+
+
+def test_parse_user_interest_path():
+    expected = {
+        "customer_id": "scallop",
+        "user_interest_id": "abalone",
+    }
+    path = BatchJobServiceClient.user_interest_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = BatchJobServiceClient.parse_user_interest_path(path)
+    assert expected == actual
+
 def test_user_list_path():
-    customer_id = "oyster"
-    user_list_id = "nudibranch"
+    customer_id = "squid"
+    user_list_id = "clam"
     expected = "customers/{customer_id}/userLists/{user_list_id}".format(customer_id=customer_id, user_list_id=user_list_id, )
     actual = BatchJobServiceClient.user_list_path(customer_id, user_list_id)
     assert expected == actual
@@ -2530,8 +2642,8 @@ def test_user_list_path():
 
 def test_parse_user_list_path():
     expected = {
-        "customer_id": "cuttlefish",
-        "user_list_id": "mussel",
+        "customer_id": "whelk",
+        "user_list_id": "octopus",
     }
     path = BatchJobServiceClient.user_list_path(**expected)
 
@@ -2540,7 +2652,7 @@ def test_parse_user_list_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "winkle"
+    billing_account = "oyster"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BatchJobServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2548,7 +2660,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "nautilus",
+        "billing_account": "nudibranch",
     }
     path = BatchJobServiceClient.common_billing_account_path(**expected)
 
@@ -2557,7 +2669,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "scallop"
+    folder = "cuttlefish"
     expected = "folders/{folder}".format(folder=folder, )
     actual = BatchJobServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2565,7 +2677,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "abalone",
+        "folder": "mussel",
     }
     path = BatchJobServiceClient.common_folder_path(**expected)
 
@@ -2574,7 +2686,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "squid"
+    organization = "winkle"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BatchJobServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2582,7 +2694,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "clam",
+        "organization": "nautilus",
     }
     path = BatchJobServiceClient.common_organization_path(**expected)
 
@@ -2591,7 +2703,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "whelk"
+    project = "scallop"
     expected = "projects/{project}".format(project=project, )
     actual = BatchJobServiceClient.common_project_path(project)
     assert expected == actual
@@ -2599,7 +2711,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "octopus",
+        "project": "abalone",
     }
     path = BatchJobServiceClient.common_project_path(**expected)
 
@@ -2608,8 +2720,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "oyster"
-    location = "nudibranch"
+    project = "squid"
+    location = "clam"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BatchJobServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2617,8 +2729,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "cuttlefish",
-        "location": "mussel",
+        "project": "whelk",
+        "location": "octopus",
     }
     path = BatchJobServiceClient.common_location_path(**expected)
 

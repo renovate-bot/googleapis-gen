@@ -54,6 +54,8 @@ from google.ads.googleads.v8.errors.types import conversion_action_error as gage
 from google.ads.googleads.v8.errors.types import conversion_adjustment_upload_error as gage_conversion_adjustment_upload_error
 from google.ads.googleads.v8.errors.types import conversion_custom_variable_error as gage_conversion_custom_variable_error
 from google.ads.googleads.v8.errors.types import conversion_upload_error as gage_conversion_upload_error
+from google.ads.googleads.v8.errors.types import conversion_value_rule_error as gage_conversion_value_rule_error
+from google.ads.googleads.v8.errors.types import conversion_value_rule_set_error as gage_conversion_value_rule_set_error
 from google.ads.googleads.v8.errors.types import country_code_error as gage_country_code_error
 from google.ads.googleads.v8.errors.types import criterion_error as gage_criterion_error
 from google.ads.googleads.v8.errors.types import currency_code_error as gage_currency_code_error
@@ -369,6 +371,12 @@ class ErrorCode(proto.Message):
             variable error
         conversion_upload_error (google.ads.googleads.v8.errors.types.ConversionUploadErrorEnum.ConversionUploadError):
             The reasons for the conversion upload error
+        conversion_value_rule_error (google.ads.googleads.v8.errors.types.ConversionValueRuleErrorEnum.ConversionValueRuleError):
+            The reasons for the conversion value rule
+            error
+        conversion_value_rule_set_error (google.ads.googleads.v8.errors.types.ConversionValueRuleSetErrorEnum.ConversionValueRuleSetError):
+            The reasons for the conversion value rule set
+            error
         header_error (google.ads.googleads.v8.errors.types.HeaderErrorEnum.HeaderError):
             The reasons for the header error.
         database_error (google.ads.googleads.v8.errors.types.DatabaseErrorEnum.DatabaseError):
@@ -877,6 +885,18 @@ class ErrorCode(proto.Message):
         number=111,
         oneof='error_code',
         enum=gage_conversion_upload_error.ConversionUploadErrorEnum.ConversionUploadError,
+    )
+    conversion_value_rule_error = proto.Field(
+        proto.ENUM,
+        number=145,
+        oneof='error_code',
+        enum=gage_conversion_value_rule_error.ConversionValueRuleErrorEnum.ConversionValueRuleError,
+    )
+    conversion_value_rule_set_error = proto.Field(
+        proto.ENUM,
+        number=146,
+        oneof='error_code',
+        enum=gage_conversion_value_rule_set_error.ConversionValueRuleSetErrorEnum.ConversionValueRuleSetError,
     )
     header_error = proto.Field(
         proto.ENUM,

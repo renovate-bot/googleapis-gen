@@ -21,6 +21,8 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
+from google.ads.googleads.v8.common.types import offline_user_data
+from google.ads.googleads.v8.enums.types import user_identifier_source
 from google.ads.googleads.v8.services.services.conversion_upload_service import ConversionUploadServiceClient
 from google.ads.googleads.v8.services.services.conversion_upload_service import transports
 from google.ads.googleads.v8.services.types import conversion_upload_service

@@ -147,7 +147,7 @@ module Google
             #   @return [::Float]
             #     Average ROAS (revenue per unit of spend) to use for Target ROAS bidding
             #     strategy. The value is between 0.01 and 1000.0, inclusive. This is a
-            #     required field.
+            #     required field, unless new_campaign_budget_amount_micros is set.
             # @!attribute [rw] new_campaign_budget_amount_micros
             #   @return [::Integer]
             #     Optional, budget amount to set for the campaign.

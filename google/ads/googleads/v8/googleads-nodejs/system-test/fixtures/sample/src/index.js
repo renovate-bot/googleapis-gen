@@ -46,6 +46,8 @@ function main() {
   const assetFieldTypeViewServiceClient = new googleads.AssetFieldTypeViewServiceClient();
   const assetServiceClient = new googleads.AssetServiceClient();
   const batchJobServiceClient = new googleads.BatchJobServiceClient();
+  const biddingDataExclusionServiceClient = new googleads.BiddingDataExclusionServiceClient();
+  const biddingSeasonalityAdjustmentServiceClient = new googleads.BiddingSeasonalityAdjustmentServiceClient();
   const biddingStrategyServiceClient = new googleads.BiddingStrategyServiceClient();
   const biddingStrategySimulationServiceClient = new googleads.BiddingStrategySimulationServiceClient();
   const billingSetupServiceClient = new googleads.BillingSetupServiceClient();
@@ -71,6 +73,8 @@ function main() {
   const conversionAdjustmentUploadServiceClient = new googleads.ConversionAdjustmentUploadServiceClient();
   const conversionCustomVariableServiceClient = new googleads.ConversionCustomVariableServiceClient();
   const conversionUploadServiceClient = new googleads.ConversionUploadServiceClient();
+  const conversionValueRuleServiceClient = new googleads.ConversionValueRuleServiceClient();
+  const conversionValueRuleSetServiceClient = new googleads.ConversionValueRuleSetServiceClient();
   const currencyConstantServiceClient = new googleads.CurrencyConstantServiceClient();
   const customAudienceServiceClient = new googleads.CustomAudienceServiceClient();
   const customerAssetServiceClient = new googleads.CustomerAssetServiceClient();

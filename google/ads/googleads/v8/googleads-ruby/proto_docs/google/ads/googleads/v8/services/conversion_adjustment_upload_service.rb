@@ -93,6 +93,18 @@ module Google
           #     value, it must have a new, more recent, adjustment occurrence time.
           #     Otherwise, it will be treated as a duplicate of the previous restatement
           #     and ignored.
+          # @!attribute [rw] user_identifiers
+          #   @return [::Array<::Google::Ads::GoogleAds::V8::Common::UserIdentifier>]
+          #     The user identifiers to enhance the original conversion.
+          #     ConversionAdjustmentUploadService only accepts user identifiers in
+          #     enhancements. The maximum number of user identifiers for each
+          #     enhancement is 5.
+          # @!attribute [rw] user_agent
+          #   @return [::String]
+          #     The user agent to enhance the original conversion. This can be found in
+          #     your user's HTTP request header when they convert on your web page.
+          #     Example, "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X)". User
+          #     agent can only be specified in enhancements with user identifiers.
           # @!attribute [rw] gclid_date_time_pair
           #   @return [::Google::Ads::GoogleAds::V8::Services::GclidDateTimePair]
           #     Uniquely identifies a conversion that was reported without an order ID
@@ -101,7 +113,7 @@ module Google
           #   @return [::String]
           #     The order ID of the conversion to be adjusted. If the conversion was
           #     reported with an order ID specified, that order ID must be used as the
-          #     identifier here.
+          #     identifier here. The order ID is required for enhancements.
           class ConversionAdjustment
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

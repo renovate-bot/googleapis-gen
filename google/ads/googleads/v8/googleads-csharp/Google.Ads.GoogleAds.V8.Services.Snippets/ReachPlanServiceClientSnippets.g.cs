@@ -203,6 +203,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Snippets
                 CurrencyCode = "",
                 CookieFrequencyCap = 0,
                 MinEffectiveFrequency = 0,
+                EffectiveFrequencyLimit = new EffectiveFrequencyLimit(),
             };
             // Make the request
             GenerateReachForecastResponse response = reachPlanServiceClient.GenerateReachForecast(request);
@@ -230,6 +231,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Snippets
                 CurrencyCode = "",
                 CookieFrequencyCap = 0,
                 MinEffectiveFrequency = 0,
+                EffectiveFrequencyLimit = new EffectiveFrequencyLimit(),
             };
             // Make the request
             GenerateReachForecastResponse response = await reachPlanServiceClient.GenerateReachForecastAsync(request);

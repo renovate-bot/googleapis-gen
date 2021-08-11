@@ -56,5 +56,40 @@ namespace Google.Ads.GoogleAds.V8.Services.Snippets
             SuggestSmartCampaignBudgetOptionsResponse response = await smartCampaignSuggestServiceClient.SuggestSmartCampaignBudgetOptionsAsync(request);
             // End snippet
         }
+
+        /// <summary>Snippet for SuggestSmartCampaignAd</summary>
+        public void SuggestSmartCampaignAdRequestObject()
+        {
+            // Snippet: SuggestSmartCampaignAd(SuggestSmartCampaignAdRequest, CallSettings)
+            // Create client
+            SmartCampaignSuggestServiceClient smartCampaignSuggestServiceClient = SmartCampaignSuggestServiceClient.Create();
+            // Initialize request argument(s)
+            SuggestSmartCampaignAdRequest request = new SuggestSmartCampaignAdRequest
+            {
+                CustomerId = "",
+                SuggestionInfo = new SmartCampaignSuggestionInfo(),
+            };
+            // Make the request
+            SuggestSmartCampaignAdResponse response = smartCampaignSuggestServiceClient.SuggestSmartCampaignAd(request);
+            // End snippet
+        }
+
+        /// <summary>Snippet for SuggestSmartCampaignAdAsync</summary>
+        public async Task SuggestSmartCampaignAdRequestObjectAsync()
+        {
+            // Snippet: SuggestSmartCampaignAdAsync(SuggestSmartCampaignAdRequest, CallSettings)
+            // Additional: SuggestSmartCampaignAdAsync(SuggestSmartCampaignAdRequest, CancellationToken)
+            // Create client
+            SmartCampaignSuggestServiceClient smartCampaignSuggestServiceClient = await SmartCampaignSuggestServiceClient.CreateAsync();
+            // Initialize request argument(s)
+            SuggestSmartCampaignAdRequest request = new SuggestSmartCampaignAdRequest
+            {
+                CustomerId = "",
+                SuggestionInfo = new SmartCampaignSuggestionInfo(),
+            };
+            // Make the request
+            SuggestSmartCampaignAdResponse response = await smartCampaignSuggestServiceClient.SuggestSmartCampaignAdAsync(request);
+            // End snippet
+        }
     }
 }

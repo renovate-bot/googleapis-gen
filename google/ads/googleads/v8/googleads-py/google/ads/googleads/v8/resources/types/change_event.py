@@ -21,13 +21,17 @@ from google.ads.googleads.v8.enums.types import resource_change_operation as gag
 from google.ads.googleads.v8.resources.types import ad as gagr_ad
 from google.ads.googleads.v8.resources.types import ad_group as gagr_ad_group
 from google.ads.googleads.v8.resources.types import ad_group_ad as gagr_ad_group_ad
+from google.ads.googleads.v8.resources.types import ad_group_asset as gagr_ad_group_asset
 from google.ads.googleads.v8.resources.types import ad_group_bid_modifier as gagr_ad_group_bid_modifier
 from google.ads.googleads.v8.resources.types import ad_group_criterion as gagr_ad_group_criterion
 from google.ads.googleads.v8.resources.types import ad_group_feed as gagr_ad_group_feed
+from google.ads.googleads.v8.resources.types import asset as gagr_asset
 from google.ads.googleads.v8.resources.types import campaign as gagr_campaign
+from google.ads.googleads.v8.resources.types import campaign_asset as gagr_campaign_asset
 from google.ads.googleads.v8.resources.types import campaign_budget as gagr_campaign_budget
 from google.ads.googleads.v8.resources.types import campaign_criterion as gagr_campaign_criterion
 from google.ads.googleads.v8.resources.types import campaign_feed as gagr_campaign_feed
+from google.ads.googleads.v8.resources.types import customer_asset as gagr_customer_asset
 from google.ads.googleads.v8.resources.types import feed as gagr_feed
 from google.ads.googleads.v8.resources.types import feed_item as gagr_feed_item
 from google.protobuf import field_mask_pb2  # type: ignore
@@ -97,6 +101,9 @@ class ChangeEvent(proto.Message):
         feed_item (str):
             Output only. The FeedItem affected by this
             change.
+        asset (str):
+            Output only. The Asset affected by this
+            change.
     """
 
     class ChangedResource(proto.Message):
@@ -131,6 +138,14 @@ class ChangeEvent(proto.Message):
                 Output only. Set if change_resource_type == AD_GROUP_FEED.
             ad_group_ad (google.ads.googleads.v8.resources.types.AdGroupAd):
                 Output only. Set if change_resource_type == AD_GROUP_AD.
+            asset (google.ads.googleads.v8.resources.types.Asset):
+                Output only. Set if change_resource_type == ASSET.
+            customer_asset (google.ads.googleads.v8.resources.types.CustomerAsset):
+                Output only. Set if change_resource_type == CUSTOMER_ASSET.
+            campaign_asset (google.ads.googleads.v8.resources.types.CampaignAsset):
+                Output only. Set if change_resource_type == CAMPAIGN_ASSET.
+            ad_group_asset (google.ads.googleads.v8.resources.types.AdGroupAsset):
+                Output only. Set if change_resource_type == AD_GROUP_ASSET.
         """
 
         ad = proto.Field(
@@ -192,6 +207,26 @@ class ChangeEvent(proto.Message):
             proto.MESSAGE,
             number=12,
             message=gagr_ad_group_ad.AdGroupAd,
+        )
+        asset = proto.Field(
+            proto.MESSAGE,
+            number=13,
+            message=gagr_asset.Asset,
+        )
+        customer_asset = proto.Field(
+            proto.MESSAGE,
+            number=14,
+            message=gagr_customer_asset.CustomerAsset,
+        )
+        campaign_asset = proto.Field(
+            proto.MESSAGE,
+            number=15,
+            message=gagr_campaign_asset.CampaignAsset,
+        )
+        ad_group_asset = proto.Field(
+            proto.MESSAGE,
+            number=16,
+            message=gagr_ad_group_asset.AdGroupAsset,
         )
 
     resource_name = proto.Field(
@@ -255,6 +290,10 @@ class ChangeEvent(proto.Message):
     feed_item = proto.Field(
         proto.STRING,
         number=14,
+    )
+    asset = proto.Field(
+        proto.STRING,
+        number=20,
     )
 
 

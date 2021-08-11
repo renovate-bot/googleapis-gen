@@ -44,6 +44,11 @@ module Google
           # @!attribute [r] ad_strength
           #   @return [::Google::Ads::GoogleAds::V8::Enums::AdStrengthEnum::AdStrength]
           #     Output only. Overall ad strength for this ad group ad.
+          # @!attribute [r] action_items
+          #   @return [::Array<::String>]
+          #     Output only. A list of recommendations to improve the ad strength. For example, a
+          #     recommendation could be "Your headlines are a little too similar.
+          #     Try adding more distinct headlines.".
           # @!attribute [r] labels
           #   @return [::Array<::String>]
           #     Output only. The resource names of labels attached to this ad group ad.

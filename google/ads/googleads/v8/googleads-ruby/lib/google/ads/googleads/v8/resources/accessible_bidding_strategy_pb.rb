@@ -32,12 +32,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.ads.googleads.v8.resources.AccessibleBiddingStrategy.MaximizeConversions" do
       optional :target_cpa, :int64, 1
     end
-    add_message "google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetCpa" do
-      proto3_optional :target_cpa_micros, :int64, 1
-    end
     add_message "google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend" do
       proto3_optional :target_spend_micros, :int64, 1
       proto3_optional :cpc_bid_ceiling_micros, :int64, 2
+    end
+    add_message "google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetCpa" do
+      proto3_optional :target_cpa_micros, :int64, 1
     end
     add_message "google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetImpressionShare" do
       optional :location, :enum, 1, "google.ads.googleads.v8.enums.TargetImpressionShareLocationEnum.TargetImpressionShareLocation"
@@ -58,8 +58,8 @@ module Google
           AccessibleBiddingStrategy = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v8.resources.AccessibleBiddingStrategy").msgclass
           AccessibleBiddingStrategy::MaximizeConversionValue = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v8.resources.AccessibleBiddingStrategy.MaximizeConversionValue").msgclass
           AccessibleBiddingStrategy::MaximizeConversions = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v8.resources.AccessibleBiddingStrategy.MaximizeConversions").msgclass
-          AccessibleBiddingStrategy::TargetCpa = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetCpa").msgclass
           AccessibleBiddingStrategy::TargetSpend = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend").msgclass
+          AccessibleBiddingStrategy::TargetCpa = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetCpa").msgclass
           AccessibleBiddingStrategy::TargetImpressionShare = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetImpressionShare").msgclass
           AccessibleBiddingStrategy::TargetRoas = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetRoas").msgclass
         end

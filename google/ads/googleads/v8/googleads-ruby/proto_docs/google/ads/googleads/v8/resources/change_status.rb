@@ -71,6 +71,24 @@ module Google
           # @!attribute [r] ad_group_bid_modifier
           #   @return [::String]
           #     Output only. The AdGroupBidModifier affected by this change.
+          # @!attribute [r] shared_set
+          #   @return [::String]
+          #     Output only. The SharedSet affected by this change.
+          # @!attribute [r] campaign_shared_set
+          #   @return [::String]
+          #     Output only. The CampaignSharedSet affected by this change.
+          # @!attribute [r] asset
+          #   @return [::String]
+          #     Output only. The Asset affected by this change.
+          # @!attribute [r] customer_asset
+          #   @return [::String]
+          #     Output only. The CustomerAsset affected by this change.
+          # @!attribute [r] campaign_asset
+          #   @return [::String]
+          #     Output only. The CampaignAsset affected by this change.
+          # @!attribute [r] ad_group_asset
+          #   @return [::String]
+          #     Output only. The AdGroupAsset affected by this change.
           class ChangeStatus
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

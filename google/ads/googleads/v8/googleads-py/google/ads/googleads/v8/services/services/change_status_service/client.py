@@ -173,6 +173,16 @@ class ChangeStatusServiceClient(metaclass=ChangeStatusServiceClientMeta):
         m = re.match(r"^customers/(?P<customer_id>.+?)/adGroupAds/(?P<ad_group_id>.+?)~(?P<ad_id>.+?)$", path)
         return m.groupdict() if m else {}
     @staticmethod
+    def ad_group_asset_path(customer_id: str,ad_group_id: str,asset_id: str,field_type: str,) -> str:
+        """Return a fully-qualified ad_group_asset string."""
+        return "customers/{customer_id}/adGroupAssets/{ad_group_id}~{asset_id}~{field_type}".format(customer_id=customer_id, ad_group_id=ad_group_id, asset_id=asset_id, field_type=field_type, )
+
+    @staticmethod
+    def parse_ad_group_asset_path(path: str) -> Dict[str,str]:
+        """Parse a ad_group_asset path into its component segments."""
+        m = re.match(r"^customers/(?P<customer_id>.+?)/adGroupAssets/(?P<ad_group_id>.+?)~(?P<asset_id>.+?)~(?P<field_type>.+?)$", path)
+        return m.groupdict() if m else {}
+    @staticmethod
     def ad_group_bid_modifier_path(customer_id: str,ad_group_id: str,criterion_id: str,) -> str:
         """Return a fully-qualified ad_group_bid_modifier string."""
         return "customers/{customer_id}/adGroupBidModifiers/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
@@ -203,6 +213,16 @@ class ChangeStatusServiceClient(metaclass=ChangeStatusServiceClientMeta):
         m = re.match(r"^customers/(?P<customer_id>.+?)/adGroupFeeds/(?P<ad_group_id>.+?)~(?P<feed_id>.+?)$", path)
         return m.groupdict() if m else {}
     @staticmethod
+    def asset_path(customer_id: str,asset_id: str,) -> str:
+        """Return a fully-qualified asset string."""
+        return "customers/{customer_id}/assets/{asset_id}".format(customer_id=customer_id, asset_id=asset_id, )
+
+    @staticmethod
+    def parse_asset_path(path: str) -> Dict[str,str]:
+        """Parse a asset path into its component segments."""
+        m = re.match(r"^customers/(?P<customer_id>.+?)/assets/(?P<asset_id>.+?)$", path)
+        return m.groupdict() if m else {}
+    @staticmethod
     def campaign_path(customer_id: str,campaign_id: str,) -> str:
         """Return a fully-qualified campaign string."""
         return "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
@@ -211,6 +231,16 @@ class ChangeStatusServiceClient(metaclass=ChangeStatusServiceClientMeta):
     def parse_campaign_path(path: str) -> Dict[str,str]:
         """Parse a campaign path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/campaigns/(?P<campaign_id>.+?)$", path)
+        return m.groupdict() if m else {}
+    @staticmethod
+    def campaign_asset_path(customer_id: str,campaign_id: str,asset_id: str,field_type: str,) -> str:
+        """Return a fully-qualified campaign_asset string."""
+        return "customers/{customer_id}/campaignAssets/{campaign_id}~{asset_id}~{field_type}".format(customer_id=customer_id, campaign_id=campaign_id, asset_id=asset_id, field_type=field_type, )
+
+    @staticmethod
+    def parse_campaign_asset_path(path: str) -> Dict[str,str]:
+        """Parse a campaign_asset path into its component segments."""
+        m = re.match(r"^customers/(?P<customer_id>.+?)/campaignAssets/(?P<campaign_id>.+?)~(?P<asset_id>.+?)~(?P<field_type>.+?)$", path)
         return m.groupdict() if m else {}
     @staticmethod
     def campaign_criterion_path(customer_id: str,campaign_id: str,criterion_id: str,) -> str:
@@ -233,6 +263,16 @@ class ChangeStatusServiceClient(metaclass=ChangeStatusServiceClientMeta):
         m = re.match(r"^customers/(?P<customer_id>.+?)/campaignFeeds/(?P<campaign_id>.+?)~(?P<feed_id>.+?)$", path)
         return m.groupdict() if m else {}
     @staticmethod
+    def campaign_shared_set_path(customer_id: str,campaign_id: str,shared_set_id: str,) -> str:
+        """Return a fully-qualified campaign_shared_set string."""
+        return "customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}".format(customer_id=customer_id, campaign_id=campaign_id, shared_set_id=shared_set_id, )
+
+    @staticmethod
+    def parse_campaign_shared_set_path(path: str) -> Dict[str,str]:
+        """Parse a campaign_shared_set path into its component segments."""
+        m = re.match(r"^customers/(?P<customer_id>.+?)/campaignSharedSets/(?P<campaign_id>.+?)~(?P<shared_set_id>.+?)$", path)
+        return m.groupdict() if m else {}
+    @staticmethod
     def change_status_path(customer_id: str,change_status_id: str,) -> str:
         """Return a fully-qualified change_status string."""
         return "customers/{customer_id}/changeStatus/{change_status_id}".format(customer_id=customer_id, change_status_id=change_status_id, )
@@ -241,6 +281,16 @@ class ChangeStatusServiceClient(metaclass=ChangeStatusServiceClientMeta):
     def parse_change_status_path(path: str) -> Dict[str,str]:
         """Parse a change_status path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/changeStatus/(?P<change_status_id>.+?)$", path)
+        return m.groupdict() if m else {}
+    @staticmethod
+    def customer_asset_path(customer_id: str,asset_id: str,field_type: str,) -> str:
+        """Return a fully-qualified customer_asset string."""
+        return "customers/{customer_id}/customerAssets/{asset_id}~{field_type}".format(customer_id=customer_id, asset_id=asset_id, field_type=field_type, )
+
+    @staticmethod
+    def parse_customer_asset_path(path: str) -> Dict[str,str]:
+        """Parse a customer_asset path into its component segments."""
+        m = re.match(r"^customers/(?P<customer_id>.+?)/customerAssets/(?P<asset_id>.+?)~(?P<field_type>.+?)$", path)
         return m.groupdict() if m else {}
     @staticmethod
     def feed_path(customer_id: str,feed_id: str,) -> str:
@@ -261,6 +311,16 @@ class ChangeStatusServiceClient(metaclass=ChangeStatusServiceClientMeta):
     def parse_feed_item_path(path: str) -> Dict[str,str]:
         """Parse a feed_item path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/feedItems/(?P<feed_id>.+?)~(?P<feed_item_id>.+?)$", path)
+        return m.groupdict() if m else {}
+    @staticmethod
+    def shared_set_path(customer_id: str,shared_set_id: str,) -> str:
+        """Return a fully-qualified shared_set string."""
+        return "customers/{customer_id}/sharedSets/{shared_set_id}".format(customer_id=customer_id, shared_set_id=shared_set_id, )
+
+    @staticmethod
+    def parse_shared_set_path(path: str) -> Dict[str,str]:
+        """Parse a shared_set path into its component segments."""
+        m = re.match(r"^customers/(?P<customer_id>.+?)/sharedSets/(?P<shared_set_id>.+?)$", path)
         return m.groupdict() if m else {}
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:

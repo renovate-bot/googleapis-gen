@@ -281,6 +281,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Tests
                 CurrencyCode = "currency_code7f81e352",
                 CookieFrequencyCap = 1624044206,
                 MinEffectiveFrequency = -519821093,
+                EffectiveFrequencyLimit = new EffectiveFrequencyLimit(),
             };
             GenerateReachForecastResponse expectedResponse = new GenerateReachForecastResponse
             {
@@ -311,6 +312,7 @@ namespace Google.Ads.GoogleAds.V8.Services.Tests
                 CurrencyCode = "currency_code7f81e352",
                 CookieFrequencyCap = 1624044206,
                 MinEffectiveFrequency = -519821093,
+                EffectiveFrequencyLimit = new EffectiveFrequencyLimit(),
             };
             GenerateReachForecastResponse expectedResponse = new GenerateReachForecastResponse
             {

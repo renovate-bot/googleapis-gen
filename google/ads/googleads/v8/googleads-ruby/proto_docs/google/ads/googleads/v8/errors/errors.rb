@@ -250,6 +250,12 @@ module Google
           # @!attribute [rw] conversion_upload_error
           #   @return [::Google::Ads::GoogleAds::V8::Errors::ConversionUploadErrorEnum::ConversionUploadError]
           #     The reasons for the conversion upload error
+          # @!attribute [rw] conversion_value_rule_error
+          #   @return [::Google::Ads::GoogleAds::V8::Errors::ConversionValueRuleErrorEnum::ConversionValueRuleError]
+          #     The reasons for the conversion value rule error
+          # @!attribute [rw] conversion_value_rule_set_error
+          #   @return [::Google::Ads::GoogleAds::V8::Errors::ConversionValueRuleSetErrorEnum::ConversionValueRuleSetError]
+          #     The reasons for the conversion value rule set error
           # @!attribute [rw] header_error
           #   @return [::Google::Ads::GoogleAds::V8::Errors::HeaderErrorEnum::HeaderError]
           #     The reasons for the header error.

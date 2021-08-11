@@ -75,6 +75,9 @@ module Google
           # @!attribute [r] feed_item
           #   @return [::String]
           #     Output only. The FeedItem affected by this change.
+          # @!attribute [r] asset
+          #   @return [::String]
+          #     Output only. The Asset affected by this change.
           class ChangeEvent
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -117,6 +120,18 @@ module Google
             # @!attribute [r] ad_group_ad
             #   @return [::Google::Ads::GoogleAds::V8::Resources::AdGroupAd]
             #     Output only. Set if change_resource_type == AD_GROUP_AD.
+            # @!attribute [r] asset
+            #   @return [::Google::Ads::GoogleAds::V8::Resources::Asset]
+            #     Output only. Set if change_resource_type == ASSET.
+            # @!attribute [r] customer_asset
+            #   @return [::Google::Ads::GoogleAds::V8::Resources::CustomerAsset]
+            #     Output only. Set if change_resource_type == CUSTOMER_ASSET.
+            # @!attribute [r] campaign_asset
+            #   @return [::Google::Ads::GoogleAds::V8::Resources::CampaignAsset]
+            #     Output only. Set if change_resource_type == CAMPAIGN_ASSET.
+            # @!attribute [r] ad_group_asset
+            #   @return [::Google::Ads::GoogleAds::V8::Resources::AdGroupAsset]
+            #     Output only. Set if change_resource_type == AD_GROUP_ASSET.
             class ChangedResource
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods

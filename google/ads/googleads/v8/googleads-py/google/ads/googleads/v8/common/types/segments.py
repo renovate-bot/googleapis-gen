@@ -24,6 +24,7 @@ from google.ads.googleads.v8.enums.types import conversion_action_category as ga
 from google.ads.googleads.v8.enums.types import conversion_attribution_event_type as gage_conversion_attribution_event_type
 from google.ads.googleads.v8.enums.types import conversion_lag_bucket as gage_conversion_lag_bucket
 from google.ads.googleads.v8.enums.types import conversion_or_adjustment_lag_bucket as gage_conversion_or_adjustment_lag_bucket
+from google.ads.googleads.v8.enums.types import conversion_value_rule_primary_dimension as gage_conversion_value_rule_primary_dimension
 from google.ads.googleads.v8.enums.types import day_of_week as gage_day_of_week
 from google.ads.googleads.v8.enums.types import device as gage_device
 from google.ads.googleads.v8.enums.types import external_conversion_source as gage_external_conversion_source
@@ -247,6 +248,13 @@ class Segments(proto.Message):
             ad, including variants.
         slot (google.ads.googleads.v8.enums.types.SlotEnum.Slot):
             Position of the ad.
+        conversion_value_rule_primary_dimension (google.ads.googleads.v8.enums.types.ConversionValueRulePrimaryDimensionEnum.ConversionValueRulePrimaryDimension):
+            Primary dimension of applied conversion value rules.
+            NO_RULE_APPLIED shows the total recorded value of
+            conversions that do not have a value rule applied. ORIGINAL
+            shows the original value of conversions to which a value
+            rule has been applied. GEO_LOCATION, DEVICE, AUDIENCE show
+            the net adjustment after value rules were applied.
         webpage (str):
             Resource name of the ad group criterion that
             represents webpage criterion.
@@ -663,6 +671,11 @@ class Segments(proto.Message):
         proto.ENUM,
         number=23,
         enum=gage_slot.SlotEnum.Slot,
+    )
+    conversion_value_rule_primary_dimension = proto.Field(
+        proto.ENUM,
+        number=138,
+        enum=gage_conversion_value_rule_primary_dimension.ConversionValueRulePrimaryDimensionEnum.ConversionValueRulePrimaryDimension,
     )
     webpage = proto.Field(
         proto.STRING,

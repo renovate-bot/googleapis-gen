@@ -277,6 +277,12 @@ def test_get_change_status(transport: str = 'grpc', request_type=change_status_s
             ad_group_feed='ad_group_feed_value',
             campaign_feed='campaign_feed_value',
             ad_group_bid_modifier='ad_group_bid_modifier_value',
+            shared_set='shared_set_value',
+            campaign_shared_set='campaign_shared_set_value',
+            asset='asset_value',
+            customer_asset='customer_asset_value',
+            campaign_asset='campaign_asset_value',
+            ad_group_asset='ad_group_asset_value',
         )
         response = client.get_change_status(request)
 
@@ -301,6 +307,12 @@ def test_get_change_status(transport: str = 'grpc', request_type=change_status_s
     assert response.ad_group_feed == 'ad_group_feed_value'
     assert response.campaign_feed == 'campaign_feed_value'
     assert response.ad_group_bid_modifier == 'ad_group_bid_modifier_value'
+    assert response.shared_set == 'shared_set_value'
+    assert response.campaign_shared_set == 'campaign_shared_set_value'
+    assert response.asset == 'asset_value'
+    assert response.customer_asset == 'customer_asset_value'
+    assert response.campaign_asset == 'campaign_asset_value'
+    assert response.ad_group_asset == 'ad_group_asset_value'
 
 
 def test_get_change_status_from_dict():
@@ -628,10 +640,33 @@ def test_parse_ad_group_ad_path():
     actual = ChangeStatusServiceClient.parse_ad_group_ad_path(path)
     assert expected == actual
 
-def test_ad_group_bid_modifier_path():
+def test_ad_group_asset_path():
     customer_id = "scallop"
     ad_group_id = "abalone"
-    criterion_id = "squid"
+    asset_id = "squid"
+    field_type = "clam"
+    expected = "customers/{customer_id}/adGroupAssets/{ad_group_id}~{asset_id}~{field_type}".format(customer_id=customer_id, ad_group_id=ad_group_id, asset_id=asset_id, field_type=field_type, )
+    actual = ChangeStatusServiceClient.ad_group_asset_path(customer_id, ad_group_id, asset_id, field_type)
+    assert expected == actual
+
+
+def test_parse_ad_group_asset_path():
+    expected = {
+        "customer_id": "whelk",
+        "ad_group_id": "octopus",
+        "asset_id": "oyster",
+        "field_type": "nudibranch",
+    }
+    path = ChangeStatusServiceClient.ad_group_asset_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = ChangeStatusServiceClient.parse_ad_group_asset_path(path)
+    assert expected == actual
+
+def test_ad_group_bid_modifier_path():
+    customer_id = "cuttlefish"
+    ad_group_id = "mussel"
+    criterion_id = "winkle"
     expected = "customers/{customer_id}/adGroupBidModifiers/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = ChangeStatusServiceClient.ad_group_bid_modifier_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -639,9 +674,9 @@ def test_ad_group_bid_modifier_path():
 
 def test_parse_ad_group_bid_modifier_path():
     expected = {
-        "customer_id": "clam",
-        "ad_group_id": "whelk",
-        "criterion_id": "octopus",
+        "customer_id": "nautilus",
+        "ad_group_id": "scallop",
+        "criterion_id": "abalone",
     }
     path = ChangeStatusServiceClient.ad_group_bid_modifier_path(**expected)
 
@@ -650,9 +685,9 @@ def test_parse_ad_group_bid_modifier_path():
     assert expected == actual
 
 def test_ad_group_criterion_path():
-    customer_id = "oyster"
-    ad_group_id = "nudibranch"
-    criterion_id = "cuttlefish"
+    customer_id = "squid"
+    ad_group_id = "clam"
+    criterion_id = "whelk"
     expected = "customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
     actual = ChangeStatusServiceClient.ad_group_criterion_path(customer_id, ad_group_id, criterion_id)
     assert expected == actual
@@ -660,9 +695,9 @@ def test_ad_group_criterion_path():
 
 def test_parse_ad_group_criterion_path():
     expected = {
-        "customer_id": "mussel",
-        "ad_group_id": "winkle",
-        "criterion_id": "nautilus",
+        "customer_id": "octopus",
+        "ad_group_id": "oyster",
+        "criterion_id": "nudibranch",
     }
     path = ChangeStatusServiceClient.ad_group_criterion_path(**expected)
 
@@ -671,9 +706,9 @@ def test_parse_ad_group_criterion_path():
     assert expected == actual
 
 def test_ad_group_feed_path():
-    customer_id = "scallop"
-    ad_group_id = "abalone"
-    feed_id = "squid"
+    customer_id = "cuttlefish"
+    ad_group_id = "mussel"
+    feed_id = "winkle"
     expected = "customers/{customer_id}/adGroupFeeds/{ad_group_id}~{feed_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, feed_id=feed_id, )
     actual = ChangeStatusServiceClient.ad_group_feed_path(customer_id, ad_group_id, feed_id)
     assert expected == actual
@@ -681,14 +716,33 @@ def test_ad_group_feed_path():
 
 def test_parse_ad_group_feed_path():
     expected = {
-        "customer_id": "clam",
-        "ad_group_id": "whelk",
-        "feed_id": "octopus",
+        "customer_id": "nautilus",
+        "ad_group_id": "scallop",
+        "feed_id": "abalone",
     }
     path = ChangeStatusServiceClient.ad_group_feed_path(**expected)
 
     # Check that the path construction is reversible.
     actual = ChangeStatusServiceClient.parse_ad_group_feed_path(path)
+    assert expected == actual
+
+def test_asset_path():
+    customer_id = "squid"
+    asset_id = "clam"
+    expected = "customers/{customer_id}/assets/{asset_id}".format(customer_id=customer_id, asset_id=asset_id, )
+    actual = ChangeStatusServiceClient.asset_path(customer_id, asset_id)
+    assert expected == actual
+
+
+def test_parse_asset_path():
+    expected = {
+        "customer_id": "whelk",
+        "asset_id": "octopus",
+    }
+    path = ChangeStatusServiceClient.asset_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = ChangeStatusServiceClient.parse_asset_path(path)
     assert expected == actual
 
 def test_campaign_path():
@@ -710,10 +764,33 @@ def test_parse_campaign_path():
     actual = ChangeStatusServiceClient.parse_campaign_path(path)
     assert expected == actual
 
-def test_campaign_criterion_path():
+def test_campaign_asset_path():
     customer_id = "winkle"
     campaign_id = "nautilus"
-    criterion_id = "scallop"
+    asset_id = "scallop"
+    field_type = "abalone"
+    expected = "customers/{customer_id}/campaignAssets/{campaign_id}~{asset_id}~{field_type}".format(customer_id=customer_id, campaign_id=campaign_id, asset_id=asset_id, field_type=field_type, )
+    actual = ChangeStatusServiceClient.campaign_asset_path(customer_id, campaign_id, asset_id, field_type)
+    assert expected == actual
+
+
+def test_parse_campaign_asset_path():
+    expected = {
+        "customer_id": "squid",
+        "campaign_id": "clam",
+        "asset_id": "whelk",
+        "field_type": "octopus",
+    }
+    path = ChangeStatusServiceClient.campaign_asset_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = ChangeStatusServiceClient.parse_campaign_asset_path(path)
+    assert expected == actual
+
+def test_campaign_criterion_path():
+    customer_id = "oyster"
+    campaign_id = "nudibranch"
+    criterion_id = "cuttlefish"
     expected = "customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}".format(customer_id=customer_id, campaign_id=campaign_id, criterion_id=criterion_id, )
     actual = ChangeStatusServiceClient.campaign_criterion_path(customer_id, campaign_id, criterion_id)
     assert expected == actual
@@ -721,9 +798,9 @@ def test_campaign_criterion_path():
 
 def test_parse_campaign_criterion_path():
     expected = {
-        "customer_id": "abalone",
-        "campaign_id": "squid",
-        "criterion_id": "clam",
+        "customer_id": "mussel",
+        "campaign_id": "winkle",
+        "criterion_id": "nautilus",
     }
     path = ChangeStatusServiceClient.campaign_criterion_path(**expected)
 
@@ -732,9 +809,9 @@ def test_parse_campaign_criterion_path():
     assert expected == actual
 
 def test_campaign_feed_path():
-    customer_id = "whelk"
-    campaign_id = "octopus"
-    feed_id = "oyster"
+    customer_id = "scallop"
+    campaign_id = "abalone"
+    feed_id = "squid"
     expected = "customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}".format(customer_id=customer_id, campaign_id=campaign_id, feed_id=feed_id, )
     actual = ChangeStatusServiceClient.campaign_feed_path(customer_id, campaign_id, feed_id)
     assert expected == actual
@@ -742,9 +819,9 @@ def test_campaign_feed_path():
 
 def test_parse_campaign_feed_path():
     expected = {
-        "customer_id": "nudibranch",
-        "campaign_id": "cuttlefish",
-        "feed_id": "mussel",
+        "customer_id": "clam",
+        "campaign_id": "whelk",
+        "feed_id": "octopus",
     }
     path = ChangeStatusServiceClient.campaign_feed_path(**expected)
 
@@ -752,9 +829,30 @@ def test_parse_campaign_feed_path():
     actual = ChangeStatusServiceClient.parse_campaign_feed_path(path)
     assert expected == actual
 
+def test_campaign_shared_set_path():
+    customer_id = "oyster"
+    campaign_id = "nudibranch"
+    shared_set_id = "cuttlefish"
+    expected = "customers/{customer_id}/campaignSharedSets/{campaign_id}~{shared_set_id}".format(customer_id=customer_id, campaign_id=campaign_id, shared_set_id=shared_set_id, )
+    actual = ChangeStatusServiceClient.campaign_shared_set_path(customer_id, campaign_id, shared_set_id)
+    assert expected == actual
+
+
+def test_parse_campaign_shared_set_path():
+    expected = {
+        "customer_id": "mussel",
+        "campaign_id": "winkle",
+        "shared_set_id": "nautilus",
+    }
+    path = ChangeStatusServiceClient.campaign_shared_set_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = ChangeStatusServiceClient.parse_campaign_shared_set_path(path)
+    assert expected == actual
+
 def test_change_status_path():
-    customer_id = "winkle"
-    change_status_id = "nautilus"
+    customer_id = "scallop"
+    change_status_id = "abalone"
     expected = "customers/{customer_id}/changeStatus/{change_status_id}".format(customer_id=customer_id, change_status_id=change_status_id, )
     actual = ChangeStatusServiceClient.change_status_path(customer_id, change_status_id)
     assert expected == actual
@@ -762,8 +860,8 @@ def test_change_status_path():
 
 def test_parse_change_status_path():
     expected = {
-        "customer_id": "scallop",
-        "change_status_id": "abalone",
+        "customer_id": "squid",
+        "change_status_id": "clam",
     }
     path = ChangeStatusServiceClient.change_status_path(**expected)
 
@@ -771,9 +869,30 @@ def test_parse_change_status_path():
     actual = ChangeStatusServiceClient.parse_change_status_path(path)
     assert expected == actual
 
+def test_customer_asset_path():
+    customer_id = "whelk"
+    asset_id = "octopus"
+    field_type = "oyster"
+    expected = "customers/{customer_id}/customerAssets/{asset_id}~{field_type}".format(customer_id=customer_id, asset_id=asset_id, field_type=field_type, )
+    actual = ChangeStatusServiceClient.customer_asset_path(customer_id, asset_id, field_type)
+    assert expected == actual
+
+
+def test_parse_customer_asset_path():
+    expected = {
+        "customer_id": "nudibranch",
+        "asset_id": "cuttlefish",
+        "field_type": "mussel",
+    }
+    path = ChangeStatusServiceClient.customer_asset_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = ChangeStatusServiceClient.parse_customer_asset_path(path)
+    assert expected == actual
+
 def test_feed_path():
-    customer_id = "squid"
-    feed_id = "clam"
+    customer_id = "winkle"
+    feed_id = "nautilus"
     expected = "customers/{customer_id}/feeds/{feed_id}".format(customer_id=customer_id, feed_id=feed_id, )
     actual = ChangeStatusServiceClient.feed_path(customer_id, feed_id)
     assert expected == actual
@@ -781,8 +900,8 @@ def test_feed_path():
 
 def test_parse_feed_path():
     expected = {
-        "customer_id": "whelk",
-        "feed_id": "octopus",
+        "customer_id": "scallop",
+        "feed_id": "abalone",
     }
     path = ChangeStatusServiceClient.feed_path(**expected)
 
@@ -791,9 +910,9 @@ def test_parse_feed_path():
     assert expected == actual
 
 def test_feed_item_path():
-    customer_id = "oyster"
-    feed_id = "nudibranch"
-    feed_item_id = "cuttlefish"
+    customer_id = "squid"
+    feed_id = "clam"
+    feed_item_id = "whelk"
     expected = "customers/{customer_id}/feedItems/{feed_id}~{feed_item_id}".format(customer_id=customer_id, feed_id=feed_id, feed_item_id=feed_item_id, )
     actual = ChangeStatusServiceClient.feed_item_path(customer_id, feed_id, feed_item_id)
     assert expected == actual
@@ -801,14 +920,33 @@ def test_feed_item_path():
 
 def test_parse_feed_item_path():
     expected = {
-        "customer_id": "mussel",
-        "feed_id": "winkle",
-        "feed_item_id": "nautilus",
+        "customer_id": "octopus",
+        "feed_id": "oyster",
+        "feed_item_id": "nudibranch",
     }
     path = ChangeStatusServiceClient.feed_item_path(**expected)
 
     # Check that the path construction is reversible.
     actual = ChangeStatusServiceClient.parse_feed_item_path(path)
+    assert expected == actual
+
+def test_shared_set_path():
+    customer_id = "cuttlefish"
+    shared_set_id = "mussel"
+    expected = "customers/{customer_id}/sharedSets/{shared_set_id}".format(customer_id=customer_id, shared_set_id=shared_set_id, )
+    actual = ChangeStatusServiceClient.shared_set_path(customer_id, shared_set_id)
+    assert expected == actual
+
+
+def test_parse_shared_set_path():
+    expected = {
+        "customer_id": "winkle",
+        "shared_set_id": "nautilus",
+    }
+    path = ChangeStatusServiceClient.shared_set_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = ChangeStatusServiceClient.parse_shared_set_path(path)
     assert expected == actual
 
 def test_common_billing_account_path():

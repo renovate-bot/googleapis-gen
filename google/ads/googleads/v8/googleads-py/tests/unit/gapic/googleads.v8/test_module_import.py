@@ -528,6 +528,8 @@ def test_module_level_imports():
     expected_names.append(ConversionLagBucketEnum.__name__)
     from google.ads.googleads import ConversionOrAdjustmentLagBucketEnum
     expected_names.append(ConversionOrAdjustmentLagBucketEnum.__name__)
+    from google.ads.googleads import ConversionValueRulePrimaryDimensionEnum
+    expected_names.append(ConversionValueRulePrimaryDimensionEnum.__name__)
     from google.ads.googleads import ExternalConversionSourceEnum
     expected_names.append(ExternalConversionSourceEnum.__name__)
     from google.ads.googleads import HotelPriceBucketEnum
@@ -774,6 +776,10 @@ def test_module_level_imports():
     expected_names.append(ConversionAdjustmentTypeEnum.__name__)
     from google.ads.googleads import ConversionCustomVariableStatusEnum
     expected_names.append(ConversionCustomVariableStatusEnum.__name__)
+    from google.ads.googleads import ConversionValueRuleSetStatusEnum
+    expected_names.append(ConversionValueRuleSetStatusEnum.__name__)
+    from google.ads.googleads import ConversionValueRuleStatusEnum
+    expected_names.append(ConversionValueRuleStatusEnum.__name__)
     from google.ads.googleads import CriterionSystemServingStatusEnum
     expected_names.append(CriterionSystemServingStatusEnum.__name__)
     from google.ads.googleads import CriterionTypeEnum
@@ -926,6 +932,10 @@ def test_module_level_imports():
     expected_names.append(ResponseContentTypeEnum.__name__)
     from google.ads.googleads import SearchTermTargetingStatusEnum
     expected_names.append(SearchTermTargetingStatusEnum.__name__)
+    from google.ads.googleads import SeasonalityEventScopeEnum
+    expected_names.append(SeasonalityEventScopeEnum.__name__)
+    from google.ads.googleads import SeasonalityEventStatusEnum
+    expected_names.append(SeasonalityEventStatusEnum.__name__)
     from google.ads.googleads import SharedSetStatusEnum
     expected_names.append(SharedSetStatusEnum.__name__)
     from google.ads.googleads import SharedSetTypeEnum
@@ -962,6 +972,16 @@ def test_module_level_imports():
     expected_names.append(UserListSizeRangeEnum.__name__)
     from google.ads.googleads import UserListTypeEnum
     expected_names.append(UserListTypeEnum.__name__)
+    from google.ads.googleads import ValueRuleDeviceTypeEnum
+    expected_names.append(ValueRuleDeviceTypeEnum.__name__)
+    from google.ads.googleads import ValueRuleGeoLocationMatchTypeEnum
+    expected_names.append(ValueRuleGeoLocationMatchTypeEnum.__name__)
+    from google.ads.googleads import ValueRuleOperationEnum
+    expected_names.append(ValueRuleOperationEnum.__name__)
+    from google.ads.googleads import ValueRuleSetAttachmentTypeEnum
+    expected_names.append(ValueRuleSetAttachmentTypeEnum.__name__)
+    from google.ads.googleads import ValueRuleSetDimensionEnum
+    expected_names.append(ValueRuleSetDimensionEnum.__name__)
     from google.ads.googleads import VanityPharmaDisplayUrlModeEnum
     expected_names.append(VanityPharmaDisplayUrlModeEnum.__name__)
     from google.ads.googleads import VanityPharmaTextEnum
@@ -1038,6 +1058,10 @@ def test_module_level_imports():
     expected_names.append(ConversionCustomVariableErrorEnum.__name__)
     from google.ads.googleads import ConversionUploadErrorEnum
     expected_names.append(ConversionUploadErrorEnum.__name__)
+    from google.ads.googleads import ConversionValueRuleErrorEnum
+    expected_names.append(ConversionValueRuleErrorEnum.__name__)
+    from google.ads.googleads import ConversionValueRuleSetErrorEnum
+    expected_names.append(ConversionValueRuleSetErrorEnum.__name__)
     from google.ads.googleads import CountryCodeErrorEnum
     expected_names.append(CountryCodeErrorEnum.__name__)
     from google.ads.googleads import CriterionErrorEnum
@@ -1284,6 +1308,10 @@ def test_module_level_imports():
     expected_names.append(AssetFieldTypeView.__name__)
     from google.ads.googleads import BatchJob
     expected_names.append(BatchJob.__name__)
+    from google.ads.googleads import BiddingDataExclusion
+    expected_names.append(BiddingDataExclusion.__name__)
+    from google.ads.googleads import BiddingSeasonalityAdjustment
+    expected_names.append(BiddingSeasonalityAdjustment.__name__)
     from google.ads.googleads import BiddingStrategy
     expected_names.append(BiddingStrategy.__name__)
     from google.ads.googleads import BiddingStrategySimulation
@@ -1322,6 +1350,8 @@ def test_module_level_imports():
     expected_names.append(CampaignSimulation.__name__)
     from google.ads.googleads import CarrierConstant
     expected_names.append(CarrierConstant.__name__)
+    from google.ads.googleads import CustomerAsset
+    expected_names.append(CustomerAsset.__name__)
     from google.ads.googleads import Feed
     expected_names.append(Feed.__name__)
     from google.ads.googleads import FeedAttribute
@@ -1348,6 +1378,10 @@ def test_module_level_imports():
     expected_names.append(ConversionAction.__name__)
     from google.ads.googleads import ConversionCustomVariable
     expected_names.append(ConversionCustomVariable.__name__)
+    from google.ads.googleads import ConversionValueRule
+    expected_names.append(ConversionValueRule.__name__)
+    from google.ads.googleads import ConversionValueRuleSet
+    expected_names.append(ConversionValueRuleSet.__name__)
     from google.ads.googleads import CurrencyConstant
     expected_names.append(CurrencyConstant.__name__)
     from google.ads.googleads import CustomAudience
@@ -1366,8 +1400,6 @@ def test_module_level_imports():
     expected_names.append(ConversionTrackingSetting.__name__)
     from google.ads.googleads import RemarketingSetting
     expected_names.append(RemarketingSetting.__name__)
-    from google.ads.googleads import CustomerAsset
-    expected_names.append(CustomerAsset.__name__)
     from google.ads.googleads import CustomerClient
     expected_names.append(CustomerClient.__name__)
     from google.ads.googleads import CustomerClientLink
@@ -1696,6 +1728,26 @@ def test_module_level_imports():
     expected_names.append(MutateAssetsResponse.__name__)
     from google.ads.googleads import MutateAssetResult
     expected_names.append(MutateAssetResult.__name__)
+    from google.ads.googleads import GetBiddingDataExclusionRequest
+    expected_names.append(GetBiddingDataExclusionRequest.__name__)
+    from google.ads.googleads import MutateBiddingDataExclusionsRequest
+    expected_names.append(MutateBiddingDataExclusionsRequest.__name__)
+    from google.ads.googleads import BiddingDataExclusionOperation
+    expected_names.append(BiddingDataExclusionOperation.__name__)
+    from google.ads.googleads import MutateBiddingDataExclusionsResponse
+    expected_names.append(MutateBiddingDataExclusionsResponse.__name__)
+    from google.ads.googleads import MutateBiddingDataExclusionsResult
+    expected_names.append(MutateBiddingDataExclusionsResult.__name__)
+    from google.ads.googleads import GetBiddingSeasonalityAdjustmentRequest
+    expected_names.append(GetBiddingSeasonalityAdjustmentRequest.__name__)
+    from google.ads.googleads import MutateBiddingSeasonalityAdjustmentsRequest
+    expected_names.append(MutateBiddingSeasonalityAdjustmentsRequest.__name__)
+    from google.ads.googleads import BiddingSeasonalityAdjustmentOperation
+    expected_names.append(BiddingSeasonalityAdjustmentOperation.__name__)
+    from google.ads.googleads import MutateBiddingSeasonalityAdjustmentsResponse
+    expected_names.append(MutateBiddingSeasonalityAdjustmentsResponse.__name__)
+    from google.ads.googleads import MutateBiddingSeasonalityAdjustmentsResult
+    expected_names.append(MutateBiddingSeasonalityAdjustmentsResult.__name__)
     from google.ads.googleads import GetBiddingStrategyRequest
     expected_names.append(GetBiddingStrategyRequest.__name__)
     from google.ads.googleads import MutateBiddingStrategiesRequest
@@ -1858,6 +1910,26 @@ def test_module_level_imports():
     expected_names.append(MutateConversionCustomVariablesResponse.__name__)
     from google.ads.googleads import MutateConversionCustomVariableResult
     expected_names.append(MutateConversionCustomVariableResult.__name__)
+    from google.ads.googleads import GetConversionValueRuleRequest
+    expected_names.append(GetConversionValueRuleRequest.__name__)
+    from google.ads.googleads import MutateConversionValueRulesRequest
+    expected_names.append(MutateConversionValueRulesRequest.__name__)
+    from google.ads.googleads import ConversionValueRuleOperation
+    expected_names.append(ConversionValueRuleOperation.__name__)
+    from google.ads.googleads import MutateConversionValueRulesResponse
+    expected_names.append(MutateConversionValueRulesResponse.__name__)
+    from google.ads.googleads import MutateConversionValueRuleResult
+    expected_names.append(MutateConversionValueRuleResult.__name__)
+    from google.ads.googleads import GetConversionValueRuleSetRequest
+    expected_names.append(GetConversionValueRuleSetRequest.__name__)
+    from google.ads.googleads import MutateConversionValueRuleSetsRequest
+    expected_names.append(MutateConversionValueRuleSetsRequest.__name__)
+    from google.ads.googleads import ConversionValueRuleSetOperation
+    expected_names.append(ConversionValueRuleSetOperation.__name__)
+    from google.ads.googleads import MutateConversionValueRuleSetsResponse
+    expected_names.append(MutateConversionValueRuleSetsResponse.__name__)
+    from google.ads.googleads import MutateConversionValueRuleSetResult
+    expected_names.append(MutateConversionValueRuleSetResult.__name__)
     from google.ads.googleads import GetCustomerAssetRequest
     expected_names.append(GetCustomerAssetRequest.__name__)
     from google.ads.googleads import MutateCustomerAssetsRequest
@@ -2468,6 +2540,8 @@ def test_module_level_imports():
     expected_names.append(ProductAllocation.__name__)
     from google.ads.googleads import GenerateReachForecastRequest
     expected_names.append(GenerateReachForecastRequest.__name__)
+    from google.ads.googleads import EffectiveFrequencyLimit
+    expected_names.append(EffectiveFrequencyLimit.__name__)
     from google.ads.googleads import FrequencyCap
     expected_names.append(FrequencyCap.__name__)
     from google.ads.googleads import Targeting
@@ -2490,6 +2564,8 @@ def test_module_level_imports():
     expected_names.append(PlannedProductForecast.__name__)
     from google.ads.googleads import OnTargetAudienceMetrics
     expected_names.append(OnTargetAudienceMetrics.__name__)
+    from google.ads.googleads import EffectiveFrequencyBreakdown
+    expected_names.append(EffectiveFrequencyBreakdown.__name__)
     from google.ads.googleads import GetRecommendationRequest
     expected_names.append(GetRecommendationRequest.__name__)
     from google.ads.googleads import ApplyRecommendationRequest
@@ -2516,6 +2592,10 @@ def test_module_level_imports():
     expected_names.append(SmartCampaignSuggestionInfo.__name__)
     from google.ads.googleads import SuggestSmartCampaignBudgetOptionsResponse
     expected_names.append(SuggestSmartCampaignBudgetOptionsResponse.__name__)
+    from google.ads.googleads import SuggestSmartCampaignAdRequest
+    expected_names.append(SuggestSmartCampaignAdRequest.__name__)
+    from google.ads.googleads import SuggestSmartCampaignAdResponse
+    expected_names.append(SuggestSmartCampaignAdResponse.__name__)
     from google.ads.googleads import GetThirdPartyAppAnalyticsLinkRequest
     expected_names.append(GetThirdPartyAppAnalyticsLinkRequest.__name__)
     from google.ads.googleads import RegenerateShareableLinkIdRequest
@@ -3112,6 +3192,18 @@ def test_module_level_imports():
     expected_names.append(CustomerAssetServiceTransport.__name__)
     from google.ads.googleads import CustomerAssetServiceGrpcTransport
     expected_names.append(CustomerAssetServiceGrpcTransport.__name__)
+    from google.ads.googleads import ConversionValueRuleSetServiceClient
+    expected_names.append(ConversionValueRuleSetServiceClient.__name__)
+    from google.ads.googleads import ConversionValueRuleSetServiceTransport
+    expected_names.append(ConversionValueRuleSetServiceTransport.__name__)
+    from google.ads.googleads import ConversionValueRuleSetServiceGrpcTransport
+    expected_names.append(ConversionValueRuleSetServiceGrpcTransport.__name__)
+    from google.ads.googleads import ConversionValueRuleServiceClient
+    expected_names.append(ConversionValueRuleServiceClient.__name__)
+    from google.ads.googleads import ConversionValueRuleServiceTransport
+    expected_names.append(ConversionValueRuleServiceTransport.__name__)
+    from google.ads.googleads import ConversionValueRuleServiceGrpcTransport
+    expected_names.append(ConversionValueRuleServiceGrpcTransport.__name__)
     from google.ads.googleads import ConversionCustomVariableServiceClient
     expected_names.append(ConversionCustomVariableServiceClient.__name__)
     from google.ads.googleads import ConversionCustomVariableServiceTransport
@@ -3196,6 +3288,18 @@ def test_module_level_imports():
     expected_names.append(BiddingStrategyServiceTransport.__name__)
     from google.ads.googleads import BiddingStrategyServiceGrpcTransport
     expected_names.append(BiddingStrategyServiceGrpcTransport.__name__)
+    from google.ads.googleads import BiddingSeasonalityAdjustmentServiceClient
+    expected_names.append(BiddingSeasonalityAdjustmentServiceClient.__name__)
+    from google.ads.googleads import BiddingSeasonalityAdjustmentServiceTransport
+    expected_names.append(BiddingSeasonalityAdjustmentServiceTransport.__name__)
+    from google.ads.googleads import BiddingSeasonalityAdjustmentServiceGrpcTransport
+    expected_names.append(BiddingSeasonalityAdjustmentServiceGrpcTransport.__name__)
+    from google.ads.googleads import BiddingDataExclusionServiceClient
+    expected_names.append(BiddingDataExclusionServiceClient.__name__)
+    from google.ads.googleads import BiddingDataExclusionServiceTransport
+    expected_names.append(BiddingDataExclusionServiceTransport.__name__)
+    from google.ads.googleads import BiddingDataExclusionServiceGrpcTransport
+    expected_names.append(BiddingDataExclusionServiceGrpcTransport.__name__)
     from google.ads.googleads import AssetServiceClient
     expected_names.append(AssetServiceClient.__name__)
     from google.ads.googleads import AssetServiceTransport
@@ -3863,6 +3967,8 @@ def test_versionsed_module_level_imports():
     expected_names.append(ConversionLagBucketEnum.__name__)
     from google.ads.googleads.v8 import ConversionOrAdjustmentLagBucketEnum
     expected_names.append(ConversionOrAdjustmentLagBucketEnum.__name__)
+    from google.ads.googleads.v8 import ConversionValueRulePrimaryDimensionEnum
+    expected_names.append(ConversionValueRulePrimaryDimensionEnum.__name__)
     from google.ads.googleads.v8 import ExternalConversionSourceEnum
     expected_names.append(ExternalConversionSourceEnum.__name__)
     from google.ads.googleads.v8 import HotelPriceBucketEnum
@@ -4109,6 +4215,10 @@ def test_versionsed_module_level_imports():
     expected_names.append(ConversionAdjustmentTypeEnum.__name__)
     from google.ads.googleads.v8 import ConversionCustomVariableStatusEnum
     expected_names.append(ConversionCustomVariableStatusEnum.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleSetStatusEnum
+    expected_names.append(ConversionValueRuleSetStatusEnum.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleStatusEnum
+    expected_names.append(ConversionValueRuleStatusEnum.__name__)
     from google.ads.googleads.v8 import CriterionSystemServingStatusEnum
     expected_names.append(CriterionSystemServingStatusEnum.__name__)
     from google.ads.googleads.v8 import CriterionTypeEnum
@@ -4261,6 +4371,10 @@ def test_versionsed_module_level_imports():
     expected_names.append(ResponseContentTypeEnum.__name__)
     from google.ads.googleads.v8 import SearchTermTargetingStatusEnum
     expected_names.append(SearchTermTargetingStatusEnum.__name__)
+    from google.ads.googleads.v8 import SeasonalityEventScopeEnum
+    expected_names.append(SeasonalityEventScopeEnum.__name__)
+    from google.ads.googleads.v8 import SeasonalityEventStatusEnum
+    expected_names.append(SeasonalityEventStatusEnum.__name__)
     from google.ads.googleads.v8 import SharedSetStatusEnum
     expected_names.append(SharedSetStatusEnum.__name__)
     from google.ads.googleads.v8 import SharedSetTypeEnum
@@ -4297,6 +4411,16 @@ def test_versionsed_module_level_imports():
     expected_names.append(UserListSizeRangeEnum.__name__)
     from google.ads.googleads.v8 import UserListTypeEnum
     expected_names.append(UserListTypeEnum.__name__)
+    from google.ads.googleads.v8 import ValueRuleDeviceTypeEnum
+    expected_names.append(ValueRuleDeviceTypeEnum.__name__)
+    from google.ads.googleads.v8 import ValueRuleGeoLocationMatchTypeEnum
+    expected_names.append(ValueRuleGeoLocationMatchTypeEnum.__name__)
+    from google.ads.googleads.v8 import ValueRuleOperationEnum
+    expected_names.append(ValueRuleOperationEnum.__name__)
+    from google.ads.googleads.v8 import ValueRuleSetAttachmentTypeEnum
+    expected_names.append(ValueRuleSetAttachmentTypeEnum.__name__)
+    from google.ads.googleads.v8 import ValueRuleSetDimensionEnum
+    expected_names.append(ValueRuleSetDimensionEnum.__name__)
     from google.ads.googleads.v8 import VanityPharmaDisplayUrlModeEnum
     expected_names.append(VanityPharmaDisplayUrlModeEnum.__name__)
     from google.ads.googleads.v8 import VanityPharmaTextEnum
@@ -4373,6 +4497,10 @@ def test_versionsed_module_level_imports():
     expected_names.append(ConversionCustomVariableErrorEnum.__name__)
     from google.ads.googleads.v8 import ConversionUploadErrorEnum
     expected_names.append(ConversionUploadErrorEnum.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleErrorEnum
+    expected_names.append(ConversionValueRuleErrorEnum.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleSetErrorEnum
+    expected_names.append(ConversionValueRuleSetErrorEnum.__name__)
     from google.ads.googleads.v8 import CountryCodeErrorEnum
     expected_names.append(CountryCodeErrorEnum.__name__)
     from google.ads.googleads.v8 import CriterionErrorEnum
@@ -4619,6 +4747,10 @@ def test_versionsed_module_level_imports():
     expected_names.append(AssetFieldTypeView.__name__)
     from google.ads.googleads.v8 import BatchJob
     expected_names.append(BatchJob.__name__)
+    from google.ads.googleads.v8 import BiddingDataExclusion
+    expected_names.append(BiddingDataExclusion.__name__)
+    from google.ads.googleads.v8 import BiddingSeasonalityAdjustment
+    expected_names.append(BiddingSeasonalityAdjustment.__name__)
     from google.ads.googleads.v8 import BiddingStrategy
     expected_names.append(BiddingStrategy.__name__)
     from google.ads.googleads.v8 import BiddingStrategySimulation
@@ -4657,6 +4789,8 @@ def test_versionsed_module_level_imports():
     expected_names.append(CampaignSimulation.__name__)
     from google.ads.googleads.v8 import CarrierConstant
     expected_names.append(CarrierConstant.__name__)
+    from google.ads.googleads.v8 import CustomerAsset
+    expected_names.append(CustomerAsset.__name__)
     from google.ads.googleads.v8 import Feed
     expected_names.append(Feed.__name__)
     from google.ads.googleads.v8 import FeedAttribute
@@ -4683,6 +4817,10 @@ def test_versionsed_module_level_imports():
     expected_names.append(ConversionAction.__name__)
     from google.ads.googleads.v8 import ConversionCustomVariable
     expected_names.append(ConversionCustomVariable.__name__)
+    from google.ads.googleads.v8 import ConversionValueRule
+    expected_names.append(ConversionValueRule.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleSet
+    expected_names.append(ConversionValueRuleSet.__name__)
     from google.ads.googleads.v8 import CurrencyConstant
     expected_names.append(CurrencyConstant.__name__)
     from google.ads.googleads.v8 import CustomAudience
@@ -4701,8 +4839,6 @@ def test_versionsed_module_level_imports():
     expected_names.append(ConversionTrackingSetting.__name__)
     from google.ads.googleads.v8 import RemarketingSetting
     expected_names.append(RemarketingSetting.__name__)
-    from google.ads.googleads.v8 import CustomerAsset
-    expected_names.append(CustomerAsset.__name__)
     from google.ads.googleads.v8 import CustomerClient
     expected_names.append(CustomerClient.__name__)
     from google.ads.googleads.v8 import CustomerClientLink
@@ -5031,6 +5167,26 @@ def test_versionsed_module_level_imports():
     expected_names.append(MutateAssetsResponse.__name__)
     from google.ads.googleads.v8 import MutateAssetResult
     expected_names.append(MutateAssetResult.__name__)
+    from google.ads.googleads.v8 import GetBiddingDataExclusionRequest
+    expected_names.append(GetBiddingDataExclusionRequest.__name__)
+    from google.ads.googleads.v8 import MutateBiddingDataExclusionsRequest
+    expected_names.append(MutateBiddingDataExclusionsRequest.__name__)
+    from google.ads.googleads.v8 import BiddingDataExclusionOperation
+    expected_names.append(BiddingDataExclusionOperation.__name__)
+    from google.ads.googleads.v8 import MutateBiddingDataExclusionsResponse
+    expected_names.append(MutateBiddingDataExclusionsResponse.__name__)
+    from google.ads.googleads.v8 import MutateBiddingDataExclusionsResult
+    expected_names.append(MutateBiddingDataExclusionsResult.__name__)
+    from google.ads.googleads.v8 import GetBiddingSeasonalityAdjustmentRequest
+    expected_names.append(GetBiddingSeasonalityAdjustmentRequest.__name__)
+    from google.ads.googleads.v8 import MutateBiddingSeasonalityAdjustmentsRequest
+    expected_names.append(MutateBiddingSeasonalityAdjustmentsRequest.__name__)
+    from google.ads.googleads.v8 import BiddingSeasonalityAdjustmentOperation
+    expected_names.append(BiddingSeasonalityAdjustmentOperation.__name__)
+    from google.ads.googleads.v8 import MutateBiddingSeasonalityAdjustmentsResponse
+    expected_names.append(MutateBiddingSeasonalityAdjustmentsResponse.__name__)
+    from google.ads.googleads.v8 import MutateBiddingSeasonalityAdjustmentsResult
+    expected_names.append(MutateBiddingSeasonalityAdjustmentsResult.__name__)
     from google.ads.googleads.v8 import GetBiddingStrategyRequest
     expected_names.append(GetBiddingStrategyRequest.__name__)
     from google.ads.googleads.v8 import MutateBiddingStrategiesRequest
@@ -5193,6 +5349,26 @@ def test_versionsed_module_level_imports():
     expected_names.append(MutateConversionCustomVariablesResponse.__name__)
     from google.ads.googleads.v8 import MutateConversionCustomVariableResult
     expected_names.append(MutateConversionCustomVariableResult.__name__)
+    from google.ads.googleads.v8 import GetConversionValueRuleRequest
+    expected_names.append(GetConversionValueRuleRequest.__name__)
+    from google.ads.googleads.v8 import MutateConversionValueRulesRequest
+    expected_names.append(MutateConversionValueRulesRequest.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleOperation
+    expected_names.append(ConversionValueRuleOperation.__name__)
+    from google.ads.googleads.v8 import MutateConversionValueRulesResponse
+    expected_names.append(MutateConversionValueRulesResponse.__name__)
+    from google.ads.googleads.v8 import MutateConversionValueRuleResult
+    expected_names.append(MutateConversionValueRuleResult.__name__)
+    from google.ads.googleads.v8 import GetConversionValueRuleSetRequest
+    expected_names.append(GetConversionValueRuleSetRequest.__name__)
+    from google.ads.googleads.v8 import MutateConversionValueRuleSetsRequest
+    expected_names.append(MutateConversionValueRuleSetsRequest.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleSetOperation
+    expected_names.append(ConversionValueRuleSetOperation.__name__)
+    from google.ads.googleads.v8 import MutateConversionValueRuleSetsResponse
+    expected_names.append(MutateConversionValueRuleSetsResponse.__name__)
+    from google.ads.googleads.v8 import MutateConversionValueRuleSetResult
+    expected_names.append(MutateConversionValueRuleSetResult.__name__)
     from google.ads.googleads.v8 import GetCustomerAssetRequest
     expected_names.append(GetCustomerAssetRequest.__name__)
     from google.ads.googleads.v8 import MutateCustomerAssetsRequest
@@ -5803,6 +5979,8 @@ def test_versionsed_module_level_imports():
     expected_names.append(ProductAllocation.__name__)
     from google.ads.googleads.v8 import GenerateReachForecastRequest
     expected_names.append(GenerateReachForecastRequest.__name__)
+    from google.ads.googleads.v8 import EffectiveFrequencyLimit
+    expected_names.append(EffectiveFrequencyLimit.__name__)
     from google.ads.googleads.v8 import FrequencyCap
     expected_names.append(FrequencyCap.__name__)
     from google.ads.googleads.v8 import Targeting
@@ -5825,6 +6003,8 @@ def test_versionsed_module_level_imports():
     expected_names.append(PlannedProductForecast.__name__)
     from google.ads.googleads.v8 import OnTargetAudienceMetrics
     expected_names.append(OnTargetAudienceMetrics.__name__)
+    from google.ads.googleads.v8 import EffectiveFrequencyBreakdown
+    expected_names.append(EffectiveFrequencyBreakdown.__name__)
     from google.ads.googleads.v8 import GetRecommendationRequest
     expected_names.append(GetRecommendationRequest.__name__)
     from google.ads.googleads.v8 import ApplyRecommendationRequest
@@ -5851,6 +6031,10 @@ def test_versionsed_module_level_imports():
     expected_names.append(SmartCampaignSuggestionInfo.__name__)
     from google.ads.googleads.v8 import SuggestSmartCampaignBudgetOptionsResponse
     expected_names.append(SuggestSmartCampaignBudgetOptionsResponse.__name__)
+    from google.ads.googleads.v8 import SuggestSmartCampaignAdRequest
+    expected_names.append(SuggestSmartCampaignAdRequest.__name__)
+    from google.ads.googleads.v8 import SuggestSmartCampaignAdResponse
+    expected_names.append(SuggestSmartCampaignAdResponse.__name__)
     from google.ads.googleads.v8 import GetThirdPartyAppAnalyticsLinkRequest
     expected_names.append(GetThirdPartyAppAnalyticsLinkRequest.__name__)
     from google.ads.googleads.v8 import RegenerateShareableLinkIdRequest
@@ -6447,6 +6631,18 @@ def test_versionsed_module_level_imports():
     expected_names.append(CustomerAssetServiceTransport.__name__)
     from google.ads.googleads.v8 import CustomerAssetServiceGrpcTransport
     expected_names.append(CustomerAssetServiceGrpcTransport.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleSetServiceClient
+    expected_names.append(ConversionValueRuleSetServiceClient.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleSetServiceTransport
+    expected_names.append(ConversionValueRuleSetServiceTransport.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleSetServiceGrpcTransport
+    expected_names.append(ConversionValueRuleSetServiceGrpcTransport.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleServiceClient
+    expected_names.append(ConversionValueRuleServiceClient.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleServiceTransport
+    expected_names.append(ConversionValueRuleServiceTransport.__name__)
+    from google.ads.googleads.v8 import ConversionValueRuleServiceGrpcTransport
+    expected_names.append(ConversionValueRuleServiceGrpcTransport.__name__)
     from google.ads.googleads.v8 import ConversionCustomVariableServiceClient
     expected_names.append(ConversionCustomVariableServiceClient.__name__)
     from google.ads.googleads.v8 import ConversionCustomVariableServiceTransport
@@ -6531,6 +6727,18 @@ def test_versionsed_module_level_imports():
     expected_names.append(BiddingStrategyServiceTransport.__name__)
     from google.ads.googleads.v8 import BiddingStrategyServiceGrpcTransport
     expected_names.append(BiddingStrategyServiceGrpcTransport.__name__)
+    from google.ads.googleads.v8 import BiddingSeasonalityAdjustmentServiceClient
+    expected_names.append(BiddingSeasonalityAdjustmentServiceClient.__name__)
+    from google.ads.googleads.v8 import BiddingSeasonalityAdjustmentServiceTransport
+    expected_names.append(BiddingSeasonalityAdjustmentServiceTransport.__name__)
+    from google.ads.googleads.v8 import BiddingSeasonalityAdjustmentServiceGrpcTransport
+    expected_names.append(BiddingSeasonalityAdjustmentServiceGrpcTransport.__name__)
+    from google.ads.googleads.v8 import BiddingDataExclusionServiceClient
+    expected_names.append(BiddingDataExclusionServiceClient.__name__)
+    from google.ads.googleads.v8 import BiddingDataExclusionServiceTransport
+    expected_names.append(BiddingDataExclusionServiceTransport.__name__)
+    from google.ads.googleads.v8 import BiddingDataExclusionServiceGrpcTransport
+    expected_names.append(BiddingDataExclusionServiceGrpcTransport.__name__)
     from google.ads.googleads.v8 import AssetServiceClient
     expected_names.append(AssetServiceClient.__name__)
     from google.ads.googleads.v8 import AssetServiceTransport

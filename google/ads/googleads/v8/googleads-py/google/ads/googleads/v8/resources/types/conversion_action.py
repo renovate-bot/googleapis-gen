@@ -167,6 +167,28 @@ class ConversionAction(proto.Message):
             optional=True,
         )
 
+    class FirebaseSettings(proto.Message):
+        r"""Settings related to a Firebase conversion action.
+        Attributes:
+            event_name (str):
+                Output only. The event name of a Firebase
+                conversion.
+            project_id (str):
+                Output only. The Firebase project ID of the
+                conversion.
+        """
+
+        event_name = proto.Field(
+            proto.STRING,
+            number=3,
+            optional=True,
+        )
+        project_id = proto.Field(
+            proto.STRING,
+            number=4,
+            optional=True,
+        )
+
     class ThirdPartyAppAnalyticsSettings(proto.Message):
         r"""Settings related to a third party app analytics conversion
         action.
@@ -188,28 +210,6 @@ class ConversionAction(proto.Message):
         provider_name = proto.Field(
             proto.STRING,
             number=3,
-        )
-
-    class FirebaseSettings(proto.Message):
-        r"""Settings related to a Firebase conversion action.
-        Attributes:
-            event_name (str):
-                Output only. The event name of a Firebase
-                conversion.
-            project_id (str):
-                Output only. The Firebase project ID of the
-                conversion.
-        """
-
-        event_name = proto.Field(
-            proto.STRING,
-            number=3,
-            optional=True,
-        )
-        project_id = proto.Field(
-            proto.STRING,
-            number=4,
-            optional=True,
         )
 
     resource_name = proto.Field(

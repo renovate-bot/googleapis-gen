@@ -21,6 +21,7 @@ import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
+from google.ads.googleads.v8.common.types import ad_type_infos
 from google.ads.googleads.v8.common.types import criteria
 from google.ads.googleads.v8.enums.types import day_of_week
 from google.ads.googleads.v8.enums.types import minute_of_hour
@@ -311,6 +312,69 @@ def test_suggest_smart_campaign_budget_options_field_headers():
     ) in kw['metadata']
 
 
+def test_suggest_smart_campaign_ad(transport: str = 'grpc', request_type=smart_campaign_suggest_service.SuggestSmartCampaignAdRequest):
+    client = SmartCampaignSuggestServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
+    )
+
+    # Everything is optional in proto3 as far as the runtime is concerned,
+    # and we are mocking out the actual API, so just send an empty request.
+    request = request_type()
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.suggest_smart_campaign_ad),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = smart_campaign_suggest_service.SuggestSmartCampaignAdResponse(
+        )
+        response = client.suggest_smart_campaign_ad(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == smart_campaign_suggest_service.SuggestSmartCampaignAdRequest()
+
+    # Establish that the response is the type that we expect.
+    assert isinstance(response, smart_campaign_suggest_service.SuggestSmartCampaignAdResponse)
+
+
+def test_suggest_smart_campaign_ad_from_dict():
+    test_suggest_smart_campaign_ad(request_type=dict)
+
+
+def test_suggest_smart_campaign_ad_field_headers():
+    client = SmartCampaignSuggestServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Any value that is part of the HTTP/1.1 URI should be sent as
+    # a field header. Set these to a non-empty value.
+    request = smart_campaign_suggest_service.SuggestSmartCampaignAdRequest()
+
+    request.customer_id = 'customer_id/value'
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.suggest_smart_campaign_ad),
+            '__call__') as call:
+        call.return_value = smart_campaign_suggest_service.SuggestSmartCampaignAdResponse()
+        client.suggest_smart_campaign_ad(request)
+
+        # Establish that the underlying gRPC stub method was called.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == request
+
+    # Establish that the field header was sent.
+    _, _, kw = call.mock_calls[0]
+    assert (
+        'x-goog-request-params',
+        'customer_id=customer_id/value',
+    ) in kw['metadata']
+
+
 def test_credentials_transport_error():
     # It is an error to provide credentials and a transport instance.
     transport = transports.SmartCampaignSuggestServiceGrpcTransport(
@@ -374,6 +438,7 @@ def test_smart_campaign_suggest_service_base_transport():
     # raise NotImplementedError.
     methods = (
         'suggest_smart_campaign_budget_options',
+        'suggest_smart_campaign_ad',
     )
     for method in methods:
         with pytest.raises(NotImplementedError):

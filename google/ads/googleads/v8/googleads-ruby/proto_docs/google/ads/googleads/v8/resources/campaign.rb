@@ -276,6 +276,25 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
+            # Campaign-level settings for tracking information.
+            # @!attribute [r] tracking_url
+            #   @return [::String]
+            #     Output only. The url used for dynamic tracking.
+            class TrackingSetting
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Selective optimization setting for this campaign, which includes a set of
+            # conversion actions to optimize this campaign towards.
+            # @!attribute [rw] conversion_actions
+            #   @return [::Array<::String>]
+            #     The selected set of conversion actions for optimizing this campaign.
+            class SelectiveOptimization
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
             # The setting for controlling Dynamic Search Ads (DSA).
             # @!attribute [rw] domain_name
             #   @return [::String]
@@ -291,16 +310,6 @@ module Google
             #   @return [::Array<::String>]
             #     The list of page feeds associated with the campaign.
             class DynamicSearchAdsSetting
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # Optimization goal setting for this campaign, which includes a set of
-            # optimization goal types.
-            # @!attribute [rw] optimization_goal_types
-            #   @return [::Array<::Google::Ads::GoogleAds::V8::Enums::OptimizationGoalTypeEnum::OptimizationGoalType>]
-            #     The list of optimization goal types.
-            class OptimizationGoalSetting
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -335,11 +344,15 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Campaign-level settings for tracking information.
-            # @!attribute [r] tracking_url
-            #   @return [::String]
-            #     Output only. The url used for dynamic tracking.
-            class TrackingSetting
+            # Describes how unbranded pharma ads will be displayed.
+            # @!attribute [rw] vanity_pharma_display_url_mode
+            #   @return [::Google::Ads::GoogleAds::V8::Enums::VanityPharmaDisplayUrlModeEnum::VanityPharmaDisplayUrlMode]
+            #     The display mode for vanity pharma URLs.
+            # @!attribute [rw] vanity_pharma_text
+            #   @return [::Google::Ads::GoogleAds::V8::Enums::VanityPharmaTextEnum::VanityPharmaText]
+            #     The text that will be displayed in display URL of the text ad when
+            #     website description is the selected display mode for vanity pharma URLs.
+            class VanityPharma
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -365,19 +378,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Describes how unbranded pharma ads will be displayed.
-            # @!attribute [rw] vanity_pharma_display_url_mode
-            #   @return [::Google::Ads::GoogleAds::V8::Enums::VanityPharmaDisplayUrlModeEnum::VanityPharmaDisplayUrlMode]
-            #     The display mode for vanity pharma URLs.
-            # @!attribute [rw] vanity_pharma_text
-            #   @return [::Google::Ads::GoogleAds::V8::Enums::VanityPharmaTextEnum::VanityPharmaText]
-            #     The text that will be displayed in display URL of the text ad when
-            #     website description is the selected display mode for vanity pharma URLs.
-            class VanityPharma
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # Campaign-level settings for App Campaigns.
             # @!attribute [rw] bidding_strategy_goal_type
             #   @return [::Google::Ads::GoogleAds::V8::Enums::AppCampaignBiddingStrategyGoalTypeEnum::AppCampaignBiddingStrategyGoalType]
@@ -394,12 +394,12 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Selective optimization setting for this campaign, which includes a set of
-            # conversion actions to optimize this campaign towards.
-            # @!attribute [rw] conversion_actions
-            #   @return [::Array<::String>]
-            #     The selected set of conversion actions for optimizing this campaign.
-            class SelectiveOptimization
+            # Optimization goal setting for this campaign, which includes a set of
+            # optimization goal types.
+            # @!attribute [rw] optimization_goal_types
+            #   @return [::Array<::Google::Ads::GoogleAds::V8::Enums::OptimizationGoalTypeEnum::OptimizationGoalType>]
+            #     The list of optimization goal types.
+            class OptimizationGoalSetting
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
