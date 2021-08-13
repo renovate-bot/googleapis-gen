@@ -1,13 +1,13 @@
-# Ruby Client for the Google Cloud Video Transcoder V1 API
+# Ruby Client for the Transcoder V1 API
 
-API Client library for the Google Cloud Video Transcoder V1 API
+API Client library for the Transcoder V1 API
 
-google-cloud-video-transcoder-v1 is the official client library for the Google Cloud Video Transcoder V1 API.
+The Transcoder API allows you to convert video files and package them for optimized delivery to web, mobile and connected TVs.
 
 https://github.com/googleapis/google-cloud-ruby
 
 This gem is a _versioned_ client. It provides basic client classes for a
-specific version of the Google Cloud Video Transcoder V1 API. Most users should consider using
+specific version of the Transcoder V1 API. Most users should consider using
 the main client gem,
 [google-cloud-video-transcoder](https://rubygems.org/gems/google-cloud-video-transcoder).
 See the section below titled *Which client should I use?* for more information.
@@ -24,6 +24,7 @@ In order to use this library, you first need to go through the following steps:
 
 1. [Select or create a Cloud Platform project.](https://console.cloud.google.com/project)
 1. [Enable billing for your project.](https://cloud.google.com/billing/docs/how-to/modify-project#enable_billing_for_a_project)
+1. [Enable the API.](https://console.cloud.google.com/apis/library/transcoder.googleapis.com)
 1. [Set up authentication.](AUTHENTICATION.md)
 
 ## Quick Start
@@ -38,6 +39,9 @@ response = client.create_job request
 
 View the [Client Library Documentation](https://googleapis.dev/ruby/google-cloud-video-transcoder-v1/latest)
 for class and method documentation.
+
+See also the [Product Documentation](https://cloud.google.com/transcoder/)
+for general usage information.
 
 ## Enabling Logging
 

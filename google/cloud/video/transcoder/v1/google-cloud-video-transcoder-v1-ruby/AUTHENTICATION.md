@@ -19,7 +19,7 @@ during development.
 2. Set the [environment variable](#environment-variables).
 
 ```sh
-export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
+export TRANSCODER_CREDENTIALS=path/to/keyfile.json
 ```
 
 3. Initialize the client.
@@ -66,6 +66,8 @@ The environment variables that google-cloud-video-transcoder-v1
 checks for credentials are configured on the service Credentials class (such as
 {::Google::Cloud::Video::Transcoder::V1::TranscoderService::Credentials}):
 
+* `TRANSCODER_CREDENTIALS` - Path to JSON file, or JSON contents
+* `TRANSCODER_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
 * `GOOGLE_APPLICATION_CREDENTIALS` - Path to JSON file
@@ -73,7 +75,7 @@ checks for credentials are configured on the service Credentials class (such as
 ```ruby
 require "google/cloud/video/transcoder/v1"
 
-ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
+ENV["TRANSCODER_CREDENTIALS"] = "path/to/keyfile.json"
 
 client = ::Google::Cloud::Video::Transcoder::V1::TranscoderService::Client.new
 ```

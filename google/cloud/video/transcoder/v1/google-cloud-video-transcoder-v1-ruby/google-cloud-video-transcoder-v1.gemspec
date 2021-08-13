@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-video-transcoder-v1 is the official client library for the Google Cloud Video Transcoder V1 API. Note that google-cloud-video-transcoder-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-video-transcoder instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Video Transcoder V1 API"
+  gem.description   = "The Transcoder API allows you to convert video files and package them for optimized delivery to web, mobile and connected TVs. Note that google-cloud-video-transcoder-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-video-transcoder instead. See the readme for more details."
+  gem.summary       = "API Client library for the Transcoder V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 
