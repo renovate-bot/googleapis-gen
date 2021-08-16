@@ -17,7 +17,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class AnalyzeIamPolicyLongrunningMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -30,7 +30,7 @@ class AnalyzeIamPolicyLongrunningMetadata extends \Google\Protobuf\Internal\Mess
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Timestamp $create_time
-     *           The time the operation was created.
+     *           Output only. The time the operation was created.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,7 +39,7 @@ class AnalyzeIamPolicyLongrunningMetadata extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -60,7 +60,7 @@ class AnalyzeIamPolicyLongrunningMetadata extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var

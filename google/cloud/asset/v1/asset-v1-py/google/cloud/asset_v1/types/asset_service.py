@@ -76,6 +76,7 @@ class ContentType(proto.Enum):
     ORG_POLICY = 4
     ACCESS_POLICY = 5
     OS_INVENTORY = 6
+    RELATIONSHIP = 7
 
 
 class AnalyzeIamPolicyLongrunningMetadata(proto.Message):
@@ -84,7 +85,8 @@ class AnalyzeIamPolicyLongrunningMetadata(proto.Message):
 
     Attributes:
         create_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time the operation was created.
+            Output only. The time the operation was
+            created.
     """
 
     create_time = proto.Field(
@@ -142,6 +144,23 @@ class ExportAssetsRequest(proto.Message):
         output_config (google.cloud.asset_v1.types.OutputConfig):
             Required. Output configuration indicating
             where the results will be output to.
+        relationship_types (Sequence[str]):
+            A list of relationship types to export, for example:
+            ``INSTANCE_TO_INSTANCEGROUP``. This field should only be
+            specified if content_type=RELATIONSHIP.
+
+            -  If specified: it snapshots specified relationships. It
+               returns an error if any of the [relationship_types]
+               doesn't belong to the supported relationship types of the
+               [asset_types] or if any of the [asset_types] doesn't
+               belong to the source types of the [relationship_types].
+            -  Otherwise: it snapshots the supported relationships for
+               all [asset_types] or returns an error if any of the
+               [asset_types] has no relationship support. An unspecified
+               asset types field means all supported asset_types. See
+               `Introduction to Cloud Asset
+               Inventory <https://cloud.google.com/asset-inventory/docs/overview>`__
+               for all supported asset types and relationship types.
     """
 
     parent = proto.Field(
@@ -166,6 +185,10 @@ class ExportAssetsRequest(proto.Message):
         proto.MESSAGE,
         number=5,
         message='OutputConfig',
+    )
+    relationship_types = proto.RepeatedField(
+        proto.STRING,
+        number=6,
     )
 
 
@@ -262,6 +285,23 @@ class ListAssetsRequest(proto.Message):
             ``ListAssetsRequest``. It is a continuation of a prior
             ``ListAssets`` call, and the API should return the next page
             of assets.
+        relationship_types (Sequence[str]):
+            A list of relationship types to output, for example:
+            ``INSTANCE_TO_INSTANCEGROUP``. This field should only be
+            specified if content_type=RELATIONSHIP.
+
+            -  If specified: it snapshots specified relationships. It
+               returns an error if any of the [relationship_types]
+               doesn't belong to the supported relationship types of the
+               [asset_types] or if any of the [asset_types] doesn't
+               belong to the source types of the [relationship_types].
+            -  Otherwise: it snapshots the supported relationships for
+               all [asset_types] or returns an error if any of the
+               [asset_types] has no relationship support. An unspecified
+               asset types field means all supported asset_types. See
+               `Introduction to Cloud Asset
+               Inventory <https://cloud.google.com/asset-inventory/docs/overview>`__
+               for all supported asset types and relationship types.
     """
 
     parent = proto.Field(
@@ -289,6 +329,10 @@ class ListAssetsRequest(proto.Message):
     page_token = proto.Field(
         proto.STRING,
         number=6,
+    )
+    relationship_types = proto.RepeatedField(
+        proto.STRING,
+        number=7,
     )
 
 
@@ -355,6 +399,23 @@ class BatchGetAssetsHistoryRequest(proto.Message):
             not set, the snapshot of the assets at end_time will be
             returned. The returned results contain all temporal assets
             whose time window overlap with read_time_window.
+        relationship_types (Sequence[str]):
+            Optional. A list of relationship types to output, for
+            example: ``INSTANCE_TO_INSTANCEGROUP``. This field should
+            only be specified if content_type=RELATIONSHIP.
+
+            -  If specified: it outputs specified relationships' history
+               on the [asset_names]. It returns an error if any of the
+               [relationship_types] doesn't belong to the supported
+               relationship types of the [asset_names] or if any of the
+               [asset_names]'s types doesn't belong to the source types
+               of the [relationship_types].
+            -  Otherwise: it outputs the supported relationships'
+               history on the [asset_names] or returns an error if any
+               of the [asset_names]'s types has no relationship support.
+               See `Introduction to Cloud Asset
+               Inventory <https://cloud.google.com/asset-inventory/docs/overview>`__
+               for all supported asset types and relationship types.
     """
 
     parent = proto.Field(
@@ -374,6 +435,10 @@ class BatchGetAssetsHistoryRequest(proto.Message):
         proto.MESSAGE,
         number=4,
         message=gca_assets.TimeWindow,
+    )
+    relationship_types = proto.RepeatedField(
+        proto.STRING,
+        number=5,
     )
 
 
@@ -828,6 +893,25 @@ class Feed(proto.Message):
             See our `user
             guide <https://cloud.google.com/asset-inventory/docs/monitoring-asset-changes-with-condition>`__
             for detailed instructions.
+        relationship_types (Sequence[str]):
+            A list of relationship types to output, for example:
+            ``INSTANCE_TO_INSTANCEGROUP``. This field should only be
+            specified if content_type=RELATIONSHIP.
+
+            -  If specified: it outputs specified relationship updates
+               on the [asset_names] or the [asset_types]. It returns an
+               error if any of the [relationship_types] doesn't belong
+               to the supported relationship types of the [asset_names]
+               or [asset_types], or any of the [asset_names] or the
+               [asset_types] doesn't belong to the source types of the
+               [relationship_types].
+            -  Otherwise: it outputs the supported relationships of the
+               types of [asset_names] and [asset_types] or returns an
+               error if any of the [asset_names] or the [asset_types]
+               has no replationship support. See `Introduction to Cloud
+               Asset
+               Inventory <https://cloud.google.com/asset-inventory/docs/overview>`__
+               for all supported asset types and relationship types.
     """
 
     name = proto.Field(
@@ -856,6 +940,10 @@ class Feed(proto.Message):
         proto.MESSAGE,
         number=6,
         message=expr_pb2.Expr,
+    )
+    relationship_types = proto.RepeatedField(
+        proto.STRING,
+        number=7,
     )
 
 

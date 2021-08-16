@@ -189,6 +189,19 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
+          case 106: {
+            com.google.cloud.asset.v1.RelatedAssets.Builder subBuilder = null;
+            if (relatedAssets_ != null) {
+              subBuilder = relatedAssets_.toBuilder();
+            }
+            relatedAssets_ = input.readMessage(com.google.cloud.asset.v1.RelatedAssets.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(relatedAssets_);
+              relatedAssets_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -774,6 +787,47 @@ private static final long serialVersionUID = 0L;
     return getOsInventory();
   }
 
+  public static final int RELATED_ASSETS_FIELD_NUMBER = 13;
+  private com.google.cloud.asset.v1.RelatedAssets relatedAssets_;
+  /**
+   * <pre>
+   * The related assets of the asset of one relationship type.
+   * One asset only represents one type of relationship.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   * @return Whether the relatedAssets field is set.
+   */
+  @java.lang.Override
+  public boolean hasRelatedAssets() {
+    return relatedAssets_ != null;
+  }
+  /**
+   * <pre>
+   * The related assets of the asset of one relationship type.
+   * One asset only represents one type of relationship.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   * @return The relatedAssets.
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.RelatedAssets getRelatedAssets() {
+    return relatedAssets_ == null ? com.google.cloud.asset.v1.RelatedAssets.getDefaultInstance() : relatedAssets_;
+  }
+  /**
+   * <pre>
+   * The related assets of the asset of one relationship type.
+   * One asset only represents one type of relationship.
+   * </pre>
+   *
+   * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.asset.v1.RelatedAssetsOrBuilder getRelatedAssetsOrBuilder() {
+    return getRelatedAssets();
+  }
+
   public static final int ANCESTORS_FIELD_NUMBER = 10;
   private com.google.protobuf.LazyStringList ancestors_;
   /**
@@ -896,6 +950,9 @@ private static final long serialVersionUID = 0L;
     if (osInventory_ != null) {
       output.writeMessage(12, getOsInventory());
     }
+    if (relatedAssets_ != null) {
+      output.writeMessage(13, getRelatedAssets());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -951,6 +1008,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getOsInventory());
     }
+    if (relatedAssets_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(13, getRelatedAssets());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -991,6 +1052,11 @@ private static final long serialVersionUID = 0L;
     if (hasOsInventory()) {
       if (!getOsInventory()
           .equals(other.getOsInventory())) return false;
+    }
+    if (hasRelatedAssets() != other.hasRelatedAssets()) return false;
+    if (hasRelatedAssets()) {
+      if (!getRelatedAssets()
+          .equals(other.getRelatedAssets())) return false;
     }
     if (!getAncestorsList()
         .equals(other.getAncestorsList())) return false;
@@ -1045,6 +1111,10 @@ private static final long serialVersionUID = 0L;
     if (hasOsInventory()) {
       hash = (37 * hash) + OS_INVENTORY_FIELD_NUMBER;
       hash = (53 * hash) + getOsInventory().hashCode();
+    }
+    if (hasRelatedAssets()) {
+      hash = (37 * hash) + RELATED_ASSETS_FIELD_NUMBER;
+      hash = (53 * hash) + getRelatedAssets().hashCode();
     }
     if (getAncestorsCount() > 0) {
       hash = (37 * hash) + ANCESTORS_FIELD_NUMBER;
@@ -1246,6 +1316,12 @@ private static final long serialVersionUID = 0L;
         osInventory_ = null;
         osInventoryBuilder_ = null;
       }
+      if (relatedAssetsBuilder_ == null) {
+        relatedAssets_ = null;
+      } else {
+        relatedAssets_ = null;
+        relatedAssetsBuilder_ = null;
+      }
       ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       accessContextPolicyCase_ = 0;
@@ -1328,6 +1404,11 @@ private static final long serialVersionUID = 0L;
         result.osInventory_ = osInventory_;
       } else {
         result.osInventory_ = osInventoryBuilder_.build();
+      }
+      if (relatedAssetsBuilder_ == null) {
+        result.relatedAssets_ = relatedAssets_;
+      } else {
+        result.relatedAssets_ = relatedAssetsBuilder_.build();
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         ancestors_ = ancestors_.getUnmodifiableView();
@@ -1428,6 +1509,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasOsInventory()) {
         mergeOsInventory(other.getOsInventory());
+      }
+      if (other.hasRelatedAssets()) {
+        mergeRelatedAssets(other.getRelatedAssets());
       }
       if (!other.ancestors_.isEmpty()) {
         if (ancestors_.isEmpty()) {
@@ -3369,6 +3453,170 @@ private static final long serialVersionUID = 0L;
         osInventory_ = null;
       }
       return osInventoryBuilder_;
+    }
+
+    private com.google.cloud.asset.v1.RelatedAssets relatedAssets_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.asset.v1.RelatedAssets, com.google.cloud.asset.v1.RelatedAssets.Builder, com.google.cloud.asset.v1.RelatedAssetsOrBuilder> relatedAssetsBuilder_;
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * @return Whether the relatedAssets field is set.
+     */
+    public boolean hasRelatedAssets() {
+      return relatedAssetsBuilder_ != null || relatedAssets_ != null;
+    }
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     * @return The relatedAssets.
+     */
+    public com.google.cloud.asset.v1.RelatedAssets getRelatedAssets() {
+      if (relatedAssetsBuilder_ == null) {
+        return relatedAssets_ == null ? com.google.cloud.asset.v1.RelatedAssets.getDefaultInstance() : relatedAssets_;
+      } else {
+        return relatedAssetsBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     */
+    public Builder setRelatedAssets(com.google.cloud.asset.v1.RelatedAssets value) {
+      if (relatedAssetsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        relatedAssets_ = value;
+        onChanged();
+      } else {
+        relatedAssetsBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     */
+    public Builder setRelatedAssets(
+        com.google.cloud.asset.v1.RelatedAssets.Builder builderForValue) {
+      if (relatedAssetsBuilder_ == null) {
+        relatedAssets_ = builderForValue.build();
+        onChanged();
+      } else {
+        relatedAssetsBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     */
+    public Builder mergeRelatedAssets(com.google.cloud.asset.v1.RelatedAssets value) {
+      if (relatedAssetsBuilder_ == null) {
+        if (relatedAssets_ != null) {
+          relatedAssets_ =
+            com.google.cloud.asset.v1.RelatedAssets.newBuilder(relatedAssets_).mergeFrom(value).buildPartial();
+        } else {
+          relatedAssets_ = value;
+        }
+        onChanged();
+      } else {
+        relatedAssetsBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     */
+    public Builder clearRelatedAssets() {
+      if (relatedAssetsBuilder_ == null) {
+        relatedAssets_ = null;
+        onChanged();
+      } else {
+        relatedAssets_ = null;
+        relatedAssetsBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     */
+    public com.google.cloud.asset.v1.RelatedAssets.Builder getRelatedAssetsBuilder() {
+      
+      onChanged();
+      return getRelatedAssetsFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     */
+    public com.google.cloud.asset.v1.RelatedAssetsOrBuilder getRelatedAssetsOrBuilder() {
+      if (relatedAssetsBuilder_ != null) {
+        return relatedAssetsBuilder_.getMessageOrBuilder();
+      } else {
+        return relatedAssets_ == null ?
+            com.google.cloud.asset.v1.RelatedAssets.getDefaultInstance() : relatedAssets_;
+      }
+    }
+    /**
+     * <pre>
+     * The related assets of the asset of one relationship type.
+     * One asset only represents one type of relationship.
+     * </pre>
+     *
+     * <code>.google.cloud.asset.v1.RelatedAssets related_assets = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.asset.v1.RelatedAssets, com.google.cloud.asset.v1.RelatedAssets.Builder, com.google.cloud.asset.v1.RelatedAssetsOrBuilder> 
+        getRelatedAssetsFieldBuilder() {
+      if (relatedAssetsBuilder_ == null) {
+        relatedAssetsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.asset.v1.RelatedAssets, com.google.cloud.asset.v1.RelatedAssets.Builder, com.google.cloud.asset.v1.RelatedAssetsOrBuilder>(
+                getRelatedAssets(),
+                getParentForChildren(),
+                isClean());
+        relatedAssets_ = null;
+      }
+      return relatedAssetsBuilder_;
     }
 
     private com.google.protobuf.LazyStringList ancestors_ = com.google.protobuf.LazyStringArrayList.EMPTY;

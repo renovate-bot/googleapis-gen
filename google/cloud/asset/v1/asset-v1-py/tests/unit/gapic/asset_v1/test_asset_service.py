@@ -1127,6 +1127,7 @@ def test_create_feed(transport: str = 'grpc', request_type=asset_service.CreateF
             asset_names=['asset_names_value'],
             asset_types=['asset_types_value'],
             content_type=asset_service.ContentType.RESOURCE,
+            relationship_types=['relationship_types_value'],
         )
         response = client.create_feed(request)
 
@@ -1141,6 +1142,7 @@ def test_create_feed(transport: str = 'grpc', request_type=asset_service.CreateF
     assert response.asset_names == ['asset_names_value']
     assert response.asset_types == ['asset_types_value']
     assert response.content_type == asset_service.ContentType.RESOURCE
+    assert response.relationship_types == ['relationship_types_value']
 
 
 def test_create_feed_from_dict():
@@ -1186,6 +1188,7 @@ async def test_create_feed_async(transport: str = 'grpc_asyncio', request_type=a
             asset_names=['asset_names_value'],
             asset_types=['asset_types_value'],
             content_type=asset_service.ContentType.RESOURCE,
+            relationship_types=['relationship_types_value'],
         ))
         response = await client.create_feed(request)
 
@@ -1200,6 +1203,7 @@ async def test_create_feed_async(transport: str = 'grpc_asyncio', request_type=a
     assert response.asset_names == ['asset_names_value']
     assert response.asset_types == ['asset_types_value']
     assert response.content_type == asset_service.ContentType.RESOURCE
+    assert response.relationship_types == ['relationship_types_value']
 
 
 @pytest.mark.asyncio
@@ -1370,6 +1374,7 @@ def test_get_feed(transport: str = 'grpc', request_type=asset_service.GetFeedReq
             asset_names=['asset_names_value'],
             asset_types=['asset_types_value'],
             content_type=asset_service.ContentType.RESOURCE,
+            relationship_types=['relationship_types_value'],
         )
         response = client.get_feed(request)
 
@@ -1384,6 +1389,7 @@ def test_get_feed(transport: str = 'grpc', request_type=asset_service.GetFeedReq
     assert response.asset_names == ['asset_names_value']
     assert response.asset_types == ['asset_types_value']
     assert response.content_type == asset_service.ContentType.RESOURCE
+    assert response.relationship_types == ['relationship_types_value']
 
 
 def test_get_feed_from_dict():
@@ -1429,6 +1435,7 @@ async def test_get_feed_async(transport: str = 'grpc_asyncio', request_type=asse
             asset_names=['asset_names_value'],
             asset_types=['asset_types_value'],
             content_type=asset_service.ContentType.RESOURCE,
+            relationship_types=['relationship_types_value'],
         ))
         response = await client.get_feed(request)
 
@@ -1443,6 +1450,7 @@ async def test_get_feed_async(transport: str = 'grpc_asyncio', request_type=asse
     assert response.asset_names == ['asset_names_value']
     assert response.asset_types == ['asset_types_value']
     assert response.content_type == asset_service.ContentType.RESOURCE
+    assert response.relationship_types == ['relationship_types_value']
 
 
 @pytest.mark.asyncio
@@ -1840,6 +1848,7 @@ def test_update_feed(transport: str = 'grpc', request_type=asset_service.UpdateF
             asset_names=['asset_names_value'],
             asset_types=['asset_types_value'],
             content_type=asset_service.ContentType.RESOURCE,
+            relationship_types=['relationship_types_value'],
         )
         response = client.update_feed(request)
 
@@ -1854,6 +1863,7 @@ def test_update_feed(transport: str = 'grpc', request_type=asset_service.UpdateF
     assert response.asset_names == ['asset_names_value']
     assert response.asset_types == ['asset_types_value']
     assert response.content_type == asset_service.ContentType.RESOURCE
+    assert response.relationship_types == ['relationship_types_value']
 
 
 def test_update_feed_from_dict():
@@ -1899,6 +1909,7 @@ async def test_update_feed_async(transport: str = 'grpc_asyncio', request_type=a
             asset_names=['asset_names_value'],
             asset_types=['asset_types_value'],
             content_type=asset_service.ContentType.RESOURCE,
+            relationship_types=['relationship_types_value'],
         ))
         response = await client.update_feed(request)
 
@@ -1913,6 +1924,7 @@ async def test_update_feed_async(transport: str = 'grpc_asyncio', request_type=a
     assert response.asset_names == ['asset_names_value']
     assert response.asset_types == ['asset_types_value']
     assert response.content_type == asset_service.ContentType.RESOURCE
+    assert response.relationship_types == ['relationship_types_value']
 
 
 @pytest.mark.asyncio

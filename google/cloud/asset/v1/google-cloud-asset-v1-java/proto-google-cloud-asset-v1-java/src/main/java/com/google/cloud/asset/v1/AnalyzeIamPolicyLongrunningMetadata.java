@@ -102,7 +102,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -114,7 +114,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -461,7 +461,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -472,7 +472,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -487,7 +487,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -507,7 +507,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -525,7 +525,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -547,7 +547,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -565,7 +565,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -592,7 +592,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The time the operation was created.
+     * Output only. The time the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

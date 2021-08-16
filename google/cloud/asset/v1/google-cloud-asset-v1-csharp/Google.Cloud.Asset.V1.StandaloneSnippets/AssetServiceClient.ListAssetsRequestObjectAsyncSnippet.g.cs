@@ -41,6 +41,7 @@ namespace Google.Cloud.Asset.V1.Snippets
                 ReadTime = new Timestamp(),
                 AssetTypes = { "", },
                 ContentType = ContentType.Unspecified,
+                RelationshipTypes = { "", },
             };
             // Make the request
             PagedAsyncEnumerable<ListAssetsResponse, Asset> response = assetServiceClient.ListAssetsAsync(request);

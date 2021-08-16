@@ -40,6 +40,7 @@ namespace Google.Cloud.Asset.V1.Snippets
                 AssetTypes = { "", },
                 ContentType = ContentType.Unspecified,
                 OutputConfig = new OutputConfig(),
+                RelationshipTypes = { "", },
             };
             // Make the request
             Operation<ExportAssetsResponse, ExportAssetsRequest> response = assetServiceClient.ExportAssets(request);

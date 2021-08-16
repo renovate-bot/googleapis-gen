@@ -9,7 +9,7 @@ public interface AnalyzeIamPolicyLongrunningMetadataOrBuilder extends
 
   /**
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -18,7 +18,7 @@ public interface AnalyzeIamPolicyLongrunningMetadataOrBuilder extends
   boolean hasCreateTime();
   /**
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -27,7 +27,7 @@ public interface AnalyzeIamPolicyLongrunningMetadataOrBuilder extends
   com.google.protobuf.Timestamp getCreateTime();
   /**
    * <pre>
-   * The time the operation was created.
+   * Output only. The time the operation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

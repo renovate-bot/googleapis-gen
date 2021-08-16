@@ -37,6 +37,7 @@ namespace Google.Cloud.Asset.V1.Snippets
                 AssetNames = { "", },
                 ContentType = ContentType.Unspecified,
                 ReadTimeWindow = new TimeWindow(),
+                RelationshipTypes = { "", },
             };
             // Make the request
             BatchGetAssetsHistoryResponse response = assetServiceClient.BatchGetAssetsHistory(request);
