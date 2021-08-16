@@ -109,6 +109,14 @@ private static final long serialVersionUID = 0L;
      * <code>MYSQL = 1;</code>
      */
     MYSQL(1),
+    /**
+     * <pre>
+     * Database dump contains Avro files.
+     * </pre>
+     *
+     * <code>AVRO = 2;</code>
+     */
+    AVRO(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -128,6 +136,14 @@ private static final long serialVersionUID = 0L;
      * <code>MYSQL = 1;</code>
      */
     public static final int MYSQL_VALUE = 1;
+    /**
+     * <pre>
+     * Database dump contains Avro files.
+     * </pre>
+     *
+     * <code>AVRO = 2;</code>
+     */
+    public static final int AVRO_VALUE = 2;
 
 
     public final int getNumber() {
@@ -156,6 +172,7 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return TYPE_UNSPECIFIED;
         case 1: return MYSQL;
+        case 2: return AVRO;
         default: return null;
       }
     }

@@ -78,7 +78,7 @@ public interface MetadataImportOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -87,7 +87,7 @@ public interface MetadataImportOrBuilder extends
   boolean hasCreateTime();
   /**
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -96,7 +96,7 @@ public interface MetadataImportOrBuilder extends
   com.google.protobuf.Timestamp getCreateTime();
   /**
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -129,6 +129,33 @@ public interface MetadataImportOrBuilder extends
    * <code>.google.protobuf.Timestamp update_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the endTime field is set.
+   */
+  boolean hasEndTime();
+  /**
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The endTime.
+   */
+  com.google.protobuf.Timestamp getEndTime();
+  /**
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
    * <pre>

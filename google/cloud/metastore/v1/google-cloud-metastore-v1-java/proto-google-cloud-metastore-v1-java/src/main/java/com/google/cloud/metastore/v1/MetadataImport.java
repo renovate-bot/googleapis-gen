@@ -113,6 +113,19 @@ private static final long serialVersionUID = 0L;
             metadataCase_ = 6;
             break;
           }
+          case 58: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (endTime_ != null) {
+              subBuilder = endTime_.toBuilder();
+            }
+            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(endTime_);
+              endTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -1543,7 +1556,7 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Timestamp createTime_;
   /**
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1555,7 +1568,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1567,7 +1580,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The time when the metadata import was created.
+   * Output only. The time when the metadata import was started.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1613,6 +1626,44 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
     return getUpdateTime();
+  }
+
+  public static final int END_TIME_FIELD_NUMBER = 7;
+  private com.google.protobuf.Timestamp endTime_;
+  /**
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the endTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndTime() {
+    return endTime_ != null;
+  }
+  /**
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The endTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getEndTime() {
+    return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+  }
+  /**
+   * <pre>
+   * Output only. The time when the metadata import finished.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+    return getEndTime();
   }
 
   public static final int STATE_FIELD_NUMBER = 5;
@@ -1674,6 +1725,9 @@ private static final long serialVersionUID = 0L;
     if (metadataCase_ == 6) {
       output.writeMessage(6, (com.google.cloud.metastore.v1.MetadataImport.DatabaseDump) metadata_);
     }
+    if (endTime_ != null) {
+      output.writeMessage(7, getEndTime());
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1705,6 +1759,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.google.cloud.metastore.v1.MetadataImport.DatabaseDump) metadata_);
     }
+    if (endTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, getEndTime());
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1733,6 +1791,11 @@ private static final long serialVersionUID = 0L;
     if (hasUpdateTime()) {
       if (!getUpdateTime()
           .equals(other.getUpdateTime())) return false;
+    }
+    if (hasEndTime() != other.hasEndTime()) return false;
+    if (hasEndTime()) {
+      if (!getEndTime()
+          .equals(other.getEndTime())) return false;
     }
     if (state_ != other.state_) return false;
     if (!getMetadataCase().equals(other.getMetadataCase())) return false;
@@ -1766,6 +1829,10 @@ private static final long serialVersionUID = 0L;
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasEndTime()) {
+      hash = (37 * hash) + END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getEndTime().hashCode();
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
@@ -1930,6 +1997,12 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
         updateTimeBuilder_ = null;
       }
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
       state_ = 0;
 
       metadataCase_ = 0;
@@ -1978,6 +2051,11 @@ private static final long serialVersionUID = 0L;
         result.updateTime_ = updateTime_;
       } else {
         result.updateTime_ = updateTimeBuilder_.build();
+      }
+      if (endTimeBuilder_ == null) {
+        result.endTime_ = endTime_;
+      } else {
+        result.endTime_ = endTimeBuilder_.build();
       }
       result.state_ = state_;
       result.metadataCase_ = metadataCase_;
@@ -2042,6 +2120,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
+      }
+      if (other.hasEndTime()) {
+        mergeEndTime(other.getEndTime());
       }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
@@ -2478,7 +2559,7 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2489,7 +2570,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2504,7 +2585,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2524,7 +2605,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2542,7 +2623,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2564,7 +2645,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2582,7 +2663,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2594,7 +2675,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2609,7 +2690,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The time when the metadata import was created.
+     * Output only. The time when the metadata import was started.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2781,6 +2862,161 @@ private static final long serialVersionUID = 0L;
         updateTime_ = null;
       }
       return updateTimeBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp endTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the endTime field is set.
+     */
+    public boolean hasEndTime() {
+      return endTimeBuilder_ != null || endTime_ != null;
+    }
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The endTime.
+     */
+    public com.google.protobuf.Timestamp getEndTime() {
+      if (endTimeBuilder_ == null) {
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      } else {
+        return endTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endTime_ = value;
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder setEndTime(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (endTimeBuilder_ == null) {
+        endTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        endTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
+      if (endTimeBuilder_ == null) {
+        if (endTime_ != null) {
+          endTime_ =
+            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+        } else {
+          endTime_ = value;
+        }
+        onChanged();
+      } else {
+        endTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public Builder clearEndTime() {
+      if (endTimeBuilder_ == null) {
+        endTime_ = null;
+        onChanged();
+      } else {
+        endTime_ = null;
+        endTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
+      
+      onChanged();
+      return getEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
+      if (endTimeBuilder_ != null) {
+        return endTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return endTime_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The time when the metadata import finished.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp end_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getEndTimeFieldBuilder() {
+      if (endTimeBuilder_ == null) {
+        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(),
+                getParentForChildren(),
+                isClean());
+        endTime_ = null;
+      }
+      return endTimeBuilder_;
     }
 
     private int state_ = 0;
