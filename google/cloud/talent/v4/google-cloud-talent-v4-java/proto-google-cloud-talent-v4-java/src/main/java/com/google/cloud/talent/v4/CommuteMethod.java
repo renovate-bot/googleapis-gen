@@ -5,7 +5,8 @@ package com.google.cloud.talent.v4;
 
 /**
  * <pre>
- * Method for commute.
+ * Method for commute. Walking, biking and wheelchair accessible transit is
+ * still in the Preview stage.
  * </pre>
  *
  * Protobuf enum {@code google.cloud.talent.v4.CommuteMethod}
@@ -37,6 +38,31 @@ public enum CommuteMethod
    * <code>TRANSIT = 2;</code>
    */
   TRANSIT(2),
+  /**
+   * <pre>
+   * Commute time is calculated based on walking time.
+   * </pre>
+   *
+   * <code>WALKING = 3;</code>
+   */
+  WALKING(3),
+  /**
+   * <pre>
+   * Commute time is calculated based on biking time.
+   * </pre>
+   *
+   * <code>CYCLING = 4;</code>
+   */
+  CYCLING(4),
+  /**
+   * <pre>
+   * Commute time is calculated based on public transit that is wheelchair
+   * accessible.
+   * </pre>
+   *
+   * <code>TRANSIT_ACCESSIBLE = 5;</code>
+   */
+  TRANSIT_ACCESSIBLE(5),
   UNRECOGNIZED(-1),
   ;
 
@@ -65,6 +91,31 @@ public enum CommuteMethod
    * <code>TRANSIT = 2;</code>
    */
   public static final int TRANSIT_VALUE = 2;
+  /**
+   * <pre>
+   * Commute time is calculated based on walking time.
+   * </pre>
+   *
+   * <code>WALKING = 3;</code>
+   */
+  public static final int WALKING_VALUE = 3;
+  /**
+   * <pre>
+   * Commute time is calculated based on biking time.
+   * </pre>
+   *
+   * <code>CYCLING = 4;</code>
+   */
+  public static final int CYCLING_VALUE = 4;
+  /**
+   * <pre>
+   * Commute time is calculated based on public transit that is wheelchair
+   * accessible.
+   * </pre>
+   *
+   * <code>TRANSIT_ACCESSIBLE = 5;</code>
+   */
+  public static final int TRANSIT_ACCESSIBLE_VALUE = 5;
 
 
   public final int getNumber() {
@@ -94,6 +145,9 @@ public enum CommuteMethod
       case 0: return COMMUTE_METHOD_UNSPECIFIED;
       case 1: return DRIVING;
       case 2: return TRANSIT;
+      case 3: return WALKING;
+      case 4: return CYCLING;
+      case 5: return TRANSIT_ACCESSIBLE;
       default: return null;
     }
   }

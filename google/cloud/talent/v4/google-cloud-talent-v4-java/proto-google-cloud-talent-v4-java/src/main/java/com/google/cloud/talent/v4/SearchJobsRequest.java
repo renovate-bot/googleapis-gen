@@ -1885,6 +1885,9 @@ private static final long serialVersionUID = 0L;
    *   "FULL_TIME", "PART_TIME".
    * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
    * "MEDIUM", "BIG".
+   * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+   *   in days.
+   *   Must specify list of numeric buckets in spec.
    * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in months.
    *   Must specify list of numeric buckets in spec.
@@ -1936,7 +1939,7 @@ private static final long serialVersionUID = 0L;
    * bucket(100000, MAX)])`
    * * `count(string_custom_attribute["some-string-custom-attribute"])`
    * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -1974,6 +1977,9 @@ private static final long serialVersionUID = 0L;
    *   "FULL_TIME", "PART_TIME".
    * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
    * "MEDIUM", "BIG".
+   * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+   *   in days.
+   *   Must specify list of numeric buckets in spec.
    * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in months.
    *   Must specify list of numeric buckets in spec.
@@ -2025,7 +2031,7 @@ private static final long serialVersionUID = 0L;
    * bucket(100000, MAX)])`
    * * `count(string_custom_attribute["some-string-custom-attribute"])`
    * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -2064,6 +2070,9 @@ private static final long serialVersionUID = 0L;
    *   "FULL_TIME", "PART_TIME".
    * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
    * "MEDIUM", "BIG".
+   * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+   *   in days.
+   *   Must specify list of numeric buckets in spec.
    * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in months.
    *   Must specify list of numeric buckets in spec.
@@ -2115,7 +2124,7 @@ private static final long serialVersionUID = 0L;
    * bucket(100000, MAX)])`
    * * `count(string_custom_attribute["some-string-custom-attribute"])`
    * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -2153,6 +2162,9 @@ private static final long serialVersionUID = 0L;
    *   "FULL_TIME", "PART_TIME".
    * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
    * "MEDIUM", "BIG".
+   * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+   *   in days.
+   *   Must specify list of numeric buckets in spec.
    * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in months.
    *   Must specify list of numeric buckets in spec.
@@ -2204,7 +2216,7 @@ private static final long serialVersionUID = 0L;
    * bucket(100000, MAX)])`
    * * `count(string_custom_attribute["some-string-custom-attribute"])`
    * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -2242,6 +2254,9 @@ private static final long serialVersionUID = 0L;
    *   "FULL_TIME", "PART_TIME".
    * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
    * "MEDIUM", "BIG".
+   * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+   *   in days.
+   *   Must specify list of numeric buckets in spec.
    * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
    *   in months.
    *   Must specify list of numeric buckets in spec.
@@ -2293,7 +2308,7 @@ private static final long serialVersionUID = 0L;
    * bucket(100000, MAX)])`
    * * `count(string_custom_attribute["some-string-custom-attribute"])`
    * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+   *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
    * </pre>
    *
    * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -3885,6 +3900,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -3936,7 +3954,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -3977,6 +3995,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4028,7 +4049,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4069,6 +4090,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4120,7 +4144,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4161,6 +4185,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4212,7 +4239,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4260,6 +4287,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4311,7 +4341,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4356,6 +4386,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4407,7 +4440,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4454,6 +4487,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4505,7 +4541,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4553,6 +4589,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4604,7 +4643,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4649,6 +4688,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4700,7 +4742,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4745,6 +4787,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4796,7 +4841,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4842,6 +4887,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4893,7 +4941,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -4937,6 +4985,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -4988,7 +5039,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -5032,6 +5083,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -5083,7 +5137,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -5121,6 +5175,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -5172,7 +5229,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -5213,6 +5270,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -5264,7 +5324,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -5306,6 +5366,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -5357,7 +5420,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -5395,6 +5458,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -5446,7 +5512,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>
@@ -5485,6 +5551,9 @@ private static final long serialVersionUID = 0L;
      *   "FULL_TIME", "PART_TIME".
      * * company_size: histogram by [CompanySize][google.cloud.talent.v4.CompanySize], for example, "SMALL",
      * "MEDIUM", "BIG".
+     * * publish_time_in_day: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
+     *   in days.
+     *   Must specify list of numeric buckets in spec.
      * * publish_time_in_month: histogram by the [Job.posting_publish_time][google.cloud.talent.v4.Job.posting_publish_time]
      *   in months.
      *   Must specify list of numeric buckets in spec.
@@ -5536,7 +5605,7 @@ private static final long serialVersionUID = 0L;
      * bucket(100000, MAX)])`
      * * `count(string_custom_attribute["some-string-custom-attribute"])`
      * * `count(numeric_custom_attribute["some-numeric-custom-attribute"],
-     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative"])`
+     *   [bucket(MIN, 0, "negative"), bucket(0, MAX, "non-negative")])`
      * </pre>
      *
      * <code>repeated .google.cloud.talent.v4.HistogramQuery histogram_queries = 7;</code>

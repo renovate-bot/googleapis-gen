@@ -851,10 +851,13 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
 
                 The fields eligible for filtering are:
 
-                -  ``companyName`` (Required)
+                -  ``companyName``
                 -  ``requisitionId``
                 -  ``status`` Available values: OPEN, EXPIRED, ALL.
                    Defaults to OPEN if no value is specified.
+
+                At least one of ``companyName`` and ``requisitionId``
+                must present or an INVALID_ARGUMENT error is thrown.
 
                 Sample Query:
 
@@ -866,6 +869,8 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                 -  companyName =
                    "projects/foo/tenants/bar/companies/baz" AND status =
                    "EXPIRED"
+                -  requisitionId = "req-1"
+                -  requisitionId = "req-1" AND status = "EXPIRED"
 
                 This corresponds to the ``filter`` field
                 on the ``request`` instance; if ``request`` is provided, this
