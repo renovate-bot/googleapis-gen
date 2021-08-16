@@ -34,6 +34,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.devtools.cloudbuild.v1.stub.CloudBuildStubSettings;
+import com.google.cloudbuild.v1.ApproveBuildRequest;
 import com.google.cloudbuild.v1.Build;
 import com.google.cloudbuild.v1.BuildOperationMetadata;
 import com.google.cloudbuild.v1.BuildTrigger;
@@ -138,6 +139,17 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
   public OperationCallSettings<RetryBuildRequest, Build, BuildOperationMetadata>
       retryBuildOperationSettings() {
     return ((CloudBuildStubSettings) getStubSettings()).retryBuildOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to approveBuild. */
+  public UnaryCallSettings<ApproveBuildRequest, Operation> approveBuildSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).approveBuildSettings();
+  }
+
+  /** Returns the object with the settings used for calls to approveBuild. */
+  public OperationCallSettings<ApproveBuildRequest, Build, BuildOperationMetadata>
+      approveBuildOperationSettings() {
+    return ((CloudBuildStubSettings) getStubSettings()).approveBuildOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to createBuildTrigger. */
@@ -363,6 +375,17 @@ public class CloudBuildSettings extends ClientSettings<CloudBuildSettings> {
     public OperationCallSettings.Builder<RetryBuildRequest, Build, BuildOperationMetadata>
         retryBuildOperationSettings() {
       return getStubSettingsBuilder().retryBuildOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to approveBuild. */
+    public UnaryCallSettings.Builder<ApproveBuildRequest, Operation> approveBuildSettings() {
+      return getStubSettingsBuilder().approveBuildSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to approveBuild. */
+    public OperationCallSettings.Builder<ApproveBuildRequest, Build, BuildOperationMetadata>
+        approveBuildOperationSettings() {
+      return getStubSettingsBuilder().approveBuildOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to createBuildTrigger. */

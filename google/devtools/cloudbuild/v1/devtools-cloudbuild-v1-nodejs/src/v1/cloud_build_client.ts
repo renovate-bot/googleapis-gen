@@ -225,6 +225,10 @@ export class CloudBuildClient {
       '.google.devtools.cloudbuild.v1.Build') as gax.protobuf.Type;
     const retryBuildMetadata = protoFilesRoot.lookup(
       '.google.devtools.cloudbuild.v1.BuildOperationMetadata') as gax.protobuf.Type;
+    const approveBuildResponse = protoFilesRoot.lookup(
+      '.google.devtools.cloudbuild.v1.Build') as gax.protobuf.Type;
+    const approveBuildMetadata = protoFilesRoot.lookup(
+      '.google.devtools.cloudbuild.v1.BuildOperationMetadata') as gax.protobuf.Type;
     const runBuildTriggerResponse = protoFilesRoot.lookup(
       '.google.devtools.cloudbuild.v1.Build') as gax.protobuf.Type;
     const runBuildTriggerMetadata = protoFilesRoot.lookup(
@@ -251,6 +255,10 @@ export class CloudBuildClient {
         this.operationsClient,
         retryBuildResponse.decode.bind(retryBuildResponse),
         retryBuildMetadata.decode.bind(retryBuildMetadata)),
+      approveBuild: new this._gaxModule.LongrunningDescriptor(
+        this.operationsClient,
+        approveBuildResponse.decode.bind(approveBuildResponse),
+        approveBuildMetadata.decode.bind(approveBuildMetadata)),
       runBuildTrigger: new this._gaxModule.LongrunningDescriptor(
         this.operationsClient,
         runBuildTriggerResponse.decode.bind(runBuildTriggerResponse),
@@ -312,7 +320,7 @@ export class CloudBuildClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const cloudBuildStubMethods =
-        ['createBuild', 'getBuild', 'listBuilds', 'cancelBuild', 'retryBuild', 'createBuildTrigger', 'getBuildTrigger', 'listBuildTriggers', 'deleteBuildTrigger', 'updateBuildTrigger', 'runBuildTrigger', 'receiveTriggerWebhook', 'createWorkerPool', 'getWorkerPool', 'deleteWorkerPool', 'updateWorkerPool', 'listWorkerPools'];
+        ['createBuild', 'getBuild', 'listBuilds', 'cancelBuild', 'retryBuild', 'approveBuild', 'createBuildTrigger', 'getBuildTrigger', 'listBuildTriggers', 'deleteBuildTrigger', 'updateBuildTrigger', 'runBuildTrigger', 'receiveTriggerWebhook', 'createWorkerPool', 'getWorkerPool', 'deleteWorkerPool', 'updateWorkerPool', 'listWorkerPools'];
     for (const methodName of cloudBuildStubMethods) {
       const callPromise = this.cloudBuildStub.then(
         stub => (...args: Array<{}>) => {
@@ -1253,6 +1261,109 @@ export class CloudBuildClient {
     const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
     const [operation] = await this.operationsClient.getOperation(request);
     const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.retryBuild, gax.createDefaultBackoffSettings());
+    return decodeOperation as LROperation<protos.google.devtools.cloudbuild.v1.Build, protos.google.devtools.cloudbuild.v1.BuildOperationMetadata>;
+  }
+  approveBuild(
+      request?: protos.google.devtools.cloudbuild.v1.IApproveBuildRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.devtools.cloudbuild.v1.IBuild, protos.google.devtools.cloudbuild.v1.IBuildOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>;
+  approveBuild(
+      request: protos.google.devtools.cloudbuild.v1.IApproveBuildRequest,
+      options: CallOptions,
+      callback: Callback<
+          LROperation<protos.google.devtools.cloudbuild.v1.IBuild, protos.google.devtools.cloudbuild.v1.IBuildOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+  approveBuild(
+      request: protos.google.devtools.cloudbuild.v1.IApproveBuildRequest,
+      callback: Callback<
+          LROperation<protos.google.devtools.cloudbuild.v1.IBuild, protos.google.devtools.cloudbuild.v1.IBuildOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>): void;
+/**
+ * Approves or rejects a pending build.
+ *
+ * If approved, the returned LRO will be analogous to the LRO returned from
+ * a CreateBuild call.
+ *
+ * If rejected, the returned LRO will be immediately done.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.name
+ *   Required. Name of the target build.
+ *   For example: "projects/{$project_id}/builds/{$build_id}"
+ * @param {google.devtools.cloudbuild.v1.ApprovalResult} request.approvalResult
+ *   Approval decision and metadata.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation. Its `promise()` method returns a promise
+ *   you can `await` for.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example
+ * const [operation] = await client.approveBuild(request);
+ * const [response] = await operation.promise();
+ */
+  approveBuild(
+      request?: protos.google.devtools.cloudbuild.v1.IApproveBuildRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          LROperation<protos.google.devtools.cloudbuild.v1.IBuild, protos.google.devtools.cloudbuild.v1.IBuildOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          LROperation<protos.google.devtools.cloudbuild.v1.IBuild, protos.google.devtools.cloudbuild.v1.IBuildOperationMetadata>,
+          protos.google.longrunning.IOperation|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        LROperation<protos.google.devtools.cloudbuild.v1.IBuild, protos.google.devtools.cloudbuild.v1.IBuildOperationMetadata>,
+        protos.google.longrunning.IOperation|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'name': request.name || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.approveBuild(request, options, callback);
+  }
+/**
+ * Check the status of the long running operation returned by `approveBuild()`.
+ * @param {String} name
+ *   The operation name that will be passed.
+ * @returns {Promise} - The promise which resolves to an object.
+ *   The decoded operation object has result and metadata field to get information from.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ * @example
+ * const decodedOperation = await checkApproveBuildProgress(name);
+ * console.log(decodedOperation.result);
+ * console.log(decodedOperation.done);
+ * console.log(decodedOperation.metadata);
+ */
+  async checkApproveBuildProgress(name: string): Promise<LROperation<protos.google.devtools.cloudbuild.v1.Build, protos.google.devtools.cloudbuild.v1.BuildOperationMetadata>>{
+    const request = new operationsProtos.google.longrunning.GetOperationRequest({name});
+    const [operation] = await this.operationsClient.getOperation(request);
+    const decodeOperation = new gax.Operation(operation, this.descriptors.longrunning.approveBuild, gax.createDefaultBackoffSettings());
     return decodeOperation as LROperation<protos.google.devtools.cloudbuild.v1.Build, protos.google.devtools.cloudbuild.v1.BuildOperationMetadata>;
   }
   runBuildTrigger(

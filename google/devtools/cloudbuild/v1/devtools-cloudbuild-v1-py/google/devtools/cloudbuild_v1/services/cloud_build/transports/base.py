@@ -188,6 +188,11 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=600.0,
                 client_info=client_info,
             ),
+            self.approve_build: gapic_v1.method.wrap_method(
+                self.approve_build,
+                default_timeout=None,
+                client_info=client_info,
+            ),
             self.create_build_trigger: gapic_v1.method.wrap_method(
                 self.create_build_trigger,
                 default_timeout=600.0,
@@ -329,6 +334,15 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
     @property
     def retry_build(self) -> Callable[
             [cloudbuild.RetryBuildRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def approve_build(self) -> Callable[
+            [cloudbuild.ApproveBuildRequest],
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]
