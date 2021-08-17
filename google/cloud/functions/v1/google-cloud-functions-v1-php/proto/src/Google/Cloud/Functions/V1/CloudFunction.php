@@ -51,7 +51,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * function, optional when updating an existing function. For a complete
      * list of possible choices, see the
      * [`gcloud` command
-     * reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+     * reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime).
      *
      * Generated from protobuf field <code>string runtime = 19;</code>
      */
@@ -110,8 +110,8 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * project. Otherwise, it must belong to a project within the same
      * organization. The format of this field is either
      * `projects/{project}/global/networks/{network}` or `{network}`, where
-     * {project} is a project id where the network is defined, and {network} is
-     * the short name of the network.
+     * `{project}` is a project id where the network is defined, and `{network}`
+     * is the short name of the network.
      * This field is mutually exclusive with `vpc_connector` and will be replaced
      * by it.
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
@@ -176,7 +176,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *           User-provided description of a function.
      *     @type string $source_archive_url
-     *           The Google Cloud Storage URL, starting with gs://, pointing to the zip
+     *           The Google Cloud Storage URL, starting with `gs://`, pointing to the zip
      *           archive which contains the function.
      *     @type \Google\Cloud\Functions\V1\SourceRepository $source_repository
      *           **Beta Feature**
@@ -184,9 +184,9 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      *     @type string $source_upload_url
      *           The Google Cloud Storage signed URL used for source uploading, generated
      *           by calling [google.cloud.functions.v1.GenerateUploadUrl].
-     *           The signature is validated on write methods {Create, Update}
-     *           The signature is stripped from the Function object on read methods {Get,
-     *           List}
+     *           The signature is validated on write methods (Create, Update)
+     *           The signature is stripped from the Function object on read methods (Get,
+     *           List)
      *     @type \Google\Cloud\Functions\V1\HttpsTrigger $https_trigger
      *           An HTTPS endpoint type of source that can be triggered via URL.
      *     @type \Google\Cloud\Functions\V1\EventTrigger $event_trigger
@@ -205,7 +205,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      *           function, optional when updating an existing function. For a complete
      *           list of possible choices, see the
      *           [`gcloud` command
-     *           reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+     *           reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime).
      *     @type \Google\Protobuf\Duration $timeout
      *           The function execution timeout. Execution is considered failed and
      *           can be terminated if the function is not completed at the end of the
@@ -232,8 +232,8 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      *           project. Otherwise, it must belong to a project within the same
      *           organization. The format of this field is either
      *           `projects/{project}/global/networks/{network}` or `{network}`, where
-     *           {project} is a project id where the network is defined, and {network} is
-     *           the short name of the network.
+     *           `{project}` is a project id where the network is defined, and `{network}`
+     *           is the short name of the network.
      *           This field is mutually exclusive with `vpc_connector` and will be replaced
      *           by it.
      *           See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
@@ -321,7 +321,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+     * The Google Cloud Storage URL, starting with `gs://`, pointing to the zip
      * archive which contains the function.
      *
      * Generated from protobuf field <code>string source_archive_url = 3;</code>
@@ -338,7 +338,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+     * The Google Cloud Storage URL, starting with `gs://`, pointing to the zip
      * archive which contains the function.
      *
      * Generated from protobuf field <code>string source_archive_url = 3;</code>
@@ -389,9 +389,9 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
     /**
      * The Google Cloud Storage signed URL used for source uploading, generated
      * by calling [google.cloud.functions.v1.GenerateUploadUrl].
-     * The signature is validated on write methods {Create, Update}
-     * The signature is stripped from the Function object on read methods {Get,
-     * List}
+     * The signature is validated on write methods (Create, Update)
+     * The signature is stripped from the Function object on read methods (Get,
+     * List)
      *
      * Generated from protobuf field <code>string source_upload_url = 16;</code>
      * @return string
@@ -409,9 +409,9 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
     /**
      * The Google Cloud Storage signed URL used for source uploading, generated
      * by calling [google.cloud.functions.v1.GenerateUploadUrl].
-     * The signature is validated on write methods {Create, Update}
-     * The signature is stripped from the Function object on read methods {Get,
-     * List}
+     * The signature is validated on write methods (Create, Update)
+     * The signature is stripped from the Function object on read methods (Get,
+     * List)
      *
      * Generated from protobuf field <code>string source_upload_url = 16;</code>
      * @param string $var
@@ -554,7 +554,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * function, optional when updating an existing function. For a complete
      * list of possible choices, see the
      * [`gcloud` command
-     * reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+     * reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime).
      *
      * Generated from protobuf field <code>string runtime = 19;</code>
      * @return string
@@ -569,7 +569,7 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * function, optional when updating an existing function. For a complete
      * list of possible choices, see the
      * [`gcloud` command
-     * reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+     * reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime).
      *
      * Generated from protobuf field <code>string runtime = 19;</code>
      * @param string $var
@@ -802,8 +802,8 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * project. Otherwise, it must belong to a project within the same
      * organization. The format of this field is either
      * `projects/{project}/global/networks/{network}` or `{network}`, where
-     * {project} is a project id where the network is defined, and {network} is
-     * the short name of the network.
+     * `{project}` is a project id where the network is defined, and `{network}`
+     * is the short name of the network.
      * This field is mutually exclusive with `vpc_connector` and will be replaced
      * by it.
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
@@ -824,8 +824,8 @@ class CloudFunction extends \Google\Protobuf\Internal\Message
      * project. Otherwise, it must belong to a project within the same
      * organization. The format of this field is either
      * `projects/{project}/global/networks/{network}` or `{network}`, where
-     * {project} is a project id where the network is defined, and {network} is
-     * the short name of the network.
+     * `{project}` is a project id where the network is defined, and `{network}`
+     * is the short name of the network.
      * This field is mutually exclusive with `vpc_connector` and will be replaced
      * by it.
      * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for

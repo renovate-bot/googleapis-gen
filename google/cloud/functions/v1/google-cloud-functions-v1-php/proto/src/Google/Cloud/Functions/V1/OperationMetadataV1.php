@@ -17,7 +17,7 @@ class OperationMetadataV1 extends \Google\Protobuf\Internal\Message
 {
     /**
      * Target of the operation - for example
-     * projects/project-1/locations/region-1/functions/function-1
+     * `projects/project-1/locations/region-1/functions/function-1`
      *
      * Generated from protobuf field <code>string target = 1;</code>
      */
@@ -63,7 +63,7 @@ class OperationMetadataV1 extends \Google\Protobuf\Internal\Message
      *
      *     @type string $target
      *           Target of the operation - for example
-     *           projects/project-1/locations/region-1/functions/function-1
+     *           `projects/project-1/locations/region-1/functions/function-1`
      *     @type int $type
      *           Type of operation.
      *     @type \Google\Protobuf\Any $request
@@ -85,7 +85,7 @@ class OperationMetadataV1 extends \Google\Protobuf\Internal\Message
 
     /**
      * Target of the operation - for example
-     * projects/project-1/locations/region-1/functions/function-1
+     * `projects/project-1/locations/region-1/functions/function-1`
      *
      * Generated from protobuf field <code>string target = 1;</code>
      * @return string
@@ -97,7 +97,7 @@ class OperationMetadataV1 extends \Google\Protobuf\Internal\Message
 
     /**
      * Target of the operation - for example
-     * projects/project-1/locations/region-1/functions/function-1
+     * `projects/project-1/locations/region-1/functions/function-1`
      *
      * Generated from protobuf field <code>string target = 1;</code>
      * @param string $var

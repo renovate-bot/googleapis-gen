@@ -51,7 +51,7 @@ public interface CloudFunctionOrBuilder extends
 
   /**
    * <pre>
-   * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+   * The Google Cloud Storage URL, starting with `gs://`, pointing to the zip
    * archive which contains the function.
    * </pre>
    *
@@ -61,7 +61,7 @@ public interface CloudFunctionOrBuilder extends
   boolean hasSourceArchiveUrl();
   /**
    * <pre>
-   * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+   * The Google Cloud Storage URL, starting with `gs://`, pointing to the zip
    * archive which contains the function.
    * </pre>
    *
@@ -71,7 +71,7 @@ public interface CloudFunctionOrBuilder extends
   java.lang.String getSourceArchiveUrl();
   /**
    * <pre>
-   * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+   * The Google Cloud Storage URL, starting with `gs://`, pointing to the zip
    * archive which contains the function.
    * </pre>
    *
@@ -115,9 +115,9 @@ public interface CloudFunctionOrBuilder extends
    * <pre>
    * The Google Cloud Storage signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
-   * The signature is validated on write methods {Create, Update}
-   * The signature is stripped from the Function object on read methods {Get,
-   * List}
+   * The signature is validated on write methods (Create, Update)
+   * The signature is stripped from the Function object on read methods (Get,
+   * List)
    * </pre>
    *
    * <code>string source_upload_url = 16;</code>
@@ -128,9 +128,9 @@ public interface CloudFunctionOrBuilder extends
    * <pre>
    * The Google Cloud Storage signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
-   * The signature is validated on write methods {Create, Update}
-   * The signature is stripped from the Function object on read methods {Get,
-   * List}
+   * The signature is validated on write methods (Create, Update)
+   * The signature is stripped from the Function object on read methods (Get,
+   * List)
    * </pre>
    *
    * <code>string source_upload_url = 16;</code>
@@ -141,9 +141,9 @@ public interface CloudFunctionOrBuilder extends
    * <pre>
    * The Google Cloud Storage signed URL used for source uploading, generated
    * by calling [google.cloud.functions.v1.GenerateUploadUrl].
-   * The signature is validated on write methods {Create, Update}
-   * The signature is stripped from the Function object on read methods {Get,
-   * List}
+   * The signature is validated on write methods (Create, Update)
+   * The signature is stripped from the Function object on read methods (Get,
+   * List)
    * </pre>
    *
    * <code>string source_upload_url = 16;</code>
@@ -261,7 +261,7 @@ public interface CloudFunctionOrBuilder extends
    * function, optional when updating an existing function. For a complete
    * list of possible choices, see the
    * [`gcloud` command
-   * reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+   * reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime).
    * </pre>
    *
    * <code>string runtime = 19;</code>
@@ -274,7 +274,7 @@ public interface CloudFunctionOrBuilder extends
    * function, optional when updating an existing function. For a complete
    * list of possible choices, see the
    * [`gcloud` command
-   * reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+   * reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime).
    * </pre>
    *
    * <code>string runtime = 19;</code>
@@ -503,8 +503,8 @@ public interface CloudFunctionOrBuilder extends
    * project. Otherwise, it must belong to a project within the same
    * organization. The format of this field is either
    * `projects/{project}/global/networks/{network}` or `{network}`, where
-   * {project} is a project id where the network is defined, and {network} is
-   * the short name of the network.
+   * `{project}` is a project id where the network is defined, and `{network}`
+   * is the short name of the network.
    * This field is mutually exclusive with `vpc_connector` and will be replaced
    * by it.
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
@@ -523,8 +523,8 @@ public interface CloudFunctionOrBuilder extends
    * project. Otherwise, it must belong to a project within the same
    * organization. The format of this field is either
    * `projects/{project}/global/networks/{network}` or `{network}`, where
-   * {project} is a project id where the network is defined, and {network} is
-   * the short name of the network.
+   * `{project}` is a project id where the network is defined, and `{network}`
+   * is the short name of the network.
    * This field is mutually exclusive with `vpc_connector` and will be replaced
    * by it.
    * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
