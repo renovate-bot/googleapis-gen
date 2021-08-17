@@ -1,127 +1,127 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.identity.accesscontextmanager.v1",
-  "libraryPackage":  "cloud.google.com/go/identity/accesscontextmanager/apiv1",
-  "services":  {
-    "AccessContextManager":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "Client",
-          "rpcs":  {
-            "CommitServicePerimeters":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.identity.accesscontextmanager.v1",
+  "libraryPackage": "cloud.google.com/go/identity/accesscontextmanager/apiv1",
+  "services": {
+    "AccessContextManager": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Client",
+          "rpcs": {
+            "CommitServicePerimeters": {
+              "methods": [
                 "CommitServicePerimeters"
               ]
             },
-            "CreateAccessLevel":  {
-              "methods":  [
+            "CreateAccessLevel": {
+              "methods": [
                 "CreateAccessLevel"
               ]
             },
-            "CreateAccessPolicy":  {
-              "methods":  [
+            "CreateAccessPolicy": {
+              "methods": [
                 "CreateAccessPolicy"
               ]
             },
-            "CreateGcpUserAccessBinding":  {
-              "methods":  [
+            "CreateGcpUserAccessBinding": {
+              "methods": [
                 "CreateGcpUserAccessBinding"
               ]
             },
-            "CreateServicePerimeter":  {
-              "methods":  [
+            "CreateServicePerimeter": {
+              "methods": [
                 "CreateServicePerimeter"
               ]
             },
-            "DeleteAccessLevel":  {
-              "methods":  [
+            "DeleteAccessLevel": {
+              "methods": [
                 "DeleteAccessLevel"
               ]
             },
-            "DeleteAccessPolicy":  {
-              "methods":  [
+            "DeleteAccessPolicy": {
+              "methods": [
                 "DeleteAccessPolicy"
               ]
             },
-            "DeleteGcpUserAccessBinding":  {
-              "methods":  [
+            "DeleteGcpUserAccessBinding": {
+              "methods": [
                 "DeleteGcpUserAccessBinding"
               ]
             },
-            "DeleteServicePerimeter":  {
-              "methods":  [
+            "DeleteServicePerimeter": {
+              "methods": [
                 "DeleteServicePerimeter"
               ]
             },
-            "GetAccessLevel":  {
-              "methods":  [
+            "GetAccessLevel": {
+              "methods": [
                 "GetAccessLevel"
               ]
             },
-            "GetAccessPolicy":  {
-              "methods":  [
+            "GetAccessPolicy": {
+              "methods": [
                 "GetAccessPolicy"
               ]
             },
-            "GetGcpUserAccessBinding":  {
-              "methods":  [
+            "GetGcpUserAccessBinding": {
+              "methods": [
                 "GetGcpUserAccessBinding"
               ]
             },
-            "GetServicePerimeter":  {
-              "methods":  [
+            "GetServicePerimeter": {
+              "methods": [
                 "GetServicePerimeter"
               ]
             },
-            "ListAccessLevels":  {
-              "methods":  [
+            "ListAccessLevels": {
+              "methods": [
                 "ListAccessLevels"
               ]
             },
-            "ListAccessPolicies":  {
-              "methods":  [
+            "ListAccessPolicies": {
+              "methods": [
                 "ListAccessPolicies"
               ]
             },
-            "ListGcpUserAccessBindings":  {
-              "methods":  [
+            "ListGcpUserAccessBindings": {
+              "methods": [
                 "ListGcpUserAccessBindings"
               ]
             },
-            "ListServicePerimeters":  {
-              "methods":  [
+            "ListServicePerimeters": {
+              "methods": [
                 "ListServicePerimeters"
               ]
             },
-            "ReplaceAccessLevels":  {
-              "methods":  [
+            "ReplaceAccessLevels": {
+              "methods": [
                 "ReplaceAccessLevels"
               ]
             },
-            "ReplaceServicePerimeters":  {
-              "methods":  [
+            "ReplaceServicePerimeters": {
+              "methods": [
                 "ReplaceServicePerimeters"
               ]
             },
-            "UpdateAccessLevel":  {
-              "methods":  [
+            "UpdateAccessLevel": {
+              "methods": [
                 "UpdateAccessLevel"
               ]
             },
-            "UpdateAccessPolicy":  {
-              "methods":  [
+            "UpdateAccessPolicy": {
+              "methods": [
                 "UpdateAccessPolicy"
               ]
             },
-            "UpdateGcpUserAccessBinding":  {
-              "methods":  [
+            "UpdateGcpUserAccessBinding": {
+              "methods": [
                 "UpdateGcpUserAccessBinding"
               ]
             },
-            "UpdateServicePerimeter":  {
-              "methods":  [
+            "UpdateServicePerimeter": {
+              "methods": [
                 "UpdateServicePerimeter"
               ]
             }

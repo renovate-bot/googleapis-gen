@@ -633,11 +633,13 @@ func (c *bigtableTableAdminGRPCClient) ListTables(ctx context.Context, req *admi
 	it := &TableIterator{}
 	req = proto.Clone(req).(*adminpb.ListTablesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Table, string, error) {
-		var resp *adminpb.ListTablesResponse
-		req.PageToken = pageToken
+		resp := &adminpb.ListTablesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -660,9 +662,11 @@ func (c *bigtableTableAdminGRPCClient) ListTables(ctx context.Context, req *admi
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -830,11 +834,13 @@ func (c *bigtableTableAdminGRPCClient) ListSnapshots(ctx context.Context, req *a
 	it := &SnapshotIterator{}
 	req = proto.Clone(req).(*adminpb.ListSnapshotsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Snapshot, string, error) {
-		var resp *adminpb.ListSnapshotsResponse
-		req.PageToken = pageToken
+		resp := &adminpb.ListSnapshotsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -857,9 +863,11 @@ func (c *bigtableTableAdminGRPCClient) ListSnapshots(ctx context.Context, req *a
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -969,11 +977,13 @@ func (c *bigtableTableAdminGRPCClient) ListBackups(ctx context.Context, req *adm
 	it := &BackupIterator{}
 	req = proto.Clone(req).(*adminpb.ListBackupsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.Backup, string, error) {
-		var resp *adminpb.ListBackupsResponse
-		req.PageToken = pageToken
+		resp := &adminpb.ListBackupsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -996,9 +1006,11 @@ func (c *bigtableTableAdminGRPCClient) ListBackups(ctx context.Context, req *adm
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

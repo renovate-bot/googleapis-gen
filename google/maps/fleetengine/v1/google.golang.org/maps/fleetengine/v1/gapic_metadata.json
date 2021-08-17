@@ -1,37 +1,37 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "maps.fleetengine.v1",
-  "libraryPackage":  "google.golang.org/maps/fleetengine/v1",
-  "services":  {
-    "TripService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "TripClient",
-          "rpcs":  {
-            "CreateTrip":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "maps.fleetengine.v1",
+  "libraryPackage": "google.golang.org/maps/fleetengine/v1",
+  "services": {
+    "TripService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TripClient",
+          "rpcs": {
+            "CreateTrip": {
+              "methods": [
                 "CreateTrip"
               ]
             },
-            "GetTrip":  {
-              "methods":  [
+            "GetTrip": {
+              "methods": [
                 "GetTrip"
               ]
             },
-            "ReportBillableTrip":  {
-              "methods":  [
+            "ReportBillableTrip": {
+              "methods": [
                 "ReportBillableTrip"
               ]
             },
-            "SearchTrips":  {
-              "methods":  [
+            "SearchTrips": {
+              "methods": [
                 "SearchTrips"
               ]
             },
-            "UpdateTrip":  {
-              "methods":  [
+            "UpdateTrip": {
+              "methods": [
                 "UpdateTrip"
               ]
             }
@@ -39,48 +39,48 @@
         }
       }
     },
-    "VehicleService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "VehicleClient",
-          "rpcs":  {
-            "CreateVehicle":  {
-              "methods":  [
+    "VehicleService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "VehicleClient",
+          "rpcs": {
+            "CreateVehicle": {
+              "methods": [
                 "CreateVehicle"
               ]
             },
-            "GetVehicle":  {
-              "methods":  [
+            "GetVehicle": {
+              "methods": [
                 "GetVehicle"
               ]
             },
-            "ListVehicles":  {
-              "methods":  [
+            "ListVehicles": {
+              "methods": [
                 "ListVehicles"
               ]
             },
-            "SearchFuzzedVehicles":  {
-              "methods":  [
+            "SearchFuzzedVehicles": {
+              "methods": [
                 "SearchFuzzedVehicles"
               ]
             },
-            "SearchVehicles":  {
-              "methods":  [
+            "SearchVehicles": {
+              "methods": [
                 "SearchVehicles"
               ]
             },
-            "UpdateVehicle":  {
-              "methods":  [
+            "UpdateVehicle": {
+              "methods": [
                 "UpdateVehicle"
               ]
             },
-            "UpdateVehicleAttributes":  {
-              "methods":  [
+            "UpdateVehicleAttributes": {
+              "methods": [
                 "UpdateVehicleAttributes"
               ]
             },
-            "UpdateVehicleLocation":  {
-              "methods":  [
+            "UpdateVehicleLocation": {
+              "methods": [
                 "UpdateVehicleLocation"
               ]
             }

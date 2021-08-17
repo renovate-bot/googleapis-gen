@@ -1,72 +1,72 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.cloud.networkconnectivity.v1",
-  "libraryPackage":  "cloud.google.com/go/networkconnectivity/apiv1",
-  "services":  {
-    "HubService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "HubClient",
-          "rpcs":  {
-            "ActivateSpoke":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.cloud.networkconnectivity.v1",
+  "libraryPackage": "cloud.google.com/go/networkconnectivity/apiv1",
+  "services": {
+    "HubService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "HubClient",
+          "rpcs": {
+            "ActivateSpoke": {
+              "methods": [
                 "ActivateSpoke"
               ]
             },
-            "CreateHub":  {
-              "methods":  [
+            "CreateHub": {
+              "methods": [
                 "CreateHub"
               ]
             },
-            "CreateSpoke":  {
-              "methods":  [
+            "CreateSpoke": {
+              "methods": [
                 "CreateSpoke"
               ]
             },
-            "DeactivateSpoke":  {
-              "methods":  [
+            "DeactivateSpoke": {
+              "methods": [
                 "DeactivateSpoke"
               ]
             },
-            "DeleteHub":  {
-              "methods":  [
+            "DeleteHub": {
+              "methods": [
                 "DeleteHub"
               ]
             },
-            "DeleteSpoke":  {
-              "methods":  [
+            "DeleteSpoke": {
+              "methods": [
                 "DeleteSpoke"
               ]
             },
-            "GetHub":  {
-              "methods":  [
+            "GetHub": {
+              "methods": [
                 "GetHub"
               ]
             },
-            "GetSpoke":  {
-              "methods":  [
+            "GetSpoke": {
+              "methods": [
                 "GetSpoke"
               ]
             },
-            "ListHubs":  {
-              "methods":  [
+            "ListHubs": {
+              "methods": [
                 "ListHubs"
               ]
             },
-            "ListSpokes":  {
-              "methods":  [
+            "ListSpokes": {
+              "methods": [
                 "ListSpokes"
               ]
             },
-            "UpdateHub":  {
-              "methods":  [
+            "UpdateHub": {
+              "methods": [
                 "UpdateHub"
               ]
             },
-            "UpdateSpoke":  {
-              "methods":  [
+            "UpdateSpoke": {
+              "methods": [
                 "UpdateSpoke"
               ]
             }

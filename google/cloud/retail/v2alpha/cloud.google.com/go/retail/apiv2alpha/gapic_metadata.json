@@ -1,32 +1,32 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.cloud.retail.v2alpha",
-  "libraryPackage":  "cloud.google.com/go/retail/apiv2alpha",
-  "services":  {
-    "CatalogService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "CatalogClient",
-          "rpcs":  {
-            "GetDefaultBranch":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.cloud.retail.v2alpha",
+  "libraryPackage": "cloud.google.com/go/retail/apiv2alpha",
+  "services": {
+    "CatalogService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CatalogClient",
+          "rpcs": {
+            "GetDefaultBranch": {
+              "methods": [
                 "GetDefaultBranch"
               ]
             },
-            "ListCatalogs":  {
-              "methods":  [
+            "ListCatalogs": {
+              "methods": [
                 "ListCatalogs"
               ]
             },
-            "SetDefaultBranch":  {
-              "methods":  [
+            "SetDefaultBranch": {
+              "methods": [
                 "SetDefaultBranch"
               ]
             },
-            "UpdateCatalog":  {
-              "methods":  [
+            "UpdateCatalog": {
+              "methods": [
                 "UpdateCatalog"
               ]
             }
@@ -34,18 +34,18 @@
         }
       }
     },
-    "CompletionService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "CompletionClient",
-          "rpcs":  {
-            "CompleteQuery":  {
-              "methods":  [
+    "CompletionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CompletionClient",
+          "rpcs": {
+            "CompleteQuery": {
+              "methods": [
                 "CompleteQuery"
               ]
             },
-            "ImportCompletionData":  {
-              "methods":  [
+            "ImportCompletionData": {
+              "methods": [
                 "ImportCompletionData"
               ]
             }
@@ -53,13 +53,13 @@
         }
       }
     },
-    "PredictionService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "PredictionClient",
-          "rpcs":  {
-            "Predict":  {
-              "methods":  [
+    "PredictionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PredictionClient",
+          "rpcs": {
+            "Predict": {
+              "methods": [
                 "Predict"
               ]
             }
@@ -67,53 +67,53 @@
         }
       }
     },
-    "ProductService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "ProductClient",
-          "rpcs":  {
-            "AddFulfillmentPlaces":  {
-              "methods":  [
+    "ProductService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ProductClient",
+          "rpcs": {
+            "AddFulfillmentPlaces": {
+              "methods": [
                 "AddFulfillmentPlaces"
               ]
             },
-            "CreateProduct":  {
-              "methods":  [
+            "CreateProduct": {
+              "methods": [
                 "CreateProduct"
               ]
             },
-            "DeleteProduct":  {
-              "methods":  [
+            "DeleteProduct": {
+              "methods": [
                 "DeleteProduct"
               ]
             },
-            "GetProduct":  {
-              "methods":  [
+            "GetProduct": {
+              "methods": [
                 "GetProduct"
               ]
             },
-            "ImportProducts":  {
-              "methods":  [
+            "ImportProducts": {
+              "methods": [
                 "ImportProducts"
               ]
             },
-            "ListProducts":  {
-              "methods":  [
+            "ListProducts": {
+              "methods": [
                 "ListProducts"
               ]
             },
-            "RemoveFulfillmentPlaces":  {
-              "methods":  [
+            "RemoveFulfillmentPlaces": {
+              "methods": [
                 "RemoveFulfillmentPlaces"
               ]
             },
-            "SetInventory":  {
-              "methods":  [
+            "SetInventory": {
+              "methods": [
                 "SetInventory"
               ]
             },
-            "UpdateProduct":  {
-              "methods":  [
+            "UpdateProduct": {
+              "methods": [
                 "UpdateProduct"
               ]
             }
@@ -121,13 +121,13 @@
         }
       }
     },
-    "SearchService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "SearchClient",
-          "rpcs":  {
-            "Search":  {
-              "methods":  [
+    "SearchService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SearchClient",
+          "rpcs": {
+            "Search": {
+              "methods": [
                 "Search"
               ]
             }
@@ -135,33 +135,33 @@
         }
       }
     },
-    "UserEventService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "UserEventClient",
-          "rpcs":  {
-            "CollectUserEvent":  {
-              "methods":  [
+    "UserEventService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UserEventClient",
+          "rpcs": {
+            "CollectUserEvent": {
+              "methods": [
                 "CollectUserEvent"
               ]
             },
-            "ImportUserEvents":  {
-              "methods":  [
+            "ImportUserEvents": {
+              "methods": [
                 "ImportUserEvents"
               ]
             },
-            "PurgeUserEvents":  {
-              "methods":  [
+            "PurgeUserEvents": {
+              "methods": [
                 "PurgeUserEvents"
               ]
             },
-            "RejoinUserEvents":  {
-              "methods":  [
+            "RejoinUserEvents": {
+              "methods": [
                 "RejoinUserEvents"
               ]
             },
-            "WriteUserEvent":  {
-              "methods":  [
+            "WriteUserEvent": {
+              "methods": [
                 "WriteUserEvent"
               ]
             }

@@ -305,11 +305,13 @@ func (c *environmentsGRPCClient) ListEnvironments(ctx context.Context, req *serv
 	it := &EnvironmentIterator{}
 	req = proto.Clone(req).(*servicepb.ListEnvironmentsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*servicepb.Environment, string, error) {
-		var resp *servicepb.ListEnvironmentsResponse
-		req.PageToken = pageToken
+		resp := &servicepb.ListEnvironmentsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -332,9 +334,11 @@ func (c *environmentsGRPCClient) ListEnvironments(ctx context.Context, req *serv
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

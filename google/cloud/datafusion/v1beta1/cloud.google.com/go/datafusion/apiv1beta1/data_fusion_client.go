@@ -356,11 +356,13 @@ func (c *gRPCClient) ListAvailableVersions(ctx context.Context, req *datafusionp
 	it := &VersionIterator{}
 	req = proto.Clone(req).(*datafusionpb.ListAvailableVersionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*datafusionpb.Version, string, error) {
-		var resp *datafusionpb.ListAvailableVersionsResponse
-		req.PageToken = pageToken
+		resp := &datafusionpb.ListAvailableVersionsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -383,9 +385,11 @@ func (c *gRPCClient) ListAvailableVersions(ctx context.Context, req *datafusionp
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -396,11 +400,13 @@ func (c *gRPCClient) ListInstances(ctx context.Context, req *datafusionpb.ListIn
 	it := &InstanceIterator{}
 	req = proto.Clone(req).(*datafusionpb.ListInstancesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*datafusionpb.Instance, string, error) {
-		var resp *datafusionpb.ListInstancesResponse
-		req.PageToken = pageToken
+		resp := &datafusionpb.ListInstancesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -423,9 +429,11 @@ func (c *gRPCClient) ListInstances(ctx context.Context, req *datafusionpb.ListIn
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -593,11 +601,13 @@ func (c *gRPCClient) ListNamespaces(ctx context.Context, req *datafusionpb.ListN
 	it := &NamespaceIterator{}
 	req = proto.Clone(req).(*datafusionpb.ListNamespacesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*datafusionpb.Namespace, string, error) {
-		var resp *datafusionpb.ListNamespacesResponse
-		req.PageToken = pageToken
+		resp := &datafusionpb.ListNamespacesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -620,9 +630,11 @@ func (c *gRPCClient) ListNamespaces(ctx context.Context, req *datafusionpb.ListN
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -675,11 +687,13 @@ func (c *gRPCClient) ListDnsPeerings(ctx context.Context, req *datafusionpb.List
 	it := &DnsPeeringIterator{}
 	req = proto.Clone(req).(*datafusionpb.ListDnsPeeringsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*datafusionpb.DnsPeering, string, error) {
-		var resp *datafusionpb.ListDnsPeeringsResponse
-		req.PageToken = pageToken
+		resp := &datafusionpb.ListDnsPeeringsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -702,9 +716,11 @@ func (c *gRPCClient) ListDnsPeerings(ctx context.Context, req *datafusionpb.List
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

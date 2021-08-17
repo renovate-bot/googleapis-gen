@@ -451,11 +451,13 @@ func (c *gRPCClient) ListShelves(ctx context.Context, req *librarypb.ListShelves
 	it := &ShelfIterator{}
 	req = proto.Clone(req).(*librarypb.ListShelvesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*librarypb.Shelf, string, error) {
-		var resp *librarypb.ListShelvesResponse
-		req.PageToken = pageToken
+		resp := &librarypb.ListShelvesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -478,9 +480,11 @@ func (c *gRPCClient) ListShelves(ctx context.Context, req *librarypb.ListShelves
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -571,11 +575,13 @@ func (c *gRPCClient) ListBooks(ctx context.Context, req *librarypb.ListBooksRequ
 	it := &BookIterator{}
 	req = proto.Clone(req).(*librarypb.ListBooksRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*librarypb.Book, string, error) {
-		var resp *librarypb.ListBooksResponse
-		req.PageToken = pageToken
+		resp := &librarypb.ListBooksResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -598,9 +604,11 @@ func (c *gRPCClient) ListBooks(ctx context.Context, req *librarypb.ListBooksRequ
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

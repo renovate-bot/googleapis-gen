@@ -643,11 +643,13 @@ func (c *gRPCClient) ListAccessPolicies(ctx context.Context, req *accesscontextm
 	it := &AccessPolicyIterator{}
 	req = proto.Clone(req).(*accesscontextmanagerpb.ListAccessPoliciesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*accesscontextmanagerpb.AccessPolicy, string, error) {
-		var resp *accesscontextmanagerpb.ListAccessPoliciesResponse
-		req.PageToken = pageToken
+		resp := &accesscontextmanagerpb.ListAccessPoliciesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -670,9 +672,11 @@ func (c *gRPCClient) ListAccessPolicies(ctx context.Context, req *accesscontextm
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -772,11 +776,13 @@ func (c *gRPCClient) ListAccessLevels(ctx context.Context, req *accesscontextman
 	it := &AccessLevelIterator{}
 	req = proto.Clone(req).(*accesscontextmanagerpb.ListAccessLevelsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*accesscontextmanagerpb.AccessLevel, string, error) {
-		var resp *accesscontextmanagerpb.ListAccessLevelsResponse
-		req.PageToken = pageToken
+		resp := &accesscontextmanagerpb.ListAccessLevelsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -799,9 +805,11 @@ func (c *gRPCClient) ListAccessLevels(ctx context.Context, req *accesscontextman
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -925,11 +933,13 @@ func (c *gRPCClient) ListServicePerimeters(ctx context.Context, req *accessconte
 	it := &ServicePerimeterIterator{}
 	req = proto.Clone(req).(*accesscontextmanagerpb.ListServicePerimetersRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*accesscontextmanagerpb.ServicePerimeter, string, error) {
-		var resp *accesscontextmanagerpb.ListServicePerimetersResponse
-		req.PageToken = pageToken
+		resp := &accesscontextmanagerpb.ListServicePerimetersResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -952,9 +962,11 @@ func (c *gRPCClient) ListServicePerimeters(ctx context.Context, req *accessconte
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -1101,11 +1113,13 @@ func (c *gRPCClient) ListGcpUserAccessBindings(ctx context.Context, req *accessc
 	it := &GcpUserAccessBindingIterator{}
 	req = proto.Clone(req).(*accesscontextmanagerpb.ListGcpUserAccessBindingsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*accesscontextmanagerpb.GcpUserAccessBinding, string, error) {
-		var resp *accesscontextmanagerpb.ListGcpUserAccessBindingsResponse
-		req.PageToken = pageToken
+		resp := &accesscontextmanagerpb.ListGcpUserAccessBindingsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -1128,9 +1142,11 @@ func (c *gRPCClient) ListGcpUserAccessBindings(ctx context.Context, req *accessc
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

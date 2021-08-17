@@ -380,11 +380,13 @@ func (c *catalogGRPCClient) ListCatalogItems(ctx context.Context, req *recommend
 	it := &CatalogItemIterator{}
 	req = proto.Clone(req).(*recommendationenginepb.ListCatalogItemsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*recommendationenginepb.CatalogItem, string, error) {
-		var resp *recommendationenginepb.ListCatalogItemsResponse
-		req.PageToken = pageToken
+		resp := &recommendationenginepb.ListCatalogItemsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -407,9 +409,11 @@ func (c *catalogGRPCClient) ListCatalogItems(ctx context.Context, req *recommend
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

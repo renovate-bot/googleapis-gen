@@ -1,42 +1,42 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.cloud.networkmanagement.v1beta1",
-  "libraryPackage":  "cloud.google.com/go/networkmanagement/apiv1beta1",
-  "services":  {
-    "ReachabilityService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "ReachabilityClient",
-          "rpcs":  {
-            "CreateConnectivityTest":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.cloud.networkmanagement.v1beta1",
+  "libraryPackage": "cloud.google.com/go/networkmanagement/apiv1beta1",
+  "services": {
+    "ReachabilityService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ReachabilityClient",
+          "rpcs": {
+            "CreateConnectivityTest": {
+              "methods": [
                 "CreateConnectivityTest"
               ]
             },
-            "DeleteConnectivityTest":  {
-              "methods":  [
+            "DeleteConnectivityTest": {
+              "methods": [
                 "DeleteConnectivityTest"
               ]
             },
-            "GetConnectivityTest":  {
-              "methods":  [
+            "GetConnectivityTest": {
+              "methods": [
                 "GetConnectivityTest"
               ]
             },
-            "ListConnectivityTests":  {
-              "methods":  [
+            "ListConnectivityTests": {
+              "methods": [
                 "ListConnectivityTests"
               ]
             },
-            "RerunConnectivityTest":  {
-              "methods":  [
+            "RerunConnectivityTest": {
+              "methods": [
                 "RerunConnectivityTest"
               ]
             },
-            "UpdateConnectivityTest":  {
-              "methods":  [
+            "UpdateConnectivityTest": {
+              "methods": [
                 "UpdateConnectivityTest"
               ]
             }

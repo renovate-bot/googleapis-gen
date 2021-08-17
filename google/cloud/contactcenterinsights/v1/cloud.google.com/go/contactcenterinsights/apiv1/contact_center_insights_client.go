@@ -823,11 +823,13 @@ func (c *gRPCClient) ListConversations(ctx context.Context, req *contactcenterin
 	it := &ConversationIterator{}
 	req = proto.Clone(req).(*contactcenterinsightspb.ListConversationsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*contactcenterinsightspb.Conversation, string, error) {
-		var resp *contactcenterinsightspb.ListConversationsResponse
-		req.PageToken = pageToken
+		resp := &contactcenterinsightspb.ListConversationsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -850,9 +852,11 @@ func (c *gRPCClient) ListConversations(ctx context.Context, req *contactcenterin
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -924,11 +928,13 @@ func (c *gRPCClient) ListAnalyses(ctx context.Context, req *contactcenterinsight
 	it := &AnalysisIterator{}
 	req = proto.Clone(req).(*contactcenterinsightspb.ListAnalysesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*contactcenterinsightspb.Analysis, string, error) {
-		var resp *contactcenterinsightspb.ListAnalysesResponse
-		req.PageToken = pageToken
+		resp := &contactcenterinsightspb.ListAnalysesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -951,9 +957,11 @@ func (c *gRPCClient) ListAnalyses(ctx context.Context, req *contactcenterinsight
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -1285,11 +1293,13 @@ func (c *gRPCClient) ListPhraseMatchers(ctx context.Context, req *contactcenteri
 	it := &PhraseMatcherIterator{}
 	req = proto.Clone(req).(*contactcenterinsightspb.ListPhraseMatchersRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*contactcenterinsightspb.PhraseMatcher, string, error) {
-		var resp *contactcenterinsightspb.ListPhraseMatchersResponse
-		req.PageToken = pageToken
+		resp := &contactcenterinsightspb.ListPhraseMatchersResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -1312,9 +1322,11 @@ func (c *gRPCClient) ListPhraseMatchers(ctx context.Context, req *contactcenteri
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

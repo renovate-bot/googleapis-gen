@@ -20,6 +20,7 @@ import (
 	"context"
 
 	storage "cloud.google.com/go/storage/apiv1"
+	"google.golang.org/api/iterator"
 	storagepb "google.golang.org/genproto/googleapis/storage/v1"
 )
 
@@ -232,12 +233,18 @@ func ExampleClient_ListBuckets() {
 	req := &storagepb.ListBucketsRequest{
 		// TODO: Fill request struct fields.
 	}
-	resp, err := c.ListBuckets(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
+	it := c.ListBuckets(ctx, req)
+	for {
+		resp, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		// TODO: Use resp.
+		_ = resp
 	}
-	// TODO: Use resp.
-	_ = resp
 }
 
 func ExampleClient_LockBucketRetentionPolicy() {
@@ -754,12 +761,18 @@ func ExampleClient_ListObjects() {
 	req := &storagepb.ListObjectsRequest{
 		// TODO: Fill request struct fields.
 	}
-	resp, err := c.ListObjects(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
+	it := c.ListObjects(ctx, req)
+	for {
+		resp, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		// TODO: Use resp.
+		_ = resp
 	}
-	// TODO: Use resp.
-	_ = resp
 }
 
 func ExampleClient_RewriteObject() {
@@ -1018,12 +1031,18 @@ func ExampleClient_ListHmacKeys() {
 	req := &storagepb.ListHmacKeysRequest{
 		// TODO: Fill request struct fields.
 	}
-	resp, err := c.ListHmacKeys(ctx, req)
-	if err != nil {
-		// TODO: Handle error.
+	it := c.ListHmacKeys(ctx, req)
+	for {
+		resp, err := it.Next()
+		if err == iterator.Done {
+			break
+		}
+		if err != nil {
+			// TODO: Handle error.
+		}
+		// TODO: Use resp.
+		_ = resp
 	}
-	// TODO: Use resp.
-	_ = resp
 }
 
 func ExampleClient_UpdateHmacKey() {

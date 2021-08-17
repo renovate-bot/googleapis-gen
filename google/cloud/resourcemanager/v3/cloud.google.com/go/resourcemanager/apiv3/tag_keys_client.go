@@ -344,11 +344,13 @@ func (c *tagKeysGRPCClient) ListTagKeys(ctx context.Context, req *resourcemanage
 	it := &TagKeyIterator{}
 	req = proto.Clone(req).(*resourcemanagerpb.ListTagKeysRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*resourcemanagerpb.TagKey, string, error) {
-		var resp *resourcemanagerpb.ListTagKeysResponse
-		req.PageToken = pageToken
+		resp := &resourcemanagerpb.ListTagKeysResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -371,9 +373,11 @@ func (c *tagKeysGRPCClient) ListTagKeys(ctx context.Context, req *resourcemanage
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

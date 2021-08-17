@@ -267,11 +267,13 @@ func (c *gRPCClient) ListEndpointPolicies(ctx context.Context, req *networkservi
 	it := &EndpointPolicyIterator{}
 	req = proto.Clone(req).(*networkservicespb.ListEndpointPoliciesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*networkservicespb.EndpointPolicy, string, error) {
-		var resp *networkservicespb.ListEndpointPoliciesResponse
-		req.PageToken = pageToken
+		resp := &networkservicespb.ListEndpointPoliciesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -294,9 +296,11 @@ func (c *gRPCClient) ListEndpointPolicies(ctx context.Context, req *networkservi
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

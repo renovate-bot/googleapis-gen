@@ -306,11 +306,13 @@ func (c *environmentsGRPCClient) ListEnvironments(ctx context.Context, req *dial
 	it := &EnvironmentIterator{}
 	req = proto.Clone(req).(*dialogflowpb.ListEnvironmentsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*dialogflowpb.Environment, string, error) {
-		var resp *dialogflowpb.ListEnvironmentsResponse
-		req.PageToken = pageToken
+		resp := &dialogflowpb.ListEnvironmentsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -333,9 +335,11 @@ func (c *environmentsGRPCClient) ListEnvironments(ctx context.Context, req *dial
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -426,11 +430,13 @@ func (c *environmentsGRPCClient) GetEnvironmentHistory(ctx context.Context, req 
 	it := &EnvironmentHistory_EntryIterator{}
 	req = proto.Clone(req).(*dialogflowpb.GetEnvironmentHistoryRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*dialogflowpb.EnvironmentHistory_Entry, string, error) {
-		var resp *dialogflowpb.EnvironmentHistory
-		req.PageToken = pageToken
+		resp := &dialogflowpb.EnvironmentHistory{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -453,9 +459,11 @@ func (c *environmentsGRPCClient) GetEnvironmentHistory(ctx context.Context, req 
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

@@ -1,157 +1,157 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.iam.admin.v1",
-  "libraryPackage":  "cloud.google.com/go/iam/admin/apiv1",
-  "services":  {
-    "IAM":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "IamClient",
-          "rpcs":  {
-            "CreateRole":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.iam.admin.v1",
+  "libraryPackage": "cloud.google.com/go/iam/admin/apiv1",
+  "services": {
+    "IAM": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IamClient",
+          "rpcs": {
+            "CreateRole": {
+              "methods": [
                 "CreateRole"
               ]
             },
-            "CreateServiceAccount":  {
-              "methods":  [
+            "CreateServiceAccount": {
+              "methods": [
                 "CreateServiceAccount"
               ]
             },
-            "CreateServiceAccountKey":  {
-              "methods":  [
+            "CreateServiceAccountKey": {
+              "methods": [
                 "CreateServiceAccountKey"
               ]
             },
-            "DeleteRole":  {
-              "methods":  [
+            "DeleteRole": {
+              "methods": [
                 "DeleteRole"
               ]
             },
-            "DeleteServiceAccount":  {
-              "methods":  [
+            "DeleteServiceAccount": {
+              "methods": [
                 "DeleteServiceAccount"
               ]
             },
-            "DeleteServiceAccountKey":  {
-              "methods":  [
+            "DeleteServiceAccountKey": {
+              "methods": [
                 "DeleteServiceAccountKey"
               ]
             },
-            "DisableServiceAccount":  {
-              "methods":  [
+            "DisableServiceAccount": {
+              "methods": [
                 "DisableServiceAccount"
               ]
             },
-            "EnableServiceAccount":  {
-              "methods":  [
+            "EnableServiceAccount": {
+              "methods": [
                 "EnableServiceAccount"
               ]
             },
-            "GetIamPolicy":  {
-              "methods":  [
+            "GetIamPolicy": {
+              "methods": [
                 "GetIamPolicy"
               ]
             },
-            "GetRole":  {
-              "methods":  [
+            "GetRole": {
+              "methods": [
                 "GetRole"
               ]
             },
-            "GetServiceAccount":  {
-              "methods":  [
+            "GetServiceAccount": {
+              "methods": [
                 "GetServiceAccount"
               ]
             },
-            "GetServiceAccountKey":  {
-              "methods":  [
+            "GetServiceAccountKey": {
+              "methods": [
                 "GetServiceAccountKey"
               ]
             },
-            "LintPolicy":  {
-              "methods":  [
+            "LintPolicy": {
+              "methods": [
                 "LintPolicy"
               ]
             },
-            "ListRoles":  {
-              "methods":  [
+            "ListRoles": {
+              "methods": [
                 "ListRoles"
               ]
             },
-            "ListServiceAccountKeys":  {
-              "methods":  [
+            "ListServiceAccountKeys": {
+              "methods": [
                 "ListServiceAccountKeys"
               ]
             },
-            "ListServiceAccounts":  {
-              "methods":  [
+            "ListServiceAccounts": {
+              "methods": [
                 "ListServiceAccounts"
               ]
             },
-            "PatchServiceAccount":  {
-              "methods":  [
+            "PatchServiceAccount": {
+              "methods": [
                 "PatchServiceAccount"
               ]
             },
-            "QueryAuditableServices":  {
-              "methods":  [
+            "QueryAuditableServices": {
+              "methods": [
                 "QueryAuditableServices"
               ]
             },
-            "QueryGrantableRoles":  {
-              "methods":  [
+            "QueryGrantableRoles": {
+              "methods": [
                 "QueryGrantableRoles"
               ]
             },
-            "QueryTestablePermissions":  {
-              "methods":  [
+            "QueryTestablePermissions": {
+              "methods": [
                 "QueryTestablePermissions"
               ]
             },
-            "SetIamPolicy":  {
-              "methods":  [
+            "SetIamPolicy": {
+              "methods": [
                 "SetIamPolicy"
               ]
             },
-            "SignBlob":  {
-              "methods":  [
+            "SignBlob": {
+              "methods": [
                 "SignBlob"
               ]
             },
-            "SignJwt":  {
-              "methods":  [
+            "SignJwt": {
+              "methods": [
                 "SignJwt"
               ]
             },
-            "TestIamPermissions":  {
-              "methods":  [
+            "TestIamPermissions": {
+              "methods": [
                 "TestIamPermissions"
               ]
             },
-            "UndeleteRole":  {
-              "methods":  [
+            "UndeleteRole": {
+              "methods": [
                 "UndeleteRole"
               ]
             },
-            "UndeleteServiceAccount":  {
-              "methods":  [
+            "UndeleteServiceAccount": {
+              "methods": [
                 "UndeleteServiceAccount"
               ]
             },
-            "UpdateRole":  {
-              "methods":  [
+            "UpdateRole": {
+              "methods": [
                 "UpdateRole"
               ]
             },
-            "UpdateServiceAccount":  {
-              "methods":  [
+            "UpdateServiceAccount": {
+              "methods": [
                 "UpdateServiceAccount"
               ]
             },
-            "UploadServiceAccountKey":  {
-              "methods":  [
+            "UploadServiceAccountKey": {
+              "methods": [
                 "UploadServiceAccountKey"
               ]
             }

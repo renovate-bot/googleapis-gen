@@ -237,11 +237,13 @@ func (c *adMobApiGRPCClient) ListPublisherAccounts(ctx context.Context, req *adm
 	it := &PublisherAccountIterator{}
 	req = proto.Clone(req).(*admobpb.ListPublisherAccountsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*admobpb.PublisherAccount, string, error) {
-		var resp *admobpb.ListPublisherAccountsResponse
-		req.PageToken = pageToken
+		resp := &admobpb.ListPublisherAccountsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -264,9 +266,11 @@ func (c *adMobApiGRPCClient) ListPublisherAccounts(ctx context.Context, req *adm
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

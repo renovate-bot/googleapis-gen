@@ -722,11 +722,13 @@ func (c *productSearchGRPCClient) ListProductSets(ctx context.Context, req *visi
 	it := &ProductSetIterator{}
 	req = proto.Clone(req).(*visionpb.ListProductSetsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*visionpb.ProductSet, string, error) {
-		var resp *visionpb.ListProductSetsResponse
-		req.PageToken = pageToken
+		resp := &visionpb.ListProductSetsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -749,9 +751,11 @@ func (c *productSearchGRPCClient) ListProductSets(ctx context.Context, req *visi
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -842,11 +846,13 @@ func (c *productSearchGRPCClient) ListProducts(ctx context.Context, req *visionp
 	it := &ProductIterator{}
 	req = proto.Clone(req).(*visionpb.ListProductsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*visionpb.Product, string, error) {
-		var resp *visionpb.ListProductsResponse
-		req.PageToken = pageToken
+		resp := &visionpb.ListProductsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -869,9 +875,11 @@ func (c *productSearchGRPCClient) ListProducts(ctx context.Context, req *visionp
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -979,11 +987,13 @@ func (c *productSearchGRPCClient) ListReferenceImages(ctx context.Context, req *
 	it := &ReferenceImageIterator{}
 	req = proto.Clone(req).(*visionpb.ListReferenceImagesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*visionpb.ReferenceImage, string, error) {
-		var resp *visionpb.ListReferenceImagesResponse
-		req.PageToken = pageToken
+		resp := &visionpb.ListReferenceImagesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -1006,9 +1016,11 @@ func (c *productSearchGRPCClient) ListReferenceImages(ctx context.Context, req *
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -1074,11 +1086,13 @@ func (c *productSearchGRPCClient) ListProductsInProductSet(ctx context.Context, 
 	it := &ProductIterator{}
 	req = proto.Clone(req).(*visionpb.ListProductsInProductSetRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*visionpb.Product, string, error) {
-		var resp *visionpb.ListProductsInProductSetResponse
-		req.PageToken = pageToken
+		resp := &visionpb.ListProductsInProductSetResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -1101,9 +1115,11 @@ func (c *productSearchGRPCClient) ListProductsInProductSet(ctx context.Context, 
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

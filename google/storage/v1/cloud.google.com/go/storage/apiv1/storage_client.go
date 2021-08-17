@@ -22,6 +22,7 @@ import (
 	"time"
 
 	gax "github.com/googleapis/gax-go/v2"
+	"google.golang.org/api/iterator"
 	"google.golang.org/api/option"
 	"google.golang.org/api/option/internaloption"
 	gtransport "google.golang.org/api/transport/grpc"
@@ -30,6 +31,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/metadata"
+	"google.golang.org/protobuf/proto"
 )
 
 var newClientHook clientHook
@@ -799,7 +801,7 @@ type internalClient interface {
 	GetBucket(context.Context, *storagepb.GetBucketRequest, ...gax.CallOption) (*storagepb.Bucket, error)
 	InsertBucket(context.Context, *storagepb.InsertBucketRequest, ...gax.CallOption) (*storagepb.Bucket, error)
 	ListChannels(context.Context, *storagepb.ListChannelsRequest, ...gax.CallOption) (*storagepb.ListChannelsResponse, error)
-	ListBuckets(context.Context, *storagepb.ListBucketsRequest, ...gax.CallOption) (*storagepb.ListBucketsResponse, error)
+	ListBuckets(context.Context, *storagepb.ListBucketsRequest, ...gax.CallOption) *BucketIterator
 	LockBucketRetentionPolicy(context.Context, *storagepb.LockRetentionPolicyRequest, ...gax.CallOption) (*storagepb.Bucket, error)
 	GetBucketIamPolicy(context.Context, *storagepb.GetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
 	SetBucketIamPolicy(context.Context, *storagepb.SetIamPolicyRequest, ...gax.CallOption) (*iampb.Policy, error)
@@ -829,7 +831,7 @@ type internalClient interface {
 	GetObject(context.Context, *storagepb.GetObjectRequest, ...gax.CallOption) (*storagepb.Object, error)
 	GetObjectMedia(context.Context, *storagepb.GetObjectMediaRequest, ...gax.CallOption) (storagepb.Storage_GetObjectMediaClient, error)
 	InsertObject(context.Context, ...gax.CallOption) (storagepb.Storage_InsertObjectClient, error)
-	ListObjects(context.Context, *storagepb.ListObjectsRequest, ...gax.CallOption) (*storagepb.ListObjectsResponse, error)
+	ListObjects(context.Context, *storagepb.ListObjectsRequest, ...gax.CallOption) *StringIterator
 	RewriteObject(context.Context, *storagepb.RewriteObjectRequest, ...gax.CallOption) (*storagepb.RewriteResponse, error)
 	StartResumableWrite(context.Context, *storagepb.StartResumableWriteRequest, ...gax.CallOption) (*storagepb.StartResumableWriteResponse, error)
 	QueryWriteStatus(context.Context, *storagepb.QueryWriteStatusRequest, ...gax.CallOption) (*storagepb.QueryWriteStatusResponse, error)
@@ -843,7 +845,7 @@ type internalClient interface {
 	CreateHmacKey(context.Context, *storagepb.CreateHmacKeyRequest, ...gax.CallOption) (*storagepb.CreateHmacKeyResponse, error)
 	DeleteHmacKey(context.Context, *storagepb.DeleteHmacKeyRequest, ...gax.CallOption) error
 	GetHmacKey(context.Context, *storagepb.GetHmacKeyRequest, ...gax.CallOption) (*storagepb.HmacKeyMetadata, error)
-	ListHmacKeys(context.Context, *storagepb.ListHmacKeysRequest, ...gax.CallOption) (*storagepb.ListHmacKeysResponse, error)
+	ListHmacKeys(context.Context, *storagepb.ListHmacKeysRequest, ...gax.CallOption) *HmacKeyMetadataIterator
 	UpdateHmacKey(context.Context, *storagepb.UpdateHmacKeyRequest, ...gax.CallOption) (*storagepb.HmacKeyMetadata, error)
 }
 
@@ -935,7 +937,7 @@ func (c *Client) ListChannels(ctx context.Context, req *storagepb.ListChannelsRe
 }
 
 // ListBuckets retrieves a list of buckets for a given project.
-func (c *Client) ListBuckets(ctx context.Context, req *storagepb.ListBucketsRequest, opts ...gax.CallOption) (*storagepb.ListBucketsResponse, error) {
+func (c *Client) ListBuckets(ctx context.Context, req *storagepb.ListBucketsRequest, opts ...gax.CallOption) *BucketIterator {
 	return c.internalClient.ListBuckets(ctx, req, opts...)
 }
 
@@ -1133,7 +1135,7 @@ func (c *Client) InsertObject(ctx context.Context, opts ...gax.CallOption) (stor
 }
 
 // ListObjects retrieves a list of objects matching the criteria.
-func (c *Client) ListObjects(ctx context.Context, req *storagepb.ListObjectsRequest, opts ...gax.CallOption) (*storagepb.ListObjectsResponse, error) {
+func (c *Client) ListObjects(ctx context.Context, req *storagepb.ListObjectsRequest, opts ...gax.CallOption) *StringIterator {
 	return c.internalClient.ListObjects(ctx, req, opts...)
 }
 
@@ -1221,7 +1223,7 @@ func (c *Client) GetHmacKey(ctx context.Context, req *storagepb.GetHmacKeyReques
 }
 
 // ListHmacKeys lists HMAC keys under a given project with the additional filters provided.
-func (c *Client) ListHmacKeys(ctx context.Context, req *storagepb.ListHmacKeysRequest, opts ...gax.CallOption) (*storagepb.ListHmacKeysResponse, error) {
+func (c *Client) ListHmacKeys(ctx context.Context, req *storagepb.ListHmacKeysRequest, opts ...gax.CallOption) *HmacKeyMetadataIterator {
 	return c.internalClient.ListHmacKeys(ctx, req, opts...)
 }
 
@@ -1502,24 +1504,47 @@ func (c *gRPCClient) ListChannels(ctx context.Context, req *storagepb.ListChanne
 	return resp, nil
 }
 
-func (c *gRPCClient) ListBuckets(ctx context.Context, req *storagepb.ListBucketsRequest, opts ...gax.CallOption) (*storagepb.ListBucketsResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
+func (c *gRPCClient) ListBuckets(ctx context.Context, req *storagepb.ListBucketsRequest, opts ...gax.CallOption) *BucketIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
 	opts = append((*c.CallOptions).ListBuckets[0:len((*c.CallOptions).ListBuckets):len((*c.CallOptions).ListBuckets)], opts...)
-	var resp *storagepb.ListBucketsResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.client.ListBuckets(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
+	it := &BucketIterator{}
+	req = proto.Clone(req).(*storagepb.ListBucketsRequest)
+	it.InternalFetch = func(pageSize int, pageToken string) ([]*storagepb.Bucket, string, error) {
+		resp := &storagepb.ListBucketsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
+		if pageSize > math.MaxInt32 {
+			req.MaxResults = math.MaxInt32
+		} else if pageSize != 0 {
+			req.MaxResults = int32(pageSize)
+		}
+		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+			var err error
+			resp, err = c.client.ListBuckets(ctx, req, settings.GRPC...)
+			return err
+		}, opts...)
+		if err != nil {
+			return nil, "", err
+		}
+
+		it.Response = resp
+		return resp.GetItems(), resp.GetNextPageToken(), nil
 	}
-	return resp, nil
+	fetch := func(pageSize int, pageToken string) (string, error) {
+		items, nextPageToken, err := it.InternalFetch(pageSize, pageToken)
+		if err != nil {
+			return "", err
+		}
+		it.items = append(it.items, items...)
+		return nextPageToken, nil
+	}
+
+	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
+	it.pageInfo.MaxSize = int(req.GetMaxResults())
+	it.pageInfo.Token = req.GetPageToken()
+
+	return it
 }
 
 func (c *gRPCClient) LockBucketRetentionPolicy(ctx context.Context, req *storagepb.LockRetentionPolicyRequest, opts ...gax.CallOption) (*storagepb.Bucket, error) {
@@ -2071,24 +2096,47 @@ func (c *gRPCClient) InsertObject(ctx context.Context, opts ...gax.CallOption) (
 	return resp, nil
 }
 
-func (c *gRPCClient) ListObjects(ctx context.Context, req *storagepb.ListObjectsRequest, opts ...gax.CallOption) (*storagepb.ListObjectsResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
+func (c *gRPCClient) ListObjects(ctx context.Context, req *storagepb.ListObjectsRequest, opts ...gax.CallOption) *StringIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
 	opts = append((*c.CallOptions).ListObjects[0:len((*c.CallOptions).ListObjects):len((*c.CallOptions).ListObjects)], opts...)
-	var resp *storagepb.ListObjectsResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.client.ListObjects(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
+	it := &StringIterator{}
+	req = proto.Clone(req).(*storagepb.ListObjectsRequest)
+	it.InternalFetch = func(pageSize int, pageToken string) ([]string, string, error) {
+		resp := &storagepb.ListObjectsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
+		if pageSize > math.MaxInt32 {
+			req.MaxResults = math.MaxInt32
+		} else if pageSize != 0 {
+			req.MaxResults = int32(pageSize)
+		}
+		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+			var err error
+			resp, err = c.client.ListObjects(ctx, req, settings.GRPC...)
+			return err
+		}, opts...)
+		if err != nil {
+			return nil, "", err
+		}
+
+		it.Response = resp
+		return resp.GetPrefixes(), resp.GetNextPageToken(), nil
 	}
-	return resp, nil
+	fetch := func(pageSize int, pageToken string) (string, error) {
+		items, nextPageToken, err := it.InternalFetch(pageSize, pageToken)
+		if err != nil {
+			return "", err
+		}
+		it.items = append(it.items, items...)
+		return nextPageToken, nil
+	}
+
+	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
+	it.pageInfo.MaxSize = int(req.GetMaxResults())
+	it.pageInfo.Token = req.GetPageToken()
+
+	return it
 }
 
 func (c *gRPCClient) RewriteObject(ctx context.Context, req *storagepb.RewriteObjectRequest, opts ...gax.CallOption) (*storagepb.RewriteResponse, error) {
@@ -2347,24 +2395,47 @@ func (c *gRPCClient) GetHmacKey(ctx context.Context, req *storagepb.GetHmacKeyRe
 	return resp, nil
 }
 
-func (c *gRPCClient) ListHmacKeys(ctx context.Context, req *storagepb.ListHmacKeysRequest, opts ...gax.CallOption) (*storagepb.ListHmacKeysResponse, error) {
-	if _, ok := ctx.Deadline(); !ok && !c.disableDeadlines {
-		cctx, cancel := context.WithTimeout(ctx, 60000*time.Millisecond)
-		defer cancel()
-		ctx = cctx
-	}
+func (c *gRPCClient) ListHmacKeys(ctx context.Context, req *storagepb.ListHmacKeysRequest, opts ...gax.CallOption) *HmacKeyMetadataIterator {
 	ctx = insertMetadata(ctx, c.xGoogMetadata)
 	opts = append((*c.CallOptions).ListHmacKeys[0:len((*c.CallOptions).ListHmacKeys):len((*c.CallOptions).ListHmacKeys)], opts...)
-	var resp *storagepb.ListHmacKeysResponse
-	err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
-		var err error
-		resp, err = c.client.ListHmacKeys(ctx, req, settings.GRPC...)
-		return err
-	}, opts...)
-	if err != nil {
-		return nil, err
+	it := &HmacKeyMetadataIterator{}
+	req = proto.Clone(req).(*storagepb.ListHmacKeysRequest)
+	it.InternalFetch = func(pageSize int, pageToken string) ([]*storagepb.HmacKeyMetadata, string, error) {
+		resp := &storagepb.ListHmacKeysResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
+		if pageSize > math.MaxInt32 {
+			req.MaxResults = math.MaxInt32
+		} else if pageSize != 0 {
+			req.MaxResults = int32(pageSize)
+		}
+		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
+			var err error
+			resp, err = c.client.ListHmacKeys(ctx, req, settings.GRPC...)
+			return err
+		}, opts...)
+		if err != nil {
+			return nil, "", err
+		}
+
+		it.Response = resp
+		return resp.GetItems(), resp.GetNextPageToken(), nil
 	}
-	return resp, nil
+	fetch := func(pageSize int, pageToken string) (string, error) {
+		items, nextPageToken, err := it.InternalFetch(pageSize, pageToken)
+		if err != nil {
+			return "", err
+		}
+		it.items = append(it.items, items...)
+		return nextPageToken, nil
+	}
+
+	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
+	it.pageInfo.MaxSize = int(req.GetMaxResults())
+	it.pageInfo.Token = req.GetPageToken()
+
+	return it
 }
 
 func (c *gRPCClient) UpdateHmacKey(ctx context.Context, req *storagepb.UpdateHmacKeyRequest, opts ...gax.CallOption) (*storagepb.HmacKeyMetadata, error) {
@@ -2385,4 +2456,145 @@ func (c *gRPCClient) UpdateHmacKey(ctx context.Context, req *storagepb.UpdateHma
 		return nil, err
 	}
 	return resp, nil
+}
+
+// BucketIterator manages a stream of *storagepb.Bucket.
+type BucketIterator struct {
+	items    []*storagepb.Bucket
+	pageInfo *iterator.PageInfo
+	nextFunc func() error
+
+	// Response is the raw response for the current page.
+	// It must be cast to the RPC response type.
+	// Calling Next() or InternalFetch() updates this value.
+	Response interface{}
+
+	// InternalFetch is for use by the Google Cloud Libraries only.
+	// It is not part of the stable interface of this package.
+	//
+	// InternalFetch returns results from a single call to the underlying RPC.
+	// The number of results is no greater than pageSize.
+	// If there are no more results, nextPageToken is empty and err is nil.
+	InternalFetch func(pageSize int, pageToken string) (results []*storagepb.Bucket, nextPageToken string, err error)
+}
+
+// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+func (it *BucketIterator) PageInfo() *iterator.PageInfo {
+	return it.pageInfo
+}
+
+// Next returns the next result. Its second return value is iterator.Done if there are no more
+// results. Once Next returns Done, all subsequent calls will return Done.
+func (it *BucketIterator) Next() (*storagepb.Bucket, error) {
+	var item *storagepb.Bucket
+	if err := it.nextFunc(); err != nil {
+		return item, err
+	}
+	item = it.items[0]
+	it.items = it.items[1:]
+	return item, nil
+}
+
+func (it *BucketIterator) bufLen() int {
+	return len(it.items)
+}
+
+func (it *BucketIterator) takeBuf() interface{} {
+	b := it.items
+	it.items = nil
+	return b
+}
+
+// HmacKeyMetadataIterator manages a stream of *storagepb.HmacKeyMetadata.
+type HmacKeyMetadataIterator struct {
+	items    []*storagepb.HmacKeyMetadata
+	pageInfo *iterator.PageInfo
+	nextFunc func() error
+
+	// Response is the raw response for the current page.
+	// It must be cast to the RPC response type.
+	// Calling Next() or InternalFetch() updates this value.
+	Response interface{}
+
+	// InternalFetch is for use by the Google Cloud Libraries only.
+	// It is not part of the stable interface of this package.
+	//
+	// InternalFetch returns results from a single call to the underlying RPC.
+	// The number of results is no greater than pageSize.
+	// If there are no more results, nextPageToken is empty and err is nil.
+	InternalFetch func(pageSize int, pageToken string) (results []*storagepb.HmacKeyMetadata, nextPageToken string, err error)
+}
+
+// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+func (it *HmacKeyMetadataIterator) PageInfo() *iterator.PageInfo {
+	return it.pageInfo
+}
+
+// Next returns the next result. Its second return value is iterator.Done if there are no more
+// results. Once Next returns Done, all subsequent calls will return Done.
+func (it *HmacKeyMetadataIterator) Next() (*storagepb.HmacKeyMetadata, error) {
+	var item *storagepb.HmacKeyMetadata
+	if err := it.nextFunc(); err != nil {
+		return item, err
+	}
+	item = it.items[0]
+	it.items = it.items[1:]
+	return item, nil
+}
+
+func (it *HmacKeyMetadataIterator) bufLen() int {
+	return len(it.items)
+}
+
+func (it *HmacKeyMetadataIterator) takeBuf() interface{} {
+	b := it.items
+	it.items = nil
+	return b
+}
+
+// StringIterator manages a stream of string.
+type StringIterator struct {
+	items    []string
+	pageInfo *iterator.PageInfo
+	nextFunc func() error
+
+	// Response is the raw response for the current page.
+	// It must be cast to the RPC response type.
+	// Calling Next() or InternalFetch() updates this value.
+	Response interface{}
+
+	// InternalFetch is for use by the Google Cloud Libraries only.
+	// It is not part of the stable interface of this package.
+	//
+	// InternalFetch returns results from a single call to the underlying RPC.
+	// The number of results is no greater than pageSize.
+	// If there are no more results, nextPageToken is empty and err is nil.
+	InternalFetch func(pageSize int, pageToken string) (results []string, nextPageToken string, err error)
+}
+
+// PageInfo supports pagination. See the google.golang.org/api/iterator package for details.
+func (it *StringIterator) PageInfo() *iterator.PageInfo {
+	return it.pageInfo
+}
+
+// Next returns the next result. Its second return value is iterator.Done if there are no more
+// results. Once Next returns Done, all subsequent calls will return Done.
+func (it *StringIterator) Next() (string, error) {
+	var item string
+	if err := it.nextFunc(); err != nil {
+		return item, err
+	}
+	item = it.items[0]
+	it.items = it.items[1:]
+	return item, nil
+}
+
+func (it *StringIterator) bufLen() int {
+	return len(it.items)
+}
+
+func (it *StringIterator) takeBuf() interface{} {
+	b := it.items
+	it.items = nil
+	return b
 }

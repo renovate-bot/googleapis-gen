@@ -288,11 +288,13 @@ func (c *organizationsGRPCClient) SearchOrganizations(ctx context.Context, req *
 	it := &OrganizationIterator{}
 	req = proto.Clone(req).(*resourcemanagerpb.SearchOrganizationsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*resourcemanagerpb.Organization, string, error) {
-		var resp *resourcemanagerpb.SearchOrganizationsResponse
-		req.PageToken = pageToken
+		resp := &resourcemanagerpb.SearchOrganizationsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -315,9 +317,11 @@ func (c *organizationsGRPCClient) SearchOrganizations(ctx context.Context, req *
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

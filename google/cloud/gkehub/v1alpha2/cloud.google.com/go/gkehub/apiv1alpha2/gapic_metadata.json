@@ -1,47 +1,47 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.cloud.gkehub.v1alpha2",
-  "libraryPackage":  "cloud.google.com/go/gkehub/apiv1alpha2",
-  "services":  {
-    "GkeHub":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "Client",
-          "rpcs":  {
-            "CreateMembership":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.cloud.gkehub.v1alpha2",
+  "libraryPackage": "cloud.google.com/go/gkehub/apiv1alpha2",
+  "services": {
+    "GkeHub": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Client",
+          "rpcs": {
+            "CreateMembership": {
+              "methods": [
                 "CreateMembership"
               ]
             },
-            "DeleteMembership":  {
-              "methods":  [
+            "DeleteMembership": {
+              "methods": [
                 "DeleteMembership"
               ]
             },
-            "GenerateConnectManifest":  {
-              "methods":  [
+            "GenerateConnectManifest": {
+              "methods": [
                 "GenerateConnectManifest"
               ]
             },
-            "GetMembership":  {
-              "methods":  [
+            "GetMembership": {
+              "methods": [
                 "GetMembership"
               ]
             },
-            "InitializeHub":  {
-              "methods":  [
+            "InitializeHub": {
+              "methods": [
                 "InitializeHub"
               ]
             },
-            "ListMemberships":  {
-              "methods":  [
+            "ListMemberships": {
+              "methods": [
                 "ListMemberships"
               ]
             },
-            "UpdateMembership":  {
-              "methods":  [
+            "UpdateMembership": {
+              "methods": [
                 "UpdateMembership"
               ]
             }

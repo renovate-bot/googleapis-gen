@@ -1,77 +1,77 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.cloud.datafusion.v1beta1",
-  "libraryPackage":  "cloud.google.com/go/datafusion/apiv1beta1",
-  "services":  {
-    "DataFusion":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "Client",
-          "rpcs":  {
-            "AddDnsPeering":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.cloud.datafusion.v1beta1",
+  "libraryPackage": "cloud.google.com/go/datafusion/apiv1beta1",
+  "services": {
+    "DataFusion": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Client",
+          "rpcs": {
+            "AddDnsPeering": {
+              "methods": [
                 "AddDnsPeering"
               ]
             },
-            "CreateInstance":  {
-              "methods":  [
+            "CreateInstance": {
+              "methods": [
                 "CreateInstance"
               ]
             },
-            "DeleteInstance":  {
-              "methods":  [
+            "DeleteInstance": {
+              "methods": [
                 "DeleteInstance"
               ]
             },
-            "GetInstance":  {
-              "methods":  [
+            "GetInstance": {
+              "methods": [
                 "GetInstance"
               ]
             },
-            "ListAvailableVersions":  {
-              "methods":  [
+            "ListAvailableVersions": {
+              "methods": [
                 "ListAvailableVersions"
               ]
             },
-            "ListDnsPeerings":  {
-              "methods":  [
+            "ListDnsPeerings": {
+              "methods": [
                 "ListDnsPeerings"
               ]
             },
-            "ListInstances":  {
-              "methods":  [
+            "ListInstances": {
+              "methods": [
                 "ListInstances"
               ]
             },
-            "ListNamespaces":  {
-              "methods":  [
+            "ListNamespaces": {
+              "methods": [
                 "ListNamespaces"
               ]
             },
-            "RemoveDnsPeering":  {
-              "methods":  [
+            "RemoveDnsPeering": {
+              "methods": [
                 "RemoveDnsPeering"
               ]
             },
-            "RemoveIamPolicy":  {
-              "methods":  [
+            "RemoveIamPolicy": {
+              "methods": [
                 "RemoveIamPolicy"
               ]
             },
-            "RestartInstance":  {
-              "methods":  [
+            "RestartInstance": {
+              "methods": [
                 "RestartInstance"
               ]
             },
-            "UpdateInstance":  {
-              "methods":  [
+            "UpdateInstance": {
+              "methods": [
                 "UpdateInstance"
               ]
             },
-            "UpgradeInstance":  {
-              "methods":  [
+            "UpgradeInstance": {
+              "methods": [
                 "UpgradeInstance"
               ]
             }

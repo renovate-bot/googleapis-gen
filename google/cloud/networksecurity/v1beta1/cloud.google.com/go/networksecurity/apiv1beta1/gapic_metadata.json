@@ -1,87 +1,87 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.cloud.networksecurity.v1beta1",
-  "libraryPackage":  "cloud.google.com/go/networksecurity/apiv1beta1",
-  "services":  {
-    "NetworkSecurity":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "Client",
-          "rpcs":  {
-            "CreateAuthorizationPolicy":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.cloud.networksecurity.v1beta1",
+  "libraryPackage": "cloud.google.com/go/networksecurity/apiv1beta1",
+  "services": {
+    "NetworkSecurity": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "Client",
+          "rpcs": {
+            "CreateAuthorizationPolicy": {
+              "methods": [
                 "CreateAuthorizationPolicy"
               ]
             },
-            "CreateClientTlsPolicy":  {
-              "methods":  [
+            "CreateClientTlsPolicy": {
+              "methods": [
                 "CreateClientTlsPolicy"
               ]
             },
-            "CreateServerTlsPolicy":  {
-              "methods":  [
+            "CreateServerTlsPolicy": {
+              "methods": [
                 "CreateServerTlsPolicy"
               ]
             },
-            "DeleteAuthorizationPolicy":  {
-              "methods":  [
+            "DeleteAuthorizationPolicy": {
+              "methods": [
                 "DeleteAuthorizationPolicy"
               ]
             },
-            "DeleteClientTlsPolicy":  {
-              "methods":  [
+            "DeleteClientTlsPolicy": {
+              "methods": [
                 "DeleteClientTlsPolicy"
               ]
             },
-            "DeleteServerTlsPolicy":  {
-              "methods":  [
+            "DeleteServerTlsPolicy": {
+              "methods": [
                 "DeleteServerTlsPolicy"
               ]
             },
-            "GetAuthorizationPolicy":  {
-              "methods":  [
+            "GetAuthorizationPolicy": {
+              "methods": [
                 "GetAuthorizationPolicy"
               ]
             },
-            "GetClientTlsPolicy":  {
-              "methods":  [
+            "GetClientTlsPolicy": {
+              "methods": [
                 "GetClientTlsPolicy"
               ]
             },
-            "GetServerTlsPolicy":  {
-              "methods":  [
+            "GetServerTlsPolicy": {
+              "methods": [
                 "GetServerTlsPolicy"
               ]
             },
-            "ListAuthorizationPolicies":  {
-              "methods":  [
+            "ListAuthorizationPolicies": {
+              "methods": [
                 "ListAuthorizationPolicies"
               ]
             },
-            "ListClientTlsPolicies":  {
-              "methods":  [
+            "ListClientTlsPolicies": {
+              "methods": [
                 "ListClientTlsPolicies"
               ]
             },
-            "ListServerTlsPolicies":  {
-              "methods":  [
+            "ListServerTlsPolicies": {
+              "methods": [
                 "ListServerTlsPolicies"
               ]
             },
-            "UpdateAuthorizationPolicy":  {
-              "methods":  [
+            "UpdateAuthorizationPolicy": {
+              "methods": [
                 "UpdateAuthorizationPolicy"
               ]
             },
-            "UpdateClientTlsPolicy":  {
-              "methods":  [
+            "UpdateClientTlsPolicy": {
+              "methods": [
                 "UpdateClientTlsPolicy"
               ]
             },
-            "UpdateServerTlsPolicy":  {
-              "methods":  [
+            "UpdateServerTlsPolicy": {
+              "methods": [
                 "UpdateServerTlsPolicy"
               ]
             }

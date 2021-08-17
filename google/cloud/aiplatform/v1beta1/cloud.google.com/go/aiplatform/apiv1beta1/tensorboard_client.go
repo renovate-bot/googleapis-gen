@@ -506,11 +506,13 @@ func (c *tensorboardGRPCClient) ListTensorboards(ctx context.Context, req *aipla
 	it := &TensorboardIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListTensorboardsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Tensorboard, string, error) {
-		var resp *aiplatformpb.ListTensorboardsResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListTensorboardsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -533,9 +535,11 @@ func (c *tensorboardGRPCClient) ListTensorboards(ctx context.Context, req *aipla
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -612,11 +616,13 @@ func (c *tensorboardGRPCClient) ListTensorboardExperiments(ctx context.Context, 
 	it := &TensorboardExperimentIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListTensorboardExperimentsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.TensorboardExperiment, string, error) {
-		var resp *aiplatformpb.ListTensorboardExperimentsResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListTensorboardExperimentsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -639,9 +645,11 @@ func (c *tensorboardGRPCClient) ListTensorboardExperiments(ctx context.Context, 
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -718,11 +726,13 @@ func (c *tensorboardGRPCClient) ListTensorboardRuns(ctx context.Context, req *ai
 	it := &TensorboardRunIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListTensorboardRunsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.TensorboardRun, string, error) {
-		var resp *aiplatformpb.ListTensorboardRunsResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListTensorboardRunsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -745,9 +755,11 @@ func (c *tensorboardGRPCClient) ListTensorboardRuns(ctx context.Context, req *ai
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -824,11 +836,13 @@ func (c *tensorboardGRPCClient) ListTensorboardTimeSeries(ctx context.Context, r
 	it := &TensorboardTimeSeriesIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListTensorboardTimeSeriesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.TensorboardTimeSeries, string, error) {
-		var resp *aiplatformpb.ListTensorboardTimeSeriesResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListTensorboardTimeSeriesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -851,9 +865,11 @@ func (c *tensorboardGRPCClient) ListTensorboardTimeSeries(ctx context.Context, r
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -929,11 +945,13 @@ func (c *tensorboardGRPCClient) ExportTensorboardTimeSeriesData(ctx context.Cont
 	it := &TimeSeriesDataPointIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ExportTensorboardTimeSeriesDataRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.TimeSeriesDataPoint, string, error) {
-		var resp *aiplatformpb.ExportTensorboardTimeSeriesDataResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ExportTensorboardTimeSeriesDataResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -956,9 +974,11 @@ func (c *tensorboardGRPCClient) ExportTensorboardTimeSeriesData(ctx context.Cont
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

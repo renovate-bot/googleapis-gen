@@ -389,11 +389,13 @@ func (c *gRPCClient) ListAuthorizationPolicies(ctx context.Context, req *network
 	it := &AuthorizationPolicyIterator{}
 	req = proto.Clone(req).(*networksecuritypb.ListAuthorizationPoliciesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*networksecuritypb.AuthorizationPolicy, string, error) {
-		var resp *networksecuritypb.ListAuthorizationPoliciesResponse
-		req.PageToken = pageToken
+		resp := &networksecuritypb.ListAuthorizationPoliciesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -416,9 +418,11 @@ func (c *gRPCClient) ListAuthorizationPolicies(ctx context.Context, req *network
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -519,11 +523,13 @@ func (c *gRPCClient) ListServerTlsPolicies(ctx context.Context, req *networksecu
 	it := &ServerTlsPolicyIterator{}
 	req = proto.Clone(req).(*networksecuritypb.ListServerTlsPoliciesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*networksecuritypb.ServerTlsPolicy, string, error) {
-		var resp *networksecuritypb.ListServerTlsPoliciesResponse
-		req.PageToken = pageToken
+		resp := &networksecuritypb.ListServerTlsPoliciesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -546,9 +552,11 @@ func (c *gRPCClient) ListServerTlsPolicies(ctx context.Context, req *networksecu
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -649,11 +657,13 @@ func (c *gRPCClient) ListClientTlsPolicies(ctx context.Context, req *networksecu
 	it := &ClientTlsPolicyIterator{}
 	req = proto.Clone(req).(*networksecuritypb.ListClientTlsPoliciesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*networksecuritypb.ClientTlsPolicy, string, error) {
-		var resp *networksecuritypb.ListClientTlsPoliciesResponse
-		req.PageToken = pageToken
+		resp := &networksecuritypb.ListClientTlsPoliciesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -676,9 +686,11 @@ func (c *gRPCClient) ListClientTlsPolicies(ctx context.Context, req *networksecu
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

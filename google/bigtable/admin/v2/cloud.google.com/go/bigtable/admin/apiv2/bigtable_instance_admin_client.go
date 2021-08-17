@@ -813,11 +813,13 @@ func (c *bigtableInstanceAdminGRPCClient) ListAppProfiles(ctx context.Context, r
 	it := &AppProfileIterator{}
 	req = proto.Clone(req).(*adminpb.ListAppProfilesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*adminpb.AppProfile, string, error) {
-		var resp *adminpb.ListAppProfilesResponse
-		req.PageToken = pageToken
+		resp := &adminpb.ListAppProfilesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -840,9 +842,11 @@ func (c *bigtableInstanceAdminGRPCClient) ListAppProfiles(ctx context.Context, r
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

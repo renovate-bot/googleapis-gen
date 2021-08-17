@@ -561,11 +561,13 @@ func (c *gRPCClient) ListServices(ctx context.Context, req *serviceusagepb.ListS
 	it := &ServiceIterator{}
 	req = proto.Clone(req).(*serviceusagepb.ListServicesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*serviceusagepb.Service, string, error) {
-		var resp *serviceusagepb.ListServicesResponse
-		req.PageToken = pageToken
+		resp := &serviceusagepb.ListServicesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -588,9 +590,11 @@ func (c *gRPCClient) ListServices(ctx context.Context, req *serviceusagepb.ListS
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -624,11 +628,13 @@ func (c *gRPCClient) ListConsumerQuotaMetrics(ctx context.Context, req *serviceu
 	it := &ConsumerQuotaMetricIterator{}
 	req = proto.Clone(req).(*serviceusagepb.ListConsumerQuotaMetricsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*serviceusagepb.ConsumerQuotaMetric, string, error) {
-		var resp *serviceusagepb.ListConsumerQuotaMetricsResponse
-		req.PageToken = pageToken
+		resp := &serviceusagepb.ListConsumerQuotaMetricsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -651,9 +657,11 @@ func (c *gRPCClient) ListConsumerQuotaMetrics(ctx context.Context, req *serviceu
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -775,11 +783,13 @@ func (c *gRPCClient) ListAdminOverrides(ctx context.Context, req *serviceusagepb
 	it := &QuotaOverrideIterator{}
 	req = proto.Clone(req).(*serviceusagepb.ListAdminOverridesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*serviceusagepb.QuotaOverride, string, error) {
-		var resp *serviceusagepb.ListAdminOverridesResponse
-		req.PageToken = pageToken
+		resp := &serviceusagepb.ListAdminOverridesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -802,9 +812,11 @@ func (c *gRPCClient) ListAdminOverrides(ctx context.Context, req *serviceusagepb
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -907,11 +919,13 @@ func (c *gRPCClient) ListConsumerOverrides(ctx context.Context, req *serviceusag
 	it := &QuotaOverrideIterator{}
 	req = proto.Clone(req).(*serviceusagepb.ListConsumerOverridesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*serviceusagepb.QuotaOverride, string, error) {
-		var resp *serviceusagepb.ListConsumerOverridesResponse
-		req.PageToken = pageToken
+		resp := &serviceusagepb.ListConsumerOverridesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -934,9 +948,11 @@ func (c *gRPCClient) ListConsumerOverrides(ctx context.Context, req *serviceusag
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

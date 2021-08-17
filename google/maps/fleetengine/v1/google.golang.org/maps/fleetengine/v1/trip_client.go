@@ -321,11 +321,13 @@ func (c *tripGRPCClient) SearchTrips(ctx context.Context, req *fleetenginepb.Sea
 	it := &TripIterator{}
 	req = proto.Clone(req).(*fleetenginepb.SearchTripsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*fleetenginepb.Trip, string, error) {
-		var resp *fleetenginepb.SearchTripsResponse
-		req.PageToken = pageToken
+		resp := &fleetenginepb.SearchTripsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -348,9 +350,11 @@ func (c *tripGRPCClient) SearchTrips(ctx context.Context, req *fleetenginepb.Sea
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

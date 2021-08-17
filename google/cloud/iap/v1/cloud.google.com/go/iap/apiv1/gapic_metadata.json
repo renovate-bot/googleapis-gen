@@ -1,37 +1,37 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.cloud.iap.v1",
-  "libraryPackage":  "cloud.google.com/go/iap/apiv1",
-  "services":  {
-    "IdentityAwareProxyAdminService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "IdentityAwareProxyAdminClient",
-          "rpcs":  {
-            "GetIamPolicy":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.cloud.iap.v1",
+  "libraryPackage": "cloud.google.com/go/iap/apiv1",
+  "services": {
+    "IdentityAwareProxyAdminService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IdentityAwareProxyAdminClient",
+          "rpcs": {
+            "GetIamPolicy": {
+              "methods": [
                 "GetIamPolicy"
               ]
             },
-            "GetIapSettings":  {
-              "methods":  [
+            "GetIapSettings": {
+              "methods": [
                 "GetIapSettings"
               ]
             },
-            "SetIamPolicy":  {
-              "methods":  [
+            "SetIamPolicy": {
+              "methods": [
                 "SetIamPolicy"
               ]
             },
-            "TestIamPermissions":  {
-              "methods":  [
+            "TestIamPermissions": {
+              "methods": [
                 "TestIamPermissions"
               ]
             },
-            "UpdateIapSettings":  {
-              "methods":  [
+            "UpdateIapSettings": {
+              "methods": [
                 "UpdateIapSettings"
               ]
             }
@@ -39,48 +39,48 @@
         }
       }
     },
-    "IdentityAwareProxyOAuthService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "IdentityAwareProxyOAuthClient",
-          "rpcs":  {
-            "CreateBrand":  {
-              "methods":  [
+    "IdentityAwareProxyOAuthService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IdentityAwareProxyOAuthClient",
+          "rpcs": {
+            "CreateBrand": {
+              "methods": [
                 "CreateBrand"
               ]
             },
-            "CreateIdentityAwareProxyClient":  {
-              "methods":  [
+            "CreateIdentityAwareProxyClient": {
+              "methods": [
                 "CreateIdentityAwareProxyClient"
               ]
             },
-            "DeleteIdentityAwareProxyClient":  {
-              "methods":  [
+            "DeleteIdentityAwareProxyClient": {
+              "methods": [
                 "DeleteIdentityAwareProxyClient"
               ]
             },
-            "GetBrand":  {
-              "methods":  [
+            "GetBrand": {
+              "methods": [
                 "GetBrand"
               ]
             },
-            "GetIdentityAwareProxyClient":  {
-              "methods":  [
+            "GetIdentityAwareProxyClient": {
+              "methods": [
                 "GetIdentityAwareProxyClient"
               ]
             },
-            "ListBrands":  {
-              "methods":  [
+            "ListBrands": {
+              "methods": [
                 "ListBrands"
               ]
             },
-            "ListIdentityAwareProxyClients":  {
-              "methods":  [
+            "ListIdentityAwareProxyClients": {
+              "methods": [
                 "ListIdentityAwareProxyClients"
               ]
             },
-            "ResetIdentityAwareProxyClientSecret":  {
-              "methods":  [
+            "ResetIdentityAwareProxyClientSecret": {
+              "methods": [
                 "ResetIdentityAwareProxyClientSecret"
               ]
             }

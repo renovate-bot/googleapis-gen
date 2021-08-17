@@ -326,11 +326,13 @@ func (c *smartDeviceManagementGRPCClient) ListDevices(ctx context.Context, req *
 	it := &DeviceIterator{}
 	req = proto.Clone(req).(*sdmpb.ListDevicesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*sdmpb.Device, string, error) {
-		var resp *sdmpb.ListDevicesResponse
-		req.PageToken = pageToken
+		resp := &sdmpb.ListDevicesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -353,9 +355,11 @@ func (c *smartDeviceManagementGRPCClient) ListDevices(ctx context.Context, req *
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -408,11 +412,13 @@ func (c *smartDeviceManagementGRPCClient) ListStructures(ctx context.Context, re
 	it := &StructureIterator{}
 	req = proto.Clone(req).(*sdmpb.ListStructuresRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*sdmpb.Structure, string, error) {
-		var resp *sdmpb.ListStructuresResponse
-		req.PageToken = pageToken
+		resp := &sdmpb.ListStructuresResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -435,9 +441,11 @@ func (c *smartDeviceManagementGRPCClient) ListStructures(ctx context.Context, re
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -469,11 +477,13 @@ func (c *smartDeviceManagementGRPCClient) ListRooms(ctx context.Context, req *sd
 	it := &RoomIterator{}
 	req = proto.Clone(req).(*sdmpb.ListRoomsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*sdmpb.Room, string, error) {
-		var resp *sdmpb.ListRoomsResponse
-		req.PageToken = pageToken
+		resp := &sdmpb.ListRoomsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -496,9 +506,11 @@ func (c *smartDeviceManagementGRPCClient) ListRooms(ctx context.Context, req *sd
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

@@ -193,11 +193,13 @@ func (c *imageVersionsGRPCClient) ListImageVersions(ctx context.Context, req *se
 	it := &ImageVersionIterator{}
 	req = proto.Clone(req).(*servicepb.ListImageVersionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*servicepb.ImageVersion, string, error) {
-		var resp *servicepb.ListImageVersionsResponse
-		req.PageToken = pageToken
+		resp := &servicepb.ListImageVersionsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -220,9 +222,11 @@ func (c *imageVersionsGRPCClient) ListImageVersions(ctx context.Context, req *se
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

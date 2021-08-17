@@ -461,11 +461,13 @@ func (c *gRPCClient) ListPhotos(ctx context.Context, req *publishpb.ListPhotosRe
 	it := &PhotoIterator{}
 	req = proto.Clone(req).(*publishpb.ListPhotosRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*publishpb.Photo, string, error) {
-		var resp *publishpb.ListPhotosResponse
-		req.PageToken = pageToken
+		resp := &publishpb.ListPhotosResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -488,9 +490,11 @@ func (c *gRPCClient) ListPhotos(ctx context.Context, req *publishpb.ListPhotosRe
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

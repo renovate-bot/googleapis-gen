@@ -1,62 +1,62 @@
 {
-  "schema":  "1.0",
-  "comment":  "This file maps proto services/RPCs to the corresponding library clients/methods.",
-  "language":  "go",
-  "protoPackage":  "google.cloud.translation.v3beta1",
-  "libraryPackage":  "cloud.google.com/go/translate/apiv3beta1",
-  "services":  {
-    "TranslationService":  {
-      "clients":  {
-        "grpc":  {
-          "libraryClient":  "TranslationClient",
-          "rpcs":  {
-            "BatchTranslateDocument":  {
-              "methods":  [
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods.",
+  "language": "go",
+  "protoPackage": "google.cloud.translation.v3beta1",
+  "libraryPackage": "cloud.google.com/go/translate/apiv3beta1",
+  "services": {
+    "TranslationService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TranslationClient",
+          "rpcs": {
+            "BatchTranslateDocument": {
+              "methods": [
                 "BatchTranslateDocument"
               ]
             },
-            "BatchTranslateText":  {
-              "methods":  [
+            "BatchTranslateText": {
+              "methods": [
                 "BatchTranslateText"
               ]
             },
-            "CreateGlossary":  {
-              "methods":  [
+            "CreateGlossary": {
+              "methods": [
                 "CreateGlossary"
               ]
             },
-            "DeleteGlossary":  {
-              "methods":  [
+            "DeleteGlossary": {
+              "methods": [
                 "DeleteGlossary"
               ]
             },
-            "DetectLanguage":  {
-              "methods":  [
+            "DetectLanguage": {
+              "methods": [
                 "DetectLanguage"
               ]
             },
-            "GetGlossary":  {
-              "methods":  [
+            "GetGlossary": {
+              "methods": [
                 "GetGlossary"
               ]
             },
-            "GetSupportedLanguages":  {
-              "methods":  [
+            "GetSupportedLanguages": {
+              "methods": [
                 "GetSupportedLanguages"
               ]
             },
-            "ListGlossaries":  {
-              "methods":  [
+            "ListGlossaries": {
+              "methods": [
                 "ListGlossaries"
               ]
             },
-            "TranslateDocument":  {
-              "methods":  [
+            "TranslateDocument": {
+              "methods": [
                 "TranslateDocument"
               ]
             },
-            "TranslateText":  {
-              "methods":  [
+            "TranslateText": {
+              "methods": [
                 "TranslateText"
               ]
             }

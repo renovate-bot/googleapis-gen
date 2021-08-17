@@ -450,11 +450,13 @@ func (c *participantsGRPCClient) ListParticipants(ctx context.Context, req *dial
 	it := &ParticipantIterator{}
 	req = proto.Clone(req).(*dialogflowpb.ListParticipantsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*dialogflowpb.Participant, string, error) {
-		var resp *dialogflowpb.ListParticipantsResponse
-		req.PageToken = pageToken
+		resp := &dialogflowpb.ListParticipantsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -477,9 +479,11 @@ func (c *participantsGRPCClient) ListParticipants(ctx context.Context, req *dial
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -595,11 +599,13 @@ func (c *participantsGRPCClient) ListSuggestions(ctx context.Context, req *dialo
 	it := &SuggestionIterator{}
 	req = proto.Clone(req).(*dialogflowpb.ListSuggestionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*dialogflowpb.Suggestion, string, error) {
-		var resp *dialogflowpb.ListSuggestionsResponse
-		req.PageToken = pageToken
+		resp := &dialogflowpb.ListSuggestionsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -622,9 +628,11 @@ func (c *participantsGRPCClient) ListSuggestions(ctx context.Context, req *dialo
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

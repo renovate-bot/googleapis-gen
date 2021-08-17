@@ -710,11 +710,13 @@ func (c *keyManagementGRPCClient) ListKeyRings(ctx context.Context, req *kmspb.L
 	it := &KeyRingIterator{}
 	req = proto.Clone(req).(*kmspb.ListKeyRingsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*kmspb.KeyRing, string, error) {
-		var resp *kmspb.ListKeyRingsResponse
-		req.PageToken = pageToken
+		resp := &kmspb.ListKeyRingsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -737,9 +739,11 @@ func (c *keyManagementGRPCClient) ListKeyRings(ctx context.Context, req *kmspb.L
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -750,11 +754,13 @@ func (c *keyManagementGRPCClient) ListCryptoKeys(ctx context.Context, req *kmspb
 	it := &CryptoKeyIterator{}
 	req = proto.Clone(req).(*kmspb.ListCryptoKeysRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*kmspb.CryptoKey, string, error) {
-		var resp *kmspb.ListCryptoKeysResponse
-		req.PageToken = pageToken
+		resp := &kmspb.ListCryptoKeysResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -777,9 +783,11 @@ func (c *keyManagementGRPCClient) ListCryptoKeys(ctx context.Context, req *kmspb
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -790,11 +798,13 @@ func (c *keyManagementGRPCClient) ListCryptoKeyVersions(ctx context.Context, req
 	it := &CryptoKeyVersionIterator{}
 	req = proto.Clone(req).(*kmspb.ListCryptoKeyVersionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*kmspb.CryptoKeyVersion, string, error) {
-		var resp *kmspb.ListCryptoKeyVersionsResponse
-		req.PageToken = pageToken
+		resp := &kmspb.ListCryptoKeyVersionsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -817,9 +827,11 @@ func (c *keyManagementGRPCClient) ListCryptoKeyVersions(ctx context.Context, req
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -830,11 +842,13 @@ func (c *keyManagementGRPCClient) ListImportJobs(ctx context.Context, req *kmspb
 	it := &ImportJobIterator{}
 	req = proto.Clone(req).(*kmspb.ListImportJobsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*kmspb.ImportJob, string, error) {
-		var resp *kmspb.ListImportJobsResponse
-		req.PageToken = pageToken
+		resp := &kmspb.ListImportJobsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -857,9 +871,11 @@ func (c *keyManagementGRPCClient) ListImportJobs(ctx context.Context, req *kmspb
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

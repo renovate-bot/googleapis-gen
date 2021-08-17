@@ -571,11 +571,13 @@ func (c *metadataGRPCClient) ListMetadataStores(ctx context.Context, req *aiplat
 	it := &MetadataStoreIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListMetadataStoresRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.MetadataStore, string, error) {
-		var resp *aiplatformpb.ListMetadataStoresResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListMetadataStoresResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -598,9 +600,11 @@ func (c *metadataGRPCClient) ListMetadataStores(ctx context.Context, req *aiplat
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -676,11 +680,13 @@ func (c *metadataGRPCClient) ListArtifacts(ctx context.Context, req *aiplatformp
 	it := &ArtifactIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListArtifactsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Artifact, string, error) {
-		var resp *aiplatformpb.ListArtifactsResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListArtifactsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -703,9 +709,11 @@ func (c *metadataGRPCClient) ListArtifacts(ctx context.Context, req *aiplatformp
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -815,11 +823,13 @@ func (c *metadataGRPCClient) ListContexts(ctx context.Context, req *aiplatformpb
 	it := &ContextIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListContextsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Context, string, error) {
-		var resp *aiplatformpb.ListContextsResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListContextsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -842,9 +852,11 @@ func (c *metadataGRPCClient) ListContexts(ctx context.Context, req *aiplatformpb
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -1022,11 +1034,13 @@ func (c *metadataGRPCClient) ListExecutions(ctx context.Context, req *aiplatform
 	it := &ExecutionIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListExecutionsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Execution, string, error) {
-		var resp *aiplatformpb.ListExecutionsResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListExecutionsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -1049,9 +1063,11 @@ func (c *metadataGRPCClient) ListExecutions(ctx context.Context, req *aiplatform
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -1203,11 +1219,13 @@ func (c *metadataGRPCClient) ListMetadataSchemas(ctx context.Context, req *aipla
 	it := &MetadataSchemaIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListMetadataSchemasRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.MetadataSchema, string, error) {
-		var resp *aiplatformpb.ListMetadataSchemasResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListMetadataSchemasResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -1230,9 +1248,11 @@ func (c *metadataGRPCClient) ListMetadataSchemas(ctx context.Context, req *aipla
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

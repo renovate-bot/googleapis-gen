@@ -519,11 +519,13 @@ func (c *featurestoreGRPCClient) ListFeaturestores(ctx context.Context, req *aip
 	it := &FeaturestoreIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListFeaturestoresRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Featurestore, string, error) {
-		var resp *aiplatformpb.ListFeaturestoresResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListFeaturestoresResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -546,9 +548,11 @@ func (c *featurestoreGRPCClient) ListFeaturestores(ctx context.Context, req *aip
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -649,11 +653,13 @@ func (c *featurestoreGRPCClient) ListEntityTypes(ctx context.Context, req *aipla
 	it := &EntityTypeIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListEntityTypesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.EntityType, string, error) {
-		var resp *aiplatformpb.ListEntityTypesResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListEntityTypesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -676,9 +682,11 @@ func (c *featurestoreGRPCClient) ListEntityTypes(ctx context.Context, req *aipla
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -800,11 +808,13 @@ func (c *featurestoreGRPCClient) ListFeatures(ctx context.Context, req *aiplatfo
 	it := &FeatureIterator{}
 	req = proto.Clone(req).(*aiplatformpb.ListFeaturesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Feature, string, error) {
-		var resp *aiplatformpb.ListFeaturesResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.ListFeaturesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -827,9 +837,11 @@ func (c *featurestoreGRPCClient) ListFeatures(ctx context.Context, req *aiplatfo
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
@@ -948,11 +960,13 @@ func (c *featurestoreGRPCClient) SearchFeatures(ctx context.Context, req *aiplat
 	it := &FeatureIterator{}
 	req = proto.Clone(req).(*aiplatformpb.SearchFeaturesRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*aiplatformpb.Feature, string, error) {
-		var resp *aiplatformpb.SearchFeaturesResponse
-		req.PageToken = pageToken
+		resp := &aiplatformpb.SearchFeaturesResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -975,9 +989,11 @@ func (c *featurestoreGRPCClient) SearchFeatures(ctx context.Context, req *aiplat
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 

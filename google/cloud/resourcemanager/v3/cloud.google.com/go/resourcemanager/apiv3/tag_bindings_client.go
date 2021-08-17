@@ -265,11 +265,13 @@ func (c *tagBindingsGRPCClient) ListTagBindings(ctx context.Context, req *resour
 	it := &TagBindingIterator{}
 	req = proto.Clone(req).(*resourcemanagerpb.ListTagBindingsRequest)
 	it.InternalFetch = func(pageSize int, pageToken string) ([]*resourcemanagerpb.TagBinding, string, error) {
-		var resp *resourcemanagerpb.ListTagBindingsResponse
-		req.PageToken = pageToken
+		resp := &resourcemanagerpb.ListTagBindingsResponse{}
+		if pageToken != "" {
+			req.PageToken = pageToken
+		}
 		if pageSize > math.MaxInt32 {
 			req.PageSize = math.MaxInt32
-		} else {
+		} else if pageSize != 0 {
 			req.PageSize = int32(pageSize)
 		}
 		err := gax.Invoke(ctx, func(ctx context.Context, settings gax.CallSettings) error {
@@ -292,9 +294,11 @@ func (c *tagBindingsGRPCClient) ListTagBindings(ctx context.Context, req *resour
 		it.items = append(it.items, items...)
 		return nextPageToken, nil
 	}
+
 	it.pageInfo, it.nextFunc = iterator.NewPageInfo(fetch, it.bufLen, it.takeBuf)
 	it.pageInfo.MaxSize = int(req.GetPageSize())
 	it.pageInfo.Token = req.GetPageToken()
+
 	return it
 }
 
