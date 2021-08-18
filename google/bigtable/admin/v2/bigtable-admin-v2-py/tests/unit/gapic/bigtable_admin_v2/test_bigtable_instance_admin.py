@@ -2863,7 +2863,7 @@ def test_create_app_profile(transport: str = 'grpc', request_type=bigtable_insta
             name='name_value',
             etag='etag_value',
             description='description_value',
-            multi_cluster_routing_use_any=None,
+            multi_cluster_routing_use_any=instance.AppProfile.MultiClusterRoutingUseAny(cluster_ids=['cluster_ids_value']),
         )
         response = client.create_app_profile(request)
 
@@ -3115,7 +3115,7 @@ def test_get_app_profile(transport: str = 'grpc', request_type=bigtable_instance
             name='name_value',
             etag='etag_value',
             description='description_value',
-            multi_cluster_routing_use_any=None,
+            multi_cluster_routing_use_any=instance.AppProfile.MultiClusterRoutingUseAny(cluster_ids=['cluster_ids_value']),
         )
         response = client.get_app_profile(request)
 

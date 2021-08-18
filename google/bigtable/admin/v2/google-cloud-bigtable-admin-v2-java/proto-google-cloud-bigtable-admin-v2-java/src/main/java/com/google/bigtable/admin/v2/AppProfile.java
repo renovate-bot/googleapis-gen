@@ -137,6 +137,51 @@ private static final long serialVersionUID = 0L;
   public interface MultiClusterRoutingUseAnyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * The set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If left empty, all clusters are eligible.
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 1;</code>
+     * @return A list containing the clusterIds.
+     */
+    java.util.List<java.lang.String>
+        getClusterIdsList();
+    /**
+     * <pre>
+     * The set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If left empty, all clusters are eligible.
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 1;</code>
+     * @return The count of clusterIds.
+     */
+    int getClusterIdsCount();
+    /**
+     * <pre>
+     * The set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If left empty, all clusters are eligible.
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 1;</code>
+     * @param index The index of the element to return.
+     * @return The clusterIds at the given index.
+     */
+    java.lang.String getClusterIds(int index);
+    /**
+     * <pre>
+     * The set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If left empty, all clusters are eligible.
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the clusterIds at the given index.
+     */
+    com.google.protobuf.ByteString
+        getClusterIdsBytes(int index);
   }
   /**
    * <pre>
@@ -159,6 +204,7 @@ private static final long serialVersionUID = 0L;
       super(builder);
     }
     private MultiClusterRoutingUseAny() {
+      clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -181,6 +227,7 @@ private static final long serialVersionUID = 0L;
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -191,6 +238,15 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                clusterIds_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              clusterIds_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -206,6 +262,9 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = clusterIds_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -223,6 +282,61 @@ private static final long serialVersionUID = 0L;
               com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.class, com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.Builder.class);
     }
 
+    public static final int CLUSTER_IDS_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList clusterIds_;
+    /**
+     * <pre>
+     * The set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If left empty, all clusters are eligible.
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 1;</code>
+     * @return A list containing the clusterIds.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getClusterIdsList() {
+      return clusterIds_;
+    }
+    /**
+     * <pre>
+     * The set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If left empty, all clusters are eligible.
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 1;</code>
+     * @return The count of clusterIds.
+     */
+    public int getClusterIdsCount() {
+      return clusterIds_.size();
+    }
+    /**
+     * <pre>
+     * The set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If left empty, all clusters are eligible.
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 1;</code>
+     * @param index The index of the element to return.
+     * @return The clusterIds at the given index.
+     */
+    public java.lang.String getClusterIds(int index) {
+      return clusterIds_.get(index);
+    }
+    /**
+     * <pre>
+     * The set of clusters to route to. The order is ignored; clusters will be
+     * tried in order of distance. If left empty, all clusters are eligible.
+     * </pre>
+     *
+     * <code>repeated string cluster_ids = 1;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the clusterIds at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getClusterIdsBytes(int index) {
+      return clusterIds_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -237,6 +351,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      for (int i = 0; i < clusterIds_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clusterIds_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -246,6 +363,14 @@ private static final long serialVersionUID = 0L;
       if (size != -1) return size;
 
       size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < clusterIds_.size(); i++) {
+          dataSize += computeStringSizeNoTag(clusterIds_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getClusterIdsList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -261,6 +386,8 @@ private static final long serialVersionUID = 0L;
       }
       com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny other = (com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny) obj;
 
+      if (!getClusterIdsList()
+          .equals(other.getClusterIdsList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -272,6 +399,10 @@ private static final long serialVersionUID = 0L;
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getClusterIdsCount() > 0) {
+        hash = (37 * hash) + CLUSTER_IDS_FIELD_NUMBER;
+        hash = (53 * hash) + getClusterIdsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -413,6 +544,8 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -439,6 +572,12 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny buildPartial() {
         com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny result = new com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = clusterIds_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.clusterIds_ = clusterIds_;
         onBuilt();
         return result;
       }
@@ -487,6 +626,16 @@ private static final long serialVersionUID = 0L;
 
       public Builder mergeFrom(com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny other) {
         if (other == com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.getDefaultInstance()) return this;
+        if (!other.clusterIds_.isEmpty()) {
+          if (clusterIds_.isEmpty()) {
+            clusterIds_ = other.clusterIds_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureClusterIdsIsMutable();
+            clusterIds_.addAll(other.clusterIds_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -513,6 +662,162 @@ private static final long serialVersionUID = 0L;
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureClusterIdsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          clusterIds_ = new com.google.protobuf.LazyStringArrayList(clusterIds_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @return A list containing the clusterIds.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getClusterIdsList() {
+        return clusterIds_.getUnmodifiableView();
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @return The count of clusterIds.
+       */
+      public int getClusterIdsCount() {
+        return clusterIds_.size();
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @param index The index of the element to return.
+       * @return The clusterIds at the given index.
+       */
+      public java.lang.String getClusterIds(int index) {
+        return clusterIds_.get(index);
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the clusterIds at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getClusterIdsBytes(int index) {
+        return clusterIds_.getByteString(index);
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @param index The index to set the value at.
+       * @param value The clusterIds to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClusterIds(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClusterIdsIsMutable();
+        clusterIds_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @param value The clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClusterIds(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureClusterIdsIsMutable();
+        clusterIds_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @param values The clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllClusterIds(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureClusterIdsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, clusterIds_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClusterIds() {
+        clusterIds_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The set of clusters to route to. The order is ignored; clusters will be
+       * tried in order of distance. If left empty, all clusters are eligible.
+       * </pre>
+       *
+       * <code>repeated string cluster_ids = 1;</code>
+       * @param value The bytes of the clusterIds to add.
+       * @return This builder for chaining.
+       */
+      public Builder addClusterIdsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureClusterIdsIsMutable();
+        clusterIds_.add(value);
+        onChanged();
         return this;
       }
       @java.lang.Override
