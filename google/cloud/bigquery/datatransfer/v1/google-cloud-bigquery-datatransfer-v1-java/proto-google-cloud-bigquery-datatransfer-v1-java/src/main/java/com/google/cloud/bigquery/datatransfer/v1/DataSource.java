@@ -257,9 +257,7 @@ private static final long serialVersionUID = 0L;
     GOOGLE_PLUS_AUTHORIZATION_CODE(2),
     /**
      * <pre>
-     * Use First Party Client OAuth. First Party Client OAuth doesn't require a
-     * refresh token to get an offline access token. Instead, it uses a
-     * client-signed JWT assertion to retrieve an access token.
+     * Use First Party OAuth.
      * </pre>
      *
      * <code>FIRST_PARTY_OAUTH = 3;</code>
@@ -296,9 +294,7 @@ private static final long serialVersionUID = 0L;
     public static final int GOOGLE_PLUS_AUTHORIZATION_CODE_VALUE = 2;
     /**
      * <pre>
-     * Use First Party Client OAuth. First Party Client OAuth doesn't require a
-     * refresh token to get an offline access token. Instead, it uses a
-     * client-signed JWT assertion to retrieve an access token.
+     * Use First Party OAuth.
      * </pre>
      *
      * <code>FIRST_PARTY_OAUTH = 3;</code>

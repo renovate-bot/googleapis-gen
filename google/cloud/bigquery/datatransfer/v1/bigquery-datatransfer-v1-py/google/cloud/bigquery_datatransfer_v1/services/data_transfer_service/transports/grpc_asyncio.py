@@ -395,8 +395,8 @@ class DataTransferServiceGrpcAsyncIOTransport(DataTransferServiceTransport):
             Awaitable[datatransfer.ListTransferConfigsResponse]]:
         r"""Return a callable for the list transfer configs method over gRPC.
 
-        Returns information about all data transfers in the
-        project.
+        Returns information about all transfer configs owned
+        by a project in the specified location.
 
         Returns:
             Callable[[~.ListTransferConfigsRequest],

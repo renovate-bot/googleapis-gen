@@ -566,7 +566,10 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.Struct params_;
   /**
    * <pre>
-   * Output only. Data transfer specific parameters.
+   * Output only. Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -578,7 +581,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Data transfer specific parameters.
+   * Output only. Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -590,7 +596,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Data transfer specific parameters.
+   * Output only. Parameters specific to each data source. For more information see the
+   * bq tab in the 'Setting up a data transfer' section for each data source.
+   * For example the parameters for Cloud Storage transfers are listed here:
+   * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
    * </pre>
    *
    * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -811,7 +820,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
-   * transfer run finishes
+   * transfer run finishes.
+   * The format for specifying a pubsub topic is:
+   * `projects/{project}/topics/{topic}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -833,7 +844,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Output only. Pub/Sub topic where a notification will be sent after this
-   * transfer run finishes
+   * transfer run finishes.
+   * The format for specifying a pubsub topic is:
+   * `projects/{project}/topics/{topic}`
    * </pre>
    *
    * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2657,7 +2670,10 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> paramsBuilder_;
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2668,7 +2684,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2683,7 +2702,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2703,7 +2725,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2721,7 +2746,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2743,7 +2771,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2761,7 +2792,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2773,7 +2807,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2788,7 +2825,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Data transfer specific parameters.
+     * Output only. Parameters specific to each data source. For more information see the
+     * bq tab in the 'Setting up a data transfer' section for each data source.
+     * For example the parameters for Cloud Storage transfers are listed here:
+     * https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
      * </pre>
      *
      * <code>.google.protobuf.Struct params = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3261,7 +3301,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3282,7 +3324,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3304,7 +3348,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3324,7 +3370,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3339,7 +3387,9 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Output only. Pub/Sub topic where a notification will be sent after this
-     * transfer run finishes
+     * transfer run finishes.
+     * The format for specifying a pubsub topic is:
+     * `projects/{project}/topics/{topic}`
      * </pre>
      *
      * <code>string notification_pubsub_topic = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

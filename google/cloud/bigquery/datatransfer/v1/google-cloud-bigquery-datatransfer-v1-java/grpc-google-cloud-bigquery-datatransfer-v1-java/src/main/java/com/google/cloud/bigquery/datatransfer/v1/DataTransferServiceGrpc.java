@@ -574,7 +574,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about all data transfers in the project.
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
      * </pre>
      */
     public void listTransferConfigs(com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request,
@@ -861,7 +862,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about all data transfers in the project.
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
      * </pre>
      */
     public void listTransferConfigs(com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request,
@@ -1047,7 +1049,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about all data transfers in the project.
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
      * </pre>
      */
     public com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse listTransferConfigs(com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest request) {
@@ -1231,7 +1234,8 @@ public final class DataTransferServiceGrpc {
 
     /**
      * <pre>
-     * Returns information about all data transfers in the project.
+     * Returns information about all transfer configs owned by a project in the
+     * specified location.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.bigquery.datatransfer.v1.ListTransferConfigsResponse> listTransferConfigs(

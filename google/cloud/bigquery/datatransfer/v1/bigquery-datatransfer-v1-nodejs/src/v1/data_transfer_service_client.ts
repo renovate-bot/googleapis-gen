@@ -1352,7 +1352,8 @@ export class DataTransferServiceClient {
           protos.google.cloud.bigquery.datatransfer.v1.IListTransferConfigsResponse|null|undefined,
           protos.google.cloud.bigquery.datatransfer.v1.ITransferConfig>): void;
 /**
- * Returns information about all data transfers in the project.
+ * Returns information about all transfer configs owned by a project in the
+ * specified location.
  *
  * @param {Object} request
  *   The request object that will be sent.
