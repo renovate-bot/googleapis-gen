@@ -18,8 +18,8 @@
 
 
 module Google
-  module Cloud
-    module Contactcenterinsights
+  module Identity
+    module AccessContextManager
       module V1
         VERSION = "0.0.1"
       end

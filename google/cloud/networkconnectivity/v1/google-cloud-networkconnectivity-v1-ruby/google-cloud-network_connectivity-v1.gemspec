@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/contactcenterinsights/v1/version", __dir__)
+require File.expand_path("lib/google/cloud/network_connectivity/v1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-contactcenterinsights-v1"
-  gem.version       = Google::Cloud::Contactcenterinsights::V1::VERSION
+  gem.name          = "google-cloud-network_connectivity-v1"
+  gem.version       = Google::Cloud::NetworkConnectivity::V1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-contactcenterinsights-v1 is the official client library for the Google Cloud Contactcenterinsights V1 API. Note that google-cloud-contactcenterinsights-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-contactcenterinsights instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Contactcenterinsights V1 API"
+  gem.description   = "Network Connectivity is Google's suite of products that provide enterprise connectivity from your on-premises network or from another cloud provider to your Virtual Private Cloud (VPC) network. Note that google-cloud-network_connectivity-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-network_connectivity instead. See the readme for more details."
+  gem.summary       = "API Client library for the Network Connectivity V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

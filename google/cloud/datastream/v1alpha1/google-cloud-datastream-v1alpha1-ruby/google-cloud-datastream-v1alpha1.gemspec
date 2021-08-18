@@ -9,8 +9,8 @@ Gem::Specification.new do |gem|
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-datastream-v1alpha1 is the official client library for the Google Cloud Datastream V1alpha1 API. Note that google-cloud-datastream-v1alpha1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-datastream instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Datastream V1alpha1 API"
+  gem.description   = "Datastream is a serverless and easy-to-use change data capture (CDC) and replication service. It allows you to synchronize data across heterogeneous databases and applications reliably, and with minimal latency and downtime. Note that google-cloud-datastream-v1alpha1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-datastream instead. See the readme for more details."
+  gem.summary       = "API Client library for the Datastream V1alpha1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

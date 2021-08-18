@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/contactcenterinsights/v1/version"
+require "google/cloud/contact_center_insights/v1/version"
 
 require "google/cloud/contact_center_insights/v1/contact_center_insights/credentials"
 require "google/cloud/contact_center_insights/v1/contact_center_insights/paths"

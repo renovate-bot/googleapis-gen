@@ -1,16 +1,16 @@
 # -*- ruby -*-
 # encoding: utf-8
 
-require File.expand_path("lib/google/cloud/identity/accesscontextmanager/v1/version", __dir__)
+require File.expand_path("lib/google/cloud/contact_center_insights/v1/version", __dir__)
 
 Gem::Specification.new do |gem|
-  gem.name          = "google-cloud-identity-accesscontextmanager-v1"
-  gem.version       = Google::Cloud::Identity::Accesscontextmanager::V1::VERSION
+  gem.name          = "google-cloud-contact_center_insights-v1"
+  gem.version       = Google::Cloud::ContactCenterInsights::V1::VERSION
 
   gem.authors       = ["Google LLC"]
   gem.email         = "googleapis-packages@google.com"
-  gem.description   = "google-cloud-identity-accesscontextmanager-v1 is the official client library for the Google Cloud Identity Accesscontextmanager V1 API. Note that google-cloud-identity-accesscontextmanager-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-identity-accesscontextmanager instead. See the readme for more details."
-  gem.summary       = "API Client library for the Google Cloud Identity Accesscontextmanager V1 API"
+  gem.description   = "Contact Center AI Insights helps users detect and visualize patterns in their contact center data. Understanding conversational data drives business value, improves operational efficiency, and provides a voice for customer feedback. Note that google-cloud-contact_center_insights-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-contact_center_insights instead. See the readme for more details."
+  gem.summary       = "API Client library for the Contact Center AI Insights V1 API"
   gem.homepage      = "https://github.com/googleapis/google-cloud-ruby"
   gem.license       = "Apache-2.0"
 

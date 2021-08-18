@@ -1,10 +1,14 @@
 {
-    "client_documentation": "https://googleapis.dev/ruby/google-cloud-contactcenterinsights-v1/latest",
-    "distribution_name": "google-cloud-contactcenterinsights-v1",
+    "api_id": "contactcenterinsights.googleapis.com",
+    "client_documentation": "https://googleapis.dev/ruby/google-cloud-contact_center_insights-v1/latest",
+    "distribution_name": "google-cloud-contact_center_insights-v1",
     "language": "ruby",
-    "name_pretty": "Google Cloud Contactcenterinsights V1 API",
+    "name": "contactcenterinsights",
+    "name_pretty": "Contact Center AI Insights V1 API",
+    "product_documentation": "https://cloud.google.com/contact-center/insights/",
     "repo": "googleapis/google-cloud-ruby",
     "requires_billing": true,
-    "ruby-cloud-description": "google-cloud-contactcenterinsights-v1 is the official client library for the Google Cloud Contactcenterinsights V1 API. Note that google-cloud-contactcenterinsights-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-contactcenterinsights instead. See the readme for more details.",
+    "ruby-cloud-description": "Contact Center AI Insights helps users detect and visualize patterns in their contact center data. Understanding conversational data drives business value, improves operational efficiency, and provides a voice for customer feedback. Note that google-cloud-contact_center_insights-v1 is a version-specific client library. For most uses, we recommend installing the main client library google-cloud-contact_center_insights instead. See the readme for more details.",
+    "ruby-cloud-product-url": "https://cloud.google.com/contact-center/insights/",
     "library_type": "GAPIC_AUTO"
 }

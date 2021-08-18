@@ -3,7 +3,7 @@ inherit_gem:
 
 AllCops:
   Exclude:
-    - "google-cloud-identity-accesscontextmanager-v1.gemspec"
+    - "google-identity-access_context_manager-v1.gemspec"
     - "lib/**/*_pb.rb"
     - "proto_docs/**/*"
     - "test/**/*"
@@ -26,4 +26,4 @@ Metrics/PerceivedComplexity:
   Enabled: false
 Naming/FileName:
   Exclude:
-    - "lib/google-cloud-identity-accesscontextmanager-v1.rb"
+    - "lib/google-identity-access_context_manager-v1.rb"

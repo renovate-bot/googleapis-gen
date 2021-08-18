@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/networkconnectivity/v1/version"
+require "google/cloud/network_connectivity/v1/version"
 
 require "google/cloud/network_connectivity/v1/hub_service/credentials"
 require "google/cloud/network_connectivity/v1/hub_service/paths"

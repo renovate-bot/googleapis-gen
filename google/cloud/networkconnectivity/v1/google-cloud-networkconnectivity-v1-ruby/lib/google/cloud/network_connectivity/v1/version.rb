@@ -19,7 +19,7 @@
 
 module Google
   module Cloud
-    module Networkconnectivity
+    module NetworkConnectivity
       module V1
         VERSION = "0.0.1"
       end

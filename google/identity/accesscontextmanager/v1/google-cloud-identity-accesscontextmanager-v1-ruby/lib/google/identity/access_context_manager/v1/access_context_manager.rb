@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/identity/accesscontextmanager/v1/version"
+require "google/identity/access_context_manager/v1/version"
 
 require "google/identity/access_context_manager/v1/access_context_manager/credentials"
 require "google/identity/access_context_manager/v1/access_context_manager/paths"
