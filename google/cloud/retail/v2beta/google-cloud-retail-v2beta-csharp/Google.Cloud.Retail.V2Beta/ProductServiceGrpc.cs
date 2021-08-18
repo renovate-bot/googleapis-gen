@@ -260,8 +260,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -285,8 +285,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -310,8 +310,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -674,8 +674,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -726,8 +726,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -776,8 +776,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -828,8 +828,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -852,8 +852,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -878,8 +878,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -902,8 +902,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -928,8 +928,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -952,8 +952,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -978,8 +978,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1002,8 +1002,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1028,8 +1028,8 @@ namespace Google.Cloud.Retail.V2Beta {
       /// [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
       ///
       /// This feature is only available for users who have Retail Search enabled.
-      /// Contact Retail Support (retail-search-support@google.com) if you are
-      /// interested in using Retail Search.
+      /// Please submit a form [here](https://cloud.google.com/contact) to contact
+      /// cloud sales if you are interested in using Retail Search.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

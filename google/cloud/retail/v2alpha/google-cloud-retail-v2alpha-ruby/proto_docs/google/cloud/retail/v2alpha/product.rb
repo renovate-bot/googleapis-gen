@@ -236,13 +236,9 @@ module Google
         #     This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
         #     error is returned:
         #
-        #     * Max entries count: 200 by default; 100 for
-        #     {::Google::Cloud::Retail::V2alpha::Product::Type::VARIANT Type.VARIANT}.
+        #     * Max entries count: 200.
         #     * The key must be a UTF-8 encoded string with a length limit of 128
         #       characters.
-        #     * Max indexable entries count: 200 by default; 40 for
-        #     {::Google::Cloud::Retail::V2alpha::Product::Type::VARIANT Type.VARIANT}.
-        #     * Max searchable entries count: 30.
         #     * For indexable attribute, the key must match the pattern:
         #       [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
         # @!attribute [rw] tags
@@ -352,7 +348,7 @@ module Google
         #   @return [::Array<::String>]
         #     The material of the product. For example, "leather", "wooden".
         #
-        #     A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+        #     A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
         #     string with a length limit of 128 characters. Otherwise, an
         #     INVALID_ARGUMENT error is returned.
         #
@@ -453,8 +449,12 @@ module Google
         #     * {::Google::Cloud::Retail::V2alpha::Product#name name}
         #     * {::Google::Cloud::Retail::V2alpha::Product#color_info color_info}
         #
-        #     Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+        #     Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
         #     returned.
+        #
+        #     Note: Returning more fields in
+        #     {::Google::Cloud::Retail::V2alpha::SearchResponse SearchResponse} may increase
+        #     response payload size and serving latency.
         # @!attribute [r] variants
         #   @return [::Array<::Google::Cloud::Retail::V2alpha::Product>]
         #     Output only. Product variants grouped together on primary product which

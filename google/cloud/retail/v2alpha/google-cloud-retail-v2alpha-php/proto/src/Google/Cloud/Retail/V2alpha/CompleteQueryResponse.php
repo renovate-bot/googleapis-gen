@@ -32,9 +32,9 @@ class CompleteQueryResponse extends \Google\Protobuf\Internal\Message
      */
     protected $attribution_token = '';
     /**
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2alpha.UserEvent] is
@@ -67,9 +67,9 @@ class CompleteQueryResponse extends \Google\Protobuf\Internal\Message
      *           this completion, which enables accurate attribution of complete model
      *           performance.
      *     @type \Google\Cloud\Retail\V2alpha\CompleteQueryResponse\RecentSearchResult[]|\Google\Protobuf\Internal\RepeatedField $recent_search_results
-     *           Matched recent searches of this user. This field is a restricted feature.
-     *           Contact Retail Support (retail-search-support&#64;google.com) if you are
-     *           interested in enabling it.
+     *           Matched recent searches of this user. The maximum number of recent searches
+     *           is 10. This field is a restricted feature. Contact Retail Search support
+     *           team if you are interested in enabling it.
      *           This feature is only available when
      *           [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
      *           field is set and [UserEvent][google.cloud.retail.v2alpha.UserEvent] is
@@ -150,9 +150,9 @@ class CompleteQueryResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2alpha.UserEvent] is
@@ -175,9 +175,9 @@ class CompleteQueryResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2alpha.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2alpha.UserEvent] is

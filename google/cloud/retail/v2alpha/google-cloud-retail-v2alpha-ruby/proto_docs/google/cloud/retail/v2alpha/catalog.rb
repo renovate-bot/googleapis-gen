@@ -98,7 +98,7 @@ module Google
         #   @return [::Array<::String>]
         #     String representing the destination to import for, all if left empty.
         #     List of possible values can be found here.
-        #     [https://support.google.com/merchants/answer/7501026?hl=en]
+        #     [https://support.google.com/merchants/answer/7501026]
         #     List of allowed string values:
         #     "shopping-ads", "buy-on-google-listings", "display-ads", "local-inventory
         #     -ads", "free-listings", "free-local-listings"

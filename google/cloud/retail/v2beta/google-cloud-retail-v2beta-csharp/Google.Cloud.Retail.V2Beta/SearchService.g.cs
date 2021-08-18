@@ -33,7 +33,7 @@ namespace Google.Cloud.Retail.V2Beta {
             "cHJvdG8aIGdvb2dsZS9wcm90b2J1Zi9maWVsZF9tYXNrLnByb3RvGhxnb29n",
             "bGUvcHJvdG9idWYvc3RydWN0LnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGlt",
             "ZXN0YW1wLnByb3RvGh5nb29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8i",
-            "kQwKDVNlYXJjaFJlcXVlc3QSFgoJcGxhY2VtZW50GAEgASgJQgPgQQISMQoG",
+            "sQwKDVNlYXJjaFJlcXVlc3QSFgoJcGxhY2VtZW50GAEgASgJQgPgQQISMQoG",
             "YnJhbmNoGAIgASgJQiH6QR4KHHJldGFpbC5nb29nbGVhcGlzLmNvbS9CcmFu",
             "Y2gSDQoFcXVlcnkYAyABKAkSFwoKdmlzaXRvcl9pZBgEIAEoCUID4EECEjcK",
             "CXVzZXJfaW5mbxgFIAEoCzIkLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRh",
@@ -63,58 +63,60 @@ namespace Google.Cloud.Retail.V2Beta {
             "cGVjEmUKFWNvbmRpdGlvbl9ib29zdF9zcGVjcxgBIAMoCzJGLmdvb2dsZS5j",
             "bG91ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlcXVlc3QuQm9vc3RTcGVjLkNv",
             "bmRpdGlvbkJvb3N0U3BlYxo2ChJDb25kaXRpb25Cb29zdFNwZWMSEQoJY29u",
-            "ZGl0aW9uGAEgASgJEg0KBWJvb3N0GAIgASgCGq8BChJRdWVyeUV4cGFuc2lv",
+            "ZGl0aW9uGAEgASgJEg0KBWJvb3N0GAIgASgCGs8BChJRdWVyeUV4cGFuc2lv",
             "blNwZWMSWQoJY29uZGl0aW9uGAEgASgOMkYuZ29vZ2xlLmNsb3VkLnJldGFp",
             "bC52MmJldGEuU2VhcmNoUmVxdWVzdC5RdWVyeUV4cGFuc2lvblNwZWMuQ29u",
-            "ZGl0aW9uIj4KCUNvbmRpdGlvbhIZChVDT05ESVRJT05fVU5TUEVDSUZJRUQQ",
-            "ABIMCghESVNBQkxFRBABEggKBEFVVE8QAyKXCQoOU2VhcmNoUmVzcG9uc2US",
-            "SAoHcmVzdWx0cxgBIAMoCzI3Lmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRh",
-            "LlNlYXJjaFJlc3BvbnNlLlNlYXJjaFJlc3VsdBJACgZmYWNldHMYAiADKAsy",
-            "MC5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5TZWFyY2hSZXNwb25zZS5G",
-            "YWNldBISCgp0b3RhbF9zaXplGAMgASgFEhcKD2NvcnJlY3RlZF9xdWVyeRgE",
-            "IAEoCRIZChFhdHRyaWJ1dGlvbl90b2tlbhgFIAEoCRIXCg9uZXh0X3BhZ2Vf",
-            "dG9rZW4YBiABKAkSWwoUcXVlcnlfZXhwYW5zaW9uX2luZm8YByABKAsyPS5n",
-            "b29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5TZWFyY2hSZXNwb25zZS5RdWVy",
-            "eUV4cGFuc2lvbkluZm8SFAoMcmVkaXJlY3RfdXJpGAogASgJGoQECgxTZWFy",
-            "Y2hSZXN1bHQSCgoCaWQYASABKAkSNAoHcHJvZHVjdBgCIAEoCzIjLmdvb2ds",
-            "ZS5jbG91ZC5yZXRhaWwudjJiZXRhLlByb2R1Y3QSHgoWbWF0Y2hpbmdfdmFy",
-            "aWFudF9jb3VudBgDIAEoBRJzChdtYXRjaGluZ192YXJpYW50X2ZpZWxkcxgE",
-            "IAMoCzJSLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlc3Bv",
-            "bnNlLlNlYXJjaFJlc3VsdC5NYXRjaGluZ1ZhcmlhbnRGaWVsZHNFbnRyeRJv",
-            "ChV2YXJpYW50X3JvbGx1cF92YWx1ZXMYBSADKAsyUC5nb29nbGUuY2xvdWQu",
-            "cmV0YWlsLnYyYmV0YS5TZWFyY2hSZXNwb25zZS5TZWFyY2hSZXN1bHQuVmFy",
-            "aWFudFJvbGx1cFZhbHVlc0VudHJ5GlgKGk1hdGNoaW5nVmFyaWFudEZpZWxk",
-            "c0VudHJ5EgsKA2tleRgBIAEoCRIpCgV2YWx1ZRgCIAEoCzIaLmdvb2dsZS5w",
-            "cm90b2J1Zi5GaWVsZE1hc2s6AjgBGlIKGFZhcmlhbnRSb2xsdXBWYWx1ZXNF",
-            "bnRyeRILCgNrZXkYASABKAkSJQoFdmFsdWUYAiABKAsyFi5nb29nbGUucHJv",
-            "dG9idWYuVmFsdWU6AjgBGu8BCgVGYWNldBILCgNrZXkYASABKAkSSwoGdmFs",
-            "dWVzGAIgAygLMjsuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEuU2VhcmNo",
-            "UmVzcG9uc2UuRmFjZXQuRmFjZXRWYWx1ZRIVCg1keW5hbWljX2ZhY2V0GAMg",
-            "ASgIGnUKCkZhY2V0VmFsdWUSDwoFdmFsdWUYASABKAlIABI4CghpbnRlcnZh",
-            "bBgCIAEoCzIkLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhLkludGVydmFs",
-            "SAASDQoFY291bnQYAyABKANCDQoLZmFjZXRfdmFsdWUaLAoSUXVlcnlFeHBh",
-            "bnNpb25JbmZvEhYKDmV4cGFuZGVkX3F1ZXJ5GAEgASgIMpICCg1TZWFyY2hT",
-            "ZXJ2aWNlErUBCgZTZWFyY2gSKS5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0",
-            "YS5TZWFyY2hSZXF1ZXN0GiouZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEu",
-            "U2VhcmNoUmVzcG9uc2UiVILT5JMCTiJJL3YyYmV0YS97cGxhY2VtZW50PXBy",
-            "b2plY3RzLyovbG9jYXRpb25zLyovY2F0YWxvZ3MvKi9wbGFjZW1lbnRzLyp9",
-            "OnNlYXJjaDoBKhpJykEVcmV0YWlsLmdvb2dsZWFwaXMuY29t0kEuaHR0cHM6",
-            "Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybULbAQoe",
-            "Y29tLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRhQhJTZWFyY2hTZXJ2aWNl",
-            "UHJvdG9QAVpAZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBp",
-            "cy9jbG91ZC9yZXRhaWwvdjJiZXRhO3JldGFpbKICBlJFVEFJTKoCGkdvb2ds",
-            "ZS5DbG91ZC5SZXRhaWwuVjJCZXRhygIaR29vZ2xlXENsb3VkXFJldGFpbFxW",
-            "MmJldGHqAh1Hb29nbGU6OkNsb3VkOjpSZXRhaWw6OlYyYmV0YWIGcHJvdG8z"));
+            "ZGl0aW9uEh4KFnBpbl91bmV4cGFuZGVkX3Jlc3VsdHMYAiABKAgiPgoJQ29u",
+            "ZGl0aW9uEhkKFUNPTkRJVElPTl9VTlNQRUNJRklFRBAAEgwKCERJU0FCTEVE",
+            "EAESCAoEQVVUTxADIrQJCg5TZWFyY2hSZXNwb25zZRJICgdyZXN1bHRzGAEg",
+            "AygLMjcuZ29vZ2xlLmNsb3VkLnJldGFpbC52MmJldGEuU2VhcmNoUmVzcG9u",
+            "c2UuU2VhcmNoUmVzdWx0EkAKBmZhY2V0cxgCIAMoCzIwLmdvb2dsZS5jbG91",
+            "ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlc3BvbnNlLkZhY2V0EhIKCnRvdGFs",
+            "X3NpemUYAyABKAUSFwoPY29ycmVjdGVkX3F1ZXJ5GAQgASgJEhkKEWF0dHJp",
+            "YnV0aW9uX3Rva2VuGAUgASgJEhcKD25leHRfcGFnZV90b2tlbhgGIAEoCRJb",
+            "ChRxdWVyeV9leHBhbnNpb25faW5mbxgHIAEoCzI9Lmdvb2dsZS5jbG91ZC5y",
+            "ZXRhaWwudjJiZXRhLlNlYXJjaFJlc3BvbnNlLlF1ZXJ5RXhwYW5zaW9uSW5m",
+            "bxIUCgxyZWRpcmVjdF91cmkYCiABKAkahAQKDFNlYXJjaFJlc3VsdBIKCgJp",
+            "ZBgBIAEoCRI0Cgdwcm9kdWN0GAIgASgLMiMuZ29vZ2xlLmNsb3VkLnJldGFp",
+            "bC52MmJldGEuUHJvZHVjdBIeChZtYXRjaGluZ192YXJpYW50X2NvdW50GAMg",
+            "ASgFEnMKF21hdGNoaW5nX3ZhcmlhbnRfZmllbGRzGAQgAygLMlIuZ29vZ2xl",
+            "LmNsb3VkLnJldGFpbC52MmJldGEuU2VhcmNoUmVzcG9uc2UuU2VhcmNoUmVz",
+            "dWx0Lk1hdGNoaW5nVmFyaWFudEZpZWxkc0VudHJ5Em8KFXZhcmlhbnRfcm9s",
+            "bHVwX3ZhbHVlcxgFIAMoCzJQLmdvb2dsZS5jbG91ZC5yZXRhaWwudjJiZXRh",
+            "LlNlYXJjaFJlc3BvbnNlLlNlYXJjaFJlc3VsdC5WYXJpYW50Um9sbHVwVmFs",
+            "dWVzRW50cnkaWAoaTWF0Y2hpbmdWYXJpYW50RmllbGRzRW50cnkSCwoDa2V5",
+            "GAEgASgJEikKBXZhbHVlGAIgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxk",
+            "TWFzazoCOAEaUgoYVmFyaWFudFJvbGx1cFZhbHVlc0VudHJ5EgsKA2tleRgB",
+            "IAEoCRIlCgV2YWx1ZRgCIAEoCzIWLmdvb2dsZS5wcm90b2J1Zi5WYWx1ZToC",
+            "OAEa7wEKBUZhY2V0EgsKA2tleRgBIAEoCRJLCgZ2YWx1ZXMYAiADKAsyOy5n",
+            "b29nbGUuY2xvdWQucmV0YWlsLnYyYmV0YS5TZWFyY2hSZXNwb25zZS5GYWNl",
+            "dC5GYWNldFZhbHVlEhUKDWR5bmFtaWNfZmFjZXQYAyABKAgadQoKRmFjZXRW",
+            "YWx1ZRIPCgV2YWx1ZRgBIAEoCUgAEjgKCGludGVydmFsGAIgASgLMiQuZ29v",
+            "Z2xlLmNsb3VkLnJldGFpbC52MmJldGEuSW50ZXJ2YWxIABINCgVjb3VudBgD",
+            "IAEoA0INCgtmYWNldF92YWx1ZRpJChJRdWVyeUV4cGFuc2lvbkluZm8SFgoO",
+            "ZXhwYW5kZWRfcXVlcnkYASABKAgSGwoTcGlubmVkX3Jlc3VsdF9jb3VudBgC",
+            "IAEoAzKSAgoNU2VhcmNoU2VydmljZRK1AQoGU2VhcmNoEikuZ29vZ2xlLmNs",
+            "b3VkLnJldGFpbC52MmJldGEuU2VhcmNoUmVxdWVzdBoqLmdvb2dsZS5jbG91",
+            "ZC5yZXRhaWwudjJiZXRhLlNlYXJjaFJlc3BvbnNlIlSC0+STAk4iSS92MmJl",
+            "dGEve3BsYWNlbWVudD1wcm9qZWN0cy8qL2xvY2F0aW9ucy8qL2NhdGFsb2dz",
+            "LyovcGxhY2VtZW50cy8qfTpzZWFyY2g6ASoaScpBFXJldGFpbC5nb29nbGVh",
+            "cGlzLmNvbdJBLmh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL2F1dGgvY2xv",
+            "dWQtcGxhdGZvcm1C2wEKHmNvbS5nb29nbGUuY2xvdWQucmV0YWlsLnYyYmV0",
+            "YUISU2VhcmNoU2VydmljZVByb3RvUAFaQGdvb2dsZS5nb2xhbmcub3JnL2dl",
+            "bnByb3RvL2dvb2dsZWFwaXMvY2xvdWQvcmV0YWlsL3YyYmV0YTtyZXRhaWyi",
+            "AgZSRVRBSUyqAhpHb29nbGUuQ2xvdWQuUmV0YWlsLlYyQmV0YcoCGkdvb2ds",
+            "ZVxDbG91ZFxSZXRhaWxcVjJiZXRh6gIdR29vZ2xlOjpDbG91ZDo6UmV0YWls",
+            "OjpWMmJldGFiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Cloud.Retail.V2Beta.CommonReflection.Descriptor, global::Google.Cloud.Retail.V2Beta.ProductReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.StructReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest), global::Google.Cloud.Retail.V2Beta.SearchRequest.Parser, new[]{ "Placement", "Branch", "Query", "VisitorId", "UserInfo", "PageSize", "PageToken", "Offset", "Filter", "CanonicalFilter", "OrderBy", "FacetSpecs", "DynamicFacetSpec", "BoostSpec", "QueryExpansionSpec", "VariantRollupKeys", "PageCategories" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Parser, new[]{ "FacetKey", "Limit", "ExcludedFilterKeys", "EnableDynamicPosition" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Types.FacetKey), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.FacetSpec.Types.FacetKey.Parser, new[]{ "Key", "Intervals", "RestrictedValues", "Prefixes", "Contains", "OrderBy", "Query" }, null, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec.Parser, new[]{ "Mode" }, null, new[]{ typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec.Types.Mode) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec.Parser, new[]{ "ConditionBoostSpecs" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec.Types.ConditionBoostSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec.Types.ConditionBoostSpec.Parser, new[]{ "Condition", "Boost" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Parser, new[]{ "Condition" }, null, new[]{ typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition) }, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec), global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Parser, new[]{ "Condition", "PinUnexpandedResults" }, null, new[]{ typeof(global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition) }, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchResponse), global::Google.Cloud.Retail.V2Beta.SearchResponse.Parser, new[]{ "Results", "Facets", "TotalSize", "CorrectedQuery", "AttributionToken", "NextPageToken", "QueryExpansionInfo", "RedirectUri" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.SearchResult), global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.SearchResult.Parser, new[]{ "Id", "Product", "MatchingVariantCount", "MatchingVariantFields", "VariantRollupValues" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { null, null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.Facet), global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.Facet.Parser, new[]{ "Key", "Values", "DynamicFacet" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.Facet.Types.FacetValue), global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.Facet.Types.FacetValue.Parser, new[]{ "Value", "Interval", "Count" }, new[]{ "FacetValue" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.QueryExpansionInfo), global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.QueryExpansionInfo.Parser, new[]{ "ExpandedQuery" }, null, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.QueryExpansionInfo), global::Google.Cloud.Retail.V2Beta.SearchResponse.Types.QueryExpansionInfo.Parser, new[]{ "ExpandedQuery", "PinnedResultCount" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -334,7 +336,8 @@ namespace Google.Cloud.Retail.V2Beta {
     /// <summary>
     /// The filter syntax consists of an expression language for constructing a
     /// predicate from one or more fields of the products being filtered. Filter
-    /// expression is case-sensitive.
+    /// expression is case-sensitive. See more details at this [user
+    /// guide](/retail/private/docs/filter-and-order#filter).
     ///
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
@@ -374,7 +377,9 @@ namespace Google.Cloud.Retail.V2Beta {
     /// <summary>
     /// The order in which products are returned. Products can be ordered by
     /// a field in an [Product][google.cloud.retail.v2beta.Product] object. Leave
-    /// it unset if ordered by relevance. OrderBy expression is case-sensitive.
+    /// it unset if ordered by relevance. OrderBy expression is case-sensitive. See
+    /// more details at this [user
+    /// guide](/retail/private/docs/filter-and-order#order).
     ///
     /// If this field is unrecognizable, an INVALID_ARGUMENT is returned.
     /// </summary>
@@ -409,9 +414,8 @@ namespace Google.Cloud.Retail.V2Beta {
     /// The specification for dynamically generated facets. Notice that only
     /// textual facets can be dynamically generated.
     ///
-    /// This feature requires additional allowlisting. Contact Retail Support
-    /// (retail-search-support@google.com) if you are interested in using dynamic
-    /// facet feature.
+    /// This feature requires additional allowlisting. Contact Retail Search
+    /// support team if you are interested in using dynamic facet feature.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.DynamicFacetSpec DynamicFacetSpec {
@@ -425,7 +429,8 @@ namespace Google.Cloud.Retail.V2Beta {
     public const int BoostSpecFieldNumber = 13;
     private global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec boostSpec_;
     /// <summary>
-    /// Boost specification to boost certain products.
+    /// Boost specification to boost certain products. See more details at this
+    /// [user guide](/retail/private/docs/boosting).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.BoostSpec BoostSpec {
@@ -440,7 +445,8 @@ namespace Google.Cloud.Retail.V2Beta {
     private global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec queryExpansionSpec_;
     /// <summary>
     /// The query expansion specification that specifies the conditions under which
-    /// query expansion will occur.
+    /// query expansion will occur. See more details at this [user
+    /// guide](/retail/private/docs/result-size#query_expansion).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec QueryExpansionSpec {
@@ -467,10 +473,9 @@ namespace Google.Cloud.Retail.V2Beta {
     /// [Product][google.cloud.retail.v2beta.Product]s attributes will lead to
     /// extra query latency. Maximum number of keys is 10.
     ///
-    /// For
-    /// [Product.fulfillment_info][google.cloud.retail.v2beta.Product.fulfillment_info],
-    /// a fulfillment type and a fulfillment ID must be provided in the format of
-    /// "fulfillmentType.filfillmentId". E.g., in "pickupInStore.store123",
+    /// For [FulfillmentInfo][google.cloud.retail.v2beta.FulfillmentInfo], a
+    /// fulfillment type and a fulfillment ID must be provided in the format of
+    /// "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
     /// "pickupInStore" is fulfillment type and "store123" is the store ID.
     ///
     /// Supported keys are:
@@ -481,24 +486,42 @@ namespace Google.Cloud.Retail.V2Beta {
     /// * discount
     /// * attributes.key, where key is any key in the
     ///   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
-    /// * pickupInStore.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.PICKUP_IN_STORE][].
-    /// * shipToStore.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.SHIP_TO_STORE][].
-    /// * sameDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].
-    /// * nextDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].
-    /// * customFulfillment1.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.CUSTOM_TYPE_1][].
-    /// * customFulfillment2.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.CUSTOM_TYPE_2][].
-    /// * customFulfillment3.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.CUSTOM_TYPE_3][].
-    /// * customFulfillment4.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.CUSTOM_TYPE_4][].
-    /// * customFulfillment5.id, where id is any [FulfillmentInfo.ids][] for type
-    ///   [FulfillmentInfo.Type.CUSTOM_TYPE_5][].
+    /// * pickupInStore.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "pickup-in-store".
+    /// * shipToStore.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "ship-to-store".
+    /// * sameDayDelivery.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "same-day-delivery".
+    /// * nextDayDelivery.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "next-day-delivery".
+    /// * customFulfillment1.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "custom-type-1".
+    /// * customFulfillment2.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "custom-type-2".
+    /// * customFulfillment3.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "custom-type-3".
+    /// * customFulfillment4.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "custom-type-4".
+    /// * customFulfillment5.id, where id is any
+    /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+    /// for [FulfillmentInfo.type][google.cloud.retail.v2beta.FulfillmentInfo.type]
+    ///   "custom-type-5".
     ///
     /// If this field is set to an invalid value other than these, an
     /// INVALID_ARGUMENT error is returned.
@@ -1442,42 +1465,42 @@ namespace Google.Cloud.Retail.V2Beta {
             private string key_ = "";
             /// <summary>
             /// Required. Supported textual and numerical facet keys in
-            /// [Product][google.cloud.retail.v2beta.Product] object, over which the
-            /// facet values are computed. Facet key is case-sensitive.
+            /// [Product][google.cloud.retail.v2.Product] object, over which the facet
+            /// values are computed. Facet key is case-sensitive.
             ///
             /// Allowed facet keys when
-            /// [FacetKey.query][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.query]
+            /// [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
             /// is not specified:
             ///
-            /// Textual facet keys:
-            /// * brands
-            /// * categories
-            /// * genders
-            /// * ageGroups
-            /// * availability
-            /// * colorFamilies
-            /// * colors
-            /// * sizes
-            /// * materials
-            /// * patterns
-            /// * conditions
-            /// * attributes.key
-            /// * pickupInStore
-            /// * shipToStore
-            /// * sameDayDelivery
-            /// * nextDayDelivery
-            /// * customFulfillment1
-            /// * customFulfillment2
-            /// * customFulfillment3
-            /// * customFulfillment4
-            /// * customFulfillment5
+            /// * textual_field =
+            ///     * "brands"
+            ///     * "categories"
+            ///     * "genders"
+            ///     * "ageGroups"
+            ///     * "availability"
+            ///     * "colorFamilies"
+            ///     * "colors"
+            ///     * "sizes"
+            ///     * "materials"
+            ///     * "patterns"
+            ///     * "conditions"
+            ///     * "attributes.key"
+            ///     * "pickupInStore"
+            ///     * "shipToStore"
+            ///     * "sameDayDelivery"
+            ///     * "nextDayDelivery"
+            ///     * "customFulfillment1"
+            ///     * "customFulfillment2"
+            ///     * "customFulfillment3"
+            ///     * "customFulfillment4"
+            ///     * "customFulfillment5"
             ///
-            /// Numeric facet keys:
-            /// * price
-            /// * discount
-            /// * rating
-            /// * ratingCount
-            /// * attributes.key
+            /// * numerical_field =
+            ///     * "price"
+            ///     * "discount"
+            ///     * "rating"
+            ///     * "ratingCount"
+            ///     * "attributes.key"
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public string Key {
@@ -1592,7 +1615,8 @@ namespace Google.Cloud.Retail.V2Beta {
             /// order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
             /// intervals are sorted in the order given by
             /// [FacetSpec.FacetKey.intervals][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.intervals];
-            /// [FulfillmentInfo.ids][] are sorted in the order given by
+            /// [FulfillmentInfo.place_ids][google.cloud.retail.v2beta.FulfillmentInfo.place_ids]
+            /// are sorted in the order given by
             /// [FacetSpec.FacetKey.restricted_values][google.cloud.retail.v2beta.SearchRequest.FacetSpec.FacetKey.restricted_values].
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2301,12 +2325,11 @@ namespace Google.Cloud.Retail.V2Beta {
             /// Examples:
             ///
             /// * To boost products with product ID "product_1" or "product_2", and
-            /// color "Red" or "Blue":
-            ///   ```
-            ///   (id: ANY("product_1", "product_2"))
-            ///   AND
-            ///   (colorFamilies: ANY("Red", "Blue"))
-            ///   ```
+            /// color
+            ///   "Red" or "Blue":&lt;br>
+            ///   *(id: ANY("product_1", "product_2"))&lt;br>*
+            ///   *AND&lt;br>*
+            ///   *(colorFamilies: ANY("Red", "Blue"))&lt;br>*
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             public string Condition {
@@ -2532,6 +2555,7 @@ namespace Google.Cloud.Retail.V2Beta {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public QueryExpansionSpec(QueryExpansionSpec other) : this() {
           condition_ = other.condition_;
+          pinUnexpandedResults_ = other.pinUnexpandedResults_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -2555,6 +2579,22 @@ namespace Google.Cloud.Retail.V2Beta {
           }
         }
 
+        /// <summary>Field number for the "pin_unexpanded_results" field.</summary>
+        public const int PinUnexpandedResultsFieldNumber = 2;
+        private bool pinUnexpandedResults_;
+        /// <summary>
+        /// Whether to pin unexpanded results. If this field is set to true,
+        /// unexpanded products are always at the top of the search results, followed
+        /// by the expanded results.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool PinUnexpandedResults {
+          get { return pinUnexpandedResults_; }
+          set {
+            pinUnexpandedResults_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as QueryExpansionSpec);
@@ -2569,6 +2609,7 @@ namespace Google.Cloud.Retail.V2Beta {
             return true;
           }
           if (Condition != other.Condition) return false;
+          if (PinUnexpandedResults != other.PinUnexpandedResults) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -2576,6 +2617,7 @@ namespace Google.Cloud.Retail.V2Beta {
         public override int GetHashCode() {
           int hash = 1;
           if (Condition != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition.Unspecified) hash ^= Condition.GetHashCode();
+          if (PinUnexpandedResults != false) hash ^= PinUnexpandedResults.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -2596,6 +2638,10 @@ namespace Google.Cloud.Retail.V2Beta {
             output.WriteRawTag(8);
             output.WriteEnum((int) Condition);
           }
+          if (PinUnexpandedResults != false) {
+            output.WriteRawTag(16);
+            output.WriteBool(PinUnexpandedResults);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -2609,6 +2655,10 @@ namespace Google.Cloud.Retail.V2Beta {
             output.WriteRawTag(8);
             output.WriteEnum((int) Condition);
           }
+          if (PinUnexpandedResults != false) {
+            output.WriteRawTag(16);
+            output.WriteBool(PinUnexpandedResults);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -2620,6 +2670,9 @@ namespace Google.Cloud.Retail.V2Beta {
           int size = 0;
           if (Condition != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition.Unspecified) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Condition);
+          }
+          if (PinUnexpandedResults != false) {
+            size += 1 + 1;
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -2634,6 +2687,9 @@ namespace Google.Cloud.Retail.V2Beta {
           }
           if (other.Condition != global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition.Unspecified) {
             Condition = other.Condition;
+          }
+          if (other.PinUnexpandedResults != false) {
+            PinUnexpandedResults = other.PinUnexpandedResults;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -2653,6 +2709,10 @@ namespace Google.Cloud.Retail.V2Beta {
                 Condition = (global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition) input.ReadEnum();
                 break;
               }
+              case 16: {
+                PinUnexpandedResults = input.ReadBool();
+                break;
+              }
             }
           }
         #endif
@@ -2669,6 +2729,10 @@ namespace Google.Cloud.Retail.V2Beta {
                 break;
               case 8: {
                 Condition = (global::Google.Cloud.Retail.V2Beta.SearchRequest.Types.QueryExpansionSpec.Types.Condition) input.ReadEnum();
+                break;
+              }
+              case 16: {
+                PinUnexpandedResults = input.ReadBool();
                 break;
               }
             }
@@ -3325,9 +3389,8 @@ namespace Google.Cloud.Retail.V2Beta {
         ///       }
         ///     }
         ///
-        /// For
-        /// [Product.fulfillment_info][google.cloud.retail.v2beta.Product.fulfillment_info],
-        /// the rollup values is a double value with type
+        /// For [FulfillmentInfo][google.cloud.retail.v2beta.FulfillmentInfo], the
+        /// rollup values is a double value with type
         /// [google.protobuf.Value][google.protobuf.Value]. For example,
         /// `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
         /// are 10 variants in this product are available in the store "store1".
@@ -4132,6 +4195,7 @@ namespace Google.Cloud.Retail.V2Beta {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public QueryExpansionInfo(QueryExpansionInfo other) : this() {
           expandedQuery_ = other.expandedQuery_;
+          pinnedResultCount_ = other.pinnedResultCount_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -4154,6 +4218,22 @@ namespace Google.Cloud.Retail.V2Beta {
           }
         }
 
+        /// <summary>Field number for the "pinned_result_count" field.</summary>
+        public const int PinnedResultCountFieldNumber = 2;
+        private long pinnedResultCount_;
+        /// <summary>
+        /// Number of pinned results. This field will only be set when expansion
+        /// happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+        /// is set to true.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public long PinnedResultCount {
+          get { return pinnedResultCount_; }
+          set {
+            pinnedResultCount_ = value;
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as QueryExpansionInfo);
@@ -4168,6 +4248,7 @@ namespace Google.Cloud.Retail.V2Beta {
             return true;
           }
           if (ExpandedQuery != other.ExpandedQuery) return false;
+          if (PinnedResultCount != other.PinnedResultCount) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -4175,6 +4256,7 @@ namespace Google.Cloud.Retail.V2Beta {
         public override int GetHashCode() {
           int hash = 1;
           if (ExpandedQuery != false) hash ^= ExpandedQuery.GetHashCode();
+          if (PinnedResultCount != 0L) hash ^= PinnedResultCount.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -4195,6 +4277,10 @@ namespace Google.Cloud.Retail.V2Beta {
             output.WriteRawTag(8);
             output.WriteBool(ExpandedQuery);
           }
+          if (PinnedResultCount != 0L) {
+            output.WriteRawTag(16);
+            output.WriteInt64(PinnedResultCount);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -4208,6 +4294,10 @@ namespace Google.Cloud.Retail.V2Beta {
             output.WriteRawTag(8);
             output.WriteBool(ExpandedQuery);
           }
+          if (PinnedResultCount != 0L) {
+            output.WriteRawTag(16);
+            output.WriteInt64(PinnedResultCount);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -4219,6 +4309,9 @@ namespace Google.Cloud.Retail.V2Beta {
           int size = 0;
           if (ExpandedQuery != false) {
             size += 1 + 1;
+          }
+          if (PinnedResultCount != 0L) {
+            size += 1 + pb::CodedOutputStream.ComputeInt64Size(PinnedResultCount);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -4233,6 +4326,9 @@ namespace Google.Cloud.Retail.V2Beta {
           }
           if (other.ExpandedQuery != false) {
             ExpandedQuery = other.ExpandedQuery;
+          }
+          if (other.PinnedResultCount != 0L) {
+            PinnedResultCount = other.PinnedResultCount;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -4252,6 +4348,10 @@ namespace Google.Cloud.Retail.V2Beta {
                 ExpandedQuery = input.ReadBool();
                 break;
               }
+              case 16: {
+                PinnedResultCount = input.ReadInt64();
+                break;
+              }
             }
           }
         #endif
@@ -4268,6 +4368,10 @@ namespace Google.Cloud.Retail.V2Beta {
                 break;
               case 8: {
                 ExpandedQuery = input.ReadBool();
+                break;
+              }
+              case 16: {
+                PinnedResultCount = input.ReadInt64();
                 break;
               }
             }

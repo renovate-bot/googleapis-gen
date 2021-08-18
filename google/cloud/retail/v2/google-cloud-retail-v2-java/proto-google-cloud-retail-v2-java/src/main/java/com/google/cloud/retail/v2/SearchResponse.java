@@ -380,10 +380,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -416,10 +415,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -459,10 +457,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -496,10 +493,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -535,10 +531,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -1016,10 +1011,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -1066,10 +1060,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -1106,10 +1099,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -1151,10 +1143,9 @@ private static final long serialVersionUID = 0L;
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      * </pre>
@@ -2283,10 +2274,9 @@ private static final long serialVersionUID = 0L;
        *          }
        *       }
        *     }
-       * For
-       * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-       * the rollup values is a double value with type
-       * [google.protobuf.Value][google.protobuf.Value]. For example:
+       * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+       * values is a double value with type
+       * [google.protobuf.Value][google.protobuf.Value]. For example,
        * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
        * are 10 variants in this product are available in the store "store1".
        * </pre>
@@ -2333,10 +2323,9 @@ private static final long serialVersionUID = 0L;
        *          }
        *       }
        *     }
-       * For
-       * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-       * the rollup values is a double value with type
-       * [google.protobuf.Value][google.protobuf.Value]. For example:
+       * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+       * values is a double value with type
+       * [google.protobuf.Value][google.protobuf.Value]. For example,
        * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
        * are 10 variants in this product are available in the store "store1".
        * </pre>
@@ -2373,10 +2362,9 @@ private static final long serialVersionUID = 0L;
        *          }
        *       }
        *     }
-       * For
-       * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-       * the rollup values is a double value with type
-       * [google.protobuf.Value][google.protobuf.Value]. For example:
+       * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+       * values is a double value with type
+       * [google.protobuf.Value][google.protobuf.Value]. For example,
        * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
        * are 10 variants in this product are available in the store "store1".
        * </pre>
@@ -2418,10 +2406,9 @@ private static final long serialVersionUID = 0L;
        *          }
        *       }
        *     }
-       * For
-       * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-       * the rollup values is a double value with type
-       * [google.protobuf.Value][google.protobuf.Value]. For example:
+       * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+       * values is a double value with type
+       * [google.protobuf.Value][google.protobuf.Value]. For example,
        * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
        * are 10 variants in this product are available in the store "store1".
        * </pre>
@@ -2471,10 +2458,9 @@ private static final long serialVersionUID = 0L;
        *          }
        *       }
        *     }
-       * For
-       * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-       * the rollup values is a double value with type
-       * [google.protobuf.Value][google.protobuf.Value]. For example:
+       * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+       * values is a double value with type
+       * [google.protobuf.Value][google.protobuf.Value]. For example,
        * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
        * are 10 variants in this product are available in the store "store1".
        * </pre>
@@ -2522,10 +2508,9 @@ private static final long serialVersionUID = 0L;
        *          }
        *       }
        *     }
-       * For
-       * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-       * the rollup values is a double value with type
-       * [google.protobuf.Value][google.protobuf.Value]. For example:
+       * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+       * values is a double value with type
+       * [google.protobuf.Value][google.protobuf.Value]. For example,
        * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
        * are 10 variants in this product are available in the store "store1".
        * </pre>
@@ -2566,10 +2551,9 @@ private static final long serialVersionUID = 0L;
        *          }
        *       }
        *     }
-       * For
-       * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-       * the rollup values is a double value with type
-       * [google.protobuf.Value][google.protobuf.Value]. For example:
+       * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+       * values is a double value with type
+       * [google.protobuf.Value][google.protobuf.Value]. For example,
        * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
        * are 10 variants in this product are available in the store "store1".
        * </pre>
@@ -4970,6 +4954,18 @@ private static final long serialVersionUID = 0L;
      * @return The expandedQuery.
      */
     boolean getExpandedQuery();
+
+    /**
+     * <pre>
+     * Number of pinned results. This field will only be set when expansion
+     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * is set to true.
+     * </pre>
+     *
+     * <code>int64 pinned_result_count = 2;</code>
+     * @return The pinnedResultCount.
+     */
+    long getPinnedResultCount();
   }
   /**
    * <pre>
@@ -5026,6 +5022,11 @@ private static final long serialVersionUID = 0L;
               expandedQuery_ = input.readBool();
               break;
             }
+            case 16: {
+
+              pinnedResultCount_ = input.readInt64();
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -5073,6 +5074,23 @@ private static final long serialVersionUID = 0L;
       return expandedQuery_;
     }
 
+    public static final int PINNED_RESULT_COUNT_FIELD_NUMBER = 2;
+    private long pinnedResultCount_;
+    /**
+     * <pre>
+     * Number of pinned results. This field will only be set when expansion
+     * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+     * is set to true.
+     * </pre>
+     *
+     * <code>int64 pinned_result_count = 2;</code>
+     * @return The pinnedResultCount.
+     */
+    @java.lang.Override
+    public long getPinnedResultCount() {
+      return pinnedResultCount_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5090,6 +5108,9 @@ private static final long serialVersionUID = 0L;
       if (expandedQuery_ != false) {
         output.writeBool(1, expandedQuery_);
       }
+      if (pinnedResultCount_ != 0L) {
+        output.writeInt64(2, pinnedResultCount_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5102,6 +5123,10 @@ private static final long serialVersionUID = 0L;
       if (expandedQuery_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1, expandedQuery_);
+      }
+      if (pinnedResultCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, pinnedResultCount_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5120,6 +5145,8 @@ private static final long serialVersionUID = 0L;
 
       if (getExpandedQuery()
           != other.getExpandedQuery()) return false;
+      if (getPinnedResultCount()
+          != other.getPinnedResultCount()) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -5134,6 +5161,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + EXPANDED_QUERY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getExpandedQuery());
+      hash = (37 * hash) + PINNED_RESULT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPinnedResultCount());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5274,6 +5304,8 @@ private static final long serialVersionUID = 0L;
         super.clear();
         expandedQuery_ = false;
 
+        pinnedResultCount_ = 0L;
+
         return this;
       }
 
@@ -5301,6 +5333,7 @@ private static final long serialVersionUID = 0L;
       public com.google.cloud.retail.v2.SearchResponse.QueryExpansionInfo buildPartial() {
         com.google.cloud.retail.v2.SearchResponse.QueryExpansionInfo result = new com.google.cloud.retail.v2.SearchResponse.QueryExpansionInfo(this);
         result.expandedQuery_ = expandedQuery_;
+        result.pinnedResultCount_ = pinnedResultCount_;
         onBuilt();
         return result;
       }
@@ -5351,6 +5384,9 @@ private static final long serialVersionUID = 0L;
         if (other == com.google.cloud.retail.v2.SearchResponse.QueryExpansionInfo.getDefaultInstance()) return this;
         if (other.getExpandedQuery() != false) {
           setExpandedQuery(other.getExpandedQuery());
+        }
+        if (other.getPinnedResultCount() != 0L) {
+          setPinnedResultCount(other.getPinnedResultCount());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5420,6 +5456,55 @@ private static final long serialVersionUID = 0L;
       public Builder clearExpandedQuery() {
         
         expandedQuery_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long pinnedResultCount_ ;
+      /**
+       * <pre>
+       * Number of pinned results. This field will only be set when expansion
+       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * is set to true.
+       * </pre>
+       *
+       * <code>int64 pinned_result_count = 2;</code>
+       * @return The pinnedResultCount.
+       */
+      @java.lang.Override
+      public long getPinnedResultCount() {
+        return pinnedResultCount_;
+      }
+      /**
+       * <pre>
+       * Number of pinned results. This field will only be set when expansion
+       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * is set to true.
+       * </pre>
+       *
+       * <code>int64 pinned_result_count = 2;</code>
+       * @param value The pinnedResultCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPinnedResultCount(long value) {
+        
+        pinnedResultCount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Number of pinned results. This field will only be set when expansion
+       * happens and [SearchRequest.query_expansion_spec.pin_unexpanded_results][]
+       * is set to true.
+       * </pre>
+       *
+       * <code>int64 pinned_result_count = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPinnedResultCount() {
+        
+        pinnedResultCount_ = 0L;
         onChanged();
         return this;
       }

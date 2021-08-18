@@ -103,7 +103,7 @@ public final class SearchServiceProto {
       "gle/protobuf/field_mask.proto\032\034google/pr" +
       "otobuf/struct.proto\032\037google/protobuf/tim" +
       "estamp.proto\032\036google/protobuf/wrappers.p" +
-      "roto\"\221\014\n\rSearchRequest\022\026\n\tplacement\030\001 \001(" +
+      "roto\"\261\014\n\rSearchRequest\022\026\n\tplacement\030\001 \001(" +
       "\tB\003\340A\002\0221\n\006branch\030\002 \001(\tB!\372A\036\n\034retail.goog" +
       "leapis.com/Branch\022\r\n\005query\030\003 \001(\t\022\027\n\nvisi" +
       "tor_id\030\004 \001(\tB\003\340A\002\0227\n\tuser_info\030\005 \001(\0132$.g" +
@@ -137,54 +137,55 @@ public final class SearchServiceProto {
       "st_specs\030\001 \003(\0132F.google.cloud.retail.v2b" +
       "eta.SearchRequest.BoostSpec.ConditionBoo" +
       "stSpec\0326\n\022ConditionBoostSpec\022\021\n\tconditio" +
-      "n\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002\032\257\001\n\022QueryExpansio" +
+      "n\030\001 \001(\t\022\r\n\005boost\030\002 \001(\002\032\317\001\n\022QueryExpansio" +
       "nSpec\022Y\n\tcondition\030\001 \001(\0162F.google.cloud." +
       "retail.v2beta.SearchRequest.QueryExpansi" +
-      "onSpec.Condition\">\n\tCondition\022\031\n\025CONDITI" +
-      "ON_UNSPECIFIED\020\000\022\014\n\010DISABLED\020\001\022\010\n\004AUTO\020\003" +
-      "\"\227\t\n\016SearchResponse\022H\n\007results\030\001 \003(\01327.g" +
-      "oogle.cloud.retail.v2beta.SearchResponse" +
-      ".SearchResult\022@\n\006facets\030\002 \003(\01320.google.c" +
-      "loud.retail.v2beta.SearchResponse.Facet\022" +
-      "\022\n\ntotal_size\030\003 \001(\005\022\027\n\017corrected_query\030\004" +
-      " \001(\t\022\031\n\021attribution_token\030\005 \001(\t\022\027\n\017next_" +
-      "page_token\030\006 \001(\t\022[\n\024query_expansion_info" +
-      "\030\007 \001(\0132=.google.cloud.retail.v2beta.Sear" +
-      "chResponse.QueryExpansionInfo\022\024\n\014redirec" +
-      "t_uri\030\n \001(\t\032\204\004\n\014SearchResult\022\n\n\002id\030\001 \001(\t" +
-      "\0224\n\007product\030\002 \001(\0132#.google.cloud.retail." +
-      "v2beta.Product\022\036\n\026matching_variant_count" +
-      "\030\003 \001(\005\022s\n\027matching_variant_fields\030\004 \003(\0132" +
-      "R.google.cloud.retail.v2beta.SearchRespo" +
-      "nse.SearchResult.MatchingVariantFieldsEn" +
-      "try\022o\n\025variant_rollup_values\030\005 \003(\0132P.goo" +
-      "gle.cloud.retail.v2beta.SearchResponse.S" +
-      "earchResult.VariantRollupValuesEntry\032X\n\032" +
-      "MatchingVariantFieldsEntry\022\013\n\003key\030\001 \001(\t\022" +
-      ")\n\005value\030\002 \001(\0132\032.google.protobuf.FieldMa" +
-      "sk:\0028\001\032R\n\030VariantRollupValuesEntry\022\013\n\003ke" +
-      "y\030\001 \001(\t\022%\n\005value\030\002 \001(\0132\026.google.protobuf" +
-      ".Value:\0028\001\032\357\001\n\005Facet\022\013\n\003key\030\001 \001(\t\022K\n\006val" +
-      "ues\030\002 \003(\0132;.google.cloud.retail.v2beta.S" +
-      "earchResponse.Facet.FacetValue\022\025\n\rdynami" +
-      "c_facet\030\003 \001(\010\032u\n\nFacetValue\022\017\n\005value\030\001 \001" +
-      "(\tH\000\0228\n\010interval\030\002 \001(\0132$.google.cloud.re" +
-      "tail.v2beta.IntervalH\000\022\r\n\005count\030\003 \001(\003B\r\n" +
-      "\013facet_value\032,\n\022QueryExpansionInfo\022\026\n\016ex" +
-      "panded_query\030\001 \001(\0102\222\002\n\rSearchService\022\265\001\n" +
-      "\006Search\022).google.cloud.retail.v2beta.Sea" +
-      "rchRequest\032*.google.cloud.retail.v2beta." +
-      "SearchResponse\"T\202\323\344\223\002N\"I/v2beta/{placeme" +
-      "nt=projects/*/locations/*/catalogs/*/pla" +
-      "cements/*}:search:\001*\032I\312A\025retail.googleap" +
-      "is.com\322A.https://www.googleapis.com/auth" +
-      "/cloud-platformB\333\001\n\036com.google.cloud.ret" +
-      "ail.v2betaB\022SearchServiceProtoP\001Z@google" +
-      ".golang.org/genproto/googleapis/cloud/re" +
-      "tail/v2beta;retail\242\002\006RETAIL\252\002\032Google.Clo" +
-      "ud.Retail.V2Beta\312\002\032Google\\Cloud\\Retail\\V" +
-      "2beta\352\002\035Google::Cloud::Retail::V2betab\006p" +
-      "roto3"
+      "onSpec.Condition\022\036\n\026pin_unexpanded_resul" +
+      "ts\030\002 \001(\010\">\n\tCondition\022\031\n\025CONDITION_UNSPE" +
+      "CIFIED\020\000\022\014\n\010DISABLED\020\001\022\010\n\004AUTO\020\003\"\264\t\n\016Sea" +
+      "rchResponse\022H\n\007results\030\001 \003(\01327.google.cl" +
+      "oud.retail.v2beta.SearchResponse.SearchR" +
+      "esult\022@\n\006facets\030\002 \003(\01320.google.cloud.ret" +
+      "ail.v2beta.SearchResponse.Facet\022\022\n\ntotal" +
+      "_size\030\003 \001(\005\022\027\n\017corrected_query\030\004 \001(\t\022\031\n\021" +
+      "attribution_token\030\005 \001(\t\022\027\n\017next_page_tok" +
+      "en\030\006 \001(\t\022[\n\024query_expansion_info\030\007 \001(\0132=" +
+      ".google.cloud.retail.v2beta.SearchRespon" +
+      "se.QueryExpansionInfo\022\024\n\014redirect_uri\030\n " +
+      "\001(\t\032\204\004\n\014SearchResult\022\n\n\002id\030\001 \001(\t\0224\n\007prod" +
+      "uct\030\002 \001(\0132#.google.cloud.retail.v2beta.P" +
+      "roduct\022\036\n\026matching_variant_count\030\003 \001(\005\022s" +
+      "\n\027matching_variant_fields\030\004 \003(\0132R.google" +
+      ".cloud.retail.v2beta.SearchResponse.Sear" +
+      "chResult.MatchingVariantFieldsEntry\022o\n\025v" +
+      "ariant_rollup_values\030\005 \003(\0132P.google.clou" +
+      "d.retail.v2beta.SearchResponse.SearchRes" +
+      "ult.VariantRollupValuesEntry\032X\n\032Matching" +
+      "VariantFieldsEntry\022\013\n\003key\030\001 \001(\t\022)\n\005value" +
+      "\030\002 \001(\0132\032.google.protobuf.FieldMask:\0028\001\032R" +
+      "\n\030VariantRollupValuesEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "%\n\005value\030\002 \001(\0132\026.google.protobuf.Value:\002" +
+      "8\001\032\357\001\n\005Facet\022\013\n\003key\030\001 \001(\t\022K\n\006values\030\002 \003(" +
+      "\0132;.google.cloud.retail.v2beta.SearchRes" +
+      "ponse.Facet.FacetValue\022\025\n\rdynamic_facet\030" +
+      "\003 \001(\010\032u\n\nFacetValue\022\017\n\005value\030\001 \001(\tH\000\0228\n\010" +
+      "interval\030\002 \001(\0132$.google.cloud.retail.v2b" +
+      "eta.IntervalH\000\022\r\n\005count\030\003 \001(\003B\r\n\013facet_v" +
+      "alue\032I\n\022QueryExpansionInfo\022\026\n\016expanded_q" +
+      "uery\030\001 \001(\010\022\033\n\023pinned_result_count\030\002 \001(\0032" +
+      "\222\002\n\rSearchService\022\265\001\n\006Search\022).google.cl" +
+      "oud.retail.v2beta.SearchRequest\032*.google" +
+      ".cloud.retail.v2beta.SearchResponse\"T\202\323\344" +
+      "\223\002N\"I/v2beta/{placement=projects/*/locat" +
+      "ions/*/catalogs/*/placements/*}:search:\001" +
+      "*\032I\312A\025retail.googleapis.com\322A.https://ww" +
+      "w.googleapis.com/auth/cloud-platformB\333\001\n" +
+      "\036com.google.cloud.retail.v2betaB\022SearchS" +
+      "erviceProtoP\001Z@google.golang.org/genprot" +
+      "o/googleapis/cloud/retail/v2beta;retail\242" +
+      "\002\006RETAIL\252\002\032Google.Cloud.Retail.V2Beta\312\002\032" +
+      "Google\\Cloud\\Retail\\V2beta\352\002\035Google::Clo" +
+      "ud::Retail::V2betab\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -241,7 +242,7 @@ public final class SearchServiceProto {
     internal_static_google_cloud_retail_v2beta_SearchRequest_QueryExpansionSpec_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_SearchRequest_QueryExpansionSpec_descriptor,
-        new java.lang.String[] { "Condition", });
+        new java.lang.String[] { "Condition", "PinUnexpandedResults", });
     internal_static_google_cloud_retail_v2beta_SearchResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_retail_v2beta_SearchResponse_fieldAccessorTable = new
@@ -283,7 +284,7 @@ public final class SearchServiceProto {
     internal_static_google_cloud_retail_v2beta_SearchResponse_QueryExpansionInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_retail_v2beta_SearchResponse_QueryExpansionInfo_descriptor,
-        new java.lang.String[] { "ExpandedQuery", });
+        new java.lang.String[] { "ExpandedQuery", "PinnedResultCount", });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

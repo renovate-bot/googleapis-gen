@@ -192,13 +192,9 @@ class Product extends \Google\Protobuf\Internal\Message
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      *
@@ -331,7 +327,7 @@ class Product extends \Google\Protobuf\Internal\Message
     private $sizes;
     /**
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -430,8 +426,11 @@ class Product extends \Google\Protobuf\Internal\Message
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2alpha.Product.name]
      * * [color_info][google.cloud.retail.v2alpha.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2alpha.SearchResponse] may increase
+     * response payload size and serving latency.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
      */
@@ -621,13 +620,9 @@ class Product extends \Google\Protobuf\Internal\Message
      *           }`.
      *           This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      *           error is returned:
-     *           * Max entries count: 200 by default; 100 for
-     *           [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT].
+     *           * Max entries count: 200.
      *           * The key must be a UTF-8 encoded string with a length limit of 128
      *             characters.
-     *           * Max indexable entries count: 200 by default; 40 for
-     *           [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT].
-     *           * Max searchable entries count: 30.
      *           * For indexable attribute, the key must match the pattern:
      *             [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $tags
@@ -708,7 +703,7 @@ class Product extends \Google\Protobuf\Internal\Message
      *           Schema.org property [Product.size](https://schema.org/size).
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $materials
      *           The material of the product. For example, "leather", "wooden".
-     *           A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     *           A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      *           string with a length limit of 128 characters. Otherwise, an
      *           INVALID_ARGUMENT error is returned.
      *           Google Merchant Center property
@@ -787,8 +782,11 @@ class Product extends \Google\Protobuf\Internal\Message
      *           following fields are always returned in by default:
      *           * [name][google.cloud.retail.v2alpha.Product.name]
      *           * [color_info][google.cloud.retail.v2alpha.Product.color_info]
-     *           Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     *           Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      *           returned.
+     *           Note: Returning more fields in
+     *           [SearchResponse][google.cloud.retail.v2alpha.SearchResponse] may increase
+     *           response payload size and serving latency.
      *     @type \Google\Cloud\Retail\V2alpha\Product[]|\Google\Protobuf\Internal\RepeatedField $variants
      *           Output only. Product variants grouped together on primary product which
      *           share similar product attributes. It's automatically grouped by
@@ -1413,13 +1411,9 @@ class Product extends \Google\Protobuf\Internal\Message
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      *
@@ -1446,13 +1440,9 @@ class Product extends \Google\Protobuf\Internal\Message
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2alpha.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      *
@@ -1973,7 +1963,7 @@ class Product extends \Google\Protobuf\Internal\Message
 
     /**
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -1990,7 +1980,7 @@ class Product extends \Google\Protobuf\Internal\Message
 
     /**
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -2211,8 +2201,11 @@ class Product extends \Google\Protobuf\Internal\Message
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2alpha.Product.name]
      * * [color_info][google.cloud.retail.v2alpha.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2alpha.SearchResponse] may increase
+     * response payload size and serving latency.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -2274,8 +2267,11 @@ class Product extends \Google\Protobuf\Internal\Message
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2alpha.Product.name]
      * * [color_info][google.cloud.retail.v2alpha.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2alpha.SearchResponse] may increase
+     * response payload size and serving latency.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
      * @param \Google\Protobuf\FieldMask $var

@@ -169,8 +169,8 @@ class ProductServiceGrpcClient extends \Grpc\BaseStub {
      * [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support@google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * @param \Google\Cloud\Retail\V2beta\SetInventoryRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -198,8 +198,8 @@ class ProductServiceGrpcClient extends \Grpc\BaseStub {
      * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support@google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * @param \Google\Cloud\Retail\V2beta\AddFulfillmentPlacesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -227,8 +227,8 @@ class ProductServiceGrpcClient extends \Grpc\BaseStub {
      * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support@google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * @param \Google\Cloud\Retail\V2beta\RemoveFulfillmentPlacesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

@@ -1847,9 +1847,9 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.retail.v2beta.CompleteQueryResponse.RecentSearchResult> recentSearchResults_;
   /**
    * <pre>
-   * Matched recent searches of this user. This field is a restricted feature.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in enabling it.
+   * Matched recent searches of this user. The maximum number of recent searches
+   * is 10. This field is a restricted feature. Contact Retail Search support
+   * team if you are interested in enabling it.
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -1872,9 +1872,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Matched recent searches of this user. This field is a restricted feature.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in enabling it.
+   * Matched recent searches of this user. The maximum number of recent searches
+   * is 10. This field is a restricted feature. Contact Retail Search support
+   * team if you are interested in enabling it.
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -1898,9 +1898,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Matched recent searches of this user. This field is a restricted feature.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in enabling it.
+   * Matched recent searches of this user. The maximum number of recent searches
+   * is 10. This field is a restricted feature. Contact Retail Search support
+   * team if you are interested in enabling it.
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -1923,9 +1923,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Matched recent searches of this user. This field is a restricted feature.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in enabling it.
+   * Matched recent searches of this user. The maximum number of recent searches
+   * is 10. This field is a restricted feature. Contact Retail Search support
+   * team if you are interested in enabling it.
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -1948,9 +1948,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Matched recent searches of this user. This field is a restricted feature.
-   * Contact Retail Support (retail-search-support&#64;google.com) if you are
-   * interested in enabling it.
+   * Matched recent searches of this user. The maximum number of recent searches
+   * is 10. This field is a restricted feature. Contact Retail Search support
+   * team if you are interested in enabling it.
    * This feature is only available when
    * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
    * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -2846,9 +2846,9 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -2874,9 +2874,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -2902,9 +2902,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -2930,9 +2930,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -2965,9 +2965,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -2997,9 +2997,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3031,9 +3031,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3066,9 +3066,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3098,9 +3098,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3130,9 +3130,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3163,9 +3163,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3194,9 +3194,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3225,9 +3225,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3250,9 +3250,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3278,9 +3278,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3307,9 +3307,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3332,9 +3332,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is
@@ -3358,9 +3358,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Matched recent searches of this user. This field is a restricted feature.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in enabling it.
+     * Matched recent searches of this user. The maximum number of recent searches
+     * is 10. This field is a restricted feature. Contact Retail Search support
+     * team if you are interested in enabling it.
      * This feature is only available when
      * [CompleteQueryRequest.visitor_id][google.cloud.retail.v2beta.CompleteQueryRequest.visitor_id]
      * field is set and [UserEvent][google.cloud.retail.v2beta.UserEvent] is

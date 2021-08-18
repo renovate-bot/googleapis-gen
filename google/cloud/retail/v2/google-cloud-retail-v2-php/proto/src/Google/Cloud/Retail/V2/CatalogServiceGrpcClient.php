@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -99,8 +99,8 @@ class CatalogServiceGrpcClient extends \Grpc\BaseStub {
      *   {newBranch}.
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support@google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * @param \Google\Cloud\Retail\V2\SetDefaultBranchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -120,8 +120,8 @@ class CatalogServiceGrpcClient extends \Grpc\BaseStub {
      * method under a specified parent catalog.
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support@google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * @param \Google\Cloud\Retail\V2\GetDefaultBranchRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

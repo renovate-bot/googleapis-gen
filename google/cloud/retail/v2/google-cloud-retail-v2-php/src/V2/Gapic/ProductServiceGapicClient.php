@@ -385,8 +385,8 @@ class ProductServiceGapicClient
      * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      *
      * Sample code:
      * ```
@@ -954,8 +954,8 @@ class ProductServiceGapicClient
      * [ListProducts][google.cloud.retail.v2.ProductService.ListProducts].
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      *
      * Sample code:
      * ```
@@ -1116,8 +1116,8 @@ class ProductServiceGapicClient
      * [RemoveFulfillmentPlaces][google.cloud.retail.v2.ProductService.RemoveFulfillmentPlaces].
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      *
      * Sample code:
      * ```

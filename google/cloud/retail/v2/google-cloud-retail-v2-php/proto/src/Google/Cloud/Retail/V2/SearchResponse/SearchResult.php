@@ -86,10 +86,9 @@ class SearchResult extends \Google\Protobuf\Internal\Message
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      *
@@ -158,10 +157,9 @@ class SearchResult extends \Google\Protobuf\Internal\Message
      *                    }
      *                 }
      *               }
-     *           For
-     *           [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     *           the rollup values is a double value with type
-     *           [google.protobuf.Value][google.protobuf.Value]. For example:
+     *           For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     *           values is a double value with type
+     *           [google.protobuf.Value][google.protobuf.Value]. For example,
      *           `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      *           are 10 variants in this product are available in the store "store1".
      * }
@@ -355,10 +353,9 @@ class SearchResult extends \Google\Protobuf\Internal\Message
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      *
@@ -394,10 +391,9 @@ class SearchResult extends \Google\Protobuf\Internal\Message
      *          }
      *       }
      *     }
-     * For
-     * [Product.fulfillment_info][google.cloud.retail.v2.Product.fulfillment_info],
-     * the rollup values is a double value with type
-     * [google.protobuf.Value][google.protobuf.Value]. For example:
+     * For [FulfillmentInfo][google.cloud.retail.v2.FulfillmentInfo], the rollup
+     * values is a double value with type
+     * [google.protobuf.Value][google.protobuf.Value]. For example,
      * `{key: "pickupInStore.store1" value { number_value: 10 }}` means a there
      * are 10 variants in this product are available in the store "store1".
      *

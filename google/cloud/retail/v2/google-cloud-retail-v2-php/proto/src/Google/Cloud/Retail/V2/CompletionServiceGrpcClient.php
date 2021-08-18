@@ -2,7 +2,7 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 // Original file comments:
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,8 +22,8 @@ namespace Google\Cloud\Retail\V2;
  * Auto-completion service for retail.
  *
  * This feature is only available for users who have Retail Search enabled.
- * Contact Retail Support (retail-search-support@google.com) if you are
- * interested in using Retail Search.
+ * Please submit a form [here](https://cloud.google.com/contact) to contact
+ * cloud sales if you are interested in using Retail Search.
  */
 class CompletionServiceGrpcClient extends \Grpc\BaseStub {
 
@@ -40,8 +40,8 @@ class CompletionServiceGrpcClient extends \Grpc\BaseStub {
      * Completes the specified prefix with keyword suggestions.
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support@google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * @param \Google\Cloud\Retail\V2\CompleteQueryRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -61,8 +61,8 @@ class CompletionServiceGrpcClient extends \Grpc\BaseStub {
      * Request processing may be synchronous. Partial updating is not supported.
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support@google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * @param \Google\Cloud\Retail\V2\ImportCompletionDataRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

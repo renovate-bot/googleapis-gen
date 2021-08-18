@@ -92,8 +92,8 @@ module Google
             # [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
             #
             # This feature is only available for users who have Retail Search enabled.
-            # Contact Retail Support (retail-search-support@google.com) if you are
-            # interested in using Retail Search.
+            # Please submit a form [here](https://cloud.google.com/contact) to contact
+            # cloud sales if you are interested in using Retail Search.
             rpc :SetInventory, ::Google::Cloud::Retail::V2alpha::SetInventoryRequest, ::Google::Longrunning::Operation
             # Incrementally adds place IDs to
             # [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
@@ -108,8 +108,8 @@ module Google
             # [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
             #
             # This feature is only available for users who have Retail Search enabled.
-            # Contact Retail Support (retail-search-support@google.com) if you are
-            # interested in using Retail Search.
+            # Please submit a form [here](https://cloud.google.com/contact) to contact
+            # cloud sales if you are interested in using Retail Search.
             rpc :AddFulfillmentPlaces, ::Google::Cloud::Retail::V2alpha::AddFulfillmentPlacesRequest, ::Google::Longrunning::Operation
             # Incrementally removes place IDs from a
             # [Product.fulfillment_info.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids].
@@ -124,8 +124,8 @@ module Google
             # [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
             #
             # This feature is only available for users who have Retail Search enabled.
-            # Contact Retail Support (retail-search-support@google.com) if you are
-            # interested in using Retail Search.
+            # Please submit a form [here](https://cloud.google.com/contact) to contact
+            # cloud sales if you are interested in using Retail Search.
             rpc :RemoveFulfillmentPlaces, ::Google::Cloud::Retail::V2alpha::RemoveFulfillmentPlacesRequest, ::Google::Longrunning::Operation
           end
 

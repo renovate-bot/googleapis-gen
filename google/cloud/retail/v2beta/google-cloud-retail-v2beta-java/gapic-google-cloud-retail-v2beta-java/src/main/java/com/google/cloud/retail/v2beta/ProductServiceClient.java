@@ -916,9 +916,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces], and
    * [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1010,9 +1010,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces], and
    * [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1071,9 +1071,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces], and
    * [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1132,9 +1132,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [AddFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.AddFulfillmentPlaces], and
    * [RemoveFulfillmentPlaces][google.cloud.retail.v2beta.ProductService.RemoveFulfillmentPlaces].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1170,9 +1170,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1215,9 +1215,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1259,9 +1259,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1303,9 +1303,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1347,9 +1347,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1390,9 +1390,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1435,9 +1435,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1479,9 +1479,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1523,9 +1523,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -1568,9 +1568,9 @@ public class ProductServiceClient implements BackgroundResource {
    * [GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct] or
    * [ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts].
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *

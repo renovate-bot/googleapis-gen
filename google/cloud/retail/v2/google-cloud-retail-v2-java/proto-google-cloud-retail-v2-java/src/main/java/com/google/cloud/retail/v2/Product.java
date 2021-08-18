@@ -1848,13 +1848,9 @@ private static final long serialVersionUID = 0L;
    * }`.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
-   * * Max entries count: 200 by default; 100 for
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * Max entries count: 200.
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
-   * * Max indexable entries count: 200 by default; 40 for
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-   * * Max searchable entries count: 30.
    * * For indexable attribute, the key must match the pattern:
    *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
@@ -1892,13 +1888,9 @@ private static final long serialVersionUID = 0L;
    * }`.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
-   * * Max entries count: 200 by default; 100 for
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * Max entries count: 200.
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
-   * * Max indexable entries count: 200 by default; 40 for
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-   * * Max searchable entries count: 30.
    * * For indexable attribute, the key must match the pattern:
    *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
@@ -1926,13 +1918,9 @@ private static final long serialVersionUID = 0L;
    * }`.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
-   * * Max entries count: 200 by default; 100 for
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * Max entries count: 200.
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
-   * * Max indexable entries count: 200 by default; 40 for
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-   * * Max searchable entries count: 30.
    * * For indexable attribute, the key must match the pattern:
    *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
@@ -1965,13 +1953,9 @@ private static final long serialVersionUID = 0L;
    * }`.
    * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
    * error is returned:
-   * * Max entries count: 200 by default; 100 for
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+   * * Max entries count: 200.
    * * The key must be a UTF-8 encoded string with a length limit of 128
    *   characters.
-   * * Max indexable entries count: 200 by default; 40 for
-   * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-   * * Max searchable entries count: 30.
    * * For indexable attribute, the key must match the pattern:
    *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
    * </pre>
@@ -2704,7 +2688,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The material of the product. For example, "leather", "wooden".
-   * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -2722,7 +2706,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The material of the product. For example, "leather", "wooden".
-   * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -2739,7 +2723,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The material of the product. For example, "leather", "wooden".
-   * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -2757,7 +2741,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The material of the product. For example, "leather", "wooden".
-   * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+   * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
    * string with a length limit of 128 characters. Otherwise, an
    * INVALID_ARGUMENT error is returned.
    * Google Merchant Center property
@@ -3105,8 +3089,11 @@ private static final long serialVersionUID = 0L;
    * following fields are always returned in by default:
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
-   * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+   * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   * Note: Returning more fields in
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+   * response payload size and serving latency.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -3157,8 +3144,11 @@ private static final long serialVersionUID = 0L;
    * following fields are always returned in by default:
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
-   * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+   * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   * Note: Returning more fields in
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+   * response payload size and serving latency.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -3209,8 +3199,11 @@ private static final long serialVersionUID = 0L;
    * following fields are always returned in by default:
    * * [name][google.cloud.retail.v2.Product.name]
    * * [color_info][google.cloud.retail.v2.Product.color_info]
-   * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+   * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
    * returned.
+   * Note: Returning more fields in
+   * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+   * response payload size and serving latency.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -7041,13 +7034,9 @@ private static final long serialVersionUID = 0L;
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
@@ -7085,13 +7074,9 @@ private static final long serialVersionUID = 0L;
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
@@ -7119,13 +7104,9 @@ private static final long serialVersionUID = 0L;
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
@@ -7158,13 +7139,9 @@ private static final long serialVersionUID = 0L;
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
@@ -7205,13 +7182,9 @@ private static final long serialVersionUID = 0L;
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
@@ -7250,13 +7223,9 @@ private static final long serialVersionUID = 0L;
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
@@ -7288,13 +7257,9 @@ private static final long serialVersionUID = 0L;
      * }`.
      * This field needs to pass all below criteria, otherwise an INVALID_ARGUMENT
      * error is returned:
-     * * Max entries count: 200 by default; 100 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
+     * * Max entries count: 200.
      * * The key must be a UTF-8 encoded string with a length limit of 128
      *   characters.
-     * * Max indexable entries count: 200 by default; 40 for
-     * [Type.VARIANT][google.cloud.retail.v2.Product.Type.VARIANT].
-     * * Max searchable entries count: 30.
      * * For indexable attribute, the key must match the pattern:
      *   [a-zA-Z0-9][a-zA-Z0-9_]*. For example, key0LikeThis or KEY_1_LIKE_THIS.
      * </pre>
@@ -9836,7 +9801,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -9854,7 +9819,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -9871,7 +9836,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -9889,7 +9854,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -9908,7 +9873,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -9934,7 +9899,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -9959,7 +9924,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -9982,7 +9947,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -10002,7 +9967,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The material of the product. For example, "leather", "wooden".
-     * A maximum of 5 values are allowed. Each value must be a UTF-8 encoded
+     * A maximum of 20 values are allowed. Each value must be a UTF-8 encoded
      * string with a length limit of 128 characters. Otherwise, an
      * INVALID_ARGUMENT error is returned.
      * Google Merchant Center property
@@ -11045,8 +11010,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -11096,8 +11064,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -11151,8 +11122,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -11211,8 +11185,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -11269,8 +11246,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -11331,8 +11311,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -11389,8 +11372,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -11441,8 +11427,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>
@@ -11496,8 +11485,11 @@ private static final long serialVersionUID = 0L;
      * following fields are always returned in by default:
      * * [name][google.cloud.retail.v2.Product.name]
      * * [color_info][google.cloud.retail.v2.Product.color_info]
-     * Maximum number of paths is 20. Otherwise, an INVALID_ARGUMENT error is
+     * Maximum number of paths is 30. Otherwise, an INVALID_ARGUMENT error is
      * returned.
+     * Note: Returning more fields in
+     * [SearchResponse][google.cloud.retail.v2.SearchResponse] may increase
+     * response payload size and serving latency.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask retrievable_fields = 30;</code>

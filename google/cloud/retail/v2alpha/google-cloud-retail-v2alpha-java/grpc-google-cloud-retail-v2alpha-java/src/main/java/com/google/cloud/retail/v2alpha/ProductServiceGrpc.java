@@ -449,8 +449,8 @@ public final class ProductServiceGrpc {
      * and
      * [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void setInventory(com.google.cloud.retail.v2alpha.SetInventoryRequest request,
@@ -471,8 +471,8 @@ public final class ProductServiceGrpc {
      * [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
      * [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void addFulfillmentPlaces(com.google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest request,
@@ -493,8 +493,8 @@ public final class ProductServiceGrpc {
      * [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
      * [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void removeFulfillmentPlaces(com.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest request,
@@ -695,8 +695,8 @@ public final class ProductServiceGrpc {
      * and
      * [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void setInventory(com.google.cloud.retail.v2alpha.SetInventoryRequest request,
@@ -718,8 +718,8 @@ public final class ProductServiceGrpc {
      * [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
      * [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void addFulfillmentPlaces(com.google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest request,
@@ -741,8 +741,8 @@ public final class ProductServiceGrpc {
      * [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
      * [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public void removeFulfillmentPlaces(com.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest request,
@@ -870,8 +870,8 @@ public final class ProductServiceGrpc {
      * and
      * [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.longrunning.Operation setInventory(com.google.cloud.retail.v2alpha.SetInventoryRequest request) {
@@ -892,8 +892,8 @@ public final class ProductServiceGrpc {
      * [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
      * [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.longrunning.Operation addFulfillmentPlaces(com.google.cloud.retail.v2alpha.AddFulfillmentPlacesRequest request) {
@@ -914,8 +914,8 @@ public final class ProductServiceGrpc {
      * [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
      * [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.longrunning.Operation removeFulfillmentPlaces(com.google.cloud.retail.v2alpha.RemoveFulfillmentPlacesRequest request) {
@@ -1048,8 +1048,8 @@ public final class ProductServiceGrpc {
      * and
      * [RemoveFulfillmentPlaces][google.cloud.retail.v2alpha.ProductService.RemoveFulfillmentPlaces].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> setInventory(
@@ -1071,8 +1071,8 @@ public final class ProductServiceGrpc {
      * [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
      * [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> addFulfillmentPlaces(
@@ -1094,8 +1094,8 @@ public final class ProductServiceGrpc {
      * [GetProduct][google.cloud.retail.v2alpha.ProductService.GetProduct] or
      * [ListProducts][google.cloud.retail.v2alpha.ProductService.ListProducts].
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> removeFulfillmentPlaces(

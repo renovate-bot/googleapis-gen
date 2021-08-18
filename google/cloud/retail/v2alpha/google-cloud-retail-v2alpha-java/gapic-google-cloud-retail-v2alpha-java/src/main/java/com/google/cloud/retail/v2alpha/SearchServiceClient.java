@@ -37,9 +37,9 @@ import javax.annotation.Generated;
 /**
  * Service Description: Service for search.
  *
- * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
- * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
- * Search.
+ * <p>This feature is only available for users who have Retail Search enabled. Please submit a form
+ * [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in using
+ * Retail Search.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -177,9 +177,9 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -223,9 +223,9 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *
@@ -269,9 +269,9 @@ public class SearchServiceClient implements BackgroundResource {
   /**
    * Performs a search.
    *
-   * <p>This feature is only available for users who have Retail Search enabled. Contact Retail
-   * Support (retail-search-support{@literal @}google.com) if you are interested in using Retail
-   * Search.
+   * <p>This feature is only available for users who have Retail Search enabled. Please submit a
+   * form [here](https://cloud.google.com/contact) to contact cloud sales if you are interested in
+   * using Retail Search.
    *
    * <p>Sample code:
    *

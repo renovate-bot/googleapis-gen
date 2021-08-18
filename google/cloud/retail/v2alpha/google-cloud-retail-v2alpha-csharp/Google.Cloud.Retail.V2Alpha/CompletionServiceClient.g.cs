@@ -169,8 +169,8 @@ namespace Google.Cloud.Retail.V2Alpha
     /// Auto-completion service for retail.
     /// 
     /// This feature is only available for users who have Retail Search enabled.
-    /// Contact Retail Support (retail-search-support@google.com) if you are
-    /// interested in using Retail Search.
+    /// Please submit a form [here](https://cloud.google.com/contact) to contact
+    /// cloud sales if you are interested in using Retail Search.
     /// </remarks>
     public abstract partial class CompletionServiceClient
     {
@@ -252,8 +252,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Completes the specified prefix with keyword suggestions.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -265,8 +265,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Completes the specified prefix with keyword suggestions.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -278,8 +278,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Completes the specified prefix with keyword suggestions.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -293,8 +293,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Request processing may be synchronous. Partial updating is not supported.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -308,8 +308,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Request processing may be synchronous. Partial updating is not supported.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -323,8 +323,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Request processing may be synchronous. Partial updating is not supported.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
@@ -365,8 +365,8 @@ namespace Google.Cloud.Retail.V2Alpha
     /// Auto-completion service for retail.
     /// 
     /// This feature is only available for users who have Retail Search enabled.
-    /// Contact Retail Support (retail-search-support@google.com) if you are
-    /// interested in using Retail Search.
+    /// Please submit a form [here](https://cloud.google.com/contact) to contact
+    /// cloud sales if you are interested in using Retail Search.
     /// </remarks>
     public sealed partial class CompletionServiceClientImpl : CompletionServiceClient
     {
@@ -413,8 +413,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Completes the specified prefix with keyword suggestions.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -429,8 +429,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Completes the specified prefix with keyword suggestions.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -450,8 +450,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Request processing may be synchronous. Partial updating is not supported.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
@@ -468,8 +468,8 @@ namespace Google.Cloud.Retail.V2Alpha
         /// Request processing may be synchronous. Partial updating is not supported.
         /// 
         /// This feature is only available for users who have Retail Search enabled.
-        /// Contact Retail Support (retail-search-support@google.com) if you are
-        /// interested in using Retail Search.
+        /// Please submit a form [here](https://cloud.google.com/contact) to contact
+        /// cloud sales if you are interested in using Retail Search.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>

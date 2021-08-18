@@ -22,34 +22,34 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      * Allowed facet keys when
      * [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
      * is not specified:
-     * Textual facet keys:
-     * * brands
-     * * categories
-     * * genders
-     * * ageGroups
-     * * availability
-     * * colorFamilies
-     * * colors
-     * * sizes
-     * * materials
-     * * patterns
-     * * conditions
-     * * attributes.key
-     * * pickupInStore
-     * * shipToStore
-     * * sameDayDelivery
-     * * nextDayDelivery
-     * * customFulfillment1
-     * * customFulfillment2
-     * * customFulfillment3
-     * * customFulfillment4
-     * * customFulfillment5
-     * Numeric facet keys:
-     * * price
-     * * discount
-     * * rating
-     * * ratingCount
-     * * attributes.key
+     * * textual_field =
+     *     * "brands"
+     *     * "categories"
+     *     * "genders"
+     *     * "ageGroups"
+     *     * "availability"
+     *     * "colorFamilies"
+     *     * "colors"
+     *     * "sizes"
+     *     * "materials"
+     *     * "patterns"
+     *     * "conditions"
+     *     * "attributes.key"
+     *     * "pickupInStore"
+     *     * "shipToStore"
+     *     * "sameDayDelivery"
+     *     * "nextDayDelivery"
+     *     * "customFulfillment1"
+     *     * "customFulfillment2"
+     *     * "customFulfillment3"
+     *     * "customFulfillment4"
+     *     * "customFulfillment5"
+     * * numerical_field =
+     *     * "price"
+     *     * "discount"
+     *     * "rating"
+     *     * "ratingCount"
+     *     * "attributes.key"
      *
      * Generated from protobuf field <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -114,7 +114,8 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
      * intervals are sorted in the order given by
      * [FacetSpec.FacetKey.intervals][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.intervals];
-     * [FulfillmentInfo.ids][] are sorted in the order given by
+     * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+     * are sorted in the order given by
      * [FacetSpec.FacetKey.restricted_values][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.restricted_values].
      *
      * Generated from protobuf field <code>string order_by = 4;</code>
@@ -157,34 +158,34 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      *           Allowed facet keys when
      *           [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
      *           is not specified:
-     *           Textual facet keys:
-     *           * brands
-     *           * categories
-     *           * genders
-     *           * ageGroups
-     *           * availability
-     *           * colorFamilies
-     *           * colors
-     *           * sizes
-     *           * materials
-     *           * patterns
-     *           * conditions
-     *           * attributes.key
-     *           * pickupInStore
-     *           * shipToStore
-     *           * sameDayDelivery
-     *           * nextDayDelivery
-     *           * customFulfillment1
-     *           * customFulfillment2
-     *           * customFulfillment3
-     *           * customFulfillment4
-     *           * customFulfillment5
-     *           Numeric facet keys:
-     *           * price
-     *           * discount
-     *           * rating
-     *           * ratingCount
-     *           * attributes.key
+     *           * textual_field =
+     *               * "brands"
+     *               * "categories"
+     *               * "genders"
+     *               * "ageGroups"
+     *               * "availability"
+     *               * "colorFamilies"
+     *               * "colors"
+     *               * "sizes"
+     *               * "materials"
+     *               * "patterns"
+     *               * "conditions"
+     *               * "attributes.key"
+     *               * "pickupInStore"
+     *               * "shipToStore"
+     *               * "sameDayDelivery"
+     *               * "nextDayDelivery"
+     *               * "customFulfillment1"
+     *               * "customFulfillment2"
+     *               * "customFulfillment3"
+     *               * "customFulfillment4"
+     *               * "customFulfillment5"
+     *           * numerical_field =
+     *               * "price"
+     *               * "discount"
+     *               * "rating"
+     *               * "ratingCount"
+     *               * "attributes.key"
      *     @type \Google\Cloud\Retail\V2\Interval[]|\Google\Protobuf\Internal\RepeatedField $intervals
      *           Set only if values should be bucketized into intervals. Must be set
      *           for facets with numerical values. Must not be set for facet with text
@@ -229,7 +230,8 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      *           order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
      *           intervals are sorted in the order given by
      *           [FacetSpec.FacetKey.intervals][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.intervals];
-     *           [FulfillmentInfo.ids][] are sorted in the order given by
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+     *           are sorted in the order given by
      *           [FacetSpec.FacetKey.restricted_values][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.restricted_values].
      *     @type string $query
      *           The query that is used to compute facet for the given facet key.
@@ -264,34 +266,34 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      * Allowed facet keys when
      * [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
      * is not specified:
-     * Textual facet keys:
-     * * brands
-     * * categories
-     * * genders
-     * * ageGroups
-     * * availability
-     * * colorFamilies
-     * * colors
-     * * sizes
-     * * materials
-     * * patterns
-     * * conditions
-     * * attributes.key
-     * * pickupInStore
-     * * shipToStore
-     * * sameDayDelivery
-     * * nextDayDelivery
-     * * customFulfillment1
-     * * customFulfillment2
-     * * customFulfillment3
-     * * customFulfillment4
-     * * customFulfillment5
-     * Numeric facet keys:
-     * * price
-     * * discount
-     * * rating
-     * * ratingCount
-     * * attributes.key
+     * * textual_field =
+     *     * "brands"
+     *     * "categories"
+     *     * "genders"
+     *     * "ageGroups"
+     *     * "availability"
+     *     * "colorFamilies"
+     *     * "colors"
+     *     * "sizes"
+     *     * "materials"
+     *     * "patterns"
+     *     * "conditions"
+     *     * "attributes.key"
+     *     * "pickupInStore"
+     *     * "shipToStore"
+     *     * "sameDayDelivery"
+     *     * "nextDayDelivery"
+     *     * "customFulfillment1"
+     *     * "customFulfillment2"
+     *     * "customFulfillment3"
+     *     * "customFulfillment4"
+     *     * "customFulfillment5"
+     * * numerical_field =
+     *     * "price"
+     *     * "discount"
+     *     * "rating"
+     *     * "ratingCount"
+     *     * "attributes.key"
      *
      * Generated from protobuf field <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -308,34 +310,34 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      * Allowed facet keys when
      * [FacetKey.query][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.query]
      * is not specified:
-     * Textual facet keys:
-     * * brands
-     * * categories
-     * * genders
-     * * ageGroups
-     * * availability
-     * * colorFamilies
-     * * colors
-     * * sizes
-     * * materials
-     * * patterns
-     * * conditions
-     * * attributes.key
-     * * pickupInStore
-     * * shipToStore
-     * * sameDayDelivery
-     * * nextDayDelivery
-     * * customFulfillment1
-     * * customFulfillment2
-     * * customFulfillment3
-     * * customFulfillment4
-     * * customFulfillment5
-     * Numeric facet keys:
-     * * price
-     * * discount
-     * * rating
-     * * ratingCount
-     * * attributes.key
+     * * textual_field =
+     *     * "brands"
+     *     * "categories"
+     *     * "genders"
+     *     * "ageGroups"
+     *     * "availability"
+     *     * "colorFamilies"
+     *     * "colors"
+     *     * "sizes"
+     *     * "materials"
+     *     * "patterns"
+     *     * "conditions"
+     *     * "attributes.key"
+     *     * "pickupInStore"
+     *     * "shipToStore"
+     *     * "sameDayDelivery"
+     *     * "nextDayDelivery"
+     *     * "customFulfillment1"
+     *     * "customFulfillment2"
+     *     * "customFulfillment3"
+     *     * "customFulfillment4"
+     *     * "customFulfillment5"
+     * * numerical_field =
+     *     * "price"
+     *     * "discount"
+     *     * "rating"
+     *     * "ratingCount"
+     *     * "attributes.key"
      *
      * Generated from protobuf field <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -513,7 +515,8 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
      * intervals are sorted in the order given by
      * [FacetSpec.FacetKey.intervals][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.intervals];
-     * [FulfillmentInfo.ids][] are sorted in the order given by
+     * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+     * are sorted in the order given by
      * [FacetSpec.FacetKey.restricted_values][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.restricted_values].
      *
      * Generated from protobuf field <code>string order_by = 4;</code>
@@ -536,7 +539,8 @@ class FacetKey extends \Google\Protobuf\Internal\Message
      * order](https://en.wikipedia.org/wiki/Natural_sort_order); numerical
      * intervals are sorted in the order given by
      * [FacetSpec.FacetKey.intervals][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.intervals];
-     * [FulfillmentInfo.ids][] are sorted in the order given by
+     * [FulfillmentInfo.place_ids][google.cloud.retail.v2.FulfillmentInfo.place_ids]
+     * are sorted in the order given by
      * [FacetSpec.FacetKey.restricted_values][google.cloud.retail.v2.SearchRequest.FacetSpec.FacetKey.restricted_values].
      *
      * Generated from protobuf field <code>string order_by = 4;</code>

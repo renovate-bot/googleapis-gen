@@ -49,8 +49,8 @@ use Google\Cloud\Retail\V2alpha\UserInfo;
  * Service Description: Service for search.
  *
  * This feature is only available for users who have Retail Search enabled.
- * Contact Retail Support (retail-search-support&#64;google.com) if you are
- * interested in using Retail Search.
+ * Please submit a form [here](https://cloud.google.com/contact) to contact
+ * cloud sales if you are interested in using Retail Search.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -291,8 +291,8 @@ class SearchServiceGapicClient
      * Performs a search.
      *
      * This feature is only available for users who have Retail Search enabled.
-     * Contact Retail Support (retail-search-support&#64;google.com) if you are
-     * interested in using Retail Search.
+     * Please submit a form [here](https://cloud.google.com/contact) to contact
+     * cloud sales if you are interested in using Retail Search.
      *
      * Sample code:
      * ```
@@ -367,7 +367,8 @@ class SearchServiceGapicClient
      *     @type string $filter
      *           The filter syntax consists of an expression language for constructing a
      *           predicate from one or more fields of the products being filtered. Filter
-     *           expression is case-sensitive.
+     *           expression is case-sensitive. See more details at this [user
+     *           guide](/retail/private/docs/filter-and-order#filter).
      *
      *           If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      *     @type string $canonicalFilter
@@ -384,7 +385,9 @@ class SearchServiceGapicClient
      *     @type string $orderBy
      *           The order in which products are returned. Products can be ordered by
      *           a field in an [Product][google.cloud.retail.v2alpha.Product] object. Leave
-     *           it unset if ordered by relevance. OrderBy expression is case-sensitive.
+     *           it unset if ordered by relevance. OrderBy expression is case-sensitive. See
+     *           more details at this [user
+     *           guide](/retail/private/docs/filter-and-order#order).
      *
      *           If this field is unrecognizable, an INVALID_ARGUMENT is returned.
      *     @type FacetSpec[] $facetSpecs
@@ -396,21 +399,23 @@ class SearchServiceGapicClient
      *           The specification for dynamically generated facets. Notice that only
      *           textual facets can be dynamically generated.
      *
-     *           This feature requires additional allowlisting. Contact Retail Support
-     *           (retail-search-support&#64;google.com) if you are interested in using dynamic
-     *           facet feature.
+     *           This feature requires additional allowlisting. Contact Retail Search
+     *           support team if you are interested in using dynamic facet feature.
      *     @type BoostSpec $boostSpec
-     *           Boost specification to boost certain products.
+     *           Boost specification to boost certain products. See more details at this
+     *           [user guide](/retail/private/docs/boosting).
      *     @type QueryExpansionSpec $queryExpansionSpec
      *           The query expansion specification that specifies the conditions under which
-     *           query expansion will occur.
+     *           query expansion will occur. See more details at this [user
+     *           guide](/retail/private/docs/result-size#query_expansion).
      *     @type int $relevanceThreshold
      *           The relevance threshold of the search results.
      *
      *           Defaults to
      *           [RelevanceThreshold.HIGH][google.cloud.retail.v2alpha.SearchRequest.RelevanceThreshold.HIGH],
      *           which means only the most relevant results are shown, and the least number
-     *           of results are returned.
+     *           of results are returned. See more details at this [user
+     *           guide](/retail/private/docs/result-size#relevance_thresholding).
      *           For allowed values, use constants defined on {@see \Google\Cloud\Retail\V2alpha\SearchRequest\RelevanceThreshold}
      *     @type string[] $variantRollupKeys
      *           The keys to fetch and rollup the matching
@@ -424,10 +429,9 @@ class SearchServiceGapicClient
      *           [Product][google.cloud.retail.v2alpha.Product]s attributes will lead to
      *           extra query latency. Maximum number of keys is 10.
      *
-     *           For
-     *           [Product.fulfillment_info][google.cloud.retail.v2alpha.Product.fulfillment_info],
-     *           a fulfillment type and a fulfillment ID must be provided in the format of
-     *           "fulfillmentType.filfillmentId". E.g., in "pickupInStore.store123",
+     *           For [FulfillmentInfo][google.cloud.retail.v2alpha.FulfillmentInfo], a
+     *           fulfillment type and a fulfillment ID must be provided in the format of
+     *           "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123",
      *           "pickupInStore" is fulfillment type and "store123" is the store ID.
      *
      *           Supported keys are:
@@ -438,24 +442,51 @@ class SearchServiceGapicClient
      *           * discount
      *           * attributes.key, where key is any key in the
      *           [Product.attributes][google.cloud.retail.v2alpha.Product.attributes] map.
-     *           * pickupInStore.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.PICKUP_IN_STORE][].
-     *           * shipToStore.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.SHIP_TO_STORE][].
-     *           * sameDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.SAME_DAY_DELIVERY][].
-     *           * nextDayDelivery.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.NEXT_DAY_DELIVERY][].
-     *           * customFulfillment1.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.CUSTOM_TYPE_1][].
-     *           * customFulfillment2.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.CUSTOM_TYPE_2][].
-     *           * customFulfillment3.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.CUSTOM_TYPE_3][].
-     *           * customFulfillment4.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.CUSTOM_TYPE_4][].
-     *           * customFulfillment5.id, where id is any [FulfillmentInfo.ids][] for type
-     *           [FulfillmentInfo.Type.CUSTOM_TYPE_5][].
+     *           * pickupInStore.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "pickup-in-store".
+     *           * shipToStore.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "ship-to-store".
+     *           * sameDayDelivery.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "same-day-delivery".
+     *           * nextDayDelivery.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "next-day-delivery".
+     *           * customFulfillment1.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "custom-type-1".
+     *           * customFulfillment2.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "custom-type-2".
+     *           * customFulfillment3.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "custom-type-3".
+     *           * customFulfillment4.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "custom-type-4".
+     *           * customFulfillment5.id, where id is any
+     *           [FulfillmentInfo.place_ids][google.cloud.retail.v2alpha.FulfillmentInfo.place_ids]
+     *           for
+     *           [FulfillmentInfo.type][google.cloud.retail.v2alpha.FulfillmentInfo.type]
+     *           "custom-type-5".
      *
      *           If this field is set to an invalid value other than these, an
      *           INVALID_ARGUMENT error is returned.
