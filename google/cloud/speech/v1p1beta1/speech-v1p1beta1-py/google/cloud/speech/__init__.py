@@ -52,6 +52,7 @@ from google.cloud.speech_v1p1beta1.types.cloud_speech_adaptation import UpdatePh
 from google.cloud.speech_v1p1beta1.types.resource import CustomClass
 from google.cloud.speech_v1p1beta1.types.resource import PhraseSet
 from google.cloud.speech_v1p1beta1.types.resource import SpeechAdaptation
+from google.cloud.speech_v1p1beta1.types.resource import TranscriptNormalization
 
 __all__ = ('AdaptationClient',
     'AdaptationAsyncClient',
@@ -90,4 +91,5 @@ __all__ = ('AdaptationClient',
     'CustomClass',
     'PhraseSet',
     'SpeechAdaptation',
+    'TranscriptNormalization',
 )

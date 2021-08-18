@@ -22,6 +22,7 @@ __protobuf__ = proto.module(
         'CustomClass',
         'PhraseSet',
         'SpeechAdaptation',
+        'TranscriptNormalization',
     },
 )
 
@@ -189,6 +190,55 @@ class SpeechAdaptation(proto.Message):
         proto.MESSAGE,
         number=3,
         message='CustomClass',
+    )
+
+
+class TranscriptNormalization(proto.Message):
+    r"""Transcription normalization configuration. Use transcription
+    normalization to automatically replace parts of the transcript
+    with phrases of your choosing. For StreamingRecognize, this
+    normalization only applies to stable partial transcripts
+    (stability > 0.8) and final transcripts.
+
+    Attributes:
+        entries (Sequence[google.cloud.speech_v1p1beta1.types.TranscriptNormalization.Entry]):
+            A list of replacement entries. We will perform replacement
+            with one entry at a time. For example, the second entry in
+            ["cat" => "dog", "mountain cat" => "mountain dog"] will
+            never be applied because we will always process the first
+            entry before it. At most 100 entries.
+    """
+
+    class Entry(proto.Message):
+        r"""A single replacement configuration.
+        Attributes:
+            search (str):
+                What to replace. Max length is 100
+                characters.
+            replace (str):
+                What to replace with. Max length is 100
+                characters.
+            case_sensitive (bool):
+                Whether the search is case sensitive.
+        """
+
+        search = proto.Field(
+            proto.STRING,
+            number=1,
+        )
+        replace = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        case_sensitive = proto.Field(
+            proto.BOOL,
+            number=3,
+        )
+
+    entries = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=Entry,
     )
 
 

@@ -15,11 +15,12 @@ class Resource
           return;
         }
         \GPBMetadata\Google\Api\Resource::initOnce();
+        \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ý
-,google/cloud/speech/v1p1beta1/resource.protogoogle.cloud.speech.v1p1beta1google/api/annotations.proto"ƒ
+«	
+,google/cloud/speech/v1p1beta1/resource.protogoogle.cloud.speech.v1p1beta1google/protobuf/timestamp.protogoogle/api/annotations.proto"ƒ
 CustomClass
 name (	
 custom_class_id (	C
@@ -39,7 +40,13 @@ class Resource
 phrase_sets (2(.google.cloud.speech.v1p1beta1.PhraseSetC
 phrase_set_references (	B$úA!
 speech.googleapis.com/PhraseSetB
-custom_classes (2*.google.cloud.speech.v1p1beta1.CustomClassBˆ
+custom_classes (2*.google.cloud.speech.v1p1beta1.CustomClass"ª
+TranscriptNormalizationM
+entries (2<.google.cloud.speech.v1p1beta1.TranscriptNormalization.Entry@
+Entry
+search (	
+replace (	
+case_sensitive (Bˆ
 !com.google.cloud.speech.v1p1beta1BSpeechResourceProtoPZCgoogle.golang.org/genproto/googleapis/cloud/speech/v1p1beta1;speechø¢GCSbproto3'
         , true);
 

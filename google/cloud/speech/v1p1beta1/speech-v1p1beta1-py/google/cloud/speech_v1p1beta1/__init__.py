@@ -52,6 +52,7 @@ from .types.cloud_speech_adaptation import UpdatePhraseSetRequest
 from .types.resource import CustomClass
 from .types.resource import PhraseSet
 from .types.resource import SpeechAdaptation
+from .types.resource import TranscriptNormalization
 
 __all__ = (
     'AdaptationAsyncClient',
@@ -87,6 +88,7 @@ __all__ = (
 'StreamingRecognitionResult',
 'StreamingRecognizeRequest',
 'StreamingRecognizeResponse',
+'TranscriptNormalization',
 'TranscriptOutputConfig',
 'UpdateCustomClassRequest',
 'UpdatePhraseSetRequest',
